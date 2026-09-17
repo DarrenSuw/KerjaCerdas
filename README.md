@@ -1,34 +1,22 @@
 <div align="center">
 
-<pre>
-╭────────────────────────────────────────────────────────────────────────────────────────────╮
-│                                                                                            │
-│  ██╗  ██╗███████╗██████╗      ██╗ █████╗  ██████╗███████╗██████╗ ██████╗  █████╗ ███████╗  │
-│  ██║ ██╔╝██╔════╝██╔══██╗     ██║██╔══██╗██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝  │
-│  █████╔╝ █████╗  ██████╔╝     ██║███████║██║     █████╗  ██████╔╝██║  ██║███████║███████╗  │
-│  ██╔═██╗ ██╔══╝  ██╔══██╗██   ██║██╔══██║██║     ██╔══╝  ██╔══██╗██║  ██║██╔══██║╚════██║  │
-│  ██║  ██╗███████╗██║  ██║╚█████╔╝██║  ██║╚██████╗███████╗██║  ██║██████╔╝██║  ██║███████║  │
-│  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝  │
-│                                                                                            │
-│                              Enterprise Talent AI Infrastructure                           │
-│                                                                                            │
-╰────────────────────────────────────────────────────────────────────────────────────────────╯
-</pre>
+# 💼 KerjaCerdas
+
 **AI-Powered Recruitment Platform — Semantic Matching & LangGraph-Assisted Response Layer**
 
-[![Backend: FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
-[![Frontend: React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
-[![AI: Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev)
-[![Agents: LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph/)
-[![Database: PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://postgresql.org)
-[![Cloud: Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
-[![Deploy: Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-1.2-1C3C3C?logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph/)
+[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-GenAI-8E75B2?logo=googlegemini&logoColor=white)](https://ai.google.dev/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2B%20pgvector-4169E1?logo=postgresql&logoColor=white)](https://github.com/pgvector/pgvector)
+[![React](https://img.shields.io/badge/React-18-20232A?logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
-*A functional prototype of an AI-powered talent matching platform utilizing high-dimensional vector search and a LangGraph response layer to streamline recruitment pipelines.*
-
-<br>
- 
 </div>
+
+A functional prototype of an AI-powered talent matching platform utilizing high-dimensional vector search and a LangGraph response layer to streamline recruitment pipelines.
 
 ---
 
