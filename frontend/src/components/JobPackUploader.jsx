@@ -4,6 +4,7 @@ import toast from 'react-hot-toast'
 import { KC, BrutalCard, topBtn, DesignStyles } from './_design'
 import { createEmployerJob } from '../services/api'
 import { UploadCloud, CheckCircle2, ArrowRight } from 'lucide-react'
+import OfflineJobPackConfirmModal from './OfflineJobPackConfirmModal'
 
 export default function JobPackUploader() {
     const { uploadJobPack, jobPackUploading, navigate } = useStore()
@@ -11,6 +12,7 @@ export default function JobPackUploader() {
     const [parsedResult, setParsedResult] = useState(null)
     const [dragActive, setDragActive] = useState(false)
     const [publishing, setPublishing] = useState(false)
+    const [offlinePending, setOfflinePending] = useState(null)
     // Which parsed postings the employer actually wants published — a job
     // pack can extract entries nobody asked to publish (a stray table row,
     // a listing that's actually closed, etc.), so confirming the batch must
@@ -91,11 +93,18 @@ export default function JobPackUploader() {
                 res.jobs.map(async job => ({ ...job, client_ref: await computeClientRef(fileHash, job) }))
             )
 
-            setParsedResult({
+            const finalParsedResult = {
                 fileName: file.name,
                 time: `${elapsedSeconds.toFixed(1)} dtk`,
                 jobs,
-            })
+            }
+
+            if (res.parsed_offline) {
+                setOfflinePending(finalParsedResult)
+                return
+            }
+
+            setParsedResult(finalParsedResult)
             // Everything starts checked — reviewing is opt-out (uncheck what
             // you don't want), which matches what most packs need (mostly
             // real postings) without forcing a click per row for the common
@@ -106,6 +115,19 @@ export default function JobPackUploader() {
             setSelectedFile(null)
             setParsedResult(null)
         }
+    }
+
+    const handleOfflineConfirm = () => {
+        if (!offlinePending) return
+        setParsedResult(offlinePending)
+        setCheckedIds(new Set(offlinePending.jobs.map(j => j.local_id)))
+        setOfflinePending(null)
+    }
+
+    const handleOfflineCancel = () => {
+        setOfflinePending(null)
+        setSelectedFile(null)
+        setParsedResult(null)
     }
 
     // Nothing exists in the database until this runs — this is the only
@@ -189,6 +211,18 @@ export default function JobPackUploader() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <DesignStyles />
+
+            {/* Offline parse confirmation modal — only mounted when needed */}
+            {offlinePending && (
+                <OfflineJobPackConfirmModal
+                    preview={{
+                        jobs_count: offlinePending.jobs.length,
+                        sample_title: offlinePending.jobs[0]?.title,
+                    }}
+                    onConfirm={handleOfflineConfirm}
+                    onCancel={handleOfflineCancel}
+                />
+            )}
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
