@@ -16,6 +16,7 @@ on:
 env:
   PYTHON_VERSION: "3.11"
   NODE_VERSION: "20"
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: "true"
 
 # Cancel in-flight runs for the same branch/PR to save runner minutes
 concurrency:
