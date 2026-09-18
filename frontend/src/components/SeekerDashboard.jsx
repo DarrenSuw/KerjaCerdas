@@ -62,7 +62,7 @@ export default function SeekerDashboard() {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                 <DesignStyles />
-                <JobDetailModal job={selectedJob} onClose={() => setSelectedJob(null)} />
+                <JobDetailModal key={selectedJob?.job_id || selectedJob?.id} job={selectedJob} onClose={() => setSelectedJob(null)} />
 
                 {/* Desktop Top Header Bar */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24, paddingBottom: 22, borderBottom: `1.5px solid ${KC.ink}` }}>
@@ -480,7 +480,7 @@ export default function SeekerDashboard() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <DesignStyles />
-            <JobDetailModal job={selectedJob} onClose={() => setSelectedJob(null)} />
+            <JobDetailModal key={selectedJob?.job_id || selectedJob?.id} job={selectedJob} onClose={() => setSelectedJob(null)} />
 
             {/* Top User Greeting Bar */}
             <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 6 }}>

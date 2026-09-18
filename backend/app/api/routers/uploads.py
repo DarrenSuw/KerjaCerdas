@@ -78,8 +78,6 @@ async def upload_cv(
         raise HTTPException(400, "Invalid PDF file: Missing %PDF- header signature")
 
     parsed = await parse_cv(blob)
-    if parsed.get("_offline"):
-        raise HTTPException(503, "Parser AI sedang tidak tersedia. Coba lagi nanti.")
     repos = get_repositories()
 
     # Find or create a seeker profile for the authenticated user using fast SQL finder
@@ -157,8 +155,6 @@ async def upload_job_pack(
 
     parsed = await parse_job_pack(blob)
     postings = parsed.get("postings", [])
-    if parsed.get("_offline") or any(p.get("_offline") for p in postings):
-        raise HTTPException(503, "Parser AI sedang tidak tersedia. Coba lagi nanti.")
 
     # Nothing is written to the JOBS table here — a PDF can extract postings
     # the employer never meant to publish, and every row this endpoint used

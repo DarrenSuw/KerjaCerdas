@@ -416,6 +416,9 @@ const useStore = create(
                 }
             },
 
+            isJobApplied: (jobId) => get().applications.some(a => a.job_id === jobId || a.job?.id === jobId),
+
+
             applyJob: async (jobId, coverLetter = '') => {
                 try {
                     const res = await applyToJob(jobId, coverLetter)
