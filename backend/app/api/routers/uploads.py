@@ -168,7 +168,11 @@ async def upload_job_pack(
     cache_key = hashlib.sha256(f"{employer.id}:{file_hash}".encode()).hexdigest()
     cached = await get_cached_job_pack_parse(cache_key)
     if cached is not None:
-        return {"employer_id": employer.id, "jobs": cached, "parsed_offline": False}
+        cached_offline = any(
+            "[offline-stub]" in (job.get("description") or "")
+            for job in cached
+        )
+        return {"employer_id": employer.id, "jobs": cached, "parsed_offline": cached_offline}
 
     parsed = await parse_job_pack(blob)
     postings = parsed.get("postings", [])
