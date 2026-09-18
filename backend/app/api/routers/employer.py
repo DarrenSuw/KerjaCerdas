@@ -143,6 +143,12 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
     if not title:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Judul lowongan wajib diisi.")
 
+    if "[offline-stub]" in payload.description:
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST,
+            "Lowongan dari mode offline (demo) tidak dapat dipublikasikan."
+        )
+
     # Idempotent replay: if the caller already created this exact posting
     # (client_ref set) — e.g. retrying after the first response was lost to
     # a timeout — return the row that already exists instead of inserting a
