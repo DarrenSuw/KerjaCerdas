@@ -437,13 +437,24 @@ const useStore = create(
 
             // ─── CV upload ───────────────────────────────────────────────
             cvUploading: false,
-            uploadResume: async (file) => {
+            uploadResume: async (file, confirmOffline = false) => {
                 if (!file) return
                 const { user } = get()
                 set({ cvUploading: true })
                 try {
-                    const res = await uploadCV({ userId: user.id || 'demo', file })
-                    set({ seekerId: res.seeker_id, cvUploading: false })
+                    const res = await uploadCV({ userId: user.id || 'demo', file, confirmOffline })
+                    set({ cvUploading: false })
+
+                    // If the backend detected an offline/demo parse and needs
+                    // explicit user confirmation before overwriting, return the
+                    // response immediately — do NOT touch the profile or advisor
+                    // session. The caller (CVUploader / OnboardingWizard) handles
+                    // showing the confirmation modal.
+                    if (res.requires_confirmation) {
+                        return res
+                    }
+
+                    set({ seekerId: res.seeker_id })
                     toast.success(res.parsed_offline
                         ? 'CV diparse (mode offline) — tambah GEMINI_API_KEY untuk hasil lebih akurat.'
                         : `CV diparse: ${res.summary?.skills_count || 0} skill terdeteksi`)

@@ -11,6 +11,7 @@ import { KC, DesignStyles } from './_design'
 import { updateSeekerProfile } from '../services/api'
 import toast from 'react-hot-toast'
 import { UploadCloud, X } from 'lucide-react'
+import OfflineParseConfirmModal from './OfflineParseConfirmModal'
 
 export default function OnboardingWizard({ onClose, isPage = false }) {
     const { user, profile, uploadResume, cvUploading, seekerId, runAgent, navigate, loadSeekerProfile } = useStore()
@@ -25,6 +26,8 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
     // Step 2 Upload state
     const [parsedResult, setParsedResult] = useState(null)
     const [fileName, setFileName] = useState('')
+    // Holds file + preview when backend needs offline confirmation
+    const [offlinePending, setOfflinePending] = useState(null)
 
     // Step 3 Form
     const [salaryRange, setSalaryRange] = useState({ min: 28, max: 40 })
@@ -48,6 +51,11 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
         setFileName(file.name)
         try {
             const res = await uploadResume(file)
+            if (res?.requires_confirmation) {
+                // Offline fallback detected — show confirmation modal.
+                setOfflinePending({ file, preview: res.preview })
+                return
+            }
             setParsedResult({
                 name: res?.profile?.full_name || fullName,
                 headline: res?.profile?.headline || targetPosition,
@@ -62,6 +70,26 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
             toast.error('Gagal membaca PDF: ' + e.message)
         }
     }
+
+    const handleOfflineConfirm = async () => {
+        if (!offlinePending) return
+        const { file } = offlinePending
+        setOfflinePending(null)
+        try {
+            const res = await uploadResume(file, true) // confirmOffline = true
+            setParsedResult({
+                name: res?.profile?.full_name || fullName,
+                headline: res?.profile?.headline || targetPosition,
+                skills: [],
+                experienceCount: 0,
+            })
+            toast.success('Profil diperbarui dengan data offline.')
+        } catch (e) {
+            toast.error('Gagal menyimpan: ' + e.message)
+        }
+    }
+
+    const handleOfflineCancel = () => setOfflinePending(null)
 
     const addCustomSkill = () => {
         const s = newSkill.trim()
@@ -617,6 +645,13 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
         return (
             <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '20px 14px', background: '#EDEAE2' }}>
                 <DesignStyles />
+                {offlinePending && (
+                    <OfflineParseConfirmModal
+                        preview={offlinePending.preview}
+                        onConfirm={handleOfflineConfirm}
+                        onCancel={handleOfflineCancel}
+                    />
+                )}
                 {content}
             </div>
         )
@@ -630,6 +665,13 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
             padding: 16, overflowY: 'auto',
         }}>
             <DesignStyles />
+            {offlinePending && (
+                <OfflineParseConfirmModal
+                    preview={offlinePending.preview}
+                    onConfirm={handleOfflineConfirm}
+                    onCancel={handleOfflineCancel}
+                />
+            )}
             {content}
         </div>
     )

@@ -4,6 +4,7 @@ import { KC, BrutalCard, Tag, FilledStat, topBtn, DesignStyles } from './_design
 import { updateSeekerProfile } from '../services/api'
 import toast from 'react-hot-toast'
 import { UploadCloud, FileText, CheckCircle2, ShieldCheck, ArrowRight, RefreshCw, Plus, Trash2, Edit3, Loader2 } from 'lucide-react'
+import OfflineParseConfirmModal from './OfflineParseConfirmModal'
 
 export default function CVUploader() {
     const { uploadResume, cvUploading, seekerId, profile, navigate, loadSeekerProfile } = useStore()
@@ -31,6 +32,9 @@ export default function CVUploader() {
     })
 
     const [manualSaving, setManualSaving] = useState(false)
+    // When the backend returns requires_confirmation, we hold the file and
+    // the preview here until the user decides to confirm or cancel.
+    const [offlinePending, setOfflinePending] = useState(null) // { file, preview }
 
     useEffect(() => {
         if (profile) {
@@ -50,6 +54,11 @@ export default function CVUploader() {
             return
         }
         const res = await uploadResume(file)
+        if (res?.requires_confirmation) {
+            // Offline fallback detected — pause and show confirmation modal.
+            setOfflinePending({ file, preview: res.preview })
+            return
+        }
         if (res?.seeker_id) {
             setUploadedFileName(file.name)
             try {
@@ -61,6 +70,23 @@ export default function CVUploader() {
             setTimeout(() => navigate('seeker-match'), 800)
         }
     }
+
+    const handleOfflineConfirm = async () => {
+        if (!offlinePending) return
+        const { file } = offlinePending
+        setOfflinePending(null)
+        const res = await uploadResume(file, true) // confirmOffline = true
+        if (res?.seeker_id) {
+            setUploadedFileName(file.name)
+            try {
+                localStorage.setItem('kc_cv_filename', file.name)
+            } catch { /* non-fatal */ }
+            toast.success('Profil diperbarui dengan data offline.')
+            setTimeout(() => navigate('seeker-match'), 800)
+        }
+    }
+
+    const handleOfflineCancel = () => setOfflinePending(null)
 
     const addSkill = () => {
         const s = manualForm.skillInput.trim()
@@ -95,6 +121,15 @@ export default function CVUploader() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <DesignStyles />
+
+            {/* Offline parse confirmation modal — only mounted when needed */}
+            {offlinePending && (
+                <OfflineParseConfirmModal
+                    preview={offlinePending.preview}
+                    onConfirm={handleOfflineConfirm}
+                    onCancel={handleOfflineCancel}
+                />
+            )}
 
             {/* Header */}
             <header className="kc-topbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 20, borderBottom: `1.5px solid ${KC.ink}` }}>

@@ -25,7 +25,7 @@ from backend.app.db.schemas import (
 )
 from backend.app.services.matching.matcher import SemanticMatcher
 from backend.app.services.pdf_parser import parse_cv, parse_job_pack
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 router = APIRouter(prefix="/uploads", tags=["uploads"])
 
@@ -67,6 +67,7 @@ def _to_education(d: dict) -> Education:
 @router.post("/cv")
 async def upload_cv(
     file: UploadFile = File(...),
+    confirm_offline: bool = Form(False),
     current_user: User = Depends(require_seeker),
 ) -> dict:
     if file.content_type not in ("application/pdf", "application/octet-stream"):
@@ -78,6 +79,22 @@ async def upload_cv(
         raise HTTPException(400, "Invalid PDF file: Missing %PDF- header signature")
 
     parsed = await parse_cv(blob)
+
+    # Guard: if the parser fell back to offline/demo data and the client
+    # hasn't explicitly acknowledged, return a preview payload instead of
+    # blindly overwriting the seeker's existing profile.
+    if parsed.get("_offline") and not confirm_offline:
+        return {
+            "requires_confirmation": True,
+            "parsed_offline": True,
+            "preview": {
+                "full_name": parsed.get("full_name", ""),
+                "headline": parsed.get("headline", ""),
+                "skills": [s.get("name", "") for s in parsed.get("skills", []) if s.get("name")],
+                "resume_text": parsed.get("resume_text", ""),
+            },
+        }
+
     repos = get_repositories()
 
     # Find or create a seeker profile for the authenticated user using fast SQL finder
