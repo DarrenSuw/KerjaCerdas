@@ -43,7 +43,7 @@ class TestSecretHygiene:
         out = subprocess.run(
             ["git", "ls-files"], cwd=REPO_ROOT, capture_output=True, text=True, check=True
         )
-        skip = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".pdf", ".woff", ".woff2", ".exe", ".zip"}
+        skip = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".pdf", ".woff", ".woff2"}
         return [
             REPO_ROOT / line
             for line in out.stdout.splitlines()
