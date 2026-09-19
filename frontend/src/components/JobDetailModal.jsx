@@ -8,7 +8,7 @@ import { X } from 'lucide-react'
 
 export default function JobDetailModal({ job, onClose }) {
     const isMobile = useIsMobile()
-    const { applyJob, toggleSaveJob, isJobSaved } = useStore()
+    const { applyJob, toggleSaveJob, isJobSaved, isJobApplied } = useStore()
     const [xaiExpanded, setXaiExpanded] = useState(true)
     const [toastMessage, setToastMessage] = useState(null)
     const [appliedLocally, setAppliedLocally] = useState(false)
@@ -16,6 +16,8 @@ export default function JobDetailModal({ job, onClose }) {
     if (!job) return null
 
     const jobId = job.job_id || job.id || 'j1'
+    const isAppliedGlobal = isJobApplied ? isJobApplied(jobId) : false
+    const hasApplied = appliedLocally || isAppliedGlobal
     const isSaved = isJobSaved(jobId)
     const company = job.company || job.company_name || 'Perusahaan Pemberi Kerja'
     const title = job.title || job.job_title || 'Posisi Lowongan'
@@ -306,9 +308,9 @@ export default function JobDetailModal({ job, onClose }) {
                                 <button
                                     onClick={handleApply}
                                     className="kc-btn"
-                                    style={{ padding: 14, background: appliedLocally ? '#10B981' : KC.orange, border: `1.5px solid ${KC.ink}`, borderRadius: 10, boxShadow: `3px 3px 0 ${KC.ink}`, font: '800 14px/1 "Plus Jakarta Sans", sans-serif', color: '#fff', cursor: 'pointer', textAlign: 'center' }}
+                                    style={{ padding: 14, background: hasApplied ? '#10B981' : KC.orange, border: `1.5px solid ${KC.ink}`, borderRadius: 10, boxShadow: `3px 3px 0 ${KC.ink}`, font: '800 14px/1 "Plus Jakarta Sans", sans-serif', color: '#fff', cursor: 'pointer', textAlign: 'center' }}
                                 >
-                                    {appliedLocally ? 'Lamaran Terkirim ✓' : 'Lamar Sekarang →'}
+                                    {hasApplied ? 'Lamaran Terkirim ✓' : 'Lamar Sekarang →'}
                                 </button>
                                 <button
                                     onClick={toggleSave}
@@ -436,12 +438,12 @@ export default function JobDetailModal({ job, onClose }) {
                                 onClick={handleApply}
                                 className="kc-btn"
                                 style={{
-                                    flex: 1, padding: '12px 14px', background: appliedLocally ? '#10B981' : KC.orange,
+                                    flex: 1, padding: '12px 14px', background: hasApplied ? '#10B981' : KC.orange,
                                     border: `1.5px solid ${KC.ink}`, borderRadius: 10, boxShadow: `2.5px 2.5px 0 ${KC.ink}`,
                                     fontSize: 13, fontWeight: 800, color: '#fff', cursor: 'pointer', minHeight: 46,
                                 }}
                             >
-                                {appliedLocally ? 'Lamaran Terkirim ✓' : 'Lamar Sekarang →'}
+                                {hasApplied ? 'Lamaran Terkirim ✓' : 'Lamar Sekarang →'}
                             </button>
                         </div>
                     </>

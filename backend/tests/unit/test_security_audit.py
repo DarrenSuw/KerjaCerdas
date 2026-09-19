@@ -367,11 +367,11 @@ class TestCors:
         resp = client.options(
             "/api/v1/auth/login",
             headers={
-                "Origin": "http://localhost:5173",
+                "Origin": "http://localhost:5000",
                 "Access-Control-Request-Method": "POST",
             },
         )
-        assert resp.headers.get("access-control-allow-origin") == "http://localhost:5173"
+        assert resp.headers.get("access-control-allow-origin") == "http://localhost:5000"
 
     def test_unrelated_origin_is_refused(self, client: TestClient) -> None:
         resp = client.options(

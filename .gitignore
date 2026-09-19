@@ -70,3 +70,9 @@ backend/.coverage
 backend/test.db
 coverage.xml
 .pytest_cache/
+
+# Debug and incident artifacts
+*.exe
+*.zip
+ci_log*.txt
+ReadCred.*

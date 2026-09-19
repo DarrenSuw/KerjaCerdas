@@ -158,10 +158,11 @@ export const removeBookmark = (jobId) =>
     request(`${API_BASE}/seeker/bookmarks/${jobId}`, { method: 'DELETE' })
 
 // ── Uploads (PDF → Gemini → schema) ─────────────────────────────────────────
-export async function uploadCV({ userId, file }) {
+export async function uploadCV({ userId, file, confirmOffline = false }) {
     const fd = new FormData()
     fd.append('user_id', userId)
     fd.append('file', file)
+    fd.append('confirm_offline', confirmOffline ? 'true' : 'false')
     const res = await fetch(`${API_BASE}/uploads/cv`, {
         method: 'POST',
         headers: { ..._authHeader() },
@@ -170,6 +171,7 @@ export async function uploadCV({ userId, file }) {
     if (!res.ok) throw new Error(`Upload CV failed: ${res.status}`)
     return res.json()
 }
+
 
 export async function uploadJobPack({ userId, file }) {
     const fd = new FormData()
