@@ -57,11 +57,10 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Reset npm registry to public (avoids Replit proxy on GitHub runner)
-        run: npm config set registry https://registry.npmjs.org/
-
       - name: Install frontend deps
-        run: cd frontend && npm ci --legacy-peer-deps
+        run: cd frontend && npm ci --legacy-peer-deps --registry https://registry.npmjs.org/
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
       - name: ESLint
         run: cd frontend && npm run lint --if-present || true
