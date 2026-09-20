@@ -568,12 +568,30 @@ async def find_active_questions(skill: str) -> list[SkillQuestionSchema]:
     )
 
 
+async def count_questions_for_skill(skill: str) -> int:
+    """Every stored question for a skill, reviewed or not.
+
+    Generation dedupe MUST use this, not find_active_questions(): that filters
+    on reviewed=True, which a freshly generated (reviewed=False) batch can never
+    satisfy, so the generator would regenerate on every single call — paying
+    Gemini each time and never converging.
+    """
+    async with async_session() as session:
+        stmt = select(func.count()).where(SkillQuestion.skill == skill)
+        return int((await session.execute(stmt)).scalar_one() or 0)
+
+
 async def list_quiz_skills() -> list[dict]:
-    """Distinct skills that have an active question bank, with question counts."""
+    """Skills that can actually serve a quiz, with question counts.
+
+    Filters on reviewed as well as active, matching find_active_questions().
+    When the two disagree the UI offers an "Ikut kuis" button for a skill whose
+    quiz then 404s.
+    """
     async with async_session() as session:
         stmt = (
             select(SkillQuestion.skill, func.max(SkillQuestion.skill_label), func.count())
-            .where(SkillQuestion.active.is_(True))
+            .where(SkillQuestion.active.is_(True), SkillQuestion.reviewed.is_(True))
             .group_by(SkillQuestion.skill)
         )
         rows = (await session.execute(stmt)).all()

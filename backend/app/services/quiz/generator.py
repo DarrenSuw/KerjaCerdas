@@ -11,7 +11,12 @@ Flow:
   2. It calls `ensure_questions_exist(skill)` from this module.
   3. This module calls Gemini once to generate 6 questions + answer keys.
   4. Questions are inserted with `reviewed=False` (marked as AI-generated).
-  5. The normal quiz flow resumes: pick 5, serve, grade by answer key.
+  5. They are NOT served yet — an admin reviews them at `GET /admin/questions`
+     first, then they go live for everyone holding that skill. Serving an
+     unreviewed question would mean a mis-keyed answer key silently marking
+     correct answers wrong, no two candidates answering a comparable quiz, and
+     a candidate being able to invent a skill name to summon a fresh, unvetted
+     quiz of their own.
 
 The generation cost (~Rp60–130) is paid once per skill and amortised across
 all future attempts.  Admin can review/deactivate questions at
@@ -149,8 +154,10 @@ async def ensure_questions_exist(skill_name: str, min_count: int = 5) -> bool:
     already existed.  Raises GenerationError on failure.
     """
     key = skill_key(skill_name)
-    existing = await store.find_active_questions(key)
-    if len(existing) >= min_count:
+    # Counts unreviewed rows too. Generated questions land as reviewed=False, so
+    # a reviewed-only check could never see them and this would regenerate (and
+    # re-bill) on every call while never becoming serveable.
+    if await store.count_questions_for_skill(key) >= min_count:
         return False
 
     questions = await generate_questions(skill_name)

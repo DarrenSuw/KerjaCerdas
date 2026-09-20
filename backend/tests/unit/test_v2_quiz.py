@@ -97,3 +97,79 @@ class TestQuiz:
     def test_employers_cannot_take_quizzes(self, client: TestClient, employer_account: dict) -> None:
         assert client.post("/api/v1/quiz/start", json={"skill": "Excel"},
                            headers=employer_account["headers"]).status_code == 403
+
+
+class TestColdStartSkill:
+    """A skill nobody has banked yet must not be served an unreviewed quiz."""
+
+    @pytest.mark.asyncio
+    async def test_generation_happens_once_not_per_attempt(self, monkeypatch) -> None:
+        """The old dedupe used a reviewed-only query, which a freshly generated
+        (reviewed=False) batch could never satisfy — so every call regenerated
+        and re-billed Gemini while never becoming serveable."""
+        from backend.app.db import postgres_store as store
+        from backend.app.db.schemas_proof import SkillQuestion
+        from backend.app.services.quiz import generator
+
+        calls = {"n": 0}
+
+        async def fake_generate(skill_name: str):
+            calls["n"] += 1
+            return [
+                SkillQuestion(skill="forklift", skill_label="Forklift",
+                              question=f"Q{i}", options=["a", "b", "c", "d"],
+                              correct_index=0, reviewed=False)
+                for i in range(6)
+            ]
+
+        monkeypatch.setattr(generator, "generate_questions", fake_generate)
+        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert calls["n"] == 1
+        # Second call must be a no-op: the rows exist, they are just unreviewed.
+        assert await generator.ensure_questions_exist("forklift", min_count=5) is False
+        assert calls["n"] == 1
+        assert await store.count_questions_for_skill("forklift") == 6
+
+    @pytest.mark.asyncio
+    async def test_unreviewed_skill_is_not_offered_or_served(self, monkeypatch) -> None:
+        from backend.app.db import postgres_store as store
+        from backend.app.db.schemas import SeekerProfile
+        from backend.app.db.schemas_proof import SkillQuestion
+        from backend.app.services.quiz import generator, service
+
+        repos = store.get_repositories()
+        for i in range(6):
+            await repos.skill_questions.upsert(
+                SkillQuestion(skill="forklift", skill_label="Forklift", question=f"Q{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
+            )
+        # Never advertised, because it cannot be served.
+        assert "forklift" not in {s["skill"] for s in await store.list_quiz_skills()}
+
+        async def no_generate(skill_name: str):  # already has rows; must not be called
+            raise AssertionError("must not regenerate for a skill that already has questions")
+
+        monkeypatch.setattr(generator, "generate_questions", no_generate)
+        seeker = SeekerProfile(user_id="u-cold", full_name="Dewi", region_code="3171")
+        with pytest.raises(service.QuizError) as err:
+            await service.start_quiz(seeker, "forklift", prism=False)
+        assert err.value.status == 404
+        assert "sedang disiapkan" in err.value.message
+
+    @pytest.mark.asyncio
+    async def test_reviewing_the_batch_makes_it_live(self) -> None:
+        from backend.app.db import postgres_store as store
+        from backend.app.db.schemas_proof import SkillQuestion
+
+        repos = store.get_repositories()
+        made = []
+        for i in range(6):
+            q = SkillQuestion(skill="forklift", skill_label="Forklift", question=f"Q{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
+            await repos.skill_questions.upsert(q)
+            made.append(q)
+        for q in made:
+            q.reviewed = True
+            await repos.skill_questions.upsert(q)
+        assert "forklift" in {s["skill"] for s in await store.list_quiz_skills()}
+        assert len(await store.find_active_questions("forklift")) == 6

@@ -91,22 +91,28 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str, prism: bool) -> dic
     key = skill_key(skill_name)
     bank = await store.find_active_questions(key)
 
-    # If insufficient questions, attempt AI generation (Option B: generate once
-    # with answer key, grade for free on every future attempt).
+    # Cold start: a skill nobody has banked yet. Draft questions for it ONCE and
+    # put them in the admin review queue — they are deliberately not served now.
+    # The skill stays "claimed" (0.30) in the meantime, which is uniform across
+    # every candidate holding it, so nobody is ranked unfairly; once an admin
+    # approves the batch it goes live for everyone with that skill at once.
     if len(bank) < QUESTIONS_PER_QUIZ:
         from backend.app.services.quiz.generator import GenerationError, ensure_questions_exist
 
+        # Record the demand either way, so the review queue can be worked in
+        # order of what seekers actually ask for rather than alphabetically.
+        await store.add_event(seeker.user_id, "quiz_unavailable", {"skill": key})
         try:
-            generated = await ensure_questions_exist(skill_name, min_count=QUESTIONS_PER_QUIZ)
-            if generated:
-                bank = await store.find_active_questions(key)
+            await ensure_questions_exist(skill_name, min_count=QUESTIONS_PER_QUIZ)
         except GenerationError as exc:
-            # If AI generation also fails, surface the reason
-            if len(bank) < QUESTIONS_PER_QUIZ:
-                raise QuizError(404, f"Belum ada kuis untuk skill '{skill_name}'. {exc.args[0]}")
-
-    if len(bank) < QUESTIONS_PER_QUIZ:
-        raise QuizError(404, f"Belum ada kuis untuk skill '{skill_name}'.")
+            raise QuizError(
+                404, f"Belum ada kuis untuk skill '{skill_name}'. {exc.args[0]}"
+            ) from exc
+        raise QuizError(
+            404,
+            f"Kuis untuk skill '{skill_name}' sedang disiapkan dan menunggu "
+            "peninjauan. Skill ini tetap tercatat sebagai klaim di profilmu.",
+        )
 
     now = datetime.now(UTC)
     attempts = await store.find_quiz_attempts(seeker.id, key)
