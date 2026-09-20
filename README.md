@@ -2,7 +2,7 @@
 
 # 💼 KerjaCerdas
 
-**AI-Powered Recruitment Platform — Semantic Matching & LangGraph-Assisted Response Layer**
+**AI Job Matching yang Menilai Skill Terbukti — Semantic Matching, Kuis Skill & LangGraph Response Layer**
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -16,7 +16,7 @@
 
 </div>
 
-A functional prototype of an AI-powered talent matching platform utilizing high-dimensional vector search and a LangGraph response layer to streamline recruitment pipelines.
+A functional prototype of an AI talent-matching platform that ranks candidates by *proven* skills, not CV keywords: semantic vector search, short skill quizzes that earn a "✓ Terbukti" badge, shareable job links/QR posters, and AutoMod for scam or discriminatory job ads.
 
 ---
 
@@ -26,10 +26,12 @@ A functional prototype of an AI-powered talent matching platform utilizing high-
 
 ## 🎯 Fitur Utama
 
-- **AI Job Matching**: Pencocokan otomatis menggunakan AI dengan infrastruktur vector search.
-- **Proactive Skill Gap Analyzer**: Analisis kelemahan skill dan rekomendasi *upskilling* spesifik.
-- **Employer Dashboard & Kanban Pipeline**: *Shortlisting* kandidat instan, manajemen *pipeline* ala Kanban, dengan model monetisasi mikro (*Pay-to-Unlock*).
-- **A/B Testing & Event Tracking**: Analitik *closed-loop* mandiri untuk optimalisasi konversi dan pengalaman pengguna (Onboarding Wizard).
+- **AI Job Matching berbasis bukti**: skor = 45% kemiripan semantik CV–lowongan + 30% skill (bobot bukti) + 15% pengalaman + 10% pendidikan. Bagian skill ditimbang bukti: klaim CV 30%, lulus kuis 85%, dikonfirmasi HR 100% — jadi menumpuk kata kunci di CV tidak lagi menang.
+- **Kuis skill → badge ✓ Terbukti**: 5 soal skenario per skill (Excel, layanan pelanggan, kasir, administrasi, dll), dinilai server dengan kunci jawaban (tanpa biaya AI per percobaan), berlaku 6 bulan.
+- **Link + poster QR lowongan**: employer membagikan `/j/<kode>` di Instagram/WhatsApp atau mencetak poster; pelamar masuk ke satu daftar yang sudah diperingkat, bukan membanjiri WhatsApp.
+- **AutoMod lowongan**: lowongan yang meminta biaya dari pelamar ditolak; syarat usia/penampilan/jenis kelamin ditahan untuk tinjauan admin. Pemasang menerima kalimat yang bermasalah + cara memperbaiki + banding (strike ladder).
+- **Skill Gap Analyzer & Career Advisor**: peta skill gap, rekomendasi kursus, dan advisor LangGraph (kuota per paket).
+- **Paket sederhana**: Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism Rp25.000/30 hari untuk pencari kerja. Membayar tidak pernah menaikkan skor.
 
 Detail lengkap mengenai fitur produk dapat dilihat di [Product Features](docs/PRODUCT_FEATURES.md).
 
@@ -51,17 +53,19 @@ Setiap komponen dalam aplikasi ini dirancang tidak hanya untuk fungsi teknis, me
 | **`CVUploader`** | Menghandle PDF parsing multipart form data + auto-navigate ke match. | Menghilangkan friksi data entry manual. AI Gemini mengekstrak data JSON dalam detik. |
 | **`SeekerDashboard`** | Mengorkestrasi data profil (trust score, matches) dari `useStore`. | Memberikan umpan balik instan ke kandidat, membangun retensi Active Users. |
 | **`SeekerMatchResults`** | Render array `matches` dari vector search + HNSW distance. | Menyajikan hasil pencocokan berbasis band (Strong, Possible, Stretch). |
-| **`JobDetailModal`** | Modal detail lowongan dengan **Explainable AI Score Breakdown**. | Transparansi 5 komponen skor pencocokan (Semantik, Skill, Lokasi, Gaji, Pengalaman) untuk trust kandidat. |
+| **`JobDetailModal`** | Modal detail lowongan dengan **Explainable AI Score Breakdown**. | Transparansi 4 komponen skor pencocokan (Semantik, Skill, Pengalaman, Pendidikan) untuk trust kandidat. |
 | **`ApplicationsPage`** | Visual milestone pipeline status lamaran interaktif. | Menghilangkan ketidakpastian kandidat dengan pelacakan tahapan lamaran real-time. |
 | **`SkillGapPanel`** | Membandingkan array `skills` pengguna dengan top lowongan (Set Difference). | Agregasi Ed-Tech: menghubungkan pengguna ke kursus/bootcamp partner (potensi komisi referal). |
 | **`FloatingAdvisor`** | Interface chatbot terhubung ke LangGraph response node. | Memberikan layanan career coaching 24/7 berskala massal dengan Zero Marginal Cost. |
 | **`EmployerDashboard`** | Dasbor analitik (KPIs) pelamar real-time per lowongan dengan context passing. | Meminimalisasi beban kognitif HRD dengan funnel view pelamar yang jelas. |
-| **`EmployerPostJob`** | Wizard pasang lowongan berjenjang (1: Profil $\rightarrow$ 2: NPWP $\rightarrow$ 3: Lowongan). | Memandu HRD melalui onboarding terstruktur sebelum mempublikasikan lowongan. |
+| **`EmployerPostJob`** | Wizard pasang lowongan (1: Profil $\rightarrow$ 2: Aturan tayang/AutoMod $\rightarrow$ 3: Lowongan). | Menjelaskan aturan tayang sebelum publish, sehingga lowongan tidak ditahan karena hal yang bisa dihindari. |
 | **`JobPackUploader`** | Drag-and-drop uploader untuk file PDF berisi kumpulan lowongan massal. | Mereduksi waktu input lowongan dari jam menjadi detik dengan AI auto-parsing. |
-| **`EmployerProfile`** | Formulir informasi legalitas dan identitas institusi perusahaan. | Membangun kredibilitas perusahaan sebelum proses verifikasi NPWP. |
-| **`EmployerCandidates`** | Menampilkan hasil reverse-matching dari backend API. | Sourcing kandidat real-time dari profil pencari kerja yang tersedia. |
+| **`EmployerProfile`** | Data perusahaan + badge kepercayaan nyata (email terverifikasi, email domain perusahaan, ditinjau admin) dan paket aktif. | Kredibilitas tanpa dokumen legal pihak ketiga; angka paket/lowongan diambil dari API, bukan placeholder. |
+| **`EmployerCandidates` / `ApplicantList` / `TalentSearch`** | Tab Pelamar (diperingkat skor proof-weighted, badge bukti, status pipeline, pertanyaan wawancara AI, konfirmasi "skill terbukti", ekspor CSV) dan Talent pool anonim. | HR mewawancarai kandidat yang layak; kandidat yang belum melamar tetap anonim (UU PDP). |
 | **`PricingPage`** | Konfigurasi limit tiering, paywall, dan ATS enterprise coming soon. | Transparansi harga B2B/B2C dengan strategi freemium untuk akuisisi awal agresif. |
-| **`VerificationDashboard`** | Antarmuka verifikasi identitas (KTP, Ijazah, NPWP, OTP). | Status: mock/demo. Saat ini menggunakan endpoint format-check internal. Integrasi resmi Dukcapil/SIVIL/DJP memerlukan kontrak dan kepatuhan regulasi. |
+| **`SkillProofPage` / `QuizModal`** | Halaman "Bukti Skill": verifikasi email (OTP) + kuis skill bertimer yang menghasilkan badge ✓ Terbukti. | Pencari kerja membuktikan skill sekali dan dipakai di semua lamaran. KerjaCerdas **tidak** mengumpulkan NIK/KTP/ijazah/NPWP. |
+| **`TrustCenter`** | Badge kepercayaan employer, pengajuan "Ditinjau admin", pedoman lowongan, status strike. | Kepercayaan dibangun in-house tanpa Dukcapil/DJP. |
+| **`PublicJobPage` / `AdminPanel`** | Halaman lamaran publik `/j/<kode>` (target QR), panel admin (moderasi, tinjauan usaha, aktivasi paket, bank soal, metrik). | Distribusi lowongan dan operasi harian dalam satu aplikasi. |
 
 ---
 
@@ -114,7 +118,7 @@ flowchart TD
     
     A --> G["📈 Analisis Skill Gap\n(Rekomendasi Kursus Ed-Tech)"]:::page
     A --> H["🔎 Pencarian Cepat Multi-Filter"]:::page
-    A --> I["🛡️ Verifikasi E-KYC &\nIjazah SIVIL Dikti"]:::action
+    A --> I["🛡️ Bukti Skill:\nVerifikasi Email & Kuis Skill"]:::action
     A --> J["💬 Konsultasi AI Career Advisor\n(Tanya Jawab & Rekomendasi Karir)"]:::ai
 ```
 
@@ -126,7 +130,7 @@ flowchart TD
 |:---:|:---:|:---:|
 | <img src="docs/assets/09_seeker_skill_gap.png" width="380" alt="Skill Gap Analysis"> | <img src="docs/assets/10_seeker_search.png" width="380" alt="Quick Search"> | <img src="docs/assets/11_seeker_saved_jobs.png" width="380" alt="Saved Jobs"> |
 
-| 12. Pelacakan Lamaran Saya | 13. Verifikasi Identitas E-KYC | 14. Ekstraksi CV PDF Cerdas |
+| 12. Pelacakan Lamaran Saya | 13. Bukti Skill (Kuis) | 14. Ekstraksi CV PDF Cerdas |
 |:---:|:---:|:---:|
 | <img src="docs/assets/12_seeker_applications.png" width="380" alt="Application Tracker"> | <img src="docs/assets/13_seeker_verification.png" width="380" alt="Verification Dashboard"> | <img src="docs/assets/14_seeker_cv_upload.png" width="380" alt="CV Extraction"> |
 
@@ -148,7 +152,7 @@ flowchart TD
     A["🏢 Dasbor Rekrutmen HR\n(KPI & Lowongan Aktif)"]:::page --> B["📋 Kelola Daftar Lowongan"]:::page
     
     subgraph Wizard_Pasang ["📝 Alur Pasang Lowongan Terstruktur"]
-        C["1. Profil Lembaga"]:::step --> D["2. Validasi NPWP DJP"]:::step
+        C["1. Profil Lembaga"]:::step --> D["2. Aturan Tayang (AutoMod)"]:::step
         D --> E["3. Form Lowongan &\nEstimasi AI Pool"]:::ai
     end
     
@@ -157,9 +161,9 @@ flowchart TD
     
     B -->|Lihat Kandidat AI| G["👥 Evaluasi Top Kandidat\n(Confidence Bands: Strong/Possible/Stretch)"]:::ai
     G -->|Tinjau Profil Asli| H["📄 CV Viewer Terstruktur"]:::modal
-    G -->|Buka Kontak Resmi| I["💳 Pay-to-Unlock Rp 50.000\n(Grounded Skill Summary)"]:::modal
+    G -->|Bagikan Link / QR| I["🔗 Pelamar masuk terperingkat\n(badge skill terbukti)"]:::modal
     
-    A --> J["🏛️ Verifikasi NPWP DJP"]:::page
+    A --> J["🛡️ Kepercayaan & Badge"]:::page
     A --> K["🏢 Profil Entitas Bisnis"]:::page
 ```
 
@@ -167,7 +171,7 @@ flowchart TD
 |:---:|:---:|:---:|
 | <img src="docs/assets/15_employer_dashboard.png" width="380" alt="Employer Dashboard"> | <img src="docs/assets/16_employer_jobs.png" width="380" alt="Employer Jobs"> | <img src="docs/assets/17_employer_post_job.png" width="380" alt="Post Job Wizard"> |
 
-| 18. Bulk Job Pack PDF Uploader | 19. Evaluasi Top Kandidat AI | 20. Verifikasi NPWP Perusahaan |
+| 18. Bulk Job Pack PDF Uploader | 19. Evaluasi Pelamar (bukti skill) | 20. Kepercayaan & Badge Perusahaan |
 |:---:|:---:|:---:|
 | <img src="docs/assets/18_employer_job_pack_upload.png" width="380" alt="Job Pack Upload"> | <img src="docs/assets/19_employer_candidates.png" width="380" alt="Candidates Shortlist"> | <img src="docs/assets/20_employer_verification.png" width="380" alt="Tax Verification"> |
 
@@ -256,7 +260,7 @@ Proyek ini menggunakan **GitHub Actions** (`release.yml`) untuk membangun (build
 
 ## 🧠 Arsitektur Sistem Inti
 
-Platform ini menggunakan **LangGraph** sebagai response layer, **Gemini Embedding 2** (768-dim, MRL-truncated dari 3072-dim) untuk embedding semantik, dan **Gemini 3.1 Flash** untuk generasi teks. Arsitektur saat ini berupa *single-node LangGraph graph* yang menghasilkan respons natural-language, sementara logika matching dan skill-gap dijalankan secara prosedural sebelum graph dieksekusi.
+Platform ini menggunakan **LangGraph** sebagai response layer, **Gemini Embedding 2** (768-dim, MRL-truncated dari 3072-dim) untuk embedding semantik, dan **Gemini 3.1 Flash** untuk generasi teks. Arsitektur saat ini berupa *single-node LangGraph graph* yang menghasilkan respons natural-language, sementara logika matching dan skill-gap dijalankan secara procedural sebelum graph dieksekusi.
 
 > **Status:** Fungsi-fungsi node (router, matcher, skill_gap, advisor, compose) sudah diimplementasikan di `nodes.py` tetapi dijalankan secara prosedural di API router — belum diwiring sebagai multi-node LangGraph StateGraph. Migrasi ke topologi multi-node yang sesungguhnya ada di roadmap teknis.
 
@@ -320,11 +324,10 @@ flowchart TD
 Sistem menggunakan komposit metrik matematis untuk mereplikasi prioritas SDM:
 ```python
 final_score = (
-    cosine_similarity * 0.45 +   # Relevansi Semantik (Vektor Gemini)
-    skill_overlap     * 0.25 +   # Irisan Keahlian Eksplisit
-    experience_fit    * 0.15 +   # Validasi Masa Kerja
-    education_fit     * 0.10 +   # Kesesuaian Jenjang Pendidikan
-    recency_boost     * 0.05     # Aktualitas Profil
+    cosine_similarity  * 0.45 +   # Relevansi Semantik (Vektor Gemini)
+    proven_skill_score * 0.30 +   # Skor Keahlian Tertimbang Bukti
+    experience_fit     * 0.15 +   # Validasi Masa Kerja
+    education_fit      * 0.10     # Kesesuaian Jenjang Pendidikan
 )
 ```
 
@@ -364,7 +367,6 @@ erDiagram
         UUID id PK
         UUID user_id FK
         VARCHAR full_name
-        VARCHAR nik "SHA-256 (UU-PDP Compliant)"
         JSONB skills "Extracted via LLM"
         JSONB experience
         VECTOR_768 embedding "HNSW Indexed"
@@ -409,7 +411,7 @@ erDiagram
     OTPS {
         UUID id PK
         UUID user_id FK
-        VARCHAR phone
+        VARCHAR email
         VARCHAR code_hash "SHA-256"
         TIMESTAMP expires_at
         BOOLEAN verified
@@ -436,7 +438,12 @@ KerjaCerdas/
 │   │   │   │   ├── jobs.py        # Pencarian dan paginasi lowongan
 │   │   │   │   ├── seeker.py      # Profil, bookmark, history aplikasi
 │   │   │   │   ├── uploads.py     # Endpoint Multi-modal PDF Parser (%PDF- validated)
-│   │   │   │   └── verify.py      # E-KYC Dukcapil/SIVIL & DB-backed OTP
+│   │   │   │   ├── verify.py      # Verifikasi email (OTP) — satu-satunya cek identitas in-house
+│   │   │   │   ├── quiz.py        # Kuis skill → badge ✓ Terbukti
+│   │   │   │   ├── public_jobs.py # Halaman /j/<kode>, QR SVG, laporan lowongan
+│   │   │   │   ├── hiring.py      # Interview kit, konfirmasi skill, ekspor CSV, banding, trust
+│   │   │   │   ├── billing.py     # Paket & pesanan (pembayaran manual)
+│   │   │   │   ├── admin.py       # Moderasi, tinjauan usaha, aktivasi paket, metrik
 │   │   │   ├── schemas/           # Pydantic validation schemas
 │   │   │   └── services/          # Business logic helpers
 │   │   ├── agents/           # LLM & LangGraph single-node response layer (routing antar matcher/skill-gap/advisor berjalan prosedural, bukan multi-agent graph)
@@ -474,13 +481,17 @@ KerjaCerdas/
 │   │   │   ├── FloatingAdvisor.jsx   # Antarmuka chat interaktif (JSON response, bukan SSE streaming)
 │   │   │   ├── JobDetailModal.jsx    # Detail lowongan + Explainable AI Breakdown
 │   │   │   ├── EmployerDashboard.jsx # Analitik kolam kandidat untuk HRD
-│   │   │   ├── EmployerCandidates.jsx# AI Shortlist & tombol "Unlock Kontak"
+│   │   │   ├── EmployerCandidates.jsx# Tab Pelamar (proof-weighted) & Talent pool anonim
 │   │   │   ├── EmployerHelpPanel.jsx # Panel panduan rekrutmen untuk HRD
 │   │   │   ├── EmployerPostJob.jsx   # Form pembuatan lowongan (Timeline Step)
 │   │   │   ├── EmployerProfile.jsx   # Pengaturan data profil perusahaan
 │   │   │   ├── JobPackUploader.jsx   # Bulk PDF job parser dengan drag-drop
 │   │   │   ├── CVUploader.jsx        # Komponen unggah PDF kandidat
-│   │   │   ├── VerificationDashboard.jsx # E-KYC KTP, Ijazah, NPWP, dan Phone OTP
+│   │   │   ├── SkillProofPage.jsx    # Bukti Skill: verifikasi email + kuis skill
+│   │   │   ├── QuizModal.jsx         # Kuis bertimer 5 soal
+│   │   │   ├── TrustCenter.jsx       # Badge kepercayaan employer + pedoman lowongan
+│   │   │   ├── PublicJobPage.jsx     # Halaman lamaran publik /j/<kode>
+│   │   │   ├── AdminPanel.jsx        # Panel admin
 │   │   │   ├── PricingPage.jsx       # Halaman harga B2B/B2C & ATS Enterprise
 │   │   │   ├── AuthModal.jsx         # Popup Login/Register terintegrasi
 │   │   │   ├── OnboardingWizard.jsx  # Alur onboarding pengguna baru
@@ -507,7 +518,7 @@ KerjaCerdas/
 │   ├── DEMO_GUIDE.md         # Panduan Live Demo
 │   ├── DEMO_ACCOUNTS.md      # Daftar Akun Pengujian (Pre-Seeded)
 │   ├── API_SPEC.md           # Spesifikasi API Lengkap (semua endpoint + schema)
-│   ├── SEQUENCE_DIAGRAMS.md  # 7 Diagram Alur Mermaid (Auth, AI, E-KYC, dll.)
+│   ├── SEQUENCE_DIAGRAMS.md  # Diagram Alur Mermaid (Auth, AI, Bukti Skill, Moderasi, dll.)
 │   ├── THREAT_MODEL.md       # Model Ancaman & Mitigasi Keamanan
 │   └── internals/            # Dokumentasi Teknis Internal Modul (00-09)
 ```
@@ -528,7 +539,7 @@ Seluruh dokumentasi produk, teknis, dan bisnis ada di folder `docs/`. Mulai dari
 | **Panduan Live Demo** | Skrip presentasi langkah demi langkah untuk alur seeker dan employer. | [DEMO_GUIDE.md](docs/DEMO_GUIDE.md) |
 | **Akun Demo** | Daftar seluruh akun uji coba (*pre-seeded credentials*). | [DEMO_ACCOUNTS.md](docs/DEMO_ACCOUNTS.md) |
 | **Spesifikasi API** | Kontrak lengkap semua endpoint FastAPI: skema request/response, rate limit, middleware, dan error codes. | [API_SPEC.md](docs/API_SPEC.md) |
-| **Diagram Alur (Sequence)** | 7 diagram Mermaid yang mendokumentasikan alur kerja kritis: Auth, AI Agent, CV Upload, E-KYC, dan lainnya. | [SEQUENCE_DIAGRAMS.md](docs/SEQUENCE_DIAGRAMS.md) |
+| **Diagram Alur (Sequence)** | Diagram Mermaid untuk alur kerja kritis: Auth, AI Agent, CV Upload, Bukti Skill, Moderasi lowongan, dan lainnya. | [SEQUENCE_DIAGRAMS.md](docs/SEQUENCE_DIAGRAMS.md) |
 | **Threat Model** | Aset, batas kepercayaan, dan mitigasi per kategori ancaman (STRIDE). | [THREAT_MODEL.md](docs/THREAT_MODEL.md) |
 
 ---

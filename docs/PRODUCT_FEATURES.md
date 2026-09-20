@@ -1,123 +1,136 @@
-# Product Features: KerjaCerdas
+# Product Features: KerjaCerdas (v2 — "Bukti, bukan klaim")
 
-Dokumen ini menjelaskan fitur utama dari platform KerjaCerdas, sebagaimana yang siap didemonstrasikan dan diuji.
+Status setiap fitur ditandai jujur: `[BUILT + TESTED]`, `[BUILT, MANUAL PAYMENT]`, `[BUILT, BANK SOAL DRAF]`, atau `[PLANNED]`.
 
 ---
 
-## 1. AI Job Matching & Explainable AI Transparency
+## 1. AI Job Matching berbobot bukti `[BUILT + TESTED]`
 
-Fitur ini mengubah cara kandidat mencari pekerjaan dengan menggantikan sistem pencarian *keyword* manual menjadi pencocokan semantik otomatis. Saat kandidat mengunggah CV PDF, model AI Gemini bertugas membaca dan mengekstrak keahlian, pengalaman, serta pendidikan kandidat secara *real-time*, lalu mengubahnya menjadi Vektor Semantik 768-dimensi.
-
-Vektor ini dicocokkan dengan seluruh lowongan aktif di database PostgreSQL (didukung index HNSW `pgvector`) menggunakan algoritma **Hybrid Ranking**:
+CV PDF diekstraksi Gemini menjadi skill/pengalaman/pendidikan, lalu jadi vektor 768 dimensi yang dicocokkan dengan lowongan aktif lewat pgvector (index HNSW).
 
 ```python
 final_score = (
-    cosine_similarity * 0.45 +   # Relevansi Semantik (Vektor Gemini)
-    skill_overlap     * 0.25 +   # Irisan Keahlian Eksplisit
-    experience_fit    * 0.15 +   # Validasi Masa Kerja
-    education_fit     * 0.10 +   # Kesesuaian Pendidikan
-    recency_activity  * 0.05     # Aktivitas Kandidat
+    cosine_similarity  * 0.45 +   # kemiripan makna CV vs lowongan
+    proven_skill_score * 0.30 +   # skill, DITIMBANG BUKTI (lihat bawah)
+    experience_fit     * 0.15 +   # masa kerja vs syarat minimum
+    education_fit      * 0.10     # jenjang vs education_min lowongan
 )
 ```
 
-Filter lokasi dan gaji yang diaktifkan pengguna diterapkan sebagai eliminasi langsung (hard filter), bukan bagian dari bobot skor di atas.
+**Bagian skill ditimbang bukti** (`backend/app/services/matching/evidence.py`):
 
-### 🔍 Transparansi Skor (Explainable AI)
-Kandidat dapat membuka kartu lowongan untuk melihat rincian kalkulasi skor (*Score Breakdown*):
-- **Relevansi Semantik (45%)**: Kecocokan konteks latar belakang CV dengan deskripsi pekerjaan.
-- **Irisan Keahlian (25%)**: Berapa banyak skill wajib yang terpenuhi vs celah (*gap*) yang belum dikuasai.
-- **Validasi Pengalaman (15%)**: Tingkat senioritas kandidat terhadap kualifikasi posisi.
-- **Kesesuaian Pendidikan (10%)**: Apakah kandidat memiliki riwayat pendidikan yang tercantum.
-- **Aktivitas Kandidat (5%)**: Faktor aktivitas terkini (saat ini bernilai tetap untuk semua kandidat).
+| Tingkat bukti | Cara diperoleh | Bobot |
+|---|---|---|
+| **Klaim** | hanya tertulis di CV/profil | 0,30 |
+| **Terbukti (kuis)** | lulus kuis skill, berlaku 180 hari | 0,85 |
+| **Dikonfirmasi HR** | employer mencentang "terbukti" setelah wawancara | 1,00 |
 
-Lihat [`docs/internals/01-matching-algorithm.md`](internals/01-matching-algorithm.md) untuk detail implementasi lengkap.
+Contoh (lowongan butuh Excel, Customer Service, Administrasi):
+- Kandidat A mengklaim ketiganya → (0,3+0,3+0,3)/3 = **0,30**
+- Kandidat B lulus kuis Excel & CS, klaim Administrasi → (0,85+0,85+0,3)/3 = **0,67**
 
-**Komponen terkait:** `CVUploader`, `SeekerDashboard`, `SeekerMatchResults`, `JobDetailModal`, `FloatingAdvisor`  
+Skill wajib berbobot 80% dan *nice-to-have* 20% dari bagian skill. Filter lokasi/gaji tetap eliminasi langsung (bukan bagian skor). Bonus "recency" 0,05 yang dulu diberikan rata ke semua kandidat **dihapus** karena tidak membawa sinyal apa pun.
+
+**Perubahan lain:** pendidikan kini dibandingkan dengan `education_min` lowongan (dulu hanya "punya pendidikan atau tidak").
+
 **API:** `POST /api/v1/uploads/cv`, `POST /api/v1/agent/invoke`, `GET /api/v1/jobs`
+**Komponen:** `CVUploader`, `SeekerMatchResults`, `JobDetailModal`, `ProofUI`
 
 ---
 
-## 2. Proactive Skill Gap Analyzer (Analisis Celah Keahlian)
+## 2. Kuis skill → badge ✓ Terbukti `[BUILT, BANK SOAL DRAF]`
 
-Sistem tidak hanya menyortir kandidat, tetapi secara proaktif memberi tahu apa kekurangan mereka terhadap target posisi impian. Melalui pipeline pemrosesan AI, sistem menganalisis kesenjangan (*gap*) antara spesifikasi lowongan dan keahlian yang tercantum di CV.
+- 5 soal skenario per skill, diambil acak dari bank soal; urutan pilihan diacak per percobaan.
+- Batas waktu 45 detik per soal dijaga server; jawaban **tidak pernah** dikirim ke browser sebelum dikumpulkan.
+- Dinilai dengan kunci jawaban — penilaian per percobaan **tanpa panggilan AI** (biaya Rp0).
+- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang setelah 7 hari (Prism: 2 hari).
+- **Pembuatan Soal Dinamis (AI-Generated):** Jika pelamar mencoba kuis untuk skill yang belum ada di bank soal, AI (Gemini) akan otomatis membuat 6 soal skenario beserta kunci jawabannya secara *real-time*. Soal baru ini disimpan ke bank soal (status draf `reviewed=false` untuk ditinjau HR) sehingga percobaan berikutnya oleh pelamar manapun tidak perlu memanggil AI lagi.
+- Anti-curang jujur: soal acak + timer + rotasi bank + pertanyaan wawancara "jelaskan jawabanmu". Kuis menyaring, wawancara memastikan.
 
-Jika kandidat memiliki celah kemampuan (misalnya belum menguasai *Docker* atau *Go Concurrency*), agen AI akan:
-1. Merinci daftar skill yang hilang (*missing skills*).
-2. Memberikan ringkasan rencana pembelajaran terfokus (*action plan*).
-3. Merekomendasikan modul pelatihan/sertifikasi terkurasi dari mitra Ed-Tech (seperti Dicoding, Prakerja) yang dapat langsung diakses.
+**API:** `GET /api/v1/quiz/skills`, `POST /api/v1/quiz/start`, `POST /api/v1/quiz/submit`
+**Komponen:** `SkillProofPage`, `QuizModal`
 
-**Komponen terkait:** `SkillGapPanel`, `FloatingAdvisor`  
+---
+
+## 3. Link + poster QR lowongan `[BUILT + TESTED]`
+
+Setiap lowongan punya kode publik → `/j/<kode>`. Employer membagikannya di bio Instagram, grup WhatsApp, atau mencetak poster QR (QR dirender server dengan `segno`, tanpa layanan pihak ketiga). Pelamar membuka halaman publik tanpa login, mendaftar, mengisi profil singkat (atau upload CV), boleh ikut kuis, lalu melamar — semuanya masuk ke satu daftar pelamar terperingkat.
+
+**API:** `GET /api/v1/public/jobs/{code}`, `GET /api/v1/public/jobs/{code}/qr.svg`
+**Komponen:** `PublicJobPage`, `QuickProfileForm`, `JobShareModal`
+
+---
+
+## 4. Skill Gap Analyzer & Career Advisor `[BUILT + TESTED]`
+
+Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursus (Gemini → katalog internal sebagai cadangan), dan advisor percakapan berbasis LangGraph. Kuota advisor: gratis 10 pesan/hari, Prism 100 pesan/30 hari.
+
 **API:** `POST /api/v1/seeker/skill-gap`, `GET /api/v1/seeker/skill-gap/latest`, `POST /api/v1/agent/invoke`
 
 ---
 
-## 3. Employer Onboarding, Job Pack Uploader & Direct Contact Unlock
+## 5. Sisi employer: pelamar terperingkat, bukan kontak terkunci `[BUILT + TESTED]`
 
-Modul ini dirancang untuk menyelesaikan beban administratif (*screening fatigue*) bagi HRD serta menawarkan model monetisasi mikro (**Pay-to-Unlock**).
+- **Tab Pelamar:** diurutkan skor proof-weighted yang dihitung ulang setiap kali dibuka (kandidat yang baru lulus kuis naik peringkat), lengkap dengan badge bukti per skill, status pipeline, catatan.
+- **Pertanyaan wawancara AI** per kandidat, fokus ke skill yang masih klaim; ada cadangan template bila AI tidak tersedia.
+- **Konfirmasi "skill terbukti"** setelah wawancara → bukti terkuat (bobot 1,0) yang menempel pada profil kandidat.
+- **Ekspor CSV** pelamar.
+- **Talent pool anonim:** kandidat yang belum melamar ditampilkan tanpa nama, tanpa nama perusahaan/sekolah, tanpa kontak (mencegah identifikasi ulang; UU PDP).
+- **Pay-to-Unlock dihapus** — alasan lengkap di [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
 
-### 📋 Alur Onboarding Berjenjang (Horizontal Step Timeline)
-1. **Langkah 1 (Profil Perusahaan):** Input nama badan usaha, NPWP, industri, ukuran tim, dan deskripsi institusi.
-2. **Langkah 2 (Verifikasi NPWP):** Pencocokan format ke sistem DJP Online untuk memastikan keabsahan legalitas perusahaan (mode demo — lihat Bagian 4 untuk detail status mock/live).
-3. **Langkah 3 (Pasang Lowongan / Upload Job Pack):** Akses pembuatan lowongan individual atau unggah massal.
-
-### 📄 Job Pack Bulk Uploader (PDF)
-Perusahaan dapat mengunggah 1 dokumen PDF berisi kumpulan banyak posisi sekaligus. AI mengekstrak setiap jabatan, kualifikasi teknis, dan ekspektasi kompensasi dalam hitungan detik untuk ditinjau — **belum diterbitkan**. Perusahaan memeriksa daftar hasil ekstraksi dan mengonfirmasi posisi mana yang ingin dipublikasikan; setiap konfirmasi dilindungi token idempoten (`client_ref`) sehingga mengunggah ulang berkas yang sama (koneksi terputus, refresh halaman) tidak pernah menghasilkan lowongan duplikat — hasil parsing di-cache di server berdasarkan hash berkas, bukan bergantung pada state browser.
-
-### 🔓 Pay-to-Unlock Model
-- Profil kandidat dalam daftar pendek (*Shortlist*) ditampilkan dengan **The Teaser Method** (misal: "Someone at Tokopedia", "Someone from ITB") lengkap dengan skor kecocokan teknis.
-- Perusahaan dapat membuka akses kontak langsung (Nama lengkap, email, nomor HP) dengan tarif flat **Rp 50.000 per kandidat** (`unlock_cost_idr` di `POST /api/v1/employer/jobs/{id}/unlock/{seeker_id}`) — bukan paket bundel 10-kandidat. Kandidat yang sudah melamar langsung ke lowongan tersebut selalu gratis di-unlock, karena kontaknya sudah diserahkan lewat lamaran. Integrasi payment gateway produksi belum tersedia — endpoint saat ini menerima token pembayaran apa pun, sehingga fitur berjalan sebagai demo alur interaksi lengkap tanpa transaksi nyata.
-
-**Komponen terkait:** `EmployerDashboard`, `EmployerJobs`, `EmployerPostJob`, `JobPackUploader`, `EmployerProfile`, `EmployerCandidates`, `PricingPage`  
-**API:** `POST /api/v1/employer/jobs`, `POST /api/v1/uploads/job-pack`, `POST /api/v1/employer/jobs/{id}/candidates`, `POST /api/v1/employer/jobs/{id}/unlock/{seeker_id}`, `GET/POST /api/v1/employer/profile`
+**API:** `GET /api/v1/employer/applications`, `GET /api/v1/employer/applications/{id}/interview-kit`, `POST /api/v1/employer/applications/{id}/confirm-skills`, `GET /api/v1/employer/jobs/{id}/applicants.csv`
 
 ---
 
-## 4. E-KYC Identity, Credential & Phone OTP Verification
+## 6. AutoMod lowongan & sistem kepercayaan `[BUILT + TESTED]`
 
-> **Status: Mock/Demo.** Fitur verifikasi saat ini menggunakan mock endpoint internal untuk demonstrasi alur pengguna. Integrasi resmi dengan API Dukcapil, SIVIL Kemdikbud, dan DJP Online memerlukan kontrak kerjasama resmi dengan instansi terkait serta kepatuhan terhadap regulasi yang berlaku.
+- Setiap lowongan diperiksa sebelum tayang: aturan tetap (minta biaya dari pelamar = **ditolak**; batas usia, syarat penampilan, jenis kelamin tanpa alasan, kontak Telegram-only, gaji di luar batas wajar = **ditahan**) + pemeriksaan AI opsional yang hanya boleh *menahan*.
+- Pemasang menerima **pemberitahuan** berisi aturan yang dilanggar, kalimat yang ditandai, cara memperbaiki, tombol edit & kirim ulang, dan **banding**.
+- **Strike ladder:** 1 = peringatan, 2 = dibatasi 1 lowongan aktif selama 30 hari, 3 = akun ditangguhkan; hangus setelah 90 hari bersih.
+- **Laporan pengguna:** cukup laporan berbeda → lowongan disembunyikan untuk ditinjau admin.
+- **Badge kepercayaan:** email terverifikasi → email domain perusahaan → "Ditinjau admin" (admin memeriksa tautan publik seperti Google Maps/Instagram bisnis).
+- **Lowongan pertama** ditahan untuk tinjauan admin kecuali employer sudah punya badge domain/admin.
 
-Platform ini dirancang untuk menyelesaikan krisis kepercayaan (*Trust Crisis*) dengan validasi kredensial berlapis:
+**API:** `POST /api/v1/public/jobs/{code}/report`, `POST /api/v1/employer/jobs/{id}/appeal`, `GET/POST /api/v1/employer/trust*`, `GET/POST /api/v1/admin/moderation/*`
 
-| Dokumen / Identitas | Integrasi Validasi | Field yang Diperiksa |
+---
+
+## 7. Verifikasi email — satu-satunya cek identitas `[BUILT + TESTED]`
+
+Kode OTP 6 digit dikirim ke email akun (Resend bila `RESEND_API_KEY` diisi; tanpa itu kode hanya muncul di respons saat mode demo dan **tidak pernah** di produksi). **NIK, KTP, ijazah, dan NPWP tidak dikumpulkan sama sekali** — identitas diperiksa HR saat wawancara. Kolom `nik`, `nik_verified`, `ijazah_verified`, dan `npwp` sudah dihapus dari basis data.
+
+**API:** `GET /api/v1/verify/status`, `POST /api/v1/verify/email/send`, `POST /api/v1/verify/email/verify`
+
+---
+
+## 8. Paket & pembayaran `[BUILT, MANUAL PAYMENT]`
+
+Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism Rp25.000/30 hari. Pesanan dibuat di aplikasi → bayar QRIS/transfer → **admin mengaktifkan** 30 hari. Gateway pembayaran `[PLANNED]`. Membayar tidak pernah mengubah skor atau peringkat.
+
+**API:** `GET /api/v1/billing/plans`, `GET /api/v1/billing/me`, `POST /api/v1/billing/orders`, `POST /api/v1/admin/orders/{id}/activate`
+
+---
+
+## 9. Data hasil & metrik admin `[BUILT + TESTED]`
+
+- Skor kecocokan + snapshot bukti skill disimpan **saat melamar**; setiap perubahan status lamaran dicatat di `application_status_events`.
+- `GET /api/v1/admin/metrics` menghitung: **biaya AI per aksi** (dari token `ai_logs` × harga Gemini × kurs), funnel lamaran per sumber (board/link), **tingkat wawancara per band skor** (menjawab "apakah skor tinggi benar-benar lolos wawancara?"), tingkat lulus kuis per skill, statistik moderasi, dan pesanan paket.
+
+---
+
+## 11. Privasi & guardrail AI `[BUILT + TESTED]`
+
+- **Redaksi PII sebelum AI:** email, nomor telepon, dan NIK 16 digit dihapus dengan aturan tetap sebelum teks dikirim ke Gemini (bukan sekadar instruksi prompt). CV berbasis teks diekstrak lokal lalu dikirim sudah tersamar; hanya PDF hasil pindai yang dikirim utuh.
+- Anti prompt-injection, rate limit per rute, token efficiency gate, hallucination guard, fallback 3 model + circuit breaker.
+- **Bukti tidak bisa dipalsukan dari klien:** skema input skill tidak punya kolom bukti; profil inline di endpoint agent direset ke "klaim" lalu bukti asli disalin dari profil tersimpan; edit profil / unggah CV ulang tidak menghapus badge yang sudah diraih.
+
+---
+
+## 12. Yang dihapus di v2
+
+| Fitur lama | Status | Alasan |
 |---|---|---|
-| **KTP / NIK** | Dukcapil E-KYC | NIK (16 digit), Nama Lengkap Sesuai KTP, Tanggal Lahir |
-| **Ijazah Akademik** | SIVIL Kemdikbud | Nomor Ijazah, Nama Perguruan Tinggi, Program Studi |
-| **NPWP Perusahaan** | DJP Online | Nomor Pokok Wajib Pajak (15 digit), Nama Badan Usaha |
-| **Akta Perusahaan** | AHU Kemenkumham | Nomor Akta Pendirian, Nama Notaris |
-| **Nomor HP / WhatsApp** | Phone OTP Gateway | Kode OTP 6-digit via WhatsApp / SMS |
-
-### 🔄 Persistensi Status (Durable, Bukan Otoritatif)
-Hasil pemeriksaan format NIK/ijazah yang lolos disimpan secara permanen pada profil pencari kerja sebagai status **`pending`** — bukan `verified` — sehingga status tersebut tetap muncul setelah reload halaman atau login dari perangkat/browser lain. Nilai `verified` sengaja tidak pernah diberikan oleh mock ini, karena pemeriksaan format tidak dapat membuktikan NIK/ijazah tersebut benar milik pengguna yang mengirimkannya; status itu baru berlaku setelah integrasi resmi Dukcapil/SIVIL benar-benar terpasang. Tampilan di dashboard mengikuti perbedaan ini secara konsisten: status `pending` ditampilkan sebagai lencana kuning "Menunggu ⏳" (bukan "Selesai ✓" hijau) dan **tidak** menambah Trust Score — hanya status `verified` yang benar-benar akan menambahnya.
-
-### 📱 Phone OTP (Demo & Produksi)
-- **Demo Testing:** Sistem menampilkan kode 6-digit langsung pada respons API / toast notifikasi sehingga pengujian alur verifikasi nomor HP berjalan 100% tanpa biaya vendor.
-- **Produksi:** Terintegrasi langsung dengan WhatsApp Gateway (Fonnte) atau Twilio SMS Verify API.
-- **Catatan implementasi:** respons `GET /api/v1/verify/documents` menyertakan label `"encryption": "AES-256-GCM"` (`backend/app/api/routers/verify.py`) sebagai deskripsi desain target produksi — ini adalah string literal pada respons demo, bukan enkripsi yang benar-benar dijalankan di codebase saat ini. NIK dan kode OTP disimpan sebagai hash SHA-256 satu arah, yang memenuhi tujuan non-reversibilitas tetapi bukan enkripsi simetris.
-
-**Komponen terkait:** `VerificationDashboard`, `EmployerVerification`  
-**API:** `POST /api/v1/verify/identity`, `POST /api/v1/verify/education`, `POST /api/v1/verify/npwp`, `POST /api/v1/verify/otp/send`, `POST /api/v1/verify/otp/verify`, `GET /api/v1/verify/documents`
-
----
-
-## 5. Interactive Milestone Application Tracking
-
-Pencari kerja dapat melacak progres setiap lamaran pekerjaan secara *real-time* melalui visual timeline tahapan:
-- **Tersimpan** $\rightarrow$ **Melamar** $\rightarrow$ **Ditinjau HRD** $\rightarrow$ **Interview** $\rightarrow$ **Diterima / Ditolak**
-
-Setiap kartu lamaran dilengkapi informasi status, riwayat tanggal lamar, dan catatan transparansi proses seleksi dari perusahaan terkait.
-
-**Komponen terkait:** `ApplicationsPage`, `Sidebar`  
-**API:** `POST /api/v1/seeker/apply`, `GET /api/v1/seeker/applications`, `GET/POST/DELETE /api/v1/seeker/bookmarks`
-
----
-
-## 6. A/B Testing & Closed-Loop Analytics Architecture
-
-Platform dilengkapi fondasi eksperimentasi produk:
-- **Stateless Feature Flagging:** Menugaskan varian A/B (misal: alur onboarding 3 langkah vs langsung ke dashboard) menggunakan hash deterministik dari `user_id`.
-- **Event Tracking:** Setiap aksi interaktif (`job_viewed`, `cv_uploaded`, `apply_submitted`) dicatat untuk melatih ulang AI (*fine-tuning*) dan mengoptimalkan konversi rekrutmen.
-
-Detail teknis A/B testing dan roadmap pengembangan lengkap dapat dibaca pada [Roadmap](ROADMAP.md).
-
-**Komponen terkait:** `OnboardingWizard`, `useStore`  
-**API:** `GET /api/v1/experiments/assignments`, `POST /api/v1/events/track`
+| Pay-to-Unlock kontak (Rp50.000) | **Dihapus** | Menagih sourcing, bukan penyaringan; bocor lewat teaser; risiko UU PDP; tanpa gateway |
+| e-KYC KTP/NIK, ijazah, NPWP | **Dihapus** | Mock tanpa otoritas; minimisasi data UU PDP |
+| OTP SMS/WhatsApp | **Diganti email OTP** | Tanpa biaya provider dan bisa jalan hari ini |
+| Klaim "94% akurasi", "100% profil terverifikasi e-KYC", "<8 detik" | **Dihapus dari UI** | Tidak ada dasar pengukuran |
