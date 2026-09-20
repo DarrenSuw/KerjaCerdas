@@ -185,6 +185,7 @@ def _register(client: TestClient, role: str, password: str = "SecurePass1") -> d
     )
     assert resp.status_code == 201, resp.text
     body = resp.json()
+
     return {
         "email": email,
         "password": password,

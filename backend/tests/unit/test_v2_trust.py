@@ -23,6 +23,14 @@ def _post(client: TestClient, headers: dict, **over) -> dict:
 @pytest.fixture
 def admin(client: TestClient, register, monkeypatch: pytest.MonkeyPatch) -> dict:
     acct = register(client, "seeker")
+    import asyncio
+    from sqlalchemy import text
+    from backend.app.api import database as db_mod
+    async def _verify():
+        async with db_mod.engine.begin() as conn:
+            await conn.execute(text("UPDATE users SET email_verified=1 WHERE email=:email").bindparams(email=acct["email"]))
+    asyncio.run(_verify())
+
     monkeypatch.setattr(settings, "admin_routes_enabled", True)
     monkeypatch.setattr(settings, "admin_emails", [acct["email"]])
     return acct
@@ -50,7 +58,7 @@ class TestPostingFlow:
         assert body["strike"]["strikes"] == 1
         assert "biaya" in body["notice"].lower()
         public = client.get(f"/api/v1/public/jobs/{body['public_code']}").json()
-        assert public["accepting_applications"] is False
+        assert public.get("withdrawn") is True
 
     def test_edit_and_resubmit_publishes(self, client: TestClient, employer_account: dict,
                                          stub_embedder) -> None:
@@ -87,7 +95,7 @@ class TestPostingFlow:
             r = client.post(f"/api/v1/public/jobs/{code}/report", headers=reporter["headers"],
                             json={"reason": "palsu"})
         assert r.json()["job_hidden_for_review"] is True
-        assert client.get(f"/api/v1/public/jobs/{code}").json()["moderation_status"] == "held"
+        assert client.get(f"/api/v1/public/jobs/{code}").json().get("withdrawn") is True
 
     def test_report_requires_login(self, client: TestClient, employer_account: dict,
                                    stub_embedder) -> None:

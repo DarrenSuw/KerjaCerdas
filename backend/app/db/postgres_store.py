@@ -642,11 +642,13 @@ async def consume_quota(user_id: str, event_type: str, limit: int, since: dateti
     """Atomic quota check using pg_advisory_xact_lock to prevent concurrent bypass."""
     from sqlalchemy import text
 
+    from backend.app.api.database import engine
     from backend.app.db.models import Event
 
     async with async_session() as session:
-        lock_id = hash(f"{user_id}:{event_type}") % (2**31 - 1)
-        await session.execute(text(f"SELECT pg_advisory_xact_lock({lock_id})"))
+        if engine.name == "postgresql":
+            lock_id = hash(f"{user_id}:{event_type}") % (2**31 - 1)
+            await session.execute(text("SELECT pg_advisory_xact_lock(:lock_id)").bindparams(lock_id=lock_id))
 
         stmt = select(func.count()).where(
             Event.user_id == user_id, Event.event_type == event_type, Event.created_at >= since

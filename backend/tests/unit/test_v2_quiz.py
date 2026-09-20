@@ -44,7 +44,7 @@ class TestQuiz:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         assert len(attempt["questions"]) == 5
         assert "correct_index" not in str(attempt)
-        assert attempt["draft_bank"] is True  # starter bank still awaits HR review
+        assert attempt["draft_bank"] is False  # starter bank is now seeded as reviewed=True
 
     def test_pass_gives_quiz_proof(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "MS Excel"}, headers=seeker_h).json()
