@@ -17,7 +17,7 @@ The pipeline is a **bi-encoder semantic ranker with structured boosts and band-b
 
 > **Changing this model is a migration.** Stored vectors carry the model that produced them, and a
 > cross-model pair is scored at cosine `0` rather than compared across two different vector spaces —
-> so every un-migrated row silently loses the whole 45% cosine term. Re-embed with
+> so every un-migrated row silently loses the whole cosine term (35% of the score). Re-embed with
 > `python -m scripts.reembed` (`--dry-run` first) immediately after any change.
 The native model is 3072-dim; Gemini applies **Matryoshka Representation Learning (MRL)** truncation, so the first 768 dims retain most of the semantic signal. 768 was chosen to match the `vector(768)` pgvector column. `text-embedding-004` (native 768-dim, no truncation) is a documented stable-fallback option, settable via `GEMINI_EMBED_MODEL`, but is not the default.
 
@@ -57,14 +57,22 @@ Both directions (`rank_jobs_for_seeker`, `rank_seekers_for_job`) share one formu
 
 ```python
 final_score = (
-    cosine_similarity    * 0.45 +   # _W_COSINE
-    proven_skill_score   * 0.30 +   # _W_SKILL — weighted by PROOF, see below
+    cosine_similarity    * 0.35 +   # _W_COSINE
+    proven_skill_score   * 0.40 +   # _W_SKILL — weighted by PROOF, see below
     experience_fit_boost         +   # up to 0.15 (_W_EXPERIENCE), scaled by shortfall
     education_fit        * 0.10     # _W_EDUCATION — compared against the job's education_min
 )
 ```
 
-**v2 changes:** the skill term is now **proof-weighted** and carries 0.30 (up from 0.25); education is
+**Proof outweighs text similarity, deliberately.** Cosine rewards a CV that reads like the advert —
+which is exactly what keyword stuffing produces — so the two terms compete directly. At the earlier
+`0.45/0.30` split proving every required skill was worth `(0.85-0.30)x0.30 = 0.165`, while a stuffer
+needed only `0.165/0.45 = 0.367` more cosine to erase it: a stuffer at cosine `0.90` scored `0.745`
+and beat a fully proven candidate at cosine `0.50` (`0.730`). The product claims the opposite, so the
+weights now say it. At `0.35/0.40` a stuffer needs `0.629` more cosine to cancel full proof, which is
+outside the range cosine actually spans on real pairs.
+
+**v2 changes:** the skill term is now **proof-weighted** and carries 0.40 (up from 0.25); education is
 compared against the posting's `education_min` instead of "has any education at all"; and the flat
 `0.05` recency term was **removed** — it was identical for every candidate, so it added no signal, only
 an offset. (The agent's token-efficiency gate was re-based accordingly: it now fires when no job shows
@@ -82,7 +90,7 @@ validated against a labelled evaluation set.
 | `cosine_similarity` | cosine similarity of the two 768-dim vectors, floored at 0 | precomputed by pgvector during retrieval when available, else computed in Python |
 | `proven_skill_score` | mean **proof weight** over the job's required skills (0 when the seeker lacks the skill), blended `0.8 × required + 0.2 × nice_to_have`; a posting listing no skills is neutral `0.5` | Proof weights (`services/matching/evidence.py`): `claimed` **0.30**, `quiz` **0.85** (valid 180 days, then it decays back to `claimed`), `hr_confirmed` **1.00**. Skills are canonicalized first via `_normalize_skill()`/`_CANONICAL_SKILL_MAP` (`React.js`/`ReactJS` → `react`, `Microsoft Excel` → `excel`, `pelayanan pelanggan` → `customer service`) so a quiz proves the skill however the CV or ad spells it. Worked example — job needs Excel + Customer Service + Administrasi: claiming all three scores `0.30`; passing the Excel and CS quizzes scores `0.67` |
 | `experience_fit_boost` | `0.15` if `years_exp >= required_years_min` (or the posting has no minimum), else scaled linearly by `years_exp / required_years_min` | `years_exp` comes from `_experience_years()`, which merges overlapping work-history date ranges before summing calendar duration — a freelancer with three concurrent 2024 contracts is not credited with 3 years |
-| `education_fit` | `1.0` when the seeker's highest degree meets the posting's `education_min`, `0.5` one level short, `0.0` otherwise or when no education is listed | ladder: SMA/SMK < D3 < D4/S1 < S2 < S3 |
+| `education_fit` | `1.0` when the posting states no minimum above the floor (SMA/SMK — nothing to fail, so nobody is penalised, including a seeker whose CV parsed no education); otherwise `1.0` when the seeker's highest degree meets `education_min`, `0.5` one level short, `0.0` otherwise or when no education is listed | ladder: SMA/SMK < D3 < D4/S1 < S2 < S3. `education_min` defaults to **SMA**: defaulting to S1 made every job posted without touching the field silently demand a degree, zeroing this term for exactly the SMA/SMK school-leavers the product targets |
 
 **Region and salary filters are hard eliminations, not soft boosts.** When a seeker actively sets a location or salary filter (or an employer sets a location/experience filter), non-matching candidates are dropped from the result set entirely rather than merely scored lower.
 

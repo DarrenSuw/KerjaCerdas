@@ -293,7 +293,7 @@ class JobPosting(TimestampedModel):
     responsibilities: list[str] = []
     required_skills: list[str] = []
     nice_to_have_skills: list[str] = []
-    education_min: EducationLevel = EducationLevel.S1
+    education_min: EducationLevel = EducationLevel.SMA  # floor = no requirement stated
     experience_years_min: int = 0
     region_code: str
     remote_allowed: bool = False

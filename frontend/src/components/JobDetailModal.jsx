@@ -30,7 +30,9 @@ export default function JobDetailModal({ job, onClose }) {
     const matchingSkills = job.matching_skills || job.required_skills?.slice(0, 4) || []
 
     // Real per-factor breakdown from the matcher's hybrid formula (matcher.py:
-    // cosine 45% + proof-weighted skills 30% + experience 15% + education 10%).
+    // cosine 35% + proof-weighted skills 40% + experience 15% + education 10%).
+    // Proof outweighs text similarity on purpose — cosine is what keyword
+    // stuffing inflates, so it must not be able to outrun evidence.
     // Location and salary are hard filters applied upstream, not weighted
     // factors — so they're intentionally not part of this breakdown.
     const proof = job.skill_proof || []
@@ -38,16 +40,16 @@ export default function JobDetailModal({ job, onClose }) {
     const breakdown = [
         {
             label: 'Kemiripan CV dengan lowongan',
-            weight: 'Bobot 45%',
-            multiplier: '×0.45',
+            weight: 'Bobot 35%',
+            multiplier: '×0.35',
             pct: Math.round(job.cosine != null ? job.cosine * 100 : score),
             color: KC.orange,
             desc: 'Kemiripan makna antara profil/CV kandidat dan deskripsi posisi',
         },
         {
             label: 'Skill (ditimbang bukti)',
-            weight: 'Bobot 30%',
-            multiplier: '×0.30',
+            weight: 'Bobot 40%',
+            multiplier: '×0.40',
             pct: Math.round(job.skill_overlap != null ? job.skill_overlap * 100 : score),
             color: '#0284C7',
             desc: proof.length

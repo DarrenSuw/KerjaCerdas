@@ -24,7 +24,7 @@ National context: Indonesia's official open unemployment rate (TPT) was 4.65% as
 Candidate doesn't know which openings fit them
   → Upload CV (PDF)
   → Gemini extracts skills/experience/education → 768-dim embedding → pgvector HNSW search
-     → Hybrid ranking (cosine 45% + proof-weighted skills 30% + experience 15% + education 10%)
+     → Hybrid ranking (cosine 35% + proof-weighted skills 40% + experience 15% + education 10%)
        where a skill counts 0.30 if only claimed in the CV, 0.85 once a skill quiz is passed,
        and 1.00 once an employer confirms it after an interview
   → Result: banded job list (Strong/Possible/Stretch) with a per-factor breakdown and, per skill,

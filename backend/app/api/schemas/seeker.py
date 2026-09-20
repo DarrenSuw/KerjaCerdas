@@ -50,7 +50,7 @@ class EducationInput(BaseModel):
     """
 
     institution: str = Field(default="", max_length=255)
-    degree: EducationLevel = EducationLevel.S1
+    degree: EducationLevel = EducationLevel.SMA  # never invent a degree
     major: str = Field(default="", max_length=255)
     graduation_year: int = 2024
 
@@ -58,11 +58,11 @@ class EducationInput(BaseModel):
     @classmethod
     def _degree_or_default(cls, v: Any) -> Any:
         if v is None:
-            return EducationLevel.S1
+            return EducationLevel.SMA
         try:
             return EducationLevel(str(v).upper())
         except ValueError:
-            return EducationLevel.S1
+            return EducationLevel.SMA
 
     @field_validator("graduation_year", mode="before")
     @classmethod

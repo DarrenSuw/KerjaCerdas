@@ -78,6 +78,35 @@ class TestPlans:
                            json={"plan": "lighthouse"})
         assert resp.status_code == 400
 
+    def test_spark_reveals_the_BEST_n_not_the_first_n(
+        self, client, employer_account, register, admin, stub_embedder, limits_on, monkeypatch
+    ):
+        """Spark is the tier every employer meets first, so it is the one that
+        has to demonstrate that ranking works. Capping by arrival hid the best
+        candidate whenever they applied late — a queue, not a ranking."""
+        monkeypatch.setattr(settings, "spark_ranked_applicant_limit", 1)
+        h = employer_account["headers"]
+        job = _job(client, h)
+
+        # Applies FIRST, matches neither required skill.
+        weak = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=weak["headers"],
+                    json={"full_name": "Weak", "region_code": "3171", "skills": ["Menyapu"]})
+        client.post("/api/v1/seeker/apply", headers=weak["headers"], json={"job_id": job["job_id"]})
+
+        # Applies SECOND, holds both required skills.
+        strong = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=strong["headers"],
+                    json={"full_name": "Strong", "region_code": "3171",
+                          "skills": ["Kasir", "Customer Service"]})
+        client.post("/api/v1/seeker/apply", headers=strong["headers"], json={"job_id": job["job_id"]})
+
+        items = client.get("/api/v1/employer/applications", headers=h).json()["items"]
+        visible = [i for i in items if not i["locked"]]
+        assert len(visible) == 1, "the cap must reveal exactly spark_ranked_applicant_limit"
+        # The late-arriving better candidate is the one shown.
+        assert visible[0]["seeker_name"] == "Strong"
+
     def test_spark_ranks_only_first_n_and_premium_tools_are_gated(
         self, client, employer_account, register, admin, stub_embedder, limits_on, monkeypatch
     ):

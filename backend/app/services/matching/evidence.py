@@ -113,6 +113,14 @@ def skill_snapshot(skills) -> list[dict]:
 def education_fit(education, education_min: str | None) -> float:
     """1.0 if the seeker's highest degree meets the job minimum, 0.5 if one
     level short, 0.0 otherwise or when no education is listed."""
+    # SMA/SMK is rank 0 — the floor. A job sitting there has stated no
+    # requirement, so nobody can fail it, including a seeker whose CV never
+    # parsed an education entry. Education only discriminates once an employer
+    # deliberately raises the bar above the floor.
+    need = _EDU_RANK.get(str(getattr(education_min, "value", education_min) or "SMA").upper(), 0)
+    if need <= 0:
+        return 1.0
+
     ranks = []
     for e in education or []:
         degree = str(_get(e, "degree", "") or "").upper()
@@ -121,7 +129,6 @@ def education_fit(education, education_min: str | None) -> float:
             ranks.append(_EDU_RANK[str(degree).upper()])
     if not ranks:
         return 0.0
-    need = _EDU_RANK.get(str(getattr(education_min, "value", education_min) or "SMA").upper(), 0)
     best = max(ranks)
     if best >= need:
         return 1.0

@@ -433,7 +433,7 @@ def _validate_job_pack_schema(d: dict[str, Any]) -> dict[str, Any]:
                     for s in (p.get("nice_to_have_skills") or [])
                     if isinstance(s, (str, int, float)) and str(s).strip()
                 ],
-                "education_min": (p.get("education_min") or "S1").upper(),
+                "education_min": (p.get("education_min") or "SMA").upper(),
                 "experience_years_min": int(p.get("experience_years_min") or 0),
                 "region_code": clean_extracted_text(str(p.get("region_code") or ""), max_length=10),
                 "remote_allowed": bool(p.get("remote_allowed", False)),
@@ -490,7 +490,7 @@ def _offline_stub(task: str) -> dict[str, Any]:
                     "responsibilities": ["Develop features", "Write tests"],
                     "required_skills": ["Python", "Git"],
                     "nice_to_have_skills": ["Docker"],
-                    "education_min": "S1",
+                    "education_min": "SMA",
                     "experience_years_min": 0,
                     "region_code": "3171",
                     "remote_allowed": True,

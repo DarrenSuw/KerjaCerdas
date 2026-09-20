@@ -58,7 +58,7 @@ class TestSchemaGuard:
 
 
 class TestEmbeddingModelMigration:
-    """Cross-model vectors score 0 on cosine — 45% of the match score."""
+    """Cross-model vectors score 0 on cosine — the entire cosine term."""
 
     def test_stale_model_tag_costs_the_whole_cosine_term(self) -> None:
         """Confirms the behaviour that makes re-embedding mandatory."""
@@ -79,8 +79,10 @@ class TestEmbeddingModelMigration:
         # Identical vectors either way. Only the model tag differs.
         fresh = pair(current)
         stale = pair("gemini-embedding-001")
-        # 0.45 of the score simply disappears — silently, with no error anywhere.
-        assert fresh - stale == pytest.approx(0.45, abs=0.01)
+        # The whole cosine weight simply disappears — silently, no error anywhere.
+        from backend.app.services.matching.matcher import _W_COSINE
+
+        assert fresh - stale == pytest.approx(_W_COSINE, abs=0.01)
 
     def test_reembed_script_targets_the_configured_model(self) -> None:
         """The documented remedy must import and point at the current model."""

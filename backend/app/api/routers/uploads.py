@@ -52,11 +52,14 @@ def _to_experience(d: dict) -> WorkExperience:
 
 
 def _to_education(d: dict) -> Education:
-    raw = (d.get("degree") or "S1").upper()
+    # An unparsed degree must not become a bachelor's — that is a credential
+    # the CV never claimed. SMA is the floor, so it can satisfy a job that
+    # states no requirement and can never clear a real bar unearned.
+    raw = (d.get("degree") or "SMA").upper()
     try:
         deg = EducationLevel(raw)
     except ValueError:
-        deg = EducationLevel.S1
+        deg = EducationLevel.SMA
     return Education(
         institution=d.get("institution", ""),
         degree=deg,
@@ -193,11 +196,11 @@ async def upload_job_pack(
     # that's a content-addressed cache keyed by file hash, not a draft job.)
     normalized_jobs: list[dict] = []
     for idx, p in enumerate(postings):
-        raw_edu = (p.get("education_min") or "S1").upper()
+        raw_edu = (p.get("education_min") or "SMA").upper()
         try:
             edu = EducationLevel(raw_edu)
         except ValueError:
-            edu = EducationLevel.S1
+            edu = EducationLevel.SMA
         title = p.get("title") or "Untitled"
         required_skills = p.get("required_skills") or []
         region_code = p.get("region_code") or employer.region_code

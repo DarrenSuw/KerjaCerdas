@@ -259,7 +259,7 @@ export default function SeekerDashboard() {
                             ) : (
                                 topMatches.map((job, idx) => {
                                     // Real cosine/skill components from the matcher's hybrid formula
-                                    // (45%/30% of the total weight; the remaining 25% is experience
+                                    // (35%/40% of the total weight; the remaining 25% is experience
                                     // and education — not shown in this compact 2-bar view). The skill
                                     // bar is proof-weighted: claimed 0.30, quiz 0.85, HR-confirmed 1.00.
                                     const jobScore = Math.round(job.overall_score ?? job.score ?? 0)

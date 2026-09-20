@@ -173,7 +173,11 @@ class JobPosting(Base, TimestampedMixin):
     responsibilities: Mapped[list[Any]] = mapped_column(JSON, default=list)
     required_skills: Mapped[list[Any]] = mapped_column(JSON, default=list)
     nice_to_have_skills: Mapped[list[Any]] = mapped_column(JSON, default=list)
-    education_min: Mapped[str] = mapped_column(String(10), default="S1")
+    # SMA = the floor, i.e. "no requirement stated". Defaulting to S1 made
+    # every job posted without touching the field silently demand a degree,
+    # zeroing the education term for exactly the SMA/SMK school-leavers this
+    # product targets.
+    education_min: Mapped[str] = mapped_column(String(10), default="SMA")
     experience_years_min: Mapped[int] = mapped_column(Integer, default=0)
     region_code: Mapped[str] = mapped_column(String(50))
     remote_allowed: Mapped[bool] = mapped_column(Boolean, default=False)

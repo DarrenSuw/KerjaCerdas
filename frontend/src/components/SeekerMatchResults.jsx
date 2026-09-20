@@ -199,7 +199,7 @@ export default function SeekerMatchResults() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                             {strongMatches.map((job, idx) => {
                                 // Real per-factor breakdown from the matcher's hybrid formula
-                                // (cosine 45% + proof-weighted skills 30% + experience 15% +
+                                // (cosine 35% + proof-weighted skills 40% + experience 15% +
                                 // education 10%) — location/salary are hard filters, not weighted
                                 // factors, so they aren't part of this score breakdown.
                                 const jobScore = Math.round(job.overall_score ?? job.score ?? 0)
@@ -258,7 +258,7 @@ export default function SeekerMatchResults() {
                                                         <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 6 }}>Semantik</div>
                                                         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 5 }}>
                                                             <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>{sem}</span>
-                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.45</span>
+                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.35</span>
                                                         </div>
                                                         <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
                                                             <div style={{ height: '100%', width: `${sem}%`, background: KC.orange, borderRadius: 999 }} />
@@ -268,7 +268,7 @@ export default function SeekerMatchResults() {
                                                         <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 6 }}>Skill</div>
                                                         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 5 }}>
                                                             <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: '#0284C7' }}>{sk}</span>
-                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.25</span>
+                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.40</span>
                                                         </div>
                                                         <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
                                                             <div style={{ height: '100%', width: `${sk}%`, background: '#0284C7', borderRadius: 999 }} />

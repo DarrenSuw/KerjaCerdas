@@ -222,12 +222,22 @@ def _has_hard_filter(filters: dict) -> bool:
 # ── Scoring weights ───────────────────────────────────────────────────────────
 # Shared by both ranking directions (job→seekers and seeker→jobs) so a
 # recalibration only ever happens in one place.
-_W_COSINE = 0.45
+#
+# Proof outweighs text similarity, deliberately. Cosine rewards a CV that reads
+# like the advert — which is exactly what keyword stuffing produces. At the old
+# 0.45/0.30 split, proving every required skill was worth (0.85-0.30)x0.30 =
+# 0.165, while a stuffer needed only 0.165/0.45 = 0.367 more cosine to erase
+# it: a stuffer at cosine 0.90 (0.745) beat a fully proven candidate at cosine
+# 0.50 (0.730). The product claims the opposite, so the weights now say it.
+#
+# At 0.35/0.40 a stuffer needs (0.85-0.30)x0.40/0.35 = 0.629 more cosine to
+# cancel full proof, which is outside the range cosine actually spans.
+_W_COSINE = 0.35
 # The skill part is proof-weighted (services/matching/evidence.py): a skill
 # only claimed in the CV earns 30% of its weight, a passed quiz 85%, an HR
 # confirmation 100%. The former flat 0.05 "recency" bonus (identical for every
 # candidate, so it carried no signal) moved here.
-_W_SKILL = 0.30
+_W_SKILL = 0.40
 _W_EXPERIENCE = 0.15
 _W_EDUCATION = 0.10
 

@@ -173,7 +173,7 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
     try:
         edu = EducationLevel(payload.education_min.upper())
     except ValueError:
-        edu = EducationLevel.S1
+        edu = EducationLevel.SMA
 
     title = payload.title.strip()
     if not title:
@@ -512,11 +512,29 @@ async def list_employer_applications(
 
     ent = await entitlements_for(current_user.id)
     cap = settings.spark_ranked_applicant_limit
-    arrival_rank: dict[str, int] = {}
+
+    # Score every applicant first, then rank BY SCORE — not by arrival time.
+    # Spark is the tier every employer meets first, so it is the one that has to
+    # demonstrate that ranking works. Capping by arrival showed the first N who
+    # applied and hid the best candidate behind the paywall whenever they
+    # happened to apply late, which demonstrates a queue, not a ranking. The cap
+    # now limits how many are revealed, not which.
+    scored: dict[str, dict] = {}
+    for app in relevant_apps:
+        job = job_map.get(app.job_id)
+        seeker = seeker_by_id.get(app.seeker_id)
+        if seeker and job:
+            scored[app.id] = score_pair(seeker, job)
+
+    score_rank: dict[str, int] = {}
     for jid in target_job_ids:
-        ordered = sorted((a for a in relevant_apps if a.job_id == jid), key=lambda a: a.created_at)
+        ordered = sorted(
+            (a for a in relevant_apps if a.job_id == jid),
+            # Descending score; arrival time breaks ties so the order is stable.
+            key=lambda a: (-(scored.get(a.id, {}).get("score") or 0.0), a.created_at),
+        )
         for i, a in enumerate(ordered):
-            arrival_rank[a.id] = i
+            score_rank[a.id] = i
 
     def _fmt(dt) -> str:
         if hasattr(dt, "strftime"):
@@ -531,9 +549,9 @@ async def list_employer_applications(
         locked = (
             job is not None
             and not ent.premium_for_job(job.id)
-            and arrival_rank.get(app.id, 0) >= cap
+            and score_rank.get(app.id, 0) >= cap
         )
-        live = score_pair(seeker, job) if (seeker and job) else None
+        live = scored.get(app.id)
         item = {
             "id": app.id,
             "application_id": app.id,
@@ -550,8 +568,8 @@ async def list_employer_applications(
             item.update({
                 "seeker_name": "Pelamar terkunci",
                 "lock_reason": (
-                    f"Paket Spark memeringkat {cap} pelamar pertama. Beli Beacon untuk "
-                    "lowongan ini agar semua pelamar diperingkat."
+                    f"Paket Spark menampilkan {cap} pelamar dengan skor tertinggi. "
+                    "Beli Beacon untuk lowongan ini agar semua pelamar terbuka."
                 ),
                 "match_score": None,
             })
