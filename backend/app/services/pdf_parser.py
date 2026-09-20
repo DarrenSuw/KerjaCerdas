@@ -244,7 +244,11 @@ def _extract_json(text: str) -> dict[str, Any]:
     return json.loads(blob)
 
 
-_MIN_TEXT_FOR_REDACTED_PATH = 200
+# Below this many extracted characters a PDF cannot be parsed usefully from its
+# text layer alone, so reading it needs the image. Named for what it measures:
+# it is a parseability floor, NOT a claim that the document is a scan — a PDF
+# can be short and still have perfectly redactable text.
+_MIN_TEXT_TO_PARSE = 200
 
 
 class ScannedPdfError(Exception):
@@ -291,12 +295,23 @@ def _llm_contents(
             text = _pdf_to_text(pdf_bytes, max_chars=20000)
         except Exception:  # noqa: BLE001 — treated the same as an empty text layer
             text = ""
-    if len(text.strip()) < _MIN_TEXT_FOR_REDACTED_PATH:
+    stripped = text.strip()
+    if len(stripped) < _MIN_TEXT_TO_PARSE:
         if not allow_scanned:
-            raise ScannedPdfError(
+            # Two different documents end up here and they deserve different
+            # words. An empty extraction is an image-only scan; a short one is a
+            # PDF whose text layer holds only a heading or a page number. Both
+            # need the image to be readable, neither is "broken", and calling a
+            # sparse file a photo would just confuse the person who uploaded it.
+            detail = (
                 "CV ini berupa hasil pindai atau foto, jadi tidak ada teks yang bisa kami "
-                "samarkan lebih dulu. Untuk membacanya, gambar dokumen perlu dikirim ke AI "
-                "apa adanya — termasuk nomor HP dan email yang tertulis di dalamnya. "
+                "samarkan lebih dulu."
+                if not stripped
+                else "Teks yang bisa kami baca dari PDF ini terlalu sedikit untuk diproses."
+            )
+            raise ScannedPdfError(
+                f"{detail} Untuk membacanya, gambar dokumen perlu dikirim ke AI apa adanya "
+                "— termasuk nomor HP dan email yang tertulis di dalamnya. "
                 "Hasil bacaannya tetap kami samarkan sebelum disimpan."
             )
         return [types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"), instruction]
@@ -324,12 +339,18 @@ async def _call_gemini(
 
         from backend.app.services.llm_factory import chat_model_chain
 
+        # Raises ScannedPdfError for an un-redactable document. Deliberately
+        # OUTSIDE the retry loop: it is a property of the file, not a transient
+        # model failure, so retrying other models cannot help and must not
+        # disguise it as one.
+        contents = _llm_contents(types, pdf_bytes, allow_scanned=allow_scanned)
+
         last_exc: Exception | None = None
         for model in chat_model_chain():
             try:
                 resp = client.models.generate_content(
                     model=model,
-                    contents=_llm_contents(types, pdf_bytes, allow_scanned=allow_scanned),
+                    contents=contents,
                     config=types.GenerateContentConfig(
                         system_instruction=system,
                         response_mime_type="application/json",
@@ -368,6 +389,12 @@ async def _call_gemini(
             _last_usage.get("tokens_out", 0),
             int((_time.monotonic() - _t0) * 1000),
         )
+    except ScannedPdfError:
+        # NOT a transient failure, so no fallback. Returning offline/demo data
+        # here would hand the caller a fabricated CV or job posting and mark it
+        # a successful parse — the endpoint would cache and store invented
+        # content instead of asking the user for consent.
+        raise
     except Exception as e:  # network/SSL/quota/parsing/page-cap — never crash the upload
         logger.warning("Gemini PDF call failed (task=%s): %s — falling back", task, e)
         if task == "cv_parser":

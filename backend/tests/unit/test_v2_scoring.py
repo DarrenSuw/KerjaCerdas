@@ -388,3 +388,51 @@ class TestScannedPdfNeedsConsent:
         long_text = "Rina. Email rina@mail.com. Telepon 0812-3456-7890. " * 6
         parts = _llm_contents(_FakeTypes, b"%PDF", allow_scanned=True, _text_override=long_text)
         assert "rina@mail.com" not in parts[0] and "[email]" in parts[0]
+
+
+class TestScannedPdfNeverBecomesFakeData:
+    """ScannedPdfError must reach the caller, not the offline fallback.
+
+    _call_gemini wraps everything in `except Exception -> return offline data`
+    so a network blip never crashes an upload. That handler used to swallow
+    ScannedPdfError too, so a scan came back as demo-stub content marked as a
+    successful parse: an invented CV for a seeker, and for an employer a
+    FABRICATED job posting that the parse cache then stored.
+    """
+
+    @pytest.mark.asyncio
+    async def test_call_gemini_propagates_instead_of_stubbing(self, monkeypatch) -> None:
+        from backend.app.services import pdf_parser as pp
+
+        monkeypatch.setattr(pp, "_client", lambda: object())
+        monkeypatch.setattr(pp, "build_system_prompt", lambda **kw: "sys")
+        monkeypatch.setattr(pp, "_cap_pdf_pages", lambda b: b)
+
+        def boom(*a, **kw):
+            raise pp.ScannedPdfError("scan")
+
+        monkeypatch.setattr(pp, "_llm_contents", boom)
+
+        for task in ("cv_parser", "job_parser"):
+            with pytest.raises(pp.ScannedPdfError):
+                await pp._call_gemini(b"%PDF", role="r", task=task)
+
+    def test_sparse_text_is_not_called_a_photo(self) -> None:
+        """A PDF whose text layer holds only a heading is short, not scanned —
+        telling its owner it is a photo would just confuse them."""
+        from backend.app.services.pdf_parser import ScannedPdfError, _llm_contents
+
+        class _FakeTypes:
+            class Part:
+                @staticmethod
+                def from_bytes(**kw):
+                    return "PDF_PART"
+
+        with pytest.raises(ScannedPdfError) as empty:
+            _llm_contents(_FakeTypes, b"%PDF", _text_override="   ")
+        assert "pindai atau foto" in str(empty.value)
+
+        with pytest.raises(ScannedPdfError) as sparse:
+            _llm_contents(_FakeTypes, b"%PDF", _text_override="Lowongan Kasir")
+        assert "terlalu sedikit" in str(sparse.value)
+        assert "pindai atau foto" not in str(sparse.value)

@@ -196,7 +196,23 @@ async def upload_job_pack(
         )
         return {"employer_id": employer.id, "jobs": cached, "parsed_offline": cached_offline}
 
-    parsed = await parse_job_pack(blob)
+    try:
+        parsed = await parse_job_pack(blob)
+    except ScannedPdfError as exc:
+        # An employer's scanned job pack has the same problem as a scanned CV,
+        # but not the same answer: a job pack contains the employer's own text,
+        # not a candidate's personal data, and the employer can simply retype or
+        # paste it. So this is a plain 422 rather than a consent handshake.
+        # Before this it fell through to _offline_stub and returned a FABRICATED
+        # posting, which the cache then stored as a real parse.
+        raise HTTPException(
+            422,
+            detail={
+                "error": "scanned_pdf",
+                "message": str(exc),
+                "hint": "Ketik atau tempel deskripsi lowongan langsung di form Pasang Lowongan.",
+            },
+        ) from exc
     postings = parsed.get("postings", [])
 
     # Nothing is written to the JOBS table here — a PDF can extract postings
