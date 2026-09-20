@@ -72,4 +72,10 @@ The last 8 rows above are UMKM/informal-sector seekers, seeded to match the UMKM
 | `hr@bimbel_cerdas.id` | Bimbel Cerdas Prima | Pendidikan Non-Formal / Bimbel |
 | `hr@kelontong_makmur.id` | Toko Kelontong Makmur Jaya | Retail / UMKM Dagang |
 
+Setiap lowongan yang ditayangkan mendapat kode publik acak 7 karakter dan halaman `/j/<kode>` beserta
+poster QR-nya — buka **Lowongan Saya → Bagikan** pada akun employer mana pun untuk melihatnya.
+
+Untuk mencoba panel admin, tambahkan email akun mana pun ke `ADMIN_EMAILS` dan set
+`ADMIN_ROUTES_ENABLED=true`, lalu buka `/admin`.
+
 The 10 rows above are UMKM employers (1-50 karyawan) — the platform's stated target segment — seeded alongside the national-enterprise employers above so the employer-side demo covers more than white-collar/IT hiring.

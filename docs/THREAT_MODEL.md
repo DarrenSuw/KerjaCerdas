@@ -7,11 +7,14 @@ KerjaCerdas is an AI-powered job matching platform for Indonesia. A FastAPI back
 ## Assets
 
 - **User credentials** — email and bcrypt-hashed passwords stored in PostgreSQL.
-- **Seeker profiles** — full name, skills, salary expectations, resume text, pgvector embeddings (768-dim). NIK is stored strictly as a SHA-256 hash.
+- **Seeker profiles** — full name, skills (with proof level), salary expectations, resume text, pgvector embeddings (768-dim). **No NIK, KTP, ijazah number or NPWP is collected** — those columns were dropped in migration `a2b4c6d8e0f1` (UU PDP data minimisation). Contact data inside resume text is redacted by fixed rules before storage and before any LLM call.
 - **Employer profiles and job postings** — company identity, job descriptions, salary bands.
 - **JWT signing secret** — signs HS256 access tokens. Gated to high-entropy configuration in production.
 - **Gemini API key** — paid AI service, protected by fallback chains and circuit breakers.
-- **Verification & OTP records** — PostgreSQL-backed `otps` table with expiration timestamps and attempt limits.
+- **Email OTP records** — PostgreSQL `otps` table (SHA-256 of the code only) with expiry and attempt limits.
+- **Skill evidence** — quiz attempts, answer keys (`skill_questions`), and HR confirmations. The answer key must never leave the server: `/quiz/start` returns questions with per-attempt shuffled options and no `correct_index`, and grading happens server-side.
+- **Moderation state** — job moderation verdicts, candidate reports, employer strikes, and the audit log (`moderation_events`).
+- **Plan orders** — manual-payment plan orders; activation is admin-only.
 
 ## Trust Boundaries
 
@@ -28,7 +31,7 @@ KerjaCerdas is an AI-powered job matching platform for Indonesia. A FastAPI back
   - `POST /api/v1/uploads/cv` (`require_seeker`, magic bytes verified)
   - `POST /api/v1/uploads/job-pack` (`require_employer`, magic bytes verified)
   - `POST /api/v1/agent/invoke` (`get_current_user` — no anonymous path)
-  - `POST/PATCH/DELETE /api/v1/employer/jobs*`, `POST /api/v1/employer/jobs/{id}/unlock/{seeker_id}` (`require_employer` + per-resource `_require_owned_job` ownership check)
+  - `POST/PATCH/DELETE /api/v1/employer/jobs*`, `GET /api/v1/employer/jobs/{id}/applicants.csv` (`require_employer` + per-resource `_require_owned_job` ownership check)
   - `POST /api/v1/seeker/apply`, `POST /api/v1/seeker/bookmarks` (`require_seeker`)
   - `POST /api/v1/verify/identity`, `POST /api/v1/verify/otp/send`, `POST /api/v1/verify/otp/verify` (`get_current_user`)
 - **Public surfaces**: `GET /api/v1/jobs*` (listing, detail, `/regions`, `/industries`), `GET /health`, `POST /api/v1/inquiries` (public contact-form submission)
@@ -53,7 +56,8 @@ KerjaCerdas is an AI-powered job matching platform for Indonesia. A FastAPI back
 - **Idempotent mutation via `client_ref`:** `POST /employer/jobs` (and the job-pack upload it's paired with) accepts a caller-supplied `client_ref`; a unique index on `(employer_id, client_ref)` plus an `IntegrityError` catch means a retried create (lost response, reload) returns the already-created row instead of inserting a duplicate posting.
 
 ### Information Disclosure
-- NIK (National ID) is never persisted at all, not even hashed — `/verify/identity` computes a SHA-256 `verification_hash` for the response only; `SeekerProfile.nik` is never written by any code path. Only the pass/fail outcome (`nik_verified: pending|failed`) is stored, satisfying UU-PDP-2022 by having nothing retained to disclose.
+- NIK (National ID) is not collected anywhere: there is no endpoint that accepts one and no column to store one. A 16-digit NIK that appears inside an uploaded CV is replaced with `[nik]` (along with emails and phone numbers) before the text is stored **and** before it reaches Gemini — fixed rules in `services/privacy/redact.py`, not a prompt instruction. Only scanned PDFs with no extractable text are sent as documents.
+- Quiz answer keys never reach the client, and a submitted quiz returns which answers were wrong but never the correct option.
 - Detailed health check (`GET /health/detailed`) requires authenticated JWT credentials.
 - Application logs correlate with opaque user IDs and request IDs; PII is stripped from logs.
 
@@ -69,5 +73,8 @@ KerjaCerdas is an AI-powered job matching platform for Indonesia. A FastAPI back
 ### Elevation of Privilege
 - Strictly separated `require_seeker` and `require_employer` dependencies prevent cross-role access.
 - Role boundaries are verified from database state on every token validation.
-- **No admin role exists yet.** `GET/PATCH /api/v1/inquiries` — the one surface that would otherwise expose cross-user data (every organization's partnership-inquiry name/email/message) — is gated behind `settings.admin_routes_enabled` (off by default) rather than a real permission check, since `get_current_user` alone only proves the caller is *some* authenticated seeker or employer. This is a stopgap, not a permission system: anyone with `ADMIN_ROUTES_ENABLED=true` and any valid JWT can reach it. Treat this flag as a deployment-time secret-equivalent, not a per-user grant.
-- **e-KYC/education verification is explicitly capped at `PENDING`, never `VERIFIED`**, by design: the NIK/ijazah checks in `verify.py` validate *format* only (16-digit NIK not "99"-prefixed; a diploma number that isn't an obvious placeholder) and never confirm the submitted credential belongs to the submitting user. Persisting a format-only pass as `VERIFIED` would let any authenticated seeker mint a durable "verified" badge with zero identity evidence behind it — see `verify_identity`'s docstring for the full reasoning.
+- **Admin is an email allow-list, not a role.** `require_admin` (`api/dependencies.py`) grants the `/api/v1/admin/*` surface — moderation decisions, business-review approvals, plan activation, quiz-bank review, metrics — only to an authenticated account whose email is listed in `ADMIN_EMAILS`, **and** only while `ADMIN_ROUTES_ENABLED=true`. Both conditions are required, so a deployment that never configures admins exposes no admin surface at all. This is still weaker than a real permission system: anyone who can obtain a token for a listed email is an admin, so treat `ADMIN_EMAILS` accounts as privileged (strong passwords, no sharing). The older `/api/v1/inquiries` flag-gate is unchanged.
+- **Paying can never buy rank.** Plan entitlements only affect quotas and premium tooling; the match score and quiz outcomes are computed from evidence alone. Proof levels cannot be set from any client payload: the skill input schema has no proof field, the agent's inline-profile override resets proof to "claimed" and re-copies real proof from the stored profile, and a profile edit or CV re-upload preserves earned badges via `evidence.carry_proof`.
+- **Identity verification was removed rather than faked.** The former NIK/ijazah/NPWP format checks had no authority to confirm anything, so v2 deletes them: identity is checked by the employer at interview. What remains is email ownership (OTP), skill evidence (quiz + HR confirmation), and employer trust badges where "Ditinjau admin" is only set by an admin who checked public proof links by hand.
+- **Skill quizzes are not cheat-proof, and the product says so.** Mitigations are layered: random questions from a bank, per-attempt shuffled options, a server-side deadline, retake cooldowns, answers never returned, rate limiting on `/quiz/*`, and interview questions that ask the candidate to explain their own answer. HR confirmation is the final gate, and a candidate who cannot explain a passed quiz simply never reaches proof level 1.0.
+- **Candidate re-identification is treated as a leak.** The talent pool shows no name, employer, school or contact for candidates who have not applied — the previous "Someone at {company}" teaser was enough to find the person on LinkedIn.

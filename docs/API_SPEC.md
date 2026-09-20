@@ -9,7 +9,7 @@ API KerjaCerdas menggunakan endpoint asinkron (FastAPI + SQLAlchemy async) dan i
 
 ```
 Development: http://localhost:8000
-Production:  https://api.kerjacerdas.id
+Production:  https://api.kerjacerdas.tech
 ```
 
 ## Authentication
@@ -31,7 +31,7 @@ Requests traverse the following layers **in order** before reaching any router:
 | **1. Request Logging** | `log_requests` | Generates `X-Request-ID` and logs method, path, status, latency ms |
 | **2. Security Headers** | `security_headers` | Attaches `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Content-Security-Policy` |
 | **3. CORS** | `CORSMiddleware` | Explicit allowlist only (`settings.cors_allow_origins`: localhost:3000/3001/5000 by default) plus this Replit workspace's own named origins (`REPLIT_DEV_DOMAIN`/`REPLIT_DOMAINS`). No wildcard/regex — a broad `*.replit.dev` regex was deliberately removed (see `backend/app/api/main.py::_replit_origins`) because combined with `allow_credentials=True` it would trust any Replit account's subdomain |
-| **4. Rate Limiter** | `RateLimiterMiddleware` | Sliding window per (IP, route bucket) — auth login/register: 10 req/60s · agent invoke: 20 req/60s · uploads (cv, job-pack): 10 req/60s each · OTP send: 5 req/60s · OTP verify: 10 req/60s · verify/identity: 10 req/60s · seeker/skill-gap: 20 req/60s · employer/jobs (incl. `/candidates`, `/estimate`): 30 req/60s · everything else: 300 req/60s shared per IP. Memory bounded at 10,000 (ip, bucket) keys with LRU eviction |
+| **4. Rate Limiter** | `RateLimiterMiddleware` | Sliding window per (IP, route bucket) — auth login/register: 10 req/60s · agent invoke: 20 req/60s · uploads (cv, job-pack): 10 req/60s each · verify/email/send: 5 req/60s · verify/email/verify: 10 req/60s · public/jobs (public page, QR, reports): 60 req/60s · quiz: 30 req/60s · billing: 20 req/60s · seeker/skill-gap: 20 req/60s · employer/jobs (incl. `/candidates`, `/estimate`): 30 req/60s · everything else: 300 req/60s shared per IP. Memory bounded at 10,000 (ip, bucket) keys with LRU eviction |
 | **5. Request Size Guard** | `RequestSizeMiddleware` | Rejects payloads exceeding 10 MB (`MAX_BODY_BYTES`) via `Content-Length` before parsing. Exempts any `/uploads/*` path (those endpoints stream the file directly and enforce their own 10 MB cap after reading the body) |
 
 All responses carry `X-Request-ID` for distributed tracing.
@@ -91,11 +91,10 @@ Returns the full variant-assignment map for every registered experiment for the 
   "onboarding_flow": "cv_first",
   "band_legend_default": "collapsed",
   "stretch_band_copy": "challenge_framing",
-  "unlock_cta_copy": "buka_kontak",
   "profile_completeness_nudge": "progress_bar"
 }
 ```
-(Live experiment registry, `EXPERIMENTS` in `backend/app/api/routers/experiments.py`. Values above are the current five experiments and one possible variant each — actual variant per user depends on the MD5 hash.)
+(Live experiment registry, `EXPERIMENTS` in `backend/app/api/routers/experiments.py`. Values above are the current experiments and one possible variant each — actual variant per user depends on the MD5 hash.)
 
 ### `GET /api/v1/experiments/list`
 
@@ -432,8 +431,21 @@ Save, list, or remove a saved job for the authenticated seeker.
 
 Submit a job application (idempotent — returns existing record if already applied).
 
-**Request:** `{ "job_id": "job-001", "cover_letter": "..." }`
-**Response `201`:** `{ "application_id": "uuid", "job_id": "job-001", "status": "applied", "already_applied": false }`
+**Request:** `{ "job_id": "job-001", "cover_letter": "...", "source": "board|link" }`
+
+`source` records where the applicant came from — `link` for the job's QR / share link, `board` for the
+public job board — so `/admin/metrics` can report whether QR traffic converts better.
+
+**Response `201`:**
+```json
+{ "application_id": "uuid", "job_id": "job-001", "status": "applied", "already_applied": false,
+  "match_score": 0.61, "band": "possible",
+  "skill_proof": [ { "name": "Excel", "status": "quiz" }, { "name": "Administrasi", "status": "claimed" } ] }
+```
+The score and a snapshot of the applicant's proof levels are stored on the application at apply time,
+so the platform can later measure whether proven skills actually predict interviews and hires.
+
+**Errors:** `409` the job is no longer accepting applications (closed or held by moderation).
 
 ---
 
@@ -584,7 +596,26 @@ List the employer's own job postings, or create a new one.
 ```
 `client_ref` is an optional idempotency token: retrying a create with the same `(employer_id, client_ref)` returns the already-created job (`created: false`) instead of inserting a duplicate. The manual "Pasang Lowongan" form omits it (each submit is a deliberate new posting); the Job Pack confirm flow always sets it.
 
-**Response `201`:** `{ "job_id": "uuid", "title": "Senior Backend Engineer", "created": true }` (`created: false` on an idempotent `client_ref` replay — the existing row is returned, not re-inserted.)
+**Response `201`:**
+```json
+{ "job_id": "uuid", "title": "Senior Backend Engineer", "created": true,
+  "public_code": "K7RPX2M", "share_path": "/j/K7RPX2M",
+  "moderation_status": "published",
+  "moderation_reasons": [],
+  "notice": "Lowongan tayang.",
+  "strike": null }
+```
+(`created: false` on an idempotent `client_ref` replay — the existing row is returned, not re-inserted.)
+
+Every new posting passes **AutoMod** first (`services/trust/automod.py`): asking candidates for money
+is `rejected` (and adds a strike), discriminatory or suspicious wording is `held` for admin review,
+and an employer's **first** posting is held unless they already hold the company-email or
+"Ditinjau admin" badge (`MODERATION_FIRST_JOB_REVIEW`). A job that is not `published` is always kept
+inactive, so every existing `is_active` filter hides it. `notice` is the ready-to-show poster message
+naming the rule, the flagged sentence and how to fix it.
+
+**Errors:** `402` the plan's active-job limit is reached (Spark 1, Lighthouse 5, plus any
+Beacon-covered job) · `403` account suspended after 3 strikes.
 
 Job is automatically embedded via `embed_job()` (pgvector) upon creation. An unrecognized `education_min` value silently falls back to `S1` rather than rejecting the request (the field is advisory for matching, not a hard gate).
 
@@ -594,7 +625,11 @@ Job is automatically embedded via `embed_job()` (pgvector) upon creation. An unr
 
 Partially update a job the caller's employer profile owns (403 if it belongs to a different employer, 404 if it doesn't exist). Only fields present in the request body are touched (`exclude_unset`). Re-embeds the job if `description` or `required_skills` changed.
 
-**Response `200`:** `{ "job_id": "uuid", "updated": ["description", "salary_max"] }`
+Editing content (`title`, `description`, `responsibilities`, salary) re-runs AutoMod — this is how a
+poster fixes a held/rejected ad ("edit & resubmit"). Setting `is_active: true` is refused with `409`
+while the job is not `published`, and with `402` when the plan's active-job limit is reached.
+
+**Response `200`:** `{ "job_id": "uuid", "updated": ["description", "salary_max"], "moderation_status": "published", "moderation_reasons": [], "notice": "Lowongan tayang." }`
 
 ### `DELETE /api/v1/employer/jobs/{job_id}`
 
@@ -612,36 +647,63 @@ Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP**) — ch
 
 ### `POST /api/v1/employer/jobs/{job_id}/candidates`
 
-Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — reverse-matching calls Gemini per request, same cost class as `/agent/invoke`). Return AI-ranked candidates for a job posting the caller's employer profile owns (403 on cross-tenant access via `_require_owned_job`). Uses `SemanticMatcher.rank_seekers_for_job` reverse ranking. Applies the *teaser method*: `full_name` is masked (e.g. `"Someone at Tokopedia"`, `"Someone from Universitas Indonesia"`, or `"Hidden Candidate"` with no usable signal) unless the candidate already applied directly to this job (`already_applied: true`), in which case their real name is shown — Pay-to-Unlock only gates candidates sourced from the wider pool, not direct applicants.
+Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — reverse-matching calls Gemini per request, same cost class as `/agent/invoke`). Return AI-ranked candidates for a job posting the caller's employer profile owns (403 on cross-tenant access via `_require_owned_job`). Uses `SemanticMatcher.rank_seekers_for_job` reverse ranking. Candidates who have **not** applied to this job are fully anonymised: `full_name` becomes `"Kandidat #N"` and the headline is blank. Only someone who applied to this very job (`already_applied: true`) is shown by name — they handed their details over voluntarily. The old `"Someone at {company}"` teaser was removed because company + school + region + experience was enough to re-identify the person elsewhere. Each row carries `skill_proof` (per required skill) and `proven_skill_count`.
 
 **Request Body (optional, `CandidateSearchRequest`):** `{ "top_k": 10, "filters": { "location": "...", "experience_min": 2 } }`
 
 ---
 
-### `POST /api/v1/employer/jobs/{job_id}/unlock/{seeker_id}`
+### `GET /api/v1/employer/applications/{application_id}/interview-kit`
 
-**[BUILT, DEMO MODE]** Unlock full contact details (name, email, phone) for a candidate. `unlock_cost_idr` is `0` if the candidate already applied directly to this job (their contact is already free/visible via `GET /employer/applications` — charging again would be double-billing for the same access), otherwise `50000`. In demo mode any `payment_token` value (including none) is accepted — there is no real payment-gateway call; a comment in `employer.py` marks where Midtrans/Xendit validation belongs. Idempotent per (employer, seeker) — re-unlocking an already-unlocked candidate returns the same contact info without re-charging.
+AI interview questions for one applicant, focused on skills that are still only *claimed*
+("explain your own answer" questions for quiz-proven ones). Falls back to deterministic
+templates when no Gemini key is configured.
 
-**Request Body (optional):**
+Requires the job to be covered by **Beacon** or **Lighthouse** — otherwise `402 Payment Required`.
+
 ```json
 {
-  "payment_token": "tok_midtrans_sandbox_123"
+  "application_id": "…",
+  "source": "template",
+  "questions": [
+    { "skill": "Administrasi", "proof": "claimed",
+      "question": "Ceritakan satu situasi nyata saat kamu memakai Administrasi. Apa yang kamu lakukan dan apa hasilnya?" }
+  ]
 }
 ```
 
-**Response `200`:**
+---
+
+### `POST /api/v1/employer/applications/{application_id}/confirm-skills`
+
+HR confirmation after the interview — the strongest proof level (weight 1.0). Only allowed once the
+application has reached `interview`, `offered`, `hired` or `rejected` (409 otherwise). Skill names
+outside the job's requirements or the candidate's profile are ignored.
+
 ```json
-{
-  "unlocked": true,
-  "seeker_id": "uuid",
-  "name": "Budi Santoso",
-  "email": "budi.santoso@example.com",
-  "phone": "+628123456789",
-  "unlock_id": "unlock_emp123_seek456",
-  "unlock_cost_idr": 50000,
-  "note": "[DEMO] Dalam produksi, verifikasi payment_token Midtrans/Xendit terlebih dahulu."
-}
+{ "skills": [ { "name": "Excel", "confirmed": true }, { "name": "Administrasi", "confirmed": false } ] }
 ```
+
+---
+
+### `GET /api/v1/employer/jobs/{job_id}/applicants.csv`
+
+CSV export (name, email, score, band, proven skills, status, source, applied date), ranked by score.
+Beacon/Lighthouse only (402 otherwise).
+
+---
+
+### `POST /api/v1/employer/jobs/{job_id}/appeal`
+
+Appeal a held/rejected posting: `{ "message": "…" }` (10–2000 chars). A rejected job moves back to
+`held` for admin review and the appeal is written to the moderation audit log.
+
+---
+
+### `GET /api/v1/employer/trust` · `POST /api/v1/employer/trust/review-request`
+
+Trust badges (`email_verified`, `company_email`, `admin_reviewed`), strike state, and the
+"Ditinjau admin" request (1–5 public `links`, e.g. Google Maps or Instagram business).
 
 ---
 
@@ -649,7 +711,28 @@ Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — rev
 
 List applications submitted to jobs the caller's employer profile owns (excludes `saved`/bookmark-only rows). Optional `?job_id=<job_id>` filters to one posting (ignored if it isn't one of the caller's own jobs).
 
-**Response `200`:** `{ "total": N, "items": [ { "id", "application_id", "job_id", "job_title", "seeker_id", "seeker_name", "seeker_email", "seeker_phone", "headline", "skills", "status", "note", "cover_letter", "match_score", "applied_at", "updated_at" } ] }`
+Applicants are ranked by a **live** proof-weighted match score (a candidate who passes a quiz after
+applying moves up). On the free **Spark** tier only the first `SPARK_RANKED_APPLICANT_LIMIT` (default
+20) applicants per job are ranked and shown; the rest come back as `locked: true` with no score or
+personal data until the job is covered by Beacon/Lighthouse.
+
+**Response `200`:**
+```json
+{ "total": 2, "ranked_limit": 20,
+  "items": [
+    { "id": "…", "application_id": "…", "job_id": "…", "job_title": "Admin & Customer Service",
+      "seeker_id": "…", "seeker_name": "Rina Paramitha", "seeker_email": "rina@example.com",
+      "email_verified": true, "headline": "Lulusan SMK Akuntansi",
+      "skills": ["Excel", "Customer Service"],
+      "skill_proof": [ { "name": "Excel", "status": "quiz" }, { "name": "Administrasi", "status": "claimed" } ],
+      "band": "possible", "match_score": 0.61, "match_score_at_apply": 0.52,
+      "status": "applied", "source": "link", "note": "", "cover_letter": "",
+      "applied_at": "2026-09-20 09:12", "updated_at": "2026-09-20 09:12", "locked": false },
+    { "id": "…", "application_id": "…", "job_id": "…", "seeker_name": "Pelamar terkunci",
+      "locked": true, "match_score": null,
+      "lock_reason": "Paket Spark memeringkat 20 pelamar pertama. …" }
+  ] }
+```
 
 ### `PATCH /api/v1/employer/applications/{application_id}/status`
 
@@ -659,150 +742,136 @@ Move an application through the recruitment pipeline. Status transitions are che
 
 **Response `200`:** `{ "id", "application_id", "status", "note", "updated_at" }`
 
+Every status change is also written to `application_status_events` (from, to, match score at apply
+time), which is what `GET /admin/metrics` uses to report the interview rate per score band.
+
 **Errors:** `404` application not found · `403` not the owning employer · `400` unrecognized status string · `409` transition not allowed from the current status.
 
 ---
 
 ## Verification Router — `/api/v1/verify`
 
-**[BUILT, DEMO MODE]** All endpoints below require authentication (`Depends(get_current_user)`) — none are public. Rate limits: `/identity` **10 req/60s per IP**, `/otp/send` **5 req/60s per IP** (kept tight — this is the one endpoint that would cost real money once a real SMS/WhatsApp vendor is wired in), `/otp/verify` **10 req/60s per IP** (a brute-force guard layered on top of the per-record `_OTP_MAX_ATTEMPTS = 5` counter). `/education`, `/npwp`, `/documents` share the 300 req/60s default bucket.
+Email verification is the **only** identity check the platform performs. NIK/KTP, ijazah numbers and
+NPWP are **not collected at all** (UU PDP data minimisation) — the employer checks identity documents
+at the interview. The former `/verify/identity`, `/verify/education`, `/verify/npwp`,
+`/verify/documents` and `/verify/otp/*` endpoints were removed in v2.
 
-### `GET /api/v1/verify/documents`
-
-Return the current user's verified documents registry.
+### `GET /api/v1/verify/status`
 
 ```json
-{
-  "encryption": "AES-256-GCM",
-  "region": "id-jakarta",
-  "compliance": ["UU-PDP-2022", "ISO-27001"],
-  "documents": []
-}
+{ "email": "rina@example.com", "email_verified": true }
 ```
 
 ---
 
-### `POST /api/v1/verify/identity`
+### `POST /api/v1/verify/email/send`
 
-Mock Dukcapil E-KYC — a NIK *format* check (16 digits, not a "99"-prefixed
-demo-fail value), not a real identity confirmation. A passing check
-persists `nik_verified: "pending"` to the seeker's profile — never
-`"verified"`, which is reserved for a real Dukcapil integration this build
-doesn't have. `PENDING` is still durable: it survives a reload or a login
-from another browser/device.
+Rate limit: **5 / 60 s**. Sends a 6-digit code (valid 10 minutes) to the account's own email via
+Resend when `RESEND_API_KEY` is configured. Without a provider the endpoint only works while OTP demo
+mode is on (never in production by default) and returns the code in `demo_code`; otherwise it fails
+closed with `503`.
 
-**Request:**
 ```json
-{
-  "nik": "3171010101010001",
-  "full_name": "Budi Santoso",
-  "date_of_birth": "1995-01-01",
-  "selfie_image_base64": null
-}
-```
-
-**Response `200`:**
-```json
-{
-  "request_id": "uuid",
-  "status": "PENDING",
-  "match_percentage": 0.97,
-  "verification_hash": "sha256:...",
-  "pii_redacted": true,
-  "message": "Format NIK diterima — menunggu verifikasi resmi (mode demo, bukan konfirmasi identitas)."
-}
-```
-`status` is `"FAILED"` (NIK prefixed "99" — the demo fail rule) when the check rejects it.
-
----
-
-### `POST /api/v1/verify/education`
-
-Mock SIVIL Kemdikbud diploma-number format check — the mirror of
-`/verify/identity` above, including the PENDING-not-VERIFIED persistence
-(`ijazah_verified`) for the same reason.
-
-**Request:** `{ "ijazah_number": "...", "university_name": "...", "major": "..." }`
-
-**Response `200`:**
-```json
-{
-  "request_id": "uuid",
-  "status": "PENDING",
-  "message": "Format nomor ijazah diterima — menunggu verifikasi resmi (mode demo).",
-  "verified_data": {
-    "university": "Universitas Indonesia",
-    "major": "Ilmu Komputer",
-    "graduation_year": "2023",
-    "degree": "S1",
-    "status": "Lulus"
-  }
-}
-```
-`status` is `"NOT_FOUND"` for an obviously-placeholder number (e.g. `"000000"`, `"test"`).
-
----
-
-### `POST /api/v1/verify/npwp`
-
-Verify company NPWP via mock DJP Online.
-
-**Request:** `{ "npwp": "12.345.678.9-012.000", "company_name": "PT Contoh" }`
-
-**Response `200`:**
-```json
-{
-  "request_id": "uuid",
-  "status": "VERIFIED",
-  "message": "NPWP terverifikasi di DJP Online (mode demo).",
-  "verified_data": {
-    "npwp": "12.345.678.9-012.000",
-    "company_name": "PT Contoh",
-    "status": "AKTIF",
-    "valid_until": "2027-12-31"
-  }
-}
+{ "request_id": "…", "status": "SENT", "email": "rina@example.com",
+  "expires_in_seconds": 600, "mode": "email" }
 ```
 
 ---
 
-### `POST /api/v1/verify/otp/send`
+### `POST /api/v1/verify/email/verify`
 
-Generate and dispatch a 6-digit OTP for phone/contact verification. In demo mode, `demo_code` is returned in response for testing without third-party vendor expenses. In production, dispatched via Fonnte (WhatsApp Gateway) or Twilio Verify.
-
-**Request:** `{ "phone": "+6281234567890" }`
-
-**Response `200`:**
-```json
-{
-  "request_id": "uuid",
-  "status": "SENT",
-  "phone": "+6281234567890",
-  "expires_in_seconds": 300,
-  "demo_code": "123456",
-  "message": "[DEMO MODE] Kode OTP: 123456. Dalam produksi kode akan dikirim via WhatsApp/SMS."
-}
-```
+Rate limit: **10 / 60 s**. Body `{ "code": "123456" }`. Max 5 attempts per code; codes are stored as
+SHA-256 hashes only. `400` wrong code (with attempts left), `410` expired, `429` too many attempts.
 
 ---
 
-### `POST /api/v1/verify/otp/verify`
+## Quiz Router — `/api/v1/quiz` (seeker only)
 
-Validate the submitted 6-digit OTP code against the active session.
+Rate limit: **30 / 60 s** across the router, so the question bank cannot be scraped.
 
-**Request:** `{ "phone": "+6281234567890", "code": "123456" }`
+### `GET /api/v1/quiz/skills?job_id=…`
 
-**Response `200`:**
+Skills with an available quiz plus this seeker's proof status
+(`claimed` / `quiz` / `hr_confirmed` / `missing`).
+
+### `POST /api/v1/quiz/start`
+
+Body `{ "skill": "Excel" }`. Returns 5 randomly drawn questions with per-attempt shuffled options and
+a server-side deadline (45 s per question). **Correct answers are never included.** An unsubmitted
+attempt within its deadline is resumed instead of drawing new questions. `404` if no bank exists for
+the skill; `429` while a retake cooldown is active (7 days, or 2 with Prism).
+
 ```json
-{
-  "request_id": "uuid",
-  "status": "VERIFIED",
-  "phone": "+6281234567890",
-  "message": "Nomor HP berhasil diverifikasi."
-}
+{ "attempt_id": "…", "skill": "excel", "skill_label": "Excel",
+  "deadline_at": "2026-09-20T09:15:00Z", "seconds_per_question": 45, "pass_mark": 4,
+  "resumed": false, "draft_bank": true,
+  "questions": [ { "id": "…", "question": "…", "options": ["…", "…", "…", "…"] } ] }
 ```
 
-**Errors:** `404` no pending OTP for this phone (send one first) · `410` OTP expired (5-minute TTL; the record is deleted) · `429` more than 5 verify attempts against this OTP record (also deletes it) · `400` wrong code (remaining-attempts count included in the message).
+### `POST /api/v1/quiz/submit`
+
+Body `{ "attempt_id": "…", "answers": [0,3,1,2,0] }`. Graded server-side against the answer key (no AI
+call). Passing (4/5) sets that skill's proof level to `quiz` for 180 days and records evidence.
+Returns which answers were right — never which option was correct.
+
+---
+
+## Public Jobs Router — `/api/v1/public/jobs`
+
+The shareable job link / QR surface. Rate limit: **60 / 60 s**.
+
+### `GET /api/v1/public/jobs/{code}`
+
+Public job page data (no login): job fields, company name, location, employer trust badges,
+`accepting_applications`, `share_path`, and the report reason list. Internal fields (`embedding`,
+`client_ref`, moderation reasons) are never exposed.
+
+### `GET /api/v1/public/jobs/{code}/qr.svg?origin=…`
+
+Printable QR poster image (SVG, rendered server-side with `segno`). `origin` is honoured only when it
+is in the CORS allow-list, so a QR can never be pointed at another site.
+
+### `POST /api/v1/public/jobs/{code}/report`
+
+Login required; one report per user per job. Body `{ "reason": "minta_biaya|palsu|diskriminatif|kontak_mencurigakan|lainnya", "detail": "…" }`.
+Once `MODERATION_REPORT_THRESHOLD` distinct unresolved reports exist, the job is hidden for admin review.
+
+---
+
+## Billing Router — `/api/v1/billing`
+
+Manual payment until a gateway is live. Rate limit: **20 / 60 s**.
+
+### `GET /api/v1/billing/plans`
+
+Public catalogue: Spark / Beacon / Lighthouse (employer) and Free / Prism (seeker), with prices from
+settings and the payment instructions text.
+
+### `GET /api/v1/billing/me`
+
+Current entitlements (`lighthouse_until`, `beacon_jobs`, `prism_until`) and recent orders.
+
+### `POST /api/v1/billing/orders`
+
+Body `{ "plan": "beacon|lighthouse|prism", "job_id": "…" }` (`job_id` required for Beacon, and must be
+a job the caller owns). Creates a **pending** order and returns an order code + payment instructions.
+An admin activates it for 30 days after checking the QRIS / transfer.
+
+---
+
+## Admin Router — `/api/v1/admin`
+
+Only for accounts whose email is in `ADMIN_EMAILS`, and only while `ADMIN_ROUTES_ENABLED=true`;
+everyone else gets `403`.
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /admin/moderation/queue` | Held jobs with AutoMod reasons, reports and appeal notes |
+| `POST /admin/moderation/jobs/{job_id}` | `{ "decision": "publish\|reject", "note": "…" }` — reject adds a strike |
+| `GET /admin/employer-reviews` · `POST /admin/employer-reviews/{employer_id}` | "Ditinjau admin" badge requests / decision |
+| `GET /admin/orders?status_filter=pending` · `POST /admin/orders/{id}/activate` · `POST /admin/orders/{id}/cancel` | Manual payment activation |
+| `GET /admin/questions` · `POST /admin/questions/{id}` | Quiz bank review (`reviewed`, `active`) |
+| `GET /admin/metrics` | AI cost per action (from `ai_logs` tokens × Gemini price × USD/IDR), applications by source, interview rate per score band, quiz pass rates, plan revenue, moderation counts |
 
 ---
 

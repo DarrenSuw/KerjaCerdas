@@ -49,7 +49,6 @@ Registry: in-code `EXPERIMENTS` dict, currently 5 experiments:
 | `onboarding_flow` | `cv_first` vs `skill_wizard` | 50/50 |
 | `band_legend_default` | `collapsed` vs `open` | 50/50 |
 | `stretch_band_copy` | `challenge_framing` vs `goal_framing` | 50/50 |
-| `unlock_cta_copy` | `buka_kontak` vs `hubungi_kandidat` | 50/50 |
 | `profile_completeness_nudge` | `progress_bar` vs `tooltip_nudge` | 50/50 |
 
 `GET /api/v1/experiments/assignments` returns all active assignments for the current user (or `"anonymous"`) in one call; the frontend branches on them and stamps `ab_variant` onto every tracked event. A second endpoint, `GET /api/v1/experiments/list`, returns the raw experiment definitions (variants/allocation/description) for admin/debug tooling — no `admin_routes_enabled` gate on this one, unlike `/inquiries`.

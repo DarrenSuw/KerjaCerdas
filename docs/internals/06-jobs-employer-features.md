@@ -20,8 +20,29 @@ Files:
 | `PATCH /employer/jobs/{id}` | update; **re-embeds only if `description` or `required_skills` changed** — cosmetic edits (salary, title tweaks) skip the Gemini call |
 | `DELETE /employer/jobs/{id}` | remove listing |
 | `POST /employer/jobs/estimate` | **live pool preview while composing a job**: cheap heuristic (skill overlap + location, no embeddings, no LLM) estimating how many seekers would match. UX: employer sees "≈14 kandidat" update as they type requirements |
-| `POST /employer/jobs/{id}/candidates` | reverse matching — full ranking of seekers for this job, banded, shuffled within band, **numeric score never shown** (see `01-matching-algorithm.md` §3). Ownership-checked (`_require_owned_job`) so employer B cannot query employer A's posting. Every candidate who did **not** apply directly to the job is redacted before payment: `full_name` is replaced with a teaser like `"Someone at {company}"` / `"Someone from {institution}"` / `"Someone in region {code}"` (falls back to `"Hidden Candidate"`), derived from the seeker's most recent experience/education/region in that priority order. |
-| `POST /employer/jobs/{job_id}/unlock/{seeker_id}` | **Pay-to-Unlock (demo mode).** Returns the candidate's real name/email/phone. `payment_token` is accepted in the request body but never validated against anything — any value (including none) succeeds; a code comment marks Midtrans/Xendit integration as the intended production path. Unlocks are tracked in an **in-process, non-persisted** `_UNLOCKED_CONTACTS: dict[employer_id, set[seeker_id]]` — they reset on every server restart and don't survive a multi-instance deployment, unlike everything else in this router (which goes through `postgres_store`). Idempotent within a process: unlocking twice doesn't charge twice. `unlock_cost_idr` is `0` if the candidate already applied directly to this job (their contact is already free via `GET /employer/applications`), else `50000` — matching the CLAUDE.md Pay-to-Unlock price point. **[BUILT, DEMO MODE]** |
+| `POST /employer/jobs/{id}/candidates` | reverse matching — ranking of seekers for this job, banded, shuffled within band, **numeric score never shown** (see `01-matching-algorithm.md` §3). Ownership-checked (`_require_owned_job`). Candidates who did **not** apply to this job are **fully anonymised**: `full_name` becomes `"Kandidat #N"` and the headline is blanked. The old `"Someone at {company}"` teaser was removed — company/school plus region and experience was enough to re-identify the person on LinkedIn, which is exactly what the paywall was supposed to prevent. Each row also carries `skill_proof` and `proven_skill_count`. |
+| `GET /employer/applications` | applicants for the caller's jobs, ranked by a **live** proof-weighted score (`matcher.score_pair`), each with `skill_proof`, `band`, `match_score_at_apply`, `source` and `email_verified`. On the free Spark tier only the first `SPARK_RANKED_APPLICANT_LIMIT` (20) applicants per job are ranked/shown; the rest return `locked: true` with no personal data. |
+| `GET /employer/applications/{id}/interview-kit` | AI questions aimed at skills that are still only claimed, with a deterministic template fallback. Beacon/Lighthouse only (402 otherwise). |
+| `POST /employer/applications/{id}/confirm-skills` | HR ticks "terbukti" after the interview → proof level 1.0 on the candidate's profile + a `skill_evidence` row. Requires the application to be at `interview` or later (409 otherwise); skill names outside the job/candidate are ignored. |
+| `GET /employer/jobs/{id}/applicants.csv` | ranked CSV export. Beacon/Lighthouse only. |
+| `POST /employer/jobs/{id}/appeal` | appeal a held/rejected posting; a rejected job returns to `held` for admin review. |
+| `GET/POST /employer/trust*` | trust badges, strike state, and the "Ditinjau admin" request. |
+
+**Pay-to-Unlock was removed in v2** (endpoint, in-process `_UNLOCKED_CONTACTS` map, schema and UI).
+It charged for sourcing rather than the screening pain employers actually reported, leaked through the
+teaser, carried UU PDP risk, and had no payment gateway behind it. Employers now pay per job (Beacon)
+or per month (Lighthouse) to rank every applicant — never for contact details. See
+[BUSINESS_MODEL.md](../BUSINESS_MODEL.md).
+
+## Moderation & share links
+
+- Every `POST`/content-`PATCH` on a job runs AutoMod (`services/trust/`), which sets
+  `moderation_status` (`published` / `held` / `rejected`) plus `moderation_reasons`, and keeps
+  non-published jobs inactive. The response carries a ready-to-show `notice` for the poster.
+- `public_code` gives each job a `/j/<code>` page and a server-rendered QR poster
+  (`GET /api/v1/public/jobs/{code}/qr.svg`, `segno`). Codes are backfilled at startup for older rows.
+- Plan limits live in `services/billing/plans.py`: Spark 1 active job, Lighthouse 5, plus any
+  Beacon-covered job; a second strike also caps the employer at one active job for 30 days.
 
 ## Job Pack Bulk Upload (`backend/app/api/routers/uploads.py`)
 
