@@ -290,7 +290,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, soal acak, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
-| Kualitas kode? | Unit test, lint backend, dan build frontend **menggugurkan** build kalau merah. Integration test (migrasi ke PostgreSQL asli) berjalan tapi **non-gating** — dan justru itu yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun. ESLint frontend **belum** dikonfigurasi. |
+| Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun — dulu non-gating, sekarang tidak lagi. ESLint baru lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
 
 ### Angka yang boleh disebut, dan sumbernya
 
