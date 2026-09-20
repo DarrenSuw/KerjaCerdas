@@ -6,7 +6,9 @@ Adds
   jobs.public_code/moderation_status/moderation_reasons   share link + AutoMod
   applications.skill_snapshot/source                      outcome data
   tables: skill_questions, quiz_attempts, skill_evidence, job_reports,
-          moderation_events, plan_orders, application_status_events
+          moderation_events, plan_orders, application_status_events,
+          otps + query_embeddings (never created by any earlier migration —
+          they only ever existed via the app's startup create_all())
 Renames
   otps.phone -> otps.destination (now an email address, VARCHAR(255))
 Drops (UU PDP data minimisation — identity documents are no longer collected)
@@ -130,6 +132,30 @@ def _new_tables() -> dict:
             sa.Column("expires_at", sa.DateTime(timezone=True), nullable=True),
             *_ts(),
         ],
+        # Neither of the next two tables was created by ANY migration — they
+        # existed only because the app's startup create_all() made them. On a
+        # database built purely from migrations (CI, and any real deployment
+        # that migrates before first boot) they were simply absent: email OTP
+        # verification had nowhere to write, and the persistent query-embedding
+        # cache silently degraded to a miss on every lookup. Created here with
+        # the post-v2 column names, so the rename below is a no-op for them.
+        "otps": [
+            sa.Column("id", sa.String(36), primary_key=True),
+            sa.Column("user_id", sa.String(36), index=True, nullable=False),
+            sa.Column("destination", sa.String(255), index=True, nullable=False),
+            sa.Column("code_hash", sa.String(64), nullable=False),
+            sa.Column("expires_at", sa.DateTime(timezone=True), index=True, nullable=False),
+            sa.Column("attempts", sa.Integer(), server_default="0", nullable=False),
+            sa.Column("verified", sa.Boolean(), server_default=sa.false(), nullable=False),
+            *_ts(),
+        ],
+        "query_embeddings": [
+            sa.Column("cache_key", sa.String(64), primary_key=True),
+            sa.Column("model", sa.String(100), nullable=False),
+            sa.Column("embedding", sa.JSON(), nullable=False),
+            sa.Column("created_at", sa.DateTime(timezone=True),
+                      server_default=sa.text("now()"), index=True),
+        ],
         "application_status_events": [
             sa.Column("id", sa.String(36), primary_key=True),
             sa.Column("application_id", sa.String(36), index=True),
@@ -147,6 +173,8 @@ def upgrade() -> None:
     insp = sa.inspect(bind)
 
     for table, columns in _NEW_COLUMNS.items():
+        if not insp.has_table(table):
+            continue
         existing = {c["name"] for c in insp.get_columns(table)}
         for col in columns:
             if col.name not in existing:
@@ -158,7 +186,8 @@ def upgrade() -> None:
     if "ix_plan_orders_user_status" not in {i["name"] for i in sa.inspect(bind).get_indexes("plan_orders")}:
         op.create_index("ix_plan_orders_user_status", "plan_orders", ["user_id", "status"])
 
-    otp_cols = {c["name"] for c in insp.get_columns("otps")}
+    otp_insp = sa.inspect(bind)  # fresh: otps may have been created just above
+    otp_cols = {c["name"] for c in otp_insp.get_columns("otps")} if otp_insp.has_table("otps") else set()
     if "phone" in otp_cols and "destination" not in otp_cols:
         op.alter_column("otps", "phone", new_column_name="destination",
                         type_=sa.String(255), existing_type=sa.String(30))
@@ -176,6 +205,8 @@ def upgrade() -> None:
         op.create_index("ix_jobs_public_code", "jobs", ["public_code"], unique=True)
 
     for table, cols in _DROPPED.items():
+        if not sa.inspect(bind).has_table(table):
+            continue
         existing = {c["name"] for c in sa.inspect(bind).get_columns(table)}
         for col in cols:
             if col in existing:

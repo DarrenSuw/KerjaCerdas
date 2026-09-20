@@ -171,3 +171,38 @@ class TestStatusEventOrdering:
         app_write = body.index("await repos.applications.upsert(app)")
         event_write = body.index("await repos.status_events.upsert(pending_event)")
         assert app_write < event_write, "history event must not be written before the status"
+
+
+class TestMigrationsCoverEveryTable:
+    """Every ORM table must be created by some migration.
+
+    `otps` and `query_embeddings` were defined in models.py but created by no
+    revision — they existed only because the app's startup create_all() made
+    them. A database built purely from migrations (CI, and any deployment that
+    migrates before first boot) therefore had no table to write email OTPs to,
+    and the v2 revision crashed with NoSuchTableError inspecting `otps`.
+    """
+
+    def test_no_orm_table_is_missing_from_the_migrations(self) -> None:
+        import re
+        from pathlib import Path
+
+        from backend.app.db import models_proof  # noqa: F401 — registers v2 tables
+        from backend.app.db.models import Base
+
+        created: set[str] = set()
+        for path in (Path(__file__).resolve().parents[2] / "alembic/versions").glob("*.py"):
+            src = path.read_text(encoding="utf-8")
+            created |= set(re.findall(r'op\.create_table\(\s*[\'"]([a-z_]+)[\'"]', src))
+            created |= set(re.findall(r"CREATE TABLE IF NOT EXISTS ([a-z_]+)", src))
+            # The v2 revision builds its tables from a {name: columns} mapping.
+            if "def _new_tables" in src:
+                block = src[src.index("def _new_tables"):src.index("def upgrade")]
+                created |= set(re.findall(r'^\s{8}"([a-z_]+)":', block, re.M))
+
+        missing = sorted(set(Base.metadata.tables) - created)
+        assert not missing, (
+            f"ORM tables created by no migration: {missing}. A migration-built "
+            "database will not have them — create_all() at startup is not a "
+            "migration path (see CLAUDE.md)."
+        )
