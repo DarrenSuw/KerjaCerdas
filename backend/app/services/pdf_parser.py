@@ -247,31 +247,49 @@ def _extract_json(text: str) -> dict[str, Any]:
 _MIN_TEXT_FOR_REDACTED_PATH = 200
 
 
-def _llm_contents(types, pdf_bytes: bytes) -> list:
+class ScannedPdfError(Exception):
+    """Raised when a PDF has no text layer, so its contents cannot be redacted.
+
+    Deliberately not a soft fallback: we would rather refuse the upload and ask
+    for manual entry than send an un-redactable image of someone's CV to a
+    third-party model.
+    """
+
+
+def _llm_contents(types, pdf_bytes: bytes, _text_override: str | None = None) -> list:
     """What is actually sent to Gemini for a PDF.
 
-    Text-based PDFs (the normal case) are converted to text locally and
-    PII-redacted (email / phone / NIK) before leaving the server. Only
-    image-only / scanned PDFs, where no text can be extracted locally, are sent
-    as the PDF itself — the task prompt still instructs the model not to
-    output contact data, and the stored resume_text is redacted afterwards.
+    A PDF is converted to text locally and PII-redacted (email / phone / NIK)
+    before anything leaves the server. Raw PDF bytes are never sent.
 
-    HONEST LIMIT: for a scanned CV (little or no extractable text) the raw PDF
-    bytes go to Gemini unredacted, because there is no text layer to run the
-    regex over. Redaction protects what we STORE and what we send as text; it
-    cannot protect an image of a CV. Do not claim otherwise in a pitch.
+    `_text_override` exists only so tests can drive both branches without
+    building real scanned and text-layer PDFs.
+
+    A PDF with no usable text layer (a scan or a photo) raises ScannedPdfError
+    instead of being sent. There is nothing to run the regex over, so the only
+    way to send it would be unredacted — and an image of a CV carries the same
+    phone number and e-mail the regex exists to strip. Leaving it to the prompt
+    to suppress them is exactly the "prompt-based redaction can fail" hole the
+    judges pointed at. The caller falls back to manual entry instead.
     """
     from backend.app.services.privacy.redact import redact_text
 
     instruction = "Ekstrak data terstruktur sesuai schema di task prompt. Kembalikan JSON saja."
-    try:
-        text = _pdf_to_text(pdf_bytes, max_chars=20000)
-    except Exception:  # noqa: BLE001 — fall through to the PDF path
-        text = ""
-    if len(text.strip()) >= _MIN_TEXT_FOR_REDACTED_PATH:
-        header = "Isi dokumen (data kontak sudah disamarkan):"
-        return [f"{header}\n\n{redact_text(text)}", instruction]
-    return [types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"), instruction]
+    if _text_override is not None:
+        text = _text_override
+    else:
+        try:
+            text = _pdf_to_text(pdf_bytes, max_chars=20000)
+        except Exception:  # noqa: BLE001 — treated the same as an empty text layer
+            text = ""
+    if len(text.strip()) < _MIN_TEXT_FOR_REDACTED_PATH:
+        raise ScannedPdfError(
+            "PDF ini tidak punya lapisan teks yang bisa dibaca (hasil pindai atau foto), "
+            "jadi data kontak di dalamnya tidak bisa kami samarkan sebelum dikirim ke AI. "
+            "Silakan unggah PDF teks, atau isi profil singkat secara manual."
+        )
+    header = "Isi dokumen (data kontak sudah disamarkan):"
+    return [f"{header}\n\n{redact_text(text)}", instruction]
 
 
 async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]:

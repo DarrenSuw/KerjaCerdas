@@ -214,8 +214,8 @@ kami menulis "belum ada data", bukan 0%.*
 
 **Stat besar:** `88%` — margin kotor per Beacon **pada 30 pelamar**
 *Caption:* asumsi pemakaian tipikal 30 pelamar / 5 dishortlist, buffer ×1,5, sudah termasuk biaya
-QRIS. Turun ke **68% pada 100 pelamar**. Kuis dan skor **tidak memanggil AI sama sekali** — itu yang
-menahan biaya.*
+QRIS. Turun ke **70% pada 100 pelamar** selagi kolam kandidat masih baru, lalu pulih karena baca CV
+dibayar sekali per kandidat — bukan per lamaran. Kuis dan skor **tidak memanggil AI sama sekali**.*
 
 Garis tebal (15 px, Ink):
 **Membayar tidak pernah menaikkan skor atau peringkat siapa pun.**
@@ -298,7 +298,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
 | Margin 88% itu dari mana? | Dari **asumsi** pemakaian 30 pelamar / 5 dishortlist dengan buffer ×1,5, bukan dari pengukuran pelanggan nyata — kami belum punya pelanggan. Yang **terukur** adalah biaya per aksi di `/admin → Metrik`, dihitung dari token asli di `ai_logs`. |
-| Kalau lowongannya viral, 200 pelamar? | Margin turun: **88% (30 pelamar) → 80% (60) → 68% (100) → 39% (200)**. Beacon tidak membatasi jumlah pelamar, jadi ini risiko nyata dan kami sudah menghitungnya. Penahannya: biaya AI per CV hanya dibayar **sekali per kandidat** seumur hidup akun, bukan per lamaran — pelamar yang sudah pernah dibaca CV-nya tidak menambah biaya di lowongan berikutnya. |
+| Kalau lowongannya viral, 200 pelamar? | Margin turun **di bulan-bulan awal**: 88% (30 pelamar) → 70% (100) → **42% (200)** selama separuh pelamar masih kandidat baru. Tapi dua biaya utama — baca CV (~Rp99) dan email OTP — dibayar **sekali per kandidat seumur akun, bukan per lamaran**. Begitu kolam kandidat matang dan hanya ~10% yang baru, margin pada 200 pelamar kembali ke **86%**. Jadi ini risiko cold-start yang mengecil sendiri, bukan kebocoran struktural — dan biaya sungguhannya terpantau di `/admin → Metrik`. |
 | Kuis/skor benar tidak pakai AI? | Benar. Kuis dinilai dengan kunci jawaban di server, skor dihitung dari vektor tersimpan. Rp0 per percobaan, dan itu sebabnya margin bertahan saat pemakaian naik. |
 | Penyamaran data gagal untuk CV pindai? | Ya, dan kami menyebutnya di slide. CV pindai tidak punya lapisan teks untuk disamarkan, jadi PDF-nya dikirim utuh ke Gemini. Yang kami jamin: teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
 | Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun — dulu non-gating, sekarang tidak lagi. ESLint baru lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |

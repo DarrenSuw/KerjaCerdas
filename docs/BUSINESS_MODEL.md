@@ -50,11 +50,24 @@ Harga Gemini API [S3]; `gemini-3.1-flash-lite` tidak ada di daftar harga publik 
 | Pertanyaan wawancara / kandidat | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
 | Analisis skill gap | 2.5 Flash-Lite (tier gratis) | 4k / 1,5k | ~Rp23 |
 | 1 pesan advisor | 2.5 Flash-Lite / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 / ~Rp38 |
-| 1 email (OTP, notifikasi) | Resend Pro $20/50.000 [S4] | — | ~Rp7 |
+| 1 email (OTP verifikasi) | Resend — **gratis sampai 3.000/bln**, lalu Pro $20/50.000 [S4] | — | **Rp0** di tier gratis; ~Rp7 setelahnya |
 
 Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadangan.
 
 ### Kontribusi per penjualan (asumsi pemakaian tipikal: 30 pelamar, 5 dishortlist)
+
+> **Dua hal yang menentukan biaya, dan keduanya dibayar SEKALI PER KANDIDAT — bukan per lamaran:**
+>
+> 1. **Baca CV + embedding (~Rp99)** — dilakukan saat kandidat mengunggah CV. Kandidat yang sama
+>    melamar ke 10 lowongan tidak menambah biaya apa pun di 9 lowongan berikutnya.
+> 2. **Email OTP (~Rp7, atau Rp0 di tier gratis Resend)** — dikirim saat kandidat memverifikasi
+>    email akunnya, sekali seumur akun. Bukan per lamaran, dan bukan per lowongan.
+>
+> Karena itu biaya marginal per lowongan **turun** seiring kolam kandidat matang. Tabel di bawah
+> memakai asumsi konservatif "separuh pelamar adalah kandidat baru" (kondisi awal). Margin Beacon
+> pada 200 pelamar: **42%** bila separuh kandidat baru (bulan-bulan awal), **86%** bila hanya 10%
+> yang baru (kolam matang). Beacon tidak membatasi jumlah pelamar — risiko ini nyata di awal dan
+> mengecil dengan sendirinya, dan biaya sungguhannya terpantau di `/admin → Metrik`.
 
 | Item | Harga | COGS | **Kontribusi** | Margin |
 |---|---|---|---|---|

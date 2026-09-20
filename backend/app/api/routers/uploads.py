@@ -25,7 +25,7 @@ from backend.app.db.schemas import (
 )
 from backend.app.services.matching.evidence import carry_proof
 from backend.app.services.matching.matcher import SemanticMatcher
-from backend.app.services.pdf_parser import parse_cv, parse_job_pack
+from backend.app.services.pdf_parser import ScannedPdfError, parse_cv, parse_job_pack
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 router = APIRouter(prefix="/uploads", tags=["uploads"])
@@ -82,7 +82,17 @@ async def upload_cv(
     if not blob.startswith(b"%PDF-"):
         raise HTTPException(400, "Invalid PDF file: Missing %PDF- header signature")
 
-    parsed = await parse_cv(blob)
+    try:
+        parsed = await parse_cv(blob)
+    except ScannedPdfError as exc:
+        # We refuse rather than send an un-redactable image of a CV to Gemini.
+        # 422, not 500: the upload is understood and legitimate, the file just
+        # cannot be processed under our own privacy rule. The client offers the
+        # quick-profile form instead, so the seeker is never dead-ended.
+        raise HTTPException(
+            422,
+            detail={"error": "scanned_pdf", "message": str(exc), "use_manual_form": True},
+        ) from exc
 
     # Guard: if the parser fell back to offline/demo data and the client
     # hasn't explicitly acknowledged, return a preview payload instead of
