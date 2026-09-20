@@ -23,7 +23,7 @@ kata kunci, satu yang sudah lulus kuis — inilah perbandingan yang jadi inti de
 
 ### 1.2 — Kuis skill (±3 menit, boleh dipercepat di demo)
 - **Aksi:** klik **Ikut kuis** pada skill *Excel* (atau skill apapun). 5 soal skenario, timer berjalan.
-- **Yang ditunjukkan:** jika skill belum ada di bank soal, AI membuatkannya secara *real-time* (ditebus 1x biaya AI). Soal dan urutan pilihan diacak per percobaan; jawaban dinilai di server dengan kunci jawaban (penilaian tanpa panggilan AI, jadi Rp0 per percobaan). Lulus 4/5 → badge **✓ Terbukti** berlaku 6 bulan dan berlaku di semua lowongan, bukan hanya lowongan ini.
+- **Yang ditunjukkan:** jika skill belum ada di bank soal, AI menyusun draf soalnya **sekali** dan mengantrikannya untuk ditinjau admin — soal draf tidak pernah langsung diujikan, dan skill itu tetap berstatus *klaim* sampai disetujui. Soal dan urutan pilihan diacak per percobaan; jawaban dinilai di server dengan kunci jawaban (penilaian tanpa panggilan AI, jadi Rp0 per percobaan). Lulus 4/5 → badge **✓ Terbukti** berlaku 6 bulan dan berlaku di semua lowongan, bukan hanya lowongan ini.
 
 ### 1.3 — Peringkat berubah di sisi HR
 - **Aksi:** pindah ke akun employer → **Kandidat → Pelamar**. Pelamar yang baru lulus kuis berada di
