@@ -62,8 +62,16 @@ jobs:
         env:
           NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
-      - name: ESLint
-        run: cd frontend && npm run lint --if-present || true
+      # NOTE: there is deliberately no ESLint step. The previous one ran
+      # `npm run lint --if-present || true` against a repo with no eslint
+      # config, no eslint dependency and no lint script — `--if-present` exits
+      # 0 on a missing script, so it always passed without linting anything.
+      # A green check that verifies nothing is worse than no check. Configuring
+      # ESLint across the frontend is tracked separately; until then this job
+      # claims only what it actually does.
+
+      - name: Vitest (unit)
+        run: cd frontend && npm test
 
       - name: Vite build check (validates all imports and bundling)
         run: cd frontend && npm run build

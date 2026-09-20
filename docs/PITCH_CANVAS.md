@@ -70,7 +70,16 @@ menyalin kalimat iklan — itu persis yang dilakukan penumpuk kata kunci. Dengan
 kata kunci butuh keunggulan kemiripan **0,63** untuk mengalahkan kandidat yang membuktikan semua
 skill — di luar rentang yang bisa dicapai kemiripan pada pasangan CV–lowongan nyata.
 
-**Sudah dibangun & diuji:** 540 tes backend + 39 tes frontend lolos, lint bersih.
+**Sudah dibangun & diuji:** seluruh suite backend dan frontend dijalankan di CI tiap push —
+`Backend · Unit Tests`, `Backend · Integration Tests` (termasuk migrasi Alembic terhadap
+PostgreSQL asli), `Backend · Lint & Audit`, dan `Frontend · Lint & Build` (isinya: tes unit Vitest + build). **Angka pastinya
+jangan dihafal — buka tab Checks di PR terakhir dan tunjukkan centang hijaunya.**
+
+Reproduksi lokal: `cd backend && python -m pytest tests/ -q` · `cd frontend && npm test`.
+
+> **Kalau juri menekan soal kualitas kode, katakan apa adanya:** ESLint frontend **belum**
+> dikonfigurasi (tidak ada config/dependency-nya), jadi yang dijamin CI untuk frontend adalah
+> tes unit dan build yang berhasil — bukan lint. Backend sudah dijaga Ruff. `[RENCANA]`
 
 ---
 
@@ -119,7 +128,7 @@ melawan sumber pendapatan mereka sendiri.
 
 | Klaim | Status |
 |---|---|
-| Prototipe berjalan, teruji otomatis | ✅ 540 tes backend + 39 frontend, lint bersih |
+| Prototipe berjalan, teruji otomatis | ✅ Suite backend + frontend hijau di CI tiap push (tunjukkan tab **Checks**, jangan hafal angkanya) |
 | Alignment PS-2 | ✅ Dinilai **"Sangat Kuat"** oleh juri |
 | Kualitas prototipe | ✅ Dinilai **"Sangat Kuat — Menonjol"** oleh juri |
 | Validasi pencari kerja | ⚠️ <10 orang, lingkaran pertemanan, **belum terdokumentasi rapi** |
