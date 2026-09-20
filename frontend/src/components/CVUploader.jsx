@@ -34,6 +34,8 @@ export default function CVUploader() {
     // When the backend returns requires_confirmation, we hold the file and
     // the preview here until the user decides to confirm or cancel.
     const [offlinePending, setOfflinePending] = useState(null) // { file, preview }
+    // { file, message, alternative } — awaiting consent to send a scan as an image
+    const [scanPending, setScanPending] = useState(null)
 
     useEffect(() => {
         if (profile) {
@@ -53,6 +55,14 @@ export default function CVUploader() {
             return
         }
         const res = await uploadResume(file)
+        if (res?.requires_scan_consent) {
+            // Scan / phone photo: no text layer, so it can only be sent to the
+            // AI as an image, unredacted. Ask before doing that rather than
+            // doing it quietly — and never block, since a photographed CV is
+            // how a great many Indonesian job seekers actually hold theirs.
+            setScanPending({ file, message: res.message, alternative: res.alternative })
+            return
+        }
         if (res?.requires_confirmation) {
             // Offline fallback detected — pause and show confirmation modal.
             setOfflinePending({ file, preview: res.preview })
@@ -131,6 +141,48 @@ export default function CVUploader() {
                     onConfirm={handleOfflineConfirm}
                     onCancel={handleOfflineCancel}
                 />
+            )}
+
+            {/* Scan/photo consent — a PDF with no text layer can only be sent to
+                the AI as an image, so we ask before doing it. Never blocks: the
+                manual form is offered, but the seeker may simply say yes. */}
+            {scanPending && (
+                <div role="dialog" aria-modal="true" style={{ position: 'fixed', inset: 0, background: 'rgba(9,10,15,.55)', display: 'grid', placeItems: 'center', zIndex: 60, padding: 16 }}>
+                    <div style={{ maxWidth: 480, background: '#FFFFFF', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `4px 4px 0 ${KC.ink}`, padding: 24 }}>
+                        <h2 style={{ font: '900 19px/1.25 "Plus Jakarta Sans", sans-serif', margin: '0 0 10px' }}>
+                            CV ini berupa foto atau hasil pindai
+                        </h2>
+                        <p style={{ fontSize: 14, lineHeight: 1.55, color: KC.ink, margin: '0 0 10px' }}>
+                            {scanPending.message}
+                        </p>
+                        <p style={{ fontSize: 13, lineHeight: 1.5, color: KC.mute, margin: '0 0 18px' }}>
+                            {scanPending.alternative}
+                        </p>
+                        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                            <button
+                                style={topBtn(KC.orange, '#fff')}
+                                onClick={async () => {
+                                    const file = scanPending.file
+                                    setScanPending(null)
+                                    const res = await uploadResume(file, false, true)
+                                    if (res?.seeker_id) {
+                                        setUploadedFileName(file.name)
+                                        toast.success('CV berhasil dibaca!')
+                                        setTimeout(() => navigate('seeker-match'), 800)
+                                    }
+                                }}
+                            >
+                                Ya, lanjutkan
+                            </button>
+                            <button
+                                style={topBtn()}
+                                onClick={() => { setScanPending(null); setActiveTab('manual') }}
+                            >
+                                Isi manual saja
+                            </button>
+                        </div>
+                    </div>
+                </div>
             )}
 
             {/* Header */}

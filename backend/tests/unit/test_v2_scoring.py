@@ -318,12 +318,13 @@ class TestResumeTextIsRedactedOnEveryPath:
         assert "rina@mail.com" not in sent and "3456" not in sent
 
 
-class TestScannedPdfIsRefusedNotLeaked:
-    """A PDF with no text layer cannot be redacted, so it is not sent at all.
+class TestScannedPdfNeedsConsent:
+    """A scan can only be sent as an image, so the seeker is asked first.
 
-    Sending it would mean handing Gemini an image of a CV carrying the very
-    phone number and e-mail the regex exists to strip, with only the prompt
-    asking it not to read them — the "prompt-based redaction can fail" hole.
+    Sending it means handing Gemini a picture of a CV carrying the very phone
+    number and e-mail the regex exists to strip. Refusing outright would
+    exclude the many Indonesian seekers whose CV is a phone photo, so the
+    trade is informed consent: never silent, never blocked.
     """
 
     def test_text_pdf_is_redacted_and_sent_as_text(self) -> None:
@@ -340,7 +341,7 @@ class TestScannedPdfIsRefusedNotLeaked:
         assert "rina@mail.com" not in parts[0]
         assert "[email]" in parts[0] and "[phone]" in parts[0]
 
-    def test_scanned_pdf_raises_instead_of_sending_bytes(self) -> None:
+    def test_scanned_pdf_is_not_sent_without_consent(self) -> None:
         import pytest as _pytest
 
         from backend.app.services.pdf_parser import ScannedPdfError, _llm_contents
@@ -349,8 +350,41 @@ class TestScannedPdfIsRefusedNotLeaked:
             class Part:
                 @staticmethod
                 def from_bytes(**kw):
-                    raise AssertionError("a scanned PDF must never reach the model")
+                    raise AssertionError("must not send a scan before the seeker agrees")
 
         with _pytest.raises(ScannedPdfError) as err:
             _llm_contents(_FakeTypes, b"%PDF-scan", _text_override="")
-        assert "manual" in str(err.value).lower()
+        # The prompt must say what actually leaves the server, not just "failed".
+        msg = str(err.value).lower()
+        assert "gambar dokumen" in msg and "dikirim ke ai" in msg
+
+    def test_scanned_pdf_is_sent_once_consent_is_given(self) -> None:
+        from backend.app.services.pdf_parser import _llm_contents
+
+        sent = {}
+
+        class _FakeTypes:
+            class Part:
+                @staticmethod
+                def from_bytes(**kw):
+                    sent.update(kw)
+                    return "PDF_PART"
+
+        parts = _llm_contents(_FakeTypes, b"%PDF-scan", allow_scanned=True, _text_override="")
+        assert parts[0] == "PDF_PART"
+        assert sent["mime_type"] == "application/pdf"
+
+    def test_consent_does_not_loosen_the_text_path(self) -> None:
+        """Consent only unlocks the image branch. A PDF that HAS text is still
+        redacted, never sent as bytes, whatever the flag says."""
+        from backend.app.services.pdf_parser import _llm_contents
+
+        class _FakeTypes:
+            class Part:
+                @staticmethod
+                def from_bytes(**kw):
+                    raise AssertionError("a text PDF must never be sent as raw bytes")
+
+        long_text = "Rina. Email rina@mail.com. Telepon 0812-3456-7890. " * 6
+        parts = _llm_contents(_FakeTypes, b"%PDF", allow_scanned=True, _text_override=long_text)
+        assert "rina@mail.com" not in parts[0] and "[email]" in parts[0]

@@ -472,12 +472,12 @@ const useStore = create(
 
             // ─── CV upload ───────────────────────────────────────────────
             cvUploading: false,
-            uploadResume: async (file, confirmOffline = false) => {
+            uploadResume: async (file, confirmOffline = false, confirmScanned = false) => {
                 if (!file) return
                 const { user } = get()
                 set({ cvUploading: true })
                 try {
-                    const res = await uploadCV({ userId: user.id || 'demo', file, confirmOffline })
+                    const res = await uploadCV({ userId: user.id || 'demo', file, confirmOffline, confirmScanned })
                     set({ cvUploading: false })
 
                     // If the backend detected an offline/demo parse and needs

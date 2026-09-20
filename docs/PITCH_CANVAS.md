@@ -165,8 +165,9 @@ Nomor, email, dan NIK **di dalam teks CV** disamarkan aturan regex tetap sebelum
 sebelum dikirim ke AI — bukan lewat instruksi ke AI, jadi tidak bisa gagal karena prompt.
 
 Caption (12 px, Mute):
-*Batasnya jujur: CV hasil pindai (tanpa lapisan teks) dikirim utuh ke AI karena tidak ada teks untuk
-disamarkan. Penyamaran melindungi teks, bukan gambar.*
+*CV hasil pindai atau foto tidak punya teks untuk disamarkan. Kami tidak menolaknya — banyak pencari
+kerja Indonesia memang hanya punya foto CV — tapi kami **minta izin dulu** sebelum gambarnya dikirim
+ke AI, dan hasil bacaannya tetap disamarkan sebelum disimpan.*
 
 ## ▸ WHAT'S UNIQUE
 
@@ -300,7 +301,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Margin 88% itu dari mana? | Dari **asumsi** pemakaian 30 pelamar / 5 dishortlist dengan buffer ×1,5, bukan dari pengukuran pelanggan nyata — kami belum punya pelanggan. Yang **terukur** adalah biaya per aksi di `/admin → Metrik`, dihitung dari token asli di `ai_logs`. |
 | Kalau lowongannya viral, 200 pelamar? | Margin turun **di bulan-bulan awal**: 88% (30 pelamar) → 70% (100) → **42% (200)** selama separuh pelamar masih kandidat baru. Tapi dua biaya utama — baca CV (~Rp99) dan email OTP — dibayar **sekali per kandidat seumur akun, bukan per lamaran**. Begitu kolam kandidat matang dan hanya ~10% yang baru, margin pada 200 pelamar kembali ke **86%**. Jadi ini risiko cold-start yang mengecil sendiri, bukan kebocoran struktural — dan biaya sungguhannya terpantau di `/admin → Metrik`. |
 | Kuis/skor benar tidak pakai AI? | Benar. Kuis dinilai dengan kunci jawaban di server, skor dihitung dari vektor tersimpan. Rp0 per percobaan, dan itu sebabnya margin bertahan saat pemakaian naik. |
-| Penyamaran data gagal untuk CV pindai? | Ya, dan kami menyebutnya di slide. CV pindai tidak punya lapisan teks untuk disamarkan, jadi PDF-nya dikirim utuh ke Gemini. Yang kami jamin: teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
+| Penyamaran data gagal untuk CV pindai? | CV pindai tidak punya teks untuk disamarkan, jadi hanya bisa dikirim sebagai gambar. Kami **tidak melakukannya diam-diam dan tidak memblokir**: pelamar diberi tahu persis apa yang akan dikirim, lalu memilih lanjut atau isi profil manual. Memblokir akan menyingkirkan justru pengguna yang paling kami tuju — banyak yang CV-nya foto HP. Persetujuan eksplisit juga dasar hukum yang benar menurut UU PDP. Teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
 | Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun — dulu non-gating, sekarang tidak lagi. ESLint baru lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
 
 ### Angka yang boleh disebut, dan sumbernya

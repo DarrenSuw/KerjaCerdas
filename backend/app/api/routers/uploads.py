@@ -72,6 +72,7 @@ def _to_education(d: dict) -> Education:
 async def upload_cv(
     file: UploadFile = File(...),
     confirm_offline: bool = Form(False),
+    confirm_scanned: bool = Form(False),
     current_user: User = Depends(require_seeker),
 ) -> dict:
     if file.content_type not in ("application/pdf", "application/octet-stream"):
@@ -83,16 +84,19 @@ async def upload_cv(
         raise HTTPException(400, "Invalid PDF file: Missing %PDF- header signature")
 
     try:
-        parsed = await parse_cv(blob)
+        parsed = await parse_cv(blob, allow_scanned=confirm_scanned)
     except ScannedPdfError as exc:
-        # We refuse rather than send an un-redactable image of a CV to Gemini.
-        # 422, not 500: the upload is understood and legitimate, the file just
-        # cannot be processed under our own privacy rule. The client offers the
-        # quick-profile form instead, so the seeker is never dead-ended.
-        raise HTTPException(
-            422,
-            detail={"error": "scanned_pdf", "message": str(exc), "use_manual_form": True},
-        ) from exc
+        # A scan/photo has no text layer, so it can only be sent as an image,
+        # unredacted. We ask first rather than doing it quietly. Mirrors the
+        # existing `confirm_offline` handshake: 200 with a prompt, and the
+        # client re-uploads with confirm_scanned=true if the seeker agrees.
+        # Blocking these outright would exclude a large share of Indonesian
+        # job seekers, whose CV is a phone photo.
+        return {
+            "requires_scan_consent": True,
+            "message": str(exc),
+            "alternative": "Atau isi profil singkat secara manual tanpa mengunggah CV.",
+        }
 
     # Guard: if the parser fell back to offline/demo data and the client
     # hasn't explicitly acknowledged, return a preview payload instead of

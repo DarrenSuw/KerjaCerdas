@@ -256,21 +256,30 @@ class ScannedPdfError(Exception):
     """
 
 
-def _llm_contents(types, pdf_bytes: bytes, _text_override: str | None = None) -> list:
+def _llm_contents(
+    types, pdf_bytes: bytes, allow_scanned: bool = False, _text_override: str | None = None
+) -> list:
     """What is actually sent to Gemini for a PDF.
 
-    A PDF is converted to text locally and PII-redacted (email / phone / NIK)
-    before anything leaves the server. Raw PDF bytes are never sent.
+    Normal case: the PDF is converted to text locally and PII-redacted (email /
+    phone / NIK) before anything leaves the server.
+
+    Scanned or photographed CVs have no text layer, so there is nothing to run
+    the regex over and the document can only be sent as an image — carrying the
+    same contact details the regex exists to strip. We do NOT silently do that:
+    the first call raises ScannedPdfError, the API turns that into a consent
+    prompt, and only an explicit `confirm_scanned` re-upload passes
+    allow_scanned=True.
+
+    Refusing outright was the first implementation and it was wrong for this
+    market: a scan or a phone photo is how a great many Indonesian job seekers
+    actually hold their CV, and blocking them would exclude exactly the people
+    this product exists for. Informed consent is the honest trade, and it is
+    also the UU PDP posture where explicit consent is the lawful basis.
+    Whatever the model returns is still redacted before it is stored.
 
     `_text_override` exists only so tests can drive both branches without
     building real scanned and text-layer PDFs.
-
-    A PDF with no usable text layer (a scan or a photo) raises ScannedPdfError
-    instead of being sent. There is nothing to run the regex over, so the only
-    way to send it would be unredacted — and an image of a CV carries the same
-    phone number and e-mail the regex exists to strip. Leaving it to the prompt
-    to suppress them is exactly the "prompt-based redaction can fail" hole the
-    judges pointed at. The caller falls back to manual entry instead.
     """
     from backend.app.services.privacy.redact import redact_text
 
@@ -283,16 +292,21 @@ def _llm_contents(types, pdf_bytes: bytes, _text_override: str | None = None) ->
         except Exception:  # noqa: BLE001 — treated the same as an empty text layer
             text = ""
     if len(text.strip()) < _MIN_TEXT_FOR_REDACTED_PATH:
-        raise ScannedPdfError(
-            "PDF ini tidak punya lapisan teks yang bisa dibaca (hasil pindai atau foto), "
-            "jadi data kontak di dalamnya tidak bisa kami samarkan sebelum dikirim ke AI. "
-            "Silakan unggah PDF teks, atau isi profil singkat secara manual."
-        )
+        if not allow_scanned:
+            raise ScannedPdfError(
+                "CV ini berupa hasil pindai atau foto, jadi tidak ada teks yang bisa kami "
+                "samarkan lebih dulu. Untuk membacanya, gambar dokumen perlu dikirim ke AI "
+                "apa adanya — termasuk nomor HP dan email yang tertulis di dalamnya. "
+                "Hasil bacaannya tetap kami samarkan sebelum disimpan."
+            )
+        return [types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"), instruction]
     header = "Isi dokumen (data kontak sudah disamarkan):"
     return [f"{header}\n\n{redact_text(text)}", instruction]
 
 
-async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]:
+async def _call_gemini(
+    pdf_bytes: bytes, role: str, task: str, allow_scanned: bool = False
+) -> dict[str, Any]:
     import asyncio
 
     try:
@@ -315,7 +329,7 @@ async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]
             try:
                 resp = client.models.generate_content(
                     model=model,
-                    contents=_llm_contents(types, pdf_bytes),
+                    contents=_llm_contents(types, pdf_bytes, allow_scanned=allow_scanned),
                     config=types.GenerateContentConfig(
                         system_instruction=system,
                         response_mime_type="application/json",
@@ -476,8 +490,12 @@ def _validate_job_pack_schema(d: dict[str, Any]) -> dict[str, Any]:
     return {"postings": cleaned_postings}
 
 
-async def parse_cv(pdf_bytes: bytes) -> dict[str, Any]:
-    return await _call_gemini(pdf_bytes, role="seeker_advisor", task="cv_parser")
+async def parse_cv(pdf_bytes: bytes, allow_scanned: bool = False) -> dict[str, Any]:
+    """Parse a CV. `allow_scanned` is the seeker's explicit consent to send an
+    un-redactable scan/photo as an image — see _llm_contents."""
+    return await _call_gemini(
+        pdf_bytes, role="seeker_advisor", task="cv_parser", allow_scanned=allow_scanned
+    )
 
 
 async def parse_job_pack(pdf_bytes: bytes) -> dict[str, Any]:

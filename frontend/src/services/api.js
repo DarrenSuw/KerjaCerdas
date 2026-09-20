@@ -158,11 +158,14 @@ export const removeBookmark = (jobId) =>
     request(`${API_BASE}/seeker/bookmarks/${jobId}`, { method: 'DELETE' })
 
 // ── Uploads (PDF → Gemini → schema) ─────────────────────────────────────────
-export async function uploadCV({ userId, file, confirmOffline = false }) {
+export async function uploadCV({ userId, file, confirmOffline = false, confirmScanned = false }) {
     const fd = new FormData()
     fd.append('user_id', userId)
     fd.append('file', file)
     fd.append('confirm_offline', confirmOffline ? 'true' : 'false')
+    // Explicit consent to send a scan/photo of the CV as an image, because
+    // a PDF with no text layer cannot be redacted before it leaves us.
+    fd.append('confirm_scanned', confirmScanned ? 'true' : 'false')
     const res = await fetch(`${API_BASE}/uploads/cv`, {
         method: 'POST',
         headers: { ..._authHeader() },
