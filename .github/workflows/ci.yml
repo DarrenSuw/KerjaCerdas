@@ -117,6 +117,13 @@ jobs:
           retention-days: 7
 
   # ── Gate 4: Integration Tests (pgvector + Alembic migration) ─────────────────
+  # NON-GATING (continue-on-error). This is the ONLY job that runs `alembic
+  # upgrade head` against a real PostgreSQL, and it has already caught a P1 in
+  # this branch: two ORM tables (`otps`, `query_embeddings`) that no migration
+  # ever created, so a migration-built database silently had nowhere to write
+  # email OTPs. Because it cannot fail the build, a future migration break can
+  # merge green. Worth making gating once it has a stable history — that is a
+  # branch-protection decision for the repo owner, not a code change.
   test-integration:
     name: "Backend · Integration Tests"
     runs-on: ubuntu-latest

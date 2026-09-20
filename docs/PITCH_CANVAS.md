@@ -70,10 +70,21 @@ menyalin kalimat iklan — itu persis yang dilakukan penumpuk kata kunci. Dengan
 kata kunci butuh keunggulan kemiripan **0,63** untuk mengalahkan kandidat yang membuktikan semua
 skill — di luar rentang yang bisa dicapai kemiripan pada pasangan CV–lowongan nyata.
 
-**Sudah dibangun & diuji:** seluruh suite backend dan frontend dijalankan di CI tiap push —
-`Backend · Unit Tests`, `Backend · Integration Tests` (termasuk migrasi Alembic terhadap
-PostgreSQL asli), `Backend · Lint & Audit`, dan `Frontend · Lint & Build` (isinya: tes unit Vitest + build). **Angka pastinya
-jangan dihafal — buka tab Checks di PR terakhir dan tunjukkan centang hijaunya.**
+**Sudah dibangun & diuji.** CI berjalan pada tiap Pull Request ke `main` dan tiap push ke `main`
+(bukan pada push ke cabang lepas tanpa PR). Yang **menggugurkan** build kalau merah:
+
+| Check | Isi | Menggugurkan? |
+|---|---|---|
+| `Backend · Unit Tests` | seluruh suite pytest | ✅ ya |
+| `Backend · Lint & Audit` | Ruff + audit dependensi | ✅ ya |
+| `Frontend · Lint & Build` | tes unit Vitest + `vite build` | ✅ ya |
+| `Backend · Integration Tests` | pgvector + **migrasi Alembic terhadap PostgreSQL asli** | ⚠️ **tidak** — `continue-on-error: true` |
+| `Backend · Latency Benchmark` | informasional | ⚠️ tidak |
+
+**Jangan hafal angkanya, dan jangan bilang "semua hijau berarti semua lolos".** Buka tab **Checks**
+di PR terakhir dan baca per baris — dua check paling bawah bisa merah tanpa menggugurkan build.
+Kalau juri bertanya, itu justru contoh bagus: *integration test kami yang menjalankan migrasi ke
+PostgreSQL asli menemukan dua tabel yang tidak pernah dibuat migrasi mana pun.*
 
 Reproduksi lokal: `cd backend && python -m pytest tests/ -q` · `cd frontend && npm test`.
 
@@ -128,7 +139,7 @@ melawan sumber pendapatan mereka sendiri.
 
 | Klaim | Status |
 |---|---|
-| Prototipe berjalan, teruji otomatis | ✅ Suite backend + frontend hijau di CI tiap push (tunjukkan tab **Checks**, jangan hafal angkanya) |
+| Prototipe berjalan, teruji otomatis | ✅ Unit + lint + build **menggugurkan build** kalau merah; integration test (migrasi ke PostgreSQL asli) berjalan tapi non-gating. Tunjukkan tab **Checks** per baris |
 | Alignment PS-2 | ✅ Dinilai **"Sangat Kuat"** oleh juri |
 | Kualitas prototipe | ✅ Dinilai **"Sangat Kuat — Menonjol"** oleh juri |
 | Validasi pencari kerja | ⚠️ <10 orang, lingkaran pertemanan, **belum terdokumentasi rapi** |
