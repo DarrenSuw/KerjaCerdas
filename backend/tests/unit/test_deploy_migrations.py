@@ -115,3 +115,59 @@ class TestQuotaOnSqlite:
         assert await consume_quota(user_id, "test_quota", limit=2, since=since) is True
         # Third call is over the limit — refused, not a 500.
         assert await consume_quota(user_id, "test_quota", limit=2, since=since) is False
+
+
+class TestPackagedDependencies:
+    """A lazily imported module still has to be a declared dependency.
+
+    `segno` is imported inside qr_svg(), so nothing fails until a request hits
+    /public/jobs/{code}/qr.svg — which is how it passed locally (already in the
+    dev environment) and 500'd in CI.
+    """
+
+    def test_lazily_imported_packages_are_declared(self) -> None:
+        import tomllib
+        from pathlib import Path
+
+        pyproject = Path(__file__).resolve().parents[2] / "pyproject.toml"
+        with pyproject.open("rb") as fh:
+            declared = tomllib.load(fh)["project"]["dependencies"]
+        names = {d.split(">")[0].split("[")[0].split("=")[0].strip().lower() for d in declared}
+        assert "segno" in names
+
+    def test_qr_rendering_actually_works(self) -> None:
+        from backend.app.services.hiring.links import qr_svg
+
+        svg = qr_svg("https://kerjacerdas.tech/j/ABC2345")
+        assert svg.startswith(b"<?xml") or b"<svg" in svg
+
+
+class TestCsvInjection:
+    """Applicant-controlled text lands in a file HR opens in a spreadsheet."""
+
+    def test_formula_prefixes_are_neutralised(self) -> None:
+        from backend.app.api.routers.hiring import _csv_safe
+
+        for payload in ("=HYPERLINK(\"http://evil\",\"click\")", "+1+1", "-2+3", "@SUM(A1)"):
+            assert _csv_safe(payload).startswith("'"), payload
+        # Ordinary values must pass through untouched, including None.
+        assert _csv_safe("Dewi Kartika") == "Dewi Kartika"
+        assert _csv_safe(None) == ""
+        assert _csv_safe("") == ""
+
+
+class TestStatusEventOrdering:
+    """A fabricated interview/hire event corrupts the metric we argue from."""
+
+    def test_event_is_written_after_the_application(self) -> None:
+        """Ordering is the whole fix, so assert it in the source, not by mocking
+        two independent repository transactions."""
+        from pathlib import Path
+
+        src = (Path(__file__).resolve().parents[2] / "app/api/routers/employer.py").read_text(
+            encoding="utf-8"
+        )
+        body = src[src.index("    pending_event: ApplicationStatusEvent | None = None"):]
+        app_write = body.index("await repos.applications.upsert(app)")
+        event_write = body.index("await repos.status_events.upsert(pending_event)")
+        assert app_write < event_write, "history event must not be written before the status"

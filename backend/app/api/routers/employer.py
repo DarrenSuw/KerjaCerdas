@@ -636,6 +636,10 @@ async def update_application_status(
             status.HTTP_403_FORBIDDEN, "Anda tidak memiliki izin mengelola lamaran ini"
         )
 
+    # Built while validating, written only AFTER the application row lands —
+    # see the comment at the upsert below.
+    pending_event: ApplicationStatusEvent | None = None
+
     if payload.status is not None:
         target = _parse_status(payload.status)
         current = ApplicationStatus(app.status)
@@ -659,14 +663,12 @@ async def update_application_status(
             raise HTTPException(status.HTTP_409_CONFLICT, detail)
 
         if target != current:
-            await repos.status_events.upsert(
-                ApplicationStatusEvent(
-                    application_id=app.id,
-                    job_id=app.job_id,
-                    from_status=current.value,
-                    to_status=target.value,
-                    match_score=app.match_score or 0.0,
-                )
+            pending_event = ApplicationStatusEvent(
+                application_id=app.id,
+                job_id=app.job_id,
+                from_status=current.value,
+                to_status=target.value,
+                match_score=app.match_score or 0.0,
             )
         app.status = target
 
@@ -675,6 +677,36 @@ async def update_application_status(
 
     app.updated_at = datetime.now(UTC)
     await repos.applications.upsert(app)
+
+    # The history event is written only once the status change itself has been
+    # persisted. Each repository upsert runs in its own transaction, so the two
+    # writes cannot be made atomic here — but the ORDER decides which way a
+    # partial failure fails:
+    #
+    #   event first  → a failed application write leaves /admin/metrics
+    #                  permanently reporting an interview/offer/hire that never
+    #                  happened, and a retry (status still unchanged) appends a
+    #                  SECOND identical event, since nothing constrains
+    #                  transition uniqueness.
+    #   status first → a failed event write means the transition is missing from
+    #                  metrics. A retry then sees target == current and writes no
+    #                  event at all, so duplicates are impossible.
+    #
+    # Under-counting a real transition is recoverable and honest; fabricating one
+    # corrupts the very number this product argues from ("do higher scores reach
+    # interview?"). Hence status first, and a loud log rather than a silent pass.
+    if pending_event is not None:
+        try:
+            await repos.status_events.upsert(pending_event)
+        except Exception:  # noqa: BLE001 — the status change itself already succeeded
+            logger.exception(
+                "Status %s->%s persisted for application %s but its history event "
+                "was not written — /admin/metrics will under-count this transition.",
+                pending_event.from_status,
+                pending_event.to_status,
+                app.id,
+            )
+
     logger.info(
         "Application %s updated to status=%s note=%s by employer=%s",
         app.id,

@@ -119,6 +119,19 @@ async def confirm_skills(app_id: str, req: ConfirmSkillsReq,
     return {"application_id": app.id, "confirmed": confirmed, "not_confirmed": rejected}
 
 
+def _csv_safe(value: str | None) -> str:
+    """Neutralise spreadsheet formula injection in an applicant-controlled cell.
+
+    Excel / Sheets / LibreOffice evaluate a cell starting with = + - or @ as a
+    formula, so a candidate could name themselves `=HYPERLINK(...)` and have it
+    execute when HR opens the export. A leading apostrophe forces the cell to be
+    read as text. Applied to every free-text column — a name is the obvious one,
+    but skill labels and e-mail local parts are just as attacker-controlled.
+    """
+    text = "" if value is None else str(value)
+    return "'" + text if text[:1] in ("=", "+", "-", "@") else text
+
+
 @router.get("/jobs/{job_id}/applicants.csv")
 async def export_applicants(job_id: str, current_user: User = Depends(get_current_user)):
     repos = get_repositories()
@@ -138,12 +151,10 @@ async def export_applicants(job_id: str, current_user: User = Depends(get_curren
         seeker = await repos.seekers.get(app.seeker_id)
         user = await repos.users.get(seeker.user_id) if seeker else None
         live = score_pair(seeker, job) if seeker else {"score": 0, "band": "", "skill_proof": []}
-        def _san(s: str) -> str:
-            return "'" + s if s and str(s)[0] in "=+-@" else str(s)
-
         proven = [p["name"] for p in live["skill_proof"] if p["status"] in ("quiz", "hr_confirmed")]
-        rows.append([_san(seeker.full_name if seeker else ""), user.email if user else "",
-                     round(live["score"] * 100), live["band"], _san("; ".join(proven)),
+        rows.append([_csv_safe(seeker.full_name if seeker else ""),
+                     _csv_safe(user.email if user else ""),
+                     round(live["score"] * 100), live["band"], _csv_safe("; ".join(proven)),
                      str(app.status.value if hasattr(app.status, "value") else app.status),
                      app.source, app.created_at.strftime("%Y-%m-%d")])
     for row in sorted(rows, key=lambda r: -r[2]):
