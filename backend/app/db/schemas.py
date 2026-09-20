@@ -166,15 +166,25 @@ class User(TimestampedModel):
     role: UserRole
     is_active: bool = True
     last_login_at: datetime | None = None
+    email_verified: bool = False
 
 
 # ── Seeker profile ────────────────────────────────────────────────────────────
+
+
+# How well a skill is proven. Only proof moves the skill part of the match
+# score (services/matching/evidence.py): a skill that is merely written in the
+# CV is "claimed"; passing a skill quiz makes it "quiz"; an employer ticking
+# "terbukti" after an interview makes it "hr_confirmed".
+ProofLevel = Literal["claimed", "quiz", "hr_confirmed"]
 
 
 class Skill(BaseModel):
     name: str
     level: Literal["beginner", "intermediate", "advanced", "expert"] = "intermediate"
     years: float = 0.0
+    proof_level: ProofLevel = "claimed"
+    proof_date: str | None = None  # ISO date the proof was earned (quiz badge valid 6 months)
 
 
 class WorkExperience(BaseModel):
@@ -190,8 +200,6 @@ class Education(BaseModel):
     degree: EducationLevel
     major: str
     graduation_year: int
-    ijazah_number: str | None = None
-    sivil_verified: VerificationStatus = VerificationStatus.UNVERIFIED
 
 
 class SeekerProfile(TimestampedModel):
@@ -199,9 +207,6 @@ class SeekerProfile(TimestampedModel):
     user_id: str
     full_name: str
     headline: str = ""
-    nik: str | None = Field(default=None, max_length=64)
-    nik_verified: VerificationStatus = VerificationStatus.UNVERIFIED
-    ijazah_verified: VerificationStatus = VerificationStatus.UNVERIFIED
     date_of_birth: str | None = None
     region_code: str  # BPS wilayah
     preferred_regions: list[str] = []
@@ -258,7 +263,6 @@ class Employer(TimestampedModel):
     id: str = Field(default_factory=_uid)
     user_id: str
     company_name: str
-    npwp: str | None = None
     industry: str = ""
     size: Literal["startup", "sme", "mid", "enterprise"] = "sme"
 
@@ -270,7 +274,11 @@ class Employer(TimestampedModel):
     region_code: str
     website: str | None = None
     description: str = ""
+    # "Ditinjau admin" — set only by an admin after checking `review_links`.
     verified: VerificationStatus = VerificationStatus.UNVERIFIED
+    review_links: list[str] = []
+    strikes: int = 0
+    last_strike_at: datetime | None = None
 
 
 # ── Job posting ───────────────────────────────────────────────────────────────
@@ -295,6 +303,9 @@ class JobPosting(TimestampedModel):
     client_ref: str | None = None
     embedding: list[float] | None = None
     embedding_model: str | None = None
+    public_code: str | None = None
+    moderation_status: Literal["published", "held", "rejected"] = "published"
+    moderation_reasons: list[dict] = []
 
 
 # ── Applications ──────────────────────────────────────────────────────────────
@@ -308,6 +319,8 @@ class Application(TimestampedModel):
     cover_letter: str = ""
     match_score: float = 0.0
     note: str = ""
+    skill_snapshot: list[dict] = []
+    source: Literal["board", "link"] = "board"
 
 
 # ── Match results (cached) ────────────────────────────────────────────────────
@@ -325,6 +338,8 @@ class MatchResult(BaseModel):
     salary_in_range: bool
     rank: int
     band: str = "stretch"  # strong | possible | stretch — the headline, not the number
+    # Per required skill: {name, status: claimed | quiz | hr_confirmed | missing}
+    skill_proof: list[dict] = []
     explanation: str = ""
 
 

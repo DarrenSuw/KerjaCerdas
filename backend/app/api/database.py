@@ -179,6 +179,45 @@ async def _migrate_applications_schema(conn) -> None:
         logger.info("Migrated applications: added note column")
 
 
+# Columns added by the v2 proof-of-skill release (Alembic revision
+# a2b4c6d8e0f1). create_all() only creates missing TABLES, so an existing
+# local SQLite dev database also needs the new COLUMNS added in place.
+# (table, column, complete static DDL) — literal SQL only, never built from
+# strings at runtime.
+_V2_COLUMNS: list[tuple[str, str, str]] = [
+    ("users", "email_verified", "ALTER TABLE users ADD COLUMN email_verified BOOLEAN DEFAULT 0"),
+    ("employers", "review_links", "ALTER TABLE employers ADD COLUMN review_links JSON DEFAULT '[]'"),
+    ("employers", "strikes", "ALTER TABLE employers ADD COLUMN strikes INTEGER DEFAULT 0"),
+    ("employers", "last_strike_at", "ALTER TABLE employers ADD COLUMN last_strike_at TIMESTAMP"),
+    ("jobs", "public_code", "ALTER TABLE jobs ADD COLUMN public_code VARCHAR(16)"),
+    (
+        "jobs",
+        "moderation_status",
+        "ALTER TABLE jobs ADD COLUMN moderation_status VARCHAR(20) DEFAULT 'published'",
+    ),
+    ("jobs", "moderation_reasons", "ALTER TABLE jobs ADD COLUMN moderation_reasons JSON DEFAULT '[]'"),
+    (
+        "applications",
+        "skill_snapshot",
+        "ALTER TABLE applications ADD COLUMN skill_snapshot JSON DEFAULT '[]'",
+    ),
+    ("applications", "source", "ALTER TABLE applications ADD COLUMN source VARCHAR(20) DEFAULT 'board'"),
+]
+
+
+async def _migrate_v2_columns(conn) -> None:
+    cache: dict[str, set[str]] = {}
+    for table, column, ddl in _V2_COLUMNS:
+        if table not in cache:
+            cache[table] = await conn.run_sync(_get_table_columns, table)
+        if cache[table] and column not in cache[table]:
+            await conn.execute(text(ddl))
+            logger.info("Migrated %s: added %s", table, column)
+    otp_cols = await conn.run_sync(_get_table_columns, "otps")
+    if "phone" in otp_cols and "destination" not in otp_cols:
+        await conn.execute(text("ALTER TABLE otps RENAME COLUMN phone TO destination"))
+
+
 async def init_db() -> None:
     """Create all tables. Called once during application startup."""
     # Import models here so their metadata is registered before create_all.
@@ -196,4 +235,6 @@ async def init_db() -> None:
         await conn.run_sync(ModelsBase.metadata.create_all)
         await _migrate_verification_logs_schema(conn)
         await _migrate_applications_schema(conn)
+        if is_sqlite:
+            await _migrate_v2_columns(conn)
     logger.info("[DB] Database tables created / verified successfully")
