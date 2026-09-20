@@ -22,7 +22,7 @@ export const VIEW_TO_PATH = {
     'seeker-match':          '/lowongan',
     'seeker-skill-gap':      '/skill-gap',
     'seeker-saved':          '/tersimpan',
-    'seeker-verification':   '/verifikasi',
+    'seeker-verification':   '/bukti-skill',
     'seeker-profile':        '/profil',
     'seeker-search':         '/cari',
     'seeker-applications':   '/lamaran',
@@ -32,9 +32,10 @@ export const VIEW_TO_PATH = {
     'employer-jobs':         '/employer/lowongan',
     'employer-post-job':     '/employer/pasang',
     'employer-candidates':   '/employer/kandidat',
-    'employer-verification': '/employer/verifikasi',
+    'employer-verification': '/employer/kepercayaan',
     'employer-upload':       '/employer/upload',
     'employer-profile':      '/employer/profil',
+    'admin':                 '/admin',
 }
 
 // Derived, never hand-written, so it can't drift from VIEW_TO_PATH.
@@ -42,6 +43,10 @@ export const PATH_TO_VIEW = Object.fromEntries(
     Object.entries(VIEW_TO_PATH).map(([view, path]) => [path, view])
 )
 
+// `admin` is reachable by any signed-in account; the backend only serves it to
+// emails listed in ADMIN_EMAILS. Public job links (/j/:code) are plain
+// <Route>s in App.jsx, not store views.
+//
 // Views reachable without auth. 'home' and 'pricing' are handled by their
 // own early-return branches in navigate() before this set is ever checked,
 // so they're deliberately left out rather than listed as if they mattered here.
@@ -53,10 +58,11 @@ export const ALLOWED_VIEWS = {
         'seeker-dashboard', 'seeker-match', 'seeker-skill-gap',
         'seeker-verification', 'seeker-saved', 'seeker-profile',
         'seeker-search', 'seeker-applications', 'seeker-advisor',
-        'seeker-onboarding',
+        'seeker-onboarding', 'admin',
     ]),
     employer: new Set([
         'employer-dashboard', 'employer-jobs', 'employer-candidates',
         'employer-post-job', 'employer-verification', 'employer-upload', 'employer-profile',
+        'admin',
     ]),
 }

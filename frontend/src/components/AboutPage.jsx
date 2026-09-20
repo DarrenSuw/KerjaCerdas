@@ -360,7 +360,7 @@ export default function AboutPage() {
                         <p style={{
                             fontSize: 16, lineHeight: 1.65, color: KC.mute, maxWidth: 740, margin: '0 0 28px',
                         }}>
-                            KerjaCerdas hadir untuk mengatasi inefisiensi pasar tenaga kerja. Melalui algoritma pencocokan semantik multi-dimensi, validasi kredensial e-KYC, dan analisis celah kompetensi, kami memangkas ratusan jam screening menjadi keputusan terukur dalam hitungan detik.
+                            KerjaCerdas adalah aplikasi pencocokan kerja AI yang menilai skill yang terbukti, bukan kata kunci di CV. Pencari kerja membuktikan skill lewat kuis singkat dan mendapat peta skill gap; usaha kecil membagikan link / QR lowongan dan menerima pelamar yang sudah diperingkat — sehingga wawancara hanya untuk kandidat yang layak.
                         </p>
 
                         {/* Action Buttons */}
@@ -447,8 +447,8 @@ export default function AboutPage() {
                                 },
                                 {
                                     label: 'Integritas & Privasi',
-                                    title: 'Validasi Dokumen e-KYC Terenkripsi',
-                                    desc: 'Memvalidasi format KTP dan nomor ijazah dengan data terenkripsi tanpa mengekspos informasi pribadi ke publik.',
+                                    title: 'Bukti Skill, Bukan Dokumen',
+                                    desc: 'Tanpa NIK/KTP/ijazah. Skill dibuktikan lewat kuis dan konfirmasi HR; lowongan dijaga AutoMod dan tinjauan admin; data kontak disamarkan sebelum ke AI.',
                                     color: KC.cyan,
                                     bg: KC.cyanSoft,
                                 },
@@ -607,10 +607,10 @@ export default function AboutPage() {
 
                             <div className="kc-roadmap-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                                 {[
-                                    { phase: 'Fase 1 (Aktif)', desc: 'Matching Vektor Semantik & e-KYC', color: KC.lime },
-                                    { phase: 'Fase 2', desc: 'Integrasi API ATS Korporasi', color: KC.cyan },
-                                    { phase: 'Fase 3', desc: 'Kurikulum Pelatihan Terpadu', color: KC.yellow },
-                                    { phase: 'Fase 4', desc: 'Simulasi Wawancara AI Real-Time', color: KC.orange },
+                                    { phase: 'Fase 1 (Aktif)', desc: 'Matching semantik + kuis skill + link/QR lowongan + AutoMod', color: KC.lime },
+                                    { phase: 'Fase 2 (Rencana)', desc: 'Payment gateway (Midtrans/Xendit) + bank soal ditinjau praktisi HR', color: KC.cyan },
+                                    { phase: 'Fase 3 (Rencana)', desc: 'Kalibrasi skor dengan data wawancara & diterima kerja', color: KC.yellow },
+                                    { phase: 'Fase 4 (Rencana)', desc: 'Latihan wawancara AI untuk pencari kerja (Prism)', color: KC.orange },
                                 ].map((r, i) => (
                                     <div key={i} style={{
                                         background: '#14151D', border: `1.5px solid rgba(255,255,255,0.2)`,

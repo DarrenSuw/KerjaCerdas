@@ -7,7 +7,9 @@ import {
     LayoutDashboard, Search, BarChart3, ShieldCheck, Bookmark,
     Building2, Briefcase, Users, Upload, LogOut,
     FileText, User, ClipboardList, Sparkles, PlusCircle, CheckCircle2, Bot,
+    SlidersHorizontal,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import useStore from '../store/useStore'
 import { ALLOWED_VIEWS } from '../routes'
 import { useIsMobile } from './_design'
@@ -33,7 +35,7 @@ const SEEKER_GROUPS = [
         title: 'Profil & Kredibilitas',
         items: [
             { id: 'seeker-profile', label: 'Upload CV', icon: Upload },
-            { id: 'seeker-verification', label: 'Verifikasi E-KYC', icon: ShieldCheck, statusKey: 'ktp_verified' },
+            { id: 'seeker-verification', label: 'Bukti Skill (Kuis)', icon: ShieldCheck, countKey: 'provenSkills' },
         ],
     },
 ]
@@ -55,9 +57,9 @@ const EMPLOYER_GROUPS = [
         ],
     },
     {
-        title: 'Perusahaan & Legalitas',
+        title: 'Perusahaan & Kepercayaan',
         items: [
-            { id: 'employer-verification', label: 'Verifikasi NPWP', icon: ShieldCheck, statusKey: 'npwp_verified' },
+            { id: 'employer-verification', label: 'Kepercayaan & Badge', icon: ShieldCheck },
             { id: 'employer-profile', label: 'Profil Perusahaan', icon: Building2 },
         ],
     },
@@ -113,8 +115,9 @@ export default function Sidebar() {
             const count = employerJobs?.length ?? 0
             return count ? { text: String(count), bg: 'rgba(255,255,255,0.15)', color: '#FFFFFF' } : null
         }
-        if (item.statusKey && profile?.[item.statusKey]) {
-            return { text: '✓', bg: '#10B981', color: '#FFFFFF' }
+        if (item.countKey === 'provenSkills') {
+            const proven = (profile?.skills || []).filter((sk) => sk.proof_level === 'quiz' || sk.proof_level === 'hr_confirmed').length
+            return proven ? { text: `✓${proven}`, bg: '#10B981', color: '#FFFFFF' } : null
         }
         return null
     }
@@ -256,6 +259,20 @@ export default function Sidebar() {
             </nav>
 
 
+
+            {/* Admin entry — only for accounts the backend already accepts as
+                admin (is_admin on the login response). Every /admin request is
+                re-checked server-side, so a forged flag buys nothing. */}
+            {user?.isAdmin && (
+                <Link
+                    to="/admin"
+                    className="mx-3 mb-2 px-3 py-2 rounded-md flex items-center gap-2 no-underline"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)', color: '#FFFFFF' }}
+                >
+                    <SlidersHorizontal size={14} />
+                    <span className="text-xs font-extrabold">Admin</span>
+                </Link>
+            )}
 
             {/* Ergonomic User Bar + Logout */}
             <div className="px-3 py-2.5 border-t border-white/10 flex items-center justify-between gap-2 bg-[#090A0F]">

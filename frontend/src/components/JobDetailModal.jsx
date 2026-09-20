@@ -30,12 +30,14 @@ export default function JobDetailModal({ job, onClose }) {
     const matchingSkills = job.matching_skills || job.required_skills?.slice(0, 4) || []
 
     // Real per-factor breakdown from the matcher's hybrid formula (matcher.py:
-    // cosine 45% + skill 25% + experience 15% + education 10% + recency 5%).
+    // cosine 45% + proof-weighted skills 30% + experience 15% + education 10%).
     // Location and salary are hard filters applied upstream, not weighted
     // factors — so they're intentionally not part of this breakdown.
+    const proof = job.skill_proof || []
+    const provenCount = proof.filter(p => p.status === 'quiz' || p.status === 'hr_confirmed').length
     const breakdown = [
         {
-            label: 'Semantic Match (Pengalaman & Profil CV)',
+            label: 'Kemiripan CV dengan lowongan',
             weight: 'Bobot 45%',
             multiplier: '×0.45',
             pct: Math.round(job.cosine != null ? job.cosine * 100 : score),
@@ -43,12 +45,14 @@ export default function JobDetailModal({ job, onClose }) {
             desc: 'Kemiripan makna antara profil/CV kandidat dan deskripsi posisi',
         },
         {
-            label: 'Technical Skills Match',
-            weight: 'Bobot 25%',
-            multiplier: '×0.25',
+            label: 'Skill (ditimbang bukti)',
+            weight: 'Bobot 30%',
+            multiplier: '×0.30',
             pct: Math.round(job.skill_overlap != null ? job.skill_overlap * 100 : score),
             color: '#0284C7',
-            desc: `${matchingSkills.length} kompetensi esensial telah terpenuhi`,
+            desc: proof.length
+                ? `${provenCount} dari ${proof.length} skill wajib sudah terbukti · klaim CV dihitung 30%, lulus kuis 85%, dikonfirmasi HR 100%`
+                : 'Klaim CV dihitung 30%, lulus kuis 85%, dikonfirmasi HR 100%',
         },
         {
             label: 'Kesesuaian Pengalaman',
@@ -64,15 +68,7 @@ export default function JobDetailModal({ job, onClose }) {
             multiplier: '×0.10',
             pct: job.education_met ? 100 : 0,
             color: '#F59E0B',
-            desc: 'Riwayat pendidikan tercantum di profil kandidat',
-        },
-        {
-            label: 'Aktualitas Profil',
-            weight: 'Bobot 5%',
-            multiplier: '×0.05',
-            pct: 100,
-            color: '#6366F1',
-            desc: 'Bobot konstan untuk saat ini'
+            desc: 'Jenjang pendidikan dibanding syarat minimum lowongan',
         },
     ]
 
@@ -284,7 +280,7 @@ export default function JobDetailModal({ job, onClose }) {
                                         {score}%
                                     </div>
                                     <div style={{ font: '600 11.5px/1.55 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.55)' }}>
-                                        Dihitung secara transparan menggunakan 5 komponen bobot semantik terkalibrasi.
+                                        Dihitung transparan dari 4 komponen; bagian skill ditimbang bukti (klaim 30%, kuis 85%, HR 100%).
                                     </div>
                                 </div>
                             )}
@@ -344,7 +340,7 @@ export default function JobDetailModal({ job, onClose }) {
                                                 </div>
                                             </div>
                                             <div style={{ textAlign: 'right', maxWidth: 140, fontSize: 10.5, lineHeight: 1.45, color: 'rgba(255,255,255,.55)', fontWeight: 600 }}>
-                                                Dihitung dari 5 komponen bobot semantik terkalibrasi
+                                                Dihitung dari 4 komponen; skill ditimbang bukti
                                             </div>
                                         </div>
                                     </div>

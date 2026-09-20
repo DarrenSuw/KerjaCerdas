@@ -21,7 +21,6 @@ export default function CVUploader() {
 
     const [manualForm, setManualForm] = useState({
         full_name: profile?.full_name ?? '',
-        nik: profile?.nik ?? '',
         date_of_birth: profile?.date_of_birth ?? '',
         region_code: profile?.region_code ?? '',
         skillInput: '',
@@ -105,7 +104,10 @@ export default function CVUploader() {
                 // otherwise overwrite the region already stored on the profile.
                 ...(manualForm.region_code ? { region_code: manualForm.region_code } : {}),
                 headline: manualForm.headline,
-                skills: manualForm.skills.map(name => ({ name, level: 'intermediate', years: 3 })),
+                // Only the name is sent. Level and years are NOT invented here —
+                // the backend defaults them, and the skill stays proof_level
+                // "claimed" until a quiz or an HR confirmation proves it.
+                skills: manualForm.skills.map(name => ({ name })),
                 salary_expectation_min: Number(manualForm.salary_expectation_min) || 0,
                 salary_expectation_max: Number(manualForm.salary_expectation_max) || 0,
             })
