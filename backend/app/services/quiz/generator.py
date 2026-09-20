@@ -154,10 +154,11 @@ async def ensure_questions_exist(skill_name: str, min_count: int = 5) -> bool:
     already existed.  Raises GenerationError on failure.
     """
     key = skill_key(skill_name)
-    # Counts unreviewed rows too. Generated questions land as reviewed=False, so
-    # a reviewed-only check could never see them and this would regenerate (and
-    # re-bill) on every call while never becoming serveable.
-    if await store.count_questions_for_skill(key) >= min_count:
+    # Counts ACTIVE rows whether or not they are reviewed: a pending draft must
+    # block regeneration (it is on its way to being serveable), while a question
+    # an admin deactivated must stop counting so the bank can refill. See the
+    # docstring on count_active_questions_for_skill for both failure modes.
+    if await store.count_active_questions_for_skill(key) >= min_count:
         return False
 
     questions = await generate_questions(skill_name)

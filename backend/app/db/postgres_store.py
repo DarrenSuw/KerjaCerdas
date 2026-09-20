@@ -568,16 +568,27 @@ async def find_active_questions(skill: str) -> list[SkillQuestionSchema]:
     )
 
 
-async def count_questions_for_skill(skill: str) -> int:
-    """Every stored question for a skill, reviewed or not.
+async def count_active_questions_for_skill(skill: str) -> int:
+    """Questions for a skill that are still live, reviewed or not.
 
-    Generation dedupe MUST use this, not find_active_questions(): that filters
-    on reviewed=True, which a freshly generated (reviewed=False) batch can never
-    satisfy, so the generator would regenerate on every single call — paying
-    Gemini each time and never converging.
+    This is the generation-dedupe predicate, and it sits between two failure
+    modes:
+
+      reviewed only  -> a freshly generated batch (reviewed=False) is invisible
+                        to the check that gates generation, so every call
+                        regenerates and re-bills Gemini, never converging.
+      all rows       -> deactivating bad questions can never be replenished: the
+                        dead rows still satisfy the threshold, so the skill is
+                        stuck with too few serveable questions forever.
+
+    Counting ACTIVE rows regardless of `reviewed` satisfies both: a pending
+    draft blocks regeneration (it is still on its way to being serveable), and
+    a deactivated question stops counting, letting the bank refill.
     """
     async with async_session() as session:
-        stmt = select(func.count()).where(SkillQuestion.skill == skill)
+        stmt = select(func.count()).where(
+            SkillQuestion.skill == skill, SkillQuestion.active.is_(True)
+        )
         return int((await session.execute(stmt)).scalar_one() or 0)
 
 

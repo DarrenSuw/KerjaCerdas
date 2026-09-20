@@ -128,7 +128,7 @@ class TestColdStartSkill:
         # Second call must be a no-op: the rows exist, they are just unreviewed.
         assert await generator.ensure_questions_exist("forklift", min_count=5) is False
         assert calls["n"] == 1
-        assert await store.count_questions_for_skill("forklift") == 6
+        assert await store.count_active_questions_for_skill("forklift") == 6
 
     @pytest.mark.asyncio
     async def test_unreviewed_skill_is_not_offered_or_served(self, monkeypatch) -> None:
@@ -173,3 +173,80 @@ class TestColdStartSkill:
             await repos.skill_questions.upsert(q)
         assert "forklift" in {s["skill"] for s in await store.list_quiz_skills()}
         assert len(await store.find_active_questions("forklift")) == 6
+
+
+class TestBankReplenishment:
+    """Deactivating bad questions must not wedge a skill permanently."""
+
+    @pytest.mark.asyncio
+    async def test_deactivated_questions_free_the_bank_to_refill(self, monkeypatch) -> None:
+        """Counting ALL rows would leave dead rows satisfying the threshold, so
+        a skill whose questions were deactivated could never be replenished."""
+        from backend.app.db import postgres_store as store
+        from backend.app.db.schemas_proof import SkillQuestion
+        from backend.app.services.quiz import generator
+
+        repos = store.get_repositories()
+        made = []
+        for i in range(6):
+            q = SkillQuestion(skill="forklift", skill_label="Forklift", question=f"Q{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
+            await repos.skill_questions.upsert(q)
+            made.append(q)
+
+        calls = {"n": 0}
+
+        async def fake_generate(skill_name: str):
+            calls["n"] += 1
+            return [
+                SkillQuestion(skill="forklift", skill_label="Forklift", question=f"N{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
+                for i in range(6)
+            ]
+
+        monkeypatch.setattr(generator, "generate_questions", fake_generate)
+
+        # Pending drafts block regeneration — they are on their way to serveable.
+        assert await generator.ensure_questions_exist("forklift", min_count=5) is False
+        assert calls["n"] == 0
+
+        # An admin finds the batch unusable and deactivates it.
+        for q in made:
+            q.active = False
+            await repos.skill_questions.upsert(q)
+        assert await store.count_active_questions_for_skill("forklift") == 0
+
+        # The bank must now be allowed to refill.
+        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert calls["n"] == 1
+        assert await store.count_active_questions_for_skill("forklift") == 6
+
+    @pytest.mark.asyncio
+    async def test_partial_deactivation_tops_the_bank_back_up(self, monkeypatch) -> None:
+        from backend.app.db import postgres_store as store
+        from backend.app.db.schemas_proof import SkillQuestion
+        from backend.app.services.quiz import generator
+
+        repos = store.get_repositories()
+        made = []
+        for i in range(6):
+            q = SkillQuestion(skill="forklift", skill_label="Forklift", question=f"Q{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=True)
+            await repos.skill_questions.upsert(q)
+            made.append(q)
+
+        async def fake_generate(skill_name: str):
+            return [
+                SkillQuestion(skill="forklift", skill_label="Forklift", question=f"N{i}",
+                              options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
+                for i in range(6)
+            ]
+
+        monkeypatch.setattr(generator, "generate_questions", fake_generate)
+        # Two questions retired -> 4 active, below the 5 a quiz needs.
+        for q in made[:2]:
+            q.active = False
+            await repos.skill_questions.upsert(q)
+        assert await store.count_active_questions_for_skill("forklift") == 4
+        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert await store.count_active_questions_for_skill("forklift") == 10
