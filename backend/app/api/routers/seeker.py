@@ -32,7 +32,9 @@ from backend.app.db.schemas import (
     SeekerProfile,
     Skill,
 )
-from backend.app.services.matching.matcher import SemanticMatcher, _normalize_skill
+from backend.app.db.schemas_proof import ApplicationStatusEvent
+from backend.app.services.matching.evidence import carry_proof, skill_snapshot
+from backend.app.services.matching.matcher import SemanticMatcher, _normalize_skill, score_pair
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 from sqlalchemy.exc import IntegrityError
 
@@ -99,7 +101,7 @@ async def create_or_update_profile(
             if field in provided and value is not None:
                 setattr(profile, field, value)
         if "skills" in provided:
-            profile.skills = skills
+            profile.skills = carry_proof(skills, profile.skills)
         if "experience" in provided:
             profile.experience = experience
         if "education" in provided:
@@ -268,8 +270,14 @@ async def apply_to_job(
     if not job:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Lowongan tidak ditemukan")
 
+    if not job.is_active:
+        raise HTTPException(status.HTTP_409_CONFLICT, "Lowongan ini sudah tidak menerima lamaran.")
+
     profile = await find_seeker_by_user_id(current_user.id)
     seeker_id = profile.id if profile else current_user.id
+    # Stored at apply time so we can later check whether proven skills /
+    # higher scores predict the interview and hire outcome.
+    scored = score_pair(profile, job) if profile else None
 
     _APPLIED_NOTE = "Lamaran terkirim ke sistem rekrutmen institusi dan menunggu peninjauan tim HR."
 
@@ -293,6 +301,9 @@ async def apply_to_job(
         app.cover_letter = payload.cover_letter
         app.note = _APPLIED_NOTE
         app.updated_at = datetime.now(UTC)
+        app.match_score = scored["score"] if scored else 0.0
+        app.skill_snapshot = skill_snapshot(profile.skills) if profile else []
+        app.source = payload.source
     else:
         app = Application(
             job_id=job_id,
@@ -300,6 +311,9 @@ async def apply_to_job(
             status=ApplicationStatus.APPLIED,
             cover_letter=payload.cover_letter,
             note=_APPLIED_NOTE,
+            match_score=scored["score"] if scored else 0.0,
+            skill_snapshot=skill_snapshot(profile.skills) if profile else [],
+            source=payload.source,
         )
     already_applied = False
     try:
@@ -327,6 +341,15 @@ async def apply_to_job(
             already_applied = True
 
     if not already_applied:
+        await repos.status_events.upsert(
+            ApplicationStatusEvent(
+                application_id=app.id,
+                job_id=job_id,
+                from_status="saved" if existing else "none",
+                to_status="applied",
+                match_score=app.match_score or 0.0,
+            )
+        )
         logger.info("Application created: seeker %s → job %s", seeker_id, job_id)
 
     return {
@@ -336,6 +359,9 @@ async def apply_to_job(
         "status": app.status,
         "note": app.note,
         "already_applied": already_applied,
+        "match_score": app.match_score,
+        "band": scored["band"] if scored else None,
+        "skill_proof": scored["skill_proof"] if scored else [],
     }
 
 

@@ -29,13 +29,18 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from backend.app.api.database import init_db, reconfigure
 from backend.app.api.middleware.rate_limiter import RateLimiterMiddleware
 from backend.app.api.middleware.sanitization import RequestSizeMiddleware
+from backend.app.api.routers.admin import router as admin_router
 from backend.app.api.routers.agent import router as agent_router
 from backend.app.api.routers.auth import router as auth_router
+from backend.app.api.routers.billing import router as billing_router
 from backend.app.api.routers.employer import router as employer_router  # prefix=/employer
 from backend.app.api.routers.events import router as events_router
 from backend.app.api.routers.experiments import router as experiments_router
+from backend.app.api.routers.hiring import router as hiring_router
 from backend.app.api.routers.inquiries import router as inquiries_router
 from backend.app.api.routers.jobs import router as jobs_router
+from backend.app.api.routers.public_jobs import router as public_jobs_router
+from backend.app.api.routers.quiz import router as quiz_router
 from backend.app.api.routers.seeker import router as seeker_router
 from backend.app.api.routers.uploads import router as uploads_router
 from backend.app.api.routers.verify import router as verify_router
@@ -76,6 +81,26 @@ async def lifespan(app: FastAPI):
     reconfigure(settings.effective_database_url)
     await init_db()
 
+    # Starter skill-quiz bank (draft, pending HR review) — inserted once.
+    from backend.app.services.quiz.service import seed_bank_if_empty
+
+    try:
+        seeded = await seed_bank_if_empty()
+        if seeded:
+            logger.info("Seeded %d starter skill-quiz questions (draft bank)", seeded)
+    except Exception as exc:  # noqa: BLE001 — never block startup on seed data
+        logger.warning("Quiz bank seed skipped: %s", exc)
+
+    # Jobs created before share links existed get a /j/<code> link now.
+    from backend.app.db.postgres_store import backfill_public_codes
+
+    try:
+        filled = await backfill_public_codes()
+        if filled:
+            logger.info("Assigned share codes to %d existing jobs", filled)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Share-code backfill skipped: %s", exc)
+
     # A real Replit *deployment* (as opposed to the interactive dev workspace)
     # always sets REPLIT_DEPLOYMENT — independent of whether anyone remembered
     # to also set APP_ENV=production in that deployment's own secrets. Without
@@ -98,8 +123,8 @@ async def lifespan(app: FastAPI):
 
     if settings.otp_demo_enabled and settings.is_production:
         logger.warning(
-            "OTP_DEMO_MODE is on in production — /verify/otp/send returns the "
-            "generated code in its response, so phone verification proves nothing"
+            "OTP_DEMO_MODE is on in production — /verify/email/send may return the "
+            "generated code in its response, so email verification proves nothing"
         )
 
     # Both prod deployment topologies (docker-compose.prod.yml's own comment
@@ -207,7 +232,12 @@ for r in (
     auth_router,
     seeker_router,
     employer_router,
+    hiring_router,
     jobs_router,
+    public_jobs_router,
+    quiz_router,
+    billing_router,
+    admin_router,
     uploads_router,
     verify_router,
     agent_router,

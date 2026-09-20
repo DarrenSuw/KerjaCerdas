@@ -106,3 +106,30 @@ async def get_current_user_optional(
         return result.scalar_one_or_none()
     except Exception:  # noqa: BLE001
         return None
+
+
+def is_admin_email(email: str | None) -> bool:
+    """Whether this address may use the admin surface right now.
+
+    Read at call time, never cached: ADMIN_EMAILS / ADMIN_ROUTES_ENABLED can be
+    changed in a deployment's secrets, and a token minted before that change
+    must not carry stale admin rights. The login response only *advertises* the
+    flag so the UI can show the entry point — every admin route re-checks it.
+    """
+    from backend.app.config.settings import settings
+
+    if not settings.admin_routes_enabled or not email:
+        return False
+    allowed = {e.strip().lower() for e in settings.admin_emails if e.strip()}
+    return email.lower() in allowed
+
+
+async def require_admin(current_user: User = Depends(get_current_user)) -> User:
+    """Admin = authenticated account whose email is listed in ADMIN_EMAILS.
+
+    Also requires ADMIN_ROUTES_ENABLED, so a deployment that never configured
+    admins exposes no cross-user admin surface at all.
+    """
+    if not is_admin_email(current_user.email):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
+    return current_user

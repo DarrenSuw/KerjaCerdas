@@ -1,310 +1,139 @@
+"""Email verification (OTP) — the only identity check KerjaCerdas runs in-house.
+
+No NIK / KTP / ijazah / NPWP is collected (UU PDP data minimisation). Skill
+claims are verified with skill quizzes (routers/quiz.py) and HR confirmation;
+the candidate's identity is checked by HR at the interview (KTP), as today.
+Job postings are protected by AutoMod + admin review (services/trust/).
+"""
+
 from __future__ import annotations
 
 import hashlib
-import random
-import string
+import secrets
 import uuid
 from datetime import UTC, datetime, timedelta
 
 from backend.app.api.dependencies import get_current_user
-from backend.app.api.services.identity_verifier import MockIdentityVerificationService
 from backend.app.config.settings import settings
 from backend.app.db.models import OTPRecord, User
-from backend.app.db.postgres_store import find_seeker_by_user_id, update_seeker_verification_status
+from backend.app.db.postgres_store import set_user_email_verified
 from backend.app.db.session import async_session
+from backend.app.services.email.sender import email_configured, send_email
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, Field
 from sqlalchemy import delete, select
 
-_OTP_TTL_SECONDS = 300  # 5 minutes
+_OTP_TTL_SECONDS = 600  # 10 minutes
 _OTP_MAX_ATTEMPTS = 5
-
-
-def _hash_token(value: str) -> str:
-    """Return SHA-256 hex digest of a string."""
-    return hashlib.sha256(value.encode("utf-8")).hexdigest()
-
 
 router = APIRouter(prefix="/verify", tags=["verify"])
 
 
-# ── Document registry (encrypted file_id surfaced only to the owner) ─────────
+def _hash_token(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-@router.get("/documents")
-async def list_documents(current_user: User = Depends(get_current_user)) -> dict:
-    """Return the current user's verified documents with masked file_ids."""
-    return {
-        "encryption": "AES-256-GCM",
-        "region": "id-jakarta",
-        "compliance": ["UU-PDP-2022", "ISO-27001"],
-        "documents": [],
-    }
+class EmailOtpVerifyReq(BaseModel):
+    code: str = Field(min_length=6, max_length=6)
 
 
-class EkycReq(BaseModel):
-    nik: str = Field(min_length=16, max_length=16)
-    full_name: str
-    date_of_birth: str = ""
-    selfie_image_base64: str | None = None
+@router.get("/status")
+async def verification_status(current_user: User = Depends(get_current_user)) -> dict:
+    return {"email": current_user.email, "email_verified": bool(current_user.email_verified)}
 
 
-@router.post("/identity")
-async def verify_identity(req: EkycReq, current_user: User = Depends(get_current_user)) -> dict:
-    """Mock e-KYC identity check (demo mode — no real Dukcapil integration).
+@router.post("/email/send")
+async def send_email_otp(current_user: User = Depends(get_current_user)) -> dict:
+    """Send a 6-digit code to the account's own email address.
 
-    This endpoint, like /education and /npwp below, is a placeholder for a
-    verification microservice that doesn't exist yet. The check itself only
-    validates NIK *format* (16 digits, not a "99"-prefixed demo-fail value)
-    — it never confirms the NIK belongs to the submitting seeker, so a
-    passing check must never be recorded as VERIFIED: any authenticated
-    seeker could submit any format-valid NIK (their own or not) and get a
-    durable "verified" badge with zero identity evidence behind it. A pass
-    is persisted as PENDING instead — "submitted, format accepted, awaiting
-    a real verification this build doesn't have" — a value only a genuine
-    Dukcapil integration should ever be allowed to upgrade to VERIFIED. That
-    PENDING status still survives a reload or a login from another browser
-    (see `nik_verified` on the seeker's profile), which is what makes the
-    badge durable — durability and authority are separate properties, and
-    this endpoint only earns the former. The raw NIK is never stored
-    (UU-PDP-2022) — not even hashed, since there is no legitimate reason to
-    retain it once this response is returned; only the status is written.
+    With RESEND_API_KEY set the code is emailed. Without it, the code is only
+    returned in the response while OTP demo mode is on (never in production
+    by default) — otherwise the endpoint fails closed.
     """
-    nik_hash = _hash_token(req.nik)
-    r = MockIdentityVerificationService.verify_identity(nik=req.nik, full_name=req.full_name)
-    is_valid = r["is_valid"]
+    if current_user.email_verified:
+        return {"status": "ALREADY_VERIFIED", "email": current_user.email}
 
-    seeker = await find_seeker_by_user_id(current_user.id)
-    if seeker:
-        await update_seeker_verification_status(
-            seeker.id, nik_verified="pending" if is_valid else "failed"
-        )
-
-    return {
-        "request_id": str(uuid.uuid4()),
-        "status": "PENDING" if is_valid else "FAILED",
-        "match_percentage": r["match_score"],
-        "verification_hash": r.get("verification_hash") or nik_hash,
-        "pii_redacted": True,
-        "message": "Format NIK diterima — menunggu verifikasi resmi (mode demo, bukan konfirmasi identitas)."
-        if is_valid
-        else "Verifikasi identitas gagal.",
-    }
-
-
-class SivilReq(BaseModel):
-    ijazah_number: str = Field(min_length=6, max_length=64)
-    university_name: str
-    major: str
-
-
-def _looks_like_placeholder(value: str) -> bool:
-    """Reject input that couldn't plausibly be a real diploma number: every
-    character the same ("0000000", "aaaaaa"), or a well-known junk token.
-
-    There is no single canonical format for an Indonesian diploma number
-    (unlike NIK's fixed 16 digits — see MockIdentityVerificationService), so
-    this can only screen out obviously-fake input, not confirm a real
-    registry match.
-    """
-    if len(set(value)) <= 1:
-        return True
-    return value.lower() in {"000000", "test", "testtest", "xxxxxx", "asdfasdf", "unknown", "123456"}
-
-
-@router.post("/education")
-async def verify_education(req: SivilReq, current_user: User = Depends(get_current_user)) -> dict:
-    """Mock SIVIL diploma-number format check (demo mode — no real SIVIL
-    integration; the mirror of verify_identity's NIK mock above). Persisted
-    as PENDING, never VERIFIED — see verify_identity's docstring for why a
-    format-only pass must not be recorded as an authoritative identity/
-    credential claim, only as a durable "submitted, awaiting real
-    verification" status."""
-    ijazah_number = req.ijazah_number.strip()
-    ok = len(ijazah_number) >= 6 and not _looks_like_placeholder(ijazah_number)
-
-    seeker = await find_seeker_by_user_id(current_user.id)
-    if seeker:
-        await update_seeker_verification_status(
-            seeker.id, ijazah_verified="pending" if ok else "failed"
-        )
-
-    return {
-        "request_id": str(uuid.uuid4()),
-        "status": "PENDING" if ok else "NOT_FOUND",
-        "message": "Format nomor ijazah diterima — menunggu verifikasi resmi (mode demo)."
-        if ok
-        else "Nomor ijazah tidak valid.",
-        "verified_data": {
-            "university": req.university_name,
-            "major": req.major,
-            "graduation_year": "2023",
-            "degree": "S1",
-            "status": "Lulus",
-        }
-        if ok
-        else None,
-    }
-
-
-class NpwpReq(BaseModel):
-    npwp: str
-    company_name: str = ""
-
-
-@router.post("/npwp")
-async def verify_npwp(req: NpwpReq, current_user: User = Depends(get_current_user)) -> dict:
-    """Mock DJP Online NPWP verification for employers."""
-    clean = req.npwp.replace(".", "").replace("-", "")
-    ok = len(clean) == 15 and clean.isdigit() and clean != "000000000000000"
-    return {
-        "request_id": str(uuid.uuid4()),
-        "status": "VERIFIED" if ok else "NOT_FOUND",
-        "message": "NPWP terverifikasi di DJP Online (mode demo)."
-        if ok
-        else "NPWP tidak ditemukan.",
-        "verified_data": {
-            "npwp": req.npwp,
-            "company_name": req.company_name or "Perusahaan",
-            "status": "AKTIF",
-            "valid_until": "2027-12-31",
-        }
-        if ok
-        else None,
-    }
-
-
-# ── Phone OTP — send & verify (Database Backed) ───────────────────────────────
-
-
-class OtpSendReq(BaseModel):
-    phone: str  # E.164 format: +6281234567890
-
-
-class OtpVerifyReq(BaseModel):
-    phone: str
-    code: str
-
-
-@router.post("/otp/send")
-async def send_otp(req: OtpSendReq, current_user: User = Depends(get_current_user)) -> dict:
-    """Generate and record a 6-digit OTP in the database.
-
-    There is no SMS/WhatsApp provider wired in yet, so the only delivery
-    channel available is the response body itself. That is a demo affordance:
-    the caller who asks for a code for a phone number is handed that code, so
-    the OTP proves nothing about who controls the number. It is gated behind
-    ``settings.otp_demo_enabled`` (off in production unless OTP_DEMO_MODE is
-    set explicitly) and the endpoint fails closed rather than issuing a code
-    it cannot deliver.
-    """
-    if not settings.otp_demo_enabled:
+    can_email = email_configured()
+    if not can_email and not settings.otp_demo_enabled:
         raise HTTPException(
             status.HTTP_503_SERVICE_UNAVAILABLE,
-            "Verifikasi OTP belum tersedia: penyedia SMS/WhatsApp belum dikonfigurasi.",
+            "Pengiriman email belum dikonfigurasi. Hubungi admin KerjaCerdas.",
         )
 
-    phone = req.phone.strip()
-    if not phone.startswith("+"):
-        raise HTTPException(
-            status.HTTP_400_BAD_REQUEST, "Phone harus dalam format internasional (+62...)"
-        )
-
-    code = "".join(random.choices(string.digits, k=6))
-    code_hash = _hash_token(code)
-    now = datetime.now(UTC)
-    expires_at = now + timedelta(seconds=_OTP_TTL_SECONDS)
-
+    code = f"{secrets.randbelow(1_000_000):06d}"
     async with async_session() as session:
-        # Invalidate any prior unverified OTPs for this user & phone
-        await session.execute(
-            delete(OTPRecord).where(
-                OTPRecord.user_id == current_user.id,
-                OTPRecord.phone == phone,
+        await session.execute(delete(OTPRecord).where(OTPRecord.user_id == current_user.id))
+        session.add(
+            OTPRecord(
+                user_id=current_user.id,
+                destination=current_user.email,
+                code_hash=_hash_token(code),
+                expires_at=datetime.now(UTC) + timedelta(seconds=_OTP_TTL_SECONDS),
+                attempts=0,
+                verified=False,
             )
         )
-        otp_entry = OTPRecord(
-            user_id=current_user.id,
-            phone=phone,
-            code_hash=code_hash,
-            expires_at=expires_at,
-            attempts=0,
-            verified=False,
-        )
-        session.add(otp_entry)
         await session.commit()
 
-    return {
+    sent = False
+    if can_email:
+        sent = await send_email(
+            current_user.email,
+            "Kode verifikasi KerjaCerdas",
+            f"Kode verifikasi email kamu: {code}\nBerlaku 10 menit. Jangan bagikan kode ini.",
+        )
+    if not sent and not settings.otp_demo_enabled:
+        raise HTTPException(status.HTTP_502_BAD_GATEWAY, "Email gagal dikirim. Coba lagi.")
+
+    body: dict = {
         "request_id": str(uuid.uuid4()),
         "status": "SENT",
-        "mode": "demo",
-        "phone": phone,
+        "email": current_user.email,
         "expires_in_seconds": _OTP_TTL_SECONDS,
-        "demo_code": code,
-        "message": (
-            f"[DEMO MODE] Kode OTP: {code}. Dalam produksi kode akan dikirim via WhatsApp/SMS."
-        ),
+        "mode": "email" if sent else "demo",
     }
+    if not sent:
+        body["demo_code"] = code
+        body["message"] = f"[DEMO] Email belum dikonfigurasi. Kode: {code}"
+    return body
 
 
-@router.post("/otp/verify")
-async def verify_otp(req: OtpVerifyReq, current_user: User = Depends(get_current_user)) -> dict:
-    """Validate submitted OTP against the database record."""
-    phone = req.phone.strip()
-    submitted_hash = _hash_token(req.code.strip())
+@router.post("/email/verify")
+async def verify_email_otp(
+    req: EmailOtpVerifyReq, current_user: User = Depends(get_current_user)
+) -> dict:
+    submitted = _hash_token(req.code.strip())
     now = datetime.now(UTC)
-
     async with async_session() as session:
         stmt = (
             select(OTPRecord)
-            .where(
-                OTPRecord.user_id == current_user.id,
-                OTPRecord.phone == phone,
-                OTPRecord.verified.is_(False),
-            )
+            .where(OTPRecord.user_id == current_user.id, OTPRecord.verified.is_(False))
             .order_by(OTPRecord.created_at.desc())
         )
-        result = await session.execute(stmt)
-        entry = result.scalars().first()
-
+        entry = (await session.execute(stmt)).scalars().first()
         if not entry:
-            raise HTTPException(
-                status.HTTP_404_NOT_FOUND, "OTP tidak ditemukan. Kirim ulang kode terlebih dahulu."
-            )
+            raise HTTPException(status.HTTP_404_NOT_FOUND, "Kode tidak ditemukan. Kirim ulang.")
 
-        if entry.expires_at.tzinfo is None:
-            # Ensure timezone-aware comparison
-            entry_expires = entry.expires_at.replace(tzinfo=UTC)
-        else:
-            entry_expires = entry.expires_at
-
-        if now > entry_expires:
+        expires = entry.expires_at if entry.expires_at.tzinfo else entry.expires_at.replace(tzinfo=UTC)
+        if now > expires:
             await session.delete(entry)
             await session.commit()
-            raise HTTPException(status.HTTP_410_GONE, "OTP sudah kedaluwarsa. Kirim ulang kode.")
+            raise HTTPException(status.HTTP_410_GONE, "Kode sudah kedaluwarsa. Kirim ulang.")
 
         entry.attempts += 1
         if entry.attempts > _OTP_MAX_ATTEMPTS:
             await session.delete(entry)
             await session.commit()
-            raise HTTPException(
-                status.HTTP_429_TOO_MANY_REQUESTS, "Terlalu banyak percobaan. Kirim ulang kode."
-            )
+            raise HTTPException(status.HTTP_429_TOO_MANY_REQUESTS, "Terlalu banyak percobaan.")
 
-        if submitted_hash != entry.code_hash:
+        if not secrets.compare_digest(submitted, entry.code_hash):
             remaining = _OTP_MAX_ATTEMPTS - entry.attempts
             await session.commit()
             raise HTTPException(
-                status.HTTP_400_BAD_REQUEST,
-                f"Kode OTP salah. {remaining} percobaan tersisa.",
+                status.HTTP_400_BAD_REQUEST, f"Kode salah. {remaining} percobaan tersisa."
             )
-
         entry.verified = True
         await session.commit()
 
-    return {
-        "request_id": str(uuid.uuid4()),
-        "status": "VERIFIED",
-        "phone": phone,
-        "message": "Nomor HP berhasil diverifikasi.",
-    }
+    await set_user_email_verified(current_user.id)
+    return {"status": "VERIFIED", "email": current_user.email, "email_verified": True}

@@ -23,6 +23,7 @@ from backend.app.db.schemas import (
     Skill,
     WorkExperience,
 )
+from backend.app.services.matching.evidence import carry_proof
 from backend.app.services.matching.matcher import SemanticMatcher
 from backend.app.services.pdf_parser import parse_cv, parse_job_pack
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
@@ -114,7 +115,11 @@ async def upload_cv(
     seeker.headline = parsed.get("headline", seeker.headline)
     if parsed.get("region_code"):
         seeker.region_code = parsed["region_code"]
-    seeker.skills = [_to_skill(s) for s in parsed.get("skills", []) if s.get("name")]
+    # A CV re-upload replaces the claimed skills but never erases earned proof
+    # (quiz badges, HR confirmations) — see evidence.carry_proof.
+    seeker.skills = carry_proof(
+        [_to_skill(s) for s in parsed.get("skills", []) if s.get("name")], seeker.skills
+    )
     seeker.experience = [_to_experience(x) for x in parsed.get("experience", [])]
     seeker.education = [_to_education(e) for e in parsed.get("education", [])]
     seeker.resume_text = parsed.get("resume_text", "")

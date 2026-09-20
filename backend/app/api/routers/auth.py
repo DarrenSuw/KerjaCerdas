@@ -12,6 +12,7 @@ onboarding step.
 import logging
 
 from backend.app.api.database import get_session
+from backend.app.api.dependencies import is_admin_email
 from backend.app.api.schemas.auth import TokenResponse, UserLoginRequest, UserRegisterRequest
 from backend.app.api.services.auth_service import (
     create_access_token,
@@ -97,6 +98,7 @@ async def register_user(request: UserRegisterRequest, db: AsyncSession = Depends
             "name": new_user.name,
             "email": new_user.email,
             "role": new_user.role,
+            "is_admin": is_admin_email(new_user.email),
         },
     )
 
@@ -138,5 +140,6 @@ async def login_user(request: UserLoginRequest, db: AsyncSession = Depends(get_s
 
     return TokenResponse(
         access_token=token,
-        user={"id": user.id, "name": user.name, "email": user.email, "role": user.role},
+        user={"id": user.id, "name": user.name, "email": user.email, "role": user.role,
+              "is_admin": is_admin_email(user.email)},
     )

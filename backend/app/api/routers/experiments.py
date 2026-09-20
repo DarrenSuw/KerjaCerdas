@@ -45,11 +45,6 @@ EXPERIMENTS: dict[str, dict] = {
         "allocation": [0.50, 0.50],
         "description": "Stretch band framing: 'tantangan' vs 'tujuan yang bisa dikejar'",
     },
-    "unlock_cta_copy": {
-        "variants": ["buka_kontak", "hubungi_kandidat"],
-        "allocation": [0.50, 0.50],
-        "description": "Employer unlock button text",
-    },
     "profile_completeness_nudge": {
         "variants": ["progress_bar", "tooltip_nudge"],
         "allocation": [0.50, 0.50],
