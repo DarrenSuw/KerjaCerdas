@@ -245,6 +245,27 @@ class TestDisplayedWeightsMatchTheEngine:
             f"(live: {sorted(live)}): " + "; ".join(offenders)
         )
 
+    def test_no_surface_still_describes_spark_as_first_come_first_served(self) -> None:
+        """Spark reveals the top N BY SCORE. Copy saying "pelamar pertama"
+        (first applicants) describes a queue — the behaviour this deliberately
+        replaced — and an employer reading it would expect the wrong thing."""
+
+        root = self._repo_root()
+        offenders = []
+        for sub in ("docs", "frontend/src", "backend/app", "README.md"):
+            base = root / sub
+            paths = [base] if base.is_file() else [
+                p for p in base.rglob("*")
+                if p.is_file() and p.suffix in {".md", ".jsx", ".js", ".py"}
+                and "node_modules" not in p.parts and "__pycache__" not in p.parts
+            ]
+            for path in paths:
+                text = path.read_text(encoding="utf-8", errors="ignore")
+                for phrase in ("pelamar pertama", "first 20 applicants"):
+                    if phrase in text:
+                        offenders.append(f"{path.relative_to(root)} says '{phrase}'")
+        assert not offenders, "Spark copy still describes arrival order: " + "; ".join(offenders)
+
     def test_sql_init_path_matches_the_orm_education_default(self) -> None:
         """A database built from the SQL file must not demand a degree the ORM
         would not have demanded."""

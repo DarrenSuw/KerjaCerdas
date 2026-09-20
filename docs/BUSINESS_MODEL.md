@@ -24,7 +24,7 @@
 
 | Paket | Harga | Untuk siapa | Isi | Status |
 |---|---|---|---|---|
-| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, 20 pelamar pertama diperingkat AI, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
+| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, 20 pelamar dengan skor tertinggi ditampilkan, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
 | **Beacon** | **Rp29.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pelamar tanpa batas diperingkat, pertanyaan wawancara AI, ekspor CSV | `[BUILT + TESTED]`, pembayaran manual |
 | **Lighthouse** | **Rp99.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
 | **Prism** (pencari kerja) | **Rp25.000 / 30 hari** | Pencari kerja aktif | Kuota advisor 100 pesan/30 hari, ulang kuis setelah 2 hari (gratis: 10 pesan/hari, ulang 7 hari) | `[BUILT + TESTED]`, pembayaran manual |

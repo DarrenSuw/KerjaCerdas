@@ -1,7 +1,7 @@
 """Plan catalogue and entitlement checks (Spark / Beacon / Lighthouse / Prism).
 
 Employers
-  Spark       Rp0          1 active job, first 20 applicants ranked, core features
+  Spark       Rp0          1 active job, top 20 applicants BY SCORE revealed, core features
   Beacon      Rp29.000     per job for 30 days: unlimited ranked applicants,
                            AI interview questions, applicant export
   Lighthouse  Rp99.000     per 30 days: up to 5 active jobs, all Beacon features
@@ -47,7 +47,7 @@ def catalogue() -> dict:
         "employer": [
             {"plan": "spark", "price_idr": 0, "period": "gratis",
              "features": ["1 lowongan aktif", "Link + QR lowongan",
-                          f"Peringkat AI untuk {settings.spark_ranked_applicant_limit} pelamar pertama",
+                          f"{settings.spark_ranked_applicant_limit} pelamar skor tertinggi ditampilkan",
                           "Badge skill terbukti", "Centang 'skill terbukti' setelah wawancara"]},
             {"plan": "beacon", "price_idr": settings.plan_price_beacon, "period": "per lowongan / 30 hari",
              "features": ["Semua fitur Spark", "Pelamar tanpa batas diperingkat",

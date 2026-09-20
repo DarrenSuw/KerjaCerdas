@@ -1,6 +1,8 @@
 // Ranked applicants for one job: proof chips, pipeline status, notes,
 // AI interview questions, "skill terbukti" confirmation, CSV export.
-// Spark (free) ranks the first 20 applicants; the rest show as locked.
+// Spark (free) scores every applicant and reveals the top 20 BY SCORE; the
+// rest show as locked. The cap limits how many are opened, not which — a
+// late-arriving better candidate must not be hidden behind the paywall.
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Download, Lock, MessageSquareText, StickyNote } from 'lucide-react'
@@ -46,7 +48,7 @@ export default function ApplicantList({ job }) {
             </div>
             {anyLocked && (
                 <BrutalCard color={KC.yellowSoft} padding={14}>
-                    <b>Paket Spark memeringkat 20 pelamar pertama.</b> Beli Beacon (Rp29.000 / lowongan / 30 hari) agar semua pelamar diperingkat.
+                    <b>Paket Spark menampilkan 20 pelamar dengan skor tertinggi.</b> Beli Beacon (Rp29.000 / lowongan / 30 hari) agar semua pelamar terbuka.
                     <button style={{ ...topBtn(KC.orange, '#fff'), marginLeft: 10 }} onClick={() => openUpgradeModal({ plan: 'beacon', jobId: job?.id })}>Beli Beacon</button>
                 </BrutalCard>
             )}

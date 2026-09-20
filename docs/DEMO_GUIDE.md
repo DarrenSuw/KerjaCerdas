@@ -48,7 +48,7 @@ kata kunci, satu yang sudah lulus kuis — inilah perbandingan yang jadi inti de
   (Klaim / ✓ Terbukti / Dikonfirmasi HR). Klik **Wawancara & konfirmasi skill** → pertanyaan wawancara
   fokus ke skill yang masih klaim ("jelaskan contoh nyatanya").
 - **Setelah wawancara:** HR mencentang *Terbukti* → menjadi bukti terkuat (bobot 1,0) di profil kandidat.
-- **Paket:** Spark gratis memeringkat 20 pelamar pertama; Beacon Rp29.000/lowongan membuka semuanya +
+- **Paket:** Spark gratis menampilkan 20 pelamar dengan skor tertinggi (semua pelamar tetap diperingkat — yang dibatasi jumlah yang terbuka, bukan siapa); Beacon Rp29.000/lowongan membuka semuanya +
   pertanyaan wawancara AI + ekspor CSV.
 
 ### 2.3 — AutoMod (tunjukkan yang ditolak)

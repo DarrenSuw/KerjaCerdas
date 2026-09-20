@@ -1028,7 +1028,7 @@ export default function LandingHero() {
         },
         {
             q: 'Bagaimana skema harga untuk perusahaan?',
-            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, 20 pelamar pertama diperingkat). Beacon Rp29.000 per lowongan (30 hari) atau Lighthouse Rp99.000 per bulan (hingga 5 lowongan) untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
+            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, 20 pelamar skor tertinggi ditampilkan). Beacon Rp29.000 per lowongan (30 hari) atau Lighthouse Rp99.000 per bulan (hingga 5 lowongan) untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
         },
     ]
 
@@ -1402,7 +1402,7 @@ export default function LandingHero() {
                             perks: [
                                 '1 lowongan aktif',
                                 'Link + poster QR lowongan',
-                                '20 pelamar pertama diperingkat AI',
+                                '20 pelamar skor tertinggi ditampilkan',
                                 'Badge skill terbukti',
                             ],
                             action: onEmployer,

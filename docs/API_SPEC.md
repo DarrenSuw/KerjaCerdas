@@ -730,7 +730,7 @@ personal data until the job is covered by Beacon/Lighthouse.
       "applied_at": "2026-09-20 09:12", "updated_at": "2026-09-20 09:12", "locked": false },
     { "id": "…", "application_id": "…", "job_id": "…", "seeker_name": "Pelamar terkunci",
       "locked": true, "match_score": null,
-      "lock_reason": "Paket Spark memeringkat 20 pelamar pertama. …" }
+      "lock_reason": "Paket Spark menampilkan 20 pelamar dengan skor tertinggi. …" }
   ] }
 ```
 
