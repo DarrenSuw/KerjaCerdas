@@ -38,6 +38,9 @@ from backend.app.db.schemas import (
     WorkExperience,
 )
 from backend.app.db.session import async_session as async_session_factory
+from backend.app.services.hiring.links import new_public_code
+from backend.app.services.matching.matcher import score_pair
+
 from backend.app.services.matching.matcher import SemanticMatcher
 from scripts.auth_utils import seed_auth_user as _seed_auth_user
 
@@ -1750,6 +1753,19 @@ async def seed(clear: bool, reset_passwords: bool = False) -> None:
         existing_employers[u.id] = emp
     print(f"[employers] {len(emp_by_key)} created")
 
+    # ── Admin account ──────────────────────────────────────────────────────
+    # Creates admin@kerjacerdas.tech so ADMIN_EMAILS has a matching account.
+    # The admin is a regular seeker account — admin powers come from being
+    # listed in ADMIN_EMAILS + ADMIN_ROUTES_ENABLED=true, not from the role.
+    await _seed_auth_user(
+        email="admin@kerjacerdas.tech",
+        name="Admin KerjaCerdas",
+        role=UserRole.SEEKER.value,
+        reset_password=reset_passwords,
+    )
+    print("[admin] admin@kerjacerdas.tech created (use SEED_DEFAULT_PASSWORD to login)")
+
+
     # ── Jobs ───────────────────────────────────────────────────────────────
     existing_jobs = {
         (job.employer_id, job.title): job for job in await repos.jobs.list()
@@ -1778,6 +1794,7 @@ async def seed(clear: bool, reset_passwords: bool = False) -> None:
             remote_allowed=remote,
             salary_min=smin,
             salary_max=smax,
+            public_code=(existing_job.public_code if existing_job else None) or new_public_code(),
         )
         await matcher.embed_job(job)
         await repos.jobs.upsert(job)
@@ -1905,7 +1922,7 @@ async def seed(clear: bool, reset_passwords: bool = False) -> None:
                     status=status_val,
                     note=note_val,
                     cover_letter="Saya sangat tertarik dengan posisi ini dan yakin pengalaman saya relevan.",
-                    match_score=0.88,
+                    match_score=score_pair(s_obj, j_obj)["score"],
                 )
                 await repos.applications.upsert(app_obj)
                 existing_applications[(j_obj.id, s_obj.id)] = app_obj
