@@ -206,3 +206,61 @@ class TestMigrationsCoverEveryTable:
             "database will not have them — create_all() at startup is not a "
             "migration path (see CLAUDE.md)."
         )
+
+
+def _v2_revision():
+    """Import the v2 revision module so its table definitions can be inspected."""
+    import importlib.util
+    from pathlib import Path
+
+    path = (Path(__file__).resolve().parents[2]
+            / "alembic/versions/a2b4c6d8e0f1_v2_proof_of_skill.py")
+    spec = importlib.util.spec_from_file_location("v2_revision", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class TestMigrationMatchesOrm:
+    """A migration-built table must have the constraints the ORM declares."""
+
+    def test_foreign_keys_match_the_orm(self) -> None:
+        from backend.app.db import models_proof  # noqa: F401 — registers v2 tables
+        from backend.app.db.models import Base
+
+        for name, columns in _v2_revision()._new_tables().items():
+            migrated = {
+                (c.name, list(c.foreign_keys)[0]._colspec)
+                for c in columns
+                if getattr(c, "foreign_keys", None)
+            }
+            orm = {
+                (c.name, list(c.foreign_keys)[0].target_fullname)
+                for c in Base.metadata.tables[name].columns
+                if c.foreign_keys
+            }
+            assert migrated == orm, (
+                f"{name}: migration declares {migrated or 'no FKs'} but the ORM "
+                f"declares {orm or 'no FKs'} — an Alembic-built database would "
+                "lose referential integrity the model assumes."
+            )
+
+
+class TestDowngradePreservesPreExistingTables:
+    """Rolling back must restore a prior state, not destroy live data."""
+
+    def test_backfilled_tables_are_not_dropped(self) -> None:
+        module = _v2_revision()
+        # These predate the revision: it only backfills them into the migration
+        # history, so a downgrade leaves them for the revision it rolls back to.
+        assert set(module._BACKFILLED_TABLES) == {"otps", "query_embeddings"}
+        for table in module._BACKFILLED_TABLES:
+            assert table in module._new_tables(), f"{table} must still be created on upgrade"
+
+    def test_every_other_new_table_is_still_dropped(self) -> None:
+        module = _v2_revision()
+        introduced = set(module._new_tables()) - set(module._BACKFILLED_TABLES)
+        assert introduced == {
+            "skill_questions", "quiz_attempts", "skill_evidence", "job_reports",
+            "moderation_events", "plan_orders", "application_status_events",
+        }

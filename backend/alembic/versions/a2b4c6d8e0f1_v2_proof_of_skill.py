@@ -56,6 +56,14 @@ _NEW_COLUMNS = {
 
 _DROPPED = {"seekers": ["nik", "nik_verified", "ijazah_verified"], "employers": ["npwp"]}
 
+# Tables this revision CREATES but did not INTRODUCE. Both predate v2 — the
+# pre-v2 app used them, they were just never written into a migration, so this
+# revision backfills them. A downgrade must therefore leave them in place: the
+# revision it rolls back to still needs `otps` to verify a code and
+# `query_embeddings` for its cache, and dropping them would destroy live OTP
+# records and the persistent embedding cache rather than restore a prior state.
+_BACKFILLED_TABLES = ("otps", "query_embeddings")
+
 
 def _ts():
     return [
@@ -141,7 +149,7 @@ def _new_tables() -> dict:
         # the post-v2 column names, so the rename below is a no-op for them.
         "otps": [
             sa.Column("id", sa.String(36), primary_key=True),
-            sa.Column("user_id", sa.String(36), index=True, nullable=False),
+            sa.Column("user_id", sa.String(36), sa.ForeignKey("users.id"), index=True, nullable=False),
             sa.Column("destination", sa.String(255), index=True, nullable=False),
             sa.Column("code_hash", sa.String(64), nullable=False),
             sa.Column("expires_at", sa.DateTime(timezone=True), index=True, nullable=False),
@@ -223,6 +231,8 @@ def downgrade() -> None:
                     type_=sa.String(30), existing_type=sa.String(255))
     op.drop_index("ix_plan_orders_user_status", table_name="plan_orders")
     for table in reversed(list(_new_tables())):
+        if table in _BACKFILLED_TABLES:
+            continue  # predates this revision — see _BACKFILLED_TABLES
         op.drop_table(table)
     for table, columns in _NEW_COLUMNS.items():
         for col in columns:
