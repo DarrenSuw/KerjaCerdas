@@ -86,7 +86,7 @@ async def generate_questions(skill_name: str) -> list[SkillQuestion]:
             HumanMessage(content=prompt),
         ])
     except LLMBusyError:
-        raise GenerationError(f"AI sedang sibuk, coba lagi nanti.")
+        raise GenerationError("AI sedang sibuk, coba lagi nanti.")
     except RuntimeError as exc:
         raise GenerationError(f"AI tidak tersedia: {exc}")
 
@@ -94,7 +94,7 @@ async def generate_questions(skill_name: str) -> list[SkillQuestion]:
     # Strip markdown code fences if present
     if raw.startswith("```"):
         lines = raw.split("\n")
-        lines = [l for l in lines if not l.strip().startswith("```")]
+        lines = [line for line in lines if not line.strip().startswith("```")]
         raw = "\n".join(lines)
 
     try:
@@ -159,5 +159,3 @@ async def ensure_questions_exist(skill_name: str, min_count: int = 5) -> bool:
         await repos.skill_questions.upsert(q)
 
     return True
-""",
-<parameter name="Description">AI quiz question generator using Option B: generate questions + answer keys once with Gemini, then grade by answer key (Rp0 per attempt). Supports dynamic quiz creation for any skill found in a user's CV.
