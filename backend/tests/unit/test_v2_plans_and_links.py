@@ -16,7 +16,9 @@ JOB = {"title": "Kasir Kafe", "description": "Melayani transaksi pelanggan.",
 def admin(client: TestClient, register, monkeypatch: pytest.MonkeyPatch) -> dict:
     acct = register(client, "seeker")
     import asyncio
+
     from sqlalchemy import text
+
     from backend.app.api import database as db_mod
     async def _verify():
         async with db_mod.engine.begin() as conn:

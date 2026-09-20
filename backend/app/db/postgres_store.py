@@ -639,7 +639,18 @@ async def add_event(user_id: str | None, event_type: str, payload: dict | None =
 
 
 async def consume_quota(user_id: str, event_type: str, limit: int, since: datetime) -> bool:
-    """Atomic quota check using pg_advisory_xact_lock to prevent concurrent bypass."""
+    """Check-and-consume one unit of a usage quota (e.g. advisor messages/day).
+
+    On PostgreSQL a per-(user, event) advisory lock held for the transaction
+    makes the count-then-insert atomic, so two concurrent requests cannot both
+    read `used == limit - 1` and both proceed.
+
+    SQLite (dev/test only) has no advisory locks, so the guard is skipped rather
+    than raising `no such function: pg_advisory_xact_lock` — which would 500 the
+    request instead of metering it. The count-then-insert is then racy under
+    genuine concurrency; that is acceptable for a single-process dev database
+    and is never the production path.
+    """
     from sqlalchemy import text
 
     from backend.app.api.database import engine

@@ -29,7 +29,7 @@
                              │                   │
                 ┌────────────▼─────────┐  ┌──────▼───────────────────┐
                 │ PostgreSQL + pgvector│  │ Google Gemini            │
-                │ vector(768) columns  │  │ · gemini-embedding-2     │
+                │ vector(768) columns  │  │ · gemini-embedding-1     │
                 │ users/jobs/seekers/  │  │   (768-dim, MRL from     │
                 │ otps/events/inquiries│  │   3072-dim)              │
                 └──────────────────────┘  │ · gemini-3.1-flash-lite  │

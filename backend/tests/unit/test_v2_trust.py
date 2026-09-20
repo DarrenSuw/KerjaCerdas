@@ -24,7 +24,9 @@ def _post(client: TestClient, headers: dict, **over) -> dict:
 def admin(client: TestClient, register, monkeypatch: pytest.MonkeyPatch) -> dict:
     acct = register(client, "seeker")
     import asyncio
+
     from sqlalchemy import text
+
     from backend.app.api import database as db_mod
     async def _verify():
         async with db_mod.engine.begin() as conn:

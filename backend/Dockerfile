@@ -14,4 +14,10 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
 
+# The entrypoint runs `alembic upgrade head` before serving, so an existing
+# PostgreSQL database actually gains new columns on deploy. Set
+# RUN_MIGRATIONS=false to skip it (e.g. when several replicas start at once and
+# a single dedicated job runs the migration instead).
+RUN chmod +x /app/backend/docker-entrypoint.sh
+ENTRYPOINT ["/app/backend/docker-entrypoint.sh"]
 CMD ["uvicorn", "backend.app.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

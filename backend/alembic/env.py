@@ -40,7 +40,9 @@ def run_migrations_offline() -> None:
     """
     import os
 
-    url = os.environ.get(
+    # PROD_DATABASE_URL wins, mirroring settings.effective_database_url — so a
+    # migration can never be applied to a different database than the app uses.
+    url = os.environ.get("PROD_DATABASE_URL") or os.environ.get(
         "DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/kerjacerdas"
     )
     context.configure(
@@ -71,7 +73,8 @@ async def run_async_migrations() -> None:
     import urllib.parse
 
     section = config.get_section(config.config_ini_section, {})
-    db_url = os.environ.get(
+    # Same precedence as settings.effective_database_url (see offline mode above).
+    db_url = os.environ.get("PROD_DATABASE_URL") or os.environ.get(
         "DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/kerjacerdas"
     )
     # Normalize: asyncpg driver is required for async alembic

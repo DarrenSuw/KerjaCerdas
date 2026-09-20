@@ -13,7 +13,12 @@ The pipeline is a **bi-encoder semantic ranker with structured boosts and band-b
 
 ## 1. Embedding Stage (offline, at write time)
 
-**Model:** `gemini-embedding-2` (`settings.gemini_embed_model`), requested at `output_dimensionality=768`.
+**Model:** `gemini-embedding-1` (`settings.gemini_embed_model`), requested at `output_dimensionality=768`.
+
+> **Changing this model is a migration.** Stored vectors carry the model that produced them, and a
+> cross-model pair is scored at cosine `0` rather than compared across two different vector spaces —
+> so every un-migrated row silently loses the whole 45% cosine term. Re-embed with
+> `python -m scripts.reembed` (`--dry-run` first) immediately after any change.
 The native model is 3072-dim; Gemini applies **Matryoshka Representation Learning (MRL)** truncation, so the first 768 dims retain most of the semantic signal. 768 was chosen to match the `vector(768)` pgvector column. `text-embedding-004` (native 768-dim, no truncation) is a documented stable-fallback option, settable via `GEMINI_EMBED_MODEL`, but is not the default.
 
 If no `GEMINI_API_KEY`/`VERTEX_AI_PROJECT` is configured, or a Gemini call fails for a non-quota reason, `embeddings/gemini.py` latches to a deterministic offline `HashEmbedder` (token-hash based, 768-dim) so the pipeline never crashes — cosine scores against hash vectors are near-meaningless, logged loudly. Quota (429) errors instead get bounded retries (up to 4 attempts for document embeds, 2 for query embeds) before raising `EmbeddingUnavailableError`.

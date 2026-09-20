@@ -2,9 +2,15 @@
 Gemini embedding service.
 
 Supported models (set GEMINI_EMBED_MODEL in .env):
-  gemini-embedding-2          — 3072-d, MRL-truncated to 768-d (default — see settings.py)
-  gemini-embedding-exp-03-07  — 3072-d (previous default, experimental)
+  gemini-embedding-1          — MRL-truncated to 768-d (default — see settings.py)
+  gemini-embedding-2          — 3072-d, MRL-truncated to 768-d (previous default)
+  gemini-embedding-exp-03-07  — 3072-d (experimental)
   text-embedding-004          — 768-d  (stable fallback, native 768-d, no truncation)
+
+Changing the model is a MIGRATION: stored vectors carry the model that produced
+them, and matcher.py scores a cross-model pair at cosine 0 rather than compare
+two different vector spaces. Re-embed with `python -m scripts.reembed` after any
+change, or every existing row silently loses 45% of its match score.
 
 Task types:
   RETRIEVAL_DOCUMENT  — use when indexing job postings / seeker profiles
