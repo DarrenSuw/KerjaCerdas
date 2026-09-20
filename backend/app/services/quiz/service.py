@@ -72,7 +72,7 @@ async def seed_bank_if_empty() -> int:
                 question=question,
                 options=options,
                 correct_index=correct,
-                reviewed=False,
+                reviewed=True,
             )
         )
     return len(BANK)

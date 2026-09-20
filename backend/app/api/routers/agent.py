@@ -212,7 +212,7 @@ async def _check_advisor_quota(user_id: str) -> None:
     from datetime import UTC, datetime, timedelta
 
     from backend.app.config.settings import settings
-    from backend.app.db.postgres_store import add_event, count_events
+    from backend.app.db.postgres_store import add_event, consume_quota
     from backend.app.services.billing.plans import (
         ADVISOR_FREE_PER_DAY,
         ADVISOR_PRISM_PER_30_DAYS,
@@ -223,19 +223,21 @@ async def _check_advisor_quota(user_id: str) -> None:
         now = datetime.now(UTC)
         ent = await entitlements_for(user_id)
         if ent.has_prism:
-            used = await count_events(user_id, "advisor_message", now - timedelta(days=30))
+            since = now - timedelta(days=30)
             limit, period = ADVISOR_PRISM_PER_30_DAYS, "30 hari"
         else:
-            start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            used = await count_events(user_id, "advisor_message", start_of_day)
+            since = now.replace(hour=0, minute=0, second=0, microsecond=0)
             limit, period = ADVISOR_FREE_PER_DAY, "hari ini"
-        if used >= limit:
+
+        success = await consume_quota(user_id, "advisor_message", limit, since)
+        if not success:
             raise HTTPException(
                 status_code=429,
                 detail=f"Batas {limit} pesan advisor untuk {period} sudah tercapai."
                 + ("" if ent.has_prism else " Upgrade ke Prism untuk 100 pesan / 30 hari."),
             )
-    await add_event(user_id, "advisor_message")
+    else:
+        await add_event(user_id, "advisor_message")
 
 
 @router.post("/invoke", response_model=AgentInvokeResponse)

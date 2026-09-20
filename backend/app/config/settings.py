@@ -88,9 +88,9 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     vertex_ai_project: str = ""
     vertex_ai_location: str = "us-central1"
-    # Gemini Embedding 2 — 3072-dim, MRL-truncatable to 768.
-    gemini_embed_model: str = "gemini-embedding-2"
-    gemini_embed_dim: int = 768  # must match vector(768) pgvector column; MRL-truncated from 3072
+    # Gemini Embedding 1
+    gemini_embed_model: str = "gemini-embedding-1"
+    gemini_embed_dim: int = 768  # must match vector(768) pgvector column
     # Chat / generation — primary + rate-limit fallback chain (free tier RPM in parens):
     #   gemini-3.1-flash-lite (15) → gemini-3.5-flash-lite (15) → gemini-3.6-flash (5, last resort)
     gemini_chat_model: str = "gemini-3.1-flash-lite"

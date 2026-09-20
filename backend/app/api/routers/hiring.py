@@ -138,9 +138,12 @@ async def export_applicants(job_id: str, current_user: User = Depends(get_curren
         seeker = await repos.seekers.get(app.seeker_id)
         user = await repos.users.get(seeker.user_id) if seeker else None
         live = score_pair(seeker, job) if seeker else {"score": 0, "band": "", "skill_proof": []}
+        def _san(s: str) -> str:
+            return "'" + s if s and str(s)[0] in "=+-@" else str(s)
+
         proven = [p["name"] for p in live["skill_proof"] if p["status"] in ("quiz", "hr_confirmed")]
-        rows.append([seeker.full_name if seeker else "", user.email if user else "",
-                     round(live["score"] * 100), live["band"], "; ".join(proven),
+        rows.append([_san(seeker.full_name if seeker else ""), user.email if user else "",
+                     round(live["score"] * 100), live["band"], _san("; ".join(proven)),
                      str(app.status.value if hasattr(app.status, "value") else app.status),
                      app.source, app.created_at.strftime("%Y-%m-%d")])
     for row in sorted(rows, key=lambda r: -r[2]):

@@ -564,6 +564,7 @@ async def find_active_questions(skill: str) -> list[SkillQuestionSchema]:
         SkillQuestionSchema,
         SkillQuestion.skill == skill,
         SkillQuestion.active.is_(True),
+        SkillQuestion.reviewed.is_(True),
     )
 
 
@@ -636,6 +637,28 @@ async def add_event(user_id: str | None, event_type: str, payload: dict | None =
     except Exception as exc:  # noqa: BLE001 — metering must never break a request
         _store_logger.warning("add_event failed (%s)", exc)
 
+
+async def consume_quota(user_id: str, event_type: str, limit: int, since: datetime) -> bool:
+    """Atomic quota check using pg_advisory_xact_lock to prevent concurrent bypass."""
+    from sqlalchemy import text
+
+    from backend.app.db.models import Event
+
+    async with async_session() as session:
+        lock_id = hash(f"{user_id}:{event_type}") % (2**31 - 1)
+        await session.execute(text(f"SELECT pg_advisory_xact_lock({lock_id})"))
+
+        stmt = select(func.count()).where(
+            Event.user_id == user_id, Event.event_type == event_type, Event.created_at >= since
+        )
+        used = int((await session.execute(stmt)).scalar_one() or 0)
+
+        if used >= limit:
+            return False
+
+        session.add(Event(user_id=user_id, event_type=event_type, payload={}))
+        await session.commit()
+        return True
 
 async def record_ai_usage(
     task: str,

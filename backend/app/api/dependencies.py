@@ -108,20 +108,19 @@ async def get_current_user_optional(
         return None
 
 
-def is_admin_email(email: str | None) -> bool:
-    """Whether this address may use the admin surface right now.
+def is_admin_user(user: User | None) -> bool:
+    """Return True if the user is an admin.
 
-    Read at call time, never cached: ADMIN_EMAILS / ADMIN_ROUTES_ENABLED can be
-    changed in a deployment's secrets, and a token minted before that change
-    must not carry stale admin rights. The login response only *advertises* the
-    flag so the UI can show the entry point — every admin route re-checks it.
+    Being an admin is not stored in the DB because we want it to be centrally
+    managed (e.g. via .env). We check the email against ADMIN_EMAILS and
+    require that the email is verified to prevent unverified takeovers.
     """
     from backend.app.config.settings import settings
 
-    if not settings.admin_routes_enabled or not email:
+    if not user or not settings.admin_routes_enabled or not user.email or not user.email_verified:
         return False
     allowed = {e.strip().lower() for e in settings.admin_emails if e.strip()}
-    return email.lower() in allowed
+    return user.email.lower() in allowed
 
 
 async def require_admin(current_user: User = Depends(get_current_user)) -> User:
@@ -130,6 +129,6 @@ async def require_admin(current_user: User = Depends(get_current_user)) -> User:
     Also requires ADMIN_ROUTES_ENABLED, so a deployment that never configured
     admins exposes no cross-user admin surface at all.
     """
-    if not is_admin_email(current_user.email):
+    if not is_admin_user(current_user):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
     return current_user

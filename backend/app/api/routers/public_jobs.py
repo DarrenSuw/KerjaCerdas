@@ -52,6 +52,9 @@ async def _job_or_404(code: str):
 @router.get("/{code}")
 async def public_job(code: str):
     job = await _job_or_404(code)
+    if not job.is_active or job.moderation_status != "published":
+        return {"withdrawn": True, "detail": "Lowongan ini sudah tidak aktif atau sedang ditinjau moderasi."}
+
     repos = get_repositories()
     employer = await repos.employers.get(job.employer_id)
     owner = await repos.users.get(employer.user_id) if employer else None
@@ -74,6 +77,8 @@ async def public_job(code: str):
 @router.get("/{code}/qr.svg")
 async def public_job_qr(code: str, origin: str | None = Query(default=None, max_length=200)):
     job = await _job_or_404(code)
+    if not job.is_active or job.moderation_status != "published":
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Lowongan tidak aktif")
     url = resolve_origin(origin) + public_path(job.public_code)
     return Response(content=qr_svg(url), media_type="image/svg+xml",
                     headers={"Cache-Control": "public, max-age=86400"})
