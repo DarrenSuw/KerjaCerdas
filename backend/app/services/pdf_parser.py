@@ -16,6 +16,7 @@ from typing import Any
 
 from backend.app.api.middleware.sanitization import clean_extracted_text
 from backend.app.config.settings import settings
+from backend.app.services.privacy.redact import redact_text
 from backend.app.services.prompt_loader import build_system_prompt
 
 logger = logging.getLogger(__name__)
@@ -254,6 +255,11 @@ def _llm_contents(types, pdf_bytes: bytes) -> list:
     image-only / scanned PDFs, where no text can be extracted locally, are sent
     as the PDF itself — the task prompt still instructs the model not to
     output contact data, and the stored resume_text is redacted afterwards.
+
+    HONEST LIMIT: for a scanned CV (little or no extractable text) the raw PDF
+    bytes go to Gemini unredacted, because there is no text layer to run the
+    regex over. Redaction protects what we STORE and what we send as text; it
+    cannot protect an image of a CV. Do not claim otherwise in a pitch.
     """
     from backend.app.services.privacy.redact import redact_text
 
@@ -400,7 +406,13 @@ def _validate_cv_schema(d: dict[str, Any]) -> dict[str, Any]:
         ],
         "salary_expectation_min": int(d.get("salary_expectation_min") or 0),
         "salary_expectation_max": int(d.get("salary_expectation_max") or 0),
-        "resume_text": clean_extracted_text(str(d.get("resume_text") or ""), max_length=2000),
+        # Redacted, not merely cleaned. Whatever Gemini echoes back can still
+        # contain the phone/email/NIK it read off the CV, and this stored value
+        # is fed verbatim to the embedding API by matcher._build_seeker_text —
+        # a path that never passes through llm_factory's redact_llm_input.
+        "resume_text": redact_text(
+            clean_extracted_text(str(d.get("resume_text") or ""), max_length=2000)
+        ),
     }
 
 

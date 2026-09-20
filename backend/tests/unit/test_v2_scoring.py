@@ -279,3 +279,40 @@ class TestDisplayedWeightsMatchTheEngine:
         ).education_min
         assert orm_default == EducationLevel.SMA
         assert f"education_min education_level default '{orm_default.value}'" in sql
+
+
+class TestResumeTextIsRedactedOnEveryPath:
+    """Stored resume_text reaches the embedding API verbatim.
+
+    matcher._build_seeker_text() puts resume_text into the text it sends to the
+    Gemini embedding API — a path that never goes through llm_factory, so
+    redact_llm_input never runs on it. Whatever is stored is what is sent, so
+    the redaction has to happen at storage time on BOTH parse paths.
+    """
+
+    def test_gemini_path_stores_redacted_text(self) -> None:
+        from backend.app.services.pdf_parser import _validate_cv_schema
+
+        out = _validate_cv_schema({
+            "resume_text": "Hubungi rina@mail.com atau 0812-3456-7890, NIK 3171123412341234",
+            "full_name": "Rina", "skills": [], "experience": [], "education": [],
+        })
+        text = out["resume_text"]
+        assert "rina@mail.com" not in text
+        assert "3456" not in text
+        assert "3171123412341234" not in text
+        assert "[email]" in text and "[phone]" in text and "[nik]" in text
+
+    def test_what_the_embedder_receives_carries_no_contact_data(self) -> None:
+        from backend.app.db.schemas import SeekerProfile
+        from backend.app.services.matching.matcher import _build_seeker_text
+        from backend.app.services.pdf_parser import _validate_cv_schema
+
+        parsed = _validate_cv_schema({
+            "resume_text": "email rina@mail.com hp 0812-3456-7890",
+            "full_name": "Rina", "skills": [], "experience": [], "education": [],
+        })
+        seeker = SeekerProfile(user_id="u1", full_name="Rina", region_code="3171",
+                               resume_text=parsed["resume_text"])
+        sent = _build_seeker_text(seeker)
+        assert "rina@mail.com" not in sent and "3456" not in sent

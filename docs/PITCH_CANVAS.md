@@ -161,7 +161,12 @@ diskriminatif ditahan untuk tinjauan. Pemasang dapat notifikasi berisi kalimat m
 dan cara memperbaikinya. Pelanggaran berulang → peringatan → dibatasi → ditangguhkan.
 
 **Data pribadi:** kami **tidak mengumpulkan NIK, KTP, ijazah, atau NPWP.** Verifikasi hanya email.
-Nomor dan email di CV disamarkan otomatis sebelum teks dikirim ke AI.
+Nomor, email, dan NIK **di dalam teks CV** disamarkan aturan regex tetap sebelum disimpan dan
+sebelum dikirim ke AI — bukan lewat instruksi ke AI, jadi tidak bisa gagal karena prompt.
+
+Caption (12 px, Mute):
+*Batasnya jujur: CV hasil pindai (tanpa lapisan teks) dikirim utuh ke AI karena tidak ada teks untuk
+disamarkan. Penyamaran melindungi teks, bukan gambar.*
 
 ## ▸ WHAT'S UNIQUE
 
@@ -207,8 +212,10 @@ kami menulis "belum ada data", bukan 0%.*
 | **Lighthouse** | **Rp99.000** / bulan |
 | **Prism** (pencari kerja) | **Rp25.000** / 30 hari |
 
-**Stat besar:** `88%` — margin kotor per Beacon
-*Caption:* biaya AI dihitung dari token asli. Kuis dan skor **tidak memanggil AI sama sekali.*
+**Stat besar:** `88%` — margin kotor per Beacon **pada 30 pelamar**
+*Caption:* asumsi pemakaian tipikal 30 pelamar / 5 dishortlist, buffer ×1,5, sudah termasuk biaya
+QRIS. Turun ke **68% pada 100 pelamar**. Kuis dan skor **tidak memanggil AI sama sekali** — itu yang
+menahan biaya.*
 
 Garis tebal (15 px, Ink):
 **Membayar tidak pernah menaikkan skor atau peringkat siapa pun.**
@@ -290,6 +297,10 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, soal acak, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
+| Margin 88% itu dari mana? | Dari **asumsi** pemakaian 30 pelamar / 5 dishortlist dengan buffer ×1,5, bukan dari pengukuran pelanggan nyata — kami belum punya pelanggan. Yang **terukur** adalah biaya per aksi di `/admin → Metrik`, dihitung dari token asli di `ai_logs`. |
+| Kalau lowongannya viral, 200 pelamar? | Margin turun: **88% (30 pelamar) → 80% (60) → 68% (100) → 39% (200)**. Beacon tidak membatasi jumlah pelamar, jadi ini risiko nyata dan kami sudah menghitungnya. Penahannya: biaya AI per CV hanya dibayar **sekali per kandidat** seumur hidup akun, bukan per lamaran — pelamar yang sudah pernah dibaca CV-nya tidak menambah biaya di lowongan berikutnya. |
+| Kuis/skor benar tidak pakai AI? | Benar. Kuis dinilai dengan kunci jawaban di server, skor dihitung dari vektor tersimpan. Rp0 per percobaan, dan itu sebabnya margin bertahan saat pemakaian naik. |
+| Penyamaran data gagal untuk CV pindai? | Ya, dan kami menyebutnya di slide. CV pindai tidak punya lapisan teks untuk disamarkan, jadi PDF-nya dikirim utuh ke Gemini. Yang kami jamin: teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
 | Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun — dulu non-gating, sekarang tidak lagi. ESLint baru lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
 
 ### Angka yang boleh disebut, dan sumbernya
@@ -299,7 +310,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | 35 / 40 / 15 / 10 | `matcher.py` — `_W_COSINE` / `_W_SKILL` / `_W_EXPERIENCE` / `_W_EDUCATION` |
 | 0.30 / 0.85 / 1.00 | `evidence.py` — `PROOF_WEIGHTS` |
 | Rp0 per percobaan kuis | dinilai dengan kunci jawaban, tanpa panggilan AI |
-| Margin 88% / 90% / 69% | `BUSINESS_MODEL.md` — biaya AI dari token asli × harga Gemini × kurs Rp17.600 |
+| Margin 88% / 90% / 69% | `BUSINESS_MODEL.md` — **jumlah token per aksi masih asumsi**, dikalikan harga Gemini × kurs Rp17.600, buffer ×1,5, pada asumsi 30 pelamar / 5 dishortlist. Angka **sungguhan** ada di `/admin → Metrik` yang membaca tabel `ai_logs`. Jangan tukar keduanya. |
 | Bulan 15 · Rp101 jt · Rp360 jt | proyeksi skenario dasar, `BUSINESS_MODEL.md` |
 | 89.141 · 7,24 jt | SIDT-UMKM Des 2025 · BPS Feb 2026 |
 | Spark 20 pelamar | **skor tertinggi**, bukan yang pertama melamar |
