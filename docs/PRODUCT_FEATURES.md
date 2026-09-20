@@ -10,8 +10,8 @@ CV PDF diekstraksi Gemini menjadi skill/pengalaman/pendidikan, lalu jadi vektor 
 
 ```python
 final_score = (
-    cosine_similarity  * 0.45 +   # kemiripan makna CV vs lowongan
-    proven_skill_score * 0.30 +   # skill, DITIMBANG BUKTI (lihat bawah)
+    cosine_similarity  * 0.35 +   # kemiripan makna CV vs lowongan
+    proven_skill_score * 0.40 +   # skill, DITIMBANG BUKTI (lihat bawah)
     experience_fit     * 0.15 +   # masa kerja vs syarat minimum
     education_fit      * 0.10     # jenjang vs education_min lowongan
 )

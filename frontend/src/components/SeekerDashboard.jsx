@@ -310,7 +310,7 @@ export default function SeekerDashboard() {
                                                     <div style={{ display: 'flex', gap: 20 }}>
                                                         <div style={{ width: 150 }}>
                                                             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 5 }}>
-                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Semantik ×0.45</span>
+                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Semantik ×0.35</span>
                                                                 <span style={{ font: '900 11.5px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>{sem}%</span>
                                                             </div>
                                                             <div style={{ height: 6, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
@@ -319,7 +319,7 @@ export default function SeekerDashboard() {
                                                         </div>
                                                         <div style={{ width: 150 }}>
                                                             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 5 }}>
-                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Skill ×0.25</span>
+                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Skill ×0.40</span>
                                                                 <span style={{ font: '900 11.5px/1 "Plus Jakarta Sans", sans-serif', color: '#0284C7' }}>{sk}%</span>
                                                             </div>
                                                             <div style={{ height: 6, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>

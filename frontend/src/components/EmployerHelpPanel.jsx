@@ -26,7 +26,7 @@ const TIPS = [
         id: 'score',
         icon: '📊',
         title: 'Memahami Skor Kecocokan',
-        body: 'Skor = 45% kemiripan CV–lowongan + 30% skill + 15% pengalaman + 10% pendidikan. Skill hanya ditulis di CV dihitung 30%, lulus kuis 85%, dikonfirmasi HR 100%. Strong ≥65, Possible ≥45, Stretch <45.',
+        body: 'Skor = 35% kemiripan CV–lowongan + 40% skill + 15% pengalaman + 10% pendidikan. Skill hanya ditulis di CV dihitung 30%, lulus kuis 85%, dikonfirmasi HR 100%. Strong ≥65, Possible ≥45, Stretch <45.',
     },
     {
         id: 'share',

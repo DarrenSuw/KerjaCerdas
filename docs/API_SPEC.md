@@ -617,7 +617,7 @@ naming the rule, the flagged sentence and how to fix it.
 **Errors:** `402` the plan's active-job limit is reached (Spark 1, Lighthouse 5, plus any
 Beacon-covered job) · `403` account suspended after 3 strikes.
 
-Job is automatically embedded via `embed_job()` (pgvector) upon creation. An unrecognized `education_min` value silently falls back to `S1` rather than rejecting the request (the field is advisory for matching, not a hard gate).
+Job is automatically embedded via `embed_job()` (pgvector) upon creation. An unrecognized or omitted `education_min` falls back to `SMA` — the floor, meaning "no requirement stated" — rather than rejecting the request (the field is advisory for matching, not a hard gate). It is deliberately NOT `S1`: that would make a posting demand a degree the employer never asked for.
 
 ---
 

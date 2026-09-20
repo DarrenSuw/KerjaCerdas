@@ -26,7 +26,7 @@ A functional prototype of an AI talent-matching platform that ranks candidates b
 
 ## 🎯 Fitur Utama
 
-- **AI Job Matching berbasis bukti**: skor = 45% kemiripan semantik CV–lowongan + 30% skill (bobot bukti) + 15% pengalaman + 10% pendidikan. Bagian skill ditimbang bukti: klaim CV 30%, lulus kuis 85%, dikonfirmasi HR 100% — jadi menumpuk kata kunci di CV tidak lagi menang.
+- **AI Job Matching berbasis bukti**: skor = 35% kemiripan semantik CV–lowongan + 40% skill (bobot bukti) + 15% pengalaman + 10% pendidikan. Bagian skill ditimbang bukti: klaim CV 30%, lulus kuis 85%, dikonfirmasi HR 100% — jadi menumpuk kata kunci di CV tidak lagi menang.
 - **Kuis skill → badge ✓ Terbukti**: 5 soal skenario per skill (Excel, layanan pelanggan, kasir, administrasi, dll), dinilai server dengan kunci jawaban (tanpa biaya AI per percobaan), berlaku 6 bulan.
 - **Link + poster QR lowongan**: employer membagikan `/j/<kode>` di Instagram/WhatsApp atau mencetak poster; pelamar masuk ke satu daftar yang sudah diperingkat, bukan membanjiri WhatsApp.
 - **AutoMod lowongan**: lowongan yang meminta biaya dari pelamar ditolak; syarat usia/penampilan/jenis kelamin ditahan untuk tinjauan admin. Pemasang menerima kalimat yang bermasalah + cara memperbaiki + banding (strike ladder).
@@ -324,8 +324,8 @@ flowchart TD
 Sistem menggunakan komposit metrik matematis untuk mereplikasi prioritas SDM:
 ```python
 final_score = (
-    cosine_similarity  * 0.45 +   # Relevansi Semantik (Vektor Gemini)
-    proven_skill_score * 0.30 +   # Skor Keahlian Tertimbang Bukti
+    cosine_similarity  * 0.35 +   # Relevansi Semantik (Vektor Gemini)
+    proven_skill_score * 0.40 +   # Skor Keahlian Tertimbang Bukti
     experience_fit     * 0.15 +   # Validasi Masa Kerja
     education_fit      * 0.10     # Kesesuaian Jenjang Pendidikan
 )

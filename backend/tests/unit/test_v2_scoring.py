@@ -184,3 +184,77 @@ class TestProofBeatsKeywordStuffing:
         )
 
         assert _W_COSINE + _W_SKILL + _W_EXPERIENCE + _W_EDUCATION == pytest.approx(1.0)
+
+
+class TestDisplayedWeightsMatchTheEngine:
+    """Every surface that shows a weight must show the weight actually used.
+
+    This drift has bitten repeatedly: the UI displayed cosine .45 / skill .25
+    (summing to 0.70 and 0.95 in two components), README and PRODUCT_FEATURES
+    carried a superseded formula, and `education_min` defaulted to SMA in the
+    ORM while the SQL init path still said S1. A user shown one calculation and
+    scored by another cannot check our working, which is the whole premise of a
+    "transparent score".
+    """
+
+    # Files that quote the formula to a human. Add new ones here.
+    _SURFACES = (
+        "README.md",
+        "docs/PRODUCT_FEATURES.md",
+        "docs/internals/01-matching-algorithm.md",
+        "frontend/src/components/SeekerDashboard.jsx",
+        "frontend/src/components/SeekerMatchResults.jsx",
+        "frontend/src/components/JobDetailModal.jsx",
+        "frontend/src/components/EmployerHelpPanel.jsx",
+    )
+
+    def _repo_root(self):
+        from pathlib import Path
+
+        return Path(__file__).resolve().parents[3]
+
+    def test_no_surface_quotes_a_weight_the_engine_does_not_use(self) -> None:
+        import re
+
+        from backend.app.services.matching.evidence import PROOF_WEIGHTS
+        from backend.app.services.matching.matcher import (
+            _W_COSINE,
+            _W_EDUCATION,
+            _W_EXPERIENCE,
+            _W_SKILL,
+        )
+
+        # Factor weights AND proof weights: both are engine constants a surface
+        # may legitimately quote (claimed 0.30 / quiz 0.85 / HR 1.00).
+        live = {round(w * 100) for w in (_W_COSINE, _W_SKILL, _W_EXPERIENCE, _W_EDUCATION)}
+        live |= {round(w * 100) for w in PROOF_WEIGHTS.values()}
+        # "×0.35", "×.35", "* 0.35" — a multiplier shown next to a factor.
+        pattern = re.compile(r"[×*]\s?0?\.(\d{2})")
+        root = self._repo_root()
+        offenders: list[str] = []
+        for rel in self._SURFACES:
+            path = root / rel
+            if not path.exists():
+                continue
+            for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                for found in pattern.findall(line):
+                    if int(found) not in live:
+                        offenders.append(f"{rel}:{lineno} shows ×0.{found}")
+        assert not offenders, (
+            "displayed weights disagree with matcher.py "
+            f"(live: {sorted(live)}): " + "; ".join(offenders)
+        )
+
+    def test_sql_init_path_matches_the_orm_education_default(self) -> None:
+        """A database built from the SQL file must not demand a degree the ORM
+        would not have demanded."""
+        from backend.app.db.schemas import EducationLevel, JobPosting
+
+        sql = (self._repo_root() / "backend/app/db/migrations/0001_init.sql").read_text(
+            encoding="utf-8"
+        )
+        orm_default = JobPosting(
+            employer_id="e1", title="x", description="x", region_code="3171"
+        ).education_min
+        assert orm_default == EducationLevel.SMA
+        assert f"education_min education_level default '{orm_default.value}'" in sql
