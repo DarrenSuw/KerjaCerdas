@@ -46,6 +46,7 @@ async def _recommend_courses(missing: list[str], job) -> list[CourseRecommendati
 
             llm = build_chat_llm(
                 temperature=settings.skill_gap_temperature,
+                task="skill_gap_courses",
             )
             sys = build_system_prompt(role="seeker_advisor", task="skill_gap")
             payload = json.dumps(

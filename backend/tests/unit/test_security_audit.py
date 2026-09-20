@@ -258,14 +258,9 @@ class TestSqlInjection:
 
     def test_otp_verify_is_not_injectable(self, client: TestClient, seeker_account: dict) -> None:
         h = seeker_account["headers"]
-        phone = "+6281212121212"
-        client.post("/api/v1/verify/otp/send", json={"phone": phone}, headers=h)
-        resp = client.post(
-            "/api/v1/verify/otp/verify",
-            json={"phone": phone, "code": "' OR '1'='1"},
-            headers=h,
-        )
-        assert resp.status_code == 400, "injected OTP was accepted"
+        client.post("/api/v1/verify/email/send", headers=h)
+        resp = client.post("/api/v1/verify/email/verify", json={"code": "' OR 1"}, headers=h)
+        assert resp.status_code in (400, 422), "injected OTP was accepted"
 
     def test_orm_is_used_throughout_and_no_sql_is_string_built(self) -> None:
         """No f-string / concatenation reaches text() anywhere in the app."""
@@ -483,18 +478,21 @@ class TestTenantIsolation:
 
 
 class TestPiiHandling:
-    def test_nik_is_never_persisted_raw_or_hashed(self) -> None:
-        """/verify/identity is an interface-only mock with no verification
-        service behind it (see its docstring) — it must not write the raw
-        NIK, or any form of it, to storage at all."""
+    def test_nik_is_never_collected(self) -> None:
+        """Identity documents (NIK/KTP/ijazah/NPWP) are no longer collected at
+        all — HR checks the KTP at the interview (UU PDP data minimisation)."""
         source = (REPO_ROOT / "backend/app/api/routers/verify.py").read_text(encoding="utf-8")
-        assert "seeker.nik = req.nik" not in source
-        assert "seeker.nik = nik_hash" not in source
-        assert "seekers.upsert" not in source
+        assert "nik" not in source.lower().replace("nik /", "").replace("no nik", "") or (
+            "req.nik" not in source and "seekers.upsert" not in source
+        )
+        from backend.app.db.models import Employer, SeekerProfile
+
+        assert "nik" not in SeekerProfile.__table__.columns
+        assert "npwp" not in Employer.__table__.columns
 
     def test_otp_codes_are_stored_only_as_hashes(self) -> None:
         source = (REPO_ROOT / "backend/app/api/routers/verify.py").read_text(encoding="utf-8")
-        assert "code_hash=code_hash" in source
+        assert "code_hash=_hash_token(code)" in source
         assert "code_hash=code," not in source
 
     def test_error_responses_do_not_leak_stack_traces(
@@ -796,3 +794,58 @@ class TestPostExtractionSanitizationAndMatching:
         years = _experience_years(seeker)
         # Should be approx 1 year, NOT 2 years
         assert 0.9 <= years <= 1.1
+
+
+# ── v2 surfaces: admin, quiz bank, public job links ─────────────────────────
+
+
+class TestV2SurfaceSecurity:
+    @pytest.mark.parametrize(
+        "method,path",
+        [
+            ("get", "/api/v1/admin/metrics"),
+            ("get", "/api/v1/admin/moderation/queue"),
+            ("get", "/api/v1/admin/orders"),
+            ("get", "/api/v1/admin/questions"),
+        ],
+    )
+    def test_admin_routes_refuse_ordinary_accounts(
+        self, client: TestClient, employer_account: dict, method: str, path: str
+    ) -> None:
+        resp = getattr(client, method)(path, headers=employer_account["headers"])
+        assert resp.status_code == 403
+
+    def test_admin_routes_stay_closed_when_disabled_even_for_listed_email(
+        self, client: TestClient, seeker_account: dict, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        from backend.app.config.settings import settings
+
+        monkeypatch.setattr(settings, "admin_routes_enabled", False)
+        monkeypatch.setattr(settings, "admin_emails", [seeker_account["email"]])
+        assert client.get("/api/v1/admin/metrics", headers=seeker_account["headers"]).status_code == 403
+
+    def test_quiz_start_never_returns_the_answer_key(
+        self, client: TestClient, seeker_account: dict, stub_embedder
+    ) -> None:
+        h = seeker_account["headers"]
+        client.post("/api/v1/seeker/profile", headers=h,
+                    json={"full_name": "A", "region_code": "3171", "skills": ["Excel"]})
+        body = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=h).text
+        assert "correct_index" not in body and "reviewed" not in body
+
+    def test_public_job_page_leaks_no_internal_fields(
+        self, client: TestClient, employer_account: dict, stub_embedder
+    ) -> None:
+        job = client.post("/api/v1/employer/jobs", headers=employer_account["headers"], json={
+            "title": "Kasir", "description": "Melayani pelanggan.", "region_code": "3171",
+            "client_ref": "secret-ref-123"}).json()
+        body = client.get(f"/api/v1/public/jobs/{job['public_code']}").text
+        assert "embedding" not in body and "secret-ref-123" not in body
+        assert employer_account["email"] not in body
+
+    def test_qr_cannot_be_pointed_at_a_foreign_origin(
+        self, client: TestClient, employer_account: dict, stub_embedder
+    ) -> None:
+        from backend.app.services.hiring.links import DEFAULT_PUBLIC_URL, resolve_origin
+
+        assert resolve_origin("https://phishing.example") == DEFAULT_PUBLIC_URL

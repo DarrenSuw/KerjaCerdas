@@ -25,6 +25,7 @@ from langchain_core.runnables import Runnable, RunnableLambda
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from backend.app.config.settings import settings
+from backend.app.services.privacy.redact import redact_llm_input
 
 logger = logging.getLogger(__name__)
 
@@ -106,11 +107,18 @@ def chat_model_chain() -> list[str]:
     return chain
 
 
-def build_chat_llm(temperature: float = 0.4, **kwargs) -> Runnable:
+def _usage(result) -> tuple[int, int, str]:
+    meta = getattr(result, "usage_metadata", None) or {}
+    model = (getattr(result, "response_metadata", None) or {}).get("model_name", "")
+    return int(meta.get("input_tokens", 0) or 0), int(meta.get("output_tokens", 0) or 0), model
+
+
+def build_chat_llm(temperature: float = 0.4, task: str = "chat", **kwargs) -> Runnable:
     """Build a chat LLM that fails over across the model chain on errors (e.g. 429).
 
     Returns a Runnable supporting .invoke/.ainvoke with the same message
-    interface as ChatGoogleGenerativeAI.
+    interface as ChatGoogleGenerativeAI. Async calls are logged to `ai_logs`
+    (task, model, tokens) for the admin cost-per-action report.
     """
     api_key = resolve_gemini_key()
     if not api_key:
@@ -154,19 +162,34 @@ def build_chat_llm(temperature: float = 0.4, **kwargs) -> Runnable:
         try:
             # Breaker closes by cooldown expiry only — success never resets it,
             # so a slow success can't race a concurrent failure's trip.
-            return chain.invoke(value, config=config)
+            # PII is stripped by fixed rules before the prompt leaves the
+            # server; prompt-level "don't repeat personal data" is only a
+            # second layer (see services/privacy/redact.py).
+            return chain.invoke(redact_llm_input(value), config=config)
         except LLMBusyError:
             raise
         except Exception as exc:
             _handle_failure(exc)
 
     async def _guarded_ainvoke(value, config=None):
+        from backend.app.db.postgres_store import record_ai_usage
+
         _check_breaker()
+        started = time.monotonic()
         try:
-            return await chain.ainvoke(value, config=config)
+            result = await chain.ainvoke(redact_llm_input(value), config=config)
         except LLMBusyError:
             raise
         except Exception as exc:
+            await record_ai_usage(
+                task, chat_model_chain()[0], 0, 0, int((time.monotonic() - started) * 1000),
+                success=False, error=str(exc),
+            )
             _handle_failure(exc)
+        tin, tout, model = _usage(result)
+        await record_ai_usage(
+            task, model or chat_model_chain()[0], tin, tout, int((time.monotonic() - started) * 1000)
+        )
+        return result
 
     return RunnableLambda(_guarded_invoke, afunc=_guarded_ainvoke)

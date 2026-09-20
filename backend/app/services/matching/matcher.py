@@ -7,8 +7,8 @@ Pipeline:
   3. Rerank with structured features (region, salary, experience, skill overlap).
   4. Return top-K MatchResult with human-readable Bahasa Indonesia explanations.
 
-The five per-factor weights below (cosine/skill/experience/education/recency)
-are fixed constants, not settings: they are a hand-calibrated starting point
+The four per-factor weights below (cosine/skill/experience/education) are
+fixed constants, not settings: they are a hand-calibrated starting point
 for the demo dataset, not yet validated against a labelled evaluation set, so
 there is no meaningful per-deployment ".env" value to tune them to. If/when a
 labelled set exists, recalibrate the constants here directly and re-run the
@@ -28,6 +28,11 @@ from backend.app.db.schemas import JobPosting, MatchResult, SeekerProfile
 from backend.app.services.matching.embeddings.gemini import (
     EmbeddingUnavailableError,
     get_embedder,
+)
+from backend.app.services.matching.evidence import (
+    education_fit,
+    proven_skill_score,
+    skill_proof_view,
 )
 from backend.app.services.regions import BPS_REGION_NAMES
 from backend.app.utils import content_to_text
@@ -63,6 +68,24 @@ _CANONICAL_SKILL_MAP: dict[str, str] = {
     "js": "javascript",
     "ts": "typescript",
     "py": "python",
+    # Everyday entry-level skills — aliases map onto the skill-quiz bank keys
+    # (services/quiz/bank_data.py) so a quiz proves the skill however the job
+    # ad or CV spells it.
+    "ms excel": "excel",
+    "microsoft excel": "excel",
+    "excel dasar": "excel",
+    "pelayanan pelanggan": "customer service",
+    "layanan pelanggan": "customer service",
+    "customer care": "customer service",
+    "communication": "komunikasi",
+    "komunikasi efektif": "komunikasi",
+    "english": "bahasa inggris",
+    "bahasa inggris dasar": "bahasa inggris",
+    "penjualan": "sales",
+    "selling": "sales",
+    "cashier": "kasir",
+    "administrasi perkantoran": "administrasi",
+    "administration": "administrasi",
 }
 
 
@@ -200,10 +223,13 @@ def _has_hard_filter(filters: dict) -> bool:
 # Shared by both ranking directions (job→seekers and seeker→jobs) so a
 # recalibration only ever happens in one place.
 _W_COSINE = 0.45
-_W_SKILL = 0.25
+# The skill part is proof-weighted (services/matching/evidence.py): a skill
+# only claimed in the CV earns 30% of its weight, a passed quiz 85%, an HR
+# confirmation 100%. The former flat 0.05 "recency" bonus (identical for every
+# candidate, so it carried no signal) moved here.
+_W_SKILL = 0.30
 _W_EXPERIENCE = 0.15
 _W_EDUCATION = 0.10
-_W_RECENCY = 0.05
 
 
 def _experience_fit_boost(years_exp: float, required_years_min: int) -> float:
@@ -220,19 +246,21 @@ def _experience_fit_boost(years_exp: float, required_years_min: int) -> float:
 
 
 def _hybrid_score(
-    cos: float, skill_overlap: float, years_exp: float, required_years_min: int, has_education: bool
+    cos: float, skill_score: float, years_exp: float, required_years_min: int, edu_fit: float
 ) -> float:
     """The one formula both ranking directions score against.
 
-    recency_boost is a flat _W_RECENCY for every candidate today (all demo
-    users are treated as recently active) — kept as a named term rather than
-    folded into the constant so a future recency signal only changes one line.
+    0.45 x meaning similarity (CV vs job text)
+  + 0.30 x proof-weighted skill score
+  + 0.15 x experience fit
+  + 0.10 x education fit (degree vs the job's `education_min`)
     """
     exp_boost = _experience_fit_boost(years_exp, required_years_min)
-    edu_boost = _W_EDUCATION if has_education else 0.0
-    recency_boost = _W_RECENCY
     return (
-        _W_COSINE * max(cos, 0.0) + _W_SKILL * skill_overlap + exp_boost + edu_boost + recency_boost
+        _W_COSINE * max(cos, 0.0)
+        + _W_SKILL * skill_score
+        + exp_boost
+        + _W_EDUCATION * edu_fit
     )
 
 
@@ -444,7 +472,7 @@ class SemanticMatcher:
         `settings.matching_full_scan_safe_limit`. This isn't just a fallback —
         it's more CORRECT: the ANN prefilter orders candidates by cosine
         similarity alone, while the hybrid score it's supposed to approximate
-        weighs skill overlap, experience, education and recency too (55%
+        weighs proof-weighted skills, experience and education too (55%
         combined, cosine is only 45%). A candidate with a weak embedding match
         but excellent skill/experience fit can score well on the real formula
         yet never reach it if their row falls outside the ANN's cosine-only
@@ -550,7 +578,7 @@ class SemanticMatcher:
                 # the query vector — treat those rows as unembedded (cosine=0).
                 job_vec = j.embedding if j.embedding_model == settings.gemini_embed_model else []
                 cos = cosine(query_vec, job_vec or [])
-            skill = _skill_overlap(seeker_skill_names, j.required_skills)
+            skill = proven_skill_score(seeker.skills, j.required_skills, j.nice_to_have_skills)
 
             # Canonicalize the same way `_skill_overlap` does (e.g. "ReactJS" ==
             # "React") so the displayed Matched/Missing lists agree with the
@@ -559,9 +587,8 @@ class SemanticMatcher:
             matched = [s for s in j.required_skills if _normalize_skill(s) in seeker_skill_norm]
             missing = [s for s in j.required_skills if _normalize_skill(s) not in seeker_skill_norm]
 
-            score = _hybrid_score(
-                cos, skill, years_exp, j.experience_years_min, bool(seeker.education)
-            )
+            edu_fit = education_fit(seeker.education, j.education_min)
+            score = _hybrid_score(cos, skill, years_exp, j.experience_years_min, edu_fit)
             # Same helper _hybrid_score used internally, normalized to [0,1] so
             # the frontend breakdown can show the real per-factor fit instead of
             # inventing numbers for factors (location, salary) that aren't part
@@ -606,11 +633,12 @@ class SemanticMatcher:
                     cosine=round(cos, 4),
                     skill_overlap=round(skill, 4),
                     experience_fit=round(experience_fit, 4),
-                    education_met=bool(seeker.education),
+                    education_met=edu_fit >= 1.0,
                     region_match=region_ok,
                     salary_in_range=salary_ok,
                     rank=0,
                     band=band,
+                    skill_proof=skill_proof_view(seeker.skills, j.required_skills),
                     # Kind, seeker-facing framing — the mirror of the employer's
                     # neutral `_candidate_summary`. No score, no rank, no urgency.
                     explanation=_seeker_summary(band, matched, missing),
@@ -676,7 +704,7 @@ class SemanticMatcher:
                 # Skip cross-model vectors — cosine across models is meaningless.
                 seeker_vec = s.embedding if s.embedding_model == settings.gemini_embed_model else []
                 cos = cosine(query_vec, seeker_vec or [])
-            skill = _skill_overlap([sk.name for sk in s.skills], job.required_skills)
+            skill = proven_skill_score(s.skills, job.required_skills, job.nice_to_have_skills)
 
             # Hard AI Filters based on UI. `target_loc` is free-text (e.g. a city
             # name typed into the employer's filter UI) while `region_code` is a
@@ -699,7 +727,14 @@ class SemanticMatcher:
                 continue  # Hard filter: Eliminate seeker below minimum experience
 
             score = round(
-                _hybrid_score(cos, skill, years_exp, job.experience_years_min, bool(s.education)), 4
+                _hybrid_score(
+                    cos,
+                    skill,
+                    years_exp,
+                    job.experience_years_min,
+                    education_fit(s.education, job.education_min),
+                ),
+                4,
             )
             seeker_skill_norm = {_normalize_skill(sk.name) for sk in s.skills}
             matched_skills = [
@@ -718,6 +753,8 @@ class SemanticMatcher:
                     # intersection), so the card shows fit, not the full skill dump.
                     "matching_skills": matched_skills,
                     "missing_skills": missing_skills,
+                    # Per required skill: claimed / quiz / hr_confirmed / missing.
+                    "skill_proof": skill_proof_view(s.skills, job.required_skills),
                     "region_code": s.region_code,
                     # `score` stays in the payload as an internal engine output — the
                     # band is the headline; the employer card never paints the number.
@@ -759,7 +796,7 @@ class SemanticMatcher:
 
                 from backend.app.services.llm_factory import build_chat_llm
 
-                llm = build_chat_llm(temperature=0.1)
+                llm = build_chat_llm(temperature=0.1, task="candidate_summary")
 
                 prompt = f"Anda adalah HR Assistant AI untuk platform KerjaCerdas.\nBerikan evaluasi SUPER SINGKAT (maks 1 kalimat, 10-15 kata) untuk masing-masing kandidat berikut ini berdasarkan kriteria loker: {job.title}\n"
                 prompt += f"Skill Wajib Loker: {', '.join(job.required_skills)}\n\n"
@@ -786,3 +823,38 @@ class SemanticMatcher:
                 logging.getLogger(__name__).warning("LLM summary generation failed: %s", e)
 
         return top_candidates
+
+
+def score_pair(seeker: SeekerProfile, job: JobPosting) -> dict:
+    """Score one (seeker, job) pair from stored embeddings — no API call.
+
+    Used when a seeker applies (the score is stored on the application) and
+    when the employer's applicant list is ranked. Same formula and bands as
+    the ranking functions above.
+    """
+    from backend.app.config.settings import settings
+    from backend.app.services.matching.evidence import education_fit as _edu_fit
+
+    same_model = (
+        seeker.embedding_model
+        and seeker.embedding_model == job.embedding_model
+        and seeker.embedding
+        and job.embedding
+    )
+    cos = cosine(seeker.embedding or [], job.embedding or []) if same_model else 0.0
+    skill = proven_skill_score(seeker.skills, job.required_skills, job.nice_to_have_skills)
+    score = _hybrid_score(
+        cos,
+        skill,
+        _experience_years(seeker),
+        job.experience_years_min,
+        _edu_fit(seeker.education, job.education_min),
+    )
+    return {
+        "score": round(score, 4),
+        "band": _band_label(
+            score, settings.band_strong_threshold, settings.band_possible_threshold
+        ),
+        "skill_score": round(skill, 4),
+        "skill_proof": skill_proof_view(seeker.skills, job.required_skills),
+    }

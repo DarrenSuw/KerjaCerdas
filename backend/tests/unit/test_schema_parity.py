@@ -33,6 +33,13 @@ _REPO_ATTRS = [
     "chats",
     "ai_logs",
     "courses",
+    "skill_questions",
+    "quiz_attempts",
+    "skill_evidence",
+    "job_reports",
+    "moderation_events",
+    "plan_orders",
+    "status_events",
 ]
 
 

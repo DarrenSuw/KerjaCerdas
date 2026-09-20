@@ -22,14 +22,16 @@ Before any user-uploaded document (e.g., CV PDF) is sent to external LLMs (like 
 AI models can inherit societal biases. KerjaCerdas implements the following safeguards to ensure fair job matching:
 
 *   **Blind Matching Protocol:** The semantic matching engine computes scores based strictly on skills, experience years, and education alignment. Variables such as gender, age, race, and religion are explicitly excluded from the vector embedding process.
-*   **Fairness Auditing:** Model outputs are periodically audited to ensure that match rates do not disproportionately favor specific demographics over others (e.g., ensuring female candidates receive equal visibility for technical roles).
+*   **Proof Over Claims:** A skill written in a CV counts as a *claim* (weight 0.30). Only a passed skill quiz (0.85) or an employer's post-interview confirmation (1.00) counts as proof. Paying for any plan never changes a match score or a rank.
+*   **Fairness Auditing (PLANNED):** No demographic fairness audit has been run yet — there is not enough outcome data. `/admin/metrics` reports the interview rate per score band, which is the first input such an audit will need. Agents must not claim an audit has taken place.
 
-## 4. Fraud Prevention & KYC
+## 4. Fraud Prevention (no KYC, by design)
 
-To protect Job Seekers from job scams and human trafficking, the platform enforces compliance checks on Employers:
+To protect Job Seekers from job scams, the platform checks the *posting*, not the person's identity documents:
 
-*   **Automated LLM Verification:** The `Job Compliance Check` agent scans newly posted job descriptions for red flags (e.g., requests for upfront payment, multi-level marketing language, overly vague requirements for high salaries).
-*   **Integration with SIVIL/NPWP:** Employer verification utilizes official government databases (or mock equivalents during MVP) to verify company legitimacy (NPWP) and candidate education credentials (SIVIL). Unverified employers are heavily down-ranked in the recommendation engine.
+*   **AutoMod before publish:** Deterministic rules run first — a fee charged to candidates is an automatic rejection plus an employer strike; discriminatory wording (age cap, appearance, gender without a job reason), contact-only-via-Telegram and salary outliers are held for admin review. An optional LLM layer may only *hold* a posting, never publish or reject one on its own.
+*   **Employer trust ladder:** email verified → company-domain email → admin-reviewed (public links such as a Google Maps listing or business Instagram, checked by hand). A new employer's first posting is held until it is reviewed.
+*   **No government database integration.** KerjaCerdas does **not** collect or verify NIK, KTP, ijazah, NPWP, and is not connected to Dukcapil or SIVIL. Identity documents are checked by the employer at the interview, as they already are today. Agents must never tell a user their identity or education has been "verified" by KerjaCerdas.
 
 ## 5. Security Standards
 

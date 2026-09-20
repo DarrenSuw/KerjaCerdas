@@ -215,9 +215,9 @@ def _fallback_extract(pdf_bytes: bytes) -> dict[str, Any]:
     )
 
     # Strip PII from resume_text for storage
-    redacted = re.sub(r"[\w.+-]+@[\w-]+\.[\w.-]+", "[email]", text)
-    redacted = re.sub(r"\+?\d[\d\s().-]{7,}\d", "[phone]", redacted)
-    redacted = re.sub(r"\b\d{16}\b", "[nik]", redacted)
+    from backend.app.services.privacy.redact import redact_text
+
+    redacted = redact_text(text)
 
     return {
         "full_name": name,
@@ -243,6 +243,31 @@ def _extract_json(text: str) -> dict[str, Any]:
     return json.loads(blob)
 
 
+_MIN_TEXT_FOR_REDACTED_PATH = 200
+
+
+def _llm_contents(types, pdf_bytes: bytes) -> list:
+    """What is actually sent to Gemini for a PDF.
+
+    Text-based PDFs (the normal case) are converted to text locally and
+    PII-redacted (email / phone / NIK) before leaving the server. Only
+    image-only / scanned PDFs, where no text can be extracted locally, are sent
+    as the PDF itself — the task prompt still instructs the model not to
+    output contact data, and the stored resume_text is redacted afterwards.
+    """
+    from backend.app.services.privacy.redact import redact_text
+
+    instruction = "Ekstrak data terstruktur sesuai schema di task prompt. Kembalikan JSON saja."
+    try:
+        text = _pdf_to_text(pdf_bytes, max_chars=20000)
+    except Exception:  # noqa: BLE001 — fall through to the PDF path
+        text = ""
+    if len(text.strip()) >= _MIN_TEXT_FOR_REDACTED_PATH:
+        header = "Isi dokumen (data kontak sudah disamarkan):"
+        return [f"{header}\n\n{redact_text(text)}", instruction]
+    return [types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"), instruction]
+
+
 async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]:
     import asyncio
 
@@ -266,10 +291,7 @@ async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]
             try:
                 resp = client.models.generate_content(
                     model=model,
-                    contents=[
-                        types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"),
-                        "Ekstrak data terstruktur sesuai schema di task prompt. Kembalikan JSON saja.",
-                    ],
+                    contents=_llm_contents(types, pdf_bytes),
                     config=types.GenerateContentConfig(
                         system_instruction=system,
                         response_mime_type="application/json",
@@ -280,15 +302,34 @@ async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]
                         ),
                     ),
                 )
+                usage = getattr(resp, "usage_metadata", None)
+                _last_usage.update(
+                    model=model,
+                    tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
+                    tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+                )
                 return resp.text or "{}"
             except Exception as exc:  # 429/quota → try next model in the chain
                 logger.warning("Gemini PDF call failed on %s (%s) — trying next model", model, exc)
                 last_exc = exc
         raise last_exc if last_exc else RuntimeError("no chat models configured")
 
+    _last_usage: dict = {}
     try:
+        import time as _time
+
+        from backend.app.db.postgres_store import record_ai_usage
+
         pdf_bytes = await asyncio.to_thread(_cap_pdf_pages, pdf_bytes)
+        _t0 = _time.monotonic()
         raw = await asyncio.to_thread(_sync)
+        await record_ai_usage(
+            task,
+            _last_usage.get("model", ""),
+            _last_usage.get("tokens_in", 0),
+            _last_usage.get("tokens_out", 0),
+            int((_time.monotonic() - _t0) * 1000),
+        )
     except Exception as e:  # network/SSL/quota/parsing/page-cap — never crash the upload
         logger.warning("Gemini PDF call failed (task=%s): %s — falling back", task, e)
         if task == "cv_parser":
