@@ -117,14 +117,18 @@ as the filled ones.
 
 Everything below is drawn. `⟦…⟧` markers are not.
 
+**Seven blocks, in this order.** The presenter walks them top to bottom in three
+minutes, so nothing else belongs on the page — if a sentence cannot be pointed
+at inside those three minutes, it is not slide content.
+
 ⟦headline⟧
 
 **CV bisa ditulis siapa saja.
 Kami membuat skill harus dibuktikan — lalu mengurutkan pelamar berdasarkan bukti itu.**
 
-Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja 18–25 tahun.
+Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja muda.
 
-⟦two-candidate comparison — labels and figures⟧
+⟦the two scores — the largest thing on the page⟧
 
 Dua pelamar, satu lowongan, pengalaman dan pendidikan sama.
 
@@ -133,101 +137,62 @@ Skill dibuktikan lewat kuis · kemiripan teks 0,50 · lulus kuis — **0.765**
 
 Bahkan pada kemiripan sempurna 1,00, CV yang hanya mengklaim berhenti di **0.720**.
 
-Penyalin iklan tidak diblokir — dia hanya kalah urutan. Kami menyaring, bukan menghakimi.
+Penyalin iklan tidak diblokir — dia hanya kalah urutan.
 
 ⟦problem⟧
 
-**Pasang "kirim CV ke WA" → puluhan PDF tak terurut, banyak mengklaim skill yang tidak dikuasai.
-Jam kerja pemilik usaha habis mewawancarai orang yang salah.**
+**Satu lowongan di grup WA bisa menerima 50 CV dalam dua hari — tidak terurut,
+banyak yang mengklaim skill yang tidak dikuasai.**
 
-Di sisi lain: melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
+Jam kerja pemilik usaha habis mewawancarai orang yang salah. Di sisi lain: melamar
+puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
 
 **89.141** usaha kecil & menengah terdaftar · SIDT-UMKM, Des 2025
 **7,28 juta** penganggur terbuka · BPS, Mei 2026
 
-⟦product⟧
-
-**Satu daftar pelamar yang sudah diurutkan — dan skill-nya sudah diuji.**
-
-Employer pasang lowongan, dapat link dan poster QR, tempel di Instagram atau grup WA yang sudah
-dipakai. Pelamar scan, daftar lewat email, ikut kuis skill 5 soal, lalu melamar. Badge berlaku
-180 hari di semua lowongan.
-
-⟦weight split — segment labels⟧
+⟦how proof is earned — weights strip, proof ladder, three steps⟧
 
 35% kemiripan teks · **40% skill terbukti** · 15% pengalaman · 10% pendidikan
 
-Bobot bukti sengaja lebih besar dari kemiripan teks, karena kemiripan teks justru naik kalau CV
-menyalin kalimat iklan.
+Ditulis di CV **0,30** → Lulus kuis **0,85** → Dikonfirmasi HR **1,00**
 
-Skill dinilai **per skill, dibagi jumlah skill yang diminta lowongan** — bukan total poin. Jadi
-mengklaim 20 skill tidak memberi keuntungan apa pun atas yang mengklaim 3, dan skill di luar
-kebutuhan lowongan bernilai nol.
+Kuis 5 soal skenario, dinilai server dengan kunci jawaban — tanpa panggilan AI,
+**Rp0 per percobaan**. HR mencentang "terbukti" setelah wawancara: bukti terkuat.
 
-⟦proof ladder — step labels⟧
+Skill dinilai **per skill, dibagi jumlah skill yang diminta lowongan**. Mengklaim 20
+skill tidak mengalahkan yang mengklaim 3.
 
-Ditulis di CV **0,30** · Lulus kuis **0,85** · Dikonfirmasi HR **1,00**
+**Membayar tidak mengubah skor maupun urutan siapa pun.**
 
-⟦how it works⟧
-
-Kuis 5 soal skenario, sekitar 3 menit, dinilai server dengan kunci jawaban — tanpa panggilan AI,
-Rp0 per percobaan. Lulus 4 dari 5 memberi badge terbukti. Gagal boleh diulang besoknya, dan
-**soal yang baru dilihat tidak muncul lagi** — bank tiap skill diisi sampai 30 soal.
-
-Kuis, skor, peringkat, dan melamar **gratis tanpa batas di semua paket** — karena semuanya memang
-berbiaya Rp0 untuk kami jalankan.
-
-HR mencentang "skill terbukti" setelah wawancara. Itu bukti terkuat.
-
-**Menolak kandidat wajib menyertakan alasan.** Delapan pilihan tetap, satu ketukan — itulah yang
-mengubah "tidak dapat kabar" jadi "kurang di mana".
-
-Skor dihitung ulang tiap daftar dibuka, jadi pelamar yang baru lulus kuis langsung naik.
-
-⟦trust — headline and four layers⟧
+⟦what we verify instead of documents — four layers + the moderation split⟧
 
 **Kami tidak memverifikasi dokumen. Kami memverifikasi perilaku dan jejak publik.**
 
-Mengumpulkan NIK tidak menghentikan lowongan palsu — penipu memakai NIK asli, curian atau dibeli.
-Yang bisa dicek tanpa Dukcapil justru formatnya saja: 16 digit. Itu bukan verifikasi, itu teater.
+Mengumpulkan NIK tidak menghentikan lowongan palsu — penipu memakai NIK asli.
 
-Sebelum tayang — iklan yang meminta biaya dari pelamar **ditolak otomatis + strike**.
-Employer baru — lowongan pertama **ditahan untuk tinjauan** sampai tepercaya.
-Jejak publik — domain email harus cocok dengan website; Google Maps, Instagram bisnis, website
-dicek admin. Penyedia email gratis tidak memenuhi syarat.
-Setelah tayang — laporan pelamar **ditimbang, bukan dihitung**. Cukup bobot → lowongan ditandai
-"perlu ditindak lebih lanjut" dan **tetap terlihat**; hanya putusan terhadap aturan yang dikutip
-yang menyembunyikannya. Pelanggaran berulang: peringatan → dibatasi → ditangguhkan.
-
-⟦moderation outcomes — branch labels⟧
+Domain email harus cocok dengan website · jejak publik dicek admin · lowongan
+pertama ditahan sampai tepercaya · laporan **ditimbang, bukan dihitung**
 
 Minta biaya dari pelamar → **ditolak otomatis**
 Syarat diskriminatif → **ditahan untuk tinjauan**
 Bersih → **tayang**
 
-⟦seeker side⟧
+Untuk pelamar: kami tidak menanyakan siapa kamu, kami menguji apa yang bisa kamu
+kerjakan. Dokumen tetap dicek HR saat wawancara.
 
-**Untuk pelamar, kami tidak menanyakan siapa kamu — kami menguji apa yang bisa kamu kerjakan.**
-Ijazah membuktikan kamu pernah kuliah; kuis membuktikan kamu bisa. Dokumen tetap dicek HR saat
-wawancara, di titik yang memang tepat.
+⟦who pays for what⟧
 
-⟦data protection⟧
+**Employer bayar untuk menyaring, bukan untuk mencari.**
 
-Nomor, email dan NIK di dalam teks CV disamarkan aturan regex tetap sebelum disimpan dan sebelum
-dikirim ke AI — bukan lewat instruksi ke AI, jadi tidak bisa gagal karena prompt.
+Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat
+Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
+Lighthouse **Rp149.000** per bulan · 5 lowongan
+Prism **Rp15.000** per 30 hari · peringkat persis lamaranmu, untuk pencari kerja
 
-CV hasil foto tidak punya teks untuk disamarkan. Kami tidak menolaknya, tapi minta izin dulu.
+Memeringkat berbiaya Rp0 untuk kami hitung — jadi tidak pernah dibatasi. Yang
+berbayar adalah yang memang berbiaya.
 
-⟦defensibility⟧
-
-**Fitur bisa ditiru sebulan. Kumpulan profil yang sudah terbukti tidak.**
-
-Peniru mulai dari nol kandidat terbukti. QR tiap employer membawa pelamar baru yang ikut
-dicocokkan ke lowongan lain — tumbuh dari pemakaian, bukan iklan. Dan model kami bertentangan
-dengan job board: mereka untung dari banyak lamaran, kami menang dengan mengirim lebih sedikit
-tapi tepat.
-
-⟦honesty rows — exactly as written, gaps as legible as the wins⟧
+⟦what we do not have yet — as legible as the wins⟧
 
 Prototipe jalan, seluruh test menggugurkan build — **sudah**
 Migrasi database teruji sampai rollback — **sudah**
@@ -235,73 +200,23 @@ Pengguna nyata terdokumentasi — **di bawah 10 orang**
 Perusahaan membayar — **belum ada**
 Validitas prediktif skor — **belum diuji**
 
-Mesin pengukurnya sudah jalan: skor dan bukti disimpan saat melamar, tiap perubahan status
-dicatat, dashboard menghitung tingkat wawancara per band skor. Datanya yang belum ada — dan layar
-kami menulis "belum ada data", bukan 0%.
+Mesin pengukurnya sudah jalan: skor dan bukti disimpan tiap kali orang melamar.
+Datanya yang belum ada — dan layar kami menulis "belum ada data", bukan 0%.
 
-⟦business model⟧
+⟦team — one compact row, small⟧
 
-**Employer bayar untuk menyaring, bukan untuk mencari.**
+**David** AI & backend · **Darren** produk & UX · **Vanessa** sistem & dampak ·
+**Jason** bisnis & deployment
 
-Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat — tanpa batas
-Beacon **Rp49.000** per lowongan
-Lighthouse **Rp149.000** per bulan
-Prism **Rp15.000** per 30 hari, untuk pencari kerja
+Kami memperbaiki produk berdasarkan kritik, bukan membela slide: Pay-to-Unlock,
+e-KYC NIK, dan klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami buktikan.
 
-**Membayar tidak mengubah skor maupun urutan siapa pun.** Prism hanya membuka rincian hasilmu
-sendiri dan menambah kuota advisor. Ulang kuis 1 hari untuk semua paket — kecepatan menuju badge
-tidak dijual.
+⟦the ask + closing banner⟧
 
-Pembayaran saat ini QRIS atau transfer yang dikonfirmasi admin. Payment gateway belum ada.
-
-⟦margin curve — axis and annotation⟧
-
-Margin kotor per penjualan — **model asumsi, bukan pengukuran pelanggan**
-
-Beacon **99%** · Lighthouse **99%** · Prism **83%**, dan **46%** bahkan kalau pelanggan Prism
-memakai seluruh kuotanya.
-
-Angka employer setinggi itu karena baca CV kini dibebankan ke akun pencari kerja, bukan ke paket
-employer — biayanya tidak hilang, ia pindah ke baris akuisisi.
-
-Jumlah pelamar tidak lagi menggerakkan biaya employer: kuis, skor, peringkat, dan pencarian
-kandidat **tidak memanggil AI sama sekali**, dan baca CV dibayar sekali per kandidat seumur akun.
-Biaya AI sungguhan terpantau per aksi di dashboard admin.
-
-⟦funding⟧
-
-**Rp200 juta untuk 10%**, dua tahap: Rp100 juta saat tanda tangan, Rp100 juta di bulan ke-6 bila
-target tercapai.
-
-Pendirian & legal 22% · Menutup rugi sampai impas 29% · Akuisisi pengguna 20% · Keamanan &
-gateway 6% · Bantalan skenario buruk 23%
-
-Proyeksi skenario dasar: impas **bulan 15** · kas terdalam **Rp101 juta** · pendapatan tahun 2
-**Rp360 juta**
-
-⟦team⟧
-
-David — AI & backend · mesin pencocokan, bobot bukti, moderasi otomatis
-Darren — produk & UX · alur seeker–employer
-Vanessa — sistem & dampak · data hasil, metrik
-Jason — bisnis & deployment · model bisnis, harga, pilot
-
-Kami memperbaiki produk berdasarkan kritik, bukan membela slide: Pay-to-Unlock, e-KYC NIK, dan
-klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami buktikan.
-
-⟦three asks⟧
-
-**UMKM & HR** — Pasang 1 lowongan sekarang, gratis. Poster QR-nya kami cetakkan hari ini.
-
+**UMKM & HR** — Pasang 1 lowongan sekarang, gratis.
 **Pencari kerja** — Scan, ikut 1 kuis 3 menit, bawa pulang badge terbukti.
-
-**Investor & offtaker** — Beri kami 30 hari dan 10 UMKM pilot. Lalu kita baca bersama tingkat
-wawancara per band skor di dashboard yang sama.
-
-Target 3 hari: **15** UMKM pasang lowongan · **100** pencari kerja selesai satu kuis ·
-**3** surat minat bayar Beacon
-
-⟦closing banner — orange ground, paper text⟧
+**Investor** — **Rp200 juta untuk 10%.** Beri kami 30 hari dan 10 UMKM pilot, lalu
+kita baca bersama tingkat wawancara per band skor di dashboard yang sama.
 
 **Pasar kerja Indonesia tidak kekurangan lamaran. Yang kurang adalah bukti.
 Kami membangun tempat bukti itu disimpan.**
@@ -312,8 +227,8 @@ Kami membangun tempat bukti itu disimpan.**
 
 1. Search your own output for `V1`, `01`, `MASALAH`, `PRODUK`, `TIM`, `⟦`. Zero hits, or start again.
 2. Does any block carry a title that is not written in §SLIDE TEXT? Delete it.
-3. Can someone read the main claim from the big numerals alone, at 2 m, in five seconds?
-4. Count the bordered boxes. More than two filled panels means go back to hairlines.
+3. Can someone read the main claim from the two big numerals alone, at 2 m, in five seconds?
+4. Count the blocks. More than nine means content crept back in — send it back rather than shrinking the type.
 5. Are the "belum ada" and "belum diuji" markers exactly as legible as the wins?
 
 ═══════════════════ SALIN SAMPAI SINI ═══════════════════

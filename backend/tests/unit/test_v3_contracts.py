@@ -534,3 +534,54 @@ class TestThirdReviewFindingsStayFixed:
         assert "r.proof_granted" in modal
         assert "if (r.passed) toast.success" not in modal
         assert "result.passed ? '✓ Lulus" not in modal
+
+
+class TestPitchCanvasStaysDeliverable:
+    """The canvas is fed to a design model and printed at one page.
+
+    It drifted to 1,131 words across 19 blocks because every round added a
+    fact and none removed one. At that density the type has to drop below the
+    brief's own 13px floor, the charts get squeezed, or the designer silently
+    drops content — and the brief's own acceptance test ("read the claim from
+    the numerals alone, at 2m, in 5 seconds") becomes unachievable.
+    """
+
+    def _canvas(self) -> str:
+        from pathlib import Path
+
+        return (Path(__file__).resolve().parents[3] / "docs" / "PITCH_CANVAS.md").read_text(
+            encoding="utf-8"
+        )
+
+    def _copy_block(self) -> str:
+        s = self._canvas()
+        return s[s.index("SALIN MULAI DARI SINI") : s.index("SALIN SAMPAI SINI")]
+
+    def test_presenter_material_stays_outside_the_copy_markers(self) -> None:
+        """Anything between the markers is pasted to the designer verbatim, so a
+        three-minute script sitting inside would be rendered onto the slide."""
+        block = self._copy_block()
+        for leaked in ("Naskah 3 Menit", "Bekal Presenter", "Angka yang boleh disebut"):
+            assert leaked not in block, f"presenter-only section leaked into the copy block: {leaked}"
+
+    def test_the_slide_text_fits_one_page(self) -> None:
+        import re
+
+        block = self._copy_block()
+        slide = block[block.index("# §SLIDE TEXT") : block.index("## Before you hand it over")]
+        blocks = [ln for ln in slide.splitlines() if ln.startswith("⟦")]
+        body = re.sub(r"⟦.*?⟧", "", slide)
+        body = re.sub(r"^\s*[#>|`-].*$", "", body, flags=re.M)
+        words = len(re.findall(r"[A-Za-zÀ-ÿ0-9.,%']+", body))
+
+        assert len(blocks) <= 9, f"{len(blocks)} content blocks — a page this busy becomes a grid"
+        assert words <= 650, (
+            f"{words} renderable words. A 1920x1080 page with charts holds roughly 400-600; "
+            "cut content rather than shrinking the type."
+        )
+
+    def test_every_spoken_beat_has_something_to_point_at(self) -> None:
+        """The presenter walks the page top to bottom in three minutes."""
+        block = self._copy_block()
+        for beat in ("0.685", "0.765", "40% skill terbukti", "0,85", "belum ada", "belum diuji"):
+            assert beat in block, f"the script points at '{beat}' but the slide does not carry it"
