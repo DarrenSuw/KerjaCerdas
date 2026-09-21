@@ -31,7 +31,13 @@ export default function QuizModal({ skill, onClose, onDone }) {
         try {
             const r = await submitQuiz(attempt.attempt_id, final)
             setResult(r)
-            if (r.passed) toast.success(`Lulus! ${skill} sekarang ✓ Terbukti`)
+            // `passed` is the score; `proof_granted` is whether it earned the
+            // badge. They differ when the question bank was too thin to avoid
+            // repeating the previous attempt — the server withholds the badge,
+            // and announcing one here would tell the candidate they hold proof
+            // they do not have.
+            if (r.proof_granted) toast.success(`Lulus! ${skill} sekarang ✓ Terbukti`)
+            else if (r.passed) toast(`Nilaimu lulus, tapi badge belum diberikan — soalnya masih terbatas`)
             onDone?.(r)
         } catch (e) {
             setError(e.message)
@@ -108,9 +114,21 @@ export default function QuizModal({ skill, onClose, onDone }) {
                 {result && (
                     <div style={{ textAlign: 'center', padding: '10px 0' }}>
                         <div style={{ fontSize: 40, fontWeight: 900 }}>{result.score}/{result.total}</div>
-                        <p style={{ fontWeight: 800, color: result.passed ? '#059669' : KC.rose }}>
-                            {result.passed ? '✓ Lulus — skill ini sekarang Terbukti (berlaku 6 bulan)' : 'Belum lulus'}
+                        <p style={{ fontWeight: 800, color: result.proof_granted ? '#059669' : (result.passed ? KC.amber || '#B45309' : KC.rose) }}>
+                            {result.proof_granted
+                                ? '✓ Lulus — skill ini sekarang Terbukti (berlaku 6 bulan)'
+                                : result.passed
+                                    ? 'Nilaimu lulus, tapi badge belum bisa diberikan'
+                                    : 'Belum lulus'}
                         </p>
+                        {result.passed && !result.proof_granted && (
+                            <p style={{ fontSize: 13, color: KC.mute }}>
+                                Bank soal untuk skill ini masih terbatas, jadi beberapa soal terpaksa
+                                diulang dari percobaan sebelumnya. Lulus atas soal yang sudah kamu lihat
+                                belum bisa kami hitung sebagai bukti. Kami sedang menambah soalnya —
+                                coba lagi besok untuk kuis penuh.
+                            </p>
+                        )}
                         {!result.passed && (
                             <p style={{ fontSize: 13, color: KC.mute }}>
                                 Pelajari materinya di rekomendasi kursus, lalu coba lagi setelah {result.retake_after_days} hari.

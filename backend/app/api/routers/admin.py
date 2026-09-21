@@ -55,10 +55,24 @@ async def moderation_queue():
     # precisely the case that needs a human — and while it was missing from this
     # queue no admin could ever see it, so the reports were never resolved and
     # every reporter's history stayed permanently empty.
+    # Three sources, not one. A posting can need a human because AutoMod held
+    # it, because the community flagged it — or because it carries reports that
+    # never reached the flag threshold. That last case used to be invisible
+    # forever: the posting stayed `published`, the reports stayed unresolved,
+    # and so no verdict was ever recorded against the people who filed them. A
+    # reporter who files steadily but never trips a threshold would accumulate
+    # no history at all, which is precisely the pattern weighting exists to
+    # catch.
     queued = [
         *await find_jobs_by_moderation_status("flagged"),
         *await find_jobs_by_moderation_status("held"),
     ]
+    seen_ids = {j.id for j in queued}
+    for job in await find_jobs_by_moderation_status("published"):
+        if job.id in seen_ids:
+            continue
+        if any(not r.resolved for r in await find_reports_for_job(job.id)):
+            queued.append(job)
     for job in queued:
         employer = await repos.employers.get(job.employer_id)
         out.append({

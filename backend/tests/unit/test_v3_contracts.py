@@ -485,3 +485,52 @@ class TestReporterHistoryIsActuallyWritten:
         reports = asyncio.run(find_reports_for_job(job_id))
         assert reports, "reports were not stored at all"
         assert all(r.upheld is None for r in reports), "a verdict exists before any decision"
+
+
+class TestThirdReviewFindingsStayFixed:
+    def test_every_v3_column_has_a_sqlite_backfill(self) -> None:
+        """create_all() adds missing TABLES, never missing COLUMNS.
+
+        Shipping ORM columns without extending this list is how a developer's
+        working SQLite database breaks on `git pull` — the models gain a field
+        the file has no column for, and the first query touching it fails.
+        """
+        from backend.app.api.database import _V2_COLUMNS, _V3_COLUMNS
+
+        backfilled = {(t, c) for t, c, _ in (*_V2_COLUMNS, *_V3_COLUMNS)}
+        migration_added = {
+            ("skill_questions", "source"),
+            ("skill_questions", "review_note"),
+            ("job_reports", "rule_cited"),
+            ("job_reports", "upheld"),
+            ("quiz_attempts", "proof_eligible"),
+            ("application_status_events", "reason_code"),
+            ("application_status_events", "reason_note"),
+        }
+        assert migration_added <= backfilled, (
+            f"no SQLite backfill for: {sorted(migration_added - backfilled)}"
+        )
+
+    def test_reports_below_the_flag_threshold_are_still_adjudicable(self) -> None:
+        """Otherwise a steady false reporter who never trips a threshold builds
+        no history at all — the exact pattern weighting exists to catch."""
+        import inspect
+
+        from backend.app.api.routers import admin
+
+        src = inspect.getsource(admin.moderation_queue)
+        assert 'find_jobs_by_moderation_status("published")' in src
+        assert "not r.resolved" in src
+
+    def test_the_ui_reads_proof_granted_rather_than_passed(self) -> None:
+        """The server withholds the badge on a compromised draw; announcing one
+        in the UI would tell the candidate they hold proof they do not have."""
+        from pathlib import Path
+
+        modal = (
+            Path(__file__).resolve().parents[3]
+            / "frontend" / "src" / "components" / "QuizModal.jsx"
+        ).read_text(encoding="utf-8")
+        assert "r.proof_granted" in modal
+        assert "if (r.passed) toast.success" not in modal
+        assert "result.passed ? '✓ Lulus" not in modal

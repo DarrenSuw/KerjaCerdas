@@ -29,6 +29,18 @@ Never render any of these onto the canvas:
 **Every visible headline on the canvas is written out in §SLIDE TEXT.** If a block has no headline
 there, it gets no headline. Silence is the correct output.
 
+## Reading order must match the spoken order
+
+This page backs a **three-minute spoken pitch**, and the presenter walks it top
+to bottom. A reader's eye must therefore land in this sequence, enforced by size
+and weight rather than by numbering:
+
+`the claim + the two scores` -> `how proof is earned` -> `what we verify instead
+of documents` -> `who pays for what` -> `what we admit we do not have` -> `the ask`
+
+Anything that cannot be pointed at inside three minutes is supporting evidence
+and should be set small enough to read as such.
+
 ## The one thing this page must do
 
 Prove a single counter-intuitive claim: **a candidate who proves a skill outranks one who merely
@@ -305,6 +317,99 @@ Kami membangun tempat bukti itu disimpan.**
 5. Are the "belum ada" and "belum diuji" markers exactly as legible as the wins?
 
 ═══════════════════ SALIN SAMPAI SINI ═══════════════════
+
+---
+
+# Naskah 3 Menit — JANGAN ditaruh di slide
+
+Tiga menit dalam bahasa Indonesia sekitar **420 kata**. Naskah ini sudah pas.
+Tiap blok menunjuk satu bagian kanvas; jangan berpindah-pindah.
+
+### 0:00–0:25 · Masalah
+
+> Satu lowongan UMKM yang dibagikan di grup WhatsApp bisa menerima lima puluh CV
+> dalam dua hari. Tidak terurut, dan banyak di antaranya mengklaim skill yang
+> tidak dikuasai. Jam kerja pemilik usaha habis untuk mewawancarai orang yang
+> salah. Di sisi lain, pelamar mengirim puluhan lamaran, tidak mendapat kabar,
+> dan tidak tahu apa yang kurang.
+
+### 0:25–1:00 · Klaim, sambil menunjuk dua angka besar
+
+> Kami membuat skill harus dibuktikan, lalu mengurutkan pelamar berdasarkan bukti
+> itu. Ini dua pelamar untuk lowongan yang sama. Yang pertama menyalin kalimat
+> dari iklan lowongan — kemiripan teksnya nol koma sembilan, tapi seluruh
+> skill-nya hanya klaim. Skornya **0.685**. Yang kedua kemiripan teksnya hanya
+> nol koma lima, tapi skill-nya lulus kuis. Skornya **0.765**. Bahkan kalau CV
+> pertama disalin sampai kemiripannya sempurna, dia berhenti di **0.720**.
+> Menyalin kalimat iklan tidak bisa lagi mengejar bukti.
+
+*(Berhenti sebentar di sini. Ini satu-satunya momen yang harus mengendap.)*
+
+### 1:00–1:35 · Cara bukti diperoleh
+
+> Bukti diperoleh dua cara. Kuis skill lima soal, dinilai server dengan kunci
+> jawaban — tanpa panggilan AI, jadi nol rupiah per percobaan. Lalu konfirmasi HR
+> setelah wawancara, yang bobotnya penuh. Klaim bernilai nol koma tiga, kuis nol
+> koma delapan lima, konfirmasi HR satu. Membayar tidak mengubah satu pun angka
+> itu — ulang kuis satu hari untuk semua paket, dan urutan pelamar sama untuk
+> semua.
+
+### 1:35–2:05 · Yang kami verifikasi
+
+> Kami tidak mengumpulkan NIK, KTP, atau ijazah. Bukan hanya soal privasi:
+> mengumpulkan NIK tidak menghentikan lowongan palsu, karena penipu memakai NIK
+> asli. Yang kami periksa adalah hal yang mahal dipalsukan — domain email harus
+> cocok dengan website perusahaan, jejak publiknya dicek admin, iklan yang
+> meminta biaya dari pelamar ditolak otomatis, dan laporan ditimbang berdasarkan
+> siapa yang melapor, bukan berapa banyak.
+
+### 2:05–2:35 · Model bisnis
+
+> Employer membayar untuk menyaring, bukan untuk mencari. Memasang lowongan
+> gratis, dan semua pelamar tetap diperingkat — memeringkat berbiaya nol untuk
+> kami hitung, jadi tidak ada alasan menyembunyikannya. Yang berbayar adalah yang
+> memang berbiaya: kit wawancara, ekspor, dan mencari kandidat yang belum
+> melamar. Empat puluh sembilan ribu rupiah per lowongan.
+
+### 2:35–2:50 · Yang belum kami punya
+
+> Yang belum kami punya: belum ada satu pun perusahaan yang membayar, dan kami
+> belum bisa membuktikan bahwa skor tinggi benar-benar lebih sering lolos
+> wawancara. Mesin pengukurnya sudah jalan — skor dan bukti disimpan setiap kali
+> orang melamar. Datanya yang belum ada.
+
+### 2:50–3:00 · Ajakan
+
+> Beri kami tiga puluh hari dan sepuluh UMKM. Setelah itu kita baca bersama
+> tingkat wawancara per band skor, di dashboard yang sama.
+
+---
+
+### Kata yang tidak kami pakai
+
+Bukan soal selera — tiap kata di bawah ini menandai klaim yang tidak bisa kami
+tunjukkan sumbernya, dan juri Digdaya menjatuhkan nilai justru di situ.
+
+| Jangan | Pakai |
+|---|---|
+| "revolusioner", "game changer", "disrupsi" | sebutkan angkanya |
+| "bayangkan sebuah dunia di mana…" | mulai dari kejadian nyata |
+| "solusi all-in-one", "ekosistem", "sinergi" | sebutkan fiturnya satu per satu |
+| "platform nomor satu", "tercepat", "terakurat" | kami belum mengukur itu |
+| "AI canggih", "teknologi mutakhir" | sebutkan apa yang dihitung AI-nya |
+| "passion kami", "perjalanan kami" | lewati, tiga menit tidak cukup |
+| "sangat mudah", "tinggal klik" | tunjukkan alurnya |
+| "pasti", "menjamin" | "berdasarkan asumsi", "belum diuji" |
+
+### Aturan pembawaan
+
+- **Satu angka per kalimat.** Dua angka dalam satu kalimat tidak ada yang nyangkut.
+- **Baca 0.685 dan 0.765 pelan.** Itu seluruh argumennya.
+- **Jangan membaca slide.** Slide untuk mata juri, naskah untuk telinga mereka.
+- **Blok "yang belum kami punya" jangan dipercepat.** Disebut dengan tenang, itu
+  yang membedakan kami dari tim yang mengaku sudah punya semuanya.
+- Kalau ditanya angka yang tidak ada di tabel sumber di bawah: **"belum kami
+  ukur"**. Itu jawaban yang menang.
 
 ---
 
