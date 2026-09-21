@@ -64,7 +64,7 @@ Setiap lowongan punya kode publik → `/j/<kode>`. Employer membagikannya di bio
 
 ## 4. Skill Gap Analyzer & Career Advisor `[BUILT + TESTED]`
 
-Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursus (Gemini → katalog internal sebagai cadangan), dan advisor percakapan berbasis LangGraph. Kuota advisor: gratis 10 pesan/hari, Prism 100 pesan/30 hari.
+Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursus (Gemini → katalog internal sebagai cadangan), dan advisor percakapan berbasis LangGraph. Kuota advisor: gratis 10 pesan/hari, Prism 20 pesan/hari — satuan yang sama, dan yang berbayar selalu lebih besar.
 
 **API:** `POST /api/v1/seeker/skill-gap`, `GET /api/v1/seeker/skill-gap/latest`, `POST /api/v1/agent/invoke`
 

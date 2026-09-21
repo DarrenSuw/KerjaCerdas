@@ -131,7 +131,7 @@ Di luar model dasar (didanai investasi): audit keamanan sebelum gateway live ~Rp
 
 ## 6. Proyeksi 24 bulan (skenario dasar, Rp juta)
 
-> **Belum disesuaikan dengan harga baru.** Tabel di bawah masih dihitung dari Beacon Rp29.000 / Lighthouse Rp99.000 / Prism Rp25.000. Harga baru menaikkan kontribusi employer (+78% Beacon, +56% Lighthouse) dan menurunkan Prism (−28% harga, tapi margin naik 69%→83%), sehingga bulan impas kemungkinan **lebih awal** dari M15 — tapi konversi pada titik harga baru **belum diuji**, jadi kami tidak mengarang angkanya. Jangan kutip baris di bawah sebagai proyeksi terkini.
+> **Belum disesuaikan dengan harga baru.** Tabel di bawah masih dihitung dari **harga lama** (sebelum revisi harga di §2). Harga baru menaikkan kontribusi employer (+78% Beacon, +56% Lighthouse) dan menurunkan Prism (−28% harga, tapi margin naik 69%→83%), sehingga bulan impas kemungkinan **lebih awal** dari M15 — tapi konversi pada titik harga baru **belum diuji**, jadi kami tidak mengarang angkanya. Jangan kutip baris di bawah sebagai proyeksi terkini.
 
 | Bulan | Lowongan Beacon | Lighthouse | Pengguna aktif | Prism | **Pendapatan** | **Kontribusi** | Opex | Uang saku | **Laba/rugi** | **Kumulatif** |
 |---|---|---|---|---|---|---|---|---|---|---|

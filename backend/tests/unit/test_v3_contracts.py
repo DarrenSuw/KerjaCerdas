@@ -280,3 +280,83 @@ class TestReviewFindingsStayFixed:
         src = inspect.getsource(public_jobs._weighted_report_score)
         assert "applicant_user_ids" in src
         assert "seekers.get_many" in src
+
+
+class TestSecondReviewFindingsStayFixed:
+    """Round two. Two new defects, plus four the first fix did not fully close."""
+
+    def test_an_admin_decision_never_rewrites_a_settled_verdict(self) -> None:
+        """find_reports_for_job returns EVERY report, resolved ones included.
+
+        Writing `upheld` to all of them let a June dismissal silently mark a
+        March complaint wrong. Standing must be a record, not a copy of the most
+        recent decision on the same posting.
+        """
+        import inspect
+
+        from backend.app.api.routers import admin
+
+        src = inspect.getsource(admin.moderate_job)
+        assert "if r.resolved:" in src and "continue" in src
+
+    def test_the_flagged_state_is_visible_to_the_admins_who_resolve_it(self) -> None:
+        """A flagged posting that no admin can see means reports never resolve,
+        which is why reporter history stayed empty even after it was writable."""
+        import inspect
+
+        from backend.app.api.routers import admin
+
+        src = inspect.getsource(admin.moderation_queue)
+        assert '"flagged"' in src and '"held"' in src
+
+    def test_hard_rules_are_evaluated_before_soft_ones(self) -> None:
+        """A soft rule returning RAGU used to end the review, so a cited R1 —
+        the only rule we act on unattended — was never asked."""
+        import inspect
+
+        from backend.app.services.trust import automod
+
+        src = inspect.getsource(automod.review_reported_posting)
+        assert 'rules.sort(key=lambda r: 0 if r.severity == "hard" else 1)' in src
+        # A soft finding may not return early; it parks in `fallback`.
+        assert "fallback = fallback or" in src
+
+    def test_generation_is_budgeted_per_user_not_only_per_skill(self) -> None:
+        """Claiming a skill is free and unlimited, so a per-skill throttle alone
+        bounds nothing: fifty invented skills buy fifty generations."""
+        import inspect
+
+        from backend.app.services.quiz import service as svc
+
+        assert svc.GENERATIONS_PER_USER_PER_DAY > 0
+        assert "consume_quota" in inspect.getsource(svc._generation_budget_left)
+        # And the budget must actually gate the call site, not merely exist.
+        assert "_generation_budget_left" in inspect.getsource(svc.start_quiz)
+
+    def test_a_thin_bank_reports_the_overlap_it_could_not_avoid(self) -> None:
+        """A guarantee we cannot keep must be visible, never absorbed quietly."""
+        import inspect
+
+        from backend.app.services.quiz import service as svc
+
+        src = inspect.getsource(svc.start_quiz)
+        assert "repeated_questions" in src
+        assert "needs_refill_now" in src
+
+    def test_plan_figures_are_consistent_everywhere_they_appear(self) -> None:
+        """The prices live in settings; no doc or component may carry its own."""
+        from pathlib import Path
+
+        from backend.app.config.settings import settings
+
+        root = Path(__file__).resolve().parents[3]
+        stale = {"Rp29.000", "Rp99.000", "Rp25.000", "100 pesan"}
+        offenders: list[str] = []
+        for pattern in ("docs/**/*.md", "frontend/src/**/*.jsx", "README.md"):
+            for path in root.glob(pattern):
+                text = path.read_text(encoding="utf-8", errors="ignore")
+                hits = [s for s in stale if s in text]
+                if hits:
+                    offenders.append(f"{path.relative_to(root)}: {hits}")
+        assert not offenders, "stale plan figures still shipped:\n" + "\n".join(offenders)
+        assert settings.plan_price_beacon == 49_000

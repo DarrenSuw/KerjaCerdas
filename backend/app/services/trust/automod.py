@@ -164,7 +164,7 @@ async def review_reported_posting(
     from backend.app.services.llm_factory import build_chat_llm, resolve_gemini_key
     from backend.app.services.trust.rules import RULES_BY_ID
 
-    rules = [RULES_BY_ID[r] for r in cited_rule_ids if r in RULES_BY_ID]
+    rules = [RULES_BY_ID[r] for r in dict.fromkeys(cited_rule_ids) if r in RULES_BY_ID]
     if not rules:
         # Nothing checkable was cited — a human decides, nothing is hidden.
         return {"verdict": "uncertain", "rule": "", "severity": "", "note": "tidak ada aturan yang dikutip"}
@@ -176,6 +176,15 @@ async def review_reported_posting(
 
         from backend.app.utils import content_to_text
 
+        # Hard rules first, and nothing may short-circuit before every hard rule
+        # has been asked. The first version returned on the first LANGGAR *or*
+        # RAGU in citation order, so a soft rule coming back "not sure" ended the
+        # review — and a cited R1 (asking candidates for money), the only rule we
+        # are willing to act on unattended, was never evaluated at all. A scam
+        # stayed live because an unrelated question happened to be uncertain.
+        rules.sort(key=lambda r: 0 if r.severity == "hard" else 1)
+
+        fallback: dict | None = None
         for rule in rules:
             prompt = (
                 "Kamu moderator lowongan kerja di Indonesia. Periksa HANYA apakah "
@@ -191,12 +200,16 @@ async def review_reported_posting(
                 [HumanMessage(content=prompt)]
             )
             answer = content_to_text(resp.content).strip()
+            found = {"rule": rule.id, "severity": rule.severity, "note": answer[:300]}
             if answer.upper().startswith("LANGGAR"):
-                return {"verdict": "violation", "rule": rule.id,
-                        "severity": rule.severity, "note": answer[:300]}
-            if answer.upper().startswith("RAGU"):
-                return {"verdict": "uncertain", "rule": rule.id,
-                        "severity": rule.severity, "note": answer[:300]}
+                if rule.severity == "hard":
+                    # The only finding that may act unattended. Stop here.
+                    return {"verdict": "violation", **found}
+                fallback = fallback or {"verdict": "violation", **found}
+            elif answer.upper().startswith("RAGU"):
+                fallback = fallback or {"verdict": "uncertain", **found}
+        if fallback is not None:
+            return fallback
         return {"verdict": "clear", "rule": "", "severity": "", "note": "tidak ditemukan pelanggaran"}
     except Exception as exc:  # noqa: BLE001 — never let the reviewer break reporting
         logger.warning("Report review skipped: %s", exc)

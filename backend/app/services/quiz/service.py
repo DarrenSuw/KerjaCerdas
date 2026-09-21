@@ -21,6 +21,7 @@ tick) is the final check.
 
 from __future__ import annotations
 
+import logging
 import random
 import secrets
 from datetime import UTC, date, datetime, timedelta
@@ -29,6 +30,8 @@ from backend.app.db import postgres_store as store
 from backend.app.db.schemas import SeekerProfile, Skill
 from backend.app.db.schemas_proof import QuizAttempt, SkillEvidence
 from backend.app.services.matching.evidence import skill_key
+
+logger = logging.getLogger(__name__)
 
 QUESTIONS_PER_QUIZ = 5
 SECONDS_PER_QUESTION = 45
@@ -61,6 +64,25 @@ _TOPUP_COOLDOWN_S = 6 * 3600
 # hammer /quiz/start and pay for a generation attempt on every request.
 _COLD_COOLDOWN_S = 15 * 60
 _last_topup: dict[str, float] = {}
+
+
+# Cold-start generations one account may trigger per day, across ALL skills.
+# The per-skill throttle alone does not bound cost: adding a skill to a profile
+# is free and unlimited, so an attacker claims fifty invented skills and gets
+# fifty generations per window. The gate has to count the PAYER's requests, not
+# the skill's.
+GENERATIONS_PER_USER_PER_DAY = 3
+
+
+async def _generation_budget_left(user_id: str) -> bool:
+    from datetime import datetime as _dt
+
+    from backend.app.db.postgres_store import consume_quota
+
+    since = _dt.now(UTC).replace(hour=0, minute=0, second=0, microsecond=0)
+    return await consume_quota(
+        user_id, "quiz_generation", GENERATIONS_PER_USER_PER_DAY, since
+    )
 
 
 def _topup_allowed(key: str, *, serveable: bool) -> bool:
@@ -147,7 +169,21 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
     # not a nicety — see generator.BANK_TARGET. Once the bank is serveable the
     # top-up is rate-limited per skill: a partially-filled bank must not pay for
     # a generation attempt on every single quiz start.
-    if len(bank) < generator_target() and _topup_allowed(key, serveable=len(bank) >= QUESTIONS_PER_QUIZ):
+    # A retake cannot honour the no-repeat rule below 2x the quiz length, so a
+    # bank in that range is treated as urgently as an empty one rather than
+    # waiting out the six-hour top-up window with a candidate stuck repeating
+    # questions. Guard: TestReviewFindingsStayFixed.
+    attempts_so_far = await store.find_quiz_attempts(seeker.id, key)
+    needs_refill_now = len(bank) < QUESTIONS_PER_QUIZ or (
+        len(bank) < 2 * QUESTIONS_PER_QUIZ
+        and any(a.submitted_at is not None for a in attempts_so_far)
+    )
+
+    if (
+        len(bank) < generator_target()
+        and _topup_allowed(key, serveable=not needs_refill_now)
+        and await _generation_budget_left(seeker.user_id)
+    ):
         from backend.app.services.quiz.generator import GenerationError, ensure_questions_exist
 
         try:
@@ -192,6 +228,19 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
             raise QuizError(429, f"Kamu bisa mengulang kuis ini mulai {retry_at.date().isoformat()}.")
 
     picked = _pick_questions(bank, attempts)
+    previous = next(
+        (a.question_ids or [] for a in reversed(attempts) if a.submitted_at is not None), []
+    )
+    repeated = len({q.id for q in picked} & set(previous))
+    if repeated:
+        # The contract is "a retake never repeats"; a bank this thin cannot keep
+        # it. Serving anyway is still right — locking the candidate out over our
+        # unfinished bank is worse — but a broken guarantee must be visible in
+        # the response and in the log, never absorbed quietly.
+        logger.warning(
+            "Bank '%s' too small to honour no-repeat: %d of %d questions reused",
+            key, repeated, QUESTIONS_PER_QUIZ,
+        )
     attempt = QuizAttempt(
         seeker_id=seeker.id,
         skill=key,
@@ -199,7 +248,9 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
         deadline_at=now + timedelta(seconds=SECONDS_PER_QUESTION * QUESTIONS_PER_QUIZ),
     )
     await store.get_repositories().quiz_attempts.upsert(attempt)
-    return _attempt_payload(attempt, {q.id: q for q in picked}, resumed=False)
+    payload = _attempt_payload(attempt, {q.id: q for q in picked}, resumed=False)
+    payload["repeated_questions"] = repeated
+    return payload
 
 
 def _pick_questions(bank: list, attempts: list) -> list:

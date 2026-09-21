@@ -50,11 +50,21 @@ class QuestionUpdate(BaseModel):
 async def moderation_queue():
     repos = get_repositories()
     out = []
-    for job in await find_jobs_by_moderation_status("held"):
+    # "flagged" belongs here as much as "held". A flagged posting is one the
+    # community reported and the AI reviewer declined to rule on, which is
+    # precisely the case that needs a human — and while it was missing from this
+    # queue no admin could ever see it, so the reports were never resolved and
+    # every reporter's history stayed permanently empty.
+    queued = [
+        *await find_jobs_by_moderation_status("flagged"),
+        *await find_jobs_by_moderation_status("held"),
+    ]
+    for job in queued:
         employer = await repos.employers.get(job.employer_id)
         out.append({
             "job_id": job.id, "title": job.title, "description": job.description[:1500],
             "company_name": employer.company_name if employer else "",
+            "moderation_status": job.moderation_status,
             "reasons": job.moderation_reasons,
             "reports": [r.model_dump() for r in await find_reports_for_job(job.id) if not r.resolved],
             "events": [e.model_dump() for e in await find_moderation_events(job.id)][-10:],
@@ -87,8 +97,16 @@ async def moderate_job(job_id: str, req: Decision, admin: User = Depends(require
     # permanently zero, so a serial false reporter never lost standing and a
     # reliable one never gained any. Publishing means the accusations did not
     # hold; rejecting means they did.
+    # ONLY the reports still open. find_reports_for_job returns every report the
+    # job ever had, so writing to all of them let a later decision rewrite an
+    # older, already-settled verdict — a reporter whose complaint was upheld in
+    # March would silently be marked wrong in June because a different report on
+    # the same posting was dismissed. Standing has to be a record, not a copy of
+    # the most recent decision.
     upheld = req.decision != "publish"
     for r in await find_reports_for_job(job.id):
+        if r.resolved:
+            continue
         r.resolved = True
         r.upheld = upheld
         await repos.job_reports.upsert(r)

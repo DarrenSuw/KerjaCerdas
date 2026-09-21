@@ -55,7 +55,7 @@ flowchart LR
 
 - **Kedaulatan Perlindungan Data (Vertex AI VPC):** *Vertex AI Endpoint* memastikan data *prompt* LLM dieksekusi dalam ruang komputasi *Virtual Private Cloud (VPC)* terisolasi dengan *Zero Data Retention*.
 - **Micro-Tuning Berkelanjutan (LoRA):** Menala model secara internal dengan dialek khas rekrutmen Indonesia (nomenklatur kampus lokal, istilah teknis Disnaker).
-- **Payment Gateway Terintegrasi:** Otomatisasi penagihan paket Beacon (Rp29.000/lowongan), Lighthouse (Rp99.000/bulan), dan Prism (Rp25.000/30 hari) lewat Midtrans/Xendit — menggantikan aktivasi manual oleh admin. Lihat [Business Model](BUSINESS_MODEL.md).
+- **Payment Gateway Terintegrasi:** Otomatisasi penagihan paket Beacon (Rp49.000/lowongan), Lighthouse (Rp149.000/bulan), dan Prism (Rp15.000/30 hari) lewat Midtrans/Xendit — menggantikan aktivasi manual oleh admin. Lihat [Business Model](BUSINESS_MODEL.md).
 
 ### 1.4 AI Agent & Matching Algorithm Roadmap
 

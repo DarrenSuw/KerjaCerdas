@@ -115,7 +115,7 @@ export default function EmployerDashboard() {
                 <BrutalCard>
                     <div style={{ fontWeight: 900 }}>Paket</div>
                     <p style={{ fontSize: 13, margin: '6px 0 10px' }}>
-                        Spark gratis: 1 lowongan aktif, 20 pelamar skor tertinggi ditampilkan. Beacon Rp29.000 / lowongan atau Lighthouse Rp99.000 / bulan
+                        Spark gratis: 1 lowongan aktif, semua pelamar diperingkat. Beacon Rp49.000 / lowongan atau Lighthouse Rp149.000 / bulan
                         untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor.
                     </p>
                     <button style={topBtn(KC.orange, '#fff')} onClick={() => openUpgradeModal()}>Lihat paket</button>
