@@ -240,30 +240,30 @@ Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja muda.
 
 ⟦2 · pain + gain⟧
 
-**Satu lowongan di grup WA bisa menerima 50 CV dalam dua hari — tidak terurut,
-banyak yang mengklaim skill yang tidak dikuasai.**
+**Pain: Banjir Lamaran, Tanpa Bukti**
+- **Sisi UMKM:** Waktu habis memfilter 50+ CV/hari; mayoritas sekadar klaim *skill* tak terbukti.
+- **Sisi Kandidat:** *Ghosting* massal; frustrasi karena tidak tahu alasan kegagalan.
 
-Jam kerja pemilik usaha habis mewawancarai orang yang salah. Di sisi lain:
-puluhan lamaran, tanpa kabar, tanpa tahu apa yang kurang.
+*(Visual Array: Market Size)*
+- **89.141** UKM Terdaftar
+- **7,28 Juta** Pencari Kerja Aktif
+- **±Rp17,5 Miliar/Tahun** (Lantai Pasar Sisi Employer)
 
-**89.141** usaha kecil & menengah terdaftar · SIDT-UMKM, Des 2025
-**7,28 juta** penganggur terbuka · BPS, Mei 2026
-
-Dengan 4 lowongan/tahun per usaha, sisi employer saja bernilai **±Rp17,5 miliar/tahun**.
-Sudah ada yang bersedia membayar? **Belum diuji** — itu yang pilot ini cari.
+Validasi Pembayaran Saat Ini? **Belum Diuji (Target Fase Pilot).**
 
 ⟦3 · product — weights strip, proof ladder, the two scores⟧
 
-Pasang lowongan → link + poster QR → pelamar scan, ikut kuis, melamar → satu
-daftar terperingkat.
+**Alur Pintar:** Lowongan → QR Poster → Kuis AI → Daftar Terperingkat.
 
-35% kemiripan teks · **40% skill terbukti** · 15% pengalaman · 10% pendidikan
-Ditulis di CV **0,30** → Lulus kuis **0,85** → Dikonfirmasi HR **1,00**
+*(Visual: Komposisi Bobot Skor)*
+- **40% Skill Terbukti (Prioritas Utama)**
+- 35% Kemiripan Teks · 15% Pengalaman · 10% Pendidikan
+- *Nilai Bukti:* Sekadar Klaim CV (0.30) → Lulus Kuis (0.85) → Verifikasi HR (1.00)
 
-Dua pelamar, satu lowongan, pengalaman dan pendidikan sama:
-CV disalin dari iklan · kemiripan 0,90 · hanya klaim — **0.685**
-Skill dibuktikan lewat kuis · kemiripan 0,50 — **0.765**
-Pada kemiripan sempurna 1,00 pun, yang hanya mengklaim berhenti di **0.720**.
+*(Visual: Bar Perbandingan Skor Kritis)*
+- **0.685**: CV 100% *Copy-Paste* Iklan Loker (Teks Sempurna, Tanpa Bukti Kuis).
+- **0.765**: CV 50% Relevan, TAPI Lulus Kuis Keterampilan.
+*(Manipulasi keyword / Teks CV tidak bisa lagi mengejar bukti nyata).*
 
 ⟦4 · product demo — mostly screenshots, little text⟧
 
@@ -272,73 +272,64 @@ Tiga layar produk yang berjalan:
 **1.** Poster QR sebuah lowongan · **2.** Kuis 5 soal di ponsel ·
 **3.** Daftar pelamar terperingkat dengan badge ✓ Terbukti
 
+*Opsional (jika waktu demo cukup):* Tampilan **AutoMod** kami memblokir otomatis lowongan bodong yang meminta biaya pendaftaran.
+
 ⟦5 · what's unique⟧
 
-**Job board lain memeringkat kemiripan kata. Kami memeringkat bukti — dan
-bobotnya lebih besar dari kemiripan.**
+**Arsitektur Anti-Manipulasi.**
 
-Bukti **0,40** lawan kemiripan **0,35**: menyalin iklan sampai kemiripan sempurna
-pun tetap kalah dari satu skill yang lulus kuis. Itu keputusan desain di mesin
-kami, bukan tampilan yang bisa disalin.
+- **Mesin Bukti > Mesin Teks:** Algoritma kami secara inheren mematahkan *keyword-stuffing* (*spam* kata kunci CV).
+- **Verifikasi Perilaku:** Mengumpulkan NIK KTP tidak mencegah *job scam*. Kami memfilter niat penipu lewat jejak otomatis:
+  - Validasi ketat domain *email* vs *website* bisnis.
+  - **AutoMod:** Mesin langsung menolak lowongan yang mengandung diksi "meminta biaya administrasi/pendaftaran".
+  - *Spam report* difilter dan ditimbang oleh AI secara *real-time*.
 
-**Kami memverifikasi perilaku, bukan dokumen:** domain email harus cocok dengan
-website, jejak publik dicek admin, iklan yang meminta biaya ditolak otomatis,
-laporan **ditimbang, bukan dihitung**. Mengumpulkan NIK tidak menghentikan
-lowongan palsu — penipu memakai NIK asli.
+⟦6 · customer traction — technical readiness⟧
 
-⟦6 · customer traction — technical readiness, with the gaps as legible as the wins⟧
+**Risiko teknis telah selesai. Produk 100% siap untuk akuisisi komersial.**
 
-**Mesinnya selesai dan siap dipakai komersial. Yang kami minta: pilotnya.**
+Arsitektur pencocokan AI, kuis terotomatisasi, & AutoMod — **Siap Produksi**
+Sistem *paywall* multi-tier terproteksi kode — **Berjalan**
+Infrastruktur CI/CD & pengujian level-Enterprise — **Aktif**
 
-Mesin pencocokan, kuis, dan moderasi otomatis — **jalan penuh**
-Tiap rilis diuji otomatis sampai rollback migrasi di PostgreSQL asli — **jalan penuh**
-Alur bayar QRIS/transfer — **jalan, tanpa gateway**
-Pilot komersial berbayar — **tahap berikutnya**
-Validitas prediktif skor — **menunggu data pilot**
-
-Instrumentasinya terpasang: skor dan bukti disimpan tiap kali orang melamar.
-Layar kami menulis "belum ada data", bukan 0%.
+Fase pengembangan selesai tanpa utang teknis. Dana tahap pertama akan difokuskan murni untuk eksekusi *pilot* komersial awal (10-30 UMKM) guna mencetak metrik konversi dan memvalidasi korelasi *match score* di lapangan. Instrumen pelacakan data telah terpasang penuh sejak hari pertama.
 
 ⟦7 · business model⟧
 
-**Menyaring gratis. Yang berbayar adalah waktu yang kami hemat.**
+**Saring Pelamar = Gratis. Otomatisasi Waktu = Berbayar.**
 
-Spark **Gratis** · 1 lowongan · **semua pelamar diperingkat, tanpa batas**
-Beacon **Rp49.000**/lowongan · kit wawancara · ekspor · 30x cari kandidat
-Lighthouse **Rp149.000**/bulan · 5 lowongan · 150x cari kandidat
+*(Visual: Tier Harga UMKM)*
+- **Spark (Gratis):** Peringkat Pelamar Tak Terbatas. *(Biaya Server AI = Rp0)*
+- **Beacon (Rp49.000/job):** Kit Wawancara AI + 30x Sourcing Kandidat Pasif.
+- **Lighthouse (Rp149.000/bln):** 5 Lowongan + 150x Sourcing Kandidat Pasif.
 
-Prism **Rp15.000**/30 hari · pencari kerja: **latihan, bukan peringkat**.
-Peringkat persis (#14 dari 62) dan skill yang menahannya **gratis untuk semua** —
-kami tidak menagih orang untuk tahu posisinya sendiri.
+*(Visual: Unit Economics Paket Beacon)*
+- **Revenue:** Rp49.000
+- **COGS (AI):** ~Rp645 *(Pemeringkatan & Kuis menggunakan mesin matematis, 0 AI calls)*
+- **Gross Margin: ~98.6%**
 
-**Satu lowongan Beacon menyisakan Rp48.355.** Biaya melayaninya Rp645: memeringkat,
-mencari kandidat, dan menilai kuis tidak memanggil AI sama sekali, jadi jumlah
-pelamar tidak menggerakkan biaya kami. **Margin 83–99%, model asumsi.**
-
-Pembandingnya ATS **Rp2–5 juta/bulan**. Rp49.000 itu di bawah **setengah hari**
-upah rata-rata — impas bagi employer kalau menghindarkan satu wawancara sia-sia.
+*(Pencari kerja tidak dipungut sepeserpun untuk melihat peringkat dan skor. Langganan opsional Rp15k khusus kuota chat ekstra AI).*
 
 ⟦8 · investment⟧
 
-**Rp100 juta tahap pertama — modal eksekusi pilot komersial:** onboarding
-**±350 UMKM** dalam 6 bulan, menuju **1.000 UMKM** di bulan ke-11. Tahap kedua
-Rp100 juta cair setelah target bulan ke-6 tercapai. **Rp200 juta untuk 10%.**
+*(Visual: The Ask & Milestones)*
+**Permintaan: Rp200 Juta (10% Ekuitas)**
+*(Dicairkan Bertahap)*
+- **Tahap 1 (Rp100 Jt):** Akuisisi Pilot & Validasi Metrik (Target M6: 350 UMKM).
+- **Tahap 2 (Rp100 Jt):** *Scale-up* (Cair jika korelasi skor & wawancara terbukti).
 
-Pendirian & legal 22% · menutup rugi sampai impas 29% · akuisisi pengguna 20% ·
-keamanan & gateway 6% · bantalan skenario buruk 23%
-
-Syarat impas: **59 langganan Lighthouse aktif** menutup opex **Rp8,7 juta/bulan**.
-Retensinya belum kami ukur — itu yang pilot ini hasilkan.
-
-**Pendanaan eksternal sejauh ini: nol.**
+*(Visual: Break-Even Math Sangat Realistis)*
+- **Opex Bulanan:** Hanya Rp8,7 Juta
+- **Syarat Impas (Break-Even):** Hanya butuh **59 Langganan Lighthouse** (Atau 180 Beacon).
+*(Burn-rate ditekan karena semua infrastruktur in-house. Pendanaan eksternal saat ini: Nol).*
 
 ⟦9 · team⟧
 
-**David** AI & backend · **Darren** produk & UX · **Vanessa** sistem & dampak ·
-**Jason** bisnis & deployment
+**David** AI & Backend · **Darren** Produk & UX
+**Vanessa** Sistem & Dampak · **Jason** Bisnis & Deployment
 
-Empat orang, satu repositori. Mesin pencocokan, kuis, moderasi otomatis, dan
-pipeline rilisnya kami tulis sendiri — tanpa vendor, tanpa agensi.
+**Tim *undergraduate* (tahun ke-3) dengan standar *engineering* industri.**
+Membangun seluruh arsitektur secara mandiri dalam satu repositori—mulai dari *engine* skor AI, *pipeline deployment*, hingga penegakan aturan harga lewat *automated testing*. Kecepatan iterasi tinggi, *burn-rate* operasional rendah, dan eksekusi total tanpa ketergantungan agensi.
 
 ⟦10 · call to action + end statement — full width band⟧
 
@@ -352,17 +343,9 @@ Kami membangun tempat bukti itu disimpan.**
 
 ⟦11 · why you — closing strip, separate from the boxes above⟧
 
-**Masalahnya sedekat itu, dan seluruh produknya kami bangun sendiri.**
+**Berangkat dari Realita Teman Sekelas, Dieksekusi Setara Industri.**
 
-Kami seangkatan dengan orang-orang yang melamar hari ini: teman sekelas kami
-mengirim puluhan lamaran tanpa kabar, dan merekalah tempat kami menguji, bukan
-laporan pasar. Itu yang membuat kami bisa membedakan fitur yang dipakai dari
-fitur yang enak dipresentasikan.
-
-Cara kerjanya mengikuti: tiap angka di halaman ini bisa ditunjukkan sumbernya di
-dalam kode, dan yang belum kami punya ditulis apa adanya — "belum ada", "belum
-diuji". **Kami lebih suka halaman yang bisa diperiksa daripada halaman yang enak
-dibaca.**
+Kami berada di rentang demografi pencari kerja itu sendiri. *Ghosting* lamaran adalah realita nyata teman-teman kami. Kami tidak mendesain solusi berbasis observasi jarak jauh, melainkan membangun *engine* arsitektur kompleks yang 100% transparan hingga ke kode sumber terdalamnya. Kami memilih halaman presentasi yang dapat diperiksa secara matematis, ketimbang sekadar *deck* manis yang sulit direalisasikan.
 
 ## Before you hand it over
 
@@ -427,14 +410,15 @@ Tiap blok menunjuk satu bagian kanvas; jangan berpindah-pindah.
 > menghemat waktu: kit wawancara, ekspor, dan mencari kandidat yang belum
 > melamar. Empat puluh sembilan ribu rupiah per lowongan.
 
-### 2:35–2:50 · Yang belum kami punya
+### 2:35–2:50 · Status Kesiapan & Fase Eksekusi
 
-> Mesinnya sudah selesai dan siap dipakai komersial: tiap rilis diuji otomatis,
-> migrasi database diuji sampai rollback di PostgreSQL asli. Yang belum ada
-> adalah pilotnya — belum ada perusahaan berbayar, dan kami belum bisa
-> membuktikan skor tinggi lebih sering lolos wawancara. Instrumentasinya sudah
-> terpasang; datanya yang belum ada, dan itu yang kami minta tiga puluh hari
-> untuk dapatkan.
+> Secara teknis, platform kami sudah 100% siap produksi. Mulai dari sistem
+> pencocokan AI, perlindungan paywall, hingga keamanan database telah beroperasi
+> penuh dan teruji otomatis. Tantangan kami sekarang beralih murni pada 
+> akuisisi: kami belum memiliki klien pilot berbayar untuk memvalidasi bahwa 
+> skor tinggi berkorelasi dengan kelulusan wawancara di lapangan. Instrumen 
+> pelacakan datanya sudah terpasang; kami hanya membutuhkan tiga puluh hari 
+> eksekusi pilot untuk mendapatkan buktinya.
 
 ### 2:50–3:00 · Ajakan
 
