@@ -449,6 +449,39 @@ so the platform can later measure whether proven skills actually predict intervi
 
 ---
 
+### `GET /api/v1/seeker/applications/{application_id}/rank`
+
+**Free, on every tier, deliberately.** Exact standing in that job's applicant queue plus the
+evidence behind it. Every figure is read from rows written when the candidate applied — no embedding
+call, no LLM call, **Rp0 per request**.
+
+This was briefly gated behind Prism. The score and the ordering were identical either way, so it
+looked fair — but a candidate who knows they are 14th of 62, and which claimed skill costs them, can
+act where one who does not know cannot. That is advantage bought with money, charged to the side of
+the market with the least of it, and it contradicts the product's own promise. `402` was removed and
+`test_seeing_your_own_standing_is_never_sold` fails if it returns.
+
+Only ownership is checked. An application belonging to someone else returns `404`, never `403`, so
+the endpoint cannot be used to probe which application ids exist.
+
+```json
+{
+  "application_id": "uuid", "job_id": "job-001",
+  "rank": 14, "total_applicants": 62, "percentile": 79,
+  "score": 0.765,
+  "skills": [{ "skill": "Excel", "level": "quiz" }],
+  "proven_count": 2, "claimed_count": 1,
+  "how_to_improve": "1 skill masih berupa klaim. Lulus kuisnya menaikkan bobot…"
+}
+```
+
+Ties share a rank (two identical stored scores are genuinely level). `percentile` is `null` when
+fewer than 10 people applied — "top 50%" out of two applicants is noise. Paying buys **visibility**
+of the position, never movement in it: the ordering reported here is the same one the employer sees
+on every tier, and the endpoint has no write path.
+
+---
+
 ### `GET /api/v1/seeker/applications`
 
 Return all job applications for the logged-in seeker with interactive milestone progress tracking (`saved` → `applied` → `reviewed` → `interview` → `hired` / `rejected`).
@@ -650,6 +683,20 @@ Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP**) — ch
 Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — reverse-matching calls Gemini per request, same cost class as `/agent/invoke`). Return AI-ranked candidates for a job posting the caller's employer profile owns (403 on cross-tenant access via `_require_owned_job`). Uses `SemanticMatcher.rank_seekers_for_job` reverse ranking. Candidates who have **not** applied to this job are fully anonymised: `full_name` becomes `"Kandidat #N"` and the headline is blank. Only someone who applied to this very job (`already_applied: true`) is shown by name — they handed their details over voluntarily. The old `"Someone at {company}"` teaser was removed because company + school + region + experience was enough to re-identify the person elsewhere. Each row carries `skill_proof` (per required skill) and `proven_skill_count`.
 
 **Request Body (optional, `CandidateSearchRequest`):** `{ "top_k": 10, "filters": { "location": "...", "experience_min": 2 } }`
+
+**Plan-gated — this is sourcing, not screening.** Searching candidates who have *not* applied is the
+employer feature that is actually sold, so it carries a quota (`_check_talent_search_quota`):
+
+| Tier | Searches / 30 days | Response when exhausted |
+|---|---|---|
+| Spark (free) | 0 | `402 Payment Required` — names Beacon and Lighthouse |
+| Beacon | 30 | `429 Too Many Requests` — offers Lighthouse |
+| Lighthouse | 150 | `429 Too Many Requests` |
+
+Ranked **applicants** (`GET /employer/applications`) are deliberately uncapped on every tier,
+including free: scoring someone who already applied costs Rp0 to compute, so capping it saves
+nothing and only hides candidates. The quota is consumed via `consume_quota` on the `talent_search`
+event and skipped entirely when `PLAN_LIMITS_ENFORCED=false`.
 
 ---
 

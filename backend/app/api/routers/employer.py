@@ -12,7 +12,7 @@ Interview kits, skill confirmation, export and trust live in routers/hiring.py.
 from __future__ import annotations
 
 import logging
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from backend.app.api.dependencies import get_current_user, require_employer
 from backend.app.api.routers.jobs import invalidate_jobs_cache
@@ -27,6 +27,8 @@ from backend.app.api.schemas.employer import (
 from backend.app.config.settings import settings
 from backend.app.db.models import User
 from backend.app.db.postgres_store import (
+    add_event,
+    consume_quota,
     find_employer_by_user_id,
     find_job_by_employer_and_client_ref,
     find_jobs_by_employer_id,
@@ -42,7 +44,14 @@ from backend.app.db.schemas import (
     can_transition,
 )
 from backend.app.db.schemas_proof import ApplicationStatusEvent
-from backend.app.services.billing.plans import active_job_limit, entitlements_for
+from backend.app.services.billing.plans import (
+    PLAN_DAYS,
+    TALENT_SEARCHES_BEACON,
+    TALENT_SEARCHES_LIGHTHOUSE,
+    active_job_limit,
+    entitlements_for,
+    talent_search_limit,
+)
 from backend.app.services.hiring.links import new_public_code, public_path
 from backend.app.services.matching.matcher import SemanticMatcher, score_pair
 from backend.app.services.trust import policy
@@ -425,6 +434,41 @@ async def estimate_job_pool(payload: JobPoolEstimateRequest):
 # ── Candidate search (REAL reverse-matching, no mocks) ────────────────────────
 
 
+async def _check_talent_search_quota(user_id: str) -> None:
+    """Meter reverse matching — the one employer feature that is actually sold.
+
+    Ranked APPLICANTS are free and uncapped on every tier because scoring people
+    who applied costs Rp0 to compute. Searching people who have NOT applied is
+    sourcing: it is the thing an employer pays for, so it is the thing that
+    carries a countable limit. `talent_search_limit()` existed and was unit
+    tested, but no caller ever consulted it, so Spark's documented quota of zero
+    was in practice unlimited and the paid tiers bought nothing.
+    """
+    if not settings.plan_limits_enforced:
+        await add_event(user_id, "talent_search")
+        return
+
+    ent = await entitlements_for(user_id)
+    limit = talent_search_limit(ent)
+    if limit <= 0:
+        raise HTTPException(
+            status.HTTP_402_PAYMENT_REQUIRED,
+            "Mencari kandidat yang belum melamar tersedia di paket Beacon "
+            f"({TALENT_SEARCHES_BEACON}x / 30 hari) atau Lighthouse "
+            f"({TALENT_SEARCHES_LIGHTHOUSE}x / 30 hari). Memeringkat pelamar "
+            "yang sudah melamar tetap gratis dan tanpa batas.",
+        )
+
+    since = datetime.now(UTC) - timedelta(days=PLAN_DAYS)
+    if not await consume_quota(user_id, "talent_search", limit, since):
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            f"Kuota {limit} pencarian kandidat per 30 hari sudah terpakai."
+            + ("" if ent.has_lighthouse else
+               f" Lighthouse menaikkannya ke {TALENT_SEARCHES_LIGHTHOUSE}x / 30 hari."),
+        )
+
+
 @router.post("/jobs/{job_id}/candidates")
 async def find_candidates(
     job_id: str,
@@ -438,6 +482,7 @@ async def find_candidates(
     # without this check employer B could submit employer A's public job id and
     # receive candidate-fit data for a recruitment process they do not own.
     job, _employer = await _require_owned_job(repos, current_user, job_id)
+    await _check_talent_search_quota(current_user.id)
 
     search = payload or CandidateSearchRequest()
     top_k = search.top_k

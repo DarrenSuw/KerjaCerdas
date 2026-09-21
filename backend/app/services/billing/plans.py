@@ -8,13 +8,37 @@ Employers
 Job seekers
   Free        Rp0          matching, skill gap, unlimited quizzes (retake next
                            day), advisor 10 messages / day
-  Prism       Rp15.000     per 30 days: exact application rank + score
-                           breakdown, advisor 30 messages / day
+  Prism       Rp15.000     per 30 days: advisor 20 messages / day (2x free).
+                           Roadmap: AI interview practice, formatted CV export.
 
 The paywall sits on what COSTS us money and saves an employer time (interview
 kits, export, sourcing), not on how many applicants may be seen. Ranking is a
 free computation; charging for it punished candidates rather than us, and left
 the free tier able to do the whole job for a one-person hire anyway.
+
+THE SEEKER RULE, and it is not negotiable:
+
+    A job seeker may pay for PRACTICE and PRESENTATION.
+    Never for POSITION, and never for INFORMATION ABOUT THEIR POSITION.
+
+Exact rank in a job's applicant queue was briefly sold under Prism. The score
+and the ordering were identical either way, so it looked fair — but a candidate
+who knows they are 14th of 62, and which claimed skill costs them, can act where
+one who does not know cannot. That is advantage bought with money, charged to
+the side of the market that has the least of it. It is free for everyone now,
+and `test_seeing_your_own_standing_is_never_sold` fails if the gate returns.
+
+Anything that touches the ranking, or what a candidate can learn about their
+place in it, is free on every tier forever: scores, bands, exact rank, the
+per-skill evidence breakdown, skill gap, courses, quizzes, badges, and the
+1-day retake cooldown.
+
+Two more invariants, both guarded by tests:
+  1. Each paid benefit is ENFORCED somewhere. A feature advertised in
+     catalogue() with no gate is revenue given away; `talent_search_limit` was
+     unit tested but unreferenced for exactly that reason.
+  2. On the employer side the paywall sits on SOURCING (finding people who have
+     not applied), never on SCREENING the people who did.
 
 Prism no longer shortens the quiz retake cooldown. That was money buying a
 faster route to a proof badge, which moves a match score — the one thing the
@@ -95,15 +119,21 @@ def catalogue() -> dict:
             {"plan": "free", "price_idr": 0, "period": "gratis",
              "features": ["Skor kecocokan + skill gap + rekomendasi kursus",
                           "Kuis skill tanpa batas (ulang besoknya)",
-                          "Band skor + skill yang kurang untuk tiap lamaran",
+                          "Peringkat persis tiap lamaran (mis. #14 dari 62)",
+                          "Rincian bukti per skill — apa yang menahan peringkatmu",
                           f"Advisor {ADVISOR_FREE_PER_DAY} pesan / hari"]},
             {"plan": "prism", "price_idr": settings.plan_price_prism, "period": "per 30 hari",
-             "features": ["Peringkat persis tiap lamaran (mis. #14 dari 62)",
-                          "Rincian skor per komponen",
-                          f"Advisor {ADVISOR_PRISM_PER_DAY} pesan / hari (2x gratis)"]},
+             "features": [f"Advisor {ADVISOR_PRISM_PER_DAY} pesan / hari (2x gratis)",
+                          "Segera: simulasi wawancara AI + umpan balik",
+                          "Segera: CV terformat dari profil yang sudah terverifikasi"],
+             "note": ("Prism membeli LATIHAN, bukan peringkat. Semua yang "
+                      "memengaruhi peringkatmu — dan semua yang bisa kamu "
+                      "ketahui tentang peringkatmu — gratis selamanya.")},
         ],
-        "note": ("Membayar tidak pernah mengubah skor kecocokan maupun peringkat. "
-             "Kuis, skor, dan urutan pelamar sama untuk semua paket."),
+        "note": ("Membayar tidak pernah mengubah skor kecocokan maupun peringkat, "
+             "dan tidak pernah membuka informasi tentang peringkatmu yang tidak "
+             "didapat pengguna gratis. Kuis, skor, peringkat, dan urutan pelamar "
+             "sama untuk semua paket."),
         "payment_instructions": settings.payment_instructions,
     }
 

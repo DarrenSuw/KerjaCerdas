@@ -164,6 +164,124 @@ class TestLinksAndApply:
                            headers=employer_account["headers"]).json()["items"]
         assert items[0]["source"] == "link" and items[0]["match_score_at_apply"] == body["match_score"]
 
+    def test_reverse_matching_is_refused_on_the_free_tier(
+        self, client, employer_account, register, stub_embedder, limits_on
+    ) -> None:
+        """Sourcing is the employer feature that is actually sold.
+
+        `talent_search_limit()` existed and was unit tested, but no router ever
+        called it — so Spark's documented quota of zero meant unlimited in
+        practice and the paid tiers bought nothing. Ranked APPLICANTS stay free
+        and uncapped; this guards the boundary between the two.
+        """
+        job = _job(client, employer_account["headers"])
+        seeker = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=seeker["headers"], json={
+            "full_name": "Nama Asli", "region_code": "3171", "skills": ["Kasir"]})
+        resp = client.post(f"/api/v1/employer/jobs/{job['job_id']}/candidates",
+                           headers=employer_account["headers"], json={})
+        assert resp.status_code == 402, resp.text
+        assert "Beacon" in resp.json()["detail"]
+
+    def test_ranked_applicants_stay_free_while_sourcing_is_paid(
+        self, client, employer_account, register, stub_embedder, limits_on
+    ) -> None:
+        """The paywall must sit on sourcing, never on screening."""
+        job = _job(client, employer_account["headers"])
+        seeker = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=seeker["headers"], json={
+            "full_name": "Pelamar", "region_code": "3171", "skills": ["Kasir"]})
+        client.post(f"/api/v1/public/jobs/{job['public_code']}/apply", headers=seeker["headers"])
+        # Screening: free, on the free tier, with no quota.
+        apps = client.get("/api/v1/employer/applications", headers=employer_account["headers"])
+        assert apps.status_code == 200, apps.text
+        # Sourcing: refused on the same tier.
+        assert client.post(f"/api/v1/employer/jobs/{job['job_id']}/candidates",
+                           headers=employer_account["headers"], json={}).status_code == 402
+
+    def test_seeing_your_own_standing_is_never_sold(
+        self, client, employer_account, register, stub_embedder, limits_on
+    ) -> None:
+        """Knowing where you stand must not be purchasable.
+
+        It was briefly gated behind Prism. Score and ordering were identical
+        either way, so it looked fair — but a candidate who knows they are 14th
+        of 62, and which claimed skill costs them, can act where one who does
+        not know cannot. That is advantage bought with money, on the side of the
+        market with the least of it. Runs with limits ENFORCED, because that is
+        the configuration in which a paywall would reappear.
+        """
+        job = _job(client, employer_account["headers"])
+        seeker = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=seeker["headers"], json={
+            "full_name": "Pelamar", "region_code": "3171", "skills": ["Kasir"]})
+        assert client.post("/api/v1/seeker/apply", headers=seeker["headers"],
+                           json={"job_id": job["job_id"]}).status_code == 201
+        app_id = client.get("/api/v1/seeker/applications",
+                            headers=seeker["headers"]).json()[0]["application_id"]
+
+        resp = client.get(f"/api/v1/seeker/applications/{app_id}/rank",
+                          headers=seeker["headers"])
+        assert resp.status_code == 200, resp.text
+        assert resp.json()["rank"] == 1
+
+    def test_the_rank_payload_answers_why_not_just_where(
+        self, client, employer_account, register, stub_embedder
+    ) -> None:
+        """A bare position is a scoreboard; the point is the route upward.
+
+        Runs with limits off (conftest default), so this exercises the feature
+        itself rather than the gate — the gate is covered above.
+        """
+        job = _job(client, employer_account["headers"])
+        seeker = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=seeker["headers"], json={
+            "full_name": "Pelamar", "region_code": "3171", "skills": ["Kasir"]})
+        client.post("/api/v1/seeker/apply", headers=seeker["headers"],
+                    json={"job_id": job["job_id"]})
+        app_id = client.get("/api/v1/seeker/applications",
+                            headers=seeker["headers"]).json()[0]["application_id"]
+
+        body = client.get(f"/api/v1/seeker/applications/{app_id}/rank",
+                          headers=seeker["headers"]).json()
+        assert body["rank"] == 1 and body["total_applicants"] == 1
+        # Too small a field to quote a percentile honestly.
+        assert body["percentile"] is None
+        assert "how_to_improve" in body and body["how_to_improve"]
+
+    def test_another_seeker_cannot_probe_an_application_id(
+        self, client, employer_account, register, stub_embedder, limits_on
+    ) -> None:
+        """Ownership is checked BEFORE entitlement: a 402 on someone else's
+        application would confirm that the id exists."""
+        job = _job(client, employer_account["headers"])
+        owner = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=owner["headers"], json={
+            "full_name": "Pemilik", "region_code": "3171", "skills": ["Kasir"]})
+        assert client.post("/api/v1/seeker/apply", headers=owner["headers"],
+                           json={"job_id": job["job_id"]}).status_code == 201
+        app_id = client.get("/api/v1/seeker/applications",
+                            headers=owner["headers"]).json()[0]["application_id"]
+
+        stranger = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=stranger["headers"], json={
+            "full_name": "Orang Lain", "region_code": "3171", "skills": ["Kasir"]})
+        assert client.get(f"/api/v1/seeker/applications/{app_id}/rank",
+                          headers=stranger["headers"]).status_code == 404
+
+    def test_paying_reveals_the_position_without_changing_it(
+        self, client, employer_account, register, stub_embedder
+    ) -> None:
+        """Prism buys visibility, never movement — the rank it reports is the
+        same ordering every tier already gets."""
+        from backend.app.services.matching.application_rank import _rank_of
+
+        scores = [0.9, 0.7, 0.7, 0.4]
+        assert _rank_of(0.9, scores) == 1
+        # Ties share a rank rather than being broken arbitrarily.
+        assert _rank_of(0.7, scores) == 2
+        assert _rank_of(0.4, scores) == 4
+
     def test_talent_search_is_anonymised(self, client, employer_account, register,
                                          stub_embedder) -> None:
         job = _job(client, employer_account["headers"])

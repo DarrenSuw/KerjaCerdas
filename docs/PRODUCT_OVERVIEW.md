@@ -61,7 +61,7 @@ See [Architecture](ARCHITECTURE.md) for the full system diagram, and [Sequence D
 
 ## Business Model
 
-See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: employers post for free and see **every** applicant ranked on the free tier — ranking costs nothing to compute, so capping it only hid candidates — and pay per job (Beacon Rp49k) or per month (Lighthouse Rp149k) for AI interview questions, CSV export and reverse matching; job seekers stay free, with an optional Prism plan (Rp15k / 30 days) that buys advisor quota and the exact rank of their own applications. The quiz retake cooldown is one day for everyone: a plan must never shorten the path to a proof badge, because a badge moves the score. Ed-tech affiliate income is upside only and is excluded from break-even.
+See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: employers post for free and see **every** applicant ranked on the free tier — ranking costs nothing to compute, so capping it only hid candidates — and pay per job (Beacon Rp49k) or per month (Lighthouse Rp149k) for AI interview questions, CSV export and reverse matching; job seekers stay free — including the exact rank of their own applications and the per-skill evidence behind it, because charging someone to learn where they stand is an advantage bought with money. An optional Prism plan (Rp15k / 30 days) buys advisor quota only: practice, never position. The quiz retake cooldown is one day for everyone: a plan must never shorten the path to a proof badge, because a badge moves the score. Ed-tech affiliate income is upside only and is excluded from break-even.
 
 ## Adoption Path
 

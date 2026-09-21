@@ -94,6 +94,33 @@ class TestPayingNeverBuysProofOrLessService:
 
         assert settings.spark_ranked_applicant_limit == 0
 
+    def test_nothing_about_a_seekers_own_position_is_sold(self) -> None:
+        """The seeker rule: pay for practice and presentation, never position.
+
+        Selling exact rank passed every earlier test — the score and the
+        ordering really were identical for payers and non-payers. The defect was
+        one level up: a candidate who knows they are 14th of 62, and which
+        claimed skill costs them, can act where one who does not know cannot.
+        Charging the unemployed for that is pay-to-win wearing a technicality.
+
+        So the paid seeker tier may not advertise ANY of the vocabulary of
+        position or of information about it.
+        """
+        seeker_tiers = {t["plan"]: t for t in plans.catalogue()["seeker"]}
+        paid = seeker_tiers["prism"]
+        forbidden = ("peringkat", "rank", "skor", "score", "urutan", "posisi", "band")
+        for feature in paid["features"]:
+            low = feature.lower()
+            for word in forbidden:
+                assert word not in low, (
+                    f"Prism advertises {feature!r}, which sells position or knowledge of "
+                    f"it ({word!r}). That belongs in the free tier."
+                )
+
+        # ...and the free tier must actually carry them, or the rule is hollow.
+        free_text = " ".join(seeker_tiers["free"]["features"]).lower()
+        assert "peringkat persis" in free_text, "exact rank must stay free for everyone"
+
     def test_quota_sits_on_reverse_matching_instead(self) -> None:
         ent = plans.Entitlements()
         assert plans.talent_search_limit(ent) == 0
@@ -365,6 +392,13 @@ class TestSecondReviewFindingsStayFixed:
             r"Rp\s?29[.,]?000|Rp29k|(?:Rp\s?)?29\s?rb": "old Beacon price",
             r"Rp\s?99[.,]?000|Rp99k|(?:Rp\s?)?99\s?rb": "old Lighthouse price",
             r"Rp\s?25[.,]?000|Rp25k|(?:Rp\s?)?25\s?rb": "old Prism price",
+            # Config carries the price as a BARE integer with no "Rp", so the
+            # money patterns above sail straight past it. That is precisely how
+            # .env.example kept serving last month's prices while every doc and
+            # the landing page had been corrected.
+            r"PLAN_PRICE_BEACON\s*=\s*29000": "old Beacon price in config",
+            r"PLAN_PRICE_LIGHTHOUSE\s*=\s*99000": "old Lighthouse price in config",
+            r"PLAN_PRICE_PRISM\s*=\s*25000": "old Prism price in config",
             r"20 pelamar|top[- ]20": "removed Spark applicant cap",
             r"100 pesan": "old Prism advisor quota",
             r"8 skill|C\(6,5\)": "old quiz bank size",
@@ -377,7 +411,13 @@ class TestSecondReviewFindingsStayFixed:
                    "tidak boleh dikutip", "dulu", "lama", "old ", "was ")
 
         offenders: list[str] = []
-        for pattern in ("docs/**/*.md", "frontend/src/**/*.jsx", "README.md"):
+        # `.env.example` is in this list because leaving it out is exactly how
+        # the prices drifted: every doc and the landing page were corrected
+        # while the config the app ACTUALLY reads still served
+        # 29.000/99.000/25.000. A live demo would have contradicted the deck,
+        # and no guard covered the one file that decides the real number.
+        for pattern in ("docs/**/*.md", "frontend/src/**/*.jsx", "README.md",
+                        ".env.example"):
             for path in root.glob(pattern):
                 for n, line in enumerate(
                     path.read_text(encoding="utf-8", errors="ignore").splitlines(), 1
@@ -388,7 +428,11 @@ class TestSecondReviewFindingsStayFixed:
                         if re.search(rx, line, re.I):
                             offenders.append(f"{path.relative_to(root)}:{n} — {why}")
         assert not offenders, "stale product figures still shipped:\n" + "\n".join(offenders)
+        # `settings` is what the running app serves, and it is what an .env
+        # override silently changes. Assert all three, not just one.
         assert settings.plan_price_beacon == 49_000
+        assert settings.plan_price_lighthouse == 149_000
+        assert settings.plan_price_prism == 15_000
 
     def test_the_internals_index_lists_every_internals_doc(self) -> None:
         """A reference doc nobody links to is a doc nobody reads."""

@@ -31,10 +31,64 @@ Aturan ini juga yang menutup risiko UU PDP: kami tidak pernah berada dalam posis
 | **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, **semua pelamar diperingkat (tanpa batas)**, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
 | **Beacon** | **Rp49.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pertanyaan wawancara AI, ekspor CSV, 30x cari kandidat yang belum melamar | `[BUILT + TESTED]`, pembayaran manual |
 | **Lighthouse** | **Rp149.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
-| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja aktif | Peringkat persis tiap lamaran + rincian skor per komponen, advisor 20 pesan/hari (gratis: 10/hari) | `[BUILT + TESTED]`, pembayaran manual |
+| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja yang ingin berlatih | Advisor 20 pesan/hari (gratis: 10/hari) `[BUILT + TESTED]`. Roadmap: simulasi wawancara AI + CV terformat `[PLANNED]` | pembayaran manual |
 | Afiliasi Ed-Tech | komisi | — | Klik kursus sudah dilacak lewat event | `[PLANNED]` — **tidak** dihitung dalam BEP |
 
-**Pencari kerja tidak pernah membayar untuk skor.** Prism hanya menambah kuota dan membuka *rincian hasilnya sendiri*; bobot bukti dan urutan identik di semua paket. Prism **tidak lagi** mempercepat ulang kuis — itu uang yang mempersingkat jalan menuju badge, dan badge menggerakkan skor.
+### 2a. Apa persisnya yang dibeli tiap paket — dan di mana itu ditegakkan
+
+Tabel ini adalah **sumber kebenaran** untuk setiap klaim harga di deck, di UI, dan di jawaban
+presenter. Kolom terakhir bukan hiasan: fitur berbayar yang tidak ditegakkan di kode adalah
+pendapatan yang kami berikan gratis tanpa sadar.
+
+| Paket | Yang didapat | Ditegakkan di | Biaya kami / pemakaian |
+|---|---|---|---|
+| **Spark** (Gratis) | 1 lowongan aktif | `plans.active_job_limit` → `employer.py` | baca lowongan ~Rp130, sekali |
+| | **Semua pelamar diperingkat, tanpa batas** | tidak dibatasi — disengaja | **Rp0** (tanpa panggilan AI) |
+| | Link + poster QR lowongan | `services/hiring/links.py` | Rp0 |
+| | Badge ✓ Terbukti terlihat + centang "skill terbukti" | `quiz/`, `hiring.py` | Rp0 per percobaan kuis |
+| **Beacon** (Rp49.000 / lowongan / 30 hari) | Pertanyaan wawancara AI per kandidat | `hiring.py::_require_premium` | ~Rp60, **di-cache** per (kandidat, lowongan) |
+| | Ekspor pelamar CSV | `hiring.py::_require_premium` | Rp0 |
+| | **Cari kandidat yang belum melamar — 30x / 30 hari** | `employer.py::_check_talent_search_quota` | Rp0 (pgvector, tanpa AI) |
+| **Lighthouse** (Rp149.000 / 30 hari) | Hingga 5 lowongan aktif | `plans.active_job_limit` | ~Rp130 per lowongan |
+| | Semua fitur Beacon di semua lowongan | `Entitlements.job_tier` | — |
+| | Cari kandidat **150x / 30 hari** | `employer.py::_check_talent_search_quota` | Rp0 |
+| **Gratis** (pencari kerja) | Skor, band, skill gap, rekomendasi kursus | `seeker.py` | baca CV ~Rp99 sekali seumur akun |
+| | Kuis tanpa batas (ulang besoknya) | `quiz/service.RETAKE_DAYS` | **Rp0 per percobaan** |
+| | **Peringkat persis tiap lamaran** (mis. #14 dari 62) + rincian bukti per skill | `seeker.py::application_rank` | **Rp0** — dibaca dari baris yang ditulis saat melamar |
+| | Advisor 10 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan |
+| **Prism** (Rp15.000 / 30 hari) | Advisor 20 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan, plafon Rp8.100 / 30 hari |
+| | *Roadmap:* simulasi wawancara AI + umpan balik `[PLANNED]` | — | ~Rp150 / sesi (perkiraan) |
+| | *Roadmap:* CV terformat dari profil terverifikasi `[PLANNED]` | — | ~Rp50 (perkiraan) |
+
+**Tiga aturan yang tidak boleh dilanggar paket mana pun:**
+
+1. **ATURAN PENCARI KERJA — pencari kerja boleh membayar untuk LATIHAN dan PRESENTASI, tidak pernah
+   untuk POSISI maupun untuk INFORMASI TENTANG POSISINYA.** Peringkat persis sempat dijual di Prism.
+   Skor dan urutannya identik bagi yang bayar maupun tidak, jadi kelihatannya adil — tapi kandidat
+   yang tahu dia peringkat 14 dari 62, dan tahu skill klaim mana yang menahannya, bisa bertindak;
+   yang tidak tahu, tidak bisa. Itu keunggulan yang dibeli dengan uang, ditagihkan ke sisi pasar yang
+   paling sedikit punya uang. **Sekarang gratis untuk semua**, dan ada test yang gagal kalau
+   gerbangnya kembali. Semua yang menyentuh peringkat — skor, band, peringkat persis, rincian bukti,
+   kuis, badge, jeda ulang 1 hari — gratis selamanya di semua paket.
+2. **Paywall ada di *sourcing*, tidak pernah di *screening*.** Memeringkat orang yang sudah melamar
+   berbiaya Rp0 untuk dihitung; membatasinya tidak menghemat sepeser pun dan hanya menyembunyikan
+   kandidat peringkat 21 dari employer yang justru meminta peringkat. Mencari orang yang **belum**
+   melamar adalah sourcing — itu yang dijual, dan itu yang punya kuota.
+3. **Setiap fitur berbayar harus DITEGAKKAN di kode.** Fitur yang diiklankan di katalog tapi tidak
+   punya gerbang adalah pendapatan yang kami berikan gratis tanpa sadar — persis yang terjadi pada
+   kuota pencarian kandidat: `talent_search_limit()` ada dan diuji, tapi tidak satu pun router
+   memanggilnya, jadi kuota Spark "0" sebenarnya tak terbatas. Kolom "Ditegakkan di" pada tabel di
+   atas wajib terisi sebelum sebuah fitur boleh dijual.
+
+**Kenapa margin bertahan saat pemakaian naik.** Tiga dari empat hal yang dibeli berbiaya **Rp0**
+untuk dilayani: pemeringkatan pelamar, pencarian kandidat (pgvector), dan peringkat persis pencari
+kerja (pembacaan baris — **gratis**, bukan fitur berbayar). Yang benar-benar memanggil AI hanyalah
+kit wawancara (di-cache) dan pesan advisor (berkuota). Karena itu jumlah pelamar tidak menggerakkan
+COGS employer sama sekali.
+
+---
+
+**Pencari kerja tidak pernah membayar untuk skor — dan tidak pernah membayar untuk *mengetahui* skornya.** Peringkat persis, rincian bukti per skill, band, dan skill yang kurang: gratis di semua paket. Prism hanya menambah kuota advisor; bobot bukti dan urutan identik di semua paket. Prism juga **tidak** mempercepat ulang kuis — itu uang yang mempersingkat jalan menuju badge, dan badge menggerakkan skor.
 
 **Kenapa paywall-nya bukan di jumlah pelamar.** Menghitung peringkat berbiaya **Rp0**, jadi membatasinya tidak pernah menghemat apa pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru meminta peringkat. Kuota dipindah ke *reverse matching* (mencari kandidat yang belum melamar), yaitu sourcing, plus kit wawancara dan ekspor yang memang berbiaya.
 

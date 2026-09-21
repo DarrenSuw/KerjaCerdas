@@ -1016,7 +1016,7 @@ export default function LandingHero() {
     const FAQS = [
         {
             q: 'Apakah platform ini sepenuhnya gratis untuk pencari kerja?',
-            a: 'Ya. Pencocokan AI, skill gap, rekomendasi kursus, kuis skill, dan melamar gratis. Paket Prism (Rp15.000 / 30 hari) membuka peringkat persis tiap lamaranmu dan menambah kuota advisor. Jeda ulang kuis 1 hari untuk semua paket — membayar tidak pernah menaikkan skor maupun urutan.',
+            a: 'Ya. Pencocokan AI, skill gap, rekomendasi kursus, kuis skill, melamar, dan peringkat persis tiap lamaranmu (mis. #14 dari 62) beserta skill mana yang menahannya — semuanya gratis. Kamu tidak membayar untuk peringkat, dan tidak membayar untuk tahu peringkatmu. Paket Prism (Rp15.000 / 30 hari) hanya menambah kuota advisor — latihan, bukan peringkat. Jeda ulang kuis 1 hari untuk semua paket.',
         },
         {
             q: 'Data apa yang dikumpulkan? Apakah perlu KTP?',

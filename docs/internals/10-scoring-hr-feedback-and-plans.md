@@ -159,8 +159,8 @@ actually pay for, and limiting it hides nobody who asked to be seen.
 | Spark | Rp0 | 1 active job, all applicants ranked, 0 talent searches |
 | Beacon | Rp49.000 / job / 30 d | interview kits, CSV, 30 talent searches |
 | Lighthouse | Rp149.000 / 30 d | 5 active jobs, 150 talent searches |
-| Seeker free | Rp0 | unlimited quizzes, 10 advisor msgs/day |
-| Prism | Rp15.000 / 30 d | exact application rank + score breakdown, 20 advisor msgs/day |
+| Seeker free | Rp0 | unlimited quizzes, **exact application rank + per-skill evidence breakdown**, 10 advisor msgs/day |
+| Prism | Rp15.000 / 30 d | 20 advisor msgs/day. Roadmap: AI interview practice, formatted CV `[PLANNED]` |
 
 **Invariant: a paid tier must be a strict superset of free on every axis it
 touches.** Prism was once 100 messages / 30 days against a free 10 / day — 100 a
@@ -200,9 +200,14 @@ Reverse matching is a pgvector query and costs **Rp0** in AI terms.
 
 ## 8. Things that are true today and easy to get wrong
 
-- Paying changes **no** score and **no** rank. Prism buys visibility *into* your
-  own result (exact rank, per-component breakdown) and a bigger advisor quota.
-  It does not buy a badge, a faster badge, or a better position.
+- Paying changes **no** score, **no** rank — and buys **no knowledge of your
+  rank** either. Exact position and the per-skill breakdown are free on every
+  tier. They were briefly sold under Prism: the ordering was identical for
+  payers and non-payers, so it looked fair, but a candidate who knows they are
+  14th of 62 and which claimed skill costs them can act where one who does not
+  know cannot. That is advantage bought with money, charged to the side of the
+  market with the least of it. Prism buys advisor capacity — practice, not
+  position — and it does not buy a badge, a faster badge, or a better place.
 - Quizzes, match scoring, ranking, applying and badges are all **Rp0** to serve.
   They are unlimited and free deliberately, not as a promotion.
 - A flagged posting is **still visible**. Only a verdict against a **hard** rule

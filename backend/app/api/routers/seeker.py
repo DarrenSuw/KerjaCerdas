@@ -651,3 +651,34 @@ async def list_applications(current_user: User = Depends(get_current_user)):
             }
         )
     return result
+
+
+@router.get("/applications/{application_id}/rank")
+async def application_rank(
+    application_id: str, current_user: User = Depends(get_current_user)
+):
+    """Exact standing in this job's applicant queue, and why — FREE, for everyone.
+
+    This was briefly a paid Prism benefit. That was wrong, and the reasoning is
+    worth keeping where the next person will read it: the score and the ordering
+    were identical either way, so it looked fair. But a candidate who knows they
+    are 14th of 62 — and which claimed skill is costing them — can act on it,
+    and one who does not know cannot. That is an advantage bought with money, on
+    the side of the market with the least of it. "Paying never changes your
+    rank" is not enough; paying must not change what you can SEE about your rank
+    either, or the promise is a technicality.
+
+    It is also free to serve — every figure is read from rows written when the
+    candidate applied, no embedding call and no LLM call — so there was never a
+    cost argument for the gate. Only ownership is checked.
+    """
+    from backend.app.services.matching.application_rank import rank_for_application
+
+    repos = get_repositories()
+    profile = await find_seeker_by_user_id(current_user.id)
+    app = await repos.applications.get(application_id)
+    # A seeker may only read their OWN standing. 404 rather than 403 so the
+    # endpoint cannot be used to probe which application ids exist.
+    if not profile or not app or app.seeker_id != profile.id:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Lamaran tidak ditemukan")
+    return await rank_for_application(app)

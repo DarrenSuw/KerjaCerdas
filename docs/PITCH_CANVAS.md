@@ -163,11 +163,14 @@ as the filled ones.
 customer pays with what an action costs us is the fastest way to make a sound margin look like a
 muddle, and it is the single most likely thing to go wrong in this box.
 
-**(a) The tier ladder — what the customer pays.** Four ascending steps: **Gratis** (Spark),
-Rp49.000 (Beacon), Rp149.000 (Lighthouse), Rp15.000 (Prism, job seeker). Write the free tier as the
-word **"Gratis"**, never as "Rp0" — a price of zero reads as an accounting entry, "Gratis" reads as
-an offer. Spark's step is the **widest**, not the smallest: the free tier ranks every applicant, and
-the shape should say so.
+**(a) The tier ladder — what the customer pays, and the ONE thing each step adds.** Four ascending
+steps, each labelled with its price and a single benefit — not a feature list:
+**Gratis** (Spark) *semua pelamar diperingkat* · **Rp49.000** (Beacon) *kit wawancara + 30x cari
+kandidat* · **Rp149.000** (Lighthouse) *5 lowongan + 150x cari kandidat*. **Prism does not belong on
+this ladder** — the seeker side is drawn separately and the free tier is the story there, not the
+paid one. Write the free tier as the word **"Gratis"**, never as "Rp0" —
+a price of zero reads as an accounting entry, "Gratis" reads as an offer. Spark's step is the
+**widest**, not the smallest: the free tier ranks every applicant, and the shape should say so.
 
 **(b) The COGS strip — what it costs us, labelled as such.** Directly beneath, visually subordinate,
 under a caption naming it as our cost per action: `memeringkat pelamar Rp0` · `kuis Rp0` ·
@@ -184,6 +187,17 @@ no projected numbers: `employer pasang lowongan` → `poster QR dibagikan di kan
 → `pelamar baru mendaftar & ikut kuis` → `profil terbukti ikut dicocokkan ke lowongan lain` → back
 to the first. Label it as a mechanism, not a forecast — we have no usage data yet and must not draw
 a curve implying we do.
+
+**The unit-economics bar** (business model box). One horizontal bar for a single Beacon sale,
+split **Rp645 / Rp48.355** — cost against contribution. The cost sliver should be almost invisible
+beside the contribution, because that is the entire argument: the expensive parts of this product
+(ranking, matching, quiz grading) make no AI call at all. Label only the two figures; do not add a
+percentage on the bar itself, the 83–99% is already written in the box.
+
+**The price anchor** (business model box). A short two-mark scale: `ATS Rp2–5 juta/bln` against
+`Beacon Rp49.000`. Same axis, so the gap is read by length rather than asserted in a sentence. Mark
+`setengah hari upah rata-rata` on it as a tick. This is the only place a competitor's price appears;
+keep it neutral and unlabelled by brand.
 
 **The break-even bar** (investment box). **Not a runway curve — we do not have one to draw.** A
 single horizontal bar showing what it takes to cover Rp8,7 juta of monthly opex, split three ways so
@@ -208,14 +222,14 @@ portrait row, an age or demographic overlay, or a repeat of any figure already d
 
 ---
 
+**Eleven boxes, in the order of the standard Pitch Canvas.** A full-width statement, then paired
+boxes, then a call-to-action band and a closing "Why You?" strip. Every box is filled — no
+placeholders. If a future edit needs a fact the team has not confirmed, leave the box out rather
+than shipping a blank to a printer.
+
 # §SLIDE TEXT
 
 Everything below is drawn. `⟦…⟧` markers are not.
-
-**Eleven boxes, in the order of the standard Pitch Canvas.** The layout follows
-that template: a full-width statement, then paired boxes, then a call-to-action
-band and a closing "Why You?" strip. Every box is filled — no placeholders. If a future edit needs a fact the team
-has not confirmed, leave the box out rather than shipping a blank to a printer.
 
 ⟦1 · simple statement — full width banner⟧
 
@@ -230,12 +244,13 @@ Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja muda.
 banyak yang mengklaim skill yang tidak dikuasai.**
 
 Jam kerja pemilik usaha habis mewawancarai orang yang salah. Di sisi lain:
-melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
+puluhan lamaran, tanpa kabar, tanpa tahu apa yang kurang.
 
 **89.141** usaha kecil & menengah terdaftar · SIDT-UMKM, Des 2025
 **7,28 juta** penganggur terbuka · BPS, Mei 2026
 
-Sudah ada yang bersedia membayar? **Belum diuji** — itu yang kami cari di pilot.
+Dengan 4 lowongan/tahun per usaha, sisi employer saja bernilai **±Rp17,5 miliar/tahun**.
+Sudah ada yang bersedia membayar? **Belum diuji** — itu yang pilot ini cari.
 
 ⟦3 · product — weights strip, proof ladder, the two scores⟧
 
@@ -249,8 +264,6 @@ Dua pelamar, satu lowongan, pengalaman dan pendidikan sama:
 CV disalin dari iklan · kemiripan 0,90 · hanya klaim — **0.685**
 Skill dibuktikan lewat kuis · kemiripan 0,50 — **0.765**
 Pada kemiripan sempurna 1,00 pun, yang hanya mengklaim berhenti di **0.720**.
-
-**Membayar tidak mengubah skor maupun urutan siapa pun.**
 
 ⟦4 · product demo — mostly screenshots, little text⟧
 
@@ -279,7 +292,7 @@ lowongan palsu — penipu memakai NIK asli.
 
 Mesin pencocokan, kuis, dan moderasi otomatis — **jalan penuh**
 Tiap rilis diuji otomatis sampai rollback migrasi di PostgreSQL asli — **jalan penuh**
-Alur bayar (QRIS/transfer, aktivasi admin) — **jalan, tanpa gateway**
+Alur bayar QRIS/transfer — **jalan, tanpa gateway**
 Pilot komersial berbayar — **tahap berikutnya**
 Validitas prediktif skor — **menunggu data pilot**
 
@@ -290,14 +303,20 @@ Layar kami menulis "belum ada data", bukan 0%.
 
 **Menyaring gratis. Yang berbayar adalah waktu yang kami hemat.**
 
-Spark **Gratis** · 1 lowongan, **semua** pelamar diperingkat
-Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
-Lighthouse **Rp149.000** per bulan · 5 lowongan
-Prism **Rp15.000** / 30 hari · peringkat persis lamaranmu, untuk pencari kerja
+Spark **Gratis** · 1 lowongan · **semua pelamar diperingkat, tanpa batas**
+Beacon **Rp49.000**/lowongan · kit wawancara · ekspor · 30x cari kandidat
+Lighthouse **Rp149.000**/bulan · 5 lowongan · 150x cari kandidat
 
-**Margin kotor 83–99% per penjualan.** Memeringkat, mencocokkan, dan menilai
-kuis tidak memanggil AI sama sekali, jadi pelamar tambahan hampir tidak menambah
-biaya. **Model asumsi**, terhitung per aksi di dashboard admin.
+Prism **Rp15.000**/30 hari · pencari kerja: **latihan, bukan peringkat**.
+Peringkat persis (#14 dari 62) dan skill yang menahannya **gratis untuk semua** —
+kami tidak menagih orang untuk tahu posisinya sendiri.
+
+**Satu lowongan Beacon menyisakan Rp48.355.** Biaya melayaninya Rp645: memeringkat,
+mencari kandidat, dan menilai kuis tidak memanggil AI sama sekali, jadi jumlah
+pelamar tidak menggerakkan biaya kami. **Margin 83–99%, model asumsi.**
+
+Pembandingnya ATS **Rp2–5 juta/bulan**. Rp49.000 itu di bawah **setengah hari**
+upah rata-rata — impas bagi employer kalau menghindarkan satu wawancara sia-sia.
 
 ⟦8 · investment⟧
 
@@ -496,6 +515,30 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Penyamaran data gagal untuk CV pindai? | CV pindai tidak punya teks untuk disamarkan, jadi hanya bisa dikirim sebagai gambar. Kami **tidak melakukannya diam-diam dan tidak memblokir**: pelamar diberi tahu persis apa yang akan dikirim, lalu memilih lanjut atau isi profil manual. Memblokir akan menyingkirkan justru pengguna yang paling kami tuju — banyak yang CV-nya foto HP. Persetujuan eksplisit juga dasar hukum yang benar menurut UU PDP. Teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
 | Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menangkap tabel tanpa migrasi sebelum sampai ke produksi. ESLint lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
 
+### Apa persisnya yang dibeli tiap paket
+
+Kalau juri menanyakan "apa yang saya dapat kalau bayar", jawab dari tabel ini. Kolom terakhir ada
+supaya kita tidak pernah menjual sesuatu yang tidak ditegakkan kode — itu pernah terjadi pada kuota
+pencarian kandidat, dan sekarang dijaga test.
+
+| Paket | Harga | Yang ditambahkan | Ditegakkan di | Biaya kami |
+|---|---|---|---|---|
+| Spark | **Gratis** | 1 lowongan, **semua pelamar diperingkat tanpa batas**, link + QR, badge terbukti | `active_job_limit` | Rp0 untuk memeringkat |
+| Beacon | Rp49.000 / lowongan / 30 hari | Kit wawancara AI per kandidat, ekspor CSV, **30x** cari kandidat yang belum melamar | `_require_premium`, `_check_talent_search_quota` | ~Rp60 kit (di-cache), Rp0 pencarian |
+| Lighthouse | Rp149.000 / 30 hari | 5 lowongan aktif, semua fitur Beacon, **150x** cari kandidat | `active_job_limit`, `_check_talent_search_quota` | ~Rp130 / lowongan |
+| Gratis (pencari kerja) | **Gratis** | Skor + band + skill gap + kursus, kuis tanpa batas, **peringkat persis tiap lamaran + rincian bukti per skill**, advisor 10/hari | `application_rank`, `_check_advisor_quota` | Rp0 kuis, Rp0 peringkat |
+| Prism | Rp15.000 / 30 hari | Advisor 20/hari. *Roadmap:* simulasi wawancara AI, CV terformat `[PLANNED]` | `_check_advisor_quota` | ~Rp9 / pesan, plafon Rp8.100 |
+
+**Dua kalimat yang harus hafal:**
+
+1. *"Pencari kerja tidak membayar untuk peringkat, dan tidak membayar untuk **tahu** peringkatnya.
+   Posisi persis dan alasannya gratis untuk semua. Prism membeli latihan, bukan posisi."* — kalau
+   juri menekan: peringkat persis sempat kami taruh di balik Prism, lalu kami buka gratis, karena
+   kandidat yang tahu posisinya bisa bertindak dan yang tidak tahu tidak bisa — itu keunggulan yang
+   dibeli dengan uang, ditagihkan ke orang yang sedang menganggur.*
+2. *"Paywall-nya di mencari orang yang belum melamar, bukan di menyaring yang sudah melamar.
+   Memeringkat berbiaya Rp0 untuk kami hitung, jadi membatasinya tidak menghemat apa pun."*
+
 ### Angka yang boleh disebut, dan sumbernya
 
 | Angka | Sumber |
@@ -518,6 +561,10 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Advisor 10 vs 20 / hari | `plans.ADVISOR_FREE_PER_DAY` / `ADVISOR_PRISM_PER_DAY`, satuan sama, berbayar selalu lebih besar |
 | Margin Beacon 99% | baca lowongan Rp195 + 5 kit wawancara Rp450. **Baca CV tidak lagi dibebankan ke employer** — pindah ke akuisisi pencari kerja. Jangan kutip tanpa kalimat kedua itu |
 | Tebak asal 1,56% | 4 opsi, lulus 4/5 |
+| Kontribusi Beacon Rp48.355 (COGS Rp645) | `BUSINESS_MODEL.md` §3 — Rp49.000 dikurangi baca lowongan Rp195 + 5 kit wawancara Rp450. **Baca CV tidak dibebankan ke employer**, sudah pindah ke akuisisi pencari kerja; sebut itu kalau margin ditanya |
+| Pasar employer ±Rp17,5 miliar / tahun | `BUSINESS_MODEL.md` §8 — 89.141 usaha kecil+menengah × **4 lowongan/tahun (asumsi)** × Rp49.000. Sebut "asumsi 4 lowongan" kalau ditanya; ini lantai pasar, bukan proyeksi pendapatan kami |
+| ATS Rp2–5 juta / bulan | Pembanding pasar untuk ATS kelas enterprise. **Perkiraan rentang, bukan penawaran yang kami kutip** — kalau juri minta sumber, katakan itu kisaran yang kami dengar dari UMKM, bukan daftar harga |
+| Rp49.000 < setengah hari upah rata-rata | Upah rata-rata Rp3,39 jt/bln (BPS Mei 2026) ÷ 30 ≈ Rp113.000/hari. Rp49.000 ≈ 43% dari satu hari |
 | Harga Spark Rp0 · Beacon Rp49.000 · Lighthouse Rp149.000 · Prism Rp15.000 | `settings.py` — `plan_price_*`, dikembalikan apa adanya oleh `GET /billing/plans`. Beacon per lowongan/30 hari, Lighthouse & Prism per 30 hari |
 | Rp200 jt dibagi Rp100 jt + Rp100 jt | `BUSINESS_MODEL.md` §7. **Tahap kedua terikat empat target bulan ke-6** — hafalkan, sudah tidak ditulis di slide: **≥30 employer berbayar**, **≥60%** pelamar ikut ≥1 kuis, **≥50** pembeli Prism, **COGS terukur per lowongan Beacon ≤ Rp5.000** |
 | ±350 UMKM di bulan 6 · 1.000 UMKM di bulan 11 | Dihitung dari asumsi §5 `BUSINESS_MODEL.md`: 40 employer mendaftar di bulan 1, **+15%/bulan** (benchmark SaaS awal 10–20%). Kumulatif ≈350 di M6 dan ≈974 di M11. **Ini target akuisisi, bukan employer berbayar** — yang berbayar 18% darinya. Jangan tukar kedua angka itu |
