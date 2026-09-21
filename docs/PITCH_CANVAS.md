@@ -84,8 +84,10 @@ orange and physically raised above the others.
 **The proof ladder**, as three ascending bars whose heights are the real weights 0.30 / 0.85 / 1.00.
 Not three equal chips.
 
-**The margin curve**, as two lines: applicants per job on x, gross margin on y. Cold candidate pool
-88 → 70 → 42. Mature pool reaching 86 at 200. Cold line yellow, mature line ink.
+**The margin floor**, as a simple bar set: Beacon 93, Lighthouse 93, Prism 83 — plus a lower
+marker at 46 on the Prism bar labelled "plafon pemakaian". The point of the graphic is that the
+paid tiers have a *floor*, not an assumption: it holds even when a subscriber consumes every
+message they are entitled to.
 
 **The funding split**, as one stacked bar: 22 / 29 / 20 / 6 / 23, each slice labelled in place.
 
@@ -146,6 +148,10 @@ dipakai. Pelamar scan, daftar lewat email, ikut kuis skill 5 soal, lalu melamar.
 Bobot bukti sengaja lebih besar dari kemiripan teks, karena kemiripan teks justru naik kalau CV
 menyalin kalimat iklan.
 
+Skill dinilai **per skill, dibagi jumlah skill yang diminta lowongan** — bukan total poin. Jadi
+mengklaim 20 skill tidak memberi keuntungan apa pun atas yang mengklaim 3, dan skill di luar
+kebutuhan lowongan bernilai nol.
+
 ⟦proof ladder — step labels⟧
 
 Ditulis di CV **0,30** · Lulus kuis **0,85** · Dikonfirmasi HR **1,00**
@@ -156,7 +162,13 @@ Kuis 5 soal skenario, sekitar 3 menit, dinilai server dengan kunci jawaban — t
 Rp0 per percobaan. Lulus 4 dari 5 memberi badge terbukti. Gagal boleh diulang besoknya, dan
 **soal yang baru dilihat tidak muncul lagi** — bank tiap skill diisi sampai 30 soal.
 
+Kuis, skor, peringkat, dan melamar **gratis tanpa batas di semua paket** — karena semuanya memang
+berbiaya Rp0 untuk kami jalankan.
+
 HR mencentang "skill terbukti" setelah wawancara. Itu bukti terkuat.
+
+**Menolak kandidat wajib menyertakan alasan.** Delapan pilihan tetap, satu ketukan — itulah yang
+mengubah "tidak dapat kabar" jadi "kurang di mana".
 
 Skor dihitung ulang tiap daftar dibuka, jadi pelamar yang baru lulus kuis langsung naik.
 
@@ -219,25 +231,27 @@ kami menulis "belum ada data", bukan 0%.
 
 **Employer bayar untuk menyaring, bukan untuk mencari.**
 
-Spark **Rp0** · 1 lowongan, semua pelamar diperingkat
+Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat — tanpa batas
 Beacon **Rp49.000** per lowongan
 Lighthouse **Rp149.000** per bulan
 Prism **Rp15.000** per 30 hari, untuk pencari kerja
 
-**Membayar tidak mengubah skor maupun urutan siapa pun.** Prism hanya mempersingkat jeda ulang
-kuis dari 7 hari ke 2 hari — soalnya tetap harus dilulusi sendiri, dan lulus tidak bisa dibeli.
+**Membayar tidak mengubah skor maupun urutan siapa pun.** Prism hanya membuka rincian hasilmu
+sendiri dan menambah kuota advisor. Ulang kuis 1 hari untuk semua paket — kecepatan menuju badge
+tidak dijual.
 
 Pembayaran saat ini QRIS atau transfer yang dikonfirmasi admin. Payment gateway belum ada.
 
 ⟦margin curve — axis and annotation⟧
 
-Margin kotor per lowongan — **model asumsi, bukan pengukuran pelanggan**
+Margin kotor per penjualan — **model asumsi, bukan pengukuran pelanggan**
 
-30 pelamar **88%** · 100 pelamar **70%** · 200 pelamar **42%**
-Kolam kandidat matang, 200 pelamar — **86%**
+Beacon **93%** · Lighthouse **93%** · Prism **83%**, dan **46%** bahkan kalau pelanggan Prism
+memakai seluruh kuotanya.
 
-Biaya baca CV dibayar sekali per kandidat seumur akun, bukan per lamaran. Kuis dan skor tidak
-memanggil AI sama sekali. Biaya AI sungguhan terpantau per aksi di dashboard admin.
+Jumlah pelamar tidak lagi menggerakkan biaya employer: kuis, skor, peringkat, dan pencarian
+kandidat **tidak memanggil AI sama sekali**, dan baca CV dibayar sekali per kandidat seumur akun.
+Biaya AI sungguhan terpantau per aksi di dashboard admin.
 
 ⟦funding⟧
 
@@ -322,6 +336,10 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, sekitar **5,6× proyeksi pendapatan tahun 2** (Rp360 juta) — dengan **nol pelanggan hari ini**. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
 | Target 18–25 tahun itu bukan diskriminasi usia juga? | Beda posisi: itu **segmen pasar kami**, bukan syarat yang boleh dipasang employer. Justru AutoMod menolak iklan yang memasang batas usia. Siapa pun boleh mendaftar dan melamar di platform; yang kami batasi hanya ke mana energi pemasaran kami diarahkan. |
 | Moat "kumpulan profil terbukti" — kalian sendiri masih nol, kan? | **Ya.** Hari ini moat itu belum ada, baru mekanismenya yang ada. Yang kami klaim bukan "kami sudah punya", tapi "ini aset yang menumpuk kalau pilot jalan, dan tidak bisa disalin dengan menyalin fitur". Kalau pilot gagal, moat ini tidak pernah lahir — itu risiko yang kami tanggung, bukan yang kami sembunyikan. |
+| Kenapa pelamar tidak dibatasi di paket gratis? | Karena memeringkat itu **Rp0** untuk kami hitung. Membatasinya tidak pernah menghemat sepeser pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru minta peringkat. Yang berbayar adalah yang memang berbiaya: kit wawancara, ekspor, dan mencari kandidat yang belum melamar. |
+| Skor per skill atau total poin? | **Per skill, dan pembaginya jumlah skill yang diminta lowongan** — bukan jumlah klaim kandidat (`evidence._coverage`). Jadi mengklaim 20 skill tidak mengalahkan yang mengklaim 3, dan skill di luar kebutuhan lowongan bernilai nol. Skill wajib 80% dari bagian skill, nice-to-have 20%. Yang belum ada tinggal **menampilkan** rinciannya ke HR — datanya sudah per skill dan sudah disimpan di lamaran. Itu pekerjaan UI, bukan algoritma. |
+| Badge kedaluwarsa atau permanen? | Kedaluwarsa **180 hari**, lalu turun jadi klaim lagi. Itu justru mekanisme *recency* yang diminta, bentuknya tebing bukan peluruhan. Permintaan "buat permanen" di catatan rapat berlawanan dengan itu — harus pilih salah satu. |
+| Laporan palsu bisa menjatuhkan lowongan? | Tidak. Laporan **ditimbang**, bukan dihitung: akun baru tanpa verifikasi bernilai 0, dan pelapor yang laporannya berkali-kali ditolak berhenti dihitung. Ambang batas hanya membuat lowongan **ditandai dan tetap terlihat**. Yang menyembunyikan hanyalah putusan terhadap aturan yang dikutip — dan **AI hanya boleh bertindak sendiri untuk aturan keras** (minta biaya dari pelamar). Aturan lunak selalu ke manusia. |
 | Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, urutan pilihan diacak per percobaan, soal yang baru dilihat tidak diulang, bank 30 soal per skill, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |

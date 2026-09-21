@@ -42,8 +42,16 @@ SPARK_ACTIVE_JOBS = 1
 # on Prism — i.e. 300 a month free against 100 a month paid, with the paid user
 # locked out for up to 30 days instead of until tomorrow. Paying bought less.
 # Any future change must keep PRISM > FREE on the same axis.
+#
+# The ceiling is priced, not guessed. At 20/day a Prism subscriber can consume
+# 600 messages in 30 days; on the normal flash-lite tier (~Rp13,5 buffered) that
+# is Rp8.100 against a Rp15.000 price — a 46% margin floor. It was briefly 30,
+# which leaves 19% and is negative the moment llm_factory falls back to
+# gemini-3.6-flash (~Rp57 buffered, break-even at 8,8 messages/day). Until
+# metering is by COST rather than by message count, the cap has to survive the
+# fallback chain, not just the happy path.
 ADVISOR_FREE_PER_DAY = 10
-ADVISOR_PRISM_PER_DAY = 30
+ADVISOR_PRISM_PER_DAY = 20
 
 # Reverse matching (searching candidates who have NOT applied) is the employer
 # feature that is genuinely worth money: it is sourcing, not screening. Ranked
@@ -92,7 +100,7 @@ def catalogue() -> dict:
             {"plan": "prism", "price_idr": settings.plan_price_prism, "period": "per 30 hari",
              "features": ["Peringkat persis tiap lamaran (mis. #14 dari 62)",
                           "Rincian skor per komponen",
-                          f"Advisor {ADVISOR_PRISM_PER_DAY} pesan / hari"]},
+                          f"Advisor {ADVISOR_PRISM_PER_DAY} pesan / hari (2x gratis)"]},
         ],
         "note": ("Membayar tidak pernah mengubah skor kecocokan maupun peringkat. "
              "Kuis, skor, dan urutan pelamar sama untuk semua paket."),

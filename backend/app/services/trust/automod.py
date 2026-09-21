@@ -154,7 +154,12 @@ async def review_reported_posting(
     whose failure mode is "an uncertain model removed a real employer's advert"
     would cost us the side of the market that is hardest to win back.
 
-    Returns {"verdict": "violation"|"clear"|"uncertain", "rule": id|"", "note": str}.
+    The caller must still check severity: a "violation" on a SOFT rule is a
+    reason to keep a human in the loop, never a reason to remove a live advert.
+    Only R1-class hard rules (asking a candidate for money) are unambiguous
+    enough from text alone for an automated takedown.
+
+    Returns {"verdict": .., "rule": id|"", "severity": .., "note": str}.
     """
     from backend.app.services.llm_factory import build_chat_llm, resolve_gemini_key
     from backend.app.services.trust.rules import RULES_BY_ID
@@ -162,9 +167,9 @@ async def review_reported_posting(
     rules = [RULES_BY_ID[r] for r in cited_rule_ids if r in RULES_BY_ID]
     if not rules:
         # Nothing checkable was cited — a human decides, nothing is hidden.
-        return {"verdict": "uncertain", "rule": "", "note": "tidak ada aturan yang dikutip"}
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "tidak ada aturan yang dikutip"}
     if not resolve_gemini_key():
-        return {"verdict": "uncertain", "rule": "", "note": "AI tidak tersedia"}
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "AI tidak tersedia"}
 
     try:
         from langchain_core.messages import HumanMessage
@@ -187,10 +192,12 @@ async def review_reported_posting(
             )
             answer = content_to_text(resp.content).strip()
             if answer.upper().startswith("LANGGAR"):
-                return {"verdict": "violation", "rule": rule.id, "note": answer[:300]}
+                return {"verdict": "violation", "rule": rule.id,
+                        "severity": rule.severity, "note": answer[:300]}
             if answer.upper().startswith("RAGU"):
-                return {"verdict": "uncertain", "rule": rule.id, "note": answer[:300]}
-        return {"verdict": "clear", "rule": "", "note": "tidak ditemukan pelanggaran"}
+                return {"verdict": "uncertain", "rule": rule.id,
+                        "severity": rule.severity, "note": answer[:300]}
+        return {"verdict": "clear", "rule": "", "severity": "", "note": "tidak ditemukan pelanggaran"}
     except Exception as exc:  # noqa: BLE001 — never let the reviewer break reporting
         logger.warning("Report review skipped: %s", exc)
-        return {"verdict": "uncertain", "rule": "", "note": "pemeriksaan gagal"}
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "pemeriksaan gagal"}

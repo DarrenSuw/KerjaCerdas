@@ -93,13 +93,17 @@ async def interview_kit(app_id: str, current_user: User = Depends(get_current_us
 
     stamp = str(getattr(seeker, "updated_at", "") or "") + str(getattr(job, "updated_at", "") or "")
     key = (app.id, stamp)
-    cached = _KIT_CACHE.get(key)
-    if cached is None:
-        cached = await build_kit(job, seeker)
+    kit = _KIT_CACHE.get(key)
+    was_cached = kit is not None
+    if kit is None:
+        kit = await build_kit(job, seeker)
         if len(_KIT_CACHE) >= _KIT_CACHE_MAX:
             _KIT_CACHE.clear()
-        _KIT_CACHE[key] = cached
-    return {"application_id": app.id, "cached": key in _KIT_CACHE, **cached}
+        _KIT_CACHE[key] = kit
+    # Read the flag BEFORE the write, or it reports the insert we just made and
+    # every response claims a cache hit — including the one that paid for the
+    # model call, which is the only number this flag exists to expose.
+    return {"application_id": app.id, "cached": was_cached, **kit}
 
 
 @router.post("/applications/{app_id}/confirm-skills")

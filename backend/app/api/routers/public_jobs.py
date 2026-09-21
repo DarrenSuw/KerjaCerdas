@@ -40,10 +40,11 @@ REPORT_REASONS = {
 
 class ReportReq(BaseModel):
     reason: str = Field(max_length=40)
-    # Which published rule (R1..R6) the reporter says was broken. The AI
-    # reviewer is only ever asked about the rule cited here, which is what
-    # keeps it from free-associating its way to removing a real posting.
-    rule_cited: str = Field(default="", max_length=40)
+    # REQUIRED. The AI reviewer is only ever asked about the rule cited here,
+    # so a report that cites nothing can neither be checked nor answered — yet
+    # it still counted toward the flag threshold, which meant the threshold
+    # could be reached entirely by accusations nobody could evaluate.
+    rule_cited: str = Field(min_length=2, max_length=40)
     detail: str = Field(default="", max_length=1000)
 
 
@@ -52,6 +53,14 @@ async def _job_or_404(code: str):
     if not job:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Lowongan tidak ditemukan")
     return job
+
+
+@router.get("/rules")
+async def posting_rules():
+    """The same rulebook shown to employers, reporters and the AI reviewer."""
+    from backend.app.services.trust.rules import rulebook
+
+    return {"rules": rulebook()}
 
 
 @router.get("/{code}")
@@ -111,7 +120,7 @@ async def report_job(code: str, req: ReportReq, current_user: User = Depends(get
 
     if req.reason not in REPORT_REASONS:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Alasan laporan tidak dikenal")
-    if req.rule_cited and req.rule_cited not in rulebook_mod.RULES_BY_ID:
+    if req.rule_cited not in rulebook_mod.RULES_BY_ID:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Aturan yang dikutip tidak dikenal")
 
     job = await _job_or_404(code)
@@ -150,7 +159,12 @@ async def report_job(code: str, req: ReportReq, current_user: User = Depends(get
     result["under_review"] = True
 
     review = await review_reported_posting(job.title, job.description or "", cited)
-    if review["verdict"] == "violation":
+    # A soft-rule "violation" is an opinion about wording, tone or intent that
+    # needs context the text does not carry — exactly where a model is least
+    # reliable and where removing a real employer's advert costs us the side of
+    # the market we can least afford to lose. Only a hard rule (asking a
+    # candidate for money) is unambiguous enough to act on unattended.
+    if review["verdict"] == "violation" and review.get("severity") == "hard":
         rule = rulebook_mod.RULES_BY_ID.get(review["rule"])
         held_reasons = [{
             "rule": review["rule"] or "community_flag", "severity": "soft",
@@ -163,9 +177,13 @@ async def report_job(code: str, req: ReportReq, current_user: User = Depends(get
         await policy.log_event(job, "report_review", "held", held_reasons, note=review["note"])
         result["job_hidden_for_review"] = True
     else:
-        # Clear or uncertain: the posting stays up and a human decides. An
-        # uncertain model must never be the thing that removes a live advert.
-        await policy.log_event(job, "report_review", "needs_admin", [], note=review["note"])
+        # Clear, uncertain, or a soft-rule finding: the posting stays up and a
+        # human decides. An uncertain model must never be the thing that removes
+        # a live advert.
+        await policy.log_event(
+            job, "report_review", "needs_admin", [],
+            note=f"{review['verdict']}/{review.get('severity') or '-'}: {review['note']}",
+        )
     return result
 
 
@@ -175,13 +193,22 @@ async def _weighted_report_score(reports, job_id: str) -> int:
 
     repos = get_repositories()
     total = 0
-    applicants: set[str] = set()
+    # Applications record a SEEKER PROFILE id; a report records a USER id. The
+    # first version compared the two directly, so "applied to this job" was
+    # never true for anybody and the signal silently contributed nothing.
+    applicant_user_ids: set[str] = set()
     try:
-        applicants = {
+        seeker_ids = {
             a.seeker_id for a in await repos.applications.list() if a.job_id == job_id
         }
+        if seeker_ids:
+            applicant_user_ids = {
+                s.user_id
+                for s in await repos.seekers.get_many(list(seeker_ids))
+                if getattr(s, "user_id", None)
+            }
     except Exception:  # noqa: BLE001 — weighting must never break reporting
-        applicants = set()
+        applicant_user_ids = set()
 
     for rep in reports:
         user = await repos.users.get(rep.reporter_user_id)
@@ -199,18 +226,10 @@ async def _weighted_report_score(reports, job_id: str) -> int:
             age_days = (datetime.now(UTC) - created_at).total_seconds() / 86400
         total += reporter_weight(
             email_verified=bool(getattr(user, "email_verified", False)),
-            applied_to_job=user.id in applicants or rep.reporter_user_id in applicants,
+            applied_to_job=rep.reporter_user_id in applicant_user_ids,
             account_age_days=age_days,
             upheld_reports=sum(1 for r in history if r.upheld),
             dismissed_reports=sum(1 for r in history if r.upheld is False),
         )
         _ = created
     return total
-
-
-@router.get("/rules")
-async def posting_rules():
-    """The same rulebook shown to employers, reporters and the AI reviewer."""
-    from backend.app.services.trust.rules import rulebook
-
-    return {"rules": rulebook()}

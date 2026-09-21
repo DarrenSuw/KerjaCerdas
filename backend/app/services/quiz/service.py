@@ -55,17 +55,21 @@ class QuizError(Exception):
 # which is the right trade: the cost it bounds is a burst of calls within one
 # session, and a durable marker would need a table for a rate limit.
 _TOPUP_COOLDOWN_S = 6 * 3600
+# A bank too small to run a quiz still gets throttled, just far more loosely.
+# Exempting it entirely (the first version of this) left the expensive path
+# wide open: a seeker who claims a skill the generator keeps failing on could
+# hammer /quiz/start and pay for a generation attempt on every request.
+_COLD_COOLDOWN_S = 15 * 60
 _last_topup: dict[str, float] = {}
 
 
 def _topup_allowed(key: str, *, serveable: bool) -> bool:
-    """Always allow when the bank cannot run a quiz; otherwise throttle."""
+    """Throttle paid generation per skill. Cold banks retry sooner, not freely."""
     import time
 
-    if not serveable:
-        return True
+    window = _TOPUP_COOLDOWN_S if serveable else _COLD_COOLDOWN_S
     now = time.monotonic()
-    if now - _last_topup.get(key, -_TOPUP_COOLDOWN_S) < _TOPUP_COOLDOWN_S:
+    if now - _last_topup.get(key, -window) < window:
         return False
     _last_topup[key] = now
     return True
@@ -150,6 +154,10 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
             if await ensure_questions_exist(skill_name):
                 bank = await store.find_active_questions(key)
         except GenerationError as exc:
+            # Re-read: a batch may have landed before the failure, and judging
+            # the pre-generation list here would tell a seeker the quiz is
+            # unavailable while enough questions now exist to run it.
+            bank = await store.find_active_questions(key)
             # A top-up failure on an already-serveable bank must not block the
             # quiz; only an unusable bank is fatal.
             if len(bank) < QUESTIONS_PER_QUIZ:
@@ -224,7 +232,22 @@ def _pick_questions(bank: list, attempts: list) -> list:
         pool = _exclude(depth)
         if len(pool) >= QUESTIONS_PER_QUIZ:
             return rng.sample(pool, QUESTIONS_PER_QUIZ)
-    return rng.sample(bank, min(QUESTIONS_PER_QUIZ, len(bank)))
+
+    # Bank too small to honour the rule. Serve anyway — locking a candidate out
+    # of a retake because WE have not finished writing questions is the worse
+    # failure — but fill the unavoidable remainder with the questions seen
+    # LONGEST ago rather than drawing blind, so the overlap is as small and as
+    # stale as the bank allows instead of being random.
+    last_seen: dict[str, int] = {}
+    for order, att in enumerate(submitted):
+        for qid in att.question_ids or []:
+            last_seen[qid] = order
+    fresh = _exclude(1)
+    rng.shuffle(fresh)
+    stale = sorted(
+        (q for q in bank if q not in fresh), key=lambda q: last_seen.get(q.id, -1)
+    )
+    return (fresh + stale)[:QUESTIONS_PER_QUIZ]
 
 
 def _attempt_payload(attempt: QuizAttempt, by_id: dict, resumed: bool) -> dict:

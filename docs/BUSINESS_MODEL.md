@@ -24,13 +24,15 @@
 
 | Paket | Harga | Untuk siapa | Isi | Status |
 |---|---|---|---|---|
-| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, 20 pelamar dengan skor tertinggi ditampilkan, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
-| **Beacon** | **Rp49.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pelamar tanpa batas diperingkat, pertanyaan wawancara AI, ekspor CSV | `[BUILT + TESTED]`, pembayaran manual |
+| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, **semua pelamar diperingkat (tanpa batas)**, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
+| **Beacon** | **Rp49.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pertanyaan wawancara AI, ekspor CSV, 30x cari kandidat yang belum melamar | `[BUILT + TESTED]`, pembayaran manual |
 | **Lighthouse** | **Rp149.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
-| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja aktif | Kuota advisor 100 pesan/30 hari, ulang kuis setelah 2 hari (gratis: 10 pesan/hari, ulang 7 hari) | `[BUILT + TESTED]`, pembayaran manual |
+| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja aktif | Peringkat persis tiap lamaran + rincian skor per komponen, advisor 20 pesan/hari (gratis: 10/hari) | `[BUILT + TESTED]`, pembayaran manual |
 | Afiliasi Ed-Tech | komisi | — | Klik kursus sudah dilacak lewat event | `[PLANNED]` — **tidak** dihitung dalam BEP |
 
-**Pencari kerja tidak pernah membayar untuk skor.** Prism hanya menambah kuota/percepatan; bobot bukti tetap sama.
+**Pencari kerja tidak pernah membayar untuk skor.** Prism hanya menambah kuota dan membuka *rincian hasilnya sendiri*; bobot bukti dan urutan identik di semua paket. Prism **tidak lagi** mempercepat ulang kuis — itu uang yang mempersingkat jalan menuju badge, dan badge menggerakkan skor.
+
+**Kenapa paywall-nya bukan di jumlah pelamar.** Menghitung peringkat berbiaya **Rp0**, jadi membatasinya tidak pernah menghemat apa pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru meminta peringkat. Kuota dipindah ke *reverse matching* (mencari kandidat yang belum melamar), yaitu sourcing, plus kit wawancara dan ekspor yang memang berbiaya.
 
 **Pembayaran hari ini:** QRIS / transfer bank → admin mengaktifkan pesanan 30 hari (`[BUILT, MANUAL PAYMENT]`). Gateway (Midtrans/Xendit) `[PLANNED]`: QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup [S1]. Stripe belum bisa dipakai — di Indonesia statusnya undangan dan tanpa transaksi lintas negara [S2].
 
@@ -71,13 +73,16 @@ Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadang
 
 | Item | Harga | COGS | **Kontribusi** | Margin |
 |---|---|---|---|---|
-| Beacon (1 lowongan) | Rp49.000 | ~Rp3.400 | **Rp25.600** | 88% |
-| Lighthouse (1 bulan, ~3 lowongan) | Rp149.000 | ~Rp10.250 | **Rp88.750** | 90% |
-| Prism (30 hari) | Rp15.000 | ~Rp7.715 | **Rp17.285** | 69% |
+| Beacon (1 lowongan) | Rp49.000 | ~Rp3.400 | **Rp45.600** | **93%** |
+| Lighthouse (1 bulan, ~3 lowongan) | Rp149.000 | ~Rp10.250 | **Rp138.750** | **93%** |
+| Prism (30 hari, pemakaian tipikal) | Rp15.000 | ~Rp2.500 | **Rp12.500** | **83%** |
+| Prism (30 hari, **plafon** 600 pesan) | Rp15.000 | ~Rp8.100 | **Rp6.900** | **46%** |
 | Spark (lowongan gratis) | Rp0 | ~Rp1.900 | −Rp1.900 | biaya akuisisi |
 | Pencari kerja gratis (per pengguna aktif/bulan) | Rp0 | ~Rp310 | −Rp310 | biaya akuisisi |
 
-Margin tinggi karena **kuis dan skor tidak memanggil AI per pemakaian**; biaya AI hanya untuk membaca CV/lowongan sekali dan pertanyaan wawancara.
+Margin tinggi karena **kuis, skor, peringkat, dan reverse matching tidak memanggil AI sama sekali**; biaya AI hanya untuk membaca CV/lowongan sekali, pertanyaan wawancara (kini di-cache, jadi klik ulang gratis), dan pesan advisor.
+
+**Plafon Prism dihitung, bukan ditebak.** Pada 20 pesan/hari seorang pelanggan bisa memakai 600 pesan per 30 hari: ~Rp8.100 pada tier flash-lite, jadi lantai marginnya 46%. Sempat disetel 30/hari, yang menyisakan 19%. Titik impas Rp15.000 adalah **1.111 pesan** di flash-lite tapi hanya **263 pesan** bila `llm_factory` jatuh ke `gemini-3.6-flash` — yaitu 37/hari lawan 8,8/hari. **Risiko terbuka:** fallback yang berkepanjangan membuat 20/hari pun rugi di plafon. Perbaikan strukturalnya adalah metering berbasis *biaya*, bukan jumlah pesan; sampai itu ada, ini eksposur yang dipantau, bukan yang sudah selesai.
 
 ---
 
@@ -125,6 +130,8 @@ Di luar model dasar (didanai investasi): audit keamanan sebelum gateway live ~Rp
 ---
 
 ## 6. Proyeksi 24 bulan (skenario dasar, Rp juta)
+
+> **Belum disesuaikan dengan harga baru.** Tabel di bawah masih dihitung dari Beacon Rp29.000 / Lighthouse Rp99.000 / Prism Rp25.000. Harga baru menaikkan kontribusi employer (+78% Beacon, +56% Lighthouse) dan menurunkan Prism (−28% harga, tapi margin naik 69%→83%), sehingga bulan impas kemungkinan **lebih awal** dari M15 — tapi konversi pada titik harga baru **belum diuji**, jadi kami tidak mengarang angkanya. Jangan kutip baris di bawah sebagai proyeksi terkini.
 
 | Bulan | Lowongan Beacon | Lighthouse | Pengguna aktif | Prism | **Pendapatan** | **Kontribusi** | Opex | Uang saku | **Laba/rugi** | **Kumulatif** |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -181,8 +188,8 @@ Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism 
 
 ## 8. Ukuran pasar (metode jelas, angka bersumber)
 
-- **Employer:** 73.828 usaha kecil + 15.313 usaha menengah = **89.141 unit** (SIDT-UMKM, 31 Des 2025) [S14] × 4 lowongan/tahun **(asumsi)** × Rp49.000 ≈ **Rp10,3 miliar/tahun**.
-- **Pencari kerja:** 7,24 juta penganggur (BPS, Feb 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp15.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp10,9 miliar/tahun**.
+- **Employer:** 73.828 usaha kecil + 15.313 usaha menengah = **89.141 unit** (SIDT-UMKM, 31 Des 2025) [S14] × 4 lowongan/tahun **(asumsi)** × Rp49.000 ≈ **Rp17,5 miliar/tahun**.
+- **Pencari kerja:** 7,28 juta penganggur (BPS, **Mei 2026**, rilis 5 Agustus 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp15.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp6,6 miliar/tahun**.
 - **Total lantai pasar ≈ Rp21 miliar/tahun.** Pendapatan tahun 2 pada skenario dasar ≈ 1,7% dari angka itu.
 - Belum dihitung (potensi tambahan, perlu sumber): usaha mikro yang tetap mempekerjakan staf, perusahaan besar untuk posisi entry-level, agen penyalur kerja (>3.000 perusahaan alih daya di asosiasi FAADI [S16]), dan pekerja yang ingin pindah kerja.
 - Konteks: angkatan kerja 154,91 juta; TPT 4,68%; rata-rata upah Rp3,29 juta (BPS Feb 2026) [S15].

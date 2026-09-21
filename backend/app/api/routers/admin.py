@@ -81,8 +81,16 @@ async def moderate_job(job_id: str, req: Decision, admin: User = Depends(require
         if employer:
             strike = await policy.add_strike(employer)
     await repos.jobs.upsert(job)
+    # Record HOW each report ended, not just that it did. Reporter weighting
+    # reads this history (services/trust/rules.reporter_weight): without it,
+    # "has a report that held up" and "has three that did not" were both
+    # permanently zero, so a serial false reporter never lost standing and a
+    # reliable one never gained any. Publishing means the accusations did not
+    # hold; rejecting means they did.
+    upheld = req.decision != "publish"
     for r in await find_reports_for_job(job.id):
         r.resolved = True
+        r.upheld = upheld
         await repos.job_reports.upsert(r)
     await policy.log_event(job, admin.email, job.moderation_status, note=req.note)
     invalidate_jobs_cache()

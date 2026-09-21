@@ -183,3 +183,100 @@ class TestGeneratedQuestionsAreScreened:
             )
             is None
         )
+
+
+class TestReviewFindingsStayFixed:
+    """One guard per defect found in review of PR #29. Each was live in the branch."""
+
+    def test_only_a_hard_rule_can_hide_a_live_posting(self) -> None:
+        """A soft-rule "violation" is an opinion needing context the text lacks.
+
+        The reviewer returned {"verdict": "violation"} for any rule and the
+        caller hid the posting, so a model's reading of tone or intent could
+        remove a real employer's advert unattended.
+        """
+        import inspect
+
+        from backend.app.api.routers import public_jobs
+
+        src = inspect.getsource(public_jobs.report_job)
+        assert 'review.get("severity") == "hard"' in src
+
+    def test_the_reviewer_reports_severity_at_all(self) -> None:
+        import inspect
+
+        from backend.app.services.trust import automod
+
+        src = inspect.getsource(automod.review_reported_posting)
+        assert '"severity"' in src
+
+    def test_a_report_must_cite_a_rule(self) -> None:
+        """An uncitable report cannot be checked, yet still moved the threshold."""
+        import pytest as _pytest
+        from pydantic import ValidationError
+
+        from backend.app.api.routers.public_jobs import ReportReq
+
+        with _pytest.raises(ValidationError):
+            ReportReq(reason="palsu")
+        assert ReportReq(reason="palsu", rule_cited="R1").rule_cited == "R1"
+
+    def test_the_rulebook_route_is_declared_before_the_code_catch_all(self) -> None:
+        """/rules was shadowed by /{code} and resolved as a job code lookup."""
+        import inspect
+
+        from backend.app.api.routers import public_jobs
+
+        src = inspect.getsource(public_jobs)
+        assert src.index('@router.get("/rules")') < src.index('@router.get("/{code}")')
+
+    def test_a_cold_bank_is_throttled_too(self) -> None:
+        """Exempting cold banks left the paid generator open to hammering."""
+        from backend.app.services.quiz import service as svc
+
+        svc._last_topup.pop("throttle-probe", None)
+        assert svc._topup_allowed("throttle-probe", serveable=False) is True
+        assert svc._topup_allowed("throttle-probe", serveable=False) is False
+        svc._last_topup.pop("throttle-probe", None)
+
+    def test_a_thin_bank_repeats_the_stalest_questions_not_random_ones(self) -> None:
+        """When the rule cannot be honoured, overlap must be minimised, not luck."""
+        bank = [_Q(f"q{i}") for i in range(6)]
+        now = datetime.now(UTC)
+        oldest = _Attempt(["q0", "q1"], now - timedelta(days=9))
+        newest = _Attempt(["q2", "q3", "q4", "q5", "q0"], now - timedelta(days=1))
+
+        picked = {q.id for q in service._pick_questions(bank, [oldest, newest])}
+        assert len(picked) == service.QUESTIONS_PER_QUIZ
+        # q1 is the only question absent from the most recent attempt, so it must
+        # always be drawn; the remainder comes from the least-recently-seen end.
+        assert "q1" in picked
+
+    def test_the_interview_kit_reports_a_miss_on_the_first_call(self) -> None:
+        """`key in cache` was evaluated after the insert, so every call said hit."""
+        import inspect
+
+        from backend.app.api.routers import hiring
+
+        src = inspect.getsource(hiring.interview_kit)
+        assert "was_cached" in src
+        assert '"cached": key in _KIT_CACHE' not in src
+
+    def test_an_admin_decision_records_whether_reports_held_up(self) -> None:
+        """Nothing wrote `upheld`, so every reporter's history was permanently empty."""
+        import inspect
+
+        from backend.app.api.routers import admin
+
+        src = inspect.getsource(admin.moderate_job)
+        assert "r.upheld" in src
+
+    def test_reporter_standing_is_mapped_from_seeker_to_user_ids(self) -> None:
+        """Applications hold seeker-profile ids; reports hold user ids."""
+        import inspect
+
+        from backend.app.api.routers import public_jobs
+
+        src = inspect.getsource(public_jobs._weighted_report_score)
+        assert "applicant_user_ids" in src
+        assert "seekers.get_many" in src
