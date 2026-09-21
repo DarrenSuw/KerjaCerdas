@@ -66,9 +66,13 @@ scripts/capture_screenshots.py
 scripts/test_*.py
 scripts/audit_*.py
 # Test artifacts
-backend/.coverage
+# `.coverage` unanchored: pytest writes it to whatever directory it runs from,
+# so it lands at the repo root as often as in backend/.
+.coverage
+.coverage.*
 backend/test.db
 coverage.xml
+htmlcov/
 .pytest_cache/
 
 # Debug and incident artifacts
