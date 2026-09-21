@@ -5,7 +5,7 @@
  */
 import {
     LayoutDashboard, Search, BarChart3, ShieldCheck, Bookmark,
-    Building2, Briefcase, Users, Upload, LogOut,
+    Building2, Briefcase, Users, LogOut,
     FileText, User, ClipboardList, Sparkles, PlusCircle, CheckCircle2, Bot,
     SlidersHorizontal,
 } from 'lucide-react'
@@ -34,7 +34,7 @@ const SEEKER_GROUPS = [
     {
         title: 'Profil & Kredibilitas',
         items: [
-            { id: 'seeker-profile', label: 'Upload CV', icon: Upload },
+            { id: 'seeker-profile', label: 'Profil Saya', icon: User },
             { id: 'seeker-verification', label: 'Bukti Skill (Kuis)', icon: ShieldCheck, countKey: 'provenSkills' },
         ],
     },

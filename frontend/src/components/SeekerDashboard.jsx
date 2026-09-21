@@ -625,7 +625,7 @@ export default function SeekerDashboard() {
                     }}
                 >
                     <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderBottom: `12px solid ${KC.orange}` }} />
-                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Upload CV</span>
+                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Profil Saya</span>
                 </div>
                 <div
                     onClick={() => navigate('seeker-verification')}

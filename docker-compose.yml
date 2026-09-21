@@ -45,6 +45,7 @@ services:
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/kerjacerdas
       DEMO_MODE: "true"
       APP_ENV: development
+      PYTHONPATH: /app
     volumes:
       - ./backend:/app/backend
       - ./scripts:/app/scripts

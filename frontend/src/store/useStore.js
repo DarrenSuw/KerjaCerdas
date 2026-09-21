@@ -320,6 +320,7 @@ const useStore = create(
                             resume_text: data.resume_text || '',
                             salary_expectation_min: data.salary_expectation_min || 0,
                             salary_expectation_max: data.salary_expectation_max || 0,
+                            portfolio_url: data.portfolio_url || '',
                         },
                         seekerId: data.id,
                     }))
@@ -329,6 +330,20 @@ const useStore = create(
                         console.error('Failed to load seeker profile:', err)
                     }
                 }
+            },
+
+            // Returns 0–100 profile completeness for the donut indicator.
+            // Weights: name 20, headline 20, skills 20, experience 20, education 20.
+            computeProfileCompleteness: () => {
+                const { profile } = get()
+                if (!profile) return 0
+                let score = 0
+                if (profile.full_name?.trim()) score += 20
+                if (profile.headline?.trim()) score += 20
+                if (profile.skills?.length) score += 20
+                if (profile.experience?.length) score += 20
+                if (profile.education?.length) score += 20
+                return score
             },
 
             seekerId: null,
