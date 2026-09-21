@@ -74,7 +74,11 @@ create table if not exists job_postings (
   responsibilities text[] default '{}',
   required_skills text[] default '{}',
   nice_to_have_skills text[] default '{}',
-  education_min education_level default 'S1',
+  -- SMA = the floor, i.e. "no requirement stated". Must match the ORM
+  -- default (db/models.py): defaulting to S1 makes a job inserted without
+  -- this field silently demand a degree, zeroing education_fit for the
+  -- SMA/SMK school-leavers this product targets.
+  education_min education_level default 'SMA',
   experience_years_min int default 0,
   region_code text not null,
   remote_allowed boolean default false,

@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 import useStore from '../store/useStore'
 import { KC, BrutalCard, topBtn, DesignStyles } from './_design'
-import { Plus, ArrowLeft, Users, Edit3, ArrowRight, FileText, Loader2 } from 'lucide-react'
+import { Plus, ArrowLeft, Users, Edit3, ArrowRight, FileText, Loader2, QrCode } from 'lucide-react'
+import JobShareModal from './JobShareModal'
+import JobEditModal from './JobEditModal'
+import ModerationNotice from './ModerationNotice'
+import { updateEmployerJob } from '../services/api'
+import toast from 'react-hot-toast'
 
 function formatSalary(min, max) {
     if (!min && !max) return 'Rp 20–35 jt'
@@ -11,8 +16,20 @@ function formatSalary(min, max) {
 }
 
 export default function EmployerJobs() {
-    const { employerJobs, employerJobsLoading, refreshEmployerJobs, navigate } = useStore()
+    const { employerJobs, employerJobsLoading, refreshEmployerJobs, navigate, openUpgradeModal } = useStore()
     const [filterTab, setFilterTab] = useState('all') // 'all' | 'active' | 'draft' | 'closed'
+    const [sharing, setSharing] = useState(null)
+    const [editing, setEditing] = useState(null)
+
+    const toggleActive = async (job) => {
+        try {
+            await updateEmployerJob(job.id, { is_active: job.status !== 'active' })
+            refreshEmployerJobs()
+        } catch (e) {
+            if (e.status === 402) openUpgradeModal({ plan: 'beacon', jobId: job.id })
+            toast.error(e.message)
+        }
+    }
 
     useEffect(() => {
         refreshEmployerJobs()
@@ -25,11 +42,16 @@ export default function EmployerJobs() {
         location: j.region_name || j.region_code || j.location || 'Indonesia',
         work_type: j.work_type || (j.remote_allowed ? 'Remote' : 'Hybrid'),
         salary: formatSalary(j.salary_min, j.salary_max) || j.salary_range || 'Gaji bersaing',
-        status: j.is_active === false ? 'draft' : 'active',
+        // "closed" = inactive but approved; held/rejected jobs show the AutoMod notice.
+        status: j.moderation_status && j.moderation_status !== 'published'
+            ? 'closed'
+            : (j.is_active === false ? 'closed' : 'active'),
         candidates_count: j.application_count ?? 0,
-        strong_count: Math.round((j.application_count ?? 0) * 0.2),
-        unlocked_count: 0,
-        interview_count: 0,
+        public_code: j.public_code,
+        plan_tier: j.plan_tier || 'spark',
+        moderation_status: j.moderation_status,
+        moderation_reasons: j.moderation_reasons,
+        raw: j,
     }))
 
     const filteredJobs = allJobs.filter(j => {
@@ -276,30 +298,24 @@ export default function EmployerJobs() {
                                 </span>
                             </div>
 
-                            {/* 4-Metric Grid */}
-                            <div style={{ display: 'flex', gap: 8, padding: '11px 0', borderTop: '1px dashed #E2E8F0', borderBottom: '1px dashed #E2E8F0', marginBottom: 12 }}>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ font: '900 16px/1 "Plus Jakarta Sans", sans-serif', color: KC.ink }}>{job.candidates_count}</div>
-                                    <div style={{ font: '700 9px/1.2 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Kandidat</div>
-                                </div>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ font: '900 16px/1 "Plus Jakarta Sans", sans-serif', color: '#10B981' }}>{job.strong_count}</div>
-                                    <div style={{ font: '700 9px/1.2 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Strong</div>
-                                </div>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ font: '900 16px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>{job.unlocked_count}</div>
-                                    <div style={{ font: '700 9px/1.2 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Unlocked</div>
-                                </div>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ font: '900 16px/1 "Plus Jakarta Sans", sans-serif', color: '#6366F1' }}>{job.interview_count}</div>
-                                    <div style={{ font: '700 9px/1.2 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Interview</div>
-                                </div>
+                            <ModerationNotice job={job} onChanged={refreshEmployerJobs} />
+                            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center', padding: '11px 0', borderTop: '1px dashed #E2E8F0', borderBottom: '1px dashed #E2E8F0', marginBottom: 12, fontSize: 12 }}>
+                                <span><b style={{ fontSize: 16 }}>{job.candidates_count}</b> pelamar</span>
+                                <span style={{ fontWeight: 800, textTransform: 'capitalize' }}>Paket: {job.plan_tier}</span>
+                                {job.plan_tier === 'spark' && (
+                                    <button onClick={() => openUpgradeModal({ plan: 'beacon', jobId: job.id })} style={{ background: 'none', border: 'none', color: KC.orange, fontWeight: 800, cursor: 'pointer', padding: 0 }}>Beli Beacon →</button>
+                                )}
+                                {job.moderation_status === 'published' && (
+                                    <button onClick={() => toggleActive(job)} style={{ background: 'none', border: 'none', color: KC.mute, fontWeight: 700, cursor: 'pointer', padding: 0 }}>
+                                        {job.status === 'active' ? 'Tutup lowongan' : 'Buka lagi'}
+                                    </button>
+                                )}
                             </div>
 
                             {/* Action Buttons */}
                             <div style={{ display: 'flex', gap: 9 }}>
                                 <button
-                                    onClick={() => navigate('employer-post-job')}
+                                    onClick={() => setEditing(job.raw)}
                                     className="kc-btn"
                                     style={{
                                         flex: 'none',
@@ -318,6 +334,15 @@ export default function EmployerJobs() {
                                 >
                                     Edit
                                 </button>
+                                {job.public_code && job.status === 'active' && (
+                                    <button
+                                        onClick={() => setSharing(job)}
+                                        className="kc-btn"
+                                        style={{ flex: 'none', padding: '11px 14px', background: KC.ink, border: `1.5px solid ${KC.ink}`, borderRadius: 9, color: '#fff', font: '800 11.5px/1 "Plus Jakarta Sans", sans-serif', minHeight: 44, display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}
+                                    >
+                                        <QrCode size={14} /> Link & QR
+                                    </button>
+                                )}
                                 <button
                                     onClick={() => handleReviewCandidates(job.id)}
                                     className="kc-btn"
@@ -337,13 +362,15 @@ export default function EmployerJobs() {
                                         cursor: 'pointer',
                                     }}
                                 >
-                                    Lihat Kandidat AI →
+                                    Lihat Pelamar →
                                 </button>
                             </div>
                         </div>
                     )
                 }))}
             </div>
+            {sharing && <JobShareModal job={sharing} onClose={() => setSharing(null)} />}
+            {editing && <JobEditModal job={editing} onClose={() => setEditing(null)} onSaved={refreshEmployerJobs} />}
         </div>
     )
 }

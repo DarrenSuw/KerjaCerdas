@@ -22,6 +22,15 @@ from backend.app.db.models import (
     SkillGapResult,
     User,
 )
+from backend.app.db.models_proof import (
+    ApplicationStatusEvent,
+    JobReport,
+    ModerationEvent,
+    PlanOrder,
+    QuizAttempt,
+    SkillEvidence,
+    SkillQuestion,
+)
 from backend.app.db.schemas import AIPerformanceLog as LogSchema
 from backend.app.db.schemas import Application as ApplicationSchema
 from backend.app.db.schemas import ChatSession as ChatSchema
@@ -32,6 +41,13 @@ from backend.app.db.schemas import MatchBundle as MatchSchema
 from backend.app.db.schemas import SeekerProfile as SeekerSchema
 from backend.app.db.schemas import SkillGapResult as SkillGapSchema
 from backend.app.db.schemas import User as UserSchema
+from backend.app.db.schemas_proof import ApplicationStatusEvent as StatusEventSchema
+from backend.app.db.schemas_proof import JobReport as JobReportSchema
+from backend.app.db.schemas_proof import ModerationEvent as ModerationEventSchema
+from backend.app.db.schemas_proof import PlanOrder as PlanOrderSchema
+from backend.app.db.schemas_proof import QuizAttempt as QuizAttemptSchema
+from backend.app.db.schemas_proof import SkillEvidence as SkillEvidenceSchema
+from backend.app.db.schemas_proof import SkillQuestion as SkillQuestionSchema
 from backend.app.db.session import async_session
 
 TSchema = TypeVar("TSchema", bound=BaseModel)
@@ -423,34 +439,6 @@ async def update_seeker_embedding(
         await session.commit()
 
 
-async def update_seeker_verification_status(
-    seeker_id: str,
-    *,
-    nik_verified: str | None = None,
-    ijazah_verified: str | None = None,
-) -> None:
-    """Write only the given verification-status column(s) for a seeker.
-
-    Called from the (mock) `/verify/identity` and `/verify/education`
-    endpoints once they decide VERIFIED/FAILED, so that result survives a
-    reload or a login from another browser instead of living only in the
-    frontend's persisted store. Narrow UPDATE for the same race-avoidance
-    reason as `update_seeker_embedding` above — this must never overwrite
-    unrelated profile fields a concurrent request is editing.
-    """
-    values = {
-        k: v
-        for k, v in {"nik_verified": nik_verified, "ijazah_verified": ijazah_verified}.items()
-        if v is not None
-    }
-    if not values:
-        return
-    async with async_session() as session:
-        stmt = update(SeekerProfile).where(SeekerProfile.id == seeker_id).values(**values)
-        await session.execute(stmt)
-        await session.commit()
-
-
 async def find_employer_by_user_id(user_id: str) -> EmployerSchema | None:
     """Return an employer by their auth user_id (indexed, O(1))."""
     try:
@@ -537,6 +525,236 @@ async def find_skill_gaps_by_seeker_id(seeker_id: str) -> list[SkillGapSchema]:
         return []
 
 
+# ── v2 proof-of-skill finders ─────────────────────────────────────────────────
+
+
+async def select_where(model, schema, *conditions, order_by=None, limit: int | None = None):
+    """Indexed SELECT ... WHERE <conditions> returning validated schema objects.
+
+    The one generic typed finder the v2 routers use instead of the
+    full-table-scan `PostgresRepository.find(lambda ...)`.
+    """
+    async with async_session() as session:
+        stmt = select(model).where(*conditions)
+        if order_by is not None:
+            stmt = stmt.order_by(order_by)
+        if limit:
+            stmt = stmt.limit(limit)
+        result = await session.execute(stmt)
+        return [
+            schema.model_validate({c.name: getattr(o, c.name) for c in model.__table__.columns})
+            for o in result.scalars().all()
+        ]
+
+
+async def find_job_by_public_code(code: str) -> JobSchema | None:
+    rows = await select_where(JobPosting, JobSchema, JobPosting.public_code == code, limit=1)
+    return rows[0] if rows else None
+
+
+async def find_applications_by_job_id(job_id: str) -> list[ApplicationSchema]:
+    return await select_where(
+        Application, ApplicationSchema, Application.job_id == job_id, order_by=Application.created_at
+    )
+
+
+async def find_active_questions(skill: str) -> list[SkillQuestionSchema]:
+    return await select_where(
+        SkillQuestion,
+        SkillQuestionSchema,
+        SkillQuestion.skill == skill,
+        SkillQuestion.active.is_(True),
+        SkillQuestion.reviewed.is_(True),
+    )
+
+
+async def count_active_questions_for_skill(skill: str) -> int:
+    """Questions for a skill that are still live, reviewed or not.
+
+    This is the generation-dedupe predicate, and it sits between two failure
+    modes:
+
+      reviewed only  -> a freshly generated batch (reviewed=False) is invisible
+                        to the check that gates generation, so every call
+                        regenerates and re-bills Gemini, never converging.
+      all rows       -> deactivating bad questions can never be replenished: the
+                        dead rows still satisfy the threshold, so the skill is
+                        stuck with too few serveable questions forever.
+
+    Counting ACTIVE rows regardless of `reviewed` satisfies both: a pending
+    draft blocks regeneration (it is still on its way to being serveable), and
+    a deactivated question stops counting, letting the bank refill.
+    """
+    async with async_session() as session:
+        stmt = select(func.count()).where(
+            SkillQuestion.skill == skill, SkillQuestion.active.is_(True)
+        )
+        return int((await session.execute(stmt)).scalar_one() or 0)
+
+
+async def list_quiz_skills() -> list[dict]:
+    """Skills that can actually serve a quiz, with question counts.
+
+    Filters on reviewed as well as active, matching find_active_questions().
+    When the two disagree the UI offers an "Ikut kuis" button for a skill whose
+    quiz then 404s.
+    """
+    async with async_session() as session:
+        stmt = (
+            select(SkillQuestion.skill, func.max(SkillQuestion.skill_label), func.count())
+            .where(SkillQuestion.active.is_(True), SkillQuestion.reviewed.is_(True))
+            .group_by(SkillQuestion.skill)
+        )
+        rows = (await session.execute(stmt)).all()
+    return [{"skill": r[0], "label": r[1] or r[0], "question_count": r[2]} for r in rows]
+
+
+async def find_quiz_attempts(seeker_id: str, skill: str | None = None) -> list[QuizAttemptSchema]:
+    conds = [QuizAttempt.seeker_id == seeker_id]
+    if skill:
+        conds.append(QuizAttempt.skill == skill)
+    return await select_where(QuizAttempt, QuizAttemptSchema, *conds, order_by=QuizAttempt.created_at)
+
+
+async def find_orders_by_user(user_id: str) -> list[PlanOrderSchema]:
+    return await select_where(PlanOrder, PlanOrderSchema, PlanOrder.user_id == user_id)
+
+
+async def find_orders_by_status(status: str) -> list[PlanOrderSchema]:
+    return await select_where(
+        PlanOrder, PlanOrderSchema, PlanOrder.status == status, order_by=PlanOrder.created_at
+    )
+
+
+async def find_reports_for_job(job_id: str) -> list[JobReportSchema]:
+    return await select_where(JobReport, JobReportSchema, JobReport.job_id == job_id)
+
+
+async def find_jobs_by_moderation_status(status: str) -> list[JobSchema]:
+    return await select_where(
+        JobPosting, JobSchema, JobPosting.moderation_status == status, order_by=JobPosting.created_at
+    )
+
+
+async def find_moderation_events(job_id: str) -> list[ModerationEventSchema]:
+    return await select_where(
+        ModerationEvent,
+        ModerationEventSchema,
+        ModerationEvent.job_id == job_id,
+        order_by=ModerationEvent.created_at,
+    )
+
+
+async def count_events(user_id: str, event_type: str, since: datetime) -> int:
+    """Usage metering (e.g. advisor messages per day) from the events table."""
+    from backend.app.db.models import Event
+
+    async with async_session() as session:
+        stmt = select(func.count()).where(
+            Event.user_id == user_id, Event.event_type == event_type, Event.created_at >= since
+        )
+        return int((await session.execute(stmt)).scalar_one() or 0)
+
+
+async def add_event(user_id: str | None, event_type: str, payload: dict | None = None) -> None:
+    from backend.app.db.models import Event
+
+    try:
+        async with async_session() as session:
+            session.add(Event(user_id=user_id, event_type=event_type, payload=payload or {}))
+            await session.commit()
+    except Exception as exc:  # noqa: BLE001 — metering must never break a request
+        _store_logger.warning("add_event failed (%s)", exc)
+
+
+async def consume_quota(user_id: str, event_type: str, limit: int, since: datetime) -> bool:
+    """Check-and-consume one unit of a usage quota (e.g. advisor messages/day).
+
+    On PostgreSQL a per-(user, event) advisory lock held for the transaction
+    makes the count-then-insert atomic, so two concurrent requests cannot both
+    read `used == limit - 1` and both proceed.
+
+    SQLite (dev/test only) has no advisory locks, so the guard is skipped rather
+    than raising `no such function: pg_advisory_xact_lock` — which would 500 the
+    request instead of metering it. The count-then-insert is then racy under
+    genuine concurrency; that is acceptable for a single-process dev database
+    and is never the production path.
+    """
+    from sqlalchemy import text
+
+    from backend.app.api.database import engine
+    from backend.app.db.models import Event
+
+    async with async_session() as session:
+        if engine.name == "postgresql":
+            lock_id = hash(f"{user_id}:{event_type}") % (2**31 - 1)
+            await session.execute(text("SELECT pg_advisory_xact_lock(:lock_id)").bindparams(lock_id=lock_id))
+
+        stmt = select(func.count()).where(
+            Event.user_id == user_id, Event.event_type == event_type, Event.created_at >= since
+        )
+        used = int((await session.execute(stmt)).scalar_one() or 0)
+
+        if used >= limit:
+            return False
+
+        session.add(Event(user_id=user_id, event_type=event_type, payload={}))
+        await session.commit()
+        return True
+
+async def record_ai_usage(
+    task: str,
+    model: str,
+    tokens_in: int,
+    tokens_out: int,
+    latency_ms: int,
+    success: bool = True,
+    user_id: str | None = None,
+    error: str | None = None,
+) -> None:
+    """One ai_logs row per Gemini call — feeds the admin cost-per-action report."""
+    import uuid as _uuid
+
+    try:
+        async with async_session() as session:
+            session.add(
+                AIPerformanceLog(
+                    id=str(_uuid.uuid4()),
+                    request_id=_uuid.uuid4().hex[:12],
+                    user_id=user_id,
+                    role="system",
+                    task=task,
+                    model=model,
+                    latency_ms=latency_ms,
+                    tokens_in=tokens_in,
+                    tokens_out=tokens_out,
+                    success=success,
+                    error=(error or "")[:500] or None,
+                )
+            )
+            await session.commit()
+    except Exception as exc:  # noqa: BLE001
+        _store_logger.warning("record_ai_usage failed (%s)", exc)
+
+
+async def backfill_public_codes() -> int:
+    """Give every job without a share code one (legacy / seeded rows)."""
+    from backend.app.services.hiring.links import new_public_code
+
+    async with async_session() as session:
+        rows = (await session.execute(select(JobPosting).where(JobPosting.public_code.is_(None)))).scalars().all()
+        for job in rows:
+            job.public_code = new_public_code()
+        await session.commit()
+        return len(rows)
+
+
+async def set_user_email_verified(user_id: str) -> None:
+    async with async_session() as session:
+        await session.execute(update(User).where(User.id == user_id).values(email_verified=True))
+        await session.commit()
+
+
 class Repositories:
     """Convenience bundle, injected via FastAPI dependency."""
 
@@ -551,6 +769,14 @@ class Repositories:
         self.chats = PostgresRepository(ChatSchema, ChatSession)
         self.ai_logs = PostgresRepository(LogSchema, AIPerformanceLog)
         self.courses = PostgresRepository(CourseSchema, Course)
+        # v2 proof-of-skill tables
+        self.skill_questions = PostgresRepository(SkillQuestionSchema, SkillQuestion)
+        self.quiz_attempts = PostgresRepository(QuizAttemptSchema, QuizAttempt)
+        self.skill_evidence = PostgresRepository(SkillEvidenceSchema, SkillEvidence)
+        self.job_reports = PostgresRepository(JobReportSchema, JobReport)
+        self.moderation_events = PostgresRepository(ModerationEventSchema, ModerationEvent)
+        self.plan_orders = PostgresRepository(PlanOrderSchema, PlanOrder)
+        self.status_events = PostgresRepository(StatusEventSchema, ApplicationStatusEvent)
 
 
 _repos: Repositories | None = None

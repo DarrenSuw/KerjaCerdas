@@ -7,7 +7,7 @@ import { Plus, X, ArrowLeft, ArrowRight, ShieldCheck, Building2, CheckCircle2 } 
 
 export default function EmployerPostJob() {
     const { navigate, refreshEmployerJobs, employerProfile, loadEmployerProfile, user } = useStore()
-    const [step, setStep] = useState(1) // 1: Profil, 2: NPWP, 3: Lowongan
+    const [step, setStep] = useState(1) // 1: Profil, 2: Aturan tayang (AutoMod), 3: Lowongan
 
     useEffect(() => {
         loadEmployerProfile()
@@ -19,15 +19,12 @@ export default function EmployerPostJob() {
     const [companySize, setCompanySize] = useState('51-200')
     const [picEmail, setPicEmail] = useState(user?.email || '')
 
-    // Step 2: Validasi NPWP
-    const [npwp, setNpwp] = useState(employerProfile?.npwp || '')
-
     // Step 3: Detail Lowongan
     const [title, setTitle] = useState('')
     const [location, setLocation] = useState('Jakarta')
     const [workType, setWorkType] = useState('Hybrid')
-    const [salaryMin, setSalaryMin] = useState(15000000)
-    const [salaryMax, setSalaryMax] = useState(25000000)
+    const [salaryMin, setSalaryMin] = useState(4000000)
+    const [salaryMax, setSalaryMax] = useState(5500000)
     const [skills, setSkills] = useState([])
     const [skillInput, setSkillInput] = useState('')
     const [description, setDescription] = useState('')
@@ -37,7 +34,6 @@ export default function EmployerPostJob() {
     useEffect(() => {
         if (employerProfile) {
             if (!companyName && employerProfile.company_name) setCompanyName(employerProfile.company_name)
-            if (!npwp && employerProfile.npwp) setNpwp(employerProfile.npwp)
         }
     }, [employerProfile]) // eslint-disable-line
     useEffect(() => {
@@ -83,7 +79,7 @@ export default function EmployerPostJob() {
         }
         setPublishing(true)
         try {
-            await createEmployerJob({
+            const res = await createEmployerJob({
                 title,
                 description,
                 required_skills: skills,
@@ -92,10 +88,17 @@ export default function EmployerPostJob() {
                 salary_min: Number(salaryMin),
                 salary_max: Number(salaryMax),
             })
-            toast.success('Lowongan berhasil dipublikasikan!')
             await refreshEmployerJobs()
-            navigate('employer-candidates')
+            // AutoMod verdict: published -> share the link; held/rejected -> the
+            // poster sees exactly which sentence and how to fix it on Lowongan Saya.
+            if (res.moderation_status === 'published') {
+                toast.success('Lowongan tayang! Bagikan link / QR-nya dari menu Lowongan Saya.')
+            } else {
+                toast(res.notice, { icon: res.moderation_status === 'rejected' ? '⛔' : '⏳', duration: 10000 })
+            }
+            navigate('employer-jobs')
         } catch (err) {
+            if (err.status === 402) useStore.getState().openUpgradeModal({ plan: 'lighthouse' })
             toast.error('Gagal mempublikasikan lowongan: ' + (err.message || 'Terjadi kesalahan'))
         } finally {
             setPublishing(false)
@@ -195,7 +198,7 @@ export default function EmployerPostJob() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', font: '700 9.5px/1.2 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4 }}>
                     <span style={{ color: step === 1 ? KC.orange : KC.ink }}>Profil</span>
-                    <span style={{ color: step === 2 ? KC.orange : (step > 2 ? KC.ink : '#94A3B8') }}>NPWP</span>
+                    <span style={{ color: step === 2 ? KC.orange : (step > 2 ? KC.ink : '#94A3B8') }}>Aturan</span>
                     <span style={{ color: step === 3 ? KC.orange : '#94A3B8' }}>Lowongan</span>
                 </div>
             </div>
@@ -312,35 +315,26 @@ export default function EmployerPostJob() {
                             cursor: 'pointer',
                         }}
                     >
-                        Lanjut ke Validasi NPWP →
+                        Lanjut →
                     </button>
                 </div>
             )}
 
-            {/* STEP 2: Validasi NPWP */}
+            {/* STEP 2: Aturan tayang — AutoMod + first-job review (no NPWP) */}
             {step === 2 && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, animation: 'kcUp .4s both' }}>
                     <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 15 }}>
                         <div style={{ font: '900 14px/1.2 "Plus Jakarta Sans", sans-serif', color: KC.ink, marginBottom: 6 }}>
-                            Validasi NPWP
+                            Sebelum lowongan tayang
                         </div>
-                        <div style={{ font: '400 11px/1.5 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', marginBottom: 13 }}>
-                            Verifikasi legalitas sebelum lowongan tayang. Status saat ini: format-check internal.
-                        </div>
-                        <input
-                            type="text"
-                            value={npwp}
-                            onChange={e => setNpwp(e.target.value)}
-                            style={{ ...inputBaseStyle, fontFamily: '"JetBrains Mono", monospace', letterSpacing: 0.5 }}
-                        />
-                        <div style={{ marginTop: 11, padding: '11px 13px', background: '#ECFDF5', border: '1px solid #10B981', borderRadius: 9, display: 'flex', alignItems: 'center', gap: 9 }}>
-                            <span style={{ width: 20, height: 20, borderRadius: '50%', background: '#10B981', display: 'grid', placeItems: 'center', color: '#fff', font: '900 11px/1 "Plus Jakarta Sans", sans-serif', flex: 'none' }}>
-                                ✓
-                            </span>
-                            <span style={{ font: '700 11.5px/1.4 "Plus Jakarta Sans", sans-serif', color: '#065F46' }}>
-                                Format valid · badan usaha terdaftar
-                            </span>
-                        </div>
+                        <ul style={{ font: '400 12.5px/1.6 "Plus Jakarta Sans", sans-serif', color: '#334155', paddingLeft: 18, margin: 0 }}>
+                            <li>AutoMod memeriksa isi lowongan. Meminta biaya dari pelamar = ditolak; syarat usia/penampilan/jenis kelamin tanpa alasan = ditahan untuk ditinjau.</li>
+                            <li>Lowongan pertama ditinjau admin (biasanya &lt; 24 jam), kecuali akun punya badge email perusahaan atau &quot;Ditinjau admin&quot;.</li>
+                            <li>Setelah tayang kamu dapat link + poster QR untuk dibagikan di Instagram, WhatsApp, atau ditempel di toko.</li>
+                        </ul>
+                        <button onClick={() => navigate('employer-verification')} style={{ marginTop: 10, background: 'none', border: 'none', color: KC.orange, fontWeight: 800, cursor: 'pointer', padding: 0 }}>
+                            Lihat badge & pedoman lengkap →
+                        </button>
                     </div>
 
                     <div style={{ display: 'flex', gap: 10 }}>
@@ -406,7 +400,7 @@ export default function EmployerPostJob() {
                                     type="text"
                                     value={title}
                                     onChange={e => setTitle(e.target.value)}
-                                    placeholder="Contoh: Senior Backend Engineer (Go)"
+                                    placeholder="Contoh: Admin & Customer Service"
                                     style={inputBaseStyle}
                                 />
                             </div>

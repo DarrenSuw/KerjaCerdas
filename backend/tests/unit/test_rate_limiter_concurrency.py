@@ -146,22 +146,23 @@ class TestLimitSelection:
     @pytest.mark.parametrize(
         "path",
         [
-            "/api/v1/verify/otp/send",
-            "/api/v1/verify/otp/verify",
-            "/api/v1/verify/identity",
+            "/api/v1/verify/email/send",
+            "/api/v1/verify/email/verify",
+            "/api/v1/quiz/start",
+            "/api/v1/public/jobs/ABC1234/report",
             "/api/v1/seeker/skill-gap",
         ],
     )
     def test_costly_endpoints_are_stricter_than_the_default(
         self, limiter: RateLimiterMiddleware, path: str
     ) -> None:
-        """Endpoints that spend money per call (SMS, e-KYC, Gemini) or that
-        gate a credential must not sit on the generic 60/min budget."""
+        """Endpoints that spend money per call (email, Gemini), gate a
+        credential, or expose the quiz bank must not sit on the default budget."""
         max_req, _ = limiter._get_limit(path)
         assert max_req < _DEFAULT_LIMIT[0], f"{path} is on the default budget"
 
     def test_otp_send_is_the_tightest_budget(self, limiter: RateLimiterMiddleware) -> None:
-        assert limiter._get_limit("/api/v1/verify/otp/send") == (5, 60)
+        assert limiter._get_limit("/api/v1/verify/email/send") == (5, 60)
 
     def test_path_casing_variant_escapes_the_strict_limit(
         self, limiter: RateLimiterMiddleware

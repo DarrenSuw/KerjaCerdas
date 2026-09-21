@@ -179,6 +179,80 @@ async def _migrate_applications_schema(conn) -> None:
         logger.info("Migrated applications: added note column")
 
 
+# Columns added by the v2 proof-of-skill release (Alembic revision
+# a2b4c6d8e0f1). create_all() only creates missing TABLES, so an existing
+# local SQLite dev database also needs the new COLUMNS added in place.
+# (table, column, complete static DDL) — literal SQL only, never built from
+# strings at runtime.
+_V2_COLUMNS: list[tuple[str, str, str]] = [
+    ("users", "email_verified", "ALTER TABLE users ADD COLUMN email_verified BOOLEAN DEFAULT 0"),
+    ("employers", "review_links", "ALTER TABLE employers ADD COLUMN review_links JSON DEFAULT '[]'"),
+    ("employers", "strikes", "ALTER TABLE employers ADD COLUMN strikes INTEGER DEFAULT 0"),
+    ("employers", "last_strike_at", "ALTER TABLE employers ADD COLUMN last_strike_at TIMESTAMP"),
+    ("jobs", "public_code", "ALTER TABLE jobs ADD COLUMN public_code VARCHAR(16)"),
+    (
+        "jobs",
+        "moderation_status",
+        "ALTER TABLE jobs ADD COLUMN moderation_status VARCHAR(20) DEFAULT 'published'",
+    ),
+    ("jobs", "moderation_reasons", "ALTER TABLE jobs ADD COLUMN moderation_reasons JSON DEFAULT '[]'"),
+    (
+        "applications",
+        "skill_snapshot",
+        "ALTER TABLE applications ADD COLUMN skill_snapshot JSON DEFAULT '[]'",
+    ),
+    ("applications", "source", "ALTER TABLE applications ADD COLUMN source VARCHAR(20) DEFAULT 'board'"),
+]
+
+
+async def _migrate_v2_columns(conn) -> None:
+    cache: dict[str, set[str]] = {}
+    for table, column, ddl in _V2_COLUMNS:
+        if table not in cache:
+            cache[table] = await conn.run_sync(_get_table_columns, table)
+        if cache[table] and column not in cache[table]:
+            await conn.execute(text(ddl))
+            logger.info("Migrated %s: added %s", table, column)
+    otp_cols = await conn.run_sync(_get_table_columns, "otps")
+    if "phone" in otp_cols and "destination" not in otp_cols:
+        await conn.execute(text("ALTER TABLE otps RENAME COLUMN phone TO destination"))
+
+
+async def _assert_schema_current(conn) -> None:
+    """Fail startup loudly when a PostgreSQL database is missing v2 columns.
+
+    `create_all()` only creates missing TABLES — it can never ADD a column to a
+    table that already exists. So an existing PostgreSQL deployment that hasn't
+    had `alembic upgrade head` run against it starts up "successfully" and then
+    500s on the first query touching users.email_verified, jobs.public_code or
+    applications.skill_snapshot.
+
+    Refusing to boot turns that into one clear message at deploy time instead of
+    scattered runtime errors. The Docker image runs the upgrade in its
+    entrypoint (backend/docker-entrypoint.sh); this is the backstop for
+    deployments that start uvicorn some other way.
+    """
+    missing: list[str] = []
+    cache: dict[str, set[str]] = {}
+    for table, column, _ddl in _V2_COLUMNS:
+        if table not in cache:
+            cache[table] = await conn.run_sync(_get_table_columns, table)
+        # An absent table is fine — create_all() just made it, with every column.
+        if cache[table] and column not in cache[table]:
+            missing.append(f"{table}.{column}")
+    otp_cols = await conn.run_sync(_get_table_columns, "otps")
+    if otp_cols and "destination" not in otp_cols:
+        missing.append("otps.destination")
+
+    if missing:
+        raise RuntimeError(
+            "Database schema is out of date — missing: "
+            + ", ".join(missing)
+            + ". Run `alembic upgrade head` (from the backend/ directory, with "
+            "DATABASE_URL set) before starting the API."
+        )
+
+
 async def init_db() -> None:
     """Create all tables. Called once during application startup."""
     # Import models here so their metadata is registered before create_all.
@@ -196,4 +270,12 @@ async def init_db() -> None:
         await conn.run_sync(ModelsBase.metadata.create_all)
         await _migrate_verification_logs_schema(conn)
         await _migrate_applications_schema(conn)
+        if is_sqlite:
+            # SQLite is dev/test only and has no Alembic history of its own, so
+            # the v2 columns are added in place here.
+            await _migrate_v2_columns(conn)
+        else:
+            # PostgreSQL migrates through Alembic (CLAUDE.md: "Migrations via
+            # Alembic only"). Verify rather than silently continue.
+            await _assert_schema_current(conn)
     logger.info("[DB] Database tables created / verified successfully")

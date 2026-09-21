@@ -158,11 +158,14 @@ export const removeBookmark = (jobId) =>
     request(`${API_BASE}/seeker/bookmarks/${jobId}`, { method: 'DELETE' })
 
 // ── Uploads (PDF → Gemini → schema) ─────────────────────────────────────────
-export async function uploadCV({ userId, file, confirmOffline = false }) {
+export async function uploadCV({ userId, file, confirmOffline = false, confirmScanned = false }) {
     const fd = new FormData()
     fd.append('user_id', userId)
     fd.append('file', file)
     fd.append('confirm_offline', confirmOffline ? 'true' : 'false')
+    // Explicit consent to send a scan/photo of the CV as an image, because
+    // a PDF with no text layer cannot be redacted before it leaves us.
+    fd.append('confirm_scanned', confirmScanned ? 'true' : 'false')
     const res = await fetch(`${API_BASE}/uploads/cv`, {
         method: 'POST',
         headers: { ..._authHeader() },
@@ -209,31 +212,17 @@ export const fetchCandidatesForJob = (jobId, topK = 5, filters = {}) =>
         body: JSON.stringify({ top_k: topK, filters }),
     })
 
-// ── Verification (mock e-KYC / SIVIL / NPWP) ────────────────────────────────
-export const verifyIdentity = (payload) => request(`${API_BASE}/verify/identity`, {
-    method: 'POST', body: JSON.stringify(payload),
-})
-export const verifyEducation = (payload) => request(`${API_BASE}/verify/education`, {
-    method: 'POST', body: JSON.stringify(payload),
-})
-export const verifyNPWP = (payload) => request(`${API_BASE}/verify/npwp`, {
-    method: 'POST', body: JSON.stringify(payload),
-})
-
 // ── Employer post-job AI estimation (live preview) ──────────────────────────
 export const estimateJobPool = (payload) => request(`${API_BASE}/employer/jobs/estimate`, {
     method: 'POST', body: JSON.stringify(payload),
 })
 
-// ── Verification documents (mock — "encrypted file_ids" is a descriptive ───
-// label on the response, not real encryption; see DEMO_GUIDE.md) ───────────
-export const listVerificationDocs = () => request(`${API_BASE}/verify/documents`)
-
 // ── Seeker applications ──────────────────────────────────────────────────────
-export const applyToJob = (jobId, coverLetter = '') =>
+// `extra` = { source: 'board'|'link' } — 'link' means the job's QR / share link
+export const applyToJob = (jobId, coverLetter = '', extra = {}) =>
     request(`${API_BASE}/seeker/apply`, {
         method: 'POST',
-        body: JSON.stringify({ job_id: jobId, cover_letter: coverLetter }),
+        body: JSON.stringify({ job_id: jobId, cover_letter: coverLetter, ...extra }),
     })
 
 export const fetchApplications = () => request(`${API_BASE}/seeker/applications`)
@@ -274,26 +263,6 @@ export const fetchExperimentAssignments = () =>
 // ── Health ──────────────────────────────────────────────────────────────────
 export const healthCheck = () => request(RAW_API_URL ? `${RAW_API_URL.replace(/\/+$/, '')}/health` : '/health')
 
-// ── Pay-to-Unlock candidate contact (3.5) ───────────────────────────────────
-export const unlockCandidate = (jobId, seekerId, paymentToken = 'demo') =>
-    request(`${API_BASE}/employer/jobs/${jobId}/unlock/${seekerId}`, {
-        method: 'POST',
-        body: JSON.stringify({ payment_token: paymentToken }),
-    })
-
-// ── Phone OTP (3.4) ─────────────────────────────────────────────────────────
-export const sendOTP = (phone) =>
-    request(`${API_BASE}/verify/otp/send`, {
-        method: 'POST',
-        body: JSON.stringify({ phone }),
-    })
-
-export const verifyOTP = (phone, code) =>
-    request(`${API_BASE}/verify/otp/verify`, {
-        method: 'POST',
-        body: JSON.stringify({ phone, code }),
-    })
-
 // ── Employer: application management & status transitions ───────────────────
 export const fetchEmployerApplications = (jobId = null) => {
     const qs = jobId ? `?job_id=${encodeURIComponent(jobId)}` : ''
@@ -317,4 +286,71 @@ export const fetchPartnershipInquiries = (params = {}) => {
     const qs = new URLSearchParams(params).toString()
     return request(`${API_BASE}/inquiries${qs ? `?${qs}` : ''}`)
 }
+
+
+// ── Email verification (the only in-house identity check; no NIK/KTP) ──────
+export const fetchVerificationStatus = () => request(`${API_BASE}/verify/status`)
+export const sendEmailOtp = () => request(`${API_BASE}/verify/email/send`, { method: 'POST' })
+export const verifyEmailOtp = (code) =>
+    request(`${API_BASE}/verify/email/verify`, { method: 'POST', body: JSON.stringify({ code }) })
+
+// ── Skill quizzes (✓ Terbukti badges) ────────────────────────────────────────
+export const fetchQuizSkills = (jobId = null) =>
+    request(`${API_BASE}/quiz/skills${jobId ? `?job_id=${encodeURIComponent(jobId)}` : ''}`)
+export const startQuiz = (skill) =>
+    request(`${API_BASE}/quiz/start`, { method: 'POST', body: JSON.stringify({ skill }) })
+export const submitQuiz = (attemptId, answers) =>
+    request(`${API_BASE}/quiz/submit`, {
+        method: 'POST', body: JSON.stringify({ attempt_id: attemptId, answers }),
+    })
+
+// ── Public job links (/j/<code>) ────────────────────────────────────────────
+export const fetchPublicJob = (code) => request(`${API_BASE}/public/jobs/${encodeURIComponent(code)}`)
+export const publicJobQrUrl = (code) =>
+    `${API_BASE}/public/jobs/${encodeURIComponent(code)}/qr.svg?origin=${encodeURIComponent(window.location.origin)}`
+export const reportJob = (code, reason, detail = '') =>
+    request(`${API_BASE}/public/jobs/${encodeURIComponent(code)}/report`, {
+        method: 'POST', body: JSON.stringify({ reason, detail }),
+    })
+
+// ── Employer jobs: edit / appeal / hiring tools / trust ─────────────────────
+export const updateEmployerJob = (jobId, data) =>
+    request(`${API_BASE}/employer/jobs/${jobId}`, { method: 'PATCH', body: JSON.stringify(data) })
+export const appealJob = (jobId, message) =>
+    request(`${API_BASE}/employer/jobs/${jobId}/appeal`, {
+        method: 'POST', body: JSON.stringify({ message }),
+    })
+export const fetchInterviewKit = (applicationId) =>
+    request(`${API_BASE}/employer/applications/${applicationId}/interview-kit`)
+export const confirmSkills = (applicationId, skills) =>
+    request(`${API_BASE}/employer/applications/${applicationId}/confirm-skills`, {
+        method: 'POST', body: JSON.stringify({ skills }),
+    })
+export async function downloadApplicantsCsv(jobId) {
+    const res = await fetch(`${API_BASE}/employer/jobs/${jobId}/applicants.csv`, { headers: { ..._authHeader() } })
+    if (!res.ok) {
+        let detail = `${res.status}`
+        try { detail = (await res.json()).detail || detail } catch { /* ignore */ }
+        const err = new Error(detail); err.status = res.status; throw err
+    }
+    return res.blob()
+}
+export const fetchEmployerTrust = () => request(`${API_BASE}/employer/trust`)
+export const requestAdminReview = (links) =>
+    request(`${API_BASE}/employer/trust/review-request`, {
+        method: 'POST', body: JSON.stringify({ links }),
+    })
+
+// ── Plans (Spark / Beacon / Lighthouse / Prism) — manual payment ────────────
+export const fetchPlans = () => request(`${API_BASE}/billing/plans`)
+export const fetchMyPlans = () => request(`${API_BASE}/billing/me`)
+export const createPlanOrder = (plan, jobId = null) =>
+    request(`${API_BASE}/billing/orders`, {
+        method: 'POST', body: JSON.stringify({ plan, job_id: jobId }),
+    })
+
+// ── Admin (ADMIN_EMAILS only) ───────────────────────────────────────────────
+export const adminFetch = (path) => request(`${API_BASE}/admin${path}`)
+export const adminPost = (path, body = {}) =>
+    request(`${API_BASE}/admin${path}`, { method: 'POST', body: JSON.stringify(body) })
 

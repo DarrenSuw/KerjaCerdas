@@ -12,7 +12,8 @@ Common workflows documented as Mermaid sequence diagrams.
 4. [JWT-Protected Endpoint Access](#4-jwt-protected-endpoint-access)
 5. [CV Upload & Profile Extraction](#5-cv-upload--profile-extraction)
 6. [Employer Posts a Job](#6-employer-posts-a-job)
-7. [E-KYC Identity & Education Verification](#7-e-kyc-identity--education-verification)
+7. [Skill Proof: Email OTP + Skill Quiz](#7-skill-proof-email-otp--skill-quiz)
+8. [Job Moderation: AutoMod → Poster Notice → Appeal → Admin](#8-job-moderation-automod--poster-notice--appeal--admin)
 
 ---
 
@@ -263,74 +264,94 @@ sequenceDiagram
 
 ---
 
-## 7. E-KYC Identity & Education Verification
+## 7. Skill Proof: Email OTP + Skill Quiz
 
 ```mermaid
 sequenceDiagram
     actor S as Seeker
-    participant F as Frontend (VerificationDashboard)
+    participant F as Frontend (SkillProofPage / QuizModal)
     participant VR as Verify Router (/api/v1/verify)
-    participant ID as MockIdentityVerificationService
-    participant SI as SIVIL Mock (Kemdikbud)
-    participant DJ as DJP Online Mock (NPWP)
+    participant QZ as Quiz Router (/api/v1/quiz)
+    participant DB as PostgreSQL
+    participant M as Mailer (Resend, optional)
 
-    note over F,VR: All data handling complies with UU PDP No.27/2022<br/>NIK is hashed via SHA-256; raw identity numbers are never stored in plaintext
+    note over F,DB: No NIK / KTP / ijazah / NPWP is collected anywhere.<br/>Identity documents are checked by the employer at the interview.
 
-    %% Step 1 — KTP Identity
-    S->>F: Enter NIK (16 digits) + Full Name + optional selfie
-    F->>F: Validate NIK length === 16, name non-empty
-    F->>VR: POST /api/v1/verify/identity<br/>{nik, full_name, date_of_birth, selfie_image_base64}
-    VR->>VR: Compute SHA-256 hash of NIK (raw NIK is never stored)
-    VR->>ID: verify_identity(nik, full_name)
-    Note over ID: Format check ONLY — 16-digit length and not<br/>prefixed "99" (demo fail rule). full_name is never<br/>checked against anything; this cannot confirm the<br/>NIK belongs to the submitting seeker.
-    alt Format valid
-        ID-->>VR: {is_valid: true, match_score: 98.5, verification_hash}
-        VR->>DB: find_seeker_by_user_id, then<br/>update_seeker_verification_status(nik_verified='pending')
-        VR-->>F: 200 {status: "PENDING", match_percentage: 98.5, verification_hash}
-        F-->>S: Show "Format Tervalidasi — Menunggu Verifikasi Resmi" badge
-    else Format invalid (prefix "99")
-        ID-->>VR: {is_valid: false, match_score: 45.2}
-        VR->>DB: update_seeker_verification_status(nik_verified='failed')
-        VR-->>F: 200 {status: "FAILED", message: "Verifikasi identitas gagal."}
-        F-->>S: Show red "Gagal" badge + retry prompt
+    %% Email ownership
+    S->>F: Click "Kirim kode"
+    F->>VR: POST /verify/email/send
+    VR->>DB: store SHA-256(code), expires_at = now + 10m
+    alt RESEND_API_KEY configured
+        VR->>M: send code to the account's own email
+        VR-->>F: 200 {mode: "email"}
+    else no provider and OTP demo mode on
+        VR-->>F: 200 {mode: "demo", demo_code}
+    else no provider in production
+        VR-->>F: 503 (fails closed — never pretends to send)
     end
-    Note over VR,DB: PENDING/FAILED persist durably (survive reload/another<br/>browser) but PENDING is never upgraded to VERIFIED by this<br/>mock — that value is reserved for a real Dukcapil integration.
+    S->>F: Enter 6-digit code
+    F->>VR: POST /verify/email/verify
+    VR->>DB: compare hash, max 5 attempts, check expiry
+    VR->>DB: users.email_verified = true
+    VR-->>F: 200 {email_verified: true}
 
-    %% Step 2 — Ijazah / Education
-    S->>F: Enter Ijazah Number + University + Major
-    F->>VR: POST /api/v1/verify/education<br/>{ijazah_number, university_name, major}
-    VR->>SI: Check ijazah_number format (mock — length >= 6, not an<br/>obvious placeholder like "000000" or "test")
-    alt Format valid
-        SI-->>VR: {ok: true, graduation_year, degree, status: "Lulus"}
-        VR->>DB: update_seeker_verification_status(ijazah_verified='pending')
-        VR-->>F: 200 {status: "PENDING", verified_data: {university, major, degree}}
-        F-->>S: Show "Format Tervalidasi — Menunggu Verifikasi Resmi"
-    else Placeholder / too short
-        SI-->>VR: {ok: false}
-        VR->>DB: update_seeker_verification_status(ijazah_verified='failed')
-        VR-->>F: 200 {status: "NOT_FOUND", message: "Nomor ijazah tidak valid."}
-        F-->>S: Show warning
+    %% Skill quiz
+    S->>F: "Ikut kuis" for a skill
+    F->>QZ: POST /quiz/start {skill}
+    QZ->>DB: pick 5 random active questions, store attempt + deadline
+    QZ-->>F: questions with per-attempt shuffled options (NO answer key)
+    note over QZ,F: An unsubmitted attempt inside its deadline is resumed,<br/>so a reload cannot draw fresh questions.
+    S->>F: Answer within the timer
+    F->>QZ: POST /quiz/submit {attempt_id, answers}
+    QZ->>QZ: re-derive the shuffle, grade against the answer key (no AI call)
+    alt score >= 4/5
+        QZ->>DB: skill_evidence row + skill.proof_level = "quiz" (180 days)
+        QZ-->>F: {passed: true} → badge ✓ Terbukti, match score rises everywhere
+    else failed
+        QZ-->>F: {passed: false, retake_after_days} (7 days; 2 with Prism)
     end
-
-    %% Step 3 — NPWP (Employer only)
-    note over S,DJ: NPWP verification is used by Employer accounts
-    S->>F: Enter NPWP (15 numeric digits) + Company Name
-    F->>VR: POST /api/v1/verify/npwp<br/>{npwp, company_name}
-    VR->>DJ: Validate NPWP format (15 digits, non-zero)
-    alt Valid NPWP
-        DJ-->>VR: {ok: true, status: "AKTIF", valid_until: "2027-12-31"}
-        VR-->>F: 200 {status: "VERIFIED", verified_data: {npwp, company_name, status}}
-        F-->>S: Show "NPWP Terverifikasi ✓" + DJP badge
-    else Invalid format or blacklisted
-        DJ-->>VR: {ok: false}
-        VR-->>F: 200 {status: "NOT_FOUND"}
-        F-->>S: Show error
-    end
-
-    %% Document registry
-    S->>F: View verified documents panel
-    F->>VR: GET /api/v1/verify/documents
-    VR-->>F: {encryption: "AES-256-GCM", compliance: ["UU-PDP-2022","ISO-27001"], documents: [...]}
-    Note over VR,F: "encryption": "AES-256-GCM" is a descriptive string literal in this mock<br/>response, not an implemented encryption routine. NIK/OTP are stored as<br/>one-way SHA-256 hashes. Do not present this as an active capability.
-    F-->>S: Render privacy promise row with masked file_id
 ```
+
+---
+
+## 8. Job Moderation: AutoMod → Poster Notice → Appeal → Admin
+
+```mermaid
+sequenceDiagram
+    actor E as Employer
+    participant F as Frontend (EmployerPostJob / EmployerJobs)
+    participant ER as Employer Router
+    participant AM as AutoMod (services/trust)
+    participant DB as PostgreSQL
+    actor A as Admin (ADMIN_EMAILS)
+
+    E->>F: Publish a job
+    F->>ER: POST /employer/jobs
+    ER->>AM: moderate(title, description, responsibilities, salary)
+    alt fee charged to candidates (hard rule)
+        AM-->>ER: rejected + reasons[{rule, excerpt, fix}]
+        ER->>DB: moderation_status = rejected, is_active = false, employer strike +1
+    else discriminatory / suspicious wording, or first job of an unbadged employer
+        AM-->>ER: held + reasons
+        ER->>DB: moderation_status = held, is_active = false
+    else clean
+        AM-->>ER: published
+        ER->>DB: moderation_status = published, is_active = true, public_code assigned
+    end
+    ER->>DB: moderation_events audit row
+    ER-->>F: {moderation_status, moderation_reasons, notice, strike}
+    F-->>E: Notice quoting the flagged sentence + how to fix + appeal
+
+    opt Employer disagrees
+        E->>F: Ajukan banding
+        F->>ER: POST /employer/jobs/{id}/appeal {message}
+        ER->>DB: rejected → held, appeal written to the audit log
+    end
+
+    A->>F: Open /admin → Moderasi
+    F->>ER: POST /admin/moderation/jobs/{id} {decision}
+    ER->>DB: publish (job goes live) or reject (+ strike), resolve reports
+```
+
+---
+

@@ -92,6 +92,10 @@ class User(Base, TimestampedMixin):
     role: Mapped[str] = mapped_column(String(20))
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    # Set once the user proves control of `email` via the email OTP flow
+    # (verify.py /verify/email/*). The only identity check the platform does
+    # in-house: KTP/NIK is never collected — HR checks the KTP at interview.
+    email_verified: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 class SeekerProfile(Base, TimestampedMixin):
@@ -103,11 +107,6 @@ class SeekerProfile(Base, TimestampedMixin):
     )
     full_name: Mapped[str] = mapped_column(String(255))
     headline: Mapped[str] = mapped_column(String(255), default="")
-    nik: Mapped[str | None] = mapped_column(
-        String(64), nullable=True
-    )  # Stores SHA-256 hash of NIK for UU-PDP compliance
-    nik_verified: Mapped[str] = mapped_column(String(20), default="unverified")
-    ijazah_verified: Mapped[str] = mapped_column(String(20), default="unverified")
     date_of_birth: Mapped[str | None] = mapped_column(String(20), nullable=True)
     region_code: Mapped[str] = mapped_column(String(50))
     preferred_regions: Mapped[list[Any]] = mapped_column(JSON, default=list)
@@ -130,13 +129,21 @@ class Employer(Base, TimestampedMixin):
         String(36), ForeignKey("users.id"), index=True, unique=True
     )
     company_name: Mapped[str] = mapped_column(String(255))
-    npwp: Mapped[str | None] = mapped_column(String(50), nullable=True)
     industry: Mapped[str] = mapped_column(String(100), default="")
     size: Mapped[str] = mapped_column(String(20), default="sme")
     region_code: Mapped[str] = mapped_column(String(50))
     website: Mapped[str | None] = mapped_column(String(255), nullable=True)
     description: Mapped[str] = mapped_column(Text, default="")
+    # "Ditinjau admin" badge: `verified` flips to "verified" only after an
+    # admin manually checks the public proof links in `review_links`
+    # (Google Maps listing, Instagram business account, website).
     verified: Mapped[str] = mapped_column(String(20), default="unverified")
+    review_links: Mapped[list[Any]] = mapped_column(JSON, default=list)
+    # AutoMod strike ladder (services/trust/strikes.py): 1 = warning,
+    # 2 = limited to one active job for 30 days, 3 = suspended. Strikes expire
+    # after 90 days without a new one.
+    strikes: Mapped[int] = mapped_column(Integer, default=0)
+    last_strike_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
 
 class JobPosting(Base, TimestampedMixin):
@@ -166,7 +173,11 @@ class JobPosting(Base, TimestampedMixin):
     responsibilities: Mapped[list[Any]] = mapped_column(JSON, default=list)
     required_skills: Mapped[list[Any]] = mapped_column(JSON, default=list)
     nice_to_have_skills: Mapped[list[Any]] = mapped_column(JSON, default=list)
-    education_min: Mapped[str] = mapped_column(String(10), default="S1")
+    # SMA = the floor, i.e. "no requirement stated". Defaulting to S1 made
+    # every job posted without touching the field silently demand a degree,
+    # zeroing the education term for exactly the SMA/SMK school-leavers this
+    # product targets.
+    education_min: Mapped[str] = mapped_column(String(10), default="SMA")
     experience_years_min: Mapped[int] = mapped_column(Integer, default=0)
     region_code: Mapped[str] = mapped_column(String(50))
     remote_allowed: Mapped[bool] = mapped_column(Boolean, default=False)
@@ -176,6 +187,16 @@ class JobPosting(Base, TimestampedMixin):
     client_ref: Mapped[str | None] = mapped_column(String(64), nullable=True)
     embedding = mapped_column(_VectorCol(), nullable=True)
     embedding_model: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    # Short public code behind the shareable apply link / QR poster
+    # (`/j/<public_code>`). Unique; generated at creation.
+    public_code: Mapped[str | None] = mapped_column(
+        String(16), nullable=True, unique=True, index=True
+    )
+    # AutoMod outcome: "published" | "held" (waiting for admin review or an
+    # appeal) | "rejected". A job that is not "published" is always kept
+    # inactive, so every existing `is_active` filter also hides it.
+    moderation_status: Mapped[str] = mapped_column(String(20), default="published")
+    moderation_reasons: Mapped[list[Any]] = mapped_column(JSON, default=list)
 
 
 class Application(Base, TimestampedMixin):
@@ -195,16 +216,25 @@ class Application(Base, TimestampedMixin):
     cover_letter: Mapped[str] = mapped_column(Text, default="")
     match_score: Mapped[float] = mapped_column(Float, default=0.0)
     note: Mapped[str] = mapped_column(Text, default="")
+    # Snapshot of the seeker's skill proof levels at apply time
+    # ([{name, proof_level}]) — lets us later measure whether proven skills
+    # predict the interview/hire outcome, even after the profile changes.
+    skill_snapshot: Mapped[list[Any]] = mapped_column(JSON, default=list)
+    # Where the application came from: "board" | "link" (the job's QR / share link).
+    source: Mapped[str] = mapped_column(String(20), default="board")
 
 
 class OTPRecord(Base, TimestampedMixin):
-    """Database-backed OTP store with expiration for distributed/autoscale environments."""
+    """Database-backed OTP store with expiration for distributed/autoscale environments.
+
+    `destination` is the email address the code was sent to (email OTP).
+    """
 
     __tablename__ = "otps"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=_uid)
     user_id: Mapped[str] = mapped_column(String(36), ForeignKey("users.id"), index=True)
-    phone: Mapped[str] = mapped_column(String(30), index=True)
+    destination: Mapped[str] = mapped_column(String(255), index=True)
     code_hash: Mapped[str] = mapped_column(String(64))  # SHA-256 hash of 6-digit OTP
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     attempts: Mapped[int] = mapped_column(Integer, default=0)
@@ -363,3 +393,8 @@ class PartnershipInquiry(Base, TimestampedMixin):
     message: Mapped[str] = mapped_column(Text, default="")
     status: Mapped[str] = mapped_column(String(30), default="pending", index=True)
     notes: Mapped[str] = mapped_column(Text, default="")
+
+
+# v2 proof-of-skill tables live in their own module; importing it here
+# registers them on Base.metadata wherever models.py is imported.
+from backend.app.db import models_proof as _models_proof  # noqa: E402, F401

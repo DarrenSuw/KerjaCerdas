@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { ProofChip } from './ProofUI'
 import useStore, { hasMeaningfulProfile } from '../store/useStore'
 import { KC, ScoreDonut, topBtn, DesignStyles, useIsMobile } from './_design'
 import JobDetailModal from './JobDetailModal'
@@ -198,15 +199,14 @@ export default function SeekerMatchResults() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                             {strongMatches.map((job, idx) => {
                                 // Real per-factor breakdown from the matcher's hybrid formula
-                                // (cosine 45% + skill 25% + experience 15% + education 10% +
-                                // recency 5%) — location/salary are hard filters, not weighted
+                                // (cosine 35% + proof-weighted skills 40% + experience 15% +
+                                // education 10%) — location/salary are hard filters, not weighted
                                 // factors, so they aren't part of this score breakdown.
                                 const jobScore = Math.round(job.overall_score ?? job.score ?? 0)
                                 const sem = Math.round(job.cosine != null ? job.cosine * 100 : jobScore)
                                 const sk = Math.round(job.skill_overlap != null ? job.skill_overlap * 100 : jobScore)
                                 const exp = Math.round(job.experience_fit != null ? job.experience_fit * 100 : jobScore)
                                 const edu = job.education_met ? 100 : 0
-                                const rec = 100 // recency boost is flat for every candidate today
                                 const isSaved = (savedJobs || []).some(s => (s.id || s.job_id) === job.id)
 
                                 return (
@@ -249,16 +249,16 @@ export default function SeekerMatchResults() {
                                                     <b style={{ color: KC.orange }}>Analisis AI:</b> {job.ai_summary || job.description?.slice(0, 140) || 'Penguasaan keahlian selaras dengan kriteria posisi rekrutmen.'}
                                                 </div>
 
-                                                {/* 5-Component Breakdown Micro-Bars — the real matcher.py weights
-                                                    (cosine/skill/experience/education/recency). Location and
-                                                    salary are hard filters upstream, not weighted factors, so
-                                                    they're intentionally not shown here. */}
-                                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, minmax(0, 1fr))', gap: 12 }}>
+                                                {/* 4-Component Breakdown Micro-Bars — the real matcher.py weights
+                                                    (cosine / proof-weighted skills / experience / education).
+                                                    Location and salary are hard filters upstream, not weighted
+                                                    factors, so they're intentionally not shown here. */}
+                                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 12 }}>
                                                     <div>
                                                         <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 6 }}>Semantik</div>
                                                         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 5 }}>
                                                             <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>{sem}</span>
-                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.45</span>
+                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.35</span>
                                                         </div>
                                                         <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
                                                             <div style={{ height: '100%', width: `${sem}%`, background: KC.orange, borderRadius: 999 }} />
@@ -268,7 +268,7 @@ export default function SeekerMatchResults() {
                                                         <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 6 }}>Skill</div>
                                                         <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 5 }}>
                                                             <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: '#0284C7' }}>{sk}</span>
-                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.25</span>
+                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.40</span>
                                                         </div>
                                                         <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
                                                             <div style={{ height: '100%', width: `${sk}%`, background: '#0284C7', borderRadius: 999 }} />
@@ -292,16 +292,6 @@ export default function SeekerMatchResults() {
                                                         </div>
                                                         <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
                                                             <div style={{ height: '100%', width: `${edu}%`, background: '#F59E0B', borderRadius: 999 }} />
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 6 }}>Aktualitas</div>
-                                                        <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 5 }}>
-                                                            <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: '#6366F1' }}>{rec}</span>
-                                                            <span style={{ font: '700 9.5px/1 "JetBrains Mono", monospace', color: '#CBD5E1' }}>×.05</span>
-                                                        </div>
-                                                        <div style={{ height: 5, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                                                            <div style={{ height: '100%', width: `${rec}%`, background: '#6366F1', borderRadius: 999 }} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -395,17 +385,18 @@ export default function SeekerMatchResults() {
 
                                                 {((job.matching_skills?.length || 0) > 0 || (job.missing_skills?.length || 0) > 0) && (
                                                 <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginBottom: 16 }}>
-                                                    {(job.matching_skills || []).map(s => (
-                                                        <span key={s} style={{ padding: '6px 12px', background: '#ECFDF5', border: '1px solid #10B981', borderRadius: 7, font: '800 11.5px/1 "Plus Jakarta Sans", sans-serif', color: '#065F46' }}>
-                                                            ✓ {s}
-                                                        </span>
-                                                    ))}
-                                                    {(job.missing_skills || []).map(s => (
-                                                        <span key={s} style={{ padding: '6px 12px', background: '#FEF3C7', border: '1px solid #F59E0B', borderRadius: 7, font: '800 11.5px/1 "Plus Jakarta Sans", sans-serif', color: '#B45309' }}>
-                                                            + {s}
-                                                        </span>
-                                                    ))}
+                                                    {job.skill_proof?.length
+                                                        ? job.skill_proof.map(p => <ProofChip key={p.name} name={p.name} status={p.status} />)
+                                                        : <>
+                                                            {(job.matching_skills || []).map(s => <ProofChip key={s} name={s} status="claimed" />)}
+                                                            {(job.missing_skills || []).map(s => <ProofChip key={s} name={s} status="missing" />)}
+                                                        </>}
                                                 </div>
+                                                )}
+                                                {(job.skill_proof || []).some(p => p.status === 'claimed') && (
+                                                    <button onClick={() => navigate('seeker-verification')} style={{ ...topBtn('#fff', KC.ink), marginBottom: 12, padding: '8px 13px', fontSize: 12 }}>
+                                                        Buktikan skill yang masih klaim → skor naik di semua lowongan
+                                                    </button>
                                                 )}
 
                                                 {job.missing_skills?.length > 0 && (
@@ -670,16 +661,12 @@ export default function SeekerMatchResults() {
                                 {/* Skills Tags */}
                                 {((job.matching_skills?.length || 0) > 0 || (job.missing_skills?.length || 0) > 0) && (
                                 <div style={{ display: 'flex', gap: 6, marginTop: 11, flexWrap: 'wrap' }}>
-                                    {(job.matching_skills || []).map(s => (
-                                        <span key={s} style={{ padding: '4px 9px', background: '#ECFDF5', border: '1px solid #10B981', borderRadius: 7, fontSize: 10.5, fontWeight: 800, color: '#065F46' }}>
-                                            ✓ {s}
-                                        </span>
-                                    ))}
-                                    {(job.missing_skills || []).map(s => (
-                                        <span key={s} style={{ padding: '4px 9px', background: '#FEF3C7', border: '1px solid #F59E0B', borderRadius: 7, fontSize: 10.5, fontWeight: 800, color: '#B45309' }}>
-                                            + {s}
-                                        </span>
-                                    ))}
+                                    {job.skill_proof?.length
+                                        ? job.skill_proof.map(p => <ProofChip key={p.name} name={p.name} status={p.status} compact />)
+                                        : <>
+                                            {(job.matching_skills || []).map(s => <ProofChip key={s} name={s} status="claimed" compact />)}
+                                            {(job.missing_skills || []).map(s => <ProofChip key={s} name={s} status="missing" compact />)}
+                                        </>}
                                 </div>
                                 )}
                             </div>

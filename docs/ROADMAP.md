@@ -15,19 +15,19 @@ flowchart LR
         F1_1["Docker Compose / Container"]:::phase
         F1_2["PostgreSQL 16 + pgvector HNSW (768-dim)"]:::phase
         F1_3["In-Process LRU Cache (512 entry)"]:::phase
-        F1_4["Demo Verification & OTP Engine"]:::phase
+        F1_4["Verifikasi Email (OTP) + Kuis Skill + AutoMod"]:::phase
     end
 
     subgraph Fase2 ["Fase 2: Cloud Stabilitas (Bulan 4-8)"]
         F2_1["Google Cloud SQL (pgvector HA)"]:::phase
         F2_2["Cloudflare R2 (10GB Free Storage)"]:::phase
-        F2_3["WhatsApp Gateway (Fonnte) & Midtrans Sandbox"]:::phase
+        F2_3["Payment Gateway (Midtrans/Xendit) & Bank Soal Ditinjau HR"]:::phase
     end
 
     subgraph Fase3 ["Fase 3: Enterprise & B2G (Bulan 9-18)"]
         F3_1["Google Vertex AI Endpoint (Zero Data Retention)"]:::phase
-        F3_2["E-KYC B2B Live API (Vida / Privy)"]:::phase
-        F3_3["Payment Gateway Produksi (Pay-to-Unlock Live)"]:::phase
+        F3_2["Kalibrasi Skor dgn Hasil Wawancara & Penerimaan"]:::phase
+        F3_3["Kemitraan Ed-Tech & Kampus (opsional)"]:::phase
         F3_4["ATS Enterprise Copilot API Integration"]:::phase
     end
 
@@ -55,7 +55,7 @@ flowchart LR
 
 - **Kedaulatan Perlindungan Data (Vertex AI VPC):** *Vertex AI Endpoint* memastikan data *prompt* LLM dieksekusi dalam ruang komputasi *Virtual Private Cloud (VPC)* terisolasi dengan *Zero Data Retention*.
 - **Micro-Tuning Berkelanjutan (LoRA):** Menala model secara internal dengan dialek khas rekrutmen Indonesia (nomenklatur kampus lokal, istilah teknis Disnaker).
-- **Payment Gateway Korporasi Terintegrasi:** Otomatisasi penagihan B2B (*Pay-to-Unlock* tarif flat Rp 50.000/kandidat, sesuai implementasi saat ini di `employer.py` — lihat [Business Model](BUSINESS_MODEL.md)) melalui integrasi Midtrans/Xendit live.
+- **Payment Gateway Terintegrasi:** Otomatisasi penagihan paket Beacon (Rp29.000/lowongan), Lighthouse (Rp99.000/bulan), dan Prism (Rp25.000/30 hari) lewat Midtrans/Xendit — menggantikan aktivasi manual oleh admin. Lihat [Business Model](BUSINESS_MODEL.md).
 
 ### 1.4 AI Agent & Matching Algorithm Roadmap
 
@@ -84,7 +84,6 @@ A/B Testing pada KerjaCerdas dirancang untuk memvalidasi alur antarmuka secara e
 | `onboarding_flow` | `cv_first` vs `skill_wizard` | Urutan langkah onboarding: unggah CV dulu vs wizard skill terpandu dulu |
 | `band_legend_default` | `collapsed` vs `open` | Apakah legenda band (Strong/Possible/Stretch) terbuka secara default untuk pengguna baru |
 | `stretch_band_copy` | `challenge_framing` vs `goal_framing` | Framing band "Stretch": "tantangan" vs "tujuan yang bisa dikejar" |
-| `unlock_cta_copy` | `buka_kontak` vs `hubungi_kandidat` | Teks tombol unlock kandidat di sisi employer |
 | `profile_completeness_nudge` | `progress_bar` vs `tooltip_nudge` | Cara kelengkapan profil dikomunikasikan ke pencari kerja |
 
 Metrik keberhasilan (CTR, waktu-ke-upload, konversi) belum dihitung otomatis oleh sistem — event mentah dicatat via `POST /events/track` (lihat §2.3) untuk dianalisis manual/offline; agregasi otomatis per-eksperimen adalah item roadmap, bukan yang sudah berjalan.
@@ -129,23 +128,48 @@ trackEvent('cv_uploaded', {
 - **Status Saat Ini:** Kurasi modul pelatihan yang memenuhi kualifikasi standar Prakerja.
 - **Roadmap Kemitraan:** Pendaftaran sebagai Mitra Platform Digital / Lembaga Pelatihan Kerja (LPK) melalui Kemenko Perekonomian untuk integrasi API langsung dalam 6–12 bulan pasca-inkubasi.
 
-### 3.3 E-KYC KTP & Ijazah (Dukcapil & SIVIL Dikti)
-- **Status Saat Ini:** Mode demo interaktif dengan validasi format NIK 16-digit dan nomor ijazah Dikti.
-- **Integrasi Produksi:** Menggunakan agregator resmi berlisensi BSSN seperti **Vida** (vida.id) atau **Privy** (privy.id) dengan biaya per verifikasi ~Rp 3.000–5.000 yang dibebankan dalam biaya rekrutmen B2B.
+### 3.3 Verifikasi identitas — **dihapus dari produk**
+- **Status:** KerjaCerdas **tidak lagi mengumpulkan NIK/KTP, nomor ijazah, atau NPWP.** Kolom terkait
+  sudah dihapus dari basis data (migrasi `a2b4c6d8e0f1`), endpoint `/verify/identity`, `/verify/education`,
+  `/verify/npwp`, dan `/verify/documents` dihapus.
+- **Alasan:** mock format-check tidak punya otoritas apa pun, sementara menyimpan NIK menambah
+  kewajiban UU PDP tanpa manfaat. Identitas diperiksa perusahaan saat wawancara, seperti praktik hari ini.
+- **Gantinya:** verifikasi **email (OTP)** untuk akun, **kuis skill + konfirmasi HR** untuk kemampuan,
+  serta **AutoMod + tinjauan admin** untuk lowongan.
+- **Jika suatu saat dibutuhkan** (mis. syarat klien besar), integrasi e-KYC berlisensi baru dievaluasi —
+  bukan prasyarat produk saat ini.
 
-### 3.4 Gateway Komunikasi OTP (WhatsApp & SMS)
-- **Status Saat Ini:** Demo OTP Engine mengembalikan kode verifikasi 6-digit langsung pada respons/toast pengujian.
-- **Integrasi Produksi:** Terhubung ke WhatsApp Business API via Fonnte atau Twilio Verify (~Rp 150–200/pesan).
+### 3.4 Pengiriman email transaksional
+- **Status Saat Ini:** Resend (gratis 3.000 email/bulan, Pro $20 untuk 50.000) dipakai untuk kode OTP.
+  Tanpa `RESEND_API_KEY`, kode hanya dikembalikan di respons saat mode demo — tidak pernah di produksi.
+- **Rencana:** domain pengirim terverifikasi + template notifikasi (pelamar baru, hasil moderasi).
+- **Catatan:** OTP SMS/WhatsApp **dibatalkan** — email cukup, gratis, dan tanpa kontrak provider.
 
 ### 3.5 Payment Gateway (Midtrans / Xendit)
-- **Status Saat Ini:** Endpoint backend `POST /employer/jobs/{id}/unlock/{seeker_id}` menerima `payment_token` apa pun tanpa validasi (stub demo) dan mengembalikan `unlock_cost_idr` flat Rp 50.000 per kandidat (gratis jika kandidat sudah melamar langsung ke lowongan itu). Belum ada sistem kredit/bundel unlock.
-- **Integrasi Produksi:** Aktivasi Sandbox $\rightarrow$ Production Midtrans/Xendit dengan biaya MDR standar (1.5–2.9%) per transaksi Pay-to-Unlock; paket bundel/kredit gratis awal (jika dipertahankan sebagai fitur produk) juga baru akan dibangun pada tahap ini.
+- **Status Saat Ini:** `[BUILT, MANUAL PAYMENT]`. Pengguna membuat pesanan paket di aplikasi
+  (`POST /billing/orders`), membayar lewat QRIS/transfer, lalu **admin mengaktifkan** paket 30 hari
+  (`POST /admin/orders/{id}/activate`). Seluruh kuota paket sudah ditegakkan di backend.
+- **Integrasi Produksi:** butuh badan usaha (PT) untuk verifikasi merchant. Biaya rujukan Midtrans:
+  QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup. Stripe belum bisa dipakai di
+  Indonesia (undangan, tanpa lintas negara).
+- **Dihapus:** Pay-to-Unlock (Rp50.000/kontak) — alasan lengkap di
+  [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
+
+### 3.6 Bank soal kuis skill
+- **Status Saat Ini:** bank soal awal (8 skill × 6 soal) sudah berjalan tetapi berstatus **draf**
+  (`reviewed=false`) dan ditandai begitu di UI.
+- **Rencana:** tinjauan praktisi HR/pengajar per soal lewat panel admin, lalu perluasan ke ~30 soal per
+  skill agar soal yang bocor tidak lagi berarti, dan penambahan skill baru sesuai lowongan nyata.
 
 ---
 
 ## Bagian 4 — Rencana Budget yang Dibutuhkan & Peta Peningkatan Infrastruktur
 
 ### 4.1 Rencana Budget Operasional Bulan ke-1 (Fase Validasi Pilot)
+
+> **Catatan:** rincian biaya bersumber, unit economics, proyeksi 24 bulan, skenario, dan kebutuhan
+> pendanaan v2 ada di [BUSINESS_MODEL.md](BUSINESS_MODEL.md). Tabel di bawah adalah rencana pilot
+> versi ringkas dan harus dibaca bersama dokumen itu bila ada selisih angka.
 Anggaran ini diajukan untuk mendanai peluncuran pilot awal (rentang budget Rp 2–5 juta/bulan):
 
 | Pos Alokasi Pengeluaran | Biaya (IDR) | Proporsi | Rasionalisasi & Peruntukan Operasional |
@@ -154,7 +178,7 @@ Anggaran ini diajukan untuk mendanai peluncuran pilot awal (rentang budget Rp 2�
 | **Database (PostgreSQL pgvector)** | Rp 100.000 | 2.6% | PostgreSQL pgvector cloud-hosted |
 | **Penyimpanan Berkas CV (GCS)** | Rp 0 (Free 10GB) | 0.0% | Kapasitas penyimpanan gratis 10GB (>10.000 PDF) tanpa biaya transfer bandwidth |
 | **Kuota API LLM & Embeddings (Gemini Flash)** | Rp 500.000 | 13.0% | Kuota parsing ~100.000 token ekstraksi CV, skill gap, dan conversational advisor |
-| **WhatsApp OTP Gateway (Fonnte / Wablas)** | Rp 300.000 | 7.8% | Paket 2.000 pesan OTP untuk verifikasi nomor telepon pengguna baru |
+| **Email transaksional (Resend)** | Rp 0–350.000 | 0–9% | Gratis 3.000 email/bulan; paket Pro $20 untuk 50.000 email bila volume naik |
 | **Domain Resmi `.id` & Keamanan SSL** | Rp 250.000 | 6.5% | Registrasi domain resmi `.id` 1 tahun + proteksi mitigasi DDoS |
 | **Program Outreach Pilot (5 UMKM & 100 Penguji)** | Rp 1.800.000 | 46.7% | Insentif pengujian validasi, onboarding langsung 5 UMKM, dan akuisisi talenta awal |
 | **Cadangan Kontinjensi & Operasional (10%)** | Rp 450.000 | 11.7% | Buffer fluktuasi kurs mata uang dan kebutuhan operasional tak terduga |
@@ -167,14 +191,14 @@ Seluruh tingkatan infrastruktur (termasuk Level 1) beroperasi **100% Full Online
 
 | Tingkatan (*Tier*) | Periode & Skala | Pemicu Peningkatan (*Upgrade Triggers*) | Komposisi Arsitektur Cloud (100% Online) | Estimasi Biaya Bulanan Total | Sumber Pembiayaan |
 |---|---|---|---|---|---|
-| **Level 1 (Full Cloud Pilot)** | **Tahun 1**<br>0 – 5.000 Seeker<br><100 UMKM | Tahap peluncuran awal, pilot project, dan demonstrasi produk | 1 Dedicated Cloud VPS Server (4 vCPU, 8GB RAM) + Cloud-Hosted pgvector + GCS + Gemini Flash + WhatsApp OTP Gateway | **Rp 1.200.000 / bln**<br>(Rp 14.400.000 / thn) | Budget Awal Bulan 1 + Laba Operasional Pay-to-Unlock |
-| **Level 2 (Managed Cloud)** | **Tahun 2**<br>5.000 – 25.000 Seeker<br>100 – 400 UMKM | 1. Kueri harian > 5.000 kueri/hari<br>2. Transaksi unlock > 10 unlock/hari<br>3. Pendapatan > Rp 15.000.000/bln | Google Cloud Run Auto-scaling + Google Cloud SQL PostgreSQL Managed HA + High-Volume Gemini/OTP | **Rp 5.000.000 / bln**<br>(Rp 60.000.000 / thn) | 100% didanai Laba Kotor Pay-to-Unlock Tahun 2 |
-| **Level 3 (Enterprise Cloud)** | **Tahun 3+**<br>>25.000 Seeker<br>>400 B2B | 1. Kueri harian > 30.000 kueri/hari<br>2. Transaksi unlock > 30 unlock/hari<br>3. Integrasi SLA Enterprise ATS | Multi-Zone Kubernetes (GKE) + Vertex AI Vector Search Engine + Vertex AI VPC Endpoint + Enterprise Security | **Rp 15.000.000 / bln**<br>(Rp 180.000.000 / thn) | 100% didanai Arus Kas Surplus Mandiri (>Rp 200jt) |
+| **Level 1 (Full Cloud Pilot)** | **Tahun 1**<br>0 – 5.000 Seeker<br><100 UMKM | Tahap peluncuran awal, pilot project, dan demonstrasi produk | 1 Dedicated Cloud VPS Server (4 vCPU, 8GB RAM) + Cloud-Hosted pgvector + GCS + Gemini Flash + Email OTP (Resend) | **Rp 1.200.000 / bln**<br>(Rp 14.400.000 / thn) | Budget awal bulan 1 + laba operasional paket (Beacon/Lighthouse/Prism) |
+| **Level 2 (Managed Cloud)** | **Tahun 2**<br>5.000 – 25.000 Seeker<br>100 – 400 UMKM | 1. Kueri harian > 5.000 kueri/hari<br>2. Paket aktif > 100/bln<br>3. Pendapatan > Rp 15.000.000/bln | Google Cloud Run Auto-scaling + Google Cloud SQL PostgreSQL Managed HA + High-Volume Gemini/OTP | **Rp 5.000.000 / bln**<br>(Rp 60.000.000 / thn) | 100% didanai laba kotor paket Tahun 2 |
+| **Level 3 (Enterprise Cloud)** | **Tahun 3+**<br>>25.000 Seeker<br>>400 B2B | 1. Kueri harian > 30.000 kueri/hari<br>2. Paket aktif > 400/bln<br>3. Integrasi SLA Enterprise ATS | Multi-Zone Kubernetes (GKE) + Vertex AI Vector Search Engine + Vertex AI VPC Endpoint + Enterprise Security | **Rp 15.000.000 / bln**<br>(Rp 180.000.000 / thn) | 100% didanai Arus Kas Surplus Mandiri (>Rp 200jt) |
 
 ---
 
 ## Bagian 5 — Kesimpulan & Kesiapan Operasional
 
 1. **Efisiensi Modal:** Alokasi budget awal pada Bulan ke-1 difokuskan pada validasi 5 UMKM percontohan dan infrastruktur dasar yang ramping.
-2. **Kemandirian Fitur:** Seluruh fungsionalitas inti (AI Matching, Explainable AI, Skill Gap, Pelacakan Lamaran, Onboarding Timeline, dan Pay-to-Unlock) dapat beroperasi mandiri tanpa dependensi pemblokir dari pihak ketiga.
+2. **Kemandirian Fitur:** Seluruh fungsionalitas inti (AI Matching, Explainable AI, Skill Gap, Pelacakan Lamaran, Kuis Bukti Skill, AutoMod, dan paket berbayar) dapat beroperasi mandiri tanpa dependensi pemblokir dari pihak ketiga.
 3. **Peningkatan Bertahap Berkelanjutan:** Transisi dari Level 1 menuju Level 2 dan 3 didanai secara mandiri oleh pertumbuhan volume transaksi tanpa membebani kas tim di awal.

@@ -28,23 +28,59 @@ class Settings(BaseSettings):
     jwt_secret_key: str = ""
     jwt_access_token_expire_minutes: int = 1440
 
-    # ── Phone OTP ────────────────────────────────────────────────────────
-    # No SMS/WhatsApp provider is wired in yet. Until one is, /verify/otp/send
-    # can only work by handing the code straight back in its own response,
-    # which is a demo affordance and nothing else: anyone who can call the
-    # endpoint for a phone number also learns the code for it.
+    # ── Email OTP ────────────────────────────────────────────────────────
+    # Email verification codes are sent through Resend's HTTP API when
+    # RESEND_API_KEY is set (free tier: 3,000 emails/month). Without a key,
+    # /verify/email/send can only hand the code back in its own response —
+    # a demo affordance, allowed only while OTP demo mode is on.
     #
-    # Leave unset and the mode follows the environment — on outside
-    # production, off inside it. Set OTP_DEMO_MODE explicitly to override, so
-    # that returning live OTP codes from a production deployment is always a
-    # decision someone made on purpose rather than a default nobody noticed.
+    # Leave OTP_DEMO_MODE unset and it follows the environment — on outside
+    # production, off inside it — so returning live codes from production is
+    # always an explicit decision.
     otp_demo_mode: bool | None = None
+    resend_api_key: str = ""
+    email_from: str = "KerjaCerdas <no-reply@kerjacerdas.tech>"
 
     # ── Admin surfaces ───────────────────────────────────────────────────
-    # There is no admin role/authentication layer yet. Routes that expose
-    # cross-user data (e.g. partnership inquiries) stay disabled until one
-    # exists, rather than being reachable by any authenticated seeker/employer.
+    # Admin = an authenticated account whose email is in ADMIN_EMAILS, and
+    # only while ADMIN_ROUTES_ENABLED is on. Admins review held job postings,
+    # "Ditinjau admin" requests and activate manually-paid plan orders.
     admin_routes_enabled: bool = False
+    admin_emails: list[str] = []
+
+    # ── Trust & moderation ───────────────────────────────────────────────
+    # Hold an employer's first posting for admin review unless the employer
+    # has a verified company-domain email or the "Ditinjau admin" badge.
+    moderation_first_job_review: bool = True
+    # Distinct candidate reports that automatically hide a job for review.
+    moderation_report_threshold: int = 3
+
+    # ── Plans (prices in IDR; see docs/BUSINESS_MODEL.md) ────────────────
+    plan_price_beacon: int = 29_000  # per job, 30 days
+    plan_price_lighthouse: int = 99_000  # per 30 days, up to 5 active jobs
+    plan_price_prism: int = 25_000  # seeker, per 30 days
+    spark_ranked_applicant_limit: int = 20
+    # Enforce plan limits (Spark: 1 active job, 20 ranked applicants; premium
+    # features need Beacon/Lighthouse). Switchable for live demos / tests.
+    plan_limits_enforced: bool = True
+    # Shown on the payment screen until a payment gateway is live.
+    payment_instructions: str = (
+        "Bayar via QRIS / transfer bank ke rekening KerjaCerdas, lalu kirim bukti "
+        "dengan kode pesanan sebagai berita transfer. Admin mengaktifkan paket "
+        "setelah pembayaran dicek."
+    )
+
+    # ── Cost reporting (admin metrics) ───────────────────────────────────
+    # USD per 1M tokens (input, output), from ai.google.dev/gemini-api/docs/pricing.
+    # gemini-3.1-flash-lite is not on the public list, so it is priced at the
+    # listed 3.5 Flash-Lite rate as a conservative proxy.
+    ai_prices_usd_per_million: dict[str, tuple[float, float]] = {
+        "gemini-3.1-flash-lite": (0.30, 2.50),
+        "gemini-3.5-flash-lite": (0.30, 2.50),
+        "gemini-3.6-flash": (0.75, 3.75),
+        "gemini-2.5-flash-lite": (0.10, 0.40),
+    }
+    usd_to_idr: float = 17_600.0  # JISDOR ~Rp17,536-17,727 in Sep 2026
 
     # ── Gemini / Vertex AI — models ──────────────────────────────────────
     # Auth: either set GEMINI_API_KEY (AI Studio) OR set
@@ -52,9 +88,9 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     vertex_ai_project: str = ""
     vertex_ai_location: str = "us-central1"
-    # Gemini Embedding 2 — 3072-dim, MRL-truncatable to 768.
-    gemini_embed_model: str = "gemini-embedding-2"
-    gemini_embed_dim: int = 768  # must match vector(768) pgvector column; MRL-truncated from 3072
+    # Gemini Embedding 1
+    gemini_embed_model: str = "gemini-embedding-1"
+    gemini_embed_dim: int = 768  # must match vector(768) pgvector column
     # Chat / generation — primary + rate-limit fallback chain (free tier RPM in parens):
     #   gemini-3.1-flash-lite (15) → gemini-3.5-flash-lite (15) → gemini-3.6-flash (5, last resort)
     gemini_chat_model: str = "gemini-3.1-flash-lite"
@@ -104,8 +140,8 @@ class Settings(BaseSettings):
     ]
 
     # ── Matching tuning ──────────────────────────────────────────────────
-    # The score formula's per-factor weights (cosine/skill/experience/education/
-    # recency) are fixed constants in matcher.py, not settings — see that
+    # The score formula's per-factor weights (cosine/proof-weighted skill/
+    # experience/education) are fixed constants in matcher.py, not settings — see that
     # module's docstring for why they aren't .env-tunable.
     matching_top_k: int = 10
     # Band thresholds for the recruiter shortlist (employer-side). Tunable so
@@ -133,7 +169,7 @@ class Settings(BaseSettings):
 
     @property
     def otp_demo_enabled(self) -> bool:
-        """Whether /verify/otp/send may return the code it just generated."""
+        """Whether /verify/email/send may return the code it just generated."""
         if self.otp_demo_mode is not None:
             return self.otp_demo_mode
         return not self.is_production

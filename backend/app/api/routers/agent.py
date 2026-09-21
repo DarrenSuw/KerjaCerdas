@@ -101,6 +101,8 @@ class EnrichedMatch(BaseModel):
     required_skills: list[str] = []
     matching_skills: list[str] = []
     missing_skills: list[str] = []
+    # Per required skill: claimed / quiz / hr_confirmed / missing (v2 proof).
+    skill_proof: list[dict] = []
     experience_years_min: int = 0
 
 
@@ -198,11 +200,44 @@ async def _enrich_matches(
                 required_skills=list(job.required_skills),
                 matching_skills=matching,
                 missing_skills=missing,
+                skill_proof=m.skill_proof,
                 experience_years_min=job.experience_years_min,
             )
         )
 
     return enriched
+
+
+async def _check_advisor_quota(user_id: str) -> None:
+    from datetime import UTC, datetime, timedelta
+
+    from backend.app.config.settings import settings
+    from backend.app.db.postgres_store import add_event, consume_quota
+    from backend.app.services.billing.plans import (
+        ADVISOR_FREE_PER_DAY,
+        ADVISOR_PRISM_PER_30_DAYS,
+        entitlements_for,
+    )
+
+    if settings.plan_limits_enforced:
+        now = datetime.now(UTC)
+        ent = await entitlements_for(user_id)
+        if ent.has_prism:
+            since = now - timedelta(days=30)
+            limit, period = ADVISOR_PRISM_PER_30_DAYS, "30 hari"
+        else:
+            since = now.replace(hour=0, minute=0, second=0, microsecond=0)
+            limit, period = ADVISOR_FREE_PER_DAY, "hari ini"
+
+        success = await consume_quota(user_id, "advisor_message", limit, since)
+        if not success:
+            raise HTTPException(
+                status_code=429,
+                detail=f"Batas {limit} pesan advisor untuk {period} sudah tercapai."
+                + ("" if ent.has_prism else " Upgrade ke Prism untuk 100 pesan / 30 hari."),
+            )
+    else:
+        await add_event(user_id, "advisor_message")
 
 
 @router.post("/invoke", response_model=AgentInvokeResponse)
@@ -236,6 +271,14 @@ async def invoke_agent(
     # Inline seeker override is only honoured when it belongs to the authenticated user.
     seeker: SeekerProfile | None = None
     if req.seeker is not None and req.seeker.user_id == current_user.id:
+        # An inline profile can never carry proof it has not earned: reset
+        # every proof level, then copy real proof from the stored profile.
+        from backend.app.services.matching.evidence import carry_proof
+
+        for sk in req.seeker.skills:
+            sk.proof_level, sk.proof_date = "claimed", None
+        stored = await find_seeker_by_user_id(current_user.id)
+        req.seeker.skills = carry_proof(req.seeker.skills, stored.skills if stored else [])
         seeker = req.seeker
     fallback_used = False
 
@@ -277,10 +320,17 @@ async def invoke_agent(
     jobs = await repos.jobs.get_many([m.job_id for m in raw_matches])
     valid_job_ids = {j.id for j in jobs}
 
-    # Token efficiency gate: if ALL matches are well below threshold, skip LLM
+    # Token efficiency gate: skip the LLM when the pool carries NO relevance
+    # signal at all — no job with meaningful text similarity and no job
+    # sharing even one skill (claimed or proven). Gating on the raw score no
+    # longer works since v2: claimed-only skills count at 30%, so a relevant
+    # but not-yet-proven profile can legitimately score low.
     max_score = max((m.score for m in raw_matches), default=0.0)
-    early_exit = max_score < 0.10
-
+    has_signal = any(
+        m.cosine > 0.10 or any(p.get("status") != "missing" for p in m.skill_proof)
+        for m in raw_matches
+    )
+    early_exit = not has_signal
     if early_exit:
         logger.info("token_gate_fired max_score=%.3f seeker=%s", max_score, seeker.id)
         seeker_skill_names = [s.name for s in (seeker.skills or [])]
@@ -301,6 +351,9 @@ async def invoke_agent(
             routing_confidence=1.0,
             early_exit=True,
         )
+
+    # --- Plan metering: Free 10 advisor messages / day, Prism 100 / 30 days ---
+    await _check_advisor_quota(current_user.id)
 
     # --- Run agent --------------------------------------------------------
     from backend.app.agents.graph.builder import get_graph

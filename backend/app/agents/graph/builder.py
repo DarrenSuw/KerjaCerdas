@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 
 def _build_llm():
-    return build_chat_llm(temperature=0.4)
+    return build_chat_llm(temperature=0.4, task="advisor")
 
 
 # ---------------------------------------------------------------------------

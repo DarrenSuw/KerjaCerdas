@@ -14,7 +14,6 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 from unittest.mock import AsyncMock, patch
 
-import pytest
 from fastapi.testclient import TestClient
 
 from backend.app.db.postgres_store import get_cached_job_pack_parse, save_job_pack_parse

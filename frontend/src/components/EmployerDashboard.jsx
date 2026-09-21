@@ -1,592 +1,127 @@
-import { useEffect } from 'react'
+// Employer home: the real hiring funnel (applicants -> interview -> hired),
+// how many applicants bring proven skills, jobs with share links, trust and
+// plan status. Every number comes from the API — no placeholder quotas.
+import { useEffect, useState } from 'react'
+import { Briefcase, FileText, PlusCircle, QrCode, ShieldCheck } from 'lucide-react'
 import useStore from '../store/useStore'
-import { KC, DesignStyles, topBtn, useIsMobile } from './_design'
-import { Briefcase } from 'lucide-react'
+import { BrutalCard, DesignStyles, KC, topBtn } from './_design'
+import JobShareModal from './JobShareModal'
+import { fetchEmployerTrust } from '../services/api'
 
-// Growth plan tier limits — [PLANNED] until a real billing/quota API exists.
-const UNLOCK_QUOTA = 20
-const JOB_SLOT_QUOTA = 10
+const REACHED_INTERVIEW = new Set(['interview', 'offered', 'hired'])
+
+function Stat({ label, value, sub, color = KC.ink }) {
+    return (
+        <BrutalCard padding={16}>
+            <div style={{ fontSize: 11.5, fontWeight: 800, color: KC.mute, textTransform: 'uppercase', letterSpacing: 0.4 }}>{label}</div>
+            <div style={{ fontSize: 32, fontWeight: 900, color, margin: '6px 0 2px' }}>{value}</div>
+            {sub && <div style={{ fontSize: 12, color: KC.mute }}>{sub}</div>}
+        </BrutalCard>
+    )
+}
 
 export default function EmployerDashboard() {
-    const isMobile = useIsMobile()
     const {
-        employerJobs,
-        employerJobsLoading,
-        refreshEmployerJobs,
-        navigate,
-        employerProfile,
-        loadEmployerProfile,
-        employerApplications,
-        loadEmployerApplications,
-        user,
+        employerJobs, refreshEmployerJobs, navigate, employerProfile, loadEmployerProfile,
+        employerApplications, loadEmployerApplications, user, openUpgradeModal,
     } = useStore()
+    const [trust, setTrust] = useState(null)
+    const [sharing, setSharing] = useState(null)
 
     useEffect(() => {
         refreshEmployerJobs()
         loadEmployerProfile()
         loadEmployerApplications()
+        fetchEmployerTrust().then(setTrust).catch(() => setTrust(null))
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    const companyName = employerProfile?.company_name || user?.full_name || 'Perusahaan'
-    const companyInitial = companyName ? companyName[0].toUpperCase() : 'P'
+    const apps = (employerApplications || []).filter((a) => !a.locked)
+    const total = employerApplications?.length || 0
+    const interviews = apps.filter((a) => REACHED_INTERVIEW.has(a.status)).length
+    const hired = apps.filter((a) => a.status === 'hired').length
+    const withProof = apps.filter((a) => (a.skill_proof || []).some((p) => p.status === 'quiz' || p.status === 'hr_confirmed')).length
+    const locked = total - apps.length
+    const jobs = employerJobs || []
+    const held = jobs.filter((j) => j.moderation_status && j.moderation_status !== 'published').length
+    const badges = trust?.badges || {}
+    const company = employerProfile?.company_name || user?.name || 'Perusahaan'
 
-    // Compute dynamic funnel metrics from real applications and employer jobs
-    const totalApps = employerApplications?.length || 0
-    const totalJobsCount = employerJobs?.length || 0
-    const totalScanned = totalApps > 0
-        ? totalApps
-        : (employerJobs || []).reduce((acc, j) => acc + (j.application_count || 0), 0)
-
-    const strongCount = totalApps > 0
-        ? employerApplications.filter(a => ['shortlisted', 'interview', 'hired'].includes(a.status) || (a.score && a.score >= 0.75)).length
-        : 0
-
-    const unlockedCount = totalApps > 0
-        ? employerApplications.filter(a => ['unlocked', 'interview', 'hired'].includes(a.status)).length
-        : 0
-
-    const interviewCount = totalApps > 0
-        ? employerApplications.filter(a => ['interview', 'hired'].includes(a.status)).length
-        : 0
-
-    const convRate = unlockedCount > 0 ? Math.round((interviewCount / unlockedCount) * 100) : 0
-
-    // Real proxy metric: days between application submission and the last
-    // status change, for applications that progressed past "applied".
-    // `applied_at`/`updated_at` are already returned by GET /employer/applications.
-    const shortlistedApps = employerApplications.filter(
-        a => ['shortlisted', 'interview', 'hired', 'unlocked', 'offered'].includes(a.status) && a.applied_at && a.updated_at
-    )
-    const avgShortlistDays = shortlistedApps.length > 0
-        ? shortlistedApps.reduce((sum, a) => sum + Math.max(0, (new Date(a.updated_at) - new Date(a.applied_at)) / 86400000), 0) / shortlistedApps.length
-        : null
-
-    const strongPct = totalScanned > 0 ? Math.min(100, Math.round((strongCount / totalScanned) * 100)) : 0
-    const unlockedPct = totalScanned > 0 ? Math.min(100, Math.round((unlockedCount / totalScanned) * 100)) : 0
-    const interviewPct = totalScanned > 0 ? Math.min(100, Math.round((interviewCount / totalScanned) * 100)) : 0
-
-    const activeList = (employerJobs || []).map((j, i) => {
-        const jobApps = (employerApplications || []).filter(a => a.job_id === j.id)
-        const candCount = jobApps.length > 0 ? jobApps.length : (j.application_count ?? 0)
-        const strong = jobApps.filter(a => ['shortlisted', 'interview', 'hired'].includes(a.status) || (a.score && a.score >= 0.75)).length
-        const possible = jobApps.filter(a => a.status === 'applied' || (a.score && a.score < 0.75 && a.score >= 0.5)).length
-        const unlocked = jobApps.filter(a => ['unlocked', 'interview', 'hired'].includes(a.status)).length
-        const interview = jobApps.filter(a => ['interview', 'hired'].includes(a.status)).length
-
-        let salaryText = 'Gaji bersaing'
-        if (j.salary_min && j.salary_max) {
-            salaryText = `Rp ${Math.round(j.salary_min / 1000000)}–${Math.round(j.salary_max / 1000000)} jt`
-        } else if (j.salary_range) {
-            salaryText = j.salary_range
-        }
-
-        const daysAgo = j.created_at
-            ? Math.max(0, Math.floor((Date.now() - new Date(j.created_at).getTime()) / (1000 * 60 * 60 * 24)))
-            : 0
-
-        return {
-            id: j.id || `ej-${i}`,
-            title: j.title || 'Posisi Rekrutmen',
-            location: j.region_name || j.region_code || j.location || 'Indonesia',
-            work_type: j.work_type || (j.remote_allowed ? 'Remote' : 'Hybrid'),
-            salary: salaryText,
-            status: j.is_active === false ? 'draft' : 'active',
-            created_days_ago: daysAgo,
-            candidates_count: candCount,
-            strong_count: strong,
-            possible_count: possible,
-            unlocked_count: unlocked,
-            interview_count: interview,
-        }
-    })
-
-    const draftJobs = activeList.filter(j => j.status === 'draft')
-    const isNpwpVerified = employerProfile?.verified === 'verified'
-
-    const handleReviewCandidates = (jobId) => {
-        useStore.setState({ selectedCandidateJobId: jobId })
+    const openJob = (id) => {
+        useStore.setState({ selectedCandidateJobId: id })
         navigate('employer-candidates')
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // DESKTOP LAYOUT (Desktop v2 · Screen D09)
-    // ─────────────────────────────────────────────────────────────────────────
-    if (!isMobile) {
-        return (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-                <DesignStyles />
-
-                {/* Desktop Header */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24, paddingBottom: 22, borderBottom: `1.5px solid ${KC.ink}` }}>
-                    <div>
-                        <div style={{
-                            display: 'inline-flex', padding: '3px 10px', background: KC.orange,
-                            borderRadius: 999, fontWeight: 900, fontSize: 10, lineHeight: 1.6,
-                            letterSpacing: 0.6, textTransform: 'uppercase', color: '#fff', marginBottom: 10,
-                        }}>
-                            Employer / HR
-                        </div>
-                        <h1 style={{ font: '900 30px/1.1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-1.2px', color: KC.ink, margin: 0 }}>
-                            Dashboard Rekrutmen
-                        </h1>
-                        <p style={{ font: '400 13.5px/1.5 "Plus Jakarta Sans", sans-serif', color: '#64748B', margin: '8px 0 0' }}>
-                            {companyName} · {activeList.length} lowongan, {activeList.filter(j => j.status === 'active').length} aktif · periode 30 hari terakhir
-                        </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: 11, flexShrink: 0 }}>
-                        <button
-                            onClick={() => navigate('employer-upload')}
-                            className="kc-btn"
-                            style={{ ...topBtn('#fff', KC.ink), padding: '11px 17px', fontSize: 12.5 }}
-                        >
-                            Upload Job Pack
-                        </button>
-                        <button
-                            onClick={() => navigate('employer-post-job')}
-                            className="kc-btn"
-                            style={{ ...topBtn(KC.orange, '#fff'), padding: '11px 17px', fontSize: 12.5 }}
-                        >
-                            + Pasang Lowongan
-                        </button>
-                    </div>
-                </div>
-
-                {/* Horizontal Recruitment Funnel Card (Decision 04) */}
-                <div style={{
-                    background: KC.ink, border: `1.5px solid ${KC.ink}`,
-                    borderRadius: 14, boxShadow: `4px 4px 0 ${KC.orange}`,
-                    padding: '26px 28px', animation: 'kcUp .4s both',
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 22 }}>
-                        <span style={{ font: '800 11px/1 "JetBrains Mono", monospace', letterSpacing: '1px', textTransform: 'uppercase', color: 'rgba(255,255,255,.45)' }}>
-                            Funnel rekrutmen · reverse matching
-                        </span>
-                        {avgShortlistDays != null && (
-                            <span style={{ padding: '5px 12px', background: 'rgba(16,185,129,.2)', border: '1px solid #10B981', borderRadius: 999, font: '800 11px/1 "Plus Jakarta Sans", sans-serif', color: '#10B981' }}>
-                                time-to-shortlist {avgShortlistDays.toFixed(1).replace('.', ',')} hari
-                            </span>
-                        )}
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'flex-end', gap: 0 }}>
-                        <div style={{ flex: 1, paddingRight: 20 }}>
-                            <div style={{ font: '900 42px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-2px', color: '#fff', marginBottom: 9 }}>{totalScanned}</div>
-                            <div style={{ font: '700 11px/1.3 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.5)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 11 }}>Profil dipindai AI</div>
-                            <div style={{ height: 11, background: '#fff', borderRadius: 999 }} />
-                        </div>
-                        <div style={{ width: 22, textAlign: 'center', font: '900 17px/1 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.25)', paddingBottom: 22 }}>→</div>
-                        <div style={{ flex: 1, padding: '0 20px' }}>
-                            <div style={{ font: '900 42px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-2px', color: '#10B981', marginBottom: 9 }}>{strongCount}</div>
-                            <div style={{ font: '700 11px/1.3 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.5)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 11 }}>Strong Fit</div>
-                            <div style={{ height: 11, background: 'rgba(255,255,255,.14)', borderRadius: 999, overflow: 'hidden' }}>
-                                <div style={{ height: '100%', width: `${strongPct}%`, background: '#10B981', borderRadius: 999 }} />
-                            </div>
-                        </div>
-                        <div style={{ width: 22, textAlign: 'center', font: '900 17px/1 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.25)', paddingBottom: 22 }}>→</div>
-                        <div style={{ flex: 1, padding: '0 20px' }}>
-                            <div style={{ font: '900 42px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-2px', color: KC.orange, marginBottom: 9 }}>{unlockedCount}</div>
-                            <div style={{ font: '700 11px/1.3 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.5)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 11 }}>Kontak dibuka</div>
-                            <div style={{ height: 11, background: 'rgba(255,255,255,.14)', borderRadius: 999, overflow: 'hidden' }}>
-                                <div style={{ height: '100%', width: `${unlockedPct}%`, background: KC.orange, borderRadius: 999 }} />
-                            </div>
-                        </div>
-                        <div style={{ width: 22, textAlign: 'center', font: '900 17px/1 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.25)', paddingBottom: 22 }}>→</div>
-                        <div style={{ flex: 1, paddingLeft: 20 }}>
-                            <div style={{ font: '900 42px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-2px', color: '#6366F1', marginBottom: 9 }}>{interviewCount}</div>
-                            <div style={{ font: '700 11px/1.3 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.5)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 11 }}>Wawancara</div>
-                            <div style={{ height: 11, background: 'rgba(255,255,255,.14)', borderRadius: 999, overflow: 'hidden' }}>
-                                <div style={{ height: '100%', width: `${interviewPct}%`, background: '#6366F1', borderRadius: 999 }} />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ marginTop: 22, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,.12)', font: '600 12.5px/1.6 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.55)' }}>
-                        Konversi kontak-dibuka → wawancara <b style={{ color: '#fff' }}>{convRate}%</b>. HR membayar Rp 50.000 setelah melihat bukti kompetensi terverifikasi AI.
-                    </div>
-                </div>
-
-                {/* 2-Column Layout: Active Jobs (Left) + Growth Quota & Legal Info (Right 300px) */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 300px', gap: 22 }}>
-                    {/* Left Column: Active Vacancies */}
-                    <div>
-                        <h2 style={{ font: '900 19px/1.15 "Plus Jakarta Sans", sans-serif', letterSpacing: '-0.6px', color: KC.ink, margin: '0 0 14px' }}>
-                            Lowongan Aktif ({activeList.length})
-                        </h2>
-                        {employerJobsLoading && activeList.length === 0 ? (
-                            <div style={{
-                                background: '#fff', border: `1.5px solid ${KC.ink}`,
-                                borderRadius: 14, boxShadow: `3px 3px 0 ${KC.ink}`,
-                                padding: '32px 24px', textAlign: 'center', color: '#64748B',
-                                font: '600 13px "Plus Jakarta Sans", sans-serif',
-                            }}>
-                                Memuat lowongan aktif…
-                            </div>
-                        ) : activeList.length === 0 ? (
-                            <div style={{
-                                background: '#fff', border: `1.5px solid ${KC.ink}`,
-                                borderRadius: 14, boxShadow: `3px 3px 0 ${KC.ink}`,
-                                padding: '40px 24px', textAlign: 'center',
-                                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12,
-                            }}>
-                                <div style={{ width: 50, height: 50, borderRadius: '50%', background: '#F1F5F9', display: 'grid', placeItems: 'center', border: `1.5px solid ${KC.ink}` }}>
-                                    <Briefcase size={22} color={KC.ink} />
-                                </div>
-                                <h3 style={{ fontSize: 16, fontWeight: 900, color: KC.ink, margin: 0 }}>
-                                    Belum Ada Lowongan Aktif
-                                </h3>
-                                <p style={{ fontSize: 12.5, color: '#64748B', margin: 0, maxWidth: 380 }}>
-                                    Pasang lowongan kerja Anda sekarang atau unggah Job Pack untuk mengaktifkan AI matching kandidat secara otomatis.
-                                </p>
-                                <div style={{ display: 'flex', gap: 10, marginTop: 6 }}>
-                                    <button
-                                        onClick={() => navigate('employer-post-job')}
-                                        className="kc-btn"
-                                        style={{ ...topBtn(KC.orange, '#fff'), padding: '10px 18px', fontSize: 12 }}
-                                    >
-                                        + Pasang Lowongan Baru
-                                    </button>
-                                    <button
-                                        onClick={() => navigate('employer-upload')}
-                                        className="kc-btn"
-                                        style={{ ...topBtn('#fff', KC.ink), padding: '10px 18px', fontSize: 12 }}
-                                    >
-                                        Upload Job Pack
-                                    </button>
-                                </div>
-                            </div>
-                        ) : (
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
-                                {activeList.map((job) => (
-                                    <div
-                                        key={job.id}
-                                        style={{
-                                            background: '#fff', border: `1.5px solid ${KC.ink}`,
-                                            borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`,
-                                            padding: '20px 22px', animation: 'kcUp .4s both',
-                                        }}
-                                    >
-                                        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 18, marginBottom: 16 }}>
-                                            <div>
-                                                <div style={{ font: '900 18px/1.2 "Plus Jakarta Sans", sans-serif', letterSpacing: '-0.6px', color: KC.ink, marginBottom: 7 }}>
-                                                    {job.title}
-                                                </div>
-                                                <div style={{ font: '600 12px/1.4 "Plus Jakarta Sans", sans-serif', color: '#94A3B8' }}>
-                                                    {job.location} · {job.work_type} · {job.salary} · dipasang {job.created_days_ago} hari lalu
-                                                </div>
-                                            </div>
-                                            <span style={{ padding: '4px 11px', background: '#ECFDF5', border: '1px solid #10B981', borderRadius: 999, font: '800 10.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#065F46', flexShrink: 0 }}>
-                                                Aktif
-                                            </span>
-                                        </div>
-
-                                        {/* 5-Metric Strip */}
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: 26, padding: '16px 0', borderTop: '1px dashed #E2E8F0', borderBottom: '1px dashed #E2E8F0', marginBottom: 16 }}>
-                                            <div>
-                                                <div style={{ font: '900 22px/1 "Plus Jakarta Sans", sans-serif', color: KC.ink, letterSpacing: '-0.9px' }}>{job.candidates_count}</div>
-                                                <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: 6 }}>Kandidat</div>
-                                            </div>
-                                            <div>
-                                                <div style={{ font: '900 22px/1 "Plus Jakarta Sans", sans-serif', color: '#10B981', letterSpacing: '-0.9px' }}>{job.strong_count}</div>
-                                                <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: 6 }}>Strong</div>
-                                            </div>
-                                            <div>
-                                                <div style={{ font: '900 22px/1 "Plus Jakarta Sans", sans-serif', color: '#F59E0B', letterSpacing: '-0.9px' }}>{job.possible_count}</div>
-                                                <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: 6 }}>Possible</div>
-                                            </div>
-                                            <div>
-                                                <div style={{ font: '900 22px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange, letterSpacing: '-0.9px' }}>{job.unlocked_count}</div>
-                                                <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: 6 }}>Unlocked</div>
-                                            </div>
-                                            <div>
-                                                <div style={{ font: '900 22px/1 "Plus Jakarta Sans", sans-serif', color: '#6366F1', letterSpacing: '-0.9px' }}>{job.interview_count}</div>
-                                                <div style={{ font: '700 9.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: 6 }}>Interview</div>
-                                            </div>
-                                        </div>
-
-                                        <div style={{ display: 'flex', gap: 10 }}>
-                                            <button
-                                                onClick={() => navigate('employer-post-job')}
-                                                className="kc-btn"
-                                                style={{ ...topBtn('#fff', KC.ink), padding: '11px 16px', fontSize: 12 }}
-                                            >
-                                                Edit Lowongan
-                                            </button>
-                                            <button
-                                                onClick={() => handleReviewCandidates(job.id)}
-                                                className="kc-btn"
-                                                style={{ ...topBtn(KC.orange, '#fff'), padding: '11px 16px', fontSize: 12 }}
-                                            >
-                                                Lihat {job.candidates_count} Kandidat AI →
-                                            </button>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Right Column (300px) */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                        <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 20 }}>
-                            <div style={{ font: '800 10.5px/1 "JetBrains Mono", monospace', letterSpacing: 0.7, textTransform: 'uppercase', color: '#64748B', marginBottom: 18 }}>
-                                Kuota plan Growth
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                                <div>
-                                    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 8 }}>
-                                        <span style={{ font: '700 12px/1 "Plus Jakarta Sans", sans-serif', color: '#334155' }}>Unlock kontak</span>
-                                        <span style={{ font: '900 13px/1 "Plus Jakarta Sans", sans-serif', color: KC.ink }}>{unlockedCount}<span style={{ color: '#94A3B8' }}>/{UNLOCK_QUOTA}</span></span>
-                                    </div>
-                                    <div style={{ height: 7, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                                        <div style={{ height: '100%', width: `${Math.min(100, Math.round((unlockedCount / UNLOCK_QUOTA) * 100))}%`, background: KC.orange, borderRadius: 999 }} />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 8 }}>
-                                        <span style={{ font: '700 12px/1 "Plus Jakarta Sans", sans-serif', color: '#334155' }}>Slot lowongan</span>
-                                        <span style={{ font: '900 13px/1 "Plus Jakarta Sans", sans-serif', color: KC.ink }}>{totalJobsCount}<span style={{ color: '#94A3B8' }}>/{JOB_SLOT_QUOTA}</span></span>
-                                    </div>
-                                    <div style={{ height: 7, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                                        <div style={{ height: '100%', width: `${Math.min(100, Math.round((totalJobsCount / JOB_SLOT_QUOTA) * 100))}%`, background: KC.ink, borderRadius: 999 }} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {isNpwpVerified ? (
-                            <div style={{ background: '#ECFDF5', border: '1.5px solid #10B981', borderRadius: 12, padding: 20 }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 11 }}>
-                                    <span style={{ width: 24, height: 24, borderRadius: '50%', background: '#10B981', display: 'grid', placeItems: 'center', color: '#fff', font: '900 13px/1 "Plus Jakarta Sans", sans-serif', flexShrink: 0 }}>✓</span>
-                                    <span style={{ font: '900 14px/1.2 "Plus Jakarta Sans", sans-serif', color: '#065F46' }}>NPWP Terverifikasi</span>
-                                </div>
-                                <p style={{ font: '400 12px/1.6 "Plus Jakarta Sans", sans-serif', color: '#047857', margin: 0 }}>
-                                    Lowongan Anda tampil dengan lencana verifikasi pada kartu match kandidat — menaikkan tingkat respons.
-                                </p>
-                            </div>
-                        ) : (
-                            <div style={{ background: '#FFF1EB', border: `1.5px solid ${KC.orange}`, borderRadius: 12, padding: 20 }}>
-                                <div style={{ font: '900 14px/1.25 "Plus Jakarta Sans", sans-serif', color: KC.ink, marginBottom: 9 }}>
-                                    NPWP Belum Terverifikasi
-                                </div>
-                                <p style={{ font: '400 12px/1.6 "Plus Jakarta Sans", sans-serif', color: '#9A3412', margin: '0 0 14px' }}>
-                                    Verifikasi NPWP untuk menampilkan lencana terverifikasi pada kartu match kandidat.
-                                </p>
-                                <button
-                                    onClick={() => navigate('employer-verification')}
-                                    className="kc-btn"
-                                    style={{ ...topBtn('#fff', KC.ink), padding: '10px 15px', fontSize: 12 }}
-                                >
-                                    Verifikasi Sekarang →
-                                </button>
-                            </div>
-                        )}
-
-                        {draftJobs.length > 0 && (
-                        <div style={{ background: '#FFF1EB', border: `1.5px solid ${KC.orange}`, borderRadius: 12, padding: 20 }}>
-                            <div style={{ font: '900 14px/1.25 "Plus Jakarta Sans", sans-serif', color: KC.ink, marginBottom: 9 }}>
-                                {draftJobs.length} lowongan perlu ditinjau
-                            </div>
-                            <p style={{ font: '400 12px/1.6 "Plus Jakarta Sans", sans-serif', color: '#9A3412', margin: '0 0 14px' }}>
-                                Draf "{draftJobs[0].title}" belum dipublikasikan{draftJobs[0].candidates_count > 0 ? ` · estimasi ${draftJobs[0].candidates_count} kandidat cocok` : ''}.
-                            </p>
-                            <button
-                                onClick={() => navigate('employer-post-job')}
-                                className="kc-btn"
-                                style={{ ...topBtn('#fff', KC.ink), padding: '10px 15px', fontSize: 12 }}
-                            >
-                                Lanjutkan Draf →
-                            </button>
-                        </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // MOBILE LAYOUT (Mobile Spec · Frame 13)
-    // ─────────────────────────────────────────────────────────────────────────
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'grid', gap: 18 }}>
             <DesignStyles />
-
-            {/* Mobile Top Bar — single clean row for employer */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingBottom: 4 }}>
-                <div style={{
-                    width: 42, height: 42, borderRadius: 11, background: '#090A0F',
-                    border: `1.5px solid ${KC.ink}`, boxShadow: `2px 2px 0 ${KC.orange}`,
-                    display: 'grid', placeItems: 'center',
-                    fontWeight: 900, fontSize: 17, color: '#FFFFFF', flexShrink: 0,
-                }}>
-                    {companyInitial}
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', alignItems: 'flex-end' }}>
+                <div>
+                    <div style={{ fontSize: 13, color: KC.mute, fontWeight: 700 }}>{company}</div>
+                    <h1 style={{ fontSize: 28, fontWeight: 900, margin: '2px 0 0', letterSpacing: '-1px' }}>Dashboard rekrutmen</h1>
                 </div>
-                <div style={{ minWidth: 0 }}>
-                    <h1 style={{ fontSize: 18, fontWeight: 900, letterSpacing: -0.6, color: KC.ink, margin: 0, lineHeight: 1.2 }}>
-                        {companyName}
-                    </h1>
-                    <div style={{
-                        display: 'inline-flex', marginTop: 4, padding: '2px 7px', background: KC.orange,
-                        borderRadius: 999, fontWeight: 900, fontSize: 8.5,
-                        letterSpacing: 0.5, textTransform: 'uppercase', color: '#fff',
-                    }}>
-                        Employer / HR
-                    </div>
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                    <button style={topBtn()} onClick={() => navigate('employer-upload')}><FileText size={14} /> Upload PDF lowongan</button>
+                    <button style={topBtn(KC.orange, '#fff')} onClick={() => navigate('employer-post-job')}><PlusCircle size={14} /> Pasang lowongan</button>
                 </div>
             </div>
 
-            {/* Mobile Funnel Card */}
-            <div style={{ background: '#FFFFFF', border: `1.5px solid ${KC.ink}`, borderRadius: 14, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 16 }}>
-                <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 800, letterSpacing: 0.7, textTransform: 'uppercase', color: '#64748B', marginBottom: 13 }}>
-                    Funnel rekrutmen · 30 hari
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    <div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-                            <span style={{ fontSize: 11.5, fontWeight: 700, color: '#334155' }}>Kandidat terkurasi AI</span>
-                            <span style={{ fontSize: 14, fontWeight: 900, color: KC.ink }}>{totalScanned}</span>
-                        </div>
-                        <div style={{ height: 9, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: totalScanned > 0 ? '100%' : '0%', background: '#090A0F', borderRadius: 999 }} />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-                            <span style={{ fontSize: 11.5, fontWeight: 700, color: '#334155' }}>Strong Fit</span>
-                            <span style={{ fontSize: 14, fontWeight: 900, color: '#10B981' }}>{strongCount}</span>
-                        </div>
-                        <div style={{ height: 9, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${strongPct}%`, background: '#10B981', borderRadius: 999 }} />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-                            <span style={{ fontSize: 11.5, fontWeight: 700, color: '#334155' }}>Kontak dibuka</span>
-                            <span style={{ fontSize: 14, fontWeight: 900, color: KC.orange }}>{unlockedCount}</span>
-                        </div>
-                        <div style={{ height: 9, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${unlockedPct}%`, background: KC.orange, borderRadius: 999 }} />
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-                            <span style={{ fontSize: 11.5, fontWeight: 700, color: '#334155' }}>Wawancara terjadwal</span>
-                            <span style={{ fontSize: 14, fontWeight: 900, color: '#6366F1' }}>{interviewCount}</span>
-                        </div>
-                        <div style={{ height: 9, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
-                            <div style={{ height: '100%', width: `${interviewPct}%`, background: '#6366F1', borderRadius: 999 }} />
-                        </div>
-                    </div>
-                </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 12 }}>
+                <Stat label="Pelamar" value={total} sub={locked ? `${locked} terkunci (Spark)` : 'semua diperingkat'} />
+                <Stat label="Punya skill terbukti" value={withProof} sub="lulus kuis / dikonfirmasi HR" color="#059669" />
+                <Stat label="Sampai wawancara" value={interviews} color={KC.orange} />
+                <Stat label="Diterima" value={hired} color={KC.indigo} />
             </div>
 
-            {/* Mobile 2 Stats */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 11 }}>
-                <div style={{ background: '#090A0F', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.orange}`, padding: 14 }}>
-                    <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 9.5, fontWeight: 800, letterSpacing: 0.6, textTransform: 'uppercase', color: 'rgba(255,255,255,.45)' }}>
-                        Time-to-shortlist
-                    </div>
-                    <div style={{ fontSize: 26, fontWeight: 900, letterSpacing: -1.2, color: '#fff', margin: '9px 0 4px' }}>
-                        {avgShortlistDays != null ? avgShortlistDays.toFixed(1).replace('.', ',') : '—'}<span style={{ fontSize: 14 }}> hari</span>
-                    </div>
-                    <div style={{ fontSize: 10.5, fontWeight: 600, color: '#10B981' }}>
-                        ▼ AI reverse matching
-                    </div>
-                </div>
+            {held > 0 && (
+                <BrutalCard color={KC.yellowSoft} padding={14}>
+                    <b>{held} lowongan ditahan / ditolak AutoMod.</b> Lihat alasannya di Lowongan Saya — perbaiki atau ajukan banding.
+                    <button style={{ ...topBtn(), marginLeft: 10 }} onClick={() => navigate('employer-jobs')}>Lihat</button>
+                </BrutalCard>
+            )}
 
-                <div style={{ background: '#FFFFFF', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 14 }}>
-                    <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 9.5, fontWeight: 800, letterSpacing: 0.6, textTransform: 'uppercase', color: '#64748B' }}>
-                        Lowongan aktif
-                    </div>
-                    <div style={{ fontSize: 26, fontWeight: 900, letterSpacing: -1.2, color: KC.ink, margin: '9px 0 4px' }}>
-                        {activeList.length}
-                    </div>
-                    <div style={{ fontSize: 10.5, fontWeight: 600, color: '#94A3B8' }}>
-                        {totalScanned} kandidat terpindai
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile Active Jobs List */}
-            <h2 style={{ fontSize: 16, fontWeight: 900, letterSpacing: -0.6, color: KC.ink, margin: '4px 0 0' }}>
-                Lowongan Saya ({activeList.length})
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-                {activeList.length === 0 ? (
-                    <div style={{
-                        background: '#FFFFFF', border: `1.5px solid ${KC.ink}`,
-                        borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 22,
-                        textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10,
-                    }}>
-                        <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#F1F5F9', display: 'grid', placeItems: 'center', border: `1.5px solid ${KC.ink}` }}>
-                            <Briefcase size={20} color={KC.ink} />
-                        </div>
-                        <div style={{ fontSize: 14.5, fontWeight: 900, color: KC.ink }}>
-                            Belum Ada Lowongan Aktif
-                        </div>
-                        <div style={{ fontSize: 11.5, color: '#64748B', maxWidth: 280 }}>
-                            Pasang lowongan baru untuk mulai merekrut kandidat terverifikasi dengan AI reverse matching.
-                        </div>
-                    </div>
-                ) : (
-                    activeList.map((job) => (
-                    <div
-                        key={job.id}
-                        onClick={() => handleReviewCandidates(job.id)}
-                        style={{
-                            background: '#FFFFFF', border: `1.5px solid ${KC.ink}`,
-                            borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 14,
-                            cursor: 'pointer',
-                        }}
-                    >
-                        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 10, marginBottom: 11 }}>
+            <BrutalCard>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontWeight: 900, marginBottom: 10 }}><Briefcase size={17} /> Lowongan</div>
+                {jobs.length === 0 && (
+                    <p style={{ color: KC.mute }}>Belum ada lowongan. Pasang satu (gratis), lalu bagikan link / QR-nya di Instagram atau grup WhatsApp.</p>
+                )}
+                <div style={{ display: 'grid', gap: 10 }}>
+                    {jobs.slice(0, 6).map((j) => (
+                        <div key={j.id} style={{ display: 'flex', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap', alignItems: 'center', borderBottom: `1px solid ${KC.ash}`, paddingBottom: 10 }}>
                             <div>
-                                <div style={{ fontSize: 14.5, fontWeight: 900, color: KC.ink, marginBottom: 4, lineHeight: 1.25 }}>
-                                    {job.title}
-                                </div>
-                                <div style={{ fontSize: 10.5, color: '#94A3B8', fontWeight: 600 }}>
-                                    {job.location} · {job.work_type} · dipasang {job.created_days_ago} hari lalu
+                                <div style={{ fontWeight: 800 }}>{j.title}</div>
+                                <div style={{ fontSize: 12, color: KC.mute }}>
+                                    {j.application_count || 0} pelamar · {j.is_active ? 'aktif' : (j.moderation_status === 'published' ? 'ditutup' : 'menunggu moderasi')} · paket {j.plan_tier || 'spark'}
                                 </div>
                             </div>
-                            <span style={{ padding: '4px 9px', background: '#ECFDF5', border: '1px solid #10B981', borderRadius: 999, fontSize: 9.5, fontWeight: 800, color: '#065F46', flexShrink: 0 }}>
-                                Aktif
-                            </span>
+                            <div style={{ display: 'flex', gap: 6 }}>
+                                {j.is_active && j.public_code && <button style={{ ...topBtn(), padding: '7px 11px', fontSize: 12 }} onClick={() => setSharing(j)}><QrCode size={13} /> Link & QR</button>}
+                                <button style={{ ...topBtn(KC.ink, '#fff'), padding: '7px 11px', fontSize: 12 }} onClick={() => openJob(j.id)}>Pelamar →</button>
+                            </div>
                         </div>
+                    ))}
+                </div>
+            </BrutalCard>
 
-                        <div style={{ display: 'flex', gap: 8, paddingTop: 11, borderTop: '1px dashed #E2E8F0' }}>
-                            <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: 16, fontWeight: 900, color: KC.ink }}>{job.candidates_count}</div>
-                                <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Kandidat</div>
-                            </div>
-                            <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: 16, fontWeight: 900, color: '#10B981' }}>{job.strong_count}</div>
-                                <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Strong</div>
-                            </div>
-                            <div style={{ flex: 1 }}>
-                                <div style={{ fontSize: 16, fontWeight: 900, color: '#F59E0B' }}>{job.possible_count}</div>
-                                <div style={{ fontSize: 9, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 0.3, marginTop: 3 }}>Possible</div>
-                            </div>
-                            <div style={{ alignSelf: 'center', fontSize: 11.5, fontWeight: 800, color: KC.orange, flexShrink: 0 }}>
-                                Lihat →
-                            </div>
-                        </div>
-                    </div>
-                )))}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 12 }}>
+                <BrutalCard color={badges.company_email || badges.admin_reviewed ? KC.limeSoft : KC.orangeSoft}>
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontWeight: 900 }}><ShieldCheck size={17} /> Kepercayaan</div>
+                    <p style={{ fontSize: 13, margin: '6px 0 10px' }}>
+                        {badges.company_email || badges.admin_reviewed
+                            ? 'Lowongan baru langsung tayang dengan badge terpercaya.'
+                            : 'Verifikasi email perusahaan atau ajukan "Ditinjau admin" agar lowongan langsung tayang dan lebih dipercaya pelamar.'}
+                    </p>
+                    <button style={topBtn()} onClick={() => navigate('employer-verification')}>Buka Kepercayaan →</button>
+                </BrutalCard>
+                <BrutalCard>
+                    <div style={{ fontWeight: 900 }}>Paket</div>
+                    <p style={{ fontSize: 13, margin: '6px 0 10px' }}>
+                        Spark gratis: 1 lowongan aktif, 20 pelamar skor tertinggi ditampilkan. Beacon Rp29.000 / lowongan atau Lighthouse Rp99.000 / bulan
+                        untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor.
+                    </p>
+                    <button style={topBtn(KC.orange, '#fff')} onClick={() => openUpgradeModal()}>Lihat paket</button>
+                </BrutalCard>
             </div>
-
-            {/* Mobile Post Job Button */}
-            <button
-                onClick={() => navigate('employer-post-job')}
-                className="kc-btn"
-                style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                    marginTop: 4, padding: 14, background: KC.orange, border: `1.5px solid ${KC.ink}`,
-                    borderRadius: 11, boxShadow: `3px 3px 0 ${KC.ink}`, font: '800 13.5px/1 "Plus Jakarta Sans", sans-serif',
-                    color: '#FFFFFF', minHeight: 48, cursor: 'pointer',
-                }}
-            >
-                + Pasang Lowongan Baru
-            </button>
+            {sharing && <JobShareModal job={sharing} onClose={() => setSharing(null)} />}
         </div>
     )
 }

@@ -1,69 +1,99 @@
-# Panduan Live Demo: KerjaCerdas
+# Panduan Live Demo: KerjaCerdas (v2 — "Bukti, bukan klaim")
 
-Dokumen ini disusun sebagai panduan operasional langkah demi langkah (*step-by-step*) bagi presenter dan penguji saat mendemonstrasikan kapabilitas teknis platform KerjaCerdas. Panduan ini mencakup alur lengkap pencari kerja (*Seeker*) dan perusahaan (*Employer*).
+Panduan operasional untuk presenter. Inti cerita yang harus terlihat dalam 3 menit:
+**kata kunci di CV tidak lagi menang — skill yang dibuktikan yang naik peringkat.**
 
-Daftar lengkap seluruh akun uji coba (*pre-seeded demo accounts*) ada di [Demo Accounts](DEMO_ACCOUNTS.md). Semua akun menggunakan kata sandi default: **`demo`** (atau nilai dari `SEED_DEFAULT_PASSWORD`). Akun yang direkomendasikan untuk demo:
+Akun demo lengkap ada di [Demo Accounts](DEMO_ACCOUNTS.md); semua memakai `SEED_DEFAULT_PASSWORD`.
 
-- **Seeker:** `budi.santoso@example.com` — teknisi otomotif, 5 tahun di Auto2000.
-- **Employer:** `hr@goto.id` (GoTo Group) atau `hr@mandiri.id` (Bank Mandiri).
-
----
-
-## 🎬 Sesi 1: Alur Pencari Kerja (Seeker Flow)
-
-*Tujuan: Memvalidasi kemampuan AI dalam membaca CV PDF, pencocokan semantik otomatis, Explainable AI, analisis celah skill, dan verifikasi OTP.*
-
-### Langkah 1.1 — Inisialisasi & Ekstraksi CV Otomatis
-- **Aksi:** Login sebagai `budi.santoso@example.com` (Sandi: `demo`). Buka halaman **Upload CV** (`/profil`), unggah berkas contoh CV PDF.
-- **Yang ditunjukkan:** Kandidat tidak perlu mengisi puluhan isian form manual. Gemini mengekstrak skill, riwayat kerja, dan pendidikan secara terstruktur dalam hitungan detik, lalu sistem otomatis mengarahkan ke hasil pencocokan.
-- **Teknis:** Ekstraksi teks PyMuPDF → Gemini multimodal parsing → vektor 768-dimensi di-upsert ke PostgreSQL pgvector (HNSW).
-
-### Langkah 1.2 — AI Job Matching & Explainable AI Transparency
-- **Aksi:** Buka menu **Job Match** (`/lowongan`), klik salah satu kartu lowongan untuk membuka **Job Detail Modal**.
-- **Yang ditunjukkan:** Sistem mengelompokkan lowongan ke dalam 3 band (Strong, Possible, Stretch). Modal detail menampilkan rincian kalkulasi Explainable AI: Relevansi Semantik 45%, Irisan Skill 25%, Pengalaman 15%, Pendidikan 10%, Aktivitas 5% — skor bukan kotak hitam.
-
-### Langkah 1.3 — Proactive Skill Gap Analysis
-- **Aksi:** Pada lowongan kategori *Stretch*, klik tombol **"Lihat skill yang perlu dilengkapi →"** atau navigasi ke `/skill-gap`.
-- **Yang ditunjukkan:** Jika kandidat belum 100% cocok, sistem merinci skill yang hilang dan merekomendasikan kursus terkurasi untuk menutup celah tersebut.
-
-### Langkah 1.4 — Verifikasi Identitas & Phone OTP *(Demo/Mock)*
-- **Aksi:** Buka menu **Verifikasi** (`/verifikasi`). Klik verifikasi pada kartu **Nomor HP**, masukkan nomor (misal `+6281234567890`), klik **Kirim Kode OTP**. Masukkan 6 digit kode OTP yang tertera pada notifikasi toast demo.
-- **Yang ditunjukkan:** Alur verifikasi mendemonstrasikan pengalaman pengguna yang dirancang untuk integrasi dengan WhatsApp Gateway resmi di tahap komersial. Saat ini kode OTP ditampilkan langsung di layar untuk keperluan pengujian.
-- **⚠️ Catatan:** Endpoint OTP bersifat mock — tidak terhubung ke provider SMS/WhatsApp sungguhan.
-
-### Langkah 1.5 — Pelacakan Lamaran (Milestone Pipeline)
-- **Aksi:** Buka menu **Lamaran Saya** (`/lamaran`). Tunjukkan visual timeline progres lamaran (*Tersimpan* → *Melamar* → *Ditinjau* → *Interview* → *Diterima*).
-- **Yang ditunjukkan:** Kandidat mendapatkan transparansi status seleksi secara real-time.
+**Sebelum mulai:** jalankan `python -m scripts.seed_all`, set `ADMIN_ROUTES_ENABLED=true` +
+`ADMIN_EMAILS` berisi email admin, lalu **pasang satu lowongan peraga** dari akun employer mana pun dan
+catat kode publiknya dari **Lowongan Saya → Bagikan**. Siapkan dua akun pelamar: satu yang CV-nya penuh
+kata kunci, satu yang sudah lulus kuis — inilah perbandingan yang jadi inti demo. Siapkan juga
+**video rekaman 90 detik + tangkapan layar** di laptop sebagai cadangan bila koneksi bermasalah.
 
 ---
 
-## 🎬 Sesi 2: Alur Perusahaan (Employer Flow)
+## 🎬 Sesi 1 (90 detik): Kata kunci vs bukti — inti demo
 
-*Tujuan: Memvalidasi efisiensi penyaringan talenta, onboarding bertahap, dan model bisnis Pay-to-Unlock bagi UMKM.*
+### 1.1 — Pelamar datang lewat QR
+- **Aksi:** tunjukkan poster QR lowongan peraga (**Lowongan Saya → Bagikan → Cetak poster**), lalu
+  pindai sendiri dengan ponsel dan tampilkan layarnya.
+- **Yang ditunjukkan:** tanpa install aplikasi, pelamar mendaftar dengan email, mengisi profil singkat
+  (atau unggah CV), lalu melihat skill apa saja yang diminta lowongan.
 
-### Langkah 2.1 — Onboarding Terpandu (Timeline 1 -> 2 -> 3)
-- **Aksi:** Buka tab baru di browser, login sebagai `hr@goto.id` (Sandi: `demo`). Buka menu **Profil Perusahaan** (`/employer/profil`) dan **Verifikasi NPWP** (`/employer/verifikasi`).
-- **Yang ditunjukkan:** Employer diarahkan melalui alur terstruktur 3 langkah sebelum mempublikasikan lowongan.
+### 1.2 — Kuis skill (±3 menit, boleh dipercepat di demo)
+- **Aksi:** klik **Ikut kuis** pada skill *Excel* (atau skill apapun). 5 soal skenario, timer berjalan.
+- **Yang ditunjukkan:** jika skill belum ada di bank soal, AI menyusun draf soalnya **sekali** dan mengantrikannya untuk ditinjau admin — soal draf tidak pernah langsung diujikan, dan skill itu tetap berstatus *klaim* sampai disetujui. Soal dan urutan pilihan diacak per percobaan; jawaban dinilai di server dengan kunci jawaban (penilaian tanpa panggilan AI, jadi Rp0 per percobaan). Lulus 4/5 → badge **✓ Terbukti** berlaku 6 bulan dan berlaku di semua lowongan, bukan hanya lowongan ini.
 
-### Langkah 2.2 — Bulk Job Pack Uploader (PDF)
-- **Aksi:** Buka menu **Upload Job Pack** (`/employer/upload`). Seret (*drag-and-drop*) berkas PDF berisi kumpulan lowongan.
-- **Yang ditunjukkan:** Untuk perusahaan dengan banyak kebutuhan rekrutmen sekaligus, Job Pack Uploader mengekstrak dan mempublikasikan seluruh lowongan dalam satu dokumen PDF secara otomatis.
-
-### Langkah 2.3 — Pasang Lowongan & AI Live Pool Estimation
-- **Aksi:** Buka menu **Pasang Lowongan** (`/employer/pasang`). Ketik judul posisi seperti **"Senior Backend Engineer"**.
-- **Yang ditunjukkan:** Saat HRD mengetik spesifikasi, widget AI Live Pool memprediksi ketersediaan kandidat yang cocok secara real-time sebelum lowongan diterbitkan.
-
-### Langkah 2.4 — Sourcing Kandidat AI & Pipeline Rekrutmen
-- **Aksi:** Buka menu **Top Kandidat** (`/employer/kandidat`). Tunjukkan daftar kandidat yang telah di-rank oleh sistem matching.
-- **Yang ditunjukkan:** Sistem mencocokkan profil pencari kerja yang tersedia dengan kebutuhan lowongan menggunakan hybrid ranking (semantik + skill). HRD dapat melihat skor kecocokan, skill yang sesuai, dan alasan kecocokan untuk setiap kandidat.
-- **⚠️ Catatan:** Model monetisasi Pay-to-Unlock (Rp 50.000/kontak) telah dirancang namun belum terintegrasi dengan payment gateway di prototipe ini.
+### 1.3 — Peringkat berubah di sisi HR
+- **Aksi:** pindah ke akun employer → **Kandidat → Pelamar**. Pelamar yang baru lulus kuis berada di
+  atas pelamar yang CV-nya penuh kata kunci. Skor dihitung ulang setiap daftar dibuka, jadi kenaikannya
+  terlihat langsung.
+- **Kalimat kunci:** *"Dua pelamar sama-sama menulis Excel di CV. Yang satu membuktikannya. Skill klaim
+  dihitung 30%, yang terbukti 85% — itu sebabnya peringkatnya berbeda."*
 
 ---
 
-## 💡 Pertanyaan yang Umum Muncul
+## 🎬 Sesi 2 (60 detik): Sisi HR
 
-**T:** *Bagaimana KerjaCerdas mencegah manipulasi kata kunci tersembunyi (invisible keywords) pada CV?*
-**J:** Model multimodal Gemini membaca pemahaman konteks semantik secara menyeluruh. Kumpulan kata kunci yang tidak memiliki keterkaitan logis dengan riwayat pengalaman akan diabaikan oleh Semantic Matching Engine.
+### 2.1 — Pasang lowongan & bagikan
+- **Aksi:** login akun employer mana pun → **Pasang Lowongan** (gratis) → setelah tayang buka
+  **Lowongan Saya** → **Bagikan** → *Cetak poster*.
+- **Yang ditunjukkan:** HR menaruh link di bio Instagram / grup WhatsApp / poster di toko. Pelamar masuk
+  ke satu daftar terperingkat, bukan membanjiri WhatsApp.
 
-**T:** *Bagaimana jaminan keamanan data pribadi pelamar diterapkan?*
-**J:** NIK dan kode OTP disimpan sebagai hash SHA-256 satu arah, bukan sebagai teks biasa. Informasi kontak disensor secara default (*The Teaser Method*) dan hanya dibuka melalui mekanisme Pay-to-Unlock. AES-256-GCM saat ini adalah label deskriptif pada respons mock endpoint verifikasi, bukan enkripsi yang benar-benar berjalan di codebase. Payment gateway (Pay-to-Unlock) sendiri belum terhubung ke provider produksi; endpoint menerima token pembayaran apa pun untuk keperluan demo.
+### 2.2 — Daftar pelamar & alat wawancara
+- **Aksi:** buka **Kandidat → Pelamar**.
+- **Yang ditunjukkan:** pelamar diurutkan skor yang dihitung ulang setiap dibuka, dengan badge per skill
+  (Klaim / ✓ Terbukti / Dikonfirmasi HR). Klik **Wawancara & konfirmasi skill** → pertanyaan wawancara
+  fokus ke skill yang masih klaim ("jelaskan contoh nyatanya").
+- **Setelah wawancara:** HR mencentang *Terbukti* → menjadi bukti terkuat (bobot 1,0) di profil kandidat.
+- **Paket:** Spark gratis menampilkan 20 pelamar dengan skor tertinggi (semua pelamar tetap diperingkat — yang dibatasi jumlah yang terbuka, bukan siapa); Beacon Rp29.000/lowongan membuka semuanya +
+  pertanyaan wawancara AI + ekspor CSV.
+
+### 2.3 — AutoMod (tunjukkan yang ditolak)
+- **Aksi:** pasang lowongan uji berisi *"Wajib bayar biaya seragam Rp250.000. Usia maksimal 23 tahun."*
+- **Yang ditunjukkan:** ditolak otomatis + pemberitahuan berisi **kalimat mana** yang bermasalah, cara
+  memperbaikinya, tombol edit & kirim ulang, dan banding. Pelanggaran berulang → peringatan → dibatasi
+  → ditangguhkan.
+
+---
+
+## 🎬 Sesi 3 (30 detik): Admin & angka
+
+- **Aksi:** login akun admin → `/admin`.
+- **Moderasi:** antrean lowongan yang ditahan + banding, tombol Tayangkan/Tolak.
+- **Metrik:** biaya AI **per aksi** dihitung dari token asli di `ai_logs` × harga Gemini × kurs;
+  funnel lamaran per sumber (papan/link); **tingkat wawancara per band skor** — inilah yang nanti
+  menjawab pertanyaan juri *"apakah skor tinggi benar-benar lolos wawancara?"* begitu data pilot masuk.
+- **Bank soal:** semua soal awal berstatus **draf** sampai ditinjau praktisi HR — ditandai jujur di UI.
+
+---
+
+## 💡 Pertanyaan yang sering muncul
+
+**T:** *Pelamar bisa merekayasa CV agar skornya naik — bagaimana Anda memverifikasinya?*
+**J:** Skill yang hanya tertulis di CV dihitung 30%. Yang lulus kuis 85%, yang dikonfirmasi HR setelah
+wawancara 100%. Jadi menumpuk kata kunci hampir tidak menggerakkan skor. Kami juga menyimpan cuplikan
+tingkat bukti saat melamar, sehingga bisa diaudit.
+
+**T:** *Kuis kan bisa dibantu orang lain atau AI?*
+**J:** Bisa — kami tidak mengklaim anti-curang. Yang kami lakukan: soal acak, urutan pilihan acak,
+timer, jeda mengulang, lalu **pertanyaan wawancara yang meminta kandidat menjelaskan jawabannya
+sendiri**. Kuis menyaring, wawancara memastikan, dan konfirmasi HR yang menjadi bukti final.
+
+**T:** *Bagaimana data pribadi dilindungi?*
+**J:** Kami **tidak mengumpulkan NIK, KTP, ijazah, atau NPWP** — kolomnya sudah dihapus dari basis data.
+Yang diverifikasi hanya email (OTP). Email, nomor telepon, dan NIK yang tertulis di CV disamarkan dengan
+aturan tetap **sebelum** teks dikirim ke Gemini. Kandidat yang belum melamar tampil anonim di talent
+pool. Keputusan akhir tetap pada manusia, dan pelamar bisa meminta peninjauan manusia (UU PDP).
+
+**T:** *Bagaimana cara Anda menghasilkan uang?*
+**J:** Employer: gratis memasang lowongan, Rp29.000/lowongan (Beacon) atau Rp99.000/bulan (Lighthouse).
+Pencari kerja: gratis, dengan Prism Rp25.000/30 hari yang hanya menambah kuota — **membayar tidak
+pernah menaikkan skor**. Pembayaran saat ini QRIS/transfer yang dikonfirmasi admin; gateway menyusul.
+Model Pay-to-Unlock lama sudah dihapus (alasannya di [BUSINESS_MODEL.md](BUSINESS_MODEL.md)).
+
+**T:** *Berapa biaya AI per pengguna?*
+**J:** Terukur, bukan perkiraan: `GET /api/v1/admin/metrics` menghitung dari token yang benar-benar
+terpakai. Kuis dan skor tidak memanggil AI sama sekali.

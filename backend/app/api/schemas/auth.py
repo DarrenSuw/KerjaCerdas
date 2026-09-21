@@ -48,4 +48,4 @@ class TokenResponse(BaseModel):
 
     access_token: str
     token_type: str = "bearer"
-    user: dict[str, str]  # id, name, email, role
+    user: dict[str, str | bool]  # id, name, email, role, is_admin

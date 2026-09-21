@@ -13,7 +13,12 @@ The pipeline is a **bi-encoder semantic ranker with structured boosts and band-b
 
 ## 1. Embedding Stage (offline, at write time)
 
-**Model:** `gemini-embedding-2` (`settings.gemini_embed_model`), requested at `output_dimensionality=768`.
+**Model:** `gemini-embedding-1` (`settings.gemini_embed_model`), requested at `output_dimensionality=768`.
+
+> **Changing this model is a migration.** Stored vectors carry the model that produced them, and a
+> cross-model pair is scored at cosine `0` rather than compared across two different vector spaces —
+> so every un-migrated row silently loses the whole cosine term (35% of the score). Re-embed with
+> `python -m scripts.reembed` (`--dry-run` first) immediately after any change.
 The native model is 3072-dim; Gemini applies **Matryoshka Representation Learning (MRL)** truncation, so the first 768 dims retain most of the semantic signal. 768 was chosen to match the `vector(768)` pgvector column. `text-embedding-004` (native 768-dim, no truncation) is a documented stable-fallback option, settable via `GEMINI_EMBED_MODEL`, but is not the default.
 
 If no `GEMINI_API_KEY`/`VERTEX_AI_PROJECT` is configured, or a Gemini call fails for a non-quota reason, `embeddings/gemini.py` latches to a deterministic offline `HashEmbedder` (token-hash based, 768-dim) so the pipeline never crashes — cosine scores against hash vectors are near-meaningless, logged loudly. Quota (429) errors instead get bounded retries (up to 4 attempts for document embeds, 2 for query embeds) before raising `EmbeddingUnavailableError`.
@@ -40,7 +45,7 @@ Embeddings are computed when a profile/job is created or updated (`embed_seeker`
 
 ## 2. Retrieval Stage (online, per request)
 
-`_job_candidates` / `_seeker_candidates` first run a cheap `COUNT(*)` of active rows. **Below `settings.matching_full_scan_safe_limit` (default 500), every active row is scored directly** — no ANN prefilter at all — because the prefilter's ordering is cosine-only, while the actual hybrid score it stands in for weighs skill overlap, experience, education and recency too (55% combined, cosine is only 45%). A candidate with a weak embedding match but a strong skill/experience fit can score well on the real formula yet never reach it if their row falls outside a cosine-only top-K — a full scan is both cheap and strictly more correct at this platform's near-term scale (see `ROADMAP.md`'s Level 1/2 numbers). A count-query failure is treated as "assume large", never as "assume small".
+`_job_candidates` / `_seeker_candidates` first run a cheap `COUNT(*)` of active rows. **Below `settings.matching_full_scan_safe_limit` (default 500), every active row is scored directly** — no ANN prefilter at all — because the prefilter's ordering is cosine-only, while the actual hybrid score it stands in for weighs proof-weighted skills, experience and education too (55% combined, cosine is only 45%). A candidate with a weak embedding match but a strong skill/experience fit can score well on the real formula yet never reach it if their row falls outside a cosine-only top-K — a full scan is both cheap and strictly more correct at this platform's near-term scale (see `ROADMAP.md`'s Level 1/2 numbers). A count-query failure is treated as "assume large", never as "assume small".
 
 Only once the active-row count genuinely exceeds that threshold does retrieval switch to the pgvector HNSW index (`embedding <=> query`, `m=16, ef_construction=64`): `_job_candidates` / `_seeker_candidates` fetch a prefiltered pool of `max(top_k * 20, 1000)` candidates with their cosine already computed by Postgres, plus any rows still missing an embedding (scored at cosine 0). The wide multiplier is a deliberate mitigation, not a magic number: cosine-only ANN ordering can still rank a structurally strong candidate (great skill/experience fit, weak embedding match) outside any fixed cutoff, so the pool is sized to shrink that risk window rather than eliminate it — full elimination needs a skill-aware SQL retrieval query, blocked today on `skills`/`required_skills` being `JSON` (not `JSONB`) columns with no overlap index; see ROADMAP.md §1.4 item 0. If the query embedding or the pgvector index is unavailable, the matcher falls back to a full in-memory scan instead of failing the request. `test_matching_parity.py` forces this ANN path unconditionally (via `matching_full_scan_safe_limit = 0`) against its small seeded dataset, since it exists specifically to test ANN-vs-in-memory parity.
 
@@ -52,25 +57,40 @@ Both directions (`rank_jobs_for_seeker`, `rank_seekers_for_job`) share one formu
 
 ```python
 final_score = (
-    cosine_similarity   * 0.45 +   # _W_COSINE
-    skill_overlap       * 0.25 +   # _W_SKILL
+    cosine_similarity    * 0.35 +   # _W_COSINE
+    proven_skill_score   * 0.40 +   # _W_SKILL — weighted by PROOF, see below
     experience_fit_boost         +   # up to 0.15 (_W_EXPERIENCE), scaled by shortfall
-    education_boost              +   # 0.10 (_W_EDUCATION) flat if the seeker has any listed education
-    recency_boost                    # 0.05 (_W_RECENCY), currently flat for every candidate
+    education_fit        * 0.10     # _W_EDUCATION — compared against the job's education_min
 )
 ```
 
-These five weights are fixed constants in `matcher.py`, not `.env`-configurable settings — the module docstring is explicit that they're a hand-calibrated starting point for the current dataset, not yet validated against a labelled evaluation set.
+**Proof outweighs text similarity, deliberately.** Cosine rewards a CV that reads like the advert —
+which is exactly what keyword stuffing produces — so the two terms compete directly. At the earlier
+`0.45/0.30` split proving every required skill was worth `(0.85-0.30)x0.30 = 0.165`, while a stuffer
+needed only `0.165/0.45 = 0.367` more cosine to erase it: a stuffer at cosine `0.90` scored `0.745`
+and beat a fully proven candidate at cosine `0.50` (`0.730`). The product claims the opposite, so the
+weights now say it. At `0.35/0.40` a stuffer needs `0.629` more cosine to cancel full proof, which is
+outside the range cosine actually spans on real pairs.
+
+**v2 changes:** the skill term is now **proof-weighted** and carries 0.40 (up from 0.25); education is
+compared against the posting's `education_min` instead of "has any education at all"; and the flat
+`0.05` recency term was **removed** — it was identical for every candidate, so it added no signal, only
+an offset. (The agent's token-efficiency gate was re-based accordingly: it now fires when no job shows
+any relevance signal at all, rather than at a fixed score threshold, because a genuinely relevant but
+unproven profile can legitimately score low.)
+
+These four weights are fixed constants in `matcher.py`, not `.env`-configurable settings — the module
+docstring is explicit that they're a hand-calibrated starting point for the current dataset, not yet
+validated against a labelled evaluation set.
 
 **Components:**
 
 | Component | Definition | Notes |
 |---|---|---|
 | `cosine_similarity` | cosine similarity of the two 768-dim vectors, floored at 0 | precomputed by pgvector during retrieval when available, else computed in Python |
-| `skill_overlap` | `\|seeker_skills ∩ required_skills\| / \|required_skills\|` | skills are canonicalized first via `_normalize_skill()`/`_CANONICAL_SKILL_MAP` (e.g. `React.js`, `ReactJS` → `react`) before the exact-match comparison |
+| `proven_skill_score` | mean **proof weight** over the job's required skills (0 when the seeker lacks the skill), blended `0.8 × required + 0.2 × nice_to_have`; a posting listing no skills is neutral `0.5` | Proof weights (`services/matching/evidence.py`): `claimed` **0.30**, `quiz` **0.85** (valid 180 days, then it decays back to `claimed`), `hr_confirmed` **1.00**. Skills are canonicalized first via `_normalize_skill()`/`_CANONICAL_SKILL_MAP` (`React.js`/`ReactJS` → `react`, `Microsoft Excel` → `excel`, `pelayanan pelanggan` → `customer service`) so a quiz proves the skill however the CV or ad spells it. Worked example — job needs Excel + Customer Service + Administrasi: claiming all three scores `0.30`; passing the Excel and CS quizzes scores `0.67` |
 | `experience_fit_boost` | `0.15` if `years_exp >= required_years_min` (or the posting has no minimum), else scaled linearly by `years_exp / required_years_min` | `years_exp` comes from `_experience_years()`, which merges overlapping work-history date ranges before summing calendar duration — a freelancer with three concurrent 2024 contracts is not credited with 3 years |
-| `education_boost` | flat `0.10` if the seeker has any listed education, else `0` | not weighted by degree level |
-| `recency_boost` | flat `0.05` for every candidate today | named as its own term so a real recency signal can replace the constant without touching the rest of the formula |
+| `education_fit` | `1.0` when the posting states no minimum above the floor (SMA/SMK — nothing to fail, so nobody is penalised, including a seeker whose CV parsed no education); otherwise `1.0` when the seeker's highest degree meets `education_min`, `0.5` one level short, `0.0` otherwise or when no education is listed | ladder: SMA/SMK < D3 < D4/S1 < S2 < S3. `education_min` defaults to **SMA**: defaulting to S1 made every job posted without touching the field silently demand a degree, zeroing this term for exactly the SMA/SMK school-leavers the product targets |
 
 **Region and salary filters are hard eliminations, not soft boosts.** When a seeker actively sets a location or salary filter (or an employer sets a location/experience filter), non-matching candidates are dropped from the result set entirely rather than merely scored lower.
 
@@ -109,3 +129,20 @@ Results are then shuffled within each band using a seed stable per job (seeker v
 3. **One embedding vector per entity.** Profile and job text are each embedded as a single concatenated string, so a long, detailed CV can dilute the signal against a short job description. A separate role-summary vector and hard-skills vector, combined via late interaction or reciprocal rank fusion, is the natural next step — see [`ROADMAP.md`](../ROADMAP.md) §1.4.
 4. **Fairness auditing has not been done.** Before scaling, exposure parity across gender/age/region groups within each band should be measured, and Indonesian job descriptions scanned for language that would be unlawful to score on under local labor regulation and UU PDP 2022.
 5. **No learning-to-rank loop yet.** `events.py` logs `job_viewed`/`apply_clicked`/band data, which is enough to eventually train a ranking model (e.g. LambdaMART) on real click/apply signal — see [`ROADMAP.md`](../ROADMAP.md) for A/B testing and event-tracking status.
+
+
+## 7. Proof, integrity and outcome data (v2)
+
+- **Where proof comes from:** `POST /quiz/submit` (a pass writes `skill_evidence` and sets the skill to
+  `quiz`) and `POST /employer/applications/{id}/confirm-skills` (HR tick → `hr_confirmed`).
+- **Clients cannot forge it.** The seeker profile input schema has no proof field; the agent's inline
+  seeker override resets all proof to `claimed` and re-copies real proof from the stored profile; and
+  `evidence.carry_proof` preserves earned badges when a profile edit or CV re-upload replaces the
+  skill list (it also keeps proven skills the new list dropped).
+- **One-pair scoring.** `matcher.score_pair(seeker, job)` scores a single (seeker, job) pair from stored
+  embeddings with no API call. It is used when a seeker applies (score + proof snapshot are stored on
+  the application) and to rank the employer's applicant list live, so a candidate who passes a quiz
+  after applying moves up.
+- **Outcome data.** `applications.match_score` + `skill_snapshot` at apply time and every status change
+  in `application_status_events` let `GET /admin/metrics` report the interview rate per score band —
+  the beginning of an answer to "do higher scores actually get interviews?".

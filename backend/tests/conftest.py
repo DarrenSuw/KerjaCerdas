@@ -31,6 +31,11 @@ from backend.app.config.settings import settings  # noqa: E402
 settings.database_url = os.environ["DATABASE_URL"]
 settings.prod_database_url = ""
 settings.jwt_secret_key = os.environ["JWT_SECRET_KEY"]
+# Most tests exercise posting/applying mechanics, not plans or first-job
+# moderation; those are switched back on explicitly by the v2 tests
+# (test_v2_*.py) via monkeypatch.
+settings.moderation_first_job_review = False
+settings.plan_limits_enforced = False
 
 
 # ── Deterministic stand-ins for the AI layer ─────────────────────────────────
@@ -180,6 +185,7 @@ def _register(client: TestClient, role: str, password: str = "SecurePass1") -> d
     )
     assert resp.status_code == 201, resp.text
     body = resp.json()
+
     return {
         "email": email,
         "password": password,

@@ -48,8 +48,8 @@ export default function SeekerDashboard() {
 
     const cvDone = Boolean(profile?.has_cv || profile?.resume_url || profile?.skills?.length > 0)
     const skillsDone = Boolean((profile?.skills?.length || 0) > 0)
-    const ktpDone = Boolean(profile?.ktp_verified)
-    const diktiDone = Boolean(profile?.ijazah_verified)
+    const provenCount = (profile?.skills || []).filter((sk) => sk.proof_level === 'quiz' || sk.proof_level === 'hr_confirmed').length
+    const proofDone = provenCount > 0
 
     const matchCount = matches.length
     const gapCount = missingSkills.length
@@ -259,8 +259,9 @@ export default function SeekerDashboard() {
                             ) : (
                                 topMatches.map((job, idx) => {
                                     // Real cosine/skill components from the matcher's hybrid formula
-                                    // (45%/25% of the total weight; the remaining 30% is experience,
-                                    // education and recency — not shown in this compact 2-bar view).
+                                    // (35%/40% of the total weight; the remaining 25% is experience
+                                    // and education — not shown in this compact 2-bar view). The skill
+                                    // bar is proof-weighted: claimed 0.30, quiz 0.85, HR-confirmed 1.00.
                                     const jobScore = Math.round(job.overall_score ?? job.score ?? 0)
                                     const sem = Math.round(job.cosine != null ? job.cosine * 100 : jobScore)
                                     const sk = Math.round(job.skill_overlap != null ? job.skill_overlap * 100 : jobScore)
@@ -309,7 +310,7 @@ export default function SeekerDashboard() {
                                                     <div style={{ display: 'flex', gap: 20 }}>
                                                         <div style={{ width: 150 }}>
                                                             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 5 }}>
-                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Semantik ×0.45</span>
+                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Semantik ×0.35</span>
                                                                 <span style={{ font: '900 11.5px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>{sem}%</span>
                                                             </div>
                                                             <div style={{ height: 6, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
@@ -318,7 +319,7 @@ export default function SeekerDashboard() {
                                                         </div>
                                                         <div style={{ width: 150 }}>
                                                             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 5 }}>
-                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Skill ×0.25</span>
+                                                                <span style={{ font: '700 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>Skill ×0.40</span>
                                                                 <span style={{ font: '900 11.5px/1 "Plus Jakarta Sans", sans-serif', color: '#0284C7' }}>{sk}%</span>
                                                             </div>
                                                             <div style={{ height: 6, background: '#E2E8F0', borderRadius: 999, overflow: 'hidden' }}>
@@ -408,44 +409,34 @@ export default function SeekerDashboard() {
                                     </span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <span style={{ display: 'flex', alignItems: 'center', gap: 9, font: '600 12.5px/1 "Plus Jakarta Sans", sans-serif', color: ktpDone ? '#334155' : '#64748B' }}>
-                                        <span style={{ width: 18, height: 18, borderRadius: 5, background: ktpDone ? '#10B981' : '#fff', border: ktpDone ? 'none' : '1.5px solid #CBD5E1', display: 'grid', placeItems: 'center', color: '#fff', font: '900 11px/1 "Plus Jakarta Sans", sans-serif' }}>
-                                            {ktpDone ? '✓' : ''}
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: 9, font: '600 12.5px/1 "Plus Jakarta Sans", sans-serif', color: proofDone ? '#334155' : '#64748B' }}>
+                                        <span style={{ width: 18, height: 18, borderRadius: 5, background: proofDone ? '#10B981' : '#fff', border: proofDone ? 'none' : '1.5px solid #CBD5E1', display: 'grid', placeItems: 'center', color: '#fff', font: '900 11px/1 "Plus Jakarta Sans", sans-serif' }}>
+                                            {proofDone ? '✓' : ''}
                                         </span>
-                                        Verifikasi identitas KTP
+                                        Skill terbukti lewat kuis ({provenCount})
                                     </span>
-                                    <span style={{ font: '800 11px/1 "Plus Jakarta Sans", sans-serif', color: ktpDone ? '#059669' : '#94A3B8' }}>
-                                        {ktpDone ? 'Selesai' : 'Belum'}
-                                    </span>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <span style={{ display: 'flex', alignItems: 'center', gap: 9, font: '600 12.5px/1 "Plus Jakarta Sans", sans-serif', color: diktiDone ? '#334155' : '#64748B' }}>
-                                        <span style={{ width: 18, height: 18, borderRadius: 5, background: diktiDone ? '#10B981' : '#fff', border: diktiDone ? 'none' : '1.5px solid #CBD5E1', display: 'grid', placeItems: 'center', color: '#fff', font: '900 11px/1 "Plus Jakarta Sans", sans-serif' }}>
-                                            {diktiDone ? '✓' : ''}
-                                        </span>
-                                        Verifikasi ijazah Dikti
-                                    </span>
-                                    <span style={{ font: '800 11px/1 "Plus Jakarta Sans", sans-serif', color: diktiDone ? '#059669' : '#94A3B8' }}>
-                                        {diktiDone ? 'Selesai' : 'Belum'}
+                                    <span style={{ font: '800 11px/1 "Plus Jakarta Sans", sans-serif', color: proofDone ? '#059669' : '#94A3B8' }}>
+                                        {proofDone ? 'Selesai' : 'Belum'}
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Verifikasi E-KYC Banner */}
+                        {/* Bukti Skill Banner */}
                         <div style={{ background: '#FFF1EB', border: `1.5px solid ${KC.orange}`, borderRadius: 13, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 20 }}>
                             <div style={{ font: '900 15px/1.25 "Plus Jakarta Sans", sans-serif', color: KC.ink, marginBottom: 10 }}>
-                                Verifikasi Identitas &amp; Ijazah
+                                Buktikan skill-mu
                             </div>
                             <p style={{ font: '400 12.5px/1.6 "Plus Jakarta Sans", sans-serif', color: '#9A3412', margin: '0 0 16px' }}>
-                                Kandidat terverifikasi memiliki visibilitas prioritas hingga <b>3× lipat</b> pada hasil kurasi rekruter perusahaan.
+                                Skill yang hanya ditulis di CV dihitung 30% di skor kecocokan. Lulus kuis singkat (±3 menit)
+                                menjadikannya <b>✓ Terbukti</b> (85%) di semua lowongan.
                             </p>
                             <button
                                 onClick={() => navigate('seeker-verification')}
                                 className="kc-btn"
                                 style={{ ...topBtn('#fff', KC.ink), padding: '11px 16px', fontSize: 12.5 }}
                             >
-                                Buka Verifikasi →
+                                Ikut kuis skill →
                             </button>
                         </div>
 
@@ -646,7 +637,7 @@ export default function SeekerDashboard() {
                     }}
                 >
                     <div style={{ width: 14, height: 16, background: KC.ink, clipPath: 'polygon(50% 0,100% 22%,100% 62%,50% 100%,0 62%,0 22%)' }} />
-                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Verifikasi E-KYC</span>
+                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Bukti Skill</span>
                 </div>
             </div>
 
@@ -793,18 +784,18 @@ export default function SeekerDashboard() {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 600, color: '#64748B' }}>
-                            <span style={{ width: 17, height: 17, borderRadius: 5, background: ktpDone ? '#10B981' : '#fff', border: ktpDone ? 'none' : '1.5px solid #CBD5E1', display: 'grid', placeItems: 'center', color: '#fff', fontSize: 10, fontWeight: 900 }}>
-                                {ktpDone ? '✓' : ''}
+                            <span style={{ width: 17, height: 17, borderRadius: 5, background: proofDone ? '#10B981' : '#fff', border: proofDone ? 'none' : '1.5px solid #CBD5E1', display: 'grid', placeItems: 'center', color: '#fff', fontSize: 10, fontWeight: 900 }}>
+                                {proofDone ? '✓' : ''}
                             </span>
-                            Verifikasi identitas KTP
+                            Skill terbukti lewat kuis ({provenCount})
                         </span>
-                        <span style={{ fontSize: 10.5, fontWeight: 800, color: ktpDone ? '#059669' : '#94A3B8' }}>
-                            {ktpDone ? 'Selesai' : 'Belum'}
+                        <span style={{ fontSize: 10.5, fontWeight: 800, color: proofDone ? '#059669' : '#94A3B8' }}>
+                            {proofDone ? 'Selesai' : 'Belum'}
                         </span>
                     </div>
                 </div>
                 <div style={{ marginTop: 13, padding: '11px 13px', background: '#FFF1EB', border: `1px solid ${KC.orange}`, borderRadius: 10, fontSize: 11.5, lineHeight: 1.5, color: '#9A3412', fontWeight: 600 }}>
-                    Profil terverifikasi mendapat prioritas hingga <b>3× lipat</b> pada kurasi rekruter.
+                    Skill yang lulus kuis dihitung <b>85%</b> di skor kecocokan, klaim CV hanya 30%.
                 </div>
             </div>
         </div>

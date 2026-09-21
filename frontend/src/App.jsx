@@ -14,13 +14,15 @@ import OnboardingWizard from './components/OnboardingWizard'
 import LandingHero from './components/LandingHero'
 import PrivacyPolicyPage from './components/PrivacyPolicyPage'
 import AboutPage from './components/AboutPage'
+import PublicJobPage from './components/PublicJobPage'
+import AdminPanel from './components/AdminPanel'
 
 // Seeker views
 import SeekerDashboard from './components/SeekerDashboard'
 import SeekerMatchResults from './components/SeekerMatchResults'
 import SkillGapPanel from './components/SkillGapPanel'
 import SavedJobsPage from './components/SavedJobsPage'
-import VerificationDashboard from './components/VerificationDashboard'
+import SkillProofPage from './components/SkillProofPage'
 import CVUploader from './components/CVUploader'
 import SeekerSearch from './components/SeekerSearch'
 import ApplicationsPage from './components/ApplicationsPage'
@@ -30,7 +32,7 @@ import EmployerDashboard from './components/EmployerDashboard'
 import EmployerJobs from './components/EmployerJobs'
 import EmployerPostJob from './components/EmployerPostJob'
 import EmployerCandidates from './components/EmployerCandidates'
-import EmployerVerification from './components/EmployerVerification'
+import TrustCenter from './components/TrustCenter'
 import JobPackUploader from './components/JobPackUploader'
 import EmployerProfile from './components/EmployerProfile'
 
@@ -120,6 +122,14 @@ export default function App() {
                 <Route path="/harga" element={<Navigate to="/" replace />} />
                 <Route path="/tentang" element={<AboutPage />} />
                 <Route path="/privasi" element={<PrivacyPolicyPage />} />
+                {/* Shareable job link / QR poster target — no login needed to view */}
+                <Route path="/j/:code" element={<PublicJobPage />} />
+                {/* ── Admin (backend allows only ADMIN_EMAILS) ──────────────── */}
+                <Route path="/admin" element={
+                    <ProtectedRoute>
+                        <AppShell><AdminPanel /></AppShell>
+                    </ProtectedRoute>
+                } />
 
                 {/* ── Seeker routes ─────────────────────────── */}
                 <Route path="/dashboard" element={
@@ -142,11 +152,12 @@ export default function App() {
                         <AppShell><SavedJobsPage /></AppShell>
                     </ProtectedRoute>
                 } />
-                <Route path="/verifikasi" element={
+                <Route path="/bukti-skill" element={
                     <ProtectedRoute role="seeker">
-                        <AppShell><VerificationDashboard /></AppShell>
+                        <AppShell><SkillProofPage /></AppShell>
                     </ProtectedRoute>
                 } />
+                <Route path="/verifikasi" element={<Navigate to="/bukti-skill" replace />} />
                 <Route path="/profil" element={
                     <ProtectedRoute role="seeker">
                         <AppShell><CVUploader /></AppShell>
@@ -194,11 +205,12 @@ export default function App() {
                         <AppShell><EmployerCandidates /></AppShell>
                     </ProtectedRoute>
                 } />
-                <Route path="/employer/verifikasi" element={
+                <Route path="/employer/kepercayaan" element={
                     <ProtectedRoute role="employer">
-                        <AppShell><EmployerVerification /></AppShell>
+                        <AppShell><TrustCenter /></AppShell>
                     </ProtectedRoute>
                 } />
+                <Route path="/employer/verifikasi" element={<Navigate to="/employer/kepercayaan" replace />} />
                 <Route path="/employer/upload" element={
                     <ProtectedRoute role="employer">
                         <AppShell><JobPackUploader /></AppShell>

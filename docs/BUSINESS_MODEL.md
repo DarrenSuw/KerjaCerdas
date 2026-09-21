@@ -1,174 +1,211 @@
-# Laporan Finansial Komprehensif, Proyeksi Tahunan & Model Bisnis: KerjaCerdas
+# Model Bisnis & Keuangan KerjaCerdas (v2 — "Bukti, bukan klaim")
 
-> **Laporan Analisis Finansial Realistis & Peta Skalabilitas (Tahap Peluncuran & Pertumbuhan 3 Tahun)**: Dokumen ini menyajikan pemodelan ekonomi menyeluruh (*Deep Financial & Unit Economics Analysis*), struktur monetisasi B2B dan B2C, rincian biaya arsitektur *cloud-native* 100% online per level, alokasi budget operasional awal Bulan ke-1 (Rp 3.850.000/bulan), proyeksi pendapatan tahunan (Tahun 1 s.d. Tahun 3), kalkulasi titik impas (*Break-Even Point*), dan peta pemicu peningkatan tier infrastruktur (*Infrastructure Scaling Triggers*).
-
----
-
-## 1. Definisi Persona Target Pengguna Nyata (*Target User Persona*)
-
-Untuk memastikan proyeksi keuangan dapat dipertanggungjawabkan, target pengguna pada tahap awal didefinisikan secara spesifik dan terukur:
-
-```mermaid
-flowchart TD
-    classDef b2c fill:#702459,stroke:#D6BCFA,stroke-width:2px,color:#FFF,font-weight:bold
-    classDef b2b fill:#2D3748,stroke:#38B2AC,stroke-width:2px,color:#FFF,font-weight:bold
-
-    subgraph B2C_Target ["🙎‍♂️ Target Pencari Kerja (B2C) — Tahun 1: 5.000 Talenta"]
-        P1["• Lulusan baru (Fresh Graduate) SMK, Vokasi & D3/S1 (Usia 18-24 thn)\n• Wilayah Fokus: Jabodetabek & Bandung Raya\n• Pain: Kesulitan menyaring lowongan yang cocok & butuh arahan skill gap"]:::b2c
-    end
-
-    subgraph B2B_Target ["🏢 Target Perusahaan (B2B) — Tahun 1: 50 - 100 UMKM"]
-        P2["• Usaha Mikro, Kecil & Menengah (UMKM Digital, Agensi Kreatif, Software House, Retail Modern)\n• Kebutuhan Rekrutmen: 1 - 3 staf per bulan\n• Pain: Tidak mampu membayar langganan job portal jutaan rupiah di muka"]:::b2b
-    end
-```
+> **Aturan dokumen ini:** setiap harga infrastruktur/AI punya sumber (lihat §9). Angka tanpa sumber ditandai **(asumsi)** atau **(perlu penawaran)**. Tidak ada angka hasil rekaan.
+> **Kurs:** US$1 = **Rp17.600** (JISDOR Bank Indonesia berkisar Rp17.536–17.727 pada September 2026 [S7]).
+> Versi sebelumnya memakai model *Pay-to-Unlock* (Rp50.000/kontak). **Model itu dihapus** — alasannya di §1.
 
 ---
 
-## 2. Aliran Pendapatan (*Revenue Streams*) & Mekanisme Monetisasi
+## 1. Kenapa Pay-to-Unlock dihapus
 
-1. **B2B Pay-to-Unlock (Fokus Utama Traksi Awal):**
-   - Perusahaan meninjau kandidat teratas (*shortlist*) secara gratis dengan format sensor (*The Teaser Method*).
-   - **Harga saat ini (sesuai implementasi `POST /api/v1/employer/jobs/{id}/unlock/{seeker_id}` di `backend/app/api/routers/employer.py`): tarif flat Rp 50.000 per kandidat yang di-unlock** — bukan paket bundel 10-kandidat. Satu-satunya pengecualian yang benar-benar berjalan: kandidat yang **sudah melamar langsung** ke lowongan tersebut selalu gratis di-unlock (`unlock_cost_idr: 0`), karena kontaknya sudah diserahkan secara sukarela lewat lamaran — mencegah menagih dua kali untuk akses yang sama.
-   - **Belum diimplementasikan:** kredit unlock gratis di awal pendaftaran ("freemium hook") dan paket bundel/diskon per-10-unlock. Keduanya adalah item roadmap monetisasi, bukan perilaku aktif sistem saat ini — lihat catatan konsistensi harga di §4 di bawah, yang memakai tarif flat Rp 50.000/transaksi sesuai kode.
-   - Endpoint unlock sendiri masih **mode demo**: menerima `payment_token` apa pun tanpa validasi gateway pembayaran nyata (lihat komentar `# Stub implementation` di `employer.py`).
+| Masalah | Penjelasan |
+|---|---|
+| Menagih rasa sakit yang salah | Juri mencatat kebutuhan perusahaan terkonfirmasi kuat pada **penyaringan** pelamar, bukan pada *sourcing* kandidat baru. Unlock menagih sourcing. |
+| Butuh likuiditas yang belum ada | Membuka kontak baru bernilai hanya jika kolam kandidat besar. Di awal, kolam itu kosong. |
+| Bocor | Teaser "Someone at X" + wilayah + pengalaman cukup untuk menemukan orangnya di LinkedIn tanpa membayar. |
+| Risiko UU PDP | Menjual akses kontak pencari kerja tanpa persetujuan eksplisit. |
+| Tidak bisa ditagih | Belum ada payment gateway; endpoint unlock menerima token apa pun (mode demo). |
 
-2. **B2B KerjaCerdas Pro (Langganan Retensi):**
-   - Skema langganan **Rp 299.000 / bulan** bagi perusahaan dengan intensitas rekrutmen berkelanjutan (akses kuota shortlisting lebih besar & branding terverifikasi).
-
-3. **B2C Komisi Afiliasi Pelatihan Ed-Tech:**
-   - Komisi **10% – 15% (rata-rata Rp 48.000 / referral)** saat pencari kerja mengambil kursus berbayar dari mitra pelatihan (Dicoding, Prakerja LPK) melalui rekomendasi *Skill Gap Analyzer*.
+**Gantinya:** employer membayar untuk **memeringkat & mewawancarai pelamar yang layak**; kontak pelamar yang melamar sendiri selalu gratis; kandidat yang belum melamar tampil **anonim**.
 
 ---
 
-## 3. Rencana Alokasi Budget yang Dibutuhkan (Bulan ke-1 Pilot: Rp 3.850.000)
+## 2. Aliran pendapatan (yang benar-benar ada di kode)
 
-Rincian alokasi budget awal untuk tahap pembuktian konsep (*proof of concept*) dan validasi pilot:
+| Paket | Harga | Untuk siapa | Isi | Status |
+|---|---|---|---|---|
+| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, 20 pelamar dengan skor tertinggi ditampilkan, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
+| **Beacon** | **Rp29.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pelamar tanpa batas diperingkat, pertanyaan wawancara AI, ekspor CSV | `[BUILT + TESTED]`, pembayaran manual |
+| **Lighthouse** | **Rp99.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
+| **Prism** (pencari kerja) | **Rp25.000 / 30 hari** | Pencari kerja aktif | Kuota advisor 100 pesan/30 hari, ulang kuis setelah 2 hari (gratis: 10 pesan/hari, ulang 7 hari) | `[BUILT + TESTED]`, pembayaran manual |
+| Afiliasi Ed-Tech | komisi | — | Klik kursus sudah dilacak lewat event | `[PLANNED]` — **tidak** dihitung dalam BEP |
 
-| Pos Alokasi Pengeluaran | Biaya (IDR) | Proporsi | Rasionalisasi & Peruntukan Operasional |
+**Pencari kerja tidak pernah membayar untuk skor.** Prism hanya menambah kuota/percepatan; bobot bukti tetap sama.
+
+**Pembayaran hari ini:** QRIS / transfer bank → admin mengaktifkan pesanan 30 hari (`[BUILT, MANUAL PAYMENT]`). Gateway (Midtrans/Xendit) `[PLANNED]`: QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup [S1]. Stripe belum bisa dipakai — di Indonesia statusnya undangan dan tanpa transaksi lintas negara [S2].
+
+---
+
+## 3. Biaya per aksi AI (dasar COGS)
+
+Harga Gemini API [S3]; `gemini-3.1-flash-lite` tidak ada di daftar harga publik sehingga dipakai tarif **3.5 Flash-Lite** sebagai proksi konservatif. Jumlah token per aksi = **(asumsi)**, diverifikasi lewat `GET /api/v1/admin/metrics` yang menghitung dari tabel `ai_logs` sungguhan.
+
+| Aksi | Model | Token (in/out) | Biaya |
 |---|---|---|---|
-| **Server Hosting (FastAPI & Docker VPS)** | Rp 450.000 | 11.7% | 1 Cloud VPS (4 vCPU, 8GB RAM) online 24/7 untuk menjamin latensi API <200ms |
-| **Database (PostgreSQL pgvector)** | Rp 100.000 | 2.6% | PostgreSQL pgvector cloud-hosted |
-| **Penyimpanan Berkas CV (Cloudflare R2)** | Rp 0 (Free 10GB) | 0.0% | Kapasitas penyimpanan gratis 10GB (>10.000 PDF) tanpa biaya transfer bandwidth |
-| **Kuota API LLM & Embeddings (Gemini Flash)** | Rp 500.000 | 13.0% | Kuota parsing ~100.000 token ekstraksi CV, skill gap, dan conversational advisor |
-| **WhatsApp OTP Gateway (Fonnte / Wablas)** | Rp 300.000 | 7.8% | Paket 2.000 pesan OTP untuk verifikasi nomor telepon pengguna baru |
-| **Domain Resmi `.id` & Keamanan SSL** | Rp 250.000 | 6.5% | Registrasi domain resmi `.id` 1 tahun + proteksi mitigasi serangan DDoS |
-| **Program Outreach Pilot (5 UMKM & 100 Penguji)** | Rp 1.800.000 | 46.7% | Insentif pengujian validasi, onboarding langsung 5 UMKM, dan akuisisi talenta awal |
-| **Cadangan Kontinjensi & Operasional (10%)** | Rp 450.000 | 11.7% | Buffer fluktuasi kurs mata uang dan kebutuhan operasional tak terduga |
-| **TOTAL BUDGET BULAN KE-1 (PILOT)** | **Rp 3.850.000** | **100.0%** | **Budget awal yang rasional untuk tahap validasi pilot (rentang Rp 2–5 jt/bln)** |
+| Baca 1 lowongan + AutoMod | 3.5 Flash-Lite | 4k / 1,5k | ~Rp130 |
+| Baca 1 CV + embedding (sekali per kandidat) | 3.5 Flash-Lite + Embedding 2 | 5k / 1,5k + 2k | ~Rp99 |
+| Skor kecocokan | tanpa panggilan AI | — | **Rp0** |
+| **Kuis skill (percobaan)** | tanpa panggilan AI (kunci jawaban) | — | **Rp0** |
+| Pembuatan soal kuis (sekali per skill baru) | 3.1 Flash Lite | 3k / 2k | ~Rp85 |
+| Pertanyaan wawancara / kandidat | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
+| Analisis skill gap | 2.5 Flash-Lite (tier gratis) | 4k / 1,5k | ~Rp23 |
+| 1 pesan advisor | 2.5 Flash-Lite / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 / ~Rp38 |
+| 1 email (OTP verifikasi) | Resend — **gratis sampai 3.000/bln**, lalu Pro $20/50.000 [S4] | — | **Rp0** di tier gratis; ~Rp7 setelahnya |
+
+Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadangan.
+
+### Kontribusi per penjualan (asumsi pemakaian tipikal: 30 pelamar, 5 dishortlist)
+
+> **Dua hal yang menentukan biaya, dan keduanya dibayar SEKALI PER KANDIDAT — bukan per lamaran:**
+>
+> 1. **Baca CV + embedding (~Rp99)** — dilakukan saat kandidat mengunggah CV. Kandidat yang sama
+>    melamar ke 10 lowongan tidak menambah biaya apa pun di 9 lowongan berikutnya.
+> 2. **Email OTP (~Rp7, atau Rp0 di tier gratis Resend)** — dikirim saat kandidat memverifikasi
+>    email akunnya, sekali seumur akun. Bukan per lamaran, dan bukan per lowongan.
+>
+> Karena itu biaya marginal per lowongan **turun** seiring kolam kandidat matang. Tabel di bawah
+> memakai asumsi konservatif "separuh pelamar adalah kandidat baru" (kondisi awal). Margin Beacon
+> pada 200 pelamar: **42%** bila separuh kandidat baru (bulan-bulan awal), **86%** bila hanya 10%
+> yang baru (kolam matang). Beacon tidak membatasi jumlah pelamar — risiko ini nyata di awal dan
+> mengecil dengan sendirinya, dan biaya sungguhannya terpantau di `/admin → Metrik`.
+
+| Item | Harga | COGS | **Kontribusi** | Margin |
+|---|---|---|---|---|
+| Beacon (1 lowongan) | Rp29.000 | ~Rp3.400 | **Rp25.600** | 88% |
+| Lighthouse (1 bulan, ~3 lowongan) | Rp99.000 | ~Rp10.250 | **Rp88.750** | 90% |
+| Prism (30 hari) | Rp25.000 | ~Rp7.715 | **Rp17.285** | 69% |
+| Spark (lowongan gratis) | Rp0 | ~Rp1.900 | −Rp1.900 | biaya akuisisi |
+| Pencari kerja gratis (per pengguna aktif/bulan) | Rp0 | ~Rp310 | −Rp310 | biaya akuisisi |
+
+Margin tinggi karena **kuis dan skor tidak memanggil AI per pemakaian**; biaya AI hanya untuk membaca CV/lowongan sekali dan pertanyaan wawancara.
 
 ---
 
-## 4. Analisis Titik Impas (*Break-Even Point / BEP Analysis*)
+## 4. Biaya tetap bulanan (harga bersumber)
 
-Kalkulasi titik impas didasarkan pada biaya operasional bulanan tetap (*Fixed OPEX Level 1 Full Cloud*) yang mencakup seluruh arsitektur server, basis data, API LLM, kuota OTP, dan pemeliharaan:
-
-```
-Biaya Operasional Tetap Bulanan (Fixed OPEX Level 1 Full Cloud) = Rp 1.200.000 / bulan
-  - Cloud VPS Server (4 vCPU, 8GB RAM)   : Rp  450.000
-  - Kuota API LLM Gemini 3.1 Flash       : Rp  400.000
-  - WhatsApp OTP Gateway                 : Rp  200.000
-  - Database Cloud Tools                 : Rp  100.000
-  - Domain, SSL & Maintenance            : Rp   50.000
-
-Harga Jual per Pay-to-Unlock (P)            = Rp 50.000  (tarif flat per kandidat, sesuai kode saat ini — lihat §2)
-Biaya Variabel per Transaksi (VC)           = Rp  5.000 (E-KYC Rp 4.000 + Gateway MDR Rp 1.000, proyeksi produksi — gateway pembayaran belum live)
-Marjin Kontribusi per Transaksi (CM = P - VC)= Rp 45.000 (90%)
-```
-
-### 4.1 Perhitungan BEP Unit & BEP Rupiah
-$$\text{BEP (Unit Transaksi)} = \frac{\text{Fixed OPEX}}{\text{Contribution Margin}} = \frac{\text{Rp 1.200.000}}{\text{Rp 45.000}} = \mathbf{26,67 \approx 27 \text{ Transaksi Unlock / Bulan}}$$
-
-$$\text{BEP (Rupiah)} = 27 \times \text{Rp 50.000} = \mathbf{\text{Rp 1.350.000 / Bulan}}$$
-
-### 4.2 Evaluasi Kelayakan:
-- Untuk menutup seluruh biaya arsitektur cloud dan operasional tetap bulanan, platform memerlukan **27 transaksi unlock per bulan** (senilai Rp 1.350.000/bulan).
-- Angka ini dapat dipenuhi hanya dari **5 hingga 7 UMKM aktif** per bulan (yang masing-masing merekrut 4-5 staf).
-- Target titik impas diproyeksikan tercapai pada **Bulan ke-3 operasional**.
-
----
-
-## 5. Proyeksi Keuangan Realistis 3 Tahun (Income Statement Tahunan)
-
-Proyeksi keuangan disusun secara konservatif-realistis berdasarkan kurva adopsi B2B UMKM Indonesia dan struktur biaya arsitektur cloud:
-
-```
-Asumsi Parameter Pertumbuhan:
-- Tahun 1 (Validasi & Traksi): 5.000 Talenta, 60 UMKM Aktif (Total 800 unlock/thn) + 15 Pengguna Pro
-- Tahun 2 (Ekspansi Regional): 20.000 Talenta, 200 UMKM Aktif (Total 3.500 unlock/thn) + 60 Pengguna Pro
-- Tahun 3 (Skala Nasional)   : 50.000 Talenta, 500 UMKM/Korporasi (Total 10.000 unlock/thn) + 180 Pengguna Pro
-```
-
-| Komponen Keuangan (IDR) | Tahun 1 (Fase Validasi: Level 1) | Tahun 2 (Fase Ekspansi: Level 2) | Tahun 3 (Fase Skala: Level 3) |
+| Komponen | Sumber harga | Bulan 1–6 | Bulan 7+ |
 |---|---|---|---|
-| **Pendapatan Pay-to-Unlock** | Rp 40.000.000 (800 unlock) | Rp 175.000.000 (3.500 unlock) | Rp 500.000.000 (10.000 unlock) |
-| **Pendapatan SaaS Pro** | Rp 5.382.000 (15 sub × 1.2 bln) | Rp 21.528.000 (60 sub × 1.2 bln) | Rp 64.584.000 (180 sub × 1.2 bln) |
-| **Komisi Pelatihan Ed-Tech (B2C)** | Rp 4.800.000 (100 referral) | Rp 19.200.000 (400 referral) | Rp 48.000.000 (1.000 referral) |
-| **TOTAL PENDAPATAN KOTOR (*Gross Revenue*)** | **Rp 50.182.000** | **Rp 215.728.000** | **Rp 612.584.000** |
-| HPP / Variable COGS (E-KYC & MDR) | (Rp 4.000.000) | (Rp 17.500.000) | (Rp 50.000.000) |
-| **LABA KOTOR (*Gross Profit*)** | **Rp 46.182.000 (92.0%)** | **Rp 198.228.000 (91.9%)** | **Rp 562.584.000 (91.8%)** |
-| Beban Infrastruktur Cloud & API LLM | (Rp 14.400.000 - Level 1) | (Rp 60.000.000 - Level 2) | (Rp 180.000.000 - Level 3) |
-| Beban Pemasaran & Akuisisi Pengguna | (Rp 12.000.000) | (Rp 36.000.000) | (Rp 80.000.000) |
-| Beban Operasional Tim & Maintenance | (Rp 10.000.000) | (Rp 40.000.000) | (Rp 100.000.000) |
-| **EBITDA** | **Rp 9.782.000** | **Rp 62.228.000** | **Rp 202.584.000** |
-| Pajak Badan PPh Final UMKM (0.5%) | (Rp 250.910) | (Rp 1.078.640) | (Rp 3.062.920) |
-| **LABA BERSIH (*Net Income*)** | **Rp 9.531.090 (19.0%)** | **Rp 61.149.360 (28.3%)** | **Rp 199.521.080 (32.6%)** |
+| Server aplikasi | DigitalOcean Basic 2 vCPU/4GB **$24**; 4 vCPU/8GB **$48** [S5] | Rp422k | Rp845k |
+| Database (Postgres + pgvector) | Supabase Pro **$25** (disk 8GB, kredit compute $10); compute Medium **$60** [S6] | Rp440k | Rp1,32jt |
+| Penyimpanan CV/PDF | Cloudflare R2: 10GB gratis, lalu $0,015/GB, tanpa biaya egress [S8] | Rp0 | ~Rp11k |
+| Email transaksional | Resend: gratis 3.000/bln; Pro **$20** untuk 50.000 [S4] | Rp0 → Rp352k | Rp352k |
+| Domain `.id` | Rp120k–250k/tahun di registrar [S9] | Rp21k | Rp21k |
+| Backup & monitoring | **(perkiraan, perlu verifikasi)** | Rp85k | Rp170k |
+| **Subtotal infrastruktur** | | **≈Rp1,32jt** | **≈Rp2,72jt** |
+| Pemasaran (konten, poster QR, kunjungan UKM) | **(pilihan anggaran)** | Rp2,5jt | Rp4jt |
+| Transport kunjungan employer Jabodetabek | **(pilihan anggaran)** | Rp1jt | Rp1jt |
+| Tools, akuntansi, admin | **(perkiraan)** | Rp0,7jt | Rp1jt |
+| **Total biaya operasional** | | **≈Rp5,5jt/bln** | **≈Rp8,7jt/bln** |
+| Uang saku 4 founder (4 × Rp2,5jt) | **dibayar hanya dari surplus** (kontribusi ≥ opex + Rp10jt) | Rp0 | Rp10jt saat syarat terpenuhi |
+
+### Biaya sekali jalan (Rp45jt)
+
+| Item | Sumber | Anggaran |
+|---|---|---|
+| Pendirian PT (akta notaris, SK AHU, NIB, NPWP perusahaan) | Rp4,9jt–15jt (2026) [S10] | Rp10jt |
+| Merek dagang 2 kelas | DJKI: Rp2,8jt/kelas umum (PP 30/2026); **UMK Rp500rb/kelas** [S11] | Rp1jt (tarif UMK) |
+| Dokumen UU PDP (kebijakan privasi, DPA, retensi) | **(perlu penawaran)** | Rp8jt |
+| Tinjauan bank soal: 25–40 skill × honor praktisi HR | **(pilihan anggaran)** | Rp25jt |
+| Materi booth & demo | **(perkiraan)** | Rp3jt |
+| Cadangan setup | | Rp3jt |
+
+Di luar model dasar (didanai investasi): audit keamanan sebelum gateway live ~Rp12jt **(perlu penawaran)**. Setup gateway sendiri gratis [S1].
 
 ---
 
-## 6. Peta Peningkatan Infrastruktur (*Infrastructure Scaling & Upgrade Triggers*)
+## 5. Asumsi pertumbuhan (berpatokan benchmark)
 
-Seluruh tingkatan infrastruktur KerjaCerdas beroperasi **100% Full Online & Cloud-Native (Zero Local Device Dependency)** yang aktif 24/7 di jaringan internet publik:
-
-```mermaid
-graph TD
-    classDef l1 fill:#2D3748,stroke:#38B2AC,stroke-width:2px,color:#FFF,font-weight:bold
-    classDef l2 fill:#4A5568,stroke:#F6E05E,stroke-width:2px,color:#FFF,font-weight:bold
-    classDef l3 fill:#702459,stroke:#D6BCFA,stroke-width:2px,color:#FFF,font-weight:bold
-
-    subgraph Level1 ["🟢 Level 1: Tahun 1 (0 s.d. 5.000 Talenta | <100 UMKM) — 100% Full Cloud"]
-        L1_Desc["• Dedicated Cloud VPS (4 vCPU, 8GB RAM)\n• Cloud-Hosted PostgreSQL 16 + pgvector HNSW (768-dim)\n• Cloudflare R2 Global Storage\n• Kuota API Gemini LLM & Fonnte WhatsApp OTP\n• Total Biaya Operasional: Rp 1.200.000 / bulan (Rp 14,4jt/thn)"]:::l1
-    end
-
-    subgraph Level2 ["🟡 Level 2: Tahun 2 (5.000 s.d. 25.000 Talenta | 100-400 UMKM) — Cloud Managed"]
-        L2_Desc["• Google Cloud Run Auto-scaling (2-8 instance)\n• Google Cloud SQL PostgreSQL Managed HA (4 vCPU, 16GB RAM)\n• High-Volume LLM/OTP\n• Total Biaya Operasional: Rp 5.000.000 / bulan (Rp 60jt/thn)"]:::l2
-    end
-
-    subgraph Level3 ["🔴 Level 3: Tahun 3+ (>25.000 Talenta | >400 Perusahaan) — Enterprise Cloud Mesh"]
-        L3_Desc["• Multi-Zone Kubernetes (GKE) / Cloud Run Multi-Zone\n• Cloud SQL High-Mem + Dedicated Vector Search (Vertex AI Matching Engine)\n• Google Vertex AI VPC Endpoint (Zero Data Retention) + SLA Enterprise\n• Total Biaya Operasional: Rp 15.000.000 / bulan (Rp 180jt/thn)"]:::l3
-    end
-
-    Level1 -->|Pemicu: Kueri Harian >5.000 / Revenue >Rp 15jt/bln| Level2
-    Level2 -->|Pemicu: Kueri Harian >30.000 / Kontrak Enterprise B2B| Level3
-```
-
-### Tabel Rincian Pemicu & Spesifikasi Peningkatan Sistem:
-
-| Tingkatan (*Tier*) | Periode & Skala | Pemicu Peningkatan (*Upgrade Triggers*) | Komposisi Arsitektur Cloud (100% Online) | Estimasi Biaya Bulanan Total | Sumber Pembiayaan |
-|---|---|---|---|---|---|
-| **Level 1 (Full Cloud Pilot)** | **Tahun 1**<br>0 – 5.000 Seeker<br><100 UMKM | Tahap peluncuran awal, pilot project, dan demonstrasi produk | 1 Dedicated Cloud VPS Server (4 vCPU, 8GB RAM) + Cloud-Hosted pgvector + Cloudflare R2 + Gemini Flash + WhatsApp OTP Gateway | **Rp 1.200.000 / bln**<br>(Rp 14.400.000 / thn) | Budget Awal Bulan 1 + Laba Operasional Pay-to-Unlock |
-| **Level 2 (Managed Cloud)** | **Tahun 2**<br>5.000 – 25.000 Seeker<br>100 – 400 UMKM | 1. Kueri harian > 5.000 kueri/hari<br>2. Transaksi unlock > 10 unlock/hari<br>3. Pendapatan > Rp 15.000.000/bln | Google Cloud Run Auto-scaling + Google Cloud SQL PostgreSQL Managed HA + High-Volume Gemini/OTP | **Rp 5.000.000 / bln**<br>(Rp 60.000.000 / thn) | 100% didanai Laba Kotor Pay-to-Unlock Tahun 2 |
-| **Level 3 (Enterprise Cloud)** | **Tahun 3+**<br>>25.000 Seeker<br>>400 B2B | 1. Kueri harian > 30.000 kueri/hari<br>2. Transaksi unlock > 30 unlock/hari<br>3. Integrasi SLA Enterprise ATS | Multi-Zone Kubernetes (GKE) + Vertex AI Vector Search Engine + Vertex AI VPC Endpoint + Enterprise Security | **Rp 15.000.000 / bln**<br>(Rp 180.000.000 / thn) | 100% didanai Arus Kas Surplus Mandiri (>Rp 200jt) |
+| Pendorong | Asumsi | Benchmark |
+|---|---|---|
+| Employer mendaftar (uji coba Spark) | 40 di bulan 1, **+15%/bulan**, batas 400/bln | Target startup SaaS awal **10–20%/bulan** [S12] |
+| Uji coba → berbayar | **18%** | Median trial-to-paid B2B tanpa kartu **18,2–18,5%** [S13] |
+| Pencari kerja beli Prism | **2%** dari pengguna aktif | Freemium → berbayar **2,6%** organik [S13]; dipangkas karena daya beli |
+| Pelamar per lowongan | 15 pengguna aktif per lowongan aktif | **(asumsi)** |
 
 ---
 
-## 7. Metrik *Unit Economics* Realistis
+## 6. Proyeksi 24 bulan (skenario dasar, Rp juta)
+
+| Bulan | Lowongan Beacon | Lighthouse | Pengguna aktif | Prism | **Pendapatan** | **Kontribusi** | Opex | Uang saku | **Laba/rugi** | **Kumulatif** |
+|---|---|---|---|---|---|---|---|---|---|---|
+| M1 | 6 | 1 | 686 | 14 | 0,7 | 0,4 | 5,5 | 0 | −5,1 | −50,1 |
+| M3 | 13 | 4 | 1.884 | 38 | 1,9 | 1,0 | 5,5 | 0 | −4,6 | −59,6 |
+| M6 | 24 | 9 | 3.876 | 78 | 4,0 | 2,0 | 5,5 | 0 | −3,5 | −71,1 |
+| M9 | 40 | 16 | 6.497 | 130 | 6,9 | 3,6 | 8,7 | 0 | −5,1 | −88,2 |
+| M12 | 64 | 26 | 10.260 | 205 | 11,0 | 5,9 | 8,7 | 0 | −2,9 | −99,3 |
+| M15 | 99 | 41 | 15.857 | 317 | 17,2 | 9,2 | 8,7 | 0 | **+0,5** | −101,4 *(titik terendah)* |
+| M18 | 152 | 65 | 24.294 | 486 | 26,6 | 14,3 | 8,7 | 0 | +5,6 | −90,2 |
+| M21 | 211 | 96 | 36.142 | 723 | 39,7 | 21,4 | 8,7 | 10 | +2,7 | −79,4 |
+| M24 | 247 | 123 | 44.399 | 888 | 49,8 | 27,3 | 8,7 | 10 | +8,6 | −59,3 |
+
+- **Pendapatan tahun 1 ≈ Rp60jt; tahun 2 ≈ Rp360jt.**
+- **Titik impas operasional: bulan 15.** Uang saku founder mulai bulan ~20.
+- **Kebutuhan kas terbesar: ≈Rp101jt.**
+- Komposisi pendapatan M24: employer ≈55%, pencari kerja (Prism) ≈45% — **dua sisi ikut membayar**.
+
+### Rumus titik impas
 
 ```
-Customer Acquisition Cost (CAC) B2B:
-- Alokasi Anggaran Pemasaran B2B Tahun 1 = Rp 6.000.000 (Outreach LinkedIn, Komunitas UMKM)
-- Target Akuisisi B2B Tahun 1 = 60 UMKM
-  ==> CAC = Rp 6.000.000 / 60 = Rp 100.000 per UMKM
-
-Customer Lifetime Value (LTV) B2B (Tahun 1):
-- Rata-rata transaksi unlock per UMKM = 13.3 unlock × Rp 45.000 (margin bersih) = Rp 600.000
-- Retensi berlangganan SaaS Pro (25% konversi × Rp 299.000 × 2 bln) = Rp 149.500
-  ==> LTV = Rp 749.500
+Pelanggan berbayar yang dibutuhkan = (biaya tetap + biaya pengguna gratis) ÷ kontribusi per penjualan
+Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism Rp17,3rb)
 ```
 
-| Metrik Finansial | Nilai Realistis KerjaCerdas | Standar Industri SaaS | Evaluasi Kesehatan Finansial |
-|---|---|---|---|
-| **Rasio LTV : CAC** | **7.5×** | 3.0× – 5.0× | **Sangat Sehat & Realistis** |
-| **CAC Payback Period** | **< 2 Bulan** | 6 – 12 Bulan | Modal akuisisi kembali pada unlock ke-3 |
-| **Gross Margin** | **92.0%** | 70% – 80% | Sangat efisien berkat embedding caching |
-| **Break-Even Point** | **Bulan ke-3** | Bulan ke-12 – 18 | Risiko operasional (*downside risk*) terkendali |
-| **Laba Bersih Tahun 1** | **Rp 9.531.090** | Umumnya Masih Negatif | Model bisnis langsung menghasilkan arus kas positif |
+### Skenario
+
+| Skenario | Pertumbuhan / konversi employer / konversi Prism | Kas terbesar | Impas operasional | Posisi M24 |
+|---|---|---|---|---|
+| Baik | 20% / 25% / 2,6% | ≈Rp74jt | M10 | kumulatif positif |
+| **Dasar** | 15% / 18% / 2% | **≈Rp101jt** | **M15** | −Rp59jt (menuju positif) |
+| Buruk | 8% / 9% / 1% + pemangkasan biaya di gerbang M9 | ≈Rp164jt | belum di M24 | perlu penyempitan fokus |
+
+---
+
+## 7. Kebutuhan pendanaan
+
+**Rp200.000.000 untuk 10% saham** (pra-uang Rp1,8 M; pasca-uang Rp2,0 M) — **(usulan, bukan valuasi hasil audit)**.
+
+| Penggunaan dana | Jumlah |
+|---|---|
+| Biaya sekali jalan (§4) | Rp45jt |
+| Menutup rugi sampai impas (dasar Rp57jt; skenario buruk lebih besar) | Rp57jt |
+| Audit keamanan + go-live payment gateway | Rp12jt |
+| Akselerasi akuisisi (konten, job fair kampus, poster) | Rp40jt |
+| Cadangan skenario buruk | Rp46jt |
+| **Total** | **Rp200jt** |
+
+**Pencairan bertahap:** Rp100jt saat penandatanganan; Rp100jt setelah milestone bulan 6 — ≥30 employer berbayar, ≥60% pelamar mengikuti minimal satu kuis, ≥50 pembeli Prism, COGS terukur per lowongan Beacon ≤ Rp5.000.
+
+**Struktur kepemilikan (ilustrasi):** founder 4 orang 90% (vesting 4 tahun, cliff 1 tahun) + ESOP 10% → setelah investasi: founder 81%, ESOP 9%, investor 10%.
+
+---
+
+## 8. Ukuran pasar (metode jelas, angka bersumber)
+
+- **Employer:** 73.828 usaha kecil + 15.313 usaha menengah = **89.141 unit** (SIDT-UMKM, 31 Des 2025) [S14] × 4 lowongan/tahun **(asumsi)** × Rp29.000 ≈ **Rp10,3 miliar/tahun**.
+- **Pencari kerja:** 7,24 juta penganggur (BPS, Feb 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp25.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp10,9 miliar/tahun**.
+- **Total lantai pasar ≈ Rp21 miliar/tahun.** Pendapatan tahun 2 pada skenario dasar ≈ 1,7% dari angka itu.
+- Belum dihitung (potensi tambahan, perlu sumber): usaha mikro yang tetap mempekerjakan staf, perusahaan besar untuk posisi entry-level, agen penyalur kerja (>3.000 perusahaan alih daya di asosiasi FAADI [S16]), dan pekerja yang ingin pindah kerja.
+- Konteks: angkatan kerja 154,91 juta; TPT 4,68%; rata-rata upah Rp3,29 juta (BPS Feb 2026) [S15].
+
+---
+
+## 9. Sumber
+
+- [S1] Midtrans, biaya transaksi: https://midtrans.com/pricing
+- [S2] Stripe Indonesia (undangan, tanpa lintas negara): https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-indonesia
+- [S3] Harga Gemini API: https://ai.google.dev/gemini-api/docs/pricing
+- [S4] Resend: https://resend.com/pricing
+- [S5] DigitalOcean Droplets: https://www.digitalocean.com/pricing/droplets
+- [S6] Supabase: https://supabase.com/pricing
+- [S7] Kurs JISDOR Bank Indonesia: https://www.bi.go.id/id/statistik/informasi-kurs/jisdor/default.aspx
+- [S8] Cloudflare R2: https://developers.cloudflare.com/r2/pricing/
+- [S9] Harga domain `.id`: https://www.hostingekspres.com/blog/harga-domain-id
+- [S10] Biaya pendirian PT 2026: https://izin.co.id/blog/berapa-biaya-pendirian-pt-di-indonesia/
+- [S11] Tarif merek DJKI (PP 30/2026): https://www.dgip.go.id/artikel/detail-artikel-berita/djki-sesuaikan-tarif-merek-umk-tetap-dapat-keringanan?kategori=liputan-humas
+- [S12] Benchmark pertumbuhan SaaS awal: https://www.lightercapital.com/blog/2025-b2b-saas-startup-benchmarks
+- [S13] Benchmark konversi trial & freemium: https://firstpagesage.com/seo-blog/saas-free-trial-conversion-rate-benchmarks/
+- [S14] Data SIDT-UMKM (Des 2025): https://ukmindonesia.id/baca-deskripsi-posts/data-umkm-jumlah-dan-pertumbuhan-usaha-mikro-kecil-dan-menengah-di-indonesia
+- [S15] BPS, Ketenagakerjaan Februari 2026: https://www.bps.go.id/id/pressrelease/2026/05/05/2574/tingkat-pengangguran-terbuka--tpt--sebesar-4-68-persen--rata-rata-upah-buruh-sebesar-3-29-juta-rupiah-.html
+- [S16] Sektor alih daya (ABADI/FAADI): https://abadi.id/
+
+> **Sebelum dipakai di pitch:** cek ulang tarif Xendit lewat kalkulator resminya, kurs pada hari-H, dan perbarui semua angka **(asumsi)** dengan data nyata dari `GET /api/v1/admin/metrics` setelah pilot.

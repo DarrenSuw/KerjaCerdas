@@ -284,7 +284,9 @@ class TestRouting:
             "/api/v1/employer/profile",
             "/api/v1/employer/jobs",
             "/api/v1/employer/applications",
-            "/api/v1/verify/documents",
+            "/api/v1/verify/status",
+            "/api/v1/billing/me",
+            "/api/v1/employer/trust",
         ],
     )
     def test_data_routes_require_authentication(self, client: TestClient, path: str) -> None:

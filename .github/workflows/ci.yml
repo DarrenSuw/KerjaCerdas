@@ -62,8 +62,16 @@ jobs:
         env:
           NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
+      # ESLint is configured (frontend/eslint.config.js) and this step is
+      # gating. It replaces a step that ran `npm run lint --if-present || true`
+      # against a repo with no config, no dependency and no lint script, so it
+      # exited 0 without linting anything. Errors fail the build; the
+      # React-Compiler-era advisories are `warn` and do not — see the config.
       - name: ESLint
-        run: cd frontend && npm run lint --if-present || true
+        run: cd frontend && npm run lint
+
+      - name: Vitest (unit)
+        run: cd frontend && npm test
 
       - name: Vite build check (validates all imports and bundling)
         run: cd frontend && npm run build
@@ -109,11 +117,17 @@ jobs:
           retention-days: 7
 
   # ── Gate 4: Integration Tests (pgvector + Alembic migration) ─────────────────
+  # GATING. This is the ONLY job that runs `alembic upgrade head` against a
+  # real PostgreSQL, and it has already caught a P1 in this branch: two ORM
+  # tables (`otps`, `query_embeddings`) that no migration ever created, so a
+  # migration-built database silently had nowhere to write email OTPs. It ran
+  # `continue-on-error: true` until then, which meant a migration break could
+  # merge green. Migrations are the least reversible thing here, so this now
+  # fails the build.
   test-integration:
     name: "Backend · Integration Tests"
     runs-on: ubuntu-latest
     needs: test-unit
-    continue-on-error: true
     services:
       postgres:
         image: pgvector/pgvector:pg16
@@ -145,6 +159,17 @@ jobs:
 
       - name: Run Alembic migrations against test DB
         run: python -m alembic -c backend/alembic.ini upgrade head
+
+      # A migration that cannot be rolled back is a one-way door on production
+      # data. Nothing exercised `downgrade()` before this, and two P1s in this
+      # branch were downgrade defects found by reading rather than running:
+      # it dropped `otps`/`query_embeddings`, which predate the revision and
+      # hold live data. Round-trip proves the path executes and that re-running
+      # upgrade afterwards still lands on a working schema.
+      - name: Alembic downgrade / upgrade round-trip
+        run: |
+          python -m alembic -c backend/alembic.ini downgrade -1
+          python -m alembic -c backend/alembic.ini upgrade head
 
       - name: Run integration tests
         run: |

@@ -106,3 +106,29 @@ async def get_current_user_optional(
         return result.scalar_one_or_none()
     except Exception:  # noqa: BLE001
         return None
+
+
+def is_admin_user(user: User | None) -> bool:
+    """Return True if the user is an admin.
+
+    Being an admin is not stored in the DB because we want it to be centrally
+    managed (e.g. via .env). We check the email against ADMIN_EMAILS and
+    require that the email is verified to prevent unverified takeovers.
+    """
+    from backend.app.config.settings import settings
+
+    if not user or not settings.admin_routes_enabled or not user.email or not user.email_verified:
+        return False
+    allowed = {e.strip().lower() for e in settings.admin_emails if e.strip()}
+    return user.email.lower() in allowed
+
+
+async def require_admin(current_user: User = Depends(get_current_user)) -> User:
+    """Admin = authenticated account whose email is listed in ADMIN_EMAILS.
+
+    Also requires ADMIN_ROUTES_ENABLED, so a deployment that never configured
+    admins exposes no cross-user admin surface at all.
+    """
+    if not is_admin_user(current_user):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
+    return current_user

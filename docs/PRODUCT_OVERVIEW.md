@@ -4,10 +4,11 @@
 
 Conventional recruitment channels — keyword-based job portals, manual forms, spreadsheets — fail to capture semantic equivalence between job terms ("backend engineer" vs. "software developer" read as unrelated to a keyword matcher) and give job seekers no concrete direction on what to improve. On the employer side, small and mid-sized companies without an enterprise ATS budget have to screen recruiting volume by hand.
 
-Three root causes drive this:
+Four root causes drive this:
 1. **Relevance mismatch** — keyword search treats semantically equivalent job terms as unrelated.
 2. **Visibility gap** — candidates don't know which specific skills are keeping them out of a role.
 3. **Screening fatigue** — HR teams without an ATS filter applications manually, one at a time.
+4. **Unverifiable claims** — a CV is a claim, not evidence. AI-written CVs make keyword-shaped profiles trivial to produce, so ranking CV text alone hands HR *more* noise, not less. This is the gap v2 closes.
 
 National context: Indonesia's official open unemployment rate (TPT) was 4.65% as of May 2026, with average worker pay at Rp 3.39 million ([BPS, released 5 August 2026](https://www.bps.go.id/id/pressrelease/2026/08/05/2606/tingkat-pengangguran-terbuka--tpt--sebesar-4-65-persen---rata-rata-upah-buruh-sebesar-3-39-juta-rupiah-.html)).
 
@@ -23,14 +24,17 @@ National context: Indonesia's official open unemployment rate (TPT) was 4.65% as
 Candidate doesn't know which openings fit them
   → Upload CV (PDF)
   → Gemini extracts skills/experience/education → 768-dim embedding → pgvector HNSW search
-     → Hybrid ranking (cosine 45% + skill overlap 25% + experience 15% + education 10% + recency 5%)
-  → Result: banded job list (Strong/Possible/Stretch) with a per-factor score breakdown
-  → Outcome: candidate picks a job with a reason, not a guess
+     → Hybrid ranking (cosine 35% + proof-weighted skills 40% + experience 15% + education 10%)
+       where a skill counts 0.30 if only claimed in the CV, 0.85 once a skill quiz is passed,
+       and 1.00 once an employer confirms it after an interview
+  → Result: banded job list (Strong/Possible/Stretch) with a per-factor breakdown and, per skill,
+     whether it is claimed / quiz-proven / HR-confirmed
+  → Outcome: candidate picks a job with a reason, and knows exactly which skill to prove next
 ```
 
 For a target job that isn't a full match, the flow continues into the **Skill Gap Analyzer**: the skill gap is computed deterministically, then Gemini narrates a learning plan and recommends courses from a curated internal catalogue.
 
-On the employer side: **company profile → NPWP verification (demo mode) → post a job or bulk-upload a Job Pack PDF → the system reverse-matches available candidates → banded, confidence-scored shortlist.**
+On the employer side: **company profile → post a job (AutoMod checks it) → share its link / QR poster where they already recruit → applicants arrive in one list ranked by proof-weighted score → AI interview questions for skills that are still only claimed → after the interview, HR ticks "skill terbukti", which becomes the strongest proof on that candidate's profile.**
 
 See [Architecture](ARCHITECTURE.md) for the full system diagram, and [Sequence Diagrams](SEQUENCE_DIAGRAMS.md) for the request-level flows.
 
@@ -41,23 +45,27 @@ See [Architecture](ARCHITECTURE.md) for the full system diagram, and [Sequence D
 | Matching | Exact/keyword match | Manual, subjective | Semantic embedding + 5-factor hybrid ranking |
 | Score transparency | None | None | Explainable AI breakdown per factor |
 | Skill direction | None | None | Skill Gap Analyzer with targeted course recommendations |
-| Employer cost | Expensive upfront ATS subscription, or free with no AI | High manual screening time | Pay-to-Unlock micro-transactions (payment gateway not yet connected — see [Architecture](ARCHITECTURE.md)) |
+| Skill evidence | None — CV text is taken at face value | Ad-hoc, per recruiter | Short skill quizzes (✓ Terbukti, 180 days) + HR confirmation, weighted into the score |
+| Scam / discriminatory ads | Reported manually, if at all | — | AutoMod blocks fee-charging ads, holds discriminatory ones, notifies the poster with the exact sentence + appeal |
+| Employer cost | Expensive upfront ATS subscription, or free with no AI | High manual screening time | Free to post (Spark); Rp29k per job (Beacon) or Rp99k/month (Lighthouse). Never charged for contact details |
 
 ## Current Scope
 
-**Works today:** semantic matching, explainable score breakdown, skill-gap analysis, application tracking, employer job posting and bulk import, candidate sourcing with tenant-ownership guards, A/B assignment and event logging, natural-language AI responses.
+**Works today:** proof-weighted semantic matching, skill quizzes with ✓ Terbukti badges, shareable job links + printable QR posters, public apply page, AutoMod for job ads with poster notices/appeals/strikes, candidate reports, email OTP verification, AI interview questions + HR skill confirmation, anonymised talent pool, applicant CSV export, plan limits (Spark/Beacon/Lighthouse/Prism), admin panel (moderation, business review, plan activation, question bank, metrics), skill-gap analysis, application tracking, A/B assignment and event logging.
 
-**Demo mode:** identity/OTP verification (format checks only, no live Dukcapil/SIVIL/DJP integration), Pay-to-Unlock (accepts any token, no live payment gateway).
+**Demo / manual mode:** plan payments (QRIS or bank transfer confirmed by an admin — no payment gateway yet); the starter quiz bank ships as a draft pending review by HR practitioners; email OTP falls back to returning the code in the response when no email provider is configured (never in production).
 
-**Not yet built:** production payment gateway (Midtrans/Xendit), government e-KYC integration, a fine-tuning feedback loop from real usage, enterprise ATS integrations.
+**Deliberately not collected:** NIK/KTP, ijazah numbers, NPWP. Identity is checked by the employer at interview, as it already is in practice.
+
+**Not yet built:** production payment gateway (Midtrans/Xendit), score calibration against real hiring outcomes (the data is being recorded now), ed-tech affiliate agreements, enterprise ATS integrations.
 
 ## Business Model
 
-See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: freemium for job seekers, Pay-to-Unlock micro-transactions and a Pro subscription for employers, and affiliate commission on ed-tech course referrals.
+See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: employers post for free and pay per job (Beacon Rp29k) or per month (Lighthouse Rp99k) to rank every applicant and get AI interview questions; job seekers stay free, with an optional Prism plan (Rp25k / 30 days) that only buys quota and shorter retake cooldowns — never a better score. Ed-tech affiliate income is upside only and is excluded from break-even.
 
 ## Adoption Path
 
-A narrow pilot — one job family, a handful of SME employers, roughly a hundred seekers, one verified course catalogue — before wider rollout. Production payment processing and official e-KYC integration are dependencies for scaling past the pilot; see [Roadmap](ROADMAP.md).
+A narrow pilot — entry-level roles (admin, customer service, cashier, sales, warehouse) with SME employers in Jabodetabek — before wider rollout. The dependencies for scaling past the pilot are a production payment gateway and a quiz bank reviewed by HR practitioners; see [Roadmap](ROADMAP.md).
 
 ## Team
 

@@ -810,7 +810,7 @@ function CleanHeroPreview() {
                     </div>
 
                     <Badge color={KC.limeSoft} ink={KC.ink} size="sm">
-                        Top 1 Shortlist
+                        Contoh tampilan
                     </Badge>
                 </div>
 
@@ -830,11 +830,11 @@ function CleanHeroPreview() {
                                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                                         <span style={{ fontSize: 15, fontWeight: 800, color: KC.ink }}>Rina Paramitha</span>
                                         <span style={{ background: KC.lime, fontSize: 9, fontWeight: 900, padding: '1px 5px', borderRadius: 4, border: `1px solid ${KC.ink}`, color: KC.ink }}>
-                                            VERIFIED
+                                            3 SKILL ✓
                                         </span>
                                     </div>
                                     <div style={{ fontSize: 12, fontWeight: 600, color: KC.mute, marginTop: 1 }}>
-                                        Senior Backend Engineer · 5 thn
+                                        Admin & Customer Service · lulusan SMK
                                     </div>
                                 </div>
                             </div>
@@ -845,7 +845,7 @@ function CleanHeroPreview() {
                                 borderRadius: 8, border: `1.5px solid ${KC.ink}`, textAlign: 'center',
                                 flexShrink: 0,
                             }}>
-                                <div style={{ fontSize: 18, fontWeight: 900, lineHeight: 1 }}>94%</div>
+                                <div style={{ fontSize: 18, fontWeight: 900, lineHeight: 1 }}>82</div>
                                 <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase' }}>Match</div>
                             </div>
                         </div>
@@ -856,22 +856,21 @@ function CleanHeroPreview() {
                                 Analisis Keselarasan AI
                             </div>
                             <div style={{ fontSize: 12, fontWeight: 600, color: KC.ink, lineHeight: 1.5 }}>
-                                "Kandidat memiliki penguasaan mendalam pada arsitektur microservices Go dan throughput tinggi, sesuai dengan spesifikasi lowongan Backend Lead."
+                                "Excel dan Customer Service lulus kuis (✓ Terbukti). Administrasi masih klaim CV — tanyakan contoh nyata saat wawancara."
                             </div>
                         </div>
 
                         {/* Skill Badges */}
                         <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginTop: 12 }}>
-                            <Badge color={KC.limeSoft} size="sm">Golang</Badge>
-                            <Badge color={KC.limeSoft} size="sm">PostgreSQL</Badge>
-                            <Badge color={KC.limeSoft} size="sm">Kubernetes</Badge>
-                            <Badge color={KC.yellowSoft} size="sm">Kafka</Badge>
-                            <Badge color={KC.surface} size="sm">+2 Skill</Badge>
+                            <Badge color={KC.limeSoft} size="sm">✓ Excel</Badge>
+                            <Badge color={KC.limeSoft} size="sm">✓ Customer Service</Badge>
+                            <Badge color={KC.limeSoft} size="sm">✓ Komunikasi</Badge>
+                            <Badge color={KC.surface} size="sm">Administrasi · klaim</Badge>
                         </div>
 
                         {/* Bottom Detail */}
                         <div style={{ marginTop: 14, paddingTop: 10, borderTop: `1px solid ${KC.ash}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 11, fontWeight: 700 }}>
-                            <span style={{ color: KC.mute }}>Gaji: <b style={{ color: KC.ink }}>Rp 32 - 45 jt/bln</b></span>
+                            <span style={{ color: KC.mute }}>Gaji: <b style={{ color: KC.ink }}>Rp 4,5 - 5,5 jt/bln</b></span>
                             <span style={{ color: '#059669', display: 'flex', alignItems: 'center', gap: 4 }}>
                                 <I.Check s={13} c="#059669" /> Rekomendasi Interview
                             </span>
@@ -881,13 +880,13 @@ function CleanHeroPreview() {
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                             <span style={{ fontSize: 13, fontWeight: 800, color: KC.ink }}>Celah Kompetensi vs Posisi Target</span>
-                            <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 800, color: KC.orange }}>Gap: -6%</span>
+                            <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 800, color: KC.orange }}>1 skill belum terbukti</span>
                         </div>
 
                         {[
-                            { name: 'Go Backend & Concurrency', val: '98%', color: KC.lime },
-                            { name: 'Distributed Caching (Redis)', val: '86%', color: KC.yellow },
-                            { name: 'Observability & Monitoring', val: '76%', color: KC.orange },
+                            { name: 'Excel · lulus kuis', val: '85%', color: KC.lime },
+                            { name: 'Customer Service · lulus kuis', val: '85%', color: KC.lime },
+                            { name: 'Administrasi · klaim CV', val: '30%', color: KC.orange },
                         ].map((s, i) => (
                             <div key={i} style={{ marginBottom: 10 }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, fontWeight: 700, marginBottom: 2, color: KC.ink }}>
@@ -901,7 +900,7 @@ function CleanHeroPreview() {
                         ))}
 
                         <div style={{ marginTop: 12, padding: '8px 10px', background: KC.yellowSoft, borderRadius: 6, border: `1px solid ${KC.yellow}`, fontSize: 11, fontWeight: 700, color: KC.ink }}>
-                            💡 Rekomendasi: Selesaikan modul <i>Cloud-Native Observability</i> untuk meningkatkan skor ke 99%.
+                            💡 Ikut kuis <i>Administrasi</i> (±3 menit) — bobot skill naik dari 30% ke 85%.
                         </div>
                     </div>
                 )}
@@ -977,7 +976,7 @@ export default function LandingHero() {
         {
             num: '02',
             title: 'Matching Multi-Dimensi',
-            desc: 'Algoritma mengevaluasi kecocokan skill, tingkat senioritas, dan kompensasi untuk menghasilkan Top-5 lowongan terakurat.',
+            desc: 'Algoritma mengevaluasi kecocokan skill, tingkat senioritas, dan kompensasi dengan skor kecocokan yang bisa kamu lihat rinciannya.',
             accent: KC.yellow,
             icon: <I.Target s={20} c={KC.ink} />,
         },
@@ -1000,15 +999,15 @@ export default function LandingHero() {
         },
         {
             num: '02',
-            title: 'Shortlist Otomatis (Top-5)',
-            desc: 'Mesin pencocokan menyaring database talenta dan menampilkan kandidat terverifikasi dengan keselarasan tertinggi.',
+            title: 'Bagikan Link / QR Lowongan',
+            desc: 'Tempel link di bio Instagram, grup WhatsApp, atau cetak poster QR. Pelamar masuk ke satu daftar yang sudah diperingkat AI.',
             accent: KC.yellow,
             icon: <I.ShieldCheck s={20} c={KC.ink} />,
         },
         {
             num: '03',
-            title: 'Efisiensi Screening 80%',
-            desc: 'Evaluasi kandidat melalui peta skill dan rekam jejak e-KYC. Buka kontak resmi dan undang wawancara tanpa hambatan.',
+            title: 'Wawancara yang Terbukti Layak',
+            desc: 'Pelamar diurutkan berdasarkan skill yang lulus kuis, bukan kata kunci di CV. AI menyiapkan pertanyaan wawancara untuk skill yang baru diklaim.',
             accent: KC.lime,
             icon: <I.Target s={20} c={KC.ink} />,
         },
@@ -1017,19 +1016,19 @@ export default function LandingHero() {
     const FAQS = [
         {
             q: 'Apakah platform ini sepenuhnya gratis untuk pencari kerja?',
-            a: 'Ya, 100% gratis. Seluruh fitur utama — pencocokan AI, analisis skill gap, konsultasi advisor karier, hingga verifikasi dokumen — dapat diakses tanpa biaya seumur hidup.',
+            a: 'Ya. Pencocokan AI, skill gap, rekomendasi kursus, kuis skill, dan melamar gratis. Paket Prism (Rp25.000 / 30 hari) hanya menambah kuota advisor dan jeda ulang kuis yang lebih pendek — membayar tidak pernah menaikkan skor kecocokan.',
         },
         {
-            q: 'Bagaimana standar keamanan dan kerahasiaan data saya?',
-            a: 'Data dokumen seperti KTP, ijazah, dan NPWP dienkripsi menggunakan standar perbankan di pusat data lokal Indonesia. Dokumen mentah tidak pernah diekspos ke publik dan hanya digunakan untuk validasi status terverifikasi.',
+            q: 'Data apa yang dikumpulkan? Apakah perlu KTP?',
+            a: 'Tidak. KerjaCerdas tidak meminta NIK, KTP, ijazah, atau NPWP. Identitas dicek HR saat wawancara seperti biasa. Email, nomor HP, dan NIK di CV disamarkan otomatis sebelum teks dikirim ke AI.',
         },
         {
             q: 'Bagaimana cara kerja algoritma pencocokan KerjaCerdas?',
             a: 'Mesin pencocokan berbasis semantic vector membandingkan deskripsi pekerjaan dengan profil talenta secara multi-dimensi (skill teknis, pengalaman riil, kompensasi yang diharapkan, dan preferensi kerja) bukan sekadar pencarian kata kunci acak.',
         },
         {
-            q: 'Apakah perusahaan dapat membatalkan langganan kapan saja?',
-            a: 'Tentu. Model Pay-per-Unlock bersifat fleksibel tanpa kontrak mengikat — Anda membayar Rp 50.000 hanya saat membuka kontak kandidat, sesuai kebutuhan rekrutmen tim. Paket langganan berjenjang (mis. Growth) masih tahap perencanaan dan belum tersedia.',
+            q: 'Bagaimana skema harga untuk perusahaan?',
+            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, 20 pelamar skor tertinggi ditampilkan). Beacon Rp29.000 per lowongan (30 hari) atau Lighthouse Rp99.000 per bulan (hingga 5 lowongan) untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
         },
     ]
 
@@ -1085,7 +1084,7 @@ export default function LandingHero() {
                             fontSize: 16, lineHeight: 1.6, color: KC.mute, maxWidth: 520,
                             margin: '0 0 26px 0',
                         }}>
-                            Hubungkan kebutuhan rekrutmen perusahaan dengan talenta terbaik melalui pencocokan berbasis kompetensi, skill gap transparan, dan dokumen e-KYC valid.
+                            Pencocokan kerja AI yang menilai skill yang <b>terbukti</b> lewat kuis singkat — bukan kata kunci di CV. Pencari kerja tahu skill mana yang kurang; HR hanya mewawancarai yang layak.
                         </p>
 
                         {/* Dual Action CTAs */}
@@ -1102,26 +1101,26 @@ export default function LandingHero() {
                         <div className="kc-metrics-desktop kc-fade-up d3">
                             <div>
                                 <div style={{ fontSize: 24, fontWeight: 900, color: KC.orange, letterSpacing: -0.8, fontFamily: MONO }}>
-                                    &lt; 8 Detik
+                                    Rp0
                                 </div>
                                 <div style={{ fontSize: 11, fontWeight: 700, color: KC.mute, marginTop: 2 }}>
-                                    Waktu Pencocokan AI
+                                    Pasang Lowongan (Spark)
                                 </div>
                             </div>
                             <div>
                                 <div style={{ fontSize: 24, fontWeight: 900, color: KC.ink, letterSpacing: -0.8, fontFamily: MONO }}>
-                                    94%
+                                    ±3 mnt
                                 </div>
                                 <div style={{ fontSize: 11, fontWeight: 700, color: KC.mute, marginTop: 2 }}>
-                                    Akurasi Keselarasan Skill
+                                    Kuis per Skill (5 soal)
                                 </div>
                             </div>
                             <div>
                                 <div style={{ fontSize: 24, fontWeight: 900, color: KC.ink, letterSpacing: -0.8, fontFamily: MONO }}>
-                                    100%
+                                    30% → 85%
                                 </div>
                                 <div style={{ fontSize: 11, fontWeight: 700, color: KC.mute, marginTop: 2 }}>
-                                    Profil Terverifikasi e-KYC
+                                    Bobot Skill: Klaim → Terbukti
                                 </div>
                             </div>
                         </div>
@@ -1148,7 +1147,7 @@ export default function LandingHero() {
                         color: KC.muteLight, whiteSpace: 'nowrap', borderRight: `1.5px solid ${KC.ash}`,
                         paddingRight: 16,
                     }}>
-                        Ekosistem Pengguna
+                        Dibangun untuk
                     </div>
 
                     <div className="kc-marquee-container" style={{
@@ -1158,8 +1157,8 @@ export default function LandingHero() {
                     }}>
                         <div className="kc-marquee-track">
                             {[...Array(2)].flatMap((_, rep) => [
-                                'BUMN Digital', 'Tech Scaleup', 'SaaS Enterprise', 'Tier-1 Headhunter',
-                                'Banking & Fintech', 'Konsultan Teknologi', 'Startup Unicorn', 'Retail MNC'
+                                'Kafe & F&B', 'Toko Ritel', 'Klinik', 'UKM Logistik',
+                                'Agen Penyalur Kerja', 'Fresh Graduate SMK/D3/S1', 'Admin & CS', 'Kasir & Sales'
                             ].map((item, idx) => (
                                 <div key={`${rep}-${idx}`} style={{
                                     fontFamily: MONO, fontSize: 13, fontWeight: 700,
@@ -1257,7 +1256,7 @@ export default function LandingHero() {
                     {[
                         {
                             title: 'Pencocokan Semantik (Vector Matching)',
-                            desc: 'Mencocokkan keahlian riil dan deskripsi pekerjaan secara multi-dimensi untuk menghasilkan daftar Top-5 kandidat terakurat.',
+                            desc: 'Mencocokkan keahlian riil dan deskripsi pekerjaan secara multi-dimensi lalu mengurutkan pelamar berdasarkan skill yang terbukti.',
                             accent: KC.orange,
                             icon: <I.Target s={20} c="#fff" />,
                         },
@@ -1268,14 +1267,14 @@ export default function LandingHero() {
                             icon: <I.Layers s={20} c={KC.ink} />,
                         },
                         {
-                            title: 'Verifikasi Dokumen e-KYC Terenkripsi',
-                            desc: 'Validasi format KTP, nomor ijazah, dan NPWP untuk menciptakan ekosistem kerja yang lebih terpercaya.',
+                            title: 'Kuis Skill → Badge ✓ Terbukti',
+                            desc: '5 soal skenario per skill (Excel, layanan pelanggan, kasir, dll). Lulus = skill dihitung 85% di skor kecocokan selama 6 bulan.',
                             accent: KC.yellow,
                             icon: <I.ShieldCheck s={20} c={KC.ink} />,
                         },
                         {
-                            title: 'Siap Integrasi Sistem HR Perusahaan',
-                            desc: 'Mendukung koneksi ke sistem HR korporasi (Workday, SAP, Greenhouse) untuk alur kerja rekrutmen terpadu.',
+                            title: 'AutoMod Lowongan Palsu',
+                            desc: 'Lowongan yang meminta biaya atau bersyarat diskriminatif ditahan otomatis. Pemasang mendapat pemberitahuan kalimat mana yang bermasalah dan bisa banding.',
                             accent: KC.cyan,
                             icon: <I.Building s={20} c={KC.ink} />,
                         },
@@ -1307,18 +1306,18 @@ export default function LandingHero() {
                             Keamanan Data
                         </Badge>
                         <h2 style={{ fontSize: 36, fontWeight: 900, letterSpacing: -1.2, margin: '14px 0 12px', lineHeight: 1.15 }}>
-                            Data Terenkripsi.<br />Hanya untuk Verifikasi.
+                            Tanpa KTP.<br />Data kontak disamarkan.
                         </h2>
                         <p style={{ fontSize: 14, color: '#D1D5DB', lineHeight: 1.6, maxWidth: 480, margin: '0 0 20px 0' }}>
-                            Dokumen sensitif seperti KTP, Ijazah, dan NPWP <b>tidak pernah dipublikasikan</b> ke pihak luar. Sistem hanya melakukan validasi satu kali untuk menerbitkan badge <span style={{ background: KC.lime, color: KC.ink, padding: '1px 6px', borderRadius: 4, fontWeight: 800, fontSize: 11 }}>VERIFIED</span>.
+                            KerjaCerdas <b>tidak mengumpulkan</b> NIK, KTP, ijazah, atau NPWP. Yang kami verifikasi: <b>email</b> (kode OTP), <b>skill</b> (kuis + konfirmasi HR), dan <b>lowongan</b> (AutoMod + tinjauan admin). Kandidat yang tidak diundang tampil anonim di talent pool.
                         </p>
 
                         <div style={{ display: 'flex', gap: 16, fontSize: 12, fontWeight: 700, flexWrap: 'wrap' }}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                                <I.Check s={14} c={KC.lime} /> Pusat Data Lokal Indonesia
+                                <I.Check s={14} c={KC.lime} /> Kontak disamarkan sebelum ke AI
                             </span>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                                <I.Check s={14} c={KC.lime} /> Enkripsi End-to-End
+                                <I.Check s={14} c={KC.lime} /> Keputusan akhir tetap di HR
                             </span>
                         </div>
                     </div>
@@ -1331,15 +1330,15 @@ export default function LandingHero() {
                         {[
                             {
                                 role: 'Untuk Pencari Kerja',
-                                docs: 'KTP & Ijazah S1',
-                                desc: 'Verifikasi identitas & integritas pendidikan.',
+                                docs: 'Email + Kuis Skill',
+                                desc: 'Buktikan skill sekali, dipakai di semua lamaran.',
                                 accent: KC.orange,
                                 icon: <I.User s={18} c="#fff" />,
                             },
                             {
                                 role: 'Untuk Employer',
-                                docs: 'NPWP & Akta Perusahaan',
-                                desc: 'Verifikasi legalitas badan usaha resmi.',
+                                docs: 'Email Perusahaan + Tinjauan Admin',
+                                desc: 'Badge terpercaya tanpa dokumen legal pihak ketiga.',
                                 accent: KC.cyan,
                                 icon: <I.Building s={18} c="#fff" />,
                             },
@@ -1371,7 +1370,6 @@ export default function LandingHero() {
                             gridColumn: '1 / -1', background: '#1A1B24', border: '1.5px solid rgba(255,255,255,0.15)',
                             borderRadius: 8, padding: 12, fontSize: 11, color: '#D1D5DB', lineHeight: 1.5,
                         }}>
-                            🔒 <b>Kontrol Penuh:</b> Dokumen mentah dapat dihapus kapan saja melalui pengaturan akun.
                         </div>
                     </div>
                 </div>
@@ -1385,67 +1383,65 @@ export default function LandingHero() {
                         Gratis untuk Talenta. Transparan untuk HR.
                     </h2>
                     <p style={{ fontSize: 15, color: KC.mute, maxWidth: 520, margin: '0 auto' }}>
-                        Pencari kerja tidak dipungut biaya. Perusahaan hanya membayar sesuai kebutuhan perekrutan.
+                        Pencari kerja gratis. Perusahaan membayar per lowongan atau per bulan — tidak pernah untuk membuka kontak.
                     </p>
                 </div>
 
                 <div className="kc-pricing-grid">
                     {[
                         {
-                            name: 'Starter',
-                            price: 'Gratis',
-                            period: 'selamanya',
-                            desc: 'Cocok untuk eksplorasi dan pemasangan lowongan dasar.',
+                            name: 'Spark',
+                            price: '0',
+                            period: 'gratis',
+                            desc: 'Coba dulu: pasang lowongan, bagikan link / QR.',
                             highlight: false,
                             bg: '#FAF9F5',
                             color: KC.ink,
                             btnVariant: 'secondary',
                             cta: 'Pasang Lowongan',
                             perks: [
-                                'Posting lowongan tanpa batas',
-                                'AI Shortlist Top-5 kandidat',
-                                'Skor keselarasan kompetensi',
-                                'Verifikasi profil dasar',
+                                '1 lowongan aktif',
+                                'Link + poster QR lowongan',
+                                '20 pelamar skor tertinggi ditampilkan',
+                                'Badge skill terbukti',
                             ],
                             action: onEmployer,
                         },
                         {
-                            name: 'Pay-per-Unlock',
-                            price: '50rb',
-                            period: '/ 10 kandidat',
-                            desc: 'Pilihan populer bagi tim yang aktif mewawancarai talenta siap kerja.',
+                            name: 'Beacon',
+                            price: '29rb',
+                            period: '/ lowongan / 30 hari',
+                            desc: 'Untuk usaha kecil yang sesekali merekrut.',
                             highlight: true,
                             bg: KC.orange,
                             color: '#fff',
                             btnVariant: 'lime',
                             cta: 'Mulai Rekrut',
                             perks: [
-                                'Buka kontak 10 kandidat',
-                                'Akses CV PDF & portofolio lengkap',
-                                'Format KTP & NPWP tervalidasi',
-                                'Format nomor ijazah tervalidasi',
-                                'Analisis skor kecocokan AI',
+                                'Pelamar tanpa batas diperingkat',
+                                'Pertanyaan wawancara AI per kandidat',
+                                'Konfirmasi "skill terbukti" setelah wawancara',
+                                'Ekspor pelamar (CSV)',
                             ],
                             action: onEmployer,
                         },
                         {
-                            name: 'Enterprise Scale',
-                            price: 'Custom',
-                            period: 'sesuai kebutuhan',
-                            desc: 'Solusi terintegrasi untuk korporasi, BUMN, dan agensi rekrutmen.',
+                            name: 'Lighthouse',
+                            price: '99rb',
+                            period: '/ 30 hari',
+                            desc: 'Untuk usaha yang merekrut setiap bulan.',
                             highlight: false,
                             bg: KC.ink,
                             color: '#fff',
                             btnVariant: 'accent',
-                            cta: 'Konsultasi Enterprise',
+                            cta: 'Pilih Lighthouse',
                             perks: [
-                                'Konektor API ke Workday & SAP',
-                                'Alur screening kustom',
-                                'Dedicated Account Manager',
-                                'Akses API bulk vector match',
-                                'Perjanjian SLA 99.9%',
+                                'Semua fitur Beacon',
+                                'Hingga 5 lowongan aktif',
+                                'Laporan rekrutmen lintas lowongan',
+                                'Pencari kerja tetap gratis (Prism opsional Rp25rb)',
                             ],
-                            action: () => openInquiry('Enterprise & HR'),
+                            action: onEmployer,
                         },
                     ].map((tier, idx) => (
                         <div key={idx} style={{
@@ -1462,7 +1458,7 @@ export default function LandingHero() {
                                     fontWeight: 900, textTransform: 'uppercase', borderRadius: 999,
                                     color: KC.ink, boxShadow: `2px 2px 0 ${KC.ink}`,
                                 }}>
-                                    Paling Diminati
+                                    Paling Hemat
                                 </div>
                             )}
 
@@ -1576,7 +1572,7 @@ export default function LandingHero() {
                         Mulai Rekrutmen yang Akurat Hari Ini.
                     </h2>
                     <p style={{ fontSize: 16, maxWidth: 560, margin: '0 auto 24px', opacity: 0.95, lineHeight: 1.55 }}>
-                        Daftar dalam 2 menit. Dapatkan kurasi Top-5 match berbasis kecocokan kompetensi riil.
+                        Daftar dalam 2 menit. Lihat skor kecocokan dan skill mana yang perlu dibuktikan.
                     </p>
 
                     <div style={{ display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>

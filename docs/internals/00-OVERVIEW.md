@@ -10,9 +10,9 @@
 | [01-matching-algorithm.md](01-matching-algorithm.md) | Semantic job↔seeker matching (the core) + research directions |
 | [02-authentication.md](02-authentication.md) | Registration, login, JWT, rate limiting, input sanitization |
 | [03-cv-upload-parsing.md](03-cv-upload-parsing.md) | PDF CV upload, Gemini extraction, profile auto-fill |
-| [04-identity-verification.md](04-identity-verification.md) | e-KYC (NIK SHA-256), education (SIVIL), NPWP & Database-backed OTP verification |
+| [04-trust-and-verification.md](04-trust-and-verification.md) | Email OTP, skill proof (quiz + HR confirmation), employer trust badges, AutoMod & strikes |
 | [05-ai-agent.md](05-ai-agent.md) | LangGraph agent, tools, memory, prompts, telemetry |
-| [06-jobs-employer-features.md](06-jobs-employer-features.md) | Job CRUD, candidate pool estimate, reverse matching |
+| [06-jobs-employer-features.md](06-jobs-employer-features.md) | Job CRUD + moderation, share links/QR, ranked applicants, hiring tools, anonymised talent pool |
 | [07-partner-integrations.md](07-partner-integrations.md) | Course & LMS ecosystem integrations (Dicoding, Prakerja) |
 | [08-events-experiments.md](08-events-experiments.md) | Analytics events + deterministic A/B testing |
 | [09-courses-skill-gap.md](09-courses-skill-gap.md) | Course catalog + 3-tier skill-gap recommendations |
@@ -29,7 +29,7 @@
                              │                   │
                 ┌────────────▼─────────┐  ┌──────▼───────────────────┐
                 │ PostgreSQL + pgvector│  │ Google Gemini            │
-                │ vector(768) columns  │  │ · gemini-embedding-2     │
+                │ vector(768) columns  │  │ · gemini-embedding-1     │
                 │ users/jobs/seekers/  │  │   (768-dim, MRL from     │
                 │ otps/events/inquiries│  │   3072-dim)              │
                 └──────────────────────┘  │ · gemini-3.1-flash-lite  │

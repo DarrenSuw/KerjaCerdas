@@ -12,10 +12,10 @@ offending field.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Literal
 
 from backend.app.api.schemas.common import LenientInt, StrList
-from backend.app.db.schemas import EducationLevel, VerificationStatus
+from backend.app.db.schemas import EducationLevel
 from pydantic import BaseModel, Field, field_validator
 
 
@@ -50,21 +50,19 @@ class EducationInput(BaseModel):
     """
 
     institution: str = Field(default="", max_length=255)
-    degree: EducationLevel = EducationLevel.S1
+    degree: EducationLevel = EducationLevel.SMA  # never invent a degree
     major: str = Field(default="", max_length=255)
     graduation_year: int = 2024
-    ijazah_number: str | None = Field(default=None, max_length=64)
-    sivil_verified: VerificationStatus = VerificationStatus.UNVERIFIED
 
     @field_validator("degree", mode="before")
     @classmethod
     def _degree_or_default(cls, v: Any) -> Any:
         if v is None:
-            return EducationLevel.S1
+            return EducationLevel.SMA
         try:
             return EducationLevel(str(v).upper())
         except ValueError:
-            return EducationLevel.S1
+            return EducationLevel.SMA
 
     @field_validator("graduation_year", mode="before")
     @classmethod
@@ -73,16 +71,6 @@ class EducationInput(BaseModel):
             return int(v)
         except (TypeError, ValueError):
             return 2024
-
-    @field_validator("sivil_verified", mode="before")
-    @classmethod
-    def _verification_or_default(cls, v: Any) -> Any:
-        if v is None:
-            return VerificationStatus.UNVERIFIED
-        try:
-            return VerificationStatus(str(v).lower())
-        except ValueError:
-            return VerificationStatus.UNVERIFIED
 
 
 class SeekerProfileUpsert(BaseModel):
@@ -129,6 +117,9 @@ class ApplyRequest(BaseModel):
 
     job_id: str = Field(max_length=64)
     cover_letter: str = Field(default="", max_length=20_000)
+    # "link" when the seeker arrived through the job's QR / share link;
+    # "board" otherwise. Lets us measure whether QR traffic converts.
+    source: Literal["board", "link"] = "board"
 
 
 class SkillGapRequest(BaseModel):

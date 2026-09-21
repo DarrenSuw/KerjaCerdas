@@ -1,7 +1,12 @@
-"""Employer endpoints — profile, job CRUD and real reverse-matching candidate search.
+"""Employer endpoints — profile, job CRUD, applicant ranking and talent search.
 
 Uses the postgres_store layer (same layer as uploads/agent), so postings
 created here are immediately visible to the semantic matcher.
+
+v2: every new/edited posting passes AutoMod (services/trust/automod.py) and
+gets a shareable link + QR code; the applicant list is ranked by the
+proof-weighted match score; plan limits (Spark/Beacon/Lighthouse) apply.
+Interview kits, skill confirmation, export and trust live in routers/hiring.py.
 """
 
 from __future__ import annotations
@@ -18,8 +23,8 @@ from backend.app.api.schemas.employer import (
     JobCreateRequest,
     JobPoolEstimateRequest,
     JobUpdateRequest,
-    UnlockCandidateRequest,
 )
+from backend.app.config.settings import settings
 from backend.app.db.models import User
 from backend.app.db.postgres_store import (
     find_employer_by_user_id,
@@ -36,7 +41,12 @@ from backend.app.db.schemas import (
     allowed_transitions,
     can_transition,
 )
-from backend.app.services.matching.matcher import SemanticMatcher
+from backend.app.db.schemas_proof import ApplicationStatusEvent
+from backend.app.services.billing.plans import active_job_limit, entitlements_for
+from backend.app.services.hiring.links import new_public_code, public_path
+from backend.app.services.matching.matcher import SemanticMatcher, score_pair
+from backend.app.services.trust import policy
+from backend.app.services.trust.automod import moderate
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.exc import IntegrityError
 
@@ -61,7 +71,7 @@ async def _require_owned_job(repos, current_user: User, job_id: str) -> tuple[Jo
 
     Centralizes the tenant-ownership check that used to be hand-repeated at
     every mutating job/candidate endpoint (update_job, delete_job,
-    find_candidates, unlock_candidate). Repeating "load resource, then check
+    find_candidates, the hiring router). Repeating "load resource, then check
     job.employer_id == employer.id" by hand at each new endpoint means a
     future endpoint can forget it — that was a real P0 cross-tenant finding
     in this codebase's history, now fixed. Routing every caller through one
@@ -77,6 +87,32 @@ async def _require_owned_job(repos, current_user: User, job_id: str) -> tuple[Jo
         raise HTTPException(status.HTTP_403_FORBIDDEN, "Bukan lowongan milik perusahaan Anda")
 
     return job, employer
+
+
+async def _enforce_active_limit(
+    user_id: str, employer: Employer, jobs: list[JobPosting], job_id: str
+) -> None:
+    """Spark: 1 active job, Lighthouse: 5; a Beacon order covers its own job.
+
+    A second AutoMod strike also limits the employer to one active job for 30 days.
+    """
+    if not settings.plan_limits_enforced:
+        return
+    ent = await entitlements_for(user_id)
+    if job_id in ent.beacon_jobs:
+        return
+    limit = active_job_limit(ent)
+    if policy.strike_state(employer)["limited"]:
+        limit = 1
+    uncovered_active = [
+        j for j in jobs if j.is_active and j.id != job_id and j.id not in ent.beacon_jobs
+    ]
+    if len(uncovered_active) >= limit:
+        raise HTTPException(
+            status.HTTP_402_PAYMENT_REQUIRED,
+            f"Batas {limit} lowongan aktif untuk paket kamu tercapai. Nonaktifkan lowongan lain, "
+            "beli Beacon untuk lowongan ini, atau upgrade ke Lighthouse.",
+        )
 
 
 # ── Employer Profile ──────────────────────────────────────────────────────────────────────────
@@ -98,7 +134,7 @@ async def update_employer_profile(
 ):
     """Create or update the employer's company profile.
 
-    Editable fields: company_name, npwp, industry, size, region_code,
+    Editable fields: company_name, industry, size, region_code,
     website, description. Fields the request omits are left untouched.
     """
     repos = get_repositories()
@@ -137,7 +173,7 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
     try:
         edu = EducationLevel(payload.education_min.upper())
     except ValueError:
-        edu = EducationLevel.S1
+        edu = EducationLevel.SMA
 
     title = payload.title.strip()
     if not title:
@@ -147,6 +183,12 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST,
             "Lowongan dari mode offline (demo) tidak dapat dipublikasikan."
+        )
+
+    if policy.strike_state(employer)["suspended"]:
+        raise HTTPException(
+            status.HTTP_403_FORBIDDEN,
+            "Akun dibatasi karena pelanggaran berulang. Ajukan banding ke admin KerjaCerdas.",
         )
 
     # Idempotent replay: if the caller already created this exact posting
@@ -182,7 +224,18 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
         salary_max=payload.salary_max,
         kbji_code=payload.kbji_code,
         client_ref=payload.client_ref,
+        public_code=new_public_code(),
     )
+
+    existing_jobs = await find_jobs_by_employer_id(employer.id)
+    verdict = await moderate(
+        job.title, job.description, job.responsibilities, job.salary_min, job.salary_max
+    )
+    notice = await policy.apply_verdict(
+        job, employer, current_user, verdict, first_job=not existing_jobs
+    )
+    if job.is_active:
+        await _enforce_active_limit(current_user.id, employer, existing_jobs, job.id)
 
     matcher = SemanticMatcher()
     await matcher.embed_job(job)
@@ -199,8 +252,19 @@ async def create_job(payload: JobCreateRequest, current_user: User = Depends(get
                 return {"job_id": existing.id, "title": existing.title, "created": False}
         raise
     invalidate_jobs_cache()
+    await policy.log_event(job, "automod", notice["moderation_status"], notice["reasons"])
     logger.info("Job created: %s by user_id=%s", job.id, current_user.id)
-    return {"job_id": job.id, "title": job.title, "created": True}
+    return {
+        "job_id": job.id,
+        "title": job.title,
+        "created": True,
+        "public_code": job.public_code,
+        "share_path": public_path(job.public_code),
+        "moderation_status": notice["moderation_status"],
+        "moderation_reasons": notice["reasons"],
+        "notice": policy.notice_text(notice),
+        "strike": notice["strike"],
+    }
 
 
 @router.get("/jobs")
@@ -221,10 +285,13 @@ async def list_my_jobs(current_user: User = Depends(get_current_user)):
         if a.job_id in job_ids:
             counts_by_job[a.job_id] = counts_by_job.get(a.job_id, 0) + 1
 
+    ent = await entitlements_for(current_user.id)
     enriched = []
     for j in jobs:
-        job_dict = j.model_dump()
+        job_dict = j.model_dump(exclude={"embedding"})
         job_dict["application_count"] = counts_by_job.get(j.id, 0)
+        job_dict["share_path"] = public_path(j.public_code) if j.public_code else None
+        job_dict["plan_tier"] = ent.job_tier(j.id)
         enriched.append(job_dict)
 
     return {"total": len(enriched), "items": enriched}
@@ -242,17 +309,50 @@ async def update_job(
     # The model declares exactly the editable fields, so anything else in the
     # request is already dropped; `exclude_unset` keeps a PATCH partial.
     updates = {k: v for k, v in payload.model_dump(exclude_unset=True).items() if v is not None}
+    wants_active = updates.pop("is_active", None)
     for field, value in updates.items():
         setattr(job, field, value)
+
+    notice = None
+    content_fields = {"title", "description", "responsibilities", "salary_min", "salary_max"}
+    if content_fields & set(updates):
+        # Edited content is re-checked; this is also how a poster fixes a
+        # held/rejected ad ("edit & resubmit").
+        verdict = await moderate(
+            job.title, job.description, job.responsibilities, job.salary_min, job.salary_max
+        )
+        was_active = job.is_active
+        notice = await policy.apply_verdict(job, _employer, current_user, verdict, first_job=False)
+        if notice["moderation_status"] == "published":
+            job.is_active = was_active
+        await policy.log_event(job, "automod", notice["moderation_status"], notice["reasons"])
+
+    if wants_active is not None:
+        if wants_active and job.moderation_status != "published":
+            raise HTTPException(
+                status.HTTP_409_CONFLICT,
+                "Lowongan belum lolos moderasi. Perbaiki isinya atau ajukan banding.",
+            )
+        if wants_active and not job.is_active:
+            others = await find_jobs_by_employer_id(_employer.id)
+            await _enforce_active_limit(current_user.id, _employer, others, job.id)
+        job.is_active = bool(wants_active)
+        updates["is_active"] = job.is_active
 
     # Re-embed if description or skills changed
     if "description" in updates or "required_skills" in updates:
         matcher = SemanticMatcher()
         await matcher.embed_job(job)
 
+    if not job.public_code:
+        job.public_code = new_public_code()
     await repos.jobs.upsert(job)
     invalidate_jobs_cache()
-    return {"job_id": job.id, "updated": sorted(updates)}
+    out = {"job_id": job.id, "updated": sorted(updates), "moderation_status": job.moderation_status}
+    if notice:
+        out["moderation_reasons"] = notice["reasons"]
+        out["notice"] = policy.notice_text(notice)
+    return out
 
 
 @router.delete("/jobs/{job_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -349,135 +449,23 @@ async def find_candidates(
     if not ranked:
         return {"job_id": job_id, "total": 0, "candidates": []}
 
-    # Load only the ranked seekers (needed for the name-redaction teaser below).
-    seekers = await repos.seekers.get_many([c["seeker_id"] for c in ranked])
-
-    # Pay-to-Unlock only applies to candidates the employer found by
-    # searching the wider seeker pool. A candidate who already applied
-    # DIRECTLY to this job is already fully visible for free in the
-    # Pelamar Langsung tab (GET /employer/applications returns their real
-    # name/email/phone unconditionally) — redacting them here too, and then
-    # charging to "unlock" someone whose contact the employer already has,
-    # would be charging twice for the same access.
+    # Talent search shows ANONYMISED candidates only: no name, no employer or
+    # school names (those let a profile be re-identified on LinkedIn), no
+    # contact. The way to reach them is to share the job link; a candidate who
+    # applied directly is already fully visible in the applicant list.
     applied_seeker_ids = {
         a.seeker_id for a in await repos.applications.find(lambda a: a.job_id == job_id)
     }
-
-    # Redact full_name (Teaser Method / LinkedIn Style)
     for c in ranked:
         c["already_applied"] = c["seeker_id"] in applied_seeker_ids
-        if c["already_applied"]:
-            continue
-
-        seeker = next((s for s in seekers if s.id == c["seeker_id"]), None)
-        if (
-            seeker
-            and seeker.experience
-            and isinstance(seeker.experience[0], dict)
-            and seeker.experience[0].get("company")
-        ):
-            c["full_name"] = f"Someone at {seeker.experience[0]['company']}"
-        elif (
-            seeker
-            and getattr(seeker, "experience", [])
-            and hasattr(seeker.experience[0], "company")
-        ):
-            c["full_name"] = f"Someone at {seeker.experience[0].company}"
-        elif (
-            seeker
-            and seeker.education
-            and isinstance(seeker.education[0], dict)
-            and seeker.education[0].get("institution")
-        ):
-            c["full_name"] = f"Someone from {seeker.education[0]['institution']}"
-        elif (
-            seeker
-            and getattr(seeker, "education", [])
-            and hasattr(seeker.education[0], "institution")
-        ):
-            c["full_name"] = f"Someone from {seeker.education[0].institution}"
-        elif seeker and seeker.region_code:
-            c["full_name"] = f"Someone in region {seeker.region_code}"
-        else:
-            c["full_name"] = "Hidden Candidate"
+        c["proven_skill_count"] = sum(
+            1 for p in c.get("skill_proof", []) if p["status"] in ("quiz", "hr_confirmed")
+        )
+        if not c["already_applied"]:
+            c["full_name"] = f"Kandidat #{c.get('rank', '')}".strip()
+            c["headline"] = ""
 
     return {"job_id": job_id, "total": len(ranked), "candidates": ranked}
-
-
-# ── Pay-to-Unlock candidate contact (3.5) ────────────────────────────────────
-# Stub implementation: in production this validates a real Midtrans/Xendit
-# payment token before revealing the candidate's contact info.
-# Budget note: integrate with Midtrans Snap (free to register, ~1.5% MDR) or
-# Xendit (free API, transaction fee only) for production pay-to-unlock.
-
-_UNLOCKED_CONTACTS: dict[str, set[str]] = {}  # employer_id → set of seeker_ids
-_DEMO_PHONE_FALLBACK = "+628123456789"  # placeholder shown when no real phone is on file
-
-
-@router.post("/jobs/{job_id}/unlock/{seeker_id}")
-async def unlock_candidate(
-    job_id: str,
-    seeker_id: str,
-    payload: UnlockCandidateRequest | None = None,
-    current_user: User = Depends(get_current_user),
-) -> dict:
-    """Unlock a candidate's full contact info after payment validation.
-
-    In demo mode: accepts any payment_token value and returns mock contact.
-    In production: validate payment_token with Midtrans/Xendit before unlock.
-
-    Returns: { unlocked: true, name, email, phone, unlock_id }
-    """
-    repos = get_repositories()
-    job, employer = await _require_owned_job(repos, current_user, job_id)
-
-    seeker = await repos.seekers.get(seeker_id)
-    if not seeker:
-        raise HTTPException(status.HTTP_404_NOT_FOUND, "Kandidat tidak ditemukan")
-
-    # Pay-to-Unlock is for the AI-sourced talent pool (a candidate the
-    # employer found by searching the wider seeker DB, who never chose to
-    # share their contact with this employer). A candidate who applied
-    # DIRECTLY to this job already handed their contact over voluntarily —
-    # GET /employer/applications returns it unconditionally — so charging
-    # to "unlock" them here would be charging twice for the same access.
-    already_applied = bool(
-        await repos.applications.find(
-            lambda a: a.job_id == job_id and a.seeker_id == seeker_id
-        )
-    )
-
-    # Check if already unlocked (idempotent)
-    employer_unlocks = _UNLOCKED_CONTACTS.setdefault(employer.id, set())
-    if seeker_id not in employer_unlocks:
-        if not already_applied:
-            # In production: validate payment_token with payment gateway here
-            # if not _validate_payment(payload.payment_token if payload else None):
-            #     raise HTTPException(402, "Payment required")
-            pass
-        employer_unlocks.add(seeker_id)
-        logger.info("Employer %s unlocked seeker %s for job %s", employer.id, seeker_id, job_id)
-
-    # Resolve the real user record for contact info. `seeker.user_id` is the
-    # users table's primary key — use the indexed point lookup instead of the
-    # full-table-scan `find()`, which materialized every user row (including
-    # every password_hash) just to find one by id.
-    real_user = await repos.users.get(seeker.user_id)
-
-    return {
-        "unlocked": True,
-        "seeker_id": seeker_id,
-        "name": seeker.full_name or (real_user.name if real_user else "Kandidat"),
-        "email": real_user.email if real_user else "demo@kerjacerdas.id",
-        "phone": getattr(seeker, "phone", _DEMO_PHONE_FALLBACK) or _DEMO_PHONE_FALLBACK,
-        "unlock_id": f"unlock_{employer.id[:8]}_{seeker_id[:8]}",
-        "unlock_cost_idr": 0 if already_applied else 50000,
-        "note": (
-            "Kandidat sudah melamar langsung ke lowongan ini — kontak gratis, tidak dikenakan biaya unlock."
-            if already_applied
-            else "[DEMO] Dalam produksi, verifikasi payment_token Midtrans/Xendit terlebih dahulu."
-        ),
-    }
 
 
 # ── Applicant & Application Management (Real Pipeline) ─────────────────────────
@@ -488,19 +476,23 @@ async def list_employer_applications(
     job_id: str | None = None,
     current_user: User = Depends(get_current_user),
 ):
-    """Return real applications submitted to this employer's jobs.
+    """Applications to this employer's jobs, ranked by proof-weighted match score.
 
     Optional query parameter: ?job_id=<job_id> to filter by a specific job.
+
+    The score is recomputed live (a candidate who passes a quiz after applying
+    moves up). On the free Spark tier only the first N applicants per job (by
+    arrival) are ranked and fully shown; the rest are listed as `locked` until
+    the job is covered by Beacon or Lighthouse.
     """
     repos = get_repositories()
     employer = await _get_employer(current_user.id)
     if not employer:
         return {"total": 0, "items": []}
 
-    my_jobs = await repos.jobs.find(lambda j: j.employer_id == employer.id)
+    my_jobs = await find_jobs_by_employer_id(employer.id)
     my_job_ids = {j.id for j in my_jobs}
     job_map = {j.id: j for j in my_jobs}
-
     target_job_ids = {job_id} if job_id and job_id in my_job_ids else my_job_ids
 
     all_apps = await repos.applications.list()
@@ -508,14 +500,9 @@ async def list_employer_applications(
         a for a in all_apps if a.job_id in target_job_ids and a.status != ApplicationStatus.SAVED
     ]
 
-    # Batch-load seekers and their auth users instead of two queries per
-    # application row. If a seeker profile is missing (orphan application),
-    # fall back to treating the application's seeker_id as a user id — this
-    # matches the previous per-row lookup's fallback behavior.
     seeker_ids = list({a.seeker_id for a in relevant_apps})
     seekers = await repos.seekers.get_many(seeker_ids) if seeker_ids else []
     seeker_by_id = {s.id: s for s in seekers}
-
     user_lookup_ids = {
         (seeker_by_id[a.seeker_id].user_id if a.seeker_id in seeker_by_id else a.seeker_id)
         for a in relevant_apps
@@ -523,49 +510,94 @@ async def list_employer_applications(
     users = await repos.users.get_many(list(user_lookup_ids)) if user_lookup_ids else []
     user_by_id = {u.id: u for u in users}
 
+    ent = await entitlements_for(current_user.id)
+    cap = settings.spark_ranked_applicant_limit
+
+    # Score every applicant first, then rank BY SCORE — not by arrival time.
+    # Spark is the tier every employer meets first, so it is the one that has to
+    # demonstrate that ranking works. Capping by arrival showed the first N who
+    # applied and hid the best candidate behind the paywall whenever they
+    # happened to apply late, which demonstrates a queue, not a ranking. The cap
+    # now limits how many are revealed, not which.
+    scored: dict[str, dict] = {}
+    for app in relevant_apps:
+        job = job_map.get(app.job_id)
+        seeker = seeker_by_id.get(app.seeker_id)
+        if seeker and job:
+            scored[app.id] = score_pair(seeker, job)
+
+    score_rank: dict[str, int] = {}
+    for jid in target_job_ids:
+        ordered = sorted(
+            (a for a in relevant_apps if a.job_id == jid),
+            # Descending score; arrival time breaks ties so the order is stable.
+            key=lambda a: (-(scored.get(a.id, {}).get("score") or 0.0), a.created_at),
+        )
+        for i, a in enumerate(ordered):
+            score_rank[a.id] = i
+
+    def _fmt(dt) -> str:
+        if hasattr(dt, "strftime"):
+            return dt.strftime("%Y-%m-%d %H:%M")
+        return str(dt)[:16] if dt else datetime.now(UTC).strftime("%Y-%m-%d %H:%M")
+
     enriched = []
     for app in relevant_apps:
         job = job_map.get(app.job_id)
         seeker = seeker_by_id.get(app.seeker_id)
         user_record = user_by_id.get(seeker.user_id if seeker else app.seeker_id)
-
-        skill_names = [getattr(s, "name", str(s)) for s in (getattr(seeker, "skills", []) or [])]
-        applied_dt = getattr(app, "created_at", None)
-        updated_dt = getattr(app, "updated_at", None) or applied_dt
-        now_fallback = datetime.now(UTC).strftime("%Y-%m-%d %H:%M")
-
-        enriched.append(
-            {
-                "id": app.id,
-                "application_id": app.id,
-                "job_id": app.job_id,
-                "job_title": job.title if job else "—",
-                "seeker_id": app.seeker_id,
+        locked = (
+            job is not None
+            and not ent.premium_for_job(job.id)
+            and score_rank.get(app.id, 0) >= cap
+        )
+        live = scored.get(app.id)
+        item = {
+            "id": app.id,
+            "application_id": app.id,
+            "job_id": app.job_id,
+            "job_title": job.title if job else "—",
+            "seeker_id": app.seeker_id,
+            "status": app.status,
+            "source": app.source,
+            "applied_at": _fmt(app.created_at),
+            "updated_at": _fmt(app.updated_at or app.created_at),
+            "locked": locked,
+        }
+        if locked:
+            item.update({
+                "seeker_name": "Pelamar terkunci",
+                "lock_reason": (
+                    f"Paket Spark menampilkan {cap} pelamar dengan skor tertinggi. "
+                    "Beli Beacon untuk lowongan ini agar semua pelamar terbuka."
+                ),
+                "match_score": None,
+            })
+        else:
+            item.update({
                 "seeker_name": seeker.full_name
                 if seeker and seeker.full_name
                 else (user_record.name if user_record else "Pelamar"),
-                "seeker_email": user_record.email if user_record else "pelamar@kerjacerdas.id",
-                "seeker_phone": getattr(seeker, "phone", "") or _DEMO_PHONE_FALLBACK,
-                "headline": getattr(seeker, "headline", "") if seeker else "",
-                "skills": skill_names,
-                "status": app.status,
-                "note": getattr(app, "note", "") or "",
-                "cover_letter": getattr(app, "cover_letter", "") or "",
-                "match_score": getattr(app, "match_score", 0.0) or 0.0,
-                "applied_at": applied_dt.strftime("%Y-%m-%d %H:%M")
-                if hasattr(applied_dt, "strftime")
-                else str(applied_dt)[:16]
-                if applied_dt
-                else now_fallback,
-                "updated_at": updated_dt.strftime("%Y-%m-%d %H:%M")
-                if hasattr(updated_dt, "strftime")
-                else str(updated_dt)[:16]
-                if updated_dt
-                else now_fallback,
-            }
-        )
+                "seeker_email": user_record.email if user_record else "",
+                "email_verified": bool(getattr(user_record, "email_verified", False)),
+                "headline": seeker.headline if seeker else "",
+                "skills": [s.name for s in (seeker.skills if seeker else [])],
+                "skill_proof": live["skill_proof"] if live else [],
+                "band": live["band"] if live else "stretch",
+                "match_score": live["score"] if live else (app.match_score or 0.0),
+                "match_score_at_apply": app.match_score or 0.0,
+                "note": app.note or "",
+                "cover_letter": app.cover_letter or "",
+            })
+        enriched.append(item)
 
-    return {"total": len(enriched), "items": enriched}
+    # Ranked applicants first (highest score first), locked ones last.
+    enriched.sort(key=lambda x: (x["locked"], -(x["match_score"] or 0.0)))
+    return {
+        "total": len(enriched),
+        "ranked_limit": None if not settings.plan_limits_enforced else cap,
+        "items": enriched,
+    }
 
 
 # Indonesian aliases the frontend has historically sent for pipeline stages.
@@ -622,6 +654,10 @@ async def update_application_status(
             status.HTTP_403_FORBIDDEN, "Anda tidak memiliki izin mengelola lamaran ini"
         )
 
+    # Built while validating, written only AFTER the application row lands —
+    # see the comment at the upsert below.
+    pending_event: ApplicationStatusEvent | None = None
+
     if payload.status is not None:
         target = _parse_status(payload.status)
         current = ApplicationStatus(app.status)
@@ -644,6 +680,14 @@ async def update_application_status(
             )
             raise HTTPException(status.HTTP_409_CONFLICT, detail)
 
+        if target != current:
+            pending_event = ApplicationStatusEvent(
+                application_id=app.id,
+                job_id=app.job_id,
+                from_status=current.value,
+                to_status=target.value,
+                match_score=app.match_score or 0.0,
+            )
         app.status = target
 
     if payload.note is not None:
@@ -651,6 +695,36 @@ async def update_application_status(
 
     app.updated_at = datetime.now(UTC)
     await repos.applications.upsert(app)
+
+    # The history event is written only once the status change itself has been
+    # persisted. Each repository upsert runs in its own transaction, so the two
+    # writes cannot be made atomic here — but the ORDER decides which way a
+    # partial failure fails:
+    #
+    #   event first  → a failed application write leaves /admin/metrics
+    #                  permanently reporting an interview/offer/hire that never
+    #                  happened, and a retry (status still unchanged) appends a
+    #                  SECOND identical event, since nothing constrains
+    #                  transition uniqueness.
+    #   status first → a failed event write means the transition is missing from
+    #                  metrics. A retry then sees target == current and writes no
+    #                  event at all, so duplicates are impossible.
+    #
+    # Under-counting a real transition is recoverable and honest; fabricating one
+    # corrupts the very number this product argues from ("do higher scores reach
+    # interview?"). Hence status first, and a loud log rather than a silent pass.
+    if pending_event is not None:
+        try:
+            await repos.status_events.upsert(pending_event)
+        except Exception:  # noqa: BLE001 — the status change itself already succeeded
+            logger.exception(
+                "Status %s->%s persisted for application %s but its history event "
+                "was not written — /admin/metrics will under-count this transition.",
+                pending_event.from_status,
+                pending_event.to_status,
+                app.id,
+            )
+
     logger.info(
         "Application %s updated to status=%s note=%s by employer=%s",
         app.id,

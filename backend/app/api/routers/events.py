@@ -2,8 +2,10 @@
 
 POST /api/v1/events/track
   Records any user interaction event (job_viewed, apply_clicked, band_clicked,
-  skill_gap_opened, course_clicked, unlock_triggered, etc.) for product analytics,
-  A/B test measurement, and the closed-loop feedback data moat.
+  skill_gap_opened, course_clicked, etc.) for product analytics and A/B test
+  measurement. This is optional telemetry only: hiring outcome data lives in
+  `applications.match_score` / `skill_snapshot` and `application_status_events`,
+  which /admin/metrics reads — never in this table.
 
 Designed to be fire-and-forget from the frontend: if the write fails silently
 the UX is never interrupted. No PII is stored — only UUID user_id references.

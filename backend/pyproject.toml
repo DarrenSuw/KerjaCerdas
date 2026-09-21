@@ -45,6 +45,9 @@ dependencies = [
     # Distributed rate limiting (RATE_LIMIT_BACKEND=redis) — required once the
     # deployment runs more than one instance (e.g. Replit autoscale).
     "redis>=5.0.0",
+    # QR posters for shareable job links (services/hiring/links.py). Pure
+    # Python, renders SVG locally — no external QR service, no API key.
+    "segno>=1.6.0",
 ]
 
 [project.optional-dependencies]

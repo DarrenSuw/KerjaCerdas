@@ -42,11 +42,11 @@ const SECTIONS = [
         content: [
             {
                 heading: 'Untuk Pencari Kerja (Talenta)',
-                text: '• Data Identitas & Kontak: Nama lengkap, alamat email aktif, nomor kontak, domisili/wilayah administratif.\n• Data Profesional & Karier: Dokumen CV/Resume (PDF/DOCX), keahlian teknis & non-teknis, riwayat pekerjaan, portfolio, preferensi kerja (gaji ekspektasi, mode kerja WFH/Hybrid/Onsite).\n• Data Kredibilitas & Verifikasi: Nilai hash e-KYC (NIK terenkripsi) dan status validasi format nomor ijazah perguruan tinggi. Validasi ini adalah pemeriksaan format internal, bukan verifikasi resmi ke basis data pemerintah (Dukcapil/PDDikti/Kemendikbudristek).'
+                text: '• Data Identitas & Kontak: Nama lengkap, alamat email aktif, nomor kontak, domisili/wilayah administratif.\n• Data Profesional & Karier: Dokumen CV/Resume (PDF/DOCX), keahlian teknis & non-teknis, riwayat pekerjaan, portfolio, preferensi kerja (gaji ekspektasi, mode kerja WFH/Hybrid/Onsite).\n• Bukti Skill: hasil kuis skill (skor, lulus/tidak, tanggal) dan konfirmasi skill dari perusahaan setelah wawancara.\n• Kami TIDAK mengumpulkan NIK, foto KTP, nomor ijazah, atau dokumen identitas lain. Identitas diperiksa langsung oleh perusahaan saat wawancara.'
             },
             {
                 heading: 'Untuk Pemberi Kerja (Employer / HR)',
-                text: '• Legalitas Entitas: Nama institusi/perusahaan, nomor pokok wajib pajak (NPWP) yang divalidasi formatnya secara internal, alamat kantor, industri usaha.\n• Kontak Person in Charge (PIC): Nama rekruter resmi, email korporat (@nama-perusahaan), nomor telepon kantor.\n• Spesifikasi Pekerjaan: Deskripsi jabatan, batas gaji, persyaratan keahlian, dan kriteria kualifikasi.'
+                text: '• Data Usaha: Nama perusahaan/usaha, industri, website, dan tautan publik yang Anda kirim untuk badge "Ditinjau admin" (mis. Google Maps, Instagram bisnis). Tidak ada NPWP.\n• Kontak Person in Charge (PIC): Nama rekruter resmi, email korporat (@nama-perusahaan), nomor telepon kantor.\n• Spesifikasi Pekerjaan: Deskripsi jabatan, batas gaji, persyaratan keahlian, dan kriteria kualifikasi.'
             }
         ]
     },
@@ -63,7 +63,7 @@ const SECTIONS = [
             },
             {
                 heading: 'Kebijakan Nol Retensi untuk Pelatihan Model Pihak Ketiga (Zero AI Training)',
-                text: 'Kami MENJAMIN bahwa berkas CV, dokumen pribadi, dan informasi rahasia lowongan kerja Anda TIDAK PERNAH digunakan untuk melatih model AI publik milik pihak ketiga. Pemrosesan dilakukan dalam sesi inferensi API yang terisolasi dengan enkripsi menyeluruh.'
+                text: 'Sebelum teks CV atau pesan dikirim ke Gemini API, alamat email, nomor telepon, dan NIK disamarkan otomatis dengan aturan tetap (bukan hanya instruksi ke AI). Hanya PDF hasil pindai (tanpa teks) yang dikirim sebagai dokumen utuh. KerjaCerdas sendiri tidak memakai data Anda untuk melatih model.'
             },
             {
                 heading: 'Larangan Penjualan Data (Zero Monetization of Data)',
@@ -74,17 +74,17 @@ const SECTIONS = [
     {
         id: 'privasi-kontak',
         number: '04',
-        title: 'Perlindungan Privasi Kontak (Pay-to-Unlock)',
+        title: 'Perlindungan Privasi Kontak & Keputusan Otomatis',
         badge: 'Anti-Spam & Privacy',
         badgeColor: KC.orange,
         content: [
             {
                 heading: 'Sistem Masking Kontak Kandidat',
-                text: 'Untuk melindungi privasi pencari kerja dari spam dan penawaran tidak sah, kontak langsung (nomor telepon, email, alamat lengkap) disembunyikan secara default dalam hasil pencarian kandidat.'
+                text: 'Di talent pool perusahaan, pencari kerja yang belum melamar tampil anonim: tanpa nama, tanpa nama perusahaan/sekolah, tanpa kontak. Kontak hanya terlihat oleh perusahaan tempat Anda melamar sendiri.'
             },
             {
-                heading: 'Akses Berbayar & Terverifikasi',
-                text: 'Pemberi kerja hanya dapat melihat rincian kontak lengkap setelah akun perusahaannya terverifikasi NPWP dan secara resmi melakukan proses pembukaan kontak (Pay-to-Unlock). Setiap pembukaan kontak dicatat dalam audit log transaksi rekrutmen.'
+                heading: 'Keputusan Tetap di Tangan Manusia',
+                text: 'Skor kecocokan dan hasil kuis membantu mengurutkan pelamar, tetapi keputusan wawancara dan penerimaan dibuat oleh perusahaan. Anda dapat meminta peninjauan manusia atas hasil yang Anda anggap keliru (UU PDP).'
             }
         ]
     },

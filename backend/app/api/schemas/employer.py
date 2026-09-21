@@ -25,7 +25,6 @@ class EmployerProfileUpdate(BaseModel):
     """
 
     company_name: str | None = Field(default=None, max_length=255)
-    npwp: str | None = Field(default=None, max_length=32)
     industry: str | None = Field(default=None, max_length=120)
     size: str | None = None
     region_code: str | None = Field(default=None, max_length=10)
@@ -60,7 +59,7 @@ class JobCreateRequest(BaseModel):
     responsibilities: StrList = Field(default=[], max_length=100)
     required_skills: StrList = Field(default=[], max_length=50)
     nice_to_have_skills: StrList = Field(default=[], max_length=50)
-    education_min: str = "S1"
+    education_min: str = "SMA"  # floor = no requirement stated
     experience_years_min: LenientInt = 0
     # The client sends either `region_code` or the older `location` key.
     region_code: str | None = Field(default=None, max_length=10)
@@ -124,12 +123,6 @@ class CandidateSearchRequest(BaseModel):
 
     top_k: int = Field(default=15, ge=1, le=100)
     filters: CandidateFilters = Field(default_factory=CandidateFilters)
-
-
-class UnlockCandidateRequest(BaseModel):
-    """Payload for the pay-to-unlock contact endpoint."""
-
-    payment_token: str | None = Field(default=None, max_length=512)
 
 
 class ApplicationStatusUpdate(BaseModel):

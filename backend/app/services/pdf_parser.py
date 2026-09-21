@@ -16,6 +16,7 @@ from typing import Any
 
 from backend.app.api.middleware.sanitization import clean_extracted_text
 from backend.app.config.settings import settings
+from backend.app.services.privacy.redact import redact_text
 from backend.app.services.prompt_loader import build_system_prompt
 
 logger = logging.getLogger(__name__)
@@ -215,9 +216,9 @@ def _fallback_extract(pdf_bytes: bytes) -> dict[str, Any]:
     )
 
     # Strip PII from resume_text for storage
-    redacted = re.sub(r"[\w.+-]+@[\w-]+\.[\w.-]+", "[email]", text)
-    redacted = re.sub(r"\+?\d[\d\s().-]{7,}\d", "[phone]", redacted)
-    redacted = re.sub(r"\b\d{16}\b", "[nik]", redacted)
+    from backend.app.services.privacy.redact import redact_text
+
+    redacted = redact_text(text)
 
     return {
         "full_name": name,
@@ -243,7 +244,84 @@ def _extract_json(text: str) -> dict[str, Any]:
     return json.loads(blob)
 
 
-async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]:
+# Below this many extracted characters a PDF cannot be parsed usefully from its
+# text layer alone, so reading it needs the image. Named for what it measures:
+# it is a parseability floor, NOT a claim that the document is a scan — a PDF
+# can be short and still have perfectly redactable text.
+_MIN_TEXT_TO_PARSE = 200
+
+
+class ScannedPdfError(Exception):
+    """Raised when a PDF has no text layer, so its contents cannot be redacted.
+
+    Deliberately not a soft fallback: we would rather refuse the upload and ask
+    for manual entry than send an un-redactable image of someone's CV to a
+    third-party model.
+    """
+
+
+def _llm_contents(
+    types, pdf_bytes: bytes, allow_scanned: bool = False, _text_override: str | None = None
+) -> list:
+    """What is actually sent to Gemini for a PDF.
+
+    Normal case: the PDF is converted to text locally and PII-redacted (email /
+    phone / NIK) before anything leaves the server.
+
+    Scanned or photographed CVs have no text layer, so there is nothing to run
+    the regex over and the document can only be sent as an image — carrying the
+    same contact details the regex exists to strip. We do NOT silently do that:
+    the first call raises ScannedPdfError, the API turns that into a consent
+    prompt, and only an explicit `confirm_scanned` re-upload passes
+    allow_scanned=True.
+
+    Refusing outright was the first implementation and it was wrong for this
+    market: a scan or a phone photo is how a great many Indonesian job seekers
+    actually hold their CV, and blocking them would exclude exactly the people
+    this product exists for. Informed consent is the honest trade, and it is
+    also the UU PDP posture where explicit consent is the lawful basis.
+    Whatever the model returns is still redacted before it is stored.
+
+    `_text_override` exists only so tests can drive both branches without
+    building real scanned and text-layer PDFs.
+    """
+    from backend.app.services.privacy.redact import redact_text
+
+    instruction = "Ekstrak data terstruktur sesuai schema di task prompt. Kembalikan JSON saja."
+    if _text_override is not None:
+        text = _text_override
+    else:
+        try:
+            text = _pdf_to_text(pdf_bytes, max_chars=20000)
+        except Exception:  # noqa: BLE001 — treated the same as an empty text layer
+            text = ""
+    stripped = text.strip()
+    if len(stripped) < _MIN_TEXT_TO_PARSE:
+        if not allow_scanned:
+            # Two different documents end up here and they deserve different
+            # words. An empty extraction is an image-only scan; a short one is a
+            # PDF whose text layer holds only a heading or a page number. Both
+            # need the image to be readable, neither is "broken", and calling a
+            # sparse file a photo would just confuse the person who uploaded it.
+            detail = (
+                "CV ini berupa hasil pindai atau foto, jadi tidak ada teks yang bisa kami "
+                "samarkan lebih dulu."
+                if not stripped
+                else "Teks yang bisa kami baca dari PDF ini terlalu sedikit untuk diproses."
+            )
+            raise ScannedPdfError(
+                f"{detail} Untuk membacanya, gambar dokumen perlu dikirim ke AI apa adanya "
+                "— termasuk nomor HP dan email yang tertulis di dalamnya. "
+                "Hasil bacaannya tetap kami samarkan sebelum disimpan."
+            )
+        return [types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"), instruction]
+    header = "Isi dokumen (data kontak sudah disamarkan):"
+    return [f"{header}\n\n{redact_text(text)}", instruction]
+
+
+async def _call_gemini(
+    pdf_bytes: bytes, role: str, task: str, allow_scanned: bool = False
+) -> dict[str, Any]:
     import asyncio
 
     try:
@@ -261,15 +339,18 @@ async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]
 
         from backend.app.services.llm_factory import chat_model_chain
 
+        # Raises ScannedPdfError for an un-redactable document. Deliberately
+        # OUTSIDE the retry loop: it is a property of the file, not a transient
+        # model failure, so retrying other models cannot help and must not
+        # disguise it as one.
+        contents = _llm_contents(types, pdf_bytes, allow_scanned=allow_scanned)
+
         last_exc: Exception | None = None
         for model in chat_model_chain():
             try:
                 resp = client.models.generate_content(
                     model=model,
-                    contents=[
-                        types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"),
-                        "Ekstrak data terstruktur sesuai schema di task prompt. Kembalikan JSON saja.",
-                    ],
+                    contents=contents,
                     config=types.GenerateContentConfig(
                         system_instruction=system,
                         response_mime_type="application/json",
@@ -280,15 +361,40 @@ async def _call_gemini(pdf_bytes: bytes, role: str, task: str) -> dict[str, Any]
                         ),
                     ),
                 )
+                usage = getattr(resp, "usage_metadata", None)
+                _last_usage.update(
+                    model=model,
+                    tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
+                    tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+                )
                 return resp.text or "{}"
             except Exception as exc:  # 429/quota → try next model in the chain
                 logger.warning("Gemini PDF call failed on %s (%s) — trying next model", model, exc)
                 last_exc = exc
         raise last_exc if last_exc else RuntimeError("no chat models configured")
 
+    _last_usage: dict = {}
     try:
+        import time as _time
+
+        from backend.app.db.postgres_store import record_ai_usage
+
         pdf_bytes = await asyncio.to_thread(_cap_pdf_pages, pdf_bytes)
+        _t0 = _time.monotonic()
         raw = await asyncio.to_thread(_sync)
+        await record_ai_usage(
+            task,
+            _last_usage.get("model", ""),
+            _last_usage.get("tokens_in", 0),
+            _last_usage.get("tokens_out", 0),
+            int((_time.monotonic() - _t0) * 1000),
+        )
+    except ScannedPdfError:
+        # NOT a transient failure, so no fallback. Returning offline/demo data
+        # here would hand the caller a fabricated CV or job posting and mark it
+        # a successful parse — the endpoint would cache and store invented
+        # content instead of asking the user for consent.
+        raise
     except Exception as e:  # network/SSL/quota/parsing/page-cap — never crash the upload
         logger.warning("Gemini PDF call failed (task=%s): %s — falling back", task, e)
         if task == "cv_parser":
@@ -359,7 +465,13 @@ def _validate_cv_schema(d: dict[str, Any]) -> dict[str, Any]:
         ],
         "salary_expectation_min": int(d.get("salary_expectation_min") or 0),
         "salary_expectation_max": int(d.get("salary_expectation_max") or 0),
-        "resume_text": clean_extracted_text(str(d.get("resume_text") or ""), max_length=2000),
+        # Redacted, not merely cleaned. Whatever Gemini echoes back can still
+        # contain the phone/email/NIK it read off the CV, and this stored value
+        # is fed verbatim to the embedding API by matcher._build_seeker_text —
+        # a path that never passes through llm_factory's redact_llm_input.
+        "resume_text": redact_text(
+            clean_extracted_text(str(d.get("resume_text") or ""), max_length=2000)
+        ),
     }
 
 
@@ -392,7 +504,7 @@ def _validate_job_pack_schema(d: dict[str, Any]) -> dict[str, Any]:
                     for s in (p.get("nice_to_have_skills") or [])
                     if isinstance(s, (str, int, float)) and str(s).strip()
                 ],
-                "education_min": (p.get("education_min") or "S1").upper(),
+                "education_min": (p.get("education_min") or "SMA").upper(),
                 "experience_years_min": int(p.get("experience_years_min") or 0),
                 "region_code": clean_extracted_text(str(p.get("region_code") or ""), max_length=10),
                 "remote_allowed": bool(p.get("remote_allowed", False)),
@@ -405,8 +517,12 @@ def _validate_job_pack_schema(d: dict[str, Any]) -> dict[str, Any]:
     return {"postings": cleaned_postings}
 
 
-async def parse_cv(pdf_bytes: bytes) -> dict[str, Any]:
-    return await _call_gemini(pdf_bytes, role="seeker_advisor", task="cv_parser")
+async def parse_cv(pdf_bytes: bytes, allow_scanned: bool = False) -> dict[str, Any]:
+    """Parse a CV. `allow_scanned` is the seeker's explicit consent to send an
+    un-redactable scan/photo as an image — see _llm_contents."""
+    return await _call_gemini(
+        pdf_bytes, role="seeker_advisor", task="cv_parser", allow_scanned=allow_scanned
+    )
 
 
 async def parse_job_pack(pdf_bytes: bytes) -> dict[str, Any]:
@@ -449,7 +565,7 @@ def _offline_stub(task: str) -> dict[str, Any]:
                     "responsibilities": ["Develop features", "Write tests"],
                     "required_skills": ["Python", "Git"],
                     "nice_to_have_skills": ["Docker"],
-                    "education_min": "S1",
+                    "education_min": "SMA",
                     "experience_years_min": 0,
                     "region_code": "3171",
                     "remote_allowed": True,

@@ -76,13 +76,18 @@ _ROUTE_LIMITS: dict[str, tuple[int, int]] = {
     "/api/v1/agent/invoke": (20, 60),
     "/api/v1/uploads/cv": (10, 60),
     "/api/v1/uploads/job-pack": (10, 60),
-    # OTP dispatch costs real money per message — keep it well below the
-    # default so a stolen token cannot be used to SMS-bomb a phone number.
-    "/api/v1/verify/otp/send": (5, 60),
+    # Each call sends a real email — keep it low so a stolen token cannot be
+    # used to mail-bomb an inbox.
+    "/api/v1/verify/email/send": (5, 60),
     # Brute-force guard on top of the per-record attempt counter.
-    "/api/v1/verify/otp/verify": (10, 60),
-    # e-KYC lookups are billed per call once a real provider is wired in.
-    "/api/v1/verify/identity": (10, 60),
+    "/api/v1/verify/email/verify": (10, 60),
+    # Public (unauthenticated) job-link surface and candidate reports.
+    "/api/v1/public/jobs": (60, 60),
+    # Quiz start/submit — throttled so the question bank cannot be scraped by
+    # opening attempts in a loop.
+    "/api/v1/quiz": (30, 60),
+    # Plan orders create admin work — no reason for anyone to spam them.
+    "/api/v1/billing": (20, 60),
     # Calls Gemini for course recommendations — same cost class as the agent.
     "/api/v1/seeker/skill-gap": (20, 60),
     # Reverse-matching (/candidates) and the pool estimator both call Gemini

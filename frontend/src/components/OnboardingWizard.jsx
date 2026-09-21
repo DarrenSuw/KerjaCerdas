@@ -265,7 +265,7 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
                                 Mode kerja yang diterima
                             </div>
                             <div style={{ fontSize: 10.5, color: '#94A3B8', marginBottom: 11, lineHeight: 1.45 }}>
-                                Bobot 10% pada skor akhir. Pilih lebih dari satu untuk memperluas kolam.
+                                Dipakai sebagai preferensi pencarian, bukan bagian dari skor. Pilih lebih dari satu untuk memperluas kolam.
                             </div>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
                                 {['Hybrid', 'Remote', 'Onsite'].map(mode => {
@@ -480,7 +480,7 @@ export default function OnboardingWizard({ onClose, isPage = false }) {
                                 Periksa sebelum dicocokkan.
                             </h1>
                             <p style={{ fontSize: 12.5, lineHeight: 1.55, color: '#64748B', margin: 0 }}>
-                                Semua bisa diedit nanti dari profil. Ekspektasi gaji hanya berbobot 5% — tidak akan mengeliminasi lowongan.
+                                Semua bisa diedit nanti dari profil. Skor kecocokan dihitung dari kemiripan CV-lowongan, skill (klaim 30% / terbukti lewat kuis 85%), pengalaman, dan pendidikan — bukan dari gaji atau mode kerja.
                             </p>
                         </div>
 

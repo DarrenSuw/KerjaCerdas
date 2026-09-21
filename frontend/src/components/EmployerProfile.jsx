@@ -1,344 +1,125 @@
+// Employer company profile: editable company data + real trust badges, plan
+// and job counts (no placeholder numbers). The website is what the
+// "Email perusahaan terverifikasi" badge compares the login email against.
 import { useEffect, useState } from 'react'
-import useStore from '../store/useStore'
-import { KC, BrutalCard, topBtn, DesignStyles } from './_design'
-import { updateEmployerProfile } from '../services/api'
 import toast from 'react-hot-toast'
-import { Building2, ShieldCheck, Check, ArrowRight, UserPlus, LogOut, Crown } from 'lucide-react'
+import { BadgeCheck, Building2, Crown, LogOut, ShieldCheck } from 'lucide-react'
+import useStore from '../store/useStore'
+import { BrutalCard, DesignStyles, KC, topBtn } from './_design'
+import { fetchEmployerTrust, fetchMyPlans, updateEmployerProfile } from '../services/api'
+
+const inputStyle = { width: '100%', padding: '10px 12px', border: `1.5px solid ${KC.ink}`, borderRadius: 9, fontFamily: 'inherit', fontSize: 14, boxSizing: 'border-box' }
 
 export default function EmployerProfile() {
-    const { employerProfile, loadEmployerProfile, navigate, logout, user, openUpgradeModal } = useStore()
-    // Empty defaults — a real employer must not be able to save a pre-filled
-    // demo company as their own profile.
-    const [form, setForm] = useState({
-        company_name: employerProfile?.company_name || user?.full_name || '',
-        brand_name: employerProfile?.company_name || user?.full_name || '',
-        npwp: employerProfile?.npwp || '',
-        industry: employerProfile?.industry || '',
-        address: employerProfile?.address || '',
-        website: employerProfile?.website || '',
-    })
+    const { employerProfile, loadEmployerProfile, navigate, logout, user, openUpgradeModal, employerJobs, refreshEmployerJobs } = useStore()
+    const [form, setForm] = useState({ company_name: '', industry: '', website: '', description: '' })
     const [saving, setSaving] = useState(false)
+    const [trust, setTrust] = useState(null)
+    const [plans, setPlans] = useState(null)
 
     useEffect(() => {
         loadEmployerProfile()
-    }, []) // eslint-disable-line
+        refreshEmployerJobs()
+        fetchEmployerTrust().then(setTrust).catch(() => setTrust(null))
+        fetchMyPlans().then(setPlans).catch(() => setPlans(null))
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (employerProfile) {
-            // `??` (not `||`) so a genuinely empty server field clears the local
-            // value instead of keeping a stale default.
-            setForm(prev => ({
-                ...prev,
-                company_name: employerProfile.company_name ?? prev.company_name,
-                brand_name: employerProfile.company_name ? employerProfile.company_name.split('(')[0].trim() : prev.brand_name,
-                npwp: employerProfile.npwp ?? prev.npwp,
-                industry: employerProfile.industry ?? prev.industry,
-                address: employerProfile.address ?? prev.address,
-                website: employerProfile.website ? employerProfile.website.replace('https://', '') : prev.website,
-            }))
+            setForm({
+                company_name: employerProfile.company_name || '',
+                industry: employerProfile.industry || '',
+                website: employerProfile.website || '',
+                description: employerProfile.description || '',
+            })
         }
     }, [employerProfile])
 
-    const handleSave = async () => {
+    const save = async () => {
         setSaving(true)
         try {
+            const website = form.website.trim()
             await updateEmployerProfile({
-                company_name: form.company_name,
-                npwp: form.npwp,
-                industry: form.industry,
-                address: form.address,
-                website: form.website ? (form.website.startsWith('http') ? form.website : `https://${form.website}`) : '',
+                company_name: form.company_name.trim(),
+                industry: form.industry.trim(),
+                description: form.description,
+                website: website ? (website.startsWith('http') ? website : `https://${website}`) : '',
             })
             await loadEmployerProfile()
-            toast.success('Perubahan profil berhasil disimpan!')
+            fetchEmployerTrust().then(setTrust).catch(() => {})
+            toast.success('Profil perusahaan disimpan')
         } catch (e) {
-            toast.success('Perubahan profil berhasil disimpan!')
+            toast.error('Gagal menyimpan: ' + e.message)
         } finally {
             setSaving(false)
         }
     }
 
-    const inputStyle = {
-        padding: '13px',
-        background: '#F8FAFC',
-        border: `1.5px solid ${KC.ink}`,
-        borderRadius: 10,
-        font: '700 12.5px/1 "Plus Jakarta Sans", sans-serif',
-        color: KC.ink,
-        minHeight: 46,
-        display: 'flex',
-        alignItems: 'center',
-        width: '100%',
-        boxSizing: 'border-box',
-        outline: 'none',
-    }
+    const active = (employerJobs || []).filter((j) => j.is_active).length
+    const lighthouse = plans?.lighthouse_until
+    const planLabel = lighthouse ? `Lighthouse s/d ${String(lighthouse).slice(0, 10)}` : 'Spark (gratis)'
+    const badges = trust?.badges || {}
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'grid', gap: 16, maxWidth: 760 }}>
             <DesignStyles />
-
-            {/* Header Hero Card */}
-            <div
-                style={{
-                    background: KC.ink,
-                    border: `1.5px solid ${KC.ink}`,
-                    borderRadius: 14,
-                    boxShadow: `3px 3px 0 ${KC.orange}`,
-                    padding: 18,
-                    animation: 'kcUp .4s both',
-                }}
-            >
-                {/* Row 1: avatar + company name (always full width) */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 13, marginBottom: 12 }}>
-                    <div
-                        style={{
-                            width: 56,
-                            height: 56,
-                            borderRadius: 14,
-                            background: '#fff',
-                            border: '1.5px solid #fff',
-                            display: 'grid',
-                            placeItems: 'center',
-                            font: '900 24px/1 "Plus Jakarta Sans", sans-serif',
-                            color: KC.ink,
-                            flex: 'none',
-                        }}
-                    >
-                        {form.brand_name.charAt(0) || 'G'}
-                    </div>
-                    <div style={{ minWidth: 0, flex: 1 }}>
-                        <div style={{ font: '900 19px/1.15 "Plus Jakarta Sans", sans-serif', letterSpacing: '-0.7px', color: '#fff' }}>
-                            {form.brand_name}
-                        </div>
-                        <div style={{ font: '600 11px/1.4 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.5)', marginTop: 4 }}>
-                            {form.industry}
+            <BrutalCard color={KC.ink} shadow={KC.orange}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap', color: '#fff' }}>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                        <Building2 size={28} />
+                        <div>
+                            <div style={{ fontWeight: 900, fontSize: 20 }}>{form.company_name || 'Perusahaan'}</div>
+                            <div style={{ fontSize: 13, opacity: 0.7 }}>{user?.email}</div>
                         </div>
                     </div>
+                    <button onClick={logout} style={{ ...topBtn('transparent', '#FCA5A5', '#FCA5A5'), boxShadow: 'none' }}><LogOut size={13} /> Keluar</button>
                 </div>
-                {/* Row 2: action buttons — always wrap so they're never clipped on narrow screens */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 15 }}>
-                    {/* PRO upgrade button */}
-                    <button
-                        id="employer-profile-upgrade-btn"
-                        onClick={openUpgradeModal}
-                        title="Upgrade ke KerjaCerdas PRO"
-                        style={{
-                            display: 'flex', alignItems: 'center', gap: 5,
-                            padding: '7px 12px',
-                            background: '#FFC800',
-                            color: '#090A0F',
-                            border: '1.5px solid rgba(255,255,255,0.3)',
-                            borderRadius: 8,
-                            font: '900 11px/1 "Plus Jakarta Sans", sans-serif',
-                            cursor: 'pointer',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
-                        <Crown size={12} />
-                        Upgrade ke PRO
-                    </button>
-                    {/* Logout button */}
-                    <button
-                        id="employer-profile-logout-btn"
-                        onClick={logout}
-                        title="Keluar dari akun"
-                        aria-label="Keluar dari akun"
-                        style={{
-                            display: 'flex', alignItems: 'center', gap: 5,
-                            padding: '7px 12px',
-                            background: 'rgba(239,68,68,0.15)',
-                            color: '#EF4444',
-                            border: '1.5px solid rgba(239,68,68,0.35)',
-                            borderRadius: 8,
-                            font: '800 11px/1 "Plus Jakarta Sans", sans-serif',
-                            cursor: 'pointer',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
-                        <LogOut size={13} />
-                        Keluar
-                    </button>
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                    <span style={{ padding: '5px 10px', background: 'rgba(16,185,129,.2)', border: '1px solid #10B981', borderRadius: 999, font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#10B981' }}>
-                        ✓ NPWP terverifikasi
-                    </span>
-                    <span style={{ padding: '5px 10px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.25)', borderRadius: 999, font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: 'rgba(255,255,255,.7)' }}>
-                        Plan: Growth
-                    </span>
-                </div>
-            </div>
-
-            {/* 2-Column Stats Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 11 }}>
-                <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 14, animation: 'kcUp .4s .05s both' }}>
-                    <div style={{ font: '800 9.5px/1 "JetBrains Mono", monospace', letterSpacing: '0.6px', textTransform: 'uppercase', color: '#64748B' }}>
-                        Kuota unlock
-                    </div>
-                    <div style={{ font: '900 26px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-1.2px', color: KC.ink, margin: '9px 0 4px' }}>
-                        8<span style={{ fontSize: 14, color: '#94A3B8' }}>/20</span>
-                    </div>
-                    <div style={{ font: '600 10.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8' }}>
-                        reset 1 Okt
-                    </div>
-                </div>
-
-                <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 14, animation: 'kcUp .4s .1s both' }}>
-                    <div style={{ font: '800 9.5px/1 "JetBrains Mono", monospace', letterSpacing: '0.6px', textTransform: 'uppercase', color: '#64748B' }}>
-                        Slot lowongan
-                    </div>
-                    <div style={{ font: '900 26px/1 "Plus Jakarta Sans", sans-serif', letterSpacing: '-1.2px', color: KC.ink, margin: '9px 0 4px' }}>
-                        4<span style={{ fontSize: 14, color: '#94A3B8' }}>/10</span>
-                    </div>
-                    <div style={{ font: '600 10.5px/1.3 "Plus Jakarta Sans", sans-serif', color: '#94A3B8' }}>
-                        2 aktif
-                    </div>
-                </div>
-            </div>
-
-            {/* Data Entitas & Legalitas Card */}
-            <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 16, animation: 'kcUp .4s .15s both' }}>
-                <div style={{ font: '800 10px/1 "JetBrains Mono", monospace', letterSpacing: '0.7px', textTransform: 'uppercase', color: '#64748B', marginBottom: 14 }}>
-                    Data entitas &amp; legalitas
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <div>
-                        <div style={{ font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#334155', marginBottom: 7 }}>
-                            Nama badan usaha
-                        </div>
-                        <input
-                            type="text"
-                            value={form.company_name}
-                            onChange={e => setForm({ ...form, company_name: e.target.value })}
-                            style={inputStyle}
-                        />
-                    </div>
-
-                    <div>
-                        <div style={{ font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#334155', marginBottom: 7 }}>
-                            NPWP
-                        </div>
-                        <div style={{ ...inputStyle, justifyContent: 'space-between', fontFamily: '"JetBrains Mono", monospace', letterSpacing: 0.4 }}>
-                            <span>{form.npwp || '—'}</span>
-                            {form.npwp && (
-                                <span style={{ font: '800 11px/1 "Plus Jakarta Sans", sans-serif', color: '#059669' }}>✓</span>
-                            )}
-                        </div>
-                    </div>
-
-                    <div>
-                        <div style={{ font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#334155', marginBottom: 7 }}>
-                            Alamat kantor
-                        </div>
-                        <input
-                            type="text"
-                            value={form.address}
-                            onChange={e => setForm({ ...form, address: e.target.value })}
-                            style={{ ...inputStyle, border: '1.5px solid #CBD5E1', color: '#475569' }}
-                        />
-                    </div>
-
-                    <div>
-                        <div style={{ font: '800 10.5px/1 "Plus Jakarta Sans", sans-serif', color: '#334155', marginBottom: 7 }}>
-                            Situs perusahaan
-                        </div>
-                        <input
-                            type="text"
-                            value={form.website}
-                            onChange={e => setForm({ ...form, website: e.target.value })}
-                            style={{ ...inputStyle, border: '1.5px solid #CBD5E1', color: '#475569', fontFamily: '"JetBrains Mono", monospace' }}
-                        />
-                    </div>
-                </div>
-
-                <button
-                    onClick={handleSave}
-                    disabled={saving}
-                    className="kc-btn"
-                    style={{
-                        marginTop: 14,
-                        padding: 14,
-                        background: KC.orange,
-                        border: `1.5px solid ${KC.ink}`,
-                        borderRadius: 10,
-                        boxShadow: `2.5px 2.5px 0 ${KC.ink}`,
-                        font: '800 13px/1 "Plus Jakarta Sans", sans-serif',
-                        color: '#fff',
-                        minHeight: 48,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%',
-                        cursor: 'pointer',
-                    }}
-                >
-                    {saving ? 'Menyimpan…' : 'Simpan Perubahan'}
-                </button>
-            </div>
-
-            {/* Tim Rekrutmen Card */}
-            <div style={{ background: '#fff', border: `1.5px solid ${KC.ink}`, borderRadius: 12, boxShadow: `3px 3px 0 ${KC.ink}`, padding: 16, animation: 'kcUp .4s .2s both' }}>
-                <div style={{ font: '800 10px/1 "JetBrains Mono", monospace', letterSpacing: '0.7px', textTransform: 'uppercase', color: '#64748B', marginBottom: 13 }}>
-                    Tim rekrutmen
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
-                        <div style={{ width: 34, height: 34, borderRadius: 9, background: '#00B8D9', border: `1.5px solid ${KC.ink}`, display: 'grid', placeItems: 'center', font: '900 13px/1 "Plus Jakarta Sans", sans-serif', color: KC.ink, flex: 'none' }}>
-                            H
-                        </div>
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ font: '800 12.5px/1.2 "Plus Jakarta Sans", sans-serif', color: KC.ink }}>
-                                HR Manager
-                            </div>
-                            <div style={{ font: '700 10.5px/1.3 "JetBrains Mono", monospace', color: '#94A3B8', marginTop: 3 }}>
-                                hr@goto.id
-                            </div>
-                        </div>
-                        <span style={{ padding: '3px 8px', background: '#FFF1EB', border: `1px solid ${KC.orange}`, borderRadius: 999, font: '800 9.5px/1 "Plus Jakarta Sans", sans-serif', color: '#9A3412', flex: 'none' }}>
-                            Owner
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 12 }}>
+                    {[['email_verified', 'Email terverifikasi'], ['company_email', 'Email perusahaan'], ['admin_reviewed', 'Ditinjau admin']].map(([k, label]) => (
+                        <span key={k} style={{ display: 'inline-flex', gap: 4, alignItems: 'center', padding: '4px 10px', borderRadius: 999, fontSize: 12, fontWeight: 800,
+                            color: badges[k] ? '#10B981' : 'rgba(255,255,255,.55)', border: `1px solid ${badges[k] ? '#10B981' : 'rgba(255,255,255,.3)'}` }}>
+                            <BadgeCheck size={13} /> {label}{badges[k] ? '' : ' — belum'}
                         </span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 11, paddingTop: 11, borderTop: '1px dashed #E2E8F0' }}>
-                        <div style={{ width: 34, height: 34, borderRadius: 9, background: '#F1F5F9', border: '1.5px dashed #CBD5E1', display: 'grid', placeItems: 'center', font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: '#94A3B8', flex: 'none' }}>
-                            +
-                        </div>
-                        <div style={{ font: '700 12px/1.35 "Plus Jakarta Sans", sans-serif', color: '#64748B' }}>
-                            Undang rekruter lain · maks 3 pada plan Growth
-                        </div>
-                    </div>
+                    ))}
                 </div>
+            </BrutalCard>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+                <BrutalCard padding={16}>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: KC.mute, textTransform: 'uppercase' }}>Paket</div>
+                    <div style={{ fontWeight: 900, fontSize: 18, margin: '6px 0' }}>{planLabel}</div>
+                    <button style={topBtn(KC.orange, '#fff')} onClick={() => openUpgradeModal()}><Crown size={14} /> Lihat paket</button>
+                </BrutalCard>
+                <BrutalCard padding={16}>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: KC.mute, textTransform: 'uppercase' }}>Lowongan aktif</div>
+                    <div style={{ fontWeight: 900, fontSize: 26, margin: '6px 0' }}>{active}<span style={{ fontSize: 14, color: KC.mute }}> / {lighthouse ? 5 : 1} (+ lowongan Beacon)</span></div>
+                    <button style={topBtn()} onClick={() => navigate('employer-jobs')}>Kelola lowongan</button>
+                </BrutalCard>
             </div>
 
-            {/* Link to NPWP Verification */}
-            <button
-                onClick={() => navigate('employer-verification')}
-                className="kc-btn"
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: 15,
-                    background: '#fff',
-                    border: `1.5px solid ${KC.ink}`,
-                    borderRadius: 12,
-                    boxShadow: `3px 3px 0 ${KC.ink}`,
-                    minHeight: 52,
-                    cursor: 'pointer',
-                    width: '100%',
-                    textAlign: 'left',
-                    animation: 'kcUp .4s .25s both',
-                }}
-            >
-                <span style={{ font: '800 13px/1.2 "Plus Jakarta Sans", sans-serif', color: KC.ink }}>
-                    Verifikasi NPWP &amp; legalitas
-                </span>
-                <span style={{ font: '900 15px/1 "Plus Jakarta Sans", sans-serif', color: KC.orange }}>
-                    →
-                </span>
-            </button>
+            <BrutalCard>
+                <div style={{ fontWeight: 900, marginBottom: 12 }}>Data perusahaan</div>
+                <div style={{ display: 'grid', gap: 10 }}>
+                    <label style={{ fontSize: 13, fontWeight: 700 }}>Nama usaha
+                        <input style={inputStyle} value={form.company_name} onChange={(e) => setForm({ ...form, company_name: e.target.value })} />
+                    </label>
+                    <label style={{ fontSize: 13, fontWeight: 700 }}>Industri
+                        <input style={inputStyle} value={form.industry} onChange={(e) => setForm({ ...form, industry: e.target.value })} placeholder="Contoh: F&B / Ritel / Logistik" />
+                    </label>
+                    <label style={{ fontSize: 13, fontWeight: 700 }}>Website
+                        <input style={inputStyle} value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="tokomaju.co.id" />
+                        <span style={{ fontSize: 12, color: KC.mute, fontWeight: 400 }}>Jika email login memakai domain website ini dan sudah diverifikasi, lowongan mendapat badge &quot;Email perusahaan&quot;.</span>
+                    </label>
+                    <label style={{ fontSize: 13, fontWeight: 700 }}>Deskripsi singkat
+                        <textarea rows={3} style={inputStyle} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
+                    </label>
+                    <button style={topBtn(KC.ink, '#fff')} disabled={saving} onClick={save}>{saving ? 'Menyimpan…' : 'Simpan'}</button>
+                </div>
+            </BrutalCard>
 
+            <button onClick={() => navigate('employer-verification')} style={{ ...topBtn(), justifyContent: 'space-between', padding: 15 }}>
+                <span style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}><ShieldCheck size={16} /> Kepercayaan, badge & pedoman lowongan</span> →
+            </button>
         </div>
     )
 }

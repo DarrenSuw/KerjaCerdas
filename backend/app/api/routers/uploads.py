@@ -23,8 +23,9 @@ from backend.app.db.schemas import (
     Skill,
     WorkExperience,
 )
+from backend.app.services.matching.evidence import carry_proof
 from backend.app.services.matching.matcher import SemanticMatcher
-from backend.app.services.pdf_parser import parse_cv, parse_job_pack
+from backend.app.services.pdf_parser import ScannedPdfError, parse_cv, parse_job_pack
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 router = APIRouter(prefix="/uploads", tags=["uploads"])
@@ -51,11 +52,14 @@ def _to_experience(d: dict) -> WorkExperience:
 
 
 def _to_education(d: dict) -> Education:
-    raw = (d.get("degree") or "S1").upper()
+    # An unparsed degree must not become a bachelor's — that is a credential
+    # the CV never claimed. SMA is the floor, so it can satisfy a job that
+    # states no requirement and can never clear a real bar unearned.
+    raw = (d.get("degree") or "SMA").upper()
     try:
         deg = EducationLevel(raw)
     except ValueError:
-        deg = EducationLevel.S1
+        deg = EducationLevel.SMA
     return Education(
         institution=d.get("institution", ""),
         degree=deg,
@@ -68,6 +72,7 @@ def _to_education(d: dict) -> Education:
 async def upload_cv(
     file: UploadFile = File(...),
     confirm_offline: bool = Form(False),
+    confirm_scanned: bool = Form(False),
     current_user: User = Depends(require_seeker),
 ) -> dict:
     if file.content_type not in ("application/pdf", "application/octet-stream"):
@@ -78,7 +83,20 @@ async def upload_cv(
     if not blob.startswith(b"%PDF-"):
         raise HTTPException(400, "Invalid PDF file: Missing %PDF- header signature")
 
-    parsed = await parse_cv(blob)
+    try:
+        parsed = await parse_cv(blob, allow_scanned=confirm_scanned)
+    except ScannedPdfError as exc:
+        # A scan/photo has no text layer, so it can only be sent as an image,
+        # unredacted. We ask first rather than doing it quietly. Mirrors the
+        # existing `confirm_offline` handshake: 200 with a prompt, and the
+        # client re-uploads with confirm_scanned=true if the seeker agrees.
+        # Blocking these outright would exclude a large share of Indonesian
+        # job seekers, whose CV is a phone photo.
+        return {
+            "requires_scan_consent": True,
+            "message": str(exc),
+            "alternative": "Atau isi profil singkat secara manual tanpa mengunggah CV.",
+        }
 
     # Guard: if the parser fell back to offline/demo data and the client
     # hasn't explicitly acknowledged, return a preview payload instead of
@@ -114,7 +132,11 @@ async def upload_cv(
     seeker.headline = parsed.get("headline", seeker.headline)
     if parsed.get("region_code"):
         seeker.region_code = parsed["region_code"]
-    seeker.skills = [_to_skill(s) for s in parsed.get("skills", []) if s.get("name")]
+    # A CV re-upload replaces the claimed skills but never erases earned proof
+    # (quiz badges, HR confirmations) — see evidence.carry_proof.
+    seeker.skills = carry_proof(
+        [_to_skill(s) for s in parsed.get("skills", []) if s.get("name")], seeker.skills
+    )
     seeker.experience = [_to_experience(x) for x in parsed.get("experience", [])]
     seeker.education = [_to_education(e) for e in parsed.get("education", [])]
     seeker.resume_text = parsed.get("resume_text", "")
@@ -174,7 +196,23 @@ async def upload_job_pack(
         )
         return {"employer_id": employer.id, "jobs": cached, "parsed_offline": cached_offline}
 
-    parsed = await parse_job_pack(blob)
+    try:
+        parsed = await parse_job_pack(blob)
+    except ScannedPdfError as exc:
+        # An employer's scanned job pack has the same problem as a scanned CV,
+        # but not the same answer: a job pack contains the employer's own text,
+        # not a candidate's personal data, and the employer can simply retype or
+        # paste it. So this is a plain 422 rather than a consent handshake.
+        # Before this it fell through to _offline_stub and returned a FABRICATED
+        # posting, which the cache then stored as a real parse.
+        raise HTTPException(
+            422,
+            detail={
+                "error": "scanned_pdf",
+                "message": str(exc),
+                "hint": "Ketik atau tempel deskripsi lowongan langsung di form Pasang Lowongan.",
+            },
+        ) from exc
     postings = parsed.get("postings", [])
 
     # Nothing is written to the JOBS table here — a PDF can extract postings
@@ -188,11 +226,11 @@ async def upload_job_pack(
     # that's a content-addressed cache keyed by file hash, not a draft job.)
     normalized_jobs: list[dict] = []
     for idx, p in enumerate(postings):
-        raw_edu = (p.get("education_min") or "S1").upper()
+        raw_edu = (p.get("education_min") or "SMA").upper()
         try:
             edu = EducationLevel(raw_edu)
         except ValueError:
-            edu = EducationLevel.S1
+            edu = EducationLevel.SMA
         title = p.get("title") or "Untitled"
         required_skills = p.get("required_skills") or []
         region_code = p.get("region_code") or employer.region_code

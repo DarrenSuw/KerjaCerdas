@@ -136,46 +136,9 @@ class TestIdentityVerificationEndpoint:
         yield
         app.dependency_overrides.pop(get_current_user, None)
 
-    def test_verify_identity_returns_pending_for_valid_demo_nik(self, client: TestClient) -> None:
-        """A format-valid demo NIK returns PENDING, not VERIFIED — the mock
-        format check has no authority to confirm a real identity."""
-        payload = {
-            "nik": "3171123412341234",
-            "full_name": "Budi Santoso",
-            "date_of_birth": "1998-01-20",
-        }
-
-        response = client.post("/api/v1/verify/identity", json=payload)
-
-        assert response.status_code == 200
-        data = response.json()
-        assert data["status"] == "PENDING"
-        assert data["match_percentage"] == 98.5
-        assert data["message"] == (
-            "Format NIK diterima — menunggu verifikasi resmi (mode demo, bukan konfirmasi identitas)."
-        )
-        assert data["verification_hash"]
-        assert data["pii_redacted"] is True
-
-    def test_verify_identity_returns_failed_for_simulated_invalid_nik(
-        self, client: TestClient
-    ) -> None:
-        """NIKs starting with 99 should fail in demo mode."""
-        payload = {
-            "nik": "9911123412341234",
-            "full_name": "Budi Santoso",
-            "date_of_birth": "1998-01-20",
-        }
-
-        response = client.post("/api/v1/verify/identity", json=payload)
-
-        assert response.status_code == 200
-        data = response.json()
-        assert data["status"] == "FAILED"
-        assert data["match_percentage"] == 45.2
-        assert data["message"] == "Verifikasi identitas gagal."
-        assert data["verification_hash"]
-        assert data["pii_redacted"] is True
+    def test_verification_status_reports_email_state(self, client: TestClient) -> None:
+        """The identity (NIK) endpoint was removed; only email OTP remains."""
+        assert client.post("/api/v1/verify/identity", json={}).status_code in (404, 405)
 
 
 class TestStartupConfiguration:

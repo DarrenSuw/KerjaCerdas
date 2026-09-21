@@ -95,9 +95,12 @@ const useStore = create(
             authTab: 'login',
             preferredAuthRole: null,
 
-            openAuthModal: (tab = 'login', preferredRole = null) =>
-                set({ showAuthModal: true, authTab: tab, preferredAuthRole: preferredRole }),
-            closeAuthModal: () => set({ showAuthModal: false, preferredAuthRole: null }),
+            // returnPath: where to land after auth instead of the role's home
+            // (e.g. back to a public job link /j/<code> the visitor came from).
+            authReturnPath: null,
+            openAuthModal: (tab = 'login', preferredRole = null, returnPath = null) =>
+                set({ showAuthModal: true, authTab: tab, preferredAuthRole: preferredRole, authReturnPath: returnPath }),
+            closeAuthModal: () => set({ showAuthModal: false, preferredAuthRole: null, authReturnPath: null }),
             setAuthTab: (tab) => set({ authTab: tab }),
 
             login: async (email, password) => {
@@ -111,7 +114,7 @@ const useStore = create(
                 set({
                     isAuthenticated: true,
                     userRole: resolvedRole,
-                    user: { id: user.id, name: user.name, email: user.email, role: resolvedRole, createdAt: new Date().toISOString() },
+                    user: { id: user.id, name: user.name, email: user.email, role: resolvedRole, isAdmin: !!user.is_admin, createdAt: new Date().toISOString() },
                     authToken: access_token,
                     // ── Clear all transient UI state ────────────────────────────
                     // login() replaces the active session without going through
@@ -132,7 +135,13 @@ const useStore = create(
                 toast.success(`Selamat datang, ${displayName}!`, { id: 'auth-success' })
 
                 const store = get()
-                store.navigate(homeView)
+                const returnPath = store.authReturnPath
+                if (returnPath && _routerNavigate) {
+                    set({ authReturnPath: null })
+                    _routerNavigate(returnPath)
+                } else {
+                    store.navigate(homeView)
+                }
                 if (resolvedRole === 'seeker') {
                     store.syncSavedJobs()
                     store.loadSeekerProfile()
@@ -153,7 +162,7 @@ const useStore = create(
                 set({
                     isAuthenticated: true,
                     userRole: user.role,
-                    user: { id: user.id, name: user.name, email: user.email, role: user.role, createdAt: new Date().toISOString() },
+                    user: { id: user.id, name: user.name, email: user.email, role: user.role, isAdmin: !!user.is_admin, createdAt: new Date().toISOString() },
                     authToken: access_token,
                     // ── Clear all transient UI state (same reason as login()) ───
                     showAuthModal: false,
@@ -169,7 +178,13 @@ const useStore = create(
                 const displayName = (user.name || '').trim() || (user.role === 'employer' ? 'Tim HR' : 'Pencari Kerja')
                 toast.success(`Akun dibuat — selamat datang, ${displayName}!`, { id: 'auth-success' })
                 const store = get()
-                store.navigate(homeView)
+                const returnPath = store.authReturnPath
+                if (returnPath && _routerNavigate) {
+                    set({ authReturnPath: null })
+                    _routerNavigate(returnPath)
+                } else {
+                    store.navigate(homeView)
+                }
                 if (user.role === 'employer') {
                     store.refreshEmployerJobs()
                     store.loadEmployerProfile()
@@ -228,10 +243,10 @@ const useStore = create(
                     return
                 }
                 if (view === 'pricing') {
-                    // Authenticated employers see the in-app plan modal — never leave the page.
+                    // Signed-in users see the in-app plan modal — never leave the page.
                     // Unauthenticated visitors get the original landing-page anchor-scroll.
-                    const { isAuthenticated: authed, userRole: role } = get()
-                    if (authed && role === 'employer') {
+                    const { isAuthenticated: authed } = get()
+                    if (authed) {
                         set({ upgradeModalOpen: true })
                         return
                     }
@@ -275,10 +290,14 @@ const useStore = create(
             floatingAdvisorOpen: false,
             toggleFloatingAdvisor: () => set((s) => ({ floatingAdvisorOpen: !s.floatingAdvisorOpen })),
 
-            // ─── Upgrade modal (employer only) ───────────────────────────
+            // ─── Plans modal (employers: Beacon/Lighthouse, seekers: Prism) ──
+            // context = { plan, jobId } to preselect (e.g. "Beli Beacon untuk
+            // lowongan ini" from the applicant list).
             upgradeModalOpen: false,
-            openUpgradeModal: () => set({ upgradeModalOpen: true }),
-            closeUpgradeModal: () => set({ upgradeModalOpen: false }),
+            upgradeContext: null,
+            openUpgradeModal: (context = null) =>
+                set({ upgradeModalOpen: true, upgradeContext: context && context.nativeEvent ? null : context }),
+            closeUpgradeModal: () => set({ upgradeModalOpen: false, upgradeContext: null }),
 
             // ─── Seeker profile + matching ───────────────────────────────
             profile: DEFAULT_PROFILE,
@@ -287,24 +306,8 @@ const useStore = create(
             loadSeekerProfile: async () => {
                 try {
                     const data = await fetchSeekerProfile()
-                    // nik_verified/ijazah_verified now come from the backend
-                    // (backend/app/api/routers/verify.py persists the outcome to the
-                    // seeker's own profile row), so the backend value is the source of
-                    // truth here — it survives a reload or a login from another
-                    // browser, unlike the old local-only flags.
-                    //
-                    // ktp_verified/ijazah_verified are true ONLY for a genuine
-                    // "verified" status — never for "pending". A passing mock format
-                    // check has no authority to confirm a real identity, so it must
-                    // not light up the same completion/trust signals (checklist ✓,
-                    // Trust Score, sidebar badge) a real verification would. Those
-                    // consumers all read this same boolean, so keeping it strictly
-                    // "verified" is what keeps them all honest at once. ktp_pending/
-                    // ijazah_pending carry the "submitted, awaiting real verification"
-                    // state separately, for VerificationDashboard's own detailed card
-                    // to show — a distinct, less confident state than done.
-                    // Phone verification has no equivalent profile column yet, so
-                    // phone_verified still only ever comes from local state.
+                    // Skills carry their proof level (claimed / quiz / hr_confirmed)
+                    // straight from the backend — the UI never sets proof itself.
                     set((s) => ({
                         profile: {
                             ...s.profile,
@@ -317,10 +320,6 @@ const useStore = create(
                             resume_text: data.resume_text || '',
                             salary_expectation_min: data.salary_expectation_min || 0,
                             salary_expectation_max: data.salary_expectation_max || 0,
-                            ktp_verified: data.nik_verified === 'verified',
-                            ktp_pending: data.nik_verified === 'pending',
-                            ijazah_verified: data.ijazah_verified === 'verified',
-                            ijazah_pending: data.ijazah_verified === 'pending',
                         },
                         seekerId: data.id,
                     }))
@@ -473,12 +472,12 @@ const useStore = create(
 
             // ─── CV upload ───────────────────────────────────────────────
             cvUploading: false,
-            uploadResume: async (file, confirmOffline = false) => {
+            uploadResume: async (file, confirmOffline = false, confirmScanned = false) => {
                 if (!file) return
                 const { user } = get()
                 set({ cvUploading: true })
                 try {
-                    const res = await uploadCV({ userId: user.id || 'demo', file, confirmOffline })
+                    const res = await uploadCV({ userId: user.id || 'demo', file, confirmOffline, confirmScanned })
                     set({ cvUploading: false })
 
                     // If the backend detected an offline/demo parse and needs
