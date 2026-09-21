@@ -1,359 +1,267 @@
-# Pitch Canvas — KerjaCerdas (1 halaman)
+# Pitch Canvas — KerjaCerdas
 
-**Cara pakai:** salin **seluruh isi antara dua garis `═══`** ke Claude design. Bagian setelahnya
-(§Bekal Presenter) **tidak ikut disalin** — itu amunisi tanya-jawab untuk tim.
+**Untuk tim:** salin **hanya isi antara dua garis `═══`** ke Claude design. §Bekal Presenter di
+bawahnya **tidak ikut disalin** — itu bahan tanya-jawab, bukan isi slide.
 
-**Aturan yang dipegang dokumen ini:** tiap angka di slide bisa ditunjukkan sumbernya — dari kode,
-dari `/admin → Metrik`, atau dari sumber publik. Yang belum ada buktinya **ditulis apa adanya di
-slide**, tidak disembunyikan. Juri Digdaya menjatuhkan nilai kami justru pada klaim tanpa bukti.
-
-**Catatan revisi:** versi sebelumnya mengunci desainer ke 11 kotak identik dan menaruh argumen
-terkuat kami sebagai paragraf. Brief ini membalik itu: **angka jadi grafik, hierarki jadi nyata,
-dan desainer diberi ruang** — yang tetap dikunci hanya fakta, bukan estetika.
+**Aturan dokumen ini:** kanvas ini satu slide yang **dibaca**, bukan naskah yang **diomongkan**.
+Kalau sebuah kalimat cuma masuk akal sambil dijelaskan presenter, tempatnya di §Bekal Presenter.
+Semua angka di slide bisa ditunjukkan sumbernya; yang belum ada buktinya ditulis apa adanya.
 
 ---
 
 ═══════════════════ SALIN MULAI DARI SINI ═══════════════════
 
-# BRIEF: One-page Pitch Canvas — KerjaCerdas
+# One-page pitch canvas — KerjaCerdas
 
-Design a **single-page pitch canvas** for an Indonesian AI job-matching startup, projected at an
-innovation-festival booth and printed as a standing poster.
+## RULE ZERO — read this before anything else
 
-**Read this first — it is the brief's one real instruction:**
+**Only the text inside §SLIDE TEXT gets drawn. Nothing else in this brief is content.**
 
-> This page must argue, not list. Its job is to prove one counter-intuitive claim — *a candidate
-> who proves a skill outranks a candidate who merely writes it, even when the liar's CV matches
-> the job posting better* — and every other element exists to support that. A reader standing 2 m
-> away for 5 seconds should get that claim from **the charts alone**, before reading a word.
->
-> The failure mode to avoid: a uniform grid of equal cards where every box is the same size,
-> weight and colour, and all the evidence is bullet points. That page is skimmed and forgotten.
+Never render any of these onto the canvas:
 
-## How to treat this brief
+- Section markers written as `⟦…⟧` — they group the copy for you, that is all.
+- Reference codes of any kind (`V1`, `A2`, `Fig. 3`). There are none in this brief; do not invent any.
+- Numbered section chips (`01`, `02`, `03…`) or category labels (`MASALAH`, `PRODUK`, `CARA KERJA`,
+  `TIM`, `AJAKAN`, `PENDANAAN`). A block of text about a problem does not need a box labelled
+  "PROBLEM" — the reader can tell.
+- Words from this brief describing the design itself: "hero", "chart", "callout", "kicker", "grid".
 
-- **Locked (never change):** every number, label and Indonesian sentence in §CONTENT, the honesty
-  markers, and the source footnotes. Do not invent figures, logos, customers or testimonials.
-- **Yours to decide:** composition, proportion, chart styling, rhythm, ornament, which blocks earn
-  more space, and how to make the page feel alive. You are the designer. Use that.
+**Every visible headline on the canvas is written out in §SLIDE TEXT.** If a block has no headline
+there, it gets no headline. Silence is the correct output.
 
-If a locked sentence genuinely will not fit, **shrink the type, not the truth** — and keep the
-honesty markers at full legibility even if a boast has to get smaller.
+## The one thing this page must do
 
-## Canvas
+Prove a single counter-intuitive claim: **a candidate who proves a skill outranks one who merely
+writes it — even when the liar's CV matches the job posting better.** Someone standing 2 m away
+for five seconds should get that from the big numbers alone.
 
-- **Artboard:** 1920 × 1080 px (16:9), also readable printed at A2 — nothing below 13 px.
-- **Outer margin:** 48–64 px, your call. Background **`#FAF9F5`** (warm bone).
+Everything else on the page is supporting evidence, and should look subordinate.
 
-**Hierarchy is mandatory; the exact layout is not.** Compose in three tiers of clearly unequal
-weight:
+## Art direction
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│  TIER 1 — HERO. Full-bleed, dark (Ink) band. ~32–38% of page height.     │
-│  The headline claim + V1 (the head-to-head chart). This block must       │
-│  read first and look unlike anything else on the page.                   │
-├──────────────────────────────────────────────────────────────────────────┤
-│  TIER 2 — MECHANISM. How the claim is enforced.                          │
-│  MASALAH · PRODUK (formula) · CARA KERJA (proof ladder, steps, AutoMod)  │
-│  · KENAPA SULIT DITIRU. Cards here are the "normal" weight.              │
-├──────────────────────────────────────────────────────────────────────────┤
-│  TIER 3 — BUSINESS & HONESTY. Lower visual weight, denser.               │
-│  BUKTI APA ADANYA · MODEL BISNIS · PENDANAAN · TIM · AJAKAN              │
-└──────────────────────────────────────────────────────────────────────────┘
-```
+**The reference is a printed evidence sheet, not a product dashboard.** Think a well-set broadsheet
+data page or an exhibition wall panel: paper, ink, hairlines, enormous numerals, a lot of air.
 
-Within a tier, **vary the card sizes** by importance. PRODUK should be visibly larger than TIM.
-A 12-column grid underneath is a good idea; a page where every cell is the same size is not.
+- **Ground:** warm bone `#FAF9F5`, ink `#090A0F`. It should read as printed, not as a dark UI.
+- **No card grid.** Separate blocks with **hairline rules** (0.75 px ink at 35% opacity) and
+  whitespace. At most **two filled panels** on the entire page — save them for the main comparison
+  and the closing line. A page of eleven bordered rounded rectangles is the thing to avoid.
+- **Asymmetry.** A wide argument column and a narrower rail do not need to be equal, and the blocks
+  in them should not all be the same height. Do not build a tidy 4 × N matrix.
+- **Numbers are the illustration.** Set `0.685` and `0.765` at 96–130 px as display numerals — they
+  are the largest things on the page after the headline, and they carry the argument by themselves.
+- **Violent type scale, few middle sizes.** Headline 60–72 / 900. Hero numerals 96–130 / 900.
+  Body 14 / 400. Captions 10.5 / 500. Almost nothing between 16 and 60 px — an even spread of
+  13–15 px text across nine blocks is what turns a canvas into grey mush.
+- **Colour is rationed by meaning, not by count.** Orange `#FF4800` only where the argument is
+  (the headline verb, the proof weight, the winning score, the closing banner). Lime `#10B981`
+  only for proven states. Yellow `#F59E0B` only for gaps we admit. Ash `#E2E8F0` for tracks and
+  rules. Everything else is ink on bone.
+- **Type:** `Plus Jakarta Sans` (300 / 500 / 900) with `JetBrains Mono` for figures and axes. If
+  those are unavailable, any editorial grotesk with a real 300–900 range will do — the weight
+  contrast matters more than the family. Do not set the whole page in one weight.
 
-## Palette
+**Explicitly banned, because they are what makes a page look machine-made:**
 
-| Token | Hex | Use |
-|---|---|---|
-| Ink | `#090A0F` | borders, shadows, headings, the hero band |
-| Bone | `#FAF9F5` | page background |
-| Paper | `#FFFFFF` | card fill |
-| Orange | `#FF4800` | the brand accent — the claim, the 40% weight, the CTA |
-| Lime | `#10B981` | proven / verified |
-| Cyan | `#0284C7` | neutral data series |
-| Yellow | `#F59E0B` | honest-gap markers |
-| Violet | `#7C3AED` | a fourth data series when a chart needs one |
-| Mute | `#64748B` | captions, secondary text |
-| Ash | `#E2E8F0` | bar tracks, dividers, dot grids |
+- A small mono label in the corner of every block. This is the single strongest tell — no block
+  gets one.
+- Uniform rounded cards with matching borders and drop shadows, tiled edge to edge.
+- Dark-mode dashboard styling, neon glow, gradients, glassmorphism, 3D, bevels.
+- An icon beside every bullet. Use at most four line icons on the whole page, or none.
+- Emoji, stock photos, invented logos, fake testimonials, decorative "AI" motifs.
 
-**Colour rule — this replaces the old "max 5 orange elements" cap, which drained the page:**
+## What must be drawn as a graphic, not written as a sentence
 
-- Orange means *"this is the argument"*. Roughly **6–10 orange moments**, and they should all be
-  on the same idea: the claim, the 40% proof weight, the winning bar, the CTA.
-- Lime is reserved for **proven** states — never decorative. Yellow only marks **gaps we admit**.
-- Cyan and Violet are free for chart series; charts may be as colourful as the data needs.
-- Inside the Ink hero band, invert: Paper text on Ink, with Orange and Lime doing the work.
+**The two-candidate comparison — the largest element on the page.** Two horizontal bars on one
+0 → 1.0 axis, same job, same experience and education; only text similarity and proof differ. Bar
+segments in the ratio 35 / 40 / 15 / 10 so the reader sees *where* the win comes from: the loser's
+bar is long on similarity, the winner's is long on proof. Proof segment orange. Set each total as
+a huge numeral at the end of its bar. Mark the two live bands on the axis at 0.45 and 0.65.
 
-## Texture & depth — allowed, and wanted
+**The weight split**, as a single 100% stacked bar — 35 / 40 / 15 / 10 — with the 40% proof segment
+orange and physically raised above the others.
 
-The old brief banned everything and got a flat grey page. Instead:
+**The proof ladder**, as three ascending bars whose heights are the real weights 0.30 / 0.85 / 1.00.
+Not three equal chips.
 
-- ✅ Hard offset shadows `4px 4px 0 #090A0F` on Tier 2 cards. Keep it, it is the house style.
-- ✅ **Ash dot-grid or hairline-rule texture** behind the hero band or under a chart.
-- ✅ Oversized, cropped, low-opacity numerals or glyphs bleeding off a card edge as ornament.
-- ✅ Thin-line icons (2 px, Lucide style), and one or two **large** line illustrations if they earn
-  their space — a QR-to-phone-to-ranked-list motif, for instance.
-- ✅ Diagonal ink hatching to mark "not yet measured" areas of a chart.
-- ❌ Still no: gradients as fills, blur, glassmorphism, 3D renders, stock photos, emoji.
+**The margin curve**, as two lines: applicants per job on x, gross margin on y. Cold candidate pool
+88 → 70 → 42. Mature pool reaching 86 at 200. Cold line yellow, mature line ink.
 
-## Typography
+**The funding split**, as one stacked bar: 22 / 29 / 20 / 6 / 23, each slice labelled in place.
 
-- **Headings & body:** `Plus Jakarta Sans` — 900 headings, 700 sub-heads, 400–500 body.
-- **Numbers, axes, micro-labels:** `JetBrains Mono` — 700, uppercase, letter-spacing 0.4 px.
+**The two market figures**, as icon arrays. They are different units — businesses and people — so
+they must not share a scale or be drawn as a ratio.
 
-Suggested scale (adjust for balance): hero claim 52–60 / 900, leading 1.05, tracking −1.5 px ·
-box title 22 / 900 · micro-label 11 / 700 mono · body 15–16 / 400, leading 1.45 · big stat
-40–48 / 900 mono · axis & caption 11–12 / 500 Mute.
+**The moderation outcome**, as a three-way split: reject, hold, publish.
 
-**Set the hero claim as large as it can go without crowding V1.** It is the page's thesis.
+**The honesty rows**, as filled and unfilled state markers, with the unfilled ones exactly as legible
+as the filled ones.
 
 ---
 
-# THE ELEVEN VISUALS — this is the heart of the brief
+# §SLIDE TEXT
 
-Data goes in charts. Prose is the fallback, not the default. Every figure below is real and
-sourced; use them exactly.
+Everything below is drawn. `⟦…⟧` markers are not.
 
-### V1 — Head-to-head score bars · HERO · the most important graphic on the page
-
-Two horizontal stacked bars on a shared 0 → 1.0 axis, comparing two candidates for the same job.
-Both have identical experience and education; only cosine and proof differ.
-
-| Candidate | cosine | proof | **total** |
-|---|---|---|---|
-| **"CV disalin dari iklan lowongan"** — keyword stuffer, claimed skills only | 0.90 | 0.30 | **0.685** |
-| **"Skill dibuktikan lewat kuis"** — modest CV match, quiz-proven | 0.50 | 0.85 | **0.765** |
-
-Segment the bars by the four weights so the reader sees *where* the win comes from: the loser's
-bar is long on the cosine segment, the winner's is long on the proof segment. **Proof segment in
-Orange; winner's total called out in Orange; loser's bar in Ash/Mute.** Do not draw the loser as
-a villain — draw it as a bar that simply ends sooner.
-
-**Kicker callout beside the chart** (this is the line that wins the argument):
-
-> Bahkan pada kemiripan teks **sempurna 1.00**, CV yang hanya mengklaim skill berhenti di
-> **0.720** — masih di bawah **0.765** milik kandidat terbukti yang kemiripan teksnya cuma 0.50.
-> Menyalin kalimat iklan tidak bisa lagi mengejar bukti.
-
-### V2 — Weight strip (in PRODUK)
-
-100% stacked horizontal bar, `35 / 40 / 15 / 10`, each segment labelled with its percentage and
-name. **Segment 2 (40%, skill terbukti) Orange and visually raised** — a taller segment, a notch,
-or an outlined lift. Others Ash with ink outlines. This is V1's explanation, so place it where the
-eye travels after the hero.
-
-### V3 — Proof staircase (in CARA KERJA)
-
-Three ascending bars whose **heights are proportional to the real weights** — not three equal
-chips. `Klaim CV 0.30` (Ash) → `✓ Lulus kuis 0.85` (Lime) → `✓✓ Dikonfirmasi HR 1.00` (Ink fill,
-Paper text). Print the weight inside or under each step.
-
-### V4 — Band ruler (small, under V1 or V2)
-
-A 0 → 1.0 axis with the two live thresholds marked: `possible ≥ 0.45`, `strong ≥ 0.65`. Plot both
-V1 candidates on it. Honest and worth showing: **the stuffer still lands in "strong"** — the
-system does not ban him, it simply ranks him below someone with proof. Label that plainly; a judge
-who spots it unaided will trust the rest of the page less.
-
-### V5 — Market scale (in MASALAH)
-
-`89.141` UMKM terdaftar (*SIDT-UMKM, Des 2025*) and `7,24 jt` penganggur terbuka (*BPS, Feb 2026*)
-as two icon-array / dot-grid figures. **Do not draw them as a ratio or a single shared scale** —
-they are different units (businesses vs people) and implying a ratio would be a fabricated claim.
-Two separate visuals, side by side.
-
-### V6 — Journey flow (in PRODUK or CARA KERJA)
-
-A left-to-right flow with a QR code as the entry point:
-
-`Employer pasang lowongan` → `link + poster QR` → `ditempel di IG / grup WA yang sudah dipakai` →
-`pelamar scan → daftar via email → kuis 5 soal` → `satu daftar terperingkat`
-
-Numbered nodes, thin-line connectors. The QR may be a stylised glyph — **do not encode a real URL.**
-
-### V7 — Margin curve (in MODEL BISNIS) · currently our best unused chart
-
-A two-line chart, x = applicants per job (30 / 100 / 200), y = gross margin %.
-
-| Applicants | Kolam kandidat masih baru | Kolam kandidat matang |
-|---|---|---|
-| 30 | 88% | — |
-| 100 | 70% | — |
-| 200 | **42%** | **86%** |
-
-Cold-pool line in Yellow (it is the admitted weakness), mature-pool line in Cyan. Annotate the
-crossing: *"biaya baca CV dibayar sekali per kandidat seumur akun — bukan per lamaran."* This
-chart turns our scariest question into our best answer, so give it real space.
-
-### V8 — Readiness meter (in BUKTI — APA ADANYA)
-
-Five rows, each a filled or unfilled state marker — not a tick-mark table:
-
-| Row | Marker |
-|---|---|
-| Prototipe jalan & teruji otomatis | penuh, Lime |
-| Alignment PS-2 (penilaian juri) | penuh, Lime — *Sangat Kuat* |
-| Kualitas prototipe (penilaian juri) | penuh, Lime — *Sangat Kuat* |
-| Perusahaan membayar | kosong, Yellow — `BELUM ADA` |
-| Validitas prediktif skor | kosong, Yellow — `BELUM DIUJI` |
-
-Yellow gap markers are **a deliberate feature**. Legible, unapologetic, same size as the wins.
-
-### V9 — Investment allocation (in PENDANAAN)
-
-100% stacked bar or donut: Pendirian & legal **22%** · Menutup rugi sampai impas **29%** ·
-Akuisisi employer & pencari kerja **20%** · Keamanan + gateway **6%** · Bantalan skenario buruk
-**23%**. Label every slice with its percentage; no legend-only charts.
-
-### V10 — Runway timeline (in PENDANAAN)
-
-A thin horizontal timeline: `Bulan 0` funding → `Bulan 6` tahap kedua → `Bulan 15` **impas**
-(Orange marker) → `Tahun 2` `Rp360 jt` pendapatan. Mark the cash trough `Rp101 jt` as a dip.
-
-### V11 — AutoMod decision flow (in CARA KERJA, small)
-
-Three-branch mini-diagram from `Iklan dipasang`:
-`Minta biaya dari pelamar` → **DITOLAK + strike** (Orange/Ink) ·
-`Syarat diskriminatif` → **DITAHAN, tinjauan admin** (Yellow) ·
-`Bersih` → **TAYANG** (Lime).
-
----
-
-# CONTENT — Indonesian text, place as written
-
-## ▸ HERO
+⟦headline⟧
 
 **CV bisa ditulis siapa saja.
 Kami membuat skill harus dibuktikan — lalu mengurutkan pelamar berdasarkan bukti itu.**
 
-Sub-line (18 px, Mute/Paper): *Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja
-18–25 tahun.*
+Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja 18–25 tahun.
 
-Plus **V1** and its kicker callout.
+⟦two-candidate comparison — labels and figures⟧
 
-## ▸ MASALAH (PAIN + GAIN)
+Dua pelamar, satu lowongan, pengalaman dan pendidikan sama.
 
-**Bagi UMKM yang merekrut hari ini**
-- Pasang "kirim CV ke WA" → puluhan PDF masuk, tidak terurut.
-- Banyak CV mengklaim skill yang tidak dikuasai. CV buatan AI memperparah.
-- Akibatnya: **jam kerja pemilik usaha habis mewawancarai orang yang salah.**
+CV disalin dari iklan lowongan · kemiripan teks 0,90 · skill hanya diklaim — **0.685**
+Skill dibuktikan lewat kuis · kemiripan teks 0,50 · lulus kuis — **0.765**
 
-**Bagi pencari kerja**
-- Melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
+Bahkan pada kemiripan sempurna 1,00, CV yang hanya mengklaim berhenti di **0.720**.
 
-Plus **V5**.
+Penyalin iklan tidak diblokir — dia hanya kalah urutan. Kami menyaring, bukan menghakimi.
 
-## ▸ PRODUK
+⟦problem⟧
+
+**Pasang "kirim CV ke WA" → puluhan PDF tak terurut, banyak mengklaim skill yang tidak dikuasai.
+Jam kerja pemilik usaha habis mewawancarai orang yang salah.**
+
+Di sisi lain: melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
+
+**89.141** usaha mikro & kecil terdaftar · SIDT-UMKM, Des 2025
+**7,24 juta** penganggur terbuka · BPS, Feb 2026
+
+⟦product⟧
 
 **Satu daftar pelamar yang sudah diurutkan — dan skill-nya sudah diuji.**
 
-- **Employer:** pasang lowongan → dapat **link + poster QR** → tempel di Instagram / grup WA yang
-  sudah dipakai → pelamar masuk ke satu daftar terperingkat.
-- **Pencari kerja:** scan QR → daftar via email → isi profil atau unggah CV → **ikut kuis skill
-  5 soal** → lamar. Badge berlaku **180 hari di semua lowongan.**
+Employer pasang lowongan, dapat link dan poster QR, tempel di Instagram atau grup WA yang sudah
+dipakai. Pelamar scan, daftar lewat email, ikut kuis skill 5 soal, lalu melamar. Badge berlaku
+180 hari di semua lowongan.
 
-Plus **V2** and **V6**. Caption under V2 (12 px, Mute): *Bobot bukti sengaja lebih besar dari
-kemiripan teks — karena kemiripan teks justru naik kalau CV menyalin kalimat iklan.*
+⟦weight split — segment labels⟧
 
-## ▸ CARA KERJA
+35% kemiripan teks · **40% skill terbukti** · 15% pengalaman · 10% pendidikan
 
-Plus **V3**, **V11**.
+Bobot bukti sengaja lebih besar dari kemiripan teks, karena kemiripan teks justru naik kalau CV
+menyalin kalimat iklan.
 
-**Tiga langkah bernomor:**
-1. **Kuis 5 soal skenario**, ±3 menit. Dinilai server pakai kunci jawaban — **tanpa panggilan AI,
-   Rp0 per percobaan.** Lulus 4/5 → badge ✓ Terbukti.
-2. **HR wawancara**, lalu mencentang *skill terbukti* → bukti terkuat, bobot 1.00.
-3. **Skor dihitung ulang** tiap daftar dibuka — pelamar yang baru lulus kuis langsung naik.
+⟦proof ladder — step labels⟧
 
-**Data pribadi:** kami **tidak mengumpulkan NIK, KTP, ijazah, atau NPWP.** Verifikasi hanya email.
-Nomor, email, dan NIK **di dalam teks CV** disamarkan aturan regex tetap sebelum disimpan dan
-sebelum dikirim ke AI — bukan lewat instruksi ke AI, jadi tidak bisa gagal karena prompt.
+Ditulis di CV **0,30** · Lulus kuis **0,85** · Dikonfirmasi HR **1,00**
 
-Caption (12 px, Mute): *CV hasil pindai atau foto tidak punya teks untuk disamarkan. Kami tidak
-menolaknya — banyak pencari kerja Indonesia memang hanya punya foto CV — tapi kami **minta izin
-dulu** sebelum gambarnya dikirim ke AI, dan hasil bacaannya tetap disamarkan sebelum disimpan.*
+⟦how it works⟧
 
-## ▸ KENAPA SULIT DITIRU
+Kuis 5 soal skenario, sekitar 3 menit, dinilai server dengan kunci jawaban — tanpa panggilan AI,
+Rp0 per percobaan. Lulus 4 dari 5 memberi badge terbukti.
 
-1. **Profil terbukti hanya ada di sini.** Peniru mulai dari nol kandidat terbukti. Fitur bisa
-   disalin sebulan; kumpulan bukti tidak.
-2. **QR tiap employer membawa pelamar baru** yang ikut dicocokkan ke lowongan lain — tumbuh dari
-   pemakaian, bukan iklan.
-3. **Model kami bertentangan dengan job board.** Mereka untung dari *banyak* lamaran; kami menang
-   dengan mengirim *lebih sedikit tapi tepat*.
+HR mencentang "skill terbukti" setelah wawancara. Itu bukti terkuat.
 
-Kutipan penutup (italic, 15 px): *"Fiturnya bisa ditiru. Profil yang sudah terbukti dan kepercayaan
-HR tidak bisa disalin."*
+Skor dihitung ulang tiap daftar dibuka, jadi pelamar yang baru lulus kuis langsung naik.
 
-## ▸ BUKTI — APA ADANYA
+⟦privacy⟧
 
-**V8**, plus catatan (12 px, Mute): *Mesin pengukurnya sudah jalan: skor + bukti disimpan saat
-melamar, tiap perubahan status dicatat, dan dashboard admin menghitung tingkat wawancara per band
-skor. Datanya yang belum ada — dan layar kami menulis "belum ada data", bukan 0%.*
+**Kami tidak mengumpulkan NIK, KTP, ijazah, atau NPWP.** Verifikasi hanya email.
 
-## ▸ MODEL BISNIS
+Nomor, email dan NIK di dalam teks CV disamarkan aturan regex tetap sebelum disimpan dan sebelum
+dikirim ke AI — bukan lewat instruksi ke AI, jadi tidak bisa gagal karena prompt.
+
+CV hasil foto tidak punya teks untuk disamarkan. Kami tidak menolaknya, tapi minta izin dulu.
+
+⟦moderation outcomes — branch labels⟧
+
+Minta biaya dari pelamar → **ditolak otomatis**
+Syarat diskriminatif → **ditahan untuk tinjauan**
+Bersih → **tayang**
+
+⟦defensibility⟧
+
+**Fitur bisa ditiru sebulan. Kumpulan profil yang sudah terbukti tidak.**
+
+Peniru mulai dari nol kandidat terbukti. QR tiap employer membawa pelamar baru yang ikut
+dicocokkan ke lowongan lain — tumbuh dari pemakaian, bukan iklan. Dan model kami bertentangan
+dengan job board: mereka untung dari banyak lamaran, kami menang dengan mengirim lebih sedikit
+tapi tepat.
+
+⟦honesty rows — exactly as written, gaps as legible as the wins⟧
+
+Prototipe jalan & teruji otomatis — **sudah**
+Alignment PS-2 · penilaian juri — **sangat kuat**
+Kualitas prototipe · penilaian juri — **sangat kuat**
+Perusahaan membayar — **belum ada**
+Validitas prediktif skor — **belum diuji**
+
+Mesin pengukurnya sudah jalan: skor dan bukti disimpan saat melamar, tiap perubahan status
+dicatat, dashboard menghitung tingkat wawancara per band skor. Datanya yang belum ada — dan layar
+kami menulis "belum ada data", bukan 0%.
+
+⟦business model⟧
 
 **Employer bayar untuk menyaring, bukan untuk mencari.**
 
-| Paket | Harga |
-|---|---|
-| **Spark** | **Rp0** · 1 lowongan, 20 pelamar skor tertinggi |
-| **Beacon** | **Rp29.000** / lowongan |
-| **Lighthouse** | **Rp99.000** / bulan |
-| **Prism** (pencari kerja) | **Rp25.000** / 30 hari |
+Spark **Rp0** · 1 lowongan, 20 pelamar skor tertinggi
+Beacon **Rp29.000** per lowongan
+Lighthouse **Rp99.000** per bulan
+Prism **Rp25.000** per 30 hari, untuk pencari kerja
 
-Plus **V7**. Caption: *asumsi pemakaian tipikal 30 pelamar / 5 dishortlist, buffer ×1,5, sudah
-termasuk biaya QRIS. Kuis dan skor **tidak memanggil AI sama sekali**.*
+**Membayar tidak pernah menaikkan skor atau peringkat siapa pun.**
 
-Garis tebal (15 px, Ink): **Membayar tidak pernah menaikkan skor atau peringkat siapa pun.**
+Pembayaran saat ini QRIS atau transfer yang dikonfirmasi admin. Payment gateway belum ada.
 
-Footnote: *Pembayaran saat ini QRIS / transfer yang dikonfirmasi admin.* `RENCANA: payment gateway`
+⟦margin curve — axis and annotation⟧
 
-## ▸ PENDANAAN
+30 pelamar **88%** · 100 pelamar **70%** · 200 pelamar **42%**
+Kolam kandidat matang, 200 pelamar — **86%**
 
-**Stat besar:** `Rp200 jt` untuk **10%** — *dua tahap: Rp100 jt saat tanda tangan, Rp100 jt di
-bulan ke-6 bila target tercapai.* Plus **V9** and **V10**.
+Biaya baca CV dibayar sekali per kandidat seumur akun, bukan per lamaran. Kuis dan skor tidak
+memanggil AI sama sekali.
 
-## ▸ TIM
+⟦funding⟧
 
-- **David** — AI / Backend · mesin pencocokan, bobot bukti, AutoMod
-- **Darren** — Product / UX · alur seeker–employer, desain sistem
-- **Vanessa** — Systems / Impact · data hasil, metrik dampak
-- **Jason** — Business / Deployment · model bisnis, harga, pilot
+**Rp200 juta untuk 10%**, dua tahap: Rp100 juta saat tanda tangan, Rp100 juta di bulan ke-6 bila
+target tercapai.
 
-Kalimat pembeda (italic, 14 px): *Kami memperbaiki produk berdasarkan kritik, bukan membela slide:
-model Pay-to-Unlock, e-KYC NIK, dan klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami
-buktikan.*
+Pendirian & legal 22% · Menutup rugi sampai impas 29% · Akuisisi pengguna 20% · Keamanan &
+gateway 6% · Bantalan skenario buruk 23%
 
-## ▸ AJAKAN
+Impas **bulan 15** · kas terdalam **Rp101 juta** · pendapatan tahun 2 **Rp360 juta**
 
-**Tiga ajakan berdampingan, tiap satu dalam kotak sendiri:**
+⟦team⟧
 
-| Untuk UMKM / HR | Untuk pencari kerja | Untuk investor / offtaker |
-|---|---|---|
-| **Pasang 1 lowongan sekarang — gratis. Poster QR-nya kami cetakkan hari ini.** | **Scan, ikut 1 kuis 3 menit, bawa pulang badge ✓ Terbukti.** | **Beri kami 30 hari dan 10 UMKM pilot. Lalu kita baca bersama tingkat wawancara per band skor di dashboard yang sama.** |
+David — AI & backend · mesin pencocokan, bobot bukti, moderasi otomatis
+Darren — produk & UX · alur seeker–employer
+Vanessa — sistem & dampak · data hasil, metrik
+Jason — bisnis & deployment · model bisnis, harga, pilot
 
-**Target terukur 3 hari** (mono, 14 px): `15` UMKM pasang lowongan · `100` pencari kerja selesai
-≥1 kuis · `3` surat minat bayar Beacon
+Kami memperbaiki produk berdasarkan kritik, bukan membela slide: Pay-to-Unlock, e-KYC NIK, dan
+klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami buktikan.
 
-**Penutup — banner Orange, teks Paper, 30–34 px / 900:**
-**"Pasar kerja Indonesia tidak kekurangan lamaran. Yang kurang adalah bukti.
-Kami membangun tempat bukti itu disimpan."**
+⟦three asks⟧
+
+**UMKM & HR** — Pasang 1 lowongan sekarang, gratis. Poster QR-nya kami cetakkan hari ini.
+
+**Pencari kerja** — Scan, ikut 1 kuis 3 menit, bawa pulang badge terbukti.
+
+**Investor & offtaker** — Beri kami 30 hari dan 10 UMKM pilot. Lalu kita baca bersama tingkat
+wawancara per band skor di dashboard yang sama.
+
+Target 3 hari: **15** UMKM pasang lowongan · **100** pencari kerja selesai satu kuis ·
+**3** surat minat bayar Beacon
+
+⟦closing banner — orange ground, paper text⟧
+
+**Pasar kerja Indonesia tidak kekurangan lamaran. Yang kurang adalah bukti.
+Kami membangun tempat bukti itu disimpan.**
 
 ---
 
-## Final check before you hand this over
+## Before you hand it over
 
-1. Can someone 2 m away name the main claim in 5 seconds, from the charts alone?
-2. Is there one obvious place the eye lands first, and does it lead somewhere second?
-3. Are the yellow gap markers as legible as the wins? (If they shrank, put them back.)
-4. Is every number on the page traceable to §CONTENT above? Nothing invented?
-5. Are there at least 8 real data visuals, and is no chart doing work a sentence already did?
+1. Search your own output for `V1`, `01`, `MASALAH`, `PRODUK`, `TIM`, `⟦`. Zero hits, or start again.
+2. Does any block carry a title that is not written in §SLIDE TEXT? Delete it.
+3. Can someone read the main claim from the big numerals alone, at 2 m, in five seconds?
+4. Count the bordered boxes. More than two filled panels means go back to hairlines.
+5. Are the "belum ada" and "belum diuji" markers exactly as legible as the wins?
 
 ═══════════════════ SALIN SAMPAI SINI ═══════════════════
 
@@ -367,9 +275,9 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 
 | Pertanyaan | Jawaban yang benar |
 |---|---|
-| *"CV bisa direkayasa, bagaimana verifikasinya?"* | Skill yang hanya ditulis di CV bernilai **0.30**; lulus kuis **0.85**; dikonfirmasi HR **1.00**. Karena bobot bukti (0.40) **lebih besar** dari kemiripan teks (0.35), menyalin kalimat iklan tidak lagi cukup untuk menang — lihat grafik utama di kanvas. |
-| *"Tunjukkan bahwa keyword stuffing benar-benar kalah."* | Dua kandidat, pengalaman & pendidikan sama. Penyalin iklan: kemiripan 0.90, semua skill hanya klaim → **0.685**. Kandidat terbukti: kemiripan 0.50, semua skill lulus kuis → **0.765**. Bahkan pada kemiripan **sempurna 1.00**, penyalin berhenti di **0.720**. Selisih bobot yang harus dikejar setara **0.629 poin kemiripan** — di luar rentang nyata. |
-| *"Berarti pembohong diblokir?"* | **Tidak, dan kami tidak mengklaim itu.** Skor 0.685 masih masuk band "strong" (ambang 0.65). Yang kami jamin cuma satu: dia **di bawah** kandidat terbukti dalam urutan yang dibaca HR. Menyaring, bukan menghakimi. |
+| *"CV bisa direkayasa, bagaimana verifikasinya?"* | Skill yang hanya ditulis di CV bernilai **0.30**; lulus kuis **0.85**; dikonfirmasi HR **1.00**. Karena bobot bukti (0.40) **lebih besar** dari kemiripan teks (0.35), menyalin kalimat iklan tidak lagi cukup untuk menang. |
+| *"Tunjukkan bahwa keyword stuffing benar-benar kalah."* | Dua kandidat, pengalaman & pendidikan sama. Penyalin iklan: kemiripan 0.90, semua skill hanya klaim → **0.685**. Kandidat terbukti: kemiripan 0.50, semua skill lulus kuis → **0.765**. Bahkan pada kemiripan **sempurna 1.00**, penyalin berhenti di **0.720**. Selisih yang harus dikejar setara **0.629 poin kemiripan** — di luar rentang nyata. |
+| *"Berarti pembohong diblokir?"* | **Tidak, dan kami tidak mengklaim itu.** Skor 0.685 masih masuk band "strong" (ambang 0.65). Yang kami jamin: dia **di bawah** kandidat terbukti dalam urutan yang dibaca HR. |
 | *"Ada mekanisme ban / turun peringkat?"* | Ada dan sudah jalan: AutoMod menolak/menahan sebelum tayang, pemasang dapat notifikasi + bisa banding, kandidat bisa melapor, dan strike 1→2→3 membatasi lalu menangguhkan akun. |
 | *"Redaksional berbasis prompt bisa gagal?"* | Karena itu penyamaran data pribadi **tidak** memakai instruksi ke AI — memakai aturan regex tetap sebelum tiap panggilan AI. NIK bahkan tidak dikumpulkan sama sekali. |
 | *"Skor tinggi benar lolos interview?"* | Mekanismenya sudah dibangun — skor + bukti disimpan saat melamar, status dicatat, dashboard menghitung tingkat wawancara per band. **Datanya belum ada, dan kami tidak akan mengarang.** Itu yang kami minta 30 hari pilot untuk dapatkan. |
@@ -380,8 +288,8 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 
 | Kalau ditanya | Jawab |
 |---|---|
-| Sudah ada yang bayar? | **Belum satu pun.** Target booth ini: 3 surat minat. |
-| Bank soalnya berapa? | **8 skill × 6 soal, masih draf AI**, sedang diperluas ke ~20 per skill dengan tinjauan praktisi HR. Dengan 6 soal, satu kuis 5 soal hanya punya 6 kombinasi — jadi ujian ulang pasti mengulang soal. Kami tahu, dan itu antrean kerja berikutnya. |
+| Sudah ada yang bayar? | **Belum satu pun.** Target: 3 surat minat. |
+| Bank soalnya berapa? | **8 skill × 6 soal, masih draf AI**, sedang diperluas ke ~20 per skill dengan tinjauan praktisi HR. Dengan 6 soal, satu kuis 5 soal hanya punya 6 kombinasi — ujian ulang pasti mengulang soal. Kami tahu, dan itu antrean kerja berikutnya. |
 | Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, soal acak, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
@@ -405,5 +313,5 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | 89.141 · 7,24 jt | SIDT-UMKM Des 2025 · BPS Feb 2026 |
 | Spark 20 pelamar | **skor tertinggi**, bukan yang pertama melamar |
 
-> **Aturan tunggal di booth:** kalau sebuah angka tidak ada di tabel ini, **jangan sebut**.
+> **Aturan tunggal:** kalau sebuah angka tidak ada di tabel ini, **jangan sebut**.
 > Katakan "belum kami ukur" — itu jawaban yang menang, bukan yang kalah.
