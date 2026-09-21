@@ -152,8 +152,6 @@ trackEvent('cv_uploaded', {
 - **Integrasi Produksi:** butuh badan usaha (PT) untuk verifikasi merchant. Biaya rujukan Midtrans:
   QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup. Stripe belum bisa dipakai di
   Indonesia (undangan, tanpa lintas negara).
-- **Dihapus:** Pay-to-Unlock (Rp50.000/kontak) — alasan lengkap di
-  [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
 
 ### 3.6 Bank soal kuis skill
 - **Status Saat Ini:** bank terisi otomatis sampai **30 soal per skill** dan disaring validator mekanis; provenance dicatat per soal (`human` vs `ai_auto`). Tinjauan praktisi manusia atas bank **belum dilakukan**

@@ -57,6 +57,26 @@ the reader can tell a problem from a price without a label. Weight matters more
 than the grid: box 3 carries the two scores and should dominate; boxes 4 and 9
 are the smallest. Box 4 is mostly screenshots.
 
+## Page geometry — build to these numbers
+
+**One page, landscape `1920 × 1080` px at 1×.** It is projected behind a speaker and also read
+close-up as a PDF, which sets both floors below.
+
+- **Outer margin 72 px** on all four sides. Nothing but the closing band may cross it.
+- **Column gutter 48 px**; row gutter 40 px. The paired boxes are **not** a 50/50 split — run the
+  argument column at roughly 58% and the rail at 42%, and do not keep that ratio identical down the
+  page.
+- **Smallest type on the page is 10.5 px** (captions). At projection distance that is already the
+  limit; anything smaller means content has to be cut instead.
+- **Two-metre test governs the top of the page.** `0.685` and `0.765` must be readable from 2 m at
+  100% zoom. If a block forces them below 96 px, the block goes, not the numerals.
+- **No element may bleed off the page and nothing scrolls.** If the content does not fit inside the
+  margins at these sizes, send it back — shrinking the type is the one failure mode this brief
+  exists to prevent.
+- **Deliver as a single page**, editable vectors, with text as live text rather than outlines, so a
+  figure can be corrected without a redraw. Every number on this page is checkable and some of them
+  will change.
+
 ## Reading order must match the spoken order
 
 This page backs a **three-minute spoken pitch**, and the presenter walks it top
@@ -92,7 +112,7 @@ data page or an exhibition wall panel: paper, ink, hairlines, enormous numerals,
   are the largest things on the page after the headline, and they carry the argument by themselves.
 - **Violent type scale, few middle sizes.** Headline 60–72 / 900. Hero numerals 96–130 / 900.
   Body 14 / 400. Captions 10.5 / 500. Almost nothing between 16 and 60 px — an even spread of
-  13–15 px text across nine blocks is what turns a canvas into grey mush.
+  13–15 px text across eleven boxes is what turns a canvas into grey mush.
 - **Colour is rationed by meaning, not by count.** Orange `#FF4800` only where the argument is
   (the headline verb, the proof weight, the winning score, the closing banner). Lime `#10B981`
   only for proven states. Yellow `#F59E0B` only for gaps we admit. Ash `#E2E8F0` for tracks and
@@ -139,11 +159,25 @@ they must not share a scale or be drawn as a ratio.
 **The honesty rows**, as filled and unfilled state markers, with the unfilled ones exactly as legible
 as the filled ones.
 
-**The cost-per-action strip** (business model box). A short row where each action carries its real
-cost: `memeringkat pelamar Rp0` · `kuis Rp0` · `cari kandidat Rp0` · `baca CV Rp99` ·
-`kit wawancara Rp60`. The Rp0 entries set in Lime, the paid ones in Ink. This is the graphic that
-makes "menyaring gratis" land as arithmetic rather than generosity — we do not charge for the parts
-that cost us nothing.
+**Price and cost are two different graphics. Never combine them into one row.** Mixing what a
+customer pays with what an action costs us is the fastest way to make a sound margin look like a
+muddle, and it is the single most likely thing to go wrong in this box.
+
+**(a) The tier ladder — what the customer pays.** Four ascending steps: **Gratis** (Spark),
+Rp49.000 (Beacon), Rp149.000 (Lighthouse), Rp15.000 (Prism, job seeker). Write the free tier as the
+word **"Gratis"**, never as "Rp0" — a price of zero reads as an accounting entry, "Gratis" reads as
+an offer. Spark's step is the **widest**, not the smallest: the free tier ranks every applicant, and
+the shape should say so.
+
+**(b) The COGS strip — what it costs us, labelled as such.** Directly beneath, visually subordinate,
+under a caption naming it as our cost per action: `memeringkat pelamar Rp0` · `kuis Rp0` ·
+`cocokkan kandidat Rp0` · `baca CV Rp99` · `kit wawancara Rp60`. Set this strip entirely in Ash and
+Ink at caption size — it is evidence, not an offer, and it must never be mistaken for a price list.
+
+Together they carry the investor argument in one glance: **ranking, matching and quiz grading make
+no AI call at all, so the marginal cost of one more applicant is effectively zero.** That is where
+the 83–99% gross margin comes from, and it is why applicant volume never has to be capped. The
+graphic's job is to make the margin look like arithmetic rather than a claim.
 
 **The growth loop** (what's unique box). A closed circle of four nodes, thin-line, no timeline and
 no projected numbers: `employer pasang lowongan` → `poster QR dibagikan di kanal yang sudah dipakai`
@@ -151,14 +185,14 @@ no projected numbers: `employer pasang lowongan` → `poster QR dibagikan di kan
 to the first. Label it as a mechanism, not a forecast — we have no usage data yet and must not draw
 a curve implying we do.
 
-**The tier ladder** (business model box). Four ascending steps — Spark, Beacon, Lighthouse, Prism —
-with price and the one thing each adds. Spark's step is the widest, not the smallest: the free tier
-ranks every applicant, and the shape should say so.
-
-**The runway line** (investment box). A thin horizontal timeline: `Bulan 0` tanda tangan →
-`Bulan 6` tahap kedua → `Bulan 15` **impas** (orange marker) → `Tahun 2` Rp360 jt. Mark the cash
-trough at Rp101 jt as a dip. Label the whole thing "proyeksi skenario dasar" so nobody reads it as
-history.
+**The break-even bar** (investment box). **Not a runway curve — we do not have one to draw.** A
+single horizontal bar showing what it takes to cover Rp8,7 juta of monthly opex, split three ways so
+the reader sees that the mix is the whole story: **180** Beacon jobs · **59** Lighthouse
+subscriptions · **696** Prism subscribers. Mark the Lighthouse segment in Orange — it is the one
+that recurs, and therefore the one the business turns on. Caption it with the milestone the round is
+gated on (**≥30 employer berbayar di bulan 6**), not with a projected break-even month. Drawing a
+curve toward a specific month would imply a model we have not built; this bar states a requirement,
+which is a fact.
 
 **The team row** (team box). Four small monogram marks with the role as a micro-caption. No photos,
 no avatars, no icons of people.
@@ -167,9 +201,10 @@ no avatars, no icons of people.
 thin-line glyph: a QR for job seekers, a document for employers, a handshake-free chart mark for
 investors. Different glyphs, identical weight — no audience gets visual priority.
 
-**The age overlay** (why you box). The market figure from box 2 redrawn small, with the founders'
-own age bracket marked inside it. One mark, no caption beyond the bracket itself. The point is made
-by position, not by words: this team is inside the population it is building for.
+**The closing strip has no graphic** (why you box). It is the second — and last — filled panel on
+the page, and it carries type only. Everything above it argues with figures; this one block earns
+its weight by being the only place the reader is asked simply to read. Do not add a chart, a
+portrait row, an age or demographic overlay, or a repeat of any figure already drawn above.
 
 ---
 
@@ -219,66 +254,72 @@ Pada kemiripan sempurna 1,00 pun, yang hanya mengklaim berhenti di **0.720**.
 
 ⟦4 · product demo — mostly screenshots, little text⟧
 
-Tiga layar produk yang berjalan hari ini:
+Tiga layar produk yang berjalan:
 
 **1.** Poster QR sebuah lowongan · **2.** Kuis 5 soal di ponsel ·
 **3.** Daftar pelamar terperingkat dengan badge ✓ Terbukti
 
 ⟦5 · what's unique⟧
 
-**Fitur bisa ditiru sebulan. Kumpulan profil yang sudah terbukti tidak.**
+**Job board lain memeringkat kemiripan kata. Kami memeringkat bukti — dan
+bobotnya lebih besar dari kemiripan.**
 
-Peniru mulai dari nol kandidat terbukti. Kami tumbuh dari pemakaian, bukan iklan.
+Bukti **0,40** lawan kemiripan **0,35**: menyalin iklan sampai kemiripan sempurna
+pun tetap kalah dari satu skill yang lulus kuis. Itu keputusan desain di mesin
+kami, bukan tampilan yang bisa disalin.
 
-Dan kami tidak memverifikasi dokumen, kami memverifikasi perilaku: domain email
-harus cocok dengan website, jejak publik dicek admin, iklan yang meminta biaya
-ditolak otomatis, laporan **ditimbang, bukan dihitung**. Mengumpulkan NIK tidak
-menghentikan lowongan palsu — penipu memakai NIK asli.
+**Kami memverifikasi perilaku, bukan dokumen:** domain email harus cocok dengan
+website, jejak publik dicek admin, iklan yang meminta biaya ditolak otomatis,
+laporan **ditimbang, bukan dihitung**. Mengumpulkan NIK tidak menghentikan
+lowongan palsu — penipu memakai NIK asli.
 
-⟦6 · customer traction — gaps as legible as the wins⟧
+⟦6 · customer traction — technical readiness, with the gaps as legible as the wins⟧
 
-Prototipe jalan, seluruh test menggugurkan build — **sudah**
-Migrasi database teruji sampai rollback — **sudah**
-Pengguna nyata terdokumentasi — **di bawah 10 orang**
-Perusahaan membayar — **belum ada**
-Validitas prediktif skor — **belum diuji**
+**Mesinnya selesai dan siap dipakai komersial. Yang kami minta: pilotnya.**
 
-Mesin pengukurnya sudah jalan: skor dan bukti disimpan tiap kali orang melamar.
-Datanya yang belum ada — dan layar kami menulis "belum ada data", bukan 0%.
+Mesin pencocokan, kuis, dan moderasi otomatis — **jalan penuh**
+Tiap rilis diuji otomatis sampai rollback migrasi di PostgreSQL asli — **jalan penuh**
+Alur bayar (QRIS/transfer, aktivasi admin) — **jalan, tanpa gateway**
+Pilot komersial berbayar — **tahap berikutnya**
+Validitas prediktif skor — **menunggu data pilot**
+
+Instrumentasinya terpasang: skor dan bukti disimpan tiap kali orang melamar.
+Layar kami menulis "belum ada data", bukan 0%.
 
 ⟦7 · business model⟧
 
 **Menyaring gratis. Yang berbayar adalah waktu yang kami hemat.**
 
-Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat
+Spark **Gratis** · 1 lowongan, **semua** pelamar diperingkat
 Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
 Lighthouse **Rp149.000** per bulan · 5 lowongan
 Prism **Rp15.000** / 30 hari · peringkat persis lamaranmu, untuk pencari kerja
 
-Margin kotor per penjualan **83–99%** — **model asumsi**; biaya sungguhannya
-terpantau per aksi di dashboard admin.
+**Margin kotor 83–99% per penjualan.** Memeringkat, mencocokkan, dan menilai
+kuis tidak memanggil AI sama sekali, jadi pelamar tambahan hampir tidak menambah
+biaya. **Model asumsi**, terhitung per aksi di dashboard admin.
 
 ⟦8 · investment⟧
 
-**Rp200 juta untuk 10%** — dua tahap: Rp100 juta saat tanda tangan, Rp100 juta
-di bulan ke-6 bila target tercapai.
+**Rp100 juta tahap pertama — modal eksekusi pilot komersial:** onboarding
+**±350 UMKM** dalam 6 bulan, menuju **1.000 UMKM** di bulan ke-11. Tahap kedua
+Rp100 juta cair setelah target bulan ke-6 tercapai. **Rp200 juta untuk 10%.**
 
 Pendirian & legal 22% · menutup rugi sampai impas 29% · akuisisi pengguna 20% ·
 keamanan & gateway 6% · bantalan skenario buruk 23%
 
-Proyeksi skenario dasar: impas **bulan 15** · kas terdalam **Rp101 juta**
+Syarat impas: **59 langganan Lighthouse aktif** menutup opex **Rp8,7 juta/bulan**.
+Retensinya belum kami ukur — itu yang pilot ini hasilkan.
 
-**Pendanaan eksternal sejauh ini: nol.** Semua yang berjalan hari ini dibangun
-sendiri oleh tim — termasuk mesin pencocokan, kuis, dan moderasi otomatis.
+**Pendanaan eksternal sejauh ini: nol.**
 
 ⟦9 · team⟧
 
 **David** AI & backend · **Darren** produk & UX · **Vanessa** sistem & dampak ·
 **Jason** bisnis & deployment
 
-Kami memperbaiki produk berdasarkan kritik, bukan membela slide: Pay-to-Unlock,
-e-KYC NIK, dan klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami
-buktikan.
+Empat orang, satu repositori. Mesin pencocokan, kuis, moderasi otomatis, dan
+pipeline rilisnya kami tulis sendiri — tanpa vendor, tanpa agensi.
 
 ⟦10 · call to action + end statement — full width band⟧
 
@@ -292,22 +333,24 @@ Kami membangun tempat bukti itu disimpan.**
 
 ⟦11 · why you — closing strip, separate from the boxes above⟧
 
-**Kami ada di dalam angka itu.** Kami berada di rentang usia yang sama dengan
-7,28 juta penganggur terbuka di kotak sebelah, dan dalam dua tahun kami melamar
-kerja dengan CV yang sama tipisnya. Kami tidak mempelajari masalah ini dari
-laporan — kami akan jadi penggunanya.
+**Masalahnya sedekat itu, dan seluruh produknya kami bangun sendiri.**
 
-Itu juga sebabnya kami menghapus tiga klaim kami sendiri sebelum ada yang
-memaksa: Pay-to-Unlock, verifikasi NIK, dan "94% akurasi". Ketiganya bisa dicek
-di riwayat repositori kami. **Kami hanya mau membangun yang kami sendiri
-bersedia memakainya.**
+Kami seangkatan dengan orang-orang yang melamar hari ini: teman sekelas kami
+mengirim puluhan lamaran tanpa kabar, dan merekalah tempat kami menguji, bukan
+laporan pasar. Itu yang membuat kami bisa membedakan fitur yang dipakai dari
+fitur yang enak dipresentasikan.
+
+Cara kerjanya mengikuti: tiap angka di halaman ini bisa ditunjukkan sumbernya di
+dalam kode, dan yang belum kami punya ditulis apa adanya — "belum ada", "belum
+diuji". **Kami lebih suka halaman yang bisa diperiksa daripada halaman yang enak
+dibaca.**
 
 ## Before you hand it over
 
 1. Search your own output for `V1`, `01`, `MASALAH`, `PRODUK`, `TIM`, `⟦`. Zero hits, or start again.
 2. Does any block carry a title that is not written in §SLIDE TEXT? Delete it.
 3. Can someone read the main claim from the two big numerals alone, at 2 m, in five seconds?
-4. Count the blocks. More than nine means content crept back in — send it back rather than shrinking the type.
+4. Count the boxes. Eleven is the template; **more than eleven** means content crept back in — send it back rather than shrinking the type.
 5. Are the "belum ada" and "belum diuji" markers exactly as legible as the wins?
 
 ═══════════════════ SALIN SAMPAI SINI ═══════════════════
@@ -367,10 +410,12 @@ Tiap blok menunjuk satu bagian kanvas; jangan berpindah-pindah.
 
 ### 2:35–2:50 · Yang belum kami punya
 
-> Yang belum kami punya: belum ada satu pun perusahaan yang membayar, dan kami
-> belum bisa membuktikan bahwa skor tinggi benar-benar lebih sering lolos
-> wawancara. Mesin pengukurnya sudah jalan — skor dan bukti disimpan setiap kali
-> orang melamar. Datanya yang belum ada.
+> Mesinnya sudah selesai dan siap dipakai komersial: tiap rilis diuji otomatis,
+> migrasi database diuji sampai rollback di PostgreSQL asli. Yang belum ada
+> adalah pilotnya — belum ada perusahaan berbayar, dan kami belum bisa
+> membuktikan skor tinggi lebih sering lolos wawancara. Instrumentasinya sudah
+> terpasang; datanya yang belum ada, dan itu yang kami minta tiga puluh hari
+> untuk dapatkan.
 
 ### 2:50–3:00 · Ajakan
 
@@ -411,20 +456,20 @@ tunjukkan sumbernya, dan juri Digdaya menjatuhkan nilai justru di situ.
 
 Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisasi angka baru.
 
-### Pertanyaan yang dulu tidak terjawab
+### Pertanyaan sulit — siapkan jawabannya persis begini
 
 | Pertanyaan | Jawaban yang benar |
 |---|---|
 | *"CV bisa direkayasa, bagaimana verifikasinya?"* | Skill yang hanya ditulis di CV bernilai **0.30**; lulus kuis **0.85**; dikonfirmasi HR **1.00**. Karena bobot bukti (0.40) **lebih besar** dari kemiripan teks (0.35), menyalin kalimat iklan tidak lagi cukup untuk menang. |
 | *"Tunjukkan bahwa keyword stuffing benar-benar kalah."* | Dua kandidat, pengalaman & pendidikan sama. Penyalin iklan: kemiripan 0.90, semua skill hanya klaim → **0.685**. Kandidat terbukti: kemiripan 0.50, semua skill lulus kuis → **0.765**. Bahkan pada kemiripan **sempurna 1.00**, penyalin berhenti di **0.720**. Selisih yang harus dikejar setara **0.629 poin kemiripan** — di luar rentang nyata. |
 | *"Berarti pembohong diblokir?"* | **Tidak, dan kami tidak mengklaim itu.** Skor 0.685 masih masuk band "strong" (ambang 0.65). Yang kami jamin: dia **di bawah** kandidat terbukti dalam urutan yang dibaca HR. |
-| *"Tanpa NIK/NPWP, bagaimana mencegah lowongan palsu?"* | **Balik dulu premisnya: NIK tidak mencegah lowongan palsu.** Penipuan lowongan di Indonesia rutin jalan pakai NIK asli — curian atau dibeli. Identitas bukan niat. Dan verifikasi NIK sungguhan butuh akses Dukcapil lewat status PSE terdaftar; yang bisa kami lakukan dulu hanyalah cek format 16 digit, yang mencegah **nol** penipuan sambil menciptakan liability penuh. Itu sebabnya dihapus. Yang kami pakai sebagai gantinya bekerja pada **perilaku dan jejak publik**: hard rule "minta biaya dari pelamar" menolak otomatis + strike; lowongan pertama employer baru ditahan untuk tinjauan; domain email harus cocok dengan website dan penyedia gratis tidak memenuhi syarat; Google Maps / IG bisnis / website dicek admin; laporan pelamar **ditimbang, bukan dihitung**, dan hanya menandai lowongan untuk ditinjau — yang menyembunyikan cuma putusan terhadap aturan keras yang dikutip; strike 1→2→3 menangguhkan akun. Semua sudah jalan, semua tercatat di `moderation_events`. |
+| *"Tanpa NIK/NPWP, bagaimana mencegah lowongan palsu?"* | **Balik dulu premisnya: NIK tidak mencegah lowongan palsu.** Penipuan lowongan di Indonesia rutin jalan pakai NIK asli — curian atau dibeli. Identitas bukan niat. Dan verifikasi NIK sungguhan butuh akses Dukcapil lewat status PSE terdaftar; tanpa itu, yang bisa dilakukan hanyalah cek format 16 digit, yang mencegah **nol** penipuan sambil menciptakan liability penuh. Itu sebabnya kami tidak menempuh jalur itu. Yang kami pakai bekerja pada **perilaku dan jejak publik**: hard rule "minta biaya dari pelamar" menolak otomatis + strike; lowongan pertama employer baru ditahan untuk tinjauan; domain email harus cocok dengan website dan penyedia gratis tidak memenuhi syarat; Google Maps / IG bisnis / website dicek admin; laporan pelamar **ditimbang, bukan dihitung**, dan hanya menandai lowongan untuk ditinjau — yang menyembunyikan cuma putusan terhadap aturan keras yang dikutip; strike 1→2→3 menangguhkan akun. Semua sudah jalan, semua tercatat di `moderation_events`. |
 | *"Kalau pelamarnya yang tidak tepercaya?"* | Kami tidak memverifikasi **siapa** dia, kami menguji **apa yang bisa** dia kerjakan — itu justru produk intinya. Ijazah membuktikan seseorang pernah kuliah; kuis membuktikan dia bisa mengerjakan. Bukti itu dibobot 0.40 melawan 0.35 kemiripan teks. Dokumen identitas tetap dicek HR di wawancara — titik yang memang tepat, dan di situ liability-nya ada pada pemberi kerja, bukan pada kami menyimpan database NIK. |
 | *"Lapisan verifikasi employer masih manual, kan?"* | Ya, `admin_reviewed` butuh manusia dan itu belum berskala. Tiga lapis lainnya otomatis. Opsi berikutnya yang sedang kami timbang: **NIB dari OSS sebagai badge opsional** — nomor izin usaha itu **data bisnis, bukan data pribadi**, jadi tidak membuka kembali lubang UU PDP yang kami tutup, dan sifatnya opsional supaya UMKM informal tidak tersingkir. Belum dibangun; jangan diklaim sudah. |
 | *"Ada mekanisme ban / turun peringkat?"* | Ada dan sudah jalan: AutoMod menolak/menahan sebelum tayang, pemasang dapat notifikasi + bisa banding, kandidat bisa melapor, dan strike 1→2→3 membatasi lalu menangguhkan akun. |
 | *"Redaksional berbasis prompt bisa gagal?"* | Karena itu penyamaran data pribadi **tidak** memakai instruksi ke AI — memakai aturan regex tetap sebelum tiap panggilan AI. NIK bahkan tidak dikumpulkan sama sekali. |
 | *"Skor tinggi benar lolos interview?"* | Mekanismenya sudah dibangun — skor + bukti disimpan saat melamar, status dicatat, dashboard menghitung tingkat wawancara per band. **Datanya belum ada, dan kami tidak akan mengarang.** Itu yang kami minta 30 hari pilot untuk dapatkan. |
-| *"Kenapa tidak mudah ditiru?"* | Bukan closed loop dan bukan fine-tuning — keduanya bisa ditiru. Yang tidak bisa disalin adalah kumpulan profil yang sudah terbukti di platform kami. |
+| *"Kenapa tidak mudah ditiru?"* | Tiga hal, dan semuanya **sudah ada hari ini**. (1) **Mesin skornya**: bukti dibobot 0,40 melawan kemiripan teks 0,35 — membalik urutan yang dipakai job board biasa, dan menyalin tampilan tidak menyalin keputusan itu. (2) **Verifikasi perilaku, bukan dokumen** — domain email lawan website, jejak publik, hard rule "minta biaya" yang menolak otomatis, laporan ditimbang bukan dihitung; itu satu sistem aturan yang sudah jalan dan tercatat, bukan satu panggilan API. (3) **Kecepatan kami sendiri**: seluruhnya kami tulis in-house, jadi perubahan butuh hitungan hari. Kumpulan profil terbukti menumpuk di atas ketiganya — itu bonus yang tumbuh, bukan syarat yang harus ada dulu. |
 | *"Dari mana lowongan pertama?"* | Pasang gratis, dan employer membagikan QR di kanal yang **sudah** mereka pakai. Kami tidak meminta mereka pindah kanal — hanya lamarannya yang pindah tempat. |
 
 ### Lubang yang kami akui — jawab persis begini
@@ -435,9 +480,9 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Bank soalnya berapa? | Target **30 soal per skill**, diisi otomatis oleh AI dan disaring validator mekanis (4 pilihan, tidak ada duplikat, jawaban tidak lebih panjang dari pengecoh). Provenance dicatat per soal: `human` (disetujui praktisi) vs `ai_auto` (lolos validator) — kami **tidak** menyebut soal AI sebagai "ditinjau praktisi". Tinjauan manusia atas bank tetap antrean kerja berikutnya. |
 | Tebak asal bisa lolos kuis? | Tiap soal 4 opsi, lulus butuh 4 dari 5 benar. Peluang lolos dengan menebak semua = **1,56%**. Bukan nol, tapi itu sebabnya badge bernilai 0.85 dan bukan 1.00 — hanya konfirmasi HR yang bernilai penuh. |
 | Ujian ulang mengulang soal? | **Tidak lagi, dan itu dijamin server.** Pengambilan soal mengecualikan seluruh soal percobaan sebelumnya, dan percobaan sebelumnya lagi bila bank masih menyisakan pilihan nyata. Bank tiap skill diisi sampai **30 soal**, jadi lima kuis berturut-turut bisa sepenuhnya tidak bertumpang tindih. Kalau bank sebuah skill masih terlalu tipis untuk menepatinya, kuis **tetap dilayani** — mengunci kandidat karena bank *kami* belum selesai itu kegagalan yang lebih buruk — tapi percobaan itu **tidak bisa memberi badge**. Tetap dinilai, tetap diberi umpan balik, hanya tidak menghasilkan bukti: lulus atas soal yang sudah dilihat kemarin bukan bukti, dan badge itu berbobot 0,85 langsung ke skor. Pelamar diberi tahu alasannya, dan percobaan berikutnya bersih begitu bank terisi. |
-| Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, sekitar **5,6× proyeksi pendapatan tahun 2** (Rp360 juta) — dengan **nol pelanggan hari ini**. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
+| Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, dengan **nol pelanggan hari ini**. Kami sengaja **tidak** menyandarkannya pada kelipatan proyeksi pendapatan: proyeksi bulan-per-bulan kami sedang dibangun ulang dan kami tidak mau mengutip angka yang tidak bisa kami pertahankan. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
 | Target 18–25 tahun itu bukan diskriminasi usia juga? | Beda posisi: itu **segmen pasar kami**, bukan syarat yang boleh dipasang employer. Justru AutoMod menolak iklan yang memasang batas usia. Siapa pun boleh mendaftar dan melamar di platform; yang kami batasi hanya ke mana energi pemasaran kami diarahkan. |
-| Moat "kumpulan profil terbukti" — kalian sendiri masih nol, kan? | **Ya.** Hari ini moat itu belum ada, baru mekanismenya yang ada. Yang kami klaim bukan "kami sudah punya", tapi "ini aset yang menumpuk kalau pilot jalan, dan tidak bisa disalin dengan menyalin fitur". Kalau pilot gagal, moat ini tidak pernah lahir — itu risiko yang kami tanggung, bukan yang kami sembunyikan. |
+| Moat-nya kan database kandidat yang belum kalian punya? | **Bukan itu moat hari ini, dan kami tidak mengklaimnya begitu.** Yang sudah ada sekarang: mesin skor yang membobot bukti di atas kemiripan, lapisan verifikasi perilaku yang sudah jalan dan tercatat di `moderation_events`, dan tim yang menulis semuanya sendiri. Kumpulan profil terbukti adalah aset yang **menumpuk di atas** itu kalau pilot jalan — kalau tidak, ketiga hal di atas tetap ada. |
 | Kenapa pelamar tidak dibatasi di paket gratis? | Karena memeringkat itu **Rp0** untuk kami hitung. Membatasinya tidak pernah menghemat sepeser pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru minta peringkat. Yang berbayar adalah yang memang berbiaya: kit wawancara, ekspor, dan mencari kandidat yang belum melamar. |
 | Skor per skill atau total poin? | **Per skill, dan pembaginya jumlah skill yang diminta lowongan** — bukan jumlah klaim kandidat (`evidence._coverage`). Jadi mengklaim 20 skill tidak mengalahkan yang mengklaim 3, dan skill di luar kebutuhan lowongan bernilai nol. Skill wajib 80% dari bagian skill, nice-to-have 20%. Yang belum ada tinggal **menampilkan** rinciannya ke HR — datanya sudah per skill dan sudah disimpan di lamaran. Itu pekerjaan UI, bukan algoritma. |
 | Badge kedaluwarsa atau permanen? | Kedaluwarsa **180 hari**, lalu turun jadi klaim lagi. Itu justru mekanisme *recency* yang diminta, bentuknya tebing bukan peluruhan. Permintaan "buat permanen" di catatan rapat berlawanan dengan itu — harus pilih salah satu. |
@@ -446,10 +491,10 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
 | Margin 88% itu dari mana? | Dari **asumsi** pemakaian 30 pelamar / 5 dishortlist dengan buffer ×1,5, bukan dari pengukuran pelanggan nyata — kami belum punya pelanggan. Yang **terukur** adalah biaya per aksi di `/admin → Metrik`, dihitung dari token asli di `ai_logs`. |
-| Kalau lowongannya viral, 200 pelamar? | **Tidak berpengaruh ke biaya kami.** Sejak v3 baca CV dibebankan ke akun pencari kerja (sekali seumur akun), bukan ke paket employer, jadi jumlah pelamar tidak menggerakkan COGS employer sama sekali — memeringkat, mencocokkan, dan kuis semuanya tanpa panggilan AI. Kurva lama 88% → 70% → 42% yang pernah kami tunjukkan **sudah tidak berlaku**, dan bukan karena membaik: bebannya pindah ke baris akuisisi pencari kerja. Itu harus disebut bersama angkanya. |
+| Kalau lowongannya viral, 200 pelamar? | **Tidak berpengaruh ke biaya kami.** Baca CV dibebankan ke akun pencari kerja (sekali seumur akun), bukan ke paket employer, jadi jumlah pelamar tidak menggerakkan COGS employer sama sekali — memeringkat, mencocokkan, dan kuis semuanya tanpa panggilan AI. Yang harus disebut jujur bersama angka margin: biaya baca CV itu tidak hilang, ia ada di baris akuisisi pencari kerja. |
 | Kuis/skor benar tidak pakai AI? | Benar. Kuis dinilai dengan kunci jawaban di server, skor dihitung dari vektor tersimpan. Rp0 per percobaan, dan itu sebabnya margin bertahan saat pemakaian naik. |
 | Penyamaran data gagal untuk CV pindai? | CV pindai tidak punya teks untuk disamarkan, jadi hanya bisa dikirim sebagai gambar. Kami **tidak melakukannya diam-diam dan tidak memblokir**: pelamar diberi tahu persis apa yang akan dikirim, lalu memilih lanjut atau isi profil manual. Memblokir akan menyingkirkan justru pengguna yang paling kami tuju — banyak yang CV-nya foto HP. Persetujuan eksplisit juga dasar hukum yang benar menurut UU PDP. Teks yang **disimpan** selalu sudah disamarkan, di kedua jalur parsing. |
-| Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menemukan dua tabel yang tidak pernah dibuat migrasi mana pun — dulu non-gating, sekarang tidak lagi. ESLint baru lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
+| Kualitas kode? | **Semua check menggugurkan build kalau merah**: unit test backend, lint backend (Ruff), ESLint + unit test + build frontend, dan integration test yang menjalankan **migrasi Alembic ke PostgreSQL asli beserta uji rollback**. Integration test itulah yang menangkap tabel tanpa migrasi sebelum sampai ke produksi. ESLint lulus pada aturan *bug*; 55 peringatan gaya sengaja dibiarkan terlihat sebagai antrean kerja, bukan dimatikan. |
 
 ### Angka yang boleh disebut, dan sumbernya
 
@@ -463,7 +508,8 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Ambang band 0.45 / 0.65 | `settings.py` — `band_possible_threshold` / `band_strong_threshold` |
 | Rp0 per percobaan kuis | dinilai dengan kunci jawaban, tanpa panggilan AI |
 | Margin Beacon 99% · Lighthouse 99% · Prism 83% (plafon 46%) | `BUSINESS_MODEL.md` §3. **Jumlah token per aksi masih asumsi**, dikalikan harga Gemini × kurs Rp17.600, buffer ×1,5. Angka **sungguhan** ada di `/admin → Metrik` yang membaca tabel `ai_logs`. Jangan kutip 99% tanpa menyebut bahwa baca CV pindah ke akuisisi pencari kerja. |
-| Bulan 15 · Rp101 jt · Rp360 jt | proyeksi skenario dasar, `BUSINESS_MODEL.md` |
+| 180 Beacon · 59 Lighthouse · 696 Prism | `BUSINESS_MODEL.md` §6a — jumlah penjualan per bulan yang menutup opex Rp8,7jt, dihitung dari kontribusi per penjualan di §3. **Ini syarat, bukan ramalan** |
+| **Bulan impas? Jangan sebut.** | Tabel proyeksi lama di §6 **superseded** dan tidak bisa direkonsiliasi dengan harga sekarang. Kalau ditanya kapan impas: *"Syaratnya 59 langganan Lighthouse aktif. Kapan itu tercapai tergantung retensi, dan retensi belum kami ukur karena belum ada pelanggan — itu salah satu hal yang pilot ini hasilkan."* |
 | 89.141 | usaha **kecil + menengah** (73.828 + 15.313), SIDT-UMKM 31 Des 2025. **Bukan** termasuk usaha mikro — jangan sebut "UMKM" untuk angka ini |
 | 7,28 jt · TPT 4,65% · upah Rp3,39 jt | BPS Mei 2026, rilis 5 Agustus 2026 — **rilis terbaru**. Angka Februari 2026 sudah digantikan; jangan dipakai. |
 | Spark: semua pelamar | **tanpa batas di setiap paket** — memeringkat berbiaya Rp0, jadi tidak pernah dibatasi. Yang berbayar: kit wawancara, ekspor, dan pencarian kandidat yang belum melamar |
@@ -472,6 +518,12 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Advisor 10 vs 20 / hari | `plans.ADVISOR_FREE_PER_DAY` / `ADVISOR_PRISM_PER_DAY`, satuan sama, berbayar selalu lebih besar |
 | Margin Beacon 99% | baca lowongan Rp195 + 5 kit wawancara Rp450. **Baca CV tidak lagi dibebankan ke employer** — pindah ke akuisisi pencari kerja. Jangan kutip tanpa kalimat kedua itu |
 | Tebak asal 1,56% | 4 opsi, lulus 4/5 |
+| Harga Spark Rp0 · Beacon Rp49.000 · Lighthouse Rp149.000 · Prism Rp15.000 | `settings.py` — `plan_price_*`, dikembalikan apa adanya oleh `GET /billing/plans`. Beacon per lowongan/30 hari, Lighthouse & Prism per 30 hari |
+| Rp200 jt dibagi Rp100 jt + Rp100 jt | `BUSINESS_MODEL.md` §7. **Tahap kedua terikat empat target bulan ke-6** — hafalkan, sudah tidak ditulis di slide: **≥30 employer berbayar**, **≥60%** pelamar ikut ≥1 kuis, **≥50** pembeli Prism, **COGS terukur per lowongan Beacon ≤ Rp5.000** |
+| ±350 UMKM di bulan 6 · 1.000 UMKM di bulan 11 | Dihitung dari asumsi §5 `BUSINESS_MODEL.md`: 40 employer mendaftar di bulan 1, **+15%/bulan** (benchmark SaaS awal 10–20%). Kumulatif ≈350 di M6 dan ≈974 di M11. **Ini target akuisisi, bukan employer berbayar** — yang berbayar 18% darinya. Jangan tukar kedua angka itu |
+| Pemakaian dana 22 / 29 / 20 / 6 / 23% | `BUSINESS_MODEL.md` §7 — Rp45jt sekali jalan · Rp57jt menutup rugi · Rp40jt akuisisi · Rp12jt audit+gateway · Rp46jt cadangan, dibagi Rp200jt |
+| **"50 CV dalam dua hari"** | **Ilustrasi, bukan statistik.** Tidak ada sumbernya dan tidak boleh disebut sebagai rata-rata. Sebut persis seperti di slide — "**bisa** menerima" — dan kalau juri menanyakan angkanya, jawab "itu gambaran kasus, bukan hasil pengukuran kami" |
+| Kemiripan 0,90 dan 0,50 | Input yang kami pilih untuk contoh dua pelamar, bukan hasil pengukuran — dipakai supaya 0.685 / 0.765 bisa dihitung ulang oleh siapa pun dari rumus di `matcher.py` |
 
 > **Aturan tunggal:** kalau sebuah angka tidak ada di tabel ini, **jangan sebut**.
 > Katakan "belum kami ukur" — itu jawaban yang menang, bukan yang kalah.

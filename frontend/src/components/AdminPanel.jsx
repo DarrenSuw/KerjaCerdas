@@ -13,11 +13,17 @@ export default function AdminPanel() {
     const [tab, setTab] = useState('queue')
     const [data, setData] = useState(null)
     const [error, setError] = useState('')
+    // The moderation queue is paged server-side (default 50, hard cap 200), so
+    // a backlog spike cannot turn one page load into thousands of queries. The
+    // admin is told when there is more behind the page rather than being shown
+    // a truncated list that looks complete.
+    const [queueLimit, setQueueLimit] = useState(50)
 
     const load = useCallback(() => {
         setData(null)
-        adminFetch(PATHS[tab]).then((d) => { setData(d); setError('') }).catch((e) => setError(e.message))
-    }, [tab])
+        const path = tab === 'queue' ? `${PATHS.queue}?limit=${queueLimit}` : PATHS[tab]
+        adminFetch(path).then((d) => { setData(d); setError('') }).catch((e) => setError(e.message))
+    }, [tab, queueLimit])
     useEffect(() => { load() }, [load])
 
     const act = async (path, body, msg) => {
@@ -34,6 +40,15 @@ export default function AdminPanel() {
             </div>
             {error && <BrutalCard color={KC.roseSoft}>{error} — hanya email di ADMIN_EMAILS dengan ADMIN_ROUTES_ENABLED=true.</BrutalCard>}
             {!error && !data && <p>Memuat…</p>}
+
+            {data && tab === 'queue' && data.total > data.items.length && (
+                <BrutalCard color={KC.yellowSoft}>
+                    Menampilkan <b>{data.items.length}</b> dari <b>{data.total}</b> lowongan yang menunggu keputusan.
+                    {queueLimit < 200
+                        ? <button style={{ ...topBtn(), marginLeft: 8 }} onClick={() => setQueueLimit(200)}>Muat lebih banyak</button>
+                        : <> Sisanya muncul setelah antrean ini dikosongkan.</>}
+                </BrutalCard>
+            )}
 
             {data && tab === 'queue' && (data.items.length ? data.items.map((j) => (
                 <BrutalCard key={j.job_id}>

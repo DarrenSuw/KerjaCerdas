@@ -876,7 +876,7 @@ everyone else gets `403`.
 
 | Endpoint | Purpose |
 |---|---|
-| `GET /admin/moderation/queue` | Held jobs with AutoMod reasons, reports and appeal notes |
+| `GET /admin/moderation/queue?limit=50&offset=0` | Postings awaiting a human, from three sources: `held` (AutoMod), `flagged` (community threshold reached, still publicly visible) and `published` jobs carrying unresolved reports that never reached the threshold. Each item has AutoMod reasons, open reports and the last 10 moderation events. Paged — `limit` 1–200 (default 50); the response carries `total`, `count`, `limit`, `offset` |
 | `POST /admin/moderation/jobs/{job_id}` | `{ "decision": "publish\|reject", "note": "…" }` — reject adds a strike |
 | `GET /admin/employer-reviews` · `POST /admin/employer-reviews/{employer_id}` | "Ditinjau admin" badge requests / decision |
 | `GET /admin/orders?status_filter=pending` · `POST /admin/orders/{id}/activate` · `POST /admin/orders/{id}/cancel` | Manual payment activation |

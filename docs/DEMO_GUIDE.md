@@ -92,7 +92,6 @@ pool. Keputusan akhir tetap pada manusia, dan pelamar bisa meminta peninjauan ma
 **J:** Employer: gratis memasang lowongan, Rp49.000/lowongan (Beacon) atau Rp149.000/bulan (Lighthouse).
 Pencari kerja: gratis, dengan Prism Rp15.000/30 hari yang hanya menambah kuota dan rincian hasil — **membayar tidak
 pernah menaikkan skor**. Pembayaran saat ini QRIS/transfer yang dikonfirmasi admin; gateway menyusul.
-Model Pay-to-Unlock lama sudah dihapus (alasannya di [BUSINESS_MODEL.md](BUSINESS_MODEL.md)).
 
 **T:** *Berapa biaya AI per pengguna?*
 **J:** Terukur, bukan perkiraan: `GET /api/v1/admin/metrics` menghitung dari token yang benar-benar

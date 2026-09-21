@@ -32,7 +32,7 @@ Matching, skill-gap computation, and intent routing run as procedural Python in 
 | Bulk job import | Employer uploads a multi-job PDF | `JobPackUploader.jsx` → `POST /api/v1/uploads/job-pack` | All positions extracted and shown for review — nothing is published until the employer confirms each one (`POST /employer/jobs` per posting, idempotent via `client_ref`) |
 | Email verification | Seeker/employer requests a code | `ProofUI.jsx` → `POST /api/v1/verify/email/send` · `/verify` | Account email verified (the only identity check; no NIK/KTP/ijazah/NPWP) |
 | Job moderation | Employer posts or edits a job | AutoMod (`services/trust/`) on `POST/PATCH /employer/jobs` | published / held / rejected + poster notice with the flagged sentence, appeal, strike ladder |
-| Report a job | Any signed-in user on a public job page | `ReportJobModal.jsx` → `POST /api/v1/public/jobs/{code}/report` | Enough distinct reports hide the job for admin review |
+| Report a job | Any signed-in user on a public job page | `ReportJobModal.jsx` → `POST /api/v1/public/jobs/{code}/report` | Reports are **weighted, not counted**. Crossing the weight threshold marks the posting `flagged` and it **stays visible**; only a verdict against the cited rule hides it, and the AI reviewer may act alone on hard rules only |
 | Plans & payment | Employer or seeker picks a plan | `UpgradeModal.jsx` → `POST /api/v1/billing/orders` | Pending order + payment instructions; an admin activates it for 30 days |
 | Admin operations | Admin (`ADMIN_EMAILS`) | `AdminPanel.jsx` → `/api/v1/admin/*` | Moderation queue, business reviews, plan activation, quiz-bank review, metrics |
 | A/B experiment assignment | Any user | `OnboardingWizard.jsx` via `GET /api/v1/experiments/assignments` | Deterministic variant (hash of `user_id`) |
@@ -60,12 +60,12 @@ Matching, skill-gap computation, and intent routing run as procedural Python in 
 | Layer | Component | Notes |
 |---|---|---|
 | Frontend | React 18 + Vite + React Router + Zustand, persisted to `localStorage` (key `kerjacerdas-v4`) | SPA with JWT-aware route guards, 40+ components (the public job page renders outside the authenticated shell) |
-| Backend | FastAPI (async), JWT auth, role-based dependencies, custom sliding-window `RateLimiterMiddleware` (in-memory by default) | 16 routers under one `/api/v1` prefix |
+| Backend | FastAPI (async), JWT auth, role-based dependencies, custom sliding-window `RateLimiterMiddleware` (in-memory by default) | 15 routers under one `/api/v1` prefix |
 | Database | PostgreSQL 16 + `pgvector` (HNSW), Alembic migrations | Alembic-managed schema; an RLS migration exists but defines no policies yet |
 | Model/API | Google Gemini (3.1 Flash) for embeddings + generation | Live calls, with an offline fallback stub on failure |
 | External integration | Curated static course catalogue (35+ items); transactional email via Resend (optional); QR posters rendered in-process with `segno` | No identity-verification vendor is used at all (no Dukcapil/SIVIL/DJP). Payment gateways (Midtrans/Xendit) are planned; today plan orders are paid by QRIS/transfer and activated by an admin |
 | Infrastructure | Docker Compose (dev + `docker-compose.prod.yml`), GitHub Actions CI (`ci.yml`) + release image publishing (`release.yml`) | CI runs backend lint, audit, and a build gate; container images publish to GHCR on tagged release |
-| Testing | 27 backend test files (pytest, `backend/tests/unit/` + `backend/tests/integration/`); 4 frontend test files (`api.test.js`, `hasMeaningfulProfile.test.js`, `seekerSearchFilters.test.js`, `proofUI.test.jsx` unit; `auth.spec.js` e2e) | Backend covers scoring/proof weights, quizzes, AutoMod + strikes + reports, plans/entitlements, public links and admin metrics (`test_v2_*.py`) plus the existing auth/security suites. Frontend component coverage is still thin relative to the 40-component UI |
+| Testing | 29 backend test files (pytest, `backend/tests/unit/` + `backend/tests/integration/`); 5 frontend unit files (`api.test.js`, `hasMeaningfulProfile.test.js`, `seekerSearchFilters.test.js`, `proofUI.test.jsx`, `adminMetrics.test.jsx`) plus `auth.spec.js` e2e | Backend covers scoring/proof weights, quizzes, AutoMod + strikes + reports, plans/entitlements, public links and admin metrics (`test_v2_*.py`) plus the existing auth/security suites. Frontend component coverage is still thin relative to the 41-component UI |
 
 ## Verification, Trust & Payments
 

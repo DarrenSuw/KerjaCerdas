@@ -28,10 +28,10 @@ Files:
 | `POST /employer/jobs/{id}/appeal` | appeal a held/rejected posting; a rejected job returns to `held` for admin review. |
 | `GET/POST /employer/trust*` | trust badges, strike state, and the "Ditinjau admin" request. |
 
-**Pay-to-Unlock was removed in v2** (endpoint, in-process `_UNLOCKED_CONTACTS` map, schema and UI).
-It charged for sourcing rather than the screening pain employers actually reported, leaked through the
-teaser, carried UU PDP risk, and had no payment gateway behind it. Employers now pay per job (Beacon)
-or per month (Lighthouse) to rank every applicant — never for contact details. See
+**Contact details are never sold.** An applicant who applies has already given their contact to that
+employer, so it is theirs for free; a candidate who has *not* applied stays anonymous and there is no
+endpoint that reveals them. Employers pay per job (Beacon) or per month (Lighthouse) for ranking,
+interview kits and export — never for access to a person. See
 [BUSINESS_MODEL.md](../BUSINESS_MODEL.md).
 
 ## Moderation & share links

@@ -77,7 +77,7 @@ Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursu
 - **Konfirmasi "skill terbukti"** setelah wawancara → bukti terkuat (bobot 1,0) yang menempel pada profil kandidat.
 - **Ekspor CSV** pelamar.
 - **Talent pool anonim:** kandidat yang belum melamar ditampilkan tanpa nama, tanpa nama perusahaan/sekolah, tanpa kontak (mencegah identifikasi ulang; UU PDP).
-- **Pay-to-Unlock dihapus** — alasan lengkap di [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
+- **Kontak kandidat tidak dijual.** Pelamar yang melamar sendiri sudah memberi kontaknya kepada employer itu; kandidat yang belum melamar tetap anonim dan identitasnya tidak bisa dibeli.
 
 **API:** `GET /api/v1/employer/applications`, `GET /api/v1/employer/applications/{id}/interview-kit`, `POST /api/v1/employer/applications/{id}/confirm-skills`, `GET /api/v1/employer/jobs/{id}/applicants.csv`
 
@@ -125,13 +125,3 @@ Spark (gratis) · Beacon Rp49.000/lowongan · Lighthouse Rp149.000/bulan · Pris
 - Anti prompt-injection, rate limit per rute, token efficiency gate, hallucination guard, fallback 3 model + circuit breaker.
 - **Bukti tidak bisa dipalsukan dari klien:** skema input skill tidak punya kolom bukti; profil inline di endpoint agent direset ke "klaim" lalu bukti asli disalin dari profil tersimpan; edit profil / unggah CV ulang tidak menghapus badge yang sudah diraih.
 
----
-
-## 12. Yang dihapus di v2
-
-| Fitur lama | Status | Alasan |
-|---|---|---|
-| Pay-to-Unlock kontak (Rp50.000) | **Dihapus** | Menagih sourcing, bukan penyaringan; bocor lewat teaser; risiko UU PDP; tanpa gateway |
-| e-KYC KTP/NIK, ijazah, NPWP | **Dihapus** | Mock tanpa otoritas; minimisasi data UU PDP |
-| OTP SMS/WhatsApp | **Diganti email OTP** | Tanpa biaya provider dan bisa jalan hari ini |
-| Klaim "94% akurasi", "100% profil terverifikasi e-KYC", "<8 detik" | **Dihapus dari UI** | Tidak ada dasar pengukuran |

@@ -53,10 +53,20 @@ Status "flagged" — LOWONGAN TETAP TERLIHAT, dengan catatan sedang ditinjau
         │
         ▼
 Peninjau AI memeriksa lowongan HANYA terhadap aturan yang dikutip
-        ├─ LANGGAR  → ditahan (disembunyikan), pemasang diberi tahu, bisa banding
+        ├─ LANGGAR atas ATURAN KERAS (R1 minta biaya)
+        │            → ditahan (disembunyikan), pemasang diberi tahu, bisa banding
+        ├─ LANGGAR atas ATURAN LUNAK (R2–R6)
+        │            → TETAP TAYANG, antrean admin
         ├─ TIDAK    → tetap tayang, laporan masuk antrean admin
         └─ RAGU     → tetap tayang, antrean admin
 ```
+
+**AI hanya boleh bertindak sendiri atas aturan keras.** Aturan lunak — batas usia,
+syarat penampilan, kontak Telegram saja — adalah penilaian yang butuh konteks yang
+tidak ada di dalam teks iklan, persis tempat model paling sering salah. Satu putusan
+LANGGAR yang keliru di situ akan menurunkan iklan pemberi kerja yang sah sebelum ada
+manusia yang melihatnya, dan itu sisi pasar yang paling sulit kami dapatkan kembali.
+Temuan aturan lunak karena itu hanya masuk antrean admin.
 
 **Tidak ada jalur yang menyembunyikan lowongan hanya karena dilaporkan.**
 Penyembunyian butuh putusan terhadap aturan tertentu — dari AI atau admin — dan

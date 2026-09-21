@@ -105,9 +105,19 @@ A badge of `company_email` or `admin_reviewed` also skips the first-job hold.
   reporter weight comes from verified email, account age, whether they actually applied, and whether
   their past reports held up. Reaching `FLAG_WEIGHT_THRESHOLD` sets the posting to `flagged`, which
   **stays publicly visible** — then the AI reviewer checks the posting against the cited rule only and
-  may answer LANGGAR / TIDAK / RAGU. Only LANGGAR hides it; anything else queues a human.
+  may answer LANGGAR / TIDAK / RAGU. **Only LANGGAR against a HARD rule hides it** (R1, asking a
+  candidate for money); a soft-rule LANGGAR, TIDAK and RAGU all leave the posting up and queue a
+  human. A soft rule is a judgement about wording, tone or intent that needs context the advert text
+  does not carry — exactly where a model is least reliable, and where a false positive removes a
+  legitimate employer's advert before anyone sees it.
   The old rule (N distinct reports → hidden) let three throwaway accounts remove a competitor's advert
   with nothing checked, while a real scam stayed live until a third person happened to complain.
+- **How a report ends is recorded, not just that it ended.** `POST /admin/moderation/jobs/{id}`
+  writes `upheld` on every report still open against that posting — `True` when the admin rejects,
+  `False` when they publish — and leaves already-resolved reports alone so a later decision cannot
+  rewrite a settled verdict. `reporter_weight` reads that history; without it "has a report that held
+  up" and "has three that did not" were both permanently zero, so a serial false reporter never lost
+  standing and a reliable one never gained any.
 - Invariant kept in one place (`policy.set_moderation`): a job that is not `published` is always
   `is_active = False`, so every existing `is_active` filter hides it.
 - Everything is written to `moderation_events` as an audit log.

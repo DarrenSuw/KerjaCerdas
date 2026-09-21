@@ -180,6 +180,36 @@ class TestAdmin:
                           json={"decision": "publish", "note": "Alasan K3 masuk akal"}).json()
         assert out["moderation_status"] == "published"
 
+    def test_the_queue_pages_instead_of_returning_the_whole_backlog(
+        self, client: TestClient, employer_account: dict, admin: dict, stub_embedder
+    ) -> None:
+        """A backlog spike must not turn one admin page load into the lot.
+
+        `total` reports the whole backlog so the admin knows what is behind the
+        page; `items` carries only the window actually asked for.
+        """
+        h = employer_account["headers"]
+        held = "Khusus pria karena pekerjaan angkat barang berat."
+        for n in range(3):
+            assert _post(client, h, title=f"Gudang {n}", description=held)["moderation_status"] == "held"
+
+        first = client.get("/api/v1/admin/moderation/queue?limit=2",
+                           headers=admin["headers"]).json()
+        assert first["total"] >= 3, first["total"]
+        assert len(first["items"]) == 2 == first["count"]
+
+        rest = client.get("/api/v1/admin/moderation/queue?limit=2&offset=2",
+                          headers=admin["headers"]).json()
+        assert rest["total"] == first["total"]
+        seen = {i["job_id"] for i in first["items"]}
+        assert seen.isdisjoint({i["job_id"] for i in rest["items"]}), "a page repeated a posting"
+
+    def test_the_queue_refuses_an_unbounded_page(self, client: TestClient, admin: dict) -> None:
+        """Without a ceiling the limit is decoration — a caller just asks for
+        everything and the fan-out is back."""
+        assert client.get("/api/v1/admin/moderation/queue?limit=100000",
+                          headers=admin["headers"]).status_code == 422
+
     def test_admin_review_badge(self, client: TestClient, employer_account: dict, admin: dict) -> None:
         h = employer_account["headers"]
         client.post("/api/v1/employer/trust/review-request", headers=h,

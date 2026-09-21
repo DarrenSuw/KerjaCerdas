@@ -1,22 +1,26 @@
-# Model Bisnis & Keuangan KerjaCerdas (v2 — "Bukti, bukan klaim")
+# Model Bisnis & Keuangan KerjaCerdas ("Bukti, bukan klaim")
 
 > **Aturan dokumen ini:** setiap harga infrastruktur/AI punya sumber (lihat §9). Angka tanpa sumber ditandai **(asumsi)** atau **(perlu penawaran)**. Tidak ada angka hasil rekaan.
 > **Kurs:** US$1 = **Rp17.600** (JISDOR Bank Indonesia berkisar Rp17.536–17.727 pada September 2026 [S7]).
-> Versi sebelumnya memakai model *Pay-to-Unlock* (Rp50.000/kontak). **Model itu dihapus** — alasannya di §1.
 
 ---
 
-## 1. Kenapa Pay-to-Unlock dihapus
+## 1. Prinsip: yang berbiaya yang ditagih
 
-| Masalah | Penjelasan |
+Satu aturan menentukan setiap baris harga di dokumen ini:
+
+> **Kami menagih pekerjaan yang menghemat waktu employer, bukan akses ke orang.**
+
+Konsekuensinya, dan semuanya sudah berlaku di kode:
+
+| Prinsip | Bentuk nyatanya |
 |---|---|
-| Menagih rasa sakit yang salah | Juri mencatat kebutuhan perusahaan terkonfirmasi kuat pada **penyaringan** pelamar, bukan pada *sourcing* kandidat baru. Unlock menagih sourcing. |
-| Butuh likuiditas yang belum ada | Membuka kontak baru bernilai hanya jika kolam kandidat besar. Di awal, kolam itu kosong. |
-| Bocor | Teaser "Someone at X" + wilayah + pengalaman cukup untuk menemukan orangnya di LinkedIn tanpa membayar. |
-| Risiko UU PDP | Menjual akses kontak pencari kerja tanpa persetujuan eksplisit. |
-| Tidak bisa ditagih | Belum ada payment gateway; endpoint unlock menerima token apa pun (mode demo). |
+| Menyaring itu gratis | Memeringkat pelamar berbiaya **Rp0** untuk kami hitung (tanpa panggilan AI), jadi tidak pernah dibatasi — termasuk di paket gratis. Membatasinya tidak menghemat apa pun dan hanya menyembunyikan kandidat dari employer yang justru meminta peringkat. |
+| Kontak pelamar tidak dijual | Pelamar yang melamar sendiri sudah memberi kontaknya kepada employer itu — gratis, selamanya. Kandidat yang **belum** melamar tampil **anonim**, dan tidak ada cara membeli identitasnya. |
+| Yang berbayar yang berbiaya atau menghemat waktu | Kit wawancara (dihitung AI, di-cache), ekspor, pencarian kandidat yang belum melamar, dan kuota lowongan aktif. |
+| Membayar tidak pernah menggerakkan skor | Bobot bukti, urutan pelamar, dan jeda ulang kuis identik di semua paket. Tidak ada paket yang bisa membeli peringkat. |
 
-**Gantinya:** employer membayar untuk **memeringkat & mewawancarai pelamar yang layak**; kontak pelamar yang melamar sendiri selalu gratis; kandidat yang belum melamar tampil **anonim**.
+Aturan ini juga yang menutup risiko UU PDP: kami tidak pernah berada dalam posisi menjual akses ke data pribadi pencari kerja.
 
 ---
 
@@ -141,7 +145,42 @@ Di luar model dasar (didanai investasi): audit keamanan sebelum gateway live ~Rp
 
 ## 6. Proyeksi 24 bulan (skenario dasar, Rp juta)
 
-> **Belum disesuaikan dengan harga baru.** Tabel di bawah masih dihitung dari **harga lama** (sebelum revisi harga di §2). Harga baru menaikkan kontribusi employer (+78% Beacon, +56% Lighthouse) dan menurunkan Prism (−28% harga, tapi margin naik 69%→83%), sehingga bulan impas kemungkinan **lebih awal** dari M15 — tapi konversi pada titik harga baru **belum diuji**, jadi kami tidak mengarang angkanya. Jangan kutip baris di bawah sebagai proyeksi terkini.
+> **⚠️ Tabel ini superseded — jangan dipakai sebagai proyeksi terkini.**
+> Ia dihitung pada harga lama, dan angkanya **tidak bisa direkonsiliasi** dengan revisi harga di §2:
+> memakai perubahan yang tercatat (+78% Beacon, +56% Lighthouse, −28% Prism) pada unit M24 di bawah
+> menghasilkan pendapatan ≈Rp37jt, bukan Rp49,8jt yang tertulis. Artinya harga yang dipakai membangun
+> tabel ini tidak sama dengan yang tercatat di mana pun, jadi ia tidak boleh dipakai sebagai dasar
+> keputusan. **Kami membiarkannya terlihat, bukan menghapusnya diam-diam**, supaya jelas apa yang
+> belum dikerjakan.
+>
+> Proyeksi bulan-per-bulan yang benar butuh dua angka yang **belum kami ukur**: churn Lighthouse dan
+> campuran Beacon/Lighthouse dari waktu ke waktu. Keduanya menentukan bulan impas sepenuhnya (lihat
+> §6a), dan kami tidak mengarangnya. Yang bisa dihitung hari ini ada di §6a.
+
+### 6a. Yang bisa dihitung sekarang — syarat impas
+
+Tanpa asumsi churn, ini tetap terhitung persis dari kontribusi per penjualan (§3) dan opex (§4):
+
+| Untuk menutup opex **Rp8,7jt/bulan** | Butuh per bulan |
+|---|---|
+| Kalau semuanya Beacon (kontribusi Rp48.355) | **180** lowongan berbayar |
+| Kalau semuanya Lighthouse (kontribusi Rp147.065) | **59** langganan aktif |
+| Kalau semuanya Prism (kontribusi Rp12.500) | **696** pelanggan |
+
+**Inilah sebabnya campuran menentukan segalanya.** Asumsi pertumbuhan §5 memberi maksimum 400
+pendaftar/bulan pada batas atas; pada konversi 18% itu **72 pelanggan berbayar baru per bulan**.
+Angka itu **tidak cukup** kalau semuanya Beacon (butuh 180), tapi **lebih dari cukup** kalau cukup
+banyak yang Lighthouse (butuh 59) — dan Lighthouse berulang, jadi langganannya menumpuk sementara
+lowongan Beacon tidak. Impas karena itu ditentukan oleh seberapa cepat basis Lighthouse tumbuh, bukan
+oleh jumlah pendaftar.
+
+**Konsekuensi yang harus disebut jujur ke investor:** angka impas kami bergantung pada retensi
+Lighthouse yang belum pernah kami ukur, karena belum ada pelanggan. Itu justru salah satu hal yang
+pilot 30 hari dirancang untuk menghasilkan.
+
+---
+
+#### Tabel lama (superseded — hanya untuk jejak, jangan dikutip)
 
 | Bulan | Lowongan Beacon | Lighthouse | Pengguna aktif | Prism | **Pendapatan** | **Kontribusi** | Opex | Uang saku | **Laba/rugi** | **Kumulatif** |
 |---|---|---|---|---|---|---|---|---|---|---|

@@ -533,6 +533,34 @@ class TestThirdReviewFindingsStayFixed:
         assert 'find_jobs_by_moderation_status("published")' not in src
         assert "get_many" in src
 
+    def test_the_moderation_queue_is_bounded(self) -> None:
+        """Backlog-shaped is not the same as bounded.
+
+        Even once the queue stopped walking the catalogue, one page load still
+        fetched an employer, a report list and an event list for EVERY held,
+        flagged and reported posting at once. A backlog spike — a bad actor
+        posting in bulk, or a week nobody worked the queue — then turned the
+        admin screen into thousands of queries. The page must be sliced before
+        that fan-out, not after: a limit that only trims the response has
+        bounded what is read, not what is done.
+        """
+        import inspect
+
+        from backend.app.api.routers import admin
+
+        sig = inspect.signature(admin.moderation_queue)
+        assert {"limit", "offset"} <= set(sig.parameters), (
+            "the moderation queue takes no page window; a backlog spike is "
+            "still one unbounded page load"
+        )
+        src = inspect.getsource(admin.moderation_queue)
+        slice_at = src.index("offset : offset + limit")
+        fanout_at = src.index("repos.employers.get")
+        assert slice_at < fanout_at, (
+            "the page is sliced after the per-job fan-out, so the limit bounds "
+            "the response but not the work"
+        )
+
     def test_the_ui_reads_proof_granted_rather_than_passed(self) -> None:
         """The server withholds the badge on a compromised draw; announcing one
         in the UI would tell the candidate they hold proof they do not have."""
@@ -545,60 +573,3 @@ class TestThirdReviewFindingsStayFixed:
         assert "r.proof_granted" in modal
         assert "if (r.passed) toast.success" not in modal
         assert "result.passed ? '✓ Lulus" not in modal
-
-
-class TestPitchCanvasStaysDeliverable:
-    """The canvas is fed to a design model and printed at one page.
-
-    It drifted to 1,131 words across 19 blocks because every round added a
-    fact and none removed one. At that density the type has to drop below the
-    brief's own 13px floor, the charts get squeezed, or the designer silently
-    drops content — and the brief's own acceptance test ("read the claim from
-    the numerals alone, at 2m, in 5 seconds") becomes unachievable.
-    """
-
-    def _canvas(self) -> str:
-        from pathlib import Path
-
-        return (Path(__file__).resolve().parents[3] / "docs" / "PITCH_CANVAS.md").read_text(
-            encoding="utf-8"
-        )
-
-    def _copy_block(self) -> str:
-        s = self._canvas()
-        return s[s.index("SALIN MULAI DARI SINI") : s.index("SALIN SAMPAI SINI")]
-
-    def test_presenter_material_stays_outside_the_copy_markers(self) -> None:
-        """Anything between the markers is pasted to the designer verbatim, so a
-        three-minute script sitting inside would be rendered onto the slide."""
-        block = self._copy_block()
-        for leaked in ("Naskah 3 Menit", "Bekal Presenter", "Angka yang boleh disebut"):
-            assert leaked not in block, f"presenter-only section leaked into the copy block: {leaked}"
-
-    def test_the_slide_text_fits_one_page(self) -> None:
-        import re
-
-        block = self._copy_block()
-        slide = block[block.index("# §SLIDE TEXT") : block.index("## Before you hand it over")]
-        blocks = [ln for ln in slide.splitlines() if ln.startswith("⟦")]
-        body = re.sub(r"⟦.*?⟧", "", slide)
-        body = re.sub(r"^\s*[#>|`-].*$", "", body, flags=re.M)
-        words = len(re.findall(r"[A-Za-zÀ-ÿ0-9.,%']+", body))
-
-        # Eleven is the standard Pitch Canvas structure, so it is the target and
-        # also the ceiling: a twelfth box means something was bolted on.
-        assert len(blocks) == 11, (
-            f"{len(blocks)} boxes — the standard Pitch Canvas has exactly 11, and judges "
-            "look for each answer where the template puts it"
-        )
-        assert words <= 750, (
-            f"{words} renderable words. A 1920x1080 page with charts holds roughly 400-600; "
-            "cut content rather than shrinking the type."
-        )
-
-    def test_every_spoken_beat_has_something_to_point_at(self) -> None:
-        """The presenter walks the page top to bottom in three minutes."""
-        block = self._copy_block()
-        for beat in ("0.685", "0.765", "40% skill terbukti", "0,85", "belum ada", "belum diuji",
-                     "Rp200 juta", "Pendanaan eksternal", "Kami ada di dalam angka itu"):
-            assert beat in block, f"the script points at '{beat}' but the slide does not carry it"

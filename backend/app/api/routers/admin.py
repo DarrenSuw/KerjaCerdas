@@ -1,6 +1,7 @@
 """Admin (ADMIN_EMAILS + ADMIN_ROUTES_ENABLED): moderation, reviews, orders, metrics.
 
-Moderation   GET  /admin/moderation/queue          held jobs + reasons + reports + appeals
+Moderation   GET  /admin/moderation/queue?limit&offset  held + flagged + openly reported
+                                                  jobs, with reasons, reports and events
              POST /admin/moderation/jobs/{id}      {decision: publish|reject, note}
 Reviews      GET  /admin/employer-reviews           "Ditinjau admin" requests
              POST /admin/employer-reviews/{id}      {approve: bool}
@@ -27,7 +28,7 @@ from backend.app.db.postgres_store import (
 from backend.app.db.schemas import VerificationStatus
 from backend.app.services.billing.plans import activate
 from backend.app.services.trust import policy
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from pydantic import BaseModel, Field
 
 router = APIRouter(prefix="/admin", tags=["admin"], dependencies=[Depends(require_admin)])
@@ -48,37 +49,49 @@ class QuestionUpdate(BaseModel):
 
 
 @router.get("/moderation/queue")
-async def moderation_queue():
+async def moderation_queue(
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+):
+    """Postings a human still has to rule on, grouped by source and paged.
+
+    Order is `flagged`, then `held`, then postings carrying unresolved reports —
+    each group by posting age. The order is deterministic on purpose: `offset`
+    paging over an unstable order would repeat some postings and skip others.
+
+    Three sources, not one. A posting can need a human because AutoMod held it,
+    because the community flagged it — or because it carries reports that never
+    reached the flag threshold. That last case used to be invisible forever: the
+    posting stayed `published`, the reports stayed unresolved, and so no verdict
+    was ever recorded against the people who filed them. A reporter who files
+    steadily but never trips a threshold would accumulate no history at all,
+    which is precisely the pattern weighting exists to catch.
+
+    The queue is assembled on the BACKLOG axis and then paged. Two status
+    queries and one open-report query name the jobs; only the page actually
+    returned pays the per-job cost of an employer, its reports and its events.
+    The earlier version walked every published job asking for its reports, which
+    cost a query per job and grew with the CATALOGUE — the wrong axis, and slow
+    exactly when the job board succeeds. Paging matters for the same reason:
+    without it a backlog spike turns one admin page load into thousands of
+    queries.
+    """
     repos = get_repositories()
-    out = []
-    # "flagged" belongs here as much as "held". A flagged posting is one the
-    # community reported and the AI reviewer declined to rule on, which is
-    # precisely the case that needs a human — and while it was missing from this
-    # queue no admin could ever see it, so the reports were never resolved and
-    # every reporter's history stayed permanently empty.
-    # Three sources, not one. A posting can need a human because AutoMod held
-    # it, because the community flagged it — or because it carries reports that
-    # never reached the flag threshold. That last case used to be invisible
-    # forever: the posting stayed `published`, the reports stayed unresolved,
-    # and so no verdict was ever recorded against the people who filed them. A
-    # reporter who files steadily but never trips a threshold would accumulate
-    # no history at all, which is precisely the pattern weighting exists to
-    # catch.
     queued = [
         *await find_jobs_by_moderation_status("flagged"),
         *await find_jobs_by_moderation_status("held"),
     ]
-    # One query for the whole open-report backlog, then one fetch for the jobs
-    # it names. Walking every published job and asking for its reports instead
-    # costs a query per job and grows with the CATALOGUE rather than with the
-    # queue — the wrong axis, and slow exactly when the board succeeds.
     seen_ids = {j.id for j in queued}
     open_report_job_ids = {
         r.job_id for r in await find_unresolved_reports() if r.job_id not in seen_ids
     }
     if open_report_job_ids:
         queued.extend(await repos.jobs.get_many(sorted(open_report_job_ids)))
-    for job in queued:
+    # Slice BEFORE the fan-out below, never after: the point of a limit is to
+    # bound the work done, not merely the rows handed back.
+    page = queued[offset : offset + limit]
+    out = []
+    for job in page:
         employer = await repos.employers.get(job.employer_id)
         out.append({
             "job_id": job.id, "title": job.title, "description": job.description[:1500],
@@ -88,7 +101,7 @@ async def moderation_queue():
             "reports": [r.model_dump() for r in await find_reports_for_job(job.id) if not r.resolved],
             "events": [e.model_dump() for e in await find_moderation_events(job.id)][-10:],
         })
-    return {"total": len(out), "items": out}
+    return {"total": len(queued), "count": len(out), "limit": limit, "offset": offset, "items": out}
 
 
 @router.post("/moderation/jobs/{job_id}")
