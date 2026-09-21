@@ -150,8 +150,42 @@ async def lifespan(app: FastAPI):
         )
     configure_auth(secret_key=jwt_secret, expire_minutes=settings.jwt_access_token_expire_minutes)
 
+    # Background bank top-up — non-blocking. After BANK_TARGET was raised to 50,
+    # every skill already in the DB needs more questions. We fire this as a
+    # background task so startup completes immediately and the quiz is still
+    # serveable from whatever is cached while the top-up runs.
+    import asyncio
+
+    async def _topup_all_banks() -> None:
+        try:
+            from backend.app.db.postgres_store import list_quiz_skills
+            from backend.app.services.quiz.generator import BANK_TARGET, ensure_questions_exist
+            from backend.app.db import postgres_store as _store
+
+            skills = await list_quiz_skills()
+            for row in skills:
+                skill_name = row.get("label") or row.get("skill") or ""
+                if not skill_name:
+                    continue
+                try:
+                    count = await _store.count_active_questions_for_skill(row["skill"])
+                    if count < BANK_TARGET:
+                        added = await ensure_questions_exist(skill_name, target=BANK_TARGET)
+                        if added:
+                            logger.info(
+                                "Background top-up '%s': +%d questions (now ~%d)",
+                                row["skill"], added, count + added,
+                            )
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Background top-up '%s' failed: %s", row.get("skill"), exc)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Background bank top-up skipped: %s", exc)
+
+    asyncio.create_task(_topup_all_banks())
+
     yield
     logger.info("KerjaCerdas API shutting down")
+
 
 
 app = FastAPI(

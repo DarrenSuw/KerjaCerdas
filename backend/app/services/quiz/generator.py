@@ -47,12 +47,15 @@ from backend.app.services.matching.evidence import skill_key
 
 _logger = logging.getLogger(__name__)
 
-# Target size of a healthy bank, and the floor below which a skill cannot give
-# two consecutive non-overlapping quizzes at all (2 x QUESTIONS_PER_QUIZ).
-BANK_TARGET = 30
+# Target size of a healthy bank. With QUESTIONS_PER_QUIZ=5, a 50-question pool
+# gives C(50,5)=2,118,760 possible draws — the probability of drawing the exact
+# same 5 two days in a row is <0.0005%. This is the primary retake defence.
+# BANK_MINIMUM (2x quiz length) is the floor below which two consecutive attempts
+# cannot be non-overlapping at all.
+BANK_TARGET = 50
 BANK_MINIMUM = 10
 GENERATE_BATCH = 10  # questions asked for per LLM call
-MAX_BATCHES = 4  # hard stop so one skill can never loop up a large bill
+MAX_BATCHES = 6  # hard stop; raised from 4 to fill the larger target
 
 # Options that make a multiple-choice item untestable.
 _BANNED_OPTION_PATTERNS = (

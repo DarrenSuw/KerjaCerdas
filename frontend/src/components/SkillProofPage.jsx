@@ -60,14 +60,31 @@ export default function SkillProofPage() {
                                     <span style={{ fontSize: 12, color: KC.mute }}>Lulus {item.proof_date} · berlaku 6 bulan</span>
                                 )}
                             </div>
-                            {item.quiz_available && item.proof === 'claimed' && (
-                                <button style={topBtn(KC.orange, '#fff')} onClick={() => setQuizSkill(item.skill)}>
-                                    <PlayCircle size={15} /> Buktikan
-                                </button>
-                            )}
-                            {!item.quiz_available && item.proof === 'claimed' && (
-                                <span style={{ fontSize: 12, color: KC.mute }}>Kuis belum tersedia · dibuktikan saat wawancara</span>
-                            )}
+                            {(() => {
+                                const isClaimed = item.proof === 'claimed'
+                                const capped = item.daily_attempts_used >= item.daily_attempts_cap
+                                if (!isClaimed) return null
+                                if (!item.quiz_available) {
+                                    return <span style={{ fontSize: 12, color: KC.mute }}>Kuis belum tersedia · dibuktikan saat wawancara</span>
+                                }
+                                if (capped) {
+                                    const resetDate = item.cap_resets_at
+                                        ? new Date(item.cap_resets_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long' })
+                                        : 'besok'
+                                    return (
+                                        <span style={{ fontSize: 12, color: KC.mute, textAlign: 'right' }}>
+                                            Sudah dicoba hari ini<br />
+                                            <b style={{ color: KC.ink }}>Coba lagi {resetDate}</b>
+                                        </span>
+                                    )
+                                }
+                                return (
+                                    <button style={topBtn(KC.orange, '#fff')} onClick={() => setQuizSkill(item.skill)}>
+                                        <PlayCircle size={15} /> Buktikan
+                                    </button>
+                                )
+                            })()}
+
                         </div>
                     ))}
                 </div>

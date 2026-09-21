@@ -37,14 +37,14 @@ QUESTIONS_PER_QUIZ = 5
 SECONDS_PER_QUESTION = 45
 PASS_MARK = 4
 GRACE_SECONDS = 15
-# One day, the same for everyone. It used to be 7 free / 2 with Prism, which
-# meant a paid plan bought a faster route to a badge that carries a 0.85 proof
-# weight — i.e. money moving a match score, which is the one thing this product
-# promises never happens. Selling it was the defect; the cooldown itself was
-# only ever friction, since a small bank could be memorised whatever the wait.
-# Retake resistance now comes from bank size and non-overlapping draws
-# (generator.BANK_TARGET, _pick_questions), which is where it belongs.
+# Exactly one attempt per skill per day, regardless of pass or fail.
+# Retake resistance comes from bank size (generator.BANK_TARGET=50) plus
+# non-overlapping random draws (_pick_questions). With a 50-question pool and
+# 5 drawn per attempt, the chance of drawing the exact same 5 twice is <0.1%.
 RETAKE_DAYS = 1
+# Cap: any submitted attempt (pass or fail) within the last RETAKE_DAYS days
+# blocks a new start. This is evaluated in start_quiz() below.
+_ATTEMPT_CAP_PER_PERIOD = 1
 
 
 class QuizError(Exception):
@@ -220,10 +220,16 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
             if all(qid in by_id for qid in a.question_ids):
                 return _attempt_payload(a, by_id, resumed=True)
 
-    cooldown = RETAKE_DAYS
-    failed = [a for a in attempts if a.submitted_at and not a.passed]
-    if failed:
-        retry_at = _aware(failed[-1].submitted_at) + timedelta(days=cooldown)
+    # 1 attempt per RETAKE_DAYS day(s), pass or fail. Checks the most recent
+    # *submitted* attempt regardless of outcome so passing on Monday doesn't
+    # let you grind the same skill all week.
+    submitted_all = sorted(
+        [a for a in attempts if a.submitted_at is not None],
+        key=lambda a: _aware(a.submitted_at),
+    )
+    if len(submitted_all) >= _ATTEMPT_CAP_PER_PERIOD:
+        last_submit = _aware(submitted_all[-1].submitted_at)
+        retry_at = last_submit + timedelta(days=RETAKE_DAYS)
         if retry_at > now:
             raise QuizError(429, f"Kamu bisa mengulang kuis ini mulai {retry_at.date().isoformat()}.")
 
