@@ -128,8 +128,8 @@ Jam kerja pemilik usaha habis mewawancarai orang yang salah.**
 
 Di sisi lain: melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
 
-**89.141** usaha mikro & kecil terdaftar · SIDT-UMKM, Des 2025
-**7,24 juta** penganggur terbuka · BPS, Feb 2026
+**89.141** usaha kecil & menengah terdaftar · SIDT-UMKM, Des 2025
+**7,28 juta** penganggur terbuka · BPS, Mei 2026
 
 ⟦product⟧
 
@@ -203,9 +203,9 @@ tapi tepat.
 
 ⟦honesty rows — exactly as written, gaps as legible as the wins⟧
 
-Prototipe jalan & teruji otomatis — **sudah**
-Alignment PS-2 · penilaian juri — **sangat kuat**
-Kualitas prototipe · penilaian juri — **sangat kuat**
+Prototipe jalan, seluruh test menggugurkan build — **sudah**
+Migrasi database teruji sampai rollback — **sudah**
+Pengguna nyata terdokumentasi — **di bawah 10 orang**
 Perusahaan membayar — **belum ada**
 Validitas prediktif skor — **belum diuji**
 
@@ -222,17 +222,20 @@ Beacon **Rp29.000** per lowongan
 Lighthouse **Rp99.000** per bulan
 Prism **Rp25.000** per 30 hari, untuk pencari kerja
 
-**Membayar tidak pernah menaikkan skor atau peringkat siapa pun.**
+**Membayar tidak mengubah skor maupun urutan siapa pun.** Prism hanya mempersingkat jeda ulang
+kuis dari 7 hari ke 2 hari — soalnya tetap harus dilulusi sendiri, dan lulus tidak bisa dibeli.
 
 Pembayaran saat ini QRIS atau transfer yang dikonfirmasi admin. Payment gateway belum ada.
 
 ⟦margin curve — axis and annotation⟧
 
+Margin kotor per lowongan — **model asumsi, bukan pengukuran pelanggan**
+
 30 pelamar **88%** · 100 pelamar **70%** · 200 pelamar **42%**
 Kolam kandidat matang, 200 pelamar — **86%**
 
 Biaya baca CV dibayar sekali per kandidat seumur akun, bukan per lamaran. Kuis dan skor tidak
-memanggil AI sama sekali.
+memanggil AI sama sekali. Biaya AI sungguhan terpantau per aksi di dashboard admin.
 
 ⟦funding⟧
 
@@ -242,7 +245,8 @@ target tercapai.
 Pendirian & legal 22% · Menutup rugi sampai impas 29% · Akuisisi pengguna 20% · Keamanan &
 gateway 6% · Bantalan skenario buruk 23%
 
-Impas **bulan 15** · kas terdalam **Rp101 juta** · pendapatan tahun 2 **Rp360 juta**
+Proyeksi skenario dasar: impas **bulan 15** · kas terdalam **Rp101 juta** · pendapatan tahun 2
+**Rp360 juta**
 
 ⟦team⟧
 
@@ -311,6 +315,11 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 |---|---|
 | Sudah ada yang bayar? | **Belum satu pun.** Target: 3 surat minat. |
 | Bank soalnya berapa? | **8 skill × 6 soal, masih draf AI**, sedang diperluas ke ~20 per skill dengan tinjauan praktisi HR. Dengan 6 soal, satu kuis 5 soal hanya punya 6 kombinasi — ujian ulang pasti mengulang soal. Kami tahu, dan itu antrean kerja berikutnya. |
+| Tebak asal bisa lolos kuis? | Tiap soal 4 opsi, lulus butuh 4 dari 5 benar. Peluang lolos dengan menebak semua = **1,56%**. Bukan nol, tapi itu sebabnya badge bernilai 0.85 dan bukan 1.00 — hanya konfirmasi HR yang bernilai penuh. |
+| Bank soal cuma 6 per skill, berarti ujian ulang mengulang soal? | **Betul, dan ini lubang paling tajam di kuis kami.** Satu kuis mengambil 5 dari 6 soal, jadi percobaan kedua pasti mengulang minimal 4 soal yang sudah dilihat. Jeda 7 hari memperlambat, tidak menutup. Perbaikannya bukan aturan baru tapi bank yang lebih besar — ~20 soal per skill dengan tinjauan praktisi HR, dan itu antrean kerja berikutnya. Sampai itu selesai, **klaim kami hanya sekuat "kuis menyaring", bukan "kuis membuktikan"** — dan penentu akhir tetap HR. |
+| Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, sekitar **5,6× proyeksi pendapatan tahun 2** (Rp360 juta) — dengan **nol pelanggan hari ini**. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
+| Target 18–25 tahun itu bukan diskriminasi usia juga? | Beda posisi: itu **segmen pasar kami**, bukan syarat yang boleh dipasang employer. Justru AutoMod menolak iklan yang memasang batas usia. Siapa pun boleh mendaftar dan melamar di platform; yang kami batasi hanya ke mana energi pemasaran kami diarahkan. |
+| Moat "kumpulan profil terbukti" — kalian sendiri masih nol, kan? | **Ya.** Hari ini moat itu belum ada, baru mekanismenya yang ada. Yang kami klaim bukan "kami sudah punya", tapi "ini aset yang menumpuk kalau pilot jalan, dan tidak bisa disalin dengan menyalin fitur". Kalau pilot gagal, moat ini tidak pernah lahir — itu risiko yang kami tanggung, bukan yang kami sembunyikan. |
 | Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, soal acak, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
@@ -326,12 +335,15 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 |---|---|
 | 35 / 40 / 15 / 10 | `matcher.py` — `_W_COSINE` / `_W_SKILL` / `_W_EXPERIENCE` / `_W_EDUCATION` |
 | 0.30 / 0.85 / 1.00 | `evidence.py` — `PROOF_WEIGHTS` |
+| Tebak asal lolos kuis 1,56% | 4 opsi per soal, lulus 4/5: C(5,4)·0,25⁴·0,75 + 0,25⁵ |
+| Valuasi Rp2 miliar | Rp200 jt ÷ 10% post-money — **angka ajuan, bukan hasil valuasi pasar** |
 | 0.685 / 0.720 / 0.765 | dihitung dari rumus di `matcher.py` (pengalaman & pendidikan disamakan). Guard test: `TestProofBeatsKeywordStuffing` di `test_v2_scoring.py` |
 | Ambang band 0.45 / 0.65 | `settings.py` — `band_possible_threshold` / `band_strong_threshold` |
 | Rp0 per percobaan kuis | dinilai dengan kunci jawaban, tanpa panggilan AI |
 | Margin 88% / 70% / 42% / 86% | `BUSINESS_MODEL.md` — **jumlah token per aksi masih asumsi**, dikalikan harga Gemini × kurs Rp17.600, buffer ×1,5. Angka **sungguhan** ada di `/admin → Metrik` yang membaca tabel `ai_logs`. Jangan tukar keduanya. |
 | Bulan 15 · Rp101 jt · Rp360 jt | proyeksi skenario dasar, `BUSINESS_MODEL.md` |
-| 89.141 · 7,24 jt | SIDT-UMKM Des 2025 · BPS Feb 2026 |
+| 89.141 | usaha **kecil + menengah** (73.828 + 15.313), SIDT-UMKM 31 Des 2025. **Bukan** termasuk usaha mikro — jangan sebut "UMKM" untuk angka ini |
+| 7,28 jt · TPT 4,65% | BPS Mei 2026, rilis 5 Agustus 2026. **Rilis terbaru** — jangan pakai angka Februari 2026 yang masih tertinggal di `BUSINESS_MODEL.md` |
 | Spark 20 pelamar | **skor tertinggi**, bukan yang pertama melamar |
 
 > **Aturan tunggal:** kalau sebuah angka tidak ada di tabel ini, **jangan sebut**.
