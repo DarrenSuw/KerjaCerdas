@@ -179,9 +179,14 @@ async def generate_questions(
     except RuntimeError as exc:
         raise GenerationError(f"AI tidak tersedia: {exc}") from exc
 
-    raw = result.content.strip()
+    raw = result.content
+    if isinstance(raw, list):
+        raw = "".join(p.get("text", "") if isinstance(p, dict) else str(p) for p in raw)
+    raw = raw.strip()
     if raw.startswith("```"):
         raw = "\n".join(ln for ln in raw.split("\n") if not ln.strip().startswith("```"))
+
+
 
     try:
         items = json.loads(raw)
