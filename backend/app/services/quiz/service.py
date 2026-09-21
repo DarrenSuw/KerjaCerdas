@@ -234,11 +234,16 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
     repeated = len({q.id for q in picked} & set(previous))
     if repeated:
         # The contract is "a retake never repeats"; a bank this thin cannot keep
-        # it. Serving anyway is still right — locking the candidate out over our
-        # unfinished bank is worse — but a broken guarantee must be visible in
-        # the response and in the log, never absorbed quietly.
+        # it. Two bad options, and we take neither: refusing the quiz punishes
+        # the candidate for OUR unfinished bank, while awarding a badge for
+        # questions they were shown yesterday hands out proof that was not
+        # earned — and that badge carries a 0.85 weight straight into the match
+        # score. So the attempt runs, is scored, and gives feedback, but it
+        # cannot grant proof. Reporting the overlap was not enough: visibility
+        # is not mitigation when the harm is the badge itself.
         logger.warning(
-            "Bank '%s' too small to honour no-repeat: %d of %d questions reused",
+            "Bank '%s' too small to honour no-repeat: %d of %d questions reused; "
+            "attempt will not be proof-bearing",
             key, repeated, QUESTIONS_PER_QUIZ,
         )
     attempt = QuizAttempt(
@@ -246,10 +251,20 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
         skill=key,
         question_ids=[q.id for q in picked],
         deadline_at=now + timedelta(seconds=SECONDS_PER_QUESTION * QUESTIONS_PER_QUIZ),
+        proof_eligible=not repeated,
     )
     await store.get_repositories().quiz_attempts.upsert(attempt)
     payload = _attempt_payload(attempt, {q.id: q for q in picked}, resumed=False)
     payload["repeated_questions"] = repeated
+    payload["proof_eligible"] = attempt.proof_eligible
+    if not attempt.proof_eligible:
+        payload["notice"] = (
+            f"Bank soal untuk skill ini belum cukup besar, jadi {repeated} soal "
+            "terpaksa diulang dari percobaan sebelumnya. Kuis ini tetap bisa kamu "
+            "kerjakan dan hasilnya tetap kami tampilkan, tapi **belum bisa memberi "
+            "badge terbukti** — lulus atas soal yang sudah kamu lihat bukan bukti. "
+            "Kami sedang menambah soalnya; coba lagi nanti untuk kuis penuh."
+        )
     return payload
 
 
@@ -343,7 +358,9 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
     attempt.passed = score >= PASS_MARK
     await repos.quiz_attempts.upsert(attempt)
 
-    if attempt.passed:
+    # A pass on a compromised draw is real feedback but not evidence, so it is
+    # never written to skill_evidence and never lifts proof_level.
+    if attempt.passed and getattr(attempt, "proof_eligible", True):
         await _record_pass(seeker, attempt)
 
     return {
@@ -354,6 +371,7 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
         "passed": attempt.passed,
         "late": late,
         "correct": correct_flags,  # which were right — never which option was right
+        "proof_granted": bool(attempt.passed and getattr(attempt, "proof_eligible", True)),
         "retake_after_days": None if attempt.passed else RETAKE_DAYS,
     }
 

@@ -43,7 +43,7 @@ Skill wajib berbobot 80% dan *nice-to-have* 20% dari bagian skill. Filter lokasi
 - 5 soal skenario per skill, diambil acak dari bank soal; urutan pilihan diacak per percobaan.
 - Batas waktu 45 detik per soal dijaga server; jawaban **tidak pernah** dikirim ke browser sebelum dikumpulkan.
 - Dinilai dengan kunci jawaban — penilaian per percobaan **tanpa panggilan AI** (biaya Rp0).
-- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang setelah 7 hari (Prism: 2 hari).
+- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang **besoknya, sama untuk semua paket** — kecepatan menuju badge tidak dijual. Soal percobaan sebelumnya tidak diulang; bank tiap skill diisi sampai 30 soal. Bila bank sebuah skill masih terlalu tipis untuk menjaminnya, kuis tetap bisa dikerjakan tetapi **tidak memberi badge** sampai banknya cukup.
 - **Skill baru → antrean tinjauan, bukan kuis instan `[BUILT, DRAFT CONTENT]`:** jika pelamar mencoba kuis untuk skill yang belum ada di bank soal, AI (Gemini) menyusun 6 draf soal + kunci jawaban **satu kali** (dedup atas seluruh baris, termasuk yang belum ditinjau, jadi tidak pernah menagih ulang) dan menyimpannya sebagai `reviewed=false`. Soal draf **tidak diujikan**: pelamar menerima "kuis sedang disiapkan" dan skill itu tetap dihitung sebagai klaim (30%). Setelah admin menyetujui, bank itu aktif untuk semua pemegang skill tersebut sekaligus.
 - **Mengapa tidak langsung diujikan:** kunci jawaban yang salah akan menilai jawaban benar sebagai salah tanpa cara mendeteksinya; dua kandidat tidak lagi mengerjakan kuis yang sebanding (padahal bobot 85% mensyaratkan itu); dan pelamar bisa mengarang nama skill untuk memanggil kuis baru yang belum ditinjau. Permintaan skill tanpa kuis dicatat sebagai event `quiz_unavailable` agar antrean ditinjau sesuai kebutuhan nyata.
 - Anti-curang jujur: soal acak + timer + rotasi bank + pertanyaan wawancara "jelaskan jawabanmu". Kuis menyaring, wawancara memastikan.
@@ -88,7 +88,7 @@ Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursu
 - Setiap lowongan diperiksa sebelum tayang: aturan tetap (minta biaya dari pelamar = **ditolak**; batas usia, syarat penampilan, jenis kelamin tanpa alasan, kontak Telegram-only, gaji di luar batas wajar = **ditahan**) + pemeriksaan AI opsional yang hanya boleh *menahan*.
 - Pemasang menerima **pemberitahuan** berisi aturan yang dilanggar, kalimat yang ditandai, cara memperbaiki, tombol edit & kirim ulang, dan **banding**.
 - **Strike ladder:** 1 = peringatan, 2 = dibatasi 1 lowongan aktif selama 30 hari, 3 = akun ditangguhkan; hangus setelah 90 hari bersih.
-- **Laporan pengguna:** cukup laporan berbeda → lowongan disembunyikan untuk ditinjau admin.
+- **Laporan pengguna:** laporan **ditimbang, bukan dihitung**, dan harus mengutip aturan terbitan (`docs/RULES.md`). Ambang batas menandai lowongan `flagged` — **tetap terlihat** — lalu peninjau AI memeriksanya hanya terhadap aturan yang dikutip. Hanya pelanggaran aturan **keras** yang menyembunyikan; sisanya ke admin.
 - **Badge kepercayaan:** email terverifikasi → email domain perusahaan → "Ditinjau admin" (admin memeriksa tautan publik seperti Google Maps/Instagram bisnis).
 - **Lowongan pertama** ditahan untuk tinjauan admin kecuali employer sudah punya badge domain/admin.
 

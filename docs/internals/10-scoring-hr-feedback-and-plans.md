@@ -103,7 +103,14 @@ assert its own proof level: the API skill input has no proof field.
   still leaves a real choice. When the bank is too small to honour the rule it
   serves anyway, filling the unavoidable remainder with the questions seen
   *longest ago* — a candidate must never be locked out because our bank is
-  unfinished.
+  unfinished — **but that attempt cannot award a badge**
+  (`QuizAttempt.proof_eligible = False`). It is scored and shown like any other
+  quiz; it simply never reaches `skill_evidence` and never lifts `proof_level`.
+  Passing questions you were shown yesterday is not evidence of the skill, and
+  the badge carries a 0.85 weight straight into the match score. Reporting the
+  overlap was the first attempt at this and was not a fix: visibility is not
+  mitigation when the harm is the badge itself. The candidate is told plainly
+  why, and the next attempt is clean once the bank refills.
 - **Bank target: 30 questions per skill** (`generator.BANK_TARGET`), topped up
   automatically. Below 10 a skill cannot give two consecutive non-overlapping
   quizzes at all.

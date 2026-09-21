@@ -41,6 +41,8 @@ class QuizAttempt(TimestampedModel):
     answers: list[int] = []
     score: int = 0
     passed: bool = False
+    # See models_proof.QuizAttempt.proof_eligible.
+    proof_eligible: bool = True
 
 
 class SkillEvidence(TimestampedModel):

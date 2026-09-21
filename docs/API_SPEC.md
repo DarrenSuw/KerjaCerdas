@@ -718,7 +718,7 @@ personal data until the job is covered by Beacon/Lighthouse.
 
 **Response `200`:**
 ```json
-{ "total": 2, "ranked_limit": 20,
+{ "total": 2, "ranked_limit": null,
   "items": [
     { "id": "…", "application_id": "…", "job_id": "…", "job_title": "Admin & Customer Service",
       "seeker_id": "…", "seeker_name": "Rina Paramitha", "seeker_email": "rina@example.com",
@@ -730,7 +730,7 @@ personal data until the job is covered by Beacon/Lighthouse.
       "applied_at": "2026-09-20 09:12", "updated_at": "2026-09-20 09:12", "locked": false },
     { "id": "…", "application_id": "…", "job_id": "…", "seeker_name": "Pelamar terkunci",
       "locked": true, "match_score": null,
-      "lock_reason": "Paket Spark menampilkan 20 pelamar dengan skor tertinggi. …" }
+      "lock_reason": null }   // ranked applicants are uncapped on every tier
   ] }
 ```
 
@@ -834,7 +834,7 @@ is in the CORS allow-list, so a QR can never be pointed at another site.
 ### `POST /api/v1/public/jobs/{code}/report`
 
 Login required; one report per user per job. Body `{ "reason": "minta_biaya|palsu|diskriminatif|kontak_mencurigakan|lainnya", "detail": "…" }`.
-Once `MODERATION_REPORT_THRESHOLD` distinct unresolved reports exist, the job is hidden for admin review.
+Reports are **weighted, not counted** (`services/trust/rules.py`): each must cite a published rule (`GET /public/jobs/rules`), and reporter weight comes from verified email, account age, whether they applied, and whether their past reports held up. Reaching the weighted threshold sets `moderation_status = "flagged"` — the posting **stays visible** — and the AI reviewer then checks it against the cited rules only. Only a **hard**-rule violation hides it; anything else queues a human.
 
 ---
 

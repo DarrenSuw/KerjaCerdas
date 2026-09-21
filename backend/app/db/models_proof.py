@@ -55,6 +55,11 @@ class QuizAttempt(Base, TimestampedMixin):
     answers: Mapped[list[Any]] = mapped_column(JSON, default=list)
     score: Mapped[int] = mapped_column(Integer, default=0)
     passed: Mapped[bool] = mapped_column(Boolean, default=False)
+    # False when the bank was too thin to draw without repeating the previous
+    # attempt. Such an attempt is still playable and still scored — it just
+    # cannot award a badge, because passing questions you were shown days ago
+    # is not evidence of the skill. See services/quiz/service._pick_questions.
+    proof_eligible: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
 class SkillEvidence(Base, TimestampedMixin):

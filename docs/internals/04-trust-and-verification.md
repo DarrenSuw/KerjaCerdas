@@ -74,8 +74,11 @@ Integrity rules (all enforced server-side):
   wedge a skill below the serveable threshold forever.
 - Honest limit, stated in-product: a remote quiz is not cheat-proof. The interview kit asks the
   candidate to explain their own answer, and HR confirmation is the final gate. The starter bank is
-  currently **8 skills x 6 questions, AI-drafted** — `C(6,5) = 6` distinct quizzes per skill, so a
-  retake shows at least 4 questions already seen. Expanding it is tracked in ROADMAP §3.6.
+  topped up automatically to **30 questions per skill, AI-drafted and mechanically validated**, which
+  is what makes the no-repeat guarantee satisfiable — at 30 items five consecutive quizzes can be
+  fully disjoint, where the old 6-item bank forced at least 4 repeats on the second attempt.
+  What is still **not** done is practitioner review of the bank: `source` records `human` vs
+  `ai_auto` precisely so we never describe a generated item as expert-approved. Tracked in ROADMAP §3.6.
 
 ## 3. Employer trust badges — `services/trust/policy.py`
 

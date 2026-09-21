@@ -156,7 +156,7 @@ trackEvent('cv_uploaded', {
   [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
 
 ### 3.6 Bank soal kuis skill
-- **Status Saat Ini:** bank soal awal (8 skill × 6 soal) sudah berjalan tetapi berstatus **draf**
+- **Status Saat Ini:** bank terisi otomatis sampai **30 soal per skill** dan disaring validator mekanis; provenance dicatat per soal (`human` vs `ai_auto`). Tinjauan praktisi manusia atas bank **belum dilakukan**
   (`reviewed=false`) dan ditandai begitu di UI.
 - **Rencana:** tinjauan praktisi HR/pengajar per soal lewat panel admin, lalu perluasan ke ~30 soal per
   skill agar soal yang bocor tidak lagi berarti, dan penambahan skill baru sesuai lowongan nyata.

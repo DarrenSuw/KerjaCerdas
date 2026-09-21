@@ -48,13 +48,21 @@ Harga Gemini API [S3]; `gemini-3.1-flash-lite` tidak ada di daftar harga publik 
 | Baca 1 CV + embedding (sekali per kandidat) | 3.5 Flash-Lite + Embedding 2 | 5k / 1,5k + 2k | ~Rp99 |
 | Skor kecocokan | tanpa panggilan AI | — | **Rp0** |
 | **Kuis skill (percobaan)** | tanpa panggilan AI (kunci jawaban) | — | **Rp0** |
-| Pembuatan soal kuis (sekali per skill baru) | 3.1 Flash Lite | 3k / 2k | ~Rp85 |
-| Pertanyaan wawancara / kandidat | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
+| Pembuatan soal kuis — **per batch 10 soal** | 3.1 Flash Lite | 3k / 3,3k | ~Rp110 |
+| Mengisi 1 skill baru sampai bank 30 soal (3 batch) | 3.1 Flash Lite | — | **~Rp330** |
+| Pertanyaan wawancara / kandidat — **di-cache, sekali per (kandidat, lowongan)** | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
+| Peringkat pelamar · reverse matching | pgvector, tanpa panggilan AI | — | **Rp0** |
 | Analisis skill gap | 2.5 Flash-Lite (tier gratis) | 4k / 1,5k | ~Rp23 |
-| 1 pesan advisor | 2.5 Flash-Lite / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 / ~Rp38 |
+| 1 pesan advisor (tier flash-lite) | 3.1 / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 |
+| 1 pesan advisor **saat fallback** ke `gemini-3.6-flash` | 3.6 Flash | 3k / 0,5k | **~Rp38** |
 | 1 email (OTP verifikasi) | Resend — **gratis sampai 3.000/bln**, lalu Pro $20/50.000 [S4] | — | **Rp0** di tier gratis; ~Rp7 setelahnya |
 
 Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadangan.
+
+**Dua perubahan biaya dari revisi v3, keduanya searah berlawanan:**
+
+- **Bank soal naik dari 6 ke 30 per skill**, jadi menyiapkan satu skill baru kini ~Rp330, bukan ~Rp85. Ini biaya sekali per skill yang diamortisasi ke seluruh percobaan selamanya, dan ia yang membeli jaminan "ujian ulang tidak mengulang soal".
+- **Baca CV tidak lagi dibebankan ke paket employer.** Pelamar mengunggah CV-nya sendiri sekali seumur akun; biaya itu pindah ke baris *pencari kerja gratis* di bawah. Biayanya tidak hilang — ia berpindah dari pendapatan ke akuisisi. Konsekuensinya: **jumlah pelamar tidak lagi menggerakkan COGS employer sama sekali**, dan kurva margin lama (88% → 70% → 42% seiring pelamar bertambah) **tidak berlaku lagi**.
 
 ### Kontribusi per penjualan (asumsi pemakaian tipikal: 30 pelamar, 5 dishortlist)
 
@@ -65,20 +73,22 @@ Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadang
 > 2. **Email OTP (~Rp7, atau Rp0 di tier gratis Resend)** — dikirim saat kandidat memverifikasi
 >    email akunnya, sekali seumur akun. Bukan per lamaran, dan bukan per lowongan.
 >
-> Karena itu biaya marginal per lowongan **turun** seiring kolam kandidat matang. Tabel di bawah
-> memakai asumsi konservatif "separuh pelamar adalah kandidat baru" (kondisi awal). Margin Beacon
-> pada 200 pelamar: **42%** bila separuh kandidat baru (bulan-bulan awal), **86%** bila hanya 10%
-> yang baru (kolam matang). Beacon tidak membatasi jumlah pelamar — risiko ini nyata di awal dan
-> mengecil dengan sendirinya, dan biaya sungguhannya terpantau di `/admin → Metrik`.
+> **Sejak v3 ini tidak lagi berlaku.** Baca CV dibebankan ke akun pencari kerja, bukan ke paket
+> employer, jadi jumlah pelamar tidak menggerakkan COGS employer sama sekali. Kurva 88% → 70% →
+> 42% yang dulu kami tampilkan **sudah tidak ada** — bukan karena membaik, tapi karena bebannya
+> pindah ke baris akuisisi. Biaya sungguhannya tetap terpantau di `/admin → Metrik`.
 
 | Item | Harga | COGS | **Kontribusi** | Margin |
 |---|---|---|---|---|
-| Beacon (1 lowongan) | Rp49.000 | ~Rp3.400 | **Rp45.600** | **93%** |
-| Lighthouse (1 bulan, ~3 lowongan) | Rp149.000 | ~Rp10.250 | **Rp138.750** | **93%** |
+| Beacon (1 lowongan, 5 dishortlist) | Rp49.000 | ~Rp645 | **Rp48.355** | **99%** |
+| Lighthouse (1 bulan, ~3 lowongan) | Rp149.000 | ~Rp1.935 | **Rp147.065** | **99%** |
 | Prism (30 hari, pemakaian tipikal) | Rp15.000 | ~Rp2.500 | **Rp12.500** | **83%** |
-| Prism (30 hari, **plafon** 600 pesan) | Rp15.000 | ~Rp8.100 | **Rp6.900** | **46%** |
-| Spark (lowongan gratis) | Rp0 | ~Rp1.900 | −Rp1.900 | biaya akuisisi |
+| Prism (30 hari, **plafon** 600 pesan, flash-lite) | Rp15.000 | ~Rp8.100 | **Rp6.900** | **46%** |
+| Spark (lowongan gratis) | Rp0 | ~Rp195 | −Rp195 | biaya akuisisi |
+| Pencari kerja — **onboarding sekali** (baca CV + embedding) | Rp0 | ~Rp150 | −Rp150 | biaya akuisisi |
 | Pencari kerja gratis (per pengguna aktif/bulan) | Rp0 | ~Rp310 | −Rp310 | biaya akuisisi |
+
+Beacon kini ~Rp645 (baca lowongan Rp195 + 5 kit wawancara Rp450) — bukan ~Rp3.400 seperti model lama, yang membebankan baca CV pelamar ke paket employer. **Angka 99% itu jujur tapi menyesatkan kalau dibaca sendirian:** biaya baca CV tidak hilang, ia pindah ke baris akuisisi pencari kerja. Yang berubah secara struktural adalah *siapa* yang menanggungnya dan *apa* yang menggerakkannya — bukan totalnya.
 
 Margin tinggi karena **kuis, skor, peringkat, dan reverse matching tidak memanggil AI sama sekali**; biaya AI hanya untuk membaca CV/lowongan sekali, pertanyaan wawancara (kini di-cache, jadi klik ulang gratis), dan pesan advisor.
 

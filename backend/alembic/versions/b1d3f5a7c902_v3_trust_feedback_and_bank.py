@@ -19,6 +19,13 @@ job_reports.rule_cited / upheld
     only question the AI reviewer is ever asked, and `upheld` records how the
     accusation ended so a reporter's weight can reflect their track record.
 
+quiz_attempts.proof_eligible
+    A quiz drawn from a bank too thin to avoid repeating the previous attempt
+    is still playable, but must not award a badge: passing questions you were
+    shown yesterday is not evidence of the skill, and the badge carries a 0.85
+    proof weight. The flag is per attempt rather than per skill because the
+    bank refills, so the very next attempt can be clean.
+
 application_status_events.reason_code / reason_note
     A rejection now requires a reason. This is the data that answers the
     candidate's "tidak tahu apa yang kurang", and the only structured outcome
@@ -46,6 +53,7 @@ _ADDED: tuple[tuple[str, str, sa.types.TypeEngine, str | None], ...] = (
     ("skill_questions", "review_note", sa.Text(), "''"),
     ("job_reports", "rule_cited", sa.String(length=40), "''"),
     ("job_reports", "upheld", sa.Boolean(), None),
+    ("quiz_attempts", "proof_eligible", sa.Boolean(), "true"),
     ("application_status_events", "reason_code", sa.String(length=40), "''"),
     ("application_status_events", "reason_note", sa.Text(), "''"),
 )

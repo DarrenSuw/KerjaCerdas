@@ -1402,7 +1402,7 @@ export default function LandingHero() {
                             perks: [
                                 '1 lowongan aktif',
                                 'Link + poster QR lowongan',
-                                '20 pelamar skor tertinggi ditampilkan',
+                                'Semua pelamar diperingkat, tanpa batas',
                                 'Badge skill terbukti',
                             ],
                             action: onEmployer,

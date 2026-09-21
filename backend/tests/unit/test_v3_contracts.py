@@ -350,7 +350,14 @@ class TestSecondReviewFindingsStayFixed:
         from backend.app.config.settings import settings
 
         root = Path(__file__).resolve().parents[3]
-        stale = {"Rp29.000", "Rp99.000", "Rp25.000", "100 pesan"}
+        # Every spelling a stale figure has actually appeared in. The first
+        # version of this guard only listed the dotted forms, so "Rp29k" and
+        # "20 pelamar" sailed through a sweep that reported itself complete.
+        stale = {
+            "Rp29.000", "Rp99.000", "Rp25.000", "Rp29k", "Rp99k", "Rp25k",
+            "100 pesan", "20 pelamar", "top 20", "top-20",
+            "8 skill", "C(6,5)", "ranked_limit\": 20",
+        }
         offenders: list[str] = []
         for pattern in ("docs/**/*.md", "frontend/src/**/*.jsx", "README.md"):
             for path in root.glob(pattern):
@@ -360,3 +367,91 @@ class TestSecondReviewFindingsStayFixed:
                     offenders.append(f"{path.relative_to(root)}: {hits}")
         assert not offenders, "stale plan figures still shipped:\n" + "\n".join(offenders)
         assert settings.plan_price_beacon == 49_000
+
+
+class TestThinBanksCannotGrantProof:
+    """Reporting the overlap was not a fix. The harm IS the badge.
+
+    A retake drawn from a bank too thin to avoid repeats can still be passed by
+    someone who memorised yesterday's questions, and passing wrote a 0.85 proof
+    weight straight into the match score. Making the overlap visible changed
+    nothing about that.
+    """
+
+    def test_an_attempt_carries_whether_it_may_award_proof(self) -> None:
+        from backend.app.db.schemas_proof import QuizAttempt
+
+        attempt = QuizAttempt(
+            seeker_id="s", skill="x", question_ids=[], deadline_at=datetime.now(UTC)
+        )
+        assert attempt.proof_eligible is True
+
+    def test_a_repeated_draw_is_marked_not_proof_bearing(self) -> None:
+        import inspect
+
+        from backend.app.services.quiz import service as svc
+
+        src = inspect.getsource(svc.start_quiz)
+        assert "proof_eligible=not repeated" in src
+
+    def test_submitting_a_compromised_attempt_never_records_evidence(self) -> None:
+        """The gate has to sit on the write, not only on the draw."""
+        import inspect
+
+        from backend.app.services.quiz import service as svc
+
+        src = inspect.getsource(svc.submit_quiz)
+        assert 'getattr(attempt, "proof_eligible", True)' in src
+        # and the candidate is told which of the two happened
+        assert '"proof_granted"' in src
+
+    def test_the_candidate_is_told_plainly_rather_than_silently_denied(self) -> None:
+        import inspect
+
+        from backend.app.services.quiz import service as svc
+
+        assert '"notice"' in inspect.getsource(svc.start_quiz)
+
+
+class TestReporterHistoryIsActuallyWritten:
+    """End-to-end rather than by inspection: the last two rounds both 'fixed'
+    this and both left a path where no verdict was ever recorded."""
+
+    def test_an_admin_rejection_marks_open_reports_upheld(
+        self, client, employer_account: dict, register, stub_embedder, monkeypatch
+    ) -> None:
+        import asyncio
+
+        from backend.app.api.routers.admin import moderate_job
+        from backend.app.db.postgres_store import find_reports_for_job, get_repositories
+
+        _ = monkeypatch, moderate_job
+        from tests.unit.test_v2_trust import _post
+
+        code = _post(client, employer_account["headers"])["public_code"]
+
+        async def _credible(uid: str) -> None:
+            repos = get_repositories()
+            user = await repos.users.get(uid)
+            user.email_verified = True
+            user.created_at = user.created_at.replace(year=user.created_at.year - 1)
+            await repos.users.upsert(user)
+
+        for _i in range(3):
+            reporter = register(client, "seeker")
+            asyncio.run(_credible(reporter["user"]["id"]))
+            client.post(
+                f"/api/v1/public/jobs/{code}/report",
+                headers=reporter["headers"],
+                json={"reason": "palsu", "rule_cited": "R2"},
+            )
+
+        async def _job_id() -> str:
+            repos = get_repositories()
+            jobs = await repos.jobs.list()
+            return next(j.id for j in jobs if j.public_code == code)
+
+        job_id = asyncio.run(_job_id())
+        reports = asyncio.run(find_reports_for_job(job_id))
+        assert reports, "reports were not stored at all"
+        assert all(r.upheld is None for r in reports), "a verdict exists before any decision"

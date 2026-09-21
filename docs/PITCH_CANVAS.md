@@ -84,7 +84,7 @@ orange and physically raised above the others.
 **The proof ladder**, as three ascending bars whose heights are the real weights 0.30 / 0.85 / 1.00.
 Not three equal chips.
 
-**The margin floor**, as a simple bar set: Beacon 93, Lighthouse 93, Prism 83 — plus a lower
+**The margin floor**, as a simple bar set: Beacon 99, Lighthouse 99, Prism 83 — plus a lower
 marker at 46 on the Prism bar labelled "plafon pemakaian". The point of the graphic is that the
 paid tiers have a *floor*, not an assumption: it holds even when a subscriber consumes every
 message they are entitled to.
@@ -246,8 +246,11 @@ Pembayaran saat ini QRIS atau transfer yang dikonfirmasi admin. Payment gateway 
 
 Margin kotor per penjualan — **model asumsi, bukan pengukuran pelanggan**
 
-Beacon **93%** · Lighthouse **93%** · Prism **83%**, dan **46%** bahkan kalau pelanggan Prism
+Beacon **99%** · Lighthouse **99%** · Prism **83%**, dan **46%** bahkan kalau pelanggan Prism
 memakai seluruh kuotanya.
+
+Angka employer setinggi itu karena baca CV kini dibebankan ke akun pencari kerja, bukan ke paket
+employer — biayanya tidak hilang, ia pindah ke baris akuisisi.
 
 Jumlah pelamar tidak lagi menggerakkan biaya employer: kuis, skor, peringkat, dan pencarian
 kandidat **tidak memanggil AI sama sekali**, dan baca CV dibayar sekali per kandidat seumur akun.
@@ -316,7 +319,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | *"CV bisa direkayasa, bagaimana verifikasinya?"* | Skill yang hanya ditulis di CV bernilai **0.30**; lulus kuis **0.85**; dikonfirmasi HR **1.00**. Karena bobot bukti (0.40) **lebih besar** dari kemiripan teks (0.35), menyalin kalimat iklan tidak lagi cukup untuk menang. |
 | *"Tunjukkan bahwa keyword stuffing benar-benar kalah."* | Dua kandidat, pengalaman & pendidikan sama. Penyalin iklan: kemiripan 0.90, semua skill hanya klaim → **0.685**. Kandidat terbukti: kemiripan 0.50, semua skill lulus kuis → **0.765**. Bahkan pada kemiripan **sempurna 1.00**, penyalin berhenti di **0.720**. Selisih yang harus dikejar setara **0.629 poin kemiripan** — di luar rentang nyata. |
 | *"Berarti pembohong diblokir?"* | **Tidak, dan kami tidak mengklaim itu.** Skor 0.685 masih masuk band "strong" (ambang 0.65). Yang kami jamin: dia **di bawah** kandidat terbukti dalam urutan yang dibaca HR. |
-| *"Tanpa NIK/NPWP, bagaimana mencegah lowongan palsu?"* | **Balik dulu premisnya: NIK tidak mencegah lowongan palsu.** Penipuan lowongan di Indonesia rutin jalan pakai NIK asli — curian atau dibeli. Identitas bukan niat. Dan verifikasi NIK sungguhan butuh akses Dukcapil lewat status PSE terdaftar; yang bisa kami lakukan dulu hanyalah cek format 16 digit, yang mencegah **nol** penipuan sambil menciptakan liability penuh. Itu sebabnya dihapus. Yang kami pakai sebagai gantinya bekerja pada **perilaku dan jejak publik**: hard rule "minta biaya dari pelamar" menolak otomatis + strike; lowongan pertama employer baru ditahan untuk tinjauan; domain email harus cocok dengan website dan penyedia gratis tidak memenuhi syarat; Google Maps / IG bisnis / website dicek admin; 3 laporan pelamar menyembunyikan lowongan; strike 1→2→3 menangguhkan akun. Semua sudah jalan, semua tercatat di `moderation_events`. |
+| *"Tanpa NIK/NPWP, bagaimana mencegah lowongan palsu?"* | **Balik dulu premisnya: NIK tidak mencegah lowongan palsu.** Penipuan lowongan di Indonesia rutin jalan pakai NIK asli — curian atau dibeli. Identitas bukan niat. Dan verifikasi NIK sungguhan butuh akses Dukcapil lewat status PSE terdaftar; yang bisa kami lakukan dulu hanyalah cek format 16 digit, yang mencegah **nol** penipuan sambil menciptakan liability penuh. Itu sebabnya dihapus. Yang kami pakai sebagai gantinya bekerja pada **perilaku dan jejak publik**: hard rule "minta biaya dari pelamar" menolak otomatis + strike; lowongan pertama employer baru ditahan untuk tinjauan; domain email harus cocok dengan website dan penyedia gratis tidak memenuhi syarat; Google Maps / IG bisnis / website dicek admin; laporan pelamar **ditimbang, bukan dihitung**, dan hanya menandai lowongan untuk ditinjau — yang menyembunyikan cuma putusan terhadap aturan keras yang dikutip; strike 1→2→3 menangguhkan akun. Semua sudah jalan, semua tercatat di `moderation_events`. |
 | *"Kalau pelamarnya yang tidak tepercaya?"* | Kami tidak memverifikasi **siapa** dia, kami menguji **apa yang bisa** dia kerjakan — itu justru produk intinya. Ijazah membuktikan seseorang pernah kuliah; kuis membuktikan dia bisa mengerjakan. Bukti itu dibobot 0.40 melawan 0.35 kemiripan teks. Dokumen identitas tetap dicek HR di wawancara — titik yang memang tepat, dan di situ liability-nya ada pada pemberi kerja, bukan pada kami menyimpan database NIK. |
 | *"Lapisan verifikasi employer masih manual, kan?"* | Ya, `admin_reviewed` butuh manusia dan itu belum berskala. Tiga lapis lainnya otomatis. Opsi berikutnya yang sedang kami timbang: **NIB dari OSS sebagai badge opsional** — nomor izin usaha itu **data bisnis, bukan data pribadi**, jadi tidak membuka kembali lubang UU PDP yang kami tutup, dan sifatnya opsional supaya UMKM informal tidak tersingkir. Belum dibangun; jangan diklaim sudah. |
 | *"Ada mekanisme ban / turun peringkat?"* | Ada dan sudah jalan: AutoMod menolak/menahan sebelum tayang, pemasang dapat notifikasi + bisa banding, kandidat bisa melapor, dan strike 1→2→3 membatasi lalu menangguhkan akun. |
@@ -330,9 +333,9 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Kalau ditanya | Jawab |
 |---|---|
 | Sudah ada yang bayar? | **Belum satu pun.** Target: 3 surat minat. |
-| Bank soalnya berapa? | **8 skill × 6 soal, masih draf AI**, sedang diperluas ke ~20 per skill dengan tinjauan praktisi HR. Dengan 6 soal, satu kuis 5 soal hanya punya 6 kombinasi — ujian ulang pasti mengulang soal. Kami tahu, dan itu antrean kerja berikutnya. |
+| Bank soalnya berapa? | Target **30 soal per skill**, diisi otomatis oleh AI dan disaring validator mekanis (4 pilihan, tidak ada duplikat, jawaban tidak lebih panjang dari pengecoh). Provenance dicatat per soal: `human` (disetujui praktisi) vs `ai_auto` (lolos validator) — kami **tidak** menyebut soal AI sebagai "ditinjau praktisi". Tinjauan manusia atas bank tetap antrean kerja berikutnya. |
 | Tebak asal bisa lolos kuis? | Tiap soal 4 opsi, lulus butuh 4 dari 5 benar. Peluang lolos dengan menebak semua = **1,56%**. Bukan nol, tapi itu sebabnya badge bernilai 0.85 dan bukan 1.00 — hanya konfirmasi HR yang bernilai penuh. |
-| Bank soal cuma 6 per skill, berarti ujian ulang mengulang soal? | **Betul, dan ini lubang paling tajam di kuis kami.** Satu kuis mengambil 5 dari 6 soal, jadi percobaan kedua pasti mengulang minimal 4 soal yang sudah dilihat. Jeda 7 hari memperlambat, tidak menutup. Perbaikannya bukan aturan baru tapi bank yang lebih besar — ~20 soal per skill dengan tinjauan praktisi HR, dan itu antrean kerja berikutnya. Sampai itu selesai, **klaim kami hanya sekuat "kuis menyaring", bukan "kuis membuktikan"** — dan penentu akhir tetap HR. |
+| Ujian ulang mengulang soal? | **Tidak lagi, dan itu dijamin server.** Pengambilan soal mengecualikan seluruh soal percobaan sebelumnya, dan percobaan sebelumnya lagi bila bank masih menyisakan pilihan nyata. Bank tiap skill diisi sampai **30 soal**, jadi lima kuis berturut-turut bisa sepenuhnya tidak bertumpang tindih. Kalau bank sebuah skill masih terlalu tipis untuk menepatinya, kuis **tetap dilayani** — mengunci kandidat karena bank *kami* belum selesai itu kegagalan yang lebih buruk — tapi percobaan itu **tidak bisa memberi badge**. Tetap dinilai, tetap diberi umpan balik, hanya tidak menghasilkan bukti: lulus atas soal yang sudah dilihat kemarin bukan bukti, dan badge itu berbobot 0,85 langsung ke skor. Pelamar diberi tahu alasannya, dan percobaan berikutnya bersih begitu bank terisi. |
 | Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, sekitar **5,6× proyeksi pendapatan tahun 2** (Rp360 juta) — dengan **nol pelanggan hari ini**. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
 | Target 18–25 tahun itu bukan diskriminasi usia juga? | Beda posisi: itu **segmen pasar kami**, bukan syarat yang boleh dipasang employer. Justru AutoMod menolak iklan yang memasang batas usia. Siapa pun boleh mendaftar dan melamar di platform; yang kami batasi hanya ke mana energi pemasaran kami diarahkan. |
 | Moat "kumpulan profil terbukti" — kalian sendiri masih nol, kan? | **Ya.** Hari ini moat itu belum ada, baru mekanismenya yang ada. Yang kami klaim bukan "kami sudah punya", tapi "ini aset yang menumpuk kalau pilot jalan, dan tidak bisa disalin dengan menyalin fitur". Kalau pilot gagal, moat ini tidak pernah lahir — itu risiko yang kami tanggung, bukan yang kami sembunyikan. |
@@ -364,7 +367,12 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Bulan 15 · Rp101 jt · Rp360 jt | proyeksi skenario dasar, `BUSINESS_MODEL.md` |
 | 89.141 | usaha **kecil + menengah** (73.828 + 15.313), SIDT-UMKM 31 Des 2025. **Bukan** termasuk usaha mikro — jangan sebut "UMKM" untuk angka ini |
 | 7,28 jt · TPT 4,65% | BPS Mei 2026, rilis 5 Agustus 2026. **Rilis terbaru** — jangan pakai angka Februari 2026 yang masih tertinggal di `BUSINESS_MODEL.md` |
-| Spark 20 pelamar | **skor tertinggi**, bukan yang pertama melamar |
+| Spark: semua pelamar | **tanpa batas di setiap paket** — memeringkat berbiaya Rp0, jadi tidak pernah dibatasi. Yang berbayar: kit wawancara, ekspor, dan pencarian kandidat yang belum melamar |
+| Bank soal 30 / skill | `generator.BANK_TARGET`. Mengisi satu skill ~Rp330 (3 batch), sekali seumur skill |
+| Ulang kuis 1 hari | `service.RETAKE_DAYS` — sama untuk semua paket, tidak dijual |
+| Advisor 10 vs 20 / hari | `plans.ADVISOR_FREE_PER_DAY` / `ADVISOR_PRISM_PER_DAY`, satuan sama, berbayar selalu lebih besar |
+| Margin Beacon 99% | baca lowongan Rp195 + 5 kit wawancara Rp450. **Baca CV tidak lagi dibebankan ke employer** — pindah ke akuisisi pencari kerja. Jangan kutip tanpa kalimat kedua itu |
+| Tebak asal 1,56% | 4 opsi, lulus 4/5 |
 
 > **Aturan tunggal:** kalau sebuah angka tidak ada di tabel ini, **jangan sebut**.
 > Katakan "belum kami ukur" — itu jawaban yang menang, bukan yang kalah.

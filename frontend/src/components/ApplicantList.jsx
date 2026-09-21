@@ -1,6 +1,7 @@
 // Ranked applicants for one job: proof chips, pipeline status, notes,
 // AI interview questions, "skill terbukti" confirmation, CSV export.
-// Spark (free) scores every applicant and reveals the top 20 BY SCORE; the
+// Every tier, including Spark, ranks and reveals ALL applicants: ranking is a
+// free computation, so a cap saved nothing and only hid people. The
 // rest show as locked. The cap limits how many are opened, not which — a
 // late-arriving better candidate must not be hidden behind the paywall.
 import { useState } from 'react'
