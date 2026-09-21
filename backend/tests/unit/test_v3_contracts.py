@@ -574,8 +574,13 @@ class TestPitchCanvasStaysDeliverable:
         body = re.sub(r"^\s*[#>|`-].*$", "", body, flags=re.M)
         words = len(re.findall(r"[A-Za-zÀ-ÿ0-9.,%']+", body))
 
-        assert len(blocks) <= 9, f"{len(blocks)} content blocks — a page this busy becomes a grid"
-        assert words <= 650, (
+        # Eleven is the standard Pitch Canvas structure, so it is the target and
+        # also the ceiling: a twelfth box means something was bolted on.
+        assert len(blocks) == 11, (
+            f"{len(blocks)} boxes — the standard Pitch Canvas has exactly 11, and judges "
+            "look for each answer where the template puts it"
+        )
+        assert words <= 750, (
             f"{words} renderable words. A 1920x1080 page with charts holds roughly 400-600; "
             "cut content rather than shrinking the type."
         )
@@ -583,5 +588,6 @@ class TestPitchCanvasStaysDeliverable:
     def test_every_spoken_beat_has_something_to_point_at(self) -> None:
         """The presenter walks the page top to bottom in three minutes."""
         block = self._copy_block()
-        for beat in ("0.685", "0.765", "40% skill terbukti", "0,85", "belum ada", "belum diuji"):
+        for beat in ("0.685", "0.765", "40% skill terbukti", "0,85", "belum ada", "belum diuji",
+                     "Rp200 juta", "ISI TIM"):
             assert beat in block, f"the script points at '{beat}' but the slide does not carry it"

@@ -29,17 +29,45 @@ Never render any of these onto the canvas:
 **Every visible headline on the canvas is written out in §SLIDE TEXT.** If a block has no headline
 there, it gets no headline. Silence is the correct output.
 
+## Layout — the standard Pitch Canvas template
+
+This follows the well-known Pitch Canvas structure, so judges can find each
+answer where they expect it:
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  1  SIMPLE STATEMENT                          (full width)   │
+├───────────────────────────┬──────────────────────────────────┤
+│  2  PAIN + GAIN           │  3  PRODUCT                      │
+├───────────────────────────┼──────────────────────────────────┤
+│  4  PRODUCT DEMO          │  5  WHAT'S UNIQUE                │
+├───────────────────────────┼──────────────────────────────────┤
+│  6  CUSTOMER TRACTION     │  7  BUSINESS MODEL               │
+├───────────────────────────┼──────────────────────────────────┤
+│  8  INVESTMENT            │  9  TEAM                         │
+├───────────────────────────┴──────────────────────────────────┤
+│  10  CALL TO ACTION + END STATEMENT           (full width)   │
+├──────────────────────────────────────────────────────────────┤
+│  11  WHY YOU?                       (separate closing strip) │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**Do not print the box numbers or the category names.** They order the page, and
+the reader can tell a problem from a price without a label. Weight matters more
+than the grid: box 3 carries the two scores and should dominate; boxes 4 and 9
+are the smallest. Box 4 is mostly screenshots.
+
 ## Reading order must match the spoken order
 
 This page backs a **three-minute spoken pitch**, and the presenter walks it top
 to bottom. A reader's eye must therefore land in this sequence, enforced by size
 and weight rather than by numbering:
 
-`the claim + the two scores` -> `how proof is earned` -> `what we verify instead
-of documents` -> `who pays for what` -> `what we admit we do not have` -> `the ask`
+`statement` -> `pain` -> `product, and the two scores` -> `what's unique` ->
+`traction, including what is missing` -> `business model` -> `the ask`
 
-Anything that cannot be pointed at inside three minutes is supporting evidence
-and should be set small enough to read as such.
+Boxes 4, 8, 9 and 11 (demo, investment, team, why you) are **read, not spoken** —
+they answer the questions a judge asks afterwards. Set them smaller.
 
 ## The one thing this page must do
 
@@ -117,82 +145,70 @@ as the filled ones.
 
 Everything below is drawn. `⟦…⟧` markers are not.
 
-**Seven blocks, in this order.** The presenter walks them top to bottom in three
-minutes, so nothing else belongs on the page — if a sentence cannot be pointed
-at inside those three minutes, it is not slide content.
+**Eleven boxes, in the order of the standard Pitch Canvas.** The layout follows
+that template: a full-width statement, then paired boxes, then a call-to-action
+band and a closing "Why You?" strip. Two boxes are marked `[ISI TIM]` — those
+carry facts only the founders can supply and **must be filled before this brief
+is sent to a designer**; a placeholder rendered onto a poster is worse than an
+absent box.
 
-⟦headline⟧
+⟦1 · simple statement — full width banner⟧
 
-**CV bisa ditulis siapa saja.
-Kami membuat skill harus dibuktikan — lalu mengurutkan pelamar berdasarkan bukti itu.**
+**CV bisa ditulis siapa saja. Kami membuat skill harus dibuktikan —
+lalu mengurutkan pelamar berdasarkan bukti itu.**
 
 Pencocokan kerja berbasis AI untuk UMKM Indonesia dan pencari kerja muda.
 
-⟦the two scores — the largest thing on the page⟧
-
-Dua pelamar, satu lowongan, pengalaman dan pendidikan sama.
-
-CV disalin dari iklan lowongan · kemiripan teks 0,90 · skill hanya diklaim — **0.685**
-Skill dibuktikan lewat kuis · kemiripan teks 0,50 · lulus kuis — **0.765**
-
-Bahkan pada kemiripan sempurna 1,00, CV yang hanya mengklaim berhenti di **0.720**.
-
-Penyalin iklan tidak diblokir — dia hanya kalah urutan.
-
-⟦problem⟧
+⟦2 · pain + gain⟧
 
 **Satu lowongan di grup WA bisa menerima 50 CV dalam dua hari — tidak terurut,
 banyak yang mengklaim skill yang tidak dikuasai.**
 
-Jam kerja pemilik usaha habis mewawancarai orang yang salah. Di sisi lain: melamar
-puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
+Jam kerja pemilik usaha habis mewawancarai orang yang salah. Di sisi lain:
+melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang kurang.
 
 **89.141** usaha kecil & menengah terdaftar · SIDT-UMKM, Des 2025
 **7,28 juta** penganggur terbuka · BPS, Mei 2026
 
-⟦how proof is earned — weights strip, proof ladder, three steps⟧
+Sudah ada yang bersedia membayar? **Belum diuji** — itu yang kami cari di pilot.
+
+⟦3 · product — weights strip, proof ladder, the two scores⟧
+
+Pasang lowongan → dapat link + poster QR → pelamar scan, ikut kuis, melamar →
+satu daftar terperingkat.
 
 35% kemiripan teks · **40% skill terbukti** · 15% pengalaman · 10% pendidikan
-
 Ditulis di CV **0,30** → Lulus kuis **0,85** → Dikonfirmasi HR **1,00**
 
-Kuis 5 soal skenario, dinilai server dengan kunci jawaban — tanpa panggilan AI,
-**Rp0 per percobaan**. HR mencentang "terbukti" setelah wawancara: bukti terkuat.
-
-Skill dinilai **per skill, dibagi jumlah skill yang diminta lowongan**. Mengklaim 20
-skill tidak mengalahkan yang mengklaim 3.
+Dua pelamar, satu lowongan, pengalaman dan pendidikan sama:
+CV disalin dari iklan · kemiripan 0,90 · hanya klaim — **0.685**
+Skill dibuktikan lewat kuis · kemiripan 0,50 — **0.765**
+Bahkan pada kemiripan sempurna 1,00, yang hanya mengklaim berhenti di **0.720**.
 
 **Membayar tidak mengubah skor maupun urutan siapa pun.**
 
-⟦what we verify instead of documents — four layers + the moderation split⟧
+⟦4 · product demo — mostly screenshots, little text⟧
 
-**Kami tidak memverifikasi dokumen. Kami memverifikasi perilaku dan jejak publik.**
+Tiga layar produk yang berjalan hari ini:
 
-Mengumpulkan NIK tidak menghentikan lowongan palsu — penipu memakai NIK asli.
+**1.** Poster QR sebuah lowongan · **2.** Kuis skill 5 soal di ponsel ·
+**3.** Daftar pelamar terperingkat dengan badge ✓ Terbukti
 
-Domain email harus cocok dengan website · jejak publik dicek admin · lowongan
-pertama ditahan sampai tepercaya · laporan **ditimbang, bukan dihitung**
+Kuis dinilai server dengan kunci jawaban — tanpa panggilan AI, **Rp0 per percobaan**.
 
-Minta biaya dari pelamar → **ditolak otomatis**
-Syarat diskriminatif → **ditahan untuk tinjauan**
-Bersih → **tayang**
+⟦5 · what's unique⟧
 
-Untuk pelamar: kami tidak menanyakan siapa kamu, kami menguji apa yang bisa kamu
-kerjakan. Dokumen tetap dicek HR saat wawancara.
+**Fitur bisa ditiru sebulan. Kumpulan profil yang sudah terbukti tidak.**
 
-⟦who pays for what⟧
+Peniru mulai dari nol kandidat terbukti. QR tiap employer membawa pelamar baru
+yang ikut dicocokkan ke lowongan lain — tumbuh dari pemakaian, bukan iklan.
 
-**Employer bayar untuk menyaring, bukan untuk mencari.**
+Dan kami tidak memverifikasi dokumen, kami memverifikasi perilaku: domain email
+harus cocok dengan website, jejak publik dicek admin, iklan yang meminta biaya
+ditolak otomatis, laporan **ditimbang, bukan dihitung**. Mengumpulkan NIK tidak
+menghentikan lowongan palsu — penipu memakai NIK asli.
 
-Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat
-Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
-Lighthouse **Rp149.000** per bulan · 5 lowongan
-Prism **Rp15.000** per 30 hari · peringkat persis lamaranmu, untuk pencari kerja
-
-Memeringkat berbiaya Rp0 untuk kami hitung — jadi tidak pernah dibatasi. Yang
-berbayar adalah yang memang berbiaya.
-
-⟦what we do not have yet — as legible as the wins⟧
+⟦6 · customer traction — gaps as legible as the wins⟧
 
 Prototipe jalan, seluruh test menggugurkan build — **sudah**
 Migrasi database teruji sampai rollback — **sudah**
@@ -203,25 +219,57 @@ Validitas prediktif skor — **belum diuji**
 Mesin pengukurnya sudah jalan: skor dan bukti disimpan tiap kali orang melamar.
 Datanya yang belum ada — dan layar kami menulis "belum ada data", bukan 0%.
 
-⟦team — one compact row, small⟧
+⟦7 · business model⟧
+
+**Employer bayar untuk menyaring, bukan untuk mencari.**
+
+Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat
+Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
+Lighthouse **Rp149.000** per bulan · 5 lowongan
+Prism **Rp15.000** / 30 hari · peringkat persis lamaranmu, untuk pencari kerja
+
+Memeringkat berbiaya Rp0 untuk kami hitung — jadi tidak pernah dibatasi. Yang
+berbayar adalah yang memang berbiaya. Margin kotor per penjualan 83–99%
+(**model asumsi**, biaya sungguhannya terpantau per aksi di dashboard admin).
+
+⟦8 · investment⟧
+
+**Rp200 juta untuk 10%** — dua tahap: Rp100 juta saat tanda tangan, Rp100 juta
+di bulan ke-6 bila target tercapai.
+
+Pendirian & legal 22% · menutup rugi sampai impas 29% · akuisisi pengguna 20% ·
+keamanan & gateway 6% · bantalan skenario buruk 23%
+
+Proyeksi skenario dasar: impas **bulan 15** · kas terdalam **Rp101 juta**
+
+`[ISI TIM]` Berapa yang sudah kami tanam sendiri, dan pendanaan apa yang sudah
+kami terima sejauh ini.
+
+⟦9 · team⟧
 
 **David** AI & backend · **Darren** produk & UX · **Vanessa** sistem & dampak ·
 **Jason** bisnis & deployment
 
 Kami memperbaiki produk berdasarkan kritik, bukan membela slide: Pay-to-Unlock,
-e-KYC NIK, dan klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami buktikan.
+e-KYC NIK, dan klaim "94% akurasi" semuanya kami hapus karena tidak bisa kami
+buktikan.
 
-⟦the ask + closing banner⟧
+⟦10 · call to action + end statement — full width band⟧
 
 **UMKM & HR** — Pasang 1 lowongan sekarang, gratis.
 **Pencari kerja** — Scan, ikut 1 kuis 3 menit, bawa pulang badge terbukti.
-**Investor** — **Rp200 juta untuk 10%.** Beri kami 30 hari dan 10 UMKM pilot, lalu
-kita baca bersama tingkat wawancara per band skor di dashboard yang sama.
+**Investor** — Beri kami 30 hari dan 10 UMKM pilot, lalu kita baca bersama
+tingkat wawancara per band skor di dashboard yang sama.
 
 **Pasar kerja Indonesia tidak kekurangan lamaran. Yang kurang adalah bukti.
 Kami membangun tempat bukti itu disimpan.**
 
----
+⟦11 · why you — closing strip, separate from the boxes above⟧
+
+`[ISI TIM]` Kenapa justru kami yang mengerjakan ini: pengalaman pribadi kami
+dengan mencari kerja atau merekrut di Indonesia, dalam dua sampai tiga kalimat.
+Satu hal yang benar tanpa perlu diisi: setiap klaim yang tidak bisa kami
+buktikan sudah kami hapus sendiri, sebelum ada yang memaksa.
 
 ## Before you hand it over
 
