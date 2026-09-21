@@ -48,10 +48,10 @@ pendapatan yang kami berikan gratis tanpa sadar.
 | | Badge ✓ Terbukti terlihat + centang "skill terbukti" | `quiz/`, `hiring.py` | Rp0 per percobaan kuis |
 | **Beacon** (Rp49.000 / lowongan / 30 hari) | Pertanyaan wawancara AI per kandidat | `hiring.py::_require_premium` | ~Rp60, **di-cache** per (kandidat, lowongan) |
 | | Ekspor pelamar CSV | `hiring.py::_require_premium` | Rp0 |
-| | **Cari kandidat yang belum melamar — 30x / 30 hari** | `employer.py::_check_talent_search_quota` | Rp0 (pgvector, tanpa AI) |
+| | **Cari kandidat yang belum melamar — 30x / 30 hari, PER LOWONGAN** | `employer.py::_check_talent_search_quota` (kuota dihitung per `job_id`) | Rp0 (pgvector, tanpa AI) |
 | **Lighthouse** (Rp149.000 / 30 hari) | Hingga 5 lowongan aktif | `plans.active_job_limit` | ~Rp130 per lowongan |
 | | Semua fitur Beacon di semua lowongan | `Entitlements.job_tier` | — |
-| | Cari kandidat **150x / 30 hari** | `employer.py::_check_talent_search_quota` | Rp0 |
+| | Cari kandidat **150x / 30 hari**, berlaku se-akun | `employer.py::_check_talent_search_quota` | Rp0 |
 | **Gratis** (pencari kerja) | Skor, band, skill gap, rekomendasi kursus | `seeker.py` | baca CV ~Rp99 sekali seumur akun |
 | | Kuis tanpa batas (ulang besoknya) | `quiz/service.RETAKE_DAYS` | **Rp0 per percobaan** |
 | | **Peringkat persis tiap lamaran** (mis. #14 dari 62) + rincian bukti per skill | `seeker.py::application_rank` | **Rp0** — dibaca dari baris yang ditulis saat melamar |

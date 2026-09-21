@@ -476,9 +476,13 @@ the endpoint cannot be used to probe which application ids exist.
 ```
 
 Ties share a rank (two identical stored scores are genuinely level). `percentile` is `null` when
-fewer than 10 people applied — "top 50%" out of two applicants is noise. Paying buys **visibility**
-of the position, never movement in it: the ordering reported here is the same one the employer sees
-on every tier, and the endpoint has no write path.
+fewer than 10 people applied — "top 50%" out of two applicants is noise. `total_applicants` counts
+only people who actually applied; `SAVED` bookmarks are excluded, so the field matches the one the
+employer's applicant list shows.
+
+**Nothing here is sold.** Paying buys neither the position nor visibility of it — an earlier draft
+of this section said otherwise and contradicted the endpoint. The ordering reported is the same one
+the employer sees on every tier, and the endpoint has no write path.
 
 ---
 
@@ -687,11 +691,18 @@ Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — rev
 **Plan-gated — this is sourcing, not screening.** Searching candidates who have *not* applied is the
 employer feature that is actually sold, so it carries a quota (`_check_talent_search_quota`):
 
-| Tier | Searches / 30 days | Response when exhausted |
-|---|---|---|
-| Spark (free) | 0 | `402 Payment Required` — names Beacon and Lighthouse |
-| Beacon | 30 | `429 Too Many Requests` — offers Lighthouse |
-| Lighthouse | 150 | `429 Too Many Requests` |
+| Tier | Searches / 30 days | Scope | Response when exhausted |
+|---|---|---|---|
+| Spark (free) | 0 | — | `402 Payment Required` — names Beacon and Lighthouse |
+| Beacon | 30 | **per job** | `429 Too Many Requests` — offers Lighthouse |
+| Lighthouse | 150 | per account | `429 Too Many Requests` |
+
+**Beacon is checked and counted against the job in the path, not the account.** It is sold per job,
+so asking only "does this account hold a Beacon?" would let a Beacon bought for job A unlock
+sourcing on every unpaid Spark job the same employer owns, and a single shared counter would make
+two Beacon purchases split one 30-search allowance. The quota bucket is therefore
+`talent_search:{job_id}` on Beacon and `talent_search` on Lighthouse, which is account-wide by
+design.
 
 Ranked **applicants** (`GET /employer/applications`) are deliberately uncapped on every tier,
 including free: scoring someone who already applied costs Rp0 to compute, so capping it saves

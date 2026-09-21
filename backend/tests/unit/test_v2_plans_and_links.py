@@ -247,7 +247,53 @@ class TestLinksAndApply:
         assert body["rank"] == 1 and body["total_applicants"] == 1
         # Too small a field to quote a percentile honestly.
         assert body["percentile"] is None
-        assert "how_to_improve" in body and body["how_to_improve"]
+
+        # The counts must be REAL. Asserting only that `how_to_improve` was
+        # non-empty is what let a wrong key ship: the filters read `level` while
+        # snapshots store `proof_level`, so both lists were always empty and
+        # every candidate was told all their skills were proven — the opposite
+        # of the advice they needed, and the string was still truthy.
+        assert body["skills"], "no evidence snapshot stored on the application"
+        assert all("proof_level" in sk for sk in body["skills"])
+        assert body["proven_count"] + body["claimed_count"] == len(body["skills"]), (
+            "evidence counts do not add up to the snapshot — a key mismatch"
+        )
+        claimed = [sk for sk in body["skills"] if sk["proof_level"] == "claimed"]
+        assert body["claimed_count"] == len(claimed)
+        if claimed:
+            assert "klaim" in body["how_to_improve"].lower()
+
+    def test_bookmarks_do_not_pad_the_applicant_field(
+        self, client, employer_account, register, stub_embedder
+    ) -> None:
+        """A SAVED row is someone who bookmarked the job, not a competitor.
+
+        Counting them inflated `total_applicants` and pushed everyone's rank
+        around, and it disagreed with the employer's own applicant list, which
+        filters SAVED out. The seeker would have been told a standing the
+        employer could not see.
+        """
+        job = _job(client, employer_account["headers"])
+        applicant = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=applicant["headers"], json={
+            "full_name": "Pelamar", "region_code": "3171", "skills": ["Kasir"]})
+        client.post("/api/v1/seeker/apply", headers=applicant["headers"],
+                    json={"job_id": job["job_id"]})
+
+        # A second seeker only BOOKMARKS the job.
+        browser = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=browser["headers"], json={
+            "full_name": "Penonton", "region_code": "3171", "skills": ["Kasir"]})
+        client.post("/api/v1/seeker/bookmarks", headers=browser["headers"],
+                    json={"job_id": job["job_id"]})
+
+        app_id = client.get("/api/v1/seeker/applications",
+                            headers=applicant["headers"]).json()[0]["application_id"]
+        body = client.get(f"/api/v1/seeker/applications/{app_id}/rank",
+                          headers=applicant["headers"]).json()
+        assert body["total_applicants"] == 1, (
+            f"a bookmark was counted as an applicant: {body['total_applicants']}"
+        )
 
     def test_another_seeker_cannot_probe_an_application_id(
         self, client, employer_account, register, stub_embedder, limits_on
@@ -281,6 +327,35 @@ class TestLinksAndApply:
         # Ties share a rank rather than being broken arbitrarily.
         assert _rank_of(0.7, scores) == 2
         assert _rank_of(0.4, scores) == 4
+
+    def test_a_beacon_on_one_job_does_not_unlock_another(
+        self, client, employer_account, register, stub_embedder, admin,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        """Beacon is priced per job; it must not be delivered per account."""
+        h = employer_account["headers"]
+        # Both postings are created BEFORE limits are switched on, so the Spark
+        # single-job cap does not stand in for the entitlement being tested.
+        paid = _job(client, h, title="Dibayar")
+        unpaid = _job(client, h, title="Tidak dibayar")
+        monkeypatch.setattr(settings, "plan_limits_enforced", True)
+
+        order = client.post("/api/v1/billing/orders", headers=h,
+                            json={"plan": "beacon", "job_id": paid["job_id"]})
+        assert order.status_code in (200, 201), order.text
+        client.post(f"/api/v1/admin/orders/{order.json()['order_id']}/activate",
+                    headers=admin["headers"], json={})
+
+        seeker = register(client, "seeker")
+        client.post("/api/v1/seeker/profile", headers=seeker["headers"], json={
+            "full_name": "Kandidat", "region_code": "3171", "skills": ["Kasir"]})
+
+        assert client.post(f"/api/v1/employer/jobs/{paid['job_id']}/candidates",
+                           headers=h, json={}).status_code == 200
+        assert client.post(f"/api/v1/employer/jobs/{unpaid['job_id']}/candidates",
+                           headers=h, json={}).status_code == 402, (
+            "a Beacon bought for one job unlocked sourcing on an unpaid job"
+        )
 
     def test_talent_search_is_anonymised(self, client, employer_account, register,
                                          stub_embedder) -> None:

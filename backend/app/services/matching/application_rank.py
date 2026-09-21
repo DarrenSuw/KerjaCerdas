@@ -17,7 +17,7 @@ has no side effects at all.
 from __future__ import annotations
 
 from backend.app.db.postgres_store import find_applications_by_job_id
-from backend.app.db.schemas import Application
+from backend.app.db.schemas import Application, ApplicationStatus
 
 
 # Ties share a rank ("joint 4th"), which is why this is not a list index. Two
@@ -30,12 +30,21 @@ def _rank_of(score: float, scores: list[float]) -> int:
 async def rank_for_application(app: Application) -> dict:
     """Exact standing for one application, plus the arithmetic behind it.
 
-    `total` counts every application to the job, including this one. Withdrawn
-    applications stay in the denominator on purpose: the candidate is being told
-    how they placed in the field that actually applied, and quietly shrinking it
-    would flatter the number.
+    `total` counts everyone who actually applied to the job, including this
+    candidate, and matches the field the employer sees. Withdrawn applications
+    stay in the denominator on purpose — the candidate placed in the field that
+    applied, and quietly shrinking it would flatter the number — but bookmarks
+    are not applications and are excluded.
     """
-    siblings = await find_applications_by_job_id(app.job_id)
+    # SAVED rows are bookmarks from people who never applied. The employer's
+    # own applicant list excludes them (employer.py), so counting them here
+    # would show the candidate a standing that disagrees with the queue HR
+    # actually reads — and would pad the field with people who are not
+    # competing at all.
+    siblings = [
+        a for a in await find_applications_by_job_id(app.job_id)
+        if a.status != ApplicationStatus.SAVED
+    ]
     scores = [a.match_score for a in siblings]
     rank = _rank_of(app.match_score, scores)
     total = len(scores) or 1
@@ -46,8 +55,12 @@ async def rank_for_application(app: Application) -> dict:
     if total >= 10:
         percentile = round(100 * (total - rank + 1) / total)
 
-    proven = [s for s in app.skill_snapshot if s.get("level") in ("quiz", "hr_confirmed")]
-    claimed = [s for s in app.skill_snapshot if s.get("level") == "claimed"]
+    # The key is `proof_level` — `evidence.skill_snapshot` writes
+    # {name, proof_level}. Reading `level` matched nothing, so both lists were
+    # always empty and every candidate was told all their skills were proven,
+    # which is the opposite of the advice they needed.
+    proven = [s for s in app.skill_snapshot if s.get("proof_level") in ("quiz", "hr_confirmed")]
+    claimed = [s for s in app.skill_snapshot if s.get("proof_level") == "claimed"]
 
     return {
         "application_id": app.id,

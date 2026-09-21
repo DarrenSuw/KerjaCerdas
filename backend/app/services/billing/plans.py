@@ -185,17 +185,25 @@ async def entitlements_for(user_id: str) -> Entitlements:
     return ent
 
 
-def talent_search_limit(ent: Entitlements) -> int:
-    """Reverse-matching searches allowed per 30 days.
+def talent_search_limit(ent: Entitlements, job_id: str) -> int:
+    """Reverse-matching searches allowed per 30 days, FOR THIS JOB.
 
     Quota goes HERE and not on ranked applicants. Scoring people who applied is
     free to compute and capping it only hides candidates; searching people who
     did not apply is sourcing, which is the thing an employer will actually pay
     for and the thing we want a deliberate, countable limit on.
+
+    `job_id` is required, and that is the whole point. Beacon is sold PER JOB.
+    An earlier version asked only "does this employer hold any Beacon?", so
+    paying for job A silently unlocked sourcing on every unpaid Spark job the
+    same account owned — the per-job product was billed per job and delivered
+    per account. Lighthouse is genuinely account-wide, so it alone ignores which
+    job is being searched.
     """
-    if ent.has_lighthouse:
+    tier = ent.job_tier(job_id)
+    if tier == "lighthouse":
         return TALENT_SEARCHES_LIGHTHOUSE
-    return TALENT_SEARCHES_BEACON if ent.beacon_jobs else TALENT_SEARCHES_SPARK
+    return TALENT_SEARCHES_BEACON if tier == "beacon" else TALENT_SEARCHES_SPARK
 
 
 def active_job_limit(ent: Entitlements) -> int:

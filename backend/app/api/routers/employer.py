@@ -434,7 +434,7 @@ async def estimate_job_pool(payload: JobPoolEstimateRequest):
 # ── Candidate search (REAL reverse-matching, no mocks) ────────────────────────
 
 
-async def _check_talent_search_quota(user_id: str) -> None:
+async def _check_talent_search_quota(user_id: str, job_id: str) -> None:
     """Meter reverse matching — the one employer feature that is actually sold.
 
     Ranked APPLICANTS are free and uncapped on every tier because scoring people
@@ -443,13 +443,23 @@ async def _check_talent_search_quota(user_id: str) -> None:
     carries a countable limit. `talent_search_limit()` existed and was unit
     tested, but no caller ever consulted it, so Spark's documented quota of zero
     was in practice unlimited and the paid tiers bought nothing.
+
+    Both the LIMIT and the COUNTER are scoped to the job for Beacon, because
+    Beacon is sold per job. Checking only "does this account hold a Beacon?"
+    let one paid job unlock sourcing on every other job the account owned, and
+    counting per account would have made two Beacon purchases share one
+    30-search allowance. Lighthouse is account-wide by design, so it meters per
+    account.
     """
     if not settings.plan_limits_enforced:
         await add_event(user_id, "talent_search")
         return
 
     ent = await entitlements_for(user_id)
-    limit = talent_search_limit(ent)
+    limit = talent_search_limit(ent, job_id)
+    # Lighthouse buys one account-wide pool; a Beacon buys an allowance for the
+    # single job it was bought for.
+    bucket = "talent_search" if ent.has_lighthouse else f"talent_search:{job_id}"
     if limit <= 0:
         raise HTTPException(
             status.HTTP_402_PAYMENT_REQUIRED,
@@ -460,7 +470,7 @@ async def _check_talent_search_quota(user_id: str) -> None:
         )
 
     since = datetime.now(UTC) - timedelta(days=PLAN_DAYS)
-    if not await consume_quota(user_id, "talent_search", limit, since):
+    if not await consume_quota(user_id, bucket, limit, since):
         raise HTTPException(
             status.HTTP_429_TOO_MANY_REQUESTS,
             f"Kuota {limit} pencarian kandidat per 30 hari sudah terpakai."
@@ -482,7 +492,7 @@ async def find_candidates(
     # without this check employer B could submit employer A's public job id and
     # receive candidate-fit data for a recruitment process they do not own.
     job, _employer = await _require_owned_job(repos, current_user, job_id)
-    await _check_talent_search_quota(current_user.id)
+    await _check_talent_search_quota(current_user.id, job_id)
 
     search = payload or CandidateSearchRequest()
     top_k = search.top_k

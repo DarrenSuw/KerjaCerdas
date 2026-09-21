@@ -94,6 +94,25 @@ class TestPayingNeverBuysProofOrLessService:
 
         assert settings.spark_ranked_applicant_limit == 0
 
+    def test_the_moderation_backlog_drains_oldest_first(self) -> None:
+        """A capped newest-first queue starves its oldest entries forever.
+
+        With a cap and newest-first ordering, once the backlog exceeded the cap
+        the OLDEST reports fell off the only screen that can resolve them. They
+        stayed unresolved, so no verdict was ever recorded, so the reporters who
+        filed them never built the history `reporter_weight` reads — the exact
+        failure this weighting exists to prevent.
+        """
+        import inspect
+
+        from backend.app.db import postgres_store as store
+
+        src = inspect.getsource(store.find_unresolved_reports)
+        assert "created_at.desc()" not in src, (
+            "newest-first with a cap permanently strands the oldest reports"
+        )
+        assert "order_by=JobReport.created_at" in src
+
     def test_nothing_about_a_seekers_own_position_is_sold(self) -> None:
         """The seeker rule: pay for practice and presentation, never position.
 
@@ -123,9 +142,32 @@ class TestPayingNeverBuysProofOrLessService:
 
     def test_quota_sits_on_reverse_matching_instead(self) -> None:
         ent = plans.Entitlements()
-        assert plans.talent_search_limit(ent) == 0
+        assert plans.talent_search_limit(ent, "job-1") == 0
         ent.beacon_jobs.add("job-1")
-        assert plans.talent_search_limit(ent) > 0
+        assert plans.talent_search_limit(ent, "job-1") > 0
+
+    def test_a_beacon_unlocks_only_the_job_it_was_bought_for(self) -> None:
+        """Beacon is sold PER JOB and must be delivered per job.
+
+        The limit used to be derived from "does this account hold any Beacon?",
+        so paying for job A unlocked reverse matching on every unpaid Spark job
+        the same account owned — a per-job product billed per job and delivered
+        per account.
+        """
+        ent = plans.Entitlements()
+        ent.beacon_jobs.add("paid-job")
+        assert plans.talent_search_limit(ent, "paid-job") == plans.TALENT_SEARCHES_BEACON
+        assert plans.talent_search_limit(ent, "unpaid-job") == 0, (
+            "a Beacon on one job unlocked sourcing on another"
+        )
+
+    def test_lighthouse_is_account_wide_on_purpose(self) -> None:
+        """The per-job rule must not accidentally break the account-wide tier."""
+        from datetime import UTC, datetime, timedelta
+
+        ent = plans.Entitlements(lighthouse_until=datetime.now(UTC) + timedelta(days=5))
+        for job in ("job-a", "job-b", "never-seen"):
+            assert plans.talent_search_limit(ent, job) == plans.TALENT_SEARCHES_LIGHTHOUSE
 
 
 class TestReportsCannotRemoveAPostingOnTheirOwn:
