@@ -630,6 +630,23 @@ async def find_reports_for_job(job_id: str) -> list[JobReportSchema]:
     return await select_where(JobReport, JobReportSchema, JobReport.job_id == job_id)
 
 
+async def find_unresolved_reports(limit: int = 200) -> list[JobReportSchema]:
+    """Open reports, newest first. One query for the whole moderation backlog.
+
+    The admin queue needs the postings that carry open reports. Walking every
+    published job and asking for its reports instead costs one query per job and
+    grows with the catalogue rather than with the backlog, which is the wrong
+    axis entirely — the queue is small even when the job board is large.
+    """
+    return await select_where(
+        JobReport,
+        JobReportSchema,
+        JobReport.resolved.is_(False),
+        order_by=JobReport.created_at.desc(),
+        limit=limit,
+    )
+
+
 async def find_jobs_by_moderation_status(status: str) -> list[JobSchema]:
     return await select_where(
         JobPosting, JobSchema, JobPosting.moderation_status == status, order_by=JobPosting.created_at

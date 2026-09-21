@@ -21,6 +21,7 @@ from backend.app.db.postgres_store import (
     find_moderation_events,
     find_orders_by_status,
     find_reports_for_job,
+    find_unresolved_reports,
     get_repositories,
 )
 from backend.app.db.schemas import VerificationStatus
@@ -67,12 +68,16 @@ async def moderation_queue():
         *await find_jobs_by_moderation_status("flagged"),
         *await find_jobs_by_moderation_status("held"),
     ]
+    # One query for the whole open-report backlog, then one fetch for the jobs
+    # it names. Walking every published job and asking for its reports instead
+    # costs a query per job and grows with the CATALOGUE rather than with the
+    # queue — the wrong axis, and slow exactly when the board succeeds.
     seen_ids = {j.id for j in queued}
-    for job in await find_jobs_by_moderation_status("published"):
-        if job.id in seen_ids:
-            continue
-        if any(not r.resolved for r in await find_reports_for_job(job.id)):
-            queued.append(job)
+    open_report_job_ids = {
+        r.job_id for r in await find_unresolved_reports() if r.job_id not in seen_ids
+    }
+    if open_report_job_ids:
+        queued.extend(await repos.jobs.get_many(sorted(open_report_job_ids)))
     for job in queued:
         employer = await repos.employers.get(job.employer_id)
         out.append({

@@ -246,11 +246,15 @@ class TestReviewFindingsStayFixed:
         oldest = _Attempt(["q0", "q1"], now - timedelta(days=9))
         newest = _Attempt(["q2", "q3", "q4", "q5", "q0"], now - timedelta(days=1))
 
-        picked = {q.id for q in service._pick_questions(bank, [oldest, newest])}
-        assert len(picked) == service.QUESTIONS_PER_QUIZ
-        # q1 is the only question absent from the most recent attempt, so it must
-        # always be drawn; the remainder comes from the least-recently-seen end.
-        assert "q1" in picked
+        # Repeated because the draw is randomised: a single pass passed on luck
+        # (5 of 6 drawn, so q1 appeared with probability 5/6) and hid the fact
+        # that the fallback was unreachable entirely.
+        for _ in range(40):
+            picked = {q.id for q in service._pick_questions(bank, [oldest, newest])}
+            assert len(picked) == service.QUESTIONS_PER_QUIZ
+            # q1 is the only question absent from the most recent attempt, so it
+            # must ALWAYS be drawn; the rest comes from the least-recently-seen end.
+            assert "q1" in picked
 
     def test_the_interview_kit_reports_a_miss_on_the_first_call(self) -> None:
         """`key in cache` was evaluated after the insert, so every call said hit."""
@@ -358,9 +362,9 @@ class TestSecondReviewFindingsStayFixed:
 
         root = Path(__file__).resolve().parents[3]
         stale = {
-            r"Rp\s?29[.,]?000|Rp29k": "old Beacon price",
-            r"Rp\s?99[.,]?000|Rp99k": "old Lighthouse price",
-            r"Rp\s?25[.,]?000|Rp25k": "old Prism price",
+            r"Rp\s?29[.,]?000|Rp29k|(?:Rp\s?)?29\s?rb": "old Beacon price",
+            r"Rp\s?99[.,]?000|Rp99k|(?:Rp\s?)?99\s?rb": "old Lighthouse price",
+            r"Rp\s?25[.,]?000|Rp25k|(?:Rp\s?)?25\s?rb": "old Prism price",
             r"20 pelamar|top[- ]20": "removed Spark applicant cap",
             r"100 pesan": "old Prism advisor quota",
             r"8 skill|C\(6,5\)": "old quiz bank size",
@@ -519,8 +523,15 @@ class TestThirdReviewFindingsStayFixed:
         from backend.app.api.routers import admin
 
         src = inspect.getsource(admin.moderation_queue)
-        assert 'find_jobs_by_moderation_status("published")' in src
-        assert "not r.resolved" in src
+        # Behaviour: postings carrying open reports reach the queue even when the
+        # reports never tripped the flag threshold.
+        assert "find_unresolved_reports" in src
+        # ...and it must stay one query for the backlog plus one fetch for the
+        # jobs it names. Walking every published job to ask for its reports costs
+        # a query per job and grows with the CATALOGUE, which is slow exactly
+        # when the board succeeds.
+        assert 'find_jobs_by_moderation_status("published")' not in src
+        assert "get_many" in src
 
     def test_the_ui_reads_proof_granted_rather_than_passed(self) -> None:
         """The server withholds the badge on a compromised draw; announcing one
@@ -589,5 +600,5 @@ class TestPitchCanvasStaysDeliverable:
         """The presenter walks the page top to bottom in three minutes."""
         block = self._copy_block()
         for beat in ("0.685", "0.765", "40% skill terbukti", "0,85", "belum ada", "belum diuji",
-                     "Rp200 juta", "ISI TIM"):
+                     "Rp200 juta", "Pendanaan eksternal", "Kami ada di dalam angka itu"):
             assert beat in block, f"the script points at '{beat}' but the slide does not carry it"

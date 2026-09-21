@@ -1409,7 +1409,7 @@ export default function LandingHero() {
                         },
                         {
                             name: 'Beacon',
-                            price: '29rb',
+                            price: '49rb',
                             period: '/ lowongan / 30 hari',
                             desc: 'Untuk usaha kecil yang sesekali merekrut.',
                             highlight: true,
@@ -1427,7 +1427,7 @@ export default function LandingHero() {
                         },
                         {
                             name: 'Lighthouse',
-                            price: '99rb',
+                            price: '149rb',
                             period: '/ 30 hari',
                             desc: 'Untuk usaha yang merekrut setiap bulan.',
                             highlight: false,
@@ -1439,7 +1439,7 @@ export default function LandingHero() {
                                 'Semua fitur Beacon',
                                 'Hingga 5 lowongan aktif',
                                 'Laporan rekrutmen lintas lowongan',
-                                'Pencari kerja tetap gratis (Prism opsional Rp25rb)',
+                                'Pencari kerja tetap gratis (Prism opsional Rp15rb)',
                             ],
                             action: onEmployer,
                         },

@@ -139,6 +139,38 @@ they must not share a scale or be drawn as a ratio.
 **The honesty rows**, as filled and unfilled state markers, with the unfilled ones exactly as legible
 as the filled ones.
 
+**The cost-per-action strip** (business model box). A short row where each action carries its real
+cost: `memeringkat pelamar Rp0` · `kuis Rp0` · `cari kandidat Rp0` · `baca CV Rp99` ·
+`kit wawancara Rp60`. The Rp0 entries set in Lime, the paid ones in Ink. This is the graphic that
+makes "menyaring gratis" land as arithmetic rather than generosity — we do not charge for the parts
+that cost us nothing.
+
+**The growth loop** (what's unique box). A closed circle of four nodes, thin-line, no timeline and
+no projected numbers: `employer pasang lowongan` → `poster QR dibagikan di kanal yang sudah dipakai`
+→ `pelamar baru mendaftar & ikut kuis` → `profil terbukti ikut dicocokkan ke lowongan lain` → back
+to the first. Label it as a mechanism, not a forecast — we have no usage data yet and must not draw
+a curve implying we do.
+
+**The tier ladder** (business model box). Four ascending steps — Spark, Beacon, Lighthouse, Prism —
+with price and the one thing each adds. Spark's step is the widest, not the smallest: the free tier
+ranks every applicant, and the shape should say so.
+
+**The runway line** (investment box). A thin horizontal timeline: `Bulan 0` tanda tangan →
+`Bulan 6` tahap kedua → `Bulan 15` **impas** (orange marker) → `Tahun 2` Rp360 jt. Mark the cash
+trough at Rp101 jt as a dip. Label the whole thing "proyeksi skenario dasar" so nobody reads it as
+history.
+
+**The team row** (team box). Four small monogram marks with the role as a micro-caption. No photos,
+no avatars, no icons of people.
+
+**The three lanes** (call-to-action box). Three equal columns, one per audience, each with a single
+thin-line glyph: a QR for job seekers, a document for employers, a handshake-free chart mark for
+investors. Different glyphs, identical weight — no audience gets visual priority.
+
+**The age overlay** (why you box). The market figure from box 2 redrawn small, with the founders'
+own age bracket marked inside it. One mark, no caption beyond the bracket itself. The point is made
+by position, not by words: this team is inside the population it is building for.
+
 ---
 
 # §SLIDE TEXT
@@ -147,10 +179,8 @@ Everything below is drawn. `⟦…⟧` markers are not.
 
 **Eleven boxes, in the order of the standard Pitch Canvas.** The layout follows
 that template: a full-width statement, then paired boxes, then a call-to-action
-band and a closing "Why You?" strip. Two boxes are marked `[ISI TIM]` — those
-carry facts only the founders can supply and **must be filled before this brief
-is sent to a designer**; a placeholder rendered onto a poster is worse than an
-absent box.
+band and a closing "Why You?" strip. Every box is filled — no placeholders. If a future edit needs a fact the team
+has not confirmed, leave the box out rather than shipping a blank to a printer.
 
 ⟦1 · simple statement — full width banner⟧
 
@@ -174,8 +204,8 @@ Sudah ada yang bersedia membayar? **Belum diuji** — itu yang kami cari di pilo
 
 ⟦3 · product — weights strip, proof ladder, the two scores⟧
 
-Pasang lowongan → dapat link + poster QR → pelamar scan, ikut kuis, melamar →
-satu daftar terperingkat.
+Pasang lowongan → link + poster QR → pelamar scan, ikut kuis, melamar → satu
+daftar terperingkat.
 
 35% kemiripan teks · **40% skill terbukti** · 15% pengalaman · 10% pendidikan
 Ditulis di CV **0,30** → Lulus kuis **0,85** → Dikonfirmasi HR **1,00**
@@ -183,7 +213,7 @@ Ditulis di CV **0,30** → Lulus kuis **0,85** → Dikonfirmasi HR **1,00**
 Dua pelamar, satu lowongan, pengalaman dan pendidikan sama:
 CV disalin dari iklan · kemiripan 0,90 · hanya klaim — **0.685**
 Skill dibuktikan lewat kuis · kemiripan 0,50 — **0.765**
-Bahkan pada kemiripan sempurna 1,00, yang hanya mengklaim berhenti di **0.720**.
+Pada kemiripan sempurna 1,00 pun, yang hanya mengklaim berhenti di **0.720**.
 
 **Membayar tidak mengubah skor maupun urutan siapa pun.**
 
@@ -191,17 +221,14 @@ Bahkan pada kemiripan sempurna 1,00, yang hanya mengklaim berhenti di **0.720**.
 
 Tiga layar produk yang berjalan hari ini:
 
-**1.** Poster QR sebuah lowongan · **2.** Kuis skill 5 soal di ponsel ·
+**1.** Poster QR sebuah lowongan · **2.** Kuis 5 soal di ponsel ·
 **3.** Daftar pelamar terperingkat dengan badge ✓ Terbukti
-
-Kuis dinilai server dengan kunci jawaban — tanpa panggilan AI, **Rp0 per percobaan**.
 
 ⟦5 · what's unique⟧
 
 **Fitur bisa ditiru sebulan. Kumpulan profil yang sudah terbukti tidak.**
 
-Peniru mulai dari nol kandidat terbukti. QR tiap employer membawa pelamar baru
-yang ikut dicocokkan ke lowongan lain — tumbuh dari pemakaian, bukan iklan.
+Peniru mulai dari nol kandidat terbukti. Kami tumbuh dari pemakaian, bukan iklan.
 
 Dan kami tidak memverifikasi dokumen, kami memverifikasi perilaku: domain email
 harus cocok dengan website, jejak publik dicek admin, iklan yang meminta biaya
@@ -221,16 +248,15 @@ Datanya yang belum ada — dan layar kami menulis "belum ada data", bukan 0%.
 
 ⟦7 · business model⟧
 
-**Employer bayar untuk menyaring, bukan untuk mencari.**
+**Menyaring gratis. Yang berbayar adalah waktu yang kami hemat.**
 
 Spark **Rp0** · 1 lowongan, **semua** pelamar diperingkat
 Beacon **Rp49.000** per lowongan · kit wawancara, ekspor, cari kandidat
 Lighthouse **Rp149.000** per bulan · 5 lowongan
 Prism **Rp15.000** / 30 hari · peringkat persis lamaranmu, untuk pencari kerja
 
-Memeringkat berbiaya Rp0 untuk kami hitung — jadi tidak pernah dibatasi. Yang
-berbayar adalah yang memang berbiaya. Margin kotor per penjualan 83–99%
-(**model asumsi**, biaya sungguhannya terpantau per aksi di dashboard admin).
+Margin kotor per penjualan **83–99%** — **model asumsi**; biaya sungguhannya
+terpantau per aksi di dashboard admin.
 
 ⟦8 · investment⟧
 
@@ -242,8 +268,8 @@ keamanan & gateway 6% · bantalan skenario buruk 23%
 
 Proyeksi skenario dasar: impas **bulan 15** · kas terdalam **Rp101 juta**
 
-`[ISI TIM]` Berapa yang sudah kami tanam sendiri, dan pendanaan apa yang sudah
-kami terima sejauh ini.
+**Pendanaan eksternal sejauh ini: nol.** Semua yang berjalan hari ini dibangun
+sendiri oleh tim — termasuk mesin pencocokan, kuis, dan moderasi otomatis.
 
 ⟦9 · team⟧
 
@@ -266,10 +292,15 @@ Kami membangun tempat bukti itu disimpan.**
 
 ⟦11 · why you — closing strip, separate from the boxes above⟧
 
-`[ISI TIM]` Kenapa justru kami yang mengerjakan ini: pengalaman pribadi kami
-dengan mencari kerja atau merekrut di Indonesia, dalam dua sampai tiga kalimat.
-Satu hal yang benar tanpa perlu diisi: setiap klaim yang tidak bisa kami
-buktikan sudah kami hapus sendiri, sebelum ada yang memaksa.
+**Kami ada di dalam angka itu.** Kami berada di rentang usia yang sama dengan
+7,28 juta penganggur terbuka di kotak sebelah, dan dalam dua tahun kami melamar
+kerja dengan CV yang sama tipisnya. Kami tidak mempelajari masalah ini dari
+laporan — kami akan jadi penggunanya.
+
+Itu juga sebabnya kami menghapus tiga klaim kami sendiri sebelum ada yang
+memaksa: Pay-to-Unlock, verifikasi NIK, dan "94% akurasi". Ketiganya bisa dicek
+di riwayat repositori kami. **Kami hanya mau membangun yang kami sendiri
+bersedia memakainya.**
 
 ## Before you hand it over
 
@@ -328,10 +359,10 @@ Tiap blok menunjuk satu bagian kanvas; jangan berpindah-pindah.
 
 ### 2:05–2:35 · Model bisnis
 
-> Employer membayar untuk menyaring, bukan untuk mencari. Memasang lowongan
-> gratis, dan semua pelamar tetap diperingkat — memeringkat berbiaya nol untuk
-> kami hitung, jadi tidak ada alasan menyembunyikannya. Yang berbayar adalah yang
-> memang berbiaya: kit wawancara, ekspor, dan mencari kandidat yang belum
+> Menyaring pelamar gratis. Memasang lowongan gratis, dan semua pelamar tetap
+> diperingkat — memeringkat berbiaya nol untuk kami hitung, jadi tidak ada alasan
+> menyembunyikannya. Yang berbayar adalah yang memang berbiaya dan memang
+> menghemat waktu: kit wawancara, ekspor, dan mencari kandidat yang belum
 > melamar. Empat puluh sembilan ribu rupiah per lowongan.
 
 ### 2:35–2:50 · Yang belum kami punya

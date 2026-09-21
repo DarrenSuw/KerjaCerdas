@@ -294,7 +294,12 @@ def _pick_questions(bank: list, attempts: list) -> list:
             blocked.update(a.question_ids or [])
         return [q for q in bank if q.id not in blocked]
 
-    for depth in (2, 1, 0):
+    # Depths 2 and 1 only. A depth of 0 excludes nothing, so it would always
+    # succeed for any bank of 5 or more and return a uniform sample — which made
+    # the least-recently-seen fallback below unreachable and let a retake redraw
+    # yesterday's questions at random. start_quiz guarantees len(bank) >= 5, so
+    # dropping depth 0 cannot leave the draw short.
+    for depth in (2, 1):
         pool = _exclude(depth)
         if len(pool) >= QUESTIONS_PER_QUIZ:
             return rng.sample(pool, QUESTIONS_PER_QUIZ)
