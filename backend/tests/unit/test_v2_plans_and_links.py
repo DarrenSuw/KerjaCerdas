@@ -55,7 +55,7 @@ class TestPlans:
     def test_catalogue_is_public(self, client: TestClient) -> None:
         body = client.get("/api/v1/billing/plans").json()
         prices = {p["plan"]: p["price_idr"] for p in body["employer"] + body["seeker"]}
-        assert prices == {"spark": 0, "beacon": 29_000, "lighthouse": 99_000, "free": 0, "prism": 25_000}
+        assert prices == {"spark": 0, "beacon": 49_000, "lighthouse": 149_000, "free": 0, "prism": 15_000}
 
     def test_spark_allows_one_active_job(self, client, employer_account, stub_embedder, limits_on):
         h = employer_account["headers"]
@@ -68,7 +68,7 @@ class TestPlans:
         h = employer_account["headers"]
         _job(client, h)
         order = client.post("/api/v1/billing/orders", headers=h, json={"plan": "lighthouse"}).json()
-        assert order["status"] == "pending" and order["amount_idr"] == 99_000
+        assert order["status"] == "pending" and order["amount_idr"] == 149_000
         client.post(f"/api/v1/admin/orders/{order['order_id']}/activate", headers=admin["headers"])
         assert client.post("/api/v1/employer/jobs", json={**JOB, "title": "Barista"},
                            headers=h).status_code == 201

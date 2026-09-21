@@ -39,14 +39,29 @@ Integrity rules (all enforced server-side):
   permutation on submit.
 - A deadline is stored on the attempt (45 s per question + grace); a late submission scores 0.
 - An unsubmitted attempt inside its deadline is **resumed**, so reloading cannot draw fresh questions.
-- Failed attempt → cooldown (7 days; 2 with Prism). Passing writes a `skill_evidence` row and updates
-  the seeker's skill.
+- Failed attempt → cooldown of **1 day, identical on every plan**. Prism used to cut it to 2 days,
+  which meant money shortening the route to a badge that moves a match score — the one thing paying
+  must never do. The cooldown was never the real defence anyway; bank size is.
 - Clients cannot forge proof: the API skill input has no proof field; the agent's inline-profile
   override resets every proof level and re-copies real proof from the stored profile; and
   `evidence.carry_proof` keeps earned badges when a profile edit or CV re-upload replaces the skill list.
 - **Only reviewed questions can grant proof.** `find_active_questions()` filters on `active` AND
   `reviewed`, and `list_quiz_skills()` filters identically — when those two predicates disagree the UI
   offers an "Ikut kuis" button for a skill whose quiz then 404s.
+- **A retake never repeats the previous attempt.** `_pick_questions()` excludes the last submitted
+  attempt's question ids outright, and the one before that when the bank still leaves a real choice.
+  It never raises on a thin bank: an unfinished bank is our failure, not the candidate's.
+- **The bank targets 30 questions per skill** (`generator.BANK_TARGET`) and tops itself up. Below 10 a
+  skill cannot even give two consecutive non-overlapping quizzes.
+- **Generated questions are screened mechanically, not trusted.** `validate_question()` rejects
+  malformed items, duplicate options, out-of-range keys, combination answers ("semua benar") and the
+  classic giveaway of a correct answer far longer than every distractor. Passing items are served as
+  `source="ai_auto"`; failing ones are stored inactive as `"ai_draft"` for a human. `source` exists so
+  that "reviewed" can never be mistaken for "a practitioner approved this".
+- **Generation is gated on the claim.** A skill with no bank costs ~Rp85-130 of Gemini to create, so
+  only a skill already on the seeker's profile may trigger it — otherwise any logged-in user could
+  loop invented names and bill us per name while gaining nothing. Skills that already have a bank stay
+  open to everyone, because taking the quiz is how you earn the skill and it costs Rp0.
 - **A skill with no bank is queued, not improvised.** The first request drafts questions once
   (`reviewed=False`) and returns "kuis sedang disiapkan"; the skill stays `claimed` (0.30) until an
   admin approves the batch, which then goes live for everyone holding that skill. Serving unreviewed
@@ -82,8 +97,14 @@ A badge of `company_email` or `admin_reviewed` also skips the first-job hold.
   sentence and say how to fix it; the poster can edit & resubmit or appeal.
 - **Strike ladder** (`strike_state`): 1 warning → 2 limited to one active job for 30 days → 3 suspended;
   strikes expire 90 days after the last one.
-- **Candidate reports** (`POST /public/jobs/{code}/report`, one per user per job): once
-  `MODERATION_REPORT_THRESHOLD` distinct unresolved reports exist, the job is hidden for review.
+- **Candidate reports** (`POST /public/jobs/{code}/report`, one per user per job) are **weighted, not
+  counted** (`services/trust/rules.py`). A report names the published rule it alleges was broken;
+  reporter weight comes from verified email, account age, whether they actually applied, and whether
+  their past reports held up. Reaching `FLAG_WEIGHT_THRESHOLD` sets the posting to `flagged`, which
+  **stays publicly visible** — then the AI reviewer checks the posting against the cited rule only and
+  may answer LANGGAR / TIDAK / RAGU. Only LANGGAR hides it; anything else queues a human.
+  The old rule (N distinct reports → hidden) let three throwaway accounts remove a competitor's advert
+  with nothing checked, while a real scam stayed live until a third person happened to complain.
 - Invariant kept in one place (`policy.set_moderation`): a job that is not `published` is always
   `is_active = False`, so every existing `is_active` filter hides it.
 - Everything is written to `moderation_events` as an audit log.

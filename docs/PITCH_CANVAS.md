@@ -153,7 +153,8 @@ Ditulis di CV **0,30** · Lulus kuis **0,85** · Dikonfirmasi HR **1,00**
 ⟦how it works⟧
 
 Kuis 5 soal skenario, sekitar 3 menit, dinilai server dengan kunci jawaban — tanpa panggilan AI,
-Rp0 per percobaan. Lulus 4 dari 5 memberi badge terbukti.
+Rp0 per percobaan. Lulus 4 dari 5 memberi badge terbukti. Gagal boleh diulang besoknya, dan
+**soal yang baru dilihat tidak muncul lagi** — bank tiap skill diisi sampai 30 soal.
 
 HR mencentang "skill terbukti" setelah wawancara. Itu bukti terkuat.
 
@@ -170,8 +171,9 @@ Sebelum tayang — iklan yang meminta biaya dari pelamar **ditolak otomatis + st
 Employer baru — lowongan pertama **ditahan untuk tinjauan** sampai tepercaya.
 Jejak publik — domain email harus cocok dengan website; Google Maps, Instagram bisnis, website
 dicek admin. Penyedia email gratis tidak memenuhi syarat.
-Setelah tayang — **3 laporan pelamar menyembunyikan lowongan otomatis.** Pelanggaran berulang:
-peringatan → dibatasi → ditangguhkan.
+Setelah tayang — laporan pelamar **ditimbang, bukan dihitung**. Cukup bobot → lowongan ditandai
+"perlu ditindak lebih lanjut" dan **tetap terlihat**; hanya putusan terhadap aturan yang dikutip
+yang menyembunyikannya. Pelanggaran berulang: peringatan → dibatasi → ditangguhkan.
 
 ⟦moderation outcomes — branch labels⟧
 
@@ -217,10 +219,10 @@ kami menulis "belum ada data", bukan 0%.
 
 **Employer bayar untuk menyaring, bukan untuk mencari.**
 
-Spark **Rp0** · 1 lowongan, 20 pelamar skor tertinggi
-Beacon **Rp29.000** per lowongan
-Lighthouse **Rp99.000** per bulan
-Prism **Rp25.000** per 30 hari, untuk pencari kerja
+Spark **Rp0** · 1 lowongan, semua pelamar diperingkat
+Beacon **Rp49.000** per lowongan
+Lighthouse **Rp149.000** per bulan
+Prism **Rp15.000** per 30 hari, untuk pencari kerja
 
 **Membayar tidak mengubah skor maupun urutan siapa pun.** Prism hanya mempersingkat jeda ulang
 kuis dari 7 hari ke 2 hari — soalnya tetap harus dilulusi sendiri, dan lulus tidak bisa dibeli.
@@ -320,7 +322,7 @@ Setiap jawaban di bawah **sudah benar terhadap kode hari ini**. Jangan improvisa
 | Valuasi Rp2 miliar dari mana? | Rp200 juta untuk 10% berarti **Rp2 miliar post-money**, sekitar **5,6× proyeksi pendapatan tahun 2** (Rp360 juta) — dengan **nol pelanggan hari ini**. Kami tidak berpura-pura itu hasil perhitungan pasar; itu angka yang kami ajukan untuk dinegosiasikan, dan tahap keduanya sengaja dikaitkan ke target bulan ke-6 supaya risikonya tidak sepenuhnya di investor. Kalau pilot 30 hari gagal, angka itu memang terlalu tinggi. |
 | Target 18–25 tahun itu bukan diskriminasi usia juga? | Beda posisi: itu **segmen pasar kami**, bukan syarat yang boleh dipasang employer. Justru AutoMod menolak iklan yang memasang batas usia. Siapa pun boleh mendaftar dan melamar di platform; yang kami batasi hanya ke mana energi pemasaran kami diarahkan. |
 | Moat "kumpulan profil terbukti" — kalian sendiri masih nol, kan? | **Ya.** Hari ini moat itu belum ada, baru mekanismenya yang ada. Yang kami klaim bukan "kami sudah punya", tapi "ini aset yang menumpuk kalau pilot jalan, dan tidak bisa disalin dengan menyalin fitur". Kalau pilot gagal, moat ini tidak pernah lahir — itu risiko yang kami tanggung, bukan yang kami sembunyikan. |
-| Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, soal acak, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
+| Kuis bisa dicontek? | Bisa. Karena itu ada timer per soal, urutan pilihan diacak per percobaan, soal yang baru dilihat tidak diulang, bank 30 soal per skill, dan **HR tetap penentu akhir** lewat centang "skill terbukti". Kami tidak mengklaim kuis anti-curang. |
 | Payment gateway? | Belum. Sekarang QRIS/transfer dikonfirmasi admin. Midtrans/Xendit biaya setup Rp0, jadi bukan penghalang — menunggu PT. |
 | Validasi penggunanya berapa? | Di bawah 10 orang dan belum terdokumentasi rapi. Itu kelemahan yang sedang kami tutup dengan paket bukti loop dampak. |
 | Margin 88% itu dari mana? | Dari **asumsi** pemakaian 30 pelamar / 5 dishortlist dengan buffer ×1,5, bukan dari pengukuran pelanggan nyata — kami belum punya pelanggan. Yang **terukur** adalah biaya per aksi di `/admin → Metrik`, dihitung dari token asli di `ai_logs`. |

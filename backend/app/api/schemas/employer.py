@@ -137,3 +137,10 @@ class ApplicationStatusUpdate(BaseModel):
 
     status: str | None = Field(default=None, max_length=40)
     note: str | None = Field(default=None, max_length=5_000)
+    # Mandatory when status == "rejected". The product's stated problem is that
+    # candidates "melamar puluhan kali, tidak dapat kabar, tidak tahu apa yang
+    # kurang" — a rejection with no reason is that problem, shipped by us. It is
+    # also the only structured outcome data that can ever answer whether a high
+    # match score actually predicts reaching an interview.
+    reason_code: str | None = Field(default=None, max_length=40)
+    reason_note: str | None = Field(default=None, max_length=1_000)

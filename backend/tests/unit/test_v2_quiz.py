@@ -66,7 +66,7 @@ class TestQuiz:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         result = client.post("/api/v1/quiz/submit", headers=seeker_h, json={
             "attempt_id": attempt["attempt_id"], "answers": _answers(attempt, right=False)}).json()
-        assert result["passed"] is False and result["retake_after_days"] == 7
+        assert result["passed"] is False and result["retake_after_days"] == 1
         again = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h)
         assert again.status_code == 429
 
@@ -90,9 +90,19 @@ class TestQuiz:
                            json={"attempt_id": attempt["attempt_id"], "answers": [0] * 5})
         assert resp.status_code == 404
 
-    def test_unknown_skill_is_404(self, client: TestClient, seeker_h: dict) -> None:
-        assert client.post("/api/v1/quiz/start", json={"skill": "Juggling"},
-                           headers=seeker_h).status_code == 404
+    def test_unbanked_skill_not_on_the_profile_cannot_trigger_generation(
+        self, client: TestClient, seeker_h: dict
+    ) -> None:
+        """An invented skill name must not reach the paid generator.
+
+        A skill with no bank costs ~Rp85-130 of Gemini to create, so letting any
+        logged-in user summon one by typing a name was a griefing vector: the
+        attacker gains nothing and we pay per name. Claiming the skill first is
+        the cheap, honest gate.
+        """
+        resp = client.post("/api/v1/quiz/start", json={"skill": "Juggling"}, headers=seeker_h)
+        assert resp.status_code == 400
+        assert "profilmu" in resp.json()["detail"]
 
     def test_employers_cannot_take_quizzes(self, client: TestClient, employer_account: dict) -> None:
         assert client.post("/api/v1/quiz/start", json={"skill": "Excel"},
@@ -113,7 +123,7 @@ class TestColdStartSkill:
 
         calls = {"n": 0}
 
-        async def fake_generate(skill_name: str):
+        async def fake_generate(skill_name: str, count: int = 10, existing=None):
             calls["n"] += 1
             return [
                 SkillQuestion(skill="forklift", skill_label="Forklift",
@@ -123,17 +133,17 @@ class TestColdStartSkill:
             ]
 
         monkeypatch.setattr(generator, "generate_questions", fake_generate)
-        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert await generator.ensure_questions_exist("forklift", target=6) > 0
         assert calls["n"] == 1
         # Second call must be a no-op: the rows exist, they are just unreviewed.
-        assert await generator.ensure_questions_exist("forklift", min_count=5) is False
+        assert await generator.ensure_questions_exist("forklift", target=6) == 0
         assert calls["n"] == 1
         assert await store.count_active_questions_for_skill("forklift") == 6
 
     @pytest.mark.asyncio
     async def test_unreviewed_skill_is_not_offered_or_served(self, monkeypatch) -> None:
         from backend.app.db import postgres_store as store
-        from backend.app.db.schemas import SeekerProfile
+        from backend.app.db.schemas import SeekerProfile, Skill
         from backend.app.db.schemas_proof import SkillQuestion
         from backend.app.services.quiz import generator, service
 
@@ -146,15 +156,26 @@ class TestColdStartSkill:
         # Never advertised, because it cannot be served.
         assert "forklift" not in {s["skill"] for s in await store.list_quiz_skills()}
 
-        async def no_generate(skill_name: str):  # already has rows; must not be called
+        async def no_generate(skill_name: str, count: int = 10, existing=None):  # already has rows; must not be called
             raise AssertionError("must not regenerate for a skill that already has questions")
 
-        monkeypatch.setattr(generator, "generate_questions", no_generate)
-        seeker = SeekerProfile(user_id="u-cold", full_name="Dewi", region_code="3171")
+        async def failing_generate(skill_name: str, count: int = 10, existing=None):
+            raise generator.GenerationError("belum bisa dibuat")
+
+        monkeypatch.setattr(generator, "generate_questions", failing_generate)
+        # The seeker claims the skill, so generation is allowed to be attempted —
+        # this test is about what happens to the UNREVIEWED rows already there.
+        seeker = SeekerProfile(
+            user_id="u-cold", full_name="Dewi", region_code="3171",
+            skills=[Skill(name="Forklift")],
+        )
         with pytest.raises(service.QuizError) as err:
-            await service.start_quiz(seeker, "forklift", prism=False)
-        assert err.value.status == 404
-        assert "sedang disiapkan" in err.value.message
+            await service.start_quiz(seeker, "forklift")
+        # Unreviewed rows exist but are invisible to the server, so the bank is
+        # still unusable and nothing is drawn from them.
+        assert err.value.status == 503
+        assert "belum siap" in err.value.message or "sedang disiapkan" in err.value.message
+        _ = no_generate
 
     @pytest.mark.asyncio
     async def test_reviewing_the_batch_makes_it_live(self) -> None:
@@ -196,7 +217,7 @@ class TestBankReplenishment:
 
         calls = {"n": 0}
 
-        async def fake_generate(skill_name: str):
+        async def fake_generate(skill_name: str, count: int = 10, existing=None):
             calls["n"] += 1
             return [
                 SkillQuestion(skill="forklift", skill_label="Forklift", question=f"N{i}",
@@ -207,7 +228,7 @@ class TestBankReplenishment:
         monkeypatch.setattr(generator, "generate_questions", fake_generate)
 
         # Pending drafts block regeneration — they are on their way to serveable.
-        assert await generator.ensure_questions_exist("forklift", min_count=5) is False
+        assert await generator.ensure_questions_exist("forklift", target=6) == 0
         assert calls["n"] == 0
 
         # An admin finds the batch unusable and deactivates it.
@@ -217,7 +238,7 @@ class TestBankReplenishment:
         assert await store.count_active_questions_for_skill("forklift") == 0
 
         # The bank must now be allowed to refill.
-        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert await generator.ensure_questions_exist("forklift", target=6) > 0
         assert calls["n"] == 1
         assert await store.count_active_questions_for_skill("forklift") == 6
 
@@ -235,7 +256,7 @@ class TestBankReplenishment:
             await repos.skill_questions.upsert(q)
             made.append(q)
 
-        async def fake_generate(skill_name: str):
+        async def fake_generate(skill_name: str, count: int = 10, existing=None):
             return [
                 SkillQuestion(skill="forklift", skill_label="Forklift", question=f"N{i}",
                               options=["a", "b", "c", "d"], correct_index=0, reviewed=False)
@@ -248,5 +269,5 @@ class TestBankReplenishment:
             q.active = False
             await repos.skill_questions.upsert(q)
         assert await store.count_active_questions_for_skill("forklift") == 4
-        assert await generator.ensure_questions_exist("forklift", min_count=5) is True
+        assert await generator.ensure_questions_exist("forklift", target=6) > 0
         assert await store.count_active_questions_for_skill("forklift") == 10

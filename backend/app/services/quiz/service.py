@@ -34,8 +34,14 @@ QUESTIONS_PER_QUIZ = 5
 SECONDS_PER_QUESTION = 45
 PASS_MARK = 4
 GRACE_SECONDS = 15
-RETAKE_DAYS_FREE = 7
-RETAKE_DAYS_PRISM = 2
+# One day, the same for everyone. It used to be 7 free / 2 with Prism, which
+# meant a paid plan bought a faster route to a badge that carries a 0.85 proof
+# weight — i.e. money moving a match score, which is the one thing this product
+# promises never happens. Selling it was the defect; the cooldown itself was
+# only ever friction, since a small bank could be memorised whatever the wait.
+# Retake resistance now comes from bank size and non-overlapping draws
+# (generator.BANK_TARGET, _pick_questions), which is where it belongs.
+RETAKE_DAYS = 1
 
 
 class QuizError(Exception):
@@ -43,6 +49,32 @@ class QuizError(Exception):
         super().__init__(message)
         self.status = status
         self.message = message
+
+
+# Per-skill cooldown for non-critical top-ups. In-process and lost on restart,
+# which is the right trade: the cost it bounds is a burst of calls within one
+# session, and a durable marker would need a table for a rate limit.
+_TOPUP_COOLDOWN_S = 6 * 3600
+_last_topup: dict[str, float] = {}
+
+
+def _topup_allowed(key: str, *, serveable: bool) -> bool:
+    """Always allow when the bank cannot run a quiz; otherwise throttle."""
+    import time
+
+    if not serveable:
+        return True
+    now = time.monotonic()
+    if now - _last_topup.get(key, -_TOPUP_COOLDOWN_S) < _TOPUP_COOLDOWN_S:
+        return False
+    _last_topup[key] = now
+    return True
+
+
+def generator_target() -> int:
+    from backend.app.services.quiz.generator import BANK_TARGET
+
+    return BANK_TARGET
 
 
 def _aware(dt: datetime) -> datetime:
@@ -87,31 +119,53 @@ def _public_questions(attempt: QuizAttempt, questions: dict) -> list[dict]:
     return out
 
 
-async def start_quiz(seeker: SeekerProfile, skill_name: str, prism: bool) -> dict:
+async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
     key = skill_key(skill_name)
+
     bank = await store.find_active_questions(key)
 
-    # Cold start: a skill nobody has banked yet. Draft questions for it ONCE and
-    # put them in the admin review queue — they are deliberately not served now.
-    # The skill stays "claimed" (0.30) in the meantime, which is uniform across
-    # every candidate holding it, so nobody is ranked unfairly; once an admin
-    # approves the batch it goes live for everyone with that skill at once.
-    if len(bank) < QUESTIONS_PER_QUIZ:
+    # Generation — not the quiz itself — is the expensive, abusable action, so
+    # the profile check gates only that. Any skill that already has a bank stays
+    # open to everyone: taking a quiz for a skill you have not listed yet is how
+    # you earn it, and costs Rp0. But a skill with NO bank would have us pay
+    # Gemini ~Rp85-130 on demand, so an invented name must not reach it — that
+    # was a free money burner any logged-in user could loop.
+    claimed = {skill_key(s.name) for s in (seeker.skills or []) if s.name}
+    if not bank and key not in claimed:
+        raise QuizError(
+            400,
+            f"Kuis untuk skill '{skill_name}' belum ada. Tambahkan skill ini ke "
+            "profilmu dulu kalau memang kamu kuasai, lalu coba lagi.",
+        )
+
+    # Top the bank up toward BANK_TARGET whenever it is short. A thin bank is
+    # what lets a retake repeat questions, so refilling is a correctness fix,
+    # not a nicety — see generator.BANK_TARGET. Once the bank is serveable the
+    # top-up is rate-limited per skill: a partially-filled bank must not pay for
+    # a generation attempt on every single quiz start.
+    if len(bank) < generator_target() and _topup_allowed(key, serveable=len(bank) >= QUESTIONS_PER_QUIZ):
         from backend.app.services.quiz.generator import GenerationError, ensure_questions_exist
 
-        # Record the demand either way, so the review queue can be worked in
-        # order of what seekers actually ask for rather than alphabetically.
-        await store.add_event(seeker.user_id, "quiz_unavailable", {"skill": key})
         try:
-            await ensure_questions_exist(skill_name, min_count=QUESTIONS_PER_QUIZ)
+            if await ensure_questions_exist(skill_name):
+                bank = await store.find_active_questions(key)
         except GenerationError as exc:
-            raise QuizError(
-                404, f"Belum ada kuis untuk skill '{skill_name}'. {exc.args[0]}"
-            ) from exc
+            # A top-up failure on an already-serveable bank must not block the
+            # quiz; only an unusable bank is fatal.
+            if len(bank) < QUESTIONS_PER_QUIZ:
+                await store.add_event(seeker.user_id, "quiz_unavailable", {"skill": key})
+                raise QuizError(
+                    503,
+                    f"Kuis untuk skill '{skill_name}' belum siap. {exc.args[0]} "
+                    "Skill ini tetap tercatat sebagai klaim di profilmu.",
+                ) from exc
+
+    if len(bank) < QUESTIONS_PER_QUIZ:
+        await store.add_event(seeker.user_id, "quiz_unavailable", {"skill": key})
         raise QuizError(
-            404,
-            f"Kuis untuk skill '{skill_name}' sedang disiapkan dan menunggu "
-            "peninjauan. Skill ini tetap tercatat sebagai klaim di profilmu.",
+            503,
+            f"Kuis untuk skill '{skill_name}' sedang disiapkan. Skill ini tetap "
+            "tercatat sebagai klaim di profilmu.",
         )
 
     now = datetime.now(UTC)
@@ -122,14 +176,14 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str, prism: bool) -> dic
             if all(qid in by_id for qid in a.question_ids):
                 return _attempt_payload(a, by_id, resumed=True)
 
-    cooldown = RETAKE_DAYS_PRISM if prism else RETAKE_DAYS_FREE
+    cooldown = RETAKE_DAYS
     failed = [a for a in attempts if a.submitted_at and not a.passed]
     if failed:
         retry_at = _aware(failed[-1].submitted_at) + timedelta(days=cooldown)
         if retry_at > now:
             raise QuizError(429, f"Kamu bisa mengulang kuis ini mulai {retry_at.date().isoformat()}.")
 
-    picked = secrets.SystemRandom().sample(bank, QUESTIONS_PER_QUIZ)
+    picked = _pick_questions(bank, attempts)
     attempt = QuizAttempt(
         seeker_id=seeker.id,
         skill=key,
@@ -138,6 +192,39 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str, prism: bool) -> dic
     )
     await store.get_repositories().quiz_attempts.upsert(attempt)
     return _attempt_payload(attempt, {q.id: q for q in picked}, resumed=False)
+
+
+def _pick_questions(bank: list, attempts: list) -> list:
+    """Draw QUESTIONS_PER_QUIZ questions, avoiding what this seeker just saw.
+
+    Rule 1 (hard): nothing from the immediately previous submitted attempt. With
+    a 6-question bank the old uniform sample repeated at least 4 of 5 on every
+    retake, so a badge was obtainable by memorising six items — while feeding a
+    0.85 proof weight.
+
+    Rule 2 (preference): also avoid the attempt before that, when the bank is
+    large enough to still leave a real choice. Applied only if it does, because
+    forcing it on a thin bank would make the draw deterministic, which is the
+    very predictability the rule exists to prevent.
+
+    Never raises on a small bank. A seeker must not be locked out of a retake
+    because we have not finished writing questions.
+    """
+    submitted = [a for a in attempts if a.submitted_at is not None]
+    submitted.sort(key=lambda a: _aware(a.submitted_at))
+    rng = secrets.SystemRandom()
+
+    def _exclude(n_attempts: int) -> list:
+        blocked: set[str] = set()
+        for a in submitted[-n_attempts:] if n_attempts else []:
+            blocked.update(a.question_ids or [])
+        return [q for q in bank if q.id not in blocked]
+
+    for depth in (2, 1, 0):
+        pool = _exclude(depth)
+        if len(pool) >= QUESTIONS_PER_QUIZ:
+            return rng.sample(pool, QUESTIONS_PER_QUIZ)
+    return rng.sample(bank, min(QUESTIONS_PER_QUIZ, len(bank)))
 
 
 def _attempt_payload(attempt: QuizAttempt, by_id: dict, resumed: bool) -> dict:
@@ -193,7 +280,7 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
         "passed": attempt.passed,
         "late": late,
         "correct": correct_flags,  # which were right — never which option was right
-        "retake_after_days": None if attempt.passed else RETAKE_DAYS_FREE,
+        "retake_after_days": None if attempt.passed else RETAKE_DAYS,
     }
 
 

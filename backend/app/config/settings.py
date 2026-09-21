@@ -53,13 +53,20 @@ class Settings(BaseSettings):
     # has a verified company-domain email or the "Ditinjau admin" badge.
     moderation_first_job_review: bool = True
     # Distinct candidate reports that automatically hide a job for review.
+    # Kept for the admin view's wording only. The automatic threshold is now a
+    # WEIGHTED score (services/trust/rules.FLAG_WEIGHT_THRESHOLD), because a
+    # count of accounts measures coordination, not harm.
     moderation_report_threshold: int = 3
 
     # ── Plans (prices in IDR; see docs/BUSINESS_MODEL.md) ────────────────
-    plan_price_beacon: int = 29_000  # per job, 30 days
-    plan_price_lighthouse: int = 99_000  # per 30 days, up to 5 active jobs
-    plan_price_prism: int = 25_000  # seeker, per 30 days
-    spark_ranked_applicant_limit: int = 20
+    plan_price_beacon: int = 49_000  # per job, 30 days
+    plan_price_lighthouse: int = 149_000  # per 30 days, up to 5 active jobs
+    plan_price_prism: int = 15_000  # seeker, per 30 days
+    # 0 = no cap. Ranked applicants are uncapped on every tier: the ranking is
+    # a free computation, so capping it never saved us money, it only hid
+    # candidates from the employer who asked for them. The paywall moved to
+    # reverse matching (plans.talent_search_limit), which is sourcing.
+    spark_ranked_applicant_limit: int = 0
     # Enforce plan limits (Spark: 1 active job, 20 ranked applicants; premium
     # features need Beacon/Lighthouse). Switchable for live demos / tests.
     plan_limits_enforced: bool = True

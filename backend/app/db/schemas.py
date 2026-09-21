@@ -304,7 +304,10 @@ class JobPosting(TimestampedModel):
     embedding: list[float] | None = None
     embedding_model: str | None = None
     public_code: str | None = None
-    moderation_status: Literal["published", "held", "rejected"] = "published"
+    # "flagged" = enough weighted community reports to warrant a look, but no
+    # violation confirmed yet. It stays VISIBLE (policy.VISIBLE_STATUSES) — a
+    # posting is not removed on accusation, only on a verdict.
+    moderation_status: Literal["published", "flagged", "held", "rejected"] = "published"
     moderation_reasons: list[dict] = []
 
 

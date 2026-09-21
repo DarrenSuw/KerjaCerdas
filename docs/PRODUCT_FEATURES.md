@@ -106,7 +106,7 @@ Kode OTP 6 digit dikirim ke email akun (Resend bila `RESEND_API_KEY` diisi; tanp
 
 ## 8. Paket & pembayaran `[BUILT, MANUAL PAYMENT]`
 
-Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism Rp25.000/30 hari. Pesanan dibuat di aplikasi → bayar QRIS/transfer → **admin mengaktifkan** 30 hari. Gateway pembayaran `[PLANNED]`. Membayar tidak pernah mengubah skor atau peringkat.
+Spark (gratis) · Beacon Rp49.000/lowongan · Lighthouse Rp149.000/bulan · Prism Rp15.000/30 hari. Pesanan dibuat di aplikasi → bayar QRIS/transfer → **admin mengaktifkan** 30 hari. Gateway pembayaran `[PLANNED]`. Membayar tidak pernah mengubah skor atau peringkat.
 
 **API:** `GET /api/v1/billing/plans`, `GET /api/v1/billing/me`, `POST /api/v1/billing/orders`, `POST /api/v1/admin/orders/{id}/activate`
 

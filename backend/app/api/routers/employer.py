@@ -511,6 +511,12 @@ async def list_employer_applications(
     user_by_id = {u.id: u for u in users}
 
     ent = await entitlements_for(current_user.id)
+    # 0 means "no cap", which is now the shipped default. Ranked applicants are
+    # free to compute, so hiding some of them never saved us a rupiah — it only
+    # made the candidate ranked 21st invisible to the employer who asked for a
+    # ranking. Paid tiers now differ on interview kits, export and reverse
+    # matching instead. The setting stays so a deployment can re-introduce a cap
+    # without a code change, and every site below honours 0.
     cap = settings.spark_ranked_applicant_limit
 
     # Score every applicant first, then rank BY SCORE — not by arrival time.
@@ -547,7 +553,8 @@ async def list_employer_applications(
         seeker = seeker_by_id.get(app.seeker_id)
         user_record = user_by_id.get(seeker.user_id if seeker else app.seeker_id)
         locked = (
-            job is not None
+            cap > 0
+            and job is not None
             and not ent.premium_for_job(job.id)
             and score_rank.get(app.id, 0) >= cap
         )
@@ -595,12 +602,26 @@ async def list_employer_applications(
     enriched.sort(key=lambda x: (x["locked"], -(x["match_score"] or 0.0)))
     return {
         "total": len(enriched),
-        "ranked_limit": None if not settings.plan_limits_enforced else cap,
+        "ranked_limit": cap if (settings.plan_limits_enforced and cap > 0) else None,
         "items": enriched,
     }
 
 
 # Indonesian aliases the frontend has historically sent for pipeline stages.
+# Fixed, machine-readable rejection reasons. A free-text box alone would give
+# the candidate prose we cannot aggregate and HR a blank page they will skip;
+# the codes make the feedback both writable in one tap and countable.
+REJECTION_REASONS: dict[str, str] = {
+    "skill_kurang": "Skill inti belum memadai untuk posisi ini",
+    "pengalaman_kurang": "Pengalaman relevan belum cukup",
+    "lokasi": "Lokasi / kesediaan pindah tidak cocok",
+    "gaji": "Ekspektasi gaji di luar anggaran",
+    "posisi_terisi": "Posisi sudah terisi kandidat lain",
+    "tidak_hadir": "Tidak hadir / tidak merespons undangan",
+    "dokumen": "Dokumen atau syarat administratif tidak terpenuhi",
+    "lainnya": "Alasan lain (tulis di catatan)",
+}
+
 _STATUS_ALIASES: dict[str, ApplicationStatus] = {
     "accepted": ApplicationStatus.HIRED,
     "diterima": ApplicationStatus.HIRED,
@@ -680,6 +701,14 @@ async def update_application_status(
             )
             raise HTTPException(status.HTTP_409_CONFLICT, detail)
 
+        if target == ApplicationStatus.REJECTED and target != current:
+            if (payload.reason_code or "") not in REJECTION_REASONS:
+                raise HTTPException(
+                    status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    "Penolakan wajib menyertakan alasan. Pilih salah satu: "
+                    + ", ".join(REJECTION_REASONS),
+                )
+
         if target != current:
             pending_event = ApplicationStatusEvent(
                 application_id=app.id,
@@ -687,6 +716,8 @@ async def update_application_status(
                 from_status=current.value,
                 to_status=target.value,
                 match_score=app.match_score or 0.0,
+                reason_code=payload.reason_code or "",
+                reason_note=(payload.reason_note or "").strip(),
             )
         app.status = target
 
