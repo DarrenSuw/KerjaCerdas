@@ -74,3 +74,10 @@ closes that regardless of what the client's browser state looks like.
 ## Seeker Side (`require_seeker`)
 
 Profile CRUD (headline, skills with level/years, experience, education, salary expectations, preferred regions) — every semantic change re-embeds the profile, same pattern as jobs. CV upload (see `03-cv-upload-parsing.md`) is the bulk alternative to manual profile editing.
+
+> **Where the paywall sits.** Ranked applicants are uncapped on every tier including Spark —
+> ranking is a free computation, so a cap saved nothing and only hid the candidate ranked 21st from
+> the employer who asked for a ranking. The quota sits on **reverse matching** (searching candidates
+> who have not applied): Spark 0, Beacon 30, Lighthouse 150 per 30 days
+> (`plans.talent_search_limit`). See
+> [10-scoring-hr-feedback-and-plans.md](10-scoring-hr-feedback-and-plans.md).

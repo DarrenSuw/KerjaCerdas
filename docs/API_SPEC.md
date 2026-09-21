@@ -798,20 +798,30 @@ Skills with an available quiz plus this seeker's proof status
 
 Body `{ "skill": "Excel" }`. Returns 5 randomly drawn questions with per-attempt shuffled options and
 a server-side deadline (45 s per question). **Correct answers are never included.** An unsubmitted
-attempt within its deadline is resumed instead of drawing new questions. `404` if no bank exists for
-the skill; `429` while a retake cooldown is active (7 days, or 2 with Prism).
+attempt within its deadline is resumed instead of drawing new questions.
+
+`400` if the skill has no bank **and** is not on the seeker's profile (only a claimed skill may
+trigger paid question generation); `503` while a bank is still being prepared; `429` while the
+retake cooldown is active — **1 day, identical on every plan**.
+
+A retake never redraws the previous attempt's questions. When a bank is still too thin to honour
+that, the quiz is served anyway but **cannot award a badge**: `proof_eligible` is `false`,
+`repeated_questions` says how many had to be reused, and `notice` explains it to the candidate.
 
 ```json
 { "attempt_id": "…", "skill": "excel", "skill_label": "Excel",
   "deadline_at": "2026-09-20T09:15:00Z", "seconds_per_question": 45, "pass_mark": 4,
   "resumed": false, "draft_bank": true,
+  "proof_eligible": true, "repeated_questions": 0,
   "questions": [ { "id": "…", "question": "…", "options": ["…", "…", "…", "…"] } ] }
 ```
 
 ### `POST /api/v1/quiz/submit`
 
 Body `{ "attempt_id": "…", "answers": [0,3,1,2,0] }`. Graded server-side against the answer key (no AI
-call). Passing (4/5) sets that skill's proof level to `quiz` for 180 days and records evidence.
+call). Passing (4/5) sets that skill's proof level to `quiz` for 180 days and records evidence —
+**unless the attempt was not `proof_eligible`**, in which case it is scored and returned normally but
+writes no evidence. `proof_granted` in the response says which of the two happened.
 Returns which answers were right — never which option was correct.
 
 ---

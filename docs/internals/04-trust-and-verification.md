@@ -117,3 +117,7 @@ A badge of `company_email` or `admin_reviewed` also skips the first-job hold.
 NIK/KTP, ijazah numbers, NPWP, and phone numbers for OTP. Emails, phone numbers and 16-digit NIKs found
 inside an uploaded CV are redacted by fixed rules before storage and before any LLM call
 (`services/privacy/redact.py`).
+
+> **Community reports, the rulebook and the flag pipeline** are specified in
+> [../RULES.md](../RULES.md); plan entitlements and the proof maths in
+> [10-scoring-hr-feedback-and-plans.md](10-scoring-hr-feedback-and-plans.md).

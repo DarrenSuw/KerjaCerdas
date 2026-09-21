@@ -116,3 +116,26 @@ v2 removed every mock identity check. What the platform verifies, it verifies it
 - Automated VPS deployment from CI (the release workflow publishes images; deployment to the VPS is manual)
 
 Architectural debt and open bugs are tracked inline as code comments at the relevant call sites (e.g. `backend/app/api/routers/employer.py`) rather than in a separate standing document.
+
+
+## Migrations
+
+Alembic only — never `create_all()` (CLAUDE.md §5). Current head: **`b1d3f5a7c902`** (v3), which
+adds `skill_questions.source` / `review_note` (question provenance: `human` | `ai_auto` |
+`ai_draft`), `job_reports.rule_cited` / `upheld` (which published rule was alleged, and how the
+accusation ended), `quiz_attempts.proof_eligible` (whether that draw may award a badge), and
+`application_status_events.reason_code` / `reason_note` (mandatory rejection feedback). Its parent
+is `a2b4c6d8e0f1` (v2 proof-of-skill). Every column is defaulted or nullable, so the upgrade is safe
+on populated tables and the downgrade is a clean drop; CI runs the round-trip.
+
+### Job moderation states
+
+| State | Publicly visible | How it is reached |
+|---|---|---|
+| `published` | yes | AutoMod found nothing, or an admin published it |
+| `flagged` | **yes** | weighted community reports crossed the threshold — under review, not removed |
+| `held` | no | soft rule, first-job review, or a confirmed hard-rule violation |
+| `rejected` | no | hard rule at posting time, or an admin decision (+ strike) |
+
+`policy.set_moderation()` keeps the invariant that anything outside
+`policy.VISIBLE_STATUSES` is also `is_active = False`.

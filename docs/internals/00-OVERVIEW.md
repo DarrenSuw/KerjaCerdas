@@ -16,6 +16,7 @@
 | [07-partner-integrations.md](07-partner-integrations.md) | Course & LMS ecosystem integrations (Dicoding, Prakerja) |
 | [08-events-experiments.md](08-events-experiments.md) | Analytics events + deterministic A/B testing |
 | [09-courses-skill-gap.md](09-courses-skill-gap.md) | Course catalog + 3-tier skill-gap recommendations |
+| [10-scoring-hr-feedback-and-plans.md](10-scoring-hr-feedback-and-plans.md) | **The precise version**: the four weights, per-skill proof maths, quiz proof rules, HR rejection feedback, plan entitlements and the margin arithmetic. When another doc disagrees with this one, this one is right |
 
 ## High-Level Architecture
 

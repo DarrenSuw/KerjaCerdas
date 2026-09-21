@@ -343,30 +343,60 @@ class TestSecondReviewFindingsStayFixed:
         assert "repeated_questions" in src
         assert "needs_refill_now" in src
 
-    def test_plan_figures_are_consistent_everywhere_they_appear(self) -> None:
-        """The prices live in settings; no doc or component may carry its own."""
+    def test_no_doc_or_component_carries_a_stale_product_figure(self) -> None:
+        """One sweep for every figure this project has already had to correct.
+
+        Hand-sweeping kept reporting itself complete while files were still
+        wrong: the first pass covered five docs and missed four, the second
+        matched "Rp29.000" but not "Rp29k". The patterns below are every
+        spelling a stale figure has actually shipped in.
+        """
+        import re
         from pathlib import Path
 
         from backend.app.config.settings import settings
 
         root = Path(__file__).resolve().parents[3]
-        # Every spelling a stale figure has actually appeared in. The first
-        # version of this guard only listed the dotted forms, so "Rp29k" and
-        # "20 pelamar" sailed through a sweep that reported itself complete.
         stale = {
-            "Rp29.000", "Rp99.000", "Rp25.000", "Rp29k", "Rp99k", "Rp25k",
-            "100 pesan", "20 pelamar", "top 20", "top-20",
-            "8 skill", "C(6,5)", "ranked_limit\": 20",
+            r"Rp\s?29[.,]?000|Rp29k": "old Beacon price",
+            r"Rp\s?99[.,]?000|Rp99k": "old Lighthouse price",
+            r"Rp\s?25[.,]?000|Rp25k": "old Prism price",
+            r"20 pelamar|top[- ]20": "removed Spark applicant cap",
+            r"100 pesan": "old Prism advisor quota",
+            r"8 skill|C\(6,5\)": "old quiz bank size",
+            r"setelah 7 hari|Prism: 2 hari": "old retake cooldown",
+            r"7,24 juta|BPS, Feb 2026": "superseded BPS release",
         }
+        # Lines that deliberately quote a superseded figure in order to retire
+        # it must say so on the same line.
+        retired = ("sudah digantikan", "tidak berlaku", "sudah tidak ada",
+                   "tidak boleh dikutip", "dulu", "lama", "old ", "was ")
+
         offenders: list[str] = []
         for pattern in ("docs/**/*.md", "frontend/src/**/*.jsx", "README.md"):
             for path in root.glob(pattern):
-                text = path.read_text(encoding="utf-8", errors="ignore")
-                hits = [s for s in stale if s in text]
-                if hits:
-                    offenders.append(f"{path.relative_to(root)}: {hits}")
-        assert not offenders, "stale plan figures still shipped:\n" + "\n".join(offenders)
+                for n, line in enumerate(
+                    path.read_text(encoding="utf-8", errors="ignore").splitlines(), 1
+                ):
+                    if any(marker in line for marker in retired):
+                        continue
+                    for rx, why in stale.items():
+                        if re.search(rx, line, re.I):
+                            offenders.append(f"{path.relative_to(root)}:{n} — {why}")
+        assert not offenders, "stale product figures still shipped:\n" + "\n".join(offenders)
         assert settings.plan_price_beacon == 49_000
+
+    def test_the_internals_index_lists_every_internals_doc(self) -> None:
+        """A reference doc nobody links to is a doc nobody reads."""
+        from pathlib import Path
+
+        internals = Path(__file__).resolve().parents[3] / "docs" / "internals"
+        index = (internals / "00-OVERVIEW.md").read_text(encoding="utf-8")
+        missing = [
+            p.name for p in sorted(internals.glob("*.md"))
+            if p.name != "00-OVERVIEW.md" and p.name not in index
+        ]
+        assert not missing, f"not linked from the internals index: {missing}"
 
 
 class TestThinBanksCannotGrantProof:

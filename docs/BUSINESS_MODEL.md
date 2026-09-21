@@ -202,7 +202,7 @@ Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism 
 - **Pencari kerja:** 7,28 juta penganggur (BPS, **Mei 2026**, rilis 5 Agustus 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp15.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp6,6 miliar/tahun**.
 - **Total lantai pasar ≈ Rp21 miliar/tahun.** Pendapatan tahun 2 pada skenario dasar ≈ 1,7% dari angka itu.
 - Belum dihitung (potensi tambahan, perlu sumber): usaha mikro yang tetap mempekerjakan staf, perusahaan besar untuk posisi entry-level, agen penyalur kerja (>3.000 perusahaan alih daya di asosiasi FAADI [S16]), dan pekerja yang ingin pindah kerja.
-- Konteks: angkatan kerja 154,91 juta; TPT 4,68%; rata-rata upah Rp3,29 juta (BPS Feb 2026) [S15].
+- Konteks: TPT **4,65%**, rata-rata upah buruh **Rp3,39 juta** (BPS Mei 2026, rilis 5 Agustus 2026) [S15]. Ini rilis terbaru; angka Februari 2026 (TPT 4,68%, upah Rp3,29 juta) sudah digantikan dan tidak boleh dikutip lagi.
 
 ---
 
@@ -222,7 +222,7 @@ Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism 
 - [S12] Benchmark pertumbuhan SaaS awal: https://www.lightercapital.com/blog/2025-b2b-saas-startup-benchmarks
 - [S13] Benchmark konversi trial & freemium: https://firstpagesage.com/seo-blog/saas-free-trial-conversion-rate-benchmarks/
 - [S14] Data SIDT-UMKM (Des 2025): https://ukmindonesia.id/baca-deskripsi-posts/data-umkm-jumlah-dan-pertumbuhan-usaha-mikro-kecil-dan-menengah-di-indonesia
-- [S15] BPS, Ketenagakerjaan Februari 2026: https://www.bps.go.id/id/pressrelease/2026/05/05/2574/tingkat-pengangguran-terbuka--tpt--sebesar-4-68-persen--rata-rata-upah-buruh-sebesar-3-29-juta-rupiah-.html
+- [S15] BPS, Ketenagakerjaan Mei 2026 (rilis 5 Agustus 2026): https://www.bps.go.id/id/pressrelease/2026/08/05/2606/tingkat-pengangguran-terbuka--tpt--sebesar-4-65-persen---rata-rata-upah-buruh-sebesar-3-39-juta-rupiah-.html
 - [S16] Sektor alih daya (ABADI/FAADI): https://abadi.id/
 
 > **Sebelum dipakai di pitch:** cek ulang tarif Xendit lewat kalkulator resminya, kurs pada hari-H, dan perbarui semua angka **(asumsi)** dengan data nyata dari `GET /api/v1/admin/metrics` setelah pilot.
