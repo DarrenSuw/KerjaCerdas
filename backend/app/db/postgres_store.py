@@ -630,6 +630,32 @@ async def find_reports_for_job(job_id: str) -> list[JobReportSchema]:
     return await select_where(JobReport, JobReportSchema, JobReport.job_id == job_id)
 
 
+async def find_unresolved_reports(limit: int = 500) -> list[JobReportSchema]:
+    """Open reports, OLDEST first. One query for the whole moderation backlog.
+
+    The admin queue needs the postings that carry open reports. Walking every
+    published job and asking for its reports instead costs one query per job and
+    grows with the catalogue rather than with the backlog, which is the wrong
+    axis entirely — the queue is small even when the job board is large.
+
+    Oldest first, and that ordering is the correctness fix, not a preference.
+    Newest-first with a cap meant that once the backlog exceeded the cap — or a
+    few heavily reported postings filled it — the OLDEST reports fell off the
+    only screen that can resolve them, permanently. They stayed unresolved, so
+    they never recorded a verdict, so the reporters who filed them never
+    accumulated the history that `reporter_weight` reads. A queue that starves
+    its oldest entries is not a queue. Draining oldest-first means every report
+    reaches an admin eventually, and the cap only bounds one page load.
+    """
+    return await select_where(
+        JobReport,
+        JobReportSchema,
+        JobReport.resolved.is_(False),
+        order_by=JobReport.created_at,
+        limit=limit,
+    )
+
+
 async def find_jobs_by_moderation_status(status: str) -> list[JobSchema]:
     return await select_where(
         JobPosting, JobSchema, JobPosting.moderation_status == status, order_by=JobPosting.created_at

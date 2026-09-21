@@ -139,3 +139,78 @@ async def moderate(title: str, description: str, responsibilities: list[str],
             verdict.reasons.append(flag)
             verdict.decision = "held"
     return verdict
+
+
+async def review_reported_posting(
+    title: str, description: str, cited_rule_ids: list[str]
+) -> dict:
+    """Judge a flagged posting against the rules its reporters actually cited.
+
+    This is the only place an AI verdict can hide a live posting, and it is
+    deliberately narrow. The model is never asked the open question "is this a
+    scam" — it is handed one rule at a time, with the rule's own wording, and
+    allowed three answers: LANGGAR, TIDAK, or RAGU. Anything but a clear LANGGAR
+    leaves the posting up and sends the case to a human. A moderation system
+    whose failure mode is "an uncertain model removed a real employer's advert"
+    would cost us the side of the market that is hardest to win back.
+
+    The caller must still check severity: a "violation" on a SOFT rule is a
+    reason to keep a human in the loop, never a reason to remove a live advert.
+    Only R1-class hard rules (asking a candidate for money) are unambiguous
+    enough from text alone for an automated takedown.
+
+    Returns {"verdict": .., "rule": id|"", "severity": .., "note": str}.
+    """
+    from backend.app.services.llm_factory import build_chat_llm, resolve_gemini_key
+    from backend.app.services.trust.rules import RULES_BY_ID
+
+    rules = [RULES_BY_ID[r] for r in dict.fromkeys(cited_rule_ids) if r in RULES_BY_ID]
+    if not rules:
+        # Nothing checkable was cited — a human decides, nothing is hidden.
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "tidak ada aturan yang dikutip"}
+    if not resolve_gemini_key():
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "AI tidak tersedia"}
+
+    try:
+        from langchain_core.messages import HumanMessage
+
+        from backend.app.utils import content_to_text
+
+        # Hard rules first, and nothing may short-circuit before every hard rule
+        # has been asked. The first version returned on the first LANGGAR *or*
+        # RAGU in citation order, so a soft rule coming back "not sure" ended the
+        # review — and a cited R1 (asking candidates for money), the only rule we
+        # are willing to act on unattended, was never evaluated at all. A scam
+        # stayed live because an unrelated question happened to be uncertain.
+        rules.sort(key=lambda r: 0 if r.severity == "hard" else 1)
+
+        fallback: dict | None = None
+        for rule in rules:
+            prompt = (
+                "Kamu moderator lowongan kerja di Indonesia. Periksa HANYA apakah "
+                "lowongan di bawah melanggar satu aturan berikut. Jangan menilai "
+                "hal lain.\n\n"
+                f"Aturan {rule.id}: {rule.title}\n{rule.detail}\n\n"
+                f"Judul: {title}\nDeskripsi: {description[:3000]}\n\n"
+                "Jawab satu baris: 'LANGGAR: <kutipan kalimat yang melanggar>' "
+                "bila jelas melanggar, 'TIDAK' bila jelas tidak, atau 'RAGU' "
+                "bila tidak yakin. Pilih RAGU kalau perlu konteks di luar teks."
+            )
+            resp = await build_chat_llm(temperature=0.0, task="automod").ainvoke(
+                [HumanMessage(content=prompt)]
+            )
+            answer = content_to_text(resp.content).strip()
+            found = {"rule": rule.id, "severity": rule.severity, "note": answer[:300]}
+            if answer.upper().startswith("LANGGAR"):
+                if rule.severity == "hard":
+                    # The only finding that may act unattended. Stop here.
+                    return {"verdict": "violation", **found}
+                fallback = fallback or {"verdict": "violation", **found}
+            elif answer.upper().startswith("RAGU"):
+                fallback = fallback or {"verdict": "uncertain", **found}
+        if fallback is not None:
+            return fallback
+        return {"verdict": "clear", "rule": "", "severity": "", "note": "tidak ditemukan pelanggaran"}
+    except Exception as exc:  # noqa: BLE001 — never let the reviewer break reporting
+        logger.warning("Report review skipped: %s", exc)
+        return {"verdict": "uncertain", "rule": "", "severity": "", "note": "pemeriksaan gagal"}

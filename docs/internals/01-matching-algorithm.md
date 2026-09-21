@@ -146,3 +146,8 @@ Results are then shuffled within each band using a seed stable per job (seeker v
 - **Outcome data.** `applications.match_score` + `skill_snapshot` at apply time and every status change
   in `application_status_events` let `GET /admin/metrics` report the interview rate per score band —
   the beginning of an answer to "do higher scores actually get interviews?".
+
+> **Per-skill detail, worked numbers and the guard tests** live in
+> [10-scoring-hr-feedback-and-plans.md](10-scoring-hr-feedback-and-plans.md). In particular: the
+> skill term divides by the **job's** required-skill list, not the candidate's claims, so padding a
+> profile with 20 skills beats nobody and a skill outside the job's list is worth exactly zero.

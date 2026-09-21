@@ -9,9 +9,10 @@ Enough distinct reports automatically hide the job for admin review.
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
+
 from backend.app.api.dependencies import get_current_user
 from backend.app.api.routers.jobs import invalidate_jobs_cache
-from backend.app.config.settings import settings
 from backend.app.db.models import User
 from backend.app.db.postgres_store import (
     find_job_by_public_code,
@@ -39,6 +40,11 @@ REPORT_REASONS = {
 
 class ReportReq(BaseModel):
     reason: str = Field(max_length=40)
+    # REQUIRED. The AI reviewer is only ever asked about the rule cited here,
+    # so a report that cites nothing can neither be checked nor answered — yet
+    # it still counted toward the flag threshold, which meant the threshold
+    # could be reached entirely by accusations nobody could evaluate.
+    rule_cited: str = Field(min_length=2, max_length=40)
     detail: str = Field(default="", max_length=1000)
 
 
@@ -49,10 +55,18 @@ async def _job_or_404(code: str):
     return job
 
 
+@router.get("/rules")
+async def posting_rules():
+    """The same rulebook shown to employers, reporters and the AI reviewer."""
+    from backend.app.services.trust.rules import rulebook
+
+    return {"rules": rulebook()}
+
+
 @router.get("/{code}")
 async def public_job(code: str):
     job = await _job_or_404(code)
-    if not job.is_active or job.moderation_status != "published":
+    if not policy.is_publicly_visible(job):
         return {"withdrawn": True, "detail": "Lowongan ini sudah tidak aktif atau sedang ditinjau moderasi."}
 
     repos = get_repositories()
@@ -77,7 +91,7 @@ async def public_job(code: str):
 @router.get("/{code}/qr.svg")
 async def public_job_qr(code: str, origin: str | None = Query(default=None, max_length=200)):
     job = await _job_or_404(code)
-    if not job.is_active or job.moderation_status != "published":
+    if not policy.is_publicly_visible(job):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Lowongan tidak aktif")
     url = resolve_origin(origin) + public_path(job.public_code)
     return Response(content=qr_svg(url), media_type="image/svg+xml",
@@ -86,26 +100,136 @@ async def public_job_qr(code: str, origin: str | None = Query(default=None, max_
 
 @router.post("/{code}/report", status_code=status.HTTP_201_CREATED)
 async def report_job(code: str, req: ReportReq, current_user: User = Depends(get_current_user)):
+    """Community report. Reaching the threshold FLAGS a posting; it never hides it.
+
+    The old behaviour hid a posting the moment three distinct users reported it,
+    with no check that anything had been broken — so three coordinated accounts
+    could remove a competitor, while a single obvious scam stayed live until a
+    third person happened to complain. Now:
+
+      report -> weighted by how much the reporter has at stake
+             -> threshold reached -> "flagged", STILL VISIBLE, with a notice
+             -> AI checks the posting against the cited rule only
+                  violation  -> held (hidden), employer notified, appeal open
+                  clear/ragu -> stays up, queued for a human
+
+    Nothing here hides a posting on accusation alone.
+    """
+    from backend.app.services.trust import rules as rulebook_mod
+    from backend.app.services.trust.automod import review_reported_posting
+
     if req.reason not in REPORT_REASONS:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Alasan laporan tidak dikenal")
+    if req.rule_cited not in rulebook_mod.RULES_BY_ID:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "Aturan yang dikutip tidak dikenal")
+
     job = await _job_or_404(code)
     repos = get_repositories()
     try:
         await repos.job_reports.upsert(
             JobReport(job_id=job.id, reporter_user_id=current_user.id,
-                      reason=req.reason, detail=req.detail.strip())
+                      reason=req.reason, rule_cited=req.rule_cited,
+                      detail=req.detail.strip())
         )
     except IntegrityError:
         return {"status": "already_reported"}
 
     open_reports = [r for r in await find_reports_for_job(job.id) if not r.resolved]
-    hidden = False
-    if len(open_reports) >= settings.moderation_report_threshold and job.moderation_status == "published":
-        reasons = [{"rule": "reports", "severity": "soft", "excerpt": "",
-                    "fix": f"{len(open_reports)} laporan pengguna — admin akan meninjau."}]
-        policy.set_moderation(job, "held", reasons)
+    weighted = await _weighted_report_score(open_reports, job.id)
+
+    result = {
+        "status": "reported",
+        "job_hidden_for_review": False,
+        "under_review": job.moderation_status == "flagged",
+    }
+    if job.moderation_status != "published":
+        return result
+    if rulebook_mod.flag_state(weighted, len(open_reports)) != "flagged":
+        return result
+
+    cited = [r.rule_cited for r in open_reports if r.rule_cited]
+    reasons = [{
+        "rule": "community_flag", "severity": "soft", "excerpt": "",
+        "fix": f"{len(open_reports)} laporan pengguna sedang diperiksa.",
+    }]
+    policy.set_moderation(job, "flagged", reasons)
+    await repos.jobs.upsert(job)
+    invalidate_jobs_cache()
+    await policy.log_event(job, "reports", "flagged", reasons)
+    result["under_review"] = True
+
+    review = await review_reported_posting(job.title, job.description or "", cited)
+    # A soft-rule "violation" is an opinion about wording, tone or intent that
+    # needs context the text does not carry — exactly where a model is least
+    # reliable and where removing a real employer's advert costs us the side of
+    # the market we can least afford to lose. Only a hard rule (asking a
+    # candidate for money) is unambiguous enough to act on unattended.
+    if review["verdict"] == "violation" and review.get("severity") == "hard":
+        rule = rulebook_mod.RULES_BY_ID.get(review["rule"])
+        held_reasons = [{
+            "rule": review["rule"] or "community_flag", "severity": "soft",
+            "excerpt": review["note"],
+            "fix": rule.fix if rule else "Perbaiki lalu ajukan tinjauan ulang.",
+        }]
+        policy.set_moderation(job, "held", held_reasons)
         await repos.jobs.upsert(job)
         invalidate_jobs_cache()
-        await policy.log_event(job, "reports", "held", reasons)
-        hidden = True
-    return {"status": "reported", "job_hidden_for_review": hidden}
+        await policy.log_event(job, "report_review", "held", held_reasons, note=review["note"])
+        result["job_hidden_for_review"] = True
+    else:
+        # Clear, uncertain, or a soft-rule finding: the posting stays up and a
+        # human decides. An uncertain model must never be the thing that removes
+        # a live advert.
+        await policy.log_event(
+            job, "report_review", "needs_admin", [],
+            note=f"{review['verdict']}/{review.get('severity') or '-'}: {review['note']}",
+        )
+    return result
+
+
+async def _weighted_report_score(reports, job_id: str) -> int:
+    """Sum reporter weights. A count of accounts is not a measure of harm."""
+    from backend.app.services.trust.rules import reporter_weight
+
+    repos = get_repositories()
+    total = 0
+    # Applications record a SEEKER PROFILE id; a report records a USER id. The
+    # first version compared the two directly, so "applied to this job" was
+    # never true for anybody and the signal silently contributed nothing.
+    applicant_user_ids: set[str] = set()
+    try:
+        seeker_ids = {
+            a.seeker_id for a in await repos.applications.list() if a.job_id == job_id
+        }
+        if seeker_ids:
+            applicant_user_ids = {
+                s.user_id
+                for s in await repos.seekers.get_many(list(seeker_ids))
+                if getattr(s, "user_id", None)
+            }
+    except Exception:  # noqa: BLE001 — weighting must never break reporting
+        applicant_user_ids = set()
+
+    for rep in reports:
+        user = await repos.users.get(rep.reporter_user_id)
+        if user is None:
+            continue
+        history = [
+            r for r in await repos.job_reports.list()
+            if r.reporter_user_id == rep.reporter_user_id and r.upheld is not None
+        ]
+        created = rep.created_at
+        age_days = 0.0
+        if getattr(user, "created_at", None) is not None:
+            created_at = user.created_at
+            created_at = created_at if created_at.tzinfo else created_at.replace(tzinfo=UTC)
+            age_days = (datetime.now(UTC) - created_at).total_seconds() / 86400
+        total += reporter_weight(
+            email_verified=bool(getattr(user, "email_verified", False)),
+            applied_to_job=rep.reporter_user_id in applicant_user_ids,
+            account_age_days=age_days,
+            upheld_reports=sum(1 for r in history if r.upheld),
+            dismissed_reports=sum(1 for r in history if r.upheld is False),
+        )
+        _ = created
+    return total

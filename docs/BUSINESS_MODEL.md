@@ -1,22 +1,26 @@
-# Model Bisnis & Keuangan KerjaCerdas (v2 — "Bukti, bukan klaim")
+# Model Bisnis & Keuangan KerjaCerdas ("Bukti, bukan klaim")
 
 > **Aturan dokumen ini:** setiap harga infrastruktur/AI punya sumber (lihat §9). Angka tanpa sumber ditandai **(asumsi)** atau **(perlu penawaran)**. Tidak ada angka hasil rekaan.
 > **Kurs:** US$1 = **Rp17.600** (JISDOR Bank Indonesia berkisar Rp17.536–17.727 pada September 2026 [S7]).
-> Versi sebelumnya memakai model *Pay-to-Unlock* (Rp50.000/kontak). **Model itu dihapus** — alasannya di §1.
 
 ---
 
-## 1. Kenapa Pay-to-Unlock dihapus
+## 1. Prinsip: yang berbiaya yang ditagih
 
-| Masalah | Penjelasan |
+Satu aturan menentukan setiap baris harga di dokumen ini:
+
+> **Kami menagih pekerjaan yang menghemat waktu employer, bukan akses ke orang.**
+
+Konsekuensinya, dan semuanya sudah berlaku di kode:
+
+| Prinsip | Bentuk nyatanya |
 |---|---|
-| Menagih rasa sakit yang salah | Juri mencatat kebutuhan perusahaan terkonfirmasi kuat pada **penyaringan** pelamar, bukan pada *sourcing* kandidat baru. Unlock menagih sourcing. |
-| Butuh likuiditas yang belum ada | Membuka kontak baru bernilai hanya jika kolam kandidat besar. Di awal, kolam itu kosong. |
-| Bocor | Teaser "Someone at X" + wilayah + pengalaman cukup untuk menemukan orangnya di LinkedIn tanpa membayar. |
-| Risiko UU PDP | Menjual akses kontak pencari kerja tanpa persetujuan eksplisit. |
-| Tidak bisa ditagih | Belum ada payment gateway; endpoint unlock menerima token apa pun (mode demo). |
+| Menyaring itu gratis | Memeringkat pelamar berbiaya **Rp0** untuk kami hitung (tanpa panggilan AI), jadi tidak pernah dibatasi — termasuk di paket gratis. Membatasinya tidak menghemat apa pun dan hanya menyembunyikan kandidat dari employer yang justru meminta peringkat. |
+| Kontak pelamar tidak dijual | Pelamar yang melamar sendiri sudah memberi kontaknya kepada employer itu — gratis, selamanya. Kandidat yang **belum** melamar tampil **anonim**, dan tidak ada cara membeli identitasnya. |
+| Yang berbayar yang berbiaya atau menghemat waktu | Kit wawancara (dihitung AI, di-cache), ekspor, pencarian kandidat yang belum melamar, dan kuota lowongan aktif. |
+| Membayar tidak pernah menggerakkan skor | Bobot bukti, urutan pelamar, dan jeda ulang kuis identik di semua paket. Tidak ada paket yang bisa membeli peringkat. |
 
-**Gantinya:** employer membayar untuk **memeringkat & mewawancarai pelamar yang layak**; kontak pelamar yang melamar sendiri selalu gratis; kandidat yang belum melamar tampil **anonim**.
+Aturan ini juga yang menutup risiko UU PDP: kami tidak pernah berada dalam posisi menjual akses ke data pribadi pencari kerja.
 
 ---
 
@@ -24,13 +28,69 @@
 
 | Paket | Harga | Untuk siapa | Isi | Status |
 |---|---|---|---|---|
-| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, 20 pelamar dengan skor tertinggi ditampilkan, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
-| **Beacon** | **Rp29.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pelamar tanpa batas diperingkat, pertanyaan wawancara AI, ekspor CSV | `[BUILT + TESTED]`, pembayaran manual |
-| **Lighthouse** | **Rp99.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
-| **Prism** (pencari kerja) | **Rp25.000 / 30 hari** | Pencari kerja aktif | Kuota advisor 100 pesan/30 hari, ulang kuis setelah 2 hari (gratis: 10 pesan/hari, ulang 7 hari) | `[BUILT + TESTED]`, pembayaran manual |
+| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, **semua pelamar diperingkat (tanpa batas)**, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
+| **Beacon** | **Rp49.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pertanyaan wawancara AI, ekspor CSV, 30x cari kandidat yang belum melamar | `[BUILT + TESTED]`, pembayaran manual |
+| **Lighthouse** | **Rp149.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
+| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja yang ingin berlatih | Advisor 20 pesan/hari (gratis: 10/hari) `[BUILT + TESTED]`. Roadmap: simulasi wawancara AI + CV terformat `[PLANNED]` | pembayaran manual |
 | Afiliasi Ed-Tech | komisi | — | Klik kursus sudah dilacak lewat event | `[PLANNED]` — **tidak** dihitung dalam BEP |
 
-**Pencari kerja tidak pernah membayar untuk skor.** Prism hanya menambah kuota/percepatan; bobot bukti tetap sama.
+### 2a. Apa persisnya yang dibeli tiap paket — dan di mana itu ditegakkan
+
+Tabel ini adalah **sumber kebenaran** untuk setiap klaim harga di deck, di UI, dan di jawaban
+presenter. Kolom terakhir bukan hiasan: fitur berbayar yang tidak ditegakkan di kode adalah
+pendapatan yang kami berikan gratis tanpa sadar.
+
+| Paket | Yang didapat | Ditegakkan di | Biaya kami / pemakaian |
+|---|---|---|---|
+| **Spark** (Gratis) | 1 lowongan aktif | `plans.active_job_limit` → `employer.py` | baca lowongan ~Rp130, sekali |
+| | **Semua pelamar diperingkat, tanpa batas** | tidak dibatasi — disengaja | **Rp0** (tanpa panggilan AI) |
+| | Link + poster QR lowongan | `services/hiring/links.py` | Rp0 |
+| | Badge ✓ Terbukti terlihat + centang "skill terbukti" | `quiz/`, `hiring.py` | Rp0 per percobaan kuis |
+| **Beacon** (Rp49.000 / lowongan / 30 hari) | Pertanyaan wawancara AI per kandidat | `hiring.py::_require_premium` | ~Rp60, **di-cache** per (kandidat, lowongan) |
+| | Ekspor pelamar CSV | `hiring.py::_require_premium` | Rp0 |
+| | **Cari kandidat yang belum melamar — 30x / 30 hari, PER LOWONGAN** | `employer.py::_check_talent_search_quota` (kuota dihitung per `job_id`) | Rp0 (pgvector, tanpa AI) |
+| **Lighthouse** (Rp149.000 / 30 hari) | Hingga 5 lowongan aktif | `plans.active_job_limit` | ~Rp130 per lowongan |
+| | Semua fitur Beacon di semua lowongan | `Entitlements.job_tier` | — |
+| | Cari kandidat **150x / 30 hari**, berlaku se-akun | `employer.py::_check_talent_search_quota` | Rp0 |
+| **Gratis** (pencari kerja) | Skor, band, skill gap, rekomendasi kursus | `seeker.py` | baca CV ~Rp99 sekali seumur akun |
+| | Kuis tanpa batas (ulang besoknya) | `quiz/service.RETAKE_DAYS` | **Rp0 per percobaan** |
+| | **Peringkat persis tiap lamaran** (mis. #14 dari 62) + rincian bukti per skill | `seeker.py::application_rank` | **Rp0** — dibaca dari baris yang ditulis saat melamar |
+| | Advisor 10 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan |
+| **Prism** (Rp15.000 / 30 hari) | Advisor 20 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan, plafon Rp8.100 / 30 hari |
+| | *Roadmap:* simulasi wawancara AI + umpan balik `[PLANNED]` | — | ~Rp150 / sesi (perkiraan) |
+| | *Roadmap:* CV terformat dari profil terverifikasi `[PLANNED]` | — | ~Rp50 (perkiraan) |
+
+**Tiga aturan yang tidak boleh dilanggar paket mana pun:**
+
+1. **ATURAN PENCARI KERJA — pencari kerja boleh membayar untuk LATIHAN dan PRESENTASI, tidak pernah
+   untuk POSISI maupun untuk INFORMASI TENTANG POSISINYA.** Peringkat persis sempat dijual di Prism.
+   Skor dan urutannya identik bagi yang bayar maupun tidak, jadi kelihatannya adil — tapi kandidat
+   yang tahu dia peringkat 14 dari 62, dan tahu skill klaim mana yang menahannya, bisa bertindak;
+   yang tidak tahu, tidak bisa. Itu keunggulan yang dibeli dengan uang, ditagihkan ke sisi pasar yang
+   paling sedikit punya uang. **Sekarang gratis untuk semua**, dan ada test yang gagal kalau
+   gerbangnya kembali. Semua yang menyentuh peringkat — skor, band, peringkat persis, rincian bukti,
+   kuis, badge, jeda ulang 1 hari — gratis selamanya di semua paket.
+2. **Paywall ada di *sourcing*, tidak pernah di *screening*.** Memeringkat orang yang sudah melamar
+   berbiaya Rp0 untuk dihitung; membatasinya tidak menghemat sepeser pun dan hanya menyembunyikan
+   kandidat peringkat 21 dari employer yang justru meminta peringkat. Mencari orang yang **belum**
+   melamar adalah sourcing — itu yang dijual, dan itu yang punya kuota.
+3. **Setiap fitur berbayar harus DITEGAKKAN di kode.** Fitur yang diiklankan di katalog tapi tidak
+   punya gerbang adalah pendapatan yang kami berikan gratis tanpa sadar — persis yang terjadi pada
+   kuota pencarian kandidat: `talent_search_limit()` ada dan diuji, tapi tidak satu pun router
+   memanggilnya, jadi kuota Spark "0" sebenarnya tak terbatas. Kolom "Ditegakkan di" pada tabel di
+   atas wajib terisi sebelum sebuah fitur boleh dijual.
+
+**Kenapa margin bertahan saat pemakaian naik.** Tiga dari empat hal yang dibeli berbiaya **Rp0**
+untuk dilayani: pemeringkatan pelamar, pencarian kandidat (pgvector), dan peringkat persis pencari
+kerja (pembacaan baris — **gratis**, bukan fitur berbayar). Yang benar-benar memanggil AI hanyalah
+kit wawancara (di-cache) dan pesan advisor (berkuota). Karena itu jumlah pelamar tidak menggerakkan
+COGS employer sama sekali.
+
+---
+
+**Pencari kerja tidak pernah membayar untuk skor — dan tidak pernah membayar untuk *mengetahui* skornya.** Peringkat persis, rincian bukti per skill, band, dan skill yang kurang: gratis di semua paket. Prism hanya menambah kuota advisor; bobot bukti dan urutan identik di semua paket. Prism juga **tidak** mempercepat ulang kuis — itu uang yang mempersingkat jalan menuju badge, dan badge menggerakkan skor.
+
+**Kenapa paywall-nya bukan di jumlah pelamar.** Menghitung peringkat berbiaya **Rp0**, jadi membatasinya tidak pernah menghemat apa pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru meminta peringkat. Kuota dipindah ke *reverse matching* (mencari kandidat yang belum melamar), yaitu sourcing, plus kit wawancara dan ekspor yang memang berbiaya.
 
 **Pembayaran hari ini:** QRIS / transfer bank → admin mengaktifkan pesanan 30 hari (`[BUILT, MANUAL PAYMENT]`). Gateway (Midtrans/Xendit) `[PLANNED]`: QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup [S1]. Stripe belum bisa dipakai — di Indonesia statusnya undangan dan tanpa transaksi lintas negara [S2].
 
@@ -46,13 +106,21 @@ Harga Gemini API [S3]; `gemini-3.1-flash-lite` tidak ada di daftar harga publik 
 | Baca 1 CV + embedding (sekali per kandidat) | 3.5 Flash-Lite + Embedding 2 | 5k / 1,5k + 2k | ~Rp99 |
 | Skor kecocokan | tanpa panggilan AI | — | **Rp0** |
 | **Kuis skill (percobaan)** | tanpa panggilan AI (kunci jawaban) | — | **Rp0** |
-| Pembuatan soal kuis (sekali per skill baru) | 3.1 Flash Lite | 3k / 2k | ~Rp85 |
-| Pertanyaan wawancara / kandidat | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
+| Pembuatan soal kuis — **per batch 10 soal** | 3.1 Flash Lite | 3k / 3,3k | ~Rp110 |
+| Mengisi 1 skill baru sampai bank 30 soal (3 batch) | 3.1 Flash Lite | — | **~Rp330** |
+| Pertanyaan wawancara / kandidat — **di-cache, sekali per (kandidat, lowongan)** | 3.5 Flash-Lite | 3k / 1k | ~Rp60 |
+| Peringkat pelamar · reverse matching | pgvector, tanpa panggilan AI | — | **Rp0** |
 | Analisis skill gap | 2.5 Flash-Lite (tier gratis) | 4k / 1,5k | ~Rp23 |
-| 1 pesan advisor | 2.5 Flash-Lite / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 / ~Rp38 |
+| 1 pesan advisor (tier flash-lite) | 3.1 / 3.5 Flash-Lite | 3k / 0,5k | ~Rp9 |
+| 1 pesan advisor **saat fallback** ke `gemini-3.6-flash` | 3.6 Flash | 3k / 0,5k | **~Rp38** |
 | 1 email (OTP verifikasi) | Resend — **gratis sampai 3.000/bln**, lalu Pro $20/50.000 [S4] | — | **Rp0** di tier gratis; ~Rp7 setelahnya |
 
 Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadangan.
+
+**Dua perubahan biaya dari revisi v3, keduanya searah berlawanan:**
+
+- **Bank soal naik dari 6 ke 30 per skill**, jadi menyiapkan satu skill baru kini ~Rp330, bukan ~Rp85. Ini biaya sekali per skill yang diamortisasi ke seluruh percobaan selamanya, dan ia yang membeli jaminan "ujian ulang tidak mengulang soal".
+- **Baca CV tidak lagi dibebankan ke paket employer.** Pelamar mengunggah CV-nya sendiri sekali seumur akun; biaya itu pindah ke baris *pencari kerja gratis* di bawah. Biayanya tidak hilang — ia berpindah dari pendapatan ke akuisisi. Konsekuensinya: **jumlah pelamar tidak lagi menggerakkan COGS employer sama sekali**, dan kurva margin lama (88% → 70% → 42% seiring pelamar bertambah) **tidak berlaku lagi**.
 
 ### Kontribusi per penjualan (asumsi pemakaian tipikal: 30 pelamar, 5 dishortlist)
 
@@ -63,21 +131,26 @@ Semua perhitungan di bawah memakai **buffer ×1,5** untuk retry dan model cadang
 > 2. **Email OTP (~Rp7, atau Rp0 di tier gratis Resend)** — dikirim saat kandidat memverifikasi
 >    email akunnya, sekali seumur akun. Bukan per lamaran, dan bukan per lowongan.
 >
-> Karena itu biaya marginal per lowongan **turun** seiring kolam kandidat matang. Tabel di bawah
-> memakai asumsi konservatif "separuh pelamar adalah kandidat baru" (kondisi awal). Margin Beacon
-> pada 200 pelamar: **42%** bila separuh kandidat baru (bulan-bulan awal), **86%** bila hanya 10%
-> yang baru (kolam matang). Beacon tidak membatasi jumlah pelamar — risiko ini nyata di awal dan
-> mengecil dengan sendirinya, dan biaya sungguhannya terpantau di `/admin → Metrik`.
+> **Sejak v3 ini tidak lagi berlaku.** Baca CV dibebankan ke akun pencari kerja, bukan ke paket
+> employer, jadi jumlah pelamar tidak menggerakkan COGS employer sama sekali. Kurva 88% → 70% →
+> 42% yang dulu kami tampilkan **sudah tidak ada** — bukan karena membaik, tapi karena bebannya
+> pindah ke baris akuisisi. Biaya sungguhannya tetap terpantau di `/admin → Metrik`.
 
 | Item | Harga | COGS | **Kontribusi** | Margin |
 |---|---|---|---|---|
-| Beacon (1 lowongan) | Rp29.000 | ~Rp3.400 | **Rp25.600** | 88% |
-| Lighthouse (1 bulan, ~3 lowongan) | Rp99.000 | ~Rp10.250 | **Rp88.750** | 90% |
-| Prism (30 hari) | Rp25.000 | ~Rp7.715 | **Rp17.285** | 69% |
-| Spark (lowongan gratis) | Rp0 | ~Rp1.900 | −Rp1.900 | biaya akuisisi |
+| Beacon (1 lowongan, 5 dishortlist) | Rp49.000 | ~Rp645 | **Rp48.355** | **99%** |
+| Lighthouse (1 bulan, ~3 lowongan) | Rp149.000 | ~Rp1.935 | **Rp147.065** | **99%** |
+| Prism (30 hari, pemakaian tipikal) | Rp15.000 | ~Rp2.500 | **Rp12.500** | **83%** |
+| Prism (30 hari, **plafon** 600 pesan, flash-lite) | Rp15.000 | ~Rp8.100 | **Rp6.900** | **46%** |
+| Spark (lowongan gratis) | Rp0 | ~Rp195 | −Rp195 | biaya akuisisi |
+| Pencari kerja — **onboarding sekali** (baca CV + embedding) | Rp0 | ~Rp150 | −Rp150 | biaya akuisisi |
 | Pencari kerja gratis (per pengguna aktif/bulan) | Rp0 | ~Rp310 | −Rp310 | biaya akuisisi |
 
-Margin tinggi karena **kuis dan skor tidak memanggil AI per pemakaian**; biaya AI hanya untuk membaca CV/lowongan sekali dan pertanyaan wawancara.
+Beacon kini ~Rp645 (baca lowongan Rp195 + 5 kit wawancara Rp450) — bukan ~Rp3.400 seperti model lama, yang membebankan baca CV pelamar ke paket employer. **Angka 99% itu jujur tapi menyesatkan kalau dibaca sendirian:** biaya baca CV tidak hilang, ia pindah ke baris akuisisi pencari kerja. Yang berubah secara struktural adalah *siapa* yang menanggungnya dan *apa* yang menggerakkannya — bukan totalnya.
+
+Margin tinggi karena **kuis, skor, peringkat, dan reverse matching tidak memanggil AI sama sekali**; biaya AI hanya untuk membaca CV/lowongan sekali, pertanyaan wawancara (kini di-cache, jadi klik ulang gratis), dan pesan advisor.
+
+**Plafon Prism dihitung, bukan ditebak.** Pada 20 pesan/hari seorang pelanggan bisa memakai 600 pesan per 30 hari: ~Rp8.100 pada tier flash-lite, jadi lantai marginnya 46%. Sempat disetel 30/hari, yang menyisakan 19%. Titik impas Rp15.000 adalah **1.111 pesan** di flash-lite tapi hanya **263 pesan** bila `llm_factory` jatuh ke `gemini-3.6-flash` — yaitu 37/hari lawan 8,8/hari. **Risiko terbuka:** fallback yang berkepanjangan membuat 20/hari pun rugi di plafon. Perbaikan strukturalnya adalah metering berbasis *biaya*, bukan jumlah pesan; sampai itu ada, ini eksposur yang dipantau, bukan yang sudah selesai.
 
 ---
 
@@ -125,6 +198,43 @@ Di luar model dasar (didanai investasi): audit keamanan sebelum gateway live ~Rp
 ---
 
 ## 6. Proyeksi 24 bulan (skenario dasar, Rp juta)
+
+> **⚠️ Tabel ini superseded — jangan dipakai sebagai proyeksi terkini.**
+> Ia dihitung pada harga lama, dan angkanya **tidak bisa direkonsiliasi** dengan revisi harga di §2:
+> memakai perubahan yang tercatat (+78% Beacon, +56% Lighthouse, −28% Prism) pada unit M24 di bawah
+> menghasilkan pendapatan ≈Rp37jt, bukan Rp49,8jt yang tertulis. Artinya harga yang dipakai membangun
+> tabel ini tidak sama dengan yang tercatat di mana pun, jadi ia tidak boleh dipakai sebagai dasar
+> keputusan. **Kami membiarkannya terlihat, bukan menghapusnya diam-diam**, supaya jelas apa yang
+> belum dikerjakan.
+>
+> Proyeksi bulan-per-bulan yang benar butuh dua angka yang **belum kami ukur**: churn Lighthouse dan
+> campuran Beacon/Lighthouse dari waktu ke waktu. Keduanya menentukan bulan impas sepenuhnya (lihat
+> §6a), dan kami tidak mengarangnya. Yang bisa dihitung hari ini ada di §6a.
+
+### 6a. Yang bisa dihitung sekarang — syarat impas
+
+Tanpa asumsi churn, ini tetap terhitung persis dari kontribusi per penjualan (§3) dan opex (§4):
+
+| Untuk menutup opex **Rp8,7jt/bulan** | Butuh per bulan |
+|---|---|
+| Kalau semuanya Beacon (kontribusi Rp48.355) | **180** lowongan berbayar |
+| Kalau semuanya Lighthouse (kontribusi Rp147.065) | **59** langganan aktif |
+| Kalau semuanya Prism (kontribusi Rp12.500) | **696** pelanggan |
+
+**Inilah sebabnya campuran menentukan segalanya.** Asumsi pertumbuhan §5 memberi maksimum 400
+pendaftar/bulan pada batas atas; pada konversi 18% itu **72 pelanggan berbayar baru per bulan**.
+Angka itu **tidak cukup** kalau semuanya Beacon (butuh 180), tapi **lebih dari cukup** kalau cukup
+banyak yang Lighthouse (butuh 59) — dan Lighthouse berulang, jadi langganannya menumpuk sementara
+lowongan Beacon tidak. Impas karena itu ditentukan oleh seberapa cepat basis Lighthouse tumbuh, bukan
+oleh jumlah pendaftar.
+
+**Konsekuensi yang harus disebut jujur ke investor:** angka impas kami bergantung pada retensi
+Lighthouse yang belum pernah kami ukur, karena belum ada pelanggan. Itu justru salah satu hal yang
+pilot 30 hari dirancang untuk menghasilkan.
+
+---
+
+#### Tabel lama (superseded — hanya untuk jejak, jangan dikutip)
 
 | Bulan | Lowongan Beacon | Lighthouse | Pengguna aktif | Prism | **Pendapatan** | **Kontribusi** | Opex | Uang saku | **Laba/rugi** | **Kumulatif** |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -181,11 +291,11 @@ Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism 
 
 ## 8. Ukuran pasar (metode jelas, angka bersumber)
 
-- **Employer:** 73.828 usaha kecil + 15.313 usaha menengah = **89.141 unit** (SIDT-UMKM, 31 Des 2025) [S14] × 4 lowongan/tahun **(asumsi)** × Rp29.000 ≈ **Rp10,3 miliar/tahun**.
-- **Pencari kerja:** 7,24 juta penganggur (BPS, Feb 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp25.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp10,9 miliar/tahun**.
+- **Employer:** 73.828 usaha kecil + 15.313 usaha menengah = **89.141 unit** (SIDT-UMKM, 31 Des 2025) [S14] × 4 lowongan/tahun **(asumsi)** × Rp49.000 ≈ **Rp17,5 miliar/tahun**.
+- **Pencari kerja:** 7,28 juta penganggur (BPS, **Mei 2026**, rilis 5 Agustus 2026) [S15] × 2% membeli Prism **(asumsi)** × Rp15.000 × 3 bulan/tahun **(asumsi)** ≈ **Rp6,6 miliar/tahun**.
 - **Total lantai pasar ≈ Rp21 miliar/tahun.** Pendapatan tahun 2 pada skenario dasar ≈ 1,7% dari angka itu.
 - Belum dihitung (potensi tambahan, perlu sumber): usaha mikro yang tetap mempekerjakan staf, perusahaan besar untuk posisi entry-level, agen penyalur kerja (>3.000 perusahaan alih daya di asosiasi FAADI [S16]), dan pekerja yang ingin pindah kerja.
-- Konteks: angkatan kerja 154,91 juta; TPT 4,68%; rata-rata upah Rp3,29 juta (BPS Feb 2026) [S15].
+- Konteks: TPT **4,65%**, rata-rata upah buruh **Rp3,39 juta** (BPS Mei 2026, rilis 5 Agustus 2026) [S15]. Ini rilis terbaru; angka Februari 2026 (TPT 4,68%, upah Rp3,29 juta) sudah digantikan dan tidak boleh dikutip lagi.
 
 ---
 
@@ -205,7 +315,7 @@ Contoh M15: Rp8,7jt ÷ (campuran Beacon Rp25,6rb / Lighthouse Rp88,75rb / Prism 
 - [S12] Benchmark pertumbuhan SaaS awal: https://www.lightercapital.com/blog/2025-b2b-saas-startup-benchmarks
 - [S13] Benchmark konversi trial & freemium: https://firstpagesage.com/seo-blog/saas-free-trial-conversion-rate-benchmarks/
 - [S14] Data SIDT-UMKM (Des 2025): https://ukmindonesia.id/baca-deskripsi-posts/data-umkm-jumlah-dan-pertumbuhan-usaha-mikro-kecil-dan-menengah-di-indonesia
-- [S15] BPS, Ketenagakerjaan Februari 2026: https://www.bps.go.id/id/pressrelease/2026/05/05/2574/tingkat-pengangguran-terbuka--tpt--sebesar-4-68-persen--rata-rata-upah-buruh-sebesar-3-29-juta-rupiah-.html
+- [S15] BPS, Ketenagakerjaan Mei 2026 (rilis 5 Agustus 2026): https://www.bps.go.id/id/pressrelease/2026/08/05/2606/tingkat-pengangguran-terbuka--tpt--sebesar-4-65-persen---rata-rata-upah-buruh-sebesar-3-39-juta-rupiah-.html
 - [S16] Sektor alih daya (ABADI/FAADI): https://abadi.id/
 
 > **Sebelum dipakai di pitch:** cek ulang tarif Xendit lewat kalkulator resminya, kurs pada hari-H, dan perbarui semua angka **(asumsi)** dengan data nyata dari `GET /api/v1/admin/metrics` setelah pilot.

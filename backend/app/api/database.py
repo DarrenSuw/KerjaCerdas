@@ -205,9 +205,42 @@ _V2_COLUMNS: list[tuple[str, str, str]] = [
 ]
 
 
+# Columns added by the v3 trust/quiz release (Alembic revision b1d3f5a7c902).
+# Same reason as _V2_COLUMNS: create_all() adds missing TABLES but never missing
+# COLUMNS, so an existing local SQLite database keeps its old shape and then
+# fails on the first query touching one of these. Adding the ORM columns without
+# extending this list is exactly how a developer's working database breaks on
+# `git pull`.
+_V3_COLUMNS: list[tuple[str, str, str]] = [
+    (
+        "skill_questions",
+        "source",
+        "ALTER TABLE skill_questions ADD COLUMN source VARCHAR(20) DEFAULT 'human'",
+    ),
+    ("skill_questions", "review_note", "ALTER TABLE skill_questions ADD COLUMN review_note TEXT DEFAULT ''"),
+    ("job_reports", "rule_cited", "ALTER TABLE job_reports ADD COLUMN rule_cited VARCHAR(40) DEFAULT ''"),
+    ("job_reports", "upheld", "ALTER TABLE job_reports ADD COLUMN upheld BOOLEAN"),
+    (
+        "quiz_attempts",
+        "proof_eligible",
+        "ALTER TABLE quiz_attempts ADD COLUMN proof_eligible BOOLEAN DEFAULT 1",
+    ),
+    (
+        "application_status_events",
+        "reason_code",
+        "ALTER TABLE application_status_events ADD COLUMN reason_code VARCHAR(40) DEFAULT ''",
+    ),
+    (
+        "application_status_events",
+        "reason_note",
+        "ALTER TABLE application_status_events ADD COLUMN reason_note TEXT DEFAULT ''",
+    ),
+]
+
+
 async def _migrate_v2_columns(conn) -> None:
     cache: dict[str, set[str]] = {}
-    for table, column, ddl in _V2_COLUMNS:
+    for table, column, ddl in (*_V2_COLUMNS, *_V3_COLUMNS):
         if table not in cache:
             cache[table] = await conn.run_sync(_get_table_columns, table)
         if cache[table] and column not in cache[table]:

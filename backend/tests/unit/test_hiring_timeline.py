@@ -37,10 +37,18 @@ PREREQ: dict[str, list[str]] = {
 }
 
 
-def _set_status(client, employer, app_id, status, note=None):
+def _set_status(client, employer, app_id, status, note=None, reason_code=None):
     body: dict = {"status": status}
     if note is not None:
         body["note"] = note
+    # A rejection without a reason is refused by the API on purpose — see
+    # REJECTION_REASONS in routers/employer.py. Supply a default so the tests
+    # that are about something else (aliases, transitions) do not all have to
+    # care, while the tests that are about the requirement pass it explicitly.
+    if reason_code is not None:
+        body["reason_code"] = reason_code
+    elif str(status).strip().casefold() in {"rejected", "ditolak"}:
+        body["reason_code"] = "skill_kurang"
     return client.patch(
         f"/api/v1/employer/applications/{app_id}/status",
         json=body,

@@ -1016,7 +1016,7 @@ export default function LandingHero() {
     const FAQS = [
         {
             q: 'Apakah platform ini sepenuhnya gratis untuk pencari kerja?',
-            a: 'Ya. Pencocokan AI, skill gap, rekomendasi kursus, kuis skill, dan melamar gratis. Paket Prism (Rp25.000 / 30 hari) hanya menambah kuota advisor dan jeda ulang kuis yang lebih pendek — membayar tidak pernah menaikkan skor kecocokan.',
+            a: 'Ya. Pencocokan AI, skill gap, rekomendasi kursus, kuis skill, melamar, dan peringkat persis tiap lamaranmu (mis. #14 dari 62) beserta skill mana yang menahannya — semuanya gratis. Kamu tidak membayar untuk peringkat, dan tidak membayar untuk tahu peringkatmu. Paket Prism (Rp15.000 / 30 hari) hanya menambah kuota advisor — latihan, bukan peringkat. Jeda ulang kuis 1 hari untuk semua paket.',
         },
         {
             q: 'Data apa yang dikumpulkan? Apakah perlu KTP?',
@@ -1028,7 +1028,7 @@ export default function LandingHero() {
         },
         {
             q: 'Bagaimana skema harga untuk perusahaan?',
-            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, 20 pelamar skor tertinggi ditampilkan). Beacon Rp29.000 per lowongan (30 hari) atau Lighthouse Rp99.000 per bulan (hingga 5 lowongan) untuk pelamar tanpa batas, pertanyaan wawancara AI, dan ekspor. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
+            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, semua pelamar diperingkat tanpa batas). Beacon Rp49.000 per lowongan (30 hari) atau Lighthouse Rp149.000 per bulan (hingga 5 lowongan) untuk pertanyaan wawancara AI, ekspor, dan pencarian kandidat yang belum melamar. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
         },
     ]
 
@@ -1402,14 +1402,14 @@ export default function LandingHero() {
                             perks: [
                                 '1 lowongan aktif',
                                 'Link + poster QR lowongan',
-                                '20 pelamar skor tertinggi ditampilkan',
+                                'Semua pelamar diperingkat, tanpa batas',
                                 'Badge skill terbukti',
                             ],
                             action: onEmployer,
                         },
                         {
                             name: 'Beacon',
-                            price: '29rb',
+                            price: '49rb',
                             period: '/ lowongan / 30 hari',
                             desc: 'Untuk usaha kecil yang sesekali merekrut.',
                             highlight: true,
@@ -1427,7 +1427,7 @@ export default function LandingHero() {
                         },
                         {
                             name: 'Lighthouse',
-                            price: '99rb',
+                            price: '149rb',
                             period: '/ 30 hari',
                             desc: 'Untuk usaha yang merekrut setiap bulan.',
                             highlight: false,
@@ -1439,7 +1439,7 @@ export default function LandingHero() {
                                 'Semua fitur Beacon',
                                 'Hingga 5 lowongan aktif',
                                 'Laporan rekrutmen lintas lowongan',
-                                'Pencari kerja tetap gratis (Prism opsional Rp25rb)',
+                                'Pencari kerja tetap gratis (Prism opsional Rp15rb)',
                             ],
                             action: onEmployer,
                         },

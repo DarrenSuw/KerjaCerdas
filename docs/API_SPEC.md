@@ -449,6 +449,43 @@ so the platform can later measure whether proven skills actually predict intervi
 
 ---
 
+### `GET /api/v1/seeker/applications/{application_id}/rank`
+
+**Free, on every tier, deliberately.** Exact standing in that job's applicant queue plus the
+evidence behind it. Every figure is read from rows written when the candidate applied — no embedding
+call, no LLM call, **Rp0 per request**.
+
+This was briefly gated behind Prism. The score and the ordering were identical either way, so it
+looked fair — but a candidate who knows they are 14th of 62, and which claimed skill costs them, can
+act where one who does not know cannot. That is advantage bought with money, charged to the side of
+the market with the least of it, and it contradicts the product's own promise. `402` was removed and
+`test_seeing_your_own_standing_is_never_sold` fails if it returns.
+
+Only ownership is checked. An application belonging to someone else returns `404`, never `403`, so
+the endpoint cannot be used to probe which application ids exist.
+
+```json
+{
+  "application_id": "uuid", "job_id": "job-001",
+  "rank": 14, "total_applicants": 62, "percentile": 79,
+  "score": 0.765,
+  "skills": [{ "skill": "Excel", "level": "quiz" }],
+  "proven_count": 2, "claimed_count": 1,
+  "how_to_improve": "1 skill masih berupa klaim. Lulus kuisnya menaikkan bobot…"
+}
+```
+
+Ties share a rank (two identical stored scores are genuinely level). `percentile` is `null` when
+fewer than 10 people applied — "top 50%" out of two applicants is noise. `total_applicants` counts
+only people who actually applied; `SAVED` bookmarks are excluded, so the field matches the one the
+employer's applicant list shows.
+
+**Nothing here is sold.** Paying buys neither the position nor visibility of it — an earlier draft
+of this section said otherwise and contradicted the endpoint. The ordering reported is the same one
+the employer sees on every tier, and the endpoint has no write path.
+
+---
+
 ### `GET /api/v1/seeker/applications`
 
 Return all job applications for the logged-in seeker with interactive milestone progress tracking (`saved` → `applied` → `reviewed` → `interview` → `hired` / `rejected`).
@@ -651,6 +688,27 @@ Rate limited under the `/employer/jobs` bucket (**30 req / 60 s per IP** — rev
 
 **Request Body (optional, `CandidateSearchRequest`):** `{ "top_k": 10, "filters": { "location": "...", "experience_min": 2 } }`
 
+**Plan-gated — this is sourcing, not screening.** Searching candidates who have *not* applied is the
+employer feature that is actually sold, so it carries a quota (`_check_talent_search_quota`):
+
+| Tier | Searches / 30 days | Scope | Response when exhausted |
+|---|---|---|---|
+| Spark (free) | 0 | — | `402 Payment Required` — names Beacon and Lighthouse |
+| Beacon | 30 | **per job** | `429 Too Many Requests` — offers Lighthouse |
+| Lighthouse | 150 | per account | `429 Too Many Requests` |
+
+**Beacon is checked and counted against the job in the path, not the account.** It is sold per job,
+so asking only "does this account hold a Beacon?" would let a Beacon bought for job A unlock
+sourcing on every unpaid Spark job the same employer owns, and a single shared counter would make
+two Beacon purchases split one 30-search allowance. The quota bucket is therefore
+`talent_search:{job_id}` on Beacon and `talent_search` on Lighthouse, which is account-wide by
+design.
+
+Ranked **applicants** (`GET /employer/applications`) are deliberately uncapped on every tier,
+including free: scoring someone who already applied costs Rp0 to compute, so capping it saves
+nothing and only hides candidates. The quota is consumed via `consume_quota` on the `talent_search`
+event and skipped entirely when `PLAN_LIMITS_ENFORCED=false`.
+
 ---
 
 ### `GET /api/v1/employer/applications/{application_id}/interview-kit`
@@ -718,7 +776,7 @@ personal data until the job is covered by Beacon/Lighthouse.
 
 **Response `200`:**
 ```json
-{ "total": 2, "ranked_limit": 20,
+{ "total": 2, "ranked_limit": null,
   "items": [
     { "id": "…", "application_id": "…", "job_id": "…", "job_title": "Admin & Customer Service",
       "seeker_id": "…", "seeker_name": "Rina Paramitha", "seeker_email": "rina@example.com",
@@ -730,7 +788,7 @@ personal data until the job is covered by Beacon/Lighthouse.
       "applied_at": "2026-09-20 09:12", "updated_at": "2026-09-20 09:12", "locked": false },
     { "id": "…", "application_id": "…", "job_id": "…", "seeker_name": "Pelamar terkunci",
       "locked": true, "match_score": null,
-      "lock_reason": "Paket Spark menampilkan 20 pelamar dengan skor tertinggi. …" }
+      "lock_reason": null }   // ranked applicants are uncapped on every tier
   ] }
 ```
 
@@ -798,20 +856,30 @@ Skills with an available quiz plus this seeker's proof status
 
 Body `{ "skill": "Excel" }`. Returns 5 randomly drawn questions with per-attempt shuffled options and
 a server-side deadline (45 s per question). **Correct answers are never included.** An unsubmitted
-attempt within its deadline is resumed instead of drawing new questions. `404` if no bank exists for
-the skill; `429` while a retake cooldown is active (7 days, or 2 with Prism).
+attempt within its deadline is resumed instead of drawing new questions.
+
+`400` if the skill has no bank **and** is not on the seeker's profile (only a claimed skill may
+trigger paid question generation); `503` while a bank is still being prepared; `429` while the
+retake cooldown is active — **1 day, identical on every plan**.
+
+A retake never redraws the previous attempt's questions. When a bank is still too thin to honour
+that, the quiz is served anyway but **cannot award a badge**: `proof_eligible` is `false`,
+`repeated_questions` says how many had to be reused, and `notice` explains it to the candidate.
 
 ```json
 { "attempt_id": "…", "skill": "excel", "skill_label": "Excel",
   "deadline_at": "2026-09-20T09:15:00Z", "seconds_per_question": 45, "pass_mark": 4,
   "resumed": false, "draft_bank": true,
+  "proof_eligible": true, "repeated_questions": 0,
   "questions": [ { "id": "…", "question": "…", "options": ["…", "…", "…", "…"] } ] }
 ```
 
 ### `POST /api/v1/quiz/submit`
 
 Body `{ "attempt_id": "…", "answers": [0,3,1,2,0] }`. Graded server-side against the answer key (no AI
-call). Passing (4/5) sets that skill's proof level to `quiz` for 180 days and records evidence.
+call). Passing (4/5) sets that skill's proof level to `quiz` for 180 days and records evidence —
+**unless the attempt was not `proof_eligible`**, in which case it is scored and returned normally but
+writes no evidence. `proof_granted` in the response says which of the two happened.
 Returns which answers were right — never which option was correct.
 
 ---
@@ -834,7 +902,7 @@ is in the CORS allow-list, so a QR can never be pointed at another site.
 ### `POST /api/v1/public/jobs/{code}/report`
 
 Login required; one report per user per job. Body `{ "reason": "minta_biaya|palsu|diskriminatif|kontak_mencurigakan|lainnya", "detail": "…" }`.
-Once `MODERATION_REPORT_THRESHOLD` distinct unresolved reports exist, the job is hidden for admin review.
+Reports are **weighted, not counted** (`services/trust/rules.py`): each must cite a published rule (`GET /public/jobs/rules`), and reporter weight comes from verified email, account age, whether they applied, and whether their past reports held up. Reaching the weighted threshold sets `moderation_status = "flagged"` — the posting **stays visible** — and the AI reviewer then checks it against the cited rules only. Only a **hard**-rule violation hides it; anything else queues a human.
 
 ---
 
@@ -866,7 +934,7 @@ everyone else gets `403`.
 
 | Endpoint | Purpose |
 |---|---|
-| `GET /admin/moderation/queue` | Held jobs with AutoMod reasons, reports and appeal notes |
+| `GET /admin/moderation/queue?limit=50&offset=0` | Postings awaiting a human, from three sources: `held` (AutoMod), `flagged` (community threshold reached, still publicly visible) and `published` jobs carrying unresolved reports that never reached the threshold. Each item has AutoMod reasons, open reports and the last 10 moderation events. Paged — `limit` 1–200 (default 50); the response carries `total`, `count`, `limit`, `offset` |
 | `POST /admin/moderation/jobs/{job_id}` | `{ "decision": "publish\|reject", "note": "…" }` — reject adds a strike |
 | `GET /admin/employer-reviews` · `POST /admin/employer-reviews/{employer_id}` | "Ditinjau admin" badge requests / decision |
 | `GET /admin/orders?status_filter=pending` · `POST /admin/orders/{id}/activate` · `POST /admin/orders/{id}/cancel` | Manual payment activation |

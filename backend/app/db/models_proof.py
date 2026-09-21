@@ -38,6 +38,9 @@ class SkillQuestion(Base, TimestampedMixin):
     # False until a human (HR practitioner / teacher) has reviewed the item.
     reviewed: Mapped[bool] = mapped_column(Boolean, default=False)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
+    # human | ai_auto | ai_draft — see schemas_proof.SkillQuestion.
+    source: Mapped[str] = mapped_column(String(20), default="human")
+    review_note: Mapped[str] = mapped_column(Text, default="")
 
 
 class QuizAttempt(Base, TimestampedMixin):
@@ -52,6 +55,11 @@ class QuizAttempt(Base, TimestampedMixin):
     answers: Mapped[list[Any]] = mapped_column(JSON, default=list)
     score: Mapped[int] = mapped_column(Integer, default=0)
     passed: Mapped[bool] = mapped_column(Boolean, default=False)
+    # False when the bank was too thin to draw without repeating the previous
+    # attempt. Such an attempt is still playable and still scored — it just
+    # cannot award a badge, because passing questions you were shown days ago
+    # is not evidence of the skill. See services/quiz/service._pick_questions.
+    proof_eligible: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
 class SkillEvidence(Base, TimestampedMixin):
@@ -74,8 +82,10 @@ class JobReport(Base, TimestampedMixin):
     job_id: Mapped[str] = mapped_column(String(36), index=True)
     reporter_user_id: Mapped[str] = mapped_column(String(36))
     reason: Mapped[str] = mapped_column(String(40))
+    rule_cited: Mapped[str] = mapped_column(String(40), default="")
     detail: Mapped[str] = mapped_column(Text, default="")
     resolved: Mapped[bool] = mapped_column(Boolean, default=False)
+    upheld: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
 
 
 class ModerationEvent(Base):
@@ -117,4 +127,6 @@ class ApplicationStatusEvent(Base):
     from_status: Mapped[str] = mapped_column(String(20))
     to_status: Mapped[str] = mapped_column(String(20))
     match_score: Mapped[float] = mapped_column(default=0.0)
+    reason_code: Mapped[str] = mapped_column(String(40), default="")
+    reason_note: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_now, index=True)

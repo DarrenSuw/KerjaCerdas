@@ -88,16 +88,73 @@ class TestPostingFlow:
         resp = client.post("/api/v1/employer/jobs", json=JOB, headers=employer_account["headers"])
         assert resp.status_code == 403
 
-    def test_reports_hide_a_job(self, client: TestClient, employer_account: dict, register,
-                                stub_embedder, monkeypatch) -> None:
-        monkeypatch.setattr(settings, "moderation_report_threshold", 2)
+    def test_throwaway_accounts_cannot_take_a_posting_down(
+        self, client: TestClient, employer_account: dict, register, stub_embedder
+    ) -> None:
+        """Brand-new unverified accounts carry no automatic weight.
+
+        The previous rule hid a posting as soon as N distinct users reported it,
+        so N throwaway registrations were enough to remove a competitor's advert
+        with no check that any rule had been broken. Reports are still recorded
+        for an admin — they just cannot move the threshold on their own.
+        """
         code = _post(client, employer_account["headers"])["public_code"]
-        for _ in range(2):
+        last = None
+        for _ in range(4):
             reporter = register(client, "seeker")
-            r = client.post(f"/api/v1/public/jobs/{code}/report", headers=reporter["headers"],
-                            json={"reason": "palsu"})
-        assert r.json()["job_hidden_for_review"] is True
-        assert client.get(f"/api/v1/public/jobs/{code}").json().get("withdrawn") is True
+            last = client.post(
+                f"/api/v1/public/jobs/{code}/report",
+                headers=reporter["headers"],
+                json={"reason": "palsu", "rule_cited": "R2"},
+            )
+        assert last.json()["job_hidden_for_review"] is False
+        assert client.get(f"/api/v1/public/jobs/{code}").status_code == 200
+
+    def test_reaching_the_threshold_flags_but_keeps_the_posting_visible(
+        self, client: TestClient, employer_account: dict, register, stub_embedder
+    ) -> None:
+        """A flag means "perlu ditindak lebih lanjut", not "gone".
+
+        Removal requires a verdict against the specific rule cited, not a count
+        of complaints. The AI reviewer is unavailable in tests, so its verdict is
+        "uncertain" — which must leave the posting up for a human to decide.
+        """
+        import asyncio
+
+        from backend.app.db.postgres_store import get_repositories
+
+        async def _make_credible(user_id: str) -> None:
+            repos = get_repositories()
+            user = await repos.users.get(user_id)
+            user.email_verified = True
+            user.created_at = user.created_at.replace(year=user.created_at.year - 1)
+            await repos.users.upsert(user)
+
+        code = _post(client, employer_account["headers"])["public_code"]
+        resp = None
+        for _ in range(3):
+            reporter = register(client, "seeker")
+            asyncio.run(_make_credible(reporter["user"]["id"]))
+            resp = client.post(
+                f"/api/v1/public/jobs/{code}/report",
+                headers=reporter["headers"],
+                json={"reason": "palsu", "rule_cited": "R2"},
+            )
+        assert resp.json()["under_review"] is True
+        assert resp.json()["job_hidden_for_review"] is False
+        # Still readable by candidates while it is being looked at.
+        assert client.get(f"/api/v1/public/jobs/{code}").status_code == 200
+
+    def test_report_citing_an_unknown_rule_is_refused(
+        self, client: TestClient, employer_account: dict, seeker_account: dict, stub_embedder
+    ) -> None:
+        code = _post(client, employer_account["headers"])["public_code"]
+        resp = client.post(
+            f"/api/v1/public/jobs/{code}/report",
+            headers=seeker_account["headers"],
+            json={"reason": "palsu", "rule_cited": "R99"},
+        )
+        assert resp.status_code == 400
 
     def test_report_requires_login(self, client: TestClient, employer_account: dict,
                                    stub_embedder) -> None:
@@ -122,6 +179,36 @@ class TestAdmin:
         out = client.post(f"/api/v1/admin/moderation/jobs/{job['job_id']}", headers=admin["headers"],
                           json={"decision": "publish", "note": "Alasan K3 masuk akal"}).json()
         assert out["moderation_status"] == "published"
+
+    def test_the_queue_pages_instead_of_returning_the_whole_backlog(
+        self, client: TestClient, employer_account: dict, admin: dict, stub_embedder
+    ) -> None:
+        """A backlog spike must not turn one admin page load into the lot.
+
+        `total` reports the whole backlog so the admin knows what is behind the
+        page; `items` carries only the window actually asked for.
+        """
+        h = employer_account["headers"]
+        held = "Khusus pria karena pekerjaan angkat barang berat."
+        for n in range(3):
+            assert _post(client, h, title=f"Gudang {n}", description=held)["moderation_status"] == "held"
+
+        first = client.get("/api/v1/admin/moderation/queue?limit=2",
+                           headers=admin["headers"]).json()
+        assert first["total"] >= 3, first["total"]
+        assert len(first["items"]) == 2 == first["count"]
+
+        rest = client.get("/api/v1/admin/moderation/queue?limit=2&offset=2",
+                          headers=admin["headers"]).json()
+        assert rest["total"] == first["total"]
+        seen = {i["job_id"] for i in first["items"]}
+        assert seen.isdisjoint({i["job_id"] for i in rest["items"]}), "a page repeated a posting"
+
+    def test_the_queue_refuses_an_unbounded_page(self, client: TestClient, admin: dict) -> None:
+        """Without a ceiling the limit is decoration — a caller just asks for
+        everything and the fan-out is back."""
+        assert client.get("/api/v1/admin/moderation/queue?limit=100000",
+                          headers=admin["headers"]).status_code == 422
 
     def test_admin_review_badge(self, client: TestClient, employer_account: dict, admin: dict) -> None:
         h = employer_account["headers"]

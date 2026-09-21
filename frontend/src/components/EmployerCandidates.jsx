@@ -3,7 +3,7 @@
 //     ranked by the proof-weighted match score (ApplicantList).
 //   Talent pool: anonymised reverse matching (TalentSearch) — no names, no
 //     contacts; share the job link to reach people.
-// Replaces the old Pay-to-Unlock flow (removed in v2).
+// Candidates who have not applied stay anonymous; there is no way to buy an identity.
 import { useEffect, useState } from 'react'
 import { Inbox, Sparkles } from 'lucide-react'
 import useStore from '../store/useStore'

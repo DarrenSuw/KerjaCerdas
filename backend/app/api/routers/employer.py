@@ -12,7 +12,7 @@ Interview kits, skill confirmation, export and trust live in routers/hiring.py.
 from __future__ import annotations
 
 import logging
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from backend.app.api.dependencies import get_current_user, require_employer
 from backend.app.api.routers.jobs import invalidate_jobs_cache
@@ -27,6 +27,8 @@ from backend.app.api.schemas.employer import (
 from backend.app.config.settings import settings
 from backend.app.db.models import User
 from backend.app.db.postgres_store import (
+    add_event,
+    consume_quota,
     find_employer_by_user_id,
     find_job_by_employer_and_client_ref,
     find_jobs_by_employer_id,
@@ -42,7 +44,14 @@ from backend.app.db.schemas import (
     can_transition,
 )
 from backend.app.db.schemas_proof import ApplicationStatusEvent
-from backend.app.services.billing.plans import active_job_limit, entitlements_for
+from backend.app.services.billing.plans import (
+    PLAN_DAYS,
+    TALENT_SEARCHES_BEACON,
+    TALENT_SEARCHES_LIGHTHOUSE,
+    active_job_limit,
+    entitlements_for,
+    talent_search_limit,
+)
 from backend.app.services.hiring.links import new_public_code, public_path
 from backend.app.services.matching.matcher import SemanticMatcher, score_pair
 from backend.app.services.trust import policy
@@ -425,6 +434,51 @@ async def estimate_job_pool(payload: JobPoolEstimateRequest):
 # ── Candidate search (REAL reverse-matching, no mocks) ────────────────────────
 
 
+async def _check_talent_search_quota(user_id: str, job_id: str) -> None:
+    """Meter reverse matching — the one employer feature that is actually sold.
+
+    Ranked APPLICANTS are free and uncapped on every tier because scoring people
+    who applied costs Rp0 to compute. Searching people who have NOT applied is
+    sourcing: it is the thing an employer pays for, so it is the thing that
+    carries a countable limit. `talent_search_limit()` existed and was unit
+    tested, but no caller ever consulted it, so Spark's documented quota of zero
+    was in practice unlimited and the paid tiers bought nothing.
+
+    Both the LIMIT and the COUNTER are scoped to the job for Beacon, because
+    Beacon is sold per job. Checking only "does this account hold a Beacon?"
+    let one paid job unlock sourcing on every other job the account owned, and
+    counting per account would have made two Beacon purchases share one
+    30-search allowance. Lighthouse is account-wide by design, so it meters per
+    account.
+    """
+    if not settings.plan_limits_enforced:
+        await add_event(user_id, "talent_search")
+        return
+
+    ent = await entitlements_for(user_id)
+    limit = talent_search_limit(ent, job_id)
+    # Lighthouse buys one account-wide pool; a Beacon buys an allowance for the
+    # single job it was bought for.
+    bucket = "talent_search" if ent.has_lighthouse else f"talent_search:{job_id}"
+    if limit <= 0:
+        raise HTTPException(
+            status.HTTP_402_PAYMENT_REQUIRED,
+            "Mencari kandidat yang belum melamar tersedia di paket Beacon "
+            f"({TALENT_SEARCHES_BEACON}x / 30 hari) atau Lighthouse "
+            f"({TALENT_SEARCHES_LIGHTHOUSE}x / 30 hari). Memeringkat pelamar "
+            "yang sudah melamar tetap gratis dan tanpa batas.",
+        )
+
+    since = datetime.now(UTC) - timedelta(days=PLAN_DAYS)
+    if not await consume_quota(user_id, bucket, limit, since):
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            f"Kuota {limit} pencarian kandidat per 30 hari sudah terpakai."
+            + ("" if ent.has_lighthouse else
+               f" Lighthouse menaikkannya ke {TALENT_SEARCHES_LIGHTHOUSE}x / 30 hari."),
+        )
+
+
 @router.post("/jobs/{job_id}/candidates")
 async def find_candidates(
     job_id: str,
@@ -438,6 +492,7 @@ async def find_candidates(
     # without this check employer B could submit employer A's public job id and
     # receive candidate-fit data for a recruitment process they do not own.
     job, _employer = await _require_owned_job(repos, current_user, job_id)
+    await _check_talent_search_quota(current_user.id, job_id)
 
     search = payload or CandidateSearchRequest()
     top_k = search.top_k
@@ -511,6 +566,12 @@ async def list_employer_applications(
     user_by_id = {u.id: u for u in users}
 
     ent = await entitlements_for(current_user.id)
+    # 0 means "no cap", which is now the shipped default. Ranked applicants are
+    # free to compute, so hiding some of them never saved us a rupiah — it only
+    # made the candidate ranked 21st invisible to the employer who asked for a
+    # ranking. Paid tiers now differ on interview kits, export and reverse
+    # matching instead. The setting stays so a deployment can re-introduce a cap
+    # without a code change, and every site below honours 0.
     cap = settings.spark_ranked_applicant_limit
 
     # Score every applicant first, then rank BY SCORE — not by arrival time.
@@ -547,7 +608,8 @@ async def list_employer_applications(
         seeker = seeker_by_id.get(app.seeker_id)
         user_record = user_by_id.get(seeker.user_id if seeker else app.seeker_id)
         locked = (
-            job is not None
+            cap > 0
+            and job is not None
             and not ent.premium_for_job(job.id)
             and score_rank.get(app.id, 0) >= cap
         )
@@ -595,12 +657,26 @@ async def list_employer_applications(
     enriched.sort(key=lambda x: (x["locked"], -(x["match_score"] or 0.0)))
     return {
         "total": len(enriched),
-        "ranked_limit": None if not settings.plan_limits_enforced else cap,
+        "ranked_limit": cap if (settings.plan_limits_enforced and cap > 0) else None,
         "items": enriched,
     }
 
 
 # Indonesian aliases the frontend has historically sent for pipeline stages.
+# Fixed, machine-readable rejection reasons. A free-text box alone would give
+# the candidate prose we cannot aggregate and HR a blank page they will skip;
+# the codes make the feedback both writable in one tap and countable.
+REJECTION_REASONS: dict[str, str] = {
+    "skill_kurang": "Skill inti belum memadai untuk posisi ini",
+    "pengalaman_kurang": "Pengalaman relevan belum cukup",
+    "lokasi": "Lokasi / kesediaan pindah tidak cocok",
+    "gaji": "Ekspektasi gaji di luar anggaran",
+    "posisi_terisi": "Posisi sudah terisi kandidat lain",
+    "tidak_hadir": "Tidak hadir / tidak merespons undangan",
+    "dokumen": "Dokumen atau syarat administratif tidak terpenuhi",
+    "lainnya": "Alasan lain (tulis di catatan)",
+}
+
 _STATUS_ALIASES: dict[str, ApplicationStatus] = {
     "accepted": ApplicationStatus.HIRED,
     "diterima": ApplicationStatus.HIRED,
@@ -680,6 +756,14 @@ async def update_application_status(
             )
             raise HTTPException(status.HTTP_409_CONFLICT, detail)
 
+        if target == ApplicationStatus.REJECTED and target != current:
+            if (payload.reason_code or "") not in REJECTION_REASONS:
+                raise HTTPException(
+                    status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    "Penolakan wajib menyertakan alasan. Pilih salah satu: "
+                    + ", ".join(REJECTION_REASONS),
+                )
+
         if target != current:
             pending_event = ApplicationStatusEvent(
                 application_id=app.id,
@@ -687,6 +771,8 @@ async def update_application_status(
                 from_status=current.value,
                 to_status=target.value,
                 match_score=app.match_score or 0.0,
+                reason_code=payload.reason_code or "",
+                reason_note=(payload.reason_note or "").strip(),
             )
         app.status = target
 

@@ -43,7 +43,7 @@ Skill wajib berbobot 80% dan *nice-to-have* 20% dari bagian skill. Filter lokasi
 - 5 soal skenario per skill, diambil acak dari bank soal; urutan pilihan diacak per percobaan.
 - Batas waktu 45 detik per soal dijaga server; jawaban **tidak pernah** dikirim ke browser sebelum dikumpulkan.
 - Dinilai dengan kunci jawaban — penilaian per percobaan **tanpa panggilan AI** (biaya Rp0).
-- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang setelah 7 hari (Prism: 2 hari).
+- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang **besoknya, sama untuk semua paket** — kecepatan menuju badge tidak dijual. Soal percobaan sebelumnya tidak diulang; bank tiap skill diisi sampai 30 soal. Bila bank sebuah skill masih terlalu tipis untuk menjaminnya, kuis tetap bisa dikerjakan tetapi **tidak memberi badge** sampai banknya cukup.
 - **Skill baru → antrean tinjauan, bukan kuis instan `[BUILT, DRAFT CONTENT]`:** jika pelamar mencoba kuis untuk skill yang belum ada di bank soal, AI (Gemini) menyusun 6 draf soal + kunci jawaban **satu kali** (dedup atas seluruh baris, termasuk yang belum ditinjau, jadi tidak pernah menagih ulang) dan menyimpannya sebagai `reviewed=false`. Soal draf **tidak diujikan**: pelamar menerima "kuis sedang disiapkan" dan skill itu tetap dihitung sebagai klaim (30%). Setelah admin menyetujui, bank itu aktif untuk semua pemegang skill tersebut sekaligus.
 - **Mengapa tidak langsung diujikan:** kunci jawaban yang salah akan menilai jawaban benar sebagai salah tanpa cara mendeteksinya; dua kandidat tidak lagi mengerjakan kuis yang sebanding (padahal bobot 85% mensyaratkan itu); dan pelamar bisa mengarang nama skill untuk memanggil kuis baru yang belum ditinjau. Permintaan skill tanpa kuis dicatat sebagai event `quiz_unavailable` agar antrean ditinjau sesuai kebutuhan nyata.
 - Anti-curang jujur: soal acak + timer + rotasi bank + pertanyaan wawancara "jelaskan jawabanmu". Kuis menyaring, wawancara memastikan.
@@ -64,7 +64,7 @@ Setiap lowongan punya kode publik → `/j/<kode>`. Employer membagikannya di bio
 
 ## 4. Skill Gap Analyzer & Career Advisor `[BUILT + TESTED]`
 
-Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursus (Gemini → katalog internal sebagai cadangan), dan advisor percakapan berbasis LangGraph. Kuota advisor: gratis 10 pesan/hari, Prism 100 pesan/30 hari.
+Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursus (Gemini → katalog internal sebagai cadangan), dan advisor percakapan berbasis LangGraph. Kuota advisor: gratis 10 pesan/hari, Prism 20 pesan/hari — satuan yang sama, dan yang berbayar selalu lebih besar.
 
 **API:** `POST /api/v1/seeker/skill-gap`, `GET /api/v1/seeker/skill-gap/latest`, `POST /api/v1/agent/invoke`
 
@@ -77,7 +77,7 @@ Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursu
 - **Konfirmasi "skill terbukti"** setelah wawancara → bukti terkuat (bobot 1,0) yang menempel pada profil kandidat.
 - **Ekspor CSV** pelamar.
 - **Talent pool anonim:** kandidat yang belum melamar ditampilkan tanpa nama, tanpa nama perusahaan/sekolah, tanpa kontak (mencegah identifikasi ulang; UU PDP).
-- **Pay-to-Unlock dihapus** — alasan lengkap di [BUSINESS_MODEL.md](BUSINESS_MODEL.md#1-kenapa-pay-to-unlock-dihapus).
+- **Kontak kandidat tidak dijual.** Pelamar yang melamar sendiri sudah memberi kontaknya kepada employer itu; kandidat yang belum melamar tetap anonim dan identitasnya tidak bisa dibeli.
 
 **API:** `GET /api/v1/employer/applications`, `GET /api/v1/employer/applications/{id}/interview-kit`, `POST /api/v1/employer/applications/{id}/confirm-skills`, `GET /api/v1/employer/jobs/{id}/applicants.csv`
 
@@ -88,7 +88,7 @@ Peta skill gap terhadap lowongan target, estimasi jam belajar, rekomendasi kursu
 - Setiap lowongan diperiksa sebelum tayang: aturan tetap (minta biaya dari pelamar = **ditolak**; batas usia, syarat penampilan, jenis kelamin tanpa alasan, kontak Telegram-only, gaji di luar batas wajar = **ditahan**) + pemeriksaan AI opsional yang hanya boleh *menahan*.
 - Pemasang menerima **pemberitahuan** berisi aturan yang dilanggar, kalimat yang ditandai, cara memperbaiki, tombol edit & kirim ulang, dan **banding**.
 - **Strike ladder:** 1 = peringatan, 2 = dibatasi 1 lowongan aktif selama 30 hari, 3 = akun ditangguhkan; hangus setelah 90 hari bersih.
-- **Laporan pengguna:** cukup laporan berbeda → lowongan disembunyikan untuk ditinjau admin.
+- **Laporan pengguna:** laporan **ditimbang, bukan dihitung**, dan harus mengutip aturan terbitan (`docs/RULES.md`). Ambang batas menandai lowongan `flagged` — **tetap terlihat** — lalu peninjau AI memeriksanya hanya terhadap aturan yang dikutip. Hanya pelanggaran aturan **keras** yang menyembunyikan; sisanya ke admin.
 - **Badge kepercayaan:** email terverifikasi → email domain perusahaan → "Ditinjau admin" (admin memeriksa tautan publik seperti Google Maps/Instagram bisnis).
 - **Lowongan pertama** ditahan untuk tinjauan admin kecuali employer sudah punya badge domain/admin.
 
@@ -106,7 +106,7 @@ Kode OTP 6 digit dikirim ke email akun (Resend bila `RESEND_API_KEY` diisi; tanp
 
 ## 8. Paket & pembayaran `[BUILT, MANUAL PAYMENT]`
 
-Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism Rp25.000/30 hari. Pesanan dibuat di aplikasi → bayar QRIS/transfer → **admin mengaktifkan** 30 hari. Gateway pembayaran `[PLANNED]`. Membayar tidak pernah mengubah skor atau peringkat.
+Spark (gratis) · Beacon Rp49.000/lowongan · Lighthouse Rp149.000/bulan · Prism Rp15.000/30 hari. Pesanan dibuat di aplikasi → bayar QRIS/transfer → **admin mengaktifkan** 30 hari. Gateway pembayaran `[PLANNED]`. Membayar tidak pernah mengubah skor atau peringkat.
 
 **API:** `GET /api/v1/billing/plans`, `GET /api/v1/billing/me`, `POST /api/v1/billing/orders`, `POST /api/v1/admin/orders/{id}/activate`
 
@@ -125,13 +125,3 @@ Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism
 - Anti prompt-injection, rate limit per rute, token efficiency gate, hallucination guard, fallback 3 model + circuit breaker.
 - **Bukti tidak bisa dipalsukan dari klien:** skema input skill tidak punya kolom bukti; profil inline di endpoint agent direset ke "klaim" lalu bukti asli disalin dari profil tersimpan; edit profil / unggah CV ulang tidak menghapus badge yang sudah diraih.
 
----
-
-## 12. Yang dihapus di v2
-
-| Fitur lama | Status | Alasan |
-|---|---|---|
-| Pay-to-Unlock kontak (Rp50.000) | **Dihapus** | Menagih sourcing, bukan penyaringan; bocor lewat teaser; risiko UU PDP; tanpa gateway |
-| e-KYC KTP/NIK, ijazah, NPWP | **Dihapus** | Mock tanpa otoritas; minimisasi data UU PDP |
-| OTP SMS/WhatsApp | **Diganti email OTP** | Tanpa biaya provider dan bisa jalan hari ini |
-| Klaim "94% akurasi", "100% profil terverifikasi e-KYC", "<8 detik" | **Dihapus dari UI** | Tidak ada dasar pengukuran |

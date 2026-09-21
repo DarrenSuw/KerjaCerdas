@@ -73,6 +73,16 @@ async def _require_premium(user: User, job_id: str) -> None:
         )
 
 
+# An interview kit is a pure function of (job, candidate) and costs ~Rp90 of
+# Gemini to build. Before this cache every re-open of the same candidate paid
+# that again, so a Beacon posting could burn more than its own price in repeat
+# clicks. Keyed on the profile's updated_at so an edited profile rebuilds; the
+# cache is per process and lost on restart, which is fine — the leak was the
+# repeated click within a hiring session, not cross-deploy reuse.
+_KIT_CACHE: dict[tuple[str, str], dict] = {}
+_KIT_CACHE_MAX = 512
+
+
 @router.get("/applications/{app_id}/interview-kit")
 async def interview_kit(app_id: str, current_user: User = Depends(get_current_user)):
     app, job, _ = await _owned_application(app_id, current_user)
@@ -80,7 +90,20 @@ async def interview_kit(app_id: str, current_user: User = Depends(get_current_us
     seeker = await get_repositories().seekers.get(app.seeker_id)
     if not seeker:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Profil kandidat tidak ditemukan")
-    return {"application_id": app.id, **await build_kit(job, seeker)}
+
+    stamp = str(getattr(seeker, "updated_at", "") or "") + str(getattr(job, "updated_at", "") or "")
+    key = (app.id, stamp)
+    kit = _KIT_CACHE.get(key)
+    was_cached = kit is not None
+    if kit is None:
+        kit = await build_kit(job, seeker)
+        if len(_KIT_CACHE) >= _KIT_CACHE_MAX:
+            _KIT_CACHE.clear()
+        _KIT_CACHE[key] = kit
+    # Read the flag BEFORE the write, or it reports the insert we just made and
+    # every response claims a cache hit — including the one that paid for the
+    # model call, which is the only number this flag exists to expose.
+    return {"application_id": app.id, "cached": was_cached, **kit}
 
 
 @router.post("/applications/{app_id}/confirm-skills")

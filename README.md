@@ -31,7 +31,7 @@ A functional prototype of an AI talent-matching platform that ranks candidates b
 - **Link + poster QR lowongan**: employer membagikan `/j/<kode>` di Instagram/WhatsApp atau mencetak poster; pelamar masuk ke satu daftar yang sudah diperingkat, bukan membanjiri WhatsApp.
 - **AutoMod lowongan**: lowongan yang meminta biaya dari pelamar ditolak; syarat usia/penampilan/jenis kelamin ditahan untuk tinjauan admin. Pemasang menerima kalimat yang bermasalah + cara memperbaiki + banding (strike ladder).
 - **Skill Gap Analyzer & Career Advisor**: peta skill gap, rekomendasi kursus, dan advisor LangGraph (kuota per paket).
-- **Paket sederhana**: Spark (gratis) · Beacon Rp29.000/lowongan · Lighthouse Rp99.000/bulan · Prism Rp25.000/30 hari untuk pencari kerja. Membayar tidak pernah menaikkan skor.
+- **Paket sederhana**: Spark (gratis, semua pelamar diperingkat) · Beacon Rp49.000/lowongan · Lighthouse Rp149.000/bulan · Prism Rp15.000/30 hari untuk pencari kerja. Membayar tidak pernah menaikkan skor maupun urutan.
 
 Detail lengkap mengenai fitur produk dapat dilihat di [Product Features](docs/PRODUCT_FEATURES.md).
 

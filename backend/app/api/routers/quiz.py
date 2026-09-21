@@ -10,7 +10,6 @@ from __future__ import annotations
 from backend.app.api.dependencies import get_current_user, require_seeker
 from backend.app.db.models import User
 from backend.app.db.postgres_store import find_seeker_by_user_id, get_repositories, list_quiz_skills
-from backend.app.services.billing.plans import entitlements_for
 from backend.app.services.matching.evidence import effective_proof, skill_key
 from backend.app.services.quiz import service as quiz
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -71,9 +70,8 @@ async def quiz_skills(job_id: str | None = None, current_user: User = Depends(ge
 @router.post("/start")
 async def start(req: StartReq, current_user: User = Depends(get_current_user)):
     seeker = await _seeker(current_user)
-    ent = await entitlements_for(current_user.id)
     try:
-        return await quiz.start_quiz(seeker, req.skill, prism=ent.has_prism)
+        return await quiz.start_quiz(seeker, req.skill)
     except quiz.QuizError as exc:
         raise HTTPException(exc.status, exc.message) from exc
 
@@ -85,9 +83,6 @@ async def submit(req: SubmitReq, current_user: User = Depends(get_current_user))
         result = await quiz.submit_quiz(seeker, req.attempt_id, req.answers)
     except quiz.QuizError as exc:
         raise HTTPException(exc.status, exc.message) from exc
-    if not result["passed"]:
-        ent = await entitlements_for(current_user.id)
-        result["retake_after_days"] = (
-            quiz.RETAKE_DAYS_PRISM if ent.has_prism else quiz.RETAKE_DAYS_FREE
-        )
+    # The cooldown is the same for everyone — a plan must never buy a faster
+    # route to proof. submit_quiz already sets it; no per-plan override here.
     return result

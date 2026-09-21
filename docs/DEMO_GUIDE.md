@@ -48,7 +48,7 @@ kata kunci, satu yang sudah lulus kuis — inilah perbandingan yang jadi inti de
   (Klaim / ✓ Terbukti / Dikonfirmasi HR). Klik **Wawancara & konfirmasi skill** → pertanyaan wawancara
   fokus ke skill yang masih klaim ("jelaskan contoh nyatanya").
 - **Setelah wawancara:** HR mencentang *Terbukti* → menjadi bukti terkuat (bobot 1,0) di profil kandidat.
-- **Paket:** Spark gratis menampilkan 20 pelamar dengan skor tertinggi (semua pelamar tetap diperingkat — yang dibatasi jumlah yang terbuka, bukan siapa); Beacon Rp29.000/lowongan membuka semuanya +
+- **Paket:** Spark gratis memeringkat **semua** pelamar tanpa batas (memeringkat berbiaya Rp0, jadi tidak ada alasan menyembunyikannya); Beacon Rp49.000/lowongan menambah
   pertanyaan wawancara AI + ekspor CSV.
 
 ### 2.3 — AutoMod (tunjukkan yang ditolak)
@@ -89,10 +89,9 @@ aturan tetap **sebelum** teks dikirim ke Gemini. Kandidat yang belum melamar tam
 pool. Keputusan akhir tetap pada manusia, dan pelamar bisa meminta peninjauan manusia (UU PDP).
 
 **T:** *Bagaimana cara Anda menghasilkan uang?*
-**J:** Employer: gratis memasang lowongan, Rp29.000/lowongan (Beacon) atau Rp99.000/bulan (Lighthouse).
-Pencari kerja: gratis, dengan Prism Rp25.000/30 hari yang hanya menambah kuota — **membayar tidak
+**J:** Employer: gratis memasang lowongan, Rp49.000/lowongan (Beacon) atau Rp149.000/bulan (Lighthouse).
+Pencari kerja: gratis — termasuk peringkat persis tiap lamaran dan rincian bukti per skill. Prism Rp15.000/30 hari hanya menambah kuota advisor — **membayar tidak
 pernah menaikkan skor**. Pembayaran saat ini QRIS/transfer yang dikonfirmasi admin; gateway menyusul.
-Model Pay-to-Unlock lama sudah dihapus (alasannya di [BUSINESS_MODEL.md](BUSINESS_MODEL.md)).
 
 **T:** *Berapa biaya AI per pengguna?*
 **J:** Terukur, bukan perkiraan: `GET /api/v1/admin/metrics` menghitung dari token yang benar-benar

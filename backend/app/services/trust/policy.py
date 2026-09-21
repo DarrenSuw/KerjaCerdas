@@ -77,11 +77,21 @@ async def log_event(job: JobPosting, actor: str, action: str, reasons=None, note
     )
 
 
+# A posting the community has flagged stays VISIBLE while it is looked at.
+# Hiding on accusation alone is what made three coordinated accounts enough to
+# remove a competitor; hiding now requires a verdict, not a complaint.
+VISIBLE_STATUSES = frozenset({"published", "flagged"})
+
+
+def is_publicly_visible(job: JobPosting) -> bool:
+    return bool(job.is_active) and job.moderation_status in VISIBLE_STATUSES
+
+
 def set_moderation(job: JobPosting, status: str, reasons: list[dict]) -> None:
-    """Single place that keeps the invariant: only published jobs are active."""
+    """Single place that keeps the invariant: only visible statuses stay active."""
     job.moderation_status = status
     job.moderation_reasons = reasons
-    if status != "published":
+    if status not in VISIBLE_STATUSES:
         job.is_active = False
 
 

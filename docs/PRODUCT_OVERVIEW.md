@@ -47,7 +47,7 @@ See [Architecture](ARCHITECTURE.md) for the full system diagram, and [Sequence D
 | Skill direction | None | None | Skill Gap Analyzer with targeted course recommendations |
 | Skill evidence | None — CV text is taken at face value | Ad-hoc, per recruiter | Short skill quizzes (✓ Terbukti, 180 days) + HR confirmation, weighted into the score |
 | Scam / discriminatory ads | Reported manually, if at all | — | AutoMod blocks fee-charging ads, holds discriminatory ones, notifies the poster with the exact sentence + appeal |
-| Employer cost | Expensive upfront ATS subscription, or free with no AI | High manual screening time | Free to post (Spark); Rp29k per job (Beacon) or Rp99k/month (Lighthouse). Never charged for contact details |
+| Employer cost | Expensive upfront ATS subscription, or free with no AI | High manual screening time | Free to post (Spark), with **every** applicant ranked; Rp49k per job (Beacon) or Rp149k/month (Lighthouse) for interview kits, export and reverse matching. Never charged for contact details |
 
 ## Current Scope
 
@@ -61,7 +61,7 @@ See [Architecture](ARCHITECTURE.md) for the full system diagram, and [Sequence D
 
 ## Business Model
 
-See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: employers post for free and pay per job (Beacon Rp29k) or per month (Lighthouse Rp99k) to rank every applicant and get AI interview questions; job seekers stay free, with an optional Prism plan (Rp25k / 30 days) that only buys quota and shorter retake cooldowns — never a better score. Ed-tech affiliate income is upside only and is excluded from break-even.
+See [Business Model](BUSINESS_MODEL.md) for the full monetization structure, cost breakdown, and financial projections. In short: employers post for free and see **every** applicant ranked on the free tier — ranking costs nothing to compute, so capping it only hid candidates — and pay per job (Beacon Rp49k) or per month (Lighthouse Rp149k) for AI interview questions, CSV export and reverse matching; job seekers stay free — including the exact rank of their own applications and the per-skill evidence behind it, because charging someone to learn where they stand is an advantage bought with money. An optional Prism plan (Rp15k / 30 days) buys advisor quota only: practice, never position. The quiz retake cooldown is one day for everyone: a plan must never shorten the path to a proof badge, because a badge moves the score. Ed-tech affiliate income is upside only and is excluded from break-even.
 
 ## Adoption Path
 

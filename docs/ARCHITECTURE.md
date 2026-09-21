@@ -23,7 +23,7 @@ Matching, skill-gap computation, and intent routing run as procedural Python in 
 | Prove a skill | Seeker takes a skill quiz | `SkillProofPage.jsx`, `QuizModal.jsx` → `POST /api/v1/quiz/start` · `/submit` | ✓ Terbukti badge for 180 days; the match score rises at every employer |
 | Skill gap | Seeker selects a target job | `SkillGapPanel.jsx` → `POST /api/v1/seeker/skill-gap` | Missing-skill list + course recommendations |
 | Apply & track | Seeker applies to a job | `ApplicationsPage.jsx` → `POST /api/v1/seeker/apply` | Milestone timeline (Saved → Applied → Reviewed → Interview → Hired/Rejected) |
-| Applicant review | Employer opens the Pelamar tab | `ApplicantList.jsx` → `GET /api/v1/employer/applications` | Applicants ranked by live proof-weighted score, proof badges, pipeline status; Spark scores everyone and reveals the **top 20 by score** — the cap limits how many are shown, not which |
+| Applicant review | Employer opens the Pelamar tab | `ApplicantList.jsx` → `GET /api/v1/employer/applications` | Applicants ranked by live proof-weighted score, proof badges, pipeline status; **every tier including Spark shows all of them** — ranking is a free computation, so capping it hid candidates without saving anything. Paid tiers add interview kits, CSV export and reverse matching |
 | Interview & confirm | Employer shortlists a candidate | `HiringToolsModal.jsx` → `/interview-kit`, `/confirm-skills` | AI questions for still-claimed skills; HR "terbukti" tick becomes the strongest proof |
 | Talent pool (anonymous) | Employer opens the Talent pool tab | `TalentSearch.jsx` → `POST /api/v1/employer/jobs/{id}/candidates` | Anonymised ranked candidates — no names, employers, schools or contacts |
 | Share a job | Employer copies the link or prints the QR poster | `JobShareModal.jsx` → `GET /api/v1/public/jobs/{code}/qr.svg` | `/j/<code>` link + printable QR for Instagram / WhatsApp / shop poster |
@@ -32,7 +32,7 @@ Matching, skill-gap computation, and intent routing run as procedural Python in 
 | Bulk job import | Employer uploads a multi-job PDF | `JobPackUploader.jsx` → `POST /api/v1/uploads/job-pack` | All positions extracted and shown for review — nothing is published until the employer confirms each one (`POST /employer/jobs` per posting, idempotent via `client_ref`) |
 | Email verification | Seeker/employer requests a code | `ProofUI.jsx` → `POST /api/v1/verify/email/send` · `/verify` | Account email verified (the only identity check; no NIK/KTP/ijazah/NPWP) |
 | Job moderation | Employer posts or edits a job | AutoMod (`services/trust/`) on `POST/PATCH /employer/jobs` | published / held / rejected + poster notice with the flagged sentence, appeal, strike ladder |
-| Report a job | Any signed-in user on a public job page | `ReportJobModal.jsx` → `POST /api/v1/public/jobs/{code}/report` | Enough distinct reports hide the job for admin review |
+| Report a job | Any signed-in user on a public job page | `ReportJobModal.jsx` → `POST /api/v1/public/jobs/{code}/report` | Reports are **weighted, not counted**. Crossing the weight threshold marks the posting `flagged` and it **stays visible**; only a verdict against the cited rule hides it, and the AI reviewer may act alone on hard rules only |
 | Plans & payment | Employer or seeker picks a plan | `UpgradeModal.jsx` → `POST /api/v1/billing/orders` | Pending order + payment instructions; an admin activates it for 30 days |
 | Admin operations | Admin (`ADMIN_EMAILS`) | `AdminPanel.jsx` → `/api/v1/admin/*` | Moderation queue, business reviews, plan activation, quiz-bank review, metrics |
 | A/B experiment assignment | Any user | `OnboardingWizard.jsx` via `GET /api/v1/experiments/assignments` | Deterministic variant (hash of `user_id`) |
@@ -60,12 +60,12 @@ Matching, skill-gap computation, and intent routing run as procedural Python in 
 | Layer | Component | Notes |
 |---|---|---|
 | Frontend | React 18 + Vite + React Router + Zustand, persisted to `localStorage` (key `kerjacerdas-v4`) | SPA with JWT-aware route guards, 40+ components (the public job page renders outside the authenticated shell) |
-| Backend | FastAPI (async), JWT auth, role-based dependencies, custom sliding-window `RateLimiterMiddleware` (in-memory by default) | 16 routers under one `/api/v1` prefix |
+| Backend | FastAPI (async), JWT auth, role-based dependencies, custom sliding-window `RateLimiterMiddleware` (in-memory by default) | 15 routers under one `/api/v1` prefix |
 | Database | PostgreSQL 16 + `pgvector` (HNSW), Alembic migrations | Alembic-managed schema; an RLS migration exists but defines no policies yet |
 | Model/API | Google Gemini (3.1 Flash) for embeddings + generation | Live calls, with an offline fallback stub on failure |
 | External integration | Curated static course catalogue (35+ items); transactional email via Resend (optional); QR posters rendered in-process with `segno` | No identity-verification vendor is used at all (no Dukcapil/SIVIL/DJP). Payment gateways (Midtrans/Xendit) are planned; today plan orders are paid by QRIS/transfer and activated by an admin |
 | Infrastructure | Docker Compose (dev + `docker-compose.prod.yml`), GitHub Actions CI (`ci.yml`) + release image publishing (`release.yml`) | CI runs backend lint, audit, and a build gate; container images publish to GHCR on tagged release |
-| Testing | 27 backend test files (pytest, `backend/tests/unit/` + `backend/tests/integration/`); 4 frontend test files (`api.test.js`, `hasMeaningfulProfile.test.js`, `seekerSearchFilters.test.js`, `proofUI.test.jsx` unit; `auth.spec.js` e2e) | Backend covers scoring/proof weights, quizzes, AutoMod + strikes + reports, plans/entitlements, public links and admin metrics (`test_v2_*.py`) plus the existing auth/security suites. Frontend component coverage is still thin relative to the 40-component UI |
+| Testing | 29 backend test files (pytest, `backend/tests/unit/` + `backend/tests/integration/`); 5 frontend unit files (`api.test.js`, `hasMeaningfulProfile.test.js`, `seekerSearchFilters.test.js`, `proofUI.test.jsx`, `adminMetrics.test.jsx`) plus `auth.spec.js` e2e | Backend covers scoring/proof weights, quizzes, AutoMod + strikes + reports, plans/entitlements, public links and admin metrics (`test_v2_*.py`) plus the existing auth/security suites. Frontend component coverage is still thin relative to the 41-component UI |
 
 ## Verification, Trust & Payments
 
@@ -116,3 +116,26 @@ v2 removed every mock identity check. What the platform verifies, it verifies it
 - Automated VPS deployment from CI (the release workflow publishes images; deployment to the VPS is manual)
 
 Architectural debt and open bugs are tracked inline as code comments at the relevant call sites (e.g. `backend/app/api/routers/employer.py`) rather than in a separate standing document.
+
+
+## Migrations
+
+Alembic only — never `create_all()` (CLAUDE.md §5). Current head: **`b1d3f5a7c902`** (v3), which
+adds `skill_questions.source` / `review_note` (question provenance: `human` | `ai_auto` |
+`ai_draft`), `job_reports.rule_cited` / `upheld` (which published rule was alleged, and how the
+accusation ended), `quiz_attempts.proof_eligible` (whether that draw may award a badge), and
+`application_status_events.reason_code` / `reason_note` (mandatory rejection feedback). Its parent
+is `a2b4c6d8e0f1` (v2 proof-of-skill). Every column is defaulted or nullable, so the upgrade is safe
+on populated tables and the downgrade is a clean drop; CI runs the round-trip.
+
+### Job moderation states
+
+| State | Publicly visible | How it is reached |
+|---|---|---|
+| `published` | yes | AutoMod found nothing, or an admin published it |
+| `flagged` | **yes** | weighted community reports crossed the threshold — under review, not removed |
+| `held` | no | soft rule, first-job review, or a confirmed hard-rule violation |
+| `rejected` | no | hard rule at posting time, or an admin decision (+ strike) |
+
+`policy.set_moderation()` keeps the invariant that anything outside
+`policy.VISIBLE_STATUSES` is also `is_active = False`.

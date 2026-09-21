@@ -28,10 +28,10 @@ Files:
 | `POST /employer/jobs/{id}/appeal` | appeal a held/rejected posting; a rejected job returns to `held` for admin review. |
 | `GET/POST /employer/trust*` | trust badges, strike state, and the "Ditinjau admin" request. |
 
-**Pay-to-Unlock was removed in v2** (endpoint, in-process `_UNLOCKED_CONTACTS` map, schema and UI).
-It charged for sourcing rather than the screening pain employers actually reported, leaked through the
-teaser, carried UU PDP risk, and had no payment gateway behind it. Employers now pay per job (Beacon)
-or per month (Lighthouse) to rank every applicant — never for contact details. See
+**Contact details are never sold.** An applicant who applies has already given their contact to that
+employer, so it is theirs for free; a candidate who has *not* applied stays anonymous and there is no
+endpoint that reveals them. Employers pay per job (Beacon) or per month (Lighthouse) for ranking,
+interview kits and export — never for access to a person. See
 [BUSINESS_MODEL.md](../BUSINESS_MODEL.md).
 
 ## Moderation & share links
@@ -74,3 +74,10 @@ closes that regardless of what the client's browser state looks like.
 ## Seeker Side (`require_seeker`)
 
 Profile CRUD (headline, skills with level/years, experience, education, salary expectations, preferred regions) — every semantic change re-embeds the profile, same pattern as jobs. CV upload (see `03-cv-upload-parsing.md`) is the bulk alternative to manual profile editing.
+
+> **Where the paywall sits.** Ranked applicants are uncapped on every tier including Spark —
+> ranking is a free computation, so a cap saved nothing and only hid the candidate ranked 21st from
+> the employer who asked for a ranking. The quota sits on **reverse matching** (searching candidates
+> who have not applied): Spark 0, Beacon 30, Lighthouse 150 per 30 days
+> (`plans.talent_search_limit`). See
+> [10-scoring-hr-feedback-and-plans.md](10-scoring-hr-feedback-and-plans.md).

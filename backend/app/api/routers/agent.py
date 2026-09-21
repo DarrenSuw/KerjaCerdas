@@ -209,32 +209,32 @@ async def _enrich_matches(
 
 
 async def _check_advisor_quota(user_id: str) -> None:
-    from datetime import UTC, datetime, timedelta
+    from datetime import UTC, datetime
 
     from backend.app.config.settings import settings
     from backend.app.db.postgres_store import add_event, consume_quota
     from backend.app.services.billing.plans import (
         ADVISOR_FREE_PER_DAY,
-        ADVISOR_PRISM_PER_30_DAYS,
+        ADVISOR_PRISM_PER_DAY,
         entitlements_for,
     )
 
     if settings.plan_limits_enforced:
         now = datetime.now(UTC)
         ent = await entitlements_for(user_id)
-        if ent.has_prism:
-            since = now - timedelta(days=30)
-            limit, period = ADVISOR_PRISM_PER_30_DAYS, "30 hari"
-        else:
-            since = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            limit, period = ADVISOR_FREE_PER_DAY, "hari ini"
+        # Same window for both tiers, so the paid one cannot come out smaller.
+        # Prism used to be metered per 30 days against a free tier metered per
+        # day, which made the upsell below an advertisement for a downgrade.
+        since = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        period = "hari ini"
+        limit = ADVISOR_PRISM_PER_DAY if ent.has_prism else ADVISOR_FREE_PER_DAY
 
         success = await consume_quota(user_id, "advisor_message", limit, since)
         if not success:
             raise HTTPException(
                 status_code=429,
                 detail=f"Batas {limit} pesan advisor untuk {period} sudah tercapai."
-                + ("" if ent.has_prism else " Upgrade ke Prism untuk 100 pesan / 30 hari."),
+                + ("" if ent.has_prism else f" Prism menaikkannya ke {ADVISOR_PRISM_PER_DAY} pesan / hari."),
             )
     else:
         await add_event(user_id, "advisor_message")
@@ -352,7 +352,7 @@ async def invoke_agent(
             early_exit=True,
         )
 
-    # --- Plan metering: Free 10 advisor messages / day, Prism 100 / 30 days ---
+    # --- Plan metering: Free 10 advisor messages / day, Prism 30 / day ---
     await _check_advisor_quota(current_user.id)
 
     # --- Run agent --------------------------------------------------------
