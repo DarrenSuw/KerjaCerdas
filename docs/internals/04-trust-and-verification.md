@@ -44,8 +44,23 @@ Integrity rules (all enforced server-side):
 - Clients cannot forge proof: the API skill input has no proof field; the agent's inline-profile
   override resets every proof level and re-copies real proof from the stored profile; and
   `evidence.carry_proof` keeps earned badges when a profile edit or CV re-upload replaces the skill list.
+- **Only reviewed questions can grant proof.** `find_active_questions()` filters on `active` AND
+  `reviewed`, and `list_quiz_skills()` filters identically — when those two predicates disagree the UI
+  offers an "Ikut kuis" button for a skill whose quiz then 404s.
+- **A skill with no bank is queued, not improvised.** The first request drafts questions once
+  (`reviewed=False`) and returns "kuis sedang disiapkan"; the skill stays `claimed` (0.30) until an
+  admin approves the batch, which then goes live for everyone holding that skill. Serving unreviewed
+  questions would mean a mis-keyed answer marking correct answers wrong with no way to notice, two
+  candidates never sitting a comparable quiz (which is what a 0.85 weight has to mean), and a
+  candidate being able to invent a skill name to summon a fresh unvetted quiz of their own. Demand is
+  logged as a `quiz_unavailable` event so the queue is worked in the order seekers actually ask.
+- **Generation dedupe counts ACTIVE rows, reviewed or not.** Reviewed-only would never see a freshly
+  generated batch and would re-bill Gemini on every attempt; all-rows would let deactivated questions
+  wedge a skill below the serveable threshold forever.
 - Honest limit, stated in-product: a remote quiz is not cheat-proof. The interview kit asks the
-  candidate to explain their own answer, and HR confirmation is the final gate.
+  candidate to explain their own answer, and HR confirmation is the final gate. The starter bank is
+  currently **8 skills x 6 questions, AI-drafted** — `C(6,5) = 6` distinct quizzes per skill, so a
+  retake shows at least 4 questions already seen. Expanding it is tracked in ROADMAP §3.6.
 
 ## 3. Employer trust badges — `services/trust/policy.py`
 

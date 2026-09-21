@@ -47,8 +47,8 @@ In-memory **sliding window** per `(IP, route bucket)` pair with an `asyncio.Lock
 | `/auth/login`, `/auth/register` | 10 req / 60 s (brute-force guard) |
 | `/agent/invoke` | 20 req / 60 s (LLM cost guard) |
 | `/uploads/cv`, `/uploads/job-pack` | 10 req / 60 s |
-| `/verify/otp/send` | 5 req / 60 s (SMS cost guard) |
-| `/verify/otp/verify`, `/verify/identity` | 10 req / 60 s |
+| `/verify/email/send` | 5 req / 60 s (email cost + OTP brute-force guard) |
+| `/verify/email/verify` | 10 req / 60 s |
 | `/seeker/skill-gap` | 20 req / 60 s (calls Gemini) |
 | `/employer/jobs*` | 30 req / 60 s (candidates/estimate call Gemini) |
 | everything else | **300 req / 60 s** (`_DEFAULT_LIMIT`) |
