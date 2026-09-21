@@ -6,6 +6,56 @@ import { Clock, X } from 'lucide-react'
 import { KC, topBtn } from './_design'
 import { startQuiz, submitQuiz } from '../services/api'
 
+function FormattedText({ text }) {
+    if (!text) return null
+    // Unescape basic characters that Gemini might escape, like \$ or \*
+    const unescaped = text.replace(/\\([$*`_])/g, '$1')
+    
+    // Parse inline code with backticks
+    const parts = unescaped.split(/`([^`]+)`/g)
+    return (
+        <>
+            {parts.map((part, i) => {
+                if (i % 2 === 1) {
+                    return (
+                        <code key={i} style={{ 
+                            background: 'rgba(0,0,0,0.06)', 
+                            padding: '2px 5px', 
+                            borderRadius: 4, 
+                            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                            fontSize: '0.9em',
+                            color: KC.ink
+                        }}>
+                            {part}
+                        </code>
+                    )
+                }
+                
+                // Parse bold
+                const boldParts = part.split(/\*\*([^*]+)\*\*/g)
+                return (
+                    <span key={i}>
+                        {boldParts.map((bPart, j) => {
+                            if (j % 2 === 1) return <strong key={j}>{bPart}</strong>
+                            
+                            // Parse italics
+                            const italicParts = bPart.split(/\*([^*]+)\*/g)
+                            return (
+                                <span key={j}>
+                                    {italicParts.map((iPart, k) => {
+                                        if (k % 2 === 1) return <em key={k}>{iPart}</em>
+                                        return iPart
+                                    })}
+                                </span>
+                            )
+                        })}
+                    </span>
+                )
+            })}
+        </>
+    )
+}
+
 export default function QuizModal({ skill, onClose, onDone }) {
     const [attempt, setAttempt] = useState(null)
     const [index, setIndex] = useState(0)
@@ -92,14 +142,18 @@ export default function QuizModal({ skill, onClose, onDone }) {
                                 Bank soal versi awal — sedang ditinjau praktisi HR.
                             </p>
                         )}
-                        <p style={{ fontWeight: 700, fontSize: 15, lineHeight: 1.5 }}>{q.question}</p>
+                        <p style={{ fontWeight: 700, fontSize: 15, lineHeight: 1.5 }}>
+                            <FormattedText text={q.question} />
+                        </p>
                         <div style={{ display: 'grid', gap: 8 }}>
                             {q.options.map((opt, i) => (
                                 <button key={i} onClick={() => choose(i)} style={{
                                     textAlign: 'left', padding: '10px 12px', borderRadius: 9, cursor: 'pointer', fontFamily: 'inherit', fontSize: 14,
                                     border: `1.5px solid ${answers[index] === i ? KC.orange : KC.borderMuted}`,
                                     background: answers[index] === i ? KC.orangeSoft : KC.paper,
-                                }}>{String.fromCharCode(65 + i)}. {opt}</button>
+                                }}>
+                                    {String.fromCharCode(65 + i)}. <FormattedText text={opt} />
+                                </button>
                             ))}
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16 }}>
