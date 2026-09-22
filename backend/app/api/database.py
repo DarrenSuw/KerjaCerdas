@@ -226,6 +226,11 @@ _V3_COLUMNS: list[tuple[str, str, str]] = [
         "ALTER TABLE quiz_attempts ADD COLUMN proof_eligible BOOLEAN DEFAULT 1",
     ),
     (
+        "quiz_attempts",
+        "status",
+        "ALTER TABLE quiz_attempts ADD COLUMN status VARCHAR(20) DEFAULT 'in_progress'",
+    ),
+    (
         "application_status_events",
         "reason_code",
         "ALTER TABLE application_status_events ADD COLUMN reason_code VARCHAR(40) DEFAULT ''",
