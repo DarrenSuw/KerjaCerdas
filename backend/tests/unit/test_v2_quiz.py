@@ -66,7 +66,7 @@ class TestQuiz:
         reason = generator.validate_question(
             "Manakah langkah paling aman saat menerima uang tunai di kasir?",
             ["Lanjutkan tanpa cek", "Mencatat transaksi dan mengecek kembalian", "Minta uang tambahan", "Tutup kasir"],
-            3,
+            4,
         )
         assert reason == "correct_index tidak sesuai dengan opsi yang tersedia"
 
