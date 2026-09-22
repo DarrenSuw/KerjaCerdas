@@ -349,7 +349,17 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
     if not attempt or attempt.seeker_id != seeker.id:
         raise QuizError(404, "Kuis tidak ditemukan.")
     if attempt.submitted_at is not None:
-        raise QuizError(409, "Kuis ini sudah dikumpulkan.")
+        return {
+            "attempt_id": attempt.id,
+            "skill": attempt.skill,
+            "score": attempt.score or 0,
+            "total": len(attempt.question_ids),
+            "passed": bool(attempt.passed),
+            "late": attempt.status == "abandoned",
+            "correct": [],
+            "proof_granted": bool(attempt.passed and getattr(attempt, "proof_eligible", True)),
+            "retake_after_days": None if attempt.passed else RETAKE_DAYS,
+        }
 
     now = datetime.now(UTC)
     late = now > _aware(attempt.deadline_at) + timedelta(seconds=GRACE_SECONDS)

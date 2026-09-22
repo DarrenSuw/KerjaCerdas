@@ -134,11 +134,11 @@ class TestQuiz:
         b = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         assert a["attempt_id"] == b["attempt_id"] and b["resumed"] is True
 
-    def test_double_submit_is_rejected(self, client: TestClient, seeker_h: dict) -> None:
+    def test_double_submit_returns_existing_result(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         body = {"attempt_id": attempt["attempt_id"], "answers": _answers(attempt, right=True)}
         assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 200
-        assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 409
+        assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 200
 
     def test_attempt_is_owner_only(self, client: TestClient, seeker_h: dict,
                                    other_seeker_account: dict) -> None:
