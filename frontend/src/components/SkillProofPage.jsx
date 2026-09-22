@@ -22,6 +22,7 @@ export default function SkillProofPage() {
             .finally(() => setLoading(false))
     }, [])
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => { load() }, [load])
 
     const mine = data.items.filter((i) => i.proof !== 'missing')

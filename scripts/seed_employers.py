@@ -35,7 +35,7 @@ async def seed_employers_data():
         chunk = expanded_jobs[i : i + 10]
         job_objs = []
         for jp in chunk:
-            key, title, kbji, desc, resps, req, nice, edu, yrs, region, remote, smin, smax = jp
+            key, title, kbji, desc, resps, req, nice, edu, yrs, region, _remote, smin, smax = jp
             emp = emp_by_key[key]
 
             # Mutate to avoid exact duplicates

@@ -6,7 +6,7 @@
 import {
     LayoutDashboard, Search, BarChart3, ShieldCheck, Bookmark,
     Building2, Briefcase, Users, LogOut,
-    FileText, User, ClipboardList, Sparkles, PlusCircle, CheckCircle2, Bot,
+    FileText, User, ClipboardList, Sparkles, PlusCircle, Bot,
     SlidersHorizontal,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'

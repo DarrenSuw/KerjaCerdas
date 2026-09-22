@@ -170,9 +170,9 @@ async def lifespan(app: FastAPI):
 
     async def _topup_all_banks() -> None:
         try:
+            from backend.app.db import postgres_store as _store
             from backend.app.db.postgres_store import list_quiz_skills
             from backend.app.services.quiz.generator import BANK_TARGET, ensure_questions_exist
-            from backend.app.db import postgres_store as _store
 
             skills = await list_quiz_skills()
             for row in skills:

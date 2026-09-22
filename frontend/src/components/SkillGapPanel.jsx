@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 
 export default function SkillGapPanel() {
     const isMobile = useIsMobile()
-    const { profile, matches, navigate, skillGapResult, runSkillGap, loadSkillGap, recommendedCourses } = useStore()
+    const { matches, skillGapResult, runSkillGap, loadSkillGap, recommendedCourses } = useStore()
     const [selectedChips, setSelectedChips] = useState([])
     const [selectedTargetJobId, setSelectedTargetJobId] = useState('')
 

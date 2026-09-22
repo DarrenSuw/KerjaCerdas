@@ -26,10 +26,9 @@ _REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from sqlalchemy import select, func
-
-from backend.app.api.database import engine, init_db
-from backend.app.db.models_proof import SkillQuestion
+from backend.app.api.database import engine, init_db  # noqa: E402
+from backend.app.db.models_proof import SkillQuestion  # noqa: E402
+from sqlalchemy import func, select  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)

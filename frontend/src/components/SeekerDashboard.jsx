@@ -44,7 +44,6 @@ export default function SeekerDashboard() {
 
     const completionPct = computeProfileCompleteness() || 0
     const userName = user?.name || user?.email || 'Pencari Kerja'
-    const initials = userName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() || 'P'
 
     const cvDone = Boolean(profile?.has_cv || profile?.resume_url || profile?.skills?.length > 0)
     const skillsDone = Boolean((profile?.skills?.length || 0) > 0)

@@ -35,9 +35,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from backend.app.config.settings import settings  # noqa: E402
-from backend.app.db.postgres_store import get_repositories  # noqa: E402
-from backend.app.services.matching.matcher import SemanticMatcher  # noqa: E402
+from backend.app.config.settings import settings
+from backend.app.db.postgres_store import get_repositories
+from backend.app.services.matching.matcher import SemanticMatcher
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger("reembed")

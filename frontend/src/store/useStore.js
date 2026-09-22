@@ -30,7 +30,6 @@ import {
     fetchEmployerApplications,
     updateApplicationStatus,
     fetchEmployerProfile,
-    updateEmployerProfile,
     trackEvent,
     fetchExperimentAssignments,
     triggerSkillGap,
@@ -606,16 +605,7 @@ const useStore = create(
 
             isJobSaved: (id) => get().savedJobs.some(j => (j.job_id || j.id) === id),
 
-            computeProfileCompleteness: () => {
-                const { profile, seekerId } = get()
-                let score = 0
-                if (seekerId) score += 20
-                if ((profile.skills || []).length > 0) score += 25
-                if ((profile.experience || []).length > 0) score += 25
-                if ((profile.education || []).length > 0) score += 20
-                if (profile.salary_expectation_min > 0) score += 10
-                return score
-            },
+
 
             // ─── Employer-scoped jobs feed ───────────────────────────────
             employerJobs: [],

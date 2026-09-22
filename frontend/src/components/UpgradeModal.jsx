@@ -28,6 +28,7 @@ export default function UpgradeModal() {
     const [order, setOrder] = useState(null)
     const [jobId, setJobId] = useState('')
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => {
         if (!upgradeModalOpen) return
         setOrder(null)

@@ -61,7 +61,7 @@ async def quiz_skills(job_id: str | None = None, current_user: User = Depends(ge
 
     # Preload all recent attempts for this seeker in one shot.
     from backend.app.db.postgres_store import find_quiz_attempts as _find_attempts
-    from backend.app.services.quiz.service import RETAKE_DAYS, _ATTEMPT_CAP_PER_PERIOD, _aware
+    from backend.app.services.quiz.service import _ATTEMPT_CAP_PER_PERIOD, RETAKE_DAYS, _aware
 
     all_attempts = await _find_attempts(seeker.id) if seeker else []
     now = datetime.now(UTC)

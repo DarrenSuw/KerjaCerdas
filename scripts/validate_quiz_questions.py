@@ -76,7 +76,7 @@ async def _sample_db_records() -> list[tuple[str, str, list[str], int]]:
                 select(SkillQuestion).where(SkillQuestion.active.is_(True), SkillQuestion.reviewed.is_(True))
             )
             rows = result.scalars().all()
-    except Exception:
+    except Exception:  # noqa: BLE001
         return _sample_bank_records()
 
     if not rows:
