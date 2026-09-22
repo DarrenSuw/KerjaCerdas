@@ -37,6 +37,7 @@ QUESTIONS_PER_QUIZ = 5
 SECONDS_PER_QUESTION = 45
 PASS_MARK = 4
 GRACE_SECONDS = 15
+ABANDON_AFTER_SECONDS = 30
 # Exactly one attempt per skill per day, regardless of pass or fail.
 # Retake resistance comes from bank size (generator.BANK_TARGET=50) plus
 # non-overlapping random draws (_pick_questions). With a 50-question pool and
@@ -365,6 +366,7 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
     score = sum(correct_flags)
     attempt.answers = [int(a) for a in answers[: len(attempt.question_ids)]]
     attempt.submitted_at = now
+    attempt.status = "submitted"
     attempt.score = score
     attempt.passed = score >= PASS_MARK
     await repos.quiz_attempts.upsert(attempt)
@@ -384,6 +386,33 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
         "correct": correct_flags,  # which were right — never which option was right
         "proof_granted": bool(attempt.passed and getattr(attempt, "proof_eligible", True)),
         "retake_after_days": None if attempt.passed else RETAKE_DAYS,
+    }
+
+
+async def abandon_quiz(seeker: SeekerProfile, attempt_id: str, elapsed_seconds: int | None = None) -> dict:
+    repos = store.get_repositories()
+    attempt = await repos.quiz_attempts.get(attempt_id)
+    if not attempt or attempt.seeker_id != seeker.id:
+        raise QuizError(404, "Kuis tidak ditemukan.")
+    if attempt.submitted_at is not None:
+        return {"attempt_id": attempt.id, "status": getattr(attempt, "status", "submitted") or "submitted", "used_attempt": False}
+
+    now = datetime.now(UTC)
+    elapsed = max(0, int(elapsed_seconds)) if elapsed_seconds is not None else int((now - _aware(attempt.created_at)).total_seconds())
+    if elapsed < ABANDON_AFTER_SECONDS:
+        return {"attempt_id": attempt.id, "status": "in_progress", "used_attempt": False}
+
+    attempt.answers = [int(a) for a in getattr(attempt, "answers", []) or []]
+    attempt.submitted_at = now
+    attempt.status = "abandoned"
+    attempt.score = 0
+    attempt.passed = False
+    await repos.quiz_attempts.upsert(attempt)
+    return {
+        "attempt_id": attempt.id,
+        "status": "abandoned",
+        "used_attempt": True,
+        "elapsed_seconds": elapsed,
     }
 
 

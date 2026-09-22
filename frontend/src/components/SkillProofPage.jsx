@@ -25,8 +25,6 @@ export default function SkillProofPage() {
     useEffect(() => { load() }, [load])
 
     const mine = data.items.filter((i) => i.proof !== 'missing')
-    const mineKeys = new Set(mine.map((i) => i.key))
-    const others = data.bank.filter((b) => !mineKeys.has(b.skill))
     const proven = mine.filter((i) => i.proof === 'quiz' || i.proof === 'hr_confirmed').length
 
     return (
@@ -71,9 +69,12 @@ export default function SkillProofPage() {
                                     const resetDate = item.cap_resets_at
                                         ? new Date(item.cap_resets_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long' })
                                         : 'besok'
+                                    const statusText = item.last_attempt_status === 'abandoned'
+                                        ? 'Kuis dibatalkan — tidak dihitung sebagai lulus'
+                                        : 'Sudah dicoba hari ini'
                                     return (
                                         <span style={{ fontSize: 12, color: KC.mute, textAlign: 'right' }}>
-                                            Sudah dicoba hari ini<br />
+                                            {statusText}<br />
                                             <b style={{ color: KC.ink }}>Coba lagi {resetDate}</b>
                                         </span>
                                     )
@@ -90,21 +91,9 @@ export default function SkillProofPage() {
                 </div>
             </BrutalCard>
 
-            {others.length > 0 && (
-                <BrutalCard color={KC.surface}>
-                    <div style={{ fontWeight: 900, marginBottom: 10 }}>Kuis lain yang tersedia</div>
-                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                        {others.map((b) => (
-                            <button key={b.skill} style={topBtn()} onClick={() => setQuizSkill(b.label)}>
-                                <PlayCircle size={15} /> {b.label}
-                            </button>
-                        ))}
-                    </div>
-                </BrutalCard>
-            )}
-
             {quizSkill && (
                 <QuizModal
+                    key={quizSkill}
                     skill={quizSkill}
                     onClose={() => setQuizSkill(null)}
                     onDone={() => { load(); loadSeekerProfile() }}

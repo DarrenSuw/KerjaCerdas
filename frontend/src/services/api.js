@@ -303,6 +303,10 @@ export const submitQuiz = (attemptId, answers) =>
     request(`${API_BASE}/quiz/submit`, {
         method: 'POST', body: JSON.stringify({ attempt_id: attemptId, answers }),
     })
+export const abandonQuiz = (attemptId, elapsedSeconds = null) =>
+    request(`${API_BASE}/quiz/abandon`, {
+        method: 'POST', body: JSON.stringify({ attempt_id: attemptId, elapsed_seconds: elapsedSeconds }),
+    })
 
 // ── Public job links (/j/<code>) ────────────────────────────────────────────
 export const fetchPublicJob = (code) => request(`${API_BASE}/public/jobs/${encodeURIComponent(code)}`)
