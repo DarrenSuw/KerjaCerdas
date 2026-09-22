@@ -1,0 +1,306 @@
+{
+  "skill": "CSS",
+  "skill_key": "css",
+  "questions": [
+    {
+      "question": "Anda sedang membangun halaman dasbor admin yang memiliki tabel data transaksi yang sangat panjang. Klien meminta agar baris judul tabel (header) tetap berada di posisi atas layar saat pengguna menggulir (scroll) ke bawah. Properti CSS apa yang paling tepat dan efisien untuk mencapai hal ini tanpa menggunakan JavaScript?",
+      "options": [
+        "position: fixed; top: 0; width: 100%;",
+        "position: sticky; top: 0; z-index: 10;",
+        "position: absolute; top: 0; overflow: scroll;",
+        "position: relative; scroll-behavior: smooth;"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa teks pada tombol CTA utama di situs e-commerce Anda meluber keluar dari batas tombol ketika dibuka di perangkat dengan layar sangat kecil. Elemen tombol tersebut menggunakan lebar tetap (fixed width). Solusi CSS terbaik untuk memperbaiki masalah responsivitas ini adalah...",
+      "options": [
+        "Mengubah properti font-size menggunakan satuan viewport width",
+        "Mengganti lebar tetap dengan min-width dan padding fleksibel",
+        "Menambahkan overflow: hidden agar teks terpotong rapi",
+        "Menggunakan transform: scale untuk memperkecil seluruh tombol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pembuatan landing page perusahaan, Anda diminta membuat galeri foto 3 kolom yang otomatis menyesuaikan diri menjadi 1 kolom pada layar ponsel, tanpa menggunakan media query yang rumit. Pendekatan CSS Grid mana yang paling tepat?",
+      "options": [
+        "grid-template-columns: repeat(3, 1fr); max-width: 100%;",
+        "grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));",
+        "grid-template-columns: 33% 33% 33%; display: inline-grid;",
+        "grid-template-columns: 1fr 2fr 1fr; flex-wrap: wrap;"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Website portal berita yang Anda kembangkan memiliki masalah performa rendering saat memuat halaman dengan ratusan ikon SVG berwarna. Desainer ingin warna ikon dapat diubah dengan mudah menggunakan CSS. Cara paling optimal untuk mengatur warna ikon tersebut adalah...",
+      "options": [
+        "Menggunakan filter drop-shadow dengan nilai warna hex",
+        "Memanfaatkan pewarisan warna melalui properti fill: currentColor",
+        "Menerapkan background-image dengan data URI berbasis base64",
+        "Mengubah properti color menggunakan pseudo-element ::before"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah gambar banner promosi tampak gepeng (terdistorsi) di dalam wadahnya karena rasio aspek aslinya tidak dijaga oleh pengembang sebelumnya. Aturan CSS mana yang harus ditambahkan pada elemen gambar tersebut untuk memperbaikinya?",
+      "options": [
+        "object-fit: cover; width: 100%; height: 100%;",
+        "object-fit: contain; max-width: none; height: auto;",
+        "background-size: 100% 100%; background-position: center;",
+        "aspect-ratio: 16 / 9; transform: scale(1.2);"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web perbankan memerlukan sistem tema gelap (dark mode) yang otomatis mengikuti preferensi sistem operasi pengguna, namun tetap menyediakan tombol toggle manual. Pendekatan arsitektur CSS modern apa yang paling efektif untuk mengelola variabel warna ini?",
+      "options": [
+        "Membuat dua file CSS terpisah dan memuatnya secara dinamis",
+        "Menggunakan CSS Custom Properties dengan kelas pengubah pada root",
+        "Memanfaatkan library preprocessor Sass untuk kompilasi ulang",
+        "Mengandalkan filter invert pada elemen body secara keseluruhan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika mendesain formulir pendaftaran kerja, Anda ingin memastikan bahwa label input selalu berada di sebelah kiri dengan lebar tetap, sementara kolom input di sebelah kanannya mengisi sisa ruang yang tersedia secara fleksibel. Layout Flexbox mana yang paling tepat?",
+      "options": [
+        "display: flex; flex-direction: column; justify-content: space-between;",
+        "display: flex; flex-direction: row; align-items: stretch;",
+        "display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;",
+        "display: flex; flex-direction: row; align-items: center;"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang menata sebuah artikel blog panjang. Pemilik produk ingin paragraf pertama dari setiap artikel memiliki ukuran font lebih besar dan tebal sebagai lead paragraph tanpa harus menambahkan kelas HTML khusus. Selektor CSS mana yang paling tepat?",
+      "options": [
+        "article p:first-child { font-size: 1.2rem; font-weight: bold; }",
+        "article p:first-of-type { font-size: 1.2rem; font-weight: bold; }",
+        "article p:nth-child(1) { font-size: 1.2rem; font-weight: bold; }",
+        "article p:last-of-type { font-size: 1.2rem; font-weight: bold; }"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tombol interaktif di aplikasi SaaS mengalami masalah visual 'layout shift' (bergeser sedikit) ketika kursor diarahkan ke atasnya karena efek penambahan border tebal pada keadaan hover. Cara paling profesional untuk mencegah pergeseran ini adalah...",
+      "options": [
+        "Menggunakan box-shadow sebagai pengganti border luar tombol",
+        "Menambahkan border transparan dengan ketebalan sama pada state normal",
+        "Mengubah properti outline-width alih-alih menggunakan border",
+        "Memberikan posisi absolute pada tombol saat status hover aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan design system perusahaan, Anda perlu memastikan bahwa teks judul panjang terpotong otomatis dan diakhiri dengan titik-titik (...) pada satu baris di dalam kartu produk yang sempit. Deklarasi CSS mana yang harus diterapkan?",
+      "options": [
+        "white-space: nowrap; overflow: hidden; text-overflow: ellipsis;",
+        "word-break: break-all; max-lines: 1; text-align: left;",
+        "display: inline-block; width: 100%; text-transform: lowercase;",
+        "overflow: scroll; text-wrap: unrestricted; clip-path: inset(0);"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain halaman profil pengguna di mana foto profil berbentuk lingkaran harus diletakkan tepat di tengah-tengah banner latar belakang yang lebar, baik pada layar desktop maupun ponsel. Bagaimana cara Anda mengatur CSS untuk wadah foto tersebut agar posisinya akurat tanpa mengandalkan nilai margin negatif?",
+      "options": [
+        "Menggunakan teknik absolute positioning dengan kombinasi properti top 50 persen dan transform translateY minus 50 persen",
+        "Memanfaatkan model layout flexbox pada wadah induk dengan mendefinisikan align-items center serta justify-content center",
+        "Menerapkan properti float ke arah kiri pada wadah gambar dan menambahkan clearing pada elemen teks di bawahnya",
+        "Mengatur ukuran lebar wadah secara kaku dalam satuan piksel lalu memberikan nilai margin auto pada sisi kiri dan kanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada halaman keranjang belanja aplikasi e-commerce, daftar produk di sebelah kiri harus tetap berada di posisinya saat pengguna menggulir (scroll) ke bawah, sementara ringkasan pembayaran di sebelah kanan tetap diam di layar. Pendekatan CSS apa yang paling tepat untuk elemen ringkasan pembayaran?",
+      "options": [
+        "Menetapkan posisi elemen menjadi absolute terhadap wadah utama agar posisinya terkunci secara otomatis",
+        "Mengubah model layout elemen menjadi fixed position dengan koordinat top nol dan lebar yang disesuaikan",
+        "Memberikan nilai sticky pada properti position elemen tersebut serta menentukan jarak top dalam piksel",
+        "Mengaktifkan fungsi float right pada elemen penampung ringkasan dan overflow hidden pada wadah induk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim desain meminta Anda membuat kartu produk dengan tinggi yang dinamis. Beberapa kartu memiliki judul dua baris, sementara yang lain hanya satu baris. Namun, tombol 'Beli' di bagian bawah setiap kartu harus selalu sejajar rata di garis dasar yang sama dalam satu baris grid. Solusi CSS mana yang paling efektif?",
+      "options": [
+        "Mengatur elemen kartu sebagai flex container dengan arah kolom dan memberikan margin-top auto pada tombol",
+        "Menentukan tinggi minimum yang kaku pada setiap kartu menggunakan satuan rem agar tombol terdorong ke bawah",
+        "Memaksa judul produk memiliki batas satu baris teks dengan menyembunyikan kelebihan karakter menggunakan ellipsis",
+        "Memberikan posisi relative pada kartu dan posisi absolute pada tombol agar posisinya bisa digeser secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs web portal berita lokal mengalami masalah penurunan skor performa Core Web Vitals karena elemen iklan banner di bagian atas halaman menyebabkan pergeseran tata letak (Cumulative Layout Shift) saat gambar iklannya selesai dimuat. Bagaimana cara Anda mengatasi hal ini menggunakan CSS murni?",
+      "options": [
+        "Menambahkan transisi durasi waktu pada properti height wadah iklan agar perubahan ukuran terjadi secara perlahan",
+        "Menetapkan rasio aspek yang konsisten pada wadah iklan menggunakan properti aspect-ratio sesuai ukuran standar",
+        "Mengubah properti display wadah iklan menjadi none saat halaman pertama kali dimuat oleh peramban web",
+        "Memberikan nilai z-index yang tinggi pada wadah iklan agar berada di lapisan atas konten teks berita utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan komponen modal dialog konfirmasi yang harus menutupi seluruh layar dengan latar belakang semi-transparan, sementara kotak dialognya berada persis di tengah layar. Properti CSS apa yang paling tepat untuk lapisan latar belakang gelap tersebut?",
+      "options": [
+        "position fixed dengan nilai koordinat top, right, bottom, dan left diatur ke angka nol untuk mencakup layar penuh",
+        "position absolute dengan nilai margin otomatis di semua sisi agar wadah tersebut mengapung di tengah dokumen",
+        "display inline-block dengan ukuran lebar dan tinggi yang dihitung menggunakan fungsi viewport height",
+        "float left dengan pembungkus clear float agar elemen tidak bertumpuk dengan komponen halaman di bawahnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan sistem navigasi utama situs web perusahaan, menu dropdown tingkat kedua sering kali tertutup oleh elemen konten banner hero di bawahnya. Setelah diperiksa, elemen banner memiliki tumpukan visual yang salah. Apa tindakan CSS yang paling tepat untuk memperbaikinya?",
+      "options": [
+        "Menaikkan nilai properti opacity pada elemen menu dropdown agar terlihat lebih dominan di atas layar",
+        "Memberikan nilai z-index yang lebih tinggi pada elemen menu dropdown yang disertai posisi selain static",
+        "Mengubah urutan penulisan tag HTML elemen banner agar berada di bawah kode menu dropdown pada dokumen",
+        "Menurunkan nilai properti scale pada elemen banner agar ukurannya mengecil dan tidak menutupi menu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat tombol interaktif yang memberikan umpan balik visual berupa sedikit pembesaran ukuran dan bayangan lembut ketika kursor tetikus diarahkan kepadanya, serta kembali ke bentuk semula secara halus saat kursor menjauh. Bagian CSS manakah yang harus dituliskan dengan benar?",
+      "options": [
+        "Menambahkan properti transition pada status normal tombol dan fungsi scale pada status pseudo-class hover",
+        "Mengatur animasi keyframes berulang kali pada status active agar tombol berdenyut tanpa henti di layar",
+        "Memanfaatkan properti transform scale pada status normal dan menghapusnya pada bagian pseudo-class focus",
+        "Menggunakan properti box-shadow dengan nilai blur radius tinggi pada status pseudo-class visited pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web dashboard analitik menggunakan tabel data yang sangat padat. Klien meminta agar baris tabel secara bergantian memiliki warna latar belakang yang berbeda (efek zebra striping) untuk meningkatkan kenyamanan baca tanpa mengubah struktur markup HTML.",
+      "options": [
+        "Menggunakan selektor pseudo-class :nth-child(even) pada elemen baris tabel untuk menerapkan warna latar belakang",
+        "Menambahkan kelas utilitas khusus secara manual pada setiap tag baris genap melalui skrip pemrograman sisi server",
+        "Memanfaatkan properti border-collapse pada tabel lalu memberikan warna pada elemen sel secara bergantian",
+        "Mengatur pseudo-element ::before pada setiap sel tabel untuk menyisipkan lapisan warna transparan di atasnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa teks paragraf yang panjang pada halaman artikel sering kali meluber melewati batas layar pada perangkat ponsel berukuran kecil karena adanya kata URL yang sangat panjang tanpa spasi. Properti CSS apa yang paling efektif untuk mencegah masalah ini?",
+      "options": [
+        "white-space diset ke nowrap agar teks secara otomatis memaksa pembuatan bilah gulir horizontal pada wadah",
+        "overflow-x diset ke scroll agar pengguna dapat menggeser teks yang keluar batas ke arah samping",
+        "word-break diset ke break-all atau overflow-wrap diset ke break-word untuk memecah kata yang terlalu panjang",
+        "text-overflow diset ke ellipsis agar sisa kata yang tidak muat langsung digantikan dengan tanda titik tiga"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam membangun halaman galeri foto properti, Anda ingin memastikan bahwa setiap gambar mini mempertahankan proporsi aspek 16:9 secara konsisten, terlepas dari ukuran dimensi asli berkas gambar yang diunggah oleh agen penjual.",
+      "options": [
+        "Memberikan properti object-fit dengan nilai cover pada elemen gambar serta menetapkan rasio aspek pada wadahnya",
+        "Mengatur ukuran lebar dan tinggi gambar secara manual menggunakan satuan piksel mutlak di dalam CSS inline",
+        "Mengubah gambar menjadi latar belakang CSS pada wadah div lalu mengatur repeat ke nilai round secara penuh",
+        "Memaksa tinggi gambar mengecil dengan menggunakan nilai transform scaleY agar sesuai dengan wadah persegi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain halaman daftar produk marketplace. Setiap kartu produk menggunakan CSS Grid, namun beberapa kartu yang memiliki judul produk sangat panjang merusak keselarasan tinggi baris di bawahnya. Properti CSS apa yang paling tepat diterapkan pada container grid untuk memastikan semua item dalam satu baris memiliki tinggi yang sama secara otomatis?",
+      "options": [
+        "Mengatur nilai properti align-items menjadi stretch pada container grid",
+        "Memberikan nilai height seratus persen pada setiap elemen kartu produk",
+        "Mengaktifkan flexbox di dalam setiap elemen anak untuk meratakan isi",
+        "Menetapkan nilai min-height eksplisit dalam satuan piksel pada grid item"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada halaman detail produk, QA melaporkan bahwa gambar produk utama mengalami pergeseran tata letak (layout shift) yang parah saat halaman dimuat karena ukuran gambar baru diketahui setelah selesai diunduh. Solusi CSS terbaik untuk memesan ruang kosong yang proporsional sebelum gambar termuat adalah...",
+      "options": [
+        "Menggunakan properti object-fit dan object-position pada tag gambar",
+        "Menambahkan properti aspect-ratio pada elemen wadah gambar tersebut",
+        "Memberikan nilai min-height tetap pada container pembungkus gambar",
+        "Mengatur ukuran lebar dan tinggi langsung menggunakan atribut HTML"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta memperbarui tampilan tombol unduh laporan keuangan agar memiliki efek transisi yang halus ketika pengguna mengarahkan kursor ke atasnya. Namun saat ini transisi warna latar belakang terasa patah-patah. Kode CSS manakah yang harus Anda perbaiki pada aturan style tombol?",
+      "options": [
+        "Menambahkan properti transition all dengan durasi pada status hover",
+        "Memindahkan properti transition ke dalam status hover dari tombol",
+        "Menentukan durasi dan properti spesifik pada selector dasar tombol",
+        "Mengubah urutan penulisan pseudo-class hover setelah selector aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dashboard HR menggunakan tabel karyawan yang sangat lebar pada layar kecil ponsel. Klien ingin tabel tersebut dapat digulir secara horizontal tanpa merusak tata letak halaman utama di sekitarnya. Bagaimana cara terbaik membungkus elemen tabel dengan CSS?",
+      "options": [
+        "Membuat elemen pembungkus dengan overflow-x auto dan width seratus persen",
+        "Mengatur properti display tabel menjadi block pada layar ukuran ponsel",
+        "Memberikan properti position absolute agar tabel bisa digeser bebas",
+        "Menurunkan ukuran padding dan ukuran font sel tabel secara proporsional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan komponen menu navigasi sisi (sidebar) yang dapat dibuka dan ditutup menggunakan animasi geser halus. Untuk memastikan animasi ini berjalan dengan performa terbaik tanpa memicu layout reflow yang berat pada browser, properti CSS mana yang sebaiknya Anda animasikan?",
+      "options": [
+        "Menggunakan perubahan nilai pada properti margin-left dari elemen sidebar",
+        "Memanfaatkan fungsi transformasi transform translateX dan properti opacity",
+        "Mengatur ulang nilai lebar width secara dinamis dengan satuan persentase",
+        "Memodifikasi posisi koordinat left dan right secara bersamaan pada elemen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan halaman landing page korporat, teks judul utama sering kali terlihat terlalu besar di layar ponsel dan terlalu kecil di layar monitor desktop yang sangat lebar. Pendekatan CSS modern apa yang paling efektif untuk membuat ukuran font responsif secara mulus?",
+      "options": [
+        "Membuat beberapa aturan media query bertingkat untuk mengubah ukuran font",
+        "Menggunakan fungsi clamp dengan kombinasi satuan viewport dan rem",
+        "Mengganti semua satuan ukuran font menggunakan persetase dari wadah",
+        "Memanfaatkan unit vw secara murni tanpa batasan nilai minimum dan maksimum"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim desain meminta Anda membuat tombol aksi mengambang (floating action button) di sudut kanan bawah layar aplikasi web. Tombol ini harus selalu berada di tempat yang sama meskipun pengguna menggulir halaman ke bawah. Properti CSS apa yang harus digunakan?",
+      "options": [
+        "Menetapkan position fixed dengan koordinat bottom dan right yang sesuai",
+        "Menggunakan position absolute dengan mengacu pada elemen body dokumen",
+        "Memasang position sticky pada container utama pembungkus tombol aksi",
+        "Mengatur properti float ke arah kanan bawah pada elemen tombol tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa ikon SVG dekoratif yang disisipkan di dalam tombol sering kali ikut diklik oleh pengguna, sehingga target interaksi tombol terganggu oleh elemen path di dalamnya. Properti CSS apa yang dapat mengabaikan interaksi tetikus pada elemen anak tersebut?",
+      "options": [
+        "Mengatur visibilitas elemen anak menjadi hidden pada status normal",
+        "Memberikan nilai none pada properti pointer-events dari elemen ikon",
+        "Menonaktifkan interaksi melalui atribut inert langsung pada tag SVG",
+        "Mengubah status z-index ikon agar berada di belakang teks tombol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web berita online ingin memastikan bahwa teks artikel utama sangat nyaman dibaca oleh pengguna di berbagai perangkat. Anda diminta membatasi lebar maksimal kolom teks agar tidak melebihi ukuran optimal keterbacaan mata. Satuan CSS apa yang paling tepat digunakan untuk batas lebar ini?",
+      "options": [
+        "Menggunakan satuan piksel konvensional agar konsisten di semua layar",
+        "Memanfaatkan satuan ch untuk membatasi jumlah karakter per baris teks",
+        "Menerapkan satuan persentase dari lebar layar perangkat pengguna",
+        "Mengandalkan satuan em yang dihitung dari ukuran font elemen induk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mendesain kartu profil pengguna, Anda ingin bagian bio singkat secara otomatis terpotong dan diberi tanda elipsis (...) apabila teksnya melebihi dua baris tampilan. Kombinasi properti CSS apa yang harus diterapkan pada elemen teks tersebut?",
+      "options": [
+        "Overflow hidden, white space nowrap, dan text overflow ellipsis",
+        "Displaywebkit box, webkit line clamp dua, dan webkit box orient vertical",
+        "Max height tetap, line height proporsional, dan overflow scroll tersembunyi",
+        "Text wrap balance, word break break all, dan overflow visible"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

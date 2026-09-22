@@ -49,7 +49,7 @@ export default function HiringToolsModal({ app, onClose }) {
                 <p style={{ fontSize: 12, color: KC.mute, margin: '2px 0 8px' }}>Fokus pada skill yang baru diklaim. Kuis menyaring, wawancara memastikan.</p>
                 {kitError?.status === 402 && (
                     <div style={{ background: KC.yellowSoft, border: `1px solid ${KC.yellow}`, borderRadius: 9, padding: 12, fontSize: 13 }}>
-                        Pertanyaan wawancara AI tersedia di Beacon (Rp49.000 / lowongan) atau Lighthouse.
+                        Pertanyaan wawancara AI tersedia di paket Beacon atau Lighthouse.
                         <button style={{ ...topBtn(KC.orange, '#fff'), marginLeft: 8 }} onClick={() => { onClose(); openUpgradeModal({ plan: 'beacon', jobId: app.job_id }) }}>Beli Beacon</button>
                     </div>
                 )}

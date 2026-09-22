@@ -44,7 +44,6 @@ export default function SeekerDashboard() {
 
     const completionPct = computeProfileCompleteness() || 0
     const userName = user?.name || user?.email || 'Pencari Kerja'
-    const initials = userName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() || 'P'
 
     const cvDone = Boolean(profile?.has_cv || profile?.resume_url || profile?.skills?.length > 0)
     const skillsDone = Boolean((profile?.skills?.length || 0) > 0)
@@ -625,7 +624,7 @@ export default function SeekerDashboard() {
                     }}
                 >
                     <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderBottom: `12px solid ${KC.orange}` }} />
-                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Upload CV</span>
+                    <span style={{ fontSize: 9.5, fontWeight: 800, color: KC.ink, textAlign: 'center', lineHeight: 1.2 }}>Profil Saya</span>
                 </div>
                 <div
                     onClick={() => navigate('seeker-verification')}

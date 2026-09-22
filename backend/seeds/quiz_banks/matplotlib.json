@@ -1,0 +1,306 @@
+{
+  "skill": "Matplotlib",
+  "skill_key": "matplotlib",
+  "questions": [
+    {
+      "question": "Sebagai Data Analyst di sebuah e-commerce Jakarta, Anda diminta membuat grafik garis untuk memantau lonjakan transaksi harian selama bulan Ramadhan. Namun, rentang tanggal pada sumbu X saling bertumpuk dan tidak terbaca karena terlalu rapat. Langkah apa yang paling tepat dilakukan pada objek Matplotlib agar tanggal tersebut tampil miring dan rapi?",
+      "options": [
+        "Mengatur ulang ukuran kanvas menggunakan fungsi plt.figure(figsize=(12, 6))",
+        "Memutar label sumbu X dengan memanggil plt.xticks(rotation=45) sebelum ditampilkan",
+        "Menghapus separuh data tanggal agar jarak antar label menjadi lebih renggang",
+        "Mengubah tipe data sumbu X dari string menjadi format datetime standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun laporan eksekutif bulanan untuk manajemen puncak di perusahaan fintech. Laporan tersebut memuat 4 grafik performa cabang yang berbeda dalam satu halaman (kanvas) yang sama agar mudah dibandingkan. Fungsi Matplotlib manakah yang paling tepat digunakan untuk menginisialisasi tata letak tersebut?",
+      "options": [
+        "fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))",
+        "plt.subplot2grid((4, 1), (0, 0)) untuk setiap grafik yang dibuat",
+        "plt.multiplot(rows=2, cols=2) untuk membagi area gambar",
+        "fig, ax = plt.figure(subplots=4) dengan pengaturan grid otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik ingin menyajikan laporan performa pengiriman barang. Grafik batang (bar chart) yang dibuat memiliki kategori nama wilayah pengiriman yang cukup panjang, menyebabkan label terpotong di bagian kiri jendela plot. Bagaimana cara mengatasi hal tersebut agar seluruh nama wilayah terlihat jelas?",
+      "options": [
+        "Menggunakan fungsi plt.tight_layout() sebelum menyimpan atau menampilkan grafik",
+        "Mengubah orientasi grafik batang menjadi horizontal dengan fungsi plt.barh()",
+        "Memperkecil ukuran font label menggunakan parameter fontsize=6 pada sumbu Y",
+        "Menyingkat seluruh nama wilayah pada dataset sebelum dimasukkan ke Matplotlib"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek analisis churn pelanggan telekomunikasi, Anda membuat scatter plot yang menghubungkan durasi panggilan dengan total tagihan bulanan. Karena titik data yang sangat banyak (lebih dari 100.000 baris), visualisasi menjadi 'overplotted' dan menumpuk gelap. Properti apa pada fungsi scatter() yang harus disesuaikan untuk mengatasi masalah visibilitas ini?",
+      "options": [
+        "Menurunkan nilai parameter alpha menjadi 0.1 agar titik menjadi transparan",
+        "Memperbesar ukuran marker menggunakan parameter s=50 agar lebih tegas",
+        "Mengganti jenis marker dari titik bulat menjadi garis putus-putus",
+        "Menghapus data pencilan (outliers) sebelum melakukan plotting scatter"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk menyisipkan logo resmi perusahaan di sudut kanan atas pada setiap visualisasi laporan penjualan sebelum dibagikan ke klien korporat. Menggunakan objek Axes (ax) di Matplotlib, metode apa yang paling tepat untuk memasukkan gambar logo tersebut?",
+      "options": [
+        "Menggunakan ax.imshow() dengan koordinat relatif terhadap ukuran gambar",
+        "Menambahkan gambar via ax.figure.figimage() dengan path file lokal",
+        "Membuat axes baru di pojok atas memakai fig.add_axes() lalu memanggil ax.imshow()",
+        "Menyisipkan file gambar langsung ke parameter title dengan format HTML"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim riset pasar menggunakan grafik pie chart untuk mempresentasikan pangsa pasar beberapa merek smartphone di Indonesia. Salah satu merek memiliki pangsa pasar yang sangat kecil (kurang dari 1%) sehingga teks persentasenya bertumpuk dengan merek lain. Solusi terbaik apa yang bisa diterapkan pada fungsi pie() Matplotlib?",
+      "options": [
+        "Mengatur parameter explode untuk mengeluarkan irisan kecil dari pusat lingkaran",
+        "Menggunakan parameter labeldistance dan autopct untuk mengatur posisi teks",
+        "Menghapus kategori kecil dan menggabungkannya ke dalam kategori 'Lainnya'",
+        "Mengubah visualisasi pie chart menjadi donut chart dengan lubang di tengah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat skrip Python otomatis yang menghasilkan ratusan grafik analisis tren penjualan tiap produk secara batch setiap malam. Setelah skrip berjalan lama, Anda mendapati penggunaan memori RAM server melonjak drastis dan proses melambat. Praktik apa yang terlewat dalam kode Matplotlib Anda?",
+      "options": [
+        "Tidak memanggil perintah plt.clf() setelah setiap iterasi selesai",
+        "Tidak memanggil fungsi plt.close('all') atau plt.close(fig) di akhir loop",
+        "Menyimpan gambar dengan resolusi tinggi menggunakan dpi=300 secara terus-menerus",
+        "Menggunakan objek global pyplot alih-alih pendekatan Object-Oriented API"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank nasional ingin menampilkan tren kredit macet (NPL) selama 5 tahun terakhir dengan dua skala mata uang yang berbeda (Rupiah dan Dolar AS) pada satu grafik waktu yang sama. Fitur Matplotlib apa yang harus Anda gunakan untuk mengakomodasi dua sumbu Y pada satu sumbu X?",
+      "options": [
+        "Membuat dua figure terpisah lalu menggabungkannya dengan library PIL",
+        "Memanggil fungsi ax.twinx() untuk membuat objek sumbu kedua yang berbagi sumbu X",
+        "Menggunakan parameter secondary_y=True langsung di dalam fungsi plot bawaan",
+        "Melakukan normalisasi data terlebih dahulu agar memiliki skala rentang 0 sampai 1"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan infografis publik untuk kampanye kesehatan. Standar perusahaan mengharuskan seluruh grafik menggunakan palet warna khusus (brand guidelines) yang tidak tersedia di dalam pilihan colormap bawaan Matplotlib. Bagaimana cara mendefinisikan warna kustom tersebut agar bisa dipakai berulang kali?",
+      "options": [
+        "Membuat objek ListedColormap dari modul matplotlib.colors dengan daftar kode HEX",
+        "Mengubah konfigurasi file matplotlibrc secara permanen pada sistem operasi",
+        "Menggunakan parameter color secara manual pada setiap pemanggilan fungsi plot",
+        "Mengimpor modul seaborn dan mendaftarkan palet warna ke dalam plt.style"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan analisis harga properti di Jabodetabek, Anda ingin menyoroti area tertentu pada grafik garis di mana terjadi kenaikan harga yang drastis akibat pembangunan jalan tol baru. Fitur apa pada Matplotlib yang paling tepat digunakan untuk memberi warna latar belakang pada rentang sumbu X tertentu?",
+      "options": [
+        "Menggunakan fungsi ax.axvspan(xmin, xmax, color='yellow', alpha=0.3)",
+        "Menambahkan bentuk persegi panjang manual dengan patches.Rectangle",
+        "Memberikan anotasi teks panah menggunakan fungsi ax.annotate() yang ditarik",
+        "Membuat garis pembatas vertikal menggunakan ax.axvline() di titik tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Data Analyst di platform ride-hailing, Anda ingin memplot distribusi usia pengemudi menggunakan Matplotlib. Agar grafik terlihat bersih dan tidak tumpang tindih saat disajikan ke manajemen, metode apa yang paling tepat dipanggil sebelum plt.show() untuk merapikan tata letak?",
+      "options": [
+        "plt.tight_layout()",
+        "plt.clean_figure()",
+        "plt.format_plot()",
+        "plt.autoscale_view()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data penjualan bulanan berbagai kategori produk FMCG. Anda ingin membuat diagram batang (bar chart) horizontal agar nama produk yang panjang terbaca dengan jelas pada sumbu Y. Fungsi Matplotlib mana yang harus Anda gunakan?",
+      "options": [
+        "plt.barh()",
+        "plt.bar_horizontal()",
+        "plt.hbar()",
+        "plt.plot_horizontal()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan dashboard performa server perusahaan SaaS, Anda perlu memperbarui data line chart secara dinamis tanpa merender ulang seluruh jendela plot dari awal, demi efisiensi resource memori. Metode objek figur apa yang paling efisien digunakan?",
+      "options": [
+        "artist.set_ydata()",
+        "pyplot.redraw_canvas()",
+        "figure.refresh_data()",
+        "axis.update_line()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain visualisasi tren kepuasan pelanggan dari tahun 2019 hingga 2023. Agar stakeholder langsung fokus pada titik terendah pandemi di tahun 2020, Anda ingin menambahkan teks anotasi panah menunjuk ke titik tersebut. Fungsi Matplotlib mana yang tepat?",
+      "options": [
+        "plt.annotate()",
+        "plt.insert_text()",
+        "plt.point_to()",
+        "plt.callout()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim analis data Anda sering menggunakan gaya visualisasi yang berbeda-beda, membuat laporan bulanan terlihat tidak konsisten. Sebagai Lead Data Analyst, Anda ingin menerapkan satu standar tema global (misalnya 'seaborn-v0_8') untuk seluruh script Matplotlib di tim. Perintah apa yang digunakan?",
+      "options": [
+        "plt.style.use()",
+        "plt.set_theme()",
+        "plt.apply_config()",
+        "plt.theme_override()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengekspor grafik analisis penjualan ke format vektor beresolusi tinggi (PDF) untuk keperluan cetak brosur perusahaan, tanpa ada pecahnya piksel. Argumen format apa yang harus disertakan dalam fungsi plt.savefig()?",
+      "options": [
+        "format='pdf'",
+        "dpi='vector'",
+        "renderer='pdf'",
+        "quality='high'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam visualisasi matriks korelasi antar variabel keuangan perusahaan, Anda menampilkan heatmap menggunakan plt.imshow() dan ingin menyertakan bilah warna (color bar) di sampingnya sebagai panduan skala. Fungsi apa yang harus dipanggil?",
+      "options": [
+        "plt.colorbar()",
+        "plt.legend_bar()",
+        "plt.scale_bar()",
+        "plt.mapping_legend()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat plot multi-panel (subplot) dengan ukuran 2x2 untuk membandingkan performa 4 cabang regional. Namun, label sumbu X pada baris atas saling bertumpuk dengan judul subplot di bawahnya. Argumen apa di plt.subplots() yang otomatis mencegah hal ini?",
+      "options": [
+        "constrained_layout=True",
+        "auto_spacing=True",
+        "prevent_overlap=True",
+        "fix_margins=True"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memplot data transaksi harian selama 3 tahun, sumbu X (tanggal) menjadi sangat padat dan saling bertumpuk sehingga tidak terbaca. Kelas Matplotlib apa yang harus dimanipulasi untuk mengatur interval dan format tanggal agar lebih renggang?",
+      "options": [
+        "matplotlib.dates",
+        "matplotlib.time_formatter",
+        "matplotlib.axis_parser",
+        "matplotlib.calendar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memuat sekumpulan data outlier gaji karyawan yang sangat ekstrem, sehingga skala pada sumbu Y membuat sebagian besar data menumpuk di bagian bawah. Transformasi skala apa yang harus diterapkan pada sumbu Y agar sebaran data lebih proporsional?",
+      "options": [
+        "ax.set_yscale('log')",
+        "ax.set_scale('exponential')",
+        "ax.transform('logarithmic')",
+        "ax.scale_axis('power')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Data Analyst di platform logistik, Anda perlu membuat grafik yang membandingkan jumlah pengiriman tepat waktu versus terlambat di 5 kota besar. Jenis visualisasi apa yang paling tepat dibuat dengan Matplotlib untuk menunjukkan perbandingan proporsi ini pada tiap kota?",
+      "options": [
+        "Menggunakan fungsi plt.pie() untuk setiap kota secara terpisah",
+        "Membuat stacked bar chart dengan parameter bottom atau bar width",
+        "Menyusun scatter plot dengan sumbu X kota dan sumbu Y jumlah paket",
+        "Menggambar line chart dengan dua garis tren untuk masing-masing status"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat laporan eksekutif berupa dua grafik berdampingan dalam satu jendela figur (1 baris, 2 kolom) untuk membandingkan metrik unduhan aplikasi dan pendapatan iklan. Metode apa yang paling tepat untuk menginisialisasi figur dan sumbu tersebut?",
+      "options": [
+        "fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2)",
+        "fig, ax1, ax2 = plt.subplots(figsize=(10, 5))",
+        "fig = plt.figure(); ax1 = plt.add_subplot(121)",
+        "fig, axes = plt.subplots(ncols=2, sharey=True)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam visualisasi metrik performa server, Anda ingin mengisi area di bawah garis tren CPU usage yang melebihi ambang batas 80% dengan warna merah transparan untuk menarik perhatian manajemen. Fungsi Matplotlib mana yang harus Anda gunakan?",
+      "options": [
+        "plt.axvspan(80, max_val, color='red', alpha=0.3)",
+        "plt.fill_between(x, y, 80, where=(y > 80), color='red', alpha=0.3)",
+        "plt.fill(x, y, color='red', threshold=80, transparency=0.3)",
+        "plt.bar(x, y, color='red', bottom=80, alpha=0.3)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis data churn pelanggan bulanan dan ingin menampilkan nilai persentase secara tepat di atas setiap batang pada bar chart agar mudah dibaca oleh klien. Langkah iterasi mana yang paling tepat?",
+      "options": [
+        "Menggunakan parameter show_values=True di dalam fungsi plt.bar()",
+        "Memanggil ax.bar_label(rects, padding=3) setelah membuat bar chart",
+        "Melakukan perulangan for pada objek container bar dan memakai plt.text()",
+        "Mengaktifkan grid teks otomatis melalui plt.rcParams['text.autopct']"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat membuat grafik distribusi gaji karyawan, rentang nilai pada sumbu X sangat lebar dan mencakup beberapa nilai ekstrem yang tinggi (outlier). Agar visualisasi tetap informatif bagi HR, bagaimana cara mengubah skala sumbu X di Matplotlib?",
+      "options": [
+        "Menggunakan perintah plt.xscale('log') sebelum memplot data",
+        "Mengatur batas sumbu manual dengan plt.xlim(min_val, threshold)",
+        "Memotong larik data secara permanen sebelum dilewatkan ke fungsi plot",
+        "Menambahkan parameter scale='logarithmic' langsung pada fungsi plt.plot()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan laporan keuangan perusahaan multinasional, Anda harus memastikan semua visualisasi menggunakan palet warna korporat yang konsisten dan ukuran font minimum 12pt untuk memenuhi standar aksesibilitas. Cara paling efisien untuk menerapkan aturan ini adalah:",
+      "options": [
+        "Menulis fungsi kustom Python yang dipanggil setiap kali selesai membuat plot",
+        "Mengubah parameter style manual menggunakan plt.rcParams di awal skrip",
+        "Mengatur properti warna dan font satu per satu pada setiap objek ax dan fig",
+        "Mengunduh file tema eksternal pihak ketiga lalu mengimpornya ke script"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain dasbor analitik interaktif sederhana menggunakan Jupyter Notebook. Ketika pengguna mengubah filter rentang tanggal, grafik garis harus diperbarui nilainya tanpa merender ulang seluruh kanvas figur. Metode mana yang paling tepat?",
+      "options": [
+        "Memanggil plt.clf() lalu membuat ulang seluruh elemen figur dari awal",
+        "Mengubah data sumber pada objekLine2D menggunakan metode set_ydata()",
+        "Menghapus sumbu lama dengan ax.remove() dan membuat sumbu baru di tempat",
+        "Menggunakan fungsi plt.draw_idle() setelah memanggil ulang plt.plot()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengekspor grafik ringkasan penjualan triwulanan ke format gambar PNG dengan resolusi tinggi (300 DPI) agar tajam saat dimasukkan ke dalam dokumen laporan cetak. Argumen apa yang wajib disertakan pada fungsi penyimpanan?",
+      "options": [
+        "plt.savefig('laporan.png', dpi=300, quality='high')",
+        "plt.savefig('laporan.png', resolution=300, bbox_inches='tight')",
+        "plt.savefig('laporan.png', dpi=300, bbox_inches='tight')",
+        "plt.savefig('laporan.png', ppi=300, format='png-hd')"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam visualisasi matriks korelasi menggunakan plt.imshow(), kotak-kotak heatmap tidak disertai nilai numerik koefisien korelasi di dalamnya. Cara paling tepat untuk menambahkan teks nilai numerik tersebut ke setiap sel adalah:",
+      "options": [
+        "Melakukan perulangan berseri ganda (nested loop) untuk menempatkan teks via plt.text()",
+        "Menggunakan argumen add_values=True pada fungsi plt.imshow() bawaan Matplotlib",
+        "Memanggil fungsi ax.annotate_heatmap() setelah matriks berhasil dirender",
+        "Mengaktifkan label matriks melalui pengaturan plt.rcParams['matrix.labels']"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat grafik garis dengan legenda yang mencakup 8 kategori produk berbeda. Ketika ditampilkan, kotak legenda menutupi sebagian data penting pada garis tren utama. Solusi terbaik di Matplotlib untuk mengatasi hal ini adalah:",
+      "options": [
+        "Menghapus label legenda dan menggantinya dengan anotasi teks manual di ujung garis",
+        "Memindahkan posisi legenda ke luar area plot menggunakan parameter bbox_to_anchor",
+        "Memperkecil ukuran gambar figur hingga tiga kali lipat agar area proporsional",
+        "Mengubah transparansi seluruh garis data agar teks legenda tetap terbaca menembusnya"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

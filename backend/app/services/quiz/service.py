@@ -37,14 +37,15 @@ QUESTIONS_PER_QUIZ = 5
 SECONDS_PER_QUESTION = 45
 PASS_MARK = 4
 GRACE_SECONDS = 15
-# One day, the same for everyone. It used to be 7 free / 2 with Prism, which
-# meant a paid plan bought a faster route to a badge that carries a 0.85 proof
-# weight — i.e. money moving a match score, which is the one thing this product
-# promises never happens. Selling it was the defect; the cooldown itself was
-# only ever friction, since a small bank could be memorised whatever the wait.
-# Retake resistance now comes from bank size and non-overlapping draws
-# (generator.BANK_TARGET, _pick_questions), which is where it belongs.
+ABANDON_AFTER_SECONDS = 30
+# Exactly one attempt per skill per day, regardless of pass or fail.
+# Retake resistance comes from bank size (generator.BANK_TARGET=50) plus
+# non-overlapping random draws (_pick_questions). With a 50-question pool and
+# 5 drawn per attempt, the chance of drawing the exact same 5 twice is <0.1%.
 RETAKE_DAYS = 1
+# Cap: any submitted attempt (pass or fail) within the last RETAKE_DAYS days
+# blocks a new start. This is evaluated in start_quiz() below.
+_ATTEMPT_CAP_PER_PERIOD = 1
 
 
 class QuizError(Exception):
@@ -220,10 +221,16 @@ async def start_quiz(seeker: SeekerProfile, skill_name: str) -> dict:
             if all(qid in by_id for qid in a.question_ids):
                 return _attempt_payload(a, by_id, resumed=True)
 
-    cooldown = RETAKE_DAYS
-    failed = [a for a in attempts if a.submitted_at and not a.passed]
-    if failed:
-        retry_at = _aware(failed[-1].submitted_at) + timedelta(days=cooldown)
+    # 1 attempt per RETAKE_DAYS day(s), pass or fail. Checks the most recent
+    # *submitted* attempt regardless of outcome so passing on Monday doesn't
+    # let you grind the same skill all week.
+    submitted_all = sorted(
+        [a for a in attempts if a.submitted_at is not None],
+        key=lambda a: _aware(a.submitted_at),
+    )
+    if len(submitted_all) >= _ATTEMPT_CAP_PER_PERIOD:
+        last_submit = _aware(submitted_all[-1].submitted_at)
+        retry_at = last_submit + timedelta(days=RETAKE_DAYS)
         if retry_at > now:
             raise QuizError(429, f"Kamu bisa mengulang kuis ini mulai {retry_at.date().isoformat()}.")
 
@@ -342,7 +349,17 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
     if not attempt or attempt.seeker_id != seeker.id:
         raise QuizError(404, "Kuis tidak ditemukan.")
     if attempt.submitted_at is not None:
-        raise QuizError(409, "Kuis ini sudah dikumpulkan.")
+        return {
+            "attempt_id": attempt.id,
+            "skill": attempt.skill,
+            "score": attempt.score or 0,
+            "total": len(attempt.question_ids),
+            "passed": bool(attempt.passed),
+            "late": attempt.status == "abandoned",
+            "correct": [],
+            "proof_granted": bool(attempt.passed and getattr(attempt, "proof_eligible", True)),
+            "retake_after_days": None if attempt.passed else RETAKE_DAYS,
+        }
 
     now = datetime.now(UTC)
     late = now > _aware(attempt.deadline_at) + timedelta(seconds=GRACE_SECONDS)
@@ -359,6 +376,7 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
     score = sum(correct_flags)
     attempt.answers = [int(a) for a in answers[: len(attempt.question_ids)]]
     attempt.submitted_at = now
+    attempt.status = "submitted"
     attempt.score = score
     attempt.passed = score >= PASS_MARK
     await repos.quiz_attempts.upsert(attempt)
@@ -378,6 +396,33 @@ async def submit_quiz(seeker: SeekerProfile, attempt_id: str, answers: list[int]
         "correct": correct_flags,  # which were right — never which option was right
         "proof_granted": bool(attempt.passed and getattr(attempt, "proof_eligible", True)),
         "retake_after_days": None if attempt.passed else RETAKE_DAYS,
+    }
+
+
+async def abandon_quiz(seeker: SeekerProfile, attempt_id: str, elapsed_seconds: int | None = None) -> dict:
+    repos = store.get_repositories()
+    attempt = await repos.quiz_attempts.get(attempt_id)
+    if not attempt or attempt.seeker_id != seeker.id:
+        raise QuizError(404, "Kuis tidak ditemukan.")
+    if attempt.submitted_at is not None:
+        return {"attempt_id": attempt.id, "status": getattr(attempt, "status", "submitted") or "submitted", "used_attempt": False}
+
+    now = datetime.now(UTC)
+    elapsed = max(0, int(elapsed_seconds)) if elapsed_seconds is not None else int((now - _aware(attempt.created_at)).total_seconds())
+    if elapsed < ABANDON_AFTER_SECONDS:
+        return {"attempt_id": attempt.id, "status": "in_progress", "used_attempt": False}
+
+    attempt.answers = [int(a) for a in getattr(attempt, "answers", []) or []]
+    attempt.submitted_at = now
+    attempt.status = "abandoned"
+    attempt.score = 0
+    attempt.passed = False
+    await repos.quiz_attempts.upsert(attempt)
+    return {
+        "attempt_id": attempt.id,
+        "status": "abandoned",
+        "used_attempt": True,
+        "elapsed_seconds": elapsed,
     }
 
 

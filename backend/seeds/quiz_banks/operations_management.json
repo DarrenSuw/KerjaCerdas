@@ -1,0 +1,306 @@
+{
+  "skill": "Operations Management",
+  "skill_key": "operations management",
+  "questions": [
+    {
+      "question": "Perusahaan jasa ekspedisi menghadapi komplain tinggi karena kurir sering gagal melakukan pengiriman paket karena alamat tidak ditemukan. Intervensi operasional manakah yang paling akurat untuk menyelesaikan masalah ini?",
+      "options": [
+        "Mewajibkan pelanggan melampirkan titik koordinat GPS yang valid saat order",
+        "Memberikan denda finansial kepada kurir yang gagal mengantar paket",
+        "Menghapus area pengiriman di luar wilayah pusat kota besar",
+        "Menggunakan armada motor berkapasitas lebih besar untuk setiap rute"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik garmen di Cikarang mengalami keterlambatan pengiriman ekspor karena bottleneck pada lini jahit. Supervisor melaporkan operator sering menunggu potongan kain dari bagian cutting. Langkah perbaikan operasional paling tepat yang harus Anda ambil adalah",
+      "options": [
+        "Menambah jumlah mesin jahit baru untuk mempercepat proses produksi akhir",
+        "Menerapkan sistem Kanban untuk menyeimbangkan aliran kerja cutting dan jahit",
+        "Memberikan pelatihan menjahit lanjutan bagi seluruh operator lini produksi",
+        "Meminta bagian cutting bekerja lembur setiap hari tanpa membatasi WIP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah manajer operasional gudang e-commerce di Surabaya yang menghadapi lonjakan pesanan 300% saat kampanye harbolnas. Kapasitas packing harian saat ini hanya 5.000 paket, sementara proyeksi pesanan mencapai 15.000 paket per hari. Keputusan taktis manakah yang paling efektif diambil?",
+      "options": [
+        "Membatasi jumlah pesanan harian yang masuk agar tidak terjadi penumpukan",
+        "Menyewa staf temporer dan menyederhanakan proses standardisasi pengepakan",
+        "Memperluas area fisik gudang dengan menyewa 2 ruko tambahan di sekitar",
+        "Mengganti seluruh sistem software manajemen gudang dengan versi terbaru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Restoran cepat saji di Jakarta Selatan mencatat waktu tunggu pelanggan saat jam makan siang mencapai 25 menit, jauh di atas SLA internal 10 menit. Analisis menunjukkan proses pembayaran di kasir menjadi hambatan utama. Solusi operasional mana yang paling tepat diterapkan?",
+      "options": [
+        "Menambah jumlah koki di dapur untuk mempercepat penyusunan makanan",
+        "Mengintegrasikan mesin pemesanan mandiri dan pembayaran digital non-tunai",
+        "Memberikan sanksi pemotongan bonus bagi kasir yang bekerja lambat",
+        "Menaikkan harga menu makan siang untuk menekan jumlah pembeli yang datang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai kepala operasional pabrik pakan ternak, Anda mendapati tingkat kerusakan mesin (downtime) meningkat 15% bulan ini, mengganggu jadwal produksi. Tindakan preventif jangka panjang apa yang harus segera dijadwalkan?",
+      "options": [
+        "Mengganti seluruh mesin produksi dengan model impor buatan Eropa",
+        "Menerapkan program Total Productive Maintenance dan inspeksi rutin berkala",
+        "Meminta operator mesin bekerja dua kali lebih teliti saat shift malam",
+        "Mengurangi kecepatan putaran mesin hingga kapasitas maksimal turun 30%"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Jakarta menghadapi masalah biaya bahan bakar yang membengkak akibat rute pengiriman kurir yang tidak efisien. Langkah analitis pertama yang harus dilakukan manajer operasional adalah",
+      "options": [
+        "Menaikkan tarif pengiriman kepada seluruh pelanggan secara merata",
+        "Menganalisis data historis pengiriman menggunakan perangkat lunak rute",
+        "Mengganti seluruh armada truk box dengan kendaraan roda tiga listrik",
+        "Memecat sopir yang mencatatkan konsumsi bahan bakar paling boros"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit kualitas pada lini perakitan komponen elektronik di Batam, ditemukan tingkat cacat (defect rate) produk naik dari 1% menjadi 4%. Pendekatan pertama yang paling tepat untuk mencari akar masalah adalah",
+      "options": [
+        "Menghentikan sementara lini produksi dan menggunakan metode 5 Whys",
+        "Melakukan pemutusan hubungan kerja terhadap tim pengendali kualitas",
+        "Mengimpor bahan baku dari supplier lain tanpa melakukan evaluasi",
+        "Menurunkan target produksi harian sebesar 50% untuk mengurangi beban"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah rumah sakit swasta di Bandung mengalami keluhan panjangnya antrean pasien di Instalasi Farmasi pada jam 16.00 - 19.00. Analisis menunjukkan kedatangan resep dari poliklinik menumpuk di waktu yang sama. Kebijakan manajemen antrean apa yang paling efektif?",
+      "options": [
+        "Menutup layanan farmasi lebih awal agar staf tidak bekerja terlalu lelah",
+        "Menjadwalkan ulang jam buka poliklinik untuk meratakan beban kerja apotek",
+        "Menambah jumlah apoteker shift malam sebanyak tiga kali lipat dari biasa",
+        "Meniadakan layanan tebus resep obat luar dan fokus pada pasien rawat inap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pabrik komponen otomotif di Karawang memiliki tingkat perputaran persediaan (inventory turnover) bahan baku yang sangat rendah, menyebabkan biaya penyimpanan tinggi. Strategi pengadaan yang harus diadopsi oleh manajer rantai pasok adalah",
+      "options": [
+        "Membeli bahan baku dalam jumlah besar sekaligus untuk mendapat diskon",
+        "Menerapkan sistem pengadaan tepat waktu atau Just-In-Time dengan vendor",
+        "Menyewa gudang tambahan di luar area pabrik untuk menampung stok",
+        "Menghentikan produksi komponen tertentu yang permukaannya kurang stabil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah hotel bintang empat di Yogyakarta kesulitan mempertahankan standar kebersihan kamar karena tingginya tingkat hunian dan jumlah staf housekeeping yang terbatas. Solusi manajerial terbaik untuk mengatasi kendala operasional ini adalah",
+      "options": [
+        "Mengurangi waktu operasional layanan kamar untuk tamu secara drastis",
+        "Meninjau ulang proses kerja dan menjalin kerjasama dengan agensi outsourcing",
+        "Meminta staf housekeeping yang ada menyelesaikan dua kali lipat kamar",
+        "Menaikkan tarif kamar agar jumlah tamu yang menginap berkurang drastis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pusat distribusi retail di Cibitung menghadapi masalah tingginya tingkat kesalahan pengambilan barang (picking error) oleh staf gudang yang memicu retur dari toko. Langkah operasional awal apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Memberikan sanksi potong gaji kepada staf yang sering salah ambil barang",
+        "Menerapkan sistem verifikasi barcode ganda pada setiap proses pengambilan",
+        "Menambah jumlah tenaga kerja temporer untuk mempercepat proses",
+        "Memindahkan lokasi penyimpanan barang slow-moving ke area depan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional pabrik makanan ringan di Bogor mendapati bahwa kapasitas mesin pengemasan sering tidak seimbang dengan kecepatan lini produksi sebelumnya, menyebabkan penumpukan produk setengah jadi. Tindakan perbaikan manakah yang paling efektif secara jangka panjang?",
+      "options": [
+        "Melakukan penyeimbangan lini produksi untuk menyelaraskan kapasitas",
+        "Menurunkan kecepatan mesin produksi awal agar sesuai dengan mesin akhir",
+        "Menyimpan produk setengah jadi di area koridor sampai mesin siap",
+        "Mengurangi jumlah shift kerja harian untuk menekan volume produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur furnitur di Semarang mengalami peningkatan waktu siklus (cycle time) produksi akibat lamanya perpindahan material antar stasiun kerja. Solusi tata letak (layout) apa yang sebaiknya diterapkan?",
+      "options": [
+        "Mengubah tata letak pabrik menjadi berbasis proses untuk fleksibilitas",
+        "Menggunakan tata letak berbasis produk untuk aliran material yang linier",
+        "Memusatkan seluruh bahan baku di satu titik gudang yang sangat jauh",
+        "Menempatkan mesin-mesin utama secara acak berdasarkan ukuran fisik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengelola proyek peluncuran lini produk baru di pabrik perakitan elektronik di Tangerang. Terjadi potensi keterlambatan pada jalur kritis (critical path) proyek tersebut. Apa langkah manajerial yang harus segera diambil?",
+      "options": [
+        "Menambah sumber daya pada aktivitas yang berada di jalur kritis proyek",
+        "Memperpanjang durasi aktivitas yang tidak berada di jalur non-kritis",
+        "Menghentikan seluruh aktivitas proyek sementara untuk evaluasi ulang",
+        "Mengalihkan anggaran proyek dari pemasaran ke bagian operasional pabrik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan agribisnis di Medan menghadapi masalah tingginya tingkat pembusukan buah segar selama proses penyimpanan di gudang sebelum didistribusikan. Pendekatan manajemen inventaris apa yang paling tepat?",
+      "options": [
+        "Menerapkan metode pencatatan persediaan secara LIFO untuk efisiensi",
+        "Menggunakan prinsip penyimpanan FIFO ketat untuk mempercepat rotasi",
+        "Menghentikan pembelian stok baru sampai gudang benar-benar kosong",
+        "Menurunkan suhu ruangan gudang secara ekstrem tanpa memperhitungkan jenis buah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kepala pabrik tekstil di Solo mencatat bahwa biaya pemeliharaan mesin (maintenance cost) terus melonjak karena sering terjadi kerusakan mendadak. Kebijakan pemeliharaan seperti apa yang harus segera diadopsi?",
+      "options": [
+        "Menunggu sampai mesin benar-benar rusak total sebelum melakukan servis",
+        "Mengganti seluruh komponen mesin secara bersamaan setiap akhir tahun",
+        "Menerapkan jadwal pemeliharaan preventif berkala berdasarkan jam operasional",
+        "Menyerahkan seluruh urusan perbaikan mesin kepada operator lini produksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur komponen logam di Malang mendapati tingkat sisa bahan baku (scrap rate) meningkat tajam pada proses pemotongan presisi. Langkah pengendalian kualitas apa yang paling tepat dilakukan?",
+      "options": [
+        "Menggunakan metode statistik untuk mengidentifikasi akar penyebab cacat",
+        "Membiarkan tingkat scrap tinggi karena sudah dianggarkan dalam biaya produksi",
+        "Menaikkan harga jual produk akhir untuk menutupi kerugian bahan baku",
+        "Mengurangi jam istirahat operator mesin pemotong agar lebih fokus bekerja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Unit layanan pelanggan sebuah perusahaan telekomunikasi di Jakarta mengalami lonjakan volume panggilan masuk pada awal bulan yang menyebabkan waktu tunggu antrean sangat lama. Strategi manajemen kapasitas apa yang paling efektif?",
+      "options": [
+        "Merekrut agen permanen dalam jumlah besar untuk menangani puncak bulanan",
+        "Menjadwalkan agen paruh waktu tambahan khusus pada periode lonjakan awal bulan",
+        "Menutup layanan telepon dan memaksa pelanggan datang langsung ke kantor",
+        "Memperpanjang durasi rata-rata penanganan per pelanggan agar lebih teliti"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur bahan kimia di Gresik sering kehabisan bahan baku pendukung kritis akibat proses pemesanan ulang yang lambat dari bagian pengadaan. Tindakan operasional apa yang harus diterapkan?",
+      "options": [
+        "Menetapkan titik pemesanan ulang (reorder point) otomatis berdasarkan lead time",
+        "Melakukan pemesanan bahan baku dalam jumlah kecil setiap hari secara manual",
+        "Menghapus kebutuhan bahan baku tersebut dari seluruh formula produk",
+        "Menunggu hingga stok fisik di gudang mencapai angka nol sebelum memesan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional perusahaan percetakan komersial di Denpasar ingin mengurangi pemborosan (waste) di lantai produksi berdasarkan prinsip lean manufacturing. Langkah awal manakah yang paling esensial?",
+      "options": [
+        "Membeli mesin cetak baru berteknologi tinggi dari luar negeri",
+        "Memetakan alur nilai (value stream mapping) untuk mengidentifikasi aktivitas tanpa nilai tambah",
+        "Mengurangi jumlah inspekturnya agar proses cetak berjalan lebih cepat",
+        "Meningkatkan target produksi harian sebesar 50 persen tanpa mengubah metode"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik perakitan sepeda motor di Sunter mengalami masalah penumpukan WIP (Work in Progress) di stasiun kerja pengelasan. Akibatnya, arus kas terganggu dan waktu tunggu produksi meningkat. Langkah operasional apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Mengurangi ukuran batch produksi dan menerapkan sistem tarik (pull system) berbasis Kanban",
+        "Menambah jumlah operator baru di stasiun pengelasan untuk mempercepat proses pembuatan",
+        "Meningkatkan kapasitas mesin pemotongan logam di awal proses agar suplai bahan baku lebih cepat",
+        "Meminta bagian pemasaran untuk memperlambat penjualan produk agar pabrik tidak kewalahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai manajer operasional rantai pasok perusahaan FMCG di Surabaya, Anda mendapati biaya penyimpanan gudang (holding cost) melonjak tajam akibat tingginya stok pengaman (safety stock) untuk produk mie instan. Kebijakan apa yang harus Anda ambil?",
+      "options": [
+        "Menghentikan sementara semua pesanan bahan baku dari pemasok utama hingga stok habis",
+        "Menganalisis variabilitas permintaan dan akurasi lead time untuk mengoptimalkan formula safety stock",
+        "Menyewa gudang tambahan di luar kota untuk menampung kelebihan inventaris yang ada saat ini",
+        "Menaikkan harga jual produk di pasaran guna menutupi biaya penyimpanan yang membengkak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lini pengemasan kopi bubuk di Bandung sering mengalami micro-stops (berhenti singkat namun sering) yang menurunkan Overall Equipment Effectiveness (OEE). Apa tindakan pertama yang paling tepat untuk manajer pemeliharaan?",
+      "options": [
+        "Mengganti seluruh unit mesin pengemasan dengan model terbaru yang berkapasitas lebih tinggi",
+        "Membuat jadwal perbaikan besar (overhaul) total yang dilakukan setiap akhir pekan secara rutin",
+        "Melakukan studi pemetaan aliran nilai untuk mencari akar penyebab kemacetan di lini produksi",
+        "Menerapkan program Autonomous Maintenance agar operator dapat mendeteksi dini anomali mesin"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Manajer pabrik baja di Cilegon menerima laporan bahwa tingkat kecelakaan kerja di lantai produksi meningkat dalam tiga bulan terakhir. Pendekatan operasional mana yang harus diprioritaskan untuk memperbaiki situasi ini?",
+      "options": [
+        "Memberikan sanksi pemotongan gaji secara tegas kepada karyawan yang mengabaikan protokol",
+        "Membentuk tim lintas fungsi untuk melakukan audit keselamatan kerja dan mitigasi bahaya",
+        "Menghentikan seluruh aktivitas operasional pabrik sampai proses investigasi selesai dilakukan",
+        "Mengurangi jam kerja operasional harian guna meminimalisir kelelahan fisik para pekerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur komponen pesawat di Batam menghadapi masalah tingginya variasi hasil produk akhir karena keausan alat potong (cutting tool). Langkah pengendalian kualitas apa yang paling tepat diterapkan?",
+      "options": [
+        "Menerapkan sistem penggantian alat potong terencana berdasarkan jumlah siklus pemakaian mesin",
+        "Melakukan pemeriksaan visual secara manual pada 100 persen produk jadi sebelum dikirim",
+        "Meminta teknisi melakukan kalibrasi ulang pada seluruh mesin pabrik setiap enam bulan sekali",
+        "Mengganti semua bahan baku logam dengan spesifikasi yang lebih lunak agar alat lebih awet"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pusat fulfillment e-commerce di Cakung mengalami lonjakan tingkat pengembalian barang (return rate) dari pelanggan akibat kesalahan jenis produk yang dikirim. Strategi perbaikan proses apa yang harus segera dieksekusi?",
+      "options": [
+        "Menambah jumlah staf bagian layanan pelanggan untuk mempercepat penanganan retur",
+        "Mengintegrasikan sistem pemindai barcode (barcode scanner) pada tahap pengemasan akhir",
+        "Memberikan pelatihan intensif kepada seluruh kurir pengiriman mengenai penanganan paket",
+        "Membatasi jenis produk tertentu yang boleh dipesan oleh pelanggan melalui aplikasi online"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik pengolahan kelapa sawit di Riau mengalami hambatan operasional karena pasokan tandan buah segar dari kebun mitra sering datang terlambat dan tidak menentu. Solusi manajemen operasional apa yang paling strategis?",
+      "options": [
+        "Membangun kerja sama kemitraan jangka panjang dan menetapkan SLA pengiriman yang tegas",
+        "Membeli armada truk sendiri dalam jumlah besar untuk mengambil langsung buah ke kebun",
+        "Mengurangi kapasitas produksi pabrik agar sesuai dengan jumlah pasokan harian yang minim",
+        "Mencari pasokan alternatif dari luar negeri dengan harga yang lebih kompetitif di pasar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek ekspansi pabrik perakitan AC di Bekasi, jadwal penyelesaian meleset dari target awal (delay). Sebagai manajer proyek, teknik analisis apa yang harus digunakan untuk mengidentifikasi aktivitas kritis?",
+      "options": [
+        "Menghitung titik impas (break-even point) dari investasi tambahan alat berat di pabrik",
+        "Melakukan analisis diagram Pareto untuk mencari jenis kerusakan komponen mesin terbanyak",
+        "Menggunakan metode Jalur Kritis (Critical Path Method) guna melihat urutan tugas penentu",
+        "Menerapkan prinsip 5S secara ketat di seluruh area konstruksi dan perakitan yang tertunda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik farmasi di Jakarta Timur mendapati kapasitas produksi lini sirup batuk tidak dapat memenuhi proyeksi permintaan musim hujan. Apa langkah kapasitas (capacity planning) jangka pendek yang paling rasional?",
+      "options": [
+        "Menambah jam kerja lembur (overtime) dan membuka shift kerja tambahan bagi operator",
+        "Membangun fasilitas gedung pabrik baru di kawasan industri lain yang lahannya luas",
+        "Melakukan diversifikasi produk dengan meluncurkan lini obat tablet penurun panas",
+        "Mengurangi volume kemasan botol produk agar jumlah unit yang dihasilkan terlihat naik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional galangan kapal di Surabaya mendapati biaya material sisa (scrap) dari pemotongan pelat baja sangat tinggi. Program perbaikan apa yang paling tepat untuk mengurangi pemborosan tersebut?",
+      "options": [
+        "Memberikan bonus insentif finansial harian kepada tim pemotong yang bekerja paling cepat",
+        "Mengoptimalkan perangkat lunak penelusuran pola potong (nesting software) untuk tata letak pelat",
+        "Mengganti pemasok pelat baja dengan vendor lain yang menawarkan harga bahan lebih murah",
+        "Mengirim seluruh teknisi pemotongan untuk mengikuti pelatihan sertifikasi keselamatan kerja"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Deep Learning",
+  "skill_key": "deep learning",
+  "questions": [
+    {
+      "question": "Tim AI sebuah e-commerce lokal mendapati model klasifikasi gambar produk sering salah mengenali kategori saat foto diambil dalam kondisi kurang cahaya di gudang. Langkah awal apa yang paling efektif untuk mengatasi masalah ini di level data?",
+      "options": [
+        "Mengganti arsitektur jaringan saraf tiruan dengan model yang memiliki jumlah lapisan lebih dalam",
+        "Melakukan augmentasi data seperti penyesuaian kecerahan, kontras, dan penambahan noise",
+        "Menambah ukuran batch saat pelatihan agar gradien pembaruan bobot lebih stabil",
+        "Meningkatkan learning rate secara drastis untuk mempercepat konvergensi model"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model deteksi objek untuk sistem tilang elektronik. Loss function untuk komponen bounding box terus menurun, namun nilai mAP (mean Average Precision) pada data validasi stagnan. Apa diagnosis yang paling tepat?",
+      "options": [
+        "Model mengalami overfitting parah karena data pelatihan terlalu sedikit",
+        "Learning rate terlalu tinggi sehingga melompati titik optimal global",
+        "Metrik evaluasi tidak selaras dengan objektif loss lokalisasi spasial",
+        "Proporsi background pada data validasi kurang merepresentasikan kondisi jalan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi mobile fintech ingin menerapkan model NLP untuk analisis sentimen ulasan pengguna. Model berukuran 1.2 GB berjalan sangat lambat di smartphone kelas menengah. Teknik apa yang sebaiknya diaplikasikan sebelum deployment?",
+      "options": [
+        "Melakukan fine-tuning ulang menggunakan dataset ulasan yang lebih spesifik",
+        "Menerapkan post-training quantization untuk mengubah bobot ke integer 8-bit",
+        "Menambahkan mekanisme dropout pada setiap lapisan tersembunyi transformer",
+        "Mengganti optimizer dari AdamW menjadi SGD dengan momentum konstan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda melatih model deep learning untuk prediksi churn pelanggan telekomunikasi. Akurasi model mencapai 96%, namun setelah dicek pada confusion matrix, model gagal mendeteksi satupun pelanggan yang benar-benar churn. Apa tindakan perbaikan utama yang harus dilakukan?",
+      "options": [
+        "Mengubah fungsi aktivasi output dari sigmoid menjadi relu",
+        "Menambah jumlah hidden units pada setiap lapisan fully connected",
+        "Menggunakan teknik penanganan imbalanced data seperti SMOTE atau class weight",
+        "Melakukan normalisasi z-score pada semua fitur numerik input"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melatih model Convolutional Neural Network (CNN) yang cukup dalam untuk klasifikasi dokumen, proses training tiba-tiba berhenti belajar dan nilai loss menjadi NaN pada iterasi ke-50. Apa penyebab teknis yang paling umum untuk kasus ini?",
+      "options": [
+        "Ukuran mini-batch terlalu kecil untuk merepresentasikan keseluruhan populasi",
+        "Nilai learning rate terlalu besar yang menyebabkan ledakan gradien (exploding gradient)",
+        "Distribusi data pelatihan tidak memiliki variansi yang cukup antar kelas",
+        "Penggunaan fungsi loss categorical cross-entropy pada label one-hot encoding"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan logistik ingin memprediksi waktu pengiriman paket berdasarkan data historis. Model LSTM yang dibuat menunjukkan performa sangat baik pada data training, tetapi error-nya sangat tinggi pada data uji bulan berikutnya. Strategi apa yang paling tepat?",
+      "options": [
+        "Menambahkan lapisan recurrent tambahan untuk menangkap pola temporal kompleks",
+        "Menerapkan regularisasi L2 dan teknik dropout pada gerbang LSTM",
+        "Menggunakan teknik early stopping berdasarkan loss pada set validasi temporal",
+        "Menghapus fitur tanggal dan waktu pengiriman dari rangkaian input"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mendeploy model rekomendasi berbasis deep learning ke server produksi dengan latensi tinggi. Backend menggunakan PyTorch. Apa pendekatan terbaik untuk optimasi inference di lingkungan production?",
+      "options": [
+        "Menyimpan model dalam format TorchScript dan melakukan tracing atau scripting",
+        "Menulis ulang seluruh arsitektur model menggunakan bahasa pemrograman C puro",
+        "Melakukan retraining model menggunakan seluruh dataset tanpa membagi validation set",
+        "Meningkatkan kapasitas RAM server dan mengaktifkan garbage collector otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Computer Vision untuk menghitung jumlah kendaraan di jalan tol, model mengalami penurunan performa secara perlahan setelah beroperasi selama tiga bulan akibat perubahan cuaca musim hujan. Bagaimana solusi jangka panjang terbaik untuk masalah ini?",
+      "options": [
+        "Melakukan hard coding aturan tambahan pada post-processing bounding box",
+        "Mengimplementasikan pipeline MLOps untuk continuous monitoring dan retraining berkala",
+        "Menurunkan ambang batas confidence threshold pada algoritma Non-Maximum Suppression",
+        "Mengganti seluruh arsitektur backbone dengan model transformer-based terbaru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup kesehatan digital melatih model klasifikasi X-ray paru-paru dengan dataset yang sangat terbatas (hanya 300 gambar). Strategi transfer learning mana yang paling optimal untuk menghindari overfitting?",
+      "options": [
+        "Melatih seluruh bobot dari scratch menggunakan arsitektur ResNet-50 yang dalam",
+        "Membekukan (freeze) lapisan konvolusional dasar dan hanya melatih lapisan classifier baru",
+        "Menghapus fungsi aktivasi batch normalization dari seluruh blok residual",
+        "Menggunakan optimizer Adamax dengan weight decay bernilai nol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan sistem chatbot menggunakan Large Language Model (LLM) open-source untuk layanan pelanggan perbankan. Model sering memberikan jawaban halusinasi terkait produk investasi. Metode apa yang paling efektif untuk memitigasi hal ini tanpa melatih ulang model?",
+      "options": [
+        "Meningkatkan parameter temperature pada fungsi sampling teks menjadi 1.0",
+        "Menerapkan pendekatan Retrieval-Augmented Generation (RAG) dengan database SOP resmi",
+        "Menambahkan instruksi system prompt yang sangat panjang tanpa contoh konkret",
+        "Mengubah metode tokenisasi dari Byte-Pair Encoding menjadi WordPiece standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Computer Vision Anda sedang mengembangkan sistem pengenalan wajah untuk absensi karyawan kantor yang baru. Saat diuji pada jam 8 pagi di lobi gedung, tingkat kesalahan verifikasi meningkat drastis dibandingkan saat pengujian di ruang lab. Apa langkah perbaikan praktis yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti arsitektur model dengan menambah jumlah layer Fully Connected agar ekstraksi fitur wajah lebih kompleks",
+        "Melakukan augmentasi data pencahayaan ekstrem dan variasi bayangan pada dataset latih sebelum fine-tuning ulang",
+        "Menurunkan ambang batas (threshold) cosine similarity pada tahap pencocokan vektor embedding wajah karyawan",
+        "Menghapus fitur normalisasi piksel pada fase preprocessing agar rentang nilai input sesuai dengan data lab"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi ride-hailing menggunakan model deep learning untuk memprediksi ETA (Estimated Time of Arrival). Selama musim hujan di Jakarta, performa model memburuk secara signifikan karena kemacetan yang tidak biasa. Bagaimana strategi terbaik untuk memperbarui model tanpa merusak performa pada hari normal?",
+      "options": [
+        "Melatih ulang model dari awal menggunakan seluruh data historis termasuk data cuaca ekstrem selama lima tahun",
+        "Menambahkan bobot penalti khusus pada loss function untuk rute yang melalui area rawan banjir saat hujan",
+        "Melakukan fine-tuning secara berkala menggunakan data dari minggu-minggu terakhir yang memiliki kondisi hujan",
+        "Mengganti seluruh arsitektur jaringan saraf tiruan dari LSTM menjadi Transformer murni untuk deret waktu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati model deteksi penipuan transaksi kartu kredit mengalami *overfitting* yang parah karena data transaksi curang sangat sedikit (1%). Model menghasilkan banyak *False Positive* pada data produksi. Pendekatan apa yang paling efektif untuk diterapkan pada proses training?",
+      "options": [
+        "Mengubah fungsi aktivasi pada layer output dari Sigmoid menjadi ReLU agar gradien tidak mengalami vanishing",
+        "Menerapkan teknik Focal Loss dan *oversampling* pada kelas minoritas menggunakan metode sintetik seperti SMOTE",
+        "Menghapus fitur numerik dengan variansi rendah dan melatih ulang model menggunakan arsitektur Random Forest",
+        "Meningkatkan ukuran batch size dan menurunkan learning rate secara eksponensial pada setiap epoch"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online ingin mengotomatisasi kategorisasi artikel panjang menggunakan model BERT. Saat proses tokenisasi, banyak teks terpotong karena melebihi batas maksimum 512 token, sehingga informasi penting di akhir artikel hilang. Solusi arsitektural mana yang paling tepat?",
+      "options": [
+        "Menggunakan pendekatan Hierarchical Attention Network untuk merangkum bagian per bagian sebelum diklasifikasi",
+        "Memperpanjang ukuran positional embedding BERT secara manual hingga 2048 token dan melatih ulang dari nol",
+        "Menghapus kata-kata penghubung dan stop words agar semua artikel dapat masuk dalam batas 512 token",
+        "Memecah teks menjadi dua bagian terpisah dan merata-ratakan probabilitas hasil prediksi kedua model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melatih model Generative Adversarial Network (GAN) untuk menghasilkan desain batik modern. Proses training mengalami *mode collapse*, di mana Generator terus menerus menghasilkan satu jenis pola batik yang sama persis. Tindakan mitigasi apa yang harus diambil?",
+      "options": [
+        "Menurunkan kapasitas jaringan Discriminator agar tidak terlalu cepat mendeteksi hasil tiruan Generator",
+        "Menambahkan regularisasi L2 pada bobot layer Generator untuk mencegah parameter bernilai terlalu besar",
+        "Mengganti fungsi loss standar dengan Wasserstein GAN dengan Gradient Penalty (WGAN-GP)",
+        "Memperbesar ukuran learning rate pada optimizer Adam untuk kedua jaringan secara bersamaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah bank digital ingin mendeteksi pengisian formulir aplikasi online yang menggunakan KTP palsu. Anda melatih model CNN untuk mendeteksi manipulasi digital pada gambar KTP. Model sangat akurat pada data internal, tetapi gagal total ketika mendeteksi foto KTP yang diambil kamera smartphone buram di lapangan. Apa solusi yang paling tepat?",
+      "options": [
+        "Menambahkan layer Dropout sebesar 0.5 di setiap akhir blok konvolusi untuk mencegah menghafal noise",
+        "Melakukan augmentasi data berupa *blur*, *gaussian noise*, dan kompresi JPEG acak pada data latih",
+        "Mengonversi seluruh citra KTP ke format grayscale dan memperbesar resolusinya menggunakan interpolasi kubik",
+        "Mengganti fungsi loss dari Cross-Entropy menjadi Mean Squared Error agar penalaran piksel lebih stabil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek sistem rekomendasi e-commerce berbasis Deep Learning (Two-Tower Neural Network), metrik Recall@K pada lingkungan produksi jauh lebih rendah daripada saat evaluasi offline. Analisis apa yang paling mungkin menjadi penyebab utama masalah ini?",
+      "options": [
+        "Terjadinya *feature drift* antara distribusi data interaksi pengguna saat training dan saat inferensi *real-time*",
+        "Penggunaan fungsi aktivasi ReLU yang menyebabkan banyak neuron mati pada tower item rekomendasi",
+        "Ukuran *embedding dimension* yang terlalu kecil sehingga kapasitas representasi item tidak mencukupi",
+        "Jumlah epoch training yang berlebihan sehingga model mengalami *overfitting* pada data keranjang belanja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertugas mendeploy model deep learning untuk penerjemah bahasa daerah ke Bahasa Indonesia pada perangkat edge IoT dengan sumber daya memori yang sangat terbatas. Teknik apa yang harus diterapkan pada model sebelum deployment?",
+      "options": [
+        "Melakukan *Quantization-Aware Training* (QAT) untuk mengubah presisi bobot model dari FP32 ke INT8",
+        "Menambahkan layer Batch Normalization di antara setiap layer Transformer untuk mempercepat inferensi",
+        "Melakukan *Knowledge Distillation* dengan melatih model kecil sebagai student menggunakan model besar sebagai teacher",
+        "Mengubah seluruh arsitektur model dari berbasis sekuensial menjadi berbasis Convolutional 1D murni"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan agrikultur menggunakan citra drone untuk menghitung estimasi hasil panen padi. Model regresi CNN yang dibuat menunjukkan nilai Loss training yang terus menurun, namun Loss pada data validasi justru berfluktuasi naik tajam setelah epoch ke-10. Strategi apa yang paling tepat diterapkan segera?",
+      "options": [
+        "Mengganti optimizer dari Adam menjadi SGD dengan momentum konstan agar konvergensi lebih halus",
+        "Menerapkan *Early Stopping* berdasarkan pantauan Validation Loss serta menambahkan *learning rate scheduler*",
+        "Menghapus teknik augmentasi data rotasi karena dianggap merusak orientasi spasial tanaman padi",
+        "Menambah jumlah layer konvolusi dan memperbesar ukuran *kernel* untuk menangkap pola yang lebih luas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim *data science* Anda mendapati bahwa model deteksi anomali berbasis Autoencoder untuk jaringan telekomunikasi menghasilkan tingkat *False Alarm* yang terlalu tinggi pada malam hari karena lonjakan trafik rutin. Bagaimana cara mengatasi masalah ini secara efektif?",
+      "options": [
+        "Menaikkan ambang batas (threshold) rekonstruksi error khusus pada rentang waktu jam malam tertentu",
+        "Menambahkan variabel waktu dan hari sebagai fitur tambahan ke dalam input arsitektur Autoencoder",
+        "Mengganti arsitektur Autoencoder konvensional dengan Variational Autoencoder (VAE) berbasis Gaussian",
+        "Menurunkan bobot *latent space dimension* agar model hanya mempelajari pola trafik yang paling dominan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edutech melatih model Transformer untuk mendeteksi tingkat kebosanan siswa dari ekspresi wajah secara real-time di video konferensi. Saat diuji pada perangkat laptop siswa kelas menengah ke bawah yang spesifikasinya beragam, frame rate turun drastis hingga di bawah 10 FPS. Langkah apa yang paling efektif untuk mengatasi latensi ini tanpa merombak arsitektur dasar?",
+      "options": [
+        "Mengonversi bobot model ke format FP16 atau INT8 menggunakan Post-Training Quantization",
+        "Menambahkan lapisan Dropout tambahan pada akhir jaringan untuk mengurangi komputasi",
+        "Memperbesar ukuran batch saat inferensi agar pemrosesan GPU menjadi lebih optimal",
+        "Melatih ulang seluruh model dari awal menggunakan fungsi loss MSE alih-alih Cross-Entropy"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan model deep learning untuk memprediksi risiko gagal bayar pinjaman mikro di platform P2P lending. Karena data historis peminjam sangat minim, Anda menggunakan pendekatan transfer learning dengan pre-trained model dari data finansial global. Namun, model menunjukkan performa buruk pada UMKM di luar pulau Jawa. Apa akar masalah utama yang harus ditangani?",
+      "options": [
+        "Terjadi vanishing gradient pada lapisan terluar akibat proses fine-tuning yang terlalu cepat",
+        "Distribusi data antara domain sumber global dan domain target lokal memiliki covariate shift",
+        "Kurva learning rate terlalu besar sehingga model melompati titik global minimum loss",
+        "Proporsi label target pada data validasi tidak seimbang sehingga akurasi menjadi bias"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup rantai pasok membangun model regresi berbasis GNN (Graph Neural Network) untuk memprediksi kemacetan jalur distribusi logistik antarkota di Indonesia. Ketika epoch training ditambah, nilai training loss terus menurun secara stabil, namun validation loss mulai berfluktuasi naik secara signifikan setelah epoch ke-15. Tindakan pencegahan apa yang paling tepat diterapkan?",
+      "options": [
+        "Menaikkan nilai learning rate secara eksponensial pada setiap kelipatan lima epoch",
+        "Mengganti fungsi aktivasi ReLU dengan Sigmoid pada seluruh lapisan tersembunyi",
+        "Menghentikan pelatihan lebih awal dengan memantau metrik pada validation loss",
+        "Menghapus mekanisme batch normalization untuk mempercepat konvergensi data spasial"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memimpin proyek pembuatan sistem peringatan dini banjir berbasis deep learning menggunakan data sensor tinggi air sungai historis. Model LSTM yang Anda rancang sering gagal mendeteksi lonjakan debit air ekstrem yang terjadi secara tiba-tiba akibat hujan deras lokal, meskipun tren mingguan terbaca dengan baik. Bagaimana cara memperbaiki sensitivitas model terhadap anomali ekstrem ini?",
+      "options": [
+        "Mengubah arsitektur menjadi model DenseNet untuk menangkap fitur spasial gambar citra satelit",
+        "Menambahkan bobot penalti yang lebih tinggi pada error prediksi nilai ekstrem di loss function",
+        "Memotong panjang sequence input agar memori komputasi tidak terbebani data masa lalu",
+        "Melakukan downsampling pada data mayoritas agar proporsi data banjir dan normal seimbang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan media daring meluncurkan fitur ringkasan otomatis artikel berita menggunakan model seq2seq berbasis encoder-decoder. Hasil evaluasi manusia menunjukkan bahwa ringkasan sering kali mengulang kalimat yang sama atau keluar dari konteks fakta aslinya. Strategi decoding manakah yang paling tepat disetel untuk mengurangi masalah halusinasi teks ini?",
+      "options": [
+        "Menggunakan teknik nucleus sampling dengan parameter top-p dan menurunkan nilai temperature",
+        "Meningkatkan ukuran hidden state pada encoder secara drastis untuk memperluas kapasitas memori",
+        "Mengganti optimizer dari Adam menjadi SGD dengan momentum konstan untuk menghindari lokal minimum",
+        "Menghapus seluruh stop-words dari dokumen sumber sebelum kalimat dimasukkan ke dalam tokeniser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda merancang model segmentasi citra medis untuk mendeteksi nodul tuberkulosis pada hasil rontgen paru-paru rumah sakit daerah. Citra yang masuk memiliki kualitas pencahayaan yang sangat bervariasi karena perbedaan spesifikasi mesin X-ray. Pendekatan preprocessing apa yang wajib dimasukkan dalam pipeline deep learning?",
+      "options": [
+        "Melakukan rotasi acak dan flipping horizontal pada setiap batch data latih secara real-time",
+        "Menerapkan augmentasi warna HSV secara agresif untuk mengubah warna dominan citra",
+        "Melakukan normalisasi intensitas piksel dan histogram equalization yang konsisten pada setiap citra",
+        "Mengonversi seluruh citra ke format hitam-putih murni dengan ambang batas biner tetap"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital ingin mendeteksi akun bot yang melakukan pendaftaran massal secara otomatis. Tim menggunakan MLP (Multi-Layer Perceptron) sederhana, tetapi model mendeteksi 99% akun sebagai sah karena jumlah akun normal jauh mendominasi data (extreme class imbalance). Metrik evaluasi apa yang paling tepat dijadikan acuan utama untuk mengoptimalkan model?",
+      "options": [
+        "Akurasi total keseluruhan prediksi benar dibagi jumlah seluruh data uji yang tersedia",
+        "Area Under the Precision-Recall Curve (AUC-PR) karena lebih tahan terhadap data tidak seimbang",
+        "Mean Absolute Error (MAE) untuk mengukur rata-rata selisih mutlak prediksi probabilitas",
+        "Categorical Cross-Entropy loss murni tanpa melihat metrik confusion matrix tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pengenalan suara (Speech-to-Text) untuk bahasa daerah Nusantara, model Conformer sering mengalami lonjakan loss yang tak terduga (exploding gradients) di tengah proses training yang memakan waktu berhari-hari. Langkah teknis apa yang paling efektif untuk meredam ketidakstabilan numerik ini?",
+      "options": [
+        "Menerapkan teknik gradient clipping dengan ambang batas maksimal pada iterasi backpropagation",
+        "Mengganti seluruh fungsi aktivasi linear dengan fungsi non-linear ReLU pada lapisan output",
+        "Menurunkan ukuran batch size sekecil mungkin hingga bernilai satu untuk setiap iterasi",
+        "Menghilangkan lapisan positional encoding agar urutan waktu suara tidak terdistorsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan properti menggunakan model deep learning berbasis tabular data untuk memprediksi harga rumah di berbagai kota besar. Ketika variabel 'kode pos' dimasukkan sebagai fitur kategorikal berdimensi tinggi setelah di-one-hot encoding, ukuran memori RAM server langsung habis saat proses pelatihan. Solusi arsitektural apa yang paling tepat untuk menangani data kardinalitas tinggi ini?",
+      "options": [
+        "Mengubah representasi fitur kategorikal menjadi dense embeddings yang dilatih bersama jaringan",
+        "Membuang seluruh kolom yang memiliki kategori unik lebih dari sepuluh untuk menghemat memori",
+        "Melakukan normalisasi min-max pada nilai kode pos agar berada di rentang angka nol sampai satu",
+        "Menggabungkan seluruh baris data yang memiliki kode pos berbeda menjadi satu kelompok rata-rata"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertugas memelihara model computer vision di pabrik manufaktur otomotif untuk mendeteksi cacat las pada komponen mesin. Model beroperasi secara online dan performanya perlahan menurun setelah beberapa bulan karena ada pembaruan jenis mesin pabrik yang menghasilkan pola kilau cahaya berbeda. Fenomena apa yang sedang terjadi pada model tersebut?",
+      "options": [
+        "Overfitting ekstrem akibat jumlah parameter model terlalu besar dibandingkan jumlah data",
+        "Catastrophic forgetting pada bobot lapisan konvolusional awal yang membeku permanen",
+        "Concept drift pada distribusi data masukan baru yang berbeda dari data saat pelatihan awal",
+        "Underfitting parah karena kapasitas model tidak mampu mempelajari kompleksitas pola las"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

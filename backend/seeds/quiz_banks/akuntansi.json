@@ -1,0 +1,306 @@
+{
+  "skill": "Akuntansi",
+  "skill_key": "akuntansi",
+  "questions": [
+    {
+      "question": "Perusahaan Anda membeli mesin pabrik seharga Rp250.000.000 secara tunai. Selain harga tersebut, terdapat biaya pengiriman Rp5.000.000, biaya instalasi Rp10.000.000, dan PPN masukan atas pembelian Rp27.500.000 yang dapat dikreditkan. Berapakah nilai perolehan aset tetap yang harus dicatat di neraca?",
+      "options": [
+        "Rp250.000.000",
+        "Rp265.000.000",
+        "Rp255.000.000",
+        "Rp292.500.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada tanggal 1 Desember, perusahaan menerima pembayaran sewa ruko sebesar Rp24.000.000 untuk masa satu tahun ke depan dan langsung dicatat sebagai Pendapatan Sewa (Metode Pendapatan). Pada akhir tahun buku 31 Desember, jurnal penyesuaian apa yang harus dibuat oleh bagian akuntansi?",
+      "options": [
+        "Debit Pendapatan Sewa Rp2.000.000 dan Kredit Utang Sewa Rp2.200.000",
+        "Debit Pendapatan Sewa Rp22.000.000 dan Kredit Pendapatan Diterima Dimuka Rp22.000.000",
+        "Debit Sewa Dibayar Dimuka Rp22.000.000 dan Kredit Pendapatan Sewa Rp22.000.000",
+        "Debit Pendapatan Sewa Rp2.000.000 dan Kredit Pendapatan Diterima Dimuka Rp2.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah toko ritel mencatat persediaan menggunakan metode Perpetual FIFO. Pada 5 Januari terdapat stok awal 100 unit @Rp10.000. Pada 10 Januari dibeli 200 unit @Rp12.000. Pada 15 Januari dijual sebanyak 250 unit. Berapakah nilai Harga Pokok Penjualan (HPP) atas transaksi penjualan tersebut?",
+      "options": [
+        "Rp2.800.000",
+        "Rp2.900.000",
+        "Rp2.700.000",
+        "Rp3.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan rekonsiliasi bank untuk bulan Maret, staf akuntansi menemukan adanya cek yang telah diterbitkan perusahaan kepada vendor senilai Rp15.000.000 pada tanggal 20 Maret, namun hingga 31 Maret cek tersebut belum diuangkan oleh vendor ke bank. Bagaimana penyesuaian pada laporan rekonsiliasi?",
+      "options": [
+        "Mengurangi saldo kas menurut catatan perusahaan sebesar Rp15.000.000",
+        "Menambah saldo kas menurut catatan perusahaan sebesar Rp15.000.000",
+        "Mengurangi saldo kas menurut laporan bank sebesar Rp15.000.000",
+        "Menambah saldo kas menurut laporan bank sebesar Rp15.000.000"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan jasa konsultan menyelesaikan proyek senilai Rp50.000.000 pada tanggal 28 November, dan tagihan telah dikirimkan ke klien. Klien baru melakukan pembayaran tunai pada tanggal 15 Desember. Berdasarkan basis akrual, pada bulan apakah pendapatan tersebut wajib diakui?",
+      "options": [
+        "Bulan Desember karena kas sudah diterima penuh",
+        "Bulan November saat pekerjaan selesai dan ditagih",
+        "Dicatat sebagai pendapatan tangguhan di bulan November",
+        "Dibagi rata antara bulan November dan Desember"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Maju Jaya memiliki piutang usaha sebesar Rp200.000.000 pada akhir tahun. Berdasarkan pengalaman historis, perusahaan menetapkan estimasi kerugian penurunan nilai piutang (cadangan piutang tak tertagih) sebesar 3%. Jika sebelum penyesuaian akun cadangan memiliki saldo normal kredit Rp1.500.000, berapakah jurnal penyesuaian yang harus dicatat?",
+      "options": [
+        "Debit Beban Piutang Tak Tertagih Rp6.000.000 dan Kredit Cadangan Rp6.000.000",
+        "Debit Beban Piutang Tak Tertagih Rp4.500.000 dan Kredit Cadangan Rp4.500.000",
+        "Debit Beban Piutang Tak Tertagih Rp7.500.000 dan Kredit Cadangan Rp7.500.000",
+        "Debit Cadangan Piutang Tak Tertagih Rp4.500.000 dan Kredit Piutang Usaha Rp4.500.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah kendaraan operasional dibeli seharga Rp120.000.000 dengan nilai residu Rp20.000.000 dan estimasi masa manfaat 5 tahun. Perusahaan menggunakan metode penyusutan garis lurus. Pada awal tahun ketiga, perusahaan menjual kendaraan tersebut seharga Rp75.000.000 secara tunai. Berapakah laba atau rugi atas pelepasan aset tersebut?",
+      "options": [
+        "Laba sebesar Rp5.000.000",
+        "Rugi sebesar Rp5.000.000",
+        "Laba sebesar Rp15.000.000",
+        "Rugi sebesar Rp15.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proses penyusunan Laporan Arus Kas metode langsung, manakah dari transaksi berikut yang dikategorikan sebagai arus kas dari aktivitas pendanaan?",
+      "options": [
+        "Pembayaran dividen tunai kepada pemegang saham perusahaan",
+        "Pembayaran beban gaji karyawan bagian administrasi dan kantor",
+        "Penerimaan kas dari pelunasan piutang usaha oleh pelanggan",
+        "Pembayaran beban bunga atas pinjaman bank jangka panjang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan memproduksi meja kantor dan menerapkan sistem biaya pesanan (job order costing). Biaya overhead pabrik dibebankan berdasarkan tarif yang ditentukan di depan sebesar 80% dari biaya tenaga kerja langsung. Jika pada suatu pesanan tercatat bahan baku langsung Rp10.000.000 dan tenaga kerja langsung Rp5.000.000, berapakah total biaya produksi untuk pesanan tersebut?",
+      "options": [
+        "Rp14.000.000",
+        "Rp15.000.000",
+        "Rp19.000.000",
+        "Rp23.000.000"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pada akhir periode akuntansi, saldo akun Ikhtisar Laba Rugi menunjukkan sisi kredit lebih besar daripada sisi debit sebelum ditutup. Apa dampak dari kondisi ini terhadap laporan keuangan perusahaan?",
+      "options": [
+        "Perusahaan mengalami rugi bersih dan saldo laba ditahan akan berkurang",
+        "Perusahaan mengalami laba bersih dan modal pemilik akan bertambah",
+        "Perusahaan mengalami rugi bersih dan ekuitas mengalami penurunan",
+        "Perusahaan mengalami laba bersih tetapi tidak memengaruhi ekuitas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sentosa mengeluarkan biaya riset sebesar Rp150.000.000 untuk mengembangkan produk baru pada bulan Maret. Pada bulan Oktober, proyek tersebut telah memenuhi seluruh kriteria pengakuan aset tak berwujud menurut SAK, dan perusahaan mengeluarkan tambahan biaya pengembangan sebesar Rp200.000.000 hingga siap komersial. Bagaimana perlakuan akuntansi yang tepat atas pengeluaran tersebut di akhir tahun?",
+      "options": [
+        "Mengkapitalisasi seluruh total biaya riset dan pengembangan sebesar Rp350.000.000 ke dalam akun aset tak berwujud",
+        "Membebankan biaya riset Rp150.000.000 sebagai beban periode berjalan dan mengkapitalisasi biaya pengembangan Rp200.000.000",
+        "Mengkapitalisasi biaya riset Rp150.000.000 dan membebankan biaya pengembangan Rp200.000.000 sebagai biaya operasional",
+        "Membebankan seluruh total pengeluaran riset dan pengembangan sebesar Rp350.000.000 langsung ke Laporan Laba Rugi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan dagang menerapkan sistem pencatatan persediaan Perpetual Average. Pada tanggal 10 April, terdapat saldo persediaan 500 unit dengan total nilai Rp10.000.000. Pada tanggal 12 April, perusahaan melakukan pembelian 300 unit dengan harga total Rp7.500.000. Jika pada tanggal 15 April dijual sebanyak 400 unit, berapakah harga pokok penjualan (HPP) untuk transaksi penjualan tersebut?",
+      "options": [
+        "Rp8.750.000 karena dihitung berdasarkan rata-rata harga perolehan terbaru saat transaksi penjualan",
+        "Rp9.000.000 karena menggunakan asumsi bahwa barang pertama yang masuk adalah barang pertama yang keluar",
+        "Rp10.000.000 karena mengambil harga pokok dari saldo persediaan awal yang tercatat di gudang",
+        "Rp11.250.000 karena dihitung menggunakan rata-rata tertimbang dari total unit dan nilai persediaan yang ada"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Staff pajak PT Makmur sedang menyiapkan rekonsiliasi fiskal tahunan. Perusahaan mencatat biaya jamuan tamu sebesar Rp40.000.000 di laporan laba rugi komersial, di mana sebesar Rp10.000.000 di antaranya tidak didukung oleh daftar nominatif yang sesuai dengan ketentuan perpajakan di Indonesia. Bagaimana penyesuaian fiskal yang harus dilakukan?",
+      "options": [
+        "Melakukan koreksi fiskal negatif sebesar Rp10.000.000 pada saat menghitung besaran Pajak Penghasilan terutang",
+        "Melakukan koreksi fiskal positif sebesar Rp10.000.000 karena biaya tersebut dianggap sebagai non-deductible expense",
+        "Melakukan koreksi fiskal positif sebesar Rp40.000.000 karena seluruh biaya jamuan tidak dapat diakui pajak",
+        "Tidak perlu melakukan koreksi fiskal karena biaya jamuan sudah diatur dalam standar akuntansi keuangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Nusantaraya memiliki investasi saham pada PT Citra dengan kepemilikan sebesar 25% dan memiliki pengaruh signifikan. Selama tahun berjalan, PT Citra melaporkan laba bersih sebesar Rp400.000.000 dan membagikan dividen tunai sebesar Rp100.000.000 kepada para pemegang sahamnya. Bagaimana pencatatan akuntansi yang harus dilakukan PT Nusantaraya atas pembagian dividen tersebut?",
+      "options": [
+        "Mencatat Pendapatan Dividen sebesar Rp100.000.000 di laporan laba rugi periode berjalan perusahaan",
+        "Mendebet Kas sebesar Rp25.000.000 dan Mengkredit Akun Investasi pada Entitas Asosiasi sebesar Rp25.000.000",
+        "Mendebet Kas sebesar Rp100.000.000 dan Mengkredit Pendapatan Investasi sebesar Rp100.000.000",
+        "Tidak mencatat jurnal apa pun karena pembagian dividen sudah diakui bersamaan dengan pencatatan laba"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada tanggal 1 Oktober, PT Berkah membayarkan premi asuransi gedung untuk jangka waktu dua tahun sebesar Rp60.000.000 dan langsung mencatatnya sebagai beban asuransi di laporan laba rugi. Pada akhir tahun buku 31 Desember, jurnal penyesuaian apa yang harus dibuat oleh bagian akuntansi?",
+      "options": [
+        "Debit Beban Asuransi Rp7.500.000 dan Kredit Asuransi Dibayar Dimuka sebesar Rp7.500.000",
+        "Debit Asuransi Dibayar Dimuka Rp52.500.000 dan Kredit Beban Asuransi sebesar Rp52.500.000",
+        "Debit Asuransi Dibayar Dimuka Rp45.000.000 dan Kredit Beban Asuransi sebesar Rp45.000.000",
+        "Debit Beban Asuransi Rp52.500.000 dan Kredit Asuransi Dibayar Dimuka sebesar Rp52.500.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam menyusun Laporan Arus Kas dengan metode tidak langsung, staf keuangan melihat adanya kenaikan saldo akun Utang Dagang dari Rp80.000.000 pada awal tahun menjadi Rp120.000.000 pada akhir tahun. Bagaimana penyajian penyesuaian kenaikan akun tersebut pada bagian aktivitas operasi?",
+      "options": [
+        "Ditambahkan sebesar Rp40.000.000 pada laba bersih karena pembelian barang secara kredit tidak mengeluarkan kas",
+        "Mengurangi laba bersih sebesar Rp40.000.000 karena adanya peningkatan kewajiban lancar perusahaan",
+        "Tidak dicatat pada aktivitas operasi melainkan dipindahkan ke bagian aktivitas pendanaan perusahaan",
+        "Ditambahkan sebesar Rp40.000.000 pada laba bersih karena kas yang seharusnya keluar tertunda pembayarannya"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah perusahaan menyewakan gudang dengan perjanjian sewa pembiayaan (finance lease) kepada pihak ketiga. Berdasarkan prinsip akuntansi, kapan lessor harus menghentikan pengakuan (derecognition) aset tetap berupa gudang tersebut dari Laporan Posisi Keuangan?",
+      "options": [
+        "Saat perjanjian kontrak sewa ditandatangani secara sah oleh kedua belah pihak di hadapan notaris",
+        "Pada saat lessee melakukan pembayaran cicilan sewa pertama beserta uang muka yang disepakati",
+        "Ketika risiko dan manfaat signifikan yang melekat pada kepemilikan aset telah dialihkan kepada lessee",
+        "Pada akhir masa sewa ketika opsi pembelian aset tersebut dieksekusi secara resmi oleh pihak lessee"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah mesin produksi mengalami penurunan nilai (impairment) akibat kerusakan teknologi. Berdasarkan uji penurunan nilai, nilai tercatat (carrying amount) mesin tersebut adalah Rp300.000.000, nilai wajarnya adalah Rp220.000.000, dan biaya pelepasan aset diperkirakan sebesar Rp20.000.000. Berapakah nilai kerugian penurunan nilai yang harus diakui dalam laporan laba rugi?",
+      "options": [
+        "Rp80.000.000 karena dihitung dari selisih nilai tercatat dikurangi nilai wajar tanpa biaya pelepasan",
+        "Rp60.000.000 karena nilai pakai tidak diketahui sehingga menggunakan nilai wajar dikurangi biaya pelepasan",
+        "Rp100.000.000 karena memperhitungkan total selisih antara nilai tercatat dengan nilai wajar dan biaya",
+        "Rp20.000.000 karena biaya pelepasan merupakan komponen utama pengurang nilai tercatat aset"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Buanajaya menerima pelunasan piutang dari pelanggan sebesar Rp15.000.000 secara tunai melalui kasir perusahaan. Bagaimana staf akuntansi harus mencatat transaksi tersebut ke dalam jurnal umum?",
+      "options": [
+        "Debit Kas Rp15.000.000 dan Kredit Piutang Usaha Rp15.000.000",
+        "Debit Piutang Usaha Rp15.000.000 dan Kredit Kas Rp15.000.000",
+        "Debit Kas Rp15.000.000 dan Kredit Pendapatan Jasa Rp15.000.000",
+        "Debit Pendapatan Jasa Rp15.000.000 dan Kredit Kas Rp15.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan menerbitkan obligasi senilai Rp500.000.000 dengan tingkat bunga kupon 10% per tahun. Obligasi tersebut laku terjual di pasar dengan harga Rp480.000.000 karena tingkat bunga pasar lebih tinggi. Berapa nilai diskon obligasi yang harus diakui saat penerbitan?",
+      "options": [
+        "Rp50.000.000 dicatat sebagai penambah kewajiban jangka panjang",
+        "Rp20.000.000 dicatat sebagai pengurang kewajiban jangka panjang",
+        "Rp20.000.000 dicatat sebagai penambah beban bunga obligasi periode",
+        "Rp48.000.000 dicatat sebagai komponen ekuitas tambahan modal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada akhir bulan, bagian akuntansi mendapati bahwa tagihan listrik kantor untuk bulan berjalan sebesar Rp3.500.000 belum dibayar dan belum dicatat. Apa jurnal penyesuaian yang wajib dibuat?",
+      "options": [
+        "Debit Beban Listrik Rp3.500.000 dan Kredit Kas Rp3.500.000",
+        "Debit Utang Usaha Rp3.500.000 dan Kredit Beban Listrik Rp3.500.000",
+        "Debit Beban Listrik Rp3.500.000 dan Kredit Utang Beban Rp3.500.000",
+        "Debit Utang Beban Rp3.500.000 dan Kredit Beban Listrik Rp3.500.000"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan dagang melakukan perhitungan fisik (stock opname) akhir tahun dan menemukan selisih kurang pada nilai persediaan gudang sebesar Rp8.000.000 dibandingkan catatan buku. Bagaimana pencatatan koreksi atas selisih tersebut?",
+      "options": [
+        "Debit Harga Pokok Penjualan Rp8.000.000 dan Kredit Persediaan Barang Rp8.000.000",
+        "Debit Persediaan Barang Rp8.000.000 dan Kredit Kerugian Persediaan Rp8.000.000",
+        "Debit Retur Pembelian Rp8.000.000 dan Kredit Harga Pokok Penjualan Rp8.000.000",
+        "Debit Ikhtisar Laba Rugi Rp8.000.000 dan Kredit Persediaan Barang Rp8.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Graha Mandiri membayar dividen tunai kepada para pemegang saham sebesar Rp100.000.000 yang telah diumumkan sebelumnya pada RUPS. Bagaimana dampak transaksi pembayaran dividen ini terhadap laporan posisi keuangan?",
+      "options": [
+        "Mengurangi total aset kas dan menambah total liabilitas lancar perusahaan",
+        "Mengurangi total aset kas dan mengurangi total ekuitas pemegang saham",
+        "Menambah total liabilitas jangka panjang dan mengurangi laba ditahan",
+        "Tidak mengubah total aset karena hanya memindahkan posisi kas ke modal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam menyusun rekonsiliasi bank, staf keuangan mendapati adanya setoran dalam perjalanan (deposit in transit) sebesar Rp12.500.000. Bagaimana perlakuan akuntansi yang tepat untuk item tersebut?",
+      "options": [
+        "Ditambahkan pada saldo catatan perusahaan dalam lembar kerja rekonsiliasi",
+        "Dikurangkan dari saldo catatan perusahaan dalam lembar kerja rekonsiliasi",
+        "Ditambahkan pada saldo menurut laporan bank dalam lembar kerja rekonsiliasi",
+        "Dikurangkan dari saldo menurut laporan bank dalam lembar kerja rekonsiliasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur membeli bahan baku secara kredit senilai Rp45.000.000 dengan syarat pembayaran 2/10, n/30. Perusahaan melunasi utang tersebut dalam masa periode potongan. Berapa besar kas yang harus dikeluarkan untuk pelunasan?",
+      "options": [
+        "Rp45.000.000 dibayar tunai tanpa ada potongan diskon pembelian",
+        "Rp44.100.000 dibayar tunai setelah dikurangi potongan tunai 2 persen",
+        "Rp43.500.000 dibayar tunai setelah dikurangi potongan tunai khusus",
+        "Rp42.000.000 dibayar tunai setelah dikurangi retur dan potongan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan jasa angkutan menerima uang muka pelanggan sebesar Rp20.000.000 untuk pengiriman barang yang baru akan dilaksanakan bulan depan. Bagaimana pengakuan akuntansi yang tepat pada tanggal penerimaan?",
+      "options": [
+        "Mencatat Pendapatan Jasa di sisi kredit dan Kas di sisi debit secara penuh",
+        "Mencatat Piutang Usaha di sisi debit dan Pendapatan Jasa di sisi kredit",
+        "Mencatat Pendapatan Diterima Dimuka di sisi kredit dan Kas di sisi debit",
+        "Mencatat Beban Dibayar Dimuka di sisi debit dan Kas di sisi kredit"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan penutupan buku akhir tahun, akun Penjualan menunjukkan saldo kredit sebesar Rp800.000.000 dan seluruh akun beban menunjukkan saldo debit total Rp650.000.000. Bagaimana jurnal penutup untuk akun Beban?",
+      "options": [
+        "Debit Ikhtisar Laba Rugi Rp650.000.000 dan Kredit Berbagai Beban Rp650.000.000",
+        "Debit Berbagai Beban Rp650.000.000 dan Kredit Ikhtisar Laba Rugi Rp650.000.000",
+        "Debit Laba Ditahan Rp650.000.000 dan Kredit Berbagai Beban Rp650.000.000",
+        "Debit Berbagai Beban Rp650.000.000 dan Kredit Laba Ditahan Rp650.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan menyewa sebuah ruko selama 3 tahun dengan pembayaran di muka. Berdasarkan PSAK 73, bagaimana perlakuan akuntansi untuk kontrak sewa tersebut oleh pihak penyewa (lessee)?",
+      "options": [
+        "Mencatat seluruh pembayaran sebagai beban sewa bulanan secara merata",
+        "Mengakui aset hak-guna (right-of-use asset) dan liabilitas sewa di neraca",
+        "Hanya mencatat biaya sewa di laporan laba rugi tanpa aset di neraca",
+        "Mengakui aset tetap berupa bangunan ruko langsung di dalam buku besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Cipta Karya mencatat transaksi penjualan kredit sebesar Rp75.000.000 kepada pelanggan. Namun, dalam jurnal umum, staf akuntansi salah mencatatnya ke dalam akun Pendapatan Jasa alih-alih Penjualan Barang Dagang. Bagaimana prosedur koreksi yang paling tepat untuk kesalahan pencatatan tersebut?",
+      "options": [
+        "Membuat jurnal penyesuaian akhir bulan untuk menggeser saldo akun secara otomatis.",
+        "Mendebit Pendapatan Jasa dan mengkredit Penjualan Barang Dagang sebesar nilai tersebut.",
+        "Menghapus catatan transaksi lama dan memasukkan kembali data baru secara manual.",
+        "Membiarkan kesalahan karena kedua akun tersebut berada dalam kelompok pendapatan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur menerima tagihan rekening telepon kantor sebesar Rp4.200.000 pada tanggal 28 November, tetapi pembayaran baru akan dilakukan pada tanggal 5 Desember. Bagaimana pencatatan jurnal penyesuaian yang harus dibuat pada tanggal 30 November?",
+      "options": [
+        "Mendebit Beban Listrik dan Air serta mengkredit Kas sebesar Rp4.200.000.",
+        "Mendebit Beban Utilitas serta mengkredit Utang Usaha sebesar Rp4.200.000.",
+        "Mendebit Utang Usaha serta mengkredit Beban Utilitas sebesar Rp4.200.000.",
+        "Tidak perlu membuat jurnal penyesuaian karena pembayaran dilakukan bulan depan."
+      ],
+      "correct_index": 1
+    }
+  ]
+}

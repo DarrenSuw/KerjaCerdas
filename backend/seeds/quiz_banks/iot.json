@@ -1,0 +1,306 @@
+{
+  "skill": "IoT",
+  "skill_key": "iot",
+  "questions": [
+    {
+      "question": "Sebuah pabrik di Cikarang memasang sensor suhu berbasis MQTT pada mesin produksi. Sering terjadi kehilangan data (data loss) saat koneksi internet pabrik tidak stabil. Langkah apa yang paling tepat untuk mengatasi masalah ini pada firmware mikrokontroler?",
+      "options": [
+        "Mengganti protokol komunikasi dari MQTT ke HTTP agar pengiriman data lebih cepat",
+        "Menerapkan mekanisme Quality of Service (QoS) level 1 dan menyimpan data sementara ke flash/SPIFFS",
+        "Mempercepat interval pengiriman data dari 5 detik sekali menjadi 1 detik sekali",
+        "Menghapus mekanisme handshake pada koneksi TCP untuk mengurangi beban jaringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendeploy sistem smart metering air untuk gedung perkantoran di Jakarta. Perangkat menggunakan modul NB-IoT dan ditempatkan di basement gedung yang sinyal selulernya sangat lemah. Apa tindakan teknis pertama yang harus dilakukan?",
+      "options": [
+        "Mengganti mikrokontroler dengan spesifikasi RAM yang lebih besar",
+        "Memindahkan broker MQTT ke server lokal di dalam gedung",
+        "Memasang antena eksternal dengan gain tinggi yang ditarik ke area luar basement",
+        "Menurunkan baud rate pada komunikasi serial antar modul"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem pertanian cerdas menggunakan ESP32 yang ditenagai panel surya dan baterai li-ion 18650 di Lembang. Perangkat sering mati total pada hari ketiga saat musim hujan karena baterai habis. Strategi power management apa yang paling efektif diterapkan?",
+      "options": [
+        "Menggunakan fungsi deep sleep pada ESP32 dan wake up secara berkala sesuai kebutuhan",
+        "Menambahkan kapasitas panel surya tanpa mengubah logika program mikrokontroler",
+        "Mematikan modul Wi-Fi dan menggantinya dengan komunikasi kabel UTP sepanjang 50 meter",
+        "Menaikkan frekuensi clock CPU ESP32 agar proses pembacaan sensor selesai lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim IoT Anda mendeteksi adanya celah keamanan di mana perangkat node sensor di lapangan dapat disadap dan dimodifikasi firmware-nya secara ilegal. Standar keamanan apa yang wajib diimplementasikan pada level transport data?",
+      "options": [
+        "Mengenkripsi payload data menggunakan base64 sebelum dikirim via jaringan",
+        "Mengaktifkan komunikasi TLS/SSL (MQTTS) dengan sertifikat digital yang valid",
+        "Menggunakan jaringan Wi-Fi tamu (guest network) yang terisolasi dari internet",
+        "Mengganti nama SSID router dan menyembunyikan broadcast-nya di lokasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta memilih protokol komunikasi wireless untuk sistem lampu penerangan jalan umum (PJU) pintar di suatu kawasan industri seluas 5 km persegi yang minim infrastruktur internet kabel. Protokol manakah yang paling efisien?",
+      "options": [
+        "Bluetooth Low Energy (BLE) dengan topologi mesh antar lampu",
+        "Wi-Fi IEEE 802.11n dengan menggunakan router di setiap tiang lampu",
+        "LoRaWAN dengan arsitektur gateway terpusat di area kawasan",
+        "Near Field Communication (NFC) pada setiap titik lampu PJU"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya memantau suhu kontainer makanan beku menggunakan GPS tracker berbasis IoT. Driver melaporkan perangkat sering mengirimkan data lokasi palsu saat melewati jembatan layang. Bagaimana cara memvalidasi integritas data tersebut di backend?",
+      "options": [
+        "Memvalidasi timestamp dan koordinat menggunakan algoritma Kalman filter atau geofencing",
+        "Meminta driver untuk melakukan restart perangkat secara manual setiap jam",
+        "Mengabaikan semua data yang masuk selama kendaraan melaju di atas kecepatan 60 km/jam",
+        "Menggunakan alamat IP seluler operator sebagai acuan utama posisi kendaraan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek smart home, mikrokontroler sering mengalami 'Memory Leak' setelah beroperasi terus-menerus selama beberapa hari, yang menyebabkan sistem reboot sendiri. Bahasa pemrograman apa dan praktik apa yang biasanya memicu hal ini?",
+      "options": [
+        "Python dengan penggunaan global variabel yang terlalu banyak dalam fungsi",
+        "C++ dengan alokasi memori dinamis (malloc/new) yang tidak pernah dibebaskan (free/delete)",
+        "Assembly dengan penulisan alamat register hardware yang salah pada timer",
+        "JavaScript dengan pemanggilan fungsi asynchronous secara berlebihan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan provisioning massal untuk 500 unit perangkat smart water heater di pabrik. Pendekatan mana yang paling efisien untuk memasukkan kredensial Wi-Fi dan token perangkat tanpa mengoding ulang satu per satu?",
+      "options": [
+        "Menyolder ulang chip memori EEPROM pada setiap unit PCB perangkat",
+        "Meminta pengguna akhir mengetik kredensial melalui terminal serial USB satu persatu",
+        "Menggunakan fitur Wi-Fi SmartConfig atau portal captive AP temporer pada perangkat",
+        "Mengirimkan SMS berisi kredensial jaringan ke nomor modul GSM di dalam alat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem monitoring tangki bahan bakar di SPBU menggunakan sensor ultrasonik. Data ketinggian minyak yang masuk ke server sangat fluktuatif dan bising (noisy) akibat riak gelombang cairan. Solusi apa yang harus diterapkan pada sisi firmware?",
+      "options": [
+        "Menambahkan resistor pull-up eksternal pada pin echo sensor ultrasonik",
+        "Menerapkan moving average filter atau exponential smoothing pada sekumpulan data pembacaan",
+        "Mengganti catu daya mikrokontroler dengan transformer non-switching",
+        "Memperpendek kabel penghubung antara sensor dan pin GPIO mikrokontroler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Arsitektur cloud IoT Anda di AWS menggunakan AWS IoT Core. Jumlah perangkat yang terhubung meningkat drastis, dan biaya operasional per bulan melonjak tajam karena tingginya jumlah pesan MQTT yang dipublish. Langkah optimasi arsitektur apa yang paling tepat?",
+      "options": [
+        "Memindahkan seluruh database cloud ke arsitektur on-premise lokal",
+        "Mengubah semua aturan IoT Rules agar langsung menyimpan ke Amazon S3",
+        "Menerapkan batching data di sisi edge device sebelum dikirim dan menaikkan interval publish",
+        "Menurunkan tingkat keamanan enkripsi dari TLS 1.2 menjadi unencrypted TCP"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah cold storage ikan di Muara Baru menggunakan sensor suhu ESP32 yang terhubung via Wi-Fi pabrik. Sering terjadi gangguan koneksi internet lokal yang menyebabkan data telemetri terputus selama beberapa jam. Langkah arsitektur apa yang paling tepat diterapkan pada firmware mikrokontroler untuk mencegah hilangnya data historis saat offline?",
+      "options": [
+        "Mengganti protokol pengiriman data dari MQTT langsung menjadi HTTP POST standar",
+        "Menambahkan modul penyimpanan lokal SPIFFS/LittleFS untuk buffering data offline",
+        "Membuat routine software reset otomatis setiap kali koneksi internet terputus",
+        "Memperbesar kapasitas bandwidth internet langganan pada router utama pabrik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merancang sistem pemantauan getaran turbin PLTU menggunakan sensor piezoelektrik dengan sampling rate tinggi 10 kHz. Kapasitas bandwidth jaringan seluler industri terbatas dan berbiaya tinggi. Strategi pengolahan data apa yang harus diimplementasikan pada edge device?",
+      "options": [
+        "Mengirimkan seluruh raw data secara real-time melalui jaringan 4G tanpa kompresi",
+        "Melakukan kompresi file teks pada semua data mentah sebelum diunggah ke cloud",
+        "Melakukan ekstraksi fitur dan FFT di edge, lalu hanya mengirimkan metrik ringkasan",
+        "Menyimpan semua data mentah dalam SD card dan mengambilnya secara manual bulanan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah gedung bertingkat di SCBD Jakarta mengintegrasikan 200 unit smart energy meter menggunakan protokol Modbus RTU (RS-485) yang ditarik ke sebuah gateway IoT berbasis Linux. Sering terjadi error CRC (checksum) pada pembacaan data jarak jauh akibat interferensi elektromagnetik lift. Solusi teknis apa yang paling efektif?",
+      "options": [
+        "Mengganti kabel komunikasi dengan kabel UTP biasa tanpa pelindung agar lebih fleksibel",
+        "Menurunkan kecepatan baud rate komunikasi serial dan memastikan penggunaan kabel STP berpelindung",
+        "Menambahkan resistor pull-up eksternal dengan nilai resistansi yang sangat tinggi di setiap meter",
+        "Mengubah topologi jaringan dari bus serial menjadi star topology menggunakan switch Ethernet"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim IoT Anda mendapati lonjakan konsumsi daya baterai yang drastis pada ratusan perangkat GPS tracker armada truk logistik. Perangkat menggunakan modul SIM800L dan sering gagal mendeteksi sinyal di daerah terpencil. Bagaimana cara mengatasi masalah drainase baterai ini secara optimal?",
+      "options": [
+        "Memrogram mikrokontroler untuk melakukan sleep mode dan mematikan modul seluler via transistor",
+        "Mengganti antena internal dengan antena high-gain tanpa mengubah logika manajemen daya",
+        "Menghubungkan pin ground modul seluler langsung ke jalur catu daya utama baterai",
+        "Memaksa modul seluler untuk terus mencari jaringan 4G LTE pada interval satu detik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem otomatisasi pabrik tekstil, aktuator pneumatik dikendalikan oleh node ESP32 yang menerima perintah dari broker MQTT lokal. Sering terjadi kasus di mana perintah 'stop' darurat terlambat diterima karena antrean pesan MQTT menumpuk (QoS 1). Tindakan mitigasi apa yang paling tepat?",
+      "options": [
+        "Membuat topik MQTT terpisah dengan prioritas tinggi dan memanfaatkan fitur clean session",
+        "Mengubah semua pesan kontrol aktuator menjadi menggunakan protokol HTTP REST API",
+        "Menghapus mekanisme Quality of Service agar pengiriman paket menjadi lebih cepat",
+        "Menaikkan batas maksimal ukuran payload pada konfigurasi broker MQTT lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melakukan commissioning sistem early warning system (EWS) banjir di bantaran sungai menggunakan NodeMCU. Perangkat sering mengalami freeze dan watchdog reset setelah berjalan 3 hari tanpa pola yang jelas. Setelah dianalisis, hal ini disebabkan oleh fragmentasi heap memory akibat penggunaan fungsi string dinamis. Perbaikan kode apa yang harus dilakukan?",
+      "options": [
+        "Mengganti fungsi penundaan waktu delay() dengan fungsi millis() non-blocking",
+        "Menggunakan alokasi memori dinamis malloc() secara terus-menerus pada setiap loop",
+        "Menghindari penggunaan String class Arduino dan beralih ke standard char array",
+        "Meningkatkan frekuensi pengiriman data ke server cloud menjadi setiap 1 detik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perkebunan sawit di Kalimantan menggunakan jaringan LoRaWAN privat untuk menghubungkan sensor kelembaban tanah sejauh 5 km. Beberapa node sensor di balik bukit tidak dapat menjangkau gateway utama. Langkah apa yang paling tepat untuk memperluas cakupan area tanpa menambah gateway baru?",
+      "options": [
+        "Mengubah frekuensi kerja LoRa dari 915 MHz menjadi 433 MHz secara ilegal",
+        "Menambahkan perangkat LoRaWAN node yang dikonfigurasi sebagai repeater/relay",
+        "Meningkatkan daya pancar transmisi radio melampaui batas regulasi lokal",
+        "Mengganti seluruh protokol komunikasi radio menjadi Wi-Fi point-to-point"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta merancang dashboard pemantauan suhu mesin pabrik menggunakan protokol WebSocket untuk klien internal. Masalah utama adalah koneksi sering terputus saat network switching dari LAN ke Wi-Fi kantor. Mekanisme apa yang wajib diimplementasikan pada sisi frontend web application?",
+      "options": [
+        "Melakukan reload halaman secara otomatis setiap kali koneksi jaringan terputus",
+        "Mengimplementasikan auto-reconnect dengan pola exponential backoff dan heartbeat ping",
+        "Mengubah protokol komunikasi dari WebSocket kembali ke HTTP polling konvensional",
+        "Menyimpan seluruh state dashboard ke dalam permanent local storage browser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan utilitas listrik ingin mendistribusikan pembaruan firmware (OTA update) ke 10.000 smart meter secara bersamaan melalui jaringan seluler. Risiko terbesar adalah kegagalan pembaruan yang membuat perangkat 'brick' (mati total). Desain OTA mana yang paling aman diterapkan?",
+      "options": [
+        "Mengunduh file firmware langsung menimpa partisi aktif saat proses download berlangsung",
+        "Menggunakan skema dual-partition (OTA_0 dan OTA_1) dengan mekanisme rollback otomatis",
+        "Mengirimkan file firmware utuh dalam satu payload MQTT berukuran besar sekaligus",
+        "Meminta teknisi datang ke lapangan untuk memprogram ulang setiap perangkat via USB"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam implementasi sistem smart lighting gedung perkantoran menggunakan protokol Zigbee, lampu-lampu di lantai 3 sering gagal merespons perintah saklar pusat. Analisis spektrum menunjukkan adanya interferensi berat dari access point Wi-Fi kantor yang berada di channel 6. Langkah mitigasi apa yang harus dilakukan pada jaringan Zigbee?",
+      "options": [
+        "Memindahkan saluran operasional jaringan Wi-Fi kantor ke channel lain yang tidak overlap",
+        "Mengkonfigurasi ulang jaringan Zigbee agar beroperasi pada channel yang berada di celah Wi-Fi",
+        "Menambahkan lebih banyak router node Zigbee di setiap sudut ruangan lantai 3",
+        "Mengganti seluruh lampu Zigbee dengan lampu pintar berbasis teknologi Bluetooth Mesh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Solo menggunakan sistem IoT berbasis ESP32 untuk memantau kelembaban ruangan. Sering terjadi gangguan koneksi internet lokal yang menyebabkan data sensor terhapus sebelum terkirim ke server cloud. Langkah mitigasi apa yang paling tepat diterapkan pada firmware perangkat?",
+      "options": [
+        "Mengganti modul Wi-Fi eksternal dengan tipe antena high gain",
+        "Menerapkan penyimpanan data sementara (buffer) ke memori SPIFFS",
+        "Mempercepat frekuensi pengiriman data agar antrean data berkurang",
+        "Menurunkan resolusi pembacaan sensor untuk menghemat kapasitas buffer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab atas pemeliharaan perangkat IoT pemantau kualitas udara (AQI) di pinggir jalan raya Bandung yang ditenagai baterai dan panel surya. Perangkat sering mati total pada musim hujan akibat kurangnya sinar matahari. Solusi rekayasa daya apa yang paling efektif?",
+      "options": [
+        "Mengubah interval sleep mode mikrokontroler menjadi mode aktif permanen",
+        "Menambahkan kapasitas panel surya tanpa mengubah logika pengkodean",
+        "Mengganti algoritma deep sleep dan mengurangi durasi采样 sensor",
+        "Memindahkan seluruh pemrosesan data mentah langsung ke server cloud"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem monitoring cold chain vaksin di puskesmas menggunakan protokol MQTT untuk mengirim data suhu setiap 1 menit. Broker MQTT di cloud sering mengalami disconnect akibat masalah jaringan seluler lokal. Bagaimana cara memastikan QoS (Quality of Service) MQTT agar tidak ada paket data suhu kritis yang hilang?",
+      "options": [
+        "Mengatur QoS level ke 0 dan memperpanjang durasi waktu keep-alive",
+        "Mengatur QoS level ke 1 serta mengaktifkan flag persistent session",
+        "Menggunakan protokol UDP untuk mempercepat transmisi paket data",
+        "Membiarkan QoS pada level 0 karena lebih hemat kuota data seluler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek smart parking di mal Jakarta, sensor ultrasonik dipasang di 300 slot parkir dan terhubung ke satu gateway ESP32 via ESP-NOW. Sering terjadi tabrakan paket data (packet collision) karena semua sensor mengirim status bersamaan saat ada mobil masuk. Apa tindakan perbaikan terbaik?",
+      "options": [
+        "Mengubah topologi jaringan menjadi star topology dengan polling server",
+        "Menambahkan delay acak (random jitter) sebelum pengiriman data sensor",
+        "Meningkatkan kapasitas daya power supply pada setiap node sensor parkir",
+        "Mengganti seluruh kabel komunikasi sensor dengan protokol RS-485"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Semarang mendapati perangkat GPS tracker berbasis seluler sering mencatat posisi yang melompat-lompat secara tidak akurat saat armada melewati area gedung bertingkat. Fitur apa yang harus diimplementasikan pada firmware untuk mengatasi masalah ini?",
+      "options": [
+        "Menambahkan sensor suhu eksternal untuk kalibrasi modul penerima GPS",
+        "Menerapkan algoritma penyaringan data seperti Kalman Filter di perangkat",
+        "Mengirim data koordinat mentah langsung ke database tanpa jeda waktu",
+        "Memaksa perangkat selalu menggunakan jaringan 2G untuk stabilitas sinyal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengonfigurasi gateway LoRaWAN di area pelabuhan Tanjung Priok. Beberapa node sensor jarak jauh sering gagal mengirimkan payload data meskipun jaraknya masih dalam radius jangkauan. Analisis awal menunjukkan adanya interferensi sinyal yang tinggi. Pengaturan apa yang perlu disesuaikan pada node dan gateway?",
+      "options": [
+        "Menurunkan nilai Spreading Factor (SF) untuk mempercepat laju transmisi",
+        "Menaikkan daya pancar (TX power) dan menaikkan Spreading Factor (SF)",
+        "Mengganti frekuensi kerja LoRa dari pita 915 MHz ke pita gelombang 2.4 GHz",
+        "Memperpendek panjang antena fisik pada perangkat node sensor lapangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem otomatisasi rumah pintar menggunakan mikrokontroler berbasis FreeRTOS mengalami system crash secara acak setelah berjalan selama beberapa hari. Debugging menunjukkan adanya penggunaan memori heap yang terus bertambah tanpa pernah dibebaskan. Praktik apa yang harus diperbaiki dalam kode sumber?",
+      "options": [
+        "Memastikan setiap alokasi memori dinamis menggunakan fungsi vPortFree",
+        "Menaikkan kapasitas ukuran stack task FreeRTOS ke nilai maksimum",
+        "Mengurangi jumlah task yang berjalan secara bersamaan di dalam sistem",
+        "Menonaktifkan fitur watchdog timer agar mikrokontroler tidak restart"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim IoT Anda mendesain sistem pemantauan getaran jembatan menggunakan sensor piezoelektrik. Karena keterbatasan bandwidth jaringan seluler, pengiriman data mentah secara kontinu tidak memungkinkan. Teknik pengolahan data apa yang harus dilakukan di sisi edge device?",
+      "options": [
+        "Melakukan kompresi file teks biasa pada seluruh log data pembacaan",
+        "Mengirim hanya nilai rata-rata dari seluruh pembacaan selama satu hari",
+        "Mengekstrak fitur domain frekuensi (FFT) dan mengirim parameter ringkasan",
+        "Menyimpan semua data ke kartu MicroSD tanpa dikirimkan sama sekali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik kimia di Karawang mengintegrasikan berbagai sensor analog 4-20mA ke dalam sistem SCADA menggunakan modul ADC berbasis mikroprosesor. Teknisi melaporkan pembacaan sensor sering berfluktuasi tajam saat motor listrik besar di dekatnya dinyalakan. Langkah mitigasi hardware apa yang paling tepat?",
+      "options": [
+        "Menambahkan resistor pull-up eksternal pada jalur pin input ADC modul",
+        "Menggunakan kabel berpelindung (shielded cable) dan grounding yang benar",
+        "Memperpanjang kabel sinyal analog agar letaknya jauh dari motor listrik",
+        "Mengganti catu daya modul mikrokontroler dengan kapasitas ampere kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengamankan komunikasi antara ratusan perangkat edge IoT dan server backend lokal di sebuah rumah sakit. Perangkat menggunakan mikrokontroler dengan sumber daya komputasi yang terbatas sehingga tidak sanggup menjalankan enkripsi TLS standar yang terlalu berat. Mekanisme keamanan alternatif apa yang paling tepat?",
+      "options": [
+        "Menggunakan enkripsi simetris pra-terbagikan (Pre-Shared Key / PSK) pada TLS",
+        "Mengirimkan data dalam bentuk teks biasa karena berada di jaringan lokal",
+        "Mengandalkan pengamanan fisik pada kotak box panel perangkat di dinding",
+        "Mengubah protokol aplikasi dari HTTP menjadi FTP tanpa menggunakan sandi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

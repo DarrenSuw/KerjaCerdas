@@ -36,15 +36,39 @@ def seeker_h(client: TestClient, seeker_account: dict, stub_embedder) -> dict:
 
 class TestQuiz:
     def test_bank_is_seeded_and_listed(self, client: TestClient, seeker_h: dict) -> None:
+        from backend.app.services.matching.evidence import skill_key
+
         body = client.get("/api/v1/quiz/skills", headers=seeker_h).json()
-        keys = {b["skill"] for b in body["bank"]}
-        assert {"excel", "customer service", "kasir"} <= keys
+        keys = {skill_key(b["skill"]) for b in body["bank"]}
+        assert keys == {skill_key("Excel")}
+
+    def test_new_profile_skill_becomes_eligible_for_quiz(self, client: TestClient, seeker_h: dict) -> None:
+        from backend.app.services.matching.evidence import skill_key
+
+        resp = client.post("/api/v1/seeker/profile", headers=seeker_h,
+                           json={"full_name": "Rina", "region_code": "3171", "skills": ["Excel", "Kasir"]})
+        assert resp.status_code in (200, 201), resp.text
+        body = client.get("/api/v1/quiz/skills", headers=seeker_h).json()
+        names = {skill_key(item["skill"]) for item in body["items"]}
+        bank_names = {skill_key(item["skill"]) for item in body["bank"]}
+        assert {skill_key("Excel"), skill_key("Kasir")} <= names
+        assert {skill_key("Excel"), skill_key("Kasir")} <= bank_names
 
     def test_start_never_sends_answers(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         assert len(attempt["questions"]) == 5
         assert "correct_index" not in str(attempt)
         assert attempt["draft_bank"] is False  # starter bank is now seeded as reviewed=True
+
+    def test_validate_question_rejects_misaligned_correct_index(self) -> None:
+        from backend.app.services.quiz import generator
+
+        reason = generator.validate_question(
+            "Manakah langkah paling aman saat menerima uang tunai di kasir?",
+            ["Lanjutkan tanpa cek", "Mencatat transaksi dan mengecek kembalian", "Minta uang tambahan", "Tutup kasir"],
+            4,
+        )
+        assert reason == "correct_index tidak sesuai dengan opsi yang tersedia"
 
     def test_pass_gives_quiz_proof(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "MS Excel"}, headers=seeker_h).json()
@@ -70,16 +94,51 @@ class TestQuiz:
         again = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h)
         assert again.status_code == 429
 
+    @pytest.mark.asyncio
+    async def test_abandoned_attempt_counts_as_used_only_after_thirty_seconds(self, client: TestClient, seeker_h: dict, seeker_account: dict) -> None:
+        from datetime import UTC, datetime, timedelta
+
+        from backend.app.db import postgres_store as store
+        from backend.app.services.quiz import service
+
+        start = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
+        repos = store.get_repositories()
+        attempt = await repos.quiz_attempts.get(start["attempt_id"])
+        assert attempt is not None
+        attempt.created_at = datetime.now(UTC) - timedelta(seconds=31)
+        await repos.quiz_attempts.upsert(attempt)
+
+        seeker = await store.find_seeker_by_user_id(seeker_account["user"]["id"])
+        assert seeker is not None
+        result = await service.abandon_quiz(seeker, start["attempt_id"], elapsed_seconds=31)
+        assert result["status"] == "abandoned"
+        assert result["used_attempt"] is True
+        assert client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).status_code == 429
+
+    @pytest.mark.asyncio
+    async def test_short_exit_does_not_count_as_attempt(self, client: TestClient, seeker_h: dict, seeker_account: dict) -> None:
+        from backend.app.db import postgres_store as store
+        from backend.app.services.quiz import service
+
+        start = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
+        seeker = await store.find_seeker_by_user_id(seeker_account["user"]["id"])
+        assert seeker is not None
+        result = await service.abandon_quiz(seeker, start["attempt_id"], elapsed_seconds=29)
+        assert result["status"] == "in_progress"
+        assert result["used_attempt"] is False
+        again = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h)
+        assert again.status_code == 200
+
     def test_open_attempt_is_resumed_not_redrawn(self, client: TestClient, seeker_h: dict) -> None:
         a = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         b = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         assert a["attempt_id"] == b["attempt_id"] and b["resumed"] is True
 
-    def test_double_submit_is_rejected(self, client: TestClient, seeker_h: dict) -> None:
+    def test_double_submit_returns_existing_result(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "Excel"}, headers=seeker_h).json()
         body = {"attempt_id": attempt["attempt_id"], "answers": _answers(attempt, right=True)}
         assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 200
-        assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 409
+        assert client.post("/api/v1/quiz/submit", headers=seeker_h, json=body).status_code == 200
 
     def test_attempt_is_owner_only(self, client: TestClient, seeker_h: dict,
                                    other_seeker_account: dict) -> None:

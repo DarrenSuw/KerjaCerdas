@@ -1,0 +1,306 @@
+{
+  "skill": "Talent Acquisition",
+  "skill_key": "talent acquisition",
+  "questions": [
+    {
+      "question": "Anda menerima lamaran untuk posisi Senior Software Engineer dengan kualifikasi teknis yang sangat luar biasa, namun dari hasil pengecekan latar belakang digital dan interviu awal, kandidat tersebut memiliki catatan rekam jejak komunikasi yang toksik di perusahaan sebelumnya. Apa langkah terbaik yang harus Anda ambil?",
+      "options": [
+        "Melanjutkan proses rekrutmen karena kemampuan teknis jauh lebih penting daripada sikap kerja",
+        "Menolak kandidat secara langsung tanpa memberikan penjelasan apapun demi efisiensi waktu",
+        "Mendiskusikan temuan ini dengan user untuk menilai seberapa besar risiko terhadap tim",
+        "Meminta kandidat tersebut membuat surat pernyataan berMaterai untuk memperbaiki sikap"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan startup fintech di Jakarta mengalami lonjakan pengunduran diri mendadak pada divisi Customer Support akibat kejenuhan kerja. Sebagai Talent Acquisition, strategi rekrutmen cepat apa yang paling efektif untuk mengatasi kekosongan ini tanpa mengorbankan kualitas?",
+      "options": [
+        "Membuka lowongan umum di semua platform job portal dan menunggu kandidat melamar",
+        "Mengaktifkan program employee referral dan menghubungi kembali talenta di talent pool",
+        "Menaikkan standar gaji pokok sebesar 100 persen untuk menarik perhatian pencari kerja",
+        "Mengurangi tahapan seleksi tes teknis agar proses penawaran kerja bisa selesai sehari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan negosiasi gaji dengan kandidat posisi manajerial yang sangat potensial, kandidat tersebut meminta angka 30 persen di atas budget maksimal yang telah disetujui oleh manajemen keuangan. Bagaimana pendekatan paling profesional yang harus Anda lakukan?",
+      "options": [
+        "Menolak permintaan tersebut dengan tegas dan langsung menawarkan kandidat di urutan kedua",
+        "Menyetujui permintaan tersebut dan meminta anggaran tambahan dari departemen lain secara diam-diam",
+        "Menjelaskan batas anggaran perusahaan dan menawarkan total reward lain seperti bonus kinerja",
+        "Meminta kandidat tersebut menurunkan ekspektasi gajinya jika ingin bergabung dengan perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan merekrut posisi niche yaitu AI Researcher di Indonesia di mana pasokan talenta sangat langka. Metode sourcing aktif apa yang paling tepat untuk mendapatkan kandidat pasif berkualitas tinggi?",
+      "options": [
+        "Memasang iklan lowongan kerja berbayar di surat kabar nasional dan majalah bisnis",
+        "Mengandalkan pelamar yang masuk secara organik melalui halaman karir perusahaan",
+        "Mendekati praktisi di LinkedIn dan komunitas riset teknologi melalui pesan personal",
+        "Menunggu lulusan universitas terbaik di Indonesia menyelesaikan program wisuda mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang hari pertama kerja (onboarding), seorang kandidat kunci untuk posisi Key Account Manager mendadak mengabarkan bahwa ia membatalkan penawaran kerja (declined offer) karena mendapat penawaran tandingan (counteroffer) dari perusahaan lamanya. Apa tindakan preventif terbaik yang seharusnya dilakukan sebelumnya?",
+      "options": [
+        "Membuat perjanjian penalti finansial yang mengikat secara hukum bagi kandidat terpilih",
+        "Meminta kandidat menyerahkan dokumen pribadi asli sebagai jaminan sebelum tanda tangan",
+        "Menjaga komunikasi intensif dan memahami motivasi kepindahan kandidat sejak awal proses",
+        "Memberikan gaji di muka untuk tiga bulan pertama sebagai bentuk komitmen perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang user dari divisi operasional sering menolak kandidat yang Anda kirimkan dengan alasan 'kurang cocok secara kultur', padahal kandidat tersebut sudah memenuhi seluruh kualifikasi teknis yang diminta. Langkah konsultatif apa yang harus Anda ambil?",
+      "options": [
+        "Mengikuti semua keputusan user dan berhenti mencarikan kandidat untuk divisi tersebut",
+        "Melakukan kalibrasi ulang bersama user untuk mendefinisikan parameter kultur secara objektif",
+        "Melaporkan perilaku diskriminatif user tersebut langsung kepada pihak manajemen puncak",
+        "Mengabaikan masukan user dan langsung menyodorkan kontrak kerja kepada kandidat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Metrik utama apa yang paling tepat digunakan untuk mengevaluasi efisiensi operasional tim Talent Acquisition dalam memenuhi kebutuhan rekrutmen perusahaan secara keseluruhan?",
+      "options": [
+        "Jumlah total CV yang berhasil dikumpulkan dari berbagai platform pencari kerja",
+        "Waktu rata-rata yang dibutuhkan sejak lowongan dibuka hingga kandidat menerima offer",
+        "Tingkat kepuasan karyawan baru setelah melewati masa percobaan selama tiga bulan",
+        "Jumlah anggaran iklan lowongan kerja yang dihabiskan dalam kurun waktu satu tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang proses seleksi untuk posisi Digital Marketing Specialist. Agar asesmen mencerminkan pekerjaan nyata sehari-hari, jenis tes apa yang paling relevan untuk diujikan kepada kandidat tahap akhir?",
+      "options": [
+        "Membuat analisis kasus penyusunan strategi kampanye iklan berdasarkan data historis fiktif",
+        "Mengerjakan soal pilihan ganda mengenai teori dasar SEO dan algoritma media sosial",
+        "Menghafal rumus perhitungan Return on Investment untuk setiap platform periklanan digital",
+        "Menulis esai panjang mengenai sejarah perkembangan industri periklanan digital di Indonesia"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pelaksanaan wawancara kerja, seorang pewawancara dari jajaran manajemen sering mengajukan pertanyaan yang berpotensi melanggar privasi dan diskriminatif terkait rencana pernikahan dan keyakinan agama kandidat. Sebagai Talent Acquisition Partner, bagaimana Anda menyikapi hal ini?",
+      "options": [
+        "Membiarkan hal tersebut berlangsung karena pewawancara memiliki posisi yang lebih tinggi",
+        "Menghentikan sesi wawancara secara terbuka di depan kandidat dan menegur pewawancara",
+        "Memberikan pelatihan singkat dan panduan pertanyaan terstruktur kepada para pewawancara",
+        "Menghubungi kandidat secara terpisah dan meminta maaf atas perilaku pewawancara tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda menerapkan kebijakan kerja jarak jauh (remote working). Saat menyusun deskripsi pekerjaan untuk posisi Administrative Staff, fokus utama apa yang harus ditonjolkan untuk menarik talenta yang tepat?",
+      "options": [
+        "Ketersediaan kendaraan pribadi untuk melakukan perjalanan dinas lintas kota secara rutin",
+        "Kemampuan komunikasi tertulis yang kuat dan kemahiran mengelola perangkat kolaborasi digital",
+        "Pengalaman bekerja di kantor pusat dengan pengawasan langsung dari atasan setiap hari",
+        "Kesediaan bekerja di luar jam operasional normal tanpa menghitung uang lembur tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin rekrutmen massal untuk posisi Sales Representatif di berbagai kota di Indonesia. Drop-off rate kandidat sangat tinggi pada tahap setelah penawaran kerja (offer stage). Langkah paling strategis apa yang harus Anda ambil untuk mengatasi masalah ini?",
+      "options": [
+        "Meningkatkan gaji pokok secara drastis untuk semua kandidat yang lolos tahap akhir",
+        "Melakukan analisis komparasi benefit dan mempercepat proses penerbitan surat penawaran",
+        "Memperketat kriteria seleksi tahap awal agar hanya kandidat yang sangat loyal yang tersisa",
+        "Mengadakan sesi wawancara tambahan untuk memastikan komitmen jangka panjang kandidat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kandidat top-tier untuk posisi Head of Product menolak tawaran gaji pertama Anda karena mendapat penawaran lebih tinggi dari kompetitor, padahal budget internal sangat ketat. Apa tindakan terbaik Anda sebagai Talent Acquisition?",
+      "options": [
+        "Menyampaikan bahwa perusahaan tidak dapat menaikkan penawaran dan langsung mencari kandidat cadangan",
+        "Meminta persetujuan BOD untuk melampaui budget demi mengamankan talenta strategis tersebut",
+        "Menawarkan paket total kompensasi non-finansial yang menarik seperti fleksibilitas waktu dan insentif berbasis kinerja",
+        "Meminta kandidat menurunkan ekspektasi gajinya demi masa depan perusahaan rintisan yang sedang berkembang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Divisi Engineering meminta Anda mencari kandidat dengan pengalaman spesifik pada teknologi baru yang baru masuk pasar Indonesia selama 6 bulan terakhir. Praktik sourcing mana yang paling efektif diterapkan?",
+      "options": [
+        "Memasang lowongan kerja berbayar di portal kerja konvensional dengan durasi penayangan panjang",
+        "Mengandalkan kiriman CV dari database internal perusahaan yang dikumpulkan tiga tahun lalu",
+        "Melakukan pendekatan langsung (headhunting) pada komunitas developer lokal dan platform GitHub",
+        "Mengadakan job fair berskala nasional untuk menjaring lulusan baru ilmu komputer berprestasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah proses rekrutmen posisi Finance Manager, Anda menemukan ketidaksesuaian antara tanggal kerja di CV dan hasil verifikasi latar belakang (reference check) dari perusahaan sebelumnya. Bagaimana sikap profesional Anda?",
+      "options": [
+        "Mengabaikan temuan tersebut jika user sangat menyukai performa kandidat saat wawancara",
+        "Menolak kandidat secara permanen karena adanya indikasi ketidakjujuran dalam dokumen",
+        "Melakukan konfirmasi ulang kepada kandidat untuk memberikan ruang klarifikasi atas temuan tersebut",
+        "Melaporkan temuan tersebut ke pihak berwajib atas dugaan pemalsuan dokumen lamaran kerja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda ingin meningkatkan keberagaman (diversity) rekrutmen untuk posisi kepemimpinan, namun sebagian besar CV yang masuk didominasi oleh satu kelompok demografi tertentu. Langkah mitigasi apa yang paling tepat?",
+      "options": [
+        "Mengubah bahasa dalam deskripsi pekerjaan menjadi lebih inklusif dan bermitra dengan komunitas spesifik",
+        "Menetapkan kuota wajib penerimaan kandidat dari kelompok minoritas tanpa melihat standar kompetensi",
+        "Menghentikan sementara seluruh proses rekrutmen hingga komposisi pelamar di pasaran berubah",
+        "Melakukan seleksi acak pada database pelamar yang ada untuk memenuhi target keberagaman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa hiring manager sering mengubah kriteria kualifikasi di tengah jalan saat proses interview sedang berjalan, sehingga memperlambat Time to Fill. Apa pendekatan konsultatif terbaik Anda?",
+      "options": [
+        "Mengikuti semua kemauan manager tersebut agar hubungan kerja tetap harmonis dan tidak ada konflik",
+        "Mengajak manager tersebut duduk bersama untuk merevisi ulang SLA dan menyepakati profil kandidat secara tertulis",
+        "Mengambil alih keputusan akhir seleksi kandidat agar proses rekrutmen dapat berjalan lebih cepat",
+        "Melaporkan tindakan manager tersebut kepada atasannya langsung karena dianggap tidak profesional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur multinasional di Cikarang kesulitan menarik kandidat operator pabrik karena lokasi yang jauh dan minimnya informasi transparan terkait fasilitas kerja. Strategi employer branding apa yang paling efektif?",
+      "options": [
+        "Membuat video tur fasilitas pabrik dan testimoni karyawan lini produksi di media sosial profesional",
+        "Mengiklankan lowongan kerja melalui banner besar di jalan tol utama menuju kawasan industri",
+        "Mengirimkan brosur fisik lowongan kerja ke seluruh kelurahan di sekitar wilayah operasional",
+        "Mengadakan seminar karier berbayar di universitas ternama untuk lulusan teknik mesin"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengukur efektivitas vendor agency rekrutmen eksternal, metrik manakah yang paling akurat untuk menilai kualitas penyedia jasa tersebut?",
+      "options": [
+        "Jumlah total CV kandidat yang dikirimkan oleh agency dalam kurun waktu satu bulan",
+        "Kecepatan waktu agency dalam mengirimkan tumpukan CV setelah posisi dibuka",
+        "Persentase kandidat dari agency yang berhasil lolos masa percobaan (probation) di perusahaan",
+        "Besaran fee penempatan yang diminta oleh agency dibandingkan dengan pasaran industri"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang merancang asesmen psikotes online untuk posisi Customer Service yang menerima ribuan pelamar setiap bulan. Tantangan utamanya adalah risiko kecurangan tes. Solusi mitigasi apa yang paling tepat?",
+      "options": [
+        "Menghapus tahapan psikotes online dan menggantinya dengan wawancara telepon singkat",
+        "Menggunakan sistem proctoring berbasis AI dan bank soal dinamis dengan batasan waktu ketat",
+        "Meminta seluruh pelamar datang ke kantor pusat untuk mengerjakan tes secara manual",
+        "Mempercayai integritas pelamar sepenuhnya karena tes online didasarkan pada kejujuran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kandidat potensial menyatakan pengunduran diri dari perusahaan saat ini (counter-offer) setelah menerima penawaran resmi dari perusahaan Anda. Apa tindakan preventif awal yang seharusnya dilakukan?",
+      "options": [
+        "Langsung mencabut penawaran kerja karena menganggap kandidat tidak memiliki komitmen kuat",
+        "Membujuk kandidat dengan menaikkan penawaran gaji di atas budget yang telah ditetapkan",
+        "Menggali motivasi karier kandidat sejak tahap awal wawancara untuk mengantisipasi alasan penolakan",
+        "Meminta perusahaan lama kandidat untuk melepaskan pegawai tersebut dengan cara baik-baik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda bertanggung jawab merekrut posisi Data Scientist untuk perusahaan e-commerce. Untuk menguji kemampuan praktis kandidat dalam mengolah data nyata alih-alih hanya tes tertulis, langkah paling efektif apa yang harus Anda integrasikan ke dalam tahapan seleksi?",
+      "options": [
+        "Memberikan studi kasus analisis dataset anonim dengan batas waktu pengumpulan tugas rumah",
+        "Meminta kandidat menghafalkan rumus statistik tingkat lanjut saat sesi wawancara tatap muka",
+        "Menjadwalkan psikotes klinis mendalam guna memetakan stabilitas emosi di bawah tekanan data",
+        "Mengandalkan sertifikasi online internasional pada profil LinkedIn sebagai acuan kelulusan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan agensi kreatif di Jakarta mengeluhkan tingginya tingkat pengunduran diri pegawai dalam 90 hari pertama kerja. Sebagai praktisi Talent Acquisition, strategi mitigasi apa yang paling tepat diterapkan pada proses rekrutmen berikutnya?",
+      "options": [
+        "Menurunkan standar ekspektasi gaji agar kandidat tidak mudah tergoda perusahaan lain di kemudian hari",
+        "Menerapkan Realistic Job Preview selama wawancara untuk menyamakan ekspektasi beban kerja riil",
+        "Menghapus tahapan wawancara user agar proses penerimaan karyawan baru menjadi jauh lebih cepat",
+        "Memberikan ikatan dinas finansial yang ketat agar karyawan baru tidak dapat resign sebelum setahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan screening CV untuk posisi Content Writer, Anda menemukan jeda waktu (employment gap) selama dua tahun tanpa riwayat pekerjaan yang jelas. Apa tindakan profesional terbaik yang harus Anda ambil?",
+      "options": [
+        "Langsung menolak lamaran tersebut karena dikhawatirkan menurunkan produktivitas tim",
+        "Menghubungi pemberi kerja terakhir secara diam-diam tanpa persetujuan kandidat",
+        "Mengklarifikasi alasan jeda tersebut secara terbuka dan objektif saat sesi wawancara awal",
+        "Mengasumsikan kandidat menempuh pendidikan non-formal dan melanjutkan proses seleksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin menarik minat talenta pasif (passive candidates) berkaliber tinggi untuk posisi Senior Legal Counsel di perusahaan Anda. Pendekatan sourcing manakah yang paling efektif dan profesional?",
+      "options": [
+        "Mengirimkan pesan langsung yang personal dan menyoroti tantangan strategis hukum di perusahaan",
+        "Menyebarkan poster lowongan kerja secara masif melalui grup pesan instan dan media sosial",
+        "Memasang iklan baris cetak harian nasional dengan mencantumkan kisaran gaji yang kompetitif",
+        "Menunggu kandidat melamar secara mandiri melalui portal karier internal perusahaan saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang user dari divisi operasional meminta Anda mencari kandidat staf administrasi dengan kualifikasi spesifik gender dan usia tertentu yang melanggar kebijakan kesetaraan kesempatan kerja perusahaan. Bagaimana cara Anda merespons permintaan tersebut?",
+      "options": [
+        "Menuruti permintaan user sepenuhnya demi menjaga keharmonisan hubungan kerja sama",
+        "Mengabaikan permintaan tersebut dan hanya mengirimkan kandidat pria usia muda saja",
+        "Mengedukasi user mengenai pentingnya fokus pada kompetensi inti dan mitigasi risiko hukum",
+        "Melaporkan perilaku diskriminatif tersebut langsung kepada Dewan Direksi tanpa diskusi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam mengevaluasi saluran rekrutmen (recruitment channels) untuk posisi staf penjualan lapangan, data menunjukkan bahwa LinkedIn menghasilkan biaya per rekrutmen yang sangat tinggi dengan jumlah hire yang minim. Apa keputusan operasional yang harus Anda ambil?",
+      "options": [
+        "Mengalihkan anggaran rekrutmen tersebut ke platform atau metode lain yang terbukti lebih efektif",
+        "Meningkatkan investasi iklan berbayar di LinkedIn secara drastis untuk menjangkau lebih banyak orang",
+        "Menghapus seluruh posisi sales dari daftar prioritas pencarian talenta perusahaan tahun ini",
+        "Memaksa tim HR untuk menggunakan LinkedIn sebagai satu-satunya saluran rekrutmen resmi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa proses penjadwalan interview antara kandidat dan para manajer lini sering mengalami penundaan panjang, menyebabkan banyak kandidat potensial mengundurkan diri. Solusi sistemik apa yang paling tepat diterapkan?",
+      "options": [
+        "Memberikan sanksi pemotongan tunjangan kepada manajer lini yang terlambat melakukan interview",
+        "Mengambil alih seluruh keputusan akhir penerimaan karyawan tanpa melibatkan persetujuan user",
+        "Mengimplementasikan sistem kalender terintegrasi dan Service Level Agreement penjadwalan",
+        "Mengurangi jumlah tahapan wawancara menjadi hanya satu kali sesi dengan tim HR saja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik nasional ingin membangun Employer Branding yang kuat guna menarik talenta pengemudi profesional berkualitas. Langkah awal strategis apa yang paling berdampak positif?",
+      "options": [
+        "Membuat konten video testimoni mengenai kesejahteraan dan fasilitas keselamatan kerja pengemudi",
+        "Mengadakan kompetisi esport tingkat nasional bagi kalangan anak muda pencari kerja pemula",
+        "Mengubah nama jabatan pengemudi menjadi istilah asing yang rumit di dalam struktur organisasi",
+        "Menyelenggarakan pameran seni kontemporer bertaraf internasional di kantor pusat perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kandidat untuk posisi Branch Manager menolak tawaran kerja Anda karena perusahaan pesaing menawarkan fleksibilitas jam kerja yang lebih baik, meskipun komponen gaji Anda lebih tinggi. Langkah negosiasi apa yang paling bijak dilakukan?",
+      "options": [
+        "Mengancam akan memasukkan nama kandidat tersebut ke dalam daftar hitam industri sejenis",
+        "Menaikkan penawaran gaji pokok secara fantastis melampaui batas anggaran departemen",
+        "Mengeksplorasi opsi penyesuaian fasilitas non-finansial seperti fleksibilitas kerja atau cuti",
+        "Menerima penolakan tersebut dan langsung menutup komunikasi tanpa melakukan evaluasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta untuk merancang Key Performance Indicator (KPI) bagi tim Talent Acquisition yang berfokus pada kualitas perekrutan jangka panjang. Metrik manakah yang paling akurat untuk mengukur hal tersebut?",
+      "options": [
+        "Jumlah total lamaran CV yang masuk ke dalam sistem ATS setiap minggunya",
+        "Tingkat retensi karyawan dan kinerja mereka dalam penilaian performa enam bulan pertama",
+        "Kecepatan rata-rata tim HR dalam menanggapi email masuk dari para pelamar kerja",
+        "Biaya total yang dihabiskan untuk memasang iklan lowongan pekerjaan di berbagai media"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Blockchain",
+  "skill_key": "blockchain",
+  "questions": [
+    {
+      "question": "Tim pengembang blockchain di sebuah perusahaan logistik nasional ingin merilis dApp berbasis Polygon untuk pelacakan rantai pasok halal. Agar pengguna akhir tidak terbebani biaya gas yang tinggi saat mencatat setiap perpindahan barang, pendekatan arsitektur apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat jaringan blockchain privat terpisah tanpa mekanisme konsensus publik.",
+        "Menggunakan pendekatan meta-transactions dengan sistem relayer bersubsidi.",
+        "Meminta setiap pengguna membeli token MATIC melalui bursa kripto lokal.",
+        "Menurunkan tingkat desentralisasi node validator untuk mempercepat blok."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah Lead Blockchain Engineer di sebuah konsorsium perbankan Indonesia yang menguji coba private blockchain menggunakan Hyperledger Fabric. Salah satu anggota konsorsium ingin memastikan data transaksi nasabah mereka tidak dapat dilihat oleh anggota konsorsium lainnya. Fitur apa yang harus dikonfigurasi?",
+      "options": [
+        "Menerapkan mekanisme konsensus Proof of Stake pada seluruh node orderer.",
+        "Membuat saluran komunikasi terpisah atau menggunakan fitur private data collections.",
+        "Mengenkripsi seluruh payload transaksi menggunakan kunci publik Bank Indonesia.",
+        "Menghapus riwayat blok lama secara berkala menggunakan teknik data pruning."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek NFT marketplace lokal mengalami kegagalan transaksi massal (out of gas) ketika melakukan minting koleksi seni secara bersamaan akibat lonjakan trafik. Sebagai smart contract developer, bagaimana cara Anda mengoptimalkan kode Solidity tersebut?",
+      "options": [
+        "Mengubah tipe data variabel penyimpanan dari uint256 menjadi uint8 secara masif.",
+        "Mengganti struktur penyimpanan data dari mapping kompleks ke array dinamis.",
+        "Menggunakan batch minting function dan mengurangi operasi penulisan state storage.",
+        "Menghapus seluruh event logs dari smart contract untuk menghemat memori."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendeteksi adanya anomali pada smart contract token ERC-20 milik klien yang beroperasi di Binance Smart Chain, di mana fungsi transfer dari alamat lain tiba-tiba gagal total. Setelah diperiksa, ditemukan bahwa nilai allowance telah diset ke angka nol oleh pemilik token. Langkah mitigasi apa yang paling aman bagi pengguna?",
+      "options": [
+        "Melakukan hard fork pada jaringan Binance Smart Chain untuk memulihkan state.",
+        "Menghubungi validator node untuk melakukan rollback transaksi yang mencurigakan.",
+        "Meminta pengguna melakukan revoke izin akses dan membuat ulang persetujuan baru.",
+        "Mengubah alamat contract address secara permanen dan menerbitkan token baru."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform agrikultur berbasis blockchain di Indonesia berencana melakukan upgrade logika smart contract pencatatan hasil panen tanpa mengubah alamat kontrak yang sudah dibagikan ke petani. Desain pola (design pattern) apa yang harus digunakan sejak awal?",
+      "options": [
+        "Factory Contract Pattern untuk menduplikasi kontrak setiap ada pembaruan.",
+        "Proxy Contract Pattern yang memisahkan lapisan penyimpanan dan logika.",
+        "Eternal Storage Pattern dengan menggunakan struktur data mapping global.",
+        "Diamond Standard Pattern khusus untuk pengelolaan token non-fungible."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek integrasi sistem pembayaran kripto untuk e-commerce, backend Node.js Anda perlu mendengarkan event dari smart contract secara real-time. Metode apa yang paling handal untuk menghindari kehilangan data event saat terjadi gangguan koneksi jaringan?",
+      "options": [
+        "Melakukan polling berulang terhadap fungsi balanceOf setiap sepuluh detik.",
+        "Memanfaatkan penyedia layanan WebSocket dengan logika penanganan rekondisi.",
+        "Membaca file log mentah dari hard drive node validator secara langsung.",
+        "Mengandalkan fungsi timeout bawaan pada pustaka HTTP client standar."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan properti tokenisasi di Bali ingin memastikan bahwa token kepemilikan vila hanya dapat diperjualbelikan oleh investor yang telah melewati proses verifikasi KYC/AML yang sah di Indonesia. Bagaimana cara memprogram pembatasan ini pada smart contract?",
+      "options": [
+        "Menulis skrip eksternal menggunakan Python untuk memblokir alamat dompet.",
+        "Menggunakan fungsi modifier yang memvalidasi daftar putih (whitelist) alamat terverifikasi.",
+        "Membuat token tanpa fungsi transfer agar tidak bisa dipindahtangankan sama sekali.",
+        "Menyerahkan seluruh pemeriksaan KYC pada dompet digital pihak ketiga."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pengujian penetrasi (penetration testing) pada aplikasi terdesentralisasi (dApp), ditemukan celah Front-Running pada kontrak lelang terbuka. Penyerang memantau mempool dan memasukkan gas price yang lebih tinggi. Strategi pertahanan apa yang efektif untuk mencegah masalah ini?",
+      "options": [
+        "Menerapkan mekanisme pengiriman komitmen terenkripsi (commit-reveal scheme).",
+        "Menaikkan biaya transaksi minimum hingga tingkat yang tidak terjangkau penyerang.",
+        "Menghapus fungsi penawaran lelang dan menggantinya dengan penjualan langsung.",
+        "Menggunakan jaringan blockchain privat yang tidak memiliki mempool publik."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup fintech di Jakarta sedang membangun platform DeFi di jaringan Ethereum. Saat melakukan audit internal pada smart contract peminjaman (lending), tim menemukan bahwa fungsi penarikan dana rentan terhadap serangan berulang sebelum saldo diperbarui. Solusi teknis apa yang harus segera diterapkan oleh developer?",
+      "options": [
+        "Mengganti seluruh bahasa pemrograman Solidity dengan Vyper untuk keamanan.",
+        "Menerapkan pola checks-effects-interactions dan modifier reentrancy guard.",
+        "Memindahkan seluruh logika penyimpanan data transaksi ke database relasional.",
+        "Meningkatkan batas gas limit pada setiap fungsi transaksi penarikan dana."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta merancang arsitektur jembatan lintas rantai (cross-chain bridge) untuk menghubungkan aset token dari jaringan Ethereum ke jaringan Avalanche. Pendekatan validasi apa yang paling aman untuk menghindari risiko eksploitasi kunci privat validator tunggal?",
+      "options": [
+        "Menggunakan satu server pusat terpercaya untuk memverifikasi seluruh transfer.",
+        "Menerapkan skema tanda tangan ambang batas (threshold signature) dengan jaringan relay terdesentralisasi.",
+        "Meminta persetujuan manual dari admin proyek melalui panel kontrol web.",
+        "Mengandalkan kontrak pintar pihak ketiga tanpa mekanisme verifikasi kriptografi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup pembiayaan agrikultur menggunakan token utilitas ERC-20 untuk pembayaran hasil panen. Saat audit pasca-peluncuran, ditemukan fungsi transfer yang tidak memeriksa apakah alamat penerima adalah kontrak token itu sendiri, menyebabkan dana terkunci permanen. Fungsi modifier apa yang seharusnya disertakan dalam implementasi?",
+      "options": [
+        "Modifier yang membatasi eksekusi fungsi hanya pada hari kerja antara jam operasional",
+        "Modifier yang memastikan alamat tujuan bukan alamat kontrak itu sendiri atau alamat nol",
+        "Modifier yang melipatgandakan jumlah token secara otomatis jika transaksi bernilai besar",
+        "Modifier yang mengubah hak akses kepemilikan kontrak kepada penambang blok pertama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform crowdfunding amal di Indonesia menggunakan smart contract untuk menyalurkan dana bantuan. Saat proses penarikan dana oleh yayasan, transaksi sering gagal karena lonjakan gas fee harian di jaringan Ethereum. Sebagai smart contract engineer, strategi apa yang paling tepat untuk mengatasi masalah ini tanpa mengubah fungsi utama pencairan?",
+      "options": [
+        "Mengganti seluruh jaringan utama dengan testnet publik agar biaya transaksi menjadi nol",
+        "Menerapkan pola meta-transaction agar yayasan dapat mencairkan dana lewat relay pihak ketiga",
+        "Menurunkan batas gas limit secara manual di bawah standar jaringan agar transaksi diprioritaskan",
+        "Menghapus fungsi keamanan pembatasan alamat penarikan demi menghemat eksekusi byte"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi pencatatan rantai pasok komoditas kopi lokal menggunakan jaringan Hyperledger Fabric. Peer organisasi eksportir mengalami ketidaksinkronan data ledger yang signifikan dibandingkan peer petani. Langkah pertama apa yang harus Anda lakukan untuk mendiagnosis masalah konsensus ini?",
+      "options": [
+        "Melakukan hard fork pada jaringan peer eksportir untuk memisahkan jalur data yang rusak",
+        "Menghapus seluruh file blok data pada database CouchDB di node validator petani",
+        "Memeriksa log kontainer orderer service dan channel configuration block untuk melihat konflik",
+        "Mengubah algoritma konsensus dari Raft menjadi Proof of Work secara langsung via terminal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah bursa aset kripto lokal ingin mengintegrasikan token BEP-20 baru ke dalam sistem dompet kustodial mereka. Tim backend melaporkan bahwa saldo pengguna sering tidak terupdate secara real-time saat terjadi deposit massal. Pendekatan arsitektur apa yang paling efektif untuk menyelesaikan masalah pemantauan transaksi ini?",
+      "options": [
+        "Membuat skrip polling terjadwal setiap satu jam sekali untuk mencatat transaksi masuk",
+        "Menggunakan WebSocket penyedia node pihak ketiga untuk mendengarkan event transfer secara langsung",
+        "Melakukan query manual ke blockchain explorer setiap kali pengguna membuka halaman dompet",
+        "Menonaktifkan sementara fitur deposit otomatis hingga jaringan mengalami penurunan aktivitas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin tim auditor smart contract untuk proyek game play-to-earn di Indonesia. Dalam kode token reward, ditemukan potensi kerentanan integer overflow pada fungsi perhitungan bonus harian pemain. Perbaikan kode seperti apa yang harus Anda implementasikan pada Solidity versi 0.8.x?",
+      "options": [
+        "Menambahkan pustaka SafeMath eksternal secara manual pada setiap operasi aritmatika dasar",
+        "Memanfaatkan pemeriksaan overflow otomatis bawaan compiler dan menggunakan blok unchecked",
+        "Mengubah seluruh variabel tipe uint256 menjadi string agar tidak terkena batasan ukuran bit",
+        "Mengganti semua operasi perkalian dengan pembagian berulang untuk menghindari batas maksimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform identitas digital berbasis blockchain di Indonesia mendeteksi bahwa kunci privat dari akun admin kontrak utama hampir kedaluwarsa rotasinya. Kontrak tersebut menggunakan pola proxy transparan (transparent proxy pattern). Tindakan operasional apa yang harus dilakukan untuk memperbarui logika kontrak tanpa kehilangan state data pengguna?",
+      "options": [
+        "Menghapus kontrak lama secara permanen dan mendeklarasikan kontrak baru dengan alamat berbeda",
+        "Mengunggah implementasi logika kontrak baru dan memperbarui alamat penunjuk pada proxy admin",
+        "Memindahkan seluruh saldo dan state data pengguna satu per satu melalui transaksi migrasi manual",
+        "Menghentikan seluruh fungsi jaringan global menggunakan tombol circuit breaker selamanya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan dApp sistem lelang aset seni digital, Anda menemukan bahwa pengguna sering mengalami kerugian karena transaksi mereka disusupi oleh bot penyerang yang menaikkan gas fee (sandwich attack). Langkah mitigasi apa yang paling tepat diterapkan pada sisi antarmuka pengguna?",
+      "options": [
+        "Menyarankan pengguna untuk selalu menggunakan gas price paling rendah yang tersedia di jaringan",
+        "Menerapkan parameter slippage tolerance dan tenggat waktu transaksi (deadline) pada pemanggilan fungsi",
+        "Menghapus fitur estimasi gas otomatis dan meminta pengguna memasukkan nilai secara acak",
+        "Menyembunyikan detail transaksi dari mempool publik dengan menggunakan enkripsi browser lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik multinasional di Surabaya ingin mencatat dokumen surat jalan ke blockchain publik dengan biaya serendah mungkin, namun tetap menjaga kerahasiaan isi dokumen dari publik. Strategi penyimpanan data apa yang paling tepat untuk diterapkan?",
+      "options": [
+        "Menyimpan seluruh teks dokumen mentah secara langsung di dalam variabel string smart contract",
+        "Mengunggah dokumen ke IPFS, lalu menyimpan hanya hash kriptografis dari dokumen tersebut on-chain",
+        "Mengirimkan dokumen fisik melalui kurir konvensional sambil mengabaikan catatan digital on-chain",
+        "Menyimpan dokumen dalam bentuk gambar beresolusi tinggi pada metadata token standar ERC-721"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem verifikasi ijazah perguruan tinggi menggunakan jaringan Avalanche Subnet kustom. Agar institusi pendidikan dapat menerbitkan ijazah secara sah tanpa biaya gas yang membebani mahasiswa, mekanisme apa yang harus dikonfigurasi pada subnet tersebut?",
+      "options": [
+        "Mengatur validator subnet hanya terdiri dari satu node pusat milik kementerian",
+        "Mengubah aturan biaya transaksi asli dengan menetapkan harga gas minimal nol pada validator node",
+        "Memaksa mahasiswa membayar biaya validasi blok setiap kali mereka mengunduh dokumen ijazah",
+        "Menghilangkan fungsi tanda tangan digital agar siapa saja bisa menerbitkan ijazah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam arsitektur sistem pembayaran lintas batas (cross-border payment) menggunakan jaringan Ripple (XRPL), gateway Anda perlu memastikan bahwa transaksi pembayaran telah diselesaikan secara final sebelum menyerahkan barang fisik kepada pembeli. Berapa lama waktu yang dibutuhkan untuk mencapai finalitas mutlak pada XRPL?",
+      "options": [
+        "Membutuhkan waktu hingga 24 jam untuk konfirmasi akhir lintas zona waktu",
+        "Hanya memerlukan waktu sekitar 3 hingga 5 detik tanpa risiko pembalikan blok",
+        "Bergantung sepenuhnya pada kemacetan jaringan Ethereum di waktu yang sama",
+        "Memerlukan persetujuan manual dari minimal 51 persen bank sentral global"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta merancang arsitektur jembatan lintas rantai (cross-chain bridge) untuk menghubungkan aset token dari jaringan Ethereum ke Binance Smart Chain. Pendekatan keamanan apa yang paling krusial untuk mencegah serangan pencetakan token palsu di rantai tujuan?",
+      "options": [
+        "Memastikan validasi tanda tangan kriptografi dari jaringan asal diverifikasi secara ketat oleh kontrak validator di rantai tujuan",
+        "Menggunakan protokol enkripsi simetris AES-256 untuk mengenkripsi setiap payload data yang dikirim melalui jembatan",
+        "Membatasi waktu tunggu transaksi lintas rantai maksimal 5 menit agar tidak terjadi penumpukan antrean",
+        "Menyimpan cadangan dana jaminan dalam bentuk mata uang fiat di bank kustodian lokal di Indonesia"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup fintech di Jakarta sedang membangun platform DeFi di jaringan Ethereum. Saat melakukan audit internal pada smart contract peminjaman, ditemukan bahwa fungsi penarikan dana rentan terhadap serangan berulang sebelum saldo diperbarui. Langkah mitigasi apa yang paling tepat diterapkan pada fungsi tersebut?",
+      "options": [
+        "Mengubah visibilitas fungsi dari public menjadi external untuk membatasi akses eksternal",
+        "Menerapkan pola checks-effects-interactions serta menggunakan modifier pembatas mutex",
+        "Menambahkan fungsi emergency stop untuk menghentikan seluruh transaksi saat darurat",
+        "Melakukan migrasi penyimpanan data dari state variable ke memory sementara"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang blockchain di sebuah perusahaan logistik nasional ingin merilis dApp berbasis Polygon untuk pelacakan rantai pasok. Mereka mendapati bahwa biaya gas harian untuk mencatat setiap perpindahan palet sangat membebani operasional. Strategi optimasi apa yang paling efektif untuk menekan biaya tersebut?",
+      "options": [
+        "Menggunakan mekanisme batching dengan menggabungkan beberapa data perpindahan dalam satu transaksi",
+        "Memindahkan seluruh logika pencatatan ke database terpusat lalu melakukan sinkronisasi mingguan",
+        "Menaikkan batas gas limit pada file konfigurasi hardhat agar transaksi diproses lebih cepat",
+        "Mengubah standar token dari ERC-20 menjadi ERC-721 untuk setiap unit palet logistik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda adalah Lead Blockchain Engineer di sebuah konsorsium perbankan Indonesia yang menguji coba private blockchain menggunakan Hyperledger Besu. Salah satu node validator mengalami kegagalan perangkat keras secara mendadak. Tindakan operasional apa yang harus segera dilakukan untuk menjaga ketersediaan jaringan?",
+      "options": [
+        "Melakukan hard fork pada seluruh node yang tersisa untuk menghapus riwayat node yang rusak",
+        "Mengganti node tersebut dengan instance baru dan menyinkronkan ulang data dari genesis block",
+        "Menjalankan prosedur konsensus ulang untuk mengeluarkan node mati dari daftar validator aktif",
+        "Menurunkan tingkat keamanan jaringan dari IBFT 2.0 ke PoW sementara waktu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah proyek NFT marketplace lokal mengalami kegagalan transaksi massal (out of gas) ketika melakukan minting koleksi seni digital secara bersamaan. Setelah dianalisis, fungsi minting melakukan perulangan (looping) pada array dinamis yang ukurannya tidak dibatasi. Bagaimana cara memperbaiki kode smart contract tersebut?",
+      "options": [
+        "Membatasi jumlah maksimal item yang dapat dicetak dalam satu panggilan fungsi atau menerapkan pola lazy minting",
+        "Mengganti tipe data string pada metadata URI menjadi bytes32 agar penggunaan memori lebih efisien",
+        "Menghapus seluruh modifier pembatas akses pemilik agar fungsi dapat dipanggil oleh siapa saja",
+        "Meningkatkan alokasi gas block maksimum pada jaringan lokal melalui file hardhat.config.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeteksi adanya anomali pada smart contract token ERC-20 milik klien yang beroperasi di Binance Smart Chain, di mana saldo total bertambah secara tidak sah tanpa adanya fungsi minting baru. Setelah diteliti, ditemukan celah pada fungsi transfer dari alamat lain. Apa akar penyebab kerentanan standar ini?",
+      "options": [
+        "Kesalahan implementasi pada logika pengecekan batas allowance sebelum mengurangi saldo pemilik",
+        "Penggunaan fungsi matematika bawaan Solidity tanpa pengaman overflow untuk versi di bawah 0.8.0",
+        "Kegagalan fungsi fallback dalam menolak pengiriman BNB secara langsung ke kontrak",
+        "Ketiadaan modifier onlyOwner pada fungsi konstruktor saat inisialisasi awal token"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform agrikultur berbasis blockchain di Indonesia berencana melakukan upgrade logika smart contract pencatatan hasil panen tanpa mengubah alamat kontrak yang sudah berinteraksi dengan pengguna. Pola desain (design pattern) arsitektur apa yang harus dipilih?",
+      "options": [
+        "Pola Factory Contract untuk menerbitkan kontrak baru setiap kali ada perubahan musim panen",
+        "Pola Diamond Standard (EIP-2535) untuk memecah logika fungsionalitas ke dalam beberapa facet",
+        "Pola Proxy Contract dengan pemisahan antara contract penyimpanan data dan contract logika",
+        "Pola Access Control berjenjang dengan memberikan hak akses khusus kepada administrator utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek integrasi sistem pembayaran kripto untuk e-commerce, backend Node.js Anda perlu mendengarkan event dari smart contract pembayaran secara real-time. Ketika terjadi lonjakan trafik, beberapa event terlewat karena koneksi WebSocket terputus. Bagaimana merancang mekanisme pemulihan yang andal?",
+      "options": [
+        "Mengganti protokol WebSocket dengan pemanggilan HTTP polling setiap detik secara terus menerus",
+        "Menyimpan blok terakhir yang berhasil diproses di database dan melakukan sinkronisasi blok secara berkala saat koneksi pulih",
+        "Meminta pengguna untuk mengirim ulang bukti transaksi melalui formulir manual di website",
+        "Meningkatkan timeout pada pustaka Ethers.js agar koneksi tidak mudah putus saat jaringan sibuk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan properti tokenisasi di Bali ingin memastikan bahwa token kepemilikan vila hanya dapat diperjualbelikan oleh investor yang telah melewati proses verifikasi identitas (KYC) yang sah. Mekanisme apa yang paling tepat diimplementasikan pada smart contract token tersebut?",
+      "options": [
+        "Menggunakan standar token ERC-1400 atau ERC-3643 yang mendukung fitur pembatasan transfer berbasis kepatuhan",
+        "Menambahkan modifier onlyOwner pada fungsi transfer agar hanya pemilik kontrak yang bisa memindahkan token",
+        "Melakukan blacklist pada alamat dompet pengguna yang belum melakukan KYC secara manual setiap hari",
+        "Mengenkripsi alamat penerima menggunakan fungsi hash keccak256 sebelum transaksi dikirim"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pengujian penetrasi pada aplikasi terdesentralisasi (dApp) lelang NFT, ditemukan celah Front-Running di mana bot penyerang dapat melihat transaksi penawaran tinggi di mempool dan mendahuluinya dengan gas fee lebih tinggi. Solusi teknis apa yang efektif untuk mencegah serangan ini?",
+      "options": [
+        "Menerapkan skema commit-reveal di mana pengguna mengirim hash penawaran terlebih dahulu sebelum membukanya",
+        "Menggunakan jaringan privat yang sepenuhnya tertutup tanpa mempublikasikan transaksi ke public mempool",
+        "Menurunkan batas gas price maksimum pada antarmuka pengguna agar transaksi diproses berurutan",
+        "Menghapus fungsi pembatalan penawaran untuk mengunci urutan transaksi yang masuk ke smart contract"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

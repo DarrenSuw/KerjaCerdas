@@ -1,0 +1,306 @@
+{
+  "skill": "Audit",
+  "skill_key": "audit",
+  "questions": [
+    {
+      "question": "Anda sedang memimpin audit laporan keuangan perusahaan manufaktur. Manajemen menolak memberikan akses penuh ke server data payroll dengan alasan rahasia pribadi karyawan. Bagaimana sikap profesional Anda menghadapi situasi ini?",
+      "options": [
+        "Menerima alasan tersebut dan hanya mengandalkan ringkasan data yang dicetak manajemen",
+        "Menghentikan seluruh proses penugasan audit secara sepihak demi menjaga independensi",
+        "Mendokumentasikan pembatasan ruang lingkup ini dan mengevaluasi dampaknya pada opini audit",
+        "Melaporkan dugaan tindak pidana pencucian uang tersebut langsung kepada pihak kepolisian"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menemukan perbedaan saldo kas di bank antara catatan buku besar perusahaan dan konfirmasi bank resmi sebesar Rp50 juta. Setelah ditelusuri, terdapat cek yang telah dikeluarkan perusahaan tetapi belum dicairkan oleh vendor. Apa langkah pencatatan koreksi yang tepat?",
+      "options": [
+        "Membuat jurnal penyesuaian untuk menambah saldo kas di buku besar perusahaan",
+        "Meminta pihak bank segera memblokir rekening koran atas transaksi cek tersebut",
+        "Mengabaikan perbedaan karena hal tersebut merupakan item rekonsiliasi yang normal",
+        "Melaporkan kejadian tersebut kepada komite audit sebagai indikasi fraud perbankan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen puncak meminta draf laporan hasil audit (LHA) direvisi karena temuan kelemahan sistem IT dianggap dapat menjatuhkan reputasi perusahaan di depan investor asing. Bagaimana respons auditor yang menjunjung tinggi kode etik?",
+      "options": [
+        "Menghapus temuan tersebut dari laporan agar hubungan dengan manajemen tetap harmonis",
+        "Memindahkan temuan tersebut ke lampiran rahasia yang tidak boleh dibaca oleh investor",
+        "Tetap mempertahankan objektivitas dan menyajikan temuan secara faktual tanpa kompromi",
+        "Meminta tambahan honorarium khusus atas risiko tekanan manajemen yang diterima"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan stock opname akhir tahun pada perusahaan distributor obat, Anda mendapati sejumlah besar produk telah melewati tanggal kadaluarsa (expired) namun masih tercatat sebagai persediaan aktif. Apa rekomendasi audit yang harus diberikan?",
+      "options": [
+        "Menghapus produk tersebut dari gudang secara diam-diam tanpa mengubah catatan sistem",
+        "Melakukan penyesuaian nilai persediaan melalui jurnal penyisihan penurunan nilai",
+        "Mendistribusikan obat tersebut kepada karyawan kantor sebagai kompensasi lembur",
+        "Meminta bagian penjualan menawarkan diskon besar agar obat cepat laku terjual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merencanakan sampel audit untuk pengujian pengendalian atas 5.000 transaksi pembayaran vendor di perusahaan ritel. Metode pemilihan sampel apa yang paling tepat untuk memastikan setiap transaksi memiliki peluang terpilih yang sama?",
+      "options": [
+        "Pemilihan sampel acak berbasis statistik menggunakan nomor urut dokumen transaksi",
+        "Memilih 50 transaksi dengan nilai nominal terbesar untuk mewakili seluruh populasi",
+        "Mengambil 100 transaksi pertama yang diserahkan oleh staf akuntansi pada hari ini",
+        "Meminta departemen keuangan memilihkan sampel transaksi yang paling mudah diaudit"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Auditor internal menemukan bahwa supervisor penjualan merangkap sebagai fungsi penagihan piutang dan pencatatan buku besar pembantu piutang. Risiko utama apa yang langsung timbul akibat kelemahan pemisahan tugas ini?",
+      "options": [
+        "Penurunan drastis volume penjualan akibat lambatnya proses pelayanan pelanggan",
+        "Karyawan penjualan dapat menyalahgunakan penerimaan kas dan menutupi catatan piutang",
+        "Kesalahan perhitungan pajak penghasilan badan pada akhir tahun buku berjalan",
+        "Kegagalan sistem komputer dalam memproses transaksi penjualan secara real-time"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika melakukan audit investigatif atas dugaan penggelapan dana kas kecil, Anda menemukan kuitansi pembelian ATK senilai Rp15 juta yang hanya bertuliskan 'toko serba ada' tanpa alamat dan nomor NPWP yang jelas. Apa kesimpulan awal yang paling logis?",
+      "options": [
+        "Transaksi tersebut sah secara hukum karena dilandasi niat pengadaan barang kantor",
+        "Dokumen pendukung tersebut tidak memadai dan berpotensi menjadi celah fiktif",
+        "Kasir perusahaan wajib memenjarakan pihak yang menandatangani kuitansi tersebut",
+        "Nilai nominalnya terlalu kecil untuk dimasukkan dalam kertas kerja pemeriksaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menguji efektivitas pengendalian internal siklus pengadaan barang di sebuah BUMN. Manajer pengadaan menunjukkan dokumen persetujuan vendor yang lengkap secara administratif. Apa pengujian substantif lanjutan yang harus Anda lakukan?",
+      "options": [
+        "Memastikan bahwa seluruh stempel dan tanda tangan pada dokumen menggunakan tinta hitam asli",
+        "Menelusuri proses pemilihan vendor untuk memastikan tidak ada konflik kepentingan atau suap",
+        "Meminta bukti fisik barang yang dibeli langsung dikirimkan ke rumah kediaman manajer",
+        "Menilai kewajaran harga pasar dengan membandingkan minimal tiga penawaran vendor lain"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam penugasan audit kepatuhan perpajakan, Anda mendapati bahwa klien tidak menyetor PPh Pasal 21 tepat waktu selama tiga bulan berturut-turut karena masalah arus kas. Apa tindakan rekomendasi yang paling konstruktif?",
+      "options": [
+        "Menyarankan pelunasan segera pokok pajak beserta perhitungan sanksi denda keterlambatan",
+        "Membuat catatan pembukuan ganda agar kewajiban pajak tersebut tidak terlihat oleh KPP",
+        "Mengusulkan agar tarif gaji seluruh karyawan dipotong permanen untuk menutupi pajak",
+        "Menunda penerbitan laporan hasil audit sampai manajemen berhasil mengajukan pinjaman bank"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit operasional di gudang logistik PT Nusantara, Anda menemukan selisih fisik inventaris sebesar 15% dari catatan sistem komputer. Apa langkah investigasi awal yang paling tepat dilakukan sebelum menarik kesimpulan?",
+      "options": [
+        "Langsung melaporkan temuan kepada dewan direksi agar segera dikeluarkan sanksi",
+        "Memeriksa dokumen transaksi keluar-masuk barang dan prosedur pencatatan periode berjalan",
+        "Meminta manajemen gudang mengganti kerugian barang yang hilang secara proporsional",
+        "Mengabaikan selisih tersebut karena berada di bawah batas materialitas umum perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengaudit siklus penggajian PT Makmur Jaya. Anda menemukan adanya pembayaran gaji kepada 5 orang karyawan yang sudah resign tiga bulan lalu. Langkah awal terbaik yang harus Anda ambil adalah:",
+      "options": [
+        "Melaporkan dugaan fraud berat ini langsung kepada pihak kepolisian setempat",
+        "Meminta bagian HRD menunjukkan surat pengunduran diri dan absensi harian",
+        "Menelusuri aliran dana ke rekening bank penerima melalui konfirmasi bank",
+        "Memotong langsung anggaran departemen HRD pada bulan berjalan sebesar temuan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan verifikasi fisik persediaan barang dalam proses (WIP) di pabrik tekstil, Anda kesulitan menentukan tingkat penyelesaian produk secara akurat karena bentuknya yang kompleks. Cara terbaik untuk mengatasi hal ini adalah:",
+      "options": [
+        "Mengabaikan saldo WIP karena nilainya tidak material terhadap total aset lancar",
+        "Menggunakan estimasi konservatif dengan menilai WIP sebesar nol rupiah",
+        "Memanfaatkan tenaga ahli independen atau insinyur pabrik untuk menilai tingkat penyelesaian",
+        "Meminta manajemen menghapus seluruh akun WIP dari neraca akhir periode"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati transaksi pembelian bahan baku dari pihak berelasi (related party) dilakukan tanpa tender dan dengan harga 30% di atas harga pasar wajar. Langkah pengujian tambahan yang esensial adalah:",
+      "options": [
+        "Memastikan pengungkapan transaksi pihak berelasi tersebut telah memadai di Catatan atas Laporan Keuangan",
+        "Menghitung estimasi kerugian perusahaan akibat selisih harga dan melaporkannya sebagai fraud",
+        "Meminta manajemen segera memutus kontrak dengan pemasok pihak berelasi tersebut",
+        "Mengubah opini audit menjadi opini tidak menyatakan pendapat atas akun pembelian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam penugasan audit operasional pada divisi pemasaran, ditemukan realisasi anggaran promosi melampaui 150% dari Rencana Kerja dan Anggaran Perusahaan (RKAP) tanpa revisi anggaran resmi. Langkah analitis awal yang harus dilakukan adalah:",
+      "options": [
+        "Membandingkan efektivitas biaya promosi tersebut terhadap peningkatan omset penjualan",
+        "Menghitung selisih angka absolut dan meminta pertanggungjawaban personal kepala divisi",
+        "Menilai kepatuhan prosedur perubahan anggaran serta meminta dokumen otorisasi darurat",
+        "Menyimpulkan telah terjadi kerugian negara pada badan usaha milik negara tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Ketika mereview perhitungan cadangan kerugian penurunan nilai (CKPN) piutang menggunakan metode Expected Credit Loss (ECL), Anda melihat manajemen tidak memperbarui asumsi makroekonomi sejak tahun lalu. Tindakan audit yang paling tepat adalah:",
+      "options": [
+        "Menghitung ulang cadangan menggunakan data historis perusahaan tanpa penyesuaian",
+        "Meminta manajemen melakukan penyesuaian asumsi dan menghitung ulang nilai CKPN",
+        "Menerima perhitungan manajemen dengan memberikan catatan kaki di laporan audit",
+        "Mengubah metode pencadangan piutang perusahaan menjadi metode penghapusan langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menguji pengendalian umum teknologi informasi pada sistem ERP perusahaan ritel. Ditemukan bahwa 10 staf akuntansi memiliki hak akses untuk mengubah master data harga jual dan melakukan entri jurnal. Risiko utama dari kondisi ini adalah:",
+      "options": [
+        "Keterlambatan penyusunan laporan keuangan bulanan akibat antrean sistem",
+        "Kegagalan sistem secara total saat terjadi lonjakan transaksi penjualan",
+        "Kemungkinan besar terjadinya manipulasi pencatatan dan konflik kepentingan",
+        "Pembengkakan biaya lisensi software akibat penambahan pengguna aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pada audit atas pengelolaan aset tetap kendaraan operasional, Anda mendapati tiga unit mobil tidak ditemukan fisik di kantor pusat maupun cabang. Kepala bagian umum menyatakan mobil sedang disewakan pribadi ke direksi. Sikap profesional Anda adalah:",
+      "options": [
+        "Menerima penjelasan lisan karena disampaikan oleh pejabat berwenang di perusahaan",
+        "Meminta bukti perjanjian sewa resmi dan persetujuan Dewan Komisaris atas tindakan tersebut",
+        "Menjurnal ulang aset tersebut sebagai investasi jangka panjang di luar operasional",
+        "Melakukan revaluasi nilai ketiga mobil tersebut berdasarkan harga pasaran saat ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan bahwa kebijakan batas maksimal otorisasi pengeluaran kas oleh Manajer Keuangan telah dilampaui pada transaksi pembelian aset tetap senilai Rp500 juta tanpa persetujuan Direktur Utama. Apa langkah audit selanjutnya?",
+      "options": [
+        "Mengevaluasi kelemahan pengendalian internal dan menguji apakah ada otorisasi susulan",
+        "Membuat jurnal koreksi untuk membatalkan transaksi pembelian aset tetap tersebut",
+        "Menyatakan laporan keuangan secara keseluruhan tidak wajar karena pelanggaran batas",
+        "Menghubungi auditor eksternal untuk mengambil alih investigasi aset tetap"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pengujian substantif atas akun Piutang Usaha, surat konfirmasi positif yang dikirimkan kepada pelanggan terbesar tidak mendapatkan balasan setelah dua kali pengiriman. Prosedur alternatif apa yang harus Anda lakukan?",
+      "options": [
+        "Menganggap saldo piutang tersebut valid karena tidak ada sanggahan dari pelanggan",
+        "Menghapus saldo piutang tersebut dari neraca untuk konservatisme laporan",
+        "Memeriksa dokumen pengiriman, faktur penjualan, dan bukti pelunasan setelah tanggal neraca",
+        "Meminta manajemen membuat jaminan tertulis atas tertagihnya piutang tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam penugasan audit kepatuhan atas izin lingkungan pabrik kimia, Anda mendapati bahwa dokumen AMDAL telah kedaluwarsa sejak enam bulan lalu, namun pabrik tetap beroperasi penuh. Tindakan tepat dalam menyikapi temuan ini adalah:",
+      "options": [
+        "Menghentikan proses audit sementara dan menunggu pabrik memperpanjang izin",
+        "Memasukkan temuan tersebut ke dalam Laporan Hasil Audit dengan kategori risiko tinggi",
+        "Meminta legal perusahaan membuat surat pernyataan bahwa perpanjangan sedang diproses",
+        "Mengabaikan temuan karena izin lingkungan berada di luar ruang lingkup akuntansi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit atas kepatuhan ketenagakerjaan, Anda menemukan bahwa perusahaan outsourcing mitra klien mempekerjakan pekerja anak. Klien berargumen bahwa hal tersebut berada di luar kendali operasional internal mereka. Bagaimana Anda menyikapi argumen ini?",
+      "options": [
+        "Menyetujui argumen klien karena tenaga kerja tersebut bukan pegawai tetap perusahaan",
+        "Mencatat hal tersebut sebagai pelanggaran kepatuhan etika dan hukum yang berdampak reputasi",
+        "Menghapus temuan dari Laporan Hasil Audit demi menjaga hubungan baik dengan klien",
+        "Menyarankan manajemen memotong biaya jasa mitra outsourcing sebesar lima puluh persen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan audit kepatuhan atas implementasi Undang-Undang Pelindungan Data Pribadi (UU PDP) di sebuah perusahaan fintech, Anda menemukan data nasabah disimpan dalam server cloud pihak ketiga tanpa enkripsi yang memadai. Langkah awal apa yang harus segera Anda ambil?",
+      "options": [
+        "Melaporkan temuan tersebut secara langsung kepada Otoritas Jasa Keuangan (OJK)",
+        "Mendokumentasikan kondisi tersebut dan menguji risiko paparan kebocoran data",
+        "Meminta manajemen IT untuk segera memutus kontrak dengan penyedia cloud",
+        "Mengasumsikan hal tersebut aman karena berada di bawah standar vendor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam penugasan audit internal pada siklus penjualan ritel modern, Anda mendapati bahwa prosedur opname kas harian kasir tidak pernah direview oleh Supervisor Toko selama enam bulan terakhir. Apa tindakan audit lanjutan yang paling tepat?",
+      "options": [
+        "Mengambil alih tugas opname kas harian untuk sisa periode audit berjalan",
+        "Memperluas sampel pengujian transaksi kas untuk mendeteksi potensi selisih atau kecurangan",
+        "Langsung memberikan opini audit tidak wajar pada laporan operasional toko tersebut",
+        "Mengabaikan temuan karena tanggung jawab pencatatan ada di bagian keuangan pusat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengaudit estimasi akuntansi provisi garansi produk elektronik. Manajemen menggunakan data historis 5 tahun lalu untuk menentukan persentase kerusakan, padahal lini produk baru memiliki tingkat kegagalan yang jauh lebih tinggi. Bagaimana sikap Anda sebagai auditor?",
+      "options": [
+        "Menerima metode manajemen karena didasarkan pada data historis resmi perusahaan",
+        "Meminta manajemen menyesuaikan estimasi menggunakan data terbaru dari lini produk baru",
+        "Mengganti metode perhitungan provisi secara sepihak sesuai standar industri global",
+        "Menolak memberikan opini tanpa melakukan konfirmasi langsung ke pabrik pembuat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika melakukan pengujian substantif atas akun Utang Usaha, Anda menemukan beberapa faktur pembelian dari periode tahun lalu yang baru dicatat dan dibebankan ke tahun berjalan. Apa implikasi utama dari temuan ini terhadap laporan keuangan?",
+      "options": [
+        "Potensi salah saji material pada akun laba ditahan dan beban periode lalu",
+        "Peningkatan signifikan pada rasio lancar perusahaan secara keseluruhan",
+        "Kesalahan klasifikasi pada laporan arus kas aktivitas pendanaan perusahaan",
+        "Penurunan drastis nilai aset tetap akibat penyesuaian penyusutan fiskal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan indikasi praktik window dressing pada laporan posisi keuangan tanggal 31 Desember, di mana piutang afiliasi dilunasi sesaat sebelum tanggal neraca menggunakan pinjaman jangka pendek bank, lalu ditarik kembali pada tanggal 2 Januari. Apa tindakan audit yang harus dilakukan?",
+      "options": [
+        "Membiarkan transaksi tersebut karena terjadi di luar tahun buku yang diaudit",
+        "Mengungkapkan transaksi tersebut dalam catatan atas laporan keuangan sebagai peristiwa penting",
+        "Meminta manajemen melakukan reklasifikasi dan penyesuaian eliminasi pada akun terkait",
+        "Menurunkan tingkat materialitas audit secara keseluruhan untuk tahun berjalan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pada penugasan audit pengadaan proyek konstruksi jalan, Anda mendapati spesifikasi teknis beton yang digunakan di lapangan lebih rendah daripada spesifikasi dalam Kontrak Kerja Konstruksi, meskipun harga pembayarannya sama. Apa langkah audit investigatif selanjutnya?",
+      "options": [
+        "Mengambil sampel inti beton untuk diuji laboratorium independen guna mengukur kuat tekan",
+        "Meminta kontraktor pelaksana segera membongkar seluruh ruas jalan yang telah selesai",
+        "Menghitung selisih harga pasar dan mengusulkan pemotongan pembayaran termin akhir",
+        "Memeriksa ulang tanda tangan persetujuan pembayaran oleh Direktur Operasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengevaluasi kecukupan pengungkapan segmen operasi berdasarkan PSAK 5 perusahaan konglomerasi. Salah satu segmen anak usaha menyumbang 8% dari total pendapatan namun tidak dilaporkan secara terpisah. Apa keputusan profesional Anda?",
+      "options": [
+        "Membiarkannya karena ambang batas kuantitatif pelaporan segmen adalah minimal 10%",
+        "Memaksa manajemen untuk membubarkan anak usaha tersebut demi efisiensi pelaporan",
+        "Mewajibkan manajemen menyatukan segmen tersebut dengan divisi pemasaran pusat",
+        "Meminta penjelasan tertulis mengapa segmen tersebut tidak dianggap strategis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menguji pengendalian akses fisik ke ruang server pusat data perusahaan, Anda menemukan bahwa kunci fisik masih dipegang oleh petugas kebersihan dan tidak ada pencatatan log masuk keluar ruangan. Bagaimana Anda menilai kelemahan ini?",
+      "options": [
+        "Sebagai defisiensi signifikan dalam pengendalian umum TI yang meningkatkan risiko integritas data",
+        "Sebagai masalah operasional biasa yang dapat diselesaikan dengan teguran lisan kepada staf",
+        "Sebagai risiko rendah karena perangkat keras server telah diasuransikan secara penuh",
+        "Sebagai pelanggaran kecil terhadap prosedur administrasi kebersihan gedung perkantoran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pelaksanaan audit operasional rumah sakit swasta, ditemukan tingginya tingkat klaim BPJS Kesehatan yang ditolak karena ketidaklengkapan resume medis dari dokter penanggung jawab. Rekomendasi perbaikan proses apa yang paling efektif?",
+      "options": [
+        "Membentuk tim verifikasi internal khusus untuk melengkapi berkas sebelum dikirim ke BPJS",
+        "Mengurangi insentif keuangan dokter yang sering terlambat melengkapi dokumen rekam medis",
+        "Meminta manajemen rumah sakit menghentikan kerja sama pelayanan dengan pihak BPJS",
+        "Mengalihkan tanggung jawab pengisian resume medis sepenuhnya kepada perawat ruangan"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

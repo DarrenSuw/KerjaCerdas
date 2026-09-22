@@ -1,0 +1,306 @@
+{
+  "skill": "Perpajakan",
+  "skill_key": "perpajakan",
+  "questions": [
+    {
+      "question": "Seorang staf pajak di perusahaan manufaktur mendapati bahwa faktur pajak masukan atas pembelian bahan baku bulan Maret baru diterima pada bulan Juni tahun yang sama. Kapan batas waktu paling lambat faktur pajak tersebut dapat dikreditkan dalam SPT Masa PPN?",
+      "options": [
+        "Masa Pajak Juni tahun berjalan",
+        "Masa Pajak Maret tahun berjalan",
+        "Masa Pajak Agustus tahun berjalan",
+        "Masa Pajak Desember tahun berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sinar Abadi membayar jasa konsultan manajemen kepada Kantor Akuntan Publik (KAP) lokal senilai Rp 100.000.000 belum termasuk PPN. Berapa jumlah PPh Pasal 23 yang harus dipotong dan disetorkan oleh PT Sinar Abadi?",
+      "options": [
+        "Sebesar Rp 1.000.000",
+        "Sebesar Rp 2.000.000",
+        "Sebesar Rp 4.000.000",
+        "Sebesar Rp 15.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Maju Jaya melakukan impor barang modal dari luar negeri seharga USD 50.000. Barang tersebut memiliki Angka Pengenal Impor (API), namun saat tiba di pelabuhan, aparat bea cukai menagih PPh Pasal 22 Impor. Berapa tarif efektif yang harus diperhitungkan oleh bagian keuangan untuk transaksi tersebut?",
+      "options": [
+        "Tarif 2,5 persen dari nilai impor",
+        "Tarif 7,5 persen dari nilai impor",
+        "Tarif 0,5 persen dari nilai impor",
+        "Tarif 10 persen dari nilai impor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada akhir tahun pajak, PT Berkah Mandiri memberikan fasilitas natura berupa laptop operasional kepada seluruh pegawai untuk bekerja dari rumah dan menanggung biaya sewa apartemen bagi jajaran direksi. Bagaimana perlakuan perpajakan atas kedua pengeluaran tersebut bagi perusahaan?",
+      "options": [
+        "Biaya sewa apartemen dan laptop dapat dibebankan sebagai biaya fiskal",
+        "Biaya sewa apartemen tidak dapat dibebankan, sedangkan laptop dapat dibebankan",
+        "Kedua jenis pengeluaran tersebut sepenuhnya tidak dapat menjadi biaya fiskal",
+        "Biaya sewa apartemen dapat dibebankan, sedangkan laptop tidak dapat dibebankan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan swasta nasional menerima dividen tunai dari penyertaan modal sebesar 25 persen pada PT Terbuka di Indonesia. Bagaimana perlakuan PPh atas dividen yang diterima oleh badan usaha tersebut?",
+      "options": [
+        "Merupakan objek pajak final dengan tarif 10 persen",
+        "Merupakan objek pajak tidak final dan dipotong PPh 23",
+        "Bukan merupakan objek pajak dengan syarat diinvestasikan",
+        "Bukan merupakan objek pajak tanpa syarat apapun"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "PT Nusantara Raya melakukan transaksi penjualan genset kepada instansi pemerintah daerah senilai Rp 330.000.000 sudah termasuk PPN 11 persen. Bagaimana mekanisme pemotongan pajak atas transaksi pengadaan barang tersebut?",
+      "options": [
+        "Bendahara pemerintah memotong PPh 22 sebesar 1,5 persen dan memungut PPN",
+        "PT Nusantara Raya menyetor sendiri PPh 22 dan PPN ke kas negara secara mandiri",
+        "Bendahara pemerintah hanya memungut PPN tanpa memotong PPh Pasal 22",
+        "PT Nusantara Raya memotong PPh 23 karena bertransaksi dengan instansi resmi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Budi adalah pegawai tetap dengan status PTKP K/2. Pada bulan Juli, ia menerima bonus tahunan atas kinerjanya yang sangat baik di luar gaji bulanan rutinnya. Bagaimana cara menghitung PPh Pasal 21 atas bonus tersebut?",
+      "options": [
+        "Dihitung terpisah dengan tarif progresif lapisan tertinggi penghasilan",
+        "Digabungkan dengan penghasilan teratur pada bulan diterimanya bonus",
+        "Dikenakan tarif final tunggal sebesar 15 persen dari total nilai bonus",
+        "Dihitung menggunakan tarif efektif rata-rata bulanan kategori TER B"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah yayasan sosial nirlaba menerima sumbangan dana hibah dari korporasi swasta untuk pembangunan fasilitas panti asuhan. Apa syarat utama agar sumbangan tersebut dapat diakui sebagai pengurang penghasilan bruto bagi pemberi sumbangan?",
+      "options": [
+        "Pemberi sumbangan mendapat persetujuan tertulis dari Dirjen Pajak",
+        "Penerima sumbangan memiliki NPWP dan kegiatan usahanya berbadan hukum",
+        "Penerima sumbangan harus menyetorkan PPh Final atas dana hibah tersebut",
+        "Pemberi dan penerima harus melaporkan sumbangan dalam SPT Tahunan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan retail multinasional melakukan pembayaran lisensi perangkat lunak kepada induk perusahaan di luar negeri sebesar USD 20.000. Perusahaan wajib memotong PPh Pasal 26. Berapa tarif standar PPh Pasal 26 sebelum memperhitungkan ketentuan P3B (Tax Treaty)?",
+      "options": [
+        "Tarif final sebesar 2,5 persen dari jumlah bruto",
+        "Tarif efektif sebesar 10 persen dari jumlah bruto",
+        "Tarif pemotongan sebesar 15 persen dari jumlah bruto",
+        "Tarif pemotongan sebesar 20 persen dari jumlah bruto"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "PT Graha Cipta mengalami kerugian fiskal pada Tahun Pajak 2022 sebesar Rp 500.000.000. Berdasarkan ketentuan perpajakan di Indonesia, sampai tahun pajak berapa kerugian fiskal tersebut dapat dikompensasikan?",
+      "options": [
+        "Dapat dikompensasikan sampai dengan Tahun Pajak 2025",
+        "Dapat dikompensasikan sampai dengan Tahun Pajak 2027",
+        "Dapat dikompensasikan sampai dengan Tahun Pajak 2032",
+        "Kerugian fiskal tidak dapat dikompensasikan ke tahun pajak berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada bulan Mei 2023, PT Bina Karya menerbitkan faktur pajak pengganti atas penyerahan Barang Kena Pajak kepada pelanggan karena terdapat kesalahan penulisan alamat. Faktur pajak normal yang diganti adalah terbitan bulan Januari 2023. Kapan Faktur Pajak Pengganti tersebut harus dilaporkan dalam SPT Masa PPN?",
+      "options": [
+        "Dilaporkan dalam SPT Masa PPN Masa Mei 2023 dengan melakukan pembetulan SPT Januari 2023",
+        "Dilaporkan dalam SPT Masa PPN Masa Januari 2023 melalui mekanisme pembetulan SPT Masa",
+        "Dilaporkan dalam SPT Masa PPN Masa Mei 2023 tanpa perlu melakukan pembetulan SPT Januari",
+        "Dilaporkan dalam masa pajak saat faktur pajak normal diterbitkan, yaitu Januari 2023"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Sentosa Mandiri menyewa gedung kantor dari pemilik perorangan yang tidak memiliki NPWP pada tanggal 10 Oktober 2023 senilai Rp 100.000.000 untuk masa sewa satu tahun. Bagaimana kewajiban pemotongan PPh Pasal 4 ayat (2) atas transaksi tersebut?",
+      "options": [
+        "PT Sentosa Mandiri tetap wajib memotong PPh Pasal 4 ayat (2) sebesar 10% dan menggunakan NIK pemilik gedung",
+        "Pemotongan PPh Pasal 4 ayat (2) tidak wajib dilakukan karena pemilik gedung tidak memiliki NPWP aktif",
+        "PT Sentosa Mandiri wajib menyetor sendiri PPh Pasal 4 ayat (2) dengan tarif lebih tinggi 100%",
+        "Kewajiban pemotongan dialihkan sepenuhnya kepada pemilik gedung melalui mekanisme pelaporan mandiri"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan jasa konstruksi memiliki kualifikasi usaha kecil yang diberikan oleh lembaga yang berwenang. Perusahaan tersebut menerima kontrak pekerjaan renovasi gudang dari PT Cakrawala. Berapa tarif PPh Final yang harus dipotong oleh PT Cakrawala atas pembayaran termin tersebut?",
+      "options": [
+        "1,75% dari jumlah bruto tidak termasuk PPN untuk kontrak dengan perencana konstruksi",
+        "2,65% dari jumlah bruto tidak termasuk PPN untuk pelaksanaan konstruksi kualifikasi kecil",
+        "4,00% dari jumlah bruto termasuk PPN untuk pekerjaan konstruksi secara umum",
+        "6,00% dari jumlah bruto tidak termasuk PPN jika penyedia jasa tidak memiliki sertifikat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ibu Rina adalah pegawai tetap di PT Anugerah Sejahtera dengan gaji bulanan Rp 12.000.000 dan berstatus K/1. Pada bulan Agustus, ia menerima THR sebesar satu kali gaji. Bagaimana penerapan tarif Efektif Rata-Rata (TER) PPh Pasal 21 untuk bulan Agustus?",
+      "options": [
+        "Gaji bulan Agustus dikenakan TER bulanan kategori A, sedangkan THR dikenakan tarif progresif Pasal 17",
+        "Gaji dan THR digabungkan terlebih dahulu, kemudian dikalikan dengan tarif progresif Pasal 17 UU PPh",
+        "Gaji dan THR dibayar terpisah, masing-masing dipotong menggunakan tarif TER bulanan yang sama",
+        "Penghasilan bruto bulan Agustus digabungkan dan dikenakan tarif TER bulanan sesuai tabel kategori"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "PT Delta Logistik membeli sebuah kendaraan pick-up bekas secara tunai dari seorang warga biasa untuk keperluan operasional kurir. Apakah atas transaksi pembelian kendaraan bekas tersebut terutang PPN, dan dokumen apa yang harus dibuat oleh pembeli?",
+      "options": [
+        "Terutang PPN dan wajib dibuatkan Faktur Pajak Standar dengan menggunakan NIK penjual",
+        "Tidak terutang PPN karena penjual bukan Pengusaha Kena Pajak, cukup buat bukti internal",
+        "Terutang PPN besaran tertentu dan wajib menerbitkan Faktur Pajak serta dokumen pengeluaran",
+        "Tidak terutang PPN, namun perusahaan wajib menyetor sendiri PPN kegiatan membangun sendiri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Krakatau Steel melakukan ekspor produk baja ke Australia. Dalam pencatatan akuntansi dan perpajakan untuk SPT Masa PPN, tarif PPN apakah yang harus diterapkan atas transaksi ekspor BKP berwujud tersebut?",
+      "options": [
+        "Tarif umum 11% karena penyerahan terjadi di luar daerah pabean Indonesia",
+        "Tarif 0% atas ekspor BKP berwujud sesuai dengan ketentuan Undang-Undang PPN",
+        "Dibebaskan dari pengenaan PPN dengan melampirkan Surat Keterangan Bebas",
+        "Tidak terutang PPN sehingga tidak perlu dilaporkan di dalam formulir SPT Masa PPN"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Global Teknologi memberikan pinjaman tanpa bunga kepada anak perusahaannya di dalam negeri sebesar Rp 2.000.000.000 untuk tambahan modal kerja. Dalam pemeriksaan pajak, koreksi apa yang berpotensi dilakukan oleh pemeriksa pajak terkait transaksi afiliasi ini?",
+      "options": [
+        "Pemeriksa akan mengenakan PPh Pasal 23 atas imbalan bunga pinjaman yang dianggap terutang",
+        "Pemeriksa akan melakukan koreksi positif penghasilan bunga berdasarkan prinsip kewajaran (Arm's Length Principle)",
+        "Pemeriksa tidak dapat melakukan koreksi karena pinjaman antar anak perusahaan adalah hak bisnis",
+        "Pemeriksa akan mengenakan PPN atas jasa pinjaman dana yang diberikan tanpa menggunakan bunga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang wajib pajak badan berbentuk PT terlambat menyampaikan SPT Tahunan PPh Badan Tahun Pajak 2023 selama satu bulan dari batas waktu yang ditentukan. Sanksi administrasi apakah yang pasti akan diterbitkan oleh Kantor Pelayanan Pajak?",
+      "options": [
+        "Sanksi denda sebesar Rp 1.000.000 ditambah bunga keterlambatan per bulan sesuai ketentuan",
+        "Sanksi denda administrasi keterlambatan penyampaian SPT Tahunan Badan sebesar Rp 1.000.000",
+        "Sanksi kenaikan sebesar 50% dari pajak yang tidak atau kurang dibayar dalam SPT tersebut",
+        "Sanksi bunga sebesar 2% per bulan dari jumlah pajak yang kurang bayar sejak jatuh tempo"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Tirta Husada melakukan pengadaan alat laboratorium kedokteran senilai Rp 550.000.000 sudah termasuk PPN dari distributor lokal yang merupakan PKP. Siapa yang wajib memungut dan menyetor PPN atas transaksi penyerahan alat kesehatan tersebut?",
+      "options": [
+        "PT Tirta Husada sebagai pembeli wajib memungut dan menyetorkan PPN ke kas negara",
+        "Distributor lokal wajib memungut PPN dan menerbitkan Faktur Pajak kepada PT Tirta Husada",
+        "Bank persepsi memotong PPN secara otomatis saat pencairan dana pengadaan alat laboratorium",
+        "Kemenkes memotong PPN secara langsung sebelum pembayaran diterbitkan ke distributor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah hotel bintang empat di Bali menerima tamu rombongan wisatawan asing dan menerbitkan tagihan mencakup kamar dan restoran. Atas penyerahan jasa perhotelan tersebut, jenis pajak daerah dan pusat apa yang melekat secara bersamaan?",
+      "options": [
+        "Dikenakan PPN 11% oleh pemerintah pusat dan Pajak Barang dan Jasa Tertentu (PBJT) oleh pemda",
+        "Hanya dikenakan Pajak Barang dan Jasa Tertentu (PBJT) oleh pemerintah kabupaten/kota setempat",
+        "Hanya dikenakan PPN sebesar 11% karena hotel merupakan Wajib Pajak Badan pusat",
+        "Dikecualikan dari PPN dan PBJT karena melayani tamu asing yang berstatus non-residen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Anugerah Gemilang melakukan pembelian mesin produksi senilai Rp 800.000.000 belum termasuk PPN dari PT Mesin Perkasa pada tanggal 12 Juli. Faktur pajak diterbitkan pada tanggal yang sama, namun pihak finance baru menerima faktur fisik tersebut pada tanggal 15 Agustus dan menginputnya ke sistem DJP Online pada periode Agustus. Bagaimana perlakuan PPN Masukan tersebut?",
+      "options": [
+        "Dapat dikreditkan pada SPT Masa PPN Masa Juli karena batas waktu pengkreditan adalah 3 bulan",
+        "Dapat dikreditkan pada SPT Masa PPN Masa Agustus karena baru diinput pada bulan tersebut",
+        "Tidak dapat dikreditkan sama sekali karena melewati akhir bulan penerbitan faktur pajak",
+        "Dapat dikreditkan melalui mekanisme pembetulan SPT Masa PPN Masa Juli secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang manajer pemasaran asing yang bekerja di kantor cabang perusahaan multinasional di Jakarta tinggal selama 185 hari dalam jangka waktu 12 bulan. Perusahaan membayarkan sewanya secara langsung kepada pemilik apartemen. Bagaimana status subjek pajak dan pemotongan PPh Pasal 21 atas fasilitas tersebut?",
+      "options": [
+        "Menjadi Wajib Pajak Luar Negeri dan dipotong PPh Pasal 26 sebesar 20 persen final",
+        "Tetap sebagai Wajib Pajak Dalam Negeri dan fasilitas sewa menjadi objek PPh Pasal 21",
+        "Menjadi Subjek Pajak Dalam Negeri namun dibebaskan dari pemotongan pajak penghasilan",
+        "Dipajaki berdasarkan tarif efektif rata-rata harian tanpa memperhitungkan nilai sewa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Cipta Sarana Media membayar jasa pemeliharaan gedung kepada CV Bangun Kokoh senilai Rp 50.000.000. Setelah diperiksa, CV Bangun Kokoh merupakan WP Badan UMKM yang memiliki surat keterangan PP 23 Tahun 2018. Kewajiban pemotongan pajak apa yang harus dilakukan oleh PT Cipta Sarana Media?",
+      "options": [
+        "Memotong PPh Pasal 23 sebesar 2 persen dari jumlah bruto tanpa memperlihatkan suket",
+        "Memotong PPh Pasal 4 ayat 2 sebesar 0,5 persen karena termasuk wajib pajak UMKM",
+        "Tidak melakukan pemotongan pajak asalkan CV Bangun Kokoh menyerahkan salinan suket",
+        "Memotong PPh Pasal 21 karena penerima penghasilan berbentuk badan usaha perorangan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Finansial Solusi Utama menerima pembayaran atas jasa konsultasi keuangan dari klien luar negeri sebesar USD 10.000 yang ditransfer langsung ke rekening perusahaan di bank lokal. Bagaimana pencatatan PPN atas penyerahan Jasa Kena Pajak ke luar daerah pabean tersebut?",
+      "options": [
+        "Dikenakan tarif PPN 11 persen karena diterima melalui perbankan di dalam negeri",
+        "Dikenakan PPN dengan tarif 0 persen dan dibuatkan Faktur Pajak Ekspor JKP",
+        "Bebas PPN karena penyerahan dilakukan kepada subjek pajak luar negeri",
+        "Tidak terutang PPN karena tempat penyerahan berada di luar wilayah pabean"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Surya Mandiri melakukan penjualan aset berupa tanah dan bangunan pabrik lama senilai Rp 5.000.000.000 kepada pihak lain. Sebelum akta jual beli ditandatangani di hadapan PPAT, kewajiban perpajakan apa yang harus diselesaikan terlebih dahulu oleh perusahaan?",
+      "options": [
+        "Menyetorkan PPh Final pengalihan hak atas tanah dan bangunan sebesar 2,5 persen",
+        "Melaporkan transaksi tersebut di dalam lampiran khusus SPT Tahunan PPh Badan",
+        "Menunggu penerbitan Surat Ketetapan Pajak Kurang Bayar dari KPP tempat terdaftar",
+        "Meminta pengecualian pembayaran PPh kepada Kantor Wilayah DJP setempat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur memberikan bingkisan Hari Raya kepada seluruh karyawannya senilai total Rp 150.000.000 yang dibeli langsung dari supermarket menggunakan dana operasional perusahaan. Bagaimana perlakuan fiskal atas pengeluaran pembelian bingkisan tersebut dalam perhitungan PPh Badan?",
+      "options": [
+        "Dapat dibiayakan sepenuhnya karena terkait langsung dengan kesejahteraan pegawai",
+        "Tidak dapat dikurangkan dari penghasilan bruto karena merupakan bentuk natura",
+        "Dapat dibiayakan jika dilaporkan sebagai tambahan penghasilan bruto karyawan",
+        "Diperbolehkan sebagai biaya apabila jumlahnya tidak melebihi omzet perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang staf pajak menemukan bahwa faktur pajak masukan atas pembelian bahan penolong bulan Januari terlambat dilaporkan pada SPT Masa PPN bulan Maret. Apa langkah hukum perpajakan yang harus diambil agar faktur tersebut tetap dapat diperhitungkan?",
+      "options": [
+        "Melakukan pembetulan SPT Masa PPN Januari untuk memasukkan faktur tersebut",
+        "Menginput faktur tersebut langsung ke dalam aplikasi e-Faktur sebagai faktur pengganti",
+        "Mengajukan permohonan pengembalian pendahuluan ke Kantor Pelayanan Pajak",
+        "Melakukan pembetulan SPT Masa PPN Maret pada bagian lampiran pengkreditan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Agro Sawit Makmur membagikan dividen tunai kepada pemegang saham orang pribadi dalam negeri sebesar Rp 200.000.000. Berdasarkan peraturan perpajakan terbaru, bagaimana perlakuan pemotongan PPh atas pembayaran dividen tersebut kepada pemegang saham?",
+      "options": [
+        "Dipotong PPh Pasal 23 sebesar 15 persen dari jumlah bruto dividen yang dibagikan",
+        "Dipotong PPh Final Pasal 4 ayat 2 sebesar 10 persen oleh pihak perusahaan",
+        "Bukan merupakan objek pajak jika pemegang saham menginvestasikannya di Indonesia",
+        "Dipotong PPh Pasal 21 sesuai dengan tarif progresif lapisan penghasilan penerima"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Mega Perkasa melakukan transaksi penyerahan Barang Kena Pajak kepada bendaharawan dinas pemerintah daerah senilai Rp 110.000.000 sudah termasuk PPN. Bagaimana mekanisme pemungutan dan penyetoran PPN atas transaksi pengadaan barang pemerintah tersebut?",
+      "options": [
+        "Dipungut dan disetorkan sendiri oleh PT Mega Perkasa melalui surat setoran pajak",
+        "Dipungut dan disetorkan oleh bendaharawan pemerintah selaku pemungut PPN",
+        "Dibebaskan dari pengenaan PPN karena bertransaksi dengan instansi pemerintah",
+        "Disetorkan oleh Kantor Pelayanan Perbendaharaan Negara secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Mitra Usaha memiliki peredaran bruto sebesar Rp 4.800.000.000 dalam satu tahun pajak dan memilih untuk menggunakan skema PPh Final PP 23 Tahun 2018. Pada tahun berikutnya, peredaran bruto perusahaan meningkat menjadi Rp 5.200.000.000. Kapan perusahaan mulai wajib menggunakan tarif umum PPh Badan?",
+      "options": [
+        "Sejak bulan pertama peredaran bruto pada tahun berjalan tersebut melampaui batas",
+        "Mulai Tahun Pajak berikutnya setelah tahun peredaran bruto melampaui batas",
+        "Harus segera melakukan pembetulan SPT Tahunan sejak awal tahun pajak berjalan",
+        "Mulai dikenakan tarif progresif setelah mendapatkan surat teguran dari KPP"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -38,14 +38,13 @@ Skill wajib berbobot 80% dan *nice-to-have* 20% dari bagian skill. Filter lokasi
 
 ---
 
-## 2. Kuis skill → badge ✓ Terbukti `[BUILT, BANK SOAL DRAF]`
+## 2. Kuis skill → badge ✓ Terbukti `[BUILT]`
 
+- Bank soal di-load otomatis dari file JSON ter-cache (163 skill, 30 soal per skill).
 - 5 soal skenario per skill, diambil acak dari bank soal; urutan pilihan diacak per percobaan.
-- Batas waktu 45 detik per soal dijaga server; jawaban **tidak pernah** dikirim ke browser sebelum dikumpulkan.
+- Batas waktu per soal dijaga server; meninggalkan kuis (abandonment) selama >30 detik akan dihitung sebagai 1 percobaan yang terpakai. Jawaban **tidak pernah** dikirim ke browser sebelum dikumpulkan.
 - Dinilai dengan kunci jawaban — penilaian per percobaan **tanpa panggilan AI** (biaya Rp0).
-- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → boleh mengulang **besoknya, sama untuk semua paket** — kecepatan menuju badge tidak dijual. Soal percobaan sebelumnya tidak diulang; bank tiap skill diisi sampai 30 soal. Bila bank sebuah skill masih terlalu tipis untuk menjaminnya, kuis tetap bisa dikerjakan tetapi **tidak memberi badge** sampai banknya cukup.
-- **Skill baru → antrean tinjauan, bukan kuis instan `[BUILT, DRAFT CONTENT]`:** jika pelamar mencoba kuis untuk skill yang belum ada di bank soal, AI (Gemini) menyusun 6 draf soal + kunci jawaban **satu kali** (dedup atas seluruh baris, termasuk yang belum ditinjau, jadi tidak pernah menagih ulang) dan menyimpannya sebagai `reviewed=false`. Soal draf **tidak diujikan**: pelamar menerima "kuis sedang disiapkan" dan skill itu tetap dihitung sebagai klaim (30%). Setelah admin menyetujui, bank itu aktif untuk semua pemegang skill tersebut sekaligus.
-- **Mengapa tidak langsung diujikan:** kunci jawaban yang salah akan menilai jawaban benar sebagai salah tanpa cara mendeteksinya; dua kandidat tidak lagi mengerjakan kuis yang sebanding (padahal bobot 85% mensyaratkan itu); dan pelamar bisa mengarang nama skill untuk memanggil kuis baru yang belum ditinjau. Permintaan skill tanpa kuis dicatat sebagai event `quiz_unavailable` agar antrean ditinjau sesuai kebutuhan nyata.
+- Lulus = 4/5 → skill menjadi **✓ Terbukti** selama 180 hari. Gagal → jatah tepat 1 percobaan per skill per 24 jam. Kuis hanya ditampilkan untuk skill yang sudah ada di profil kandidat (opsi "Kuis lain yang tersedia" ditiadakan).
 - Anti-curang jujur: soal acak + timer + rotasi bank + pertanyaan wawancara "jelaskan jawabanmu". Kuis menyaring, wawancara memastikan.
 
 **API:** `GET /api/v1/quiz/skills`, `POST /api/v1/quiz/start`, `POST /api/v1/quiz/submit`

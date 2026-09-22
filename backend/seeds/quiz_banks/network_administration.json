@@ -1,0 +1,306 @@
+{
+  "skill": "Network Administration",
+  "skill_key": "network administration",
+  "questions": [
+    {
+      "question": "Anda adalah Network Administrator di sebuah kantor cabang bank di Surabaya. Tiba-tiba seluruh karyawan mengeluhkan tidak bisa mengakses aplikasi core banking lokal, namun koneksi internet publik tetap berjalan lancar. Langkah troubleshooting pertama apa yang paling efektif Anda lakukan?",
+      "options": [
+        "Melakukan restart pada perangkat router utama kantor cabang",
+        "Memeriksa status tabel routing statis dan koneksi ke VPN tunnel pusat",
+        "Mengganti konfigurasi alamat IP pada komputer server utama",
+        "Menghubungi provider ISP publik untuk memeriksa jalur fiber optik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan startup e-commerce di Jakarta mengalami lonjakan trafik drastis saat flash sale. Tim DevOps melaporkan bahwa load balancer sering timeout. Sebagai Network Admin, parameter apa yang harus segera Anda periksa pada perangkat firewall dan load balancer?",
+      "options": [
+        "Kapasitas daya listrik dan suhu perangkat di dalam rak server",
+        "Sisa lisensi fitur keamanan dan masa berlaku sertifikat SSL",
+        "Utilisasi CPU, tabel stateful inspection, dan limitasi sesi koneksi",
+        "Versi sistem operasi dan jadwal pembaruan firmware rutin"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kantor pusat perusahaan logistik di Bandung menerapkan segmentasi VLAN untuk memisahkan departemen Keuangan, Operasional, dan Tamu (Guest). Pengguna di VLAN Tamu ternyata masih bisa mengakses printer server di VLAN Keuangan. Konfigurasi mana yang terlewat atau salah?",
+      "options": [
+        "Access Control List (ACL) pada perangkat switch atau router inter-VLAN",
+        "Pengaturan alamat IP gateway default pada masing-masing VLAN",
+        "Konfigurasi mode port trunking antara switch distribusi dan akses",
+        "Protokol Spanning Tree yang mencegah terjadinya looping jaringan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati keluhan bahwa koneksi Wi-Fi di lantai 2 Gedung Perkantoran sering terputus-putus dan lambat pada jam 10 pagi setiap hari. Setelah dicek melalui controller, utilisasi kanal sangat tinggi. Tindakan preventif terbaik untuk mengatasi masalah ini adalah?",
+      "options": [
+        "Mengganti seluruh kabel UTP kategori 5e dengan kabel fiber optik",
+        "Menurunkan kekuatan pancaran daya (transmit power) pada access point",
+        "Melakukan perencanaan ulang tata letak dan lebar kanal frekuensi AP",
+        "Membatasi jumlah total pengguna yang terhubung ke jaringan LAN"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Karawang menggunakan koneksi utama leased line dari ISP A dan backup radio wireless dari ISP B. Saat link utama terputus, failover otomatis gagal dan trafik tidak berpindah ke jalur backup. Apa yang harus Anda periksa pada router edge?",
+      "options": [
+        "Konfigurasi parameter IP SLA dan objek tracking pada static route",
+        "Kecepatan port fisik interface yang terhubung ke perangkat radio ISP",
+        "Konfigurasi enkripsi VPN IPsec yang berjalan di atas jalur backup",
+        "Pengaturan firewall zone-based yang memblokir trafik internet lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memantau grafik MRTG di Network Operations Center (NOC), Anda melihat utilisasi bandwidth pada uplink internasional selalu menyentuh 95% setiap jam kerja. Analisis awal menunjukkan banyak karyawan mengakses layanan streaming video. Kebijakan teknis apa yang paling tepat diterapkan?",
+      "options": [
+        "Memutus total akses kabel jaringan ke lantai yang paling banyak memakai",
+        "Menerapkan aturan Quality of Service (QoS) dan pembatasan bandwidth",
+        "Melakukan upgrade kapasitas bandwidth langganan ke provider secara permanen",
+        "Memblokir seluruh alamat IP publik yang menuju ke mesin pencari utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Komputer workstation milik seorang manajer keuangan mendadak mengenkripsi file sendiri dan mencoba menyebarkan trafik mencurigakan ke port 445 (SMB) ke komputer lain di dalam LAN. Sebagai tindakan mitigasi darurat, apa yang harus Anda lakukan pada switch core?",
+      "options": [
+        "Mematikan fungsi daya listrik pada seluruh switch lantai tersebut",
+        "Melakukan perintah shutdown pada port switch tempat komputer terhubung",
+        "Menghapus seluruh konfigurasi VLAN aktif pada perangkat switch",
+        "Mengganti password akun administrator utama pada server domain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan media digital baru saja memigrasikan server lokal ke cloud AWS dan menghubungkannya via AWS Direct Connect. Karyawan mengeluhkan akses lambat saat mengunggah file video berukuran besar. Diagnostik awal menunjukkan adanya fragmentasi paket. Parameter apa yang perlu disesuaikan pada router kantor?",
+      "options": [
+        "Menurunkan nilai Maximum Transmission Unit (MTU) atau mengaktifkan MSS clamping",
+        "Mengganti protokol routing dinamis dari BGP menjadi OSPF area backbone",
+        "Menambahkan jumlah jalur paralel menggunakan protokol STP portfast",
+        "Meningkatkan batas timeout sesi TCP pada perangkat firewall perimeter"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengonfigurasi DHCP Server baru di MikroTik untuk gedung perkantoran baru. Beberapa perangkat IoT memerlukan alamat IP yang selalu sama setiap kali melakukan restart. Fitur apa yang harus Anda atur pada DHCP Server tersebut?",
+      "options": [
+        "Mengaktifkan fitur DHCP Relay agent menuju server pusat",
+        "Membuat aturan DHCP Lease Static berdasarkan alamat MAC perangkat",
+        "Memperpendek durasi lease time agar IP cepat diperbarui",
+        "Membatasi pool alamat IP khusus untuk subnet perangkat IoT saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah institusi pendidikan tinggi menggunakan protokol OSPF untuk menghubungkan beberapa gedung di dalam kampus. Tiba-tiba jalur komunikasi antar gedung mengalami fluktuasi (route flapping) yang menyebabkan koneksi terputus beberapa detik secara berkala. Fitur OSPF apa yang harus Anda konfigurasikan untuk meredam masalah ini?",
+      "options": [
+        "Mengubah area OSPF menjadi Stub Area pada setiap router gedung",
+        "Mengaktifkan fitur OSPF Hello dan Dead interval yang lebih cepat",
+        "Menerapkan fitur OSPF Route Summarization dan penyesuaian cost",
+        "Mengaktifkan fitur OSPF SPF throttling dan incremental SPF"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mengelola jaringan kantor pusat yang terhubung ke tiga cabang via VPN IPsec. Tiba-tiba salah satu cabang melaporkan tidak bisa mengakses server lokal, sementara dua cabang lainnya normal. Apa langkah awal investigasi yang paling efektif?",
+      "options": [
+        "Melakukan restart massal pada perangkat core switch kantor pusat",
+        "Memeriksa status tunnel, logs, dan fase SA pada router kantor pusat",
+        "Mengganti provider ISP utama yang digunakan oleh kantor cabang tersebut",
+        "Meminta teknisi di cabang untuk langsung mereset pengaturan pabrik router"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit swasta di Semarang mengeluhkan sistem rekam medis lambat saat diakses dari poli anak. Analisis menunjukkan utilisasi CPU pada switch access lantai tersebut mencapai 98% akibat broadcast storm. Tindakan mitigasi apa yang harus segera diterapkan?",
+      "options": [
+        "Mengganti kabel UTP kategori 5e dengan kabel fiber optik mutakhir",
+        "Mengaktifkan fitur Spanning Tree Protocol dan Port Security di switch",
+        "Menaikkan kapasitas bandwidth langganan internet dari ISP penyedia",
+        "Melakukan reinstall sistem operasi pada server pusat rekam medis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di perusahaan manufaktur, departemen Produksi mendadak tidak bisa berkomunikasi dengan server mesin CNC yang berada di segmen VLAN berbeda. Routing antar-VLAN menggunakan router on a stick. Pengecekan awal apa yang paling tepat dilakukan?",
+      "options": [
+        "Memeriksa konfigurasi trunk port pada switch dan status sub-interface router",
+        "Melakukan penggantian perangkat router utama dengan spesifikasi lebih tinggi",
+        "Menghapus seluruh konfigurasi VLAN lama dan membuat ulang dari awal",
+        "Mengecek ketersediaan alamat IP publik yang diberikan oleh pihak ISP lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kantor konsultan hukum mendapati beberapa dokumen rahasia bocor. Hasil audit forensik menunjukkan adanya perangkat unauthorized yang menyadap lalu lintas jaringan (ARP Spoofing). Fitur keamanan switch apa yang wajib diaktifkan untuk mencegah hal ini terulang?",
+      "options": [
+        "Penerapan fungsi DHCP Snooping dan Dynamic ARP Inspection",
+        "Mematikan seluruh port switch yang tidak terhubung ke komputer staff",
+        "Mengganti metode enkripsi Wi-Fi kantor dari WPA2 menjadi WEP",
+        "Membatasi jumlah MAC address maksimal satu per port dengan port security"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan agensi kreatif menggunakan load balancing dua ISP pada router MikroTik. Klien mengeluhkan sesi login aplikasi perbankan sering terputus karena alamat IP publik berubah-ubah secara acak setiap melakukan klik. Bagaimana cara mengatasi masalah ini?",
+      "options": [
+        "Membuat mangle rule dengan perutean PCC untuk memisahkan trafik unduhan",
+        "Menonaktifkan salah satu jalur ISP agar trafik hanya melewati satu gateway",
+        "Menambahkan route mark khusus dan mangle routing untuk protokol HTTPS",
+        "Menggunakan fitur perutean berbasis nth untuk mendistribusikan beban secara rata"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim audit internal meminta laporan log akses jaringan untuk investigasi insiden keamanan, namun server Syslog lokal Anda melaporkan kapasitas disk penuh dan gagal mencatat log terbaru. Apa tindakan darurat yang harus diambil?",
+      "options": [
+        "Memformat ulang media penyimpanan server syslog tanpa melakukan backup",
+        "Mengurangi tingkat detail log severity pada perangkat jaringan yang mengirim",
+        "Melakukan rotasi log manual, kompresi, dan pemindahan arsip lama ke storage lain",
+        "Meningkatkan kapasitas RAM pada server syslog agar pemrosesan data lebih cepat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati latensi yang sangat tinggi menuju server aplikasi internal perusahaan. Hasil traceroute menunjukkan adanya packet looping di antara dua core switch. Protokol manajemen apa yang harus dikonfigurasi untuk menghentikan loop ini secara otomatis?",
+      "options": [
+        "Mengonfigurasi Rapid Spanning Tree Protocol (RSTP) pada semua switch terkait",
+        "Menerapkan konfigurasi Link Aggregation Control Protocol (LACP) antar switch",
+        "Mengaktifkan protokol dynamic routing BGP untuk pertukaran rute internal",
+        "Memasang firewall filter rules untuk memblokir alamat IP yang melakukan ping"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah hotel bintang empat di Bali mengeluhkan tamu sering gagal terhubung ke portal captive Wi-Fi publik. Berdasarkan pengecekan, perangkat pengguna mendapatkan IP valid tetapi gagal mendapakan resolusi DNS. Di mana letak potensi kesalahan konfigurasi?",
+      "options": [
+        "Pengaturan DHCP server memberikan alamat gateway lokal yang tidak valid",
+        "Access point mengalami kegagalan fungsi perangkat keras pada modul radio",
+        "Konfigurasi DNS forwarding atau service DNS pada router gateway bermasalah",
+        "Kabel penghubung dari router utama ke server billing mengalami putus total"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan ekspedisi nasional berencana menghubungkan kantor cabang remote via jalur radio wireless jarak jauh menggunakan perangkat Ubiquiti/MikroTik. Signal RSSI bagus, tetapi packet loss mencapai 40%. Analisis spektrum menunjukkan interferensi kanal yang tinggi. Langkah apa yang paling tepat?",
+      "options": [
+        "Mengubah lebar kanal frekuensi (channel width) dan memindah ke frekuensi bersih",
+        "Meningkatkan daya pancar (output power) perangkat radio hingga batas maksimal",
+        "Mengganti antena directional dengan antena omnidirectional cakupan luas",
+        "Menurunkan kecepatan modulasi transmisi data secara manual ke tingkat terendah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan upgrade firmware pada core switch enterprise di jam operasional secara tidak sengaja menyebabkan perangkat mengalami bootloop. Langkah mitigasi cepat untuk memulihkan layanan jaringan adalah...",
+      "options": [
+        "Melakukan factory reset dan membangun seluruh konfigurasi jaringan dari awal",
+        "Menghubungkan konsol serial, masuk ke bootloader, dan memuat versi firmware lama",
+        "Membiarkan perangkat melakukan proses booting berulang hingga sistem stabil sendiri",
+        "Mengganti modul power supply karena diduga tidak kuat mengangkat daya perangkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengamankan akses remote SSH ke router edge perusahaan agar tidak mudah diserang brute-force dari internet. Langkah taktis apa yang paling tepat diterapkan pada firewall router?",
+      "options": [
+        "Mengubah port default SSH dan membatasi sumber IP menggunakan rule firewall input",
+        "Mematikan seluruh layanan akses remote management dan hanya memakai kabel konsol",
+        "Mengaktifkan fitur enkripsi WPA3 pada antarmuka fisik WAN router perusahaan",
+        "Menurunkan batas kapasitas memori buffer untuk mencegah serangan buffer overflow"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah switch access di lantai 3 tiba-tiba mengalami lonjakan trafik aneh (broadcast storm) yang melumpuhkan jaringan lokal. Tindakan mitigasi cepat apa yang harus Andaaktifkan pada port switch tersebut?",
+      "options": [
+        "Mengaktifkan fitur Spanning Tree Protocol portfast dan bpduguard secara permanen",
+        "Menyalakan fitur storm control untuk membatasi persentase trafik broadcast masuk",
+        "Melakukan restart menyeluruh pada perangkat core switch utama gedung kantor",
+        "Mengganti kabel UTP kategori 5e yang terhubung ke switch dengan kabel serat optik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kantor cabang melaporkan koneksi site-to-site VPN IPsec tiba-tiba putus setelah ISP melakukan pergantian alamat IP publik dinamis di sisi cabang. Konfigurasi apa yang harus segera Anda perbarui?",
+      "options": [
+        "Mengubah parameter fase enkripsi AES menjadi protokol DES yang lebih cepat",
+        "Memperbarui parameter peer address dan identitas remote pada konfigurasi VPN",
+        "Menaikkan nilai Maximum Transmission Unit pada interface virtual tunnel VPN",
+        "Melakukan reset konfigurasi routing statis pada router pusat secara berkala"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang aplikasi mengeluhkan bahwa server staging internal tidak dapat diakses dari segmen jaringan lain karena aturan firewall yang terlalu ketat. Langkah konfigurasi apa yang harus Anda lakukan?",
+      "options": [
+        "Menambahkan rule NAT port forwarding pada router untuk trafik lokal internal",
+        "Membuat rule access list baru yang mengizinkan port spesifik dari segmen asal",
+        "Memindahkan server staging ke dalam VLAN default tanpa proteksi keamanan",
+        "Mengganti topologi jaringan fisik dan menambah satu buah perangkat switch"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan monitoring utilisasi interface router menggunakan SNMP, grafik menunjukkan packet loss tinggi pada port penghubung ke ISP. Analisis awal apa yang paling logis untuk dilakukan?",
+      "options": [
+        "Memeriksa kondisi fisik kabel patchcord serat optik dan modul SFP di kedua ujung",
+        "Melakukan upgrade kapasitas lisensi sistem operasi pada perangkat router utama",
+        "Mengubah skema pengalamatan IP publik yang diberikan oleh pihak penyedia jasa",
+        "Menambah jumlah alokasi alamat IP lokal pada server DHCP yang sedang berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah server database perusahaan merespons sangat lambat, dan setelah diperiksa, terjadi saturasi pada antarmuka jaringan akibat serangan DDoS jenis SYN flood. Fitur apa yang harus diaktifkan pada router pembatas?",
+      "options": [
+        "Mengaktifkan mekanisme SYN cookies pada sistem operasi dan proteksi firewall",
+        "Mematikan protokol routing dinamis OSPF yang berjalan pada router gerbang utama",
+        "Menurunkan kapasitas kecepatan port interface fisik dari 1Gbps menjadi 100Mbps",
+        "Mengganti skema alokasi alamat IP statis server menjadi menggunakan DHCP pool"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati beberapa perangkat komputer klien di kantor mendapatkan alamat IP dari server DHCP ilegal (rogue DHCP server). Langkah pencegahan di switch layer 2 apa yang harus diterapkan?",
+      "options": [
+        "Mengaktifkan fitur Port Security dan membatasi jumlah MAC address per port",
+        "Mengonfigurasi fitur DHCP Snooping dan menandai port uplink sebagai trusted",
+        "Memasang filter MAC address manual pada setiap tabel ARP perangkat router",
+        "Membuat VLAN terpisah khusus untuk seluruh komputer staf administrasi kantor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Koneksi internet kantor sering mengalami gangguan putus-nyambung karena jalur utama menggunakan koneksi radio wireless yang rentan cuaca buruk. Desain jaringan apa yang paling tepat untuk mengatasi hal ini?",
+      "options": [
+        "Menambahkan perangkat penguat sinyal amplifier pada antena radio wireless luar",
+        "Menerapkan sistem routing backup otomatis menggunakan protokol BGP multihoming",
+        "Mengonfigurasi dual-WAN dengan fitur failover otomatis ke jalur ISP fiber optik",
+        "Memperbesar kapasitas alokasi bandwidth pada penyedia layanan radio wireless"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Divisi marketing mengeluhkan akses ke aplikasi berbasis web terasa lambat, padahal penggunaan bandwidth total kantor masih di bawah 40%. Solusi manajemen bandwidth apa yang paling tepat diterapkan?",
+      "options": [
+        "Menerapkan policy QoS dengan metode HTB untuk memprioritaskan trafik HTTP/HTTPS",
+        "Melakukan upgrade kapasitas bandwidth langganan internet dari ISP secara total",
+        "Membatasi akses situs jejaring sosial untuk seluruh karyawan menggunakan proxy",
+        "Memindahkan seluruh data aplikasi web marketing ke dalam server lokal kantor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda baru saja mengganti perangkat core switch dan menemukan beberapa port trunk tidak dapat meneruskan trafik dari VLAN tertentu. Pemeriksaan konfigurasi apa yang harus segera dilakukan?",
+      "options": [
+        "Memastikan daftar VLAN yang diizinkan (allowed VLANs) sudah dikonfigurasi dengan benar",
+        "Memeriksa ulang pengalamatan IP address management pada interface manajemen switch",
+        "Mengganti mode operasi port switch dari mode dynamic desirable menjadi access",
+        "Menonaktifkan protokol spanning tree pada seluruh port switch yang terhubung"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

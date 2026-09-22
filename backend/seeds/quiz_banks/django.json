@@ -1,0 +1,306 @@
+{
+  "skill": "Django",
+  "skill_key": "django",
+  "questions": [
+    {
+      "question": "Tim backend Anda melaporkan lonjakan beban database pada tabel transaksi. Setelah dianalisis menggunakan Django Debug Toolbar, terdapat masalah N+1 query pada endpoint daftar pesanan yang menampilkan nama produk dan kategori. Apa tindakan paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menambahkan dekorator cache_page pada fungsi view untuk menyimpan seluruh halaman pesanan",
+        "Menggunakan method select_related dan prefetch_related pada queryset untuk relasi foreign key",
+        "Mengonversi hasil queryset menjadi raw SQL query agar eksekusi database menjadi lebih cepat",
+        "Membuat tabel materialized view baru di database PostgreSQL khusus untuk endpoint tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi e-commerce yang Anda kembangkan mengalami penulisan data ganda (race condition) pada tabel stok produk ketika terjadi flash sale dengan ribuan request bersamaan. Bagaimana cara menangani konkurensi ini di tingkat ORM Django?",
+      "options": [
+        "Menggunakan blok transaction.atomic() dipadukan dengan method select_for_update() pada queryset",
+        "Menambahkan parameter unique=True pada kolom jumlah stok di dalam definisi model produk",
+        "Mengubah level isolasi database menjadi Read Uncommitted agar pembacaan data lebih agresif",
+        "Membuat middleware khusus untuk melakukan rate limiting pada setiap request masuk ke server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun fitur export data laporan bulanan ke file Excel yang memakan waktu hingga 45 detik. Jika proses ini dijalankan langsung di view, request HTTP akan mengalami timeout dari load balancer Nginx. Pendekatan apa yang paling profesional untuk menyelesaikan masalah ini?",
+      "options": [
+        "Memindahkan proses pembuatan file ke dalam thread terpisah di dalam file views.py aplikasi",
+        "Menaikkan batas timeout pada konfigurasi uWSGI dan Nginx hingga mencapai waktu 120 detik",
+        "Menggunakan Celery bersama message broker Redis untuk memproses pembuatan file secara asynchronous",
+        "Mengubah format export dari file Excel (.xlsx) menjadi file CSV agar prosesnya jauh lebih ringkas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sistem monolitik Django Anda akan dipecah menjadi beberapa layanan mikro. Saat ini, model User bawaan Django digunakan secara luas di seluruh aplikasi untuk relasi Foreign Key. Apa langkah awal terbaik untuk menghindari masalah dependensi ketat antar layanan?",
+      "options": [
+        "Mengganti seluruh foreign key ke User dengan menyimpan string username atau integer id secara manual",
+        "Membuat custom user model abstrak sejak awal dan membagikan database instance yang sama ke semua layanan",
+        "Membuat auth service terpisah dan menggunakan token JWT, lalu merujuk user cukup dengan field UUID",
+        "Menghapus tabel auth_user dari database dan memindahkan manajemen otentikasi langsung ke Nginx"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi SaaS HRD yang Anda kelola akan melayani beberapa perusahaan berbeda dengan database terpisah (multi-tenancy). Pustaka django-tenants dipilih untuk kebutuhan ini. Di mana lokasi yang paling tepat untuk mendefinisikan model data yang bersifat global dan dapat diakses oleh semua perusahaan?",
+      "options": [
+        "Di dalam skema publik (public schema) database PostgreSQL yang dikonfigurasi pada settings khusus",
+        "Di dalam direktori root project Django sejajar dengan file wsgi.py dan settings.py utama",
+        "Di dalam folder migrations bersama file migrasi bawaan dari aplikasi django.contrib.auth",
+        "Di dalam aplikasi terpisah yang dimasukkan ke dalam daftar SHARED_APPS pada file pengaturan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendapati file media upload pengguna (seperti foto KTP) di direktori /media/server/ menumpuk hingga puluhan gigabyte di server lokal, membuat proses backup harian gagal. Langkah arsitektural apa yang paling tepat diterapkan pada proyek Django ini?",
+      "options": [
+        "Mengubah fungsi save pada model untuk melakukan kompresi otomatis ukuran file gambar menjadi kecil",
+        "Mengintegrasikan django-storages untuk mengarahkan penyimpanan file langsung ke layanan AWS S3 atau OSS",
+        "Membuat cron job Linux untuk menghapus file media lama yang tidak diakses selama lebih dari 30 hari",
+        "Memindahkan direktori media dari server aplikasi ke direktori tersembunyi di dalam database PostgreSQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query kompleks pada dashboard admin memerlukan agregasi data penjualan bulanan yang melibatkan jutaan baris data, membuat halaman admin menjadi sangat lambat. Bagaimana cara mengoptimalkan query tersebut menggunakan fitur bawaan Django ORM?",
+      "options": [
+        "Menggunakan fungsi Aggregate dan Annotate bersama ExpressionWrapper untuk kalkulasi di database",
+        "Melakukan iterasi looping pada queryset menggunakan bahasa Python di dalam fungsi view untuk menghitung data",
+        "Menjalankan raw SQL query dengan memanggil method cursor.execute() secara langsung tanpa ORM",
+        "Mendefinisikan ulang seluruh struktur model database agar tidak lagi menggunakan relasi foreign key"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA menemukan celah keamanan di mana pengguna dapat menebak URL ID laporan milik instansi lain dan melihat datanya melalui endpoint /api/reports/<int:pk>/. Perbaikan logika apa yang harus segera Anda implementasikan pada Django REST Framework APIView?",
+      "options": [
+        "Menambahkan dekorator login_required di atas fungsi dispatch pada class APIView yang bersangkutan",
+        "Mengganti tipe primary key pada model laporan dari integer biasa menjadi format UUID v4 yang acak",
+        "Melakukan pengecekan kepemilikan data dengan memfilter queryset berdasarkan request.user di metode get_queryset",
+        "Menonaktifkan metode GET pada endpoint tersebut dan mewajibkan semua klien mengirim data via POST"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu memperbarui struktur field 'status_pembayaran' pada model Transaksi yang memiliki jutaan baris data di production. Agar proses migrasi database tidak menyebabkan tabel terkunci (table lock) lama yang mengganggu transaksi pengguna, pendekatan apa yang harus diambil?",
+      "options": [
+        "Langsung menjalankan perintah python manage.py migrate di production pada jam kerja aktif",
+        "Menghapus tabel transaksi terlebih dahulu, lalu membuat ulang tabel baru dengan struktur field yang baru",
+        "Membuat migrasi secara bertahap: tambah field opsional, isi data secara batch asynchronous, lalu terapkan batasan",
+        "Menurunkan skala server (downscale) aplikasi sementara waktu agar proses alter table berjalan lebih cepat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sistem backend Django Anda menerima webhook pembayaran dari pihak ketiga secara berkala. Beberapa webhook kadang dikirim dua kali (duplicate notification) karena masalah jaringan di sisi vendor. Bagaimana cara memastikan sistem Anda aman dari duplikasi pemrosesan data?",
+      "options": [
+        "Menambahkan indeks unik (unique constraint) pada kolom transaction_id atau reference_no dari payload webhook",
+        "Menggunakan middleware khusus untuk memblokir request masuk yang memiliki alamat IP sama persis",
+        "Menyimpan seluruh payload webhook yang masuk ke dalam file teks log server alih-alih ke dalam database",
+        "Mengonfigurasi ulang pengaturan CORS dan CSRF token pada settings.py agar mengabaikan header vendor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Django Anda mengalami error memori (Out of Memory) saat melakukan query `Pesan.objects.all()` pada tabel chat yang sudah berisi lebih dari 5 juta baris data. Langkah paling efektif apa yang harus Anda lakukan pada kode untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti database relasional dengan NoSQL untuk performa tabel",
+        "Menggunakan fungsi iterator() dengan chunk_size untuk mengambil data secara bertahap",
+        "Menambahkan dekorator @transaction.atomic pada fungsi view yang memuat pesan",
+        "Membuat indeks baru pada kolom waktu pengiriman di database PostgreSQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan bahwa endpoint API pencarian produk di Django Rest Framework (DRF) sangat lambat karena melakukan query database di dalam loop serialisasi serializer. Pendekatan apa yang paling tepat untuk mengoptimalkannya?",
+      "options": [
+        "Menggunakan select_related dan prefetch_related pada queryset di view",
+        "Menurunkan tingkat isolasi transaksi database ke Read Committed",
+        "Mengaktifkan caching tingkat view menggunakan middleware Django",
+        "Menulis ulang query menggunakan raw SQL dengan koneksi kustom"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Frontend melaporkan bahwa cookie session pengguna sering hilang ketika mereka mengakses aplikasi Django melalui subdomain yang berbeda (misal: api.domain.co.id dan app.domain.co.id). Pengaturan Django apa yang harus Anda ubah di `settings.py`?",
+      "options": [
+        "Mengubah nilai variabel SESSION_COOKIE_AGE menjadi durasi yang lebih panjang",
+        "Mengatur variabel SESSION_COOKIE_SECURE menjadi bernilai False",
+        "Menyesuaikan nilai variabel SESSION_COOKIE_DOMAIN dengan domain utama",
+        "Mengubah fungsi backend autentikasi default di dalam settings"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membuat custom management command di Django untuk melakukan sinkronisasi data harian dari API eksternal. Perintah tersebut kadang berjalan sangat lama dan rentan terputus di tengah jalan. Bagaimana cara terbaik mengelola transaksi database di dalam command tersebut?",
+      "options": [
+        "Membungkus seluruh logika perintah di dalam blok try-except tanpa transaksi",
+        "Memecah proses simpan data per batch dan membungkus setiap batch dengan @transaction.atomic",
+        "Mematikan fitur autocommit global pada konfigurasi database settings",
+        "Menjalankan perintah management command secara background via Celery worker"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Django Anda di-deploy menggunakan beberapa instance server di belakang load balancer. Pengguna sering mengeluh harus login ulang setiap kali berpindah halaman. Apa penyebab utama masalah ini dan bagaimana memperbaikinya?",
+      "options": [
+        "Backend session default menggunakan database lokal, ubah ke Redis atau Cache backend",
+        "Secret key Django berbeda di setiap server, pastikan environment variable konsisten",
+        "Waktu server tidak sinkron, lakukan sinkronisasi NTP pada semua mesin server",
+        "Middleware CSRF memblokir token lintas server, tambahkan domain tepercaya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menambahkan field baru `nomor_telepon` pada model Klien yang wajib diisi (tidak boleh null), namun tabel tersebut sudah memiliki jutaan data aktif di production. Bagaimana cara menerapkan migrasi ini tanpa menyebabkan downtime?",
+      "options": [
+        "Langsung ubah model, buat migrasi, lalu jalankan migrate secara langsung di production",
+        "Buat field dengan null=True, jalankan migrasi, isi data default, lalu ubah field menjadi null=False",
+        "Hapus tabel lama, buat tabel baru dengan struktur field yang lengkap menggunakan schema SQL",
+        "Gunakan perintah makemigrations dengan argumen --empty lalu isi manual kodenya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem e-commerce Anda memiliki fitur keranjang belanja. Pengguna yang belum login (Anonymous) juga bisa memasukkan barang ke keranjang. Ketika mereka melakukan login, keranjang belanja tersebut harus digabungkan dengan akun mereka. Di mana tempat paling tepat menempatkan logika penggabungan ini?",
+      "options": [
+        "Di dalam method save() dari model KeranjangBelanja",
+        "Di dalam custom Django authentication signal user_logged_in",
+        "Di dalam middleware kustom yang memeriksa setiap request masuk",
+        "Di dalam form validasi halaman login bawaan Django Admin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa log error aplikasi Django Anda dipenuhi dengan serangan brute-force pada halaman `/admin/`. Langkah mitigasi apa yang paling cepat dan aman untuk mengamankan jalur masuk admin tanpa mengubah kode sumber Django?",
+      "options": [
+        "Mengubah nama path URL admin di urls.py utama menjadi URL yang sulit ditebak",
+        "Membuat model baru untuk mencatat alamat IP penyerang dan memblokirnya",
+        "Menonaktifkan aplikasi django.contrib.admin secara permanen dari INSTALLED_APPS",
+        "Menulis middleware khusus untuk membatasi ukuran payload request POST"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah endpoint API di Django Rest Framework menerima payload JSON yang sangat besar dan kompleks dari sistem logistik mitra. Anda perlu melakukan validasi ketat pada struktur data tersebut sebelum diproses. Komponen DRF mana yang paling tepat digunakan?",
+      "options": [
+        "Membuat ModelSerializer yang terhubung langsung ke tabel database log",
+        "Membuat Serializer kustom menggunakan kelas serializers.Serializer",
+        "Menggunakan fungsi clean() bawaan dari model Django terkait",
+        "Memanfaatkan Django Form biasa di dalam fungsi view APIView"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menambahkan fitur multi-bahasa (internasionalisasi) pada aplikasi web Django agar mendukung Bahasa Indonesia dan Bahasa Inggris. Setelah menambahkan string terjemahan di file .po, perintah apa yang harus dijalankan agar file tersebut bisa dibaca oleh aplikasi?",
+      "options": [
+        "python manage.py makemessages",
+        "python manage.py compilemessages",
+        "python manage.py collectstatic",
+        "python manage.py flushdata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Django Anda di-deploy di platform cloud menggunakan Gunicorn sebagai WSGI server di belakang Nginx. Saat pengguna mengunggah file laporan berukuran 50MB, server tiba-tiba merespons dengan HTTP 504 Gateway Time-out. Apa tindakan paling tepat untuk mengatasi masalah ini pada konfigurasi infrastruktur?",
+      "options": [
+        "Mengurangi jumlah worker Gunicorn agar memori setiap worker menjadi lebih besar",
+        "Menaikkan timeout pada konfigurasi Gunicorn dan Nginx untuk mengakomodasi durasi upload",
+        "Memindahkan proses penyimpanan file langsung ke database relasional utama",
+        "Mengubah protokol komunikasi dari HTTP ke FTP khusus untuk endpoint tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur unduh laporan PDF di Django yang memproses data besar dan memakan waktu sekitar 15 detik. Pengguna sering menekan tombol unduh berulang kali karena mengira sistem macet, yang menyebabkan lonjakan beban server. Bagaimana cara arsitektural terbaik menangani skenario ini?",
+      "options": [
+        "Menjalankan proses pembuatan PDF secara sinkron di dalam view menggunakan thread terpisah",
+        "Menggunakan Celery untuk menghasilkan PDF secara asinkron dan memberikan notifikasi status ke frontend",
+        "Menyimpan seluruh file PDF ke dalam cache Redis selamanya tanpa memperbarui data",
+        "Membatasi akses tombol unduh hanya untuk pengguna dengan hak akses superuser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi sistem absensi karyawan berbasis Django mengalami lonjakan trafik setiap jam 08:00 pagi, di mana ribuan pegawai melakukan clock-in bersamaan. Hal ini menyebabkan deadlock pada database PostgreSQL. Pendekatan optimasi ORM mana yang paling tepat untuk mengurangi durasi kunci tabel?",
+      "options": [
+        "Menambahkan dekorator @transaction.atomic pada fungsi view absensi yang paling besar",
+        "Menggunakan method select_for_update(nowait=True) untuk langsung membatalkan transaksi yang berbenturan",
+        "Mengubah transaksi database menjadi mode autocommit dan menghindari blok transaksi yang terlalu panjang",
+        "Menggunakan fungsi raw SQL dengan perintah LOCK TABLE EXCLUSIVE setiap kali ada data masuk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek Django e-commerce, Anda perlu memastikan bahwa saldo dompet digital pengguna tidak pernah bernilai negatif akibat transaksi bersamaan. Mekanisme pengamanan tingkat database apa yang harus diterapkan pada operasi pengurangan saldo di ORM?",
+      "options": [
+        "Membungkus query dalam transaction.atomic() dan memanggil select_for_update() pada baris dompet",
+        "Melakukan validasi nilai saldo menggunakan serializer DRF sebelum data dikirim ke database",
+        "Membuat middleware khusus yang memindai setiap request masuk untuk mendeteksi anomali saldo",
+        "Menggunakan cache Redis untuk menyimpan saldo sementara sebelum disinkronkan tiap tengah malam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa query pada model Pesanan dan DetailPesanan sangat lambat karena tidak memiliki indeks komposit pada kolom (tanggal_pesanan, status). Migrasi apa yang harus dilakukan agar proses pembuatan indeks tidak mengunci tabel operasional secara penuh di PostgreSQL?",
+      "options": [
+        "Membuat migrasi standar Django dengan RunPython untuk mengeksekusi perintah CREATE INDEX",
+        "Membuat RunSQL migration yang menggunakan perintah CREATE INDEX CONCURRENTLY",
+        "Menghapus tabel pesanan terlebih dahulu, lalu membuatnya ulang dengan indeks yang sudah ditentukan",
+        "Menggunakan fitur Django admin untuk membangun indeks secara otomatis di latar belakang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Django Anda menggunakan Django Rest Framework (DRF) dan diakses oleh aplikasi mobile Android dan iOS. Tim keamanan meminta agar token autentikasi JWT tidak mudah dicuri melalui penyimpanan lokal perangkat. Strategi penyimpanan token apa yang paling disarankan?",
+      "options": [
+        "Menyimpan access token di localStorage browser dan refresh token di dalam file teks lokal",
+        "Menyimpan access token di memori aplikasi (state) dan refresh token di HttpOnly Secure Cookie",
+        "Menyimpan seluruh token ke dalam database pusat tanpa mekanisme enkripsi tambahan",
+        "Menulis token langsung ke dalam parameter URL setiap kali melakukan navigasi halaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati performa halaman beranda website berita Django Anda sangat lambat karena mengambil data kategori dan artikel populer dari database pada setiap request. Pendekatan caching berbasis Django mana yang paling efektif untuk mengurangi beban query ini?",
+      "options": [
+        "Mengaktifkan Low-Level Cache API untuk menyimpan hasil queryset artikel populer ke Redis dengan timeout tertentu",
+        "Menggunakan middleware Gzip untuk mengompresi seluruh respons HTML yang dikirim ke browser",
+        "Mematikan fungsi ORM caching bawaan Django agar koneksi database menjadi lebih longgar",
+        "Menyimpan seluruh konfigurasi situs ke dalam file JSON statis di direktori root proyek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem reporting perusahaan berbasis Django perlu menampilkan data agregat dari tabel log aktivitas yang memiliki puluhan juta baris. Penggunaan ORM standar `.annotate()` menyebabkan memori server melonjak habis. Bagaimana cara menulis query yang efisien?",
+      "options": [
+        "Menggunakan fungsi iterator() pada queryset untuk mengambil data secara streaming dalam ukuran chunk",
+        "Menarik seluruh data ke memori Python terlebih dahulu lalu melakukan looping manual",
+        "Mengubah database backend dari PostgreSQL kembali ke SQLite untuk mempercepat komputasi",
+        "Menghapus semua indeks pada tabel log agar proses pembacaan data berjalan lebih natural"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan bahwa aplikasi Django Anda rentan terhadap serangan Cross-Site Scripting (XSS) karena beberapa template merender input pengguna mentah menggunakan filter `|safe`. Apa langkah perbaikan yang paling tepat dan aman?",
+      "options": [
+        "Menghapus filter `|safe` dan memanfaatkanEscape otomatis bawaan Django atau sanitasi pustaka pihak ketiga",
+        "Mengganti seluruh template HTML Django dengan format JSON murni tanpa antarmuka visual",
+        "Menonaktifkan Django CSRF middleware agar sistem secara otomatis memblokir script berbahaya",
+        "Menambahkan header HTTP X-Frame-Options ke dalam file pengaturan utama proyek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam arsitektur microservices, layanan autentikasi terpisah mengeluarkan token JWT, sementara layanan Django Anda bertindak sebagai resource server. Bagaimana cara mengonfigurasi Django agar dapat memvalidasi token JWT tersebut tanpa harus selalu melakukan query ke database layanan autentikasi?",
+      "options": [
+        "Menggunakan pustaka seperti djangorestframework-simplejwt dengan konfigurasi public key/secret key verifikasi lokal",
+        "Membuat custom middleware yang melakukan HTTP request ke layanan autentikasi pada setiap masuknya API call",
+        "Menyimpan username dan password pengguna di file environment lokal setiap instance server Django",
+        "Mematikan seluruh sistem autentikasi dan membiarkan endpoint terbuka untuk umum secara bebas"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

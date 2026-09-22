@@ -1,0 +1,306 @@
+{
+  "skill": "SAP",
+  "skill_key": "sap",
+  "questions": [
+    {
+      "question": "Seorang staf gudang di PT Maju Bersama melaporkan bahwa stok fisik material besi beton di lapangan berbeda dengan sistem SAP (transaksi MMBE). Langkah investigasi awal apa yang paling tepat dilakukan di SAP untuk melacak akar masalah perbedaan tersebut?",
+      "options": [
+        "Melakukan penyesuaian stok langsung menggunakan transaksi MB1C",
+        "Memeriksa histori dokumen material menggunakan transaksi MB51",
+        "Menghapus data stok lama melalui program massal via SE38",
+        "Membuat Purchase Order baru untuk menutup selisih kekurangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Akuntansi menemukan bahwa faktur pajak dari vendor tidak bisa ditarik ke dalam transaksi pencatatan invoice verification (MIRO) karena nomor Purchase Order (PO) salah. Apa tindakan korektif yang harus dilakukan oleh bagian Purchasing?",
+      "options": [
+        "Membatalkan seluruh Goods Receipt lalu membuat PO baru dari awal",
+        "Mengubah nomor PO secara manual langsung di dalam dokumen finansial FI",
+        "Melakukan perubahan (change) pada PO yang ada melalui transaksi ME22N",
+        "Meminta bagian pajak menerbitkan faktur pengganti dengan nomor PO baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam modul SAP FI/CO, saat menjalankan siklus closing bulanan, seorang accountant mendapati bahwa posting period untuk modul material management (MM) sudah ditutup, namun masih ada transaksi Goods Receipt yang tertinggal. Transaksi apa yang digunakan untuk membuka kembali periode khusus MM tersebut?",
+      "options": [
+        "Menggunakan kode transaksi OB52 untuk mengubah periode posting",
+        "Menggunakan kode transaksi MM02 untuk membuka master data material",
+        "Menggunakan kode transaksi MMPV untuk membuka periode berjalan",
+        "Menggunakan kode transaksi OMSY untuk mengubah tahun fiskal aktif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur di Cikarang ingin memastikan bahwa sistem SAP mereka secara otomatis memblokir pembuatan Purchase Requisition untuk material tertentu jika stok di gudang masih mencukupi. Konfigurasi level mana di SAP yang paling relevan untuk diatur?",
+      "options": [
+        "Pengaturan toleransi limit harga pada master data vendor",
+        "Parameter MRP (Material Requirements Planning) pada material master",
+        "Aktivasi otorisasi user pada role basis SAP_ALL",
+        "Penentuan automatic account assignment pada modul keuangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika staf HR menjalankan proses payroll bulanan menggunakan modul SAP HCM, sistem menghentikan proses karena ada beberapa karyawan baru yang belum memiliki nomor induk pajak yang valid di infotype terkait. Infotype berapa yang harus diperbarui oleh HR?",
+      "options": [
+        "Memperbarui data alamat dan domisili pada Infotype 0006",
+        "Memperbarui data status pernikahan pada Infotype 0002",
+        "Memperbarui data perpajakan karyawan pada Infotype 0185",
+        "Memperbarui data absensi harian pada Infotype 2001"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang Sales Admin membuat Sales Order (VA01) untuk pelanggan korporat, namun harga yang muncul di sistem otomatis lebih tinggi dari kontrak harga khusus yang telah disepakati. Bagian mana di SAP SD yang perlu diperiksa pertama kali?",
+      "options": [
+        "Kondisi pricing procedure dan validity period pada kondisi record",
+        "Status pengiriman barang pada laporan monitor pengiriman harian",
+        "Limit kredit pelanggan pada master data credit management",
+        "Ketersediaan stok gudang pusat pada modul manajemen inventaris"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek implementasi SAP S/4HANA, tim konsultan perlu memigrasikan data master aset tetap dari sistem legacy ke SAP menggunakan alat bantu migrasi standar. Pendekatan apa yang paling dianjurkan dalam SAP S/4HANA?",
+      "options": [
+        "Menggunakan program custom ABAP untuk langsung injeksi ke tabel database",
+        "Menggunakan fitur SAP S/4HANA Migration Cockpit dengan template file",
+        "Melakukan entri manual satu persatu menggunakan transaksi AS01",
+        "Meminta basis administrator merestorasi backup database secara langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manager Logistik meminta laporan konsumsi material proyek selama 6 bulan terakhir untuk keperluan audit. Laporan standar SAP mana yang paling efektif untuk menyajikan data kuantitas dan nilai konsumsi per cost center?",
+      "options": [
+        "Menjalankan laporan transaksi ME2L untuk melihat daftar pembelian",
+        "Menjalankan laporan transaksi MB5S untuk melihat selisih GR/IR",
+        "Menjalankan laporan transaksi S_ALR_87012093 atau setara untuk biaya aktual",
+        "Menjalankan laporan transaksi VA05 untuk analisis order penjualan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah dokumen penagihan (Billing Document) di SAP SD telah dibuat dan diteruskan ke bagian akuntansi, namun ternyata salah alamat penagihan. Langkah prosedural yang benar di SAP untuk membatalkan dokumen billing tersebut adalah...",
+      "options": [
+        "Langsung menghapus baris item billing menggunakan mode edit di VF02",
+        "Membuat dokumen pembatalan billing (Cancellation) menggunakan transaksi VF11",
+        "Meminta tim Basis menghapus tabel database penagihan secara langsung",
+        "Melakukan Goods Return fisik tanpa melibatkan dokumen pembatalan billing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat proses Goods Receipt (MIGO) atas Purchase Order impor, sistem SAP memberikan pesan error (red traffic light) terkait perbedaan nilai kurs mata uang asing. Langkah penyelesaian operasional yang tepat adalah...",
+      "options": [
+        "Mengubah master data mata uang di tabel global sistem secara permanen",
+        "Meminta bagian keuangan memperbarui kurs harian pada transaksi OB06",
+        "Mengabaikan pesan error tersebut dan memaksa simpan dokumen MIGO",
+        "Menghapus Purchase Order lalu membuatnya kembali dengan mata uang lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam modul SAP SD, seorang sales supervisor mendapati bahwa batas kredit (credit limit) seorang pelanggan telah terlampaui, tetapi pengiriman barang harus tetap berjalan atas dispensasi manajemen. Solusi sistem apa yang paling tepat?",
+      "options": [
+        "Meminta bagian kredit untuk menaikkan limit sementara melalui transaksi FD32",
+        "Melakukan release dokumen penjualan yang terblokir melalui transaksi VKM1",
+        "Mengubah parameter risk category pada master data customer di XD02",
+        "Menghapus dokumen delivery yang ada dan membuatnya ulang via VL01N"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang plant controller mendapati bahwa alokasi biaya departemen produksi ke cost center lini produk gagal saat proses settlement bulanan di modul SAP CO. Langkah investigasi apa yang paling tepat untuk dilakukan pertama kali?",
+      "options": [
+        "Memeriksa status primary cost element pada master data akun",
+        "Memastikan transaction data pada cycle assessment telah lengkap",
+        "Mengecek kembali aturan penentuan harga material di MM",
+        "Memverifikasi kelengkapan master data cost center dan activity type"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Ketika melakukan proses Goods Issue (MB1A atau MIGO) untuk keperluan operasional kantor, staf logistik menerima pesan error bahwa akun GL tertentu tidak dapat ditransaksikan secara langsung karena dikontrol oleh sistem cost accounting. Apa tindakan yang harus diambil?",
+      "options": [
+        "Menghapus relasi akun GL tersebut dari automatic posting configuration",
+        "Melakukan penyesuaian pada field status variant di modul keuangan",
+        "Menambahkan cost object yang valid seperti cost center pada baris item",
+        "Mengubah status direct posting pada master data akun GL yang bersangkutan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Departemen Tax PT Nusantara mendapati bahwa kode pajak yang digunakan pada faktur pembelian lokal salah dan harus diubah setelah dokumen Goods Receipt dan Invoice Verification selesai. Bagaimana penanganan terbaik dalam sistem SAP?",
+      "options": [
+        "Melakukan koreksi langsung pada tabel database menggunakan transaksi SE16N",
+        "Membatalkan dokumen invoice dan goods receipt lalu mengulang dari awal",
+        "Membuat dokumen memo penyesuaian pajak manual melalui modul FI-GL",
+        "Mengubah parameter tax indicator pada master data vendor secara massal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang PP Production Planner ingin menjadwalkan ulang kapasitas kerja mesin pabrik karena adanya breakdown mendadak. Transaksi SAP manakah yang paling tepat digunakan untuk melakukan penyesuaian kapasitas tersebut?",
+      "options": [
+        "Menggunakan transaksi CM21 untuk dispatching order secara grafis",
+        "Menjalankan transaksi MD02 untuk melakukan single item planning",
+        "Mengakses transaksi CO02 untuk mengubah sequence operasi produksi",
+        "Memakai transaksi MM02 untuk memperbarui parameter lot size mesin"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada modul SAP MM, staf procurement ingin membuat Purchase Requisition khusus untuk pengadaan jasa maintenance berkala yang nilainya fluktuatif. Tipe dokumen apa yang paling tepat dipilih pada transaksi ME51N?",
+      "options": [
+        "Standard Purchase Requisition dengan item category Standard",
+        "Framework Purchase Requisition dengan item category Service",
+        "Subcontracting Purchase Requisition dengan item category Subcontract",
+        "Consignment Purchase Requisition dengan item category Consignment"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Treasury perusahaan menjumpai adanya selisih kurs yang belum terealisasi (unrealized exchange rate gain/loss) pada akhir bulan saat menjalankan evaluasi mata uang asing. Program SAP apa yang harus dijalankan untuk mencatat penyesuaian ini?",
+      "options": [
+        "Menjalankan program F.13 untuk otomatis clearing dokumen open items",
+        "Menjalankan program F.05 untuk foreign currency valuation",
+        "Menjalankan program S_ALR_87012357 untuk laporan aging piutang",
+        "Menjalankan program FAGL_FC_VAL untuk pembuatan neraca saldo"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan konfirmasi hasil produksi (Production Order Confirmation) menggunakan transaksi CO15, operator pabrik mendapati selisih kuantitas scrap yang terlalu besar. Bagaimana cara sistem SAP memperlakukan biaya akibat selisih scrap tersebut?",
+      "options": [
+        "Biaya langsung dibebankan ke akun rugi laba operasional pabrik",
+        "Biaya dialokasikan kembali secara proporsional ke sisa produk bagus",
+        "Biaya dikumpulkan pada production order variance untuk dianalisis saat settlement",
+        "Biaya dihapus dari sistem dan tidak mempengaruhi perhitungan HPP"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang warehouse staff ingin memindahkan stok material antar storage location di dalam satu plant yang sama dengan menggunakan sistem SAP WM (Warehouse Management). Dokumen apa yang harus dibuat terlebih dahulu?",
+      "options": [
+        "Transfer Requirement yang kemudian dikonversi menjadi Transfer Order",
+        "Stock Transport Order yang dilanjutkan dengan proses Goods Issue",
+        "Physical Inventory Document yang disetujui oleh supervisor gudang",
+        "Material Document hasil transaksi Goods Receipt dari plant lain"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pemeliharaan aset (Plant Maintenance), seorang engineer ingin mencatat jam kerja teknisi dan pemakaian spare part untuk perbaikan mesin pompa air. Transaksi SAP mana yang paling tepat digunakan?",
+      "options": [
+        "Membuat Maintenance Order melalui IW31 dan melakukan konfirmasi",
+        "Membuat Purchase Order melalui ME21N untuk jasa pihak ketiga",
+        "Membuat Reservation material melalui MB21 tanpa referensi equipment",
+        "Membuat Functional Location baru melalui transaski IL01 di sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Ketika staf HR menjalankan proses payroll bulanan menggunakan modul SAP HCM, sistem menghentikan proses karena ada beberapa master data karyawan yang belum lengkap. Apa langkah yang harus diambil untuk menyelesaikan kendala ini?",
+      "options": [
+        "Menghapus data karyawan bermasalah dari database menggunakan transaksi SE16N",
+        "Memperbaiki infotype kepegawaian yang kurang lengkap melalui transaksi PA30",
+        "Menjalankan ulang program cluster payroll dengan mengabaikan pesan error tersebut",
+        "Membuat personal action baru menggunakan transaksi PA40 untuk seluruh karyawan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang staf procurement ingin membuat Purchase Requisition khusus untuk pengadaan jasa maintenance berkala yang sifatnya rutin. Transaksi SAP apa yang paling tepat digunakan untuk memasukkan jenis pengadaan tersebut?",
+      "options": [
+        "Menggunakan transaksi ME21N dengan mengubah tipe dokumen menjadi Service Order",
+        "Menggunakan transaksi ME51N dan memilih item category D pada baris item",
+        "Menggunakan transaksi ML81N langsung tanpa perlu membuat dokumen referensi",
+        "Menggunakan transaksi ME59N untuk memproses otomatis kebutuhan jasa tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang staf gudang melaporkan bahwa stok fisik material besi beton di lapangan berbeda dengan sistem SAP. Prosedur penyesuaian selisih stok (stock adjustment) yang benar di SAP menggunakan transaksi...",
+      "options": [
+        "MI01 untuk membuat physical inventory document, lalu MI04 untuk entry, dan MI07 untuk posting selisih",
+        "MB1B dengan movement type 311 langsung mengubah kuantitas stok tanpa dokumen penghitungan fisik",
+        "MIGO dengan memilih reference Other dan mencatat nilai selisih secara manual di tab account assignment",
+        "MM02 untuk memperbarui langsung nilai total stok pada master data material panduan akuntansi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Akuntansi menemukan bahwa faktur pajak dari vendor tidak bisa ditarik ke dalam transaksi pencatatan invoice verification (MIRO) karena nomor pajak elektronik tidak sesuai. Langkah mitigasi operasional yang harus dilakukan adalah...",
+      "options": [
+        "Meminta bagian procurement membatalkan PO yang sudah disetujui sebelumnya",
+        "Memperbarui data referensi pajak pada master vendor menggunakan transaksi FK02",
+        "Menghubungi vendor untuk menerbitkan faktur pajak pengganti yang valid",
+        "Melakukan posting manual melalui FI lewat transaksi FB60 dengan mengabaikan MM"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam modul SAP FI/CO, saat menjalankan siklus closing bulanan, seorang accountant mendapati bahwa posting period untuk periode lalu masih terbuka, padahal transaksi baru sudah harus dimasukkan. Transaksi apa yang digunakan untuk mengontrol pembukaan periode tersebut?",
+      "options": [
+        "Menggunakan t-code OB52 untuk mengatur rentang posting period variant perusahaan",
+        "Menggunakan t-code OBY6 untuk mengubah konfigurasi dasar chart of accounts",
+        "Menggunakan t-code F.13 untuk menutup periode secara otomatis berdasarkan tanggal sistem",
+        "Menggunakan t-code OKP1 untuk mengunci aktivitas controlling pada plant tertentu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur ingin memastikan bahwa sistem SAP mereka secara otomatis memblokir pembuatan Purchase Requisition jika anggaran cost center telah terlampaui. Modul dan fungsi utama apa yang harus diintegrasikan?",
+      "options": [
+        "Integrasi antara modul MM dengan SD melalui pengecekan ketersediaan stok fisik",
+        "Integrasi antara modul FI dan PM melalui pemeliharaan jadwal preventive maintenance",
+        "Integrasi antara modul MM dan CO menggunakan fungsi Budget Availability Control (Funds Management atau CO-OM)",
+        "Integrasi antara modul HR dan PP melalui pembatasan jam kerja tenaga operasional pabrik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang Sales Admin membuat Sales Order (VA01) untuk pelanggan korporat, namun harga yang muncul di sistem otomatis lebih rendah dari daftar harga terbaru. Analisis apa yang harus dilakukan pada prosedur Pricing Determination di SAP?",
+      "options": [
+        "Memeriksa kondisi record harga pada transaksi VK13 untuk memastikan masa berlaku dan kondisi kriteria sudah benar",
+        "Mengubah mata uang transaksi pada header sales order agar sesuai dengan kurs pajak harian",
+        "Menghapus jenis pengiriman (shipping condition) pada master customer agar harga kembali normal",
+        "Meminta bagian finance untuk memperbarui limit kredit pelanggan melalui transaksi FD32"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek implementasi SAP S/4HANA, tim konsultan perlu memigrasikan data master aset tetap dari sistem legacy ke SAP secara massal. Tools atau metode standar SAP apa yang paling direkomendasikan?",
+      "options": [
+        "Menggunakan perekaman batch input melalui transaksi SHDB secara manual satu per satu",
+        "Menggunakan program migrasi berbasis file Excel dengan framework SAP S/4HANA Migration Cockpit (LTMC/LTMOM)",
+        "Menggunakan langsung program ABAP ad-hoc untuk melakukan insert tabel database BKPF dan BSEG",
+        "Melakukan entry manual satu per satu lewat transaksi AS01 untuk menghindari selisih nilai buku"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manager Logistik meminta laporan konsumsi material proyek selama 6 bulan terakhir untuk keperluan audit. Laporan standar SAP manakah yang paling tepat untuk menyediakan data historis pergerakan barang tersebut?",
+      "options": [
+        "Transaksi MM03 untuk melihat spesifikasi teknis dan karakteristik material",
+        "Transaksi MB51 untuk menampilkan daftar dokumen material berdasarkan kriteria periode dan movement type",
+        "Transaksi MB5B untuk melihat stok on-hand secara real-time pada hari ini",
+        "Transaksi ME2L untuk melacak seluruh pesanan pembelian yang dibuat kepada vendor tertentu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah dokumen penagihan (Billing Document) di SAP SD telah dibuat dan diteruskan ke bagian akuntansi, namun ternyata salah memasukkan kuantitas barang. Langkah koreksi standar yang harus diambil di sistem adalah...",
+      "options": [
+        "Menghapus nomor billing document langsung di tabel database keuangan menggunakan debug mode",
+        "Membuat dokumen pembatalan penagihan (Cancellation Billing) menggunakan transaksi VF11, lalu merevisi Sales Order",
+        "Membuat invoice baru dengan nilai minus secara manual melalui transaksi FB60 di modul akuntansi",
+        "Mengubah kuantitas pada delivery document yang sudah lewat status Goods Issue menggunakan VL02N"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

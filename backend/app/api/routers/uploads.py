@@ -26,7 +26,7 @@ from backend.app.db.schemas import (
 from backend.app.services.matching.evidence import carry_proof
 from backend.app.services.matching.matcher import SemanticMatcher
 from backend.app.services.pdf_parser import ScannedPdfError, parse_cv, parse_job_pack
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, UploadFile
 
 router = APIRouter(prefix="/uploads", tags=["uploads"])
 
@@ -70,6 +70,7 @@ def _to_education(d: dict) -> Education:
 
 @router.post("/cv")
 async def upload_cv(
+    background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     confirm_offline: bool = Form(False),
     confirm_scanned: bool = Form(False),
@@ -86,21 +87,12 @@ async def upload_cv(
     try:
         parsed = await parse_cv(blob, allow_scanned=confirm_scanned)
     except ScannedPdfError as exc:
-        # A scan/photo has no text layer, so it can only be sent as an image,
-        # unredacted. We ask first rather than doing it quietly. Mirrors the
-        # existing `confirm_offline` handshake: 200 with a prompt, and the
-        # client re-uploads with confirm_scanned=true if the seeker agrees.
-        # Blocking these outright would exclude a large share of Indonesian
-        # job seekers, whose CV is a phone photo.
         return {
             "requires_scan_consent": True,
             "message": str(exc),
             "alternative": "Atau isi profil singkat secara manual tanpa mengunggah CV.",
         }
 
-    # Guard: if the parser fell back to offline/demo data and the client
-    # hasn't explicitly acknowledged, return a preview payload instead of
-    # blindly overwriting the seeker's existing profile.
     if parsed.get("_offline") and not confirm_offline:
         return {
             "requires_confirmation": True,
@@ -115,7 +107,6 @@ async def upload_cv(
 
     repos = get_repositories()
 
-    # Find or create a seeker profile for the authenticated user using fast SQL finder
     user_id = current_user.id
     existing = await find_seeker_by_user_id(user_id)
     seeker = (
@@ -132,8 +123,6 @@ async def upload_cv(
     seeker.headline = parsed.get("headline", seeker.headline)
     if parsed.get("region_code"):
         seeker.region_code = parsed["region_code"]
-    # A CV re-upload replaces the claimed skills but never erases earned proof
-    # (quiz badges, HR confirmations) — see evidence.carry_proof.
     seeker.skills = carry_proof(
         [_to_skill(s) for s in parsed.get("skills", []) if s.get("name")], seeker.skills
     )
@@ -143,9 +132,22 @@ async def upload_cv(
     seeker.salary_expectation_min = int(parsed.get("salary_expectation_min") or 0)
     seeker.salary_expectation_max = int(parsed.get("salary_expectation_max") or 0)
 
-    matcher = SemanticMatcher()
-    await matcher.embed_seeker(seeker)
+    # Save immediately without embedding so the response is fast and reliable
     await repos.seekers.upsert(seeker)
+
+    # Queue embedding in the background to avoid blocking the client
+    async def _embed_and_save(p: SeekerProfile) -> None:
+        try:
+            from backend.app.db.postgres_store import update_seeker_embedding
+            matcher = SemanticMatcher()
+            await matcher.embed_seeker(p)
+            if p.embedding:
+                await update_seeker_embedding(p.id, p.embedding, p.embedding_model)
+        except Exception as exc:
+            import logging
+            logging.getLogger(__name__).warning("Background embed failed for seeker %s: %s", p.id, exc)
+
+    background_tasks.add_task(_embed_and_save, seeker)
 
     return {
         "seeker_id": seeker.id,

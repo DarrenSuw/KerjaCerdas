@@ -1,0 +1,306 @@
+{
+  "skill": "Bootstrap",
+  "skill_key": "bootstrap",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan halaman dashboard admin untuk sistem logistik. Di layar berukuran mobile, tabel data terlalu lebar dan menyebabkan munculnya scroll horizontal yang mengganggu. Kelas utility Bootstrap apa yang paling tepat disematkan pada pembungkus tabel agar tabel responsif di semua ukuran layar?",
+      "options": [
+        "Gunakan pembungkus dengan kelas table-responsive",
+        "Tambahkan kelas container-fluid pada elemen table",
+        "Terapkan kelas overflow-auto langsung ke tag table",
+        "Ubah struktur tabel menjadi d-flex flex-column"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim UI/UX memberikan desain landing page e-commerce di mana pada layar desktop, elemen ringkasan pesanan harus berada di sebelah kanan, namun pada tampilan smartphone, elemen tersebut harus bergeser ke atas sebelum daftar produk. Bagaimana cara mengatur urutan kolom menggunakan sistem grid Bootstrap 5?",
+      "options": [
+        "Membuat dua blok HTML terpisah dan menyembunyikannya memakai d-none d-lg-block",
+        "Memanfaatkan kelas urutan order-lg-2 dan order-1 pada elemen kolom grid",
+        "Mengatur ulang posisi baris menggunakan kelas flex-row-reverse di mobile",
+        "Menggunakan kombinasi float-end dan float-start pada masing-masing kolom"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek redesign portal berita, Anda mendapati tombol 'Kirim Komentar' menggunakan warna latar default Bootstrap yang tidak sesuai dengan pedoman merek (brand guidelines) perusahaan. Cara paling efisien tanpa menulis ulang seluruh struktur CSS komponen adalah:",
+      "options": [
+        "Membuat file CSS terpisah untuk menimpa aturan warna utama browser",
+        "Mengubah nilai variabel tema Sass kustom lalu melakukan kompilasi ulang",
+        "Menghapus kelas btn dan menulis ulang semua properti dengan inline style",
+        "Mengganti kelas btn-primary dengan warna hex kustom pada atribut style"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat form registrasi karyawan baru. Desain mengharuskan label input dan kolom teks berada dalam satu baris horizontal pada layar medium ke atas, tetapi bertumpuk vertikal pada layar kecil. Struktur kelas Bootstrap manakah yang paling tepat untuk baris form tersebut?",
+      "options": [
+        "Menggunakan pembungkus dengan kelas row dan kolom col-md-4 serta col-md-8",
+        "Memanfaatkan kelas form-group d-flex justify-content-between di setiap baris",
+        "Menerapkan kelas form-floating pada setiap elemen input teks yang tersedia",
+        "Mengatur elemen dengan kelas d-grid gap-2 dan menambahkan padding responsif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web perbankan memerlukan komponen modal konfirmasi transaksi yang ukurannya harus lebih lebar dari modal standar Bootstrap agar dapat memuat tabel rincian biaya yang cukup padat. Modifikasi kelas apa yang harus ditambahkan pada elemen div berkelas modal-dialog?",
+      "options": [
+        "Menambahkan kelas modal-xl untuk memperlebar tampilan modal",
+        "Menyisipkan kelas modal-fullscreen agar memenuhi seluruh layar",
+        "Membuat kelas kustom dengan properti width 90% pada CSS lokal",
+        "Mengubah kelas modal-dialog menjadi modal-container-fluid"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menguji halaman profil pengguna di perangkat tablet, Anda menyadari jarak antar kartu informasi terlalu rapat sehingga tampilan terlihat padat dan kurang rapi. Kelas utility spasi apa yang paling tepat digunakan untuk menambah jarak vertikal antar kartu?",
+      "options": [
+        "Menambahkan kelas margin-top mt-3 atau mt-4 pada setiap kartu",
+        "Mengubah padding container utama dengan utility p-5 secara konsisten",
+        "Memanfaatkan kelas gap-3 pada elemen baris pembungkus grid",
+        "Menyisipkan spasi HTML non-breaking space di antara elemen kartu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun navigasi header (navbar) untuk situs web perusahaan. Navbar tersebut harus tetap menempel di bagian atas layar pengguna bahkan ketika mereka melakukan scroll ke bawah halaman. Kelas apa yang harus ditambahkan pada elemen nav?",
+      "options": [
+        "Menambahkan kelas fixed-top pada elemen nav utama",
+        "Menyematkan kelas sticky-bottom untuk mengunci posisi",
+        "Menggunakan kelas position-absolute dengan nilai top zero",
+        "Menerapkan kelas d-block shadow-sm pada kontainer navbar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah halaman galeri foto properti, gambar-gambar seringkali memiliki rasio aspek yang berbeda-beda dari sumbernya, membuat tata letak card terlihat tidak beraturan tingginya. Kelas utility rasio apa di Bootstrap 5 yang dapat membungkus gambar agar memiliki dimensi seragam?",
+      "options": [
+        "Memakai kelas ratio dan ratio-16x9 pada pembungkus elemen gambar",
+        "Mengatur tinggi gambar secara kustom menggunakan kelas h-100",
+        "Menambahkan kelas img-thumbnail dan w-100 pada setiap tag gambar",
+        "Memanfaatkan kelas object-fit-cover langsung di dalam tag img"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menampilkan status ketersediaan stok produk berupa badge berbentuk pil (pill) dengan warna latar belakang kuning peringatan. Kombinasi kelas Bootstrap mana yang menghasilkan komponen tersebut?",
+      "options": [
+        "Menggunakan badge rounded-pill bg-warning text-dark",
+        "Membuat elemen dengan kelas alert alert-warning rounded",
+        "Menerapkan kelas btn btn-warning btn-sm pill-shape",
+        "Menggabungkan kelas text-bg-warning dan badge-pill"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Halaman dashboard analitik yang Anda buat memuat banyak widget kartu informasi. Anda ingin memastikan bahwa pada layar ponsel, seluruh kartu tersusun satu kolom penuh, namun pada layar laptop tampil berdampingan menjadi tiga kolom. Kelas kolom grid mana yang harus dituliskan?",
+      "options": [
+        "Menggunakan kelas col-12 col-lg-4 pada setiap elemen kartu widget",
+        "Menerapkan kelas col-md-3 col-sm-6 pada elemen pembungkus kartu",
+        "Menuliskan kelas row-cols-1 row-cols-lg-3 pada elemen baris row",
+        "Mengatur grid template columns secara manual melalui inline style"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mendesain halaman login aplikasi kasir yang diakses via tablet. Desain meminta form login berada tepat di tengah layar secara horizontal dan vertikal. Kelas utilitas Bootstrap apa yang paling tepat diterapkan pada container utama form tersebut?",
+      "options": [
+        "d-flex justify-content-center align-items-center vh-100",
+        "text-center align-middle min-vh-100 position-relative",
+        "container d-grid place-items-center height-100vh",
+        "row justify-content-between align-items-baseline h-100"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan bahwa pada layar ukuran kecil (smartphone), teks pada tombol aksi di dashboard admin terpotong karena ukuran font bawaan terlalu besar. Kelas utilitas Bootstrap manakah yang paling efektif untuk mengecilkan ukuran teks khusus pada layar mobile?",
+      "options": [
+        "fs-sm-6 font-size-small text-mobile-sm",
+        "fs-6 fs-md-5 fs-lg-4 text-break",
+        "fs-6 fs-sm-5 text-truncate",
+        "fs-6 small responsive-text-sm"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan portal berita, Anda perlu membuat section 'Berita Utama' yang terdiri dari tiga kolom di desktop, namun harus berubah menjadi satu kolom penuh yang menumpuk ke bawah pada layar smartphone. Bagaimana struktur baris grid Bootstrap yang tepat?",
+      "options": [
+        "div class=\"row col-12 col-md-4\"",
+        "div class=\"row row-cols-1 row-cols-md-3 g-4\"",
+        "div class=\"grid columns-3 columns-mobile-1 gap-3\"",
+        "div class=\"row flex-column flex-md-row col-4\""
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang halaman profil pengguna di mana terdapat beberapa tombol aksi (Edit, Hapus, Bagikan) yang berderet horizontal. Pada tampilan mobile, jarak antar tombol tersebut menjadi terlalu rapat dan sering bersentuhan saat diklik. Kelas utilitas apa yang harus ditambahkan?",
+      "options": [
+        "Menambahkan kelas gap-2 atau gap-3 pada pembungkus flex",
+        "Menggunakan margin m-auto di antara setiap elemen tombol",
+        "Mengubah tombol menjadi d-block dengan padding-bottom",
+        "Memanfaatkan kelas spacing sp-2 pada container tombol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada aplikasi HRIS yang Anda kembangkan, terdapat tabel data karyawan yang sangat panjang. Anda ingin memastikan bagian header tabel (thead) tetap terlihat di bagian atas saat pengguna melakukan scroll ke bawah. Kelas Bootstrap apa yang harus disematkan?",
+      "options": [
+        "table class=\"table table-sticky-header\"",
+        "table class=\"table sticky-top table-light\"",
+        "thead class=\"fixed-top bg-white\"",
+        "thead class=\"table-dark position-sticky top-0\""
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda diminta menambahkan animasi transisi halus saat sebuah alert peringatan (dismissible alert) ditutup oleh pengguna pada aplikasi dashboard. Kelas tambahan apa yang diperlukan bersama kelas alert dan alert-dismissible?",
+      "options": [
+        "fade show transition-all duration-300",
+        "collapse show animate-fade",
+        "fade show",
+        "slide-down active-alert"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah form pendaftaran vendor, Anda ingin membuat teks bantuan di bawah input 'Nomor NPWP' memiliki warna abu-abu yang lebih lembut agar tidak mendominasi visual form. Kelas warna teks Bootstrap mana yang paling tepat?",
+      "options": [
+        "text-muted atau text-secondary",
+        "text-gray-500 atau text-light",
+        "text-opacity-50 text-dark",
+        "text-black-50 atau text-hint"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat halaman error 404. Desain mengharuskan gambar ilustrasi error disembunyikan sepenuhnya pada perangkat mobile karena memakan terlalu banyak ruang vertikal, namun tetap tampil pada layar tablet ke atas. Kelas utilitas visibilitas apa yang digunakan?",
+      "options": [
+        "d-none d-md-block",
+        "hide-mobile show-desktop",
+        "invisible visible-md",
+        "d-block d-sm-none"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sistem manajemen inventaris, Anda menggunakan komponen card untuk menampilkan ringkasan stok gudang. Anda ingin card tersebut memiliki efek bayangan (shadow) yang tampak sedikit terangkat saat kursor mouse berada di atasnya. Kelas mana yang mendukung kebutuhan ini?",
+      "options": [
+        "card shadow-hover-lg transition-shadow",
+        "card shadow-sm shadow-lg-hover",
+        "card shadow hover-elevation",
+        "card shadow-sm h-100"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu membuat tata letak dua kolom di mana kolom sebelah kiri berisi sidebar navigasi dengan lebar tetap (fixed width), dan kolom sebelah kanan berisi konten utama yang mengisi sisa ruang secara fleksibel. Kelas grid Bootstrap mana yang paling tepat?",
+      "options": [
+        "div class=\"col-auto\" untuk sidebar dan div class=\"col\" untuk konten",
+        "div class=\"col-3\" untuk sidebar dan div class=\"col-9\" untuk konten",
+        "div class=\"col-fixed\" untuk sidebar dan div class=\"col-fluid\" untuk konten",
+        "div class=\"col-md-auto\" untuk sidebar dan div class=\"col-md-12\" untuk konten"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan halaman dashboard admin untuk sistem logistik. Di layar berukuran mobile, tabel data terlalu lebar dan merusak layout. Kelas utilitas Bootstrap apa yang paling tepat disematkan pada pembungkus tabel agar tabel dapat digulir secara horizontal di layar kecil?",
+      "options": [
+        "Gunakan kelas pembungkus dengan nama table-responsive",
+        "Terapkan utility kelas overflow-auto langsung pada elemen tabel",
+        "Tambahkan atribut CSS inline overflow-x scroll ke dalam tag tabel",
+        "Ubah elemen tabel menjadi display block menggunakan kelas d-block"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim UI/UX memberikan desain landing page e-commerce di mana pada layar desktop, elemen ringkasan pesanan harus berada di sebelah kanan, namun pada layar mobile harus turun ke bawah form pengisian. Kelas grid apa yang Anda gunakan untuk mengatur urutan kolom secara responsif?",
+      "options": [
+        "Manfaatkan kelas order-lg-last untuk memindahkan posisi elemen",
+        "Gunakan kombinasi kelas flex-row-reverse pada kontainer flexbox",
+        "Atur posisi menggunakan kelas float-end dan float-none secara bergantian",
+        "Terapkan kelas order-first pada kolom ringkasan pesanan di desktop"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek redesign portal berita, Anda mendapati tombol 'Kirim Komentar' menggunakan warna latar default Bootstrap yang tidak sesuai dengan pedoman brand perusahaan. Bagaimana cara paling efisien mengubah warna latar tombol tersebut tanpa merusak struktur komponen?",
+      "options": [
+        "Timpa variabel warna SCSS Bootstrap sebelum melakukan proses kompilasi",
+        "Gunakan kelas utilitas warna latar kustom seperti bg-warning atau bg-info",
+        "Hapus kelas btn dan tulis ulang seluruh styling CSS murni dari awal",
+        "Manfaatkan kelas turunan btn-custom yang sudah disediakan Bootstrap"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat form registrasi karyawan baru. Desain mengharuskan label input dan kolom teks berada dalam satu baris horizontal pada layar medium ke atas. Sistem grid apa yang paling tepat diterapkan pada struktur form tersebut?",
+      "options": [
+        "Gunakan struktur row dengan kelas col-form-label dan col untuk input",
+        "Terapkan kelas form-inline secara langsung pada elemen form utama",
+        "Gunakan kelas d-flex flex-row untuk menyusun label dan input berdampingan",
+        "Bungkus setiap elemen form dengan kelas float-start secara konsisten"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web perbankan memerlukan komponen modal konfirmasi transaksi yang ukurannya harus lebih lebar dari modal standar agar tabel detail muat dengan baik. Kelas tambahan apa yang harus ditambahkan pada elemen modal-dialog?",
+      "options": [
+        "Tambahkan kelas modal-lg pada elemen pembungkus dialog modal",
+        "Ubah ukuran modal menggunakan kelas utility w-100 pada dialog",
+        "Sisipkan kelas modal-extended untuk memperlebar ukuran default",
+        "Gunakan kelas modal-fluid agar ukurannya memenuhi seluruh layar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menguji halaman profil pengguna di perangkat tablet, Anda menyadari jarak antar kartu informasi terlalu rapat sehingga tampak padat. Kelas spacing apa yang harus ditambahkan untuk memberi jarak margin bawah secara konsisten?",
+      "options": [
+        "Tambahkan kelas margin mb-3 atau mb-4 pada setiap elemen kartu",
+        "Gunakan utility padding pt-3 untuk memperluas area dalam kartu",
+        "Atur jarak antar elemen menggunakan kelas gap-3 pada kontainer row",
+        "Terapkan kelas spacing sp-4 di antara komponen card informasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun navigasi header (navbar) untuk situs web perusahaan. Navbar tersebut harus tetap menempel di bagian paling atas layar meskipun pengguna menggulir halaman ke bawah. Kelas apa yang harus disematkan pada tag nav?",
+      "options": [
+        "Gunakan kelas fixed-top agar navbar menempel di bagian atas",
+        "Terapkan kelas sticky-top pada elemen nav utama aplikasi",
+        "Gunakan kelas position-fixed top-0 w-100 pada elemen navbar",
+        "Tambahkan kelas float-top untuk mengunci posisi navigasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah halaman galeri foto properti, gambar-gambar seringkali memiliki rasio aspek yang berbeda-beda dari sumbernya, membuat tata letak berantakan. Kelas rasio apa yang disediakan Bootstrap untuk menyeragamkan kotak gambar?",
+      "options": [
+        "Gunakan pembungkus dengan kelas ratio dan ratio-16x9",
+        "Terapkan kelas img-fluid bersama kelas aspect-ratio-fixed",
+        "Gunakan kelas h-100 w-100 pada setiap elemen tag gambar",
+        "Atur proporsi gambar menggunakan kelas proportion-box"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menampilkan status ketersediaan stok produk berupa badge berbentuk pil (pill) dengan warna latar belakang kuning peringatan. Kombinasi kelas apa yang paling tepat digunakan?",
+      "options": [
+        "Gunakan badge rounded-pill bg-warning text-dark pada elemen span",
+        "Terapkan kelas pill-badge badge-yellow pada elemen teks status",
+        "Gunakan kelas rounded-circle text-bg-warning untuk badge stok",
+        "Kombinasikan kelas label-pill dan alert-warning pada elemen badge"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Halaman dashboard analitik yang Anda buat memuat banyak widget kartu informasi. Anda ingin memastikan bahwa pada layar ponsel, setiap kartu memenuhi lebar penuh layar, sementara di laptop tersusun empat kolom sejajar. Bagaimana cara menulis kelas gridnya?",
+      "options": [
+        "Gunakan kombinasi kelas col-12 col-lg-3 pada setiap kartu widget",
+        "Terapkan kelas col-mobile-12 col-desktop-3 pada elemen kartu",
+        "Gunakan kelas w-100 w-lg-25 untuk mengatur lebar kolom responsif",
+        "Atur grid menggunakan kelas grid-cols-1 grid-cols-lg-4"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

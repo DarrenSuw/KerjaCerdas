@@ -1,0 +1,306 @@
+{
+  "skill": "Business Writing",
+  "skill_key": "business writing",
+  "questions": [
+    {
+      "question": "Tim Anda baru saja menyelesaikan proyek besar dengan sukses berkat bantuan divisi operasional. Anda ingin menulis email apresiasi kepada mereka. Kalimat mana yang paling tepat?",
+      "options": [
+        "Kerja bagus untuk kalian, akhirnya proyek ini selesai juga tanpa banyak drama.",
+        "Terima kasih atas dukungan luar biasa divisi operasional yang membuat proyek ini sukses.",
+        "Keberhasilan proyek ini sepenuhnya adalah hasil kerja keras dari tim operasional saja.",
+        "Tanpa bantuan kalian, tim kami pasti sudah gagal total sejak minggu pertama."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati kesalahan ketik (typo) fatal pada laporan keuangan resmi yang sudah terkirim ke Direksi. Langkah penulisan koreksi apa yang harus Anda ambil?",
+      "options": [
+        "Diam saja berharap tidak ada anggota direksi yang menyadari kesalahan tersebut",
+        "Mengirim email baru dengan subjek revisi, lampiran benar, dan permintaan maaf singkat",
+        "Memarahi staf junior yang membantu mengetik dokumen tanpa memeriksa ulang",
+        "Menunggu sampai rapat pleno berikutnya untuk membahas kesalahan itu secara lisan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengirim email penolakan kepada kandidat yang sudah melalui tahap interview user tetapi belum lolos. Kalimat pembuka mana yang paling tepat dan profesional?",
+      "options": [
+        "Sayang sekali kami harus memberitahu bahwa Anda gagal dalam proses seleksi ini.",
+        "Terima kasih banyak atas waktu dan antusiasme Anda dalam mengikuti proses rekrutmen.",
+        "Mohon maaf karena posisi yang Anda lamar sudah diisi oleh kandidat lain yang lebih baik.",
+        "Dengan berat hati kami mengumumkan bahwa Anda tidak terpilih untuk bergabung."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Atasan Anda meminta pembuatan laporan mingguan yang sangat padat. Agar mudah dibaca oleh manajemen puncak di tengah kesibukan mereka, format apa yang sebaiknya Anda gunakan?",
+      "options": [
+        "Paragraf naratif panjang yang merinci setiap kegiatan harian secara kronologis",
+        "Poin-poin singkat dengan sorotan utama pencapaian dan kendala di bagian atas",
+        "Tabel besar berisi seluruh data mentah tanpa kesimpulan agar mereka bisa menilai sendiri",
+        "Lampiran dokumen eksternal lengkap tanpa ringkasan di badan email utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus menulis email pengingat (reminder) kepada klien yang belum membayar invoice yang sudah jatuh tempo 3 hari lalu. Nada bahasa apa yang paling tepat?",
+      "options": [
+        "Ancaman pemutusan kontrak kerja sama jika pembayaran tidak dilakukan hari ini",
+        "Sinis karena mereka mengabaikan tenggat waktu yang telah disepakati bersama",
+        "Formal, sopan, dengan asumsi ada keterlambatan administratif yang wajar",
+        "Sangat santai dan bercanda agar hubungan pertemanan tetap terjaga dengan baik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin mengirim pesan singkat via WhatsApp kepada manajer dari divisi lain untuk meminta data proyek. Apa subjek atau kalimat pembuka yang paling efektif?",
+      "options": [
+        "Halo Pak, tolong kirimkan data proyek X sekarang karena saya butuh cepat.",
+        "Penting: Permintaan data laporan proyek divisi sebelah untuk keperluan audit.",
+        "Selamat pagi Pak Budi, mohon izin meminta data proyek X untuk laporan Q3.",
+        "Tolong bantu saya urus data proyek ini ya pak mumpung saya sedang luang."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur produk baru mengalami penundaan rilis selama dua minggu. Anda ditugaskan menulis pengumuman resmi kepada para pengguna aktif. Pendekatan penulisan apa yang paling tepat?",
+      "options": [
+        "Menyalahkan vendor pihak ketiga yang terlambat menyerahkan modul sistem",
+        "Bersembunyi di balik alasan teknis rumit agar pengguna tidak paham masalahnya",
+        "Mengabaikan penundaan tersebut dan menunggu sampai fitur benar-benar siap",
+        "Meminta maaf atas keterlambatan, jelaskan alasannya singkat, dan beri estimasi baru"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda menulis proposal kerja sama bisnis untuk calon klien korporat. Fokus utama apa yang harus mendominasi isi proposal tersebut?",
+      "options": [
+        "Sejarah panjang perusahaan Anda dan visi misi pendiri sejak awal berdiri",
+        "Daftar lengkap penghargaan yang pernah diraih oleh tim internal Anda",
+        "Solusi spesifik atas masalah yang sedang dihadapi oleh klien tersebut",
+        "Biaya operasional perusahaan Anda selama tiga tahun periode fiskal terakhir"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah rapat lintas divisi, terjadi perdebatan sengit. Anda ditugaskan membuat notulen rapat. Bagaimana Anda menuliskan bagian keputusan rapat?",
+      "options": [
+        "Menuliskan seluruh isi perdebatan kata per kata dari setiap peserta rapat",
+        "Menuliskan ringkasan aksi, PIC yang bertanggung jawab, dan tenggat waktu",
+        "Menuliskan asumsi pribadi Anda tentang siapa yang sebenarnya benar dalam debat",
+        "Mengosongkan bagian tersebut dan fokus pada daftar hadir peserta saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengajukan cuti tahunan selama 3 hari kepada atasan lewat email. Manakah subjek email yang paling informatif dan mudah diprioritaskan?",
+      "options": [
+        "Permohonan Cuti",
+        "Liburan Akhir Tahun - [Nama Anda]",
+        "Pengajuan Cuti 3 Hari - [Nama Anda] - [Tanggal]",
+        "Penting Sekali: Izin Tidak Masuk Kantor"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda berhasil memenangkan penghargaan industri bergengsi. Anda diminta menulis siaran pers (press release) untuk media massa. Fokus isi paragraf pertama (lead paragraph) harus berisi apa?",
+      "options": [
+        "Biografi pendiri perusahaan sejak pertama kali merintis bisnis dari bawah secara mendetail.",
+        "Informasi inti 5W+1H mengenai penghargaan apa yang dimenangkan, oleh siapa, dan apa dampaknya.",
+        "Daftar lengkap nama seluruh karyawan yang bekerja di perusahaan tanpa terkecuali.",
+        "Opini pribadi CEO mengenai persaingan bisnis yang tidak sehat di industri sejenis."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Atasan Anda meminta draf kebijakan baru kantor terkait aturan bekerja dari rumah (WFH). Bagaimana struktur isi dokumen kebijakan tersebut agar mudah ditaati?",
+      "options": [
+        "Menyajikan opini pribadi Anda mengenai pentingnya fleksibilitas kerja di era modern dalam bentuk esai argumentatif.",
+        "Membuat daftar aturan terperinci mencakup kriteria kelayakan, jam kerja wajib responsif, dan mekanisme pelaporan tugas.",
+        "Menuliskan seluruh peraturan dalam bentuk puisi naratif agar mudah diingat oleh seluruh karyawan di berbagai divisi.",
+        "Menyertakan tautan situs web eksternal tanpa merinci aturan internal yang berlaku khusus di perusahaan Anda."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengirim pesan via Slack/Teams kepada seorang rekan kerja dari departemen berbeda untuk berkolaborasi. Apa elemen pertama yang wajib Anda sampaikan?",
+      "options": [
+        "Menanyakan kabar pribadinya secara panjang lebar sebelum masuk ke topik urusan pekerjaan kantor.",
+        "Langsung melampirkan sepuluh dokumen kerja tanpa memberikan konteks penjelasan apa pun sebelumnya.",
+        "Menyatakan tujuan pesan secara spesifik dan alasan mengapa kolaborasi darinya sangat dibutuhkan saat ini.",
+        "Mengirimkan undangan rapat kalender secara mendadak tanpa konfirmasi ketersediaan waktu terlebih dahulu."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu menegur bawahan secara tertulis melalui email karena sering datang terlambat dan mengganggu produktivitas tim. Bagaimana cara merumuskan isi email tersebut yang paling profesional?",
+      "options": [
+        "Menyebutkan semua catatan tanggal keterlambatannya secara detail dan meminta surat keterangan dokter untuk setiap kejadian.",
+        "Membuat jadwal pertemuan tatap muka untuk membahas kinerja sambil melampirkan data absensi sebagai bahan diskusi.",
+        "Menjelaskan dampak keterlambatannya pada beban kerja rekan tim lain lalu memberikan peringatan keras pemotongan gaji.",
+        "Mengirimkan teguran langsung berbasis teks di grup WhatsApp kantor agar menjadi contoh bagi anggota tim lainnya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menulis instruksi kerja operasional yang panjang dan rumit untuk staf lapangan baru. Format penulisan apa yang paling efektif agar mudah dipahami?",
+      "options": [
+        "Paragraf naratif panjang agar konteks dan latar belakang kebijakan dapat dipahami secara menyeluruh dan mendalam.",
+        "Poin-poin bernomor (numbered lists) dengan kalimat instruksi singkat dan penekanan pada kata kerja tindakan.",
+        "Tabel komprehensif berisi seluruh kemungkinan skenario kendala lapangan beserta sejarah penyelesaian masalahnya.",
+        "Esai deskriptif bergaya formal menggunakan istilah teknis tinggi agar standar operasional terlihat sangat profesional."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengirimkan email penawaran jasa (cold pitching) kepada seorang Direktur HR perusahaan target. Bagaimana cara menyusun kalimat pembuka yang paling menarik perhatian?",
+      "options": [
+        "Langsung menceritakan sejarah perusahaan Anda sejak berdiri beserta daftar lengkap seluruh klien besar yang pernah ditangani.",
+        "Memuji prestasi perusahaan target secara berlebihan agar mereka merasa tersanjung dan mau membaca pesan sampai akhir.",
+        "Menyebutkan tantangan spesifik terkait retensi karyawan yang sering dialami industri mereka dan solusi ringkas dari Anda.",
+        "Meminta waktu panggilan telepon selama 30 menit minggu depan untuk memperkenalkan profil perusahaan Anda secara rinci."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien mengirimkan email komplain dengan nada emosional karena layanan server perusahaan Anda sempat down selama satu jam. Bagaimana Anda merespons dalam kalimat pembuka surat balasan?",
+      "options": [
+        "Meminta maaf atas ketidaknyamanan tersebut, mengakui gangguan teknis, dan menjelaskan langkah mitigasi yang sedang berjalan.",
+        "Menjelaskan bahwa gangguan server tersebut berada di luar kendali pihak internal dan meminta klien bersabar.",
+        "Mengabaikan nada emosional klien tersebut dan langsung mengirimkan laporan teknis berupa kode log server yang rumit.",
+        "Menyatakan bahwa komplain tersebut tidak beralasan karena durasi gangguan masih berada di bawah batas SLA."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda harus menulis deskripsi lowongan pekerjaan untuk posisi Manajer Pemasaran. Pendekatan bahasa seperti apa yang paling tepat untuk menarik kandidat berkualitas?",
+      "options": [
+        "Menggunakan kalimat penuh tuntutan target ketat dan ancaman sanksi tegas bagi yang gagal mencapai KPI bulanan.",
+        "Menuliskan daftar panjang persyaratan administratif ijazah dan sertifikasi tanpa menjelaskan fasilitas perusahaan.",
+        "Menyoroti tanggung jawab utama, dampak posisi tersebut bagi perusahaan, serta kisaran benefit kompetitif yang ditawarkan.",
+        "Memakai bahasa gaul dan santai agar suasana perusahaan terkesan sangat cair tanpa batasan hierarki formal."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu meminta perpanjangan tenggat waktu (deadline) penyelesaian laporan proyek kepada Direktur karena adanya kendala data dari vendor eksternal. Apa strategi penulisan email yang paling tepat?",
+      "options": [
+        "Menyalahkan vendor secara penuh atas keterlambatan data dan meminta perpanjangan waktu tanpa batas waktu pasti.",
+        "Menyampaikan permohonan maaf, menjelaskan hambatan objektif secara ringkas, dan menawarkan tenggat waktu baru yang realistis.",
+        "Mengirimkan draf laporan apa adanya yang masih kosong bagian datanya agar tenggat waktu awal tetap terpenuhi.",
+        "Menghindari pengiriman email dan baru menjelaskannya secara lisan ketika atasan menanyakan progres laporan tersebut."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis panduan penggunaan aplikasi baru untuk para pengguna awam (end-user). Prinsip penulisan apa yang harus Anda utamakan?",
+      "options": [
+        "Menghindari penggunaan gambar tangkapan layar agar ukuran file panduan tidak terlalu besar saat diunduh.",
+        "Menggunakan istilah teknis arsitektur perangkat lunak agar pengguna memahami cara kerja sistem di balik layar.",
+        "Menyusun langkah-langkah berbasis bahasa sehari-hari yang intuitif disertai ilustrasi visual pada setiap tahapan.",
+        "Menuliskan seluruh bab manual secara padat dalam satu paragraf panjang agar pembaca langsung paham."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda harus menulis email tindak lanjut (follow-up) kepada manajer senior yang belum membalas proposal penting Anda setelah satu minggu. Kalimat pembuka apa yang paling efektif dan tetap profesional?",
+      "options": [
+        "Saya menulis untuk menanyakan apakah Anda sudah membaca proposal saya minggu lalu.",
+        "Melanjutkan email saya sebelumnya, saya ingin tahu progres peninjauan proposal ini.",
+        "Semoga minggu Anda menyenangkan. Saya ingin mengecek apakah proposal yang saya kirim sudah diterima.",
+        "Karena belum ada balasan, saya berasumsi Anda sibuk, jadi saya mengirim ulang proposalnya."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim sales Anda ingin membuat template pesan WhatsApp blast untuk menawarkan produk ke prospek baru agar tidak dianggap spam. Prinsip penulisan seperti apa yang harus diterapkan?",
+      "options": [
+        "Langsung menyebutkan harga diskon besar di kalimat pertama agar mereka tertarik membeli.",
+        "Menyapa ramah, menyebutkan nama mereka, dan langsung memberikan nilai tambah produk secara singkat.",
+        "Menggunakan banyak emoji dan huruf kapital agar pesan terlihat menonjol di antara chat lain.",
+        "Meminta mereka mengisi tautan survei panjang sebelum menjelaskan maksud pesan Anda."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis email internal kepada seluruh karyawan untuk mengumumkan perubahan jam operasional kantor selama bulan Ramadhan. Informasi apa yang wajib diletakkan di bagian paling atas?",
+      "options": [
+        "Alasan filosofis mengapa manajemen memutuskan untuk mengubah jam operasional kantor.",
+        "Daftar nama karyawan yang harus tetap masuk kerja di luar jam operasional baru.",
+        "Waktu pasti jam masuk dan jam pulang kantor yang baru beserta tanggal berlakunya.",
+        "Ucapan selamat menunaikan ibadah puasa dari jajaran direksi perusahaan untuk staf."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menyusun ringkasan eksekutif (executive summary) dari laporan riset pasar setebal 30 halaman untuk para direksi. Apa fokus utama penulisan bagian tersebut?",
+      "options": [
+        "Menyajikan metodologi riset secara mendetail beserta seluruh data statistik pendukung.",
+        "Menyoroti temuan kunci, dampak bisnis, dan rekomendasi strategis secara padat.",
+        "Menceritakan latar belakang proses pengumpulan data dari awal hingga akhir proyek.",
+        "Menuliskan biografi singkat seluruh anggota tim yang terlibat dalam penyusunan riset."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menyampaikan kabar buruk kepada klien bahwa ada kenaikan harga langganan layanan tahun depan akibat inflasi. Bagaimana cara menyusun paragraf pembukanya?",
+      "options": [
+        "Mulai dengan permohonan maaf yang berlebihan dan menyalahkan kondisi ekonomi global saat ini.",
+        "Langsung lampirkan tabel harga baru tanpa memberikan penjelasan latar belakang sama sekali.",
+        "Apresiasi kerja sama yang terjalin, lalu transisi ke penyesuaian operasional yang berdampak pada biaya.",
+        "Katakan bahwa semua kompetitor juga menaikkan harga jadi klien tidak punya pilihan lain."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat slide presentasi laporan bulanan untuk dipresentasikan di depan CEO yang memiliki rentang perhatian singkat. Prinsip penulisan teks pada slide yang paling tepat adalah?",
+      "options": [
+        "Menuliskan seluruh narasi penjelasan secara utuh agar CEO bisa membaca sendiri materinya.",
+        "Menggunakan poin-poin pendek (bullet points) yang hanya memuat kata kunci dan metrik penting.",
+        "Membuat paragraf panjang dengan bahasa formal agar terlihat sangat profesional dan akurat.",
+        "Menghindari teks sama sekali dan hanya memasang grafik tanpa label penjelasan di setiap slide."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang vendor pihak ketiga mengirimkan tagihan dengan nominal yang tidak sesuai dengan kontrak yang disepakati. Anda harus menulis email sanggahan. Nada penulisan seperti apa yang paling tepat?",
+      "options": [
+        "Tegas, objektif, merujuk pada klausa kontrak spesifik, tanpa menggunakan emosi negatif.",
+        "Marah dan menuduh mereka sengaja mencoba melakukan kecurangan terhadap perusahaan Anda.",
+        "Sangat santai dan menganggap itu hanya salah ketik biasa tanpa perlu meminta revisi nominal.",
+        "Pasif dan langsung membayar selisihnya agar hubungan kerja sama tetap berjalan baik."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengirimkan pesan perkenalan profesional melalui LinkedIn kepada seorang ahli industri yang Anda kagumi untuk meminta waktu wawancara singkat. Bagaimana isi pesan yang efektif?",
+      "options": [
+        "Langsung mengirimkan daftar 20 pertanyaan panjang yang harus mereka jawab via email.",
+        "Memuji karya mereka secara spesifik, perkenalkan diri singkat, dan ajukan panggilan 15 menit.",
+        "Menceritakan riwayat hidup Anda secara lengkap dari awal karier hingga posisi saat ini.",
+        "Meminta nomor WhatsApp pribadi mereka agar bisa dihubungi kapan saja dengan mudah."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda mengalami gangguan sistem mendadak yang membuat layanan digital tidak bisa diakses pelanggan. Anda ditugaskan menulis pesan pembaruan (status update) berkala. Apa fokus isinya?",
+      "options": [
+        "Menjelaskan secara teknis baris kode mana yang mengalami kerusakan di server utama.",
+        "Meminta pelanggan untuk bersabar dan tidak mengajukan pertanyaan lebih lanjut ke tim support.",
+        "Menyampaikan apa yang sedang dilakukan tim, perkiraan waktu pemulihan, dan permohonan maaf.",
+        "Mengalihkan kesalahan kepada penyedia layanan internet pihak ketiga yang sedang maintenance."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis panduan internal perusahaan tentang cara menggunakan sistem penggantian biaya (reimbursement) yang baru. Agar staf mudah mengikuti, struktur penulisan apa yang paling direkomendasikan?",
+      "options": [
+        "Esai naratif panjang yang menjelaskan sejarah mengapa sistem lama diganti dengan sistem baru.",
+        "Langkah-langkah berurutan (step-by-step) disertai tangkapan layar (screenshot) pada setiap tahap.",
+        "Kumpulan tanya jawab acak tanpa kategori yang dikumpulkan dari berbagai pertanyaan karyawan.",
+        "Diagram alur (flowchart) visual yang rumit tanpa ada teks penjelas sama sekali di sampingnya."
+      ],
+      "correct_index": 1
+    }
+  ]
+}

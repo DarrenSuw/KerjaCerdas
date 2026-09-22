@@ -1,0 +1,306 @@
+{
+  "skill": "PHP",
+  "skill_key": "php",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi e-commerce lokal di Indonesia. Pengguna sering mengeluhkan bahwa saat mereka menekan tombol 'Bayar' dua kali secara cepat karena koneksi lambat, saldo mereka terpotong dua kali dan pesanan dibuat ganda. Pendekatan apa yang paling tepat untuk mengatasi masalah race condition ini pada sisi backend PHP?",
+      "options": [
+        "Menggunakan fungsi sleep(2) di awal script untuk memberi jeda waktu",
+        "Memanfaatkan database transaction dengan row-level locking (SELECT ... FOR UPDATE)",
+        "Menghapus tombol bayar menggunakan JavaScript setelah klik pertama",
+        "Melakukan pengecekan jumlah klik pada session browser pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web perusahaan mengalami lonjakan trafik yang tinggi. Tim DevOps melaporkan bahwa penggunaan CPU server PHP-FPM melonjak hingga 100%. Setelah diperiksa menggunakan APM (Application Performance Monitoring), bottleneck terjadi pada pemanggilan API eksternal layanan kurir yang sering lambat. Langkah mitigasi apa yang paling efektif diterapkan pada kode PHP?",
+      "options": [
+        "Mengganti seluruh kode prosedural menjadi Object-Oriented Programming murni",
+        "Meningkatkan nilai memory_limit pada file konfigurasi php.ini server",
+        "Menerapkan async request atau caching hasil respons API menggunakan Redis",
+        "Menjalankan skrip PHP melalui command line interface secara background"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mewarisi aplikasi legacy berbasis PHP native tanpa framework. Saat melakukan audit keamanan, ditemukan bahwa input dari form pendaftaran pengguna langsung dimasukkan ke dalam query SQL mentah. Perbaikan paling aman dan sesuai standar industri modern untuk mencegah celah SQL Injection adalah...",
+      "options": [
+        "Membersihkan semua input menggunakan fungsi bawaan strip_tags()",
+        "Mengubah semua tipe data pada tabel database menjadi VARCHAR",
+        "Menggunakan Prepared Statements dengan PDO atau MySQLi",
+        "Melakukan enkripsi pada setiap parameter sebelum dikirim ke database"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi HRIS perusahaan Anda memiliki fitur unduh laporan gaji karyawan dalam format PDF yang berukuran besar. Saat HR manager mencoba mengunduhnya, server PHP menampilkan pesan error 'Fatal error: Allowed memory size exhausted'. Bagaimana cara mengatasi masalah ini secara spesifik pada kode PHP tanpa harus menaikkan memory_limit secara ekstrem?",
+      "options": [
+        "Menambahkan fungsi gc_collect_cycles() di akhir baris skrip",
+        "Melakukan chunking atau pembacaan data database secara streaming/iterator",
+        "Mengubah metode pengiriman HTTP header dari chunked menjadi standard",
+        "Menyimpan seluruh data PDF ke dalam session sebelum dikirim ke browser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek tim menggunakan Laravel, Anda mendapati bahwa halaman daftar produk memuat sangat lambat dan memicu masalah 'N+1 Query Problem' saat menampilkan kategori dan ulasan produk. Solusi paling tepat pada Eloquent ORM untuk mengoptimalkan performa kueri tersebut adalah...",
+      "options": [
+        "Menambahkan indeks pada kolom foreign key di database",
+        "Menggunakan metode eager loading dengan fungsi with()",
+        "Melakukan caching seluruh hasil query menggunakan Redis driver",
+        "Mengganti relasi Eloquent dengan query builder mentah SQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat RESTful API dengan PHP untuk aplikasi mobile. Klien melaporkan bahwa setiap kali mereka mengirim request POST untuk memperbarui profil, data lama kadang masih muncul karena masalah caching di sisi server atau proxy. Header HTTP apa yang paling tepat diset dalam skrip PHP untuk mencegah caching respons tersebut?",
+      "options": [
+        "header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');",
+        "header('Content-Type: application/json; charset=UTF-8');",
+        "header('Access-Control-Allow-Origin: *');",
+        "header('X-Content-Type-Options: nosniff');"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem manajemen konten (CMS) custom berbasis PHP sering menjadi target serangan Cross-Site Scripting (XSS Stored) melalui kolom komentar artikel. Selain melakukan sanitasi saat data dimasukkan, langkah pertahanan krusial apa yang harus dilakukan saat *menampilkan* kembali data komentar tersebut ke layar?",
+      "options": [
+        "Menghapus semua tag HTML menggunakan fungsi strip_tags() saja",
+        "Mengonversi karakter khusus HTML menjadi entitas aman menggunakan htmlspecialchars()",
+        "Memastikan database menggunakan collation utf8mb4_unicode_ci",
+        "Menambahkan token CSRF pada setiap form pengiriman komentar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi PHP yang berjalan di lingkungan production sering mengalami kebocoran memori (memory leak) karena pustaka pihak ketiga yang memuat objek secara berulang dalam loop panjang. Fungsi bawaan PHP apa yang dapat Anda panggil secara manual di dalam loop untuk membersihkan memori siklik yang tidak terpakai?",
+      "options": [
+        "unset()",
+        "gc_collect_cycles()",
+        "memory_get_usage()",
+        "session_write_close()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA menemukan celah keamanan di mana pengguna jahat dapat menebak dan mengakses file laporan bulanan perusahaan dengan mengubah parameter URL menjadi ID berurutan (misal: /download?id=101, /download?id=102). Arsitektur otorisasi apa yang paling tepat diterapkan pada backend PHP untuk mencegah Insecure Direct Object References (IDOR) ini?",
+      "options": [
+        "Memastikan parameter ID dienkripsi menggunakan fungsi base64_encode()",
+        "Mengecek apakah session pengguna yang sedang login memiliki hak akses atas ID data tersebut",
+        "Mengubah metode pengiriman parameter dari GET menjadi POST pada form HTML",
+        "Menambahkan validasi tipe data integer pada parameter ID sebelum diproses"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses deployment aplikasi PHP ke server production cloud, Anda ingin memastikan bahwa dependensi Composer yang terinstal tidak menyertakan paket-paket yang hanya dibutuhkan untuk pengembangan lokal (seperti PHPUnit atau faker). Perintah Composer apa yang harus dijalankan pada pipeline CI/CD?",
+      "options": [
+        "composer update --no-dev",
+        "composer install --optimize-autoloader",
+        "composer install --no-dev --optimize-autoloader",
+        "composer dump-autoload --classmap-authoritative"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun fitur pembayaran digital di mana nominal transaksi dikirim dari frontend ke backend PHP. Karena masalah presisi angka desimal, perhitungan total harga sering meleset beberapa sen. Bagaimana cara paling aman menangani data moneter ini di PHP?",
+      "options": [
+        "Menggunakan tipe data float standar dengan pembulatan round() di setiap akhir baris",
+        "Mengonversi nilai mata uang menjadi satuan terkecil (sen) sebagai integer sebelum diproses",
+        "Memanfaatkan ekstensi BCMath untuk operasi matematika dengan string angka presisi tinggi",
+        "Mengubah seluruh input harga menjadi tipe data double untuk akurasi desimal maksimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem manajemen inventaris gudang sering mengalami data race karena dua pegawai memperbarui stok barang yang sama pada detik yang sama, menyebabkan stok akhir tidak sinkron. Pendekatan database apa yang harus diterapkan pada query PHP untuk mencegahnya?",
+      "options": [
+        "Menambahkan klausa transaksi database dengan teknik SELECT ... FOR UPDATE pada baris terkait",
+        "Membuat antrean background job menggunakan Redis untuk memproses setiap update secara serial",
+        "Menghindari penyimpanan cache pada tabel inventaris agar query selalu membaca data real-time",
+        "Menggunakan fungsi sleep() acak di PHP sebelum menjalankan query update stok barang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi layanan berlangganan Anda menggunakan cron job berbasis PHP untuk memeriksa masa aktif akun pengguna setiap tengah malam. Proses ini mulai berjalan lambat karena jumlah pengguna mencapai ratusan ribu. Apa strategi optimal untuk mengatasi masalah ini?",
+      "options": [
+        "Meningkatkan batas memory_limit dan max_execution_time pada file konfigurasi php.ini",
+        "Memecah data pengguna menjadi beberapa chunk kecil dan mendistribusikannya ke worker antrean",
+        "Menjalankan skrip PHP secara paralel menggunakan fungsi exec() dengan proses background Linux",
+        "Melakukan indexing pada semua kolom tabel pengguna yang tidak sering diakses oleh sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima laporan bahwa sistem login perusahaan mengalami serangan Brute Force secara masif pada endpoint API autentikasi. Tanpa menggunakan library pihak ketiga yang besar, bagaimana cara paling efektif menangani ini di PHP?",
+      "options": [
+        "Menerapkan rate limiting berbasis IP dan username menggunakan mekanisme penyimpanan cache Redis",
+        "Memblokir alamat IP penyerang secara permanen melalui pengaturan file .htaccess di server",
+        "Menambahkan kolom status blokir otomatis pada tabel database pengguna setelah 3 kali gagal",
+        "Memaksa pengguna untuk selalu memasukkan ulang kode OTP setiap kali melakukan percobaan login"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi portal berita, editor sering mengunggah gambar resolusi tinggi langsung dari DSLR yang mengakibatkan penyimpanan server cepat penuh dan halaman lambat dimuat. Langkah pemrosesan apa yang harus dilakukan skrip PHP saat upload?",
+      "options": [
+        "Langsung menyimpan file asli ke cloud storage dan membuat thumbnail dinamis menggunakan CSS",
+        "Memvalidasi ukuran file maksimum di PHP lalu meresize serta mengompresi gambar sebelum disimpan",
+        "Mengonversi semua gambar yang diunggah ke format RAW agar kualitas aslinya tetap terjaga",
+        "Memindahkan direktori penyimpanan folder upload ke partisi disk eksternal yang kapasitasnya besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur impor data ribuan data karyawan dari file CSV ke database MySQL. Proses sering terhenti di tengah jalan karena timeout atau kehabisan memori. Bagaimana cara menulis kode pembacaan CSV yang efisien?",
+      "options": [
+        "Membaca seluruh isi file CSV ke dalam array multidimensi menggunakan fungsi file() sekaligus",
+        "Membaca file baris demi baris menggunakan fgetcsv() dalam perulangan loop dan melakukan insert batch",
+        "Mengunggah file CSV ke direktori sementara lalu menjalankan perintah LOAD DATA INFILE via PDO",
+        "Meminta tim pengembang frontend untuk memecah file CSV menjadi bagian yang lebih kecil di browser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi SaaS multi-tenant berbasis PHP menggunakan satu database bersama dengan kolom tenant_id di setiap tabel untuk memisahkan data antar perusahaan. Risiko keamanan apa yang paling krusial dan harus dicegah oleh pengembang?",
+      "options": [
+        "Kelalaian menyertakan kondisi WHERE tenant_id pada query SQL yang menyebabkan kebocoran data antar tenant",
+        "Kegagalan mengenkripsi password administrator tenant saat disimpan ke dalam tabel database bersama",
+        "Penggunaan nama database yang sama untuk seluruh tenant sehingga rentan terhadap serangan SQL Injection",
+        "Keterbatasan kapasitas koneksi pool database saat semua tenant mengakses aplikasi secara bersamaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi PHP kustom Anda sering gagal merespons ketika layanan pihak ketiga (payment gateway) sedang mengalami gangguan atau lambat merespons. Desain penanganan error apa yang paling tepat diterapkan?",
+      "options": [
+        "Menambahkan blok try-catch dengan batasan waktu timeout yang tegas pada setiap panggilan HTTP eksternal",
+        "Mengabaikan respons dari payment gateway jika durasinya melebihi batas waktu normal aplikasi",
+        "Menonaktifkan sementara fitur pembayaran secara otomatis menggunakan cron job pengecekan server",
+        "Membuat fungsi rekursif yang terus mencoba ulang koneksi HTTP sampai mendapatkan respons sukses"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi internal perusahaan memerlukan fitur ekspor data transaksi besar ke file Excel (.xlsx). Penggunaan library PHPExcel konvensional selalu memicu pesan fatal error memory limit. Pendekatan apa yang harus diambil?",
+      "options": [
+        "Beralih menggunakan library modern seperti Box/Spout yang mendukung pembacaan dan penulisan berbasis streaming",
+        "Menaikkan nilai parameter memory_limit pada file php.ini menjadi sebesar kapasitas RAM server fisik",
+        "Mengubah format ekspor data menjadi file teks biasa dengan ekstensi CSV agar ukuran file menjadi kecil",
+        "Melakukan kompresi file hasil ekspor menggunakan fungsi gzcompress() sebelum dikirim ke browser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengimplementasikan sistem Single Sign-On (SSO) di mana aplikasi PHP Anda bertindak sebagai Resource Server yang memvalidasi JSON Web Token (JWT) dari Auth Server. Pengecekan apa yang wajib dilakukan pada token tersebut?",
+      "options": [
+        "Memastikan token hanya berisi klaim data profil pengguna yang tidak bersifat rahasia dan sensitif",
+        "Memverifikasi tanda tangan digital (signature), masa berlaku (exp), dan penerbit token (iss)",
+        "Menyimpan token yang diterima ke dalam tabel sesi database agar bisa dihapus saat logout",
+        "Memeriksa apakah panjang karakter token sesuai dengan standar enkripsi AES-256 yang digunakan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi point of sale (POS) di kasir toko. Saat kasir memindai banyak barang dengan cepat, terjadi selisih stok karena dua transaksi bersamaan memperbarui baris produk yang sama di database MySQL. Solusi tingkat database apa yang paling tepat diterapkan melalui PDO PHP?",
+      "options": [
+        "Menambahkan penundaan waktu (sleep) pada skrip PHP sebelum melakukan eksekusi perintah update.",
+        "Menggunakan klausa SELECT ... FOR UPDATE di dalam transaksi database yang dikelola secara eksplisit.",
+        "Melakukan pengecekan jumlah stok ulang menggunakan loop while di dalam kode PHP secara terus-menerus.",
+        "Mengubah tipe penyimpanan tabel database menjadi MyISAM agar mendukung penguncian tingkat baris."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web logistik mengalami masalah performa berat saat menghasilkan laporan bulanan yang menggabungkan jutaan baris data pengiriman. Penggunaan memori PHP melonjak drastis hingga memicu kesalahan fatal (memory limit exceeded). Bagaimana cara paling efisien menangani query database besar di PHP murni?",
+      "options": [
+        "Menggunakan fungsi kustom untuk memuat seluruh hasil query ke dalam array terindeks di memori.",
+        "Membatasi jumlah hasil query secara ekstrem menggunakan klausa LIMIT 100 pada setiap eksekusi.",
+        "Menggunakan teknik kursor database atau mengambil data secara bertahap menggunakan fetch baris per baris.",
+        "Menaikkan batas memori PHP di dalam file php.ini secara permanen ke nilai yang sangat tinggi."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek Laravel, fitur notifikasi WhatsApp sering gagal terkirim karena proses pengiriman pesan memakan waktu lama dan membuat pengguna harus menunggu lama saat menekan tombol kirim. Apa pendekatan arsitektur terbaik untuk menyelesaikan masalah ini?",
+      "options": [
+        "Memindahkan logika pengiriman pesan ke dalam antrean latar belakang menggunakan sistem Queue.",
+        "Melakukan optimasi pada koneksi jaringan cURL agar proses pengiriman pesan berjalan lebih cepat.",
+        "Menjalankan proses pengiriman pesan menggunakan fungsi kustom asinkron bawaan dari PHP native.",
+        "Mengganti pustaka pengiriman HTTP pihak ketiga dengan fungsi file_get_contents standar PHP."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mewarisi aplikasi e-commerce lama yang menggunakan kode PHP prosedural tanpa kerangka kerja. Saat memeriksa kode otorisasi halaman admin, Anda menemukan fungsi pemeriksaan hak akses yang terpencar di berbagai file dan sering terlewat. Pendekatan refaktorisasi apa yang paling aman untuk mencegah masalah ini?",
+      "options": [
+        "Memindahkan seluruh logika pemeriksaan hak akses ke dalam file konfigurasi terpusat berbentuk array.",
+        "Membuat middleware atau fungsi pembungkus terpusat yang memeriksa sesi sebelum merender halaman.",
+        "Menghapus seluruh file lama dan menulis ulang seluruh sistem menggunakan kerangka kerja modern.",
+        "Menambahkan blok kode pengecekan sesi secara manual di awal setiap file halaman admin secara teliti."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah API publik berbasis PHP yang Anda kembangkan sering menerima ribuan permintaan per detik dari sumber yang sama, menyebabkan server kelebihan beban. Mekanisme apa yang paling efektif diterapkan di sisi aplikasi untuk membatasi laju permintaan tersebut?",
+      "options": [
+        "Menyimpan alamat IP setiap klien ke dalam tabel database MySQL dan memeriksanya setiap kali ada permintaan.",
+        "Memanfaatkan penyimpanan sementara seperti Redis untuk melacak jumlah permintaan per IP dalam jendela waktu tertentu.",
+        "Menghentikan eksekusi skrip PHP menggunakan fungsi die() jika durasi permintaan terlalu cepat dari biasanya.",
+        "Menutup koneksi database secara paksa menggunakan perintah close apabila trafik dari satu IP melonjak."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi portal berita Anda sering diserang oleh bot jahat yang mencoba melakukan brute force pada halaman login administrator. Selain menggunakan reCAPTCHA, mitigasi berbasis kode PHP apa yang paling efektif untuk melindungi endpoint login tersebut?",
+      "options": [
+        "Menerapkan pembatasan percobaan login (rate limiting) berdasarkan kombinasi IP dan nama pengguna dengan cache.",
+        "Menyimpan kata sandi pengguna di dalam database menggunakan fungsi enkripsi bolak-balik yang aman.",
+        "Mengubah nama file skrip login secara berkala setiap hari untuk mengecoh bot otomatis penyerang.",
+        "Memaksa pengguna untuk mengubah kata sandi mereka setiap kali mereka berhasil masuk ke sistem."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun layanan unggah dokumen perusahaan di mana dokumen sensitif harus disimpan di server lokal tetapi tidak boleh dapat diakses secara langsung melalui URL publik browser. Bagaimana cara menyajikan file tersebut secara aman melalui PHP?",
+      "options": [
+        "Menempatkan file di direktori publik web server dan menyembunyikannya menggunakan file .htaccess.",
+        "Mengubah ekstensi file yang diunggah menjadi format yang tidak dikenal oleh penjelajah web.",
+        "Menyimpan file di luar direktori root publik, lalu membuat skrip pengunduh PHP yang memeriksa hak akses sesi.",
+        "Mengenkripsi isi file dokumen menggunakan kunci privat sebelum menyimpannya ke dalam folder server."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan aplikasi multi-bahasa untuk perusahaan multinasional di Indonesia, aplikasi PHP Anda mengalami penurunan performa karena terlalu sering memuat file terjemahan teks dari disk pada setiap permintaan HTTP. Bagaimana cara mengoptimalkan proses ini?",
+      "options": [
+        "Menggabungkan semua teks terjemahan ke dalam satu file teks berukuran besar dan membacanya sekaligus.",
+        "Menyimpan data terjemahan yang sering digunakan ke dalam sistem penyiapan memori seperti APCu atau Redis.",
+        "Memindahkan seluruh file terjemahan dari format teks biasa ke dalam tabel database relasional MySQL.",
+        "Menggunakan fungsi kompresi gzcompress pada setiap file terjemahan sebelum dibaca oleh skrip PHP."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim keamanan menemukan celah SQL Injection pada salah satu laporan lama aplikasi PHP native karena parameter dari pengguna langsung digabungkan ke dalam string query SQL. Apa standar keamanan mutlak yang harus diterapkan untuk memperbaiki masalah ini?",
+      "options": [
+        "Melakukan penyaringan karakter khusus menggunakan fungsi bawaan htmlspecialchars sebelum query.",
+        "Menggunakan prepared statements dengan parameter terikat (bound parameters) pada PDO atau MySQLi.",
+        "Mengonversi semua data masukan pengguna menjadi tipe data integer secara paksa sebelum diproses.",
+        "Menghapus semua tanda kutip tunggal dari data masukan pengguna menggunakan fungsi str_replace."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa waktu respons API PHP meningkat secara signifikan saat sistem memuat data konfigurasi aplikasi dari file JSON besar pada setiap permintaan. Pendekatan optimasi apa yang paling tepat untuk mengatasi masalah ini di lingkungan produksi?",
+      "options": [
+        "Mengubah file konfigurasi JSON menjadi format XML agar lebih mudah dibaca oleh parser PHP.",
+        "Membagi file konfigurasi yang besar menjadi beberapa file kecil dan memuatnya secara berurutan.",
+        "Melakukan proses cache data konfigurasi yang sudah diparse ke dalam memori bersama (opcode/APCu).",
+        "Memuat file konfigurasi hanya ketika ada permintaan dari pengguna dengan hak akses administrator."
+      ],
+      "correct_index": 2
+    }
+  ]
+}

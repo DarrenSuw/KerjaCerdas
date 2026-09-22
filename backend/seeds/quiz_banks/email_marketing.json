@@ -1,0 +1,306 @@
+{
+  "skill": "Email Marketing",
+  "skill_key": "email marketing",
+  "questions": [
+    {
+      "question": "Sebuah e-commerce lokal mendapati open rate email kampanye mingguan mereka turun drastis dari 22% menjadi 9% dalam sebulan terakhir. Sebagai spesialis email marketing, langkah awal apa yang paling tepat untuk mendiagnosis masalah ini?",
+      "options": [
+        "Mengganti seluruh desain template email dengan layout baru yang lebih minimalis",
+        "Melakukan pengujian A/B pada baris subjek dan memeriksa kesehatan reputasi domain",
+        "Menurunkan frekuensi pengiriman email dari dua kali seminggu menjadi sebulan sekali",
+        "Menghapus semua kontak pelanggan yang tidak aktif dalam enam bulan terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi fintech mendapati lonjakan tingkat unsubscription sebesar 4% setelah mengirimkan email notifikasi fitur baru. Evaluasi apa yang paling rasional untuk memperbaiki alur komunikasi produk tersebut?",
+      "options": [
+        "Menghilangkan tautan berhenti berlangganan agar pengguna tetap membaca informasi",
+        "Mengganti jam pengiriman dari jam kerja ke akhir pekan pada pukul delapan malam",
+        "Menambahkan opsi pusat preferensi agar pengguna bisa memilih jenis topik notifikasi",
+        "Mengurangi jumlah teks pada badan email dan memperbesar ukuran tombol Call-to-Action"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan menyiapkan otomatisasi email sambutan (welcome series) untuk pengguna baru SaaS B2B. Urutan konten edukasi tiga hari pertama yang paling efektif untuk membangun kepercayaan adalah:",
+      "options": [
+        "Penawaran diskon langganan tahunan, testimoni klien besar, dan tombol unduh aplikasi",
+        "Ucapan terima kasih, panduan langkah awal penggunaan fitur utama, dan kisah sukses",
+        "Daftar harga paket berlangganan, profil perusahaan, serta tautan menuju media sosial",
+        "Undangan bergabung ke komunitas privat, formulir survei kepuasan, dan promo terbatas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan uji pratinjau (preview) kampanye email bulanan, Anda mendapati gambar utama tidak muncul pada klien email Outlook di desktop, sementara tampil sempurna di Gmail seluler. Tindakan teknis apa yang harus segera diambil?",
+      "options": [
+        "Mengubah format gambar dari PNG menjadi format GIF animasi agar kompatibel",
+        "Menghapus gambar tersebut dan menggantinya sepenuhnya dengan teks biasa berformat tebal",
+        "Memastikan atribut teks alternatif (alt text) terisi dengan deskripsi yang jelas",
+        "Menaikkan kapasitas resolusi gambar agar terbaca dengan baik oleh sistem Windows"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Metrik klik (CTR) pada email newsletter mingguan biro perjalanan Anda stagnan di angka 1,2% meskipun tingkat buka (open rate) mencapai 25%. Pendekatan optimasi mana yang paling tepat untuk mengatasi hambatan ini?",
+      "options": [
+        "Merekrut desainer grafis baru untuk membuat ilustrasi spanduk yang lebih berwarna",
+        "Memperjelas penawaran nilai dan mempertegas desain tombol Call-to-Action utama",
+        "Memperpanjang durasi kalimat pengantar pada paragraf pertama di badan email",
+        "Mengurangi variasi tautan rujukan dan membatasi jumlah informasi dalam satu pesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan rintisan pendidikan online Anda mendapati tingkat rasio pentalan keras (hard bounce) mencapai 6,5% pada kampanye terbaru. Langkah operasional apa yang wajib dilakukan untuk menjaga reputasi pengirim?",
+      "options": [
+        "Mengabaikan pentalan tersebut karena alamat email bisa saja aktif kembali di masa depan",
+        "Menghapus atau menonaktifkan seluruh alamat email yang menghasilkan hard bounce",
+        "Mengirim ulang pesan yang gagal terkirim menggunakan alamat domain alternatif",
+        "Menghubungi penyedia layanan internet pelanggan untuk meminta pembukaan blokir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun strategi pengaktifan kembali (re-engagement campaign) untuk pelanggan B2C yang tidak melakukan transaksi atau membuka email selama 90 hari terakhir. Pesan pancingan apa yang memiliki peluang berhasil paling tinggi?",
+      "options": [
+        "Pesan yang menanyakan alasan mereka pergi disertai survei panjang berhadiah",
+        "Pemberitahuan bahwa akun mereka akan segera dihapus permanen dalam 24 jam",
+        "Penawaran voucer diskon eksklusif kembalinya mereka dengan batas waktu jelas",
+        "Katalog produk terbaru yang memuat seluruh inventaris barang terlaris minggu ini"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam uji coba A/B untuk baris subjek email promosi flash sale, variasi A menggunakan emoji dan urgensi waktu, sedangkan variasi B menggunakan kalimat formal berbasis personalisasi nama depan. Hasil menunjukkan open rate variasi A unggul 35%. Keputusan lanjutan apa yang paling logis?",
+      "options": [
+        "Menghentikan penggunaan nama depan pelanggan pada seluruh kampanye pemasaran mendatang",
+        "Menerapkan pola gaya bahasa variasi A untuk segmen audiens serupa di kampanye berikutnya",
+        "Menggabungkan kedua variasi tersebut secara langsung tanpa melakukan pengujian ulang",
+        "Mengabaikan hasil tes karena durasi pengujian dianggap terlalu singkat untuk diambil kesimpulan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah klinik kecantikan ingin memastikan email promosi perawatan bulanan mereka lolos dari filter spam Gmail dan Yahoo yang semakin ketat. Praktik terbaik apa yang harus dipatuhi tim kreatif?",
+      "options": [
+        "Menghindari penggunaan kata-kata promosi berlebihan dan melengkapi autentikasi domain SPF serta DKIM",
+        "Menggunakan huruf kapital penuh pada baris subjek agar pesan terlihat menonjol di kotak masuk utama",
+        "Menyertakan sebanyak mungkin tautan eksternal menuju situs ulasan pihak ketiga yang independen",
+        "Mengirimkan email dalam bentuk satu file gambar besar tanpa teks pendukung agar tata letak konsisten"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform e-grocery di Jakarta ingin mengirimkan email resep masakan harian khusus kepada pelanggan yang dalam 30 hari terakhir membeli bahan pokok tertentu. Langkah awal apa yang paling tepat untuk memastikan relevansi pesan?",
+      "options": [
+        "Mengirimkan satu email massal berisi seluruh resep populer ke seluruh basis data pelanggan aktif",
+        "Membuat segmen pelanggan berdasarkan kategori produk bahan pokok yang spesifik dibeli",
+        "Menjadwalkan pengiriman email otomatis setiap jam 6 pagi tanpa memfilter riwayat transaksi",
+        "Menyertakan tautan katalog produk umum di setiap akhir email resep untuk meningkatkan penjualan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati rasio klik-pembuka (CTOR) dari email promosi bulanan produk fashion lokal Anda sangat rendah, padahal tingkat buka (open rate) mencapai 25%. Evaluasi apa yang paling krusial untuk dilakukan pada email berikutnya?",
+      "options": [
+        "Mengganti alamat pengirim agar menggunakan nama pribadi alih-alih nama toko resmi",
+        "Memperpanjang paragraf pengantar teks untuk memperjelas narasi merek produk",
+        "Memperjelas letak tombol ajakan bertindak (CTA) dan relevansi penawaran visual",
+        "Menurunkan frekuensi pengiriman email dari mingguan menjadi satu bulan sekali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai spesialis pemasaran email di perusahaan SaaS lokal, Anda mendapati domain pengiriman email utama Anda masuk dalam daftar hitam (blacklist) penyedia layanan internet. Tindakan darurat apa yang harus segera diambil?",
+      "options": [
+        "Melanjutkan pengiriman kampanye rutin dengan mengganti domain pengirim sekunder secara kilat",
+        "Menghentikan sementara seluruh kampanye pemasaran dan mengajukan permohonan penghapusan",
+        "Mengirimkan email klarifikasi massal kepada seluruh pengguna bahwa sistem sedang mengalami gangguan",
+        "Membuat akun baru dengan penyedia layanan email gratis untuk mengirimkan sisa antrean kampanye"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform kursus daring ingin meningkatkan keterlibatan pengguna pasca pendaftaran uji coba gratis selama 7 hari. Strategi urutan email otomatisasi (drip campaign) seperti apa yang paling efektif?",
+      "options": [
+        "Mengirimkan penawaran diskon berlangganan tahunan di hari pertama pendaftaran akun",
+        "Mengirimkan materi tutorial fitur unggulan secara bertahap menjelang batas akhir masa uji coba",
+        "Mengirimkan daftar seluruh kelas yang tersedia di platform tanpa memedulikan aktivitas pengguna",
+        "Mengirimkan survei kepuasan pelanggan yang panjang sebelum pengguna mencoba platform"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendesain templat email promosi menggunakan HTML untuk toko daring furnitur. Agar email tetap nyaman dibaca oleh sebagian besar pelanggan di Indonesia yang menggunakan gawai seluler, prinsip desain apa yang wajib diterapkan?",
+      "options": [
+        "Menggunakan tata letak satu kolom responsif dengan ukuran tombol utama yang ramah sentuhan",
+        "Menyusun teks dalam bentuk paragraf panjang tanpa jeda gambar agar waktu muat lebih cepat",
+        "Memastikan seluruh informasi produk disematkan di dalam satu gambar utama berukuran besar",
+        "Menghindari penggunaan tautan teks dan hanya mengandalkan banner grafis penuh warna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik B2B mendapati tingkat keluhan spam (spam complaint rate) melampaui batas aman 0,3% pada buletin bulanan mereka. Langkah preventif apa yang paling tepat untuk memperbaiki kesehatan pengiriman?",
+      "options": [
+        "Menyembunyikan tautan berhenti berlangganan di bagian bawah teks agar pembaca tidak menemukannya",
+        "Menerapkan proses verifikasi ganda (double opt-in) dan menyediakan tautan berhenti berlangganan yang jelas",
+        "Mengirimkan email lebih sering agar pelanggan terbiasa dengan keberadaan merek di kotak masuk",
+        "Menggunakan subjek yang sangat provokatif guna menarik perhatian pembaca agar tidak menandai spam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membersihkan daftar kontak email yang sudah tidak aktif selama enam bulan terakhir pada platform asuransi digital Anda. Pendekatan pengelolaan daftar (list hygiene) apa yang paling bijak sebelum menghapus mereka?",
+      "options": [
+        "Langsung menghapus seluruh kontak yang tidak aktif dari basis data untuk menghemat biaya langganan",
+        "Mengirimkan rangkaian email kampanye re-engagement khusus untuk menawarkan pembaruan preferensi",
+        "Tetap mengirimkan promosi harian kepada mereka dengan harapan suatu saat mereka akan merespons",
+        "Memindahkan seluruh kontak tidak aktif ke dalam daftar pengiriman kampanye promosi mitra bisnis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan audit metrik email kampanye peluncuran produk kosmetik, Anda melihat rasio konversi penjualan dari email sangat rendah meskipun trafik klik tinggi. Apa hambatan utama yang paling mungkin terjadi di halaman tujuan (landing page)?",
+      "options": [
+        "Baris subjek email kurang menarik minat awal pembaca untuk membuka pesan",
+        "Alamat pengirim email tidak menggunakan domain resmi perusahaan kecantikan",
+        "Ketidaksesuaian pesan atau penawaran antara isi email dengan halaman arahan produk",
+        "Waktu pengiriman email dilakukan pada akhir pekan alih-alih hari kerja efektif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan rintisan (startup) makanan sehat ingin mematuhi regulasi perlindungan data pribadi dalam pengumpulan alamat email pelanggan melalui situs web mereka. Tindakan kepatuhan apa yang wajib diintegrasikan?",
+      "options": [
+        "Merekam alamat IP pengunjung situs secara diam-diam untuk keperluan analisis demografi lanjutan",
+        "Menyediakan kotak centang persetujuan (consent checkbox) yang jelas beserta tautan kebijakan privasi",
+        "Membagikan daftar alamat email pelanggan kepada mitra bisnis kuliner tanpa izin tertulis",
+        "Mengabaikan opsi berhenti berlangganan di badan email demi mempertahankan jumlah basis data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah marketplace fesyen ingin mengirimkan email khusus untuk pelanggan VIP yang berulang tahun bulan ini. Namun, data tanggal lahir banyak yang kosong di sistem CRM. Langkah taktis apa yang paling tepat untuk mengatasi kendala ini?",
+      "options": [
+        "Mengirimkan email ucapan umum ke seluruh basis data pelanggan tanpa menyebutkan ulang tahun",
+        "Membuat kampanye interaktif berhadiah diskon untuk melengkapi profil data sebelum hari ulang tahun",
+        "Mengabaikan segmen pelanggan VIP tersebut dan fokus pada kampanye promosi reguler mingguan",
+        "Menggunakan estimasi tanggal berdasarkan transaksi pertama untuk menebak waktu ulang tahun mereka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola email pemasaran untuk sebuah aplikasi investasi saham. Anda ingin menguji efektivitas dua tombol ajakan bertindak (CTA) berbeda untuk fitur autodebet baru. Strategi pengujian A/B yang paling valid adalah...",
+      "options": [
+        "Mengirimkan variasi A pada hari Senin dan variasi B pada hari Rabu di minggu yang sama",
+        "Membagi daftar kontak secara acak menjadi dua kelompok yang sama besar untuk menerima variasi secara bersamaan",
+        "Mengirimkan variasi A ke pelanggan baru dan variasi B ke pelanggan lama secara terpisah",
+        "Membuat satu email dengan kedua tombol CTA tersebut agar pengguna bisa memilih sendiri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah hotel resor di Bali mendapati bahwa 65% pelanggan membuka email konfirmasi reservasi melalui ponsel cerdas. Desain email seperti apa yang harus diprioritaskan oleh tim pengembang?",
+      "options": [
+        "Tata letak kolom tunggal dengan ukuran tombol minimal 44x44 piksel agar mudah ditekan jari",
+        "Tampilan interaktif berbasis animasi GIF berat untuk menarik perhatian visual pengguna",
+        "Desain multi-kolom berdampingan agar informasi ringkas terlihat dalam satu layar penuh",
+        "Penyematan teks berukuran sangat kecil guna memuat seluruh syarat dan ketentuan hotel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pemasaran Anda mendesain email kampanye diskon dengan menyertakan seluruh informasi produk, syarat ketentuan, dan ulasan pelanggan dalam satu gambar besar berformat PNG. Apa risiko utama dari pendekatan ini?",
+      "options": [
+        "Kapasitas server pengiriman akan kelebihan beban karena ukuran file gambar yang masif",
+        "Penyedia layanan email akan otomatis mengubah semua tautan menjadi teks biasa tanpa warna",
+        "Sebagian besar klien email memblokir gambar secara default sehingga pesan tidak terbaca",
+        "Pelanggan tidak dapat membagikan gambar tersebut ke media sosial secara langsung"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mengelola kampanye email untuk produk properti komersial bernilai tinggi. Karakteristik isi email manakah yang paling efektif untuk mendorong prospek melakukan konsultasi?",
+      "options": [
+        "Teks panjang mendalam berisi spesifikasi teknis lengkap beserta brosur PDF terlampir",
+        "Salinan tulisan personal dari manajer akun dengan ajakan berdiskusi via telepon atau WhatsApp",
+        "Desain grafis mencolok dengan hitung mundur waktu diskon harga yang agresif setiap jam",
+        "Kompilasi puluhan foto interior dan eksterior gedung tanpa teks penjelasan tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah jenama kopi lokal ingin menyambut pelanggan baru yang mendaftar melalui situs web mereka. Alur otomatisasi email seperti apa yang paling optimal untuk membangun loyalitas merek?",
+      "options": [
+        "Satu email langsung berisi katalog produk lengkap beserta tombol pembelian produk terlaris",
+        "Serangkaian tiga email bertahap berisi cerita merek, panduan seduh kopi, dan voucher diskon",
+        "Pengiriman email promosi harian selama sebulan penuh agar pelanggan terus mengingat merek",
+        "Email berisi survei kepuasan pelanggan secara mendetail mengenai proses pendaftaran akun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan rintisan layanan logistik ingin mengurangi jumlah surel yang masuk ke folder spam. Praktik autentikasi teknis apa yang wajib divalidasi terlebih dahulu dengan tim IT?",
+      "options": [
+        "Penambahan tombol berhenti berlangganan manual di bagian paling atas setiap pesan",
+        "Pengaturan catatan DNS untuk protokol SPF, DKIM, dan DMARC pada domain pengirim",
+        "Penggunaan nama pengirim personal alih-alih menggunakan nama perusahaan resmi",
+        "Penyisipan kode pelacakan pihak ketiga untuk memantau perilaku klik pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengirimkan kampanye surel khusus kepada pelanggan setia yang sudah melakukan pembelian lebih dari lima kali tahun ini. Apa langkah awal pengolahan data yang harus dilakukan?",
+      "options": [
+        "Melakukan segmentasi basis data berdasarkan riwayat frekuensi transaksi kumulatif",
+        "Mengekspor seluruh data kontak ke spreadsheet untuk disaring secara manual satu per satu",
+        "Menghapus pelanggan yang tidak aktif selama tiga puluh hari terakhir dari daftar utama",
+        "Mengubah templat surel standar menjadi desain mewah khusus anggota klub eksklusif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs berita daring ingin menguji apakah penambahan nama depan pembaca pada baris subjek email dapat meningkatkan keterlibatan. Apa risiko utama jika personalisasi ini gagal diterapkan?",
+      "options": [
+        "Penyedia layanan email akan menandai seluruh domain sebagai pengirim konten berbahaya",
+        "Timbul kesalahan data seperti tag nama yang kosong atau cacat tampilan bagi penerima",
+        "Biaya pengiriman kampanye pemasaran melalui platform otomatisasi akan melonjak drastis",
+        "Pelanggan akan langsung melaporkan surel tersebut sebagai tindakan penipuan phishing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agensi digital di Jakarta ingin mengirimkan laporan kinerja bulanan kepada klien melalui email. Agar laporan tidak terlihat monoton dan tetap profesional, pendekatan visual apa yang paling tepat diterapkan pada desain email tersebut?",
+      "options": [
+        "Menggunakan satu gambar besar berukuran penuh untuk seluruh isi laporan agar pembaca tidak perlu repot menggulir layar",
+        "Menyusun tata letak berbasis teks dengan hierarki visual yang jelas serta menyematkan tombol unduh tautan dokumen",
+        "Memasukkan seluruh tabel data mentah langsung ke dalam badan surel agar klien bisa langsung membaca angka secara rinci",
+        "Memanfaatkan animasi bergerak pada setiap grafik untuk menarik perhatian penerima sejak detik pertama dibuka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa tingkat pentalan lunak (soft bounce) pada kampanye email promosi bulanan produk fesyen lokal melonjak hingga 8% di minggu ini. Langkah penanganan operasional apa yang harus segera Anda lakukan?",
+      "options": [
+        "Menghapus permanen seluruh alamat surel yang mengalami pentalan lunak dari basis data demi menjaga reputasi pengirim",
+        "Mengabaikan lonjakan tersebut karena pentalan lunak bersifat sementara dan akan pulih dengan sendirinya pada bulan depan",
+        "Memantau status pentalan tersebut selama beberapa siklus pengiriman berikutnya sebelum mengambil tindakan pembersihan",
+        "Mengubah domain pengiriman utama perusahaan secara mendadak untuk menghindari sanksi dari penyedia layanan surel"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform e-commerce lokal ingin mengoptimalkan waktu pengiriman (send time) email promosi tengah malam agar tingkat keterbukaannya maksimal bagi pekerja kantoran di Indonesia. Strategi penjadwalan apa yang paling efektif?",
+      "options": [
+        "Mengirimkan surel secara serentak tepat pukul 00.00 WIB demi menciptakan kesan eksklusif pada awal hari baru",
+        "Menggunakan fitur pengiriman berbasis zona waktu lokal atau fitur optimasi waktu berbasis kecerdasan buatan",
+        "Menjadwalkan pengiriman pada pukul 03.00 dini hari agar surel berada di posisi paling atas saat pagi hari",
+        "Menyebarkan surel secara acak sepanjang akhir pekan ketika para pekerja memiliki waktu luang yang lebih banyak"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

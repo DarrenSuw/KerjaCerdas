@@ -1,0 +1,306 @@
+{
+  "skill": "Data Mining",
+  "skill_key": "data mining",
+  "questions": [
+    {
+      "question": "Sebuah platform e-commerce lokal mengalami lonjakan data transaksi harian. Anda ditugaskan membangun model segmentasi pelanggan menggunakan algoritma K-Means. Berdasarkan teknik data mining, langkah apa yang paling tepat dilakukan sebelum menjalankan algoritma tersebut?",
+      "options": [
+        "Melakukan normalisasi atau standarisasi pada rentang nilai fitur numerik",
+        "Mengubah seluruh variabel kategorikal menjadi teks deskriptif panjang",
+        "Menghapus semua data outlier tanpa melihat konteks bisnis transaksi",
+        "Menambahkan variabel target label kelas untuk proses supervised learning"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim analis pemasaran retail minimarket ingin mengetahui produk apa saja yang sering dibeli bersamaan oleh pelanggan saat akhir pekan. Algoritma data mining apa yang paling efektif diterapkan untuk kasus keranjang belanja ini?",
+      "options": [
+        "Algoritma regresi logistik untuk prediksi probabilitas pembelian",
+        "Algoritma Apriori untuk analisis asosiasi pola frequent itemsets",
+        "Algoritma K-Means clustering untuk pengelompokan jenis kelamin",
+        "Algoritma Naive Bayes untuk klasifikasi kepuasan pelanggan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan model prediktif churn rate untuk produk telekomunikasi seluler. Dataset yang diperoleh sangat tidak seimbang, di mana hanya 2 persen pelanggan yang benar-benar berhenti berlangganan. Metrik evaluasi apa yang paling tepat digunakan untuk mengukur performa model Anda?",
+      "options": [
+        "Akurasi total keseluruhan data uji tanpa melihat sebaran kelas",
+        "Mean Squared Error untuk menghitung selisih nilai prediksi kontinu",
+        "Precision, Recall, dan Area Under ROC Curve pada kelas minoritas",
+        "Total waktu komputasi training model pada server cloud produksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek data mining untuk deteksi klaim asuransi fiktif, data historis yang tersedia memiliki banyak atribut dengan nilai kosong (missing values) yang signifikan pada kolom pendapatan tahunan. Pendekatan imputasi apa yang paling aman untuk menjaga integritas distribusi data?",
+      "options": [
+        "Mengisi seluruh nilai kosong dengan angka nol secara seragam",
+        "Menghapus seluruh kolom pendapatan dari model analisis data",
+        "Mengganti nilai kosong menggunakan nilai rata-rata atau median",
+        "Membuat baris tiruan baru dengan nilai acak tanpa batas atas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah bank digital ingin mengotomatiskan persetujuan pinjaman kilat. Anda diminta membangun model klasifikasi Decision Tree. Kendala utama yang sering terjadi pada model ini jika kedalaman pohon tidak dibatasi adalah:",
+      "options": [
+        "Model gagal mengenali pola dasar dari data training yang sederhana",
+        "Model mengalami overfitting dan buruk dalam memprediksi data baru",
+        "Model membutuhkan waktu training yang jauh lebih lambat dari neural network",
+        "Model menghasilkan output dalam bentuk angka kontinu yang sulit dibaca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di perusahaan logistik nasional dan ingin mengelompokkan kota-kota tujuan pengiriman berdasarkan tingkat kepadatan dan waktu tempuh. Jumlah klaster optimal tidak diketahui sebelumnya. Algoritma DBSCAN dipilih karena keunggulannya dalam:",
+      "options": [
+        "Menemukan klaster dengan bentuk arbitrer dan mendeteksi data pencilan",
+        "Menjamin waktu eksekusi yang selalu linear terhadap jumlah dimensi data",
+        "Mengharuskan pengguna menentukan jumlah klaster sejak awal eksekusi",
+        "Mengolah data teks mentah tanpa perlu proses tokenisasi terlebih dahulu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim data science sebuah aplikasi super-app sedang merancang sistem rekomendasi berbasis Collaborative Filtering. Tantangan klasik apa yang akan langsung dihadapi ketika pengguna baru mendaftar dan belum memberikan satupun rating produk?",
+      "options": [
+        "Masalah sparsity data rating yang terlalu padat di matriks",
+        "Masalah cold start yang menghambat akurasi rekomendasi awal",
+        "Masalah overfitting ekstrem pada data riwayat transaksi masa lalu",
+        "Masalah multicollinearity antar variabel demografi pengguna baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses preprocessing data teks ulasan aplikasi dari Google Play Store untuk analisis sentimen, tahapan manakah yang berfungsi untuk mengubah kata berimbuhan menjadi kata dasar kamus?",
+      "options": [
+        "Case folding untuk menyeragamkan huruf kapital dan kecil",
+        "Tokenization untuk memecah kalimat menjadi deretan kata",
+        "Stopword removal untuk membuang kata hubung yang tidak penting",
+        "Stemming atau lemmatization untuk penyederhanaan bentuk kata"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendapati bahwa model Random Forest yang Anda bangun untuk prediksi gagal bayar kredit memiliki akurasi 99 persen pada data training, namun akurasinya turun drastis menjadi 75 persen saat diuji pada data produksi. Tindakan mitigasi apa yang paling tepat?",
+      "options": [
+        "Menambah jumlah fitur input dan memperdalam pohon keputusan",
+        "Melakukan pruning, mengurangi kedalaman, atau menambah data latih",
+        "Mengganti metrik evaluasi dari akurasi menjadi mean absolute error",
+        "Menghapus algoritma ensemble dan beralih ke regresi linear tunggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan media online ingin mengelurkan artikel berita ke dalam kategori otomatis menggunakan teks judul dan isi. Karena keterbatasan sumber daya komputasi, Anda memilih algoritma Naive Bayes. Apa asumsi utama dari algoritma tersebut?",
+      "options": [
+        "Semua fitur atau kata yang muncul bersifat independen satu sama lain",
+        "Hubungan antar variabel prediktor harus memiliki korelasi linier kuat",
+        "Urutan kemunculan kata dalam kalimat sangat menentukan hasil akhir",
+        "Distribusi data dari setiap fitur harus berbentuk kurva normal standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan ride-hailing ingin mendeteksi akun pengemudi yang melakukan praktik curang (order fiktif). Model Isolation Forest yang Anda terapkan menghasilkan terlalu banyak false positive, sehingga banyak driver jujur yang ikut terblokir. Langkah praktis apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah algoritma menjadi K-Means agar batas keputusan antar cluster menjadi jelas",
+        "Menaikkan ambang batas skor anomali dan menambahkan aturan validasi berbasis aturan bisnis",
+        "Menghapus seluruh variabel numerik pada dataset agar model hanya membaca data kategorikal",
+        "Menurunkan proporsi data latih pada proses validasi silang untuk mengurangi kompleksitas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menganalisis data klik iklan digital sebuah brand kosmetik lokal. Ditemukan bahwa variabel pendapatan pengguna memiliki banyak nilai kosong (missing values) hingga 45 persen. Pendekatan imputasi mana yang paling aman dilakukan agar distribusi data tidak rusak?",
+      "options": [
+        "Mengganti seluruh nilai kosong dengan angka nol untuk memudahkan perhitungan matematis",
+        "Menghapus seluruh baris data yang memiliki nilai kosong pada variabel pendapatan tersebut",
+        "Menggunakan nilai median dari kelompok demografi yang serupa untuk mengisi kekosongan",
+        "Mengisi nilai kosong menggunakan metode interpolasi linier berdasarkan urutan waktu klik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek analisis keranjang belanja (market basket analysis) untuk jaringan supermarket nasional, algoritma Apriori menghasilkan jutaan aturan asosiasi yang membuat tim bisnis kewalahan. Tindakan apa yang harus Anda ambil untuk menyaring aturan yang benar-benar bernilai komersial?",
+      "options": [
+        "Menaikkan parameter minimum support dan minimum confidence secara bertahap",
+        "Mengganti algoritma asosiasi dengan model regresi linier berganda untuk prediksi",
+        "Menghapus semua item produk yang frekuensi penjualannya berada di bawah rata-rata",
+        "Melakukan normalisasi min-max pada seluruh transaksi sebelum aturan dibentuk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model prediksi harga rumah di kawasan penyangga Jakarta menggunakan algoritma Gradient Boosting. Evaluasi metrik menunjukkan nilai RMSE yang sangat tinggi akibat adanya beberapa properti mewah berharga ekstrem. Solusi terbaik pada tahap pra-pemrosesan adalah",
+      "options": [
+        "Mengabaikan properti ekstrem tersebut karena jumlahnya tidak sampai satu persen data",
+        "Melakukan transformasi logaritmik pada variabel target harga untuk meredam skewness",
+        "Mengganti nilai properti ekstrem tersebut dengan rata-rata keseluruhan harga properti",
+        "Menambah jumlah pohon keputusan agar model mampu menghafal nilai ekstrem tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online ingin mengelompokkan arsip artikel lama menggunakan teknik text mining dan K-Means clustering. Sebelum menghitung jarak antar dokumen, matriks TF-IDF perlu melalui tahap apa agar frekuensi kata yang sangat panjang tidak mendominasi?",
+      "options": [
+        "Melakukan proses stemming menggunakan pustaka Sastrawi untuk menyamakan kata dasar",
+        "Menerapkan pembobotan TF-IDF yang secara alami sudah menekan pengaruh kata umum",
+        "Menghapus seluruh tanda baca dan mengubah semua huruf menjadi bentuk kecil (lowercase)",
+        "Melakukan normalisasi L2 pada setiap vektor baris dokumen agar panjang vektor bernilai satu"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim riset pemasaran sebuah aplikasi edutech ingin mengetahui profil pengguna aktif berdasarkan kebiasaan belajar mereka. Data memiliki dimensi yang sangat tinggi (lebih dari 80 fitur perilaku). Teknik apa yang paling tepat diterapkan sebelum menjalankan algoritma clustering?",
+      "options": [
+        "Menggunakan Principal Component Analysis untuk mereduksi dimensi tanpa kehilangan banyak varians",
+        "Menghapus fitur yang memiliki korelasi rendah dengan durasi langganan aplikasi bulanan",
+        "Melakukan binning pada semua fitur numerik menjadi kategori ordinal rendah, sedang, tinggi",
+        "Menerapkan teknik oversampling SMOTE untuk menyeimbangkan jumlah sampel antar kelompok"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem deteksi dini kerusakan mesin pabrik tekstil, data sensor IoT yang masuk sering kali mengalami pergeseran pola distribusi seiring bertambahnya usia komponen mesin. Apa istilah fenomena ini dan bagaimana strategi mitigasinya?",
+      "options": [
+        "Disebut data leakage dan diatasi dengan membagi data latih secara acak tanpa memperhatikan waktu",
+        "Disebut concept drift dan diatasi dengan menjadwalkan pelatihan ulang model secara berkala",
+        "Disebut multicollinearity dan diatasi dengan menghapus variabel sensor yang saling berkorelasi",
+        "Disebut class imbalance dan diatasi dengan menyesuaikan bobot penalti pada fungsi kerugian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis sentimen ulasan pengguna terhadap layanan dompet digital baru di Twitter. Ditemukan banyak singkatan gaul dan bahasa daerah. Tahapan tokenisasi standar gagal memisahkan kata dengan tepat. Apa langkah perbaikan yang paling efektif?",
+      "options": [
+        "Mengubah seluruh kalimat menjadi representasi angka menggunakan teknik One-Hot Encoding",
+        "Membuat kamus normalisasi khusus (slang dictionary) sebelum proses tokenisasi dijalankan",
+        "Menghapus semua tweet yang mengandung unsur bahasa daerah agar data bersih dari noise",
+        "Langsung melatih model deep learning LSTM tanpa melalui tahap pembersihan teks lanjutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik ingin memprediksi keterlambatan pengiriman paket antarkota. Variabel target memiliki proporsi kelas terlambat sebesar 5 persen dan tepat waktu 95 persen. Metrik evaluasi apa yang paling tepat digunakan untuk mengukur performa model klasifikasi ini?",
+      "options": [
+        "Akurasi total karena proporsi data mayoritas sangat mendominasi keseluruhan sampel",
+        "Mean Absolute Error untuk mengukur selisih hari keterlambatan secara langsung",
+        "Precision-Recall AUC karena lebih peka terhadap kelas minoritas yang tidak seimbang",
+        "Koefisien determinasi R-squared untuk melihat seberapa besar varians dapat dijelaskan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengevaluasi model Support Vector Machine (SVM) untuk klasifikasi kategori produk fesyen berdasarkan deskripsi teks. Hasil validasi silang menunjukkan tanda-tanda overfitting yang kuat. Parameter apa yang perlu disesuaikan untuk mengontrol kompleksitas model?",
+      "options": [
+        "Memperbesar nilai parameter regularisasi C agar margin keputusan menjadi lebih longgar",
+        "Mengganti fungsi kernel dari linear menjadi polinomial berderajat tinggi untuk fleksibilitas",
+        "Menurunkan nilai parameter regularisasi C untuk memberikan penalti lebih besar pada kesalahan",
+        "Menambahkan lebih banyak fitur turunan panjang karakter pada setiap deskripsi produk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menganalisis data transaksi kartu kredit sebuah bank untuk mendeteksi transaksi penipuan (fraud). Dari 100.000 data, hanya ada 50 transaksi penipuan. Metrik evaluasi manakah yang paling tepat Anda gunakan untuk mengukur kinerja model klasifikasi Anda?",
+      "options": [
+        "Akurasi total karena mencakup seluruh sampel data dengan adil",
+        "Precision dan Recall karena data target sangat tidak seimbang",
+        "Mean Squared Error untuk mengukur deviasi nilai prediksi",
+        "Confusion Matrix secara keseluruhan tanpa melihat proporsi kelas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam membangun model prediksi kelayakan kredit nasabah KPR, Anda mendapati bahwa variabel 'jumlah penghasilan bulanan' memiliki skala ribuan dalam rupiah, sedangkan variabel 'lama bekerja' dalam satuan tahun (1-30). Langkah preprocessing apa yang wajib dilakukan sebelum melatih model Regresi Logistik?",
+      "options": [
+        "Melakukan transformasi logaritmik pada kedua variabel secara bersamaan",
+        "Melakukan feature scaling agar koefisien model tidak bias ke nilai besar",
+        "Menghapus variabel lama bekerja karena memiliki rentang nilai terlalu kecil",
+        "Mengubah variabel jumlah penghasilan bulanan menjadi kategori ordinal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menangani proyek segmentasi pelanggan untuk sebuah aplikasi kesehatan mental. Algoritma K-Means dipilih, namun Anda kesulitan menentukan jumlah klaster $k$ yang optimal. Metode visual apa yang paling efektif untuk membantu keputusan ini?",
+      "options": [
+        "Menggunakan Elbow Method untuk melihat titik siku penurunan inertia",
+        "Melihat distribusi frekuensi data menggunakan histogram satu variabel",
+        "Menghitung nilai korelasi Pearson antara semua pasangan variabel numerik",
+        "Membuat diagram scatter plot 3D dari seluruh data latih yang tersedia"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs e-commerce ingin menerapkan sistem rekomendasi produk personalisasi menggunakan algoritma Collaborative Filtering berbasis Item. Tantangan apa yang paling sering muncul ketika jumlah pengguna dan produk meningkat drastis?",
+      "options": [
+        "Penurunan drastis akurasi akibat masalah cold start pada pengguna baru",
+        "Matriks interaksi pengguna-produk menjadi sangat besar dan sangat sparse",
+        "Kesulitan dalam menentukan bobot sentimen teks ulasan dari para pembeli",
+        "Waktu komputasi yang lambat akibat tingginya dimensi atribut demografi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim riset perusahaan FMCG ingin memprediksi volume penjualan bulanan produk mie instan berdasarkan data historis 5 tahun terakhir yang memiliki tren dan musiman yang kuat. Pendekatan data mining atau machine learning apa yang paling sesuai?",
+      "options": [
+        "Menggunakan algoritma klasterisasi DBSCAN untuk mengelompokkan bulan",
+        "Menerapkan model klasifikasi Naive Bayes untuk menentukan kategori laris",
+        "Menggunakan model regresi deret waktu seperti ARIMA atau Prophet",
+        "Memanfaatkan asosiasi Apriori untuk mencari pola pembelian silang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan pembersihan data untuk analisis demografi penduduk kota besar, Anda menemukan banyak nilai yang hilang (missing values) pada kolom tingkat pendapatan. Tindakan apa yang paling aman dilakukan jika persentase data yang hilang mencapai 40 persen?",
+      "options": [
+        "Langsung menghapus seluruh baris data yang memiliki missing values tersebut",
+        "Mengganti semua nilai kosong dengan angka nol agar perhitungan konsisten",
+        "Melakukan imputasi menggunakan nilai modus dari keseluruhan data sampel",
+        "Mempertimbangkan untuk menghapus kolom pendapatan dari analisis model"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang mengembangkan model untuk mengkategorikan tiket keluhan pelanggan otomatis berdasarkan teks pesan. Setelah melakukan tokenisasi dan stopword removal pada data teks bahasa Indonesia, langkah representasi fitur apa yang mengubah teks menjadi vektor angka?",
+      "options": [
+        "Melakukan normalisasi min-max pada frekuensi kemunculan setiap kata",
+        "Menerapkan TF-IDF untuk memberi bobot pentingnya kata dalam dokumen",
+        "Menjalankan analisis komponen utama untuk mereduksi dimensi teks",
+        "Menggunakan teknik one-hot encoding pada setiap karakter abjad dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek deteksi anomali pada sistem server cloud perusahaan teknologi, data log aktivitas yang masuk bersifat kontinu dan tidak memiliki label normal atau penyerangan. Algoritma unsupervised learning manakah yang paling tepat digunakan?",
+      "options": [
+        "Decision Tree classifier dengan kedalaman maksimum yang dibatasi",
+        "Isolation Forest untuk mengisolasi titik data yang berbeda dari mayoritas",
+        "Linear Regression untuk memprediksi beban penggunaan server harian",
+        "K-Means clustering untuk membagi data log menjadi lima kelompok server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda melatih model Random Forest untuk klasifikasi churn pelanggan telekomunikasi. Hasil evaluasi menunjukkan akurasi data latih (train accuracy) mencapai 99%, namun akurasi data uji (test accuracy) hanya 72%. Apa diagnosis utama dari situasi ini?",
+      "options": [
+        "Model mengalamiunderfitting karena jumlah pohon keputusan terlalu sedikit",
+        "Model mengalami overfitting sehingga gagal menggeneralisasi data baru",
+        "Terjadi kebocoran data target pada saat proses normalisasi variabel fitur",
+        "Proporsi kelas target pada data uji tidak seimbang dengan data latih"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur ingin memprediksi kapan mesin produksi akan mengalami kerusakan berdasarkan ratusan variabel sensor yang dicatat setiap detik. Masalah apa yang akan langsung Anda hadapi terkait dimensi data?",
+      "options": [
+        "Terjadinya curse of dimensionality yang membuat jarak antar data tidak bermakna",
+        "Hilangnya seluruh korelasi linier antar variabel akibat proses normalisasi data",
+        "Ketidakmampuan algoritma supervised learning menerima data bertipe numerik",
+        "Peningkatan kecepatan komputasi model secara drastis pada tahap pelatihan"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Cybersecurity",
+  "skill_key": "cybersecurity",
+  "questions": [
+    {
+      "question": "Anda melakukan pengujian penetrasi pada aplikasi web internal perusahaan dan mendapati bahwa halaman profil pengguna rentan terhadap Stored XSS. Skenario terburuk apa yang dapat dieksploitasi oleh penyerang melalui celah ini?",
+      "options": [
+        "Penyerang dapat mengambil alih akun administrator saat mereka melihat profil tersebut",
+        "Penyerang dapat menghapus seluruh struktur tabel database server utama",
+        "Penyerang dapat mengubah alamat IP server web menjadi situs tiruan",
+        "Penyerang dapat mengunduh seluruh file sistem operasi melalui browser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai petugas SOC di sebuah bank swasta di Jakarta, Anda mendapati lonjakan outbound traffic yang tidak biasa dari server database ke IP publik luar negeri pada pukul 02.00 pagi. Tindakan awal mitigasi apa yang paling tepat untuk dilakukan?",
+      "options": [
+        "Melakukan isolasi atau disconnect server database tersebut dari jaringan utama",
+        "Mematikan seluruh daya pusat data agar penyerang tidak dapat mengakses data",
+        "Menghubungi vendor pembuat sistem database untuk meminta patch keamanan",
+        "Membuat aturan firewall baru untuk memblokir port database dari internet"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim IT sebuah e-commerce lokal melaporkan bahwa halaman login utama menampilkan pesan tidak senonoh dan tombol navigasi tidak berfungsi setelah seorang staf mengunggah file gambar dari vendor luar. Apa akar masalah paling mungkin dari insiden ini?",
+      "options": [
+        "Serangan brute force pada akun administrator database server",
+        "Eskalasi hak akses melalui celah keamanan konfigurasi web server",
+        "Kegagalan sistem load balancer dalam mengatur lalu lintas data",
+        "Penyisipan script berbahaya melalui celah unggahan file tanpa validasi"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda diminta melakukan audit keamanan pada aplikasi seluler fintech. Anda menemukan bahwa token autentikasi pengguna disimpan dalam bentuk plain text pada penyimpanan lokal perangkat. Risiko utama apa yang ditimbulkan temuan ini?",
+      "options": [
+        "Aplikasi akan mengalami crash saat pengguna berpindah jaringan seluler",
+        "Penyerang dapat mencuri token dan melakukan pembajakan sesi pengguna",
+        "Server backend akan kelebihan beban karena proses enkripsi yang lemah",
+        "Data transaksi finansial dapat disadap langsung dari satelit GPS ponsel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah instansi pemerintahan menerima email phising yang sangat meyakinkan, menargetkan divisi keuangan untuk membuka lampiran file berformat .iso. Setelah dianalisis, file tersebut berisi malware infostealer. Langkah pemulihan awal bagi target yang terlanjur membuka file adalah...",
+      "options": [
+        "Memaksa semua pegawai mengubah kata sandi akun domain dan mencabut akses internet",
+        "Menghapus file .iso dari komputer korban lalu menjalankan pemindaian antivirus",
+        "Memblokir domain pengirim email di mail gateway dan menghapus email terkait",
+        "Melaporkan kejadian tersebut kepada Badan Siber dan Sandi Negara (BSSN) saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek implementasi sistem pembayaran baru, Anda mendapati bahwa pengembang menggunakan kredensial database hardcoded di dalam kode sumber aplikasi frontend. Saran perbaikan terbaik yang harus Anda berikan adalah...",
+      "options": [
+        "Memindahkan kredensial tersebut ke dalam file konfigurasi teks biasa",
+        "Menggunakan layanan manajemen rahasia terpusat dan variabel lingkungan",
+        "Melakukan enkripsi string kredensial menggunakan algoritma MD5",
+        "Membatasi akses kode sumber hanya untuk tim pengembang senior saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat memantau log web server perusahaan logistik, Anda melihat banyak permintaan HTTP dengan parameter 'UNION SELECT' yang dikirim ke form pencarian resi. Jenis serangan apa yang sedang dicoba oleh pihak luar tersebut?",
+      "options": [
+        "Cross-Site Scripting untuk mencuri cookie sesi pengguna",
+        "SQL Injection untuk memanipulasi kueri ke dalam database",
+        "Distributed Denial of Service untuk melumpuhkan server",
+        "Directory Traversal untuk membaca file sensitif sistem operasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan startup tempat Anda bekerja berencana memindahkan infrastruktur utamanya ke cloud publik. Agar kepatuhan terhadap regulasi pelindungan data pribadi terpenuhi, apa aspek teknis utama yang wajib Anda verifikasi?",
+      "options": [
+        "Memastikan pusat data cloud penyedia berada di wilayah hukum Indonesia",
+        "Menggunakan kapasitas bandwidth minimal 10 Gbps untuk koneksi server",
+        "Memastikan semua karyawan memiliki akses penuh ke panel manajemen cloud",
+        "Menonaktifkan fitur pencatatan log otomatis untuk menghemat penyimpanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan salah satu server web perusahaan mengalami penurunan performa drastis dan ditemukan proses tersembunyi bernama 'kworkerds' yang memakan 100% kapasitas CPU. Analisis awal menunjukkan server tersebut telah disusupi penambang kripto ilegal. Apa tindakan forensik pertama yang harus Anda lakukan sebelum membersihkannya?",
+      "options": [
+        "Langsung menghentikan proses tersebut dan menghapus file binari terkait",
+        "Melakukan pengambilan snapshot disk dan memori untuk keperluan investigasi",
+        "Melakukan pemformatan ulang seluruh hard drive server ke pengaturan pabrik",
+        "Mengubah konfigurasi router agar memutus koneksi internet server tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit swasta melaporkan sistem rekam medis mendadak terkunci dan muncul file teks berisi instruksi pembayaran tebusan Bitcoin. Analisis menunjukkan serangan ransomware masuk melalui celah VPN remote worker yang belum diperbarui. Kebijakan pencegahan jangka panjang mana yang paling efektif?",
+      "options": [
+        "Menerapkan autentikasi multifaktor dan kebijakan manajemenPatch rutin",
+        "Melarang seluruh tenaga medis menggunakan perangkat laptop pribadi",
+        "Membeli asuransi siber untuk menjamin penggantian dana tebusan",
+        "Menyimpan seluruh cadangan data di komputer lokal ruang server utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan bahwa sistem pemantauan keamanan (SIEM) gagal mengumpulkan log dari beberapa server penting selama akhir pekan karena masalah konfigurasi agen. Langkah mitigasi untuk meminimalkan dampak blind spot keamanan tersebut adalah:",
+      "options": [
+        "Menghentikan sementara operasional server yang gagal mengirimkan log data",
+        "Memperbaiki konfigurasi agen pengumpul log dan memverifikasi integritas riwayat",
+        "Membuat laporan insiden formal kepada manajemen puncak tanpa perbaikan teknis",
+        "Mengganti perangkat lunak SIEM dengan solusi dari vendor global yang lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis keamanan siber di perusahaan telekomunikasi, Anda mendapati lonjakan besar pada log autentikasi gagal dari berbagai alamat IP luar negeri yang menargetkan satu akun eksekutif. Tindakan awal mitigasi apa yang paling tepat untuk menghentikan serangan brute force ini tanpa mengganggu operasional bisnis?",
+      "options": [
+        "Memblokir seluruh rentang subnet IP asal trafik tersebut pada perimeter firewall",
+        "Menerapkan kebijakan penguncian akun sementara dan mengaktifkan pembatasan rate limit",
+        "Menutup total akses layanan VPN perusahaan hingga investigasi forensik selesai",
+        "Mengubah paksa seluruh kredensial basis data internal pada server autentikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin tim incident response di sebuah perusahaan ritel nasional. Ditemukan indikasi bahwa penyerang telah berhasil melakukan eksfiltrasi data pelanggan menggunakan kanal DNS tunneling. Langkah penahanan lanjutan yang paling efektif untuk memutus komunikasi C2 tersebut adalah:",
+      "options": [
+        "Melakukan isolasi pada host yang terinfeksi dan memblokir trafik DNS eksternal",
+        "Mengganti sertifikat SSL/TLS pada seluruh load balancer aplikasi web utama",
+        "Menonaktifkan sementara fitur pendaftaran akun baru pada aplikasi seluler",
+        "Melakukan pemindaian kerentanan eksternal menggunakan alat otomatisasi komersial"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat meninjau log akses firewall perusahaan manufaktur, Anda menemukan anomali berupa trafik internal yang rutin mengirimkan paket data terenkripsi ke alamat IP eksternal yang tidak dikenal setiap pukul 02.00 pagi. Prosedur investigasi awal yang harus Anda ambil adalah:",
+      "options": [
+        "Mengabaikan temuan tersebut karena terjadi di luar jam operasional kantor",
+        "Menghapus jadwal tugas otomatis pada server untuk menghentikan proses",
+        "Melakukan analisis lalu lintas jaringan dan isolasi host sumber yang mencurigakan",
+        "Memperbarui aturan enkripsi pada sertifikat digital server utama perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim pengembang aplikasi di perusahaan edutech melaporkan bahwa kode sumber mereka mengalami kebocoran di platform publik karena kecerobohan staf. Di dalam kode tersebut terdapat token API aktif untuk layanan pihak ketiga. Tindakan prioritas pertama yang harus Anda lakukan adalah:",
+      "options": [
+        "Melaporkan kejadian tersebut kepada pihak berwajib penegak hukum siber",
+        "Melakukan pencabutan dan pembuatan ulang token API langsung pada konsol layanan",
+        "Mengirimkan surel pemberitahuan massal kepada seluruh pengguna aplikasi",
+        "Meminta tim pengembang untuk menghapus repositori publik yang bersangkutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit konfigurasi cloud infrastructure perusahaan logistik, Anda mendapati sebuah bucket penyimpanan objek (object storage) dapat diakses secara publik oleh siapa saja tanpa autentikasi, meskipun berisi dokumen internal. Langkah perbaikan yang paling tepat adalah:",
+      "options": [
+        "Menghapus seluruh file yang tersimpan di dalam bucket agar tidak terekspos",
+        "Memindahkan seluruh data ke server fisik lokal demi keamanan maksimal",
+        "Mengubah aturan kontrol akses untuk membatasi izin publik dan mengenkripsi data",
+        "Meminta manajemen menyusun kebijakan baru mengenai tata kelola data cloud"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai spesialis penanganan insiden, Anda menerima laporan bahwa sebuah workstation staf keuangan terinfeksi trojan perbankan. Setelah memutuskan jaringan workstation dari internet, tindakan forensik digital berikutnya yang krusial sebelum mematikan daya perangkat adalah:",
+      "options": [
+        "Menjalankan pemindaian antivirus lokal untuk membersihkan file berbahaya",
+        "Melakukan dump memori RAM untuk mengamankan artefak volatil dan kredensial",
+        "Mencopot perangkat keras penyimpanan dan memformat ulang cakram keras",
+        "Mengubah kata sandi akun domain seluruh pegawai divisi keuangan seketika"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati adanya lonjakan latensi jaringan yang parah pada server portal layanan publik akibat serangan Distributed Denial of Service (DDoS) lapisan aplikasi (Layer 7). Solusi mitigasi jangka pendek yang paling tepat diterapkan adalah:",
+      "options": [
+        "Meningkatkan kapasitas bandwidth internet dari penyedia layanan telekomunikasi",
+        "Mengaktifkan aturan pembatasan tantangan JavaScript dan CAPTCHA pada WAF",
+        "Melakukan migrasi total arsitektur aplikasi ke pusat data fisik yang berbeda",
+        "Menutup akses jaringan luar negeri secara permanen pada router utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan tinjauan kebijakan akses kontrol (IAM) di perusahaan media digital, Anda menemukan banyak akun mantan karyawan yang masih aktif dan memiliki hak akses istimewa. Langkah perbaikan proses yang paling mendesak untuk mencegah risiko insider threat adalah:",
+      "options": [
+        "Menerapkan prosedur otomatis pencabutan akses saat proses offboarding karyawan",
+        "Mengurangi hak akses seluruh staf kreatif menjadi hanya sebagai pembaca data",
+        "Melakukan audit manual terhadap daftar pengguna aktif setiap akhir tahun anggaran",
+        "Meminta seluruh karyawan aktif untuk mengganti kata sandi mereka secara berkala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam uji kerentanan pada sistem intranet perusahaan manufaktur, ditemukan bahwa protokol komunikasi yang digunakan untuk manajemen perangkat jaringan masih menggunakan Telnet yang tidak terenkripsi. Rekomendasi teknis yang harus diberikan adalah:",
+      "options": [
+        "Membatasi akses manajemen jaringan hanya melalui satu komputer administrator",
+        "Melakukan pembaruan perangkat tegar (firmware) pada seluruh perangkat router",
+        "Mengganti penggunaan protokol Telnet dengan SSH dan menonaktifkan port lama",
+        "Memasang sistem deteksi intrusi jaringan di depan setiap perangkat sakelar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim operasi jaringan melaporkan adanya latensi tinggi dan lonjakan penggunaan CPU yang tidak wajar pada server DNS publik perusahaan. Analisis awal menunjukkan adanya banjir permintaan rekursif dari berbagai alamat IP acak. Jenis serangan apa yang sedang dialami perusahaan?",
+      "options": [
+        "Serangan pemantulan dan amplifikasi DNS (DNS Amplification and Reflection Attack)",
+        "Serangan pencurian sesi pengguna melalui manipulasi token autentikasi DNS",
+        "Serangan penyuntikan kode berbahaya melalui zona transfer DNS sekunder",
+        "Serangan pengambilalihan domain utama melalui eksploitasi celah registrar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Incident Responder di sebuah perusahaan fintech, Anda mendapati bahwa kunci privat API gateway perusahaan telah terunggah secara tidak sengaja ke repositori publik milik pihak ketiga oleh seorang pengembang. Langkah prioritas pertama yang harus Anda lakukan adalah:",
+      "options": [
+        "Segera melakukan pencabutan (revoke) kunci tersebut di penyedia layanan dan membuat kunci baru yang aman",
+        "Menghubungi pengembang terkait untuk menegur dan meminta menghapus repositori publik tersebut",
+        "Mematikan seluruh server API gateway agar tidak ada akses ilegal yang masuk ke sistem",
+        "Melakukan pemindaian virus pada seluruh perangkat kerja tim pengembang untuk mencari malware"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan audit keamanan pada aplikasi web sistem kepegawaian suatu instansi dan menemukan bahwa parameter input pada fitur pencarian rentan terhadap serangan SQL Injection berbasis waktu (time-based). Bukti paling efektif yang harus Anda sertakan dalam laporan untuk membuktikan kerentanan ini adalah:",
+      "options": [
+        "Tangkapan layar pesan error database yang muncul pada halaman web saat tanda kutip tunggal dimasukkan",
+        "Hasil eksekusi perintah yang menunjukkan adanya penundaan respons server secara terukur menggunakan fungsi jeda waktu",
+        "Salinan seluruh isi tabel basis data pegawai yang berhasil diunduh menggunakan alat otomatisasi",
+        "Daftar baris kode sumber dari modul pencarian yang menunjukkan ketiadaan sanitasi input pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim SOC sebuah perusahaan e-commerce mendapati peringatan dari sistem IDS mengenai adanya aktivitas pemindaian port yang agresif dari sebuah alamat IP eksternal yang tidak dikenal. Tindakan mitigasi awal yang paling tepat untuk menghentikan pemindaian tersebut adalah:",
+      "options": [
+        "Memblokir alamat IP sumber tersebut pada perimeter firewall perusahaan",
+        "Melaporkan alamat IP tersebut ke lembaga penegak hukum siber nasional",
+        "Melakukan serangan balik (counter-attack) ke IP tersebut untuk melumpuhkan scanner",
+        "Menutup seluruh port jaringan pada server yang menjadi target pemindaian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah evaluasi keamanan infrastruktur cloud perusahaan logistik, ditemukan bahwa sebuah instance virtual machine memiliki konfigurasi grup keamanan (security group) yang membuka akses SSH (port 22) ke seluruh alamat internet (0.0.0.0/0). Rekomendasi perbaikan yang paling aman adalah:",
+      "options": [
+        "Mengganti port default SSH dari port 22 ke port acak lain yang lebih tinggi",
+        "Membatasi akses SSH hanya dari rentang IP kantor yang sah atau melalui bastion host",
+        "Menghapus total layanan SSH dari mesin virtual dan hanya menggunakan konsol web cloud",
+        "Mengharuskan penggunaan autentikasi dua faktor untuk setiap sesi login SSH"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyelidiki kasus pencurian data di perusahaan media dan menemukan artefak file arsip terkompresi yang dilindungi kata sandi di dalam direktori sementara server web. Berdasarkan analisis forensik digital, teknik apa yang kemungkinan besar digunakan pelaku untuk menyelundupkan data keluar?",
+      "options": [
+        "Menggunakan protokol DNS tunneling untuk mentransfer data dalam bentuk kueri nama domain",
+        "Melakukan pengiriman email massal berisi file arsip tersebut melalui server SMTP internal",
+        "Menyembunyikan data di dalam file gambar menggunakan teknik steganografi tingkat lanjut",
+        "Mengunggah data melalui protokol FTP standar yang berjalan pada port non-standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat meninjau log proksi web perusahaan, Anda menemukan lonjakan trafik yang konsisten ke sebuah domain penyedia layanan penyimpanan pihak ketiga yang tidak disetujui perusahaan. Kebijakan pencegahan kebocoran data (DLP) apa yang paling efektif diterapkan berikutnya?",
+      "options": [
+        "Membuat aturan pemblokiran akses domain tersebut di tingkat firewall dan proksi web",
+        "Mengirimkan surel peringatan otomatis kepada seluruh karyawan agar tidak menggunakan layanan tersebut",
+        "Melakukan inspeksi mendalam terhadap isi percakapan aplikasi pesan instan internal",
+        "Mewajibkan semua karyawan menandatangani pakta integritas terkait kerahasiaan data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi mobile banking mengalami masalah di mana pengguna dapat melihat saldo rekening pengguna lain hanya dengan mengubah parameter ID akun pada URL permintaan HTTP tanpa memerlukan sesi login yang valid. Kerentanan ini dikategorikan sebagai:",
+      "options": [
+        "Broken Object Level Authorization atau otorisasi tingkat objek yang rusak",
+        "Cross-Site Scripting tingkat tersimpan pada sisi server aplikasi",
+        "Cross-Site Request Forgery yang mengeksploitasi cookie autentikasi",
+        "Broken Authentication akibat penggunaan token sesi yang terlalu lemah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai spesialis keamanan siber di perusahaan energi, Anda diminta merancang strategi penguatan untuk mencegah serangan rekayasa sosial (social engineering) jenis spear phishing yang menargetkan para eksekutif. Pendekatan pelatihan dan teknis yang paling komprehensif adalah:",
+      "options": [
+        "Mengadakan simulasi phishing rutin berkala disertai pelatihan kesadaran dan memasang banner peringatan eksternal pada surel",
+        "Melarang para eksekutif menggunakan perangkat pribadi untuk membaca surel perusahaan demi alasan keamanan",
+        "Menonaktifkan fitur lampiran file pada seluruh layanan surel yang masuk ke domain eksekutif",
+        "Mewajibkan penggunaan tanda tangan digital (PGP) untuk setiap surel yang diterima oleh jajaran direksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa file konfigurasi utama dari sebuah aplikasi web berbasis kontainer (Docker) mencakup kata sandi basis data dalam teks biasa. Untuk memperbaiki praktik keamanan ini sesuai prinsip terbaik, langkah yang harus diambil adalah:",
+      "options": [
+        "Memindahkan kata sandi tersebut ke dalam variabel lingkungan (environment variables) atau sistem manajemen rahasia terpusat",
+        "Mengenkripsi teks sandi tersebut menggunakan algoritma enkripsi simetris dengan kunci yang disimpan di file yang sama",
+        "Menyembunyikan file konfigurasi tersebut dengan menambahkan atribut tersembunyi pada sistem operasi kontainer",
+        "Mengganti kata sandi secara berkala setiap minggu menggunakan skrip otomatisasi internal"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

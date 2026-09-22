@@ -1,0 +1,306 @@
+{
+  "skill": "Quality Assurance",
+  "skill_key": "quality assurance",
+  "questions": [
+    {
+      "question": "Sebuah tiket bug dilaporkan oleh pengguna dengan deskripsi 'Aplikasi sering force close saat ditekan tombolnya'. Sebagai QA, apa langkah pertama yang harus Anda lakukan pada tiket tersebut?",
+      "options": [
+        "Langsung menutup tiket karena deskripsi masalah yang diberikan kurang jelas",
+        "Meminta log perangkat, langkah replikasi, dan informasi versi aplikasi kepada pelapor",
+        "Menyalahkan tim pengembang frontend atas ketidakstabilan kode program",
+        "Memperbaiki baris kode penyebab crash secara mandiri tanpa koordinasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer proyek meminta Anda untuk memberikan tanda tangan kelulusan (sign-off) QA untuk rilis besar, namun Anda tahu ada satu modul sekunder yang belum sempat diuji karena keterbatasan waktu. Apa keputusan profesional yang harus Anda ambil?",
+      "options": [
+        "Memberikan tanda tangan palsu agar jadwal rilis tim tetap tepat waktu",
+        "Menolak memberikan sign-off penuh dan menyertakan laporan risiko modul yang belum diuji",
+        "Menyalahkan seluruh anggota tim pengembang atas keterlambatan pekerjaan",
+        "Mengabaikan modul tersebut dan berharap tidak ada pengguna yang mengaksesnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mewarisi sekumpulan skrip pengujian otomatis berbasis UI yang sudah usang dan sering gagal (flaky tests) setiap kali ada perubahan kecil pada tata letak tombol. Langkah perbaikan apa yang paling efektif?",
+      "options": [
+        "Menghapus seluruh skrip otomatisasi dan kembali murni menggunakan pengujian manual",
+        "Memperbarui pemilih elemen menggunakan atribut unik yang stabil seperti data-testid",
+        "Mematikan fungsi pelaporan kegagalan agar pipeline CI CD tetap berjalan hijau",
+        "Menambah durasi jeda waktu tunggu manual pada setiap baris skrip pengujian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pengembangan tangkas (Agile), kriteria penerimaan (Acceptance Criteria) untuk fitur pendaftaran akun belum ditulis secara rinci oleh analis bisnis. Kapan waktu paling efektif bagi Anda untuk mulai membahas kriteria tersebut?",
+      "options": [
+        "Setelah aplikasi berhasil diunggah ke toko aplikasi publik",
+        "Sebelum siklus pengembangan dimulai, idealnya pada sesi penyempurnaan backlog",
+        "Ketika proses pengujian akhir di lingkungan staging hampir selesai",
+        "Pada saat pengguna akhir mengajukan keluhan resmi pasca-peluncuran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pengembang mengklaim telah memperbaiki bug terkait kalkulasi diskon, namun saat Anda melakukan pengujian ulang, bug yang sama masih muncul dalam kondisi tertentu. Apa tindakan Anda selanjutnya?",
+      "options": [
+        "Langsung menyetujui tiket pengujian karena pengembang sudah menyatakan selesai",
+        "Membuka kembali tiket bug tersebut dengan melampirkan bukti langkah reproduksi terbaru",
+        "Memperbaiki sendiri kode sumber kalkulasi diskon di repositori utama tim",
+        "Menurunkan tingkat keparahan bug menjadi catatan kecil di dokumentasi rilis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk merancang strategi pengujian untuk fitur keranjang belanja yang sering mengalami lonjakan trafik saat kampanye tanggal kembar. Pendekatan pengujian apa yang paling krusial untuk diprioritaskan?",
+      "options": [
+        "Pengujian kegunaan untuk menilai kenyamanan tata letak tombol keranjang",
+        "Pengujian beban dan performa untuk memastikan kesiapan infrastruktur server",
+        "Pengujian kompatibilitas visual pada berbagai merek ponsel pintar lama",
+        "Pengujian translasi bahasa untuk memastikan semua istilah menu akurat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda baru saja merilis pembaruan aplikasi e-commerce pada hari Jumat sore. Pukul 19.00, laporan masuk dari tim operasional bahwa pengguna gagal melakukan checkout menggunakan dompet digital tertentu. Langkah awal apa yang harus segera Anda ambil sebagai QA?",
+      "options": [
+        "Menunggu hingga hari kerja berikutnya untuk eskalasi ke manajer",
+        "Memvalidasi ulang bug tersebut di lingkungan produksi untuk memastikan reproduksibilitas",
+        "Langsung meminta pengembang untuk melakukan rollback total seluruh sistem",
+        "Membuat dokumentasi pasca-insiden sebelum menguji sistem yang rusak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi Sprint Planning, Product Owner mendesak agar fitur pelaporan pajak baru dirilis minggu depan meskipun waktu pengujian otomatis belum siap. Sebagai QA, bagaimana sikap terbaik Anda dalam menghadapi situasi ini?",
+      "options": [
+        "Menolak sepenuhnya perilisan dan menghentikan seluruh aktivitas tim pengembang",
+        "Melakukan pengujian eksploratif manual secara intensif pada skenario kritis risiko tinggi",
+        "Menyetujui rilis tanpa syarat dengan asumsi pengguna akhir akan melaporkan bug",
+        "Memindahkan seluruh tanggung jawab kualitas ke tangan tim pengembang backend"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan sebuah bug visual kecil di mana teks tombol bergeser 2 piksel di browser tertentu, tetapi fungsionalitas utamanya berjalan sempurna menjelang batas waktu rilis. Keputusan apa yang paling rasional untuk diambil?",
+      "options": [
+        "Menunda tanggal rilis produk sampai perbaikan visual selesai sepenuhnya",
+        "Mencatat bug tersebut dengan prioritas rendah dan melanjutkan proses rilis",
+        "Menghapus fitur tombol tersebut dari halaman utama tanpa persetujuan",
+        "Mengubah seluruh desain antarmuka pengguna secara mendadak di production"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pengujian API untuk sistem perbankan digital, Anda menyadari bahwa data sensitif berupa nomor rekening muncul secara jelas dalam teks mentah pada respons server. Apa tindakan prioritas pertama Anda?",
+      "options": [
+        "Mengabaikannya karena data tersebut hanya terlihat oleh sistem internal",
+        "Melaporkan temuan kerentanan keamanan kritis ini kepada pengembang dan pemimpin tim",
+        "Membagikan tangkapan layar respons API tersebut ke grup publik untuk pengujian",
+        "Membiarkannya hingga siklus pengujian penetrasi tahunan terjadwal berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang menyerahkan modul manajemen inventaris baru tanpa disertai dokumen spesifikasi teknis atau panduan fungsional. Sebagai QA, strategi pendekatan apa yang sebaiknya Andaambil?",
+      "options": [
+        "Menolak melakukan pengujian sampai Product Owner menuliskan manual pengguna yang tebal",
+        "Melakukan eksplorasi mandiri berbasis aturan bisnis umum dan berdiskusi dengan PO untuk membuat matriks pengujian",
+        "Mengikuti insting semata saat mengklik tombol tanpa mencatat hasil pengujian yang sistematis",
+        "Meminta tim pengembang untuk menguji aplikasi mereka sendiri sepenuhnya tanpa keterlibatan QA"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menguji integrasi gerbang pembayaran (payment gateway) baru. Skenario uji coba transfer bank berhasil mencatat status 'Paid' di sistem internal, namun saldo merchant tidak bertambah. Langkah investigasi awal apa yang paling tepat dilakukan?",
+      "options": [
+        "Langsung menyimpulkan bahwa API dari pihak ketiga mengalami gangguan total tanpa cek log",
+        "Memeriksa payload request dan response pada log server serta webhook untuk melacak status transaksi",
+        "Meminta tim finansial melakukan pengecekan manual ke rekening bank fisik setiap ada transaksi baru",
+        "Membuat tiket bug darurat untuk pengembang frontend agar segera merubah tampilan tombol bayar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Fitur pencarian produk di aplikasi marketplace lambat merespons saat diberi kata kunci yang mengandung karakter khusus seperti tanda kutip atau emoji. Sebagai QA, bagaimana Anda mendokumentasikan temuan ini?",
+      "options": [
+        "Menulis deskripsi bahwa pencarian rusak total dan meminta fitur tersebut dihapus dari aplikasi",
+        "Merekam layar, mencatat langkah reproduksi, dan melampirkan string input spesifik yang menyebabkan latensi",
+        "Membiarkannya karena pengguna jarang sekali menggunakan emoji atau tanda kutip saat mencari barang",
+        "Meminta pengembang backend untuk menebak sendiri letak kesalahan pada basis data tanpa data pendukung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengujian regresi untuk aplikasi mobile logistik, Anda mendapati bahwa versi Android terbaru mengalami crash saat izin akses lokasi (location permission) ditolak oleh pengguna. Apa prioritas tindakan Anda?",
+      "options": [
+        "Mengubah dokumentasi persyaratan agar pengguna wajib mengizinkan lokasi demi kelancaran aplikasi",
+        "Menurunkan tingkat keparahan bug karena penolakan izin adalah tindakan opsional dari pengguna",
+        "Melaporkan bug dengan tingkat prioritas tinggi karena penghentian paksa merusak pengalaman pengguna",
+        "Menunggu laporan masuk dari pelanggan di Play Store sebelum mengambil tindakan perbaikan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Hasil uji performa beban (load test) pada sistem pendaftaran tiket konser menunjukkan lonjakan waktu respons yang drastis ketika mencapai 5.000 pengguna bersamaan. Keputusan apa yang harus diambil oleh QA lead?",
+      "options": [
+        "Memberikan lampu hijau untuk rilis karena 5.000 pengguna sudah melebihi estimasi hari biasa",
+        "Menahan persetujuan rilis dan merekomendasikan penyesuaian kapasitas server atau optimalisasi kueri",
+        "Menyalahkan tim infrastruktur secara terbuka dalam rapat evaluasi mingguan dengan manajemen",
+        "Mengurangi jumlah target pengguna uji beban pada laporan akhir agar terlihat memenuhi standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menguji alur multi-bahasa (Indonesia dan Inggris) pada aplikasi fintech, Anda menemukan kesalahan terjemahan teks pada halaman konfirmasi pinjaman yang berpotensi menyesatkan pengguna. Tindakan Anda adalah:",
+      "options": [
+        "Mengabaikan kesalahan terjemahan karena fungsi utama tombol konfirmasi tetap berjalan normal",
+        "Memperbaiki file bahasa secara langsung di server produksi tanpa melalui proses staging",
+        "Membuat tiket bug kategori teks dan mengonfirmasi padanan kata yang benar kepada Product Owner",
+        "Menunda seluruh rilis fitur aplikasi hingga semua bahasa daerah di Indonesia selesai diterjemahkan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pengembang baru saja menerapkan perbaikan keamanan untuk mencegah kerentanan SQL Injection pada kolom input profil. Sebagai QA, metode pengujian apa yang paling efektif untuk memvalidasi perbaikan ini?",
+      "options": [
+        "Melakukan pengujian penetrasi dasar menggunakan payload string SQL berbahaya pada form input tersebut",
+        "Meminta konfirmasi lisan kepada pengembang apakah celah keamanan tersebut benar-benar sudah ditutup",
+        "Hanya menguji menggunakan karakter abjad biasa karena asumsi sistem sudah aman secara otomatis",
+        "Membiarkan tim keamanan eksternal saja yang mencari celah tanpa melakukan validasi internal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur notifikasi push baru diuji coba dan berhasil dikirim, namun isi pesan notifikasi terpotong di perangkat dengan layar kecil. Langkah terbaik dalam pelaporan bug ini adalah:",
+      "options": [
+        "Menuliskan judul bug 'Notifikasi jelek' agar pengembang langsung paham maksudnya",
+        "Menyertakan tangkapan layar perbandingan tampilan notifikasi di berbagai ukuran layar ponsel",
+        "Menyarankan semua pengguna untuk mengganti perangkat mereka ke model layar yang lebih besar",
+        "Menonaktifkan fitur notifikasi push secara permanen pada semua platform seluler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa skenario pengujian manual untuk fitur berlangganan bulanan memakan waktu hingga dua hari penuh setiap kali siklus rilis. Solusi jangka panjang apa yang paling tepat diterapkan?",
+      "options": [
+        "Menghapus sebagian besar langkah pengujian agar proses pengecekan selesai dalam waktu satu jam",
+        "Mengidentifikasi alur kritis berulang dan merencanakan otomatisasi pengujian untuk alur tersebut",
+        "Meminta penambahan staf QA baru secara besar-besaran khusus untuk menangani pengujian langganan",
+        "Melakukan pengujian hanya ketika ada komplain serius dari pelanggan yang berlangganan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada hari rilis aplikasi versi mayor, Anda menemukan inkonsistensi kecil pada warna latar belakang footer di halaman profil pengguna. Fungsionalitas inti berjalan sempurna. Sikap profesional Anda sebagai QA:",
+      "options": [
+        "Menolak memberikan izin rilis total sampai warna footer diperbaiki secara sempurna oleh desainer",
+        "Mencatat bug tersebut dengan prioritas rendah dan mendiskusikan apakah layak ditambal pada patch berikutnya",
+        "Mengubah kode sumber warna footer sendiri secara langsung agar rilis dapat berjalan tepat waktu",
+        "Berdiam diri dan tidak melaporkan temuan tersebut agar tidak dianggap mencari-cari masalah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda mengadopsi metodologi pengujian berbasis perilaku (Behavior-Driven Development). Bagaimana cara Anda menyusun kriteria penerimaan bersama Product Owner dan pengembang?",
+      "options": [
+        "Menggunakan format bahasa skenario Given-When-Then yang mudah dipahami semua pihak",
+        "Menulis dokumen spesifikasi teknis yang sangat panjang menggunakan kode pemrograman",
+        "Membuat diagram alur arsitektur basis data yang rumit untuk setiap fitur baru",
+        "Menyerahkan pembuatan aturan bisnis sepenuhnya kepada tim pemasaran perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah laporan bug dari pengguna menyebutkan bahwa tombol 'Simpan' tidak berfungsi pada resolusi layar tertentu. Namun, saat Anda mencobanya di perangkat pengujian, fitur tersebut berjalan normal. Langkah verifikasi selanjutnya yang paling tepat adalah?",
+      "options": [
+        "Langsung menutup tiket bug tersebut dengan status tidak dapat direplikasi",
+        "Meminta spesifikasi perangkat lengkap, versi sistem operasi, dan tangkapan layar dari pengguna",
+        "Mengubah desain antarmuka tombol agar terlihat mencolok di semua perangkat",
+        "Melakukan pengujian beban server untuk memastikan tidak ada lonjakan trafik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan validasi pada sistem registrasi akun, Anda menemukan bahwa kolom kata sandi menerima kombinasi karakter apa saja tanpa batasan keamanan minimal. Apa tindakan analitis yang harus Anda lakukan?",
+      "options": [
+        "Membiarkannya karena membuat proses pendaftaran menjadi lebih cepat bagi pengguna",
+        "Membandingkan implementasi dengan standar kebijakan kata sandi perusahaan dan OWASP",
+        "Mengubah langsung kode validasi di server produksi tanpa persetujuan tim",
+        "Membuat tiket peningkatan performa antarmuka alih-alih melaporkan masalah keamanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah aplikasi mobile logistik, GPS sering kali gagal mendeteksi lokasi saat perangkat berada di dalam gedung bertingkat. Bagaimana Anda merancang skenario pengujian untuk kondisi simulasi ini?",
+      "options": [
+        "Menggunakan fitur tiruan lokasi (mock location) atau simulasi data koordinat pada perangkat uji",
+        "Memaksa pengembang untuk menghapus fitur pelacakan lokasi berbasis GPS dari aplikasi",
+        "Mengabaikan kondisi tersebut karena dianggap sebagai masalah di luar kendali perangkat lunak",
+        "Meminta seluruh kurir untuk keluar gedung setiap kali ingin memperbarui status pengiriman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa laporan pengujian manual Anda sering dipertanyakan kejelasannya oleh pengembang karena kurangnya bukti pendukung. Elemen apa yang wajib Anda tambahkan pada setiap pelaporan bug di masa mendatang?",
+      "options": [
+        "Opini pribadi mengenai kemampuan teknis pengembang yang menulis kode tersebut",
+        "Langkah-langkah reproduksi yang jelas, log sistem, dan bukti visual yang valid",
+        "Estimasi waktu kerja tambahan yang dibutuhkan untuk memperbaiki masalah",
+        "Daftar nama seluruh anggota tim yang ikut serta dalam sesi pengujian fitur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pengembang menyerahkan perbaikan bug kritis tepat sepuluh menit sebelum batas waktu pengiriman build ke klien. Sebagai QA, sikap profesional apa yang harus Anda tunjukkan?",
+      "options": [
+        "Menolak melakukan pengujian sama sekali dan langsung menyetujui rilis build",
+        "Melakukan pengujian asap (smoke test) terfokus pada area yang diperbaiki dan dampaknya",
+        "Melaksanakan seluruh rangkaian pengujian regresi penuh selama dua jam berikutnya",
+        "Meminta klien untuk menguji sendiri perbaikan tersebut di lingkungan produksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa waktu muat halaman utama aplikasi e-commerce meningkat 40% setelah penambahan modul banner promo baru. Langkah pertama apa yang paling tepat untuk dilakukan sebelum melaporkannya ke pengembang?",
+      "options": [
+        "Meminta pengembang untuk langsung menghapus modul banner baru dari sistem produksi",
+        "Melakukan analisis profil jaringan dan ukuran aset untuk mengisolasi akar masalah",
+        "Mengubah batas ambang toleransi performa di dokumen spesifikasi produk",
+        "Menunggu hingga ada keluhan resmi dari pelanggan sebelum membuat tiket bug"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengujian fitur dompet digital, Anda menemukan bahwa saldo pengguna bertambah dua kali lipat jika tombol konfirmasi top-up diklik cepat secara berulang kali. Kategori pengujian apa yang paling efektif mencegah celah ini di masa depan?",
+      "options": [
+        "Pengujian penetrasi keamanan tingkat lanjut pada infrastruktur server pusat",
+        "Pengujian regresi manual berbasis skenario perjalanan pengguna harian",
+        "Pengujian konkurensi dan manajemen penanganan klik ganda pada antarmuka",
+        "Pengujian kompatibilitas lintas peramban untuk memastikan tampilan konsisten"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Fitur unggulan transfer antar bank mengalami kegagalan total di lingkungan staging, padahal kode sumbernya sama persis dengan yang lulus uji di lingkungan lokal pengembang. Apa tindakan investigasi awal yang harus Anda ambil?",
+      "options": [
+        "Memeriksa perbedaan konfigurasi lingkungan dan variabel sistem antara staging dan lokal",
+        "Meminta pengembang menulis ulang seluruh modul kode sumber dari awal",
+        "Membuat laporan insiden darurat kepada manajemen puncak perusahaan",
+        "Mengabaikan kegagalan tersebut karena sistem lokal sudah membuktikan kelaikannya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda harus menguji sistem pelaporan pajak yang kompleks dengan ratusan kombinasi aturan input. Strategi pembuatan kasus uji apa yang paling efisien untuk diterapkan dalam keterbatasan waktu?",
+      "options": [
+        "Menulis seluruh kemungkinan kombinasi data input tanpa terkecuali secara manual",
+        "Menggunakan teknik partisi ekuivalensi dan analisis nilai batas untuk mewakili data",
+        "Menyerahkan seluruh tanggung jawab perancangan kasus uji kepada tim pengembang",
+        "Menguji hanya satu skenario data valid yang paling sering digunakan pengguna"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

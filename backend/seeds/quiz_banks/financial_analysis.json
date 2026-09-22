@@ -1,0 +1,306 @@
+{
+  "skill": "Financial Analysis",
+  "skill_key": "financial analysis",
+  "questions": [
+    {
+      "question": "Anda adalah analis keuangan di sebuah perusahaan ritel di Jakarta. Manajemen ingin mengetahui apakah penambahan 5 gerai baru tahun depan layak secara finansial. Proyeksi arus kas bebas (free cash flow) menunjukkan angka positif di tahun ke-3, namun investasi awal (capex) sangat besar. Metrik apa yang paling tepat Anda gunakan untuk merekomendasikan keputusan ini kepada BOD?",
+      "options": [
+        "Menghitung Net Present Value dan Internal Rate of Return proyek",
+        "Menganalisis rasio likuiditas dan rasio aktivitas perusahaan",
+        "Memeriksa pertumbuhan laba bersih tahun-tahun sebelumnya",
+        "Menilai margin laba kotor dari gerai yang sudah ada"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur FMCG di Cikarang mencatat kenaikan laba bersih yang signifikan sebesar 25% pada kuartal ini. Namun, saat Anda meneliti Laporan Arus Kas, arus kas dari aktivitas operasi ternyata bernilai negatif. Sebagai analis, apa langkah awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Merevisi naik proyeksi dividen untuk pemegang saham",
+        "Menyelidiki lonjakan piutang usaha dan penumpukan inventori",
+        "Menyatakan perusahaan dalam kondisi bangkrut total",
+        "Meminta bagian pemasaran menurunkan target penjualan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun model keuangan (financial model) untuk startup teknologi lokal yang bersiap mencari pendanaan Seri A. Mereka masih membukukan rugi bersih tetapi pertumbuhan pengguna aktif sangat cepat. Metrik valuasi apa yang paling relevan untuk Anda tonjolkan dalam pitch deck?",
+      "options": [
+        "Price to Earnings Ratio berdasarkan laba bersih saat ini",
+        "Customer Acquisition Cost dan Lifetime Value pelanggan",
+        "Total nilai aset tetap terhadap jumlah modal disetor",
+        "Gross Profit Margin tanpa memperhitungkan biaya server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan distributor farmasi memiliki Operating Cycle yang memanjang dari 60 hari menjadi 90 hari dalam dua tahun terakhir. Hal ini mulai membebani fasilitas modal kerja (overdraft). Rekomendasi operasional apa yang paling efektif secara finansial?",
+      "options": [
+        "Memperpanjang tempo pembayaran utang ke supplier obat",
+        "Menaikkan harga jual seluruh produk secara serentak",
+        "Memperketat syarat kredit pelanggan dan mempercepat penagihan",
+        "Menghentikan seluruh aktivitas promosi produk baru segera"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam audit internal triwulanan, Anda menemukan bahwa rasio Acid-Test (Quick Ratio) perusahaan logistik tempat Anda bekerja berada di angka 0,6. Apa implikasi langsung dari temuan angka tersebut terhadap operasional perusahaan?",
+      "options": [
+        "Perusahaan sangat likuid dan memiliki kas berlebih yang menganggur",
+        "Aset lancar sangat bergantung pada persediaan untuk melunasi utang",
+        "Perusahaan berisiko gagal memenuhi kewajiban jangka pendek tanpa kas",
+        "Struktur modal perusahaan didominasi oleh pendanaan ekuitas murni"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen meminta Anda mengevaluasi struktur modal perusahaan saat ini yang terdiri dari 70% utang berbunga dan 30% ekuitas. Suku bunga pinjaman bank sedang tren naik. Risiko apa yang paling mendesak dianalisis dan dilaporkan kepada CFO?",
+      "options": [
+        "Penurunan drastis pada rasio perputaran persediaan barang",
+        "Kenaikan beban bunga yang menggerus Interest Coverage Ratio",
+        "Potensi hilangnya pangsa pasar akibat harga jual terlalu tinggi",
+        "Ketidakmampuan membayar dividen tunai kepada pemegang saham"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis efisiensi penggunaan aset tetap oleh pabrik tekstil klien Anda. Rasio Fixed Asset Turnover turun dari 2,5x menjadi 1,5x tahun ini, sementara penjualan relatif stagnan. Apa kesimpulan paling logis dari analisis ini?",
+      "options": [
+        "Terjadi investasi berlebih pada mesin atau kapasitas yang belum optimal",
+        "Perusahaan terlalu cepat melunasi kewajiban jangka panjangnya",
+        "Marjin laba kotor meningkat drastis akibat efisiensi produksi",
+        "Nilai pasar wajar aset tetap sudah melampaui nilai buku akuntansi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen puncak berencana melakukan ekspansi dengan mengakuisisi kompetitor kecil. Anda ditugaskan menghitung cost of capital (WACC) sebagai tingkat diskonto arus kas akuisisi. Komponen mana yang paling sensitif terhadap fluktuasi pasar modal Indonesia saat ini?",
+      "options": [
+        "Nilai nominal saham pendiri perusahaan target akuisisi",
+        "Biaya utang historis dari pinjaman bank jangka panjang",
+        "Tingkat imbal hasil bebas risiko dari Surat Berharga Negara",
+        "Jumlah total dividen yang dibayarkan tiga tahun lalu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan properti tempat Anda bekerja menerbitkan obligasi dalam denominasi US Dollar, sementara pendapatan penjualan unit apartemen sepenuhnya dalam Rupiah. Terjadi pelemahan nilai tukar Rupiah yang tajam. Analisis dampak keuangan apa yang harus segera Anda buat?",
+      "options": [
+        "Menghitung kerugian selisih kurs atas translasi liabilitas valas",
+        "Menganalisis kenaikan biaya pemeliharaan gedung apartemen",
+        "Menilai penurunan beban pokok pendapatan akibat depresiasi",
+        "Menghitung ulang besaran pajak penghasilan badan tahun berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melakukan analisis varians (variance analysis) atas anggaran operasional departemen pemasaran. Realisasi biaya iklan melebihi anggaran sebesar 15%, namun penjualan bersih pada periode yang sama melonjak 30%. Bagaimana Anda menyikapi temuan ini dalam laporan kinerja?",
+      "options": [
+        "Menegur manajer pemasaran karena melanggar batas anggaran biaya iklan",
+        "Menilai bahwa over-budget tersebut efektif karena menghasilkan ROI positif",
+        "Menunda pembayaran seluruh invoice vendor periklanan bulan depan",
+        "Meminta revisi anggaran agar tidak ada catatan selisih biaya negatif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis laporan keuangan perusahaan konstruksi yang mencatat lonjakan pendapatan drastis dari proyek jangka panjang, namun kas dari aktivitas operasi justru negatif signifikan. Langkah awal apa yang paling tepat untuk menilai kesehatan keuangan perusahaan?",
+      "options": [
+        "Memeriksa metode pengakuan pendapatan dan jadwal penagihan termin",
+        "Menyarankan manajemen untuk segera memangkas biaya administrasi kantor",
+        "Menghitung ulang rasio solvabilitas dan likuiditas secara keseluruhan",
+        "Menganalisis ulang asumsi tingkat diskonto dalam valuasi proyek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya berencana membeli armada truk baru senilai Rp5 miliar. Dengan asumsi aliran kas masuk bersih tahunan stabil selama 5 tahun, metode mana yang paling tepat untuk menguji tingkat pengembalian modal terhadap biaya modal?",
+      "options": [
+        "Menghitung Net Present Value dan Internal Rate of Return proyek",
+        "Membandingkan total laba bersih akuntansi dengan total biaya investasi",
+        "Menggunakan payback period tanpa memperhitungkan nilai waktu uang",
+        "Melihat rasio lancar setelah pembelian truk menggunakan utang bank"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengevaluasi kinerja keuangan anak perusahaan di bidang agribisnis, Anda mendapati bahwa margin laba kotor meningkat, tetapi margin laba bersih justru turun drastis. Faktor operasional apa yang paling mungkin menjadi penyebab utama kondisi ini?",
+      "options": [
+        "Lonjakan biaya distribusi logistik dan beban bunga pinjaman bank",
+        "Penurunan volume penjualan akibat berkurangnya permintaan pasar ekspor",
+        "Kenaikan harga bahan baku langsung dalam proses produksi perkebunan",
+        "Peningkatan efisiensi tenaga kerja langsung di area pengolahan pabrik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menilai kelayakan penambahan lini produk baru pada pabrik alas kaki. Analisis sensitivitas menunjukkan bahwa proyek sangat rentan terhadap perubahan harga bahan baku impor. Tindakan mitigasi finansial apa yang paling efektif disarankan?",
+      "options": [
+        "Melakukan hedging mata uang asing dan menegosiasikan kontrak jangka panjang",
+        "Menaikkan harga jual produk secara agresif tanpa memperhitungkan elastisitas",
+        "Mengurangi anggaran pemasaran untuk produk lini lama secara drastis",
+        "Memindahkan seluruh fasilitas pabrik ke wilayah dengan upah minimum rendah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan manufaktur komponen otomotif mencatat penurunan Return on Equity (ROE) tahun ini. Berdasarkan analisis DuPont tiga komponen, margin laba bersih dan perputaran aset tetap stabil, namun leverage keuangan menurun. Apa arti kondisi ini bagi pemegang saham?",
+      "options": [
+        "Perusahaan mengurangi porsi pendanaan utang sehingga risiko finansial turun",
+        "Efisiensi operasional pabrik mengalami kemunduran yang signifikan",
+        "Manajemen gagal mengendalikan harga pokok penjualan barang produksi",
+        "Aset perusahaan tidak lagi menghasilkan pendapatan yang memadai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai analis di perusahaan telekomunikasi, Anda mendapati bahwa belanja modal (CapEx) tahun ini meningkat tiga kali lipat karena pembangunan infrastruktur 5G, sementara EBITDA relatif stagnan. Metrik apa yang paling krusial untuk dipresentasikan kepada direksi?",
+      "options": [
+        "Rasio pengeluaran modal terhadap pendapatan dan proyeksi arus kas bebas",
+        "Tingkat pertumbuhan laba bersih kuartalan dibandingkan tahun sebelumnya",
+        "Besarnya laba ditahan dalam neraca keuangan periode berjalan",
+        "Perbandingan total aset lancar terhadap total liabilitas jangka pendek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengevaluasi penawaran pembiayaan dari dua bank untuk ekspansi pabrik. Bank A menawarkan suku bunga tetap dengan biaya provisi di awal, sedangkan Bank B menawarkan suku bunga mengambang dengan grace period. Analisis apa yang harus Anda utamakan?",
+      "options": [
+        "Menghitung proyeksi arus kas dan simulasi beban bunga di berbagai skenario",
+        "Memilih bank yang memberikan nilai pinjaman nominal terbesar secara langsung",
+        "Membandingkan total biaya administrasi bank secara nominal tanpa diskonto",
+        "Meminta rekomendasi dari divisi operasional pabrik mengenai fasilitas bank"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan rintisan (startup) F&B mencatat pertumbuhan omzet yang fantastis lewat ekspansi gerai, tetapi rasio Debt-to-Equity melonjak melewati batas covenant perbankan. Apa langkah finansial yang paling mendesak untuk dilakukan manajemen?",
+      "options": [
+        "Restrukturisasi kewajiban utang atau mencari tambahan pendanaan ekuitas",
+        "Menghentikan seluruh pencatatan depresiasi aset tetap pada laporan laba rugi",
+        "Meningkatkan target penjualan bulanan melalui promosi diskon besar-besaran",
+        "Menunda pembayaran gaji karyawan guna memperbesar saldo kas operasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam meninjau laporan laba rugi konsolidasian perusahaan konglomerasi, Anda melihat lonjakan pos 'pendapatan lain-lain' yang nilainya melampaui laba operasional inti. Bagaimana sikap profesional Anda sebagai analis keuangan?",
+      "options": [
+        "Mengeluarkan komponen non-operasional tersebut saat menghitung core earnings",
+        "Langsung merekomendasikan saham perusahaan karena total laba bersih naik",
+        "Mengasumsikan bahwa tren pendapatan lain-lain tersebut akan berulang terus",
+        "Menambah proyeksi dividen tunai tahun depan berdasarkan laba bersih total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan manufaktur elektronik memiliki rasio perputaran persediaan (inventory turnover) yang jauh di bawah rata-rata industri sejenis. Apa dampak langsung kondisi ini terhadap struktur modal dan likuiditas perusahaan?",
+      "options": [
+        "Modal kerja tertahan terlalu lama pada barang yang belum terjual di gudang",
+        "Perusahaan memiliki cadangan kas yang sangat berlimpah untuk investasi lain",
+        "Beban bunga pinjaman jangka pendek bank akan otomatis terhapus",
+        "Marjin laba kotor perusahaan akan meningkat secara otomatis setiap bulan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menghitung Weighted Average Cost of Capital (WACC) untuk perusahaan perkebunan sawit. Dalam menentukan komponen biaya ekuitas menggunakan metode CAPM, langkah yang paling tepat dalam menetapkan tingkat bebas risiko (risk-free rate) di Indonesia adalah...",
+      "options": [
+        "Menggunakan tingkat imbal hasil obligasi pemerintah jangka panjang dalam Rupiah",
+        "Menggunakan suku bunga acuan bank sentral Amerika Serikat untuk konsistensi",
+        "Mengambil rata-rata suku bunga deposito berjangka seluruh bank umum buku IV",
+        "Menggunakan tingkat inflasi domestik tahun berjalan ditambah margin keuntungan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai analis keuangan di perusahaan pengembang perumahan, Anda diminta menilai risiko proyek baru akibat fluktuasi nilai tukar Rupiah terhadap material impor. Langkah analitis paling tepat yang harus Anda lakukan adalah...",
+      "options": [
+        "Menggunakan analisis sensitivitas untuk melihat dampak perubahan kurs terhadap margin",
+        "Menurunkan proyeksi penjualan secara merata sebesar sepuluh persen pada model",
+        "Mengasumsikan kurs tetap berdasarkan rata-rata historis tiga tahun terakhir",
+        "Menghapus komponen material impor dari Rencana Anggaran Biaya konstruksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan tekstil tempat Anda bekerja memiliki rasio utang terhadap ekuitas (DER) yang mendekati batas maksimum kovenan bank. Manajemen ingin menambah mesin baru melalui skema sewa guna usaha (leasing). Keputusan finansial yang paling aman bagi perusahaan adalah...",
+      "options": [
+        "Memilih financial lease agar aset dan liabilitas tercatat jelas di neraca",
+        "Memilih operating lease agar pembayaran sewa dicatat sebagai biaya operasional",
+        "Menunda investasi mesin baru hingga utang lama lunas sepenuhnya tanpa kecuali",
+        "Menerbitkan saham baru untuk mendanai pembelian tunai mesin tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis laporan arus kas perusahaan manufaktur baja dan mendapati kas dari aktivitas operasi bernilai negatif, meskipun laba bersih tahun berjalan tercatat positif. Penyebab operasional yang paling mungkin mendasari kondisi ini adalah...",
+      "options": [
+        "Lonjakan pelunasan utang jangka panjang kepada perbankan sindikasi",
+        "Pembayaran dividen kas dalam jumlah besar kepada para pemegang saham",
+        "Peningkatan drastis pada piutang usaha dan penumpukan persediaan barang",
+        "Pembelian aset tetap baru secara tunai untuk keperluan ekspansi pabrik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen puncak meminta proyeksi kebutuhan modal kerja bersih (net working capital) untuk tahun depan. Perusahaan mengalami pertumbuhan penjualan 30%. Pendekatan paling realistis yang harus Anda terapkan dalam model keuangan adalah...",
+      "options": [
+        "Memproyeksikan komponen modal kerja secara proporsional mengikuti pertumbuhan penjualan",
+        "Menggunakan nilai historis nominal modal kerja tahun lalu tanpa penyesuaian",
+        "Menurunkan rasio persediaan dan piutang secara drastis untuk menghemat kas",
+        "Menyamakan persentase pertumbuhan modal kerja dengan tingkat inflasi makroekonomi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan jasa logistik mencatat laba operasi (EBIT) yang stabil, namun beban bunga pinjamannya naik tajam akibat kenaikan suku bunga acuan BI. Metrik utama yang paling krusial untuk Anda pantau guna menilai risikosolvabilitas jangka pendek adalah...",
+      "options": [
+        "Rasio perputaran total aset untuk mengukur efisiensi penggunaan modal",
+        "Rasio cakupan bunga atau interest coverage ratio guna menguji ketahanan laba",
+        "Margin laba kotor perusahaan guna melihat efisiensi biaya langsung layanan",
+        "Rasio perputaran modal kerja untuk mengukur kecepatan penagihan piutang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam meninjau laporan keuangan triwulanan perusahaan ritel modern, Anda mendapati penurunan margin laba bersih meskipun penjualan tumbuh tinggi. Analisis vertikal menunjukkan lonjakan signifikan pada pos beban penjualan dan pemasaran. Tindakan analitis selanjutnya yang harus Anda ambil adalah...",
+      "options": [
+        "Memeriksa rincian efektivitas biaya promosi dan diskon gerai terhadap perolehan pendapatan",
+        "Menyarankan manajemen untuk segera menutup seluruh gerai yang baru beroperasi",
+        "Mengasumsikan kenaikan beban tersebut bersifat sementara dan dapat diabaikan",
+        "Mengubah metode penyusutan aset tetap di bagian administrasi kantor pusat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan manufaktur komponen elektronik berencana melakukan investasi mesin otomatisasi senilai Rp20 miliar. Hasil perhitungan menunjukkan Net Present Value (NPV) positif pada tingkat diskonto 12%. Arti ekonomis dari temuan ini bagi direksi keuangan adalah...",
+      "options": [
+        "Proyek akan menghasilkan tingkat pengembalian tepat sebesar dua belas persen",
+        "Proyek memberikan nilai tambah bagi kekayaan pemegang saham melebihi biaya modal",
+        "Arus kas masuk bersih proyek akan kembali secara nominal dalam waktu satu tahun",
+        "Risiko kegagalan proyek secara keseluruhan berada di angka nol persen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengevaluasi laporan posisi keuangan konsolidasian dan melihat lonjakan akun 'Goodwill' yang cukup besar akibat akuisisi perusahaan lain tahun lalu. Sebagai analis, perhatian utama yang harus Anda sampaikan kepada komite audit adalah...",
+      "options": [
+        "Potensi penurunan nilai atau impairment test secara berkala terhadap goodwill tersebut",
+        "Kewajiban perusahaan untuk segera melunasi nilai goodwill dalam bentuk tunai",
+        "Peningkatan beban penyusutan tahunan yang akan mengurangi laba ditahan",
+        "Pengaruh langsung goodwill terhadap rasio likuiditas dan quick ratio perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan kontraktor swasta mencatat pendapatan dengan metode persentase penyelesaian proyek. Anda menemukan adanya selisih besar antara tagihan bruto kepada pemberi kerja dan kas yang benar-benar diterima. Risiko finansial utama yang mengancam perusahaan adalah...",
+      "options": [
+        "Lonjakan beban pajak penghasilan final yang harus dibayar tunai segera",
+        "Potensi timbulnya masalah likuiditas akibat laba akuntansi tidak berwujud kas",
+        "Penurunan drastis nilai buku aset tetap yang tercatat di neraca perusahaan",
+        "Peningkatan otomatis suku bunga pinjaman modal kerja dari pihak bank"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

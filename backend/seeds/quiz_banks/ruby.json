@@ -1,0 +1,306 @@
+{
+  "skill": "Ruby",
+  "skill_key": "ruby",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan API e-commerce menggunakan Ruby on Rails dan mendapati query database melambat karena masalah N+1 queries pada endpoint daftar produk yang memuat relasi kategori. Bagaimana cara paling tepat mengatasi hal ini di controller?",
+      "options": [
+        "Menambahkan indeks pada kolom foreign key kategori di dalam migrasi basis data",
+        "Memanfaatkan method includes(:category) pada pemanggilan ActiveRecord di dalam aksi",
+        "Melakukan caching seluruh objek hasil query menggunakan Rails low-level cache",
+        "Mengubah konfigurasi connection pool pada berkas database.yaml agar lebih optimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi layanan logistik berbasis Ruby mengalami lonjakan memori secara drastis saat memproses laporan pengiriman harian dengan 500.000 baris data menggunakan model ActiveRecord. Pendekatan apa yang paling efisien untuk mencegah kehabisan memori?",
+      "options": [
+        "Menggunakan method find_each untuk memproses data secara batch dalam iterasi blok",
+        "Memanggil method pluck untuk mengambil semua kolom sekaligus ke dalam memori RAM",
+        "Menonaktifkan mekanisme caching internal ActiveRecord sebelum proses iterasi dimulai",
+        "Mengganti iterator standard tiap record dengan perintah reload pada setiap putaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di aplikasi FinTech tempat Anda bekerja, sebuah transaksi transfer dana harus dibatalkan sepenuhnya jika salah satu tahap (debit atau kredit) gagal. Fitur Ruby on Rails manakah yang harus digunakan untuk menjamin integritas data tersebut?",
+      "options": [
+        "Membuat callback before_save khusus untuk menangani validasi status transfer",
+        "Membungkus seluruh rangkaian operasi basis data di dalam blok ActiveRecord::Base.transaction",
+        "Memanfaatkan gem sidekiq untuk menjalankan proses transfer secara asinkron di latar belakang",
+        "Menambahkan validasi presence: true pada model transaksi untuk mencegah data kosong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis fungsi helper di Ruby untuk memproses data pengguna yang mungkin bernilai nil, di mana Anda ingin menghindari error 'NoMethodError: undefined method for nil:NilClass'. Fitur operator apa yang paling modern dan tepat digunakan?",
+      "options": [
+        "Operator ternary untuk memeriksa kondisi keberadaan variabel sebelum pemanggilan",
+        "Operator safe navigation (&.) untuk mengamankan rantai pemanggilan method",
+        "Operator logical OR (||) untuk memberikan nilai fallback secara langsung",
+        "Operator double negation (!!) untuk memaksa konversi nilai menjadi boolean"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek Ruby on Rails, Anda perlu menjadwalkan tugas pembersihan data keranjang belanja yang terbengkalai setiap tengah malam. Mana pendekatan standar industri yang paling bersih tanpa menambah beban proses utama web server?",
+      "options": [
+        "Membuat cron job sistem operasi yang langsung menjalankan script rails runner setiap malam",
+        "Memanfaatkan gem Sidekiq-cron atau Solid Queue untuk mengatur penjadwalan background job",
+        "Menulis infinite loop di dalam initializer aplikasi yang tidur selama 24 jam setiap eksekusi",
+        "Menggunakan AJAX polling dari sisi klien browser untuk memicu pembersihan data secara berkala"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati method di sebuah model Ruby tumbuh terlalu besar dan melanggar prinsip Single Responsibility. Anda ingin mengekstrak logika kompleks tersebut ke dalam objek terisolasi yang hanya memiliki satu tugas utama. Pola desain apa yang lazim diterapkan?",
+      "options": [
+        "Membuat Service Objects atau Form Objects untuk membungkus logika bisnis spesifik",
+        "Memindahkan seluruh logika tersebut ke dalam helper view agar controller tetap ramping",
+        "Memanfaatkan Concern modular untuk membagi baris kode ke file modul terpisah",
+        "Mengubah method tersebut menjadi callback lifecycle agar berjalan otomatis di model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menulis pengujian unit (unit test) menggunakan RSpec untuk sebuah layanan pemotongan harga yang bergantung pada waktu saat ini, pengujian terkadang gagal jika dijalankan pada jam tertentu. Bagaimana cara terbaik mengisolasi pengujian dari waktu sistem?",
+      "options": [
+        "Mengubah zona waktu pada berkas konfigurasi environment test aplikasi Rails Anda",
+        "Memanfaatkan helper time freezing seperti travel_to dari ActiveSupport::Testing::TimeHelpers",
+        "Membuat mock manual pada objek Time.now menggunakan pustaka bawaan Ruby standard",
+        "Menulis ulang logika kode sumber agar menerima parameter waktu secara opsional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi SaaS HRIS menggunakan Ruby on Rails memerlukan fitur multi-tenancy berbasis subdomain. Gem apa yang paling standar dan populer digunakan untuk memisahkan ruang lingkup data setiap perusahaan klien?",
+      "options": [
+        "Devise untuk menangani autentikasi tingkat lanjut pada berbagai subdomain berbeda",
+        "Puma worker-loader untuk melakukan routing request berdasarkan header host masuk",
+        "Apartment atau acts_as_tenant untuk manajemen skema basis data atau scope tenant",
+        "Cancancan untuk membatasi akses kontrol berbasis peran pengguna di dalam aplikasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang melakukan code review pada pull request rekan tim yang menambahkan kolom status pada tabel pesanan. Rekan Anda menggunakan tipe data string biasa. Masukan arsitektur apa yang sebaiknya Anda berikan untuk performa dan integritas?",
+      "options": [
+        "Mengubah tipe data menjadi integer dan memanfaatkan enum bawaan ActiveRecord untuk efisiensi",
+        "Menambahkan validasi length pada model untuk memastikan string status tidak terlalu panjang",
+        "Membuat tabel relasi terpisah untuk master status agar tabel pesanan tidak bengkak",
+        "Menggunakan tipe data text agar fleksibel menampung berbagai variasi status di masa depan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Rails Anda menerima webhook eksternal dari gerbang pembayaran (payment gateway) yang rentan terhadap pemalsuan data. Mekanisme keamanan apa yang harus Anda implementasikan pada endpoint controller tersebut?",
+      "options": [
+        "Memverifikasi tanda tangan digital (signature header) menggunakan kunci rahasia HMAC",
+        "Memastikan bahwa semua request yang masuk menggunakan protokol HTTPS dengan sertifikat valid",
+        "Melakukan pembatasan laju akses (rate limiting) menggunakan gem Rack::Attack pada IP",
+        "Menyimpan token sesi sementara di Redis setiap kali pengguna melakukan checkout pesanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan sebuah method dalam aplikasi Ruby on Rails yang sering dipanggil dalam loop, dan kinerjanya menjadi lambat karena alokasi objek yang berlebihan. Pendekatan apa yang paling tepat untuk mengoptimalkan penggunaan memori objek tersebut?",
+      "options": [
+        "Mengganti seluruh struktur data array dengan hash bersarang agar pencarian data lebih cepat",
+        "Memanfaatkan method freeze pada string literal konstan untuk menghindari duplikasi alokasi",
+        "Menonaktifkan garbage collector bawaan Ruby agar proses iterasi berjalan tanpa jeda",
+        "Mengubah fungsi helper tersebut menjadi modul campuran menggunakan extend alih-alih include"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam layanan pengiriman logistik berbasis Ruby on Rails, Anda perlu mengimpor data CSV berukuran 500.000 baris ke database tanpa membebani memori RAM server. Strategi pemrosesan batch apa yang paling efisien?",
+      "options": [
+        "Membaca seluruh baris CSV ke dalam array menggunakan CSV.read lalu melakukan save satu per satu",
+        "Menggunakan method find_each pada model ActiveRecord untuk memperbarui data secara bertahap",
+        "Memanfaatkan method find_in_batches untuk memproses sekumpulan data array dalam blok memori",
+        "Menaikkan batas alokasi memori heap Ruby pada file konfigurasi environment produksi server"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi e-commerce Anda mengalami masalah N+1 query pada halaman daftar produk yang menampilkan kategori dan ulasan pengguna. Bagaimana cara mendeteksi dan mencegah masalah ini secara otomatis pada lingkungan pengembangan?",
+      "options": [
+        "Mengaktifkan flag ActiveRecord::Base.raise_on_load_callbacks di dalam file initializers",
+        "Memasang gem bullet dan mengonfigurasinya untuk memunculkan alert saat terjadi N+1 query",
+        "Menulis custom middleware untuk mencatat setiap waktu eksekusi SQL ke file log terpisah",
+        "Menggunakan method eager_load pada setiap pemanggilan query tanpa memeriksa log SQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis pengujian RSpec untuk sebuah layanan notifikasi email yang memanggil API pihak ketiga. Agar test suite tetap berjalan cepat dan tidak mengirim email sungguhan, apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Membuat mock objek menggunakan RSpec double untuk menggantikan seluruh pemanggilan kelas jaringan",
+        "Mematikan koneksi internet pada environment pengujian agar eksekusi langsung mengalami timeout",
+        "Menggunakan method stub pada objek ActiveRecord untuk menghentikan proses penyimpanan data",
+        "Menghapus pengujian integrasi tersebut dan hanya mengandalkan manual testing sebelum rilis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Ruby on Rails memiliki model User yang sering melakukan pencarian berdasarkan email dengan huruf kapital yang bervariasi. Bagaimana cara memastikan pencarian tetap efisien dan case-insensitive di database PostgreSQL?",
+      "options": [
+        "Menggunakan fungsi downcase pada parameter input sebelum mencocokkannya di dalam query",
+        "Menambahkan indeks ekspresi pada kolom email dengan fungsi lower di dalam migrasi database",
+        "Mengubah tipe data kolom email dari string menjadi text agar mendukung fitur pencarian teks",
+        "Membuat callback before_save untuk mengubah semua input email menjadi huruf kecil secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengimplementasikan background job menggunakan Sidekiq di Ruby on Rails untuk mengirim laporan bulanan. Pekerjaan ini kadang gagal karena masalah jaringan eksternal. Bagaimana cara mengatur penanganan kegagalan yang aman?",
+      "options": [
+        "Menggunakan blok rescue StandardError di dalam method perform lalu mengabaikan exception",
+        "Memanfaatkan opsi sidekiq_options dengan parameter retry dan menentukan batasan percobaan ulang",
+        "Menulis cron job sistem operasi untuk me-restart layanan sidekiq setiap kali terjadi error",
+        "Menyimpan status kegagalan ke dalam tabel log database khusus tanpa menggunakan fitur job"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi FinTech, Anda mendapati bahwa pembagian pecahan angka desimal untuk perhitungan suku bunga sering menghasilkan pembulatan yang tidak akurat. Di Ruby, kelas mana yang harus digunakan untuk menghindari masalah presisi ini?",
+      "options": [
+        "Menggunakan tipe data Float bawaan Ruby karena memiliki kecepatan eksekusi yang paling tinggi",
+        "Menggunakan kelas Complex untuk merepresentasikan angka desimal berpresisi ganda di memori",
+        "Menggunakan kelas BigDecimal dari pustaka standar Ruby untuk menjaga keakuratan desimal",
+        "Mengubah seluruh nilai angka menjadi tipe data Integer dengan mengalikannya dengan faktor 100"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang meninjau kode migrasi database rekan tim yang menambahkan kolom status bertipe integer pada tabel transaksi yang sudah memiliki jutaan data di production. Apa potensi risiko dari migrasi tersebut dan solusinya?",
+      "options": [
+        "Migrasi akan gagal total karena tipe data integer tidak mendukung penambahan indeks secara langsung",
+        "Penambahan kolom dengan nilai default langsung dapat mengunci tabel; solusinya tambahkan tanpa default dulu",
+        "Kolom baru tidak akan bisa diakses oleh model ActiveRecord sebelum server aplikasi direstart manual",
+        "Ukuran file database akan membengkak drastis; solusinya gunakan tipe data string yang lebih ringkas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah controller Ruby on Rails menerima parameter JSON yang sangat dalam dan kompleks dari aplikasi mobile. Untuk memastikan keamanan dan validasi struktur data, pendekatan idiomatis apa yang sebaiknya digunakan?",
+      "options": [
+        "Membuat method sanitize manual dengan melakukan iterasi rekursif pada seluruh parameter hash",
+        "Menggunakan fitur Strong Parameters bawaan Rails dikombinasikan dengan pustaka dry-validation",
+        "Menonaktifkan proteksi CSRF pada controller tersebut agar payload JSON dapat diterima dengan baik",
+        "Mengubah format parameter masuk menjadi string biasa lalu memecahnya menggunakan regular expression"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menambahkan fungsionalitas logging kustom ke beberapa kelas layanan (service objects) tanpa mengubah hierarki pewarisan kelas tersebut secara kaku di Ruby. Desain apa yang paling tepat?",
+      "options": [
+        "Membuat modul terpisah yang mendefinisikan method log lalu memasukkannya menggunakan keyword include",
+        "Mengubah seluruh kelas layanan menjadi subclass dari satu kelas induk universal berbasis logger",
+        "Membuat instance objek logger baru di dalam setiap baris pertama method kelas layanan terkait",
+        "Memanfaatkan global variable untuk menyimpan status log yang bisa diakses oleh semua kelas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di aplikasi e-commerce Anda, sebuah modul kalkulasi diskon menggunakan method dinamis yang dipanggil ribuan kali. Untuk menghindari overhead pembuatan method baru setiap saat dan meningkatkan performa, fitur metaprogramming apa yang paling tepat digunakan di Ruby?",
+      "options": [
+        "define_method untuk mendefinisikan method secara dinamis saat runtime",
+        "method_missing untuk menangkap panggilan method yang tidak terdefinisi",
+        "eval untuk mengeksekusi string kode Ruby secara langsung di memori",
+        "send untuk memanggil method privat secara langsung dari luar objek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati sebuah service object di aplikasi Rails sering mengalami kegagalan parsial karena exception eksternal yang tidak tertangkap, meninggalkan data kotor di database. Bagaimana cara terbaik memastikan seluruh operasi di dalam service tersebut aman dari kegagalan parsial?",
+      "options": [
+        "Menggunakan block ActiveRecord::Base.transaction(requires_new: true)",
+        "Membungkus seluruh kode di dalam block begin-rescue standar Ruby",
+        "Memanfaatkan method rescue_from di dalam scope class service object",
+        "Menambahkan validasi presence: true pada semua model yang terlibat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi manajemen dokumen, Anda perlu membaca file teks berukuran sangat besar (2 GB) baris per baris tanpa membebani penggunaan RAM server. Idiom iterasi apa yang paling efisien di Ruby untuk kasus ini?",
+      "options": [
+        "File.foreach('data.txt') { |line| proses(line) }",
+        "File.read('data.txt').each_line { |line| proses(line) }",
+        "File.readlines('data.txt').map { |line| proses(line) }",
+        "IO.read('data.txt').split(\"\\n\").each { |line| proses(line) }"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis test RSpec untuk sebuah method yang memodifikasi waktu sistem global (Time.zone.now). Agar test suite tidak bergantung pada waktu aktual server dan tetap konsisten, helper RSpec apa yang harus digunakan?",
+      "options": [
+        "Menggunakan helper freeze_time dari ActiveSupport::Testing::TimeHelpers",
+        "Melakukan mocking pada objek Time dengan library RSpec standard mocks",
+        "Mengganti semua pemanggilan waktu di kode produksi dengan Time.now.to_i",
+        "Membuat stub manual pada method now di kelas Time menggunakan allow"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Rails Anda membutuhkan cache tingkat fragment untuk bagian sidebar dashboard yang mahal query-nya. Namun, cache tersebut harus otomatis kedaluwarsa saat ada pembaruan pada data profil pengguna terkait. Pendekatan caching apa yang paling tepat?",
+      "options": [
+        "Menggunakan model instance langsung sebagai cache key di dalam view helper",
+        "Menyimpan data JSON sidebar secara manual ke dalam Redis dengan key kustom",
+        "Mengatur kedaluwarsa berbasis waktu tetap (expires_in: 12.hours) pada cache",
+        "Mematikan fragment caching dan beralih sepenuhnya ke low-level caching Redis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan refaktor kode lama, Anda melihat penggunaan operator operator ganda (!!) secara berulang untuk memaksa nilai ekspresi menjadi boolean murni di Ruby. Praktik idiomatik apa yang lebih bersih untuk mencapai tujuan ini?",
+      "options": [
+        "Menggunakan method built-in objek yaitu predicate method yang diakhiri tanda tanya",
+        "Mengganti ekspresi tersebut menggunakan method bawaan kernel yaitu convert_to_bool",
+        "Memanfaatkan method casting eksplisit seperti Object#to_bool pada setiap variabel",
+        "Membiarkan operator ganda tersebut karena merupakan standar resmi komunitas Ruby"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat sebuah domain DSL (Domain Specific Language) sederhana di dalam class Ruby Anda untuk konfigurasi modul laporan. Fitur block evaluation apa yang paling tepat digunakan agar blok kode konfigurasi dapat berjalan dalam konteks objek target?",
+      "options": [
+        "Menggunakan method instance_eval untuk mengevaluasi blok di dalam konteks objek",
+        "Menggunakan method yield biasa untuk meneruskan kontrol ke blok yang diberikan",
+        "Memanfaatkan lambda dengan parameter eksplisit untuk menangkap argumen blok",
+        "Menggunakan method call pada Proc object yang diterima melalui parameter method"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah proses batch processing di Sidekiq, Anda perlu mengunduh data dari API eksternal yang terkadang mengalami gangguan jaringan sementara (intermittent network error). Mekanisme apa di Sidekiq yang paling tepat untuk menangani hal ini?",
+      "options": [
+        "Mengonfigurasi opsi sidekiq_options retry: true dengan backslash eksponensial",
+        "Menulis ulang worker untuk melakukan rescue dari semua error secara manual",
+        "Mematikan fitur retry bawaan Sidekiq dan menggunakan cron job tambahan",
+        "Menaikkan batas timeout HTTP client pada konfigurasi initializer aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan sebuah method di model Ruby yang mengembalikan array berisi elemen duplikat, dan Anda perlu mengubahnya menjadi koleksi unik. Mana cara yang paling idiomatik dan efisien di Ruby untuk menghapus duplikat dari array?",
+      "options": [
+        "Memanggil method instance uniq pada objek array tersebut secara langsung",
+        "Melakukan iterasi manual menggunakan each_with_object dan memeriksa inklusi",
+        "Mengubah array menjadi Set terlebih dahulu lalu mengubahnya kembali ke Array",
+        "Menggunakan method compact untuk membersihkan elemen duplikat bernilai nil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Ruby on Rails mengalami lonjakan alokasi objek string di memori (string allocation spike) akibat pembuatan string baru secara berlebihan dalam loop log aplikasi yang ketat. Fitur Ruby apa yang membantu mengurangi alokasi memori ini?",
+      "options": [
+        "Mengaktifkan string freeze literal dengan magic comment frozen_string_literal: true",
+        "Menggunakan method string interpolation sebagai pengganti operator plus concatenation",
+        "Menjalankan garbage collector secara manual di setiap iterasi loop menggunakan GC.start",
+        "Mengubah semua tipe data string di database menjadi tipe binary untuk efisiensi RAM"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Canva",
+  "skill_key": "canva",
+  "questions": [
+    {
+      "question": "Anda diminta membuat carousel Instagram untuk promosi bulanan e-commerce. Desain tersebut menggunakan berbagai macam elemen grafis pihak ketiga gratis dan foto stok. Apa tindakan paling aman yang harus dilakukan sebelum mengekspor desain untuk klien?",
+      "options": [
+        "Mengunduh semua elemen secara terpisah ke komputer lokal",
+        "Memeriksa lisensi setiap elemen untuk memastikan izin komersial",
+        "Mengubah seluruh teks menjadi bentuk kurva agar tidak bergeser",
+        "Menghapus riwayat versi agar ukuran file menjadi lebih ringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah restoran meminta Anda membuat desain menu makanan 3 halaman yang konsisten. Agar tidak perlu mengatur ulang tata letak dan warna secara manual di setiap halaman, fitur apa di Canva yang paling tepat Anda gunakan?",
+      "options": [
+        "Membuat template master di menu pengaturan halaman",
+        "Menggunakan fitur Brand Kit untuk palet warna dan font",
+        "Menyalin seluruh elemen secara manual dari halaman pertama",
+        "Memanfaatkan fitur Smart Mockups pada setiap elemen foto"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendesain laporan keuangan tahunan perusahaan dalam bentuk dokumen presentasi. Agar tampilan antar halaman terlihat rapi dan selaras secara profesional, metode apa yang sebaiknya diterapkan pada elemen teks?",
+      "options": [
+        "Mengelompokkan teks dengan gambar menggunakan fitur Group",
+        "Menerapkan gaya font dan ukuran melalui Styles terpadu",
+        "Mengatur posisi teks secara manual menggunakan bantuan grid",
+        "Menyalin format teks menggunakan ikon salin gaya visual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pemasaran ingin membuat 50 banner diskon dengan nama produk yang berbeda-beda dalam waktu singkat. Bagaimana cara paling efisien di Canva untuk menyelesaikan pekerjaan ini tanpa mendesain satu per satu?",
+      "options": [
+        "Meminta bantuan rekan kerja untuk membagi tugas desain",
+        "Memanfaatkan fitur Bulk Create dengan sumber data tabel",
+        "Menggunakan fungsi Duplicate Page sebanyak lima puluh kali",
+        "Menduplikasi elemen teks dan mengubah isinya secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain poster acara kantor yang akan dicetak dalam ukuran besar (A1). Saat mendesain di Canva, langkah krusial apa yang wajib diperhatikan agar hasil cetak tidak pecah atau buram?",
+      "options": [
+        "Memastikan semua warna menggunakan format digital RGB standar",
+        "Mengaktifkan garis cetak dan batas aman dokumen sejak awal",
+        "Menyimpan file akhir dalam format PNG dengan resolusi tinggi",
+        "Mengatur ukuran kanvas khusus dalam milimeter dengan bleed"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Klien Anda mengirimkan logo perusahaan berformat PNG dengan latar belakang putih, padahal Anda ingin memasangnya di atas poster berwarna gelap. Fitur apa yang harus digunakan di Canva untuk menghapus latar belakang tersebut?",
+      "options": [
+        "Memakai alat penyaring warna transparan bawaan editor",
+        "Menggunakan fitur pemotong gambar berbasis kecerdasan buatan",
+        "Memanfaatkan fitur Background Remover pada foto logo",
+        "Mengubah tingkat transparansi logo menjadi setengah redup"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain infografis panjang untuk laporan media sosial. Ketika diunduh sebagai gambar tunggal, teks di bagian tengah terlihat terlalu kecil saat dilihat di ponsel. Apa solusi terbaik untuk mengatasi masalah ini?",
+      "options": [
+        "Memperbesar ukuran keseluruhan kanvas secara proporsional",
+        "Memecah infografis menjadi beberapa halaman format carousel",
+        "Mengurangi jumlah informasi teks agar tidak terlalu padat",
+        "Mengubah orientasi dokumen dari vertikal menjadi horizontal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah agensi tempat Anda bekerja menggunakan akun Canva Team. Anda membuat templat postingan media sosial yang nantinya harus diisi oleh staf lain tanpa merusak posisi tata letak utama. Fitur apa yang harus Anda terapkan?",
+      "options": [
+        "Mengunci posisi elemen penting dan membagikannya sebagai templat",
+        "Membatasi izin akses pengguna hanya sebagai penonton biasa",
+        "Menyimpan desain ke dalam folder khusus yang bersifat privat",
+        "Menonaktifkan fitur pengeditan teks pada halaman pengaturan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat video pendek promosi produk berdurasi 15 detik menggunakan Canva. Agar transisi antar klip video dan gambar terasa mulus dan profesional, fitur apa yang sebaiknya Anda tambahkan?",
+      "options": [
+        "Menambahkan efek animasi teks masuk pada setiap judul",
+        "Memasukkan elemen transisi antar halaman dan animasi halaman",
+        "Mengatur durasi tampil setiap elemen secara manual di timeline",
+        "Memberikan efek filter warna yang seragam pada semua klip"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang pitch deck untuk calon investor. Agar presentasi dapat berjalan lancar tanpa harus bolak-balik melihat catatan di layar terpisah, fitur Canva apa yang harus Anda manfaatkan?",
+      "options": [
+        "Membuat tautan tonton khusus untuk dibagikan secara langsung",
+        "Menggunakan mode Presenter View untuk melihat catatan slide",
+        "Merekam video penjelasan di setiap halaman slide presentasi",
+        "Mengunduh file presentasi menjadi format dokumen PDF interaktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengunggah 100 foto produk baru ke Canva untuk katalog penjualan, namun ukuran file foto tersebut sangat besar dan membuat proses unggah lambat. Apa tindakan paling efisien sebelum mengunggahnya?",
+      "options": [
+        "Mengompres ukuran file gambar secara massal di luar Canva sebelum melakukan proses unggah",
+        "Mengunggah gambar satu per satu ke galeri Canva agar sistem tidak mengalami gangguan kapasitas",
+        "Membuka setiap gambar di Canva lalu mengecilkan ukuran visualnya secara manual satu per satu",
+        "Mengubah ekstensi format seluruh file gambar mentah tersebut menjadi format dokumen PDF"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah klinik kecantikan meminta Anda membuat kartu nama dengan spesifikasi warna khusus yang sesuai dengan pedoman merek mereka. Bagaimana cara memastikan warna elemen desain konsisten dengan cetakan fisik?",
+      "options": [
+        "Menyalin kode hex warna resmi merek tersebut ke dalam kolom palet warna desain Canva",
+        "Mengandalkan kalibrasi otomatis dari layar monitor komputer yang Anda gunakan saat bekerja",
+        "Memilih warna secara visual dari galeri preset standar yang sudah disediakan oleh Canva",
+        "Menurunkan tingkat transparansi elemen agar warnanya terlihat lebih muda saat dicetak"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun proposal penawaran jasa dalam bentuk dokumen Canva yang panjang. Agar klien dapat langsung melompat ke bagian anggaran biaya tanpa harus menggulir semua halaman, fitur apa yang sebaiknya Anda manfaatkan?",
+      "options": [
+        "Menyisipkan tautan aktif pada daftar isi yang mengarah langsung ke halaman anggaran biaya",
+        "Menggunakan animasi transisi halaman yang bergerak cepat dari halaman pertama ke halaman akhir",
+        "Memecah dokumen utama menjadi beberapa file terpisah agar lebih mudah diakses oleh klien",
+        "Menambahkan catatan kaki di setiap halaman dokumen yang merujuk pada nomor halaman target"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim operasional meminta Anda mendesain sertifikat kelulusan pelatihan karyawan untuk 200 peserta dengan nama yang berbeda. Fitur apa di Canva yang paling tepat digunakan untuk menyelesaikan tugas ini dengan cepat?",
+      "options": [
+        "Memanfaatkan fitur Buat Banyak (Bulk Create) dengan menghubungkan file data berformat CSV",
+        "Mengetik nama peserta secara manual satu persatu sambil melakukan duplikasi halaman desain",
+        "Meminta peserta mengisi nama mereka sendiri melalui tautan kolaborasi publik yang dibagikan",
+        "Menggunakan templat otomatis yang merandom nama dari daftar kontak akun media sosial"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain konten Reels Instagram yang memuat narasi teks panjang. Agar teks tidak tertutup oleh tombollike, komentar, dan caption di bagian bawah layar ponsel penonton, di mana sebaiknya Anda menempatkan area aman teks tersebut?",
+      "options": [
+        "Memusatkan seluruh elemen teks penting pada area tengah atas hingga bagian tengah kanvas",
+        "Menempatkan semua teks persis di bagian paling bawah agar sejajar dengan tombol interaksi",
+        "Menyebarkan teks secara merata ke seluruh sudut luar tepi kanvas tanpa batasan margin",
+        "Meletakkan teks di sisi paling kiri layar agar tidak terhalang oleh ikon profil pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mendesain infografis panduan langkah kerja yang memerlukan banyak ikon penunjuk arah. Agar gaya visual semua ikon terlihat seragam dan profesional, strategi apa yang harus Anda terapkan?",
+      "options": [
+        "Mencari ikon dari satu set kreator yang sama atau menggunakan filter gaya ilustrasi serupa",
+        "Mengambil ikon acak dari berbagai hasil pencarian lalu menyamakan ukuran pikselnya",
+        "Menggunakan ikon dengan warna yang sama persis tanpa memperhatikan detail garis gambar",
+        "Membuat ulang seluruh ikon secara manual menggunakan garis bantu bentuk dasar lingkaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain poster promosi event dengan latar belakang foto gelap dan teks putih di atasnya, namun teks tersebut sulit dibaca karena kontras latar belakang yang kompleks. Langkah perbaikan visual apa yang paling efektif?",
+      "options": [
+        "Menambahkan elemen persegi panjang semi-transparan berwarna gelap di antara foto dan teks",
+        "Memperbesar ukuran huruf teks putih hingga memenuhi setengah dari total area poster",
+        "Mengubah warna teks putih menjadi warna kuning cerah tanpa mengubah elemen latar belakang",
+        "Memberikan efek bayangan tebal berwarna hitam pada setiap huruf teks promosi tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang berkolaborasi secara real-time dengan rekan kerja untuk menyelesaikan desain banner dalam batas waktu ketat. Rekan Anda tidak sengaja menggeser posisi elemen latar belakang yang sudah rapi. Bagaimana cara mencegah hal tersebut terjadi lagi?",
+      "options": [
+        "Menggunakan fitur Kunci (Lock) pada elemen latar belakang agar posisinya tidak dapat diubah",
+        "Mengunduh desain tersebut ke komputer lokal sebelum melanjutkan proses penyuntingan bersama",
+        "Meminta rekan kerja Anda keluar dari dokumen dan menyunting desain secara bergantian",
+        "Menghapus elemen latar belakang tersebut dan menggantinya dengan warna polos standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan Anda memiliki aturan ketat mengenai penggunaan jenis huruf (font). Saat membuat desain baru di Canva, bagaimana cara memastikan tim Anda hanya menggunakan font resmi perusahaan?",
+      "options": [
+        "Mengunggah file font resmi perusahaan ke dalam fitur Brand Kit di akun Canva tim",
+        "Menuliskan catatan panduan font di setiap halaman deskripsi proyek yang dikerjakan",
+        "Meminta setiap anggota tim menghafalkan nama font resmi melalui dokumen pedoman merek",
+        "Mencari font gratis di internet yang memiliki kemiripan bentuk dengan font resmi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengekspor desain brosur lipat tiga dari Canva untuk dikirimkan ke vendor percetakan offset profesional. Pengaturan unduhan apa yang paling tepat agar hasil cetak tidak pecah dan memiliki garis potong yang jelas?",
+      "options": [
+        "Mengunduh dalam format PDF Cetak (PDF Print) dengan opsi tanda potong dan garis bleed",
+        "Mengunduh dalam format gambar PNG berukuran tinggi dengan resolusi piksel standar web",
+        "Mengunduh dalam format GIF animasi agar vendor dapat melihat bentuk visual brosur",
+        "Mengunduh dalam format PDF Standar dengan kualitas kompresi file yang paling rendah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain banner media sosial dengan elemen grafis yang menumpuk, membuat Anda sering salah mengeklik latar belakang alih-alih objek di depannya. Fitur apa yang paling tepat digunakan untuk mengunci posisi objek utama?",
+      "options": [
+        "Menggunakan fitur Group untuk menyatukan semua elemen",
+        "Memanfaatkan panel Layer untuk mengunci objek tertentu",
+        "Mengaktifkan menu Position lalu menekan ikon gembok",
+        "Menurunkan tingkat transparansi pada elemen latar belakang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang manajer meminta Anda mengubah seluruh warna aksen merah pada presentasi 30 halaman menjadi biru dongker sesuai identitas baru perusahaan. Cara paling efisien di Canva adalah...",
+      "options": [
+        "Menggunakan opsi Ubah Semua pada pemilih warna elemen",
+        "Menyeleksi satu per satu halaman lalu mengganti warnanya",
+        "Mengunduh file lalu mengeditnya kembali di aplikasi lain",
+        "Membuat templat baru dengan palet warna yang sudah diatur"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda merancang kiriman carousel Instagram dan ingin memastikan teks di slide pertama dan kedua memiliki keselarasan visual yang presisi tanpa menebak-nebak. Langkah yang harus diambil adalah...",
+      "options": [
+        "Mengandalkan fitur Snap to grid otomatis saat menggeser teks",
+        "Menyalin kotak teks yang sama persis ke posisi slide berikutnya",
+        "Memasukkan nilai koordinat X dan Y yang sama melalui panel posisi",
+        "Memperbesar tampilan layar hingga seratus persen saat menyunting"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat poster digital yang memuat banyak informasi teks penting. Saat mengekspor desain untuk diunggah, bagian tepi teks terlihat pecah dan kurang tajam. Solusi terbaik saat mengunduh adalah...",
+      "options": [
+        "Menaikkan faktor skala ukuran file gambar pada pengaturan unduh",
+        "Mengubah format dokumen asli menjadi bentuk video berdurasi pendek",
+        "Menurunkan tingkat kompresi file hingga batas minimum yang diizinkan",
+        "Mengganti seluruh jenis huruf dengan variasi sans-serif yang lebih tebal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyisipkan grafik diagram batang dari data penjualan bulanan ke dalam dokumen laporan. Agar data tersebut mudah diperbarui langsung di Canva tanpa membuat ulang grafik, Anda harus...",
+      "options": [
+        "Memasukkan data baru secara manual melalui tabel bawaan Canva",
+        "Menghubungkan tabel Canva langsung dengan tautan Google Sheets",
+        "Mengunggah tangkapan layar tabel dan menempelkannya di halaman",
+        "Membuat grafik terpisah lalu menyimpannya sebagai elemen gambar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang desain kemasan produk yang memerlukan garis potong (bleed) agar hasil cetak fisik tidak memiliki tepi putih. Pengaturan apa yang perlu diaktifkan pada kanvas Canva?",
+      "options": [
+        "Menyalakan panduan cetak dan area pemotongan di menu pengaturan",
+        "Menambahkan bingkai kosong berwarna putih di sekeliling halaman",
+        "Memperbesar ukuran kanvas secara manual sebesar sepuluh persen",
+        "Mengubah profil warna dokumen menjadi format cetak CMYK standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan foto stok di Canva yang sangat bagus, namun orientasinya tidak sesuai dengan tata letak header banner horizontal Anda. Tindakan cepat yang paling tepat adalah...",
+      "options": [
+        "Mencari ulang foto lain dengan orientasi lanskap yang bersesuaian",
+        "Memotong gambar secara manual hingga fokus pada bagian tengah",
+        "Memutar posisi gambar sebesar sembilan puluh derajat ke kanan",
+        "Menggunakan fitur pemotong cerdas untuk menyesuaikan area pandang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim kreatif Anda sering menggunakan elemen ilustrasi dengan gaya garis yang sama. Agar anggota tim lain dapat menemukan aset grafis tersebut dengan cepat tanpa mencari satu per satu, Anda sebaiknya...",
+      "options": [
+        "Membuat folder khusus dan menyimpan semua aset ke dalam Brand Kit",
+        "Menuliskan kata kunci spesifik pada catatan tempel di halaman desain",
+        "Mengumpulkan seluruh aset grafis tersebut ke dalam satu halaman kosong",
+        "Membagikan tautan eksternal berisi kumpulan gambar kepada rekan tim"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengekspor dokumen laporan tahunan dari Canva agar dapat dibaca pembaca di berbagai perangkat tanpa menggeser tata letak halaman yang rumit. Format unduhan terbaik adalah...",
+      "options": [
+        "PDF Standar karena ukuran filenya yang kecil dan ramah seluler",
+        "PDF Cetak agar ketajaman warna dan resolusi grafis tetap terjaga",
+        "Kumpulan gambar PNG terpisah untuk setiap halaman dokumen",
+        "Format Microsoft PowerPoint agar mudah disunting kembali oleh klien"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain konten kutipan motivasi harian dan ingin memberikan efek bayangan lembut di belakang teks agar lebih estetik. Fitur penataan efek yang harus Anda buka adalah...",
+      "options": [
+        "Memilih menu Sesuaikan lalu menaikkan parameter kejelasan",
+        "Masuk ke menu Efek pada teks lalu memilih opsi Bayangan",
+        "Menyalin teks yang sama dan menaruhnya persis di lapisan bawah",
+        "Mengaktifkan animasi muncul perlahan pada objek teks terpilih"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Training & Development",
+  "skill_key": "training & development",
+  "questions": [
+    {
+      "question": "Perusahaan ritel Anda baru saja meluncurkan sistem POS (Point of Sales) baru di 50 cabang seluruh Indonesia. Kasir sering mengeluh kebingungan saat jam sibuk. Apa langkah prioritas pertama Anda sebagai T&D Manager?",
+      "options": [
+        "Mengadakan pelatihan kelas intensif selama tiga hari penuh bagi seluruh kasir",
+        "Membuat modul e-learning interaktif yang wajib diselesaikan dalam sebulan",
+        "Menyusun video tutorial singkat dan cheat sheet praktis untuk diletakkan di dekat mesin kasir",
+        "Memberikan teguran kepada kepala cabang yang anak buahnya belum menguasai sistem"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Hasil evaluasi level 1 (Reaksi) dari program pelatihan kepemimpinan menunjukkan skor tinggi, tetapi manajer peserta melaporkan tidak ada perubahan perilaku kerja di lapangan (Level 3). Apa tindakan evaluatif terbaik yang harus Anda lakukan?",
+      "options": [
+        "Mengganti seluruh vendor pelatihan karena materinya terbukti tidak efektif",
+        "Mengadakan sesi coaching lanjutan dan meminta atasan langsung memantau penerapan",
+        "Merevisi ulang kuesioner evaluasi reaksi agar hasilnya lebih realistis ke depan",
+        "Menurunkan anggaran untuk program pelatihan kepemimpinan di periode berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta merancang pelatihan onboarding untuk karyawan milenial dan Gen Z di industri startup teknologi. Agar engagement tinggi, metode pembelajaran apa yang paling tepat diterapkan?",
+      "options": [
+        "Ceramah satu arah dari jajaran direksi mengenai sejarah dan visi perusahaan",
+        "Membaca manual SOP setebal 200 halaman sebelum hari pertama bekerja",
+        "Gamification dengan sistem poin dan studi kasus pemecahan masalah nyata",
+        "Penugasan menulis esai reflektif setiap akhir pekan selama masa percobaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer Operasional meminta Anda mengadakan pelatihan 'Time Management' karena target departemen sering meleset. Namun, dari data HR, masalah utamanya adalah tingginya tingkat absensi dan kelelahan akibat kekurangan staff. Bagaimana respons profesional Anda?",
+      "options": [
+        "Tetap menjalankan pelatihan sesuai permintaan Manajer Operasional untuk menjaga hubungan",
+        "Menolak permintaan dan melaporkan masalah absensi langsung kepada Direktur Utama",
+        "Mengubah materi pelatihan menjadi motivasi kerja agar semangat karyawan kembali pulih",
+        "Menyampaikan temuan data HR dan mendiskusikan solusi berbasis akar masalah yang tepat"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah pabrik manufaktur mengalami peningkatan produk cacat sebesar 15% setelah masuknya mesin produksi baru buatan Jerman. Operator mesin belum pernah mendapat pelatihan khusus. Langkah Training Needs Analysis (TNA) apa yang paling awal dilakukan?",
+      "options": [
+        "Menganalisis kesenjangan kompetensi antara standar operasional mesin dan keahlian operator saat ini",
+        "Mengirim seluruh operator senior studi banding langsung ke pabrik pembuat mesin di Jerman",
+        "Membuka rekrutmen terbuka untuk mencari teknisi mesin berpengalaman dari industri sejenis",
+        "Menyusun anggaran biaya pelatihan eksternal untuk pengoperasian mesin presisi tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain program Talent Pool untuk calon manajer. Salah satu peserta berprestasi tinggi secara sales, tetapi sering mendapat keluhan dari tim karena gaya komunikasi yang otoriter. Strategi pengembangan apa yang paling pas?",
+      "options": [
+        "Mengeluarkan peserta tersebut dari program Talent Pool karena gagal uji kepribadian",
+        "Memberikan sesi executive coaching secara intensif untuk memperbaiki kecerdasan emosional",
+        "Menaikkan target penjualan individu agar fokusnya tetap terjaga pada pencapaian angka",
+        "Memindahkan peserta ke divisi lain yang tidak membutuhkan koordinasi banyak orang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan pembiayaan (leasing) memiliki kantor cabang di kota-kota tier 2 dan 3 dengan koneksi internet yang tidak stabil. Anda harus meluncurkan program compliance wajib untuk 1.000 sales lapangan. Media pembelajaran apa yang paling efektif?",
+      "options": [
+        "Menggunakan platform LMS berbasis cloud yang wajib diakses secara online setiap hari",
+        "Mengirimkan modul cetak dan lembar kerja ujian tertulis melalui kurir ekspedisi",
+        "Mengadakan webinar serentak menggunakan aplikasi konferensi video beresolusi tinggi",
+        "Membagikan file video offline dan panduan saku digital yang bisa diunduh via WhatsApp"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "CEO menuntut agar seluruh program pelatihan tahun depan diukur Return on Investment (ROI)-nya. Pelatihan manakah yang paling mudah dan valid untuk dihitung nilai ROI finansialnya?",
+      "options": [
+        "Pelatihan kepemimpinan dan manajemen konflik untuk supervisor lini pertama",
+        "Pelatihan teknik negosiasi lanjutan bagi tim sales B2B enterprise",
+        "Pelatihan pemahaman budaya perusahaan bagi karyawan baru angkatan ini",
+        "Pelatihan public speaking dan teknik presentasi efektif bagi staf humas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang trainer internal senior sering mendominasi kelas, memotong pembicaraan peserta, dan menggunakan contoh kasus yang sudah kedaluwarsa saat membawakan materi customer service. Sebagai koordinator, apa pendekatan konstruktif Anda?",
+      "options": [
+        "Langsung mengambil alih sesi pelatihannya di tengah kelas agar peserta tidak bosan",
+        "Melaporkan kinerjanya yang buruk secara resmi kepada bagian Human Capital Operations",
+        "Mengajak diskusi 4 mata menggunakan metode feedback sandwich dan merevisi modul bersama",
+        "Mengurangi jam mengajar trainer tersebut secara bertahap tanpa memberikan penjelasan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja menyelesaikan pelatihan Service Excellence selama dua hari untuk frontliner hotel bintang empat. Peserta antusias, namun manajemen ingin memastikan keterampilan tersebut diaplikasikan secara konsisten. Apa instrumen pemantauan terbaik di tempat kerja?",
+      "options": [
+        "Menyebarkan kuesioner kepuasan kerja kepada seluruh peserta sebulan pasca pelatihan",
+        "Menerapkan program mystery shopper berkala dan observasi langsung oleh supervisor",
+        "Mengadakan ujian tertulis ulang mengenai teori pelayanan prima setelah tiga bulan",
+        "Meminta setiap peserta membuat laporan harian tertulis tentang interaksi tamu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik nasional meluncurkan aplikasi pelacakan paket baru untuk kurir lapangan. Pelatihan klasikal di kantor pusat gagal karena kurir sulit meninggalkan rute pengiriman. Sebagai L&D Specialist, langkah paling efektif apa yang harus Anda ambil?",
+      "options": [
+        "Mengadakan sesi wajib di akhir pekan dengan memberikan uang lembur penuh bagi seluruh kurir",
+        "Membuat modul microlearning berbasis video pendek durasi 3 menit yang dapat diakses langsung via smartphone",
+        "Mencetak buku panduan manual setebal 50 halaman dan membagikannya ke setiap kepala cabang logistik",
+        "Menunjuk satu kurir senior per cabang untuk belajar di pusat lalu mengajarkan temannya secara lisan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil Training Needs Analysis (TNA) menunjukkan staf customer service mengalami penurunan skor CSAT (Customer Satisfaction) bukan karena kurangnya kemampuan komunikasi, melainkan karena mereka kebingungan memahami prosedur klaim asuransi produk baru yang sangat teknis. Intervensi L&D apa yang paling tepat?",
+      "options": [
+        "Menyelenggarakan outbound motivasi kerja guna meningkatkan semangat melayani nasabah",
+        "Mengadakan lokakarya teknik persuasi tingkat lanjut untuk meredam kemarahan nasabah",
+        "Membuat job aid berupa infografis alur keputusan klaim cepat yang ditempel di meja agen",
+        "Mengirim seluruh staf mengikuti sertifikasi manajemen layanan pelanggan selama satu minggu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain program pelatihan kepatuhan (compliance) K3 untuk pekerja pabrik. Manajemen ingin memastikan materi tidak hanya dipahami secara kognitif, tetapi benar-benar diterapkan di lantai produksi. Metode evaluasi Kirkpatrick manakah yang paling akurat untuk menguji hal ini?",
+      "options": [
+        "Mengukur persentase penurunan angka kecelakaan kerja dan pelanggaran APD dalam tiga bulan",
+        "Menghitung skor kenaikan rata-rata tes pilihan ganda sebelum dan sesudah pelatihan selesai",
+        "Menyebarkan kuesioner tingkat kepuasan peserta terhadap fasilitas dan konsumsi pelatihan",
+        "Meminta atasan langsung mengisi formulir terkait tingkat motivasi staf setelah pelatihan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah korporasi FMCG ingin merancang program Accelerated Leadership Development untuk manajer muda. Anggaran terbatas, namun perusahaan menuntut metode pengembangan yang memberikan dampak langsung pada bisnis nyata. Pendekatan apa yang paling sesuai?",
+      "options": [
+        "Mengirim semua peserta mengikuti kuliah umum mingguan bersama akademisi bisnis ternama",
+        "Menerapkan metode Action Learning di mana peserta menyelesaikan proyek riil efisiensi biaya",
+        "Meminta peserta membaca buku kepemimpinan internasional dan meresensinya setiap bulan",
+        "Mengadakan seminar motivasi satu hari penuh dengan mengundang pembicara publik terkenal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Departemen Pemasaran mengeluhkan bahwa pelatihan digital marketing yang baru saja selesai diselenggarakan terasa membosankan karena trainer terlalu banyak menggunakan slide teori tanpa praktik. Apa tindakan preventif terbaik untuk pelatihan berikutnya?",
+      "options": [
+        "Mengganti seluruh materi pelatihan dengan modul bacaan mandiri tanpa sesi tatap muka",
+        "Menerapkan prinsip experiential learning dengan porsi praktik langsung menggunakan data riil perusahaan",
+        "Memberikan teguran tertulis kepada vendor pelatihan atas ketidaksesuaian metode pengajaran",
+        "Menambahkan durasi waktu istirahat agar peserta tidak jenuh mendengarkan materi teoretis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan melatih tim sales agen properti mengenai teknik negosiasi tingkat lanjut. Peserta terdiri dari agen junior hingga agen senior yang merasa sudah sangat berpengalaman dan menolak diajar. Bagaimana cara Anda membuka sesi pelatihan agar mereka tetap terlibat aktif?",
+      "options": [
+        "Meminta peserta senior untuk langsung maju memimpin jalannya kelas menggantikan posisi Anda",
+        "Memulai kelas dengan studi kasus nyata kegagalan transaksi besar yang dialami agen senior",
+        "Mengabaikan penolakan tersebut dan langsung membacakan materi sesuai slide presentasi",
+        "Mengingatkan mereka bahwa kehadiran di kelas ini bersifat wajib dari Direktur Pemasaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan manufaktur tekstil berencana mengotomatisasi lini jahit dengan mesin robotik baru. Serikat pekerja khawatir kebijakan ini berujung pada pemutusan hubungan kerja massal dan menolak ikut pelatihan pengoperasian mesin. Langkah strategis L&D yang paling bijak adalah?",
+      "options": [
+        "Melakukan sosialisasi bersama manajemen untuk menjelaskan bahwa pelatihan ini bertujuan meningkatkan kapasitas dan jaminan karier",
+        "Memberikan sanksi pemotongan tunjangan bagi pekerja yang menolak hadir dalam sesi pelatihan mesin",
+        "Mendatangkan teknisi asing secara permanen untuk mengoperasikan mesin tanpa melibatkan pekerja lokal",
+        "Mengalihkan program pelatihan hanya kepada karyawan baru yang belum terikat dengan serikat pekerja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Program pelatihan Public Speaking untuk jajaran supervisor baru menunjukkan hasil evaluasi level 2 (Learning) yang sangat baik. Namun, tiga bulan kemudian manajer mereka melaporkan tidak ada perubahan cara mereka melakukan presentasi di kantor. Hambatan utama apa yang mungkin terjadi?",
+      "options": [
+        "Kurangnya fasilitas proyektor dan ruang rapat yang memadai di masing-masing lantai kantor",
+        "Tidak adanya dukungan atau kesempatan dari lingkungan kerja untuk mempraktikkan keterampilan baru",
+        "Materi pelatihan yang diberikan terlalu sulit dicerna oleh peserta berlatar belakang non-komunikasi",
+        "Durasi pelatihan selama dua hari terlalu singkat untuk membentuk memori jangka panjang peserta"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan konsultan IT ingin mengukur efektivitas biaya (Cost-Effectiveness) dari program sertifikasi cloud computing senilai Rp20 juta per karyawan. Metode paling tepat untuk mengevaluasi dampak finansial program ini adalah?",
+      "options": [
+        "Menghitung total jam belajar yang dihabiskan karyawan dibandingkan dengan gaji pokok bulanan mereka",
+        "Membandingkan biaya pelatihan dengan peningkatan pendapatan proyek klien berkat keahlian baru tersebut",
+        "Menyebarkan survei tingkat kepuasan klien terhadap keramahan staf IT setelah mereka bersertifikasi",
+        "Merekap jumlah sertifikat digital yang berhasil dikumpulkan oleh karyawan di profil LinkedIn pribadi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi Human Capital mendapati tingkat penyelesaian (completion rate) pada platform Learning Management System (LMS) mandiri perusahaan sangat rendah (<20%). Karyawan beralasan beban kerja operasional terlalu padat. Apa solusi struktural terbaik untuk mengatasi hal ini?",
+      "options": [
+        "Menutup akses platform LMS eksternal dan mewajibkan kelas tatap muka di ruang meeting",
+        "Mengintegrasikan waktu belajar mikro (15 menit per hari) ke dalam KPI resmi dan jadwal kerja mingguan",
+        "Mengancam akan menurunkan nilai kinerja tahunan bagi karyawan yang tidak menyelesaikan modul",
+        "Memperbanyak jumlah pilihan kursus online di dalam katalog agar karyawan lebih tertarik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank swasta nasional baru saja merombak standar layanan nasabah prioritas. Divisi L&D diminta melatih 200 Relationship Manager (RM) yang tersebar di Jabodetabek dalam waktu hanya dua minggu sebelum peluncuran resmi. Pendekatan pelatihan apa yang paling efektif dan efisien untuk diterapkan?",
+      "options": [
+        "Mengadakan lokakarya klasikal tatap muka selama tiga hari penuh berturut-turut di kantor pusat bagi seluruh RM",
+        "Menerapkan model blended learning berupa modul e-learning mandiri disusul sesi role-play kasus nyata secara virtual",
+        "Membuat buku panduan tebal tercetak yang wajib dibaca mandiri oleh setiap RM di sela-sela jam kerja operasional",
+        "Menugaskan konsultan eksternal mahal untuk melakukan pendampingan personal satu per satu langsung ke setiap cabang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agrikultur ingin melatih ratusan petani mitra di daerah pedesaan mengenai teknik pemupukan modern berbasis teknologi. Tantangan utamanya adalah tingkat literasi digital peserta yang beragam dan minimnya fasilitas komputer. Strategi instruksional apa yang paling tepat?",
+      "options": [
+        "Menyediakan kursus berbasis web interaktif yang wajib diakses melalui gawai masing-masing peserta setiap malam",
+        "Mengirimkan modul digital berformat PDF lengkap dengan tautan video tutorial berdurasi panjang via aplikasi pesan",
+        "Menggunakan metode demonstrasi langsung di lahan percontohan lokal dengan pendampingan fasilitator lapangan",
+        "Mengadakan seminar teoretis di ruang kelas ber-AC di ibukota kabupaten dengan menggunakan proyektor canggih"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Hasil evaluasi level 3 (Behavior) dari program pelatihan negosiasi vendor menunjukkan bahwa para manajer pembelian tidak mengubah perilaku tawar-menawar mereka di tempat kerja. Investigasi mendalam mengungkap bahwa sistem Key Performance Indicator (KPI) mereka masih berbasis kecepatan pengadaan, bukan penghematan biaya. Apa tindakan perbaikan utama yang harus dilakukan?",
+      "options": [
+        "Mengulangi kembali pelatihan negosiasi dari awal dengan durasi waktu yang lebih panjang dan intensif",
+        "Melakukan koordinasi dengan departemen HR dan manajemen puncak untuk menyelaraskan kembali indikator kinerja",
+        "Mengganti seluruh materi pelatihan dengan modul baru yang lebih menekankan pada aspek kecepatan pengadaan",
+        "Memberikan sanksi pemotongan tunjangan kepada manajer yang gagal menerapkan teknik negosiasi baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan startup e-commerce mengalami pergantian staf customer support yang sangat tinggi (turnover rate mencapai 40% per tahun). Proses onboarding yang ada saat ini memakan waktu tiga minggu penuh di kelas sebelum agen bisa melayani pelanggan. Bagaimana cara merestrukturisasi program ini?",
+      "options": [
+        "Memperpanjang masa pelatihan kelas dasar menjadi satu bulan penuh agar pemahaman produk menjadi sangat sempurna",
+        "Menghapuskan sama sekali sesi pelatihan kelas dan langsung menerjunkan agen baru ke meja layanan pelanggan",
+        "Mengadopsi pendekatan 70:20:10 dengan mempercepat teori dasar dan memperbanyak praktik terbimbing dengan pendamping",
+        "Meminta karyawan senior untuk memberikan ceramah satu arah mengenai sejarah perusahaan selama minggu pertama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mengevaluasi efektivitas pelatihan 'Design Thinking' bagi tim produk. Anggaran perusahaan terbatas, dan manajemen eksekutif meminta bukti konkret peningkatan produktivitas sebelum menyetujui anggaran tahun depan. Metode evaluasi Kirkpatrick manakah yang paling mendesak untuk dilaporkan?",
+      "options": [
+        "Level 1 untuk melihat tingkat kepuasan peserta terhadap fasilitas katering dan kenyamanan ruang pelatihan",
+        "Level 2 untuk menguji peningkatan skor pengetahuan teoretis peserta melalui kuis pilihan ganda online",
+        "Level 4 untuk menghitung dampak bisnis nyata seperti jumlah inovasi produk baru yang berhasil diluncurkan",
+        "Level 0 untuk menghitung total biaya logistik yang dihabiskan selama penyelenggaraan acara pelatihan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan pertambangan multinasional mewajibkan pelatihan keselamatan kerja (Safety Induction) bagi seluruh sub-kontraktor baru sebelum memasuki area tambang. Sebagian besar pekerja sub-kontraktor memiliki tingkat pendidikan dasar dan sering bosan dengan metode ceramah konvensional. Pendekatan pelatihan apa yang paling efektif?",
+      "options": [
+        "Menugaskan mereka menghafalkan dokumen Standar Operasional Prosedur setebal 100 halaman di ruang tunggu",
+        "Memanfaatkan media simulasi interaktif visual, video pendek studi kasus kecelakaan, dan diskusi kelompok kecil",
+        "Mengadakan ujian tertulis esai mendalam mengenai sejarah peraturan keselamatan kerja pertambangan dunia",
+        "Meminta mereka mendengarkan rekaman audio ceramah keselamatan kerja selama bekerja di dalam terowongan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Departemen HR sebuah perusahaan telekomunikasi mendapati bahwa program pelatihan kepemimpinan untuk level supervisor mengalami penurunan tingkat penyelesaian (completion rate) drastis di angka 30%. Supervisor beralasan jadwal operasional harian terlalu padat. Apa solusi desain pembelajaran yang paling tepat?",
+      "options": [
+        "Memaksa seluruh supervisor untuk mengambil cuti khusus demi menyelesaikan modul pelatihan di hotel",
+        "Mengubah format materi menjadi modular berukuran mikro (microlearning) berdurasi 5-10 menit yang fleksibel",
+        "Menghapuskan program pelatihan kepemimpinan tersebut dan menggantinya dengan penugasan manajerial biasa",
+        "Memperketat pengawasan kehadiran fisik di ruang kelas kantor pusat setiap hari Sabtu dan Minggu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan merancang program pelatihan 'Cross-Cultural Communication' untuk ekspatriat asing yang baru ditempatkan di kantor cabang Indonesia. Selain materi dasar etika bisnis, substansi krusial apa yang wajib dimasukkan agar pelatihan ini sukses secara praktis?",
+      "options": [
+        "Hafalan mendalam mengenai undang-undang ketenagakerjaan dan perpajakan nasional yang berlaku di Indonesia",
+        "Pelatihan bahasa Indonesia tingkat lanjut agar mereka bisa menulis surat resmi kenegaraan tanpa bantuan",
+        "Pemahaman konteks budaya lokal, norma tak tertulis, dan dinamika komunikasi kolektif di tempat kerja",
+        "Simulasi cara menghadapi inspeksi mendadak dari instansi pemerintah pusat di lingkungan pabrik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah institusi finansial merancang program percepatan karier (Fast-Track Career) untuk manajer cabang masa depan. Dalam proses seleksi peserta, ditemukan kesenjangan keterampilan digital yang lebar antar kandidat dari wilayah Jawa dan luar Jawa. Langkah mitigasi awal apa yang harus diambil oleh tim L&D?",
+      "options": [
+        "Membatalkan seluruh program seleksi dan menunda promosi jabatan manajer cabang hingga tahun depan",
+        "Memberikan program penyetaraan keterampilan digital dasar terlebih dahulu sebelum peserta masuk ke materi inti",
+        "Memilih hanya kandidat dari kota besar yang sudah terbiasa menggunakan sistem teknologi canggih",
+        "Menurunkan standar kompetensi materi inti program agar setara dengan kemampuan terendah peserta"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur otomotif mendapati bahwa para operator lini perakitan sering mengabaikan prosedur penguncian alat (lockout-tagout) meskipun telah lulus pelatihan K3 teori. Sebagai praktisi L&D, langkah intervensi apa yang paling tepat untuk mengubah perilaku mereka di lantai pabrik?",
+      "options": [
+        "Mengirim seluruh operator kembali ke kelas untuk mengikuti ujian ulang modul keselamatan kerja",
+        "Membuat poster infografis berukuran besar yang dipasang di setiap dinding dekat mesin produksi",
+        "Menerapkan sesi coaching di tempat kerja oleh supervisor langsung yang dibarengi observasi harian",
+        "Memberikan sanksi pemotongan insentif bulanan bagi pekerja yang tertangkap basah melanggar SOP"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

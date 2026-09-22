@@ -1,0 +1,306 @@
+{
+  "skill": "MATLAB",
+  "skill_key": "matlab",
+  "questions": [
+    {
+      "question": "Anda sedang menganalisis data sensor IoT berukuran 4 GB di MATLAB yang menyebabkan komputer mengalami out-of-memory. Fungsi apa yang paling tepat digunakan untuk membaca data CSV secara bertahap tanpa memuat seluruhnya ke RAM?",
+      "options": [
+        "Menggunakan fungsi importdata dengan parameter chunk size khusus",
+        "Membuat objek datastore dan membacanya menggunakan fungsi read",
+        "Mengonversi file CSV menjadi file mat menggunakan perintah save",
+        "Membaca file baris per baris menggunakan perulangan fopen dan fgetl"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah skrip pemrosesan sinyal, Anda mendapati waktu eksekusi perulangan for sangat lambat karena melakukan operasi matriks ukuran besar secara berulang. Pendekatan MATLAB manakah yang paling efektif untuk mengoptimalkannya?",
+      "options": [
+        "Menerapkan teknik preallocation pada variabel matriks sebelum perulangan",
+        "Mengganti seluruh struktur perulangan for dengan fungsi arrayfun",
+        "Menjalankan skrip tersebut menggunakan mode multi-thread otomatis",
+        "Menggunakan perintah clear dalam perulangan untuk menghemat memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA di perusahaan manufaktur meminta Anda membuat GUI sederhana agar operator pabrik bisa memasukkan parameter input dan langsung melihat grafik hasil uji produk. Tool apa yang paling direkomendasikan di MATLAB modern?",
+      "options": [
+        "Membuat antarmuka klasik menggunakan fungsi guide dan file fig",
+        "Menyusun komponen secara manual menggunakan fungsi figure dan uicontrol",
+        "Memanfaatkan App Designer untuk merancang aplikasi interaktif visual",
+        "Mengekspor variabel workspace langsung ke lingkungan Simulink dasar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menggabungkan dua tabel data penjualan berdasarkan kolom 'Kode_Cabang' yang memiliki tipe data string, namun beberapa baris mengandung spasi di awal atau akhir. Fungsi apa yang harus dijalankan sebelum fungsi join?",
+      "options": [
+        "Membersihkan spasi string menggunakan fungsi strtrim pada kolom tersebut",
+        "Mengonversi seluruh isi tabel menjadi matriks numerik dengan str2double",
+        "Menyamakan panjang karakter teks menggunakan fungsi pad sebelum digabung",
+        "Mengubah tipe data kolom menjadi cell array agar spasi otomatis diabaikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menjalankan fungsi kustom buatan Anda pada sekumpulan data, MATLAB mengeluarkan peringatan (warning) numerik yang berulang dan memenuhi jendela Command Window. Cara terbaik untuk menonaktifkan peringatan tersebut sementara adalah...",
+      "options": [
+        "Menghapus baris kode yang memicu peringatan dengan komentar persentase",
+        "Menggunakan fungsi warning('off', 'ID_pesan') sebelum blok kode berjalan",
+        "Mengalihkan seluruh output Command Window ke file teks eksternal",
+        "Mengatur preferensi editor MATLAB untuk mengabaikan semua jenis pesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu membagikan fungsi analisis data MATLAB kepada rekan kerja yang tidak memiliki lisensi MATLAB di komputernya. Langkah deployment apa yang harus Anda ambil?",
+      "options": [
+        "Mengemas kode sumber menjadi file P-code agar aman dan bisa dijalankan",
+        "Menyimpan workspace saat ini ke dalam format file mat siap muat",
+        "Membuat installer mandiri menggunakan MATLAB Compiler dan Application Compiler",
+        "Mengekspor seluruh fungsi utama menjadi skrip bahasa Python standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah matriks data sensor cuaca memiliki beberapa nilai yang hilang yang ditandai dengan NaN. Untuk menghitung rata-rata suhu tanpa terganggu oleh nilai NaN tersebut, fungsi statistik apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fungsi mean dengan tambahan argumen 'omitnan'",
+        "Menghapus baris yang mengandung NaN menggunakan fungsi rmmissing",
+        "Mengganti semua nilai NaN dengan angka nol menggunakan isnan",
+        "Menghitung nilai rata-rata manual setelah memfilter dengan find"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati skrip MATLAB Anda berjalan lambat pada operasi perkalian matriks berdimensi tinggi. Setelah diperiksa dengan Profiler, bottleneck berada pada baris tersebut. Solusi pemrograman mana yang paling tepat?",
+      "options": [
+        "Memecah matriks besar menjadi beberapa sel kecil secara manual",
+        "Memanfaatkan toolbox komputasi paralel dengan perintah parfor",
+        "Mengubah orientasi dimensi matriks agar sesuai dengan indeks kolom",
+        "Menyimpan data sementara ke hardisk SSD menggunakan fungsi save"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan laporan otomatis, Anda perlu mengekspor hasil plot grafik ke format vektor berkualitas tinggi agar tidak pecah saat dimasukkan ke dalam dokumen PDF perusahaan. Fungsi cetak apa yang harus digunakan?",
+      "options": [
+        "Menyimpan gambar menggunakan fungsi saveas dengan ekstensi fig",
+        "Mengekspor jendela grafik aktif melalui perintah print dengan format -dpdf",
+        "Mengambil tangkapan layar jendela grafik menggunakan fungsi getframe",
+        "Menyimpan plot secara langsung lewat menu GUI File Save As bitmap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima data waktu dalam bentuk teks string dengan format 'DD-MM-YYYY HH:MM:SS' dan ingin melakukan analisis tren per jam. Fungsi konversi apa yang paling tepat untuk mengubah data teks tersebut?",
+      "options": [
+        "Mengubah teks menjadi nomor serial waktu menggunakan fungsi datenum",
+        "Memecah string teks secara manual menggunakan fungsi split dan str2num",
+        "Mengonversi teks menjadi objek waktu menggunakan fungsi datetime",
+        "Mentransformasikan format teks ke bentuk durasi memakai hours"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan algoritma prediksi beban listrik PLN menggunakan Neural Network. Agar proses pelatihan tidak terjebak pada local minima dan waktu konvergensi optimal, fungsi aktivasi apa yang paling tepat Anda gunakan pada hidden layer untuk data kontinu?",
+      "options": [
+        "Menggunakan fungsi sigmoid biner untuk skala probabilitas",
+        "Menggunakan fungsi ReLU agar gradien tidak mengalami vanishing",
+        "Menggunakan fungsi linear murni untuk menjaga rentang nilai asli",
+        "Menggunakan fungsi step diskrit untuk mempercepat komputasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Jakarta merekam koordinat GPS armada truk setiap detik ke dalam file teks besar. Saat Anda membaca baris data menggunakan fgetl dalam perulangan, proses berjalan sangat lambat. Pendekatan mana yang paling efisien untuk mempercepat pembacaan?",
+      "options": [
+        "Membuka file menggunakan fungsi textscan dengan ukuran buffer besar",
+        "Mengubah file teks menjadi format MAT binary menggunakan load",
+        "Membaca seluruh file sekaligus ke memori memakai readlines",
+        "Memecah file teks secara manual menggunakan skrip eksternal Python"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima data hasil survei kepuasan pelanggan yang kolomnya bercampur antara angka dan teks tanggapan kosong. Saat melakukan operasi matematika, MATLAB menghasilkan error karena tipe data cell. Bagaimana cara terbaik mengonversinya menjadi matriks numerik?",
+      "options": [
+        "Menggunakan fungsi cell2mat setelah mengganti sel kosong dengan nilai NaN",
+        "Melakukan perulangan for untuk mengubah setiap sel menggunakan str2double",
+        "Memaksa konversi langsung menggunakan fungsi cast ke tipe double",
+        "Menyimpan data ke file CSV lalu mengimpornya kembali lewat UI import"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengolahan citra digital untuk inspeksi kualitas produk kelapa sawit, Anda perlu mendeteksi tepi retak pada buah. Filter spasial berdimensi 2D mana yang paling efektif diterapkan pada matriks citra grayscale untuk tujuan ini?",
+      "options": [
+        "Menerapkan filter Gaussian blur untuk meredam gangguan derau",
+        "Menggunakan operator Sobel untuk mendeteksi gradien intensitas",
+        "Memakai filter rata-rata bergerak untuk memperhalus kontras",
+        "Melakukan operasi morfologi dilasi untuk mempertebal objek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat skrip otomatisasi laporan bulanan yang menghasilkan 50 figur grafik terpisah. Agar memori RAM laptop kantor tidak habis saat proses rendering batch, tindakan apa yang harus diambil pada figur?",
+      "options": [
+        "Membuat figur baru dengan argumen 'Visible','off' lalu menutupnya via close",
+        "Menonaktifkan fitur rendering grafis hardware dengan perintah opengl software",
+        "Menyimpan setiap figur langsung ke format PNG menggunakan fungsi saveas",
+        "Menggabungkan seluruh plot ke dalam satu jendela dengan fungsi subplot"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan regresi polinomial untuk estimasi harga properti di Surabaya, grafik sisaan (residual plot) menunjukkan pola melengkung yang jelas. Indikasi apa yang paling tepat mengenai model tersebut?",
+      "options": [
+        "Model mengalami overfitting karena derajat polinomial terlalu tinggi",
+        "Model mengalami underfitting sehingga perlu penambahan derajat polinomial",
+        "Data pelatihan mengandung terlalu banyak nilai pencilan atau outlier",
+        "Varians galat bersifat homoskedastisitas dan memenuhi asumsi statistik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati skrip MATLAB Anda gagal berjalan di komputer klien karena pemanggilan fungsi eksternal dari Toolbox tertentu yang tidak terinstal di sana. Bagaimana cara mendeteksi keberadaan Toolbox tersebut secara dinamis di dalam kode?",
+      "options": [
+        "Memeriksa lisensi aktif menggunakan fungsi license('test', 'Toolbox_Name')",
+        "Menangkap pesan error menggunakan blok try-catch saat fungsi dipanggil",
+        "Menggunakan fungsi ver untuk mencetak daftar produk ke command window",
+        "Membandingkan tanggal kedaluwarsa dongle hardware pada komputer klien"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis getaran mesin pabrik, Anda perlu mengubah sinyal domain waktu ke domain frekuensi menggunakan Fast Fourier Transform (FFT). Langkah awal apa yang wajib dilakukan pada vektor sinyal agar resolusi frekuensi akurat?",
+      "options": [
+        "Memastikan panjang vektor sinyal bernilai genap atau kelipatan pangkat dua",
+        "Melakukan normalisasi amplitudo sinyal dengan membaginya terhadap nilai maksimum",
+        "Menambahkan derau putih Gauss untuk menghindari fenomena aliasing",
+        "Mengalikan sinyal dengan jendela Hamming untuk mengurangi kebocoran spektral"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang menulis fungsi kustom di MATLAB yang menerima jumlah argumen input yang bersifat opsional dari pengguna. Fitur bahasa apa yang harus Anda gunakan di dalam definisi fungsi untuk menangani hal ini?",
+      "options": [
+        "Memanfaatkan variabel khusus varargin untuk menampung argumen fleksibel",
+        "Mendefinisikan nilai default parameter menggunakan struktur inputParser",
+        "Memeriksa panjang argumen masuk menggunakan fungsi nargin secara manual",
+        "Membuat fungsi overloading dengan berbagai variasi jumlah parameter"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem akuisisi data suhu merekam nilai setiap milidetik, namun sering terjadi lonjakan data ekstrem akibat gangguan elektromagnetik (spike). Metode pemfilteran mana yang paling tepat untuk membersihkan data tanpa menggeser waktu kejadian?",
+      "options": [
+        "Menggunakan filter rata-rata bergerak konvensional dengan jendela lebar",
+        "Menerapkan filter median 1D untuk membuang nilai ekstrem sesaat",
+        "Memakai filter Butterworthorde tinggi dengan cutoff frekuensi rendah",
+        "Melakukan interpolasi linear pada titik data yang bernilai menyimpang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang dasbor monitoring pembangkit listrik dan ingin memperbarui plot garis secara real-time tanpa harus menghapus dan menggambar ulang seluruh figur setiap detiknya agar performa tetap optimal. Metode apa yang paling tepat digunakan?",
+      "options": [
+        "Mengubah properti XData dan YData dari objek garis yang sudah ada secara langsung",
+        "Menggunakan fungsi drawnow(limitrate) di dalam perulangan untuk memperbarui kanvas",
+        "Menutup jendela figur lama pada setiap iterasi lalu memanggil fungsi figure yang baru",
+        "Memanggil perintah clf sebelum menggambar ulang grafik pada setiap iterasi program"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan data penjualan ritel, Anda memiliki sel (cell array) yang berisi nama-nama produk berupa teks dengan panjang baris yang bervariasi. Anda ingin mengubah seluruh isi cell tersebut menjadi matriks karakter atau string array standar. Fungsi apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi cell2mat setelah memastikan seluruh elemen memiliki dimensi sama",
+        "Mengonversi langsung menggunakan fungsi string atau mengubahnya via cellstr",
+        "Melakukan perulangan for untuk mengekstrak setiap elemen menggunakan kurung biasa",
+        "Menjalankan fungsi reshape untuk menyamakan ukuran setiap sel sebelum digabung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima struktur data bersarang (nested struct) dari hasil pembacaan file konfigurasi JSON untuk sistem IoT, di mana Anda perlu mengakses nilai dari field dinamis yang namanya disimpan dalam sebuah variabel string. Cara penulisan indeks yang benar di MATLAB adalah:",
+      "options": [
+        "Menggunakan tanda titik langsung diikuti dengan nama variabel string tersebut",
+        "Memakai tanda kurung siku dan menuliskan nama variabel string di dalam tanda kutip",
+        "Menggunakan indeks dinamis dengan tanda kurung biasa seperti data.(namaVar)",
+        "Mengonversi struct menjadi tabel terlebih dahulu agar bisa diakses dengan kurung kurawa"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan pembersihan data transaksi keuangan, Anda ingin mencari baris-baris dalam tabel yang nilai pada kolom 'Jumlah' berada di antara 100000 dan 500000. Cara penulisan logika penapisan (filtering) yang paling efisien di MATLAB adalah:",
+      "options": [
+        "TabelData(TabelData.Jumlah >= 100000 & TabelData.Jumlah <= 500000, :);",
+        "find(TabelData.Jumlah >= 100000 && TabelData.Jumlah <= 500000);",
+        "filter(TabelData, 'Jumlah >= 100000 AND Jumlah <= 500000');",
+        "TabelData(between(TabelData.Jumlah, 100000, 500000), :);"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah skrip pemrosesan batch untuk data citra satelit, sebuah iterasi kadang mengalami galat (error) karena file rusak. Anda ingin agar perulangan tetap berjalan meskipun ada iterasi yang gagal tanpa menghentikan seluruh program. Struktur apa yang harus digunakan?",
+      "options": [
+        "Menggunakan pernyataan conditional if bersarang dengan pengecekan fungsi exist",
+        "Memasang blok perintah try dan catch di dalam badan perulangan for",
+        "Menambahkan argumen penanganan galat pada parameter utama fungsi perulangan",
+        "Memanfaatkan fungsi keyboard untuk menghentikan sementara proses saat ada galat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat fungsi kustom untuk menghitung statistik bulanan yang menerima masukan parameter wajib dan beberapa parameter opsional nama-nilai (name-value pairs). Fitur bawaan MATLAB apa yang paling tepat digunakan untuk menangani argumen tersebut di dalam fungsi?",
+      "options": [
+        "Memanfaatkan variabel global varargin untuk menangkap seluruh masukan",
+        "Menggunakan fungsi narginchk untuk memvalidasi jumlah masukan dari pengguna",
+        "Memakai objek inputParser untuk mendefinisikan parameter default dan opsional",
+        "Mengonversi seluruh argumen masukan menjadi struktur data menggunakan struct"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengoptimalkan kode MATLAB yang berisi operasi matematika skalar berulang dalam jumlah besar. Untuk memanfaatkan kemampuan komputasi paralel pada CPU multi-core komputer Anda, fungsi tingkat tinggi apa yang paling mudah diterapkan untuk menggantikan perulangan for independen?",
+      "options": [
+        "Mengubah fungsi perulangan standar menjadi perulangan paralel dengan perintah parfor",
+        "Menjalankan fungsi spmd untuk mendistribusikan variabel lokal ke berbagai worker",
+        "Memanfaatkan fungsi batch untuk mengirim skrip utama ke antrean latar belakang",
+        "Menggunakan perintah pool = gcpool untuk membuka sesi pekerja secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis kualitas air, Anda memiliki matriks data multi-kolom yang mengandung beberapa nilai kosong (NaN). Anda ingin menghitung koefisien korelasi antar kolom tanpa mengabaikan seluruh baris yang memiliki satu saja nilai NaN. Argumen tambahan apa yang diberikan pada fungsi corrcoef?",
+      "options": [
+        "Memberikan parameter 'Rows' dengan nilai 'complete' untuk baris lengkap",
+        "Menggunakan opsi 'Rows' yang diset menjadi 'pairwise' untuk setiap pasang",
+        "Menjalankan fungsi rmmissing terlebih dahulu pada setiap kolom secara terpisah",
+        "Mengganti nilai NaN dengan angka nol menggunakan fungsi fillmissing bawaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu membaca file teks berukuran sangat besar yang strukturnya tidak beraturan dan terdiri dari kombinasi baris header metadata serta baris data numerik. Fungsi pembacaan tingkat rendah (low-level file I/O) manakah yang memberikan kontrol paling fleksibel?",
+      "options": [
+        "Menggunakan fungsi readtable dengan menentukan opsi delimiter kustom",
+        "Memakai fungsi load untuk memuat seluruh isi file langsung ke workspace",
+        "Menggunakan fungsi fopen, fgetl, dan fclose secara berurutan dalam perulangan",
+        "Memanfaatkan fungsi importdata untuk mendeteksi struktur file secara otomatis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda telah menyelesaikan pengembangan aplikasi pemrosesan sinyal dan ingin menyusun dokumentasi fungsi agar muncul saat pengguna mengetik 'help nama_fungsi' di Command Window. Bagaimana cara menuliskan blok bantuan (help text) yang benar di MATLAB?",
+      "options": [
+        "Menuliskan komentar dengan simbol persen (%) pada baris pertama tepat setelah deklarasi fungsi",
+        "Membuat file teks terpisah bernama sama dengan ekstensi .txt di dalam folder yang sama",
+        "Menyimpan deskripsi fungsi di dalam atribut metadata file menggunakan fungsi meta.class",
+        "Menambahkan blok komentar multiline menggunakan tanda %{ dan %} di akhir file skrip"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

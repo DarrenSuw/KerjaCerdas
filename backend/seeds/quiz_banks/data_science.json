@@ -1,0 +1,306 @@
+{
+  "skill": "Data Science",
+  "skill_key": "data science",
+  "questions": [
+    {
+      "question": "Tim product management meminta Anda menganalisis tingkat churn pelanggan e-commerce dalam tiga bulan terakhir. Anda menemukan bahwa kelas 'churn' sangat langka, hanya menyumbang 2% dari total 500.000 baris data. Langkah apa yang paling tepat untuk menangani ketimpangan kelas ini sebelum melatih model machine learning?",
+      "options": [
+        "Menghapus seluruh data pelanggan non-churn agar jumlah barisnya seimbang dengan data churn",
+        "Menggunakan teknik resampling seperti SMOTE pada data latih dan mengevaluasi pakai ROC-AUC",
+        "Membuang variabel yang memiliki nilai kosong lebih dari 5 persen tanpa imputasi lanjutan",
+        "Mengubah semua variabel kategorikal menjadi numerik memakai one-hot encoding standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun model prediksi harga rumah di Jakarta. Saat melakukan analisis korelasi, Anda mendapati dua fitur independen, yaitu 'luas bangunan' dan 'jumlah AC', memiliki korelasi linear yang sangat tinggi sebesar 0.89. Apa tindakan teknis terbaik yang harus diambil?",
+      "options": [
+        "Mengabaikan kedua fitur tersebut karena dianggap tidak relevan dengan harga akhir",
+        "Menghitung nilai VIF untuk mendeteksi multikolinearitas dan menghapus salah satu fitur",
+        "Menjumlahkan kedua nilai fitur tersebut secara langsung menjadi satu kolom baru",
+        "Mengubah skala data menggunakan normalisasi min-max agar korelasinya menurun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi fintech meluncurkan fitur credit scoring baru berbasis machine learning. Model menunjukkan akurasi 95% pada data uji, namun tim risk management melaporkan bahwa model tersebut menolak hampir semua pengajuan dari pengguna di luar Pulau Jawa. Apa akar masalah utama dari skenario ini?",
+      "options": [
+        "Pemilihan metrik evaluasi yang kurang tepat karena mengabaikan bias demografis data",
+        "Penggunaan algoritma ensemble yang terlalu kompleks untuk data berdimensi tinggi",
+        "Proses normalisasi data numerik yang tidak menyertakan outlier di rentang ekstrem",
+        "Penggunaan teknik cross-validation yang salah saat membagi data latih dan data uji"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menganalisis data log transaksi harian sebuah supermarket besar menggunakan Python. Ukuran file CSV mencapai 12 GB, sementara RAM laptop kerja Anda hanya 8 GB. Pendekatan apa yang paling efisien untuk memuat dan memproses data tersebut?",
+      "options": [
+        "Membuka file menggunakan fungsi bawaan open() lalu memparsing setiap baris secara manual",
+        "Meningkatkan kapasitas virtual memory pada sistem operasi agar file dapat dimuat utuh",
+        "Membaca data secara bertahap menggunakan parameter chunksize di Pandas atau pustaka Dask",
+        "Mengonversi file CSV menjadi format Excel (.xlsx) agar ukurannya menjadi lebih ringkas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerapkan model Random Forest untuk memprediksi keterlambatan pengiriman logistik. Setelah melakukan hyperparameter tuning dengan GridSearchCV, model diuji pada data produksi dan performanya turun drastis dibandingkan data validasi silang. Apa kemungkinan besar penyebabnya?",
+      "options": [
+        "Terjadinya kebocoran data atau overfitting akibat optimasi hyperparameter yang berlebihan",
+        "Jumlah pohon dalam model Random Forest terlalu sedikit untuk menangkap pola data",
+        "Distribusi data pada sistem produksi tidak memiliki nilai kosong sama sekali",
+        "Penggunaan fungsi aktivasi yang tidak sesuai pada arsitektur pohon keputusan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal berita online ingin mengelompokkan artikel-artikelnya ke dalam beberapa kategori otomatis berdasarkan teks judul dan paragraf pembuka. Anda memiliki 50.000 artikel tanpa label kategori sebelumnya. Algoritma dan metode apa yang paling sesuai?",
+      "options": [
+        "Melatih model regresi linear berganda setelah mengubah teks menjadi bentuk TF-IDF",
+        "Menggunakan K-Means clustering pada representasi vektor dokumen hasil TF-IDF atau embedding",
+        "Menerapkan supervised learning dengan algoritma Support Vector Machine berbasis label acak",
+        "Menghitung matriks jarak Euclidean langsung pada string teks mentah tanpa pra-pemrosesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek data science untuk industri telekomunikasi, Anda perlu menyertakan variabel 'pendapatan bulanan' yang memiliki distribusi sangat miring ke kanan (right-skewed) karena ada sebagian kecil pelanggan berpendapatan sangat tinggi. Transformasi apa yang lazim diterapkan?",
+      "options": [
+        "Melakukan standarisasi z-score agar rata-rata nilai variabel menjadi tepat bernilai nol",
+        "Menerapkan transformasi logaritmik atau Box-Cox untuk mendekati distribusi normal",
+        "Menghapus semua baris data yang berada di atas persentil ke-95 tanpa pengecualian",
+        "Mengganti seluruh nilai yang miring dengan nilai median dari keseluruhan kolom"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja mendeploy model machine learning ke environment production menggunakan API Flask. Dalam beberapa hari pertama, performa prediksi mulai memburuk secara perlahan karena tren perilaku pengguna berubah akibat hari raya nasional. Fenomena apa yang sedang terjadi?",
+      "options": [
+        "Data drift yang menyebabkan asumsi distribusi pada data latih tidak lagi valid",
+        "Gradient vanishing pada lapisan tersembunyi model akibat ukuran batch yang kecil",
+        "Overfitting permanen yang disebabkan oleh durasi training yang terlalu singkat",
+        "Memory leak pada server API yang menghambat kecepatan proses inferensi data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai satu-satunya Data Scientist di sebuah startup logistik, Anda diminta membuat baseline model estimasi waktu pengiriman dalam waktu dua hari. Praktik terbaik apa yang sebaiknya Anda lakukan pada tahap awal ini?",
+      "options": [
+        "Langsung merancang arsitektur Deep Neural Network yang kompleks dengan banyak hidden layer",
+        "Membuat model sederhana yang stabil, seperti Regresi Linear atau Decision Tree, sebagai pembanding",
+        "Menghabiskan kedua hari tersebut hanya untuk membersihkan seluruh missing value secara sempurna",
+        "Membangun sistem pipeline otomatis berbasis cloud sebelum model pertamanya selesai dibuat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan ride-hailing ingin menguji apakah fitur antarmuka pemesanan baru dapat meningkatkan rata-rata nilai transaksi pengguna. Tim menjalankan A/B testing selama dua minggu dan mencatat data dari ribuan pengguna. Uji statistik apa yang paling tepat digunakan untuk menarik kesimpulan?",
+      "options": [
+        "Uji Chi-Square untuk melihat hubungan asosiasi antar dua variabel kategorikal nominal",
+        "Uji ANOVA satu arah untuk membandingkan varians dari lebih dari dua kelompok sampel",
+        "Uji t dua sampel (Two-sample t-test) atau Mann-Whitney U test pada metrik nilai transaksi",
+        "Analisis regresi logistik untuk memprediksi probabilitas pengguna mengklik tombol pesan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform edutech ingin memprediksi siswa yang berisiko gagal ujian akhir semester berdasarkan data aktivitas belajar. Dataset sangat tidak seimbang (hanya 3% siswa yang gagal). Metrik evaluasi apa yang paling tepat Anda prioritaskan untuk mengukur performa awal model?",
+      "options": [
+        "Akurasi keseluruhan karena mudah dipahami stakeholder bisnis",
+        "Precision tinggi untuk meminimalkan intervensi pada siswa yang salah",
+        "ROC-AUC score untuk melihat kemampuan pemisahan kelas secara keseluruhan",
+        "Mean Absolute Error untuk mengukur deviasi nilai prediksi probabilitas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menganalisis waktu tunggu antrean di gerai ritel nasional menggunakan Python. Dataset berukuran 4 GB, sementara RAM laptop operasional Anda hanya 8 GB. Langkah paling efektif apa yang harus Anda ambil saat memuat data?",
+      "options": [
+        "Membaca file secara utuh dengan pandas dan langsung menghapus kolom tak penting",
+        "Membagi file CSV menjadi beberapa bagian kecil menggunakan skrip shell eksternal",
+        "Menggunakan parameter chunksize pada pandas read_csv untuk memproses per bagian",
+        "Mengonversi seluruh isi file ke format Excel agar kompresi memori lebih optimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Model klasifikasi churn pelanggan telekomunikasi yang Anda buat mendadak mengalami penurunan performa (data drift) setelah berjalan dua bulan di production. Tindakan proaktif apa yang harus segera Anda lakukan?",
+      "options": [
+        "Melatih ulang model menggunakan seluruh data historis dari awal operasional perusahaan",
+        "Mengambil sampel data terbaru, melabelinya, lalu membandingkan distribusi dengan data train",
+        "Menurunkan ambang batas probabilitas keputusan model secara manual di sistem backend",
+        "Mengganti algoritma Random Forest dengan Deep Neural Network untuk adaptasi otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek segmentasi pelanggan supermarket menggunakan K-Means clustering, Anda kesulitan menentukan jumlah kluster optimal ($k$). Pendekatan analitis mana yang paling objektif untuk menyelesaikan masalah ini?",
+      "options": [
+        "Mencoba nilai $k$ dari 2 hingga 10 lalu memilih nilai dengan Silhouette Coefficient tertinggi",
+        "Membuat kluster sejumlah kategori produk yang dijual agar interpretasi bisnis lebih mudah",
+        "Menggunakan nilai $k$ sama dengan akar kuadrat dari jumlah total baris data pelanggan",
+        "Menjalankan Elbow Method dan memilih titik di mana penurunan inertia mulai melambat drastis"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang membangun model regresi untuk memprediksi durasi pengiriman kurir. Analisis residual menunjukkan pola corak corong (heteroskedastisitas), di mana variance error semakin besar pada jarak pengiriman yang jauh. Bagaimana cara menangani masalah ini?",
+      "options": [
+        "Melakukan transformasi logaritmik pada variabel target durasi pengiriman",
+        "Menghapus seluruh baris data yang memiliki jarak pengiriman di atas kuartil ketiga",
+        "Mengganti metrik evaluasi dari RMSE menjadi Mean Absolute Percentage Error",
+        "Menambahkan lebih banyak fitur kategorikal seperti jenis kendaraan dan cuaca"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah bank digital ingin mendeteksi transaksi penipuan kartu kredit. Fitur nominal transaksi memiliki rentang nilai yang sangat ekstrem dibandingkan fitur frekuensi transaksi harian. Algoritma mana yang paling rentan jika Anda lupa melakukan feature scaling?",
+      "options": [
+        "Decision Tree classifier berbasis pohon keputusan biner berurutan",
+        "Random Forest ensemble dengan ratusan pohon estimator paralel",
+        "Support Vector Machine dengan kernel fungsi berbasis jarak Euclidean",
+        "Gradient Boosting Machine dengan fungsi loss berbasis residual error"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim marketing menjalankan kampanye diskon ganda dan ingin mengetahui apakah kenaikan penjualan signifikan secara statistik atau hanya kebetulan. Uji hipotesis apa yang tepat jika data distribusi penjualan harian tidak normal?",
+      "options": [
+        "Uji T berpasangan (Paired Sample T-Test) pada rata-rata penjualan harian",
+        "Uji Mann-Whitney U untuk membandingkan median distribusi kedua kelompok",
+        "Uji Chi-Square untuk melihat independensi variabel kategori kampanye",
+        "Analisis varians ANOVA satu arah untuk menguji perbedaan multi-kelompok"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merancang sistem rekomendasi produk untuk e-commerce fashion menggunakan collaborative filtering berbasis item. Tantangan terbesar apa yang biasanya langsung muncul pada awal peluncuran fitur ini?",
+      "options": [
+        "Cold start problem pada pengguna baru yang belum memiliki riwayat interaksi sama sekali",
+        "Keterbatasan daya komputasi server saat menghitung matriks kesamaan antar pengguna",
+        "Sparsity matrix yang ekstrem akibat jumlah produk jauh lebih sedikit daripada pengguna",
+        "Penurunan akurasi rekomendasi drastis akibat perubahan tren fashion musiman yang cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan teks ulasan aplikasi berbahasa Indonesia yang informal, Anda mendapati banyak kata singkatan, typo, dan emoji. Langkah preprocessing NLP mana yang harus dieksekusi paling akhir sebelum masuk ke ekstraksi fitur TF-IDF?",
+      "options": [
+        "Pembersihan tanda baca khusus dan emoji menggunakan regex",
+        "Penyetaraan kata melalui proses lemmatisasi atau stemming",
+        "Penghapusan kata depan umum yang tidak bermakna (stopwords)",
+        "Konversi seluruh teks menjadi huruf kecil (case folding)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi kesehatan ingin memprediksi risiko penyakit jantung. Model logistic regression Anda menghasilkan koefisien positif yang sangat besar pada fitur tekanan darah. Apa interpretasi bisnis yang paling akurat untuk disampaikan kepada dokter?",
+      "options": [
+        "Tekanan darah adalah satu-satunya penyebab utama penyakit jantung pada pasien",
+        "Setiap kenaikan satu unit tekanan darah melipatgandakan peluang kejadian penyakit",
+        "Probabilitas pasien terkena penyakit jantung naik secara linear sebesar koefisien tersebut",
+        "Pasien dengan tekanan darah tinggi pasti akan didiagnosis positif menderita penyakit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menangani data penjualan ritel bulanan yang memiliki tren kenaikan musiman setiap akhir tahun dan fluktuasi mingguan. Anda diminta melakukan forecasting untuk 6 bulan ke depan. Pendekatan apa yang paling tepat untuk menangkap pola tersebut?",
+      "options": [
+        "Menggunakan model regresi linier sederhana dengan variabel waktu sebagai prediktor utama",
+        "Menerapkan algoritma ARIMA setelah melakukan differencing untuk menghilangkan tren",
+        "Memanfaatkan model Prophet dari Meta yang secara native mengakomodasi efek musiman",
+        "Melatih model deep learning LSTM dengan seluruh data historis tanpa transformasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah startup agritech mengumpulkan data sensor kelembapan tanah yang dikirim setiap menit, namun sering terjadi gangguan sinyal yang menyebabkan data kosong secara acak selama beberapa jam. Langkah imputasi terbaik untuk analisis tren harian adalah:",
+      "options": [
+        "Mengisi nilai kosong menggunakan metode forward fill atau interpolasi linier waktu",
+        "Menghapus seluruh baris data pada hari yang memiliki catatan nilai kosong",
+        "Mengganti semua nilai yang kosong dengan nilai rata-rata dari keseluruhan dataset",
+        "Mengisi bagian yang kosong dengan nilai nol karena sensor diasumsikan mati"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat model klasifikasi untuk mendeteksi aplikasi pinjaman online yang berisiko macet. Dari hasil evaluasi, manajemen meminta agar tidak ada satupun peminjam berisiko macet yang lolos, meskipun beberapa peminjam lancar ikut tertolak. Metrik apa yang harus Anda prioritaskan?",
+      "options": [
+        "Maksimalkan nilai akurasi total model pada data validasi dan test",
+        "Fokus pada peningkatan nilai precision dari kelas peminjam macet",
+        "Mengejar nilai recall yang tinggi khusus pada kelas peminjam macet",
+        "Menyamakan nilai false positive rate dan false negative rate model"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek pengolahan data teks ulasan produk lokal di e-commerce, Anda mendapati jumlah fitur kata (vocabulary size) membengkak hingga 100.000 kata setelah proses tokenisasi TF-IDF. Tindakan paling efektif untuk efisiensi memori adalah:",
+      "options": [
+        "Menghapus semua kata sifat dan kata keterangan dari kamus data teks",
+        "Menerapkan teknik stemming ekstrem untuk menyamakan semua bentuk kata",
+        "Membatasi parameter max_features atau menetapkan ambang batas min_df",
+        "Mengubah representasi matriks TF-IDF dari sparse matrix menjadi dense array"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengembangkan model ensemble Gradient Boosting untuk memprediksi harga sewa apartemen di Surabaya. Saat melakukan evaluasi lintas waktu, Anda mendapati metrik RMSE pada data train sangat kecil, namun pada data test sangat tinggi. Langkah mitigasi yang tepat adalah:",
+      "options": [
+        "Menambah jumlah estimator dan memperdalam kedalaman maksimum pohon keputusan",
+        "Menurunkan tingkat learning rate dan membatasi kedalaman maksimum pohon",
+        "Menghapus fitur numerik yang memiliki korelasi rendah terhadap harga sewa",
+        "Melakukan oversampling pada data sewa apartemen yang bernilai sangat tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim bisnis sebuah aplikasi streaming musik ingin mengetahui apakah durasi langganan pengguna dipengaruhi oleh genre musik favorit mereka. Variabel durasi bersifat kontinu dan genre bersifat kategorikal. Uji statistik apa yang paling sesuai digunakan?",
+      "options": [
+        "Menggunakan uji Chi-Square untuk melihat hubungan antar variabel kategorikal",
+        "Melakukan uji korelasi Pearson untuk mengukur keeratan hubungan linear",
+        "Menerapkan uji ANOVA satu arah untuk membandingkan rata-rata durasi antar genre",
+        "Menghitung koefisien kontingensi guna mengevaluasi asosiasi dua variabel"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik memiliki data koordinat GPS titik jemput dan antar barang di Jakarta. Anda ingin mengelompokkan titik-titik tersebut menjadi beberapa wilayah operasional tanpa harus menentukan jumlah kluster di awal, serta tahan terhadap titik anomali (noise). Algoritma klusterisasi apa yang paling tepat?",
+      "options": [
+        "Menjalankan algoritma K-Means dengan mencari nilai optimal lewat metode elbow",
+        "Menggunakan algoritma DBSCAN berdasarkan parameter jarak spasial dan densitas",
+        "Menerapkan metode Hierarchical Clustering dengan pemotongan dendrogram manual",
+        "Memakai model Gaussian Mixture Model untuk menangkap distribusi probabilistik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menyiapkan data untuk model regresi logistik penipuan kartu kredit, Anda melihat distribusi variabel nominal transaksi sangat miring ke kanan (right-skewed) dengan outlier ekstrem. Transformasi data apa yang paling efektif sebelum dimasukkan ke model?",
+      "options": [
+        "Melakukan standardisasi menggunakan teknik Z-score standard scaler",
+        "Menerapkan transformasi logaritmik atau Box-Cox pada kolom nominal tersebut",
+        "Melakukan normalisasi Min-Max agar nilai berada di antara rentang 0 dan 1",
+        "Memotong nilai ekstrem menggunakan metode clipping pada persentil tertentu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis log akses server menggunakan Pandas dengan ukuran file mencapai 8 GB, sementara laptop kerja Anda memiliki RAM sebesar 16 GB. Cara paling efisien untuk memuat dan memproses data tersebut di Python adalah:",
+      "options": [
+        "Membaca seluruh file CSV sekaligus menggunakan fungsi read_csv standar",
+        "Membaca file secara bertahap menggunakan parameter chunksize di Pandas",
+        "Mengonversi seluruh file CSV mentah menjadi format file Excel (.xlsx)",
+        "Menaikkan kapasitas virtual memory sistem operasi sebelum menjalankan skrip"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edukasi online ingin mengukur apakah fitur gamifikasi baru efektif menaikkan tingkat penyelesaian kursus. Analisis A/B testing dilakukan selama satu bulan. Metrik uji apa yang paling tepat digunakan untuk variabel biner status kelulusan peserta?",
+      "options": [
+        "Menggunakan uji t dua sampel independen untuk membandingkan rata-rata nilai",
+        "Melakukan uji proporsi Z-test atau Chi-Square pada rasio tingkat kelulusan",
+        "Menghitung nilai mean squared error dari prediksi status kelulusan siswa",
+        "Menerapkan uji Mann-Whitney U test untuk data non-parametrik berdistribusi bebas"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

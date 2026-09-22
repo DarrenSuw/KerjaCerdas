@@ -1,0 +1,306 @@
+{
+  "skill": "Flask",
+  "skill_key": "flask",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi web back-end menggunakan Flask untuk sebuah startup logistik di Jakarta. Saat aplikasi menerima lonjakan traffic ribuan pesanan bersamaan, beberapa request mengalami timeout karena proses query database yang lambat. Solusi arsitektur mana yang paling tepat diterapkan pada Flask untuk menangani beban proses latar belakang (background tasks) ini?",
+      "options": [
+        "Menggunakan Flask-SQLAlchemy dengan teknik eager loading pada semua tabel",
+        "Memindahkan proses berat ke antrean tugas menggunakan Celery dan Redis",
+        "Mengubah seluruh fungsi view Flask menjadi fungsi sinkronus standar Python",
+        "Menaikkan batas timeout maksimum pada konfigurasi server WSGI Gunicorn"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya kerentanan keamanan CSRF (Cross-Site Request Forgery) pada form pendaftaran akun di aplikasi Flask korporat Anda. Modul ekstensi apa yang paling tepat diintegrasikan untuk mengamankan form berbasis HTML tradisional di Flask?",
+      "options": [
+        "Flask-WTF yang menyediakan integrasi WTForms beserta proteksi CSRF bawaan",
+        "Flask-Login untuk mengelola sesi pengguna dan mencegah pembajakan token",
+        "Flask-Migrate untuk mengenkripsi data sensitif langsung di dalam database",
+        "Flask-Bcrypt untuk melakukan hashing pada setiap payload yang dikirim klien"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan merestrukturisasi proyek Flask monolitik yang semakin besar agar lebih mudah dikelola oleh beberapa tim developer secara paralel. Pendekatan desain apa yang harus Anda terapkan pada struktur kode Flask tersebut?",
+      "options": [
+        "Memecah logika aplikasi menjadi beberapa modul dengan memanfaatkan fitur Blueprint",
+        "Membuat file app.py terpisah untuk setiap halaman web yang diakses pengguna",
+        "Memanfaatkan factory function untuk menginisialisasi ekstensi secara manual",
+        "Menggabungkan seluruh endpoint API ke dalam satu file blueprint utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi microservices Flask yang Anda kelola membutuhkan autentikasi stateless untuk komunikasi antar layanan dan klien mobile. Mana pola implementasi token yang paling sesuai standar industri untuk kasus ini?",
+      "options": [
+        "Menggunakan cookie sesi server-side standar yang dienkripsi dengan Flask-Session",
+        "Menggunakan token JWT (JSON Web Tokens) dengan pustaka seperti Flask-JWT-Extended",
+        "Mengimplementasikan HTTP Basic Authentication dengan dekode Base64 di middleware",
+        "Menyimpan token akses unik di dalam tabel database relasional untuk setiap request"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi Flask ke environmentproduction menggunakan Gunicorn di server Ubuntu, aplikasi gagal berjalan karena Gunicorn tidak dapat menemukan objek aplikasi utama. Perintah terminal mana yang paling tepat untuk menjalankan Gunicorn dengan benar?",
+      "options": [
+        "gunicorn --bind 0.0.0.0:8000 main:create_app()",
+        "python -m gunicorn.app.wsgi --app wsgi:app --port 8000",
+        "gunicorn wsgi:app --workers 4 --bind 0.0.0.0:8000",
+        "flask run --host=0.0.0.0 --port=8000 --production"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis unit test menggunakan Pytest untuk endpoint API Flask yang memerlukan interaksi dengan database PostgreSQL. Agar setiap fungsi test berjalan independen dan bersih dari sisa data test sebelumnya, praktik apa yang harus dilakukan?",
+      "options": [
+        "Membuat database baru secara fisik untuk setiap fungsi test yang dieksekusi",
+        "Menggunakan fixture Flask yang membungkus transaksi database dalam rollback",
+        "Menjalankan perintah drop database secara otomatis pada akhir setiap blok test",
+        "Mematikan koneksi database global selama proses pengujian unit berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Flask Anda sering mengalami crash di production karena error tak terduga pada pihak ketiga yang membuat pengguna melihat halaman error bawaan server yang buruk. Bagaimana cara elegan menangani error kustom secara global di Flask?",
+      "options": [
+        "Membungkus setiap blok kode di view dengan try-except dan mengembalikan jsonify",
+        "Menggunakan dekorator @app.errorhandler untuk menangkap exception tertentu",
+        "Mengatur variabel DEBUG menjadi True agar pesan error detail tampil ke pengguna",
+        "Membuat middleware WSGI kustom untuk memfilter seluruh respons HTTP keluar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menerapkan pembatasan rate limiting (rate limiting) pada endpoint API login Flask untuk mencegah serangan brute force pada sistem perbankan digital. Ekstensi mana yang paling tepat digunakan?",
+      "options": [
+        "Flask-Limiter untuk mengatur batas kuota request berdasarkan IP atau pengguna",
+        "Flask-CORS untuk membatasi domain mana saja yang boleh mengakses endpoint login",
+        "Flask-Caching untuk menyimpan hasil respons login ke dalam memori Redis",
+        "Flask-Talisman untuk memaksa penggunaan protokol HTTPS yang aman di server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Flask skala besar, Anda mendapati bahwa konfigurasi untuk environment development, testing, dan production tercampur di satu file. Pendekatan standar apa yang dianjurkan Flask untuk mengelola konfigurasi ini?",
+      "options": [
+        "Menggunakan objek class konfigurasi terpisah yang diwarisi dan dimuat via app.config.from_object",
+        "Membuat file konfigurasi terpisah lalu mengimpornya secara manual di setiap file blueprint",
+        "Menyimpan seluruh parameter rahasia langsung di dalam fungsi factory app.py",
+        "Memanfaatkan environment variable sistem operasi tanpa menggunakan file konfigurasi Python"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur pelaporan data di aplikasi Flask memakan waktu hingga 15 detik untuk menghasilkan file PDF besar, yang membuat koneksi HTTP klien terputus karena timeout. Pola penanganan asinkron apa yang paling tepat di Flask?",
+      "options": [
+        "Mengubah worker Gunicorn menjadi mode asynchronous menggunakan pustaka gevent",
+        "Menggunakan Celery untuk menghasilkan PDF di background dan menyediakan endpoint status",
+        "Memanfaatkan fitur yield generator di Flask untuk mengirim data PDF secara streaming",
+        "Meningkatkan kapasitas alokasi RAM pada server cloud untuk mempercepat proses render"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan API Flask yang memproses data transaksi finansial dalam jumlah besar secara asinkron menggunakan Celery. Bagaimana cara terbaik mengelola koneksi database SQLAlchemy di dalam worker Celery agar tidak terjadi kebocoran koneksi (connection leaks)?",
+      "options": [
+        "Membuka koneksi baru di setiap task dan mengandalkan garbage collector Python untuk menutupnya",
+        "Menggunakan decorator atau signal Celery untuk menutup sesi database secara manual setelah task selesai",
+        "Membuat satu instance koneksi global di file utama dan membagikannya ke seluruh worker secara bersamaan",
+        "Menonaktifkan connection pooling pada SQLAlchemy agar koneksi otomatis terputus setiap kueri selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Flask e-commerce Anda mengalami lonjakan trafik saat flash sale. Pemantauan menunjukkan bottleneck terjadi pada endpoint katalog produk yang sering diakses. Pendekatan caching apa yang paling efektif untuk diterapkan pada endpoint tersebut?",
+      "options": [
+        "Menyimpan cache langsung pada memori internal server WSGI menggunakan variabel global Python",
+        "Memanfaatkan Flask-Caching dengan backend Redis untuk menyimpan hasil serialisasi JSON dari kueri produk",
+        "Mengaktifkan mekanisme client-side caching melalui header HTTP Cache-Control tanpa melibatkan server",
+        "Melakukan caching query database secara permanen pada ORM SQLAlchemy tanpa batas waktu kedaluwarsa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa aplikasi Single Page Application (SPA) berbasis React yang berjalan di domain berbeda sering gagal mengakses endpoint Flask API karena masalah CORS. Langkah mitigasi apa yang paling tepat di sisi backend?",
+      "options": [
+        "Menambahkan ekstensi Flask-CORS dan mengonfigurasi origin spesifik domain frontend yang diizinkan",
+        "Memodifikasi konfigurasi Nginx untuk menyisipkan header Access-Control-Allow-Origin secara global",
+        "Mengubah semua metode HTTP pada endpoint Flask agar hanya menerima request menggunakan metode GET",
+        "Menyimpan token autentikasi pengguna langsung ke dalam cookie dengan flag secure yang dimatikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa beberapa request sensitif ke aplikasi Flask mengalami kegagalan otorisasi karena token JWT kedaluwarsa di tengah sesi pengguna. Desain penanganan token apa yang paling ideal untuk menjaga pengalaman pengguna tetap baik?",
+      "options": [
+        "Meminta pengguna untuk melakukan login ulang setiap kali token akses berdurasi 15 menit habis",
+        "Memperpanjang masa aktif token akses menjadi satu minggu penuh demi kenyamanan navigasi pengguna",
+        "Menerapkan mekanisme refresh token dengan menyimpan token pendek untuk akses dan token panjang untuk pembaruan",
+        "Menghilangkan sistem kedaluwarsa token dan menggunakan satu token permanen yang terikat pada perangkat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan aplikasi Flask untuk sistem HRD, data gaji karyawan harus dienkripsi sebelum disimpan ke database PostgreSQL. Di mana lokasi penanganan enkripsi dan dekripsi data yang paling konsisten dan aman?",
+      "options": [
+        "Melakukan enkripsi secara manual pada setiap fungsi route controller sebelum dikirim ke database",
+        "Memanfaatkan fitur Event Listeners atau Hybrid Attributes pada SQLAlchemy untuk enkripsi transparan",
+        "Mengandalkan fitur Transparent Data Encryption (TDE) tingkat sistem operasi pada server database",
+        "Menulis skrip migrasi terpisah yang mengenkripsi seluruh tabel database secara berkala setiap malam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Flask Anda mendadak merespons sangat lambat akibat tingginya jumlah request masuk ke endpoint pencarian teks. Setelah dianalisis, kueri database tidak menggunakan indeks. Langkah optimal apa yang harus diambil pada kode Flask?",
+      "options": [
+        "Menambahkan logika perulangan (looping) di Python untuk memfilter data setelah diambil secara utuh",
+        "Melakukan optimasi kueri ORM dengan memastikan penggunaan indeks dan membatasi kolom yang diambil",
+        "Menaikkan spesifikasi RAM server aplikasi secara berkala untuk menampung proses komputasi yang berat",
+        "Membuat thread pool kustom di dalam aplikasi Flask agar pencarian berjalan secara paralel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengunggah file dokumen berukuran besar langsung dari klien ke Object Storage (seperti AWS S3 atau Google Cloud Storage) tanpa membebani bandwidth server Flask. Pola arsitektur apa yang harus diterapkan?",
+      "options": [
+        "Mengirim file melalui form multipart standar ke Flask, lalu Flask meneruskannya ke Object Storage",
+        "Meminta Flask menghasilkan presigned URL (signed URL) agar klien dapat mengunggah file langsung ke storage",
+        "Menyimpan file sementara ke direktori lokal server Flask sebelum dipindahkan secara terjadwal",
+        "Mengonversi file dokumen menjadi string base64 di sisi klien dan mengirimkannya melalui payload JSON API"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan migrasi database menggunakan Flask-Migrate (Alembic), Anda mendapati bahwa perubahan skema tabel secara tidak sengaja menghapus kolom penting di production. Bagaimana praktik pencegahan terbaik untuk masa mendatang?",
+      "options": [
+        "Selalu menghapus riwayat migrasi lama dan membuat ulang file migrasi inisial setiap ada perubahan",
+        "Meninjau dan menguji file skrip migrasi secara manual sebelum menerapkannya ke server production",
+        "Mematikan fitur otomatisasi migrasi dan melakukan perubahan struktur tabel langsung via CLI database",
+        "Menggunakan mode sinkronisasi otomatis Alembic yang mendeteksi perbedaan tabel tanpa file migrasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah endpoint API Flask menerima input data JSON dari pengguna publik. Anda ingin memastikan struktur dan tipe data input tersebut valid sebelum diproses lebih lanjut oleh business logic. Pendekatan mana yang paling standar industri?",
+      "options": [
+        "Membuat serangkaian kondisi percabangan if-else manual untuk memeriksa keberadaan setiap key",
+        "Menggunakan pustaka validasi skema seperti Marshmallow atau Pydantic untuk mendeklarasikan aturan data",
+        "Mengandalkan mekanisme penanganan error bawaan Python saat mencoba mengakses key dictionary yang kosong",
+        "Menyerahkan seluruh validasi format data langsung kepada database melalui batasan constraint tabel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memantau kesehatan (health check) aplikasi Flask yang berjalan di dalam klaster Kubernetes. Endpoint seperti apa yang sebaiknya disediakan oleh aplikasi?",
+      "options": [
+        "Endpoint tunggal yang mengecek status koneksi database, Redis, dan layanan eksternal secara mendalam",
+        "Endpoint terpisah untuk liveness probe (cek proses hidup) dan readiness probe (cek kesiapan dependensi)",
+        "Endpoint statis berupa file HTML sederhana yang mengonfirmasi bahwa server web WSGI sedang aktif",
+        "Endpoint yang hanya merespons jika jumlah memori yang digunakan server berada di bawah 50 persen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati memori server production membengkak secara drastis setelah aplikasi Flask memproses file CSV besar dalam satu waktu. Bagaimana cara paling tepat menangani file tersebut di Flask?",
+      "options": [
+        "Membaca file secara baris per baris menggunakan generator Python untuk efisiensi memori",
+        "Menggunakan modul gc.collect() secara manual pada setiap akhir fungsi pemrosesan data",
+        "Menaikkan batas alokasi memori RAM pada file konfigurasi WSGI Gunicorn di server",
+        "Memindahkan proses parsing file CSV ke dalam blok try-except agar tidak error"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Flask e-commerce mencatat transaksi pembayaran yang lambat karena gateway pihak ketiga sering timeout. Pendekatan apa yang paling tepat agar proses checkout tidak menggantung di sisi pengguna?",
+      "options": [
+        "Membuat thread baru secara manual di dalam route Flask untuk setiap request pembayaran",
+        "Menggunakan Celery bersama Redis untuk memproses transaksi pembayaran di latar belakang",
+        "Menambahkan argumen async pada fungsi def route Flask untuk menangani proses IO",
+        "Memanfaatkan fitur gevent worker pada Gunicorn agar request otomatis berjalan paralel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mendokumentasikan API Flask menggunakan Swagger UI agar mudah dibaca oleh tim frontend. Ekstensi Flask mana yang paling sesuai dan efisien untuk diintegrasikan?",
+      "options": [
+        "Flask-RESTful dengan tambahan manual HTML template Swagger di direktori static",
+        "Flask-OpenAPI3 yang langsung memvalidasi tipe data menggunakan Pydantic",
+        "Flask-Swagger-Generator untuk melakukan parsing kode Python secara otomatis",
+        "Flask-APIDoc yang membaca komentar docstring pada setiap fungsi route"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Flask Anda menggunakan SQLAlchemy dan mengalami masalah koneksi database terputus (OperationalError) setelah jeda waktu yang lama. Langkah apa yang paling tepat untuk mengatasinya?",
+      "options": [
+        "Mengatur ulang parameter pool_pre_ping bernilai True pada konfigurasi SQLAlchemy",
+        "Menutup sesi database secara manual menggunakan db.session.remove() di awal route",
+        "Menambahkan blok try-except pada setiap pemanggilan query database di aplikasi",
+        "Membuat cron job di sistem operasi untuk merestart layanan Flask setiap satu jam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati performa endpoint pencarian data di Flask sangat lambat karena melakukan query kompleks ke tabel database besar tanpa indeks. Apa langkah perbaikan yang paling efektif?",
+      "options": [
+        "Membuat indeks pada kolom database yang sering menjadi parameter pencarian",
+        "Menyimpan seluruh hasil tabel database ke dalam memori cache aplikasi selamanya",
+        "Mengubah fungsi database dari SQL relational menjadi NoSQL berbasis dokumen",
+        "Menggunakan pagination dengan limit kecil pada setiap hasil query pencarian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi Flask multi-tenant, koneksi database harus ditentukan secara dinamis berdasarkan subdomain yang diakses pengguna. Bagaimana cara mengimplementasikannya?",
+      "options": [
+        "Membuat middleware kustom untuk mengubah string koneksi SQLAlchemy berdasarkan request host",
+        "Menulis ulang seluruh model ORM secara dinamis setiap kali ada request masuk ke server",
+        "Menggunakan variabel global pada modul utama Flask untuk menyimpan status koneksi aktif",
+        "Membuat aplikasi Flask terpisah untuk setiap tenant yang berbeda pada port berbeda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menangani error kustom secara global di aplikasi Flask agar setiap exception mengembalikan format JSON yang konsisten ke klien. Fitur Flask apa yang harus digunakan?",
+      "options": [
+        "Dekorator @app.errorhandler() untuk menangkap berbagai jenis exception aplikasi",
+        "Modul logging bawaan Python untuk mencatat setiap traceback error ke file log",
+        "Fungsi abort() yang dipanggil di dalam blok try-except pada setiap fungsi route",
+        "Pengaturan debug=True pada objek aplikasi Flask saat instance utama dibuat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim keamanan meminta agar cookie sesi autentikasi pada aplikasi Flask tidak dapat diakses melalui skrip JavaScript klien untuk mencegah serangan XSS. Konfigurasi Flask mana yang harus diaktifkan?",
+      "options": [
+        "SESSION_COOKIE_HTTPONLY bernilai True pada konfigurasi utama aplikasi Flask",
+        "SESSION_COOKIE_SECURE bernilai True agar cookie hanya dikirim via jalur HTTPS",
+        "REMEMBER_COOKIE_DURATION untuk membatasi masa aktif sesi login pengguna",
+        "PERMANENT_SESSION_LIFETIME untuk menghapus sesi otomatis setelah waktu tertentu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menjalankan tugas terjadwal (background cron job) setiap tengah malam di dalam aplikasi Flask tanpa menggunakan server terpisah seperti Celery. Pendekatan paling sederhana apa yang bisa dipakai?",
+      "options": [
+        "Mengintegrasikan pustaka APScheduler langsung ke dalam inisialisasi aplikasi Flask",
+        "Memanfaatkan perulangan while True dengan fungsi time.sleep di dalam thread utama",
+        "Membuat route Flask khusus yang dipanggil secara otomatis oleh browser klien",
+        "Mengandalkan fungsi after_request milik Flask untuk mengecek waktu sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menulis kode pengujian (testing) untuk endpoint Flask yang memerlukan login, bagaimana cara terbaik menghindari pengulangan proses autentikasi di setiap fungsi test?",
+      "options": [
+        "Membuat fixture Pytest yang mengembalikan client uji dengan header otorisasi siap pakai",
+        "Menonaktifkan sistem autentikasi secara permanen pada file konfigurasi environment testing",
+        "Menyimpan token autentikasi ke dalam file teks lokal yang dibaca oleh setiap test case",
+        "Melakukan request login sungguhan ke database production di dalam setiap fungsi test"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

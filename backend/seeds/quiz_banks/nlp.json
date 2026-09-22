@@ -1,0 +1,306 @@
+{
+  "skill": "NLP",
+  "skill_key": "nlp",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan chatbot layanan pelanggan berbahasa Indonesia untuk bank digital. Seringkali nasabah mencampur bahasa Indonesia dan bahasa Inggris dalam satu kalimat, contohnya: \"Min, mau tanya dong, cara top-up saldo e-wallet pakai VA bca gimana ya?\". Pendekatan tokenisasi apa yang paling tepat agar model BERT pre-trained Anda tidak menghasilkan banyak token [UNK] (unknown)?",
+      "options": [
+        "Menggunakan standard WordPiece tokenizer bawaan model multilingual BERT",
+        "Membuat custom rule-based tokenizer yang memisahkan huruf kapital dan kecil",
+        "Melakukan stemming seluruh kalimat menggunakan Sastrawi sebelum tokenisasi",
+        "Mengganti semua istilah bahasa Inggris ke padanan baku bahasa Indonesia"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim analis sentimen di sebuah e-commerce ingin mendeteksi ulasan palsu (fake reviews) yang ditulis oleh bot. Ulasan tersebut biasanya memiliki pola struktur kalimat yang sangat kaku dan repetitif meskipun kosakatanya beragam. Fitur representasi teks apa yang paling efektif menangkap struktur sintaksis kaku ini untuk model klasifikasi?",
+      "options": [
+        "TF-IDF dengan pembobotan unigram dan bigram pada tingkat kata",
+        "Word Embedding statis menggunakan FastText berbasis sub-kata",
+        "Kombinasi embedding kalimat dan part-of-speech (POS) tagging n-grams",
+        "Distribusi kemunculan karakter khusus menggunakan bag-of-chars"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi berita online ingin mengelompokkan ribuan artikel harian ke dalam kanal otomatis (Politik, Ekonomi, Olahraga, Hiburan). Model k-Means clustering yang Anda terapkan pada vektor TF-IDF menghasilkan cluster yang kurang tajam karena kosakata umum yang sering muncul di semua kanal mendominasi perhitungan jarak. Langkah preprocessing apa yang paling tepat untuk mengatasi hal ini?",
+      "options": [
+        "Menghapus seluruh angka dan tanda baca menggunakan regex",
+        "Menerapkan pembobotan TF-IDF untuk menurunkan pengaruh kata umum",
+        "Melakukan lemmatisasi agar semua kata kembali ke bentuk dasarnya",
+        "Membatasi maksimum fitur kosakata (max_features) menjadi 500 kata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengekstrak nama entitas (NER) berupa nama orang, lokasi, dan nama perusahaan dari transkrip percakapan WhatsApp call center yang penuh dengan singkatan gaul (seperti 'jkt', 'sby', 'bsi'). Model NER berbasis rule-based gagal total. Strategi transfer learning apa yang paling efisien untuk mengatasi keterbatasan data latih berlabel ini?",
+      "options": [
+        "Melatih ulang model spaCy dari awal menggunakan korpus chat WhatsApp",
+        "Melakukan fine-tuning model IndoLEM BERT menggunakan teknik masking khusus",
+        "Membuat kamus gazetteer raksasa berisi seluruh nama tempat dan kota",
+        "Mengonversi semua singkatan ke bentuk formal via rule lalu jalankan CRF"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup agritech ingin membangun sistem tanya jawab otomatis (QA System) untuk petani mengenai harga pupuk berdasarkan dokumen PDF panduan pemerintah yang tebal. Pendekatan Retrieval-Augmented Generation (RAG) dipilih. Tantangan utamanya adalah dokumen PDF memiliki banyak tabel harga yang rusak jika diekstrak secara teks biasa. Apa solusi arsitektur terbaik untuk masalah ini?",
+      "options": [
+        "Mengubah seluruh tabel PDF menjadi gambar lalu memakai model OCR",
+        "Memotong dokumen berdasarkan jumlah karakter secara sliding window",
+        "Menggunakan parser berbasis visi komputer khusus tabel sebelum di-embed",
+        "Menulis skrip regex manual untuk mendeteksi angka rupiah pada dokumen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengevaluasi model klasifikasi teks untuk mendeteksi ujaran kebencian di media sosial. Dari 10.000 data uji, hanya 200 data yang merupakan ujaran kebencian (highly imbalanced). Metrik evaluasi manakah yang paling menyesatkan jika digunakan sebagai acuan utama performa model?",
+      "options": [
+        "Precision pada kelas positif ujaran kebencian",
+        "Recall pada kelas positif ujaran kebencian",
+        "Akurasi total (overall accuracy) dari keseluruhan prediksi",
+        "Macro-averaged F1-score dari kedua kelas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform HRTech menerima ribuan CV pelamar kerja dalam format PDF dengan layout yang sangat beragam. Tugas Anda adalah mengekstrak bagian 'Pengalaman Kerja' secara otomatis. Model sequence labeling berbasis BiLSTM-CRF sering gagal karena batas antar bagian CV tidak memiliki penanda yang konsisten. Pendekatan modern apa yang paling robust?",
+      "options": [
+        "Memanfaatkan Large Language Model dengan teknik prompt engineering terstruktur",
+        "Menggunakan algoritma Levenshtein distance untuk mencocokkan judul bagian",
+        "Melatih ulang model Naive Bayes menggunakan fitur posisi koordinat teks",
+        "Memaksa semua kandidat mengunggah CV dengan template standar perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Departemen Legal perusahaan multinasional meminta Anda meringkas dokumen kontrak kerja sama setebal 50 halaman ke dalam 3 paragraf poin penting. Model transformer encoder-decoder (seperti T5) yang Anda gunakan mengalami kendala truncate karena panjang dokumen melebihi batas maximum context window 512 token. Strategi apa yang paling tepat?",
+      "options": [
+        "Menerapkan metode Map-Reduce summarization dengan memecah dokumen",
+        "Membuang seluruh klausa pasal administratif dan hanya mengambil pasal utama",
+        "Memperpanjang positional embedding model secara paksa melalui interpolasi",
+        "Menggunakan metode extractive summarization berbasis TextRank tradisional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati model analisis sentimen ulasan produk mengalami penurunan performa (data drift) secara signifikan setelah pergantian tahun, karena banyak istilah slang baru yang digunakan konsumen Gen Z. Apa langkah operasional pertama yang paling efisien untuk memperbaiki model di production?",
+      "options": [
+        "Langsung melatih ulang seluruh arsitektur deep learning dari awal",
+        "Mengumpulkan sampel data baru yang mencerminkan tren slang dan lakukan fine-tuning",
+        "Menambahkan kamus sinonim manual untuk menerjemahkan bahasa slang ke formal",
+        "Menurunkan threshold probabilitas klasifikasi pada model yang sedang berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan sistem pencarian semantik (semantic search) untuk direktori regulasi perusahaan, Anda menggunakan dense retriever untuk menghasilkan embedding dokumen. Masalah yang sering terjadi adalah dokumen hukum yang sangat spesifik sering kalah relevansi dibanding dokumen umum yang panjang. Teknik apa yang dapat meningkatkan akurasi retrieval?",
+      "options": [
+        "Mengganti seluruh embedding dengan pencocokan kata kunci BM25 murni",
+        "Menerapkan hybrid search yang menggabungkan sparse retrieval dan dense retrieval",
+        "Menghapus kata-kata hubung (stop words) dari query sebelum di-encode",
+        "Memperbesar dimensi vektor embedding dari 768 menjadi 1536 unit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem mesin penerjemah bahasa daerah (Jawa ke Indonesia) untuk aplikasi wisata. Data paralel yang tersedia sangat terbatas, hanya sekitar 5.000 kalimat. Pendekatan apa yang paling efektif untuk mengatasi keterbatasan data ini?",
+      "options": [
+        "Melatih model Transformer dari awal menggunakan seluruh korpus bahasa Jawa yang ada",
+        "Melakukan fine-tuning pada model IndoBERT yang sudah ada dengan teknik transfer learning",
+        "Menggunakan aturan tata bahasa manual berbasis kamus bilingual tanpa model statistik",
+        "Memperbanyak data secara masif menggunakan mesin penerjemah komersial tanpa validasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform e-learning ingin mendeteksi tingkat kebingungan siswa dari pertanyaan yang mereka ajukan di forum diskusi. Pertanyaan sering kali singkat dan tidak memiliki konteks gramatikal yang jelas. Langkah pra-pemrosesan NLP mana yang paling krusial untuk kasus ini?",
+      "options": [
+        "Menghapus seluruh angka dan simbol tanpa pengecualian untuk mengurangi noise",
+        "Melakukan lematisasi ketat menggunakan kamus baku bahasa Indonesia formal",
+        "Menangani singkatan informal dan slang lokal menggunakan kamus normalisasi khusus",
+        "Melakukan stemming menggunakan algoritma Nazief & Adriani secara agresif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membangun sistem klasifikasi niat (intent classification) untuk sistem tiket IT internal. Sebagian besar karyawan menuliskan keluhan dengan variasi istilah teknis yang sangat luas. Representasi fitur apa yang paling tepat untuk menangkap kemiripan semantik antar istilah tersebut?",
+      "options": [
+        "Menggunakan matriks TF-IDF tradisional dengan n-gram unigram dan bigram",
+        "Memanfaatkan word embedding prarilis seperti FastText yang menangani out-of-vocabulary",
+        "Menghitung frekuensi kemunculan kata mutlak tanpanormalisasi bobot dokumen",
+        "Menerapkan one-hot encoding pada seluruh kosakata unik di dalam dataset perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek ekstraksi informasi dari laporan keuangan perusahaan, Anda mendapati bahwa model NER sering gagal mengenali nama entitas perusahaan baru yang tidak pernah muncul saat pelatihan. Strategi mitigasi apa yang paling tepat?",
+      "options": [
+        "Menambahkan aturan berbasis pola regex untuk mendeteksi akhiran kata seperti PT atau Tbk",
+        "Mengganti seluruh arsitektur model menjadi pendekatan statistik berbasis aturan murni",
+        "Menurunkan ambang batas probabilitas output softmax pada lapisan klasifikasi token",
+        "Menghapus kalimat yang mengandung nama perusahaan asing dari data pelatihan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi kesehatan mental ingin menganalisis tingkat stres pengguna dari jurnal harian mereka. Model transformer mengalami masalah memori (Out of Memory) karena beberapa jurnal sangat panjang melebihi batas token 512. Solusi arsitektural apa yang paling tepat?",
+      "options": [
+        "Memotong paksa setiap jurnal tepat pada karakter ke-500 tanpa memperdulikan kalimat",
+        "Menggunakan pendekatan Longformer atau model dengan atensi sparse untuk dokumen panjang",
+        "Memecah dokumen menjadi kalimat terpisah dan menganalisis setiap kalimat secara acak",
+        "Menaikkan kapasitas RAM server utama tanpa mengubah arsitektur model NLP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan latensi model deteksi spam SMS agar dapat berjalan secara real-time di server berdaya rendah. Model BERT ukuran penuh terlalu lambat. Teknik kompresi model apa yang paling efektif diterapkan?",
+      "options": [
+        "Melakukan kuantisasi model ke int8 dan menggunakan arsitektur DistilBERT",
+        "Menghapus seluruh lapisan embedding dan melatih ulang dari awal dengan data baru",
+        "Mengganti fungsi aktivasi ReLU dengan fungsi sigmoid pada seluruh lapisan tersembunyi",
+        "Menambahkan jumlah kepala atensi (attention heads) untuk mempercepat ekstraksi fitur"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim produk meminta fitur deteksi topik otomatis untuk kolom komentar berita. Topik berita sangat dinamis dan berubah setiap hari mengikuti isu yang sedang viral. Algoritma pemodelan topik (topic modeling) mana yang paling sesuai?",
+      "options": [
+        "Latent Dirichlet Allocation (LDA) statis dengan jumlah topik yang dikunci",
+        "BERTopic yang menggabungkan transformer embedding dengan klasterisasi densitas",
+        "K-Means clustering langsung pada matriks frekuensi kata tanpa reduksi dimensi",
+        "Naive Bayes classifier yang dilatih ulang setiap jam menggunakan data pseudo-label"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan fitur voice-to-text untuk aplikasi pencatatan rapat bahasa Indonesia, hasil transkripsi sering mengandung banyak kata pengisi (filler words) seperti 'eee', 'anu', dan pengulangan kata yang tidak perlu. Langkah NLP apa yang paling efektif untuk membersihkannya sebelum diringkas?",
+      "options": [
+        "Menerapkan aturan berbasis pola ekspresi reguler (regex) untuk menghapus pola filler umum",
+        "Menggunakan kamus sinonim untuk mengganti setiap kata dengan padanan formalnya",
+        "Melakukan stemming pada setiap kata kerja yang muncul dalam transkrip",
+        "Menerapkan tokenisasi subword untuk memecah kata pengisi menjadi bagian kecil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah lembaga riset ingin menganalisis opini publik terhadap kebijakan subsidi energi di Twitter. Data tweet sangat kotor dengan banyak emoji, singkatan gaul, dan kesalahan ejaan. Pendekatan tokenisasi apa yang paling direkomendasikan untuk model berbasis BERT?",
+      "options": [
+        "Word-level tokenizer berbasis spasi kosong setelah dibersihkan secara manual",
+        "Character-level tokenizer untuk menghindari masalah kata out-of-vocabulary",
+        "Subword tokenizer seperti WordPiece atau Byte-Pair Encoding yang dilatih pada korpus multibahasa",
+        "Rule-based tokenizer yang memotong teks berdasarkan tanda baca titik dan koma saja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa model klasifikasi dokumen hukum sering memberikan prediksi salah karena bias terhadap dokumen yang jumlahnya jauh lebih mendominasi dalam dataset (imbalanced dataset). Tindakan penanganan level data apa yang paling tepat?",
+      "options": [
+        "Menggunakan teknik augmentasi teks seperti back-translation atau synonym replacement pada kelas minoritas",
+        "Menghapus seluruh data dari kelas mayoritas hingga jumlahnya sama persis dengan kelas minoritas",
+        "Menaikkan bobot penalti penalti loss function pada kelas mayoritas saat proses pelatihan",
+        "Mengganti metrik evaluasi dari F1-Score menjadi Accuracy agar performa terlihat lebih baik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menganalisis umpan balik pelanggan dari aplikasi mobile banking yang penuh dengan singkatan gaul, typo, dan bahasa daerah. Pendekatan tokenisasi apa yang paling tepat untuk mengatasi masalah OOV (Out-of-Vocabulary) pada model deep learning Anda?",
+      "options": [
+        "Menggunakan pendekatan tokenisasi berbasis kata dengan kamus KBBI baku",
+        "Menerapkan subword tokenization seperti Byte-Pair Encoding (BPE)",
+        "Melakukan penghapusan seluruh kata yang tidak terdaftar di kamus",
+        "Mengganti setiap kata tidak baku secara manual dengan regex statis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform marketplace lokal ingin mendeteksi produk tiruan berdasarkan deskripsi penjual yang sengaja memelesetkan nama merek (misal: 'N1ke', 'Naike', 'N-ike'). Teknik representasi teks apa yang paling efektif untuk menangkap kemiripan ortografis ini?",
+      "options": [
+        "TF-IDF dengan pembobotan unigram berbasis frekuensi kemunculan",
+        "One-hot encoding pada tingkat kata seluruh deskripsi produk",
+        "Character n-gram TF-IDF untuk menangkap pola ejaan yang mirip",
+        "Word2Vec trained pada korpus teks bahasa Inggris standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang melatih model klasifikasi teks untuk mendeteksi penipuan online pada chat marketplace. Data chat sangat tidak seimbang, di mana kasus penipuan hanya 1% dari total data. Metrik evaluasi apa yang paling tepat digunakan selama proses iterasi model?",
+      "options": [
+        "Accuracy karena mengukur keseluruhan ketepatan tebakan model",
+        "Precision murni untuk memastikan tidak ada data normal yang salah",
+        "Area Under the ROC Curve (ROC-AUC) dan Precision-Recall AUC",
+        "Mean Squared Error untuk menghitung jarak deviasi prediksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek ekstraksi informasi dokumen klaim asuransi, format tanggal sangat beragam (misal: '12-Jan-2023', '12 Januari 2023', '12/01/23'). Setelah model NER mendeteksi entitas tanggal, langkah pra-pemrosesan apa yang paling efisien untuk standardisasi?",
+      "options": [
+        "Membuat aturan regex terpisah untuk setiap variasi format yang ada",
+        "Menggunakan pustaka parsing tanggal heuristik seperti dateparser",
+        "Melatih ulang seluruh lapisan transformer khusus untuk format tanggal",
+        "Menolak dokumen yang tidak menggunakan format tanggal standar perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan model IndoBERT untuk klasifikasi kategori produk, namun performa model menurun drastis ketika diuji pada data ulasan yang ditulis dalam bahasa campuran Indonesia-Inggris (Grup Jaksel). Strategi mitigasi apa yang paling tepat?",
+      "options": [
+        "Melakukan fine-tuning lanjutan (domain adaptation) menggunakan data ulasan campur",
+        "Menerjemahkan seluruh kata bahasa Inggris ke bahasa Indonesia baku via Google Translate",
+        "Menghapus semua kalimat yang mengandung unsur bahasa Inggris sebelum prediksi",
+        "Mengganti arsitektur model menjadi LSTM konvensional tanpa pre-training"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah instansi pemerintah ingin melakukan clustering dokumen kebijakan publik yang sangat panjang. Anda mendapati bahwa algoritma K-Means pada vektor TF-IDF menghasilkan cluster yang buruk karena masalah sparsitas. Apa solusi arsitektural terbaik?",
+      "options": [
+        "Menaikkan batas maksimum fitur TF-IDF hingga 100.000 kata unik",
+        "Menggunakan Sentence Transformers untuk menghasilkan embedding padat, lalu UMAP dan HDBSCAN",
+        "Memotong setiap dokumen agar hanya mengambil 10 kata pertama saja",
+        "Mengubah seluruh teks dokumen menjadi huruf kapital untuk mengurangi variasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati model ekstraksi sentimen berbasis aspek (ABSA) sering salah mengaitkan sentimen positif pada ulasan: 'Pelayanannya sangat lambat, tapi makanannya luar biasa enak'. Pendekatan NLP apa yang dapat mengatasi kompleksitas ini?",
+      "options": [
+        "Analisis sentimen tingkat dokumen global tanpa melihat konteks kalimat",
+        "Pendekatan berbasis aturan kamus sentimen positif dan negatif sederhana",
+        "Pemodelan dependensi sintaksis (dependency parsing) untuk menghubungkan kata sifat dan objek",
+        "Menghapus kata sambung 'tapi' agar kalimat terpecah menjadi dua sentimen terpisah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan sistem pencarian dokumen internal perusahaan, hasil pencarian sering gagal karena pengguna menggunakan sinonim yang tidak ada di dokumen (misal mencari 'gaji' tapi dokumen menulis 'remunerasi'). Fitur NLP apa yang wajib ditambahkan?",
+      "options": [
+        "Pencarian berbasis exact match string untuk menjaga keakuratan hasil",
+        "Sparse retrieval menggunakan BM25 murni tanpa ekspansi kueri",
+        "Dense vector search menggunakan embedding model yang menangkap makna semantik",
+        "Spell checker otomatis untuk mengoreksi kata 'remunerasi' menjadi 'gaji'"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mempercepat waktu inferensi model transformer klasifikasi teks dari 200ms menjadi di bawah 50ms untuk aplikasi real-time, dengan toleransi penurunan akurasi yang minimal. Teknik optimasi mana yang paling tepat diterapkan?",
+      "options": [
+        "Melakukan kuantisasi model (quantization) dari FP32 ke INT8",
+        "Menambah jumlah lapisan (layers) transformer untuk memperkaya representasi",
+        "Mengganti seluruh tokenizer dengan metode pencarian kamus manual",
+        "Melatih ulang model dari awal menggunakan arsitektur bag-of-words"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi HR ingin merangkum catatan wawancara kandidat. Menggunakan model LLM pre-trained, Anda mendapati model sering menambahkan informasi palsu yang tidak ada di transkrip asli (hallucination). Langkah mitigasi terbaik saat prompting adalah:",
+      "options": [
+        "Menurunkan parameter temperature mendekati angka 0 dan memberikan instruksi grounded",
+        "Meminta model untuk menghasilkan ringkasan yang lebih kreatif dan panjang",
+        "Menaikkan parameter temperature hingga maksimal agar model lebih eksploratif",
+        "Menghapus seluruh konteks transkrip dan meminta model menebak kepribadian kandidat"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

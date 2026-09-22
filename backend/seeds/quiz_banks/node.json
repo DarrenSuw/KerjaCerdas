@@ -1,0 +1,306 @@
+{
+  "skill": "Node.js",
+  "skill_key": "node",
+  "questions": [
+    {
+      "question": "Aplikasi Express.js Anda sering mengalami penurunan performa secara drastis saat memproses file laporan CSV berukuran 50MB yang diunggah oleh pengguna. Langkah apa yang paling tepat untuk mengatasi masalah blocking pada event loop ini?",
+      "options": [
+        "Memindahkan seluruh proses parsing CSV ke dalam Worker Threads terpisah",
+        "Mengganti modul filesystem bawaan dengan pustaka pihak ketiga berbasis sinkron",
+        "Menaikkan batas alokasi memori heap V8 melalui flag terminal node",
+        "Menggunakan middleware kompresi gzip pada respons HTTP yang dikirim"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi Node.js ke lingkungan production menggunakan Docker, kontainer sering keluar secara tiba-tiba tanpa log error yang jelas akibat kehabisan memori. Apa tindakan preventif terbaik yang harus dilakukan pada file Dockerfile?",
+      "options": [
+        "Menambahkan flag --max-old-space-size pada perintah eksekusi node",
+        "Mengubah basis image Docker dari Alpine menjadi Ubuntu terbaru",
+        "Mematikan fitur garbage collection otomatis di dalam skrip utama",
+        "Menjalankan aplikasi menggunakan modul cluster bawaan Node.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah API backend e-commerce mengalami lonjakan trafik saat flash sale. Pemantauan menunjukkan banyak koneksi database menggantung karena kueri lambat, membuat server Node.js kehabisan pool koneksi. Bagaimana cara menangani kegagalan ini secara elegan?",
+      "options": [
+        "Menerapkan mekanisme pembatasan rate limit dan timeout pada pool database",
+        "Menutup seluruh proses aplikasi secara paksa agar kontainer melakukan restart",
+        "Menonaktifkan sistem pencatatan log agar beban CPU server berkurang",
+        "Memperbesar kapasitas penyimpanan hard disk pada server database utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati memori aplikasi backend Node.js terus merangkak naik (memory leak) dari hari ke hari hingga akhirnya crash. Alat dan pendekatan apa yang paling efektif untuk mengidentifikasi akar permasalahan di lingkungan staging?",
+      "options": [
+        "Mengambil snapshot heap menggunakan v8 dan menganalisisnya via Chrome DevTools",
+        "Memeriksa ulang seluruh blok kode asynchronous menggunakan try-catch",
+        "Meningkatkan jumlah worker PM2 untuk mendistribusikan beban memori",
+        "Mengganti semua fungsi callback tradisional dengan sintaks async-await"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan microservices menggunakan NestJS/Express, Anda perlu memastikan bahwa token JWT yang dikirim klien divalidasi dengan efisien tanpa membebani database utama untuk pengecokan hak akses setiap detik. Solusi arsitektur apa yang paling tepat?",
+      "options": [
+        "Menyimpan data sesi aktif dan peran pengguna di dalam cache Redis terdistribusi",
+        "Melakukan enkripsi ulang token pada setiap endpoint middleware keamanan",
+        "Menyertakan seluruh data riwayat transaksi pengguna langsung di dalam payload JWT",
+        "Membuat tabel khusus database relasional untuk mencatat setiap klik pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Node.js Anda gagal terhubung ke database PostgreSQL di cloud saat dijalankan di lingkungan Kubernetes, meskipun variabel lingkungan (environment variables) sudah diatur. Apa langkah pertama yang paling logis untuk debugging?",
+      "options": [
+        "Memverifikasi keberadaan dan nilai Secret Kubernetes yang di-mount ke pod",
+        "Menginstal ulang modul node_modules langsung di dalam container produksi",
+        "Mengubah versi pustaka driver PostgreSQL ke versi yang paling lama",
+        "Menghapus mekanisme penanganan error koneksi agar aplikasi tidak berhenti"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun fitur notifikasi real-time menggunakan WebSockets di Node.js. Ketika jumlah klien aktif mencapai sepuluh ribu, server tunggal mulai kewalahan menjaga koneksi tetap terbuka. Pendekatan skalabilitas apa yang harus diterapkan?",
+      "options": [
+        "Mengintegrasikan Redis Pub/Sub untuk menyinkronkan pesan antar beberapa instans server",
+        "Memindahkan seluruh logika pengiriman pesan WebSocket ke sisi klien browser",
+        "Menggunakan protokol HTTP/1.1 standar untuk menggantikan protokol WebSocket",
+        "Menurunkan frekuensi detak jantung (heartbeat) koneksi menjadi sekali setiap jam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah endpoint API pencarian produk di aplikasi Express.js sering menerima permintaan berulang dengan parameter yang sama, menyebabkan beban database meningkat. Strategi optimal apa yang bisa diterapkan pada layer aplikasi?",
+      "options": [
+        "Menerapkan caching respons menggunakan Redis dengan TTL yang disesuaikan",
+        "Mengonversi semua kueri SQL menjadi prosedur tersimpan di database",
+        "Mengharuskan pengguna melakukan login ulang sebelum melakukan pencarian",
+        "Menambahkan jeda buatan (setTimeout) pada setiap respons API yang lambat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan kerentanan keamanan pada salah satu dependensi pihak ketiga (npm package) di proyek besar Anda, namun paket tersebut belum memiliki patch resmi dari pembuatnya. Langkah mitigasi darurat apa yang paling tepat?",
+      "options": [
+        "Memanfaatkan fitur npm overrides atau resolutions untuk mengganti sub-dependensi",
+        "Menghapus seluruh folder node_modules dan menginstal ulang dari awal",
+        "Menonaktifkan fitur pemeriksaan keamanan otomatis pada pipeline CI/CD",
+        "Mengubah hak akses file package.json menjadi read-only di sistem operasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proses deployment otomatis (CI/CD) aplikasi Node.js Anda sering gagal di tengah jalan karena kehabisan waktu (timeout) saat mengunduh modul npm berukuran besar. Bagaimana cara mengoptimalkan proses instalasi dependensi di server CI?",
+      "options": [
+        "Memanfaatkan perintah npm ci dan melakukan caching pada direktori node_modules",
+        "Menggunakan perintah npm install dengan opsi --no-optional dan --force",
+        "Menghapus file package-lock.json agar proses unduhan menjadi lebih fleksibel",
+        "Beralih menggunakan pustaka pengelolaan paket yang berjalan secara offline total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menggunakan async/await di dalam loop 'Array.prototype.forEach' untuk memproses batch data transaksi pembayaran. Anda mendapati kode berjalan tanpa menunggu seluruh proses selesai. Bagaimana cara memperbaikinya secara tepat?",
+      "options": [
+        "Mengganti metode forEach dengan struktur perulangan 'for...of' tradisional",
+        "Menambahkan dekorator async pada fungsi callback di dalam metode forEach",
+        "Membungkus seluruh pemanggilan metode forEach dengan fungsi Promise.all",
+        "Memodifikasi konfigurasi runtime Node.js agar mendukung async di callback"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Express.js melakukan eksekusi query database yang lambat secara sinkron di dalam event loop utama ketika terjadi traffic tinggi, menyebabkan seluruh request lain tertahan. Pendekatan apa yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Memindahkan proses berat tersebut ke Worker Threads agar berjalan di latar belakang",
+        "Mengubah fungsi database driver dari protokol TCP menjadi koneksi berbasis HTTP",
+        "Menaikkan batas alokasi memori heap V8 menggunakan parameter max-old-space-size",
+        "Mengganti framework Express.js ke framework lain yang mendukung asynchronous murni"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengintegrasikan library pihak ketiga berbahasa C++ native ke dalam backend Node.js untuk pemrosesan citra. Apa tool atau pendekatan standar industri yang harus digunakan saat melakukan instalasi dependensi tersebut?",
+      "options": [
+        "Memastikan toolchain build lokal tersedia agar node-gyp dapat melakukan kompilasi modul",
+        "Mengunduh file binari secara manual dan menyimpannya langsung ke dalam folder root",
+        "Menggunakan opsi flag khusus --ignore-scripts pada saat menjalankan perintah npm install",
+        "Menulis ulang modul C++ tersebut ke dalam bahasa JavaScript murni berbasis ES6+"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi microservice Node.js Anda perlu mengirimkan pesan event ke sistem lain menggunakan Apache Kafka. Anda mendapati beberapa pesan terkirim ganda saat terjadi gangguan jaringan sementara. Langkah mitigasi apa yang harus diterapkan?",
+      "options": [
+        "Menerapkan mekanisme idempotensi pada sisi layanan konsumen pesan Kafka",
+        "Menaikkan nilai parameter waktu tunggu timeout koneksi TCP pada produsen",
+        "Mengurangi ukuran batch pengiriman pesan agar beban jaringan menjadi ringan",
+        "Mengaktifkan mode sinkronisasi ketat pada konfigurasi penyimpanan broker"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin melakukan unit testing pada fungsi pengendali (controller) Express.js yang melakukan operasi tulis ke database eksternal. Praktik terbaik apa yang harus dilakukan agar pengujian berjalan cepat dan terisolasi?",
+      "options": [
+        "Membuat objek mock atau stub untuk menggantikan lapisan layanan basis data",
+        "Menyiapkan database in-memory terpisah yang diinisialisasi sebelum pengujian",
+        "Menjalankan skrip migrasi data penuh di awal setiap siklus kasus pengujian",
+        "Menggunakan koneksi jaringan lokal khusus yang terhubung ke server staging"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah API backend Node.js menerima file upload berukuran besar dari pengguna secara bersamaan, menyebabkan penggunaan memori melonjak drastis hingga terjadi crash. Bagaimana cara menangani aliran data file ini secara optimal?",
+      "options": [
+        "Menggunakan sistem stream berbasis pipa untuk mengalirkan data secara bertahap",
+        "Menaikkan kapasitas penyimpanan sementara disk server sebelum proses dimulai",
+        "Membatasi ukuran string base64 maksimal pada payload header permintaan klien",
+        "Menyimpan seluruh buffer data ke dalam variabel global sebelum divalidasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati proses aplikasi Node.js tiba-tiba berhenti tanpa meninggalkan jejak log error yang jelas di terminal server production. Apa langkah awal diagnostik yang paling tepat untuk melacak penyebabnya?",
+      "options": [
+        "Mengonfigurasi listener untuk event unhandledRejection dan uncaughtException",
+        "Melakukan instalasi ulang seluruh paket dependensi melalui perintah npm ci",
+        "Menurunkan tingkat verbositas log aplikasi untuk menghemat sumber daya sistem",
+        "Memeriksa ulang versi Node.js yang terpasang apakah sesuai dengan package.json"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam arsitektur microservices, aplikasi Express.js Anda perlu memanggil beberapa layanan eksternal secara paralel. Jika salah satu layanan lambat, Anda ingin memastikan aplikasi tidak menunggu terlalu lama. Pola apa yang harus diterapkan?",
+      "options": [
+        "Menggunakan fungsi Promise.allSettled bersama implementasi batas waktu timeout",
+        "Menjalankan pemanggilan secara berurutan menggunakan perulangan for bertingkat",
+        "Mengabaikan respons dari layanan eksternal yang lambat tanpa penanganan khusus",
+        "Memaksa pemutusan koneksi soket jaringan secara paksa menggunakan perintah kill"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengamankan aplikasi Express.js dari serangan umum seperti HTTP Parameter Pollution dan Cross-Site Scripting pada level header HTTP. Paket middleware apa yang paling tepat dipasang?",
+      "options": [
+        "Menggunakan modul Helmet untuk mengatur konfigurasi header keamanan HTTP",
+        "Mengaktifkan modul Compression untuk memperkecil ukuran respons data json",
+        "Memasang modul Morgan untuk mencatat seluruh aktivitas akses masuk klien",
+        "Memanfaatkan modul Cors untuk membatasi domain asal permintaan API luar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi backend Node.js berjalan di lingkungan cluster multi-core untuk memaksimalkan penggunaan CPU. Bagaimana cara berbagi status sesi pengguna (user session) antar proses worker yang berbeda?",
+      "options": [
+        "Menyimpan data sesi pada layanan penyimpanan terpusat eksternal seperti Redis",
+        "Memanfaatkan variabel global di dalam memori proses utama master cluster",
+        "Menuliskan data sesi ke dalam file lokal bersama yang diakses secara bergantian",
+        "Mengandalkan mekanisme sticky session pada load balancer eksternal semata"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Node.js Anda menggunakan package winston untuk logging, tetapi ketika terjadi error fatal di production, log tidak tersimpan secara persisten karena kontainer sering direstart. Langkah paling tepat untuk mengatasi masalah ini adalah?",
+      "options": [
+        "Mengubah level log dari info menjadi silly agar semua aktivitas tercatat secara detail",
+        "Menambahkan transport baru yang mengarahkan output log langsung ke file lokal kontainer",
+        "Mengonfigurasi transport winston untuk mengirim log ke stdout agar ditangkap oleh sistem logging platform",
+        "Membuat middleware Express khusus yang menulis ulang pesan error ke dalam database utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati endpoint `/export-pdf` di Express.js sering membuat event loop terblokir beberapa detik saat memproses laporan besar. Apa solusi arsitektural yang paling tepat untuk masalah ini?",
+      "options": [
+        "Memindahkan proses pembuatan PDF ke dalam child process terpisah menggunakan modul worker_threads",
+        "Mengganti fungsi sinkronus di dalam endpoint dengan teknik synchronous polling berbasis interval",
+        "Menaikkan batas maksimum ukuran heap memory V8 menggunakan flag --max-old-space-size di CLI",
+        "Menambahkan middleware kompresi gzip pada respons Express untuk mempercepat pengiriman data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat mengembangkan API autentikasi, Anda perlu menyimpan password pengguna dengan aman sebelum dimasukkan ke database PostgreSQL. Pendekatan kriptografi apa yang harus digunakan?",
+      "options": [
+        "Menggunakan fungsi hash cepat seperti MD5 dengan tambahan secret salt statis di lingkungan server",
+        "Menggunakan algoritma hashing satu arah yang adaptif dan lambat seperti bcrypt atau argon2",
+        "Mengenkripsi password secara bolak-balik menggunakan AES-256 agar bisa didekripsi saat login",
+        "Melakukan enkripsi bertingkat menggunakan kombinasi RSA dan SHA-256 pada payload header"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi Express.js menerima request payload JSON berukuran besar yang dikirimkan oleh klien penyerang secara terus-menerus, membuat server kehabisan memori. Bagaimana cara mitigasi standar yang paling efektif?",
+      "options": [
+        "Menonaktifkan parsing body secara total dan membaca stream request secara manual di setiap route",
+        "Membatasi ukuran maksimum payload pada body-parser Express melalui opsi limit",
+        "Memasang middleware pembatas rate limit berdasarkan alamat IP pada setiap endpoint publik",
+        "Menambahkan header kustom X-Content-Type-Options untuk menolak tipe data selain form-data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin melakukan unit testing pada service Express.js yang bergantung pada pemanggilan API eksternal. Agar tes berjalan cepat dan andal tanpa koneksi internet, apa yang harus dilakukan?",
+      "options": [
+        "Menjalankan database uji coba lokal terpisah khusus untuk proses pengujian integrasi API",
+        "Membuat server tiruan (mock/stub) menggunakan library seperti nock untuk memalsukan respons HTTP",
+        "Mengubah kode sumber agar otomatis mendeteksi lingkungan testing dan mematikan fungsi jaringan",
+        "Menggunakan setTimeout untuk memberi jeda waktu agar server eksternal sempat merespons"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi backend Anda sering mengalami crash di production dengan pesan error 'UnhandledPromiseRejectionWarning'. Langkah pencegahan terbaik pada level aplikasi adalah?",
+      "options": [
+        "Menambahkan blok try-catch di setiap pemanggilan fungsi tanpa menggunakan async/await",
+        "Memastikan setiap Promise memiliki blok catch atau menggunakan penangkap error global process",
+        "Mengaktifkan kembali fitur eksperimental penanganan pengecualian otomatis pada versi Node.js",
+        "Mengganti seluruh fungsi berbasis Promise kembali ke pola callback tradisional yang aman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati performa pembacaan file konfigurasi JSON berukuran besar di awal startup aplikasi Node.js sangat lambat dan memblokir thread utama. Apa metode pemanggilan yang seharusnya digunakan?",
+      "options": [
+        "Mengganti fungsi fs.readFileSync dengan padanan asinkronusnya yaitu fs.promises.readFile",
+        "Memecah file JSON menjadi ratusan file kecil dan membacanya satu persatu secara berurutan",
+        "Menyimpan data konfigurasi tersebut langsung ke dalam tabel memori database Redis",
+        "Menggunakan teknik lazy loading dengan membaca file konfigurasi setiap kali ada request masuk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengelolaan environment variables di aplikasi Node.js enterprise, Anda ingin memastikan aplikasi langsung gagal berjalan saat startup jika ada variabel krusial yang terlewat. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Membiarkan aplikasi berjalan dan memberikan nilai string kosong secara otomatis sebagai fallback",
+        "Melakukan validasi skema environment variables menggunakan library seperti Joi di awal entry point",
+        "Menulis skrip bash eksternal untuk memeriksa keberadaan file .env sebelum menjalankan node app.js",
+        "Menangkap error ketidakhadiran variabel di dalam middleware global Express pada tahap runtime"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query database PostgreSQL melalui ORM Sequelize di aplikasi Node.js berjalan sangat lambat karena melakukan Full Table Scan. Tindakan diagnostik awal apa yang paling tepat dilakukan?",
+      "options": [
+        "Menambahkan jumlah koneksi maksimal pada konfigurasi connection pool database di ORM",
+        "Menganalisis execution plan query tersebut di database menggunakan perintah EXPLAIN ANALYZE",
+        "Menghapus seluruh indeks tabel yang ada untuk memaksa database menyegarkan cache memori",
+        "Meningkatkan spesifikasi RAM server aplikasi Node.js agar proses filtering data lebih cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengimplementasikan mekanisme retry otomatis ketika komunikasi HTTP ke microservice pembayaran eksternal gagal akibat gangguan jaringan sementara. Pola penanganan apa yang paling disarankan?",
+      "options": [
+        "Melakukan pengulangan request tanpa henti setiap milidetik hingga server tujuan merespons",
+        "Menggunakan strategi exponential backoff dengan batas maksimal percobaan tertentu",
+        "Memutus total koneksi klien dan langsung mengirimkan pesan error permanen ke pengguna",
+        "Mengalihkan seluruh trafik pembayaran ke server cadangan melalui mekanisme round-robin"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

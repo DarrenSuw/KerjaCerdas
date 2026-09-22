@@ -1,0 +1,306 @@
+{
+  "skill": "Airflow",
+  "skill_key": "airflow",
+  "questions": [
+    {
+      "question": "Sebuah DAG Airflow memproses data transaksi harian di e-commerce lokal. Tugas `tarik_data_bank` sering gagal di tengah jalan akibat koneksi API bank yang tidak stabil, namun data berhasil ditarik sebagian. Apa konfigurasi task yang paling tepat agar task tersebut otomatis mencoba ulang sebanyak 3 kali dengan jeda 5 menit antar percobaan?",
+      "options": [
+        "Mengatur parameter retries=3 dan retry_delay=timedelta(minutes=5) pada operator task tersebut",
+        "Membuat loop try-except di dalam fungsi PythonOperator dengan sleep selama 300 detik",
+        "Mengaktifkan fitur catchup=True dan max_active_runs=3 pada definisi DAG utama",
+        "Menambahkan argumen execution_timeout=timedelta(minutes=15) di dalam default_args"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim data warehouse menggunakan Airflow untuk menjalankan 20 task secara paralel. Tiba-tiba server Airflow mengalami lonjakan penggunaan memori yang drastis hingga proses worker terhenti (OOM killed). Pendekatan apa yang paling efektif untuk membatasi beban eksekusi tanpa mengubah kode DAG?",
+      "options": [
+        "Mengurangi nilai parallel_processes di file konfigurasi worker",
+        "Menurunkan nilai default dag_concurrency dan parallelism di file airflow.cfg",
+        "Memindahkan seluruh task dari CeleryExecutor ke SequentialExecutor segera",
+        "Menghapus parameter schedule_interval dari semua file DAG aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah DAG harian di perusahaan fintech tertinggal selama 7 hari berturut-turut karena maintenance server. Ketika scheduler dinyalakan kembali, Airflow langsung membuat 7 instance DAG secara bersamaan untuk mengejar ketertinggalan, yang membuat database operasional down. Bagaimana cara mencegah hal ini pada DAG tersebut?",
+      "options": [
+        "Mengubah parameter catchup menjadi False pada definisi DAG",
+        "Menyetel max_active_runs_per_dag menjadi angka 10 di airflow.cfg",
+        "Menghapus folder DAG lalu mengunggahnya kembali secara manual",
+        "Mengganti format schedule_interval menjadi '@once' selamanya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah task PythonOperator di Airflow perlu membaca kredensial database PostgreSQL produksi yang tersimpan aman. Sesuai best practice keamanan di Airflow, bagaimana cara mengambil kredensial tersebut di dalam kode task?",
+      "options": [
+        "Menggunakan os.environ untuk membaca variabel environment secara langsung",
+        "Menulis plaintext username dan password secara hardcode di file python DAG",
+        "Memanggil Hook Airflow untuk mengambil koneksi berdasarkan ID yang tersimpan",
+        "Menyimpan kredensial dalam bentuk file JSON di folder dags utama server"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat DAG yang harus menunggu ketersediaan file CSV dari vendor logistik pihak ketiga di sebuah bucket S3 setiap pukul 08.00 pagi sebelum proses ETL dimulai. Operator apa yang paling efisien digunakan untuk skenario sensor ini?",
+      "options": [
+        "BashOperator yang menjalankan perintah curl berulang kali",
+        "S3KeySensor dengan mode poke atau reschedule yang memadai",
+        "PythonOperator yang berisi fungsi perulangan while True",
+        "ExternalTaskSensor yang memantau DAG lain di sistem berbeda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah DAG laporan bulanan memiliki dua cabang: jika total transaksi di atas 1 miliar, jalankan task `bonus_tim`, jika tidak, jalankan task `evaluasi_sales`. Bagaimana cara mendesain logika percabangan ini di Airflow secara tepat?",
+      "options": [
+        "Menggunakan BranchPythonOperator yang mengembalikan string id task tujuan",
+        "Membuat dua DAG terpisah lalu dihubungkan dengan TriggerDagRunOperator",
+        "Memanfaatkan parameter trigger_rule='all_done' pada kedua task hilir",
+        "Menulis pernyataan if-else konvensional di luar struktur objek Operator"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Task `muat_data_warehouse` gagal dijalankan pada tanggal eksekusi kemarin, namun data sumber untuk tanggal tersebut sudah diperbaiki oleh tim data engineer. Anda ingin menjalankan ulang hanya task tersebut untuk tanggal kemarin tanpa mengulang task hulu (upstream). Perintah CLI apa yang paling tepat?",
+      "options": [
+        "airflow dags trigger nama_dag --exec-date tanggal_kemarin",
+        "airflow tasks clear nama_dag -t muat_data_warehouse -s tanggal_kemarin -e tanggal_kemarin",
+        "airflow dags test nama_dag tanggal_kemarin --task-id muat_data_warehouse",
+        "airflow tasks run nama_dag muat_data_warehouse tanggal_kemarin --ignore-dependencies"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah task pembersihan data memakan waktu sangat lama dan sering melewati batas waktu wajar, menyebabkan worker Airflow menggantung. Parameter apa yang harus ditambahkan pada inisialisasi Operator untuk menghentikan task secara paksa jika berjalan lebih dari 2 jam?",
+      "options": [
+        "execution_timeout=timedelta(hours=2)",
+        "max_execution_time=7200",
+        "task_concurrency=timedelta(minutes=120)",
+        "timeout_limit=2"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengonfigurasi sebuah task dengan `trigger_rule='one_failed'` di dalam DAG berukuran besar. Kapan tepatnya task dengan aturan pemicu tersebut akan mulai dieksekusi oleh scheduler?",
+      "options": [
+        "Segera setelah semua task hulu (upstream) selesai dengan status sukses",
+        "Ketika setidaknya satu task hulu mengalami kegagalan tanpa menunggu yang lain",
+        "Hanya jika seluruh task hulu gagal secara bersamaan dalam satu waktu",
+        "Saat task hulu pertama kali masuk ke status running di dalam queue"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah nilai parameter konfigurasi dinamis (seperti tanggal akhir periode) perlu dibagikan dari task `tarik_parameter` ke task `proses_data` di dalam DAG yang sama. Mekanisme apa yang disediakan Airflow untuk pertukaran data antar task ini?",
+      "options": [
+        "Menyimpan variabel di database lokal menggunakan fungsi variabel global Python",
+        "Memanfaatkan fitur XComs dengan fungsi push dari pemberi dan pull dari penerima",
+        "Menulis data secara langsung ke file teks bersama di direktori /tmp server",
+        "Menggunakan Airflow Connections untuk menulis data string dinamis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah DAG Airflow di e-commerce mengalami kegagalan pada task tengah malam akibat gangguan jaringan sementara. Anda ingin task tersebut otomatis mencoba ulang sebanyak 3 kali dengan jeda waktu 5 menit setiap percobaan tanpa intervensi manual. Bagaimana cara mengimplementasikannya secara efisien?",
+      "options": [
+        "Menggunakan argumen retries dan retry_delay pada dictionary default_args DAG",
+        "Menulis skrip bash luar untuk memantau log error dan memicu ulang task otomatis",
+        "Membuat loop try-except di dalam fungsi PythonOperator untuk eksekusi berulang",
+        "Mengubah parameter schedule_interval menjadi setiap 5 menit sekali secara permanen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim data engineering mendapati bahwa beberapa task dalam DAG laporan harian berjalan terlalu lama dan memblokir kapasitas worker Celery untuk DAG operasional lain yang mendesak. Langkah apa yang paling tepat untuk mengisolasi sumber daya eksekusi task tersebut?",
+      "options": [
+        "Menurunkan nilai parameter concurrency global pada file konfigurasi airflow.cfg",
+        "Menetapkan pool khusus dengan jumlah slot terbatas untuk task laporan berat",
+        "Memindahkan seluruh task laporan ke dalam satu file Python script yang terpisah",
+        "Menghapus parameter retries agar task yang macet langsung dihentikan sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu memindahkan variabel rahasia berupa token API partner logistik ke dalam DAG Airflow. Sesuai standar keamanan operasional, bagaimana cara terbaik mengakses token tersebut di dalam kode PythonOperator?",
+      "options": [
+        "Menyimpan token sebagai teks biasa langsung di dalam file kode sumber DAG",
+        "Mengambil nilai token secara dinamis menggunakan Airflow Variable get",
+        "Mengambil nilai token dari Airflow Connections atau Backend Secrets Manager",
+        "Menuliskan token ke dalam environment variable sistem operasi container worker"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah DAG pemrosesan data analitik harus dijalankan secara berurutan: Task A harus selesai sukses terlebih dahulu, kemudian Task B atau Task C harus dijalankan jika salah satu dari mereka siap, dan terakhir Task D dijalankan setelah keduanya selesai. Operator apa yang paling tepat untuk mengatur alur percabangan ini?",
+      "options": [
+        "Menggunakan BranchPythonOperator untuk memilih jalur eksekusi dinamis",
+        "Memanfaatkan DummyOperator sebagai penghubung logika percabangan",
+        "Mengatur trigger_rule pada Task D menjadi all_done secara eksplisit",
+        "Membuat dua DAG terpisah yang dihubungkan dengan ExternalTaskSensor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati task `unggah_laporan` di Airflow terus-menerus berada dalam status 'queued' dan tidak pernah berubah menjadi 'running' selama berjam-jam, meskipun worker server terlihat aktif. Apa penyebab paling umum dari masalah operasional ini?",
+      "options": [
+        "Ketiadaan slot kosong pada pool yang ditugaskan untuk task tersebut",
+        "Kesalahan sintaksis penulisan kode Python di dalam fungsi task operator",
+        "Koneksi database metadata PostgreSQL terputus total dari server utama",
+        "Perubahan waktu zona lokal server tidak sinkron dengan UTC scheduler"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah DAG pipeline data memiliki task sensor `S3KeySensor` yang memantau file harian. Namun, task ini sering kali mengalami timeout karena vendor terlambat mengunggah file hingga 6 jam. Bagaimana cara mencegah sensor memakan slot worker secara terus-menerus?",
+      "options": [
+        "Mengganti S3KeySensor dengan metode polling manual menggunakan BashOperator",
+        "Mengaktifkan mode poke pada sensor dengan durasi timeout yang sangat panjang",
+        "Mengubah mode sensor menjadi reschedule agar membebaskan slot worker saat menunggu",
+        "Meningkatkan kapasitas jumlah worker Celery di server infrastruktur cloud"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja memperbarui kode Python di dalam sebuah file DAG untuk memperbaiki bug logika bisnis. Namun, setelah file disimpan di server production, antarmuka web Airflow tidak menunjukkan perubahan apa pun pada struktur DAG tersebut. Langkah pemecahan masalah apa yang harus dilakukan?",
+      "options": [
+        "Melakukan restart penuh pada seluruh layanan webserver dan scheduler",
+        "Menunggu durasi interval DAG parsing selesai atau melakukan sinkronisasi manual",
+        "Menghapus tabel riwayat eksekusi task dari database metadata PostgreSQL",
+        "Mengubah nama file script DAG agar scheduler membaca ulang dari awal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan memiliki kebutuhan khusus di mana sebuah DAG harian hanya boleh dipicu secara eksternal melalui REST API Airflow oleh sistem aplikasi frontend, bukan oleh scheduler otomatis berdasarkan waktu. Bagaimana konfigurasi parameter DAG yang paling sesuai?",
+      "options": [
+        "Mengatur nilai parameter schedule_interval atau schedule menjadi None",
+        "Menyetel nilai parameter catchup pada definisi DAG menjadi bernilai False",
+        "Mengisi parameter max_active_runs dengan angka nol untuk menghentikan waktu",
+        "Menghapus seluruh argumen default_args yang berkaitan dengan tanggal mulai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menjalankan pembersihan tabel staging database setiap akhir bulan, namun parameter schedule bawaan cron Airflow terkadang membingungkan untuk penanggalan akhir bulan yang dinamis. Bagaimana pendekatan terbaik mendefinisikan jadwal tersebut?",
+      "options": [
+        "Menggunakan ekspresi cron standar '0 0 31 * *' pada parameter schedule",
+        "Memanfaatkan objek pendukung cron preset seperti '@monthly' atau timertable",
+        "Menjalankan DAG setiap hari lalu menambahkan kondisi if tanggal di dalam task",
+        "Membuat cron job terpisah di luar Airflow menggunakan crontab sistem Linux"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah arsitektur Airflow terdistribusi yang menggunakan Executor Celery, sebuah task Python menjalankan proses machine learning berat yang memakan banyak memori RAM. Apa risiko utama jika task ini dijalankan tanpa batasan sumber daya di worker?",
+      "options": [
+        "Task akan otomatis dipindahkan ke executor Kubernetes secara instan",
+        "Proses worker bisa mengalami crash total akibat sistem kehabisan memori OOM",
+        "Metadata database Airflow akan langsung terkorupsi karena kelebihan beban",
+        "Scheduler akan menghentikan seluruh DAG lain yang berjalan di waktu bersamaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah task di Airflow membaca file besar dari SFTP. Seringkali terjadi timeout jaringan sesaat, namun file tersebut sebenarnya berhasil diunduh sebagian besar. Mekanisme bawaan apa yang paling tepat dikonfigurasi pada task tersebut agar otomatis mencoba ulang tanpa intervensi manual?",
+      "options": [
+        "Mengatur parameter retries dan retry_delay pada definisi task operator terkait",
+        "Membuat loop try-except di dalam fungsi PythonOperator untuk menangkap error",
+        "Memanfaatkan TriggerRule dengan kondisi all_done untuk memicu ulang task",
+        "Mengubah parameter execution_timeout agar memberikan waktu eksekusi lebih lama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa dua instance dari DAG laporan harian yang sama berjalan secara bersamaan dan saling berebut menulis data ke tabel staging yang sama. Konfigurasi apa yang harus diterapkan pada DAG tersebut?",
+      "options": [
+        "Menurunkan nilai concurrency global pada file konfigurasi airflow.cfg utama",
+        "Mengatur parameter max_active_runs pada objek DAG menjadi bernilai satu",
+        "Menambahkan task dummy di awal DAG untuk mengunci tabel staging secara manual",
+        "Memisahkan file DAG menjadi dua file berbeda dengan jadwal waktu yang digeser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengirimkan pesan notifikasi ke grup Telegram operasional hanya ketika sebuah task spesifik dalam DAG mengalami kegagalan (failed). Parameter mana di Airflow yang harus Anda manfaatkan?",
+      "options": [
+        "Menggunakan argumen on_success_callback dengan fungsi pengiriman pesan",
+        "Membuat task terpisah di akhir DAG dengan trigger_rule bernilai none_failed",
+        "Menggunakan argumen on_failure_callback dengan fungsi pengiriman pesan",
+        "Mengatur parameter email_on_failure dan menyambungkannya ke bot Telegram"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah DAG analitik membutuhkan pembacaan parameter tanggal mulai dan tanggal selesai yang dihitung secara dinamis saat DAG tersebut dijadwalkan berjalan. Pendekatan apa yang paling dianjurkan di Airflow?",
+      "options": [
+        "Menggunakan XCom untuk mengirimkan data tanggal dari task pertama ke task lain",
+        "Memanfaatkan variabel bawaan seperti ds dan ds_add di dalam parameter task",
+        "Menyimpan tanggal tersebut ke dalam database eksternal sebelum DAG dipicu",
+        "Membuat file konfigurasi JSON terpisah yang diperbarui secara manual setiap hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah pipeline data, Anda memiliki task pembersihan file sementara yang harus selalu dieksekusi setelah task utama selesai, terlepas dari apakah task utama tersebut sukses atau mengalami kegagalan. Trigger rule apa yang paling tepat?",
+      "options": [
+        "Mengatur trigger_rule menjadi all_success agar berjalan saat bersih",
+        "Mengatur trigger_rule menjadi one_failed agar berjalan saat ada error",
+        "Mengatur trigger_rule menjadi all_done agar selalu berjalan pada akhirnya",
+        "Mengatur trigger_rule menjadi dummy_success untuk mengabaikan status task"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati task `validasi_data` di Airflow terus-menerus berjalan sangat lambat dan memakan memori worker secara berlebihan karena ukuran dataframe pandas yang terlalu besar. Arsitektur apa yang paling tepat untuk memindahkan beban komputasi tersebut keluar dari worker Airflow?",
+      "options": [
+        "Menggunakan KubernetesPodOperator untuk menjalankan proses di cluster terpisah",
+        "Mengubah Executor Airflow dari Celery menjadi LocalExecutor untuk efisiensi",
+        "Menambahkan jumlah worker baru pada server yang sama untuk membagi beban",
+        "Memecah file DAG menjadi beberapa DAG kecil yang berjalan secara paralel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah task Python di DAG Anda perlu mengunduh file besar ke disk lokal worker Airflow dan memastikan file tersebut dibersihkan kembali setelah task selesai, baik sukses maupun gagal. Pola penulisan kode apa yang paling tepat di PythonOperator?",
+      "options": [
+        "Menulis kode penghapusan file di baris paling akhir dari fungsi PythonOperator",
+        "Menggunakan blok kode try...finally untuk memastikan pembersihan selalu berjalan",
+        "Membuat task terpisah di akhir DAG khusus untuk menghapus file sisa di disk",
+        "Mengandalkan sistem operasi worker yang otomatis menghapus file setelah task mati"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menguji apakah sintaks dan struktur logika di dalam file DAG baru sudah benar tanpa harus menunggu penjadwal utama memprosesnya di server produksi. Perintah CLI Airflow apa yang paling tepat digunakan?",
+      "options": [
+        "Menjalankan perintah airflow dags test [DAG_ID] [EXECUTION_DATE]",
+        "Menjalankan perintah airflow tasks test [DAG_ID] [TASK_ID] [EXECUTION_DATE]",
+        "Menjalankan perintah airflow dags trigger [DAG_ID] langsung di terminal",
+        "Menjalankan perintah airflow db clean untuk membersihkan cache metadata"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah task sensor kustom dibuat untuk memeriksa status server API eksternal. Agar task sensor tersebut tidak memakan slot worker secara terus-menerus saat menunggu berjam-jam, mode apa yang harus diaktifkan pada sensor tersebut?",
+      "options": [
+        "Mengaktifkan mode poke dengan interval waktu pemeriksaan yang sangat pendek",
+        "Mengubah parameter execution_timeout agar task berhenti setelah beberapa jam",
+        "Mengaktifkan modereschedule agar membebaskan worker di setiap interval",
+        "Menggunakan BranchPythonOperator untuk menghindari penggunaan sensor sama sekali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim data warehouse ingin menjalankan ulang seluruh eksekusi DAG untuk rentang tanggal bulan lalu yang datanya baru saja dikoreksi, tanpa harus menekan tombol trigger satu per satu secara manual. Perintah CLI apa yang paling efisien?",
+      "options": [
+        "Menjalankan perintah airflow dags backfill dengan argumen rentang tanggal",
+        "Menjalankan perintah airflow tasks clear dengan opsi rentang tanggal eksekusi",
+        "Menjalankan perintah airflow dags unpause lalu memicu manual lewat REST API",
+        "Menjalankan perintah airflow db reset untuk menghapus riwayat eksekusi lama"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

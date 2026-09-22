@@ -1,0 +1,306 @@
+{
+  "skill": "Computer Vision",
+  "skill_key": "computer vision",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan sistem deteksi helm keselamatan untuk proyek konstruksi di Cikarang. Model YOLOv8 yang Anda latih sering mendeteksi pekerja tanpa helm secara keliru saat mereka membelakangi kamera dengan posisi kepala menunduk. Langkah perbaikan apa yang paling efektif?",
+      "options": [
+        "Menurunkan ambang batas kepercayaan model dari 0.5 menjadi 0.2 untuk memancing deteksi",
+        "Menambahkan augmentasi data berupa rotasi ekstrem dan pembalikan horizontal pada citra pelatihan",
+        "Memperluas dataset dengan variasi sudut pandang belakang dan pose menunduk lalu melatih ulang",
+        "Mengganti arsitektur model dasar dari YOLOv8n ke YOLOv8x untuk meningkatkan kapasitas memori"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Solo meminta Anda memasang sistem inspeksi kualitas kain otomatis menggunakan kamera line-scan. Masalah utamanya adalah getaran mesin tenun membuat bingkai gambar bergeser secara acak sejauh 5 piksel. Solusi pra-pemrosesan apa yang paling tepat?",
+      "options": [
+        "Menerapkan algoritma penyeimbangan histogram adaptif untuk menjaga kontras warna",
+        "Menggunakan teknik registrasi citra berbasis fase korelasi sebelum masuk ke model defek",
+        "Melakukan operasi penajaman tepi menggunakan filter Laplacian untuk memperjelas serat",
+        "Menurunkan resolusi tangkapan kamera sebesar 50 persen guna meredam dampak getaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim logistik e-commerce di Jakarta membutuhkan sistem pembacaan nomor resi otomatis pada paket yang bergerak cepat di atas conveyor belt. Kendala utamanya adalah blur karena gerakan (motion blur). Pendekatan komputer vision mana yang harus Anda ambil?",
+      "options": [
+        "Memasang filter Wiener deconvolution secara real-time pada setiap frame video sebelum OCR",
+        "Menggunakan jaringan saraf tiruan restorasi gambar untuk mempertajam teks yang kabur",
+        "Mengintegrasikan kamera global shutter dengan pencahayaan strobo LED durasi tinggi",
+        "Menaikkan exposure time pada kamera area-scan untuk menangkap lebih banyak cahaya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membangun sistem absensi pengenalan wajah untuk kantor di Bandung yang memiliki area lobi dengan pencahayaan dari jendela kaca besar. Akibatnya, pada siang hari terjadi kondisi backlight yang membuat wajah karyawan terlihat gelap gulap. Apa tindakan teknis terbaik?",
+      "options": [
+        "Mengaktifkan algoritma CLAHE pada kanal luminans citra sebelum ekstraksi fitur wajah",
+        "Mengganti model embedding wajah dengan arsitektur yang lebih dalam seperti ResNet-101",
+        "Menambahkan lampu sorot inframerah dekat dan kamera yang peka terhadap gelombang IR",
+        "Melakukan normalisasi z-score pada matriks piksel gambar untuk meratakan intensitas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perkebunan kelapa sawit di Kalimantan menggunakan drone untuk menghitung jumlah tandan buah segar pada pohon. Masalahnya, daun pelepah sering menutupi sebagian tandan buah sehingga model segmentasi instance mengalami under-counting. Bagaimana mengatasinya?",
+      "options": [
+        "Melatih model dengan loss function focal loss untuk menangani ketidakseimbangan kelas piksel",
+        "Menerapkan metode morphological closing untuk menyatukan bagian tandan yang terhalang",
+        "Menambah anotasi tingkat kesulitan parsial dan melatih model dengan teknik attention gate",
+        "Mengubah format warna citra dari RGB ke HSV guna memisahkan klorofil daun dari buah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendeploy model deteksi plat nomor kendaraan (OCR) ke dalam edge device berbasis Raspberry Pi 4 untuk gerbang tol otomatis. Performanya sangat lambat, hanya mencapai 2 frame per detik. Langkah optimalisasi mana yang harus diprioritaskan?",
+      "options": [
+        "Melakukan kuantisasi model dari format float32 ke integer 8-bit menggunakan TensorRT atau TFLite",
+        "Mengubah bahasa pemrograman implementasi inferensi dari Python murni ke C++ tanpa mengubah bobot",
+        "Mengurangi resolusi input kamera dari 1080p langsung menjadi 480p agar ukuran tensor mengecil",
+        "Menambahkan modul Coral USB Accelerator untuk memproses komputasi tensor secara eksternal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek sistem pengawasan keselamatan area tambang terbuka, kamera mengalami penurunan kualitas visual yang drastis akibat debu tebal dan kabut pagi. Teknik computer vision tingkat rendah apa yang paling efektif untuk memulihkan visibilitas?",
+      "options": [
+        "Menggunakan operasi thresholding Otsu untuk memisahkan latar depan dari latar belakang berdebu",
+        "Menerapkan metode dehazing berbasis dark channel prior pada setiap frame masukan video",
+        "Melakukan transformasi Fourier 2D untuk menyaring frekuensi spasial rendah penyebab kabut",
+        "Menaikkan saturasi warna dan nilai gamma secara agresif pada ruang warna YCrCb"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah minimarket di Surabaya ingin mendeteksi antrean panjang di kasir menggunakan kamera CCTV yang sudah ada. Posisi kamera berada di langit-langit dengan sudut pandang dari atas ke bawah (top-down view). Tantangan terbesar apa yang biasanya muncul pada skenario ini?",
+      "options": [
+        "Oklusi parah antar-pelanggan dan distorsi perspektif yang mengubah ukuran tubuh manusia",
+        "Kesulitan mendeteksi wajah pelanggan karena posisi kepala menghadap ke lantai kasir",
+        "Perubahan intensitas cahaya ruangan akibat lampu neon yang berkedip pada frekuensi tinggi",
+        "Keterbatasan bandwidth jaringan lokal untuk mengirim aliran video resolusi tinggi ke server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mendesain sistem sortir buah mangga berdasarkan tingkat kematangan di pabrik pengemasan buah di Indramayu. Buah bergerak di atas roller dan memiliki warna gradasi yang mirip antara matang dan setengah matang. Ruang warna apa yang paling tepat untuk segmentasi?",
+      "options": [
+        "Ruang warna Grayscale karena hanya memerlukan informasi intensitas terang gelap buah",
+        "Ruang warna RGB karena langsung merepresentasikan sinyal warna standar dari sensor kamera",
+        "Ruang warna HSV karena memisahkan informasi warna dari pencahayaan secara independen",
+        "Ruang warna CMYK karena cocok untuk proses pencetakan dan pewarnaan produk agrikultur"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah rumah sakit di Jakarta menggunakan sistem pemantauan pasien berbasis computer vision untuk mendeteksi lansia jatuh dari tempat tidur. Masalah yang sering terjadi adalah alarm palsu ketika pasien menutupi tubuhnya dengan selimut tebal. Bagaimana cara mengurangi kejadian ini?",
+      "options": [
+        "Menaikkan ambang batas waktu durasi diam sebelum sistem memicu status peringatan darurat",
+        "Memadukan deteksi pose tubuh skeletal dengan estimasi volume dan bentuk tekstur selimut",
+        "Menempatkan kamera kedua di sudut ruangan yang berbeda untuk triangulasi posisi tiga dimensi",
+        "Mengganti kamera optik konvensional dengan sensor kedalaman berbasis time-of-flight inframerah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem Computer Vision untuk memonitor kepatuhan pemakaian masker welder di galangan kapal Batam. Masalah utamanya adalah pantulan cahaya las yang sangat terang sering membuat area wajah overexposed sehingga model gagal mendeteksi masker. Langkah mitigasi apa yang paling tepat untuk mengatasi masalah kondisi pencahayaan ekstrem ini?",
+      "options": [
+        "Mengganti seluruh kamera dengan resolusi 4K untuk menangkap lebih banyak detail piksel",
+        "Melakukan augmentasi data dengan teknik simulasi silau dan penyesuaian kontras",
+        "Menurunkan ambang batas threshold kepercayaan model deteksi objek secara drastis",
+        "Menambahkan algoritma penajaman tepi berbasis filter Laplace sebelum inferensi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pelabuhan peti kemas di Tanjung Priok menggunakan OCR berbasis Computer Vision untuk membaca nomor kontainer yang masuk. Seringkali nomor kontainer tertutup debu tebal atau karat sehingga karakter terpotong. Pendekatan preprocessing apa yang paling efektif untuk memulihkan struktur karakter yang rusak sebelum masuk ke model OCR?",
+      "options": [
+        "Menerapkan operasi morfologi penutupan untuk menyambungkan garis karakter yang terputus",
+        "Menggunakan konversi warna HSV untuk menghapus seluruh warna selain teks kontainer",
+        "Melakukan rotasi citra otomatis berdasarkan sudut kemiringan kontainer terhadap tanah",
+        "Menerapkan blur Gauss berukuran besar untuk meratakan gradasi warna karat yang ada"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeploy model segmentasi semantik untuk mendeteksi retak pada jalan tol lintas Sumatera menggunakan kamera yang dipasang di bawah mobil inspeksi. Saat mobil melaju dengan kecepatan 80 km/jam, citra yang dihasilkan mengalami motion blur yang parah. Bagaimana cara paling efisien mengatasi masalah ini pada tingkat pipeline data?",
+      "options": [
+        "Mengintegrasikan sensor GPS untuk memperlambat laju kendaraan saat proses foto",
+        "Mengubah model segmentasi menjadi model klasifikasi sederhana berbasis patch",
+        "Menambahkan modul deblurring berbasis Deep Learning sebelum tahap segmentasi",
+        "Mempercepat waktu tangkap rana kamera dan menaikkan nilai ISO secara manual"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah pabrik perakitan smartphone di Batam menggunakan sistem computer vision untuk mendeteksi cacat goresan halus pada layar kaca. Masalahnya, variasi sudut pantulan lampu ruangan menghasilkan false positive yang tinggi. Strategi apa yang paling tepat untuk membedakan goresan asli dan pantulan cahaya?",
+      "options": [
+        "Mengubah posisi penempatan kamera agar tegak lurus sempurna terhadap layar",
+        "Menggunakan teknik pencahayaan terpolarisasi silang untuk meredam pantulan",
+        "Menaikkan resolusi tangkapan gambar dari kamera menjadi tingkat ultra-HD",
+        "Menambahkan dataset pelatihan dengan gambar layar tanpa goresan dalam jumlah besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengembangkan sistem pemantauan area parkir mal di Jakarta untuk mendeteksi slot kosong menggunakan kamera CCTV statis sudut tinggi. Perubahan cuaca dari terik matahari menjadi hujan lebat menyebabkan bayangan awan dan pantulan genangan air sering terdeteksi sebagai mobil. Langkah apa yang paling efektif untuk mengurangi kesalahan ini?",
+      "options": [
+        "Menggunakan metode pengurangan latar belakang adaptif yang diperbarui secara berkala",
+        "Membatasi waktu operasional sistem hanya pada saat cuaca cerah di siang hari",
+        "Melatih ulang model menggunakan citra parkiran saat kondisi hujan dan berawan",
+        "Menurunkan tingkat sensitivitas kamera terhadap perubahan intensitas cahaya sekitar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek otomatisasi gudang dingin di Cibitung, kamera pengawas sering mengalami pengembunan pada lensa akibat perbedaan suhu ekstrem saat forklift keluar masuk area freezer. Hal ini membuat visibilitas buram. Solusi teknis apa yang paling tepat diterapkan pada perangkat keras?",
+      "options": [
+        "Memasang elemen pemanas kecil di sekitar rumah lensa untuk menjaga suhu konstan",
+        "Menggunakan algoritma restorasi citra berbasis jaringan saraf tiruan untuk menajamkan",
+        "Mengganti lensa kamera dengan jenis inframerah jarak jauh agar tembus embun",
+        "Menambahkan kipas pendingin berkecepatan tinggi di depan wadah kamera pengawas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik rokok di Kediri memerlukan sistem computer vision untuk mendeteksi cacat batang rokok yang posisinya bergerak sangat cepat di atas konveyor berjalan. Batang rokok sering terlihat bertumpuk sehingga objek tampak saling menutupi (occlusion). Arsitektur atau teknik apa yang paling tepat dipilih?",
+      "options": [
+        "Menggunakan model klasifikasi gambar murni untuk menilai seluruh kotak rokok",
+        "Menerapkan algoritma pelacakan objek dengan estimasi Kalman Filter sederhana",
+        "Memilih model deteksi berbasis anchor-free dengan penanganan NMS yang optimal",
+        "Menggunakan teknik thresholding warna dasar untuk memisahkan setiap batang rokok"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun sistem navigasi untuk Autonomous Mobile Robot (AMR) di pabrik otomotif Karawang. Robot harus mengenali pejalan kaki di lorong sempit yang minim cahaya. Kamera RGB biasa gagal mendeteksi orang dengan jelas dalam gelap. Integrasi sensor apa yang paling ideal untuk melengkapi sistem ini?",
+      "options": [
+        "Menambahkan sensor ultrasonik jarak dekat di setiap sudut bodi robot",
+        "Mengganti kamera RGB dengan modul kamera termal inframerah jarak jauh",
+        "Memasang lampu sorot LED berdaya tinggi yang menyala secara terus-menerus",
+        "Menggunakan encoder roda beresolusi tinggi untuk mengukur posisi lintasan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fasilitas pengolahan udang di Lampung membutuhkan sistem computer vision untuk menghitung dan mengukur ukuran udang di atas ban berjalan basah yang mengkilap. Kilau air pada tubuh udang menyebabkan algoritma segmentasi kontur sering salah menggabungkan dua udang berdekatan menjadi satu objek. Solusi apa yang paling tepat?",
+      "options": [
+        "Menerapkan transformasi Watershed berbasis jarak setelah proses thresholding",
+        "Menurunkan kecepatan putaran ban berjalan agar air sempat menetes turun",
+        "Menggunakan filter median berukuran besar untuk menghilangkan tekstur air",
+        "Mengganti pencahayaan ruangan dengan lampu ultraviolet berintensitas tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diundang untuk mengoptimalkan model deteksi hama tanaman cabai di sebuah rumah kaca di Lembang. Model YOLO yang digunakan berjalan lambat pada perangkat edge berbasis NVIDIA Jetson Nano di lapangan karena ukuran input gambar terlalu besar. Apa langkah optimasi model yang paling standar dan aman dilakukan?",
+      "options": [
+        "Mengonversi bobot model ke format TensorRT dengan presisi FP16 atau INT8",
+        "Menghapus separuh lapisan konvolusi terakhir untuk mempercepat waktu proses",
+        "Mengurangi jumlah kelas hama yang dideteksi menjadi hanya satu jenis hama",
+        "Menaikkan clock speed GPU pada Jetson Nano melalui overclocking perangkat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya menggunakan sistem *computer vision* untuk mendeteksi kerusakan kardus paket secara real-time pada ban berjalan. Model deteksi objek yang Anda gunakan sering salah mendeteksi bayangan lipatan kardus sebagai robekan fisik. Solusi tingkat arsitektur dan data apa yang paling efektif untuk mengatasi *false positive* ini?",
+      "options": [
+        "Menambahkan teknik *dropout* pada lapisan akhir jaringan saraf tiruan saat pelatihan",
+        "Mengubah fungsi kerugian (*loss function*) model dari Focal Loss menjadi Cross-Entropy",
+        "Menambahkan variasi pencahayaan buatan dan bayangan pada proses augmentasi data latih",
+        "Mengganti seluruh model deep learning dengan algoritma deteksi tepi Canny klasik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan memasang sistem *computer vision* di pabrik pengolahan kelapa sawit di Riau untuk memantau kemacetan pada mesin *thresher* (penebah). Kamera terpasang di atas langit-langit pabrik yang sangat berdebu, menyebabkan lensa cepat kotor dan menurunkan performa deteksi secara perlahan. Strategi pemeliharaan sistem yang paling tepat untuk mengantisipasi penurunan performa ini adalah?",
+      "options": [
+        "Mengintegrasikan modul deteksi *blur* berbasis *Laplacian variance* untuk memicu peringatan pembersihan lensa",
+        "Melakukan pelatihan ulang (*retraining*) model setiap minggu menggunakan seluruh data gambar terbaru",
+        "Meningkatkan ambang batas (*threshold*) konfidensi pada inferensi model YOLO secara bertahap",
+        "Menambahkan lapisan *Gaussian blur* secara otomatis pada setiap frame video sebelum masuk ke model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah stasiun pengisian bahan bakar (SPBU) di Denpasar ingin menerapkan sistem pengenalan wajah untuk analisis demografi pelanggan saat mengisi bensin. Kamera CCTV menghadap ke arah jalan raya, sehingga latar belakang video sangat dinamis dengan lalu lintas kendaraan yang padat di belakang pelanggan. Teknik apa yang paling krusial untuk diterapkan sebelum modul pengenalan wajah dijalankan?",
+      "options": [
+        "Melakukan *color grading* otomatis untuk menyamakan kontras warna siang dan malam hari",
+        "Menerapkan algoritma *Background Subtraction* berbasis MOG2 untuk mengisolasi area jalan",
+        "Menggunakan model *face alignment* berbasis 68 titik landmark untuk normalisasi pose wajah",
+        "Menjalankan model *Bounding Box Tracking* jenis SORT untuk mengikuti pergerakan kendaraan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik perakitan motor di Bekasi menggunakan sistem *computer vision* untuk inspeksi kelengkapan baut pada blok mesin. Model Anda sering mengalami *false negative* (gagal mendeteksi baut yang ada) karena kilauan cahaya (*specular reflection*) pada permukaan logam baut yang terkena lampu pabrik. Perbaikan hardware dan software apa yang paling tepat?",
+      "options": [
+        "Mengganti kamera monokrom dengan kamera termal inframerah jarak jauh untuk deteksi panas",
+        "Menambahkan filter polarisasi pada lensa kamera dan menggunakan pencahayaan *diffuse ring light*",
+        "Meningkatkan resolusi kamera dari 1080p menjadi 4K untuk menangkap detail kilauan cahaya",
+        "Menurunkan nilai *learning rate* secara drastis saat proses fine-tuning model klasifikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan sistem deteksi jenis sampah otomatis untuk fasilitas *Material Recovery Facility* (MRF) di Bantargebang. Sampah bergerak cepat di atas konveyor dan sering saling tumpang tindih (*occlusion*), membuat model deteksi objek kesulitan mengenali jenis material secara utuh. Arsitektur atau metode apa yang paling sesuai untuk menangani masalah objek bertumpuk ini?",
+      "options": [
+        "Menggunakan arsitektur berbasis *Instance Segmentation* seperti Mask R-CNN untuk memisahkan piksel tiap objek",
+        "Menerapkan algoritma pelacakan objek *DeepSORT* untuk mencatat riwayat posisi sampah dari awal konveyor",
+        "Menggunakan model klasifikasi gambar standar dengan arsitektur ResNet-50 pada potongan citra grid",
+        "Menambahkan lapisan *Non-Maximum Suppression* (NMS) dengan ambang batas IoU yang sangat tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pelabuhan penyeberangan di Merak mengimplementasikan sistem pembacaan manifest muatan truk menggunakan kamera OCR. Truk melintas dengan kecepatan sedang dan kondisi cuaca sering berubah dari terik matahari hingga hujan lebat di malam hari, menyebabkan pantulan air pada bodi truk. Bagaimana cara terbaik memastikan kestabilan ekstraksi teks plat dan nomor kontainer?",
+      "options": [
+        "Menggunakan pencahayaan inframerah (IR) eksternal dan kamera yang peka terhadap spektrum IR",
+        "Melakukan konversi ruang warna dari RGB ke CMYK untuk mengurangi saturasi warna air hujan",
+        "Menambahkan modul deteksi cuaca untuk mengganti bobot model YOLO secara otomatis saat hujan",
+        "Meminta pengemudi truk berhenti sejenak di titik tertentu menggunakan palang pintu otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda merancang sistem *computer vision* untuk memantau ketinggian air sungai di Bandung guna peringatan dini banjir. Kamera dipasang di jembatan dengan sudut miring menghadap permukaan air. Saat malam hari atau cuaca berkabut, permukaan air sangat sulit dibedakan dari tepian sungai. Pendekatan kalibrasi apa yang wajib dilakukan pada sistem ini?",
+      "options": [
+        "Menempatkan *fixed physical markers* (staff gauge) yang terdeteksi otomatis sebagai titik referensi skala pixel ke centimeter",
+        "Mengandalkan sensor ultrasonik tambahan untuk mengukur jarak secara mandiri tanpa bantuan kamera",
+        "Melakukan pelatihan model segmentasi semantik menggunakan gambar simulasi komputer 3D",
+        "Mengubah sudut kemiringan kamera setiap 6 jam sekali untuk mendapatkan pencahayaan optimal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah galeri seni di Yogyakarta ingin mendeteksi pengunjung yang terlalu dekat dengan lukisan berharga menggunakan kamera CCTV lama bersolusi rendah. Algoritma deteksi objek apa yang paling efisien diterapkan untuk berjalan secara *real-time* pada perangkat keras berbiaya rendah tanpa GPU?",
+      "options": [
+        "Menggunakan model berbasis transformer seperti DETR dengan resolusi penuh",
+        "Memanfaatkan YOLOv8n (nano) yang telah di-quantize ke format INT8",
+        "Menerapkan Mask R-CNN dengan *backbone* ResNet-101 untuk akurasi",
+        "Menggabungkan beberapa model Cascade Classifier berbasis Haar Cascade"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pemantauan jalur evakuasi kebakaran di sebuah gedung bertingkat di Jakarta, bayangan pekat dari jendela sering disalahartikan oleh sistem deteksi objek sebagai objek asing. Langkah *preprocessing* apa yang paling efektif mengatasi masalah ini?",
+      "options": [
+        "Mengubah ruang warna citra dari RGB ke HSV dan menerapkan *thresholding* saturasi",
+        "Menggunakan filter Gaussian Blur berukuran besar untuk menghilangkan semua tepi tajam",
+        "Menerapkan augmentasi *random cropping* pada setiap frame video secara langsung",
+        "Menurunkan kontras citra secara keseluruhan agar bayangan dan objek menyatu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah peternakan ayam modern di Bogor menggunakan kamera untuk memantau perilaku ayam dan mendeteksi gejala penyakit dini berdasarkan penurunan aktivitas bergerak. Tantangan utama apa yang paling sering muncul saat melatih model deteksi objek pada kasus ini?",
+      "options": [
+        "Ketiadaan variasi latar belakang karena kandang ayam selalu steril dan bersih",
+        "Kesulitan anotasi manual akibat objek ayam yang saling menumpuk dan berukuran kecil",
+        "Resolusi kamera CCTV yang terlalu tinggi sehingga memperlambat proses *inference*",
+        "Perubahan pencahayaan yang sangat ekstrem karena lampu kandang menyala 24 jam"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

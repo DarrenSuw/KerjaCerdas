@@ -1,0 +1,306 @@
+{
+  "skill": "Swift",
+  "skill_key": "swift",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi e-commerce lokal dan mendapati memory leak pada halaman daftar produk yang menggunakan UICollectionView. Alat apa yang paling tepat di Xcode untuk mendiagnosis masalah ini secara efisien?",
+      "options": [
+        "Menggunakan Debug View Hierarchy untuk melihat hierarki tampilan visual",
+        "Menjalankan instrumen Leaks dan Time Profiler untuk melacak objek",
+        "Memasang breakpoint di dalam metode deinit dari setiap sel koleksi",
+        "Melihat log konsol melalui print statement pada siklus hidup tampilan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi fintech Anda mengalami crash secara acak saat pengguna melakukan tap cepat pada tombol transfer berkali-kali. Bagaimana cara terbaik menangani masalah ini menggunakan Swift modern?",
+      "options": [
+        "Menonaktifkan tombol secara permanen setelah satu kali klik",
+        "Menggunakan operator throttle dari Combine pada event tap tombol",
+        "Menambahkan DispatchQueue main async pada aksi tombol transfer",
+        "Mengubah fungsi tombol menjadi async await tanpa proteksi tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda memutuskan untuk migrasi dari Callback-based networking ke async/await Swift. Pada fungsi pemanggilan API profil pengguna, bagaimana deklarasi fungsi yang paling bersih dan idiomatis?",
+      "options": [
+        "func fetchProfile() async throws -> UserProfile",
+        "func fetchProfile(completion: (Result<UserProfile, Error>) -> Void)",
+        "func fetchProfile() -> Future<UserProfile, Error>",
+        "func fetchProfile(completion: @escaping (UserProfile?) -> Void)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan parsing JSON dari backend lokal yang tidak konsisten format tanggalnya, bagaimana cara menangani hal tersebut menggunakan custom JSONDecoder pada Swift?",
+      "options": [
+        "Menggunakan try! untuk mengabaikan error parsing tanggal yang invalid",
+        "Mengubah tipe data tanggal pada model struct menjadi tipe String biasa",
+        "Membuat strategi decoding kustom menggunakan closure DateDecodingStrategy",
+        "Meminta tim backend untuk memperbarui dokumentasi API secepatnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat kustom view berbasis SwiftUI untuk grafik penjualan harian. View tersebut sering melakukan render ulang yang tidak perlu saat state induk berubah. Apa solusi optimal untuk mencegahnya?",
+      "options": [
+        "Mengganti seluruh SwiftUI view dengan representasi UIKit via UIViewRepresentable",
+        "Membungkus data grafik menggunakan properti StateObject daripada ObservedObject",
+        "Memastikan model data grafik memenuhi protokol Equatable untuk optimasi diff",
+        "Menambahkan modifier onAppear untuk memuat ulang data secara manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi SuperApp di Indonesia harus mendukung mode gelap (Dark Mode) secara dinamis. Warna latar belakang kustom tidak berubah dengan benar saat pengguna mengganti tema perangkat. Langkah perbaikan apa yang harus diambil?",
+      "options": [
+        "Mendefinisikan warna menggunakan UIColor kustom dengan closure traitCollection",
+        "Membuat dua skema warna terpisah pada file Info.plist aplikasi",
+        "Melakukan restart otomatis pada aplikasi setiap kali tema sistem berubah",
+        "Menggunakan warna hex statis yang sama untuk kedua mode tampilan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam modul keranjang belanja, terjadi race condition saat dua operasi jaringan secara bersamaan memperbarui total harga lokal. Mekanisme apa di Swift yang paling tepat untuk mengamankan akses data tersebut?",
+      "options": [
+        "Menggunakan kunci DispatchSemaphore di setiap pemanggilan properti",
+        "Memindahkan seluruh logika perhitungan harga ke dalam main thread",
+        "Menerapkan Swift Actor untuk mengisolasi state keranjang belanja",
+        "Membuat variabel global dengan modifier dynamic var di Swift"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu menyimpan token akses OAuth yang sensitif di perangkat pengguna secara aman. API mana dari ekosistem Apple yang wajib digunakan dalam kode Swift Anda?",
+      "options": [
+        "UserDefaults dengan enkripsi AES tambahan pada string token",
+        "Keychain Services API untuk penyimpanan terenkripsi yang aman",
+        "CoreData dengan opsi penyimpanan SQLite terenkripsi penuh",
+        "File Manager untuk menulis token ke direktori Documents tersembunyi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Anda mendadak mengalami penurunan performa (frame drop) saat menggulir daftar transaksi yang sangat panjang di UITableView. Apa penyebab paling umum yang harus diperiksa pertama kali?",
+      "options": [
+        "Penggunaan auto layout constraint yang terlalu kompleks di dalam cell",
+        "Melakukan pemuatan gambar sinkron atau berat di dalam cellForRowAt",
+        "Jumlah data transaksi yang melebihi batas kapasitas memori RAM",
+        "Tidak menggunakan struktur data turunan dari NSObject pada model"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menulis unit test untuk fungsi manajer jaringan yang menggunakan async/await, bagaimana cara Anda menguji fungsi tersebut agar independen dari jaringan nyata?",
+      "options": [
+        "Membuat subclass dari URLSession dan mengoverride fungsi data",
+        "Menggunakan protokol untuk dependensi URLSession dan menyuntikkan Mock",
+        "Menghubungkan test target langsung ke server staging backend",
+        "Memanfaatkan XCTestExpectation dengan timeout yang cukup panjang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi penyedia layanan transportasi online, Anda mendapati bahwa fungsi pembaharuan lokasi GPS pengguna berjalan di main thread, yang menyebabkan UI kadang tersendat saat peta digeser. Bagaimana cara Anda memperbaiki masalah ini menggunakan Swift Concurrency?",
+      "options": [
+        "Memindahkan seluruh logika pemrosesan GPS ke dalam blok DispatchQueue.main agar eksekusi lebih terisolasi",
+        "Menandai fungsi pembaharuan lokasi dengan @MainActor dan menjalankan operasi berat di background actor",
+        "Mengubah fungsi pembaharuan lokasi menjadi synchronous closure agar tidak terjadi antrean pada thread utama",
+        "Menggunakan mekanisme kunci (mutex) manual pada setiap variabel koordinat agar aman diakses dari thread manapun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun fitur unggah foto KTP pada aplikasi perbankan digital. Saat pengguna memilih foto berukuran besar, aplikasi sering mengalami Memory Warning dan crash. Pendekatan apa yang paling tepat untuk mengoptimalkan penggunaan memori saat memuat gambar?",
+      "options": [
+        "Menyimpan seluruh data gambar mentah ke dalam cache disk lokal sebelum ditampilkan ke dalam komponen UIImageView",
+        "Menggunakan teknik downsampling pada UIImageSource untuk mendekode gambar sesuai dimensi tampilan yang dibutuhkan",
+        "Mematikan sistem manajemen memori otomatis ARC sementara waktu selama proses decoding gambar berlangsung",
+        "Memperbesar kapasitas alokasi heap memori aplikasi melalui file konfigurasi project agar muat menampung gambar besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada aplikasi e-commerce, halaman keranjang belanja menggunakan SwiftUI List dengan ribuan item. Ketika pengguna mengubah jumlah suatu produk, seluruh daftar ikut melakukan render ulang dan terasa lambat. Bagaimana cara mengatasi masalah performa ini?",
+      "options": [
+        "Memastikan model data item keranjang mengadopsi protokol Identifiable dan menggunakan Identifiable ID yang stabil",
+        "Mengganti seluruh komponen SwiftUI List dengan UIKit UICollectionView menggunakan representasi UIViewControllerRepresentable",
+        "Menghapus semua animasi transisi bawaan pada modifiers SwiftUI agar proses layout komputasi menjadi ditiadakan",
+        "Mengubah struktur data item dari struct value type menjadi class reference type agar referensi memorinya tetap sama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat sebuah framework Swift modular untuk integrasi payment gateway. Agar fungsi internal modul tidak dapat diakses secara sembarangan oleh aplikasi utama, tingkat akses (access control) apa yang paling tepat digunakan untuk fungsi tersebut?",
+      "options": [
+        "Menggunakan tingkat akses public agar fungsi helper dapat dibaca dan digunakan dengan bebas oleh target lain",
+        "Menggunakan tingkat akses open agar modul lain dapat melakukan override terhadap fungsi pemrosesan pembayaran",
+        "Menggunakan tingkat akses internal agar modul luar tidak bisa melihat dan mengakses fungsi internal pembayaran",
+        "Menggunakan tingkat akses fileprivate agar kode hanya bisa diakses dalam satu file kode sumber yang sama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat mengimplementasikan fitur 'Pull to Refresh' pada riwayat transaksi menggunakan Combine framework, data dari API sering datang terlambat dan menyebabkan kondisi data tumpang tindih (out-of-order response). Operator Combine apa yang harus digunakan untuk mengabaikan hasil lama jika ada permintaan baru?",
+      "options": [
+        "Menggunakan operator .debounce(for:dueTime:scheduler:) untuk menunda eksekusi permintaan selama beberapa detik",
+        "Menggunakan operator .switchToLatest() untuk membatalkan publisher lama dan hanya mendengarkan publisher terbaru",
+        "Menggunakan operator .collect() untuk menggabungkan seluruh respons jaringan menjadi satu array utuh sebelum diproses",
+        "Menggunakan operator .removeDuplicates() untuk menyaring data respons yang memiliki nilai identik secara berurutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi berita lokal mengalami retain cycle pada bagian pemuatan artikel, di mana closure pada URLSession tidak sengaja menahan referensi self secara kuat. Bagaimana cara penulisan closure yang benar untuk mencegah memory leak ini?",
+      "options": [
+        "Menambahkan daftar tangkapan [weak self] di dalam deklarasi closure sebelum memanggil properti instans",
+        "Mengubah objek self dari tipe reference class menjadi tipe value struct agar tidak memiliki reference counting",
+        "Memanggil fungsi deinit() secara manual di dalam blok penutup closure saat proses pengambilan data selesai",
+        "Menggunakan DispatchQueue.global().async mendahului pemanggilan fungsi agar memori dibebaskan otomatis oleh sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang model data menggunakan Swift Codable untuk membaca respons dari API backend yang menggunakan format kunci berbeda-beda (misalnya 'nama_lengkap' di satu endpoint dan 'fullName' di endpoint lain). Fitur apa dari Codable yang paling efektif mengatasi hal ini?",
+      "options": [
+        "Membuat inisialisasi kustom init(from decoder: Decoder) dengan memetakan enum CodingKeys secara manual",
+        "Mengubah semua nama properti struct menjadi string opsional agar proses decoding tidak pernah gagal saat kunci hilang",
+        "Menulis ekstensi global pada protocol Decodable untuk mengonversi format snake_case ke camelCase secara otomatis",
+        "Menggunakan fungsi fatalError() di dalam blok decoder untuk menghentikan aplikasi saat format kunci tidak cocok"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan fitur chat real-time, Anda perlu memastikan bahwa pembaruan antarmuka untuk gelembung pesan baru selalu dieksekusi di Main Thread, terlepas dari thread mana data WebSocket diterima. Pendekatan modern mana yang paling bersih di Swift?",
+      "options": [
+        "Membungkus kode pembaruan UI dengan DispatchQueue.main.async secara konsisten di setiap pemanggilan",
+        "Menandai metode atau kelas view controller pengelola chat dengan atribut global actor @MainActor",
+        "Membuat sebuah serial dispatch queue khusus UI yang berjalan paralel dengan main thread aplikasi",
+        "Menggunakan operasi synchronous lock pada thread pemanggil agar antrean UI tidak mengalami bentrok"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis unit test XCTest untuk menguji fungsi manajer jaringan asinkron yang mengembalikan data profil pengguna. Bagaimana cara memanggil fungsi async/await tersebut di dalam metode test fungsi tanpa menyebabkan error kompilasi?",
+      "options": [
+        "Menambahkan kata kunci async pada tanda tangan metode pengujian test, sehingga XCTest mendukung await secara langsung",
+        "Menggunakan blok ekspresi dispatchSemaphore.wait() untuk menahan thread pengujian sampai data jaringan selesai diunduh",
+        "Membungkus pemanggilan fungsi ke dalam metode asynchronous expectation standar yang disediakan oleh framework UIKit",
+        "Mengubah fungsi utama manajer jaringan menjadi berbasis closure completion handler khusus untuk kebutuhan unit testing"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Anda memiliki fitur berbagi dokumen PDF besar yang disimpan secara lokal di direktori sementara (tmp). Pengguna mengeluhkan memori penyimpanan perangkat cepat penuh. Di mana lokasi penyimpanan yang paling tepat menurut panduan Apple untuk file unduhan sementara tersebut?",
+      "options": [
+        "Menyimpan seluruh file dokumen langsung ke dalam direktori Documents agar dapat diakses kapan saja oleh pengguna",
+        "Menempatkan file ke dalam direktori Caches agar sistem operasi dapat menghapusnya secara otomatis saat ruang penyimpanan menipis",
+        "Menulis file ke dalam direktori Application Support dengan menandai atribut proteksi file sebagai enkripsi penuh",
+        "Membuat direktori kustom di luar sandbox aplikasi agar tidak membebani kuota penyimpanan internal sistem iOS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi e-commerce, Anda mendapati bahwa pengetikan cepat pada kolom pencarian produk memicu terlalu banyak panggilan API secara simultan. Bagaimana cara paling efisien menangani hal ini menggunakan Combine?",
+      "options": [
+        "Menggunakan operator debounce untuk menunda pengiriman nilai baru hingga jeda waktu tertentu",
+        "Menggunakan operator throttle untuk membatasi eksekusi maksimal satu kali dalam interval waktu",
+        "Menggunakan operator filter untuk mengabaikan teks pencarian dengan panjang kurang dari tiga",
+        "Menggunakan operator removeDuplicates untuk mencegah pengiriman kueri yang sama secara beruntun"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat aplikasi investasi saham yang menampilkan grafik pergerakan harga real-time. Saat data masuk ribuan kali per detik, antarmuka menjadi lambat karena pembaruan UI terjadi di thread utama secara berlebihan. Apa solusi terbaiknya?",
+      "options": [
+        "Memindahkan seluruh proses decoding data JSON ke background actor sebelum dikirim ke view",
+        "Memastikan setiap perubahan state UI dibungkus secara manual dengan DispatchQueue.main.async",
+        "Menggunakan operator receive(on:) dengan DispatchQueue.global() untuk memproses data UI",
+        "Menggunakan operator throttle pada publisher data agar pembaruan UI dibatasi ke interval tertentu"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah aplikasi kasir digital mengalami masalah ketika pengguna menekan tombol 'Bayar' berkali-kali dengan cepat, menyebabkan transaksi ganda terkirim ke server backend. Bagaimana cara mencegah hal ini pada tingkat ViewModel?",
+      "options": [
+        "Menonaktifkan interaksi tombol di UIKit menggunakan properti isUserInteractionEnabled secara manual",
+        "Menggunakan flag boolean penanda status proses dan mengabaikan panggilan baru jika sedang sibuk",
+        "Membuat antrian serial DispatchQueue khusus untuk mengeksekusi fungsi pembayaran secara berurutan",
+        "Mengubah fungsi pembayaran menjadi synchronous agar thread utama menunggu hingga proses selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat sebuah struct kustom di Swift yang merepresentasikan mata uang Rupiah, di mana operasi penambahan nilai hanya bisa dilakukan jika mata uangnya sama. Fitur Swift apa yang paling tepat digunakan?",
+      "options": [
+        "Memanfaatkan inheritance dari kelas induk untuk memvalidasi tipe data mata uang saat runtime",
+        "Menggunakan protocol dengan associatedtype untuk memastikan keamanan tipe saat kompilasi",
+        "Menerapkan operator overloading kustom untuk tipe data struct tersebut secara langsung",
+        "Membuat fungsi ekstensi pada tipe Double dasar untuk mendeteksi kesamaan mata uang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan aplikasi logistik, Anda perlu mengonversi respons JSON dari berbagai kurir ekspedisi yang memiliki struktur properti berbeda ke dalam satu model data standar Swift Codable. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Menggunakan tipe any Codable dan melakukan casting manual menggunakan pengkondisian tipe",
+        "Menulis implementasi init(from decoder:) kustom untuk memetakan kunci JSON yang berbeda",
+        "Membuat kelas turunan terpisah untuk setiap kurir yang mewarisi satu kelas dasar universal",
+        "Meminta tim backend mengubah seluruh struktur respons JSON agar seragam di sisi server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi perbankan Anda menggunakan Core Data untuk menyimpan riwayat transaksi secara lokal. Saat melakukan migrasi model data sederhana (menambah atribut baru), aplikasi crash karena migrasi otomatis gagal. Langkah perbaikan apa yang harus diambil?",
+      "options": [
+        "Mengaktifkan inferensi pemetaan ringan dengan mengatur opsi migrasi di NSPersistentStoreDescription",
+        "Menghapus file database lama secara otomatis saat aplikasi mendeteksi adanya versi skema baru",
+        "Menulis kode migrasi manual yang kompleks menggunakan NSMigrationManager dan mapping model",
+        "Membuat entitas baru terpisah di model Core Data tanpa mengubah entitas transaksi yang lama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah kelas manajer unduhan file di aplikasi Anda mengalami retain cycle karena closure delegate mempertahankan referensi kuat ke instance kelas itu sendiri. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Mengubah kelas manajer unduhan tersebut menjadi sebuah struct agar tidak memiliki referensi memori",
+        "Menambahkan daftar tangkapan [weak self] di dalam deklarasi closure yang mereferensikan kelas",
+        "Mengganti seluruh penggunaan closure di kelas tersebut menjadi pola desain target-action",
+        "Memastikan untuk selalu memanggil metode pembatalan memori di fungsi deinit kelas tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi manajemen inventaris gudang, Anda perlu mengurutkan daftar ribuan produk berdasarkan nama secara lokal dengan performa tinggi. Manakah dari pilihan berikut yang merupakan cara paling idiomatis di Swift?",
+      "options": [
+        "Menggunakan metode sorted(by:) bawaan koleksi dengan closure pembanding string standar",
+        "Membuat algoritma pengurutan Bubble Sort kustom untuk memastikan kontrol penuh memori",
+        "Mengubah array produk menjadi NSArray lalu memanggil fungsi pengurutan berbasis Objective-C",
+        "Menggunakan pustaka pihak ketiga eksternal untuk mempercepat proses pengurutan data array"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengimplementasikan sistem caching gambar profil pengguna di memori menggunakan NSCache. Masalah apa yang paling sering muncul jika Anda mengabaikan pengaturan batas kapasitas cache?",
+      "options": [
+        "Data gambar akan langsung terhapus secara permanen saat aplikasi beralih ke latar belakang",
+        "Aplikasi akan mengalami penutupan paksa oleh sistem operasi karena kehabisan memori (OOM)",
+        "Proses pengambilan gambar dari server akan berjalan dua kali lebih lambat dari biasanya",
+        "Kunci cache akan mengalami konflik nama jika pengguna memiliki foto dengan ukuran identik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fitur analitik kustom di aplikasi Anda harus berjalan secara asinkron tanpa memblokir thread utama saat mengirim log aktivitas pengguna. Fitur konkurensi Swift manakah yang paling pas untuk skenario ini?",
+      "options": [
+        "Membuat GlobalActor khusus analitik untuk memastikan semua tugas berjalan di satu thread",
+        "Menggunakan Task.detached untuk menjalankan pengiriman log secara terpisah dari konteks saat ini",
+        "Menjalankan fungsi pengiriman log di dalam blok DispatchQueue.main berprioritas rendah",
+        "Memanfaatkan mekanisme actor reentrancy untuk mengantrekan pengiriman log secara bergantian"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

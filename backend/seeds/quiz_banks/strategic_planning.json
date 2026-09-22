@@ -1,0 +1,306 @@
+{
+  "skill": "Strategic Planning",
+  "skill_key": "strategic planning",
+  "questions": [
+    {
+      "question": "Perusahaan ritel Anda mengalami penurunan margin keuntungan sebesar 15% dalam dua kuartal terakhir akibat perang harga dengan kompetitor baru. Sebagai Kepala Strategi, langkah awal apa yang paling tepat untuk merumuskan ulang arah bisnis?",
+      "options": [
+        "Memotong anggaran operasional dan pemasaran secara merata sebesar 20%",
+        "Melakukan analisis rantai nilai dan segmentasi pelanggan untuk mencari celah produk bernilai tinggi",
+        "Segera menurunkan harga produk inti agar dapat bersaing secara langsung dengan kompetitor",
+        "Mengadakan rapat darurat seluruh karyawan untuk meminta ide inovasi produk baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang memimpin penyusunan rencana strategis 5 tahun untuk sebuah perusahaan logistik nasional. Divisi operasional mendesak investasi besar pada armada truk konvensional, sementara divisi teknologi menyarankan otomatisasi gudang dan sistem berbasis AI. Alokasi sumber daya terbatas. Apa yang harus Anda lakukan?",
+      "options": [
+        "Menyetujui usulan operasional karena armada truk adalah inti bisnis saat ini",
+        "Membagi anggaran secara adil 50:50 agar kedua divisi tidak merasa dianaktirikan",
+        "Menilai kembali proyek mana yang paling selaras dengan visi jangka panjang dan tren industri",
+        "Menunda seluruh investasi strategis sampai kondisi keuangan tahun depan lebih stabil"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sesi evaluasi triwulanan pelaksanaan strategi perusahaan fintech, Anda mendapati bahwa target akuisisi pengguna baru tercapai 150%, namun tingkat retensi (customer retention) turun drastis. Keputusan strategis apa yang harus diambil?",
+      "options": [
+        "Tetap fokus pada akuisisi karena volume pengguna yang besar menarik investor",
+        "Menghentikan semua kampanye pemasaran dan memecat tim akuisisi pengguna",
+        "Mengalihkan sebagian sumber daya dari akuisisi ke peningkatan pengalaman dan utilitas produk",
+        "Menaikkan biaya layanan untuk menyaring pengguna yang kurang loyal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pemerintah baru saja mengeluarkan regulasi ketat baru yang membatasi impor bahan baku utama industri manufaktur Anda. Rencana strategis tahunan yang sudah disetujui dewan direksi menjadi tidak relevan. Langkah taktis strategis apa yang paling mendesak?",
+      "options": [
+        "Melakukan lobi politik kepada kementerian terkait untuk pengecualian regulasi",
+        "Mengaktifkan tim manajemen krisis untuk mengevaluasi pemasok lokal dan mengubah desain produk",
+        "Menghentikan kegiatan produksi sementara waktu sampai situasi regulasi mereda",
+        "Melanjutkan produksi dengan sisa bahan baku sambil mencari celah hukum impor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja merumuskan strategi ekspansi pasar ke luar pulau Jawa. Saat mempresentasikannya kepada para manajer cabang, Anda melihat gelombang penolakan karena mereka merasa target tersebut tidak realistis. Bagaimana pendekatan komunikasi strategis Anda?",
+      "options": [
+        "Mengancam akan memberikan sanksi bagi cabang yang tidak mencapai target ekspansi",
+        "Menurunkan target ekspansi sebesar 50% agar para manajer merasa nyaman",
+        "Mengubah seluruh strategi ekspansi sesuai dengan usulan para manajer cabang",
+        "Mengadakan lokakarya bersama untuk memecah target besar menjadi inisiatif lokal yang terukur"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah perusahaan FMCG ingin meluncurkan produk ramah lingkungan. Analisis SWOT menunjukkan kapabilitas internal riset produk sangat kuat, tetapi kesadaran merek (brand awareness) untuk kategori hijau masih sangat rendah di pasar Indonesia. Strategi pemasaran mana yang paling tepat dipilih?",
+      "options": [
+        "Memasang iklan masif di televisi nasional untuk memperkenalkan kategori produk baru",
+        "Bermitra dengan influencer gaya hidup berkelanjutan dan komunitas lokal untuk edukasi pasar",
+        "Menjual produk dengan harga murah di bawah modal untuk menarik pembeli pertama",
+        "Fokus menjual produk hanya melalui saluran digital eksklusif tanpa pemasaran luas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses penyusunan Key Performance Indicators (KPI) tingkat korporat untuk tahun depan, Anda menemukan bahwa divisi penjualan dan divisi keuangan memiliki target yang saling bertentangan secara langsung. Langkah penyelarasan strategis apa yang harus dilakukan?",
+      "options": [
+        "Membiarkan kedua divisi berjalan sendiri karena persaingan internal memicu produktivitas",
+        "Memutuskan target secara sepihak berdasarkan intuisi Anda sebagai perencana strategi",
+        "Memfasilitasi forum lintas fungsi untuk merumuskan metrik bersama yang menyeimbangkan pertumbuhan dan risiko",
+        "Menghapus KPI kedua divisi tersebut dan menggantinya dengan target kehadiran karyawan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan telekomunikasi tempat Anda bekerja menghadapi kejenuhan pasar seluler konvensional. Manajemen puncak meminta usulan diversifikasi strategis. Berdasarkan analisis lanskap digital Indonesia saat ini, arah diversifikasi mana yang paling rasional?",
+      "options": [
+        "Membangun rantai restoran waralaba nasional untuk memperluas portofolio aset",
+        "Masuk ke industri pertambangan batubara untuk mendapatkan margin keuntungan tinggi",
+        "Mengembangkan layanan ekosistem digital seperti cloud computing dan solusi IoT korporat",
+        "Membuat lini pakaian bermerek sendiri untuk dijual kepada pelanggan setia"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan memimpin restrukturisasi strategis di sebuah perusahaan media cetak tradisional yang sedang sekarat. Aset digital sudah ada tetapi monetisasinya gagal. Apa prioritas utama dalam dokumen strategi pemulihan Anda?",
+      "options": [
+        "Mencetak lebih banyak koran edisi khusus akhir pekan dengan desain grafis mewah",
+        "Memangkas seluruh jurnalis senior dan menggantinya dengan penulis konten magang",
+        "Memindahkan seluruh anggaran ke media cetak luar ruang dan baliho perkotaan",
+        "Mentransformasi model pendapatan ke langganan digital berbayar dengan kurasi konten eksklusif"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah startup unicorn lokal ingin melakukan ekspansi regional ke Asia Tenggara. Sebagai VP of Strategy, Anda diminta menyaring berbagai usulan negara tujuan. Kriteria paling objektif apa yang harus digunakan dalam kerangka kerja pengambilan keputusan?",
+      "options": [
+        "Memilih negara yang pimpinan perusahaannya memiliki kedekatan personal dengan CEO Anda",
+        "Menilai ukuran pasar, hambatan regulasi, tingkat kompetisi lokal, dan kesiapan infrastruktur digital",
+        "Memilih negara dengan biaya sewa kantor termurah di ibu kota negara tersebut",
+        "Mengikuti jejak langkah kompetitor utama tanpa perlu menganalisis kondisi spesifik pasar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan distribusi makanan beku Anda menghadapi lonjakan biaya bahan bakar logistik sebesar 30%. Strategi mitigasi risiko finansial yang paling berkelanjutan dalam kerangka perencanaan strategis adalah:",
+      "options": [
+        "Membebankan seluruh kenaikan biaya tersebut langsung kepada pelanggan setia",
+        "Mengoptimalkan rute pengiriman menggunakan perangkat lunak analitik geospasial",
+        "Mengurangi frekuensi pengiriman barang ke toko-toko kecil hingga batas minimum",
+        "Mengganti seluruh armada truk pengiriman dengan kendaraan listrik berukuran kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Strategic Planner di perusahaan agritech, Anda melihat adopsi aplikasi oleh petani di Jawa Timur sangat rendah meskipun biaya langganan sudah digratiskan. Langkah strategis paling efektif untuk mengatasi hambatan ini adalah:",
+      "options": [
+        "Mengganti seluruh tim pengembang aplikasi dengan talenta yang lebih berpengalaman",
+        "Mengubah model bisnis menjadi sistem bagi hasil berdasarkan peningkatan hasil panen",
+        "Bermitra dengan kelompok tani lokal dan mendampingi langsung proses penggunaannya",
+        "Melakukan kampanye iklan televisi nasional secara masif untuk meningkatkan kesadaran"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan properti Anda memiliki portofolio apartemen menengah ke bawah yang permukaannya jenuh, sementara permintaan ruko komersial meningkat pesat di kawasan penyangga Jakarta. Keputusan alokasi sumber daya strategis terbaik adalah:",
+      "options": [
+        "Menghentikan seluruh proyek apartemen dan langsung membangun ruko komersial baru",
+        "Melakukan penyesuaian desain lantai dasar apartemen yang belum terjual menjadi ruang usaha",
+        "Menurunkan harga jual apartemen secara agresif untuk menghabiskan stok yang ada",
+        "Meminta suntikan dana tambahan dari investor guna mendanai riset pasar ruko komersial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi pemasaran dan divisi penjualan di perusahaan manufaktur Anda saling menyalahkan: pemasaran merasa lead yang diberikan sudah berkualitas tetapi diabaikan, sedangkan penjualan merasa lead tersebut tidak siap beli. Intervensi strategis apa yang paling tepat?",
+      "options": [
+        "Membubarkan kedua divisi tersebut dan membentuk satu unit tugas lintas fungsi terpadu",
+        "Menetapkan metrik Service Level Agreement (SLA) bersama terkait kriteria lead siap jual",
+        "Memberikan pelatihan motivasi kerja secara rutin kepada tim penjualan setiap minggu",
+        "Mengganti sistem insentif finansial dengan fokus utama pada volume penjualan produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit swasta tier-2 menghadapi persaingan ketat dari rumah sakit spesialis baru. Analisis menunjukkan kekuatan utama mereka adalah layanan poli umum yang cepat dan terjangkau. Strategi diferensiasi yang paling rasional untuk diterapkan adalah:",
+      "options": [
+        "Mengubah seluruh fasilitas menjadi pusat bedah plastik mewah demi margin tinggi",
+        "Memperluas jam layanan malam hari dan mempercepat proses administrasi pasien umum",
+        "Menaikkan tarif layanan umum secara bertahap guna meningkatkan citra merek premium",
+        "Menghentikan kerja sama dengan BPJS Kesehatan untuk fokus pada pasien asuransi swasta"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rantai hotel business budget ingin meningkatkan tingkat okupansi pada akhir pekan saat kunjungan bisnis sepi. Inisiatif strategis berbasis portofolio yang paling logis adalah:",
+      "options": [
+        "Menutup operasional hotel setiap hari Sabtu dan Minggu untuk menekan biaya utilitas",
+        "Mengubah konsep hotel menjadi pusat kebugaran dan spa khusus warga sekitar",
+        "Menawarkan paket liburan keluarga terintegrasi dengan destinasi wisata lokal terdekat",
+        "Menurunkan kualitas layanan makanan dan minuman guna menghemat pengeluaran"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam memonitor eksekusi strategi ekspansi pabrik baru di Kalimantan, Anda mendapati bahwa proyek mengalami keterlambatan 20% dari jadwal akibat rantai pasok material konstruksi. Tindakan korektif strategis yang harus diambil adalah:",
+      "options": [
+        "Memberikan sanksi pemotongan anggaran kepada kontraktor utama yang bertanggung jawab",
+        "Melakukan negosiasi ulang dengan vendor lokal alternatif untuk mempercepat pasokan",
+        "Merevisi tenggat waktu keseluruhan proyek tanpa mengubah alokasi sumber daya",
+        "Mengurangi kapasitas produksi pabrik saat beroperasi nanti untuk menghemat waktu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Platform e-commerce lokal Anda kalah bersaing dalam hal bakar uang (subsidi ongkir) dengan pemain asing raksasa. Sebagai Head of Strategy, arah strategis jangka panjang mana yang paling aman untuk kelangsungan bisnis?",
+      "options": [
+        "Meminjam dana dalam jumlah besar untuk menandingi subsidi ongkir kompetitor",
+        "Keluar dari pasar massal dan fokus mendominasi produk UMKM lokal berkurasi tinggi",
+        "Menjual perusahaan kepada investor asing sebelum kehabisan modal operasional",
+        "Mengubah platform menjadi situs informasi ulasan produk tanpa fitur transaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil asesmen budaya organisasi menunjukkan bahwa karyawan di perusahaan jasa keuangan Anda sangat resistan terhadap digitalisasi proses kerja baru. Langkah change management strategis yang paling tepat adalah:",
+      "options": [
+        "Memberikan peringatan tertulis kepada karyawan senior yang menolak menggunakan sistem",
+        "Merekrut konsultan eksternal untuk memaksa penerapan sistem baru dalam waktu singkat",
+        "Menunjuk champion dari internal staf untuk memberikan pelatihan dan pendampingan rekan sejawat",
+        "Menunda proyek digitalisasi hingga seluruh karyawan merasa siap secara psikologis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan konsultan manajemen Anda ingin merambah pasar klien sektor pemerintahan (B2B/B2G). Kendala utamanya adalah lambatnya proses birokrasi pengadaan. Strategi penyesuaian operasional yang efektif adalah:",
+      "options": [
+        "Membentuk tim khusus tender pemerintah yang memahami seluk-beluk regulasi LPSE",
+        "Menurunkan tarif jasa konsultasi secara drastis di bawah standar pasar industri",
+        "Mengurangi jumlah tenaga ahli agar biaya operasional perusahaan tetap rendah",
+        "Mengalihkan seluruh fokus bisnis kembali ke sektor swasta multinasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan logistik kargo udara Anda mengalami tekanan kompetisi harga yang ketat dari pemain baru bermodal besar. Alih-alih ikut perang tarif, strategi diferensiasi apa yang paling efektif untuk mempertahankan pangsa pasar?",
+      "options": [
+        "Menawarkan jaminan ketepatan waktu pengiriman barang bernilai tinggi dengan sistem asuransi",
+        "Memotong gaji kurir lapangan guna menekan biaya operasional harian hingga titik minimal",
+        "Membuka jalur penerbangan domestik baru ke kota-kota kecil yang belum terjamah rute reguler",
+        "Menjual seluruh armada pesawat kargo dan menyewanya kembali dari perusahaan leasing"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur alas kaki di Sidoarjo menghadapi lonjakan Upah Minimum Kabupaten (UMK) sebesar 15% tahun depan. Sebagai kepala strategi, langkah apa yang harus Anda rekomendasikan kepada direksi?",
+      "options": [
+        "Menghentikan seluruh produksi manual dan memindahkan basis pabrik ke wilayah pedesaan",
+        "Melakukan otomatisasi pada lini perakitan utama untuk menaikkan produktivitas per tenaga kerja",
+        "Menaikkan harga jual produk secara agresif sebesar persentase kenaikan UMK kepada konsumen",
+        "Mengurangi jumlah jam kerja karyawan tetap dan memperbanyak pekerja kontrak harian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan SaaS (Software as a Service) lokal Anda mendapati tingkat churn rate pelanggan korporat melonjak hingga 8% per bulan. Analisis awal menunjukkan klien berhenti berlangganan karena kesulitan menggunakan fitur lanjutan. Apa tindakan strategis terbaik?",
+      "options": [
+        "Mengubah model bisnis dari langganan bulanan menjadi sistem beli putus lisensi",
+        "Membentuk tim customer success khusus untuk melakukan onboarding dan pelatihan intensif",
+        "Memberikan diskon besar-besaran bagi klien yang memperpanjang kontrak tahun depan",
+        "Menurunkan harga paket langganan agar setara dengan kompetitor termurah di pasar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menyusun strategi penetrasi pasar untuk produk makanan ringan sehat ke minimarket modern nasional. Tantangan terbesarnya adalah biaya slotting fee yang sangat tinggi di rak ritel. Keputusan strategis apa yang paling rasional?",
+      "options": [
+        "Memfokuskan anggaran awal pada kanal e-commerce dan pameran komunitas sebelum masuk ritel",
+        "Meminjam dana bank untuk membayar biaya slotting fee di seluruh gerai minimarket nasional",
+        "Menurunkan kualitas bahan baku demi menekan harga pokok penjualan produk secara drastis",
+        "Mengubah seluruh lini produk menjadi makanan beku agar memiliki daya simpan yang lebih lama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah grup media digital lokal mendapati pendapatan iklan banner menurun drastis karena migrasi audiens ke media sosial. Dewan direksi meminta perumusan pilar pendapatan baru dalam strategi jangka panjang. Langkah awal yang paling tepat adalah?",
+      "options": [
+        "Melakukan PHK massal pada divisi jurnalis investigasi untuk memangkas biaya operasional",
+        "Mengembangkan layanan berbasis langganan premium dan event eksklusif bagi pembaca setia",
+        "Membuat akun media sosial di setiap platform untuk mendulang traffic klik iklan harian",
+        "Mengakuisisi perusahaan percetakan konvensional untuk memperluas jangkauan pembaca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam rapat review tahunan, ditemukan bahwa strategi diversifikasi produk yang diluncurkan dua tahun lalu menyerap 40% sumber daya perusahaan namun hanya menyumbang 5% total pendapatan. Apa keputusan strategis yang harus diambil?",
+      "options": [
+        "Menambah alokasi anggaran pemasaran produk tersebut agar penjualannya bisa terdongkrak",
+        "Melakukan divestasi atau menghentikan lini produk tersebut untuk memfokuskan sumber daya",
+        "Mengganti seluruh jajaran manajer produk dengan tenaga ahli dari perusahaan multinasional",
+        "Menggabungkan lini produk yang kurang performa ini dengan produk utama yang paling laris"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah jaringan kafe lokal ingin berekspansi secara agresif ke lima kota besar di luar Jawa dalam waktu satu tahun. Analisis risiko menunjukkan kendala utama adalah menjaga konsistensi kualitas rasa produk. Strategi operasional apa yang wajib diterapkan?",
+      "options": [
+        "Mengandalkan keahlian meracik dari barista lokal yang direkrut langsung di setiap kota tujuan",
+        "Membangun fasilitas dapur pusat (central kitchen) untuk memasok bahan setengah jadi yang distandarisasi",
+        "Mengubah menu di setiap cabang agar menyesuaikan dengan selera lidah masyarakat setempat",
+        "Mewajibkan seluruh manajer cabang untuk mengikuti pelatihan intensif di luar negeri selama setahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan pembiayaan multi-finance Anda menghadapi risiko kredit macet (NPL) yang meningkat di segmen kendaraan roda dua bekas. Langkah mitigasi strategis dalam portofolio pinjaman yang paling tepat adalah?",
+      "options": [
+        "Menaikkan suku bunga pinjaman secara merata untuk menutup potensi kerugian dari kredit macet",
+        "Mengetatkan kriteria penilaian kredit dengan mengintegrasikan data alternatif dari rekam jejak digital",
+        "Menghentikan total penyaluran pembiayaan dan mengalihkan seluruh modal ke deposito berjangka",
+        "Menurunkan uang muka (DP) minimum guna menarik lebih banyak debitur baru secepat mungkin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik tekstil besar mendapati mesin produksinya sudah usang sehingga sering rusak dan menghambat target pengiriman ekspor. Anggaran belanja modal (CapEx) terbatas. Apa prioritas alokasi strategis yang harus diputuskan?",
+      "options": [
+        "Melakukan perbaikan darurat pada mesin lama setiap kali terjadi kerusakan di lini produksi",
+        "Membeli mesin baru yang paling canggih dengan menarik utang bank dalam jumlah besar",
+        "Melakukan audit pemeliharaan prediktif dan merevitalisasi komponen vital mesin yang paling krusial",
+        "Mengalihkan sebagian pesanan ekspor ke pabrik subkontraktor luar sembari menunggu modal terkumpul"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses transformasi digital sebuah bank daerah, bagian IT dan bagian operasional sering berselisih paham mengenai prioritas pengembangan fitur aplikasi mobile banking. Sebagai kepala strategi korporat, bagaimana Anda menyelesaikan konflik ini?",
+      "options": [
+        "Menyerahkan seluruh keputusan anggaran teknologi sepenuhnya kepada divisi IT tanpa intervensi",
+        "Membentuk gugus tugas lintas fungsi yang menyelaraskan metrik kesuksesan berbasis kebutuhan nasabah",
+        "Memisahkan divisi operasional dari struktur organisasi bank agar tidak menghambat inovasi IT",
+        "Merekrut konsultan eksternal untuk mengambil alih pengelolaan proyek transformasi digital secara penuh"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

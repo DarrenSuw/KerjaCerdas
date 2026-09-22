@@ -116,7 +116,7 @@ def _app():
 
 
 @pytest.fixture
-def client(_app) -> Iterator[TestClient]:
+def client(_app, _mock_background_gemini_calls) -> Iterator[TestClient]:
     """Started app (lifespan runs) backed by the isolated SQLite file."""
     with TestClient(_app) as c:
         yield c
@@ -140,6 +140,7 @@ def _clean_database():
                 except Exception:  # table not created yet
                     pass
 
+
     asyncio.run(_wipe())
 
     # Process-wide caches that would otherwise carry rows across tests.
@@ -150,6 +151,18 @@ def _clean_database():
     from backend.app.agents.graph import builder as builder_mod
 
     builder_mod._graph_v2 = None
+
+
+@pytest.fixture(autouse=True)
+def _mock_background_gemini_calls(monkeypatch):
+    """Prevent the background bank top-up from making real Gemini calls and locking the DB during tests."""
+    import asyncio
+    original_create_task = asyncio.create_task
+    def mock_create_task(coro, *args, **kwargs):
+        if getattr(coro, "__name__", "") == "_topup_all_banks":
+            return original_create_task(asyncio.sleep(0), *args, **kwargs)
+        return original_create_task(coro, *args, **kwargs)
+    monkeypatch.setattr(asyncio, "create_task", mock_create_task)
 
 
 @pytest.fixture(autouse=True)

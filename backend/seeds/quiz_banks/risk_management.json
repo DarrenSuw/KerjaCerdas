@@ -1,0 +1,306 @@
+{
+  "skill": "Risk Management",
+  "skill_key": "risk management",
+  "questions": [
+    {
+      "question": "Rumah sakit swasta di Surabaya mendeteksi potensi kerentanan keamanan data rekam medis pasien setelah adanya tren serangan siber di industri kesehatan. Langkah proaktif apa yang harus segera diambil oleh Manajer IT?",
+      "options": [
+        "Mematikan seluruh server yang terhubung ke internet secara permanen",
+        "Melakukan audit penetrasi sistem dan memperbarui protokol enkripsi data",
+        "Menunggu hingga terjadi insiden nyata sebelum mengalokasikan anggaran",
+        "Meminta seluruh staf medis menandatangani surat pernyataan kerahasiaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agrikultur di Sumatra menghadapi risiko gagal panen akibat fenomena cuaca ekstrem El Nino yang diprediksi BMKG. Keputusan manajerial apa yang paling tepat dalam konteks mitigasi risiko operasional?",
+      "options": [
+        "Mengalihkan investasi sepenuhnya ke sektor properti perkotaan",
+        "Mengubah jadwal tanam dan menginstal sistem irigasi hemat air",
+        "Membiarkan lahan tetap kosong sampai musim kemarau benar-benar usai",
+        "Menjual seluruh aset lahan pertanian kepada investor asing secepatnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Jakarta mendapati bahwa 40% armadanya sudah tua dan sering mogok, mengancam SLA pengiriman klien korporat. Berdasarkan kerangka manajemen risiko ISO 31000, langkah mitigasi paling tepat yang harus diambil manajer operasional adalah:",
+      "options": [
+        "Menghentikan seluruh operasional armada tua secara mendadak demi keamanan",
+        "Membuat jadwal peremajaan bertahap dan kontrak sewa kendaraan cadangan",
+        "Membebankan denda keterlambatan sepenuhnya kepada pengemudi terkait",
+        "Meminta klien untuk memaklumi kondisi lalu lintas Jakarta yang buruk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer proyek IT di sebuah bank swasta menemukan bahwa vendor perangkat lunak inti telat menyerahkan modul krusial selama dua minggu dari jadwal. Apa tindakan respons risiko pertama yang harus dilakukan manajer?",
+      "options": [
+        "Mengaktifkan rencana darurat dengan mempekerjakan konsultan lepas internal",
+        "Memutuskan kontrak kerja sama vendor secara sepihak untuk memberi efek jera",
+        "Mengabaikan keterlambatan karena biasanya tim internal bisa mengejar waktu",
+        "Melaporkan masalah langsung ke jajaran komisaris tanpa solusi alternatif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik pengolahan makanan di Cikarang menghadapi risiko kenaikan harga bahan baku impor akibat fluktuasi nilai tukar Rupiah yang tinggi. Strategi finansial apa yang paling efektif untuk mengendalikan eksposur risiko ini?",
+      "options": [
+        "Menaikkan harga jual produk ke konsumen secara drastis setiap bulan",
+        "Menghentikan pembelian bahan baku impor dan mencari bahan lokal seadanya",
+        "Melakukan kontrak lindung nilai atau hedging valuta asing dengan bank",
+        "Menyimpan cadangan kas perusahaan dalam bentuk dolar di brankas kantor"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Divisi HR sebuah perusahaan ritel nasional mendapati tingkat turnover karyawan front-liner mencapai 35% per tahun, mengganggu layanan pelanggan. Penilaian risiko manakah yang paling akurat untuk mengidentifikasi akar masalah?",
+      "options": [
+        "Menganalisis hasil wawancara keluar dan membandingkan gaji dengan standar industri",
+        "Membuat peraturan disiplin kerja yang jauh lebih ketat bagi staf yang bertahan",
+        "Mengurangi anggaran pelatihan karena karyawan baru toh akan segera resign",
+        "Menaikkan target penjualan bulanan untuk menyaring karyawan yang tidak loyal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim kepatuhan (compliance) sebuah startup fintech menemukan celah dalam prosedur KYC (Know Your Customer) yang berpotensi dimanfaatkan untuk pencucian uang. Tindakan mitigasi segera yang wajib dieksekusi adalah:",
+      "options": [
+        "Menutup seluruh akun pengguna baru yang mendaftar dalam sebulan terakhir",
+        "Memperketat verifikasi identitas digital dan melaporkan celah ke regulator",
+        "Mengurangi batas transaksi harian pengguna tanpa melakukan verifikasi ulang",
+        "Membiarkan celah tersebut tetap ada demi mengejar target pertumbuhan bisnis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Proyek pembangunan gedung bertingkat di Bali mengalami penundaan izin AMDAL dari instansi terkait, menghentikan aktivitas konstruksi di lapangan. Bagaimana manajer proyek harus mengelola risiko regulasi ini?",
+      "options": [
+        "Melanjutkan proses pembangunan secara sembunyi-sembunyi pada malam hari",
+        "Membubarkan tim proyek dan memecat seluruh pekerja bangunan harian",
+        "Berkoordinasi dengan konsultan hukum untuk mempercepat proses birokrasi",
+        "Menyalahkan instansi pemerintah di media sosial atas lambatnya layanan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan kafe nasional berencana beralih ke penyedia biji kopi lokal baru demi efisiensi biaya, namun menghadapi risiko inkonsistensi rasa produk. Langkah uji kelayakan risiko yang tepat adalah:",
+      "options": [
+        "Langsung mengganti seluruh pasokan di semua cabang tanpa uji coba pasar",
+        "Mengadakan uji rasa buta (blind taste test) terbatas pada pelanggan setia",
+        "Menurunkan harga jual kopi di semua cabang untuk mengantisipasi protes",
+        "Melarang pelanggan memberikan ulasan negatif tentang rasa kopi yang baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan manufaktur komponen otomotif mendapati bahwa satu-satunya pemasok baut baja utama mereka mengalami kebakaran pabrik. Rencana kontinuitas bisnis (Business Continuity Plan) apa yang paling mendesak diaktifkan?",
+      "options": [
+        "Mengimpor pasokan alternatif dari daftar pemasok cadangan yang telah diverifikasi",
+        "Menghentikan produksi kendaraan roda empat secara nasional hingga tahun depan",
+        "Meminta teknisi pabrik untuk mulai melebur besi sisa menjadi baut secara manual",
+        "Mengubah spesifikasi desain produk agar tidak memerlukan baut baja sama sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan pengembang properti di Tangerang menghadapi risiko sengketa lahan dengan warga lokal menjelang pembangunan klaster baru. Langkah mitigasi apa yang paling efektif dilakukan pertama kali?",
+      "options": [
+        "Melanjutkan pembangunan dengan pengawalan aparat keamanan setempat",
+        "Melakukan dialog terbuka dan audit legalitas kepemilikan tanah bersama",
+        "Menunda proyek secara permanen untuk menghindari konflik lanjutan",
+        "Membeli tanah tambahan di lokasi lain sebagai alternatif cadangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan e-commerce di Jakarta mengalami lonjakan trafik hingga 300% saat kampanye harbolnas, yang berpotensi menyebabkan peladen (server) down. Tindakan mitigasi proaktif apa yang harus diambil tim manajemen risiko IT?",
+      "options": [
+        "Membatasi jumlah transaksi harian secara ketat selama periode promo",
+        "Menonaktifkan fitur pembayaran tertentu untuk mengurangi beban sistem",
+        "Melakukan uji beban dan menambah kapasitas server sementara secara dinamis",
+        "Menunda kampanye hingga infrastruktur internal dibeli dan diperbarui total"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur tekstil di Bandung sangat bergantung pada pasokan energi listrik dari PLN. Mengingat seringnya pemadaman, strategi penanganan risiko apa yang paling tepat diterapkan?",
+      "options": [
+        "Mengalihkan seluruh jadwal produksi operasional hanya pada akhir pekan",
+        "Meminta ganti rugi finansial secara rutin kepada pihak penyedia listrik",
+        "Berhenti beroperasi total dan merumahkan karyawan saat terjadi pemadaman",
+        "Berinvestasi pada genset berkapasitas industri dan sistem catu daya cadangan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Manajer risiko di sebuah perusahaan konsultan multinasional di Jakarta mendapati bahwa dokumen rahasia klien sering dibawa pulang oleh karyawan menggunakan laptop pribadi. Apa tindakan mitigasi yang paling tepat?",
+      "options": [
+        "Memberikan sanksi pemecatan langsung tanpa peringatan kepada staf",
+        "Melarang penggunaan laptop pribadi dan menerapkan kebijakan enkripsi data ketat",
+        "Meminta klien untuk menandatangani surat pembebasan tanggung jawab data",
+        "Membiarkan praktik tersebut selama karyawan berjanji menjaga kerahasiaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan ekspor hasil laut di Makassar menghadapi risiko pembatalan pesanan secara sepihak oleh buyer di Eropa akibat pengetatan regulasi lingkungan. Bagaimana langkah mitigasi terbaik yang harus diambil?",
+      "options": [
+        "Mengalihkan seluruh target pasar ekspor yang ada ke wilayah domestik",
+        "Melakukan audit rantai pasok untuk memenuhi standar sertifikasi keberlanjutan",
+        "Mengajukan gugatan hukum internasional kepada buyer yang membatalkan",
+        "Menurunkan harga jual produk secara drastis untuk menarik minat pembeli baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan pertambangan batu bara di Kalimantan mendapati bahwa jalan hauling utama mereka rawan longsor saat musim hujan lebat. Tindakan mitigasi risiko operasional apa yang paling tepat?",
+      "options": [
+        "Menghentikan seluruh aktivitas penambangan selama musim hujan berlangsung",
+        "Membangun dinding penahan tanah dan sistem drainase air yang memadai",
+        "Meminta pemerintah daerah untuk memperbaiki infrastruktur jalan tersebut",
+        "Mengalihkan rute angkutan melalui pemukiman warga terdekat secara sementara"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah produksi film di Jakarta menghadapi risiko kebocoran materi film mentah ke internet sebelum jadwal penayangan bioskop. Kontٹرول risiko apa yang paling efektif diterapkan?",
+      "options": [
+        "Membatasi akses file hanya pada tim inti dengan sistem manajemen hak digital",
+        "Mengasuransikan seluruh biaya produksi film kepada perusahaan asuransi",
+        "Meminta penonton bioskop menandatangani perjanjian kerahasiaan saat membeli tiket",
+        "Menyebarkan versi bajakan sendiri terlebih dahulu untuk meredam dampak"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi seluler nasional merencanakan peluncuran produk pascabayar baru, namun divisi hukum memperingatkan adanya potensi pelanggaran aturan perlindungan konsumen. Apa langkah mitigasi yang harus dilakukan?",
+      "options": [
+        "Meluncurkan produk secara diam-diam tanpa publikasi media massa",
+        "Mengubah syarat dan ketentuan layanan agar selaras dengan regulasi berlaku",
+        "Menunda peluncuran produk sampai ada revisi undang-undang terkait",
+        "Melanjutkan peluncuran dan menyiapkan anggaran untuk membayar denda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank perkreditan rakyat (BPR) di Jawa Tengah mengalami peningkatan rasio kredit macet (Non-Performing Loan) akibat pelemahan ekonomi sektor UMKM lokal. Strategi mitigasi risiko kredit apa yang paling tepat?",
+      "options": [
+        "Menutup seluruh kantor cabang yang mencatatkan rasio kredit macet tinggi",
+        "Menghentikan total penyaluran kredit baru kepada semua jenis pelaku usaha",
+        "Melakukan restrukturisasi kredit dan memperketat analisis kelayakan nasabah",
+        "Menjual seluruh portofolio piutang macet kepada perusahaan penagih utang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan FMCG di Surabaya mendapati produk makanan mereka kedaluwarsa di rak supermarket mitra karena distribusi yang lambat. Langkah mitigasi apa yang harus diambil untuk rantai pasok?",
+      "options": [
+        "Menerapkan sistem pelacakan inventaris berbasis FIFO dan memperketat retur",
+        "Meminta supermarket mengganti seluruh kerugian produk yang tidak terjual",
+        "Menghentikan kerja sama penjualan dengan supermarket yang kinerjanya buruk",
+        "Menurunkan masa kedaluwarsa pada label kemasan produk untuk keamanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan jasa ekspedisi menghadapi komplain pelanggan yang meningkat akibat tingginya tingkat kerusakan paket selama proses sortir di hub utama. Manajer risiko diminta menentukan langkah mitigasi operasional. Tindakan manajer risiko yang paling tepat adalah",
+      "options": [
+        "Mengganti seluruh vendor pengiriman pihak ketiga dengan armada milik sendiri secara bertahap",
+        "Memberikan pelatihan penanganan barang rapuh dan memasang sensor getaran di zona sortir",
+        "Merevisi syarat dan ketentuan layanan untuk membatasi tanggung jawab perusahaan atas kerusakan",
+        "Mengasuransikan seluruh kiriman pelanggan melalui perusahaan asuransi pihak ketiga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi pengadaan sebuah perusahaan manufaktur elektronik di Batam mendapati bahwa komponen semikonduktor krusial dari pemasok tunggal di Asia Timur terancam embargo ekspor. Langkah mitigasi proaktif yang harus segera diambil adalah",
+      "options": [
+        "Menghentikan sementara lini produksi produk yang menggunakan komponen tersebut hingga ada kepastian",
+        "Mendatangi langsung kantor pusat pemasok untuk menegosiasikan kontrak jangka panjang baru",
+        "Mengidentifikasi pemasok alternatif di wilayah lain dan menguji sampel komponen kompatibel",
+        "Menumpuk stok komponen di gudang lokal dalam jumlah besar untuk cadangan tiga tahun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah rumah sakit swasta di Jakarta mencatat kenaikan signifikan kasus infeksi nosokomial akibat menurunnya kedisiplinan staf dalam protokol sterilisasi ruangan. Sebagai ketua komite manajemen risiko, langkah prioritas Anda adalah",
+      "options": [
+        "Memberikan sanksi pemotongan gaji secara massal bagi seluruh perawat shift malam yang bertugas",
+        "Menerbitkan kebijakan baru tanpa sosialisasi agar staf langsung membaca di portal internal",
+        "Mengganti seluruh kepala departemen keperawatan dengan tenaga profesional dari luar negeri",
+        "Melakukan audit kepatuhan harian dan menerapkan sistem pelaporan insiden yang transparan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah perusahaan pengembang properti di Surabaya menghadapi risiko gugatan hukum dari penghuni apartemen karena keterlambatan serah terima unit akibat masalah perizinan tata kota. Apa tindakan mitigasi hukum yang paling tepat?",
+      "options": [
+        "Membentuk tim negosiasi khusus untuk menawarkan kompensasi proporsional dan adendum kontrak",
+        "Menutup akses komunikasi dengan para pembeli sampai proses perizinan selesai sepenuhnya",
+        "Mengalihkan seluruh tanggung jawab hukum kepada kontraktor utama yang membangun proyek",
+        "Membiarkan proses hukum berjalan di pengadilan tanpa melakukan pendekatan persuasif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup dompet digital mengalami lonjakan percobaan penipuan akun (account takeover) menggunakan kredensial hasil kebocoran data eksternal. Tim manajemen risiko keamanan siber harus segera menerapkan langkah berikut",
+      "options": [
+        "Memblokir semua akun pengguna yang tidak aktif bertransaksi selama lebih dari satu bulan",
+        "Mewajibkan autentikasi multifaktor (MFA) dan memantau pola login yang mencurigakan",
+        "Menurunkan batas maksimal saldo dan limit transfer harian bagi seluruh pengguna aplikasi",
+        "Menonaktifkan fitur transfer antarbank sampai investigasi internal kepolisian selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agrikultur di Malang mendapati kualitas biji kopi ekspor mereka menurun akibat tingginya kadar air saat penyimpanan di gudang karena atap yang bocor di musim hujan. Langkah mitigasi risiko yang paling efektif adalah",
+      "options": [
+        "Menjual hasil panen tersebut ke pasar domestik dengan harga murah tanpa perbaikan gudang",
+        "Mengasuransikan seluruh persediaan kopi terhadap segala jenis kerusakan cuaca ekstrem",
+        "Memperbaiki struktur atap gudang serta memasang alat pengontrol kelembapan otomatis",
+        "Memindahkan seluruh proses penyimpanan hasil panen ke rumah penduduk sekitar pabrik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik kimia di Cilegon menghadapi risiko pencemaran limbah cair yang dapat memicu demonstrasi warga sekitar dan pencabutan izin operasi oleh Kementerian LHK. Prioritas penanganan risiko operasional ini adalah",
+      "options": [
+        "Menghentikan total aktivitas pabrik hingga situasi sosial di masyarakat sekitar mereda",
+        "Menyuap oknum pengawas lingkungan agar tidak melaporkan hasil temuan limbah ke pusat",
+        "Membentuk tim humas untuk mered pemberitaan negatif yang beredar di media sosial",
+        "Mengaudit instalasi pengolahan air limbah (IPAL) dan mengaktifkan sistem pemantauan real-time"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Manajer risiko pada perusahaan logistik antar-pulau menghadapi masalah tingginya klaim kehilangan barang di jalur pelayaran tertentu akibat pembajakan atau pencurian di atas kapal. Tindakan mitigasi yang paling rasional adalah",
+      "options": [
+        "Bekerjasama dengan perusahaan asuransi maritim dan memasang GPS tracker tersembunyi pada kargo",
+        "Menghentikan seluruh pengiriman barang melalui jalur laut dan beralih menggunakan kargo udara",
+        "Meminta awak kapal untuk membawa senjata api tanpa izin resmi demi pertahanan diri",
+        "Menolak melayani pengiriman rute tersebut dan fokus pada wilayah perkotaan saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan media digital nasional mendapati ketergantungan pendapatan yang terlalu tinggi (80%) pada satu klien pemasang iklan besar yang kini sedang mengalami krisis keuangan. Strategi mitigasi risiko finansial terbaik adalah",
+      "options": [
+        "Memotong gaji seluruh karyawan agar perusahaan memiliki cadangan kas darurat yang besar",
+        "Melakukan diversifikasi pasar secara agresif untuk mencari klien pengiklan baru dari berbagai sektor",
+        "Mengambil pinjaman bank berbunga tinggi untuk menutupi potensi kehilangan pendapatan iklan",
+        "Menggugat klien tersebut ke pengadilan niaga agar segera melunasi sisa kontrak iklan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit pemerintah daerah di Jawa Barat mendapati persediaan obat-obatan esensial sering kosong akibat birokrasi pengadaan yang panjang dan lambat. Langkah mitigasi rantai pasok yang paling tepat adalah",
+      "options": [
+        "Mengizinkan dokter meresepkan obat alternatif bebas tanpa melalui persetujuan apotek",
+        "Membeli obat langsung dari apotek luar menggunakan dana operasional harian rumah sakit",
+        "Membuat sistem pemesanan otomatis berbasis ambang batas minimum stok (buffer stock)",
+        "Mengurangi jumlah pasien rawat inap agar kebutuhan obat harian menjadi lebih sedikit"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

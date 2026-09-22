@@ -1028,7 +1028,7 @@ export default function LandingHero() {
         },
         {
             q: 'Bagaimana skema harga untuk perusahaan?',
-            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, semua pelamar diperingkat tanpa batas). Beacon Rp49.000 per lowongan (30 hari) atau Lighthouse Rp149.000 per bulan (hingga 5 lowongan) untuk pertanyaan wawancara AI, ekspor, dan pencarian kandidat yang belum melamar. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
+            a: 'Pasang lowongan gratis (Spark: 1 lowongan aktif, semua pelamar diperingkat tanpa batas). Upgrade ke paket berbayar (Beacon atau Lighthouse) untuk fitur pertanyaan wawancara AI, ekspor, dan pencarian kandidat yang belum melamar. Tanpa kontrak. Pembayaran saat ini via QRIS / transfer yang dikonfirmasi admin.',
         },
     ]
 

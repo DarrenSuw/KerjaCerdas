@@ -1,0 +1,306 @@
+{
+  "skill": "Financial Modeling",
+  "skill_key": "financial modeling",
+  "questions": [
+    {
+      "question": "Anda sedang membangun model keuangan untuk sebuah perusahaan manufaktur di Cikarang. Dalam menyusun proyeksi Laporan Laba Rugi, bagaimana cara terbaik memodelkan biaya bahan baku agar sensitif terhadap volume penjualan?",
+      "options": [
+        "Menggunakan persentase tetap dari total biaya operasional tahun sebelumnya",
+        "Membuat asumsi biaya per unit yang dikalikan dengan proyeksi volume unit terjual",
+        "Menetapkan kenaikan inflasi konstan 5 persen setiap tahun pada pos bahan baku",
+        "Mengambil rata-rata historis pengeluaran bahan baku tanpa melihat proyeksi unit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat meninjau model arus kas diskonto (DCF) untuk sebuah proyek infrastruktur jalan tol di Jawa Barat, Anda menyadari bahwa jadwal konstruksi mengalami penundaan 6 bulan. Langkah apa yang paling tepat dalam struktur model Excel Anda?",
+      "options": [
+        "Menggeser seluruh formula rumus pendapatan ke sel baris berikutnya secara manual",
+        "Menggunakan fungsi pemindah tanggal berbasis indeks pada asumsi timeline proyek",
+        "Menghapus baris periode konstruksi awal dan memperpendek masa konsesi",
+        "Mengubah asumsi suku bunga diskonto untuk menutupi selisih waktu penundaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen meminta Anda menganalisis dampak perubahan kurs USD/IDR terhadap Net Profit Margin perusahaan logistik yang memiliki pinjaman dalam bentuk USD. Di mana letak penyesuaian utama dalam model keuangan?",
+      "options": [
+        "Pada perhitungan beban pokok penjualan dan biaya distribusi logistik domestik",
+        "Pada jadwal amortisasi pinjaman, rugi/laba selisih kurs, dan bunga utang",
+        "Pada penyesuaian tarif pajak penghasilan badan sesuai ketentuan pajak terbaru",
+        "Pada proyeksi penambahan aset tetap armada truk dan biaya depresiasi tahunan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa formula lingkaran melingkar (circular reference) terjadi pada perhitungan bunga pinjaman dan saldo kas minimum di model keuangan PT Sejahtera. Apa pendekatan profesional untuk mengatasi hal ini?",
+      "options": [
+        "Membiarkan iterasi otomatis Excel aktif tanpa mengubah struktur formula sama sekali",
+        "Mengganti seluruh pendanaan utang dengan suntikan modal saham dari pemegang saham",
+        "Menggunakan pendekatan makro VBA atau formula penyeimbang pinjaman berbasis rata-rata kas",
+        "Menghapus baris perhitungan bunga agar model bisa langsung menghasilkan angka bersih"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menyusun model pengeluaran modal (CapEx) untuk ekspansi pabrik, Anda harus memasukkan depresiasi aset baru. Bagaimana metode paling akurat dalam menghubungkannya ke Laporan Laba Rugi dan Neraca?",
+      "options": [
+        "Membuat jadwal aset tetap terpisah yang menghitung depresiasi tahunan untukakumulasi ke neraca",
+        "Mengurangkan nilai perolehan aset secara langsung dari kas berjalan tanpa melalui neraca",
+        "Menambahkan beban depresiasi sebagai komponen biaya tetap operasional di luar aset",
+        "Menghitung penyusutan berdasarkan persentase dari laba bersih sebelum pajak tahun berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Direktur Keuangan meminta analisis sensitivitas NPV terhadap dua variabel kunci: harga jual produk dan volume penjualan. Fitur Excel apa yang paling efisien untuk menyajikan hasil ini dalam satu tabel matriks?",
+      "options": [
+        "Menggunakan fungsi Goal Seek secara berulang untuk setiap kombinasi sel",
+        "Membuat skenario manual satu per satu dengan mengubah input sel secara bergantian",
+        "Memanfaatkan fitur Data Table dua variabel pada menu What-If Analysis",
+        "Menulis rumus logika IF bertingkat yang mencakup seluruh kemungkinan kombinasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat memodelkan modal kerja (working capital) untuk perusahaan ritel modern, komponen piutang usaha (accounts receivable) diproyeksikan menggunakan metrik apa agar akurat?",
+      "options": [
+        "Hari Penjualan Belum Tertagih (Days Sales Outstanding / DSO) dikalikan penjualan kredit",
+        "Persentase tetap dari total beban operasional dan gaji karyawan setiap bulannya",
+        "Nilai absolut yang sama persis dengan posisi akhir pada tahun buku sebelumnya",
+        "Rasio lancar (current ratio) target yang ditetapkan oleh manajemen perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan startup teknologi tempat Anda bekerja merencanakan pendanaan Seri B. Investor meminta lembar kerja permodelan yang menunjukkan dampak dilusi kepemilikan saham. Elemen apa yang harus ditambahkan?",
+      "options": [
+        "Jadwal pinjaman bank jangka panjang dan beban bunga amortisasi utang obligasi",
+        "Tabel kapitalisasi (cap table) yang mencantumkan jumlah saham beredar dan opsi saham",
+        "Perhitungan pajak penghasilan final atas pengalihan hak kepemilikan aset tetap",
+        "Analisis umur piutang dan estimasi cadangan kerugian penurunan nilai piutang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menghitung tingkat pengembalian internal (IRR) dari proyek properti komersial. Arus kas bersih menunjukkan angka negatif pada tahun pertama dan positif pada tahun berikutnya. Apa risiko teknis penggunaan fungsi IRR di Excel?",
+      "options": [
+        "Fungsi IRR akan selalu menghasilkan nilai nol jika durasi proyek melebihi lima tahun",
+        "Excel tidak dapat memproses angka negatif dalam satu baris rentang sel yang sama",
+        "Adanya arus kas negatif di tengah periode dapat menghasilkan banyak hasil solusi (multiple IRR)",
+        "Fungsi tersebut mengasumsikan tingkat reinvestasi sama dengan tingkat inflasi nasional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Untuk memastikan model keuangan siap diaudit dan diserahkan kepada calon investor institusional, praktik audit internal apa yang harus Anda lakukan pada formula Excel?",
+      "options": [
+        "Menyembunyikan seluruh formula dan lembar kerja pendukung agar kerahasiaan terjaga",
+        "Memastikan konsistensi warna sel, menghindari angka hardcoded di tengah rumus, dan uji error",
+        "Mengubah format seluruh angka menjadi mata uang asing untuk menyamakan standar",
+        "Menghapus semua tautan eksternal dan menggantinya dengan catatan teks penjelas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam memodelkan pajak penghasilan badan (PPh Badan) untuk perusahaan terbuka di Bursa Efek Indonesia, Anda mendapati bahwa laba akuntansi berbeda dengan laba fiskal karena adanya biaya yang tidak dapat dikurangkan (non-deductible expenses). Bagaimana cara terbaik merefleksikan hal ini dalam model keuangan?",
+      "options": [
+        "Mengalikan tarif pajak langsung dengan laba bersih sebelum pajak dari laporan laba rugi komersial",
+        "Membuat jadwal pajak terpisah yang menyesuaikan laba akuntansi dengan koreksi fiskal positif dan negatif sebelum mengenakan tarif pajak",
+        "Mengasumsikan tarif pajak efektif selalu konstan sebesar 22% tanpa mempedulikan beda temporer maupun permanen",
+        "Mengurangi total kewajiban pajak dengan jumlah dividen yang dibayarkan kepada pemegang saham setiap tahunnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika membangun model merger dan akuisisi (M&A) untuk dua perusahaan manufaktur lokal, Anda perlu menghitung goodwill yang timbul dari transaksi pembelian. Komponen apa saja yang harus dibandingkan untuk menentukan nilai goodwill tersebut?",
+      "options": [
+        "Nilai pasar total ekuitas target terhadap total kewajiban lancar yang tercatat di neraca",
+        "Harga pembelian bersih terhadap nilai buku historis dari seluruh aset tetap yang dimiliki target",
+        "Nilai wajar imbalan yang dialihkan terhadap nilai wajar aset teridentifikasi dikurangi liabilitas yang diakuisisi",
+        "Total modal disetor perusahaan pengakuisisi terhadap proyeksi laba bersih target selama lima tahun pertama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengevaluasi proyek investasi energi terbarukan di Indonesia yang menggunakan skema pembiayaan proyek (project financing) dengan rasio utang terhadap ekuitas 70:30. Dalam membangun jadwal pelunasan utang (debt schedule), kondisi apa yang harus diuji untuk memastikan model mematuhi ketentuan perbankan lokal?",
+      "options": [
+        "Memastikan bahwa rasio cakupan layanan utang atau DSCR selalu berada di atas batas minimum yang disyaratkan kreditur",
+        "Menjamin total sisa pinjaman selalu sama dengan nilai buku bersih aset tetap setiap akhir tahun buku berjalan",
+        "Memverifikasi bahwa pembayaran pokok utang dilakukan dalam jumlah yang meningkat secara eksponensial setiap tahun",
+        "Mengharuskan akumulasi saldo kas bebas perusahaan selalu nol setelah pembayaran cicilan pokok dan bunga selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam memodelkan penilaian perusahaan (valuation) menggunakan metode Comparable Company Analysis (CCA), Anda mengumpulkan data dari beberapa emiten sejenis di BEI. Metrik valuasi berbasis nilai perusahaan apa yang paling tepat digunakan jika struktur modal antar perusahaan pembanding sangat bervariasi?",
+      "options": [
+        "Rasio Price to Earnings Ratio atau disingkat PER",
+        "Rasio EV to EBITDA karena mengeliminasi dampak struktur modal dan kebijakan pendanaan",
+        "Rasio Price to Book Value atau disingkat PBV secara konsisten tanpa penyesuaian",
+        "Rasio Dividend Yield tahunan berdasarkan pembagian dividen historis terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menambahkan analisis skenario (Scenario Analysis) ke dalam model keuangan menggunakan fitur Excel Scenario Manager. Langkah awal krusial apa yang harus Anda lakukan sebelum mendefinisikan skenario optimis, moderat, dan pesimis?",
+      "options": [
+        "Menghapus seluruh formula referensi eksternal agar file tidak korup saat berganti skenario",
+        "Mengubah format seluruh angka dalam lembar kerja menjadi mata uang Rupiah penuh",
+        "Mengidentifikasi dan memberi nama sel input kunci (driver variables) yang akan diubah nilainya",
+        "Membuat macro VBA otomatis untuk mencetak laporan ke dalam format PDF secara langsung"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat membangun proyeksi neraca (balance sheet) untuk perusahaan telekomunikasi, Anda menemukan ketidakseimbangan antara total aset dan total liabilitas ditambah ekuitas pada tahun ketiga proyeksi. Apa tindakan investigasi pertama yang paling sistematis untuk menemukan sumber kesalahan?",
+      "options": [
+        "Memeriksa apakah perubahan saldo kas pada laporan arus kas sudah terhubung dengan akun kas di neraca",
+        "Mengganti seluruh formula perkalian dengan fungsi penjumlahan bertingkat pada rentang sel",
+        "Menaikkan asumsi pertumbuhan pendapatan secara manual hingga selisih neraca menjadi nol",
+        "Menghapus jadwal depresiasi aset tetap agar perhitungan beban penyusutan menjadi netral"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pemodelan keuangan untuk perusahaan perkebunan kelapa sawit, biaya pemeliharaan tanaman belum menghasilkan (TBM) dikapitalisasi ke dalam aset biologis sebelum akhirnya disusutkan. Bagaimana Anda merefleksikan dinamika ini dalam model pengeluaran modal?",
+      "options": [
+        "Memasukkan seluruh biaya pemeliharaan TBM langsung sebagai beban operasional berjalan di laba rugi",
+        "Memasukkan pengeluaran TBM ke dalam jadwal penambahan aset dan menghentikan depresiasi aset lain",
+        "Membuat jadwal kapitalisasi TBM terpisah yang akumulasinya dipindahkan ke aset produktif saat tanaman menghasilkan",
+        "Mengabaikan biaya pemeliharaan tersebut karena dianggap sebagai pengeluaran non-kas yang tidak relevan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Investor meminta Anda untuk menghitung metrik pengembalian yang memperhitungkan nilai waktu uang namun kebal terhadap masalah multiple IRR pada pola arus kas non-konvensional. Alternatif metrik apa yang paling tepat disajikan dalam ringkasan eksekutif?",
+      "options": [
+        "Modified Internal Rate of Return atau disingkat MIRR dengan asumsi tingkat reinvestasi tertentu",
+        "Simple Payback Period tanpa diskonto untuk melihat kecepatan pengembalian modal awal",
+        "Accounting Rate of Return berdasarkan laba bersih akuntansi setelah dikurangi pajak penghasilan",
+        "Average Return on Investment yang dihitung dari total laba kumulatif dibagi modal awal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain model keuangan yang akan digunakan secara kolaboratif oleh berbagai divisi di perusahaan. Untuk mencegah pengguna tidak sengaja merusak formula inti, praktik proteksi lembar kerja apa yang paling profesional untuk diterapkan?",
+      "options": [
+        "Menyembunyikan seluruh lembar kerja proyeksi dan hanya menampilkan satu lembar hasil akhir",
+        "Mengunci sel-sel yang berisi formula, membuka kunci sel input asumsi, lalu memproteksi sheet dengan kata sandi",
+        "Mengonversi seluruh angka dalam model menjadi teks statis agar tidak dapat dihitung ulang",
+        "Mematikan fungsi kalkulasi otomatis Excel secara permanen pada komputer setiap pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun model keuangan untuk sebuah perusahaan fast-moving consumer goods (FMCG) yang mendistribusikan produknya secara nasional. Manajemen ingin melihat dampak kenaikan upah minimum regional (UMR) terhadap struktur biaya operasional. Pendekatan terbaik apa yang harus Anda terapkan dalam model?",
+      "options": [
+        "Mengasumsikan seluruh biaya operasional naik secara proporsional dengan persentase UMR",
+        "Memisahkan komponen biaya tenaga kerja langsung dan tidak langsung, lalu mengindeksnya secara terpisah",
+        "Memasukkan kenaikan UMR sebagai pengurang langsung pada pos laba ditahan dalam neraca",
+        "Menaikkan harga pokok penjualan secara otomatis tanpa mengubah asumsi beban gaji karyawan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam memodelkan rencana ekspansi jaringan ritel modern di luar Pulau Jawa, Anda perlu memproyeksikan biaya sewa lahan dan bangunan yang biasanya dibayar dimuka untuk jangka waktu beberapa tahun. Bagaimana cara paling tepat merefleksikannya pada model laporan keuangan?",
+      "options": [
+        "Mencatat seluruh pembayaran sewa sebagai beban operasional pada tahun pertama transaksi",
+        "Mengakui beban sewa secara merata setiap bulan dan mencatat sisanya sebagai aset lancar",
+        "Memasukkan total nilai sewa ke dalam pos liabilitas jangka panjang hingga masa sewa habis",
+        "Membukukan pengeluaran tersebut langsung sebagai penambahan nilai aset tetap berwujud"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan pertambangan tempat Anda bekerja diwajibkan menyisihkan dana untuk Reklamasi dan Pascatambang sesuai regulasi Kementerian ESDM. Bagaimana mekanisme pencatatan yang paling akurat dalam model keuangan jangka panjang?",
+      "options": [
+        "Menghitung estimasi biaya akhir, mencatatnya sebagai provisi liabilitas, dan menyusutkannya bertahap",
+        "Mengeluarkan kas secara langsung dari laporan laba rugi hanya pada tahun terakhir masa tambang",
+        "Membebankan biaya tersebut sebagai bagian dari modal kerja bersih setiap kuartal berjalan",
+        "Mengabaikan estimasi tersebut hingga inspeksi resmi dari instansi pemerintah dilakukan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk menambahkan fleksibilitas pada model keuangan agar pengguna dapat memilih proyeksi berdasarkan tiga kondisi makroekonomi: optimis, moderat, dan pesimis. Fitur Excel apa yang paling efisien untuk membangun mekanisme pemilihan skenario tersebut tanpa menggunakan makro VBA?",
+      "options": [
+        "Menggunakan fungsi IF bertingkat yang dikombinasikan dengan fungsi Excel CHOOSE",
+        "Membuat tiga file terpisah dan menghubungkan sel menggunakan tautan eksternal statis",
+        "Memanfaatkan fitur Data Table satu variabel untuk mengubah seluruh lembar kerja",
+        "Menyusun ulang struktur neraca agar otomatis menyesuaikan dengan inflasi bulanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membangun model penilaian perusahaan berbasis arus kas bebas ekuitas (Free Cash Flow to Equity / FCFE), Anda mendapati bahwa struktur modal perusahaan akan berubah drastis karena adanya pelunasan pokok pinjaman bank di tahun ketiga. Apa penyesuaian utama yang harus dilakukan pada rumus FCFE?",
+      "options": [
+        "Menambahkan kembali beban bunga bersih setelah dikurangi pajak penghasilan badan",
+        "Memasukkan penerimaan pinjaman baru sebagai penambah arus kas operasi tahun berjalan",
+        "Mengurangkan pembayaran pokok pinjaman aktual serta memperhitungkan penerbitan utang baru",
+        "Mengubah tingkat diskonto menjadi biaya modal rata-rata tertimbang atau Weighted Average Cost of Capital"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen meminta Anda mengevaluasi kelayakan investasi mesin produksi baru yang memiliki umur ekonomis 5 tahun dengan nilai sisa di akhir periode. Di manakah posisi yang tepat untuk memasukkan nilai sisa (salvage value) tersebut dalam model DCF?",
+      "options": [
+        "Sebagai penambah arus kas operasional pada tahun terakhir proyek berjalan",
+        "Sebagai pengurang total pengeluaran modal awal pada saat mesin mulai dibeli",
+        "Sebagai komponen arus kas terminal yang ditambahkan pada tahun terakhir proyek",
+        "Sebagai beban penyusutan tambahan yang dialokasikan merata setiap tahunnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menyusun model keuangan untuk perusahaan media digital, sebagian besar pendapatan diperoleh dari kontrak iklan berjangka panjang yang dibayar di muka oleh klien besar. Bagaimana perlakuan akuntansi dan pemodelan yang tepat untuk kas yang diterima di muka ini?",
+      "options": [
+        "Langsung diakui sebagai pendapatan bersih pada bulan diterimanya dana tunai",
+        "Dicatat sebagai pendapatan tangguhan (deferred revenue) pada sisi liabilitas jangka pendek",
+        "Dimasukkan langsung ke dalam komponen laba ditahan tanpa melalui laporan laba rugi",
+        "Diperhitungkan sebagai bagian dari piutang usaha yang belum tertagih dalam modal kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan model valuasi untuk perusahaan konstruksi yang sering menghadapi fluktuasi pendapatan akibat penundaan termin proyek pemerintah. Pendekatan apa yang paling bijaksana untuk memproyeksikan pendapatan dalam kondisi tersebut?",
+      "options": [
+        "Mengasumsikan pertumbuhan pendapatan konstan sebesar tingkat inflasi tahunan",
+        "Menggunakan metode persentase penyelesaian proyek dan memasukkan buffer risiko keterlambatan",
+        "Mendasarkan proyeksi hanya pada kas yang benar-benar masuk tanpa melihat dokumen kontrak",
+        "Menyamakan target pendapatan dengan plafon anggaran maksimum yang disetujui DPR"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam model keuangan korporasi yang kompleks, Anda sering mendapati formula dengan rentang sel yang sangat panjang dan sulit dibaca. Langkah terbaik apa yang harus diambil untuk meningkatkan keterbacaan dan auditabilitas model tersebut?",
+      "options": [
+        "Mengganti seluruh referensi sel dengan angka konstan langsung di dalam rumus",
+        "Menggunakan fitur Defined Names untuk memberikan label deskriptif pada sel atau rentang",
+        "Menghapus semua rumus pendukung dan hanya menyisakan lembar ringkasan akhir",
+        "Menyembunyikan lembar kerja perhitungan rinci agar tidak dilihat oleh manajemen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan validasi silang (cross-check) pada model keuangan yang Anda buat, Anda menemukan bahwa jumlah total aset pada neraca tidak sama dengan jumlah liabilitas ditambah ekuitas pada tahun proyeksi kelima. Apa langkah investigasi pertama yang paling sistematis?",
+      "options": [
+        "Mengubah manual angka ekuitas agar seimbang dengan total aset tanpa mencari selisihnya",
+        "Memeriksa apakah arus kas bersih kas masuk dan keluar terhubung secara benar ke kas neraca",
+        "Menghapus seluruh rumus penyusutan aset tetap dan menggantinya dengan estimasi acak",
+        "Menaikkan tingkat suku bunga pinjaman bank agar selisih pembukuan tertutupi otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun model keuangan untuk sebuah perusahaan manufaktur tekstil di Solo. Manajemen berencana menaikkan harga jual produk sebesar 10% tahun depan untuk mengimbangi inflasi bahan baku, namun Anda memperkirakan volume penjualan akan turun sebesar 4%. Bagaimana cara terbaik merefleksikan asumsi pendapatan baru ini di dalam model?",
+      "options": [
+        "Mengalikan harga dasar tahun lalu dengan faktor kenaikan harga dan volume baru secara terpisah",
+        "Menaikkan total pendapatan tahun sebelumnya secara langsung sebesar selisih persentase keduanya",
+        "Membuat baris terpisah untuk menghitung penyesuaian harga dan volume terhadap basis awal",
+        "Menggunakan fungsi IF bertingkat untuk mengganti rumus pendapatan jika target tercapai"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

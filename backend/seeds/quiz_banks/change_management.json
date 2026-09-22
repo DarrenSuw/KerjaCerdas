@@ -1,0 +1,306 @@
+{
+  "skill": "Change Management",
+  "skill_key": "change management",
+  "questions": [
+    {
+      "question": "Perusahaan ritel tempat Anda bekerja akan menerapkan sistem POS (Point of Sales) baru di seluruh cabang. Kepala toko di cabang regional menolak keras karena merasa sistem lama sudah cukup efisien dan takut dinilai gagap teknologi. Langkah awal paling tepat yang harus Anda ambil adalah",
+      "options": [
+        "Melaporkan kepala toko tersebut kepada atasannya agar diberikan surat peringatan disiplin kerja",
+        "Mengajak kepala toko tersebut berdiskusi empat mata untuk mendengarkan detail kendala dan kekhawatirannya",
+        "Langsung memaksakan instalasi sistem baru agar target migrasi nasional tercapai tepat waktu",
+        "Mengganti kepala toko tersebut dengan staf junior yang lebih antusias terhadap teknologi baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin proyek transisi struktur organisasi di sebuah perusahaan manufaktur. Sebagian besar karyawan senior menunjukkan sikap pasif-agresif saat sosialisasi karena merasa posisi mereka terancam. Strategi komunikasi terbaik untuk meredam resistensi ini adalah",
+      "options": [
+        "Mengadakan town hall meeting besar untuk memamerkan keuntungan perusahaan setelah restrukturisasi",
+        "Mengirimkan memo resmi dari jajaran direksi yang menegaskan bahwa kebijakan ini bersifat wajib",
+        "Membuat sesi dialog kelompok kecil yang memfasilitasi kekhawatiran spesifik dan jalur karier mereka",
+        "Menyebarkan infografis berkala melalui email perusahaan tentang pentingnya efisiensi biaya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah startup fintech menerapkan alur kerja baru berbasis Agile. Setelah satu bulan, produktivitas tim menurun drastis karena karyawan merasa kebingungan dengan peran baru dan frekuensi rapat yang terlalu padat. Tindakan korektif yang paling tepat dilakukan adalah",
+      "options": [
+        "Mengembalikan seluruh proses operasional ke sistem tradisional yang sudah terbiasa mereka jalankan",
+        "Mengadakan evaluasi kilat untuk menyederhanakan proses dan memperjelas pembagian peran harian",
+        "Memberikan pelatihan lanjutan mengenai teori dasar Agile dan Scrum Master selama tiga hari penuh",
+        "Menambah jumlah staf operasional baru untuk membantu meringankan beban kerja harian tim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Proyek digitalisasi dokumen HR di instansi Anda telah berjalan setengah jalan, namun tingkat adopsi karyawan masih sangat rendah di bawah 30%. Evaluasi menunjukkan bahwa mereka enggan belajar karena antarmuka sistem baru dianggap membingungkan. Langkah mitigasi yang paling efektif adalah",
+      "options": [
+        "Memberikan sanksi pemotongan tunjangan bagi karyawan yang masih menggunakan cara manual",
+        "Menunjuk beberapa staf teladan sebagai agen perubahan dan pendamping teknis di setiap divisi",
+        "Menghapus fitur-fitur rumit dalam sistem baru agar tampilannya menjadi sangat sederhana",
+        "Membuat manual penggunaan setebal seratus halaman dan membagikannya ke seluruh staf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen puncak memutuskan untuk memindahkan kantor pusat perusahaan ke lokasi baru yang berjarak cukup jauh, memicu protes dari banyak karyawan bagian operasional. Pendekatan change management yang paling manusiawi dan strategis adalah",
+      "options": [
+        "Memberikan tenggat waktu pindah yang ketat tanpa kompromi untuk melatih ketahanan mental staf",
+        "Menawarkan opsi kerja hybrid serta fasilitas transportasi khusus transisi selama masa penyesuaian",
+        "Merekrut karyawan baru yang berdomisili dekat lokasi kantor baru untuk menggantikan yang protes",
+        "Mengabaikan keluhan staf karena keputusan strategis perusahaan sudah bersifat mutlak dan final"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengawal merger dua perusahaan media dengan budaya kerja yang sangat kontras: satu sangat birokratis, satu lagi sangat santai dan kreatif. Konflik internal mulai sering terjadi pada level manajerial. Langkah awal penyelarasan budaya yang tepat adalah",
+      "options": [
+        "Memecat para manajer dari kedua belah pihak yang terbukti paling keras menentang aturan baru",
+        "Membuat kode etik dan nilai perusahaan baru yang mengombinasikan elemen terbaik dari kedua belah pihak",
+        "Memberlakukan budaya perusahaan yang lebih dominan secara sepihak untuk menciptakan kejelasan",
+        "Menunda proyek merger selama satu tahun hingga kedua kubu dapat beradaptasi secara alami"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek implementasi software ERP, tim IT Anda sering mengabaikan masukan dari divisi operasional, sehingga sistem yang dibangun tidak sesuai kebutuhan lapangan. Sebagai change manager, intervensi apa yang harus Anda lakukan pada fase ini?",
+      "options": [
+        "Meminta manajemen puncak untuk membubarkan divisi operasional dan menyerahkan wewenang ke IT",
+        "Membentuk satuan tugas lintas fungsi untuk merancang ulang spesifikasi sistem secara kolaboratif",
+        "Melanjutkan proyek sesuai rencana awal IT karena anggaran dan tenggat waktu sudah disetujui",
+        "Menyerahkan sepenuhnya keputusan akhir desain sistem kepada konsultan eksternal yang netral"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik meluncurkan aplikasi pelacakan paket baru untuk sopir lapangan. Angka penggunaan minggu pertama sangat rendah karena sebagian besar sopir merasa layar ponsel terlalu kecil dan menyulitkan saat mengemudi. Respons terbaik dari manajemen adalah",
+      "options": [
+        "Mewajibkan sopir berhenti di bahu jalan setiap kali harus memperbarui status pengiriman paket",
+        "Menghentikan penggunaan aplikasi dan kembali menggunakan sistem pencatatan kertas manual",
+        "Mengadakan sesi jemput bola di titik transit untuk mendengarkan masukan dan menyempurnakan fitur",
+        "Mengancam akan menahan gaji sopir yang menolak menggunakan aplikasi pelacakan tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja ditunjuk sebagai Change Lead untuk restrukturisasi divisi pemasaran. Agar perubahan ini tidak berhenti di tengah jalan, indikator keberhasilan jangka panjang apa yang paling krusial untuk Anda pantau secara berkala?",
+      "options": [
+        "Jumlah lembar dokumen SOP baru yang berhasil diselesaikan dan didistribusikan ke divisi lain",
+        "Tingkat retensi karyawan dan tingkat adopsi proses kerja baru secara organik oleh tim sehari-hari",
+        "Jumlah jam pelatihan formal yang telah diikuti oleh seluruh staf pemasaran di kuartal berjalan",
+        "Kecepatan persetujuan anggaran operasional oleh jajaran direksi untuk divisi pemasaran baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank swasta nasional sedang melakukan digitalisasi layanan nasabah. Divisi customer service merasa cemas bahwa otomatisasi akan mengurangi peran mereka dan berpotensi memicu PHK. Langkah paling efektif apa yang harus Anda ambil sebagai pengelola perubahan untuk mengatasi kecemasan ini?",
+      "options": [
+        "Mengadakan rapat pleno untuk menegaskan bahwa manajemen tidak memiliki rencana PHK sama sekali",
+        "Merancang program peningkatan keahlian agar mereka bertransisi menjadi penasihat keuangan digital",
+        "Meminta kepala divisi untuk memberikan sanksi tegas bagi staf yang menyebarkan isu negatif",
+        "Menunda peluncuran sistem digital sampai seluruh staf customer service merasa benar-benar siap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan FMCG tempat Anda bekerja mengubah sistem penilaian kinerja tahunan menjadi evaluasi kuartal berbasis OKR. Manajer lini banyak yang mengeluhkan beban administratif bertambah dan memilih mengabaikan sistem baru ini. Tindakan intervensi apa yang paling tepat?",
+      "options": [
+        "Menurunkan target pencapaian kuartal pertama agar manajer lini memiliki waktu adaptasi",
+        "Melaporkan para manajer yang tidak patuh secara langsung kepada direktur sumber daya manusia",
+        "Menyediakan sesi pendampingan intensif dan menyederhanakan templat pelaporan OKR",
+        "Mengembalikan metode penilaian ke sistem tahunan lama demi menjaga stabilitas operasional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek migrasi data ke sistem cloud perusahaan asuransi, tim IT menetapkan tenggat waktu yang sangat agresif. Akibatnya, tim operasional merasa terbebani dan mulai menunjukkan sikap resisten pasif dengan menunda penyediaan data. Bagaimana strategi komunikasi terbaik untuk mencairkan situasi ini?",
+      "options": [
+        "Menggelar dialog terbuka untuk mendengar kendala operasional dan menegosiasi ulang lini masa",
+        "Mengirimkan memo resmi dari direksi yang mewajibkan seluruh divisi mematuhi jadwal IT",
+        "Merekrut konsultan eksternal untuk mengambil alih proses pembersihan dan migrasi data",
+        "Mengancam akan menunda pembayaran insentif bulanan jika target migrasi data meleset"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur tekstil mengintegrasikan mesin otomatisasi baru di lini produksi, yang ditolak oleh serikat pekerja karena dianggap mengancam keselamatan kerja dan kuota lembur mereka. Langkah negosiasi awal apa yang paling strategis?",
+      "options": [
+        "Mengajak perwakilan serikat pekerja mengunjungi pabrik lain yang sudah sukses memakai mesin tersebut",
+        "Membatalkan rencana otomatisasi lini produksi demi menjaga hubungan baik dengan serikat pekerja",
+        "Melibatkan pengurus serikat pekerja dalam perancangan standar operasional prosedur keselamatan kerja",
+        "Memberikan uang kompensasi tunai satu kali di muka kepada setiap anggota serikat pekerja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memimpin adopsi platform manajemen proyek baru di sebuah agensi kreatif. Sebagian besar karyawan milenial antusias, namun para pemimpin senior tetap bersikeras menggunakan email dan spreadsheet konvensional. Pendekatan apa yang paling efektif untuk merangkul para pemimpin senior ini?",
+      "options": [
+        "Membuat kebijakan korporat yang melarang penggunaan email dan spreadsheet untuk tugas proyek",
+        "Menugaskan asisten junior untuk mengunggah pekerjaan para pemimpin senior ke platform baru",
+        "Mengadakan pelatihan massal wajib selama dua hari penuh khusus untuk level manajerial atas",
+        "Menunjukkan contoh langsung efisiensi laporan eksekutif yang dihasilkan platform baru tersebut"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Perusahaan telekomunikasi tempat Anda bekerja baru saja merestrukturisasi divisi penjualan. Moral tim berada di titik terendah karena target baru dinilai tidak realistis dan wilayah kerja diacak ulang. Apa tindakan pertama yang harus dilakukan oleh para manajer penjualan?",
+      "options": [
+        "Mengadakan sesi dengar pendapat untuk memvalidasi frustrasi tim dan menjelaskan rasional bisnis",
+        "Membagikan bonus insentif di muka untuk mendongkrak semangat kerja secara instan",
+        "Mengubah kembali wilayah kerja penjualan seperti sedia kala untuk meredakan gejolak",
+        "Membuka rekrutmen terbuka untuk mengganti staf penjualan yang menunjukkan penolakan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah rumah sakit swasta memperkenalkan rekam medis elektronik. Dokter-dokter senior enggan menggunakannya karena merasa proses input data memakan waktu konsultasi pasien. Sebagai agen perubahan, langkah apa yang paling solutif?",
+      "options": [
+        "Mewajibkan dokter senior mendelegasikan pengisian rekam medis kepada perawat ruangan",
+        "Menyediakan juru catat administratif pendamping bagi dokter senior selama masa transisi",
+        "Memberikan sanksi pemotongan jasa medis bagi dokter yang terlambat mengisi data",
+        "Menyederhanakan antarmuka aplikasi dan mengurangi jumlah kolom wajib di sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan properti nasional mengubah kebijakan kerja fleksibel (hybrid working) setelah dua tahun memberlakukan kerja jarak jauh penuh. Kebijakan baru ini memicu gelombang protes dan ancaman resign dari karyawan lini operasional. Bagaimana manajemen harus mengomunikasikan kebijakan ini?",
+      "options": [
+        "Menjelaskan dasar pertimbangan kolaborasi tatap muka secara transparan dan membuka ruang kompromi",
+        "Menegaskan bahwa keputusan bersifat mutlak dan karyawan dipersilakan mencari tempat kerja lain",
+        "Memberikan kelonggaran khusus berupa kebebasan memilih hari kerja jarak jauh tanpa batas",
+        "Mengadakan survei ulang kepuasan kerja untuk menunda penerapan kebijakan selama enam bulan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam implementasi sistem rantai pasok global di perusahaan multinasional cabang Indonesia, ditemukan benturan antara prosedur standar global dan kearifan lokal birokrasi pelabuhan. Staf lokal merasa sistem baru tidak aplikatif. Langkah manajerial mana yang paling tepat?",
+      "options": [
+        "Memaksa staf lokal mengikuti prosedur global secara kaku demi keseragaman audit",
+        "Menyerahkan seluruh kewenangan penyesuaian proses kepada kepala cabang di Indonesia",
+        "Membentuk satuan tugas gabungan untuk mengadaptasi sistem global tanpa melanggar regulasi lokal",
+        "Mengganti tim manajemen lokal dengan ekspatriat yang sudah terbiasa dengan sistem tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah instansi pemerintahan meluncurkan aplikasi pengaduan internal anti-korupsi. Setelah enam bulan, hampir tidak ada laporan yang masuk karena pegawai takut identitas mereka bocor dan memicu konflik karier. Apa strategi intervensi yang paling tepat untuk membangun kepercayaan?",
+      "options": [
+        "Mengubah sistem pelaporan menjadi wajib dengan memberikan kuota minimal laporan per bagian",
+        "Bermitra dengan lembaga independen eksternal untuk menjamin kerahasiaan dan keamanan pelapor",
+        "Memberikan imbalan finansial yang besar bagi pegawai yang berani melaporkan pelanggaran",
+        "Mengancam akan melakukan investigasi acak jika tidak ada laporan yang masuk setiap bulannya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agritech mengubah struktur insentif tim penjualan untuk mendorong fokus ke produk pupuk organik, namun para sales agent terus menjual produk kimia lama karena target komisi yang lebih cepat tercapai. Sebagai Change Lead, tindakan apa yang paling efektif untuk menyelaraskan perilaku mereka?",
+      "options": [
+        "Memberikan sanksi pemotongan gaji bagi agen yang masih menjual produk kimia setelah sosialisasi selesai",
+        "Merevisi skema komisi agar produk organik memberikan insentif finansial yang jauh lebih menarik",
+        "Mengadakan seminar motivasi mingguan tentang pentingnya pertanian berkelanjutan bagi lingkungan",
+        "Memecat beberapa agen senior sebagai contoh agar yang lain segera mengikuti aturan baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek transformasi digital di sebuah perusahaan pertambangan, para pengawas lapangan menolak menggunakan tablet pelaporan baru karena sinyal internet di area tambang sering terputus dan memperlambat pekerjaan mereka. Langkah terbaik untuk mengatasi resistensi ini adalah:",
+      "options": [
+        "Mewajibkan mereka mengirim laporan ganda menggunakan kertas dan aplikasi secara bersamaan",
+        "Mengganti seluruh pengawas lapangan dengan tenaga kerja yang lebih melek teknologi digital",
+        "Menyediakan fitur offline-sync pada aplikasi agar data tersimpan lokal dan terkirim saat ada sinyal",
+        "Meminta bantuan manajemen puncak untuk memberikan surat peringatan keras kepada para pengawas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah rantai hotel nasional meluncurkan inisiatif budaya pelayanan baru untuk meningkatkan ulasan tamu. Resepsionis di cabang-cabang daerah menganggap program ini hanya beban administratif tambahan di tengah kesibukan operasional harian. Apa strategi komunikasi yang paling tepat?",
+      "options": [
+        "Mengirimkan email blast mingguan dari CEO berisi kutipan inspiratif tentang kepuasan pelanggan",
+        "Mengadakan lokakarya interaktif di setiap cabang untuk menunjukkan bagaimana program ini mempermudah tugas mereka",
+        "Memasang poster besar di ruang istirahat karyawan yang merinci sanksi bagi pelanggaran standar pelayanan",
+        "Mengabaikan keluhan mereka karena target peningkatan ulasan tamu sudah ditetapkan oleh direksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan media digital melakukan transisi ke sistem manajemen konten (CMS) berbasis kecerdasan buatan. Para jurnalis senior merasa keahlian menulis mereka diremehkan dan menolak menggunakannya. Pendekatan change management mana yang paling tepat?",
+      "options": [
+        "Melibatkan para jurnalis senior dalam tim penguji awal untuk menyesuaikan fitur CMS dengan kebutuhan redaksi",
+        "Membuat kebijakan bahwa artikel yang tidak dibuat lewat CMS baru tidak akan dibayarkan honornya",
+        "Mengadakan pelatihan mandiri secara online tanpa pendampingan agar mereka belajar sendiri",
+        "Memindahkan seluruh jurnalis senior ke divisi arsip dan merekrut lulusan baru yang lebih adaptif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik komponen otomotif menerapkan metodologi Lean Manufacturing untuk mengurangi pemborosan. Para kepala shift lini produksi menolak perubahan tata letak mesin karena khawatir target produksi harian mereka akan turun selama masa penyesuaian. Bagaimana Anda mengatasi kekhawatiran ini?",
+      "options": [
+        "Menurunkan target produksi harian secara temporer selama fase transisi dan memberikan pelatihan intensif",
+        "Mengancam akan menurunkan jabatan kepala shift yang tidak mencapai target produksi minggu ini",
+        "Melanjutkan perubahan tata letak secara paksa tanpa mempedulikan penurunan output sementara",
+        "Membatalkan proyek Lean Manufacturing dan kembali menggunakan metode produksi lama yang aman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan konsultansi manajemen mengimplementasikan platform kolaborasi awan yang baru untuk menggantikan komunikasi email tradisional. Tingkat adopsi di kalangan konsultan junior sangat tinggi, namun para direktur senior tetap menggunakan email lama. Apa tindakan intervensi yang paling strategis?",
+      "options": [
+        "Meminta konsultan junior untuk terus memaksa para direktur membalas pesan melalui platform baru",
+        "Menutup akses email perusahaan bagi seluruh level jabatan agar semua pihak terpaksa pindah",
+        "Mengedukasi para direktur senior secara personal mengenai efisiensi waktu pengambilan keputusan melalui platform tersebut",
+        "Membiarkan perbedaan pola komunikasi ini terus berjalan karena tidak mengganggu operasional inti"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan supermarket regional mengubah prosedur audit inventaris untuk mencegah kehilangan barang. Karyawan gudang merasa prosedur baru terlalu rumit dan memperlama proses bongkar muat barang masuk. Apa langkah awal terbaik yang harus diambil oleh manajer proyek?",
+      "options": [
+        "Mengundang perwakilan karyawan gudang untuk mendiskusikan bagian prosedur mana yang paling menghambat pekerjaan",
+        "Merekrut konsultan eksternal untuk mengawasi kinerja karyawan gudang setiap hari secara ketat",
+        "Memberikan bonus tambahan bagi karyawan yang berhasil menyelesaikan bongkar muat tepat waktu",
+        "Mengurangi jumlah barang yang masuk ke gudang agar beban kerja karyawan berkurang secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan manufaktur makanan ringan meluncurkan kampanye keberlanjutan untuk mengurangi kemasan plastik. Bagian pengadaan menghadapi tekanan dari pemasok lama yang belum siap menyediakan bahan ramah lingkungan. Bagaimana cara mengelola resistensi dari rantai pasok eksternal ini?",
+      "options": [
+        "Langsung memutus kontrak kerja sama dengan seluruh pemasok lama yang tidak memenuhi syarat",
+        "Memberikan masa transisi dan pendampingan teknis bagi pemasok untuk mengembangkan kapasitas bahan ramah lingkungan",
+        "Membeli bahan baku plastik dari pasar gelap dengan harga lebih murah untuk menjaga kelancaran produksi",
+        "Menunda proyek keberlanjutan tersebut sampai seluruh pemasok secara sukarela menawarkan solusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan jasa keuangan menerapkan kebijakan otomatisasi layanan pelanggan melalui chatbot berbasis AI. Staf call center merasa cemas akan kehilangan pekerjaan dan mulai menyebarkan informasi negatif di internal perusahaan. Langkah darurat apa yang harus diambil manajemen?",
+      "options": [
+        "Mengadakan sesi town hall terbuka untuk transparan mengenai rencana pelatihan ulang staf call center ke peran konsultasi bernilai tambah",
+        "Mengancam akan memecat siapa saja yang terbukti menyebarkan isu negatif mengenai implementasi AI",
+        "Menyangkal berita tersebut melalui memo resmi dan menyatakan bahwa tidak akan ada perubahan struktur sama sekali",
+        "Mempercepat jadwal peluncuran chatbot agar staf call center tidak memiliki waktu untuk melakukan protes"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan farmasi melakukan restrukturisasi departemen riset dan pengembangan (R&D) untuk mempercepat peluncuran produk baru. Para peneliti senior merasa otonomi ilmiah mereka terganggu oleh target komersial yang ketat. Strategi komunikasi apa yang paling tepat untuk meredakan ketegangan?",
+      "options": [
+        "Menekankan bahwa keuntungan perusahaan adalah satu-satunya metrik keberhasilan yang penting saat ini",
+        "Menyusun forum dialog dua arah di mana peneliti dapat menyumbangkan ide inovatif yang selaras dengan target komersial",
+        "Menghentikan sementara semua penelitian mendasar dan mengalihkan dana sepenuhnya ke produk komersial cepat",
+        "Mengganti kepala departemen R&D dengan eksekutif dari divisi pemasaran yang tidak memiliki latar belakang sains"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik nasional mengubah sistem pelacakan armada secara total. Sopir senior mengeluh bahwa aplikasi baru terlalu rumit dan memilih menggunakan metode lama. Langkah pertama apa yang paling efektif Anda lakukan sebagai Change Lead?",
+      "options": [
+        "Mengancam pemberian sanksi administratif bagi sopir yang tidak menggunakan aplikasi baru dalam seminggu",
+        "Mengadakan sesi pendampingan langsung di lapangan untuk memahami kesulitan spesifik yang mereka hadapi",
+        "Membuat panduan tertulis setebal 50 halaman dan membagikannya ke setiap kantor cabang logistik",
+        "Menunda peluncuran sistem hingga seluruh sopir senior menyatakan diri siap secara mandiri"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

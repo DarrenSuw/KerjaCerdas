@@ -1,0 +1,306 @@
+{
+  "skill": "Payroll",
+  "skill_key": "payroll",
+  "questions": [
+    {
+      "question": "Seorang karyawan tetap resign efektif tanggal 15 Mei. Gaji bulan tersebut dibayarkan penuh atau prorata? Bagaimana cara menghitungnya sesuai praktik umum di Indonesia?",
+      "options": [
+        "Dibayar penuh karena sudah bekerja separuh bulan berjalan",
+        "Dihitung prorata berdasarkan jumlah hari kerja aktual dalam bulan tersebut",
+        "Dihitung prorata menggunakan rumus 15/30 dikali gaji pokok dan tunjangan tetap",
+        "Dibayar berdasarkan akumulasi jam kerja aktual dibagi 173 jam"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses pengolahan PPh 21 masa Desember, Anda mendapati ada kelebihan pemotongan pajak pada seorang pegawai tetap akibat fluktuasi bonus bulanan. Apa tindakan yang harus Anda lakukan pada slip gaji Desember karyawan tersebut?",
+      "options": [
+        "Mengembalikan kelebihan potong tersebut tunai bersamaan dengan gaji bulan Desember",
+        "Melaporkannya sebagai restitusi pajak langsung ke Kantor Pelayanan Pajak terdekat",
+        "Mengakumulasikannya ke dalam perhitungan PPh 21 masa Januari tahun berikutnya",
+        "Mengabaikannya karena kelebihan bayar pajak tahunan akan otomatis dihitung nihil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan mengambil cuti melahirkan selama 3 bulan. Sesuai UU Ketenagakerjaan dan praktik payroll, bagaimana status pemotongan BPJS Kesehatan dan Ketenagakerjaan selama periode tersebut?",
+      "options": [
+        "Iuran ditangguhkan sementara hingga karyawan tersebut aktif masuk kerja kembali",
+        "Perusahaan tetap wajib membayarkan seluruh iuran pemberi kerja dan pekerja",
+        "Hanya iuran jaminan kecelakaan kerja yang dibayarkan oleh pihak perusahaan",
+        "Karyawan wajib membayar sendiri iuran mandiri melalui fasilitas autodebet"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan menetapkan kebijakan lembur pada hari Sabtu bagi departemen operasional. Durasi lembur adalah 5 jam. Bagaimana perhitungan upah lembur yang benar untuk jam pertama hingga kelima?",
+      "options": [
+        "1,5 kali upah sejam untuk jam 1-4, dan 2 kali upah sejam untuk jam ke-5",
+        "2 kali upah sejam untuk jam 1-3, dan 3 kali upah sejam untuk jam ke-4 dan 5",
+        "Semua jam lembur dihitung flat 1,5 kali upah sejam karena dilakukan di akhir pekan",
+        "1,5 kali upah sejam untuk jam pertama, dan 2 kali upah sejam untuk jam 2 sampai 5"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati selisih kurang bayar gaji pada periode lalu akibat keterlambatan pelaporan absensi. Langkah koreksi apa yang paling tepat dilakukan pada siklus payroll bulan berjalan?",
+      "options": [
+        "Membuat slip gaji terpisah khusus untuk pembayaran selisih periode lalu",
+        "Memasukkan komponen penyesuaian positif pada komponen pendapatan di slip berjalan",
+        "Menunda pembayaran selisih tersebut hingga audit tahunan selesai dilaksanakan",
+        "Meminta persetujuan Dinas Tenaga Kerja sebelum melakukan koreksi pembayaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan asing ( expatriate) mulai bekerja di kantor cabang Jakarta sejak tanggal 10 Maret. Bagaimana metode perhitungan PPh Pasal 21 untuk bulan pertama kedatangannya?",
+      "options": [
+        "Dihitung sebagai subjek pajak luar negeri karena belum genap bekerja satu tahun",
+        "Dihitung secara disetahunkan langsung berdasarkan proyeksi penghasilan setahun penuh",
+        "Dihitung prorata berdasarkan jumlah hari keberadaan di Indonesia dalam tahun pajak",
+        "Dihitung secara bulanan biasa tanpa perlu melihat ketentuan subjek pajak dalam negeri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam skema BPJS Ketenagakerjaan, terdapat batas atas upah (ceiling) untuk perhitungan iuran Program Jaminan Pensiun. Apa dampak jika gaji seorang karyawan berada di atas batas atas tersebut?",
+      "options": [
+        "Iuran Jaminan Pensiun dihitung dari total gaji bruto tanpa batasan apapun",
+        "Iuran dihitung berdasarkan nominal batas atas yang ditetapkan oleh pemerintah",
+        "Karyawan dibebaskan sepenuhnya dari kewajiban membayar iuran Jaminan Pensiun",
+        "Selisih di atas batas atas dialihkan untuk menambah iuran Jaminan Hari Tua"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan menerapkan sistem cut-off absensi tanggal 20 setiap bulannya untuk pembayaran gaji tanggal 25. Karyawan A masuk pada tanggal 22 bulan lalu. Kapan gaji pertama karyawan tersebut akan dibayarkan?",
+      "options": [
+        "Tanggal 25 pada bulan pertama ia mulai resmi bergabung bekerja di perusahaan",
+        "Tanggal 25 pada bulan berikutnya karena melewati tanggal cut-off absensi",
+        "Tanggal 22 bertepatan dengan tanggal ia mulai aktif masuk bekerja pertama kali",
+        "Dibayarkan secara tunai pada akhir minggu pertama ia menyelesaikan masa orientasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan terkena Pemutusan Hubungan Kerja (PHK) karena efisiensi. Dalam komponen uang pesangon, komponen apa saja yang wajib menjadi dasar perhitungan selain gaji pokok?",
+      "options": [
+        "Hanya tunjangan tetap yang melekat secara rutin setiap bulan pada slip gaji",
+        "Seluruh jenis tunjangan baik yang bersifat tetap maupun tunjangan tidak tetap",
+        "Gaji pokok ditambah dengan seluruh jenis tunjangan serta bonus tahunan terakhir",
+        "Gaji pokok ditambah tunjangan tetap serta uang penggantian perumahan dan pengobatan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Ketika melakukan validasi data sebelum finalisasi payroll, Anda menemukan seorang karyawan mengalami kenaikan gaji efektif tengah bulan. Bagaimana perlakuan pajak PPh 21 untuk bulan tersebut?",
+      "options": [
+        "Menerapkan tarif pajak baru untuk seluruh penghasilan bruto pada bulan tersebut",
+        "Menggunakan tarif pajak lama untuk seluruh penghasilan yang diterima pada bulan itu",
+        "Menghitung rata-rata tertimbang dari tarif gaji lama dan tarif gaji baru bulanan",
+        "Melakukan perhitungan terpisah atas penghasilan sebelum dan sesudah kenaikan gaji"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan resign atas kemauan sendiri dan mengajukan permohonan pencairan sisa hak cuti tahunannya yang belum diambil sebanyak 5 hari. Bagaimana perlakuan payroll yang tepat terhadap hak cuti tersebut sesuai regulasi di Indonesia?",
+      "options": [
+        "Wajib diuangkan dalam komponen gaji terakhir karena merupakan hak normatif pekerja",
+        "Hangus secara otomatis karena karyawan mengundurkan diri atas kemauan sendiri",
+        "Hanya diberikan jika diatur secara eksplisit dalam Perusahaan atau PKB",
+        "Dikonversi menjadi bentuk perpanjangan masa pemberitahuan kerja wajib"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda memberlakukan fasilitas pinjaman karyawan tanpa bunga melalui potongan gaji setiap bulan. Pada bulan ini, karyawan tersebut mangkir kerja selama 3 hari berturut-turut tanpa keterangan sah. Bagaimana Anda menyesuaikan potongan cicilan pinjaman tersebut pada slip gaji?",
+      "options": [
+        "Menunda pemotongan cicilan pinjaman hingga kehadiran karyawan kembali normal",
+        "Tetap memotong cicilan pinjaman sesuai jadwal meski gaji bersih berkurang drastis",
+        "Menghapuskan cicilan bulan ini dan menambahkannya ke masa akhir pinjaman",
+        "Memotong cicilan pinjaman secara proporsional berdasarkan sisa hari kerja efektif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati seorang karyawan salah memasukkan nomor rekening bank saat pengisian data onboarding, sehingga transfer gaji bulan ini mengalami retur (dikembalikan oleh bank). Apa tindakan administratif awal yang harus Anda ambil?",
+      "options": [
+        "Menunggu hingga periode penggajian bulan berikutnya untuk menggabungkan pembayaran",
+        "Membuat instruksi transfer manual khusus setelah konfirmasi ulang nomor rekening valid",
+        "Menyerahkan dana dalam bentuk kas tunai langsung kepada karyawan yang bersangkutan",
+        "Meminta bagian HR untuk menerbitkan surat peringatan terkait kesalahan data bank"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam perhitungan PPh 21 masa pajak terakhir (Desember) menggunakan tarif efektif rata-rata (TER), seorang pegawai tetap mendapati status pajak kurang bayar yang cukup signifikan karena adanya bonus tahunan. Kapan batas waktu penyetoran kekurangan pajak tersebut ke kas negara?",
+      "options": [
+        "Paling lambat tanggal 10 bulan berikutnya setelah tahun kalender berakhir",
+        "Paling lambat tanggal 15 bulan berikutnya setelah tahun kalender berakhir",
+        "Bersamaan dengan pelaporan SPT Tahunan pribadi karyawan yang bersangkutan",
+        "Paling lambat akhir bulan diserahkannya bukti pemotongan pajak tahunan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan mengambil cuti sakit selama 4 bulan berturut-turut dengan melampirkan surat keterangan dokter. Sesuai dengan ketentuan UU Ketenagakerjaan, bagaimana penyesuaian pembayaran upah pada bulan keempat cuti sakit tersebut?",
+      "options": [
+        "Dibayarkan penuh sebesar 100 persen dari upah pokok beserta seluruh tunjangan tetap",
+        "Dibayarkan sebesar 75 persen dari jumlah upah bulanan yang biasa diterima",
+        "Dibayarkan sebesar 50 persen dari jumlah upah bulanan sesuai ketentuan normatif",
+        "Tidak dibayarkan karena masa cuti berbayar telah habis pada bulan ketiga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan mengadakan kegiatan gathering tahunan di luar kota yang bersifat wajib bagi seluruh karyawan. Sejumlah karyawan memilih tidak hadir karena alasan pribadi dan mengajukan pemotongan cuti. Bagaimana perlakuan payroll atas ketidakhadiran tersebut?",
+      "options": [
+        "Memotong hak cuti tahunan karyawan dan mengurangi uang saku perjalanan dinas",
+        "Memotong gaji bulanan secara proporsional karena dianggap sebagai mangkir kerja",
+        "Membiarkan ketidakhadiran tanpa ada pengurangan gaji maupun pemotongan cuti",
+        "Mewajibkan karyawan mengganti jam kerja sejumlah durasi acara gathering tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang staf sales menerima komponen gaji pokok serta insentif penjualan yang bersifat tidak tetap setiap bulan. Saat menghitung iuran BPJS Ketenagakerjaan untuk program Jaminan Hari Tua (JHT), komponen mana yang wajib dijadikan dasar perhitungan?",
+      "options": [
+        "Hanya komponen gaji pokok sesuai dengan kontrak kerja yang disepakati",
+        "Akumulasi dari gaji pokok ditambah dengan insentif penjualan bulan berjalan",
+        "Nilai rata-rata dari total penerimaan bruto dalam periode tiga bulan terakhir",
+        "Upah minimum regional yang berlaku di domisili tempat bekerja saat ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Karyawan shift malam di pabrik Anda bekerja mulai pukul 22.00 hingga 06.00 keesokan harinya. Perusahaan menerapkan jadwal lembur 2 jam sebelum jam masuk shift dimulai. Bagaimana cara Anda menghitung komponen upah kerja lembur tersebut?",
+      "options": [
+        "Dihitung berdasarkan tarif lembur hari kerja biasa dikalikan jumlah jam lembur",
+        "Dihitung menggunakan tarif khusus lembur malam ditambah premi shift berjalan",
+        "Dikonversi menjadi hari libur pengganti karena dilakukan di luar jam operasional",
+        "Tidak dihitung sebagai lembur karena jaraknya terlalu jauh dari jam istirahat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proses audit internal payroll, ditemukan kelebihan pembayaran gaji (overpayment) pada seorang manajer senilai Rp5.000.000 akibat salah input tunjangan transportasi bulan lalu. Langkah pemulihan apa yang paling tepat dilakukan?",
+      "options": [
+        "Memotong langsung seluruh kelebihan tersebut pada gaji bulan berjalan tanpa pemberitahuan",
+        "Melakukan koordinasi tertulis dengan yang bersangkutan untuk skema pengembalian bertahap",
+        "Membebankan selisih kurang tersebut kepada staf payroll yang melakukan kesalahan input",
+        "Mengabaikannya jika nominal tidak melampaui ambang batas materialitas perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan mengalami penurunan jabatan (demosi) karena evaluasi kinerja, yang berdampak pada penurunan nominal gaji pokok efektif per tanggal 1 Oktober. Kapan penyesuaian perhitungan PPh 21 atas penurunan penghasilan tersebut mulai diterapkan?",
+      "options": [
+        "Mulai masa pajak bulan Oktober bersamaan dengan berlakunya surat keputusan demosi",
+        "Mulai masa pajak bulan berikutnya setelah proses administrasi HR selesai sepenuhnya",
+        "Ditunda hingga perhitungan penyesuaian pajak pada masa pajak Desember tahun berjalan",
+        "Dilakukan secara retroaktif terhitung sejak awal tahun kalender pajak yang bersangkutan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan resign secara baik-baik per tanggal 12 bulan berjalan. Perusahaan menggunakan cut-off kehadiran tanggal 20. Bagaimana perlakuan payroll untuk komponen tunjangan transportasi bulanan pada periode tersebut?",
+      "options": [
+        "Dibayarkan secara penuh karena sudah dianggarkan dalam struktur gaji tahunan perusahaan",
+        "Dihitung secara prorata berdasarkan jumlah hari kerja efektif aktual sampai tanggal resign",
+        "Tidak dibayarkan sama sekali karena tidak mencapai masa kerja minimal 15 hari dalam sebulan",
+        "Tetap dibayarkan penuh namun dipotong proporsional pada komponen THR di akhir tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan baru saja memberlakukan penyesuaian tarif iuran BPJS Kesehatan. Ketika Anda melakukan rekapitulasi iuran untuk periode ini, ditemukan adanya karyawan yang gajinya telah melampaui batas atas (ceiling) iuran BPJS Kesehatan. Tindakan apa yang harus Anda ambil?",
+      "options": [
+        "Menggunakan nominal gaji aktual karyawan tersebut sebagai dasar perhitungan iuran tanpa batas",
+        "Membatasi dasar perhitungan iuran sesuai dengan batas atas gaji yang ditetapkan oleh regulasi",
+        "Membebaskan karyawan tersebut dari kewajiban pembayaran iuran BPJS Kesehatan bulan ini",
+        "Melaporkan kelebihan iuran tersebut langsung ke kantor cabang BPJS Kesehatan terdekat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan mengambil cuti tahunan selama 5 hari kerja, namun di tengah masa cuti tersebut terdapat hari libur nasional resmi yang ditetapkan pemerintah. Bagaimana penghitungan hak cuti karyawan tersebut pada sistem HRIS?",
+      "options": [
+        "Potong saldo cuti sebanyak 5 hari penuh karena cuti sudah disetujui sebelumnya",
+        "Potong saldo cuti sebanyak 4 hari dan 1 hari dianggap sebagai libur nasional",
+        "Tambahkan kuota cuti pengganti sebanyak jumlah hari libur yang jatuh di tengah cuti",
+        "Batalkan seluruh pengajuan cuti dan minta karyawan mengajukan ulang jadwal baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses validasi PPh 21 bulanan, Anda mendapati ada pegawai tetap yang memiliki status PTKP berubah pada bulan Juli karena menikah dan memiliki tanggungan baru. Kapan perubahan PTKP tersebut mulai wajib diterapkan dalam perhitungan pajak?",
+      "options": [
+        "Sejak awal tahun pajak berjalan dengan melakukan pembetulan SPT masa Januari-Juni",
+        "Mulai masa pajak bulan Juli saat dokumen pendukung sah telah diserahkan ke HR",
+        "Pada masa pajak bulan Desember saat perhitungan PPh 21 setahun penuh dilakukan",
+        "Tahun pajak berikutnya setelah perusahaan melaporkan SPT Tahunan badan selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan mendapati slip gajinya mencantumkan potongan pinjaman koperasi yang melebihi batas maksimal ketentuan internal perusahaan. Langkah koreksi paling tepat yang harus dilakukan tim payroll adalah:",
+      "options": [
+        "Mengabaikan komplain karena pemotongan dilakukan langsung berdasarkan data dari pengurus koperasi",
+        "Mengembalikan kelebihan potongan secara tunai dan menyesuaikan cicilan pada periode berikutnya",
+        "Meminta karyawan menyelesaikan selisih tersebut secara mandiri langsung ke kantor koperasi",
+        "Menunda pembayaran gaji bulan tersebut secara keseluruhan sampai ada klarifikasi tertulis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan menerapkan kebijakan shift kerja 24 jam. Seorang karyawan dijadwalkan bekerja pada hari libur resmi nasional dan ia hadir bekerja sesuai jadwal tersebut. Bagaimana perhitungan upah kerja lembur/hari libur untuk karyawan ini?",
+      "options": [
+        "Dibayarkan dengan tarif tetap tanpa memandang hari libur nasional karena sudah masuk shift",
+        "Dihitung berdasarkan ketentuan upah kerja pada hari libur resmi sesuai durasi jam kerja",
+        "Diberikan penggantian hari libur (compensatory leave) tanpa tambahan komponen upah uang",
+        "Ditambahkan ke dalam akumulasi cuti tahunan berjalan sebagai kompensasi masuk hari libur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan proses transfer gaji massal melalui fasilitas bank (payroll service), sistem bank menolak transaksi milik seorang staf baru karena nama pada rekening berbeda satu huruf dengan data di sistem HR. Apa tindakan preventif terbaik?",
+      "options": [
+        "Melakukan transfer manual menggunakan rekening pribadi bagian keuangan agar cepat selesai",
+        "Meminta karyawan melampirkan buku tabungan valid dan memperbarui data master bank",
+        "Menahan pembayaran gaji staf tersebut sampai periode penggajian bulan berikutnya tiba",
+        "Mengubah nama pada database sistem HR agar sama persis dengan nama di rekening bank"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan berstatus kontrak (PKWT) masa kerjanya berakhir pada tanggal 10 bulan ini dan tidak diperpanjang. Sesuai regulasi ketenagakerjaan, apa hak finansial yang wajib dibayarkan perusahaan selain gaji prorata?",
+      "options": [
+        "Uang pesangon penuh dan uang penghargaan masa kerja sesuai masa pengabdian",
+        "Uang kompensasi PKWT dihitung prorata masa kerja serta uang penggantian hak",
+        "Uang pisah dan jaminan asuransi kesehatan selama enam bulan ke depan gratis",
+        "Tunjangan Hari Raya penuh meskipun hari raya masih jauh dari jadwal bulanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit internal, ditemukan bahwa tunjangan kemahalan seorang ekspatriat salah dikonversi menggunakan kurs pajak yang sudah kadaluarsa, menyebabkan selisih kurang bayar. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Membebankan selisih kurang bayar tersebut sebagai potongan pada gaji bulan depan",
+        "Memasukkan koreksi kurang bayar pada komponen variabel payroll periode berjalan",
+        "Melaporkan koreksi langsung pada pembetulan SPT Masa PPh 21 tahun-tahun sebelumnya",
+        "Mengabaikan selisih kecil tersebut karena tidak signifikan terhadap laporan keuangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan mangkir (tidak hadir tanpa keterangan) selama 3 hari berturut-turut setelah diberikan surat peringatan terakhir. Bagaimana dampak ketidakhadiran ini terhadap komponen gaji bulanannya?",
+      "options": [
+        "Gaji dibayarkan penuh karena sanksi disiplin tidak boleh mengurangi hak normatif bulanan",
+        "Perusahaan berhak melakukan pemotongan upah prorata sesuai jumlah hari mangkir kerja",
+        "Karyawan tetap berhak atas gaji pokok namun seluruh tunjangan kinerjanya dihanguskan",
+        "Gaji ditahan sepenuhnya sampai proses investigasi internal oleh bagian HR selesai"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

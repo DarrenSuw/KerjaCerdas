@@ -1,0 +1,306 @@
+{
+  "skill": "Lua",
+  "skill_key": "lua",
+  "questions": [
+    {
+      "question": "Dalam pengembangan game menggunakan Roblox Studio, Anda perlu melacak total koin pemain yang terus bertambah setiap detiknya. Skrip mana yang paling aman mencegah kebocoran memori (memory leak) saat pemain keluar dari permainan?",
+      "options": [
+        "Menggunakan while true do dengan task.wait(1) di dalam PlayerAdded",
+        "Membuat loop tak terbatas yang memeriksa semua player secara global",
+        "Menghubungkan event PlayerRemoving untuk memutuskan koneksi event koin",
+        "Membiarkan engine Roblox membersihkan variabel lokal secara otomatis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis fungsi konfigurasi server backend menggunakan Lua di Nginx (OpenResty). Anda perlu membaca parameter dari query string URL, namun parameter tersebut mungkin tidak ada. Pendekatan idiomatik Lua apa yang sebaiknya digunakan untuk memberikan nilai default 'guest'?",
+      "options": [
+        "local role = ngx.var.arg_role and ngx.var.arg_role or 'guest'",
+        "local role = ngx.var.arg_role ? ngx.var.arg_role : 'guest'",
+        "local role = if ngx.var.arg_role == nil then 'guest' else ngx.var.arg_role",
+        "local role = coalesce(ngx.var.arg_role, 'guest')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan iterasi pada tabel besar yang berisi data transaksi menggunakan pairs() di Lua 5.1, Anda mendapati urutan pemrosesan acak dan performa menurun. Bagaimana cara terbaik mengoptimalkan pembacaan data jika kunci tabel berupa angka berurutan 1 sampai N?",
+      "options": [
+        "Mengubah tabel menjadi struktur userdata untuk akses memori langsung",
+        "Mengganti fungsi pairs() dengan ipairs() dan loop numerik for i = 1, #t",
+        "Menambahkan metatable dengan fungsi __index khusus untuk caching",
+        "Menggunakan fungsi table.sort() pada tabel sebelum melakukan iterasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan bug di mana fungsi utilitas Lua sering gagal karena menerima argumen string kosong alih-alih angka. Validasi tipe data apa yang paling tepat untuk memastikan argumen 'harga' benar-benar tipe numerik?",
+      "options": [
+        "if type(harga) == 'number' then",
+        "if typeof(harga) == 'number' then",
+        "if getmetatable(harga) == 'number' then",
+        "if checkdatatype(harga, 'number') then"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skrip Neovim (plugin development) menggunakan Lua, Anda ingin membuat tabel lokal yang berfungsi sebagai cache data file agar tidak dibaca ulang terus-menerus. Agar tabel ini tidak mencegah garbage collector menghapus objek jika memori tipis, apa yang harus Anda lakukan?",
+      "options": [
+        "Mengatur metatable dengan mode __mode = 'kv' pada tabel tersebut",
+        "Menghapus referensi tabel secara manual setiap 60 detik",
+        "Menggunakan fungsi collectgarbage('stop') di awal plugin",
+        "Memindahkan penyimpanan cache dari memori ke file temporary"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat sistem modul Lua untuk aplikasi IoT. Anda ingin memastikan variabel di dalam modul 'sensor.lua' bersifat privat dan tidak bisa diubah secara langsung dari skrip utama (main.lua). Bagaimana cara mencapainya?",
+      "options": [
+        "Menambahkan keyword 'private' di depan deklarasi variabel lokal",
+        "Memanfaatkan scope lokal berkas dan hanya mengekspor fungsi getter",
+        "Membungkus seluruh isi file modul di dalam blok try-catch aman",
+        "Menggunakan fungsi setfenv() untuk mengunci namespace modul"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fungsi Lua memproses data JSON dari API eksternal menggunakan library cjson. Terkadang API mengirimkan respons null yang di-mapping Lua menjadi cjson.null. Bagaimana cara aman mengecek apakah variabel 'status' bernilai null dari cjson tanpa error?",
+      "options": [
+        "if status == nil then",
+        "if status == cjson.null then",
+        "if isnull(status) then",
+        "if status == 'null' then"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati performa aplikasi menurun drastis karena penggabungan (concatenation) string berukuran kecil secara berulang dalam loop besar di Lua. Solusi paling efisien untuk masalah ini adalah...",
+      "options": [
+        "Memasukkan potongan string ke dalam tabel lalu menggunakan table.concat()",
+        "Menggunakan operator bitwise shift untuk menggabungkan kode ASCII string",
+        "Memanfaatkan fungsi string.format() di dalam setiap iterasi loop",
+        "Mengubah semua string menjadi userdata sebelum digabungkan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam implementasi sistem inventory game online berbasis Redis dan Lua scripting, mengapa Anda harus menghindari penggunaan fungsi global di dalam skrip Lua yang dieksekusi di Redis?",
+      "options": [
+        "Redis akan langsung menghentikan server karena pelanggaran memori",
+        "Fungsi global akan menyebabkan error sintaksis saat Redis memuat skrip",
+        "Redis melarang pembuatan variabel global untuk menjaga determinisme skrip",
+        "Variabel global akan otomatis terhapus setiap kali transaksi database selesai"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis pustaka matematika kustom di Lua dan ingin agar dua objek kustom (misal: Vektor) bisa dijumlahkan langsung menggunakan operator plus (+). Fitur Lua apa yang harus Anda implementasikan?",
+      "options": [
+        "Operator overloading melalui metatable dengan metamethod __add",
+        "Fungsi override bawaan sistem menggunakan modul operator",
+        "Mendaftarkan fungsi penjumlahan ke dalam tabel global _G",
+        "Mengubah struktur dasar compiler Lua untuk mendukung ekstensi operator"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan backend mikroservis menggunakan Lua dan OpenResty. Anda perlu membaca header HTTP 'X-User-Role' dari request masuk untuk keperluan otorisasi. Kode mana yang paling tepat dan efisien?",
+      "options": [
+        "local role = ngx.req.get_headers()['X-User-Role']",
+        "local role = ngx.header['X-User-Role']",
+        "local role = request.getHeader('X-User-Role')",
+        "local role = os.getenv('HTTP_X_USER_ROLE')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skrip otomasi Neovim dengan Lua, Anda ingin menulis fungsi pembantu yang menerima argumen opsional berupa jumlah baris. Jika argumen tidak diberikan, nilainya harus default ke 10. Cara idiomatis Lua apa yang harus digunakan?",
+      "options": [
+        "local lines = count or 10",
+        "local lines = count ? count : 10",
+        "local lines = if count == nil then 10 else count",
+        "local lines = isset(count) ? count : 10"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati memori aplikasi Lua terus membengkak (memory leak) karena tabel global tidak sengaja tercemar oleh variabel lokal yang lupa diberi keyword 'local'. Alat bawaan apa yang dapat Anda gunakan untuk mendeteksi variabel global tak sengaja ini?",
+      "options": [
+        "Memeriksa tabel _G secara iteratif pada akhir siklus eksekusi",
+        "Menggunakan fungsi debug.getlocal() pada fungsi utama skrip",
+        "Menjalankan perintah lua -v untuk melihat daftar variabel global",
+        "Memanfaatkan garbage collector dengan mengaktifkan gcinfo()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis modul Lua untuk memproses data sensor IoT. Anda ingin memastikan bahwa tabel konfigurasi modul tidak bisa dimodifikasi secara tidak sengaja oleh skrip lain di luar modul. Apa mekanisme Lua yang paling tepat?",
+      "options": [
+        "Menggunakan setmetatable dengan __newindex metamethod yang memicu error",
+        "Mengubah tabel menjadi string JSON sebelum dibagikan ke modul lain",
+        "Menghapus referensi tabel dari _G menggunakan fungsi rawset()",
+        "Membungkus seluruh isi tabel ke dalam fungsi penutup (closure)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam game engine berbasis Lua, Anda ingin membuat sistem callback event sederhana di mana sebuah fungsi dapat memicu beberapa listener sekaligus. Struktur data apa di dalam modul yang paling efisien untuk menyimpan daftar fungsi listener tersebut?",
+      "options": [
+        "Sebuah array numerik (tabel dengan indeks angka berurutan)",
+        "Sebuah tabel asosiatif dengan kunci berupa string nama fungsi",
+        "Sebuah file eksternal yang dibaca ulang setiap kali event dipicu",
+        "Sebuah string panjang yang memuat nama fungsi dipisahkan koma"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima string data mentah yang dipisahkan oleh karakter pipa (|) dari perangkat serial IoT. Anda ingin memecah string tersebut menjadi beberapa bagian (substring) di Lua. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Menggunakan string.gmatch dengan pola pemisah yang sesuai",
+        "Menggunakan string.sub untuk memotong berdasarkan panjang tetap",
+        "Mengonversi string ke tabel ASCII lalu melakukan iterasi byte",
+        "Menggunakan pustaka eksternal pihak ketiga untuk parsing XML"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menulis skrip migrasi data menggunakan Lua, Anda perlu memastikan bahwa operasi pembacaan tabel yang mungkin memiliki struktur sangat dalam tidak menyebabkan error 'attempt to index a nil value'. Cara penanganan yang aman adalah:",
+      "options": [
+        "Memeriksa keberadaan setiap level kunci secara berurutan atau menggunakan pcall",
+        "Mematikan mekanisme proteksi tipe data bawaan Lua menggunakan setmetatable",
+        "Memaksa semua tabel kosong diisi dengan nilai boolean true secara otomatis",
+        "Menggunakan fungsi assert pada setiap variabel sebelum dideklarasikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengoptimalkan fungsi pembacaan file konfigurasi besar dalam format teks kustom menggunakan Lua. Untuk menghindari pemborosan siklus CPU, bagaimana cara terbaik membaca file baris demi baris?",
+      "options": [
+        "Menggunakan iterator io.lines() di dalam perulangan for",
+        "Membaca seluruh isi file sekaligus dengan io.read('*all')",
+        "Membuka file dalam mode tulis lalu membaca buffer internal",
+        "Menggunakan fungsi os.execute untuk memparsing file via grep"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan plugin aplikasi desktop berbasis Lua, Anda mendapati fungsi tertentu memakan waktu eksekusi yang lama dan membuat UI utama menjadi macet. Solusi arsitektur apa yang umumnya diambil?",
+      "options": [
+        "Memindahkan beban kerja berat ke coroutine agar bisa berjalan secara kooperatif",
+        "Mengganti seluruh interpreter Lua dengan bahasa C murni tanpa kompromi",
+        "Meningkatkan ukuran alokasi memori heap melalui parameter garbage collector",
+        "Menjalankan fungsi tersebut secara berulang di dalam thread sistem operasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memastikan bahwa modul Lua kustom Anda aman dari konflik penamaan variabel global saat dimuat di lingkungan aplikasi bersama plugin lain. Praktik terbaik apa yang harus diterapkan pada tingkat file modul?",
+      "options": [
+        "Mendeklarasikan seluruh variabel lokal di dalam file dan mengembalikan satu tabel modul",
+        "Menghindari penggunaan kata kunci local agar variabel otomatis terisolasi",
+        "Menempatkan semua fungsi ke dalam tabel global utama bernama _G.CustomModul",
+        "Menambahkan awalan garis bawah ganda pada setiap nama variabel global"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan sistem rate-limiting menggunakan Redis dan Lua di backend fintech, Anda perlu memastikan operasi penghitungan berjalan atomik. Bagaimana cara memastikan skrip Lua dieksekusi dengan aman tanpa race condition?",
+      "options": [
+        "Menjalankan skrip melalui perintah EVALSHA setelah memastikan skrip sudah dimuat di cache Redis",
+        "Menggunakan fungsi os.execute di dalam skrip Lua untuk mengunci tabel database eksternal",
+        "Memanggil fungsi redis.pcall secara berulang di dalam thread terpisah menggunakan coroutine",
+        "Menyimpan status kunci secara lokal di dalam variabel global modul Lua sebelum dikirim ke Redis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis skrip pemrosesan log akses Nginx menggunakan OpenResty dan Lua. Anda ingin menangkap error runtime saat memanggil fungsi pihak ketiga agar worker process tidak crash. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi pcall() untuk membungkus pemanggilan fungsi yang berisiko menghasilkan error",
+        "Memeriksa nilai kembalian fungsi dengan operator perbandingan nil lalu memanggil error() manual",
+        "Menambahkan blok try-catch standar Lua di sekitar baris kode yang memanggil fungsi tersebut",
+        "Memanfaatkan fungsi assert() pada setiap argumen masukan sebelum fungsi pihak ketiga dieksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat mengembangkan plugin Neovim menggunakan Lua, Anda mendapati fungsi handler event sering terpanggil bersamaan, menyebabkan pembacaan file konfigurasi ganda. Bagaimana cara menerapkan debounce dasar?",
+      "options": [
+        "Menyimpan timestamp eksekusi terakhir di dalam closure dan mengabaikan panggilan baru jika belum melewati jeda waktu",
+        "Mematikan seluruh event loop Neovim menggunakan perintah vim.schedule selama proses pembacaan file",
+        "Membuat tabel global baru setiap kali event terpanggil untuk menimpa proses pembacaan yang sedang berjalan",
+        "Menggunakan fungsi coroutine.yield() di dalam fungsi handler untuk menjeda eksekusi secara permanen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengoptimalkan fungsi parser data string yang sangat panjang di aplikasi backend Lua. Agar tidak membebani Garbage Collector akibat alokasi memori string baru, teknik apa yang sebaiknya dihindari?",
+      "options": [
+        "Melakukan penggabungan string kecil berulang kali menggunakan operator titik dua ganda di dalam perulangan",
+        "Menggunakan fungsi string.gmatch untuk menghasilkan iterator pembacaan token secara langsung",
+        "Menampung potongan substring ke dalam sebuah tabel array lalu digabung di akhir dengan table.concat",
+        "Membaca posisi byte string menggunakan fungsi string.byte secara langsung tanpa membuat salinan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan game seluler menggunakan mesin berbasis Lua, Anda ingin mencegah pemain memodifikasi variabel skor global secara ilegal melalui konsol debug. Bagaimana cara memproteksinya?",
+      "options": [
+        "Membungkus tabel status permainan menggunakan metatabel dengan fungsi __newindex yang memicu peringatan",
+        "Menyatakan semua variabel skor sebagai lokal di dalam cakupan file skrip utama permainan",
+        "Mengubah fungsi bawaan rawset agar tidak bisa lagi digunakan pada seluruh tabel di dalam memori",
+        "Menjalankan seluruh kode permainan di dalam fungsi sandbox loadstring yang dienkripsi basis64"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis modul konfigurasi untuk microservice Lua yang memuat data dari berkas eksternal. Anda ingin memastikan bahwa jika modul dimuat berkali-kali menggunakan require(), status internalnya tidak terinisialisasi ulang. Apa polanya?",
+      "options": [
+        "Mengembalikan tabel instansiasi yang sama atau memanfaatkan cache dari package.loaded secara langsung",
+        "Menghapus nama modul dari tabel package.preload setiap kali fungsi require selesai dieksekusi",
+        "Menempatkan seluruh variabel konfigurasi ke dalam cakupan global _G agar bisa diakses bebas",
+        "Menggunakan fungsi setmetatable dengan argumen __mode bernilai 'kv' pada tabel modul utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memproses payload JSON dari webhook pihak ketiga di OpenResty, kadang kala field tanggal bernilai null yang diterjemahkan cjson menjadi userdata kosong. Bagaimana cara menanganinya dengan aman?",
+      "options": [
+        "Membandingkan nilai variabel dengan cjson.null sebelum melakukan operasi manipulasi string tanggal",
+        "Memeriksa apakah tipe data variabel tersebut adalah 'table' menggunakan operator bawaan type()",
+        "Membungkus pemanggilan cjson.decode di dalam fungsi pcall untuk mengabaikan nilai kosong otomatis",
+        "Mengubah konfigurasi cjson agar mengubah semua nilai null menjadi string kosong secara global"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis fungsi utilitas matematika di Lua yang menerima jumlah argumen tidak tetap (varargs). Anda perlu meneruskan seluruh argumen tersebut ke fungsi lain secara utuh tanpa ada yang terpotong jika ada nilai nil di tengah. Bagaimana caranya?",
+      "options": [
+        "Membungkus argumen varargs ke dalam sebuah tabel menggunakanEkspresi tabel {...} beserta fungsi select",
+        "Langsung melemparkan titik-titik tiga (varargs) ke dalam pemanggilan fungsi tujuan tanpa modifikasi",
+        "Menggunakan fungsi table.pack untuk mengubah varargs menjadi string terformat sebelum dikirim",
+        "Melakukan iterasi manual menggunakan perulangan numerik berdasarkan panjang dari tabel _G"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem queue background worker berbasis Lua, Anda menggunakan coroutine untuk menangani tugas asinkron. Bagaimana cara menghentikan dan membersihkan sumber daya coroutine yang mengalami timeout?",
+      "options": [
+        "Membiarkan objek coroutine tidak aktif sampai Garbage Collector Lua membersihkannya secara otomatis",
+        "Memanggil fungsi coroutine.resume sekali lagi dengan menyertakan argumen error khusus di dalamnya",
+        "Mengubah status variabel status internal coroutine menjadi 'dead' secara langsung dari luar fungsi",
+        "Memanggil fungsi coroutine.close jika menggunakan Lua 5.4 atau menandai referensinya menjadi nil"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ingin membuat modul Lua yang mendukung pemanggilan metode secara berantai (method chaining) seperti `builder:setHost('lokal'):setPort(80):build()`. Apa yang harus dikembalikan oleh setiap metode penyusun?",
+      "options": [
+        "Mengembalikan referensi objek instance itu sendiri (self) pada akhir setiap blok fungsi metode",
+        "Mengembalikan nilai boolean true jika operasi pengaturan parameter berhasil tanpa kendala",
+        "Mengembalikan tabel baru yang berisi salinan seluruh status objek pada tahapan eksekusi tersebut",
+        "Mengembalikan hasil eksekusi dari fungsi coroutine.yield untuk menahan proses selanjutnya"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

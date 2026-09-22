@@ -1,0 +1,306 @@
+{
+  "skill": "Econometrics",
+  "skill_key": "econometrics",
+  "questions": [
+    {
+      "question": "Sebuah platform e-commerce di Indonesia ingin mengukur efektivitas program subsidi ongkir terhadap total nilai transaksi (GMV) merchant UMKM. Anda menggunakan data panel dari 500 merchant selama 12 bulan. Uji Hausman yang Anda jalankan menunjukkan nilai p-value sebesar 0.03. Keputusan model apa yang paling tepat berdasarkan hasil tersebut?",
+      "options": [
+        "Menggunakan model Fixed Effects karena asumsi korelasi terpenuhi menolak Pooled OLS",
+        "Menggunakan model Random Effects karena variansi antar individu dianggap acak",
+        "Menggunakan model Fixed Effects karena menolak hipotesis nol pada taraf nyata 5%",
+        "Menggunakan model Random Effects karena gagal menolak hipotesis nol secara statistik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim analis data di perusahaan FMCG multinasional sedang memodelkan penjualan produk mie instan berdasarkan harga jual dan pengeluaran iklan. Hasil uji Breusch-Pagan menunjukkan nilai p-value 0.01. Apa implikasi praktis dari temuan ini terhadap model regresi linier berganda Anda?",
+      "options": [
+        "Estimator OLS kehilangan sifat BLUE akibat adanya masalah heteroskedastisitas",
+        "Terjadi korelasi serial tingkat tinggi antar error term pada periode waktu berbeda",
+        "Model mengalami multikolinearitas sempurna sehingga koefisien gagal diestimasi",
+        "Variabel independen bersifat endogen dan berkorelasi langsung dengan error term"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengevaluasi program pelatihan kerja mandiri pemerintah terhadap tingkat pendapatan peserta setelah 1 tahun lulus. Terdapat kekhawatiran bahwa individu yang memiliki motivasi tinggi (faktor tak teramati) cenderung lebih rajin ikut pelatihan sekaligus memiliki pendapatan lebih tinggi secara alami. Instrumen apa yang paling tepat digunakan untuk mengatasi bias seleksi ini?",
+      "options": [
+        "Menambahkan variabel kontrol berupa umur dan tingkat pendidikan formal ke dalam OLS",
+        "Menerapkan metode Two-Stage Least Squares menggunakan jarak tempuh ke pusat pelatihan",
+        "Melakukan transformasi Box-Cox pada variabel pendapatan untuk menormalkan distribusi",
+        "Menggunakan pendekatan Difference-in-Differences dengan asumsi tren paralel terpenuhi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai peneliti pasar tenaga kerja, Anda menganalisis penentu tingkat upah buruh pabrik di kawasan industri Cikarang. Ketika memasukkan variabel lama pengalaman kerja dan tingkat pendidikan, nilai VIF (Variance Inflation Factor) untuk kedua variabel tersebut berada di angka 12. Apa tindakan korektif yang paling tepat untuk mengatasi masalah tersebut?",
+      "options": [
+        "Menghapus salah satu variabel yang redundan atau menggabungkannya menjadi indeks baru",
+        "Melakukan pembobotan ulang data menggunakan metode Weighted Least Squares",
+        "Menambah ukuran sampel penelitian dengan mengambil data dari kawasan industri lain",
+        "Mentransformasikan variabel dependen ke dalam bentuk persentase perubahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan ride-hailing di Indonesia ingin menguji apakah penambahan fitur keamanan baru di aplikasi berhasil menurunkan tingkat pembatalan pesanan oleh penumpang. Anda memiliki data harian dari kota Surabaya selama 6 bulan sebelum dan sesudah peluncuran fitur. Teknik ekonometrika apa yang paling sesuai untuk mengisolasi dampak kebijakan tersebut?",
+      "options": [
+        "Regresi Probit biner untuk memprediksi probabilitas pembatalan pesanan harian",
+        "Analisis runtut waktu ARIMA untuk meramalkan tren pembatalan di masa depan",
+        "Difference-in-Differences dengan membandingkan Surabaya dan kota kontrol lain",
+        "Regresi panel statis dengan memasukkan efek tetap individu dan waktu bersamaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menganalisis elastisitas harga permintaan daging sapi di pasar tradisional Jakarta menggunakan data cross-section rumah tangga. Uji White yang Anda lakukan menghasilkan statistik hitung yang signifikan secara statistik. Langkah perbaikan inferensi statistik apa yang harus diambil tanpa mengubah nilai estimasi koefisien?",
+      "options": [
+        "Melakukan pembagian seluruh variabel dengan akar kuadrat dari variansi error",
+        "Menggunakan standard error yang konsisten terhadap heteroskedastisitas (Robust Standard Errors)",
+        "Melakukan differensiasi tingkat pertama pada seluruh variabel harga dan kuantitas",
+        "Mengganti metode estimasi dari OLS menjadi Maximum Likelihood Estimation non-linier"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam studi evaluasi dampak program Dana Desa terhadap penurunan angka kemiskinan kabupaten di Jawa Timur, Anda menduga bahwa tingkat kemiskinan masa lalu juga memengaruhi besaran alokasi Dana Desa saat ini. Kondisi ini menciptakan masalah endogenitas berupa:",
+      "options": [
+        "Multikolinearitas antar variabel penjelas yang menyebabkan standar deviasi membengkak",
+        "Omission variable bias karena mengabaikan karakteristik demografi spesifik wilayah",
+        "Simultanitas atau kausalitas balik yang melanggar asumsi eksogenitas regressor",
+        "Autokorelasi spasial antar kabupaten yang letaknya berdekatan secara geografis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi ingin memodelkan keputusan pelanggan untuk melakukan churn (berhenti berlangganan) berdasarkan durasi panggilan, jumlah keluhan, dan tagihan bulanan. Variabel dependen bernilai 1 jika churn dan 0 jika tidak. Model ekonometrika mana yang paling tepat untuk mengestimasi probabilitas kejadian tersebut?",
+      "options": [
+        "Model Regresi Linier Berganda OLS konvensional dengan interpretasi persentase langsung",
+        "Model Logit atau Probit yang menjamin estimasi probabilitas berada di antara 0 dan 1",
+        "Model Vector Autoregression (VAR) untuk menangkap dinamika waktu antar keluhan",
+        "Model Panel Data Dynamic GMM untuk mengatasi masalah korelasi serial error"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis pengaruh tingkat suku bunga Bank Indonesia terhadap penyaluran kredit perbankan nasional menggunakan data runtut waktu (time series). Saat memeriksa hasil regresi OLS, nilai Durbin-Watson sangat rendah dan grafik residual menunjukkan pola gelombang yang jelas. Langkah teknis apa yang harus Anda ambil untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah spesifikasi model menjadi bentuk logaritma natural untuk meredam variasi data",
+        "Mentransformasikan variabel menjadi bentuk beda pertama atau memasukkan lag dari variabel terikat",
+        "Menghapus observasi pada periode krisis ekonomi untuk menghilangkan tren musiman",
+        "Mengganti metode estimasi menggunakan regresi non-linear kuadrat terkecil tertimbang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank swasta di Jakarta ingin mengestimasi probabilitas seorang debitur mengalami gagal bayar (macet) berdasarkan rasio utang terhadap pendapatan dan riwayat kredit. Variabel terikat bersifat biner (0 atau 1). Pendekatan ekonometrika mana yang paling tepat digunakan untuk estimasi ini?",
+      "options": [
+        "Analisis regresi linier berganda dengan metode kuadrat terkecil biasa",
+        "Model regresi logistik atau probit untuk mengatasi keterbatasan rentang nilai",
+        "Model deret waktu ARIMA untuk memproyeksikan risiko gagal bayar bulanan",
+        "Analisis komponen utama guna mereduksi dimensi variabel prediktor makro"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang meneliti dampak investasi asing langsung (FSA) terhadap penyerapan tenaga kerja di berbagai provinsi di Indonesia menggunakan panel data. Uji Hausman yang Anda lakukan menunjukkan nilai p-value yang sangat kecil (di bawah 0.01). Apa implikasi dari hasil uji tersebut terhadap pemilihan model?",
+      "options": [
+        "Model efek tetap (fixed effects) harus dipilih karena efek individu berkorelasi dengan regressor",
+        "Model efek acak (random effects) lebih efisien karena mengasumsikan tidak ada korelasi",
+        "Model OLS gabungan (pooled OLS) sudah cukup valid tanpa perlu memasukkan dummy provinsi",
+        "Model harus diestimasi ulang menggunakan pendekatan kuadrat terkecil dua tahap (2SLS)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam studi evaluasi dampak program Bantuan Langsung Tunai (BLT) terhadap konsumsi rumah tangga pedesaan, Anda menduga ada bias seleksi karena penerima bantuan dipilih berdasarkan tingkat kemiskinan awal. Teknik ekonometrika apa yang paling tepat untuk mengatasi masalah endogenisitas ini?",
+      "options": [
+        "Menambahkan variabel dummy waktu untuk mengontrol tren makroekonomi tahunan",
+        "Menggunakan metode Propensity Score Matching atau variabel instrumental yang valid",
+        "Melakukan transformasi Box-Cox pada variabel konsumsi rumah tangga sampel",
+        "Menerapkan pembobotan sampel berdasarkan jumlah anggota keluarga di desa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur mobil di Karawang ingin meramalkan volume penjualan tahun depan berdasarkan proyeksi PDB, kurs rupiah, dan tingkat inflasi. Hasil uji akar unit (unit root test) menunjukkan bahwa data tidak stasioner pada level, tetapi stasioner pada tingkat beda pertama. Apa tindakan lanjutan yang sesuai?",
+      "options": [
+        "Melakukan uji kointegrasi Engle-Granger untuk melihat hubungan jangka panjang antar variabel",
+        "Melanjutkan regresi OLS standar karena data deret waktu makro selalu bersifat tren",
+        "Mengambil logaritma natural dari seluruh variabel tanpa melakukan pembedaan lagi",
+        "Menghapus variabel inflasi dari model karena tidak memiliki pengaruh yang signifikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan regresi untuk mengestimasi fungsi produksi suatu industri padat karya, Anda menduga bahwa modal dan tenaga kerja bersifat endogen karena perusahaan dapat menyesuaikan input berdasarkan produktivitas tidak teramati yang mereka ketahui. Pendekatan estimasi apa yang direkomendasikan?",
+      "options": [
+        "Menggunakan estimator panel data dua arah untuk menangkap efek waktu dan individu",
+        "Menerapkan metode Levin-Lin-Chu untuk menguji stasioneritas panel data",
+        "Menggunakan metode seperti Olley-Pakes atau Levinsohn-Petrin untuk kontrol proksi",
+        "Menambahkan interaksi antara variabel modal dan tenaga kerja ke dalam spesifikasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda melakukan analisis regresi silang (cross-section) untuk menguji pengaruh tingkat pendidikan terhadap upah pekerja formal di Surabaya. Hasil uji Breusch-Pagan menunjukkan nilai p-value sebesar 0.02. Bagaimana Anda menyikapi hasil pengujian tersebut pada interpretasi model?",
+      "options": [
+        "Model mengalami heteroskedastisitas, sehingga perlu menggunakan standard error yang robust",
+        "Model mengalami multikolinearitas sempurna, sehingga salah satu variabel harus dikeluarkan",
+        "Model mengalami autokorelasi tingkat tinggi, sehingga perlu transformasi lag waktu",
+        "Model mengalami bias simultan, sehingga harus menggunakan estimasi sistem persamaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengestimasi permintaan impor Indonesia dari Tiongkok, Anda memasukkan variabel tingkat harga domestik dan kurs efektif riil. Hasil matriks korelasi menunjukkan nilai koefisien antara kedua variabel tersebut mencapai 0.92, namun nilai R-squared sangat tinggi dan signifikan. Apa diagnosis dan konsekuensi utamanya?",
+      "options": [
+        "Terjadi multikolinearitas tinggi yang menyebabkan kesalahan standar koefisien menjadi besar",
+        "Terjadi heteroskedastisitas murni yang membuat estimasi parameter menjadi tidak konsisten",
+        "Terjadi misspecification model karena hilangnya variabel penjelas yang relevan",
+        "Terjadi masalah heterogenitas spasial antar wilayah perdagangan bilateral"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pemerintah daerah ingin mengukur dampak pembangunan jalan tol baru terhadap harga tanah di sekitar gerbang tol menggunakan metode perbedaan-dalam-perbedaan (Difference-in-Differences). Asumsi mengikat apa yang harus terpenuhi agar estimasi kausal tersebut valid?",
+      "options": [
+        "Tren harga tanah pada kelompok perlakuan dan kelompok kontrol harus paralel sebelum intervensi",
+        "Jumlah sampel pada wilayah perlakuan harus persis sama dengan wilayah kelompok kontrol",
+        "Pertumbuhan ekonomi makro daerah tersebut harus konstan sepanjang periode pengamatan",
+        "Variabel gangguan (error term) harus berdistribusi normal baku dengan mean nol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menganalisis pengaruh pengeluaran iklan digital terhadap jumlah unduhan aplikasi seluler menggunakan data harian selama satu tahun. Anda menemukan bahwa dampak iklan tidak seketika terjadi hari ini, melainkan berdampak pada beberapa hari ke depan. Spesifikasi model ekonometrika apa yang paling tepat?",
+      "options": [
+        "Model regresi dengan variabel lag terdistribusi (distributed lag model) untuk efek tertunda",
+        "Model probit biner untuk memperkirakan probabilitas unduhan aplikasi harian",
+        "Model analisis diskriminan linier untuk mengklasifikasikan efektivitas kampanye",
+        "Model regresi patahan struktural untuk mendeteksi perubahan kebijakan iklan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah jaringan supermarket nasional ingin mengukur efektivitas kampanye diskon akhir pekan terhadap volume penjualan produk daging ayam. Analis mencurigai adanya masalah multikolinearitas yang tinggi antara variabel harga daging ayam dan harga daging sapi sebagai barang substitusi. Apa langkah diagnostik awal dan penanganan yang paling tepat untuk mengatasi masalah tersebut?",
+      "options": [
+        "Mengeluarkan variabel harga daging sapi dari model agar nilai Variance Inflation Factor (VIF) menurun drastis",
+        "Menghitung nilai VIF untuk setiap variabel independen dan jika melebihi ambang batas, mempertimbangkan pusatan data",
+        "Melakukan transformasi logaritma natural pada seluruh variabel untuk menghilangkan korelasi linier antarprediktor",
+        "Mengabaikan multikolinearitas karena asumsi ini tidak mempengaruhi ketepatan nilai estimasi koefisien regresi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim analis properti di Surabaya sedang memodelkan harga rumah tapak berdasarkan luas bangunan, jumlah kamar, dan jarak ke pusat kota. Ketika menguji asumsi homoskedastisitas menggunakan uji Breusch-Pagan, nilai p-value menunjukkan angka 0,012. Bagaimana implikasi kondisi ini terhadap hasil regresi OLS Anda?",
+      "options": [
+        "Koefisien regresi yang dihasilkan menjadi bias dan tidak konsisten akibat adanya korelasi antar-error",
+        "Estimasi koefisien masih tidak bias, tetapi kesalahan baku (standard error) menjadi tidak valid untuk uji hipotesis",
+        "Model regresi kehilangan kemampuan prediktif total sehingga harus diganti dengan model non-parametrik",
+        "Nilai R-squared otomatis meningkat secara artifisial tanpa mencerminkan hubungan kausal yang sebenarnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis data panel tahunan dari 34 provinsi di Indonesia mengenai tingkat pengangguran terbuka dan pertumbuhan ekonomi regional. Berdasarkan uji Hausman, nilai p-value adalah 0,003. Pemilihan spesifikasi model yang paling tepat untuk analisis ini adalah",
+      "options": [
+        "Model Pooled OLS karena mengasumsikan tidak ada perbedaan karakteristik antarprovinsi di Indonesia",
+        "Model Fixed Effects karena mengasumsikan efek individu berkorelasi dengan variabel penjelas dalam model",
+        "Model Random Effects karena mengasumsikan efek individu bersifat acak dan tidak berkorelasi dengan prediktor",
+        "Model Difference-in-Differences untuk menangkap dampak kebijakan ekonomi makro secara serentak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik berbasis aplikasi sedang meneliti pengaruh waktu pengiriman terhadap tingkat kepuasan pelanggan menggunakan data time-series harian selama dua tahun. Setelah diperiksa, residual model menunjukkan pola autokorelasi tingkat pertama yang signifikan. Apa konsekuensi utama jika Anda tetap menggunakan standar OLS tanpa koreksi?",
+      "options": [
+        "Nilai koefisien slope akan melompat secara ekstrem dan tidak lagi memenuhi syarat Best Linear Unbiased Estimator",
+        "Estimasi kesalahan baku cenderung lebih kecil dari yang seharusnya, memicu risiko kesalahan tipe I yang tinggi",
+        "Nilai koefisien determinasi (R2) akan bernilai negatif karena varians residual melebihi varians total data",
+        "Variabel waktu pengiriman otomatis kehilangan signifikansi statistik dalam uji t parsial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta meneliti faktor-faktor yang mempengaruhi keputusan petani tebu di Jawa Tengah untuk bergabung dengan koperasi tani modern atau tetap mandiri. Model ekonometrika apa yang paling tepat digunakan untuk estimasi parameter dalam kasus ini?",
+      "options": [
+        "Regresi Linier Berganda karena variabel dependen dapat diubah menjadi persentase keanggotaan",
+        "Regresi Logistik Biner (Logit/Probit) karena variabel dependen bersifat kategorikal diskrit biner",
+        "Model Regresi Poisson karena jumlah petani yang bergabung dihitung berdasarkan frekuensi kejadian",
+        "Analisis Jalur (Path Analysis) untuk mengukur pengaruh langsung dan tidak langsung secara simultan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam studi evaluasi dampak program elektrifikasi pedesaan di Nusa Tenggara Timur terhadap tingkat produktivitas UMKM lokal, Anda menghadapi masalah endogenitas karena desa yang mendapat listrik lebih cepat biasanya adalah desa yang sudah lebih maju secara ekonomi. Teknik estimasi apa yang paling tepat untuk mengatasi masalah bias seleksi ini?",
+      "options": [
+        "Menambahkan variabel dummy wilayah dan menjalankan Ordinary Least Squares standar",
+        "Menggunakan metode Instrumental Variables (IV) atau Two-Stage Least Squares (2SLS)",
+        "Melakukan differencing data secara manual untuk menghilangkan efek tren waktu unobserved",
+        "Menerapkan pembobotan propensity score matching tanpa membutuhkan variabel instrumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis hubungan antara pengeluaran promosi digital dan pendapatan penjualan bulanan suatu brand fashion lokal. Scatter plot menunjukkan hubungan non-linier di mana pertumbuhan penjualan melambat pada tingkat pengeluaran promosi yang sangat tinggi. Transformasi data apa yang paling lazim digunakan dalam ekonometrika untuk menangkap fenomena pelonggaran pertumbuhan ini?",
+      "options": [
+        "Mengubah seluruh variabel ke bentuk kuadratik terbalik (inverse quadratic transformation)",
+        "Menggunakan model log-log (logaritma natural pada kedua sisi variabel independen dan dependen)",
+        "Melakukan standarisasi z-score pada semua pengamatan sebelum dimasukkan ke dalam persamaan",
+        "Menghilangkan outlier di kuartil atas agar hubungan kembali menjadi linier sempurna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai ekonom perusahaan energi, Anda meramalkan permintaan listrik industri di Pulau Jawa menggunakan model Vector Autoregression (VAR). Sebelum mengestimasi model, Anda melakukan uji Augmented Dickey-Fuller (ADF) dan mendapati bahwa data tidak stasioner pada tingkat level, tetapi stasioner setelah differencing pertama. Langkah metodologis selanjutnya yang harus dilakukan adalah",
+      "options": [
+        "Langsung mengestimasi persamaan VAR dalam bentuk level karena data ekonomi makro secara alami tidak pernah stasioner",
+        "Melakukan uji kointegrasi Johansen untuk memeriksa apakah terdapat hubungan jangka panjang antarvariabel",
+        "Mengubah model menjadi regresi silang sederhana untuk menghindari bias parameter regresi lancung",
+        "Melakukan transformasi Box-Cox untuk menstabilkan varians sebelum memasukkan data ke dalam software"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lembaga riset independen sedang meneliti dampak lama studi di perguruan tinggi terhadap tingkat gaji awal lulusan sarjana di Jakarta. Analis khawatir bahwa variabel 'kemampuan bawaan individu' (innate ability) terabaikan dalam model padahal berkorelasi dengan lama studi dan tingkat gaji. Apa istilah ekonometrika untuk masalah spesifikasi ini dan dampaknya?",
+      "options": [
+        "Omitted Variable Bias, yang menyebabkan estimator OLS menjadi tidak konsisten dan bias",
+        "Simultaneous Causality Bias, yang membuat arah hubungan kausalitas berbalik arah secara total",
+        "Measurement Error Bias, yang mengakibatkan nilai koefisien mengecil mendekati angka nol",
+        "Sample Selection Bias, yang membatasi generalisasi hasil hanya pada sampel universitas swasta"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menguji apakah kebijakan pembatasan sosial pada masa pandemi berpengaruh secara struktural terhadap pola pengeluaran bulanan rumah tangga di perkotaan. Uji statistik apa yang paling tepat digunakan untuk mendeteksi adanya pergeseran parameter struktural sebelum dan sesudah kebijakan tersebut diterapkan?",
+      "options": [
+        "Uji Chow (Chow Test) dengan membandingkan residual sum of squares dari model terpisah dan gabungan",
+        "Uji White (White Test) untuk mendeteksi perubahan varians error lintas kelompok waktu pengamatan",
+        "Uji Hausman (Hausman Test) untuk menentukan kelayakan penggunaan efek tetap atau acak",
+        "Uji Granger Causality untuk melihat arah hubungan kausalitas timbal balik antarvariabel waktu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan agribisnis ingin memodelkan hasil panen padi di Karawang berdasarkan curah hujan dan penggunaan pupuk. Saat memeriksa data time-series bulanan selama 10 tahun, Anda menemukan bahwa variabel hasil panen dan curah hujan memiliki tren naik dari waktu ke waktu. Apa langkah ekonometrika yang paling tepat untuk menghindari risiko regresi lancung (spurious regression)?",
+      "options": [
+        "Langsung melakukan regresi OLS dengan menambahkan variabel tren waktu linier saja",
+        "Menguji akar unit menggunakan uji Augmented Dickey-Fuller dan melakukan differencing jika tidak stasioner",
+        "Mengubah seluruh data ke dalam bentuk logaritma natural tanpa melakukan uji stasioneritas",
+        "Membuang data masa lalu dan hanya menggunakan data dari tahun terakhir untuk analisis OLS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis faktor penentu produktivitas karyawan di pabrik tekstil menggunakan data cross-section. Hasil uji Breusch-Pagan menunjukkan nilai p-value sebesar 0.01, yang mengindikasikan adanya heteroskedastisitas pada residual. Keputusan apa yang harus Anda ambil terkait estimasi OLS?",
+      "options": [
+        "Koefisien regresi OLS menjadi tidak bias dan konsisten, namun kesalahan baku (standard errors) menjadi tidak valid",
+        "Estimasi parameter OLS kehilangan sifat BLUE dan nilai koefisiennya berubah menjadi bias secara signifikan",
+        "Anda wajib membuang sampel yang memiliki residual terbesar agar asumsi homoskedastisitas terpenuhi",
+        "Nilai R-squared otomatis menjadi tidak valid sehingga model harus diganti dengan regresi non-linear"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

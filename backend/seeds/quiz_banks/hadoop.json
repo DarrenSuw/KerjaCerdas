@@ -1,0 +1,306 @@
+{
+  "skill": "Hadoop",
+  "skill_key": "hadoop",
+  "questions": [
+    {
+      "question": "Sebuah platform e-commerce di Jakarta mengalami kegagalan pada job MapReduce harian karena error OutOfMemory (OOM) pada container YARN. Langkah awal apa yang paling tepat untuk mendiagnosis masalah tersebut di cluster Hadoop perusahaan?",
+      "options": [
+        "Mengganti sistem operasi node worker dengan versi terbaru",
+        "Memeriksa log aplikasi via YARN ResourceManager UI untuk alokasi memori",
+        "Melakukan format ulang pada seluruh sistem file HDFS yang aktif",
+        "Menurunkan jumlah replikasi data block secara massal di HDFS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Data Engineering di sebuah bank nasional mendapati proses query Hive pada tabel besar berjalan sangat lambat karena masalah small files di HDFS. Solusi operasional apa yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Menjalankan perintah compaction secara berkala untuk menggabungkan file kecil",
+        "Menonaktifkan fitur kompresi data pada seluruh direktori HDFS",
+        "Menghapus data histori transaksi yang lebih lama dari satu minggu",
+        "Menambah kapasitas RAM pada setiap DataNode secara fisik di server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mengoptimalkan pipeline Sqoop yang mengimpor data dari database operasional MySQL ke HDFS setiap jam. Proses ini sering membuat beban CPU database melonjak tinggi. Pendekatan apa yang sebaiknya diterapkan?",
+      "options": [
+        "Memindahkan penyimpanan database MySQL langsung ke dalam cluster HDFS",
+        "Membatasi jumlah mappers pada Sqoop dan menjadwalkannya di jam sepi",
+        "Menggunakan format teks biasa tanpa kompresi untuk mempercepat proses",
+        "Menaikkan jumlah replikasi tabel MySQL secara otomatis di sisi sumber"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah klaster Hadoop di perusahaan logistik mengalami penurunan performa baca data yang drastis akibat skew data pada kolom kunci partisi. Bagaimana cara Anda memperbaiki distribusi data tersebut?",
+      "options": [
+        "Melakukan re-partisi tabel dengan menambahkan salt pada kolom kunci",
+        "Menghapus node Hadoop yang memiliki utilisasi disk paling tinggi",
+        "Mengubah format file penyimpanan dari Parquet menjadi teks berformat CSV",
+        "Menaikkan batas maksimal ukuran blok HDFS dari 128MB ke 512MB"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati status NameNode pada cluster Hadoop produksi menunjukkan mode Safe Mode secara tidak terduga setelah reboot server. Tindakan operasional apa yang harus dilakukan?",
+      "options": [
+        "Melakukan format ulang direktori metadata NameNode dari awal",
+        "Menunggu proses fsimage dan edit log selesai dimuat atau keluar manual",
+        "Mematikan seluruh layanan DataNode secara paksa melalui terminal",
+        "Mengubah parameter konfigurasi replikasi blok menjadi satu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi ingin menyimpan data log CDR (Call Detail Record) berukuran petabyte dengan kebutuhan sering melakukan agregasi kolom tertentu namun jarang membaca seluruh kolom. Format file apa yang paling efisien dipilih di HDFS?",
+      "options": [
+        "Comma Separated Values dengan kompresi Gzip standar",
+        "JSON Line Delimited tanpa indeks tambahan pada data",
+        "Apache Parquet dengan struktur penyimpanan berorientasi kolom",
+        "SequenceFile mentah tanpa skema kompresi yang terdefinisi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Cluster Hadoop perusahaan Anda mengalami peringatan disk usage di atas 90 persen pada beberapa DataNode tertentu. Kebijakan manajemen penyimpanan apa yang paling aman untuk diterapkan segera?",
+      "options": [
+        "Menghapus direktori checkpoint sekunder NameNode secara manual",
+        "Menjalankan balancer HDFS untuk meratakan distribusi blok data",
+        "Menghentikan proses YARN NodeManager pada semua node klaster",
+        "Menurunkan nilai threshold kapasitas disk pada file hdfs-site.xml"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengamankan akses data sensitif pelanggan di HDFS agar hanya tim Analitik tertentu yang dapat membaca direktori spesifik. Fitur keamanan Hadoop apa yang harus diintegrasikan?",
+      "options": [
+        "Mengaktifkan integrasi Apache Ranger untuk kontrol akses berbasis peran",
+        "Mengubah hak akses Linux dasar chmod 777 pada folder root HDFS",
+        "Menggunakan protokol FTP tradisional untuk pertukaran file harian",
+        "Menonaktifkan sistem autentikasi Kerberos untuk mempercepat koneksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job Spark on YARN gagal dijalankan karena terjadi 'Container killed by YARN for exceeding memory limits'. Konfigurasi apa yang perlu disesuaikan pada submit script agar job tersebut sukses?",
+      "options": [
+        "Menaikkan parameter alokasi memori driver dan executor spark secara proporsional",
+        "Menghapus seluruh cache data frame yang tersimpan di dalam memori RAM",
+        "Mengganti mode eksekusi Spark dari cluster client menjadi mode lokal",
+        "Menurunkan jumlah core CPU per executor agar beban kerja berkurang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan migrasi data dari cluster Hadoop lama ke cluster Hadoop baru di cloud, bandwidth jaringan menjadi bottleneck utama. Alat apa yang paling tepat digunakan untuk proses migrasi skala besar ini?",
+      "options": [
+        "Perintah dasar scp melalui terminal Linux secara paralel",
+        "Utility Apache DistCp untuk menyalin data secara terdistribusi",
+        "Skrip Python kustom menggunakan library socket standar",
+        "Fitur ekspor impor database relasional via Sqoop client"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah job Hive di perusahaan media mengalami kegagalan berulang kali dengan pesan error 'GC overhead limit exceeded' pada container executor. Langkah paling efektif apa yang harus Anda ambil untuk mengatasi kendala tersebut?",
+      "options": [
+        "Menurunkan alokasi memori heap JVM untuk mencegah penggunaan RAM berlebih di NodeManager",
+        "Menambah alokasi parameter mapreduce.reduce.memory.mb dan menyesuaikan proporsi heap Java",
+        "Mengurangi jumlah paralelisasi reducer agar beban pemrosesan pada tiap node menjadi lebih kecil",
+        "Mengganti format penyimpanan tabel dari ORC ke TextFile agar proses parsing data lebih ringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda mendapati proses ingestion data harian menggunakan Apache Flume mengalami penumpukan antrean pada channel memori, menyebabkan source berhenti menerima data baru dari aplikasi. Tindakan operasional apa yang paling tepat?",
+      "options": [
+        "Mengubah tipe channel dari memory ke file channel agar kapasitas buffer tidak mudah habis",
+        "Menaikkan batas ukuran memori heap pada file konfigurasi daemon Flume yang sedang berjalan",
+        "Melakukan restart pada seluruh layanan NameNode dan ResourceManager secara bersamaan",
+        "Menghapus file log aplikasi sumber secara manual untuk menghentikan aliran data sementara"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pipeline Oozie workflow di perusahaan finansial gagal pada tahap aksi Sqoop karena kendala kredensial database yang kedaluwarsa. Bagaimana cara terbaik memperbarui kredensial tanpa mengubah kode workflow secara permanen?",
+      "options": [
+        "Mengedit file job.properties yang mendefinisikan parameter eksekusi sebelum melakukan submit ulang",
+        "Melakukan redeploy seluruh direktori Oozie workflow di HDFS menggunakan versi aplikasi baru",
+        "Memodifikasi file oozie-site.xml pada direktori konfigurasi server Oozie utama di klaster",
+        "Mengganti password langsung di dalam skrip XML workflow Oozie pada tag konfigurasi aksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proyek analisis log server pada cluster Hadoop menunjukkan bahwa banyak sekali file kecil berukuran di bawah 1 KB yang tersimpan di HDFS, sehingga membebani memori NameNode. Solusi arsitektural apa yang paling tepat diterapkan?",
+      "options": [
+        "Mengubah ukuran blok default HDFS dari 128 MB menjadi 1 MB agar file kecil lebih terakomodasi",
+        "Menjalankan proses kompresi gzip pada setiap file individu menggunakan skrip shell terjadwal",
+        "Mengimplementasikan proses penggabungan file menggunakan format SequenceFile atau arsip Hadoop",
+        "Menonaktifkan fitur replikasi blok HDFS untuk mengurangi beban penggunaan memori NameNode"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang data engineer melaporkan bahwa perintah HDFS fsck mendapati adanya sejumlah 'Under-replicated blocks' pada klaster setelah terjadi pemeliharaan perangkat keras. Apa tindakan sistem yang biasanya dilakukan Hadoop untuk mengatasi hal ini?",
+      "options": [
+        "NameNode secara otomatis menginstruksikan DataNode untuk menyalin blok ke node lain yang valid",
+        "ResourceManager melakukan restart pada kontainer YARN yang terhubung dengan blok data tersebut",
+        "Sistem secara otomatis menghapus file yang memiliki blok rusak untuk menjaga kesehatan kuota",
+        "Administrator harus menjalankan perintah balancer manual agar replika data kembali seimbang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skenario multi-tenancy di klaster Hadoop perusahaan, sebuah departemen menghabiskan seluruh kapasitas queue YARN sehingga job dari departemen lain antre terlalu lama. Konfigurasi apa yang harus diterapkan pada YARN CapacityScheduler?",
+      "options": [
+        "Membatasi jumlah maksimum total eksekutor yang dapat berjalan dalam satu waktu pada klaster",
+        "Mengaktifkan fitur preemption dan menetapkan batas kapasitas minimum serta maksimum per queue",
+        "Membuat klaster fisik terpisah untuk setiap departemen agar tidak terjadi perebutan sumber daya",
+        "Menurunkan prioritas eksekusi job menggunakan parameter job priority pada level klien pengirim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tabel Hive eksternal yang merujuk ke direktori penyimpanan di HDFS mengalami perubahan skema penambahan kolom pada data sumber. Query SQL selanjutnya gagal membaca kolom baru tersebut. Langkah apa yang harus dilakukan?",
+      "options": [
+        "Menjalankan perintah ALTER TABLE ADD COLUMNS diikuti dengan perintah pembaruan metadata tabel",
+        "Menghapus direktori tabel di HDFS dan melakukan proses ingest ulang seluruh dataset dari awal",
+        "Melakukan drop tabel Hive tersebut dan mendefinisikannya kembali dengan skema kolom terbaru",
+        "Menjalankan perintah MSCK REPAIR TABLE untuk memperbarui partisi dan skema tabel Hive"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan troubleshooting performa pada cluster Hadoop, ditemukan bahwa pemanfaatan CPU pada satu DataNode sangat tinggi sementara DataNode lainnya menganggur saat proses MapReduce berjalan. Apa akar penyebab masalah ini?",
+      "options": [
+        "Konfigurasi memori YARN NodeManager pada node tersebut tidak sesuai dengan kapasitas fisik",
+        "Terjadi ketidakseimbangan alokasi blok data HDFS atau data skew pada tahap pemetaan tugas",
+        "Versi pustaka Java yang terpasang pada node tersebut berbeda dengan node klaster lainnya",
+        "Kapasitas jaringan antar-rack mengalami saturasi akibat topologi switch yang kurang optimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengonfigurasi batas waktu (timeout) untuk job MapReduce yang tampak menggantung (hang) karena proses eksternal yang macet di dalam fungsi mapper. Parameter apa yang perlu disesuaikan?",
+      "options": [
+        "Mengatur parameter mapreduce.task.timeout untuk menentukan batas durasi tanpa progress task",
+        "Menyesuaikan nilai yarn.nodemanager.resource.memory-mb pada file konfigurasi YARN-site",
+        "Mengubah parameter dfs.client.socket-timeout pada pengaturan klien sistem file HDFS",
+        "Memperbarui konfigurasi mapreduce.job.jvm.num.tasks untuk membatasi daur ulang kontainer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah direktori data historis di HDFS perlu diubah kebijakan retensinya agar otomatis terhapus setelah 90 hari tanpa intervensi manual administrator. Fitur Hadoop apa yang paling tepat dimanfaatkan?",
+      "options": [
+        "Menggunakan fitur HDFS Erasure Coding untuk memindahkan data lama ke storage berbiaya rendah",
+        "Menerapkan aturan HDFS Storage Policies untuk memindahkan blok data ke disk jenis archive",
+        "Mengaktifkan fitur HDFS File Tiering dengan integrasi sistem manajemen arsip pihak ketiga",
+        "Memanfaatkan fitur HDFS Namespace Quota untuk membatasi ukuran penyimpanan direktori harian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah job MapReduce mengalami kegagalan berulang karena kehabisan ruang disk sementara (local disk) pada node pekerja. Langkah apa yang paling tepat dilakukan untuk mengatasi masalah ini pada konfigurasi YARN/MapReduce?",
+      "options": [
+        "Menambahkan path direktori disk lokal baru pada parameter yarn.nodemanager.local-dirs",
+        "Meningkatkan kapasitas memori heap untuk proses NameNode utama melalui hdfs-site.xml",
+        "Memperbesar alokasi heap JVM untuk container MapReduce via mapreduce.map.java.opts",
+        "Menurunkan ukuran blok default HDFS agar file penampung sementara tidak terlalu besar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proses pembacaan tabel Hive eksternal yang disimpan dalam format Parquet di HDFS berjalan sangat lambat. Analisis menunjukkan bahwa query membaca seluruh kolom padahal hanya membutuhkan tiga kolom. Apa tindakan terbaik yang harus diambil?",
+      "options": [
+        "Mengonversi format penyimpanan tabel tersebut dari Parquet menjadi teks biasa berformat CSV",
+        "Membuat indeks bitmap pada setiap kolom tabel Hive untuk mempercepat proses pencarian data",
+        "Memastikan fitur vectorization diaktifkan pada konfigurasi sesi Hive sebelum menjalankan query",
+        "Memaksa optimizer Hive melakukan pemindaian data menggunakan operasi MapJoin yang agresif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang engineer mendapati bahwa proses backup metadata HDFS (fsimage dan edits) gagal karena direktori secondary namenode kehabisan ruang penyimpanan. Tindakan preventif apa yang paling tepat untuk mengelola ruang tersebut?",
+      "options": [
+        "Mengurangi frekuensi pemeriksaan checkpoint dengan memperbesar nilai parameter dfs.namenode.checkpoint.period",
+        "Menghapus file fsimage lama secara manual dari direktori direktori aktif NameNode saat sistem berjalan",
+        "Melakukan format ulang pada secondary namenode untuk menghapus seluruh riwayat transaksi lama",
+        "Mengaktifkan fitur kompresi pada log edits transaksi melalui konfigurasi hdfs-site.xml secara langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah klaster Hadoop mengalami masalah di mana proses klien sering mengalami timeout saat mencoba terhubung ke NameNode utama. Setelah diperiksa, RPC queue di NameNode penuh. Bagaimana cara paling efektif untuk meredakannya?",
+      "options": [
+        "Menambah jumlah handler threads untuk RPC NameNode melalui parameter dfs.namenode.handler.count",
+        "Mengurangi ukuran blok default HDFS agar jumlah objek metadata di dalam memori berkurang drastis",
+        "Melakukan restart total pada semua DataNode secara bersamaan untuk membersihkan antrean koneksi",
+        "Memindahkan sebagian besar file kecil di HDFS ke dalam arsip menggunakan alat Hadoop Archive"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim operasional ingin membatasi kuota penyimpanan di HDFS untuk direktori proyek masing-masing departemen agar tidak memonopoli klaster. Fitur Hadoop mana yang harus dikonfigurasi oleh administrator?",
+      "options": [
+        "Mengaktifkan manajemen kuota berbasis ruang (space quota) dan kuota direktori pada namespace HDFS",
+        "Membuat skrip cron eksternal yang memantau ukuran folder dan mengirim peringatan via email otomatis",
+        "Mengatur batasan kapasitas memori Java heap secara spesifik untuk setiap pengguna di file yarn-site",
+        "Memanfaatkan mekanisme Access Control List (ACL) tingkat lanjut pada direktori root masing-masing tim"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job Sqoop yang mengimpor tabel besar dari RDBMS ke Hive mengalami bottleneck karena hanya menggunakan satu tugas paralel (mappers). Konfigurasi apa yang harus ditambahkan pada perintah Sqoop untuk mempercepat proses tersebut?",
+      "options": [
+        "Menambahkan argumen parameter --num-mappers dengan nilai integer lebih besar beserta kolom pembanding",
+        "Mengubah format target impor dari Hive import menjadi direktori teks biasa berbasis SequenceFile",
+        "Meningkatkan alokasi memori container YARN melalui parameter mapreduce.reduce.memory.mb",
+        "Menonaktifkan validasi integritas data transaksional pada sisi database sumber sebelum eksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menjalankan query konsolidasi besar di Hive, proses terhenti pada fase reduce dengan persentase progress tetap di 99% dalam waktu yang sangat lama. Indikasi apa yang paling akurat untuk situasi ini?",
+      "options": [
+        "Terjadi skew data yang parah di mana satu reducer harus memproses beban jauh lebih besar dari yang lain",
+        "Klaster kehabisan kapasitas memori total sehingga proses reduce masuk ke fase swizzling disk",
+        "Koneksi jaringan antara NameNode dan salah satu DataNode utama terputus secara permanen",
+        "Format file penyimpanan data sumber mengalami korupsi korupsi struktur blok secara menyeluruh"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Administrator ingin memastikan bahwa proses enkripsi data di HDFS (Transparent Encryption) aktif untuk direktori sensitif tanpa mengubah kode aplikasi yang membaca data tersebut. Komponen apa yang harus dikonfigurasi?",
+      "options": [
+        "Menyiapkan Key Management Server (KMS) terintegrasi dan membuat Encryption Zone pada direktori tujuan",
+        "Mengaktifkan fitur kompresi Gzip secara manual pada setiap file teks yang diunggah ke direktori tersebut",
+        "Mengubah izin akses file dasar menggunakan perintah hdfs dfs -chmod menjadi mode sangat terbatas",
+        "Memasang plugin keamanan pihak ketiga pada setiap instance JVM milik worker node di dalam klaster"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pipeline Spark membaca data dari direktori HDFS yang berisi jutaan file JSON kecil, mengakibatkan overhead penjadwalan tugas yang sangat tinggi. Pendekatan arsitektur apa yang paling tepat untuk menyelesaikan masalah ini?",
+      "options": [
+        "Membuat pekerjaan pembersihan rutin untuk menggabungkan file-file kecil menjadi file berukuran optimal menggunakan format Parquet",
+        "Menaikkan batas alokasi memori penggerak (driver memory) pada konfigurasi Spark submit secara signifikan",
+        "Menonaktifkan mekanisme caching bawaan Spark agar memori fisik tidak cepat habis oleh metadata file",
+        "Menambahkan jumlah partisi acak pada perintah pembacaan awal agar tugas disebar ke lebih banyak node"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengelolaan hak akses klaster Hadoop yang terintegrasi dengan direktori perusahaan, mekanisme autentikasi apa yang menjadi standar industri untuk menjamin keamanan komunikasi RPC antar node?",
+      "options": [
+        "Mengonfigurasi protokol Kerberos untuk autentikasi tiket kriptografi yang aman di seluruh layanan klaster",
+        "Menerapkan enkripsi berbasis Secure Socket Layer (SSL) murni pada antarmuka web UI setiap daemon",
+        "Menggunakan file otorisasi teks sederhana berbasis posix permission pada setiap direktori root HDFS",
+        "Memanfaatkan autentikasi berbasis token sandi unik yang diperbarui setiap hari oleh administrator"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

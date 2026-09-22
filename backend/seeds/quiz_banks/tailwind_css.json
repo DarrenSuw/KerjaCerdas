@@ -1,0 +1,306 @@
+{
+  "skill": "Tailwind CSS",
+  "skill_key": "tailwind css",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan dashboard admin untuk klien di Jakarta. Klien meminta tabel data transaksi memiliki baris dengan warna latar belakang selang-seling (zebra striping) secara otomatis tanpa menulis CSS kustom. Kelas Tailwind apa yang paling tepat digunakan pada elemen baris tabel (tr)?",
+      "options": [
+        "bg-slate-100 dark:bg-slate-800",
+        "odd:bg-white even:bg-slate-50",
+        "row-stripe:bg-gray-100",
+        "alternate:bg-slate-100"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim UI/UX memberikan desain tombol utama yang berubah warna saat kursor berada di atasnya (hover) dan saat tombol tersebut ditekan (active). Bagaimana cara menuliskan utilitas Tailwind untuk skenario ini pada elemen tombol?",
+      "options": [
+        "bg-blue-600 on-hover:bg-blue-700 on-click:bg-blue-800",
+        "bg-blue-600 hover:bg-blue-750 active:bg-blue-900",
+        "bg-blue-600 hover:bg-blue-700 active:bg-blue-800",
+        "bg-blue-600 state-hover:bg-blue-700 state-active:bg-blue-800"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pada halaman landing page produk e-commerce, Anda perlu membuat section hero yang responsif. Pada layar mobile menggunakan tata letak kolom ke bawah, namun pada layar tablet ke atas (breakpoint md) berubah menjadi dua kolom sejajar. Kelas apa yang harus diterapkan pada container utama?",
+      "options": [
+        "flex flex-col md:flex-row",
+        "block md:inline-block",
+        "grid grid-cols-1 md:grid-cols-2",
+        "layout-col md:layout-row"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proyek perusahaan Anda menerapkan mode gelap (dark mode) berbasis kelas (class strategy). Untuk memastikan teks berubah dari abu-abu gelap menjadi abu-abu terang secara otomatis ketika kelas 'dark' aktif pada elemen html, utilitas mana yang harus digunakan?",
+      "options": [
+        "text-slate-800-dark text-slate-200",
+        "text-slate-800 dark:text-slate-200",
+        "text-slate-800/dark:text-slate-200",
+        "dark-text:slate-200 text-slate-800"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa ukuran file CSS production membengkak karena banyak kelas Tailwind yang tidak terpakai diimpor. Konfigurasi apa di dalam file 'tailwind.config.js' yang bertugas memindai file template untuk menghapus kelas yang tidak terpakai?",
+      "options": [
+        "purge: ['./src/**/*.{html,js}']",
+        "content: ['./src/**/*.{html,js,jsx,ts,tsx}']",
+        "scanner: { paths: ['./src'] }",
+        "optimize: { removeUnused: true }"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan kartu produk, Anda ingin gambar di dalam kartu memenuhi lebar kontainer dan memiliki tinggi tetap 200px, namun tidak boleh mengalami distorsi (gepeng). Kelas Tailwind mana yang paling tepat untuk elemen tag img?",
+      "options": [
+        "w-full h-[200px] object-cover",
+        "w-full h-[200px] object-fill",
+        "w-full h-48 object-contain",
+        "w-full fixed-h-200 object-fit"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menata sebuah teks judul artikel berita yang panjang. Jika judul tersebut melebihi lebar kontainer, Anda ingin teks terpotong dan diakhiri dengan titik-titik (elipsis ...). Kombinasi kelas apa yang harus digunakan?",
+      "options": [
+        "truncate w-full",
+        "overflow-hidden text-clip",
+        "clip-text text-ellipsis",
+        "line-clamp-1 w-full"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Desainer meminta jarak padding horizontal sebesar 18px (yang tidak ada dalam skala default Tailwind 4px/rem standar) untuk sebuah komponen card khusus. Bagaimana cara menuliskan nilai arbitrer (arbitrary value) tersebut di Tailwind?",
+      "options": [
+        "px-(18px)",
+        "px-[18px]",
+        "padding-x-[18px]",
+        "px-custom-[18px]"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menyusun elemen-elemen list card dalam sebuah grid yang secara otomatis menyesuaikan jumlah kolom berdasarkan lebar layar, dengan minimal lebar setiap kolom adalah 250px tanpa menulis media query manual. Kelas Tailwind mana yang tepat?",
+      "options": [
+        "grid grid-cols-auto-fit-250",
+        "grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]",
+        "flex flex-wrap min-w-[250px]",
+        "grid auto-cols-max min-w-250"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah elemen modal pop-up harus diletakkan tepat di tengah layar secara vertikal dan horizontal di atas konten lain, dengan latar belakang transparan gelap. Kombinasi kelas Tailwind manakah yang benar untuk kontainer utama modal tersebut?",
+      "options": [
+        "fixed inset-0 bg-black/50 flex items-center justify-center z-50",
+        "absolute top-1/2 left-1/2 bg-black/50 align-middle z-10",
+        "relative mx-auto my-auto bg-black/50 flex center z-50",
+        "block w-screen h-screen bg-black/50 position-center z-100"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat sebuah komponen badge status pesanan yang memiliki sudut sangat bundar (pill shape) dan teks berada tepat di tengah secara vertikal dan horizontal. Kelas utilitas manakah yang paling tepat dan bersih untuk diterapkan?",
+      "options": [
+        "rounded-full flex items-center justify-center px-3 py-1",
+        "rounded-lg inline-flex items-center justify-center p-2 text-center",
+        "rounded-full block text-center leading-loose px-4 py-0.5",
+        "rounded-md flex items-center justify-around px-3 py-1 text-center"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam halaman detail produk, Anda memiliki kontainer flexbox berisi dua tombol aksi di bawah deskripsi. Tombol pertama harus berada di ujung kiri dan tombol kedua di ujung kanan kontainer tanpa jarak tambahan di sisi luar. Utility class apa yang harus digunakan pada parent container?",
+      "options": [
+        "flex justify-between items-center w-full",
+        "flex justify-around items-center w-full",
+        "flex justify-evenly items-center w-full",
+        "flex justify-flower items-center w-full"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan bahwa teks pada paragraf deskripsi di aplikasi mobile sering terpotong secara kaku di tengah kata jika kalimatnya terlalu panjang. Bagaimana cara Anda mengatasi hal ini menggunakan kelas Tailwind agar kata yang panjang turun ke baris berikutnya?",
+      "options": [
+        "Menambahkan kelas break-words pada elemen paragraf teks tersebut",
+        "Menambahkan kelas truncate pada elemen paragraf teks tersebut",
+        "Menambahkan kelas overflow-ellipsis pada elemen paragraf teks tersebut",
+        "Menambahkan kelas whitespace-nowrap pada elemen paragraf teks tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain form login di mana tombol submit harus memiliki efek transisi yang halus ketika pengguna mengarahkannya dengan kursor (hover), berubah dari warna biru tua ke biru muda selama 300 milidetik. Kelas apa saja yang wajib dipasang?",
+      "options": [
+        "transition-colors duration-300 bg-blue-800 hover:bg-blue-500",
+        "transition-all duration-300 bg-blue-800 hover:bg-blue-500",
+        "transition-opacity duration-300 bg-blue-800 hover:bg-blue-500",
+        "transition-transform duration-300 bg-blue-800 hover:bg-blue-500"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membangun layout dashboard, Anda ingin membuat sidebar navigasi yang menempel (fixed) di sisi kiri layar dan tidak ikut bergeser ketika area konten utama di sebelah kanannya di-scroll. Properti posisi apa yang harus disematkan pada sidebar?",
+      "options": [
+        "fixed top-0 left-0 h-screen w-64 z-20",
+        "absolute top-0 left-0 h-screen w-64 z-20",
+        "sticky top-0 left-0 h-screen w-64 z-20",
+        "relative top-0 left-0 h-screen w-64 z-20"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam membuat komponen kartu profil, Anda ingin memastikan bahwa foto profil berbentuk lingkaran sempurna dengan ukuran tetap 64x64 piksel dan tidak mengalami distorsi atau pipih meskipun kontainer diubah ukurannya. Kombinasi kelas apa yang paling akurat?",
+      "options": [
+        "w-16 h-16 rounded-full object-cover",
+        "w-16 h-16 rounded-lg object-contain",
+        "w-16 h-16 rounded-full object-fill",
+        "w-16 h-16 rounded-md object-scale-down"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun halaman profil pengguna yang memiliki latar belakang berbeda antara mode terang dan gelap. Anda ingin memastikan border pada kotak kartu berubah warna secara otomatis saat mode gelap aktif. Format kelas mana yang benar?",
+      "options": [
+        "border-gray-200 dark:border-gray-700",
+        "border-gray-200 mode-dark:border-gray-700",
+        "border-gray-200 dark-mode:border-gray-700",
+        "border-gray-200 theme-dark:border-gray-700"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sebuah halaman tabel data keuangan yang panjang, Anda ingin bagian header tabel (thead) tetap berada di bagian atas layar dan tidak hilang dari pandangan ketika pengguna melakukan scroll ke bawah membaca baris data. Kelas apa yang harus diterapkan pada elemen thead?",
+      "options": [
+        "sticky top-0 bg-white z-10",
+        "fixed top-0 bg-white z-10",
+        "absolute top-0 bg-white z-10",
+        "relative top-0 bg-white z-10"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat elemen banner promosi yang tembus pandang (transparan) sebesar 50% dan memberikan efekburam yang elegan pada latar belakang di belakang banner tersebut. Kelas utilitas apakah yang harus digabungkan?",
+      "options": [
+        "bg-white/50 backdrop-blur-md",
+        "opacity-50 blur-md bg-white",
+        "bg-opacity-50 blur-sm bg-white",
+        "backdrop-opacity-50 bg-white/50"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mendesain form pendaftaran akun, Anda ingin menyembunyikan pesan error validasi secara default, namun membuatnya muncul dengan transisi transparansi yang mulus ketika state error bernilai true. Kelas dasar apa yang harus dipasang untuk menyembunyikannya secara aksesibel?",
+      "options": [
+        "opacity-0 pointer-events-none transition-opacity duration-200",
+        "hidden opacity-100 transition-all duration-200",
+        "invisible block transition-opacity duration-200",
+        "scale-0 pointer-events-auto transition-transform duration-200"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat elemen navigasi sticky yang selalu berada di bagian atas layar saat pengguna melakukan scrolling ke bawah, namun elemen tersebut harus transparan dan memiliki efek blur pada latar belakangnya. Kelas Tailwind apa yang paling tepat?",
+      "options": [
+        "sticky top-0 bg-white/50 backdrop-blur-md",
+        "fixed top-0 bg-opacity-50 blur-lg",
+        "absolute top-0 bg-white-50 backdrop-md",
+        "sticky top-0 bg-transparent blur-background"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan layout card produk, Anda ingin memastikan bahwa teks judul yang terlalu panjang akan secara otomatis terpotong dengan tanda elipsis (...) di akhir baris setelah mencapai satu baris penuh. Kombinasi kelas utilitas apa yang harus digunakan?",
+      "options": [
+        "overflow-hidden text-clip whitespace-pre",
+        "truncate w-full",
+        "line-clamp-1 block",
+        "text-ellipsis break-all"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun dashboard interaktif dan ingin membuat efek transisi yang halus selama 300 milidetik pada properti background-color ketika tombol diklik atau di-hover. Kelas mana yang harus diterapkan pada elemen tombol tersebut?",
+      "options": [
+        "transition-all duration-300 ease-in-out",
+        "transition-colors duration-300",
+        "animate-fade duration-300",
+        "transition-bg time-300"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada halaman profil pengguna, Anda perlu menampilkan avatar berupa gambar dengan rasio aspek 1:1, berbentuk lingkaran sempurna, dan memastikan gambar tidak mengalami distorsi proporsi saat ukurannya berubah. Kelas Tailwind apa yang tepat?",
+      "options": [
+        "w-16 h-16 rounded-full aspect-square object-cover",
+        "size-16 rounded-circle image-cover ratio-1",
+        "w-16 h-16 rounded-lg object-contain aspect-auto",
+        "w-full h-16 rounded-full object-fill square"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyusun galeri foto dengan grid yang secara responsif mengubah jumlah kolom dari 1 kolom pada layar mobile, 2 kolom pada tablet, hingga 4 kolom pada layar desktop besar. Kelas grid yang paling efisien adalah:",
+      "options": [
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+        "grid columns-1 md:columns-2 lg:columns-4",
+        "grid flex-col md:flex-row lg:grid-cols-4",
+        "grid grid-cols-responsive-1-2-4"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mendesain form pembayaran, Anda ingin elemen input teks berubah warna border-nya menjadi biru terang dan memunculkan bayangan lembut (ring) hanya saat input tersebut sedang difokuskan oleh pengguna. Kelas apa yang digunakan?",
+      "options": [
+        "focus:border-blue-500 focus:ring-2 focus:ring-blue-300",
+        "active:border-blue-500 ring-blue-500",
+        "hover:border-blue-500 focus:shadow-blue",
+        "select:border-blue-500 focus:outline-blue"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat komponen alert notifikasi yang posisinya mengapung di pojok kanan bawah layar dan tetap berada di posisi tersebut meskipun halaman digulir (scroll). Kombinasi kelas apa yang harus digunakan?",
+      "options": [
+        "absolute bottom-4 right-4 z-50",
+        "fixed bottom-4 right-4 z-50",
+        "sticky bottom-4 right-4 z-50",
+        "relative bottom-4 right-4 z-50"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat membuat tampilan daftar riwayat transaksi, Anda ingin baris tabel (tr) memiliki warna latar belakang selang-seling (zebra striping) secara otomatis untuk meningkatkan keterbacaan data. Kelas apa yang diterapkan pada elemen tr?",
+      "options": [
+        "even:bg-slate-50 odd:bg-white",
+        "striped:bg-slate-50",
+        "nth-child:bg-slate-50",
+        "alternate:bg-slate-50"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain banner promosi menggunakan flexbox di mana terdapat dua teks: judul di sebelah kiri dan tombol tutup di sebelah kanan. Anda ingin jarak di antara kedua elemen tersebut meregang secara maksimal ke tepi kontainer. Kelas apa yang digunakan?",
+      "options": [
+        "flex justify-between items-center",
+        "flex justify-around items-center",
+        "flex justify-evenly items-center",
+        "flex gap-x-auto items-center"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah komponen kartu informasi, Anda ingin menyembunyikan teks deskripsi secara default pada layar mobile, namun menampilkannya kembali sebagai blok teks ketika ukuran layar mencapai breakpoint md atau lebih besar. Kelas apa yang tepat?",
+      "options": [
+        "hidden md:block",
+        "invisible md:visible",
+        "display-none md:display-block",
+        "opacity-0 md:opacity-100"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

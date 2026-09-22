@@ -1,0 +1,306 @@
+{
+  "skill": "Bayesian Optimization",
+  "skill_key": "bayesian optimization",
+  "questions": [
+    {
+      "question": "Anda bekerja sebagai Machine Learning Engineer di sebuah startup e-commerce di Jakarta. Anda sedang menyetel (tune) hyperparameter model XGBoost untuk memprediksi churn rate pelanggan. Setiap kali melakukan training, prosesnya memakan waktu hingga 4 jam pada server GPU perusahaan. Metode mana yang paling efisien untuk mencari kombinasi parameter terbaik dalam anggaran waktu yang terbatas?",
+      "options": [
+        "Grid Search karena mencakup seluruh kombinasi parameter secara sistematis",
+        "Random Search karena menguji titik acak tanpa pola tertentu",
+        "Bayesian Optimization karena membangun model proksi untuk mengurangi jumlah evaluasi mahal",
+        "Manual Search karena intuisi manusia lebih cepat daripada algoritma pencarian"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim Data Science Anda di sebuah bank digital sedang menggunakan Bayesian Optimization untuk hyperparameter tuning model LightGBM. Setelah 10 iterasi, fungsi akuisisi (acquisition function) terus menerus menyarankan titik evaluasi yang sangat dekat dengan iterasi sebelumnya di area ruang parameter yang sama. Apa tindakan diagnostik terbaik yang harus Anda ambil?",
+      "options": [
+        "Mengurangi jumlah pohon pada model LightGBM untuk mempercepat waktu komputasi",
+        "Menaikkan parameter eksplorasi seperti beta pada Upper Confidence Bound untuk mendorong pencarian area baru",
+        "Mengubah fungsi objektif dari AUC menjadi akurasi agar model tidak terjebak",
+        "Menghentikan proses karena model telah mencapai konvergensi global secara pasti"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Senior Data Scientist di perusahaan telekomunikasi, Anda menggunakan Bayesian Optimization dengan Gaussian Process (GP) sebagai surrogate model untuk optimasi jaringan 5G. Dataset parameter input Anda kini telah berkembang menjadi 35 dimensi. Masalah apa yang paling mungkin Anda temui terkait performa surrogate model tersebut?",
+      "options": [
+        "Proses fitting Gaussian Process menjadi sangat lambat karena kompleksitas komputasi kubik terhadap jumlah data",
+        "Fungsi objektif akan otomatis menjadi konveks dan mudah diselesaikan tanpa iterasi lanjutan",
+        "Model GP akan mengalami underfitting total karena terlalu banyak batasan linier",
+        "Ruang pencarian akan menyusut secara otomatis dan mengabaikan parameter penting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memimpin proyek computer vision untuk pabrik manufaktur di Cikarang. Anda menerapkan Bayesian Optimization untuk mencari arsitektur CNN dan learning rate terbaik. Noise pada fungsi evaluasi (hasil validasi silang yang sedikit berfluktuasi antar run) sangat tinggi. Modifikasi apa yang paling tepat pada model surrogate Bayesian Optimization Anda?",
+      "options": [
+        "Menggunakan fungsi akuisisi Expected Improvement tanpa modifikasi apapun",
+        "Menambahkan parameter noise variance (nugget) pada Gaussian Process Regressor",
+        "Mengganti surrogate model dari Gaussian Process menjadi regresi linier sederhana",
+        "Menghapus proses validasi silang dan hanya menggunakan data training tunggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform fintech di Jakarta ingin mengoptimalkan ambang batas (threshold) persetujuan pinjaman secara online menggunakan Bayesian Optimization yang berinteraksi langsung dengan data pengguna real-time. Risiko utamanya adalah mengevaluasi parameter yang buruk dapat merugikan finansial perusahaan secara langsung. Strategi pemilihan fungsi akuisisi mana yang paling aman?",
+      "options": [
+        "Probability of Improvement untuk memaksimalkan peluang peningkatan kecil yang aman",
+        "Pure Random Sampling untuk menghindari bias dari model surrogate",
+        "Upper Confidence Bound dengan bobot eksplorasi ekstrem untuk mencari risiko tinggi",
+        "Expected Improvement tanpa batas bawah untuk mempercepat pencarian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mengoptimalkan pipeline ETL berbasis cloud di mana durasi eksekusi sangat bervariasi tergantung beban server eksternal. Anda memutuskan menggunakan Bayesian Optimization. Masalah praktis apa yang sering muncul pada surrogate model Gaussian Process standar dalam skenario ini?",
+      "options": [
+        "Gaussian Process mengasumsikan observasi bersifat deterministik, sehingga noise heteroskedastik dapat menyesatkan model",
+        "Gaussian Process tidak dapat menerima input berupa angka desimal atau float",
+        "Gaussian Process memerlukan waktu training yang eksponensial terhadap jumlah fitur",
+        "Gaussian Process secara otomatis menghapus parameter kategorikal dari ruang pencarian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek NLP untuk analisis sentimen berbahasa Indonesia di sebuah agensi media, Anda menyetel hyperparameter model Transformer menggunakan Bayesian Optimization. Anda memiliki akses ke 4 GPU secara paralel. Pendekatan apa yang harus digunakan agar proses berjalan efisien?",
+      "options": [
+        "Menjalankan iterasi secara berurutan satu per satu untuk menjaga akurasi model surrogate",
+        "Menggunakan teknik batch Bayesian Optimization dengan fungsi akuisisi seperti q-Expected Improvement",
+        "Membagi ruang parameter menjadi 4 bagian tetap dan menjalankan Grid Search terpisah",
+        "Menjalankan Random Search murni pada ke-4 GPU secara independen tanpa koordinasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan tuning hyperparameter untuk model prediksi harga rumah menggunakan perpustakaan berbasis Bayesian Optimization. Ruang pencarian Anda mencakup parameter kontinu (learning rate) dan parameter diskrit/kategorikal (pilihan optimizer: Adam, SGD, RMSprop). Bagaimana cara penanganan parameter kategorikal tersebut oleh Gaussian Process standar?",
+      "options": [
+        "Dapat langsung diproses tanpa transformasi karena GP mendukung data campuran secara native",
+        "Harus diubah menjadi representasi numerik seperti one-hot encoding atau menggunakan kernel khusus data campuran",
+        "Harus diabaikan dan hanya parameter kontinu saja yang boleh dioptimalkan",
+        "Harus diubah menjadi tipe data boolean secara otomatis oleh sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik besar ingin mengoptimalkan rute pengiriman kendaraan menggunakan simulasi berbasis agen yang mahal secara komputasi. Mereka menggunakan Bayesian Optimization. Setelah 50 iterasi, peningkatan metrik (objective value) sudah mendatar (plateau) selama 15 iterasi berturut-turut. Langkah operasional apa yang paling logis selanjutnya?",
+      "options": [
+        "Melanjutkan proses hingga 1000 iterasi tanpa mengubah apapun karena algoritma pasti menemukan jalan keluar",
+        "Menghentikan proses optimasi dan menggunakan konfigurasi parameter terbaik yang tersimpan sejauh ini",
+        "Menghapus seluruh riwayat data masa lalu dan memulai ulang dari titik acak baru",
+        "Mengganti fungsi objektif menjadi metrik yang sama sekali berbeda di tengah jalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di tim riset AI sebuah rumah sakit untuk mengoptimalkan hyperparameter deteksi penyakit dari citra medis. Evaluasi satu model memakan waktu 8 jam dan anggaran komputasi Anda sangat ketat (maksimal 15 kali evaluasi). Strategi inisialisasi apa yang paling efektif untuk tahap awal Bayesian Optimization?",
+      "options": [
+        "Menggunakan kombinasi Random Sampling atau Sobol Sequence sebanyak 3-5 titik awal yang tersebar merata",
+        "Langsung menggunakan titik tengah dari seluruh batas parameter tanpa evaluasi awal",
+        "Menjalankan Grid Search lengkap terlebih dahulu untuk 15 iterasi pertama",
+        "Mengambil titik acak tunggal dan membiarkan model menebak sisanya secara linier"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Lead Data Scientist di perusahaan penyedia SaaS HR di Bandung, Anda menggunakan Bayesian Optimization untuk mencari kombinasi parameter terbaik pada model pencocokan CV pelamar kerja. Evaluasi fungsi objektif sering mengalami kegagalan (crash) karena alokasi memori GPU habis pada parameter tertentu. Bagaimana cara terbaik menangani masalah ini dalam kerangka kerja optimasi?",
+      "options": [
+        "Memberikan nilai penalti berupa skor performa yang sangat buruk pada parameter yang gagal agar model belajar menghindarinya.",
+        "Menghentikan seluruh proses optimasi secara manual dan menghapus parameter tersebut dari ruang pencarian secara permanen.",
+        "Mengganti fungsi objektif dengan menangkap exception dan mengembalikan nilai NaN agar diabaikan oleh algoritma.",
+        "Memaksa sistem operasi untuk mengalokasikan virtual memory tambahan setiap kali fungsi evaluasi GPU dipanggil."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bekerja di platform edutech di Yogyakarta untuk mengoptimalkan parameter arsitektur Neural Network agar akurat memprediksi tingkat kelulusan siswa. Ruang pencarian parameter mencakup angka kontinu dan kategori diskrit. Fungsi akuisisi mana yang sebaiknya Anda prioritaskan jika bisnis meminta hasil yang sangat stabil tanpa risiko penurunan performa yang drastis pada iterasi awal?",
+      "options": [
+        "Lower Confidence Bound dengan penyesuaian bobot eksplorasi yang tinggi demi mengutamakan area ketidakpastian.",
+        "Probability of Improvement karena fokus utamanya adalah mencari titik yang melampaui skor terbaik saat ini.",
+        "Expected Improvement karena kemampuannya menyeimbangkan ekspektasi peningkatan nilai dan besarnya varians.",
+        "Entropy Search karena dirancang khusus untuk mempercepat pemetaan seluruh ruang parameter kategori diskrit."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi agritech di Malang menggunakan Bayesian Optimization untuk menyetel parameter model prediksi cuaca pertanian. Karena waktu komputasi yang mahal, Anda ingin memanfaatkan hasil evaluasi hyperparameter dari proyek serupa yang pernah dikerjakan bulan lalu. Pendekatan apa yang paling efektif untuk mengintegrasikan pengetahuan lama ini?",
+      "options": [
+        "Menggunakan Transfer Learning pada Gaussian Process untuk memanfaatkan prior distribution dari model sebelumnya.",
+        "Menggabungkan dataset log lama langsung ke dalam data training model utama tanpa proses penyesuaian.",
+        "Mengambil titik optimum mutlak dari proyek lama dan menjadikannya satu-satunya titik awal pencarian.",
+        "Menjalankan ulang seluruh eksperimen lama secara paralel bersamaan dengan eksperimen baru dari nol."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek optimasi rantai pasok untuk perusahaan FMCG di Jakarta, Anda menerapkan Bayesian Optimization untuk menentukan parameter simulasi stok gudang. Proses ini melibatkan noise stokastik yang cukup tinggi pada setiap evaluasi fungsi objektif. Bagaimana cara Anda mengonfigurasi surrogate model agar tahan terhadap noise tersebut?",
+      "options": [
+        "Menambahkan parameter noise variance (nugget effect) pada kernel Gaussian Process untuk mengakomodasi ketidakpastian observasi.",
+        "Menggunakan model interpolasi murni tanpa fungsi noise agar titik sampel lama selalu ditepati secara akurat.",
+        "Menurunkan jumlah titik sampel inisialisasi agar algoritma tidak terpengaruh oleh fluktuasi data masa lalu.",
+        "Mengganti metode optimasi surrogate menjadi pencarian grid secara menyeluruh di sekitar titik optimum lokal."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertugas mengoptimalkan pipeline pemrosesan citra satelit untuk pemetaan lahan di Kalimantan. Setiap proses memakan waktu lama dan menggunakan sumber daya klaster awan yang mahal. Anda ingin menjalankan beberapa evaluasi parameter secara paralel (batch Bayesian Optimization). Tantangan apa yang harus diantisipasi terkait pemilihan titik batch tersebut?",
+      "options": [
+        "Risiko pemilihan titik yang redundan di area parameter yang sama akibat kurangnya diversifikasi pada strategi batch.",
+        "Peningkatan drastis akurasi model surrogate secara instan yang membuat proses pencarian berhenti terlalu cepat.",
+        "Kegagalan total pada fungsi akuisisi karena tidak mendukung input berbentuk matriks multi-dimensi.",
+        "Kebutuhan untuk mengubah seluruh hyperparameter menjadi format biner agar kompatibel dengan pemrosesan paralel."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan media daring di Bali menggunakan Bayesian Optimization untuk tuning parameter model rekomendasi artikel berita. Ruang pencarian memiliki batasan fisik, di mana kombinasi parameter tertentu (misalnya ukuran embedding besar dengan batch size kecil) akan menyebabkan error out-of-memory. Bagaimana cara terbaik menangani batasan ini dalam pustaka optimasi?",
+      "options": [
+        "Mendefinisikan fungsi pembatas (constraints) atau feasible domain yang secara matematis mencegah algoritma memilih area terlarang.",
+        "Membiarkan algoritma memilih area tersebut dan membiarkannya crash agar sistem belajar secara otomatis melalui trial-error.",
+        "Mengubah semua parameter kontinu menjadi diskrit agar rentang nilai yang berbahaya dapat dihapus secara manual.",
+        "Memperkecil ukuran data latih secara keseluruhan agar kombinasi parameter yang berbahaya tetap dapat dieksekusi."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai konsultan Machine Learning untuk sebuah proyek logistik pelabuhan di Surabaya, Anda diminta melakukan tuning hyperparameter pada model estimasi waktu bongkar muat kontainer. Waktu komputasi sangat terbatas karena hasil harus dipresentasikan dalam 2 jam. Strategi inisialisasi seperti apa yang harus Anda pilih untuk memaksimalkan efisiensi Bayesian Optimization dalam waktu singkat?",
+      "options": [
+        "Menggunakan teknik Quasi-Monte Carlo seperti Sobol sequence untuk inisialisasi titik awal yang menyebar merata secara efisien.",
+        "Menjalankan 100 titik random sampling murni terlebih dahulu sebelum membangun surrogate model pertama.",
+        "Memulai optimasi hanya dengan 1 titik acak tunggal untuk mempercepat peluncuran iterasi pertama.",
+        "Menggunakan grid search penuh pada seluruh kombinasi parameter sebelum menyerahkan hasilnya ke Gaussian Process."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bekerja di perusahaan energi surya di Nusa Tenggara untuk mengoptimalkan sudut kemiringan panel surya secara otomatis. Setiap kali menguji sudut tertentu, sensor memerlukan waktu 4 jam untuk mengukur stabilitas keluaran energi akibat fluktuasi cuaca. Pendekatan apa yang paling efisien untuk menangani mahalnya waktu evaluasi ini?",
+      "options": [
+        "Menggunakan Random Search dengan ribuan iterasi paralel untuk mencakup seluruh ruang parameter",
+        "Menerapkan Bayesian Optimization dengan fungsi perolehan Expected Improvement untuk meminimalkan uji coba",
+        "Melakukan Grid Search menyeluruh dengan resolusi satu derajat demi akurasi matematis maksimal",
+        "Mengandalkan Gradient Descent stokastik langsung pada sistem fisik nyata tanpa fungsi proksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda di perusahaan pengembang gim mobile di Bandung sedang menyetel parameter perilaku NPC (Non-Player Character) agar tingkat retensi pemain optimal. Evaluasi satu set parameter membutuhkan waktu dua hari pengujian A/B testing langsung di server produksi. Mengapa penggantian Gaussian Process dengan Tree-structured Parzen Estimator (TPE) lebih menguntungkan dalam kasus ini?",
+      "options": [
+        "TPE menghilangkan kebutuhan untuk mendefinisikan batas bawah dan batas atas ruang pencarian parameter",
+        "TPE mampu memodelkan hubungan non-linear yang kompleks jauh lebih cepat tanpa inversi matriks kovarians",
+        "TPE secara native langsung menghasilkan model probabilitas posterior tanpa memerlukan fungsi perolehan",
+        "TPE dirancang khusus untuk menangani data uji coba yang sangat sedikit dengan dimensi ruang parameter tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik tekstil smart di Solo ingin mengoptimalkan campuran bahan kimia pewarna kain untuk meminimalkan cacat warna. Proses laboratorium untuk mencetak dan menguji satu sampel kain memakan waktu seharian dan sangat bising (memiliki noise pengukuran yang tinggi). Keputusan apa yang harus diambil saat mengonfigurasi model Gaussian Process di dalam Bayesian Optimization?",
+      "options": [
+        "Menetapkan parameter alpha atau noise level pada kernel Gaussian Process bernilai lebih besar dari nol",
+        "Menggunakan kernel linear sederhana untuk menghindari overfitting terhadap data laboratorium yang bising",
+        "Mengubah fungsi perolehan dari Expected Improvement menjadi random uniform sampling murni",
+        "Menurunkan batas toleransi konvergensi agar algoritma berhenti pada iterasi pertama yang ditemukan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengoptimalkan arsitektur CNN untuk sistem keamanan bandara di Denpasar. Ruang pencarian hyperparameter mencakup variabel kontinu (learning rate), diskrit (jumlah filter), dan kategorikal (jenis fungsi aktivasi). Bagaimana cara Bayesian Optimization menangani campuran tipe variabel ini dengan efektif?",
+      "options": [
+        "Mengubah seluruh variabel kategorikal dan diskrit menjadi nilai kontinu melalui normalisasi MinMax",
+        "Mengabaikan variabel kategorikal dan hanya fokus menyetel parameter kontinu dan diskrit saja",
+        "Menggunakan surrogate model berbasis pohon seperti Random Forest atau TPE yang mendukung ruang campuran",
+        "Menjalankan Grid Search terpisah untuk setiap kategori fungsi aktivasi secara manual berurutan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai Data Scientist di platform streaming musik lokal, Anda menggunakan Bayesian Optimization untuk menemukan kombinasi bobot pada sistem rekomendasi lagu. Setelah berjalan 30 iterasi, optimizer terus menerus menguji titik di sekitar area yang sama tanpa mengeksplorasi area lain. Langkah apa yang paling tepat untuk memperbaiki kondisi ini?",
+      "options": [
+        "Meningkatkan nilai parameter eksplorasi (misalnya parameter kappa pada Upper Confidence Bound) agar lebih berani mencoba area baru",
+        "Menurunkan jumlah sampel awal (initial points) secara drastis untuk memaksa algoritma mempercepat proses konvergensi",
+        "Mengganti metrik evaluasi offline dengan data historis pengguna dari tahun sebelumnya tanpa validasi silang",
+        "Menghapus semua titik data historis yang sudah dievaluasi agar Gaussian Process melupakan hasil sebelumnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memimpin proyek optimasi proses fermentasi tempe skala industri di Malang menggunakan bioreaktor cerdas. Sensor suhu, pH, dan kelembapan menghasilkan data deret waktu yang mahal untuk dievaluasi kinerjanya. Ketika jumlah iterasi Bayesian Optimization bertambah menjadi lebih dari 100, apa hambatan komputasi utama yang akan Anda hadapi pada model Gaussian Process standar?",
+      "options": [
+        "Kompleksitas waktu untuk melatih Gaussian Process meningkat secara kubik terhadap jumlah iterasi",
+        "Kapasitas penyimpanan memori GPU akan habis karena penyimpanan bobot jaringan saraf tiruan",
+        "Fungsi perolehan akan mengalami overflow numerik akibat ukuran matriks kovarians yang terlalu kecil",
+        "Proses sampling acak dari distribusi uniform akan berhenti berfungsi pada dimensi ruang yang tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan jasa pengiriman logistik laut di Surabaya ingin mengoptimalkan jadwal pemeliharaan armada kapal untuk menekan biaya operasional. Simulasi biaya tahunan memakan waktu 30 menit per satu set parameter. Anda memutuskan menggunakan Bayesian Optimization. Manakah strategi akuisisi yang paling tepat jika perusahaan ingin menghindari risiko kegagalan besar selama proses uji coba?",
+      "options": [
+        "Menggunakan Probability of Improvement untuk fokus mencari titik yang sedikit lebih baik dari status quo",
+        "Menggunakan Thompson Sampling murni untuk memaksimalkan eksplorasi acak di seluruh ruang parameter",
+        "Menggunakan Upper Confidence Bound dengan bobot eksplorasi ekstrem untuk mencari nilai maksimum global",
+        "Menggunakan Random Search tanpa model proksi untuk memastikan objektivitas pemilihan parameter"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengembangan obat herbal di sebuah lembaga riset di Bogor, peneliti ingin menemukan kombinasi ekstrak tanaman untuk efektivitas maksimal. Hasil uji lab bersifat stokastik (hasilnya bervariasi untuk campuran yang sama). Mengapa fungsi perolehan Expected Improvement (EI) tetap bekerja dengan baik meskipun ada variasi acak pada hasil pengukuran?",
+      "options": [
+        "Karena EI secara otomatis menghapus semua data pencilan (outliers) sebelum memperbarui model",
+        "Karena surrogate model memperkirakan nilai rata-rata dan ketidakpastian (variance) pada setiap titik",
+        "Karena EI hanya melihat nilai maksimum historis tanpa memperhitungkan fungsi probabilitas",
+        "Karena proses optimasi berjalan secara deterministik murni tanpa melibatkan perhitungan matematis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyetel hyperparameter model deteksi penipuan kartu kredit di bank nasional. Karena data sangat tidak seimbang, evaluasi F1-score memerlukan waktu komputasi yang signifikan. Anda ingin menjalankan beberapa evaluasi parameter secara paralel dalam satu waktu (batch Bayesian Optimization). Tantangan apa yang paling sering muncul dari pendekatan ini?",
+      "options": [
+        "Optimizer dapat mengusulkan titik parameter yang terlalu mirip antar-worker karena kurangnya informasi umpan balik instan",
+        "Gaussian Process menolak untuk menerima lebih dari satu titik input dalam satu pemanggilan fungsi prediksi",
+        "Nilai fungsi perolehan akan selalu bernilai nol mutlak untuk semua titik parameter yang diuji secara bersamaan",
+        "Waktu pelatihan surrogate model akan berkurang drastis hingga menyebabkan underfitting total pada data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup agritech di Medan menggunakan Bayesian Optimization untuk mengatur debit air sistem irigasi tetes otomatis di perkebunan cabai. Setelah 50 iterasi, sistem mencapai plateau di mana peningkatan performa sangat kecil. Apa tindakan praktis terbaik yang harus dilakukan selanjutnya?",
+      "options": [
+        "Menghentikan optimasi, mengambil parameter terbaik saat ini, dan menerapkan batasan ruang pencarian yang lebih spesifik jika diperlukan penyetelan lanjutan",
+        "Mengubah fungsi kernel Gaussian Process menjadi fungsi linier sederhana untuk memaksa sistem melompat ke area lain",
+        "Menghapus seluruh riwayat data eksperimen dan memulai ulang proses optimasi dari titik acak nol",
+        "Menaikkan batas atas ruang pencarian parameter debit air hingga dua kali lipat dari kapasitas fisik pipa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan pengolahan data satelit di Bandung menggunakan Bayesian Optimization untuk mencari konfigurasi filter spasial pemrosesan citra. Setiap evaluasi fungsi objektif memakan waktu 40 menit di server GPU. Untuk mempercepat proses tuning tanpa mengorbankan kualitas pencarian model Gaussian Process surrogate, pendekatan teknik yang paling efektif diterapkan adalah:",
+      "options": [
+        "Mengganti model surrogate Gaussian Process dengan Random Forest Regressor yang lebih cepat",
+        "Menjalankan evaluasi paralel asinkron menggunakan antrean tugas berbasis fungsi akuisisi batch",
+        "Mengubah kernel Gaussian Process dari Matérn menjadi Squared Exponential standar",
+        "Menghapus riwayat iterasi lama agar ukuran matriks kovariansi tetap kecil dan konstan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan arsitektur LightGBM untuk sistem prediksi churn pelanggan di sebuah bank BUMN. Ruang pencarian mencakup kombinasi tipe data kontinu, diskon diskrit, dan parameter kategorikal seperti metode binning. Kendala utama saat ini adalah Gaussian Process standar kesulitan menangani parameter kategorikal secara langsung. Solusi implementasi yang paling tepat adalah:",
+      "options": [
+        "Mengonversi seluruh parameter kategorikal menjadi integer berurutan lalu diperlakukan kontinu",
+        "Menggunakan fungsi jarak khusus kategori dan kernel Mahalanobis pada model surrogate",
+        "Mengubah metode surrogate menjadi pohon regresi acak yang mendukung pemisahan kategori",
+        "Menggunakan teknik One-Hot Encoding pada parameter tersebut sebelum masuk ke optimizer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Machine Learning Specialist di startup edutech, Anda melakukan tuning hyperparameter model rekomendasi kursus. Metrik evaluasi utama adalah kombinasi antara Precision@K dan Latency server. Karena terdapat dua tujuan yang saling bertentangan, Anda memutuskan untuk menggunakan fungsi akuisisi multiobjektif. Pendekatan Bayesian Optimization yang paling sesuai untuk skenario ini adalah:",
+      "options": [
+        "Menggunakan Expected Improvement dengan menjumlahkan kedua metrik secara linier",
+        "Menerapkan Expected Hypervolume Improvement untuk mengeksplorasi batas Pareto",
+        "Menjalankan optimasi terpisah untuk setiap metrik lalu merata-ratakan hasilnya",
+        "Menggunakan model Gaussian Process terpisah dan memilih nilai maksimum tunggal"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "skill": "pymoo",
+  "skill_key": "pymoo",
+  "questions": [
+    {
+      "question": "Sebuah tim Data Science di e-commerce Indonesia ingin mengoptimalkan penempatan gudang dengan batasan anggaran ketat dan kapasitas maksimal tiap gudang. Karena fungsi kendala (constraint) bersifat non-linier dan kompleks, Anda memutuskan menggunakan pymoo. Bagaimana cara mendefinisikan fungsi kendala tersebut agar dapat diterima dengan benar oleh kelas Problem di pymoo?",
+      "options": [
+        "Mengembalikan nilai penalti positif ke dalam array G jika batasan dilanggar dan bernilai <= 0 jika terpenuhi",
+        "Melempar exception Python secara manual ketika variabel keputusan melanggar batas kapasitas gudang",
+        "Menyimpan status pelanggaran dalam atribut khusus objek problem sebelum memanggil fungsi evaluasi",
+        "Membuat fungsi terpisah lalu mendaftarkannya sebagai callback eksternal pada method minimize"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek optimasi portofolio investasi saham di Bursa Efek Indonesia, Anda menggunakan pymoo dengan variabel keputusan bertipe kontinu (bobot alokasi dana). Anda ingin memastikan bahwa total seluruh bobot alokasi persis bernilai 1 (100%). Pendekatan terbaik apa yang harus diimplementasikan pada kelas turunan Problem di pymoo?",
+      "options": [
+        "Menggunakan fungsi kendala kesamaan (equality constraints) melalui matriks atau array H",
+        "Menambahkan normalisasi otomatis di dalam method evaluate dengan membagi setiap nilai dengan totalnya",
+        "Mengatur batas atas (upper bound) setiap variabel keputusan secara dinamis pada iterasi tertentu",
+        "Memanfaatkan operator perbaikan khusus (repair operator) yang langsung memodifikasi populasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model penjadwalan shift tenaga kerja pabrik menggunakan pymoo di mana variabel keputusan merepresentasikan urutan penugasan (permutasi). Jenis sampling dan operator genetic apa yang harus Anda impor dan pasang agar algoritma penelusuran tidak menghasilkan nilai kontinu yang tidak valid?",
+      "options": [
+        "Menggunakan FloatRandomSampling dipadu dengan Simulated Binary Crossover standar",
+        "Menggunakan PermutationRandomSampling dipadu dengan Order Crossover dan Inversion Mutation",
+        "Menggunakan IntegerRandomSampling dipadu dengan Uniform Crossover dan Bitwise Mutation",
+        "Menggunakan BinaryRandomSampling dipadu dengan Two-Point Crossover dan Swap Mutation"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan tuning hyperparameter pada model machine learning untuk deteksi fraud menggunakan pymoo, proses evaluasi fitness memakan waktu sangat lama karena dataset berukuran besar. Mekanisme apa yang paling efektif di pymoo untuk mempercepat proses komputasi ini?",
+      "options": [
+        "Menggunakan fungsi evaluasi paralel berbasis multiprocessing dengan memanfaatkan modul Evaluator bawaan",
+        "Mengubah representasi masalah dari multi-objektif menjadi single-objektif menggunakan metode tertimbang",
+        "Menurunkan nilai probabilitas mutasi secara eksponensial pada setiap generasi pencarian solusi",
+        "Mengaktifkan caching hasil evaluasi populasi melalui parameter cache_pop pada fungsi minimize"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa algoritma NSGA-III yang Anda jalankan di pymoo untuk optimasi desain pabrik kimia (5 tujuan sekaligus) gagal menemukan titik-titik pada bagian ujung (extreme points) dari Pareto front. Langkah mitigasi apa yang paling tepat dalam konfigurasi pymoo?",
+      "options": [
+        "Menambah jumlah titik referensi (reference directions) menggunakan metode Das and Dennis di ruang obyektif",
+        "Mengganti algoritma dasar menjadi R-NSGA-II agar fokus pencarian diarahkan ke preferensi tertentu",
+        "Memperbesar ukuran generasi maksimum secara linier hingga metrik hipervolume konvergen sempurna",
+        "Mengubah fungsi normalisasi obyektif internal untuk menangani skala data yang tidak seimbang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam studi kasus penentuan rute kendaraan (VRP) dengan jendela waktu di sebuah perusahaan kurir, Anda menulis kelas kustom Problem di pymoo. Ketika kode dijalankan, muncul error dimensi array pada fungsi evaluasi karena pymoo mengevaluasi individu secara vectorized. Bagaimana cara memperbaiki struktur method _evaluate pada class Anda?",
+      "options": [
+        "Melakukan iterasi manual menggunakan perulangan for untuk setiap baris solusi dalam matriks X",
+        "Memastikan perhitungan obyektif F dan kendala G ditulis menggunakan operasi matriks NumPy secara vectorized",
+        "Membungkus fungsi obyektif dengan dekorator vectorize dari pustaka utilitas eksternal Python",
+        "Mengubah tipe data input X menjadi list of list sebelum melakukan operasi aritmatika matriks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional meminta laporan hasil optimasi rantai pasok dalam bentuk grafik Pareto Front 2 dimensi dari objek hasil (res) pymoo. Kode Python mana yang paling tepat untuk memvisualisasikan hasil tersebut secara langsung?",
+      "options": [
+        "from pymoo.visualization.scatter import Scatter; plot = Scatter(); plot.add(res.F); plot.show()",
+        "import matplotlib.pyplot as plt; plt.plot(res.F); plt.show()",
+        "from pymoo.core.result import ResultPlot; ResultPlot(res).render_2d()",
+        "res.history.plot_objective_space()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menghentikan eksekusi algoritma optimasi pymoo secara otomatis ketika nilai hipervolume dari Pareto front tidak lagi menunjukkan peningkatan signifikan selama 20 generasi berturut-turut. Fitur apa di pymoo yang harus digunakan?",
+      "options": [
+        "Membuat kelas callback kustom yang memantau riwayat hipervolume dan mengubah properti termination bernilai True",
+        "Menggunakan kelas atau fungsi Termination berbasis Multi-Criteria Convergence dari modul termination pymoo",
+        "Menambahkan parameter callback='hypervolume_stagnation' langsung di dalam pemanggilan fungsi minimize",
+        "Mengatur parameter max_gen dan tol secara bersamaan pada konstruktor objek algoritma pencarian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi ingin menempatkan menara BTS baru. Variabel keputusan adalah koordinat X dan Y (kontinu) serta tipe menara (diskret/integer). Bagaimana cara mendefinisikan variabel campuran (mixed-variable) ini secara efisien saat instansiasi kelas Problem di pymoo?",
+      "options": [
+        "Menggunakan tipe data object numpy array dan mendefinisikan tipe variabel melalui parameter jenis mask",
+        "Membuat dua kelas problem terpisah lalu menggabungkan hasil akhirnya menggunakan fungsi gabungan pymoo",
+        "Memanfaatkan modul mixed-variable problem API pymoo dengan mendefinisikan kamus tipe variabel keputusan",
+        "Mengubah seluruh variabel menjadi kontinu lalu melakukan pembulatan otomatis di dalam fungsi evaluasi"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

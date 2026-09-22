@@ -1,0 +1,306 @@
+{
+  "skill": "Market Research",
+  "skill_key": "market research",
+  "questions": [
+    {
+      "question": "Anda mendapati hasil survei online menunjukkan 85% responden sangat tertarik membeli produk pakaian kantor pria yang ramah lingkungan. Namun, saat produk dijual, angka penjualan sangat rendah. Apa bias metodologi riset yang paling mungkin terjadi?",
+      "options": [
+        "Terjadinya kesalahan teknis dalam perekrutan sampel demografi usia responden",
+        "Adanya kesenjangan antara niat yang dinyatakan responden dengan perilaku pembelian riil",
+        "Durasi pengisian kuesioner riset yang terlalu singkat sehingga data tidak terbaca",
+        "Kurangnya jumlah sampel minimum yang diperlukan untuk menguji kategori produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menganalisis data penjualan produk makanan ringan yang tiba-tiba turun 15% di wilayah Jabodetabek dalam dua bulan terakhir, sementara data nasional stabil. Langkah pertama apa yang paling tepat untuk mendiagnosis masalah ini?",
+      "options": [
+        "Menggandakan anggaran iklan digital di seluruh kanal media sosial untuk mendongkrak awareness",
+        "Langsung mengubah formula rasa produk agar lebih sesuai dengan lidah konsumen ibukota",
+        "Memeriksa laporan distribusi ritel lokal dan melakukan wawancara singkat dengan pemilik warung",
+        "Mengadakan survei kuantitatif nasional untuk mengukur ulang tingkat kepuasan pelanggan lama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim manajemen puncak meminta Anda melakukan riset kompetitor untuk aplikasi fintech pembayaran P2P baru. Apa indikator paling akurat yang harus Anda teliti untuk mengukur pangsa pasar aktual mereka di Indonesia?",
+      "options": [
+        "Jumlah total unduhan aplikasi tersebut di Google Play Store dan Apple App Store",
+        "Volume transaksi bulanan riil dan jumlah pengguna aktif harian yang dilaporkan resmi",
+        "Jumlah pengikut akun resmi Instagram dan tingkat engagement pada setiap unggahan",
+        "Total pendanaan Seri pendanaan yang berhasil dihimpun dari investor modal ventura"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam merancang survei kepuasan pelanggan untuk layanan logistik e-commerce di Indonesia, Anda ingin menghindari bias konfirmasi dari responden. Bentuk pertanyaan mana yang paling netral dan menghasilkan data valid?",
+      "options": [
+        "Mengapa layanan pengiriman kilat kami jauh lebih unggul dibandingkan jasa kurir lain?",
+        "Apakah Anda setuju bahwa kurir kami selalu bersikap ramah dan tepat waktu?",
+        "Seberapa puas Anda dengan kecepatan pengiriman paket pada pesanan terakhir Anda?",
+        "Bukankah harga ongkos kirim kami sudah sangat murah untuk kantong Anda?"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah startup Direct-to-Consumer (D2C) produk perawatan kulit lokal ingin meluncurkan toner baru untuk pasar Gen Z di kota tier 1 Indonesia. Budget riset sangat terbatas. Metode riset apa yang paling efektif dan efisien untuk memvalidasi minat pasar awal?",
+      "options": [
+        "Menyewa agensi riset global untuk melakukan survei telepon nasional dengan 2.000 responden",
+        "Membuat kuesioner online gratis dan menyebarkannya lewat fitur polling Instagram serta komunitas beauty",
+        "Membuka toko pop-up fisik selama satu bulan di kawasan pusat perbelanjaan Jakarta Selatan",
+        "Membeli data transaksional global dari perusahaan kosmetik multinasional untuk dianalisis trennya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan FMCG besar ingin menguji kemasan baru untuk produk mi instan cup sebelum diproduksi massal. Metode riset kualitatif mana yang paling tepat untuk mengamati perilaku asli konsumen terhadap kemasan tersebut?",
+      "options": [
+        "Mengadakan Focus Group Discussion di kantor pusat dengan panduan pertanyaan tertulis",
+        "Melakukan uji coba pasar tertutup di minimarket terpilih dan mengamati langsung pembeli",
+        "Menyebarkan lembar evaluasi kemasan melalui tautan Google Form di grup WhatsApp keluarga",
+        "Meminta staf internal perusahaan mencoba produk tersebut di ruang istirahat karyawan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan analisis kompetitif untuk layanan pesan-antar makanan, Anda perlu membandingkan pengalaman pengguna (UX) aplikasi kompetitor utama. Pendekatan praktis apa yang paling efektif untuk mendapatkan wawasan mendalam?",
+      "options": [
+        "Membaca seluruh ulasan bintang satu hingga bintang lima di toko aplikasi secara acak",
+        "Melakukan pengujian langsung (user journey walkthrough) dengan mencoba memesan makanan",
+        "Meminta laporan keuangan tahunan dari masing-masing perusahaan kompetitor tersebut",
+        "Menghitung estimasi total biaya operasional harian yang dikeluarkan oleh kompetitor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan properti tempat Anda bekerja ingin membangun apartemen menengah ke bawah di pinggiran Jakarta. Sumber data sekunder mana yang paling valid untuk memperkirakan daya beli riil calon pembeli di wilayah tersebut?",
+      "options": [
+        "Artikel berita ekonomi makro terbaru mengenai proyeksi pertumbuhan properti nasional",
+        "Data sensus penduduk BPS terbaru mengenai tingkat pengeluaran rumah tangga per kecamatan",
+        "Hasil diskusi santai dengan agen properti independen yang beroperasi di sekitar lokasi",
+        "Ulasan dan komentar netizen di forum properti online mengenai harga tanah setempat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun laporan riset pasar untuk ekspansi bisnis kafe ke kota Surabaya. Pimpinan meminta segmentasi pasar berdasarkan psikografis. Data seperti apa yang harus Anda sajikan dalam laporan tersebut?",
+      "options": [
+        "Distribusi tingkat pendapatan bulanan, jenis pekerjaan, dan jenjang pendidikan warga",
+        "Sebaran lokasi tempat tinggal, radius jarak tempuh, dan aksesibilitas transportasi umum",
+        "Gaya hidup, kebiasaan menghabiskan waktu luang, dan preferensi estetika nongkrong",
+        "Jumlah populasi penduduk usia produktif dan tingkat pertumbuhan ekonomi regional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah riset peluncuran kendaraan listrik roda dua di Indonesia, Anda menemukan hambatan terbesar adalah kekhawatiran tentang infrastruktur pengisian daya. Rekomendasi strategis apa yang paling tepat berdasarkan temuan ini?",
+      "options": [
+        "Menurunkan harga jual kendaraan secara drastis untuk menarik pembeli kelas bawah",
+        "Memperbanyak variasi pilihan warna bodi motor agar lebih menarik perhatian publik",
+        "Mengadakan kampanye iklan yang fokus menonjolkan kecepatan maksimal kendaraan",
+        "Bermitra dengan minimarket lokal untuk menyediakan titik penukaran baterai praktis"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang menyusun laporan riset pasar B2B untuk penyedia layanan komputasi awan lokal. Tantangan utama apa yang biasanya dihadapi saat merekrut responden untuk wawancara mendalam segmen pengambil keputusan korporat?",
+      "options": [
+        "Kesulitan mengatur jadwal karena kesibukan tinggi para eksekutif",
+        "Ketiadaan insentif finansial yang menarik minat para direktur",
+        "Kurangnya pemahaman responden mengenai dasar-dasar teknologi",
+        "Keterbatasan akses internet di kantor pusat perusahaan besar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform edutech lokal ingin mengetahui fitur belajar apa yang paling diminati oleh siswa SMA di kota tier 2 dan 3 di Indonesia. Tim Anda memiliki anggaran terbatas dan waktu yang sangat ketat. Pendekatan riset sekunder manakah yang paling efektif untuk dieksekusi pertama kali?",
+      "options": [
+        "Melakukan wawancara mendalam dengan 50 guru di berbagai daerah",
+        "Membeli laporan tren industri pendidikan tahunan dari firma global",
+        "Menganalisis data laporan riset publik dari kementerian dan asosiasi",
+        "Menyebarkan kuesioner berbayar kepada seluruh siswa di wilayah tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mendesain kuesioner untuk mengukur loyalitas pelanggan sebuah merek kopi susu kekinian. Agar responden tidak merasa jenuh dan tingkat penyelesaian survei tinggi, strategi apa yang paling tepat dalam menyusun alur pertanyaan?",
+      "options": [
+        "Menempatkan pertanyaan demografi yang sensitif di bagian paling awal",
+        "Membuat seluruh pertanyaan berbentuk esai agar jawaban lebih mendalam",
+        "Menggunakan skala Likert 10 poin untuk seluruh indikator kepuasan",
+        "Menyusun pertanyaan inti produk di awal dan demografi di akhir survei"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam riset peluncuran produk vitamin herbal baru, data penjualan uji coba menunjukkan hasil yang sangat kontradiktif dengan hasil survei pra-luncur yang menyatakan 90% responden berniat beli. Sebagai peneliti, langkah validasi apa yang harus Anda ambil?",
+      "options": [
+        "Mengabaikan data penjualan karena periode uji coba terlalu singkat",
+        "Melakukan analisis perilaku pembelian aktual melalui observasi dan data transaksi",
+        "Menaikkan target responden survei hingga dua kali lipat dari sebelumnya",
+        "Mengubah spesifikasi produk tanpa melakukan riset lanjutan ke pasar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan FMCG ingin meriset potensi pasar deterjen cair saset di wilayah pedesaan Jawa Timur. Metode pengumpulan data kualitatif apa yang paling tepat untuk menggali kebiasaan mencuci warga setempat?",
+      "options": [
+        "Focus Group Discussion di hotel berbintang di pusat kota Surabaya",
+        "Wawancara telepon terstruktur dengan kepala desa di wilayah sasaran",
+        "Observasi partisipatif dan wawancara langsung di rumah warga desa",
+        "Survei online menggunakan iklan bertarget media sosial di wilayah tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan menganalisis ulasan pelanggan (customer reviews) dari tiga marketplace besar untuk produk air purifier lokal. Teknik analisis data apa yang paling efisien untuk memetakan keluhan utama konsumen secara cepat?",
+      "options": [
+        "Membaca satu persatu seluruh ulasan secara manual setiap harinya",
+        "Menggunakan analisis sentimen berbasis teks pada kumpulan data ulasan",
+        "Menghubungi setiap pemberi ulasan buruk melalui pesan pribadi",
+        "Membuat kuesioner baru untuk dikirimkan kepada pembeli yang sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan riset harga (pricing research) untuk layanan berlangganan SaaS HRIS di Indonesia, Anda ingin menentukan titik harga optimal yang tidak membuat klien kabur ke kompetitor. Metode van Westendorp Price Sensitivity Meter mana yang menunjukkan batas harga terlalu mahal?",
+      "options": [
+        "Titik perpotongan kurva murah sekali dan mahal sekali",
+        "Titik di mana responden mulai meragukan kualitas produk",
+        "Titik persimpangan antara garis kemahalan dan kemurahan",
+        "Titik persentase kumulatif tertinggi untuk kategori harga mahal"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah rantai restoran siap saji ingin memindahkan lokasi salah satu cabang utamanya di Bandung. Analisis pasar berbasis lokasi (location intelligence) apa yang harus diprioritaskan sebelum memutuskan titik baru?",
+      "options": [
+        "Menghitung jumlah total penduduk di seluruh Provinsi Jawa Barat",
+        "Menganalisis kepadatan lalu lintas, profil demografi area, dan titik pesaing",
+        "Menilai estetika arsitektur bangunan ruko yang tersedia di pinggir jalan",
+        "Meminta pendapat staf restoran lama mengenai lokasi impian mereka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mengevaluasi efektivitas kampanye iklan digital untuk produk motor matic baru, metrik riset merek (brand tracking) mana yang paling akurat untuk mengukur perpindahan konsumen dari tahap tahu menjadi pertimbangan?",
+      "options": [
+        "Jumlah tayangan iklan yang muncul di beranda media sosial target",
+        "Tingkat keterlibatan berupa suka dan komentar pada unggahan video",
+        "Persentase target audiens yang secara spontan menyebut merek Anda",
+        "Peningkatan metrik *Consideration Lift* melalui survei panel khusus"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah merek pakaian lokal ingin menguji dua desain logo baru sebelum rebranding total. Metode *A/B testing* atau *monadic testing* mana yang paling minim bias dalam mengukur preferensi visual konsumen?",
+      "options": [
+        "Menanyakan langsung logo mana yang lebih bagus secara terbuka di grup WhatsApp",
+        "Menampilkan satu desain logo secara acak ke satu kelompok sampel terpisah",
+        "Meminta responden menilai kedua logo secara bersamaan dalam satu lembar",
+        "Menyerahkan keputusan akhir sepenuhnya kepada selera tim desain internal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis data tren pencarian Google dan ulasan media sosial untuk produk skincare lokal yang mengalami lonjakan penjualan mendadak di TikTok Shop. Langkah awal apa yang paling tepat untuk memvalidasi apakah tren ini berkelanjutan?",
+      "options": [
+        "Mengabaikan data media sosial karena terlalu subjektif dan hanya fokus pada angka penjualan bulanan perusahaan",
+        "Membandingkan volume pencarian kata kunci merek dengan data penjualan riil dan ulasan pelanggan berulang dalam tiga bulan terakhir",
+        "Menyebarkan kuesioner skala besar kepada seluruh pengguna aktif media sosial di Indonesia untuk menanyakan niat beli mereka",
+        "Meminta tim pemasaran digital untuk segera menghentikan anggaran iklan agar dapat melihat angka organik secara murni"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda melakukan focus group discussion (FGD) untuk mengevaluasi konsep aplikasi dompet digital bagi pekerja informal. Salah satu peserta yang dominan terus-menerus memotong pembicaraan dan memengaruhi opini peserta lain. Tindakan moderasi apa yang paling tepat?",
+      "options": [
+        "Meminta peserta tersebut keluar dari ruangan agar diskusi berjalan sesuai dengan keinginan moderator",
+        "Mengonfirmasi pendapat peserta lain secara langsung dan mengalihkan giliran bicara secara terstruktur kepada mereka yang lebih pasif",
+        "Mengikuti semua argumen yang disampaikan oleh peserta dominan tersebut karena dianggap mewakili suara mayoritas pasar",
+        "Menghentikan sesi FGD seketika itu juga dan menjadwalkan ulang dengan mengundang orang yang sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik B2B ingin melakukan riset mengenai hambatan utama perusahaan manufaktur dalam menggunakan jasa pengiriman mereka. Metode pengumpulan data primer manakah yang paling efektif untuk mendapatkan wawasan mendalam dari para Manajer Rantai Pasok (Supply Chain Manager)?",
+      "options": [
+        "Melakukan survei daring dengan daftar pilihan ganda dan menyebarkannya melalui grup LinkedIn secara acak",
+        "Mengadakan wawancara mendalam (In-Depth Interviews) secara daring atau tatap muka dengan sampel terpilih dari klien target",
+        "Membeli data laporan industri sekunder global dari lembaga riset internasional tanpa melakukan kontak langsung",
+        "Membuat kuis interaktif berhadiah di platform Instagram untuk menjaring opini publik secara cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah survei kepuasan pelanggan untuk platform e-grocery, Anda mendapati tingkat penyelesaian kuesioner (completion rate) sangat rendah, di mana banyak responden berhenti di tengah jalan. Evaluasi apa yang paling tepat untuk memperbaiki instrumen survei tersebut?",
+      "options": [
+        "Memperpanjang durasi survei dengan menambahkan bagian khusus mengenai sejarah perusahaan agar responden lebih paham",
+        "Mengubah seluruh pertanyaan terbuka menjadi pilihan ganda yang sangat kompleks dan detail tanpa panduan",
+        "Memangkas jumlah pertanyaan yang tidak esensial, menyederhanakan alur, dan menempatkan pertanyaan inti di awal",
+        "Menurunkan insentif atau hadiah yang dijanjikan agar responden yang mengisi benar-benar murni tanpa pamrih"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyusun laporan riset pasar untuk peluncuran merek air minum dalam kemasan botol kaca premium di kafe-kafe perkotaan. Data sekunder mana yang paling relevan untuk dianalisis guna memperkirakan ukuran pasar potensial (TAM)?",
+      "options": [
+        "Data sensus penduduk nasional mengenai jumlah total kepala keluarga di seluruh wilayah perdesaan",
+        "Laporan asosiasi industri hotel, restoran, dan kafe (HOREKA) mengenai volume konsumsi air minum kemasan premium",
+        "Statistik nasional mengenai volume impor bahan baku plastik industri otomotif dalam lima tahun terakhir",
+        "Data historis penjualan mi instan cup di minimarket seluruh wilayah Indonesia bagian timur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rantai minimarket nasional ingin menentukan lokasi pembukaan 10 gerai baru di Surabaya. Variabel geospasial apa yang paling krusial untuk dimasukkan ke dalam model analisis pasar (market gravity model)?",
+      "options": [
+        "Kepadatan penduduk, jalur utama lalu lintas harian, dan jarak terdekat dari kompetitor sejenis",
+        "Jumlah universitas seni rupa di seluruh pulau Jawa dan preferensi warna cat dinding gedung",
+        "Tingkat kelembapan udara harian rata-rata dan arah angin muson di kawasan tersebut",
+        "Jumlah kepemilikan kendaraan pribadi jenis truk kontainer di setiap kecamatan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam riset penetapan harga (pricing research) menggunakan metode Van Westendorp Price Sensitivity Meter untuk produk laptop gaming lokal, kurva titik mana yang menunjukkan batas harga di mana konsumen mulai merasa kualitas produk tersebut diragukan karena terlalu murah?",
+      "options": [
+        "Too expensive (Terlalu mahal)",
+        "Expensive (Mahal)",
+        "Cheap (Murah)",
+        "Too cheap (Terlalu murah)"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah bank swasta ingin mengukur *brand health* (kesehatan merek) setelah meluncurkan kampanye iklan masif di televisi dan media sosial. Metrik *aided brand awareness* berbeda dari *unaided brand awareness* dalam hal apa?",
+      "options": [
+        "Aided awareness mengukur ingatan spontan responden tanpa menyebutkan nama merek, sedangkan unaided menggunakan bantuan daftar",
+        "Aided awareness memberikan daftar pilihan nama merek kepada responden, sedangkan unaided mengandalkan ingatan spontan tanpa petunjuk",
+        "Aided awareness hanya diukur melalui klik tautan digital, sedangkan unaided diukur melalui wawancara tatap muka langsung",
+        "Aided awareness khusus untuk mengukur kepuasan pelanggan lama, sedangkan unaided khusus untuk calon pelanggan baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menganalisis sentimen ulasan konsumen di e-commerce untuk produk pembersih lantai guna menemukan celah inovasi produk. Teknik analisis data teks (text mining) mana yang paling tepat untuk mengelompokkan keluhan utama pelanggan secara otomatis?",
+      "options": [
+        "Menghitung rata-rata total rating bintang dan mempublikasikannya dalam bentuk grafik batang sederhana",
+        "Melakukan analisis regresi linear berganda antara harga produk dan jumlah terjual setiap bulan",
+        "Menerapkan analisis topik (topic modeling) atau klasterisasi kata kunci pada teks ulasan yang bernada negatif",
+        "Menyaring ulasan berdasarkan nama toko online dan membuang semua teks yang panjangnya di bawah 50 kata"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan rintisan agritech ingin menguji minat petani terhadap platform digital jual-beli hasil panen langsung. Tantangan metodologis apa yang paling mungkin terjadi jika survei dilakukan sepenuhnya melalui aplikasi pesan singkat?",
+      "options": [
+        "Bias cakupan (coverage bias) karena tidak semua petani target memiliki akses gawai pintar atau literasi digital yang memadai",
+        "Kelebihan data sekunder makroekonomi yang membuat analisis menjadi terlalu luas dan tidak terarah",
+        "Tingginya tingkat respons dari petani senior yang tidak menggunakan teknologi sama sekali",
+        "Ketidakmampuan sistem untuk merekam data kuantitatif dalam bentuk angka statistik dasar"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

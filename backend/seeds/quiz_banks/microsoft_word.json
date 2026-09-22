@@ -1,0 +1,306 @@
+{
+  "skill": "Microsoft Word",
+  "skill_key": "microsoft word",
+  "questions": [
+    {
+      "question": "Anda harus membuat dokumen brosur promosi lipat tiga yang membutuhkan orientasi halaman berbeda (Landscape dalam satu file Portrait). Pengaturan apa yang harus dibuat di antara halaman tersebut?",
+      "options": [
+        "Menyisipkan Page Break biasa sebelum bagian halaman landscape",
+        "Membuat dokumen terpisah lalu menggabungkannya via PDF editor",
+        "Menambahkan Section Break jenis Next Page di titik transisi",
+        "Mengubah pengaturan orientation printer saat hendak mencetak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat menyusun laporan keuangan, Anda perlu menampilkan total dari kolom angka secara otomatis di dalam tabel Word tanpa harus menghitungnya manual di kalkulator. Formula apa yang digunakan?",
+      "options": [
+        "Memasukkan rumus matematika manual menggunakan teks biasa",
+        "Memanfaatkan fungsi Formula dengan perintah SUM(ABOVE)",
+        "Menghubungkan tabel Word ke lembar kerja Excel tersembunyi",
+        "Menggunakan fitur AutoSum yang ada di tab menu Home"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Rekan kerja Anda melaporkan bahwa dokumen Word proposal tender gagal dibuka karena file korup atau rusak akibat mati lampu mendadak. Langkah preventif apa di pengaturan Word yang seharusnya diaktifkan agar kejadian ini tidak merugikan?",
+      "options": [
+        "Mengaktifkan opsi Always create backup copy dan AutoRecover",
+        "Mematikan fitur Cloud Sync agar file tersimpan aman di lokal komputer",
+        "Mengubah interval penyimpanan otomatis menjadi setiap 2 jam sekali",
+        "Menggunakan format dokumen versi lama (.doc) untuk keamanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun Laporan Tahunan perusahaan setebal 100 halaman. Pimpinan meminta agar halaman Daftar Isi menggunakan penomoran angka romawi (i, ii, iii), sementara bab utama menggunakan angka biasa (1, 2, 3) tanpa mengubah nomor halaman di cover. Langkah apa yang paling tepat dilakukan?",
+      "options": [
+        "Mengatur format page number melalui menu Insert lalu ubah format dokumen secara keseluruhan",
+        "Membuat file terpisah untuk bagian awal lalu digabungkan saat proses cetak PDF akhir",
+        "Menyisipkan Section Break pada akhir tiap bagian dan mematikan fungsi Link to Previous",
+        "Menggunakan fitur Watermark untuk menimpa nomor halaman yang tidak diinginkan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Bagian HRD meminta Anda mengirimkan 50 surat penawaran kerja personal ke kandidat berbeda menggunakan format surat yang sama. Data nama dan gaji kandidat sudah tersedia di file Microsoft Excel. Fitur apa yang paling efisien untuk menyelesaikan tugas ini?",
+      "options": [
+        "Mail Merge dengan sumber data dari lembar kerja Excel yang telah disiapkan",
+        "Copy dan paste manual satu per satu data kandidat ke dalam format dokumen",
+        "Membuat Macro VBA otomatis untuk membaca sel Excel dan mencetak dokumen",
+        "Menggunakan fitur Track Changes untuk memasukkan data variabel secara massal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membuka dokumen proposal penawaran klien yang dikirim rekan kerja, Anda melihat teks berantakan karena menggunakan spasi berlebih dan tombol Enter untuk turun baris. Cara paling profesional dan cepat untuk merapikan format paragraf tersebut adalah...",
+      "options": [
+        "Menghapus manual seluruh spasi dan menggantinya dengan tombol Tab",
+        "Memanfaatkan fitur Find and Replace untuk membersihkan karakter ganda",
+        "Mengubah jenis font keseluruhan teks menjadi Calibri ukuran 12 pt",
+        "Menerapkan gaya Heading 1 pada setiap awal paragraf yang berantakan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima dokumen perjanjian kerja sama dari divisi legal yang memiliki banyak catatan revisi dan coretan merah di pinggir halaman. Anda ingin membaca versi bersih tanpa menghilangkan jejak revisi tersebut untuk keperluan arsip. Apa yang harus dipilih pada menu Tracking?",
+      "options": [
+        "Mengubah tampilan dari All Markup menjadi Simple Markup",
+        "Menonaktifkan fitur Track Changes secara permanen pada dokumen",
+        "Menekan tombol Accept All Changes sebelum mencetak dokumen",
+        "Memilih opsi No Markup untuk menyembunyikan semua catatan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dokumen spesifikasi teknis proyek setebal 50 halaman harus dibagikan ke tim eksternal, namun Anda ingin memastikan isi dokumen tidak dapat diubah atau diedit sembarangan oleh pihak penerima. Tindakan pengamanan apa yang paling tepat?",
+      "options": [
+        "Menyimpan file dalam format PDF dengan proteksi read-only",
+        "Menggunakan fitur Restrict Editing dan memberikan kata sandi proteksi",
+        "Menghapus seluruh tabel dan grafik penting sebelum dokumen dikirim",
+        "Mengubah ekstensi file asli dari docx menjadi format txt biasa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis panduan operasional SOP perusahaan dan ingin membuat daftar isi otomatis yang langsung memperbarui nomor halaman ketika ada penambahan bab. Fitur dasar apa yang wajib diterapkan pada judul-judul bab sebelumnya?",
+      "options": [
+        "Mengatur ukuran font judul menjadi lebih besar dan dicetak tebal",
+        "Memberikan penomoran otomatis menggunakan bullet and numbering biasa",
+        "Menerapkan gaya style bawaan seperti Heading 1 dan Heading 2",
+        "Membuat tabel transparan di setiap awal halaman untuk judul bab"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tabel data keuangan di Microsoft Word terpotong di tengah baris karena pindah halaman, sehingga header tabel tidak muncul di halaman berikutnya dan membingungkan pembaca. Bagaimana cara mengatasinya dengan cepat?",
+      "options": [
+        "Membuat tabel baru secara manual di halaman kedua dokumen",
+        "Mengaktifkan opsi Repeat Header Rows pada menu tata letak tabel",
+        "Mengatur ukuran margin halaman menjadi lebih sempit dari sebelumnya",
+        "Menyisipkan baris kosong secara manual di atas tabel halaman baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam dokumen spesifikasi proyek, Anda sering menulis singkatan panjang seperti PT. Pembangunan Infrastruktur Nusantara. Cara cepat apa yang bisa diatur agar Word otomatis mengubah singkatan 'PIN' menjadi nama lengkap tersebut?",
+      "options": [
+        "Membuat tabel referensi silang pada bagian Lampiran dokumen",
+        "Mengaktifkan fitur AutoCorrect options untuk teks pengganti otomatis",
+        "Memanfaatkan fitur Bookmark untuk melompat ke kata kunci tertentu",
+        "Menyimpan teks panjang tersebut sebagai komponen Quick Parts baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengetik laporan keuangan penting dan tidak sengaja menimpa paragraf sebelumnya dengan teks baru karena mode ketik yang aktif. Tombol apa pada keyboard yang biasanya tidak sengaja tertekan sehingga mengubah fungsi pengetikan menjadi menimpa (overwrite)?",
+      "options": [
+        "Menekan tombol Caps Lock secara tidak sengaja",
+        "Menekan tombol Insert di dekat tombol Delete",
+        "Menekan tombol Page Down di samping panah",
+        "Menekan tombol Num Lock pada bagian angka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat membuat formulir pendaftaran kerja, Anda ingin kotak isian titik-titik sejajar dengan rapi tanpa harus menekan tombol spasi berulang-ulang yang sering bergeser. Pengaturan paragraf apa yang paling tepat digunakan?",
+      "options": [
+        "Mengatur jarak baris spasi menjadi tepat 1.5 lines pada menu Paragraph",
+        "Memasang titik henti Tab Stops dengan karakter leader garis pada mistar",
+        "Membuat tabel tersembunyi tanpa garis tepi untuk menyusun formulir",
+        "Menggunakan fitur Justified alignment pada setiap awal baris kalimat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi marketing meminta Anda menyatukan dua paragraf terpisah dalam dokumen promosi agar menjadi satu paragraf tanpa ada jarak baris kosong yang mengganggu. Langkah paling efisien apa yang harus Anda lakukan?",
+      "options": [
+        "Menempatkan kursor di akhir baris pertama lalu menekan tombol Delete",
+        "Menyorot seluruh paragraf kedua lalu memilih menu Clear Formatting",
+        "Menekan kombinasi tombol Ctrl bersamaan dengan tombol Enter",
+        "Menggunakan fitur Replace untuk menghapus semua spasi ganda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima dokumen teks mentah dari internet yang penuh dengan garis bawah merah dan hijau karena pemeriksaan ejaan aktif dalam bahasa Inggris, padahal laporan berbahasa Indonesia. Bagaimana cara menonaktifkannya untuk dokumen ini?",
+      "options": [
+        "Masuk ke tab File lalu pilih menu Options untuk menutup aplikasi",
+        "Memblok seluruh teks lalu ubah bahasa proofing menjadi Indonesia",
+        "Menghapus semua tanda baca titik dan koma menggunakan fitur Find",
+        "Mengubah format penyimpanan dokumen dari docx menjadi format txt"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menyisipkan gambar logo perusahaan ke dalam halaman muka laporan, posisi teks di sekitarnya menjadi berantakan dan sulit digeser secara bebas. Pengaturan apa yang harus diubah pada opsi gambar tersebut?",
+      "options": [
+        "Mengubah properti pemotongan gambar melalui menu Format gambar",
+        "Mengganti gaya pembungkus teks menjadi In Line with Text standar",
+        "Mengatur ulang tata letak pembungkus teks menjadi Square atau Tight",
+        "Mengubah orientasi halaman dokumen dari portrait menjadi landscape"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta merapikan dokumen kontrak kerja yang memiliki ukuran margin kiri berbeda dari halaman lainnya khusus untuk keperluan penjilidan jilid skuat. Fitur apa yang paling tepat digunakan pada pengaturan halaman?",
+      "options": [
+        "Memanfaatkan pengaturan Gutter margin pada menu Page Setup",
+        "Menggeser batas mistar penggaris atas secara manual per halaman",
+        "Menambahkan spasi paragraf sisi kiri melalui menu Paragraph",
+        "Mengubah ukuran kertas standar dari A4 menjadi ukuran Legal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah dokumen manual mesin pabrik memiliki nomor halaman di bagian footer yang sama persis dari halaman pertama sampai akhir. Aturan apa yang harus diaktifkan agar halaman sampul depan tidak menampilkan nomor halaman?",
+      "options": [
+        "Menghapus secara manual nomor halaman pada halaman pertama saja",
+        "Membuat file dokumen terpisah khusus untuk halaman sampul depan",
+        "Mengaktifkan opsi Different First Page pada tab Header & Footer",
+        "Mengatur nomor halaman awal dimulai dari angka nol pada format"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda harus mengirimkan dokumen penawaran harga kepada klien dalam format final yang tidak boleh bisa diubah atau diedit sembarangan oleh pihak penerima. Langkah apa yang paling cepat dilakukan melalui Microsoft Word?",
+      "options": [
+        "Menyimpan dokumen dengan memilih format output PDF saat Save As",
+        "Memberikan kata sandi enkripsi dokumen pada menu Protect Document",
+        "Mengunci seluruh paragraf menggunakan fitur Restrict Editing saja",
+        "Mengubah ekstensi file dokumen secara manual dari docx ke format zip"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun laporan proyek kelompok dengan rekan kerja yang sering melakukan revisi teks. Agar Anda bisa melihat bagian mana saja yang diubah atau dihapus oleh rekan Anda, fitur apa yang harus dinyalakan sebelum file dikirim?",
+      "options": [
+        "Mengaktifkan fitur Restrict Editing untuk mengunci seluruh halaman",
+        "Menyalakan fitur Track Changes pada tab Review sebelum mulai mengedit",
+        "Membuat salinan dokumen baru menggunakan fungsi Compare Documents",
+        "Memberikan tanda warna highlighter kuning pada setiap paragraf baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati dokumen laporan kerja memiliki banyak spasi berlebih di antara kata-kata karena hasil salinan dari web. Cara paling efisien untuk merapikan seluruh spasi ganda tersebut menjadi spasi tunggal sekaligus adalah...",
+      "options": [
+        "Menggunakan fitur Find and Replace untuk mencari spasi ganda dan menggantinya",
+        "Menghapus setiap spasi berlebih secara manual menggunakan tombol Backspace",
+        "Mengubah jenis rata teks dokumen dari Justify menjadi Align Left",
+        "Memilih seluruh paragraf lalu mengatur ulang line spacing menjadi 1.0"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyisipkan tanda tangan digital transparan berbentuk gambar ke dalam surat resmi, namun bagian latar belakang putih pada gambar menutupi garis tabel di bawahnya. Fitur apa yang harus Anda gunakan agar latar belakang gambar tersebut menyatu dengan dokumen?",
+      "options": [
+        "Menggunakan opsi Remove Background pada tab Picture Format",
+        "Mengubah pengaturan Wrap Text menjadi Behind Text pada gambar",
+        "Menurunkan tingkat kecerahan gambar melalui menu Corrections",
+        "Mengaplikasikan efek Artistic Effects buram pada gambar tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat Anda menekan tombol Enter untuk membuat baris baru di dalam dokumen kontrak, jarak antar baris terasa terlalu jauh karena menggunakan spasi paragraf ganda. Cara paling efisien untuk merapikannya tanpa mengubah spasi judul adalah...",
+      "options": [
+        "Menekan kombinasi tombol Shift dan Enter untuk membuat line break",
+        "Mengubah nilai Paragraph Spacing After menjadi nol pada menu Layout",
+        "Memilih seluruh teks dokumen lalu mengganti ukuran font secara manual",
+        "Mengatur ulang batas margin dokumen melalui panel Page Setup"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu membandingkan dua versi dokumen penawaran harga yang berbeda untuk melihat perubahan kalimat apa saja yang dilakukan oleh rekan tim Anda. Langkah paling praktis di Microsoft Word adalah...",
+      "options": [
+        "Membuka kedua file secara berdampingan menggunakan fitur View Side by Side",
+        "Memanfaatkan fitur Compare pada tab Review untuk menggabungkan dokumen",
+        "Menyorot teks satu per satu menggunakan fitur Text Highlighter Tool",
+        "Mencetak kedua dokumen ke dalam kertas fisik untuk diperiksa manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah dokumen laporan audit setebal 80 halaman memerlukan bab baru yang dimulai dari halaman ganjil, namun halaman kosong yang tercipta otomatis menampilkan nomor halaman. Bagaimana cara menghilangkan nomor halaman pada halaman kosong tersebut?",
+      "options": [
+        "Menghapus manual nomor halaman dengan tombol Delete pada halaman terkait",
+        "Memutus tautan header dan footer serta mengaktifkan Different First Page",
+        "Mengubah format nomor halaman menjadi huruf romawi pada bagian tersebut",
+        "Menyisipkan Section Break jenis Continuous sebelum bab baru dimulai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam dokumen proposal proyek, Anda menyisipkan grafik dari Microsoft Excel yang sering berubah datanya. Agar grafik di Word otomatis memperbarui diri saat data Excel diubah, teknik penyisipan apa yang harus dipilih?",
+      "options": [
+        "Menggunakan menu Paste Special lalu pilih Unformatted Text",
+        "Menyalin grafik dan memilih opsi Keep Source Formatting",
+        "Menempelkan data dengan memilih opsi Link & Keep Source Formatting",
+        "Mengubah format grafik menjadi gambar bitmap sebelum disalin"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyusun laporan yang memiliki beberapa judul sub-bab panjang, namun Anda ingin daftar isi hanya menampilkan judul utama saja tanpa memenuhi halaman dengan sub-bab. Pengaturan apa yang perlu disesuaikan?",
+      "options": [
+        "Mengatur level Outline pada kotak dialog Table of Contents",
+        "Menghapus manual teks sub-bab dari tampilan daftar isi otomatis",
+        "Menggunakan gaya font terpisah yang tidak terdeteksi oleh Word",
+        "Mengubah properti dokumen pada tab File menu Info"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat mencetak dokumen laporan perusahaan, bagian pinggir kanan dokumen terpotong karena ukuran kertas printer berbeda dengan pengaturan dokumen. Langkah pencegahan terbaik di Word sebelum mencetak adalah...",
+      "options": [
+        "Memilih opsi Scale to Paper Size pada jendela cetak",
+        "Mengubah orientasi kertas dokumen menjadi Landscape sepenuhnya",
+        "Memperkecil ukuran margin halaman secara drastis di menu Layout",
+        "Menyesuaikan ukuran font teks keseluruhan menjadi 10 pt"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyisipkan kutipan sumber pustaka dan membuat daftar pustaka otomatis bergaya APA pada makalah ilmiah Anda. Menu apa yang harus diakses di Microsoft Word untuk mengelola data sumber tersebut?",
+      "options": [
+        "Tab Insert lalu pilih menu Bookmark dan Cross-reference",
+        "Tab References lalu gunakan fitur Insert Citation dan Bibliography",
+        "Tab Review lalu aktifkan fitur Track Changes dan New Comment",
+        "Tab Mailings lalu pilih opsi Start Mail Merge untuk daftar pustaka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dokumen hasil pindai (scan) berupa gambar teks mentah dikirimkan kepada Anda dan harus diedit isinya. Cara paling cepat mengubah gambar tersebut menjadi teks yang bisa diketik ulang di Word adalah...",
+      "options": [
+        "Membuka file gambar tersebut menggunakan aplikasi Microsoft Excel",
+        "Mengonversi file gambar menjadi format PDF lalu dibuka via Word",
+        "Mengetik ulang seluruh isi teks gambar secara manual ke halaman kosong",
+        "Menyalin gambar ke Paint lalu melakukan ekstrak teks otomatis"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Go",
+  "skill_key": "go",
+  "questions": [
+    {
+      "question": "Tim backend Go Anda mendapati lonjakan latensi pada layanan microservice akibat lock contention yang tinggi pada sebuah shared map di dalam memori saat traffic flash sale. Pendekatan idiomatik Go apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti map bawaan dengan sync.Map atau menggunakan mutex granular untuk membatasi area kritis",
+        "Menggunakan goroutine pool berukuran tetap untuk mengeksekusi semua operasi tulis secara serial",
+        "Membuat custom lock berbasis channel berkapasitas besar untuk antrean proses tulis data",
+        "Menonaktifkan garbage collector sementara menggunakan debug.SetGCPercent selama event berlangsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi pemrosesan transaksi keuangan di Go yang bergantung pada pihak ketiga (payment gateway). Bagaimana cara Anda melakukan mocking pada klien HTTP eksternal tersebut secara idiomatik tanpa library pihak ketiga yang berat?",
+      "options": [
+        "Membuat interface untuk klien HTTP dan menggunakan httptest.NewServer untuk simulasi respons",
+        "Mengubah fungsi utama agar membaca file JSON lokal sebagai pengganti koneksi jaringan aktif",
+        "Memakai library monkey patching untuk mengubah implementasi fungsi jaringan secara runtime",
+        "Menjalankan instance mock server terpisah di dalam container Docker sebelum go test dimulai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah worker pool di aplikasi Go Anda mengalami kebocoran memori (memory leak) karena goroutine tetap hidup dan tertahan selamanya di dalam channel baca. Apa pola pencegahan yang paling tepat diterapkan?",
+      "options": [
+        "Meneruskan context.Context ke dalam fungsi worker untuk sinyal pembatalan dan timeout otomatis",
+        "Menutup channel input secara paksa dari fungsi utama menggunakan fungsi defer recover",
+        "Mengatur ukuran buffer channel menjadi sangat besar agar tidak pernah terjadi blocking state",
+        "Memanggil runtime.Goexit() di dalam loop utama worker setiap kali siklus iterasi selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan code review pada repositori Go tim, Anda melihat fungsi mengembalikan pointer ke variabel lokal (local variable) yang dideklarasikan di dalam fungsi tersebut. Apa dampak dari penulisan kode ini?",
+      "options": [
+        "Kode tetap aman karena compiler Go melakukan escape analysis dan memindahkan variabel ke heap",
+        "Terjadi undefined behavior saat fungsi selesai dieksekusi dan stack frame dihapus dari memori",
+        "Program akan langsung mengalami panic saat runtime karena alokasi pointer ilegal di stack",
+        "Variabel lokal akan otomatis diubah menjadi tipe data primitif oleh compiler saat optimasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Go Anda perlu membaca konfigurasi dari file YAML dan mengubah beberapa nilai secara bersamaan di beberapa goroutine saat runtime. Bagaimana cara mencegah race condition pada objek konfigurasi tersebut?",
+      "options": [
+        "Menggunakan sync/atomic atau sync.RWMutex untuk melindungi operasi baca dan tulis pada struct",
+        "Membungkus seluruh objek konfigurasi di dalam unbuffered channel agar diakses secara bergiliran",
+        "Membuat salinan (deep copy) dari objek konfigurasi setiap kali goroutine baru ingin membacanya",
+        "Menandai seluruh field di dalam struct konfigurasi sebagai variabel global berjenis konstan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati performa pembacaan JSON payload berukuran besar di endpoint API Go cukup lambat dan membebani alokasi heap GC. Pendekatan optimasi apa yang paling efektif?",
+      "options": [
+        "Memanfaatkan package encoding/json standar dengan melakukan reuse buffer via sync.Pool",
+        "Mengubah seluruh struktur data payload menjadi bentuk string mentah tanpa parsing struct",
+        "Menghindari penggunaan struct Go dan langsung memetakan data ke tipe map[string]any",
+        "Meningkatkan frekuensi pembersihan memori dengan memanggil runtime.GC() secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi microservice Go sering mengalami panic tak terduga akibat error 'invalid memory address or nil pointer dereference'. Di mana dan bagaimana penanganan error ini seharusnya distrukturkan?",
+      "options": [
+        "Memeriksa nilai nil secara eksplisit sebelum akses pointer dan gunakan recover di goroutine utama",
+        "Menambahkan blok try-catch di setiap fungsi handler HTTP untuk menangkap semua jenis exception",
+        "Mengubah semua pointer struct di dalam aplikasi menjadi tipe nilai biasa untuk menghindari nil",
+        "Membiarkan panic terjadi agar container orchestrator dapat langsung melakukan restart pod"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengintegrasikan database PostgreSQL ke aplikasi Go menggunakan database/sql. Agar koneksi tidak habis (connection exhaustion) saat traffic tinggi, konfigurasi apa yang wajib diatur?",
+      "options": [
+        "Mengatur SetMaxOpenConns, SetMaxIdleConns, dan SetConnMaxLifetime secara tepat pada objek DB",
+        "Menutup koneksi database menggunakan fungsi defer tepat setelah setiap eksekusi query selesai",
+        "Membuat instance koneksi database baru di setiap handler HTTP request yang masuk ke server",
+        "Menggunakan unbuffered channel sebagai antrean tunggal untuk seluruh perintah SQL ke database"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem distributed tracing menggunakan OpenTelemetry di Go, bagaimana cara meneruskan context lintas batas fungsi atau goroutine yang berjalan secara asynchronous?",
+      "options": [
+        "Menyertakan objek context.Context sebagai parameter pertama pada setiap signature fungsi",
+        "Menyimpan nilai trace ID ke dalam variabel global agar dapat diakses oleh semua goroutine",
+        "Menggunakan package reflect untuk menyisipkan metadata tracing ke dalam struct parameter",
+        "Membuat goroutine local storage khusus untuk menyimpan context aktif di setiap thread OS"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim DevOps melaporkan binary file aplikasi Go Anda terlalu besar untuk didistribusikan keproduction server. Langkah optimasi build apa yang paling tepat untuk mengurangi ukuran binary?",
+      "options": [
+        "Menambahkan flag -ldflags=\"-s -w\" saat menjalankan perintah go build untuk menghapus simbol debug",
+        "Melakukan kompresi ulang file binary hasil build menggunakan utility pihak ketiga seperti UPX",
+        "Memecah kode sumber aplikasi menjadi puluhan package kecil agar compiler lebih efisien",
+        "Menghapus semua komentar dan dokumentasi fungsi di dalam kode sumber sebelum melakukan compile"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Go Anda melakukan HTTP request ke berbagai microservice eksternal secara paralel menggunakan goroutine. Seringkali request tersebut harus dibatalkan di tengah jalan jika client memutus koneksi atau terjadi timeout secara keseluruhan. Apa pendekatan paling tepat untuk mengelola pembatalan ini secara efisien?",
+      "options": [
+        "Menggunakan channel khusus bertipe bool untuk mengirim sinyal stop ke setiap goroutine pekerja secara manual",
+        "Memanfaatkan package context untuk meneruskan sinyal pembatalan secara berjenjang ke seluruh HTTP client",
+        "Mengandalkan fungsi runtime.Goexit() di dalam loop goroutine utama untuk menghentikan proses yang berjalan",
+        "Menutup seluruh koneksi jaringan yang terbuka secara paksa menggunakan fungsi net.CloseOnExec pada OS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan fungsi pembacaan data streaming dari file log besar berukuran gigabyte di aplikasi Go. Agar penggunaan memori tetap stabil dan tidak memicu GC pause yang tinggi, struktur apa yang sebaiknya Anda gunakan untuk membaca baris per baris?",
+      "options": [
+        "Menggunakan bufio.Scanner untuk memproses data secara iteratif tanpa memuat seluruh file ke heap",
+        "Membaca seluruh file sekaligus ke dalam slice byte menggunakan fungsi os.ReadFile agar proses lebih cepat",
+        "Membuat custom buffer slice berukuran tetap menggunakan fungsi make([]byte, file_size) di awal fungsi",
+        "Memanfaatkan package ioutil lama untuk membaca string secara langsung ke dalam alokasi memori lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi backend Go mengalami lonjakan penggunaan CPU yang tidak wajar saat melakukan penggabungan string (string concatenation) berukuran besar di dalam loop yang berjalan ribuan kali per detik. Bagaimana cara paling optimal untuk memperbaiki masalah alokasi memori ini?",
+      "options": [
+        "Mengganti operator penambahan string biasa dengan menggunakan tipe data bytes.Buffer atau strings.Builder",
+        "Melakukan konversi eksplisit dari string ke slice byte pada setiap iterasi loop menggunakan cast bawaan",
+        "Menurunkan kapasitas GC target menggunakan fungsi debug.SetGCPercent agar pembersihan memori lebih sering",
+        "Memindahkan proses penggabungan string tersebut ke dalam goroutine terpisah agar berjalan secara asynchronous"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menangani operasi pembacaan data bersamaan (concurrent reads) pada sebuah map di Go tanpa memicu panic 'concurrent map write'. Pilihan manakah yang paling tepat dan efisien jika frekuensi pembacaan jauh lebih tinggi daripada penulisan?",
+      "options": [
+        "Selalu membungkus setiap akses map dengan sync.Mutex standar agar data tetap konsisten secara mutlak",
+        "Menggunakan tipe data khusus sync.Map yang telah dioptimalkan secara internal untuk pola akses tersebut",
+        "Membuat goroutine terpisah sebagai proxy tunggal yang melayani semua request map melalui channel",
+        "Mengubah struktur map menjadi slice multidimensi agar tidak membutuhkan mekanisme locking sama sekali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah microservice Go, Anda mendapati bahwa error handling sering kali mengabaikan root cause karena error dibungkus secara berlapis tanpa informasi stack trace yang jelas. Bagaimana cara idiomatik di Go 1.20+ untuk menambahkan konteks pada error?",
+      "options": [
+        "Menggunakan fungsi fmt.Errorf dengan format verb %w untuk membungkus error asli ke dalam error baru",
+        "Membuat tipe struct error custom yang mengimplementasikan method Error() string secara manual",
+        "Menggunakan fungsi panic() setiap kali terjadi kegagalan agar runtime mencetak stack trace lengkap",
+        "Memanfaatkan package errors eksternal pihak ketiga untuk menyisipkan log string pada setiap level"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memastikan bahwa fungsi inisialisasi koneksi cache di aplikasi Go Anda hanya dieksekusi tepat sekali meskipun dipanggil secara bersamaan oleh ratusan goroutine saat startup. Mekanisme apa yang harus digunakan?",
+      "options": [
+        "Membuat variabel boolean global yang dicek di dalam blok kondisi if dan dilindungi oleh sync.Mutex",
+        "Menggunakan struktur data sync.Once untuk menjalankan fungsi inisialisasi secara aman dan efisien",
+        "Memanfaatkan channel berukuran satu (buffered channel) sebagai semaphore pengunci inisialisasi",
+        "Menjalankan fungsi inisialisasi di dalam fungsi khusus init() yang disediakan secara native oleh Go"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fungsi pemrosesan data di Go menerima interface{} sebagai parameter dan Anda perlu memastikan tipe data aktual di dalamnya aman sebelum melakukan casting, guna menghindari panic 'interface conversion'. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Menggunakan type switch untuk mencocokkan berbagai kemungkinan tipe data secara aman dan terstruktur",
+        "Melakukan direct type assertion secara langsung tanpa pengecekan karena compiler Go sudah menjaminnya",
+        "Memanfaatkan fungsi reflect.TypeOf() untuk membandingkan nama string tipe data secara manual",
+        "Menggunakan recovery block di dalam defer untuk menangkap panic yang mungkin muncul saat casting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis kode Go yang perlu berinteraksi dengan pustaka C (CGO). Aturan manajemen memori apa yang krusial untuk diingat saat melewatkan pointer dari Go heap ke C?",
+      "options": [
+        "C dapat dengan bebas memodifikasi memori Go heap tanpa batasan selama pointer tersebut masih aktif",
+        "Memori yang dialokasikan oleh Go tidak boleh berisi pointer ke objek Go lain yang dapat dipindah GC",
+        "Garbage collector Go akan otomatis membersihkan memori yang dialokasikan oleh fungsi C jika tidak digunakan",
+        "Pointer C harus selalu dikonversi menjadi tipe data string standar Go sebelum dikembalikan ke fungsi pemanggil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan profiling menggunakan pprof pada aplikasi Go, Anda menemukan adanya indikasi goroutine leak. Apa pola umum penyebab utama terjadinya masalah tersebut pada kode Go?",
+      "options": [
+        "Goroutine melakukan alokasi memori heap yang terlalu besar sehingga gagal dibersihkan oleh garbage collector",
+        "Goroutine melakukan blocking pada pengiriman atau penerimaan channel tanpa ada partner yang merespons",
+        "Penggunaan loop tanpa henti yang menghabiskan siklus CPU tanpa memanggil fungsi time.Sleep sama sekali",
+        "Fungsi defer diletakkan di dalam perulangan loop sehingga menumpuk antrean eksekusi di memori stack"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengimplementasikan rate limiting sederhana untuk endpoint API publik di aplikasi Go guna mencegah serangan DDoS. Struktur bawaan apa di standard library Go yang paling cocok untuk membuat pembatas laju berbasis token bucket?",
+      "options": [
+        "Menggunakan package container/ring untuk menyimpan antrean timestamp request yang masuk secara circular",
+        "Memanfaatkan package golang.org/x/time/rate untuk mengontrol frekuensi akses secara presisi dan thread-safe",
+        "Membuat custom channel berukuran tetap yang berfungsi sebagai token pool penampung izin akses",
+        "Mengandalkan fungsi time.Ticker global yang mengatur ulang variabel counter setiap beberapa detik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Go Anda melakukan pemrosesan data batch yang intensif menggunakan goroutine. Anda ingin membatasi jumlah maksimum goroutine yang berjalan secara bersamaan agar tidak kehabisan sumber daya sistem. Pendekatan idiomatik apa yang sebaiknya Anda terapkan?",
+      "options": [
+        "Menggunakan buffered channel sebagai mekanisme semaphore untuk mengontrol akses",
+        "Membuat nested loop dengan perintah time.Sleep secara manual di setiap worker",
+        "Menonaktifkan pengelola scheduler Go menggunakan runtime.GOMAXPROCS(1)",
+        "Mengandalkan fitur bawaan sync.WaitGroup untuk membatasi kapasitas eksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa fungsi pembacaan data konfigurasi di aplikasi Go sering menjadi bottleneck karena diakses bersamaan oleh banyak goroutine, namun sangat jarang diubah. Mekanisme sinkronisasi mana yang memberikan performa baca optimal?",
+      "options": [
+        "Mengganti tipe data map standar dengan struktur sync.Map bawaan Go",
+        "Mengamankan seluruh blok akses memori menggunakan fungsi sync.Mutex standar",
+        "Menerapkan pola penguncian ganda menggunakan struktur data sync.Cond",
+        "Memanfaatkan sync.RWMutex agar goroutine pembaca bisa berjalan paralel"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah layanan backend Go menerima payload JSON yang sangat besar dari klien. Anda ingin menghindari overhead alokasi memori heap yang berlebihan saat melakukan decoding berulang kali pada endpoint tersebut. Objek apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat instance buffer baru menggunakan bytes.NewBuffer di tiap request",
+        "Menggunakan instance json.Decoder dengan memanfaatkan method token",
+        "Mendaur ulang objek decoder menggunakan sync.Pool untuk alokasi memori",
+        "Memanfaatkan fungsi json.Unmarshal dengan melewatkan parameter pointer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan pemanggilan HTTP client ke layanan pihak ketiga di Go, aplikasi Anda sering mengalami hanging ketika pihak ketiga lambat merespons. Cara paling tepat untuk mencegah hal ini adalah...",
+      "options": [
+        "Menggunakan fungsi context.WithTimeout untuk membatasi durasi permintaan",
+        "Menangkap panic runtime menggunakan blok kode defer dan recover bawaan",
+        "Menaikkan batas kapasitas maksimum koneksi pada objek http.Transport",
+        "Menjalankan proses pemanggilan HTTP di dalam goroutine terpisah secara aman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis pustaka Go yang harus mendistribusikan tugas ke beberapa worker melalui channel. Bagaimana cara memastikan bahwa goroutine worker berhenti secara bersih tanpa meninggalkan jejak goroutine leak saat aplikasi shutdown?",
+      "options": [
+        "Menutup channel data dari sisi pengirim dan membiarkan worker membaca sampai kosong",
+        "Mengirimkan sinyal penutup melalui channel khusus pembatalan atau context ke worker",
+        "Memanggil fungsi runtime.Goexit() secara paksa dari luar goroutine yang sedang aktif",
+        "Mengatur ukuran buffer channel worker menjadi tanpa batas agar tidak pernah blok"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah microservice Go, Anda perlu membaca struktur data bertingkat dari dokumen JSON fleksibel yang skemanya sering berubah. Pendekatan parsing mana yang paling aman menghindari error tipe data saat runtime?",
+      "options": [
+        "Melakukan casting tipe data secara langsung menggunakan operator interface assertion",
+        "Menggunakan pustaka pihak ketiga untuk mengubah JSON menjadi struct kaku",
+        "Menerapkan validasi manual menggunakan switch type pada setiap field bertingkat",
+        "Melakukan unmarshal data langsung ke dalam variabel bertipe peta map[string]any"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendesain sistem antrean pesan internal di Go menggunakan channel berukuran tetap. Ketika channel penuh, Anda ingin memastikan proses pengiriman data tidak memblokir goroutine utama, melainkan langsung mencatat log jika antrean penuh. Apa yang harus dilakukan?",
+      "options": [
+        "Menggunakan struktur kendali select dengan klausa default pada operasi kirim",
+        "Memperbesar ukuran kapasitas buffer channel secara dinamis saat runtime berjalan",
+        "Menjalankan operasi pengiriman channel tersebut di dalam background goroutine",
+        "Mengganti penggunaan channel dengan struktur data sinkronisasi sync.Mutex"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Go Anda membaca file CSV berukuran besar baris per baris. Untuk menjaga penggunaan memori tetap rendah dan stabil, komponen pustaka standar apa yang harus digunakan untuk iterasi baris?",
+      "options": [
+        "Menggunakan fungsi os.ReadFile untuk memuat seluruh isi file sekaligus",
+        "Memanfaatkan objek bufio.Scanner untuk membaca data secarastreaming per baris",
+        "Menggunakan fungsi io.ReadAll dengan batasan ukuran buffer tertentu",
+        "Menerapkan fungsi strings.Split pada string hasil pembacaan seluruh file"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menjalankan unit test pada fungsi yang mengakses database eksternal di Go, Anda ingin mengganti koneksi database nyata dengan mock tanpa mengubah implementasi kode bisnis utama. Fitur bahasa apa yang paling mendukung kebutuhan ini?",
+      "options": [
+        "Menerapkan pewarisan struct berbasis mekanisme object-oriented programming",
+        "Mendefinisikan kontrak perilaku melalui interface dan menyuntikannya ke fungsi",
+        "Mengubah variabel global koneksi database secara langsung di dalam fungsi test",
+        "Memanfaatkan fitur monkey patching untuk mengganti fungsi database saat runtime"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mencatat log terstruktur (structured logging) di aplikasi Go modern menggunakan pustaka standar `log/slog`. Bagaimana cara menyertakan informasi konteks tambahan seperti request ID ke dalam setiap baris log secara konsisten?",
+      "options": [
+        "Menambahkan parameter request ID secara manual ke setiap pemanggilan fungsi log",
+        "Membuat instance logger baru di setiap fungsi handler HTTP yang dipanggil",
+        "Menyimpan logger yang sudah diabstraksi dengan atribut atribut khusus di context",
+        "Menggunakan variabel global untuk menampung nilai request ID yang sedang aktif"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "AutoCAD",
+  "skill_key": "autocad",
+  "questions": [
+    {
+      "question": "Anda ingin membuat garis as bangunan yang memanjang secara presisi berjarak 3000 mm dari garis dinding luar yang sudah ada. Perintah modifikasi apa yang paling cepat dan aman digunakan?",
+      "options": [
+        "Menggunakan perintah COPY lalu ketik jarak 3000 pada command line",
+        "Menggunakan perintah OFFSET, masukkan jarak 3000, lalu pilih garis acuan",
+        "Menggunakan perintah MOVE dengan bantuan tracking titik kursor sementara",
+        "Menggunakan perintah EXTEND lalu atur panjang tambahan sejauh 3000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat membuka file gambar kerja lama, semua teks berbahasa Indonesia dengan font berkarakter khusus mendadak berubah menjadi simbol tanya '???' atau kotak kosong. Langkah penanganan apa yang harus dilakukan?",
+      "options": [
+        "Mengganti jenis font utama di tab Text Style dengan font standar seperti Arial",
+        "Menginstall dan melengkapi file shape (.shx) atau font TrueType yang hilang ke folder fonts",
+        "Menjalankan perintah REGENALL untuk menyegarkan kembali cache memori teks",
+        "Menggunakan perintah OVERKILL untuk membersihkan teks yang korup"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengerjakan Denah Arsitektur sebuah ruko 3 lantai di AutoCAD. Saat mencetak (Plot) ke format PDF dengan skala 1:100, hasil cetak di kertas A3 ternyata terlalu besar dan terpotong di bagian tepi. Langkah apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah ukuran kertas pada pengaturan Plotter menjadi A4 agar gambar muat",
+        "Mengatur Plot Area ke 'Extents' dan mencentang opsi 'Center the plot'",
+        "Mengatur skala kustom di menu Plot menjadi 1:200 agar gambar mengecil",
+        "Membuat ulang seluruh garis gambar denah menggunakan skala 1:200 sejak awal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang drafter senior mengirimkan file kerja berukuran sangat besar (lebih dari 80 MB) padahal isinya hanya gambar denah sederhana. Saat Anda mencoba melakukan perintah PURGE, file tidak banyak berkurang. Fitur apa yang paling efektif untuk membersihkan file korup dan objek tersembunyi tersebut?",
+      "options": [
+        "Menjalankan perintah AUDIT lalu pilih 'Y' untuk memperbaiki error",
+        "Menggunakan perintah OVERKILL untuk menghapus garis yang saling tumpang tindih",
+        "Memblok seluruh gambar lalu menyimpannya sebagai file template baru (.dwt)",
+        "Menyimpan ulang file ke versi AutoCAD yang lebih lama via Save As"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Detail Engineering Design (DED) struktur beton, Anda ingin mengubah diameter seluruh simbol tulangan lingkaran secara serentak tanpa harus mengeditnya satu per satu. Objek tersebut adalah komponen Block yang tidak memiliki atribut. Fitur apa yang harus digunakan?",
+      "options": [
+        "Menggunakan perintah QSELECT lalu mengubah radius pada properties palette",
+        "Masuk ke Block Editor (BEDIT), ubah ukurannya, lalu simpan perubahan block",
+        "Melakukan explode pada semua block lalu menggunakan perintah scale massal",
+        "Membuat block baru dengan ukuran berbeda lalu menimpanya via DesignCenter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima file kerja dari konsultan struktur eksternal sebagai referensi denah lantai. Setiap kali Anda mencoba memindahkan garis dinding pada file Anda sendiri, kursor terasa menempel secara kaku pada titik-titik tertentu dari gambar referensi tersebut. Pengaturan apa yang perlu dimatikan?",
+      "options": [
+        "Menonaktifkan tombol status bar Dynamic Input (F12) pada pojok kanan bawah",
+        "Mematikan fungsi Object Snap (OSNAP) dengan menekan tombol F3",
+        "Mematikan fungsi Grid Display dengan menekan tombol F7 pada keyboard",
+        "Menonaktifkan fungsi Ortho Mode dengan menekan tombol F8 di keyboard"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun gambar kerja MEP (Mechanical, Electrical, Plumbing) di Layout (Paper Space). Ketika Anda membuat viewport baru, garis putus-putus pada pipa air kotor terlihat sangat rapat seperti garis lurus kontinu. Bagaimana cara menyamakan tampilan skala garis di layout tersebut?",
+      "options": [
+        "Mengubah variabel sistem MSLTSCALE bernilai 1 lalu ketik REGEN",
+        "Mengganti jenis linetype pipa dengan skala yang jauh lebih besar di Layer Properties",
+        "Menggunakan perintah LTSCALE global dan memperbesar angkanya secara drastis",
+        "Mengubah nilai DIMSCALE pada properties palette dari viewport yang aktif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat bekerja dengan file gambar site plan kawasan perumahan yang kompleks, proses navigasi seperti Zoom dan Pan menjadi sangat patah-patah (lagging) dan lambat. Langkah diagnostik awal apa yang paling tepat untuk memperbaiki performa grafis ini di AutoCAD?",
+      "options": [
+        "Menonaktifkan fitur hardware acceleration dengan mengetik GRAPHICSCONFIG",
+        "Menghapus seluruh hatch arsiran vegetasi dan menggantinya dengan teks keterangan",
+        "Memecah (Explode) semua external reference agar tidak membebani memori",
+        "Memindahkan seluruh layer gambar ke titik koordinat 0,0,0 secara presisi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat tabel Rekapitulasi Volume Pekerjaan langsung di dalam AutoCAD berdasarkan data panjang garis poliline denah pondasi. Fitur native apa yang paling efisien untuk otomatisasi tugas ini tanpa software pihak ketiga?",
+      "options": [
+        "Membuat tabel manual lalu memasukkan rumus matematika dasar Excel",
+        "Menggunakan fitur Data Extraction untuk mengekstrak panjang objek ke tabel AutoCAD",
+        "Menggunakan perintah FIND and REPLACE untuk membaca panjang objek garis",
+        "Mengekspor gambar ke format DXF lalu mengolahnya menggunakan Notepad"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada lembar kerja denah lantai dua, Anda melihat sebuah teks keterangan ruangan terkunci dan tidak bisa diedit isinya, meskipun layer teks tersebut tidak dalam kondisi terkunci (lock). Apa penyebab utama masalah ini?",
+      "options": [
+        "Teks tersebut berada di dalam sebuah objek Group yang aktif fiturnya",
+        "Teks tersebut merupakan bagian dari objek Block atau External Reference",
+        "Variabel sistem PICKFIRST pada AutoCAD Anda tidak sengaja bernilai 0",
+        "Format font teks tersebut menggunakan huruf TrueType yang tidak kompatibel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam gambar detail penulangan balok beton, Anda perlu memperpanjang garis as bentang balok sejauh tepat 1500 mm dari ujung garis yang sudah ada tanpa harus menghitung posisi koordinat akhir. Perintah apa yang paling cepat dan akurat?",
+      "options": [
+        "Menggunakan perintah STRETCH dengan jendela seleksi di ujung garis",
+        "Menggunakan perintah EXTEND dengan memilih batas garis bantu luar",
+        "Menggunakan perintah LENGTHEN dengan opsi delta penambahan panjang",
+        "Menggunakan perintah SCALE dengan acuan faktor perbesaran tertentu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Anda membuka lembar kerja gambar kerja tata letak lanskap, semua objek kurva garis batas taman (spline) mendadak berubah menjadi bentuk garis patah-patah lurus kaku yang sulit dibaca. Variabel sistem apa yang perlu diubah untuk mengembalikan kehalusan tampilan kurva tersebut?",
+      "options": [
+        "Mengubah nilai variabel sistem VIEWRES menjadi angka yang lebih tinggi",
+        "Mengubah nilai variabel sistem REGENMODE menjadi status aktif penuh",
+        "Mengubah nilai variabel sistem LTSCALE untuk menyesuaikan skala garis",
+        "Mengubah nilai variabel sistem FILLMODE menjadi posisi menyala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merevisi denah arsitektur apartemen dan perlu menghapus garis-garis arsiran dinding yang tidak sengaja menumpuk dan saling berpotongan di area koridor. Perintah apa yang paling efisien digunakan untuk merapikan tumpukan garis tersebut dalam satu langkah tanpa memilih satu persatu?",
+      "options": [
+        "Menjalankan perintah OVERKILL untuk mendeteksi dan menghapus duplikat",
+        "Memblok seluruh area koridor lalu menekan tombol hapus pada keyboard",
+        "Menggunakan perintah PURGE untuk membersihkan elemen sisa gambar",
+        "Membuat layer baru khusus koridor lalu memindahkan arsiran ke sana"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek desain interior kantor, Anda ingin membuat pola lantai keramik berbentuk bujur sangkar 60x60 cm di dalam area lobby yang memiliki bentuk denah melengkung tidak beraturan. Fitur apa yang paling tepat digunakan untuk mengisi area tersebut secara cepat?",
+      "options": [
+        "Membuat blok dinamis berukuran standar lalu menyusunnya secara manual",
+        "Menggunakan perintah HATCH dengan pola pengguna dan skala tertentu",
+        "Memakai perintah DIVIDE pada setiap sisi lengkung batas area lobby",
+        "Menggambar kotak satu persatu mengikuti batas lengkung menggunakan OSNAP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima file kerja gambar denah dari rekan satu tim, namun ketika Anda ingin mengubah posisi pintu, ternyata objek pintu dan kusennya tergabung menjadi satu kesatuan yang tidak bisa dipilih per bagian garis. Apa tindakan yang harus Anda lakukan?",
+      "options": [
+        "Menggunakan perintah GROUP untuk menyatukan kembali elemen pintu",
+        "Memilih objek tersebut lalu menekan tombol Ctrl+X diikuti Ctrl+V",
+        "Melakukan perintah EXPLODE pada objek gabungan tersebut",
+        "Mengubah status layer pintu dari terkunci menjadi terbuka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Anda sedang membuat gambar kerja instalasi pipa plumbing, Anda perlu menarik garis pipa baru yang harus tepat berhenti bersilangan tegak lurus tepat di tengah garis pipa eksisting yang sudah ada. Fitur OSNAP apa yang harus diaktifkan?",
+      "options": [
+        "Menyalakan mode OSNAP jenis Midpoint pada garis pipa eksisting",
+        "Menyalakan mode OSNAP jenis Nearest untuk menempel di sembarang titik",
+        "Menyalakan mode OSNAP jenis Intersection untuk titik persilangan",
+        "Menyalakan mode OSNAP jenis Perpendicular untuk sudut siku"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyiapkan dokumen tender proyek gedung perkantoran. Seluruh gambar detail harus menggunakan standar ketebalan garis (lineweight) yang berbeda pada setiap warna layer saat dicetak. Di mana pengaturan utama pemetaan warna ke ketebalan garis ini harus disimpan?",
+      "options": [
+        "Di dalam file pengaturan lembar kerja Plotter Configuration File",
+        "Di dalam berkas tabel gaya cetak berformat CTB atau STB",
+        "Di dalam menu pengaturan sistem Properties umum aplikasi AutoCAD",
+        "Di dalam lembar pengaturan Layout Paper Space pada tab halaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika Anda mencoba menggeser sebuah denah struktur kolom menggunakan perintah MOVE, seluruh gambar tiba-tiba ikut terpantul atau bergeser ke arah sumbu koordinat tertentu secara tidak terkendali karena terikat oleh suatu titik acuan lama. Fitur apa yang sedang aktif dan perlu dimatikan?",
+      "options": [
+        "Mematikan fungsi tombol pintas ORTHO pada bilah status bawah",
+        "Menonaktifkan fitur tangkapan titik bantu objek bawaan Dynamic UCS",
+        "Mematikan fungsi pelacakan sudut otomatis Polar Tracking",
+        "Menonaktifkan fitur Object Snap Tracking yang mengunci referensi titik"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda membuat sebuah simbol tanda panah petunjuk arah evakuasi yang sering digunakan berulang kali pada lembar kerja jalur darurat. Agar file gambar tidak menjadi berat dan Anda dapat mengubah bentuk seluruh tanda panah tersebut sekaligus di masa depan jika ada revisi standar, format apa yang sebaiknya Anda buat?",
+      "options": [
+        "Menyimpan objek tersebut ke dalam bentuk definisi blok mandiri",
+        "Mengelompokkan seluruh garis panah menggunakan perintah GROUP",
+        "Menjadikan objek tanda panah tersebut sebagai gambar eksternal terpisah",
+        "Menyimpan objek panah ke dalam layer khusus bertipe garis putus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun gambar kerja facade bangunan bertingkat tinggi yang memiliki banyak elemen jendela vertikal berulang dengan jarak interval yang sama persis. Perintah apa yang paling efektif untuk menduplikasi jendela tersebut dalam satu baris perintah?",
+      "options": [
+        "Menjalankan perintah ARRAY dengan memasukkan parameter kolom dan jarak",
+        "Menjalankan perintah COPY berulang kali dari satu titik ke titik lain",
+        "Menjalankan perintah MIRROR dengan menarik garis sumbu pencerminan",
+        "Menjalankan perintah OFFSET untuk menggandakan garis tepi secara paralel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada lembar kerja denah tata letak furnitur kantor, Anda ingin menyalin posisi kursi rapat secara melingkar mengelilingi sebuah meja bundar. Fitur modifikasi apa yang paling cepat untuk menyelesaikan tugas ini?",
+      "options": [
+        "Menggunakan perintah Polar Array dengan menentukan titik pusat meja",
+        "Menggunakan perintah Path Array mengikuti garis tepi meja bundar",
+        "Menggunakan perintah Rectangular Array dengan arah sumbu polar",
+        "Menggunakan perintah Rotate berulang kali dengan sudut tertentu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda telah menyelesaikan gambar detail profil kusen aluminium dan ingin menyimpannya sebagai file master terpisah agar bisa disisipkan ke berbagai proyek lain di masa depan. Perintah apa yang harus Anda jalankan?",
+      "options": [
+        "Mengekspor objek terpilih menjadi file baru dengan perintah WBLOCK",
+        "Menyimpan seluruh lembar kerja aktif menggunakan perintah SAVE",
+        "Membuat grup objek kusen menggunakan perintah GROUP manager",
+        "Menjadikan objek kusen sebagai blok internal dengan perintah BLOCK"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merevisi denah arsitektur ruko di AutoCAD dan perlu memotong garis-garis dinding yang saling berpotongan agar membentuk bukaan pintu yang bersih. Perintah apa yang paling efisien untuk digunakan secara bersamaan dengan menekan tombol Shift?",
+      "options": [
+        "Menggunakan perintah TRIM untuk memotong garis berlebih",
+        "Menggunakan perintah EXTEND untuk memperpanjang garis",
+        "Menggunakan perintah BREAK untuk memutus garis dinding",
+        "Menggunakan perintah FILLET untuk menyambung sudut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan gambar kerja struktur jembatan, Anda diminta membuat garis bantu sejajar dengan jarak persis 2500 mm dari kurva tepi aspal yang ada. Fitur apa yang paling tepat untuk membuat garis tersebut?",
+      "options": [
+        "Menggunakan perintah OFFSET dengan memasukkan nilai jarak",
+        "Menggunakan perintah COPY lalu menggesernya secara manual",
+        "Menggunakan perintah ARRAY untuk menduplikasi objek kurva",
+        "Menggunakan perintah SCALE dengan acuan referensi panjang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima file denah lantai dari arsitek lain dan ingin memastikan seluruh dimensi ruang yang digambar menggunakan satuan milimeter sesuai standar kantor. Di menu manakah Anda harus mengatur unit gambar tersebut?",
+      "options": [
+        "Mengakses jendela Drawing Units melalui perintah UNITS",
+        "Mengubah pengaturan global system variable pada menu OPTIONS",
+        "Menyesuaikan skala pada tab Page Setup Manager saat plot",
+        "Mengubah pengaturan dimensi style melalui perintah DIMSTYLE"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat bekerja pada gambar site plan kawasan industri yang sangat luas, Anda kesulitan menyeleksi objek karena garis-garis arsiran kawasan hijau selalu ikut terklik saat Anda ingin memilih garis jalan. Cara cepat apa yang bisa dipakai?",
+      "options": [
+        "Mematikan sementara layer arsiran hijau melalui panel Layer",
+        "Mengunci seluruh objek gambar menggunakan perintah LOCKALL",
+        "Mengubah warna latar belakang layar kerja AutoCAD menjadi hitam",
+        "Menggunakan fitur Quick Select berdasarkan jenis objek garis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa ketika membuat garis baru di atas denah eksisting, garis tersebut tidak mau menempel secara akurat di ujung sudut kolom bangunan. Pengaturan apa yang perlu diaktifkan pada status bar bawah?",
+      "options": [
+        "Menyalakan fitur Object Snap dengan opsi Endpoint aktif",
+        "Mengaktifkan fitur Ortho Mode agar kursor bergerak lurus",
+        "Menyalakan fitur Grid Display untuk memandu letak kursor",
+        "Mengaktifkan fitur Dynamic Input pada area kursor mouse"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek renovasi interior hotel, Anda ingin merapikan puluhan teks nomor kamar yang posisi ketinggiannya tidak rata satu sama lain agar sejajar secara horizontal. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan perintah Express Tools Text Align untuk meratakan teks",
+        "Mengubah nilai coordinate Y pada properti setiap teks satu persatu",
+        "Membuat tabel baru lalu menyalin teks nomor kamar ke dalam sel",
+        "Menggunakan perintah Justify Text untuk memindahkan titik acuan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat Anda melakukan perbesaran (Zoom In) terlalu dekat pada gambar kerja utilitas gedung, tampilan lingkaran pipa mendapatinya terlihat seperti segi delapan yang patah-patah. Variabel sistem apa yang harus ditingkatkan nilainya untuk memperbaiki tampilan tersebut?",
+      "options": [
+        "Menaikkan nilai system variable VIEWRES untuk memperhalus kurva",
+        "Mengubah nilai LTSCALE agar garis putus-putus terlihat normal",
+        "Menyesuaikan nilai FILLMODE untuk menampilkan isi arsiran padat",
+        "Meningkatkan nilai PICKFIRST agar seleksi objek menjadi lebih akurat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menghapus semua file sampah, objek geometri kosong, serta definisi layer yang tidak terpakai dari file gambar kerja sebelum diserahkan ke pemberi tugas. Perintah apa yang harus dijalankan?",
+      "options": [
+        "Menjalankan perintah PURGE untuk membersihkan data yang tidak terpakai",
+        "Menjalankan perintah AUDIT untuk memeriksa kerusakan struktur file",
+        "Menjalankan perintah OVERKILL untuk menghapus garis yang saling tumpang",
+        "Menjalankan perintah REGEN untuk memperbarui tampilan memori grafis"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

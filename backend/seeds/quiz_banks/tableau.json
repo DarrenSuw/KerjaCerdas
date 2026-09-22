@@ -1,0 +1,306 @@
+{
+  "skill": "Tableau",
+  "skill_key": "tableau",
+  "questions": [
+    {
+      "question": "Anda membuat dashboard penjualan bulanan untuk manajemen di Jakarta. Manajemen ingin melihat tren penjualan, namun data tanggal memiliki format string 'YYYYMMDD' yang tidak terbaca otomatis oleh Tableau sebagai tanggal. Langkah praktis apa yang harus Anda ambil?",
+      "options": [
+        "Mengubah tipe data kolom tersebut di Data Source tab menjadi Date",
+        "Membuat calculated field dengan fungsi DATEPARSE untuk memetakan string",
+        "Membuat filter manual berdasarkan string menggunakan fungsi LEFT dan MID",
+        "Melakukan ekstrak ulang data agar sistem mendeteksi format secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan ritel memiliki data transaksi jutaan baris. Saat Anda memasukkan dimensi 'Kategori Produk' dan ukuran 'Total Penjualan' ke view, kinerja render dashboard terasa sangat lambat di Tableau Desktop. Tindakan optimasi apa yang paling tepat?",
+      "options": [
+        "Mengubah seluruh data live connection menjadi bentuk file CSV lokal",
+        "Membuat ekstrak data (.hyper) dan memanfaatkan filter ekstrak yang relevan",
+        "Menghapus semua tooltip dan menggantinya dengan label teks statis",
+        "Memindahkan perhitungan ukuran dari Tableau ke dalam kustom SQL database"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat laporan performa sales regional. Direktur Penjualan ingin agar ketika mengklik nama 'Pulau Jawa' pada peta, grafik batang di sebelah kanannya otomatis memfilter data khusus untuk wilayah Jawa saja. Fitur apa yang harus Anda konfigurasi di Tableau?",
+      "options": [
+        "Action filter berbasis klik antar worksheet di dalam dashboard",
+        "Highlight action untuk menandai data provinsi tanpa memfilter baris",
+        "Parameter action untuk mengubah nilai ukuran total penjualan wilayah",
+        "Set action dinamis untuk mengganti dimensi wilayah secara langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis profitabilitas cabang toko di Surabaya, Anda perlu membandingkan laba tiap cabang terhadap rata-rata laba keseluruhan kota. Fitur cepat apa di Tableau yang dapat menampilkan garis referensi rata-rata tersebut tanpa rumus rumit?",
+      "options": [
+        "Membuat kustom calculated field menggunakan fungsi window_avg",
+        "Menyeret objek Reference Line dari panel Analytics ke dalam area sumbu",
+        "Menggunakan quick table calculation berupa moving average pada bar",
+        "Menambahkan trend line linear untuk mendeteksi anomali profit cabang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim HRD meminta dashboard karyawan di mana pengguna dapat memilih untuk melihat metrik 'Gaji' atau 'Jumlah Kinerja' pada grafik yang sama melalui sebuah tombol pilihan di layar. Fitur Tableau apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat data blend antara tabel gaji dan tabel kinerja karyawan",
+        "Membuat sebuah parameter pilihan metrik dan menghubungkannya ke calculated field",
+        "Membuat dua worksheet terpisah dan menyusunnya dalam satu wadah vertikal",
+        "Menggunakan action filter silang untuk mengganti tipe grafik secara dinamis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain dashboard eksekutif untuk direksi perusahaan logistik. Direksi sering membuka laporan melalui ponsel pintar saat perjalanan dinas. Praktik terbaik apa yang harus diterapkan pada tata letak dashboard?",
+      "options": [
+        "Membuat rentang ukuran kanvas tetap sebesar 1920x1080 piksel",
+        "Menambahkan layout khusus perangkat seluler (Device Layout) di tab dashboard",
+        "Menggunakan format file PDF agar mudah diunduh melalui aplikasi mobile",
+        "Menyembunyikan semua filter global agar tampilan layar tidak penuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional ingin melihat proporsi kontribusi masing-masing kategori produk terhadap total pendapatan perusahaan dalam bentuk diagram lingkaran (pie chart). Namun, terdapat 12 kategori berbeda yang membuat chart sulit dibaca. Langkah mitigasi apa yang disarankan?",
+      "options": [
+        "Mengubah diagram lingkaran menjadi stacked bar chart yang diurutkan",
+        "Mengelompokkan 8 kategori kecil menjadi satu kategori 'Lainnya' via kelompok data",
+        "Memecah diagram tersebut menjadi 12 diagram lingkaran terpisah secara kecil",
+        "Menggunakan bentuk packed bubbles untuk menampilkan seluruh kategori produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menghubungkan Tableau ke database PostgreSQL perusahaan. Setiap kali data diperbarui oleh tim operasional, laporan harus mencerminkan data detik itu juga tanpa perlu melakukan penyegaran manual atau penjadwalan ulang ekstrak. Koneksi data apa yang harus Anda pilih?",
+      "options": [
+        "Live connection langsung ke server database PostgreSQL operasional",
+        "Scheduled extract refresh setiap 15 menit melalui Tableau Server",
+        "Data blending otomatis menggunakan file CSV cadangan di local drive",
+        "Incremental extract yang berjalan otomatis setiap ada penambahan baris"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah laporan keuangan menunjukkan angka total penjualan seluruh cabang. Anda ingin memastikan bahwa hanya pengguna dengan peran 'Finance Manager' yang dapat melihat data gaji karyawan di dalam tooltip visualisasi tersebut. Fitur keamanan apa yang harus diterapkan?",
+      "options": [
+        "Menerbitkan dua workbook terpisah dengan nama file yang berbeda",
+        "Menggunakan fungsi USERNAME() atau ISMEMBEROF() dalam calculated field keamanan",
+        "Menonaktifkan fitur ekspor data mentah pada pengaturan server Tableau",
+        "Memberikan sandi enkripsi khusus pada file workbook berformat .twbx"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menganalisis data penjualan produk, Anda mendapati bahwa perhitungan persentase pertumbuhan bulan ke bulan (Month-over-Month) bernilai kosong pada baris bulan pertama karena tidak ada data pembanding di bulan sebelumnya. Bagaimana cara membersihkan tampilan agar tidak membingungkan pengguna?",
+      "options": [
+        "Menghapus baris data bulan pertama langsung dari sumber database utama",
+        "Membuat filter menggunakan fungsi ISNULL untuk menyembunyikan baris pertama",
+        "Menggunakan fungsi ZN() pada kalkulasi untuk mengubah nilai kosong menjadi nol",
+        "Mengganti tipe perhitungan tabel dari percentage menjadi difference absolut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat dashboard penjualan untuk manajer area yang sering bepergian dan mengakses Tableau menggunakan tablet. Manajer mengeluhkan tata letak elemen visual yang berantakan dan terpotong di layar perangkat bergerak mereka. Langkah apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah ukuran kanvas dashboard menjadi fixed size yang lebih kecil agar pas di semua layar",
+        "Membuat layout khusus perangkat seluler menggunakan fitur Device Designer di dalam Tableau",
+        "Menghapus beberapa filter dan chart agar tampilan di tablet menjadi lebih lapang dan sederhana",
+        "Meminta manajer untuk mengubah orientasi layar tablet mereka dari potret menjadi lanskap saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah laporan komisi penjualan, Anda ingin memberikan warna hijau untuk agen dengan performa di atas rata-rata tim dan merah untuk di bawah rata-rata. Namun, rata-rata tersebut harus berubah dinamis saat pengguna memfilter wilayah tertentu. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat calculated field menggunakan fungsi agregasi LOD (Level of Detail) EXCLUDE",
+        "Menggunakan color palette default Tableau yang memiliki gradasi warna merah dan hijau",
+        "Memanfaatkan calculated field berbasis fungsi IF dengan ukuran yang diagregasi secara dinamis",
+        "Menggunakan fitur Quick Table Calculation untuk mengubah warna berdasarkan persentase"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menganalisis data log akses pengguna situs e-commerce perusahaan. Data tersebut memiliki timestamp yang sangat presisi hingga milidetik. Manajemen hanya ingin melihat pola kunjungan berdasarkan jam dalam sehari tanpa mempedulikan tanggalnya. Bagaimana Anda mengekstrak informasi jam dari field timestamp tersebut?",
+      "options": [
+        "Mengubah tipe data field timestamp menjadi string lalu memotong karakternya menggunakan fungsi MID",
+        "Membuat calculated field baru dengan fungsi DATEPART untuk mengambil komponen jam dari tanggal",
+        "Menggunakan fitur Custom Split pada kolom timestamp untuk memisahkan bagian waktu dan tanggal",
+        "Melakukan drag field timestamp ke shelf dan mengubah format tampilannya menjadi waktu lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah dashboard logistik menampilkan peta sebaran pengiriman barang di seluruh Indonesia. Ketika titik gudang diklik, manajer ingin memunculkan detail informasi berupa tabel dan grafik kecil yang mengambang di atas peta tepat di dekat kursor. Fitur interaktif apa yang paling tepat diterapkan?",
+      "options": [
+        "Menggunakan fitur Highlight Action untuk menyorot data gudang yang relevan di peta",
+        "Memanfaatkan fitur Tooltip Viz in Tooltip untuk menyematkan lembar kerja lain di dalam tooltip",
+        "Membuat URL Action yang akan membuka halaman web detail gudang saat titik diklik",
+        "Menambahkan Filter Action yang akan mengirimkan filter ke dashboard halaman terpisah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan dashboard untuk presentasi direksi esok pagi. Ketika Anda melakukan refresh data sumber, proses render visualisasi menjadi sangat lambat karena ukuran data yang besar dan kompleksitas rumus kalkulasi. Tindakan optimasi apa yang paling efektif dilakukan segera?",
+      "options": [
+        "Mengganti format penyimpanan data sumber dari file CSV menjadi koneksi langsung ke Excel",
+        "Mengubah semua calculated field yang ada di dashboard menjadi bentuk parameter statis",
+        "Membuat ekstrak data (Hyper extract) dan menerapkan indeks serta agregasi yang diperlukan",
+        "Menghapus semua tooltip dan label angka yang ada di setiap grafik pada dashboard utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim pemasaran ingin melihat perbandingan efektivitas kampanye iklan digital berdasarkan kategori produk. Mereka ingin grafik batang disusun otomatis dari nilai tertinggi ke terendah, tetapi pengurutan ini harus tetap berfungsi dengan baik meskipun filter kategori produk diubah. Bagaimana cara mengatur pengurutan tersebut?",
+      "options": [
+        "Menggunakan tombol sort manual pada sumbu grafik di lembar kerja utama Tableau",
+        "Melakukan klik kanan pada dimensi kategori di data pane dan mengatur default sort",
+        "Mengatur opsi sort pada field ukuran di sumbu menggunakan metode field dan agregasi",
+        "Membuat parameter khusus urutan peringkat untuk dipilih secara manual oleh pengguna"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam laporan analisis keranjang belanja (market basket analysis), Anda perlu menggabungkan tabel transaksi penjualan dengan tabel itu sendiri (self-join) untuk melihat produk apa saja yang sering dibeli bersamaan dalam satu nomor transaksi yang sama. Di mana Anda mengatur jenis relasi join tersebut?",
+      "options": [
+        "Di dalam tab Data Source pada lembar kerja Tableau sebelum masuk ke sheet analisis",
+        "Melalui pembuatan calculated field baru menggunakan fungsi ekspresi logika IF bersarang",
+        "Menggunakan fitur Blending Data dengan menghubungkan dua sumber data yang identik",
+        "Melalui menu Analisis lanjutan dengan mengaktifkan opsi Clustering pada dimensi produk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain dashboard keuangan yang berisi informasi sensitif gaji karyawan. Anda ingin memastikan bahwa ketika manajer cabang Bandung membuka dashboard, mereka hanya melihat data karyawan cabang Bandung saja, sementara manajer pusat melihat semuanya. Fitur keamanan apa yang harus dikonfigurasi?",
+      "options": [
+        "Menerapkan fitur Row-Level Security (RLS) menggunakan fungsi USERNAME() atau USERDOMAIN()",
+        "Membuat parameter sandi akses yang harus dimasukkan pengguna sebelum melihat lembar kerja",
+        "Menggunakan fitur Data Blending untuk memisahkan database gaji berdasarkan wilayah",
+        "Membatasi hak akses folder proyek di Tableau Server hanya untuk grup pengguna tertentu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional meminta Anda menambahkan garis referensi (reference line) pada grafik tren bulanan untuk menunjukkan pencapaian target penjualan perusahaan sebesar 500 juta rupiah. Garis ini harus melintang secara horizontal di sepanjang sumbu waktu. Bagaimana cara menambahkannya dengan cepat?",
+      "options": [
+        "Membuat calculated field baru yang berisi angka konstan 500 juta lalu memasukkannya ke marks card",
+        "Menarik elemen Reference Line dari pane Analytics dan menjatuhkannya ke area grafik pada sumbu target",
+        "Menggunakan fitur Annotate untuk menuliskan angka target di area kosong dalam lembar kerja grafik",
+        "Mengubah tipe grafik menjadi kombinasi antara garis tren dan diagram batang untuk nilai target"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat visualisasi matriks korelasi untuk melihat hubungan antara diskon produk dan volume penjualan. Anda memiliki dimensi kategori dan beberapa ukuran numerik. Langkah awal apa yang paling tepat dilakukan di Tableau untuk menyusun matriks tersebut?",
+      "options": [
+        "Meletakkan dimensi kategori pada baris dan kolom lalu menggunakan ukuran di color marks",
+        "Menyeret ukuran diskon ke kolom dan ukuran volume penjualan ke baris, lalu nonaktifkan aggregate measures",
+        "Membuat parameter ganda untuk memilih ukuran sumbu X dan Y secara bergantian",
+        "Menggunakan fitur Trend Line otomatis yang disediakan pada panel Analytics Tableau"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat dashboard penjualan nasional. Saat pengguna memilih filter 'Wilayah Timur', grafik tren sering menunjukkan jeda waktu yang lama karena perhitungan kalkulasi yang kompleks. Fitur Tableau apa yang paling tepat digunakan untuk mempercepat waktu muat kueri tersebut?",
+      "options": [
+        "Membuat kalkulasi tersembunyi di dalam level of detail",
+        "Memanfaatkan ekstrak data dan membuat indeks pada kolom",
+        "Mengubah semua dimensi teks menjadi tipe data numerik",
+        "Menghapus seluruh hierarki tanggal dari panel data sumber"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer keuangan meminta Anda menampilkan 5 produk teratas dan 5 produk terbawah berdasarkan margin keuntungan dalam satu tampilan grafik batang tunggal yang dinamis. Pendekatan Tableau apa yang harus Anda terapkan?",
+      "options": [
+        "Membuat dua set terpisah lalu menggabungkannya via dashboard",
+        "Memakai filter manual dengan mencentang produk satu per satu",
+        "Menggunakan kombinasi calculated field rank dan parameter",
+        "Memanfaatkan fungsi group otomatis pada dimensi produk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam dashboard logistik, Anda memiliki dua sumber data terpisah: data pengiriman dari Excel dan data target armada dari Google Sheets. Keduanya memiliki kolom kode cabang tetapi format penamaannya berbeda huruf besar-kecil. Langkah persiapan apa yang harus dilakukan di Tableau?",
+      "options": [
+        "Menggunakan relasi multi-tabel dengan fungsi kustom lower",
+        "Menghapus salah satu sumber data agar tidak terjadi konflik",
+        "Melakukan blending data tanpa membuat kolom penghubung",
+        "Mengubah tipe data semua ukuran menjadi string secara paksa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun dashboard inventaris gudang. Pengguna ingin melihat status stok (Aman, Menipis, Habis) ditandai dengan ikon bentuk yang berbeda pada tabel matriks. Fitur kartu tanda apa yang harus Anda modifikasi?",
+      "options": [
+        "Menyeret field kategori status ke kartu ukuran grafik",
+        "Mengubah jenis tanda visual pada kartu tanda ke bentuk",
+        "Menambahkan field status ke dalam kartu tooltip detail",
+        "Membuat perhitungan warna kustom menggunakan rumus if"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Direktur pemasaran ingin melihat kontribusi kumulatif dari berbagai saluran iklan terhadap total leads masuk. Grafik garis kumulatif naik tidak beraturan. Fitur tabel apa yang paling cepat mengubah angka absolut menjadi persentase total berjalan?",
+      "options": [
+        "Menggunakan opsi edit filter untuk membalikkan urutan data",
+        "Menambahkan perhitungan cepat table calculation running total",
+        "Membuat formula manual menggunakan fungsi total and sum",
+        "Mengubah format angka pada panel sumbu menjadi mata uang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain laporan eksekutif dengan tata letak yang padat. Ketika pengguna mengarahkan kursor ke titik data penjualan, tooltip default memuat terlalu banyak informasi tabel mentah yang membingungkan. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Menghapus seluruh dimensi dari kartu rincian data dasar",
+        "Menonaktifkan centang pada menu tooltip di lembar kerja",
+        "Menyesuaikan format teks dan menyaring isi kartu tooltip",
+        "Memindahkan semua ukuran penting ke dalam panel filter"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam analisis kepuasan pelanggan, Anda memiliki data skor ulasan dari 1 hingga 5. Saat dihitung rata-rata, hasilnya berbentuk desimal (misal 3.42). Manajer layanan ingin angka tersebut dibulatkan menjadi satu tempat desimal saja. Di mana Anda harus mengubah pengaturannya?",
+      "options": [
+        "Melalui menu format default pada panel data ukuran skor",
+        "Dengan membuat rumus pembulatan round baru di kalkulasi",
+        "Mengubah tipe data ukuran skor dari float menjadi integer",
+        "Menghapus nilai desimal menggunakan filter ambang batas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim operasional cabang melaporkan bahwa data transaksi hari ini belum muncul di dashboard Tableau Server padahal mereka sudah menginputnya. Jadwal penyegaran otomatis diatur setiap tengah malam. Solusi sementara apa yang bisa Anda lakukan di Tableau Desktop?",
+      "options": [
+        "Melakukan ekspor ulang file konfigurasi koneksi server",
+        "Menjalankan proses penyegaran data manual secara langsung",
+        "Membuat salinan baru lembar kerja di dalam buku kerja",
+        "Mengubah parameter tanggal sistem operasi komputer lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat dashboard interaktif di mana pemilihan satu grafik batang kategori produk akan menyaring data pada tiga grafik lainnya sekaligus di lembar kerja yang sama. Fitur aksi apa yang paling tepat diterapkan?",
+      "options": [
+        "Menambahkan aksi URL untuk membuka halaman web eksternal",
+        "Mengaktifkan aksi sorot data pada kartu legenda warna",
+        "Membuat aksi filter lembar kerja menggunakan klik tunggal",
+        "Menyembunyikan judul panel filter global secara permanen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah laporan keuangan perusahaan multinasional menampilkan angka penjualan dalam mata uang Rupiah. Pimpinan cabang di Singapura ingin melihat angka tersebut otomatis berubah ke Dolar Singapura berdasarkan kurs harian saat mereka membuka laporan. Fitur apa yang harus Anda gunakan?",
+      "options": [
+        "Membuat parameter kurs dan kalkulasi perkalian mata uang",
+        "Menyediakan dua dashboard terpisah untuk setiap negara",
+        "Mengubah format mata uang secara manual di setiap grafik",
+        "Memakai fungsi filter konteks pada dimensi mata uang"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -24,77 +24,119 @@ Aturan ini juga yang menutup risiko UU PDP: kami tidak pernah berada dalam posis
 
 ---
 
-## 2. Aliran pendapatan (yang benar-benar ada di kode)
+## 2. Aliran pendapatan
 
-| Paket | Harga | Untuk siapa | Isi | Status |
+> ⚠️ Dokumen ini sudah diperbarui ke struktur harga baru (Premium/Lite/Pro/Max). Kode masih menggunakan struktur/harga lama — sinkronisasi kode akan menyusul di iterasi berikutnya.
+
+## Full benefit description with yearly included
+
+**Free — Rp0**
+Semua yang kamu butuhkan untuk mulai melamar. Gratis, selamanya.
+- Profil lengkap dengan upload CV (PDF) atau isi manual
+- Skor kecocokan AI di setiap lowongan yang kamu lamar
+- Peringkat persis kamu di antara semua pelamar
+- Rincian bukti skill untuk setiap lamaran
+- Analisis skill gap dan rekomendasi kursus
+- Kuis Bukti Skill 1x sehari per skill
+- Badge Terbukti di profil saat lulus kuis
+- AI Advisor 3 pesan per hari
+- Lowongan tersimpan dan riwayat lamaran
+
+**Premium — Rp35.000/bulan**
+*Rp350.000 per tahun (hemat 2 bulan)*
+Untuk kamu yang ingin tampil lebih siap, bukan sekadar melamar.
+Semua fitur Free, plus:
+- AI Advisor 15 pesan per hari, 3x lebih banyak
+- Simulasi wawancara AI 2 sesi per bulan (Segera hadir)
+- AI Cover Letter Generator 3 surat per bulan (Segera hadir)
+- CV terformat dan siap kirim (Segera hadir)
+
+Skor kecocokan, urutan pelamar, dan aturan kuis identik di semua paket. Premium memberi keunggulan persiapan, bukan posisi.
+
+**Lite — Rp0**
+Untuk semua employer. Gratis, selamanya.
+- 1 lowongan aktif
+- Link lowongan dan poster QR siap sebar
+- Semua pelamar diperingkat otomatis, tanpa batas
+- Lihat badge Terbukti dan status verifikasi skill
+- Konfirmasi "skill terbukti" di profil kandidat
+
+**Pro — Rp79.000/lowongan/bulan**
+Untuk UKM yang membuka lowongan sesekali.
+Semua fitur Lite, plus:
+- Pertanyaan wawancara AI per kandidat, klik ulang gratis
+- Ekspor seluruh daftar pelamar ke CSV
+- Cari kandidat yang belum melamar, 30x per lowongan per bulan
+
+Buka 3 lowongan atau lebih dalam sebulan? Max lebih hemat.
+
+**Max 5x — Rp229.000/bulan**
+*Rp2.290.000 per tahun (hemat 2 bulan)*
+Untuk tim yang merekrut setiap bulan.
+Semua fitur Pro, plus:
+- Hingga 5 lowongan aktif sekaligus
+- Semua fitur Pro berlaku di semua lowongan aktif
+- Cari kandidat yang belum melamar, 150x per bulan per akun
+
+**Max 20x — Rp699.000/bulan**
+*Rp6.990.000 per tahun (hemat 2 bulan)*
+Untuk tim dengan volume rekrutmen tinggi.
+Semua fitur Pro, plus:
+- Hingga 20 lowongan aktif sekaligus
+- Semua fitur Pro berlaku di semua lowongan aktif
+- Cari kandidat yang belum melamar, 600x per bulan per akun
+
+### Perbandingan Fitur — Pencari Kerja
+
+| Fitur | Free | Premium |
+|---|---|---|
+| **Profil dan Lamaran** | | |
+| Profil dengan upload CV (PDF) | Ya | Ya |
+| Profil dengan isi manual | Ya | Ya |
+| Lowongan tersimpan | Ya | Ya |
+| Riwayat lamaran | Ya | Ya |
+| **AI Matching** | | |
+| Skor kecocokan per lowongan | Ya | Ya |
+| Peringkat pelamar | Ya | Ya |
+| Rincian bukti skill | Ya | Ya |
+| Skill gap dan rekomendasi kursus | Ya | Ya |
+| **Verifikasi Skill** | | |
+| Kuis Bukti Skill | 1x sehari per skill | 1x sehari per skill |
+| Badge Terbukti | Ya | Ya |
+| **AI Advisor** | | |
+| Kuota pesan | 3 per hari | 15 per hari |
+| **Fitur Eksklusif Premium** | | |
+| Simulasi wawancara AI | Tidak | 2 sesi per bulan |
+| AI Cover Letter | Tidak | 3 surat per bulan |
+| CV terformat siap kirim | Tidak | Segera hadir |
+| **Jaminan** | | |
+| Skor dan peringkat identik | Ya | Ya |
+
+### Perbandingan Fitur — Employer / HR
+
+| Fitur | Lite | Pro | Max 5x | Max 20x |
 |---|---|---|---|---|
-| **Spark** | Rp0 | Semua employer | 1 lowongan aktif, link + poster QR, **semua pelamar diperingkat (tanpa batas)**, badge skill terbukti, konfirmasi "skill terbukti" | `[BUILT + TESTED]` |
-| **Beacon** | **Rp49.000 / lowongan / 30 hari** | UKM yang sesekali merekrut | Pertanyaan wawancara AI, ekspor CSV, 30x cari kandidat yang belum melamar | `[BUILT + TESTED]`, pembayaran manual |
-| **Lighthouse** | **Rp149.000 / 30 hari** | Yang merekrut tiap bulan | Semua fitur Beacon + hingga 5 lowongan aktif | `[BUILT + TESTED]`, pembayaran manual |
-| **Prism** (pencari kerja) | **Rp15.000 / 30 hari** | Pencari kerja yang ingin berlatih | Advisor 20 pesan/hari (gratis: 10/hari) `[BUILT + TESTED]`. Roadmap: simulasi wawancara AI + CV terformat `[PLANNED]` | pembayaran manual |
-| Afiliasi Ed-Tech | komisi | — | Klik kursus sudah dilacak lewat event | `[PLANNED]` — **tidak** dihitung dalam BEP |
-
-### 2a. Apa persisnya yang dibeli tiap paket — dan di mana itu ditegakkan
-
-Tabel ini adalah **sumber kebenaran** untuk setiap klaim harga di deck, di UI, dan di jawaban
-presenter. Kolom terakhir bukan hiasan: fitur berbayar yang tidak ditegakkan di kode adalah
-pendapatan yang kami berikan gratis tanpa sadar.
-
-| Paket | Yang didapat | Ditegakkan di | Biaya kami / pemakaian |
-|---|---|---|---|
-| **Spark** (Gratis) | 1 lowongan aktif | `plans.active_job_limit` → `employer.py` | baca lowongan ~Rp130, sekali |
-| | **Semua pelamar diperingkat, tanpa batas** | tidak dibatasi — disengaja | **Rp0** (tanpa panggilan AI) |
-| | Link + poster QR lowongan | `services/hiring/links.py` | Rp0 |
-| | Badge ✓ Terbukti terlihat + centang "skill terbukti" | `quiz/`, `hiring.py` | Rp0 per percobaan kuis |
-| **Beacon** (Rp49.000 / lowongan / 30 hari) | Pertanyaan wawancara AI per kandidat | `hiring.py::_require_premium` | ~Rp60, **di-cache** per (kandidat, lowongan) |
-| | Ekspor pelamar CSV | `hiring.py::_require_premium` | Rp0 |
-| | **Cari kandidat yang belum melamar — 30x / 30 hari, PER LOWONGAN** | `employer.py::_check_talent_search_quota` (kuota dihitung per `job_id`) | Rp0 (pgvector, tanpa AI) |
-| **Lighthouse** (Rp149.000 / 30 hari) | Hingga 5 lowongan aktif | `plans.active_job_limit` | ~Rp130 per lowongan |
-| | Semua fitur Beacon di semua lowongan | `Entitlements.job_tier` | — |
-| | Cari kandidat **150x / 30 hari**, berlaku se-akun | `employer.py::_check_talent_search_quota` | Rp0 |
-| **Gratis** (pencari kerja) | Skor, band, skill gap, rekomendasi kursus | `seeker.py` | baca CV ~Rp99 sekali seumur akun |
-| | Kuis tanpa batas (ulang besoknya) | `quiz/service.RETAKE_DAYS` | **Rp0 per percobaan** |
-| | **Peringkat persis tiap lamaran** (mis. #14 dari 62) + rincian bukti per skill | `seeker.py::application_rank` | **Rp0** — dibaca dari baris yang ditulis saat melamar |
-| | Advisor 10 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan |
-| **Prism** (Rp15.000 / 30 hari) | Advisor 20 pesan / hari | `agent.py::_check_advisor_quota` | ~Rp9 / pesan, plafon Rp8.100 / 30 hari |
-| | *Roadmap:* simulasi wawancara AI + umpan balik `[PLANNED]` | — | ~Rp150 / sesi (perkiraan) |
-| | *Roadmap:* CV terformat dari profil terverifikasi `[PLANNED]` | — | ~Rp50 (perkiraan) |
-
-**Tiga aturan yang tidak boleh dilanggar paket mana pun:**
-
-1. **ATURAN PENCARI KERJA — pencari kerja boleh membayar untuk LATIHAN dan PRESENTASI, tidak pernah
-   untuk POSISI maupun untuk INFORMASI TENTANG POSISINYA.** Peringkat persis sempat dijual di Prism.
-   Skor dan urutannya identik bagi yang bayar maupun tidak, jadi kelihatannya adil — tapi kandidat
-   yang tahu dia peringkat 14 dari 62, dan tahu skill klaim mana yang menahannya, bisa bertindak;
-   yang tidak tahu, tidak bisa. Itu keunggulan yang dibeli dengan uang, ditagihkan ke sisi pasar yang
-   paling sedikit punya uang. **Sekarang gratis untuk semua**, dan ada test yang gagal kalau
-   gerbangnya kembali. Semua yang menyentuh peringkat — skor, band, peringkat persis, rincian bukti,
-   kuis, badge, jeda ulang 1 hari — gratis selamanya di semua paket.
-2. **Paywall ada di *sourcing*, tidak pernah di *screening*.** Memeringkat orang yang sudah melamar
-   berbiaya Rp0 untuk dihitung; membatasinya tidak menghemat sepeser pun dan hanya menyembunyikan
-   kandidat peringkat 21 dari employer yang justru meminta peringkat. Mencari orang yang **belum**
-   melamar adalah sourcing — itu yang dijual, dan itu yang punya kuota.
-3. **Setiap fitur berbayar harus DITEGAKKAN di kode.** Fitur yang diiklankan di katalog tapi tidak
-   punya gerbang adalah pendapatan yang kami berikan gratis tanpa sadar — persis yang terjadi pada
-   kuota pencarian kandidat: `talent_search_limit()` ada dan diuji, tapi tidak satu pun router
-   memanggilnya, jadi kuota Spark "0" sebenarnya tak terbatas. Kolom "Ditegakkan di" pada tabel di
-   atas wajib terisi sebelum sebuah fitur boleh dijual.
-
-**Kenapa margin bertahan saat pemakaian naik.** Tiga dari empat hal yang dibeli berbiaya **Rp0**
-untuk dilayani: pemeringkatan pelamar, pencarian kandidat (pgvector), dan peringkat persis pencari
-kerja (pembacaan baris — **gratis**, bukan fitur berbayar). Yang benar-benar memanggil AI hanyalah
-kit wawancara (di-cache) dan pesan advisor (berkuota). Karena itu jumlah pelamar tidak menggerakkan
-COGS employer sama sekali.
-
----
-
-**Pencari kerja tidak pernah membayar untuk skor — dan tidak pernah membayar untuk *mengetahui* skornya.** Peringkat persis, rincian bukti per skill, band, dan skill yang kurang: gratis di semua paket. Prism hanya menambah kuota advisor; bobot bukti dan urutan identik di semua paket. Prism juga **tidak** mempercepat ulang kuis — itu uang yang mempersingkat jalan menuju badge, dan badge menggerakkan skor.
-
-**Kenapa paywall-nya bukan di jumlah pelamar.** Menghitung peringkat berbiaya **Rp0**, jadi membatasinya tidak pernah menghemat apa pun — yang terjadi hanya kandidat peringkat 21 tidak terlihat oleh employer yang justru meminta peringkat. Kuota dipindah ke *reverse matching* (mencari kandidat yang belum melamar), yaitu sourcing, plus kit wawancara dan ekspor yang memang berbiaya.
-
-**Pembayaran hari ini:** QRIS / transfer bank → admin mengaktifkan pesanan 30 hari (`[BUILT, MANUAL PAYMENT]`). Gateway (Midtrans/Xendit) `[PLANNED]`: QRIS 0,7%, VA Rp4.000, kartu 2,9% + Rp2.000, tanpa biaya setup [S1]. Stripe belum bisa dipakai — di Indonesia statusnya undangan dan tanpa transaksi lintas negara [S2].
-
----
+| **Lowongan** | | | | |
+| Lowongan aktif | 1 | 1 per lowongan berbayar | Hingga 5 | Hingga 20 |
+| Link lowongan dan poster QR | Ya | Ya | Ya | Ya |
+| Penagihan per lowongan aktif | Tidak | Ya | Tidak | Tidak |
+| Lowongan ditutup tidak dihitung bulan berikutnya | Ya | Ya | Ya | Ya |
+| **Pelamar dan Ranking** | | | | |
+| Peringkat otomatis semua pelamar | Tak terbatas | Tak terbatas | Tak terbatas | Tak terbatas |
+| Biaya tambahan per pelamar | Tidak ada | Tidak ada | Tidak ada | Tidak ada |
+| Badge Terbukti | Ya | Ya | Ya | Ya |
+| Status verifikasi skill | Ya | Ya | Ya | Ya |
+| Konfirmasi "skill terbukti" | Ya | Ya | Ya | Ya |
+| **AI dan Produktivitas** | | | | |
+| Pertanyaan wawancara AI per kandidat | Tidak | Ya | Ya | Ya |
+| Klik ulang gratis (di-cache) | Tidak | Ya | Ya | Ya |
+| Ekspor daftar pelamar ke CSV | Tidak | Ya | Ya | Ya |
+| **Candidate Search** | | | | |
+| Cari kandidat yang belum melamar | Tidak | 30x per lowongan per bulan | 150x per bulan per akun | 600x per bulan per akun |
+| **Multi-Lowongan** | | | | |
+| Fitur Pro di semua lowongan aktif | Tidak | Tidak | Ya | Ya |
+| **Kapasitas** | | | | |
+| Cocok untuk | Coba-coba | UKM sesekali | Rekrutmen bulanan | Volume tinggi |
 
 ## 3. Biaya per aksi AI (dasar COGS)
 

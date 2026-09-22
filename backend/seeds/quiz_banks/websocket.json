@@ -1,0 +1,306 @@
+{
+  "skill": "WebSocket",
+  "skill_key": "websocket",
+  "questions": [
+    {
+      "question": "Tim Anda sedang mengembangkan fitur chat untuk aplikasi e-commerce lokal. Saat pengguna membuka halaman detail produk, koneksi WebSocket sering terputus tiba-tiba karena jaringan seluler yang tidak stabil di area mereka. Strategi apa yang paling tepat diterapkan pada sisi klien untuk menangani masalah ini secara otomatis?",
+      "options": [
+        "Mengganti protokol WebSocket sepenuhnya dengan teknik HTTP long-polling reguler",
+        "Membuat mekanisme reconnect otomatis dengan jeda waktu berbasis eksponensial backoff",
+        "Menutup halaman aplikasi secara paksa dan meminta pengguna melakukan login ulang",
+        "Mengirimkan HTTP request baru setiap detik untuk memastikan status koneksi aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi pelacakan kurir logistik menggunakan WebSocket untuk mengirimkan koordinat GPS secara real-time. Server Node.js Anda mulai mengalami kelambatan memori yang signifikan (memory leak) setelah berjalan beberapa hari karena ribuan klien terputus secara tidak normal tanpa membersihkan state. Langkah perbaikan manakah yang paling efektif?",
+      "options": [
+        "Menambahkan mekanisme interval ping-pong untuk mendeteksi koneksi mati dan membersihkan memori",
+        "Menaikkan kapasitas alokasi RAM pada server cloud secara berkala menggunakan auto-scaling",
+        "Meminta pengguna untuk menutup tab browser secara manual setiap kali selesai melakukan pengiriman",
+        "Mengubah format payload data dari JSON string yang kompleks menjadi teks biasa tanpa struktur"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan membangun dashboard pemantauan transaksi keuangan perbankan yang menerima ribuan event per detik via WebSocket. Browser klien mengalami lag parah dan akhirnya crash saat terjadi lonjakan transaksi. Bagaimana cara terbaik mengoptimalkan performa di sisi klien?",
+      "options": [
+        "Menyimpan seluruh data event mentah ke dalam memori lokal browser tanpa batasan ukuran",
+        "Membuat worker terpisah untuk melakukan proses rendering ulang DOM setiap kali data tiba",
+        "Menerapkan teknik throttling atau debouncing pada antrean pesan sebelum dirender ke UI",
+        "Mematikan fitur keamanan CORS agar data dapat diproses lebih cepat oleh browser modern"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi web pemesanan tiket konser menggunakan WebSocket untuk menampilkan kursi yang masih tersedia. Saat flash sale dimulai, server backend tunggal kewalahan menerima koneksi masuk dan mengalami lonjakan CPU. Arsitektur skala apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menggunakan load balancer berbasis TCP dengan Redis Pub/Sub untuk sinkronisasi antar instance server",
+        "Memindahkan seluruh logika autentikasi pengguna langsung ke dalam skrip sisi klien berbasis Vue.js",
+        "Mengganti server WebSocket dengan database relasional berbasis SQL yang memiliki indeks optimal",
+        "Menghapus fitur pembaruan real-time dan memaksa pengguna menekan tombol refresh secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeteksi bahwa endpoint WebSocket aplikasi fintech Anda rentan terhadap serangan Cross-Site WebSocket Hijacking (CSWSH). Langkah mitigasi manakah yang harus segera diterapkan pada saat proses handshake awal di server?",
+      "options": [
+        "Memvalidasi header Origin yang dikirimkan oleh klien untuk memastikan hanya domain resmi yang diizinkan",
+        "Mengenkripsi seluruh isi pesan payload menggunakan algoritma hashing satu arah seperti MD5",
+        "Menghapus semua cookie sesi pengguna dari browser sebelum koneksi WebSocket berhasil dibuka",
+        "Membatasi ukuran maksimum setiap paket frame data yang masuk menjadi tepat 1 kilobyte"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Backend Go (Golang) Anda menangani koneksi WebSocket untuk aplikasi kolaborasi dokumen. Beberapa klien melaporkan bahwa pesan perubahan teks sering kali sampai secara tidak berurutan di antara para kolaborator. Solusi arsitektural apa yang paling tepat?",
+      "options": [
+        "Menambahkan nomor urut (sequence number) pada setiap paket pesan dan melakukan antrean sortir di klien",
+        "Mengurangi ukuran buffer pengiriman jaringan agar paket data dikirimkan dalam ukuran sekecil mungkin",
+        "Menggunakan protokol UDP murni untuk menggantikan TCP demi kecepatan transmisi data dokumen",
+        "Meminta pengguna untuk memperlambat kecepatan mengetik agar server tidak kebingungan memproses data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi chat perusahaan Anda harus melalui corporate firewall yang sangat ketat yang sering memblokir port non-standar dan koneksi WebSocket langsung. Konfigurasi infrastruktur apa yang harus disiapkan agar koneksi tetap berjalan?",
+      "options": [
+        "Mengonfigurasi Nginx sebagai reverse proxy yang mendukung upgrade koneksi ke WebSocket melalui port 443",
+        "Meminta bagian IT perusahaan klien untuk membuka semua port jaringan dari 1 hingga 65535",
+        "Mengubah seluruh komunikasi aplikasi menjadi berbasis protokol FTP tanpa enkripsi SSL/TLS",
+        "Menonaktifkan protokol HTTPS pada aplikasi agar enkripsi tidak mengganggu inspeksi firewall"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menguji integrasi aplikasi mobile Flutter dengan server WebSocket. Saat aplikasi masuk ke latar belakang (background) oleh sistem operasi, koneksi sering terputus setelah beberapa menit. Pendekatan apa yang harus diambil pada kode Flutter?",
+      "options": [
+        "Menggunakan plugin foreground service dan menerapkan logika heartbeat untuk menjaga koneksi tetap hidup",
+        "Membiarkan sistem operasi mengelola koneksi secara otomatis tanpa penanganan tambahan dari pengembang",
+        "Mengubah aplikasi menjadi berjalan secara native sepenuhnya menggunakan bahasa pemrograman Swift dan Kotlin",
+        "Menaikkan timeout server WebSocket menjadi 24 jam penuh tanpa batasan aktivitas ping"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform e-learning menggunakan WebSocket untuk kuis interaktif langsung. Terkadang peserta menerima soal sebelum animasi hitung mundur selesai karena perbedaan waktu jam sistem klien. Bagaimana cara menyinkronkan waktu secara akurat?",
+      "options": [
+        "Mengirimkan stempel waktu (timestamp) server pada setiap payload pesan dan menghitung latensi jaringan",
+        "Menggunakan fungsi bawaan JavaScript setTimeout dengan durasi tetap tanpa mengacu pada server",
+        "Meminta setiap peserta untuk menyamakan jam tangan fisik mereka dengan jam server sebelum kuis",
+        "Mengandalkan zona waktu lokal perangkat masing-masing peserta ujian untuk menentukan batas waktu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan adanya potensi kebocoran data autentikasi karena token JWT dikirimkan secara berulang melalui parameter query URL pada setiap koneksi WebSocket. Bagaimana cara yang lebih aman untuk mengirimkan token tersebut?",
+      "options": [
+        "Mengirimkan token JWT melalui pesan pertama (first message) setelah koneksi WebSocket berhasil terbentuk",
+        "Menyimpan token JWT secara permanen di dalam cache DNS komputer lokal pengguna aplikasi",
+        "Menuliskan token JWT langsung di dalam kode sumber frontend yang dapat diakses publik",
+        "Menghapus total mekanisme autentikasi karena WebSocket sudah dilindungi oleh enkripsi TLS"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi marketplace Anda mengalami lonjakan trafik saat flash sale, dan server Node.js WebSocket mulai kehabisan memori akibat ribuan koneksi idle yang tidak aktif. Apa langkah teknis paling tepat untuk mengatasi masalah ini di level arsitektur?",
+      "options": [
+        "Mengganti seluruh protokol komunikasi klien menjadi HTTP polling agar memori lebih hemat",
+        "Menerapkan mekanisme ping-pong heartbeat secara berkala dan menutup koneksi yang mati",
+        "Menaikkan batas alokasi RAM pada server cloud tanpa mengubah konfigurasi kode aplikasi",
+        "Menyimpan seluruh status sesi pengguna ke dalam database relasional pusat setiap detik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun fitur kolaborasi kanvas desain secara real-time. Beberapa pengguna mengeluhkan perubahan posisi objek yang mereka lakukan sering kali terlambat ditampilkan atau melompat-lompat di layar kolaborator lain. Bagaimana cara terbaik mengoptimalkan pengiriman data WebSocket ini?",
+      "options": [
+        "Mengirimkan setiap koordinat piksel secara instan tanpa ada penundaan sama sekali",
+        "Melakukan kompresi seluruh payload JSON menggunakan algoritma gzip di setiap paket",
+        "Menerapkan teknik pembatasan frekuensi atau throttling untuk mengirim state delta",
+        "Memaksa browser klien melakukan sinkronisasi ulang halaman setiap lima detik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sistem notifikasi pembayaran merchant menggunakan WebSocket terputus secara misterius setiap tepat 60 detik saat diakses melalui jaringan Wi-Fi kantor tertentu. Analisis apa yang paling akurat mengenai penyebab masalah tersebut?",
+      "options": [
+        "Kapasitas bandwidth total dari penyedia layanan internet kantor sudah habis sepenuhnya",
+        "Terjadi timeout pada reverse proxy atau load balancer perantara akibat tidak ada aktivitas",
+        "Klien salah melakukan enkripsi protokol keamanan TLS pada handshake awal",
+        "Server backend mengalami crash secara periodik akibat kelebihan beban antrean pesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain arsitektur WebSocket berketahanan tinggi (high availability) menggunakan beberapa instance server Node.js di belakang Nginx. Saat satu server mengirim broadcast pesan ke ruang obrolan, pengguna yang terhubung ke server lain tidak menerima pesan tersebut. Solusi apa yang harus diimplementasikan?",
+      "options": [
+        "Menghubungkan semua instance server menggunakan sistem pesan pub/sub eksternal",
+        "Mengonfigurasi Nginx agar hanya mengizinkan satu instance server aktif dalam satu waktu",
+        "Meminta klien untuk membuka dua koneksi WebSocket sekaligus ke server berbeda",
+        "Menyimpan pesan yang belum terkirim ke dalam file teks lokal di masing-masing server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web logistik mendeteksi memori browser klien meningkat drastis hingga mengalami crash setelah dibiarkan membuka halaman pemantauan armada selama beberapa jam. Setelah ditelusuri, apa akar permasalahan yang paling mungkin?",
+      "options": [
+        "Server terlalu sering mengirimkan data biner mentah melalui koneksi WebSocket",
+        "Koneksi WebSocket terputus secara otomatis oleh sistem operasi perangkat pengguna",
+        "Penanganan event listener pada objek WebSocket menumpuk tanpa pernah dibersihkan",
+        "Format data JSON yang dikirimkan oleh server memiliki ukuran yang terlalu besar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim keamanan siber meminta Anda mengamankan komunikasi WebSocket pada aplikasi super-app agar tahan terhadap serangan man-in-the-middle. Konfigurasi awal apa yang wajib dipastikan pada URL koneksi klien?",
+      "options": [
+        "Menggunakan skema protokol wss:// dengan sertifikat SSL/TLS yang valid dan terpercaya",
+        "Menambahkan parameter hash kriptografi MD5 di akhir string URL endpoint WebSocket",
+        "Mengubah port komunikasi standar menjadi port acak di atas 50000 untuk keamanan",
+        "Memastikan header kustom Authorization selalu disisipkan pada fungsi konstruktor awal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengembangkan fitur live bidding lelang online. Terkadang, penawaran harga dari peserta terlambat tercatat di server karena masalah latensi jaringan yang tidak stabil. Pendekatan apa yang paling adil untuk menangani urutan waktu transaksi ini?",
+      "options": [
+        "Mengandalkan timestamp lokal yang dihasilkan oleh perangkat klien saat tombol diklik",
+        "Menyerahkan penentuan urutan waktu sepenuhnya pada antrean thread asynchronous klien",
+        "Menggunakan timestamp server terpusat saat pesan diterima untuk validasi urutan",
+        "Menolak semua pesan masuk yang memiliki selisih waktu lebih dari satu milidetik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi trading saham Anda menerima aliran data harga instan dalam jumlah masif dari server. Klien web mulai mengalami lag antarmuka (UI freeze) karena terlalu sering merender ulang komponen DOM setiap kali paket data diterima. Bagaimana strategi penanganan yang tepat?",
+      "options": [
+        "Mengurangi ukuran paket data dengan menghapus seluruh atribut angka desimal",
+        "Menggunakan teknik buffering dan batching untuk memperbarui UI pada interval waktu tertentu",
+        "Memindahkan seluruh logika rendering grafis langsung ke dalam kode bahasa C",
+        "Mengganti protokol WebSocket dengan HTTP POST untuk memperlambat laju data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pengujian penetrasi pada aplikasi korporat, ditemukan bahwa koneksi WebSocket gagal terhubung karena proxy perusahaan menolak header Upgrade. Solusi teknis apa yang harus diterapkan pada infrastruktur server?",
+      "options": [
+        "Menurunkan versi protokol HTTP dari versi 1.1 menjadi versi absolut 1.0",
+        "Memastikan server mendukung dan merespons header negosiasi standar dengan benar",
+        "Mengubah seluruh komunikasi WebSocket menjadi bentuk file transfer berbasis FTP",
+        "Menonaktifkan mekanisme pemeriksaan header keamanan pada seluruh firewall jaringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Backend Python (FastAPI) Anda menangani ribuan klien WebSocket. Ketika terjadi deployment versi baru, semua proses server dihentikan mendadak, menyebabkan ribuan klien langsung terputus tanpa pemberitahuan dan gagal mengirim data transaksi terakhir mereka. Bagaimana memperbaiki alur penutupan ini?",
+      "options": [
+        "Mengirimkan kode penutupan khusus dan melakukan graceful shutdown pada server",
+        "Memaksa klien untuk melakukan reboot perangkat keras komputer secara otomatis",
+        "Menggunakan database NoSQL untuk menampung sisa memori sebelum server mati",
+        "Mengabaikan proses pemutusan karena klien akan otomatis mencoba ulang koneksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda menggunakan WebSocket untuk pembaruan status pesanan secara langsung. Pengguna mengeluh bahwa status pesanan berhenti memperbarui setelah beberapa menit jika halaman dibiarkan diam tanpa interaksi. Langkah apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti protokol WebSocket dengan Long Polling HTTP secara permanen",
+        "Menurunkan ukuran paket data JSON yang dikirimkan oleh server backend",
+        "Mengimplementasikan mekanisme heartbeat (ping/pong) secara berkala",
+        "Meminta pengguna untuk melakukan refresh halaman secara manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan dashboard pemantauan server yang menerima ribuan pesan WebSocket per detik. Browser klien mulai mengalami penurunan performa (lag) dan penggunaan memori yang tinggi. Strategi optimasi apa yang harus diterapkan pada sisi frontend?",
+      "options": [
+        "Menyimpan seluruh riwayat pesan masuk ke dalam local storage browser",
+        "Menggunakan teknik pembatasan (throttling) atau penundaan (debouncing) render",
+        "Membuka koneksi WebSocket baru setiap kali ada kelompok data masuk",
+        "Memindahkan seluruh logika pemrosesan data mentah ke web worker lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Backend Node.js Anda menangani koneksi WebSocket untuk ribuan driver ojek online. Ketika satu instance server mengalami lonjakan beban dan restart, ribuan klien secara bersamaan mencoba melakukan koneksi ulang ke instance yang sama. Bagaimana cara mencegah efek thundering herd ini?",
+      "options": [
+        "Mengonfigurasi server untuk menolak semua koneksi baru selama masa pemulihan",
+        "Menerapkan penundaan acak (jitter) pada waktu percobaan ulang klien",
+        "Menonaktifkan fitur reconnect otomatis pada aplikasi mobile klien",
+        "Memaksa klien untuk beralih menggunakan koneksi HTTP GET standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform SaaS kolaborasi dokumen mengalami masalah di mana urutan operasi sunting teks dari beberapa pengguna sering tertukar saat diterima oleh server WebSocket. Pendekatan arsitektur apa yang paling efektif untuk menyelesaikan masalah konkurensi ini?",
+      "options": [
+        "Menggunakan nomor urut sekuensial (sequence ID) atau vektor waktu pada setiap pesan",
+        "Mengunci seluruh dokumen agar hanya satu pengguna yang dapat mengetik dalam satu waktu",
+        "Mengandalkan urutan kedatangan paket TCP di tingkat jaringan secara langsung",
+        "Meminta server untuk melakukan broadcast ulang pesan berdasarkan stempel waktu lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeteksi adanya upaya eksploitasi pada layanan WebSocket aplikasi perbankan melalui pengiriman frame data biner ilegal yang menyebabkan server crash. Lapisan pengamanan apa yang harus segera diperketat pada server?",
+      "options": [
+        "Menambahkan enkripsi SSL/TLS berlapis ganda pada tingkat reverse proxy",
+        "Validasi tipe frame, sanitasi payload, dan pembatasan ukuran maksimum pesan",
+        "Memblokir semua alamat IP yang berasal dari luar wilayah geografis Indonesia",
+        "Mengganti pustaka WebSocket dari bahasa pemrograman Node.js ke Go"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi pelaporan bencana alam menggunakan WebSocket untuk mengirimkan data darurat. Seringkali koneksi terputus saat pengguna melewati area dengan sinyal seluler yang buruk. Mekanisme pemulihan data apa yang harus dirancang pada klien?",
+      "options": [
+        "Menghapus antrean pesan lama dan hanya mengirimkan data posisi terbaru",
+        "Menyimpan pesan offline ke penyimpanan lokal dan mengirimkannya ulang saat terhubung",
+        "Memaksa aplikasi menutup diri secara otomatis jika koneksi terputus",
+        "Mengubah format data dari JSON menjadi teks biasa agar ukuran file lebih kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps melaporkan bahwa penggunaan memori pada server Nginx reverse proxy melonjak drastis setelah mengaktifkan proxy pass untuk WebSocket aplikasi chat. Parameter konfigurasi apa yang paling krusial untuk disesuaikan pada Nginx?",
+      "options": [
+        "Meningkatkan nilai timeout pada `proxy_read_timeout` dan `proxy_send_timeout`",
+        "Menonaktifkan fitur caching untuk seluruh direktori file statis",
+        "Mengurangi jumlah worker process Nginx agar alokasi memori lebih terpusat",
+        "Mengubah protokol proxy dari HTTP/1.1 menjadi HTTP/2 murni"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan load testing pada server WebSocket berbasis Python (WebSockets library), Anda mendapati bahwa satu proses server mencapai batas penggunaan CPU 100% saat menangani 5.000 klien aktif. Apa penyebab utama keterbatasan ini dalam konteks model concurrency?",
+      "options": [
+        "Penggunaan struktur data array yang tidak terindeks pada memori RAM",
+        "Keterbatasan jumlah port jaringan yang tersedia pada sistem operasi Linux",
+        "Blokir pada thread utama akibat operasi sinkronous dalam penanganan event loop",
+        "Ukuran header HTTP handshake yang terlalu besar untuk setiap koneksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi multi-tenant SaaS ingin memastikan bahwa koneksi WebSocket milik satu perusahaan klien tidak dapat mendengarkan atau mengirim pesan ke perusahaan lain. Di mana validasi otorisasi kepemilikan channel (room) harus dilakukan?",
+      "options": [
+        "Hanya pada skrip frontend JavaScript di browser pengguna akhir",
+        "Pada saat proses inisialisasi koneksi awal (handshake) dan setiap kali join room",
+        "Diatur secara otomatis oleh protokol dasar WebSocket pada lapisan transport",
+        "Melalui pengaturan firewall jaringan fisik di pusat data server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi logistik Anda menggunakan arsitektur microservices di mana event WebSocket diterima oleh Service A dan harus disebarkan ke instance Service B dan C. Komponen perantara apa yang paling tepat digunakan untuk distribusi pesan antar server ini?",
+      "options": [
+        "Database relasional dengan fungsi trigger otomatis pada setiap baris tabel",
+        "Message broker atau pub/sub system seperti Redis Pub/Sub atau RabbitMQ",
+        "Penyimpanan cloud object storage dengan fitur event notification",
+        "Load balancer berbasis DNS round-robin pada tingkat jaringan publik"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

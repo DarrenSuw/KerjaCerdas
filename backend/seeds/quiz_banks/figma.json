@@ -1,0 +1,306 @@
+{
+  "skill": "Figma",
+  "skill_key": "figma",
+  "questions": [
+    {
+      "question": "Tim Front-End mengeluh bahwa jarak antar elemen di design system Anda tidak konsisten saat diimplementasikan ke kode. Apa langkah paling efektif di Figma untuk mencegah masalah ini berulang pada komponen masa depan?",
+      "options": [
+        "Mengunci seluruh posisi layer menggunakan fitur lock agar tidak bisa digeser sembarangan oleh tim lain",
+        "Membuat dokumentasi terpisah di halaman Notion mengenai aturan margin dan padding setiap komponen",
+        "Menerapkan sistem Auto Layout secara konsisten dengan batasan nilai spacing yang terikat pada tokens",
+        "Mengubah seluruh frame utama menjadi komponen tunggal agar struktur internalnya tidak dapat diubah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mendesain aplikasi mobile untuk pasar Indonesia dengan variasi ukuran layar ponsel Android yang sangat beragam. Fitur Figma apa yang paling tepat digunakan agar layout utama otomatis menyesuaikan diri dengan berbagai lebar layar tersebut?",
+      "options": [
+        "Menggunakan Constraints dengan pengaturan scale pada setiap teks dan tombol di dalam frame",
+        "Membuat banyak halaman terpisah dengan ukuran canvas kustom untuk setiap merk ponsel populer",
+        "Memanfaatkan fitur Auto Layout pada parent container dengan pengaturan 'Fill container' di sumbu utama",
+        "Mengaktifkan plugin pihak ketiga untuk melakukan export otomatis ke berbagai resolusi layar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan handover desain aplikasi e-commerce ke developer, mereka kesulitan mencari halaman checkout karena file Figma Anda memiliki ratusan frame yang tidak beraturan di satu halaman yang sama. Apa tindakan terbaik yang harus Anda lakukan?",
+      "options": [
+        "Menghapus halaman lama dan membuat file baru khusus untuk developer backend saja",
+        "Mengorganisasi ulang file dengan membaginya ke beberapa halaman (pages) dan memberi nama section yang jelas",
+        "Memberikan akses penuh ke akun Figma Anda agar mereka bisa mencari sendiri komponen yang dibutuhkan",
+        "Mengekspor seluruh desain ke format PDF beresolusi tinggi lalu mengirimkannya via WhatsApp"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengubah warna utama (primary color) sebuah aplikasi fintech dari biru tua menjadi hijau emerald pada 50 layar berbeda. Cara paling efisien di Figma tanpa harus mengubah warnanya satu per satu secara manual adalah...",
+      "options": [
+        "Membuat rectangle hijau di atas setiap frame lalu mengubah blend mode layer menjadi multiply",
+        "Melakukan seleksi massal pada semua frame menggunakan shortcut lalu mengganti warna via panel fill",
+        "Memanfaatkan fitur Local Variables atau Color Styles yang terhubung ke setiap elemen desain tersebut",
+        "Menggunakan plugin pencari warna otomatis untuk mendeteksi dan mengganti kode HEX secara acak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin membuat tombol interaktif yang berubah warna saat kursor mendekat (hover) dan saat diklik (pressed) untuk keperluan presentasi ke klien. Fitur Figma mana yang paling tepat digunakan?",
+      "options": [
+        "Membuat tiga frame terpisah di halaman utama dan menyusunnya secara berdampingan",
+        "Memanfaatkan fitur Component Variants dikombinasikan dengan Interactive Components pada Prototype",
+        "Menggunakan plugin animasi pihak ketiga untuk merender efek transisi klik secara instan",
+        "Menambahkan catatan teks interaktif di samping tombol untuk menjelaskan perilaku saat diklik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang Product Manager meminta revisi teks pada tombol CTA utama yang sudah digunakan sebagai Master Component di 20 modul aplikasi yang berbeda. Apa metode paling aman agar perubahan teks tersebut langsung diterapkan ke seluruh modul tanpa merusak override yang sudah ada?",
+      "options": [
+        "Mengedit teks langsung pada Master Component utama di halaman design system",
+        "Melakukan detach instance pada semua komponen tombol lalu mengetik ulang teksnya satu persatu",
+        "Membuat komponen baru dari awal dan menghapus komponen lama dari file projek",
+        "Mengubah nama komponen utama agar sistem mendeteksi pembaruan secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "File Figma tim Anda mendadak sangat lambat (lagging) saat dibuka karena terlalu banyak aset ilustrasi raster berukuran besar di dalamnya. Langkah optimal untuk mengembalikan performa file tanpa kehilangan aset adalah...",
+      "options": [
+        "Memindahkan seluruh aset ilustrasi ke file Figma terpisah dan menggunakan fitur Library untuk import",
+        "Mengubah format seluruh file gambar menjadi TIFF agar kualitasnya tetap terjaga dengan baik",
+        "Menurunkan kapasitas RAM komputer lokal Anda agar pemrosesan grafis menjadi lebih ringan",
+        "Menghapus cache browser dan mematikan koneksi internet saat sedang mengedit desain"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang tabel data transaksi yang panjang dan ingin memastikan header tabel tetap berada di posisinya saat prototipe digulir (scroll) secara vertikal. Pengaturan Figma apa yang harus diterapkan?",
+      "options": [
+        "Mengatur frame tabel dengan fungsi Prototype Overflow Scrolling ke arah vertical",
+        "Memilih layer header tabel lalu mengatur Constraints menjadi top dan left pada panel design",
+        "Memisahkan header tabel menjadi frame tersendiri dan menempatkannya di luar area konten utama",
+        "Menggunakan plugin pembuat tabel otomatis untuk mengunci posisi baris paling atas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan user testing, responden mengeluhkan teks pada kartu produk terlalu rapat dan sulit dibaca pada layar ponsel kecil. Parameter typography mana di Figma yang paling tepat disesuaikan untuk mengatasi masalah ini?",
+      "options": [
+        "Menaikkan nilai letter spacing dan line height pada text style komponen kartu produk",
+        "Mengubah jenis font menjadi sans-serif yang memiliki ukuran file lebih kecil",
+        "Menurunkan ketebalan font dari bold menjadi regular agar teks terlihat lebih longgar",
+        "Menambahkan efek drop shadow pada teks agar lebih kontras dengan latar belakang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memastikan bahwa tim QA dapat menguji alur (user flow) aplikasi dengan lancar mulai dari halaman login hingga dashboard utama dalam satu tautan prototype. Fitur apa yang harus diatur di panel Prototype?",
+      "options": [
+        "Menentukan Starting Frame yang tepat pada halaman login dan menghubungkan interaksi antar frame secara runtut",
+        "Mengekspor seluruh layar menjadi file video MP4 berdurasi pendek lalu mengunggahnya ke Google Drive",
+        "Membuat salinan file baru khusus untuk QA tanpa perlu menghubungkan jalur interaksi antar layar",
+        "Mengaktifkan mode presentation full screen dan merekam layar menggunakan aplikasi pihak ketiga"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat desain form pendaftaran dan ingin memastikan bahwa tombol 'Kirim' secara otomatis berpindah ke bawah jika teks input di atasnya bertambah panjang. Fitur layout apa yang harus Anda gunakan pada container utama form tersebut?",
+      "options": [
+        "Mengaktifkan fitur Constraints pada setiap elemen input teks",
+        "Menerapkan Auto Layout dengan arah vertikal pada parent frame",
+        "Mengubah grouping elemen menjadi komponen master terpisah",
+        "Menggunakan plugin pihak ketiga untuk mengatur jarak otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang Product Manager meminta Anda membuat mockup halaman profil yang bisa digulir (scroll) ke samping untuk melihat galeri foto, tanpa membuat halaman utama ikut bergeser. Langkah apa yang paling tepat di dalam Figma?",
+      "options": [
+        "Membuat frame galeri dengan ukuran melebihi layar lalu atur overflow scrolling",
+        "Menggunakan mode prototype Smart Animate untuk menghubungkan setiap foto",
+        "Memecah galeri foto menjadi beberapa halaman terpisah dalam satu file",
+        "Mengatur constraints elemen foto agar tetap berada di sisi kanan layar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain tombol dengan teks dinamis. Saat teks diubah dari 'Simpan' menjadi 'Simpan Perubahan', padding kiri dan kanan tombol bergeser tidak beraturan. Bagaimana cara memperbaikinya agar padding tetap konsisten?",
+      "options": [
+        "Mengunci ukuran lebar frame tombol secara manual menggunakan angka pasti",
+        "Mengatur properti resizing teks menjadi 'Fill Container' di panel Auto Layout",
+        "Mengatur ukuran lebar frame teks menjadi 'Fixed' dan mereset padding",
+        "Menggunakan teks dengan jumlah karakter yang sama persis seperti sebelumnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa bayangan (shadow) pada kartu produk di desain Anda terlihat pecah dan buram saat diekspor ke format PNG untuk keperluan lampiran bug report. Apa penyebab utama masalah ini di Figma?",
+      "options": [
+        "Nilai blur pada efek drop shadow terlalu kecil untuk layar beresolusi tinggi",
+        "Format ekspor file yang dipilih salah, seharusnya menggunakan format PDF",
+        "Skala ekspor (export scale) masih diatur pada nilai 1x standar",
+        "Efek bayangan dibuat menggunakan kombinasi beberapa layer terpisah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan inspeksi desain pada panel Inspect, developer mengeluh bahwa nilai padding antar elemen menggunakan desimal yang tidak biasa (misal: 15.4px). Bagaimana cara mencegah hal ini terjadi ke depannya?",
+      "options": [
+        "Mengaktifkan opsi 'Snap to pixel grid' dan menggunakan kelipatan 4 atau 8",
+        "Selalu memasukkan nilai angka bulat secara manual melalui keyboard",
+        "Menghindari penggunaan fitur Auto Layout pada elemen berukuran kecil",
+        "Mengunci seluruh rasio ukuran frame sebelum mulai menyusun komponen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain ikon navigasi yang terdiri dari beberapa path vector terpisah. Agar ikon tersebut aman digunakan dalam komponen tanpa berubah bentuk saat ukurannya diubah, apa yang harus Anda lakukan?",
+      "options": [
+        "Mengubah seluruh stroke ikon menjadi bentuk outline menggunakan perintah flatten",
+        "Mengelompokkan semua path vector tersebut menggunakan fungsi Union boolean",
+        "Mengubah semua layer vector menjadi komponen terpisah sebelum digabung",
+        "Menghapus titik-titik anchor yang tidak diperlukan pada setiap sudut ikon"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat animasi transisi halaman yang mulus saat pengguna menekan tombol 'Lanjut' dari halaman keranjang belanja ke halaman pembayaran. Fitur prototipe apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan animasi Dissolve dengan durasi 500 milidetik pada interaksi",
+        "Memanfaatkan fitur Smart Animate dengan mencocokkan nama layer yang sama",
+        "Mengatur interaksi on drag dengan membatasi arah gerakan secara horizontal",
+        "Menggunakan trigger Mouse Enter untuk memicu perubahan halaman otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah komponen kartu informasi, Anda ingin elemen ikon di sebelah kiri memiliki lebar tetap, sementara teks di sebelah kanannya menyesuaikan sisa ruang layar. Pengaturan resizing apa yang harus diterapkan?",
+      "options": [
+        "Mengatur ikon menjadi Fill dan teks menjadi Hug contents di Auto Layout",
+        "Mengatur ikon menjadi Fixed dan teks menjadi Fill container di Auto Layout",
+        "Mengatur kedua elemen tersebut menggunakan ukuran Fixed secara bersamaan",
+        "Mengatur kedua elemen tersebut menggunakan ukuran Hug contents secara bersamaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja memperbarui satu gaya warna (color style) di design system, namun perubahan tersebut tidak berdampak pada beberapa instance komponen tertentu di halaman lain. Apa kemungkinan penyebab utamanya?",
+      "options": [
+        "Warna pada instance tersebut telah diubah secara manual (detached/overridden)",
+        "File Figma Anda belum disinkronkan dengan server penyimpanan cloud",
+        "Gaya warna tersebut belum diterbitkan ke tim melalui library publishing",
+        "Pengguna harus menutup dan membuka kembali aplikasi Figma secara paksa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang sebuah komponen kartu produk di mana judul produk terkadang hanya satu baris, namun ada kalanya mencapai tiga baris. Anda ingin memastikan tinggi kartu secara keseluruhan dapat menyesuaikan secara otomatis dengan panjang teks tersebut tanpa merusak tata letak elemen harga di bagian bawah. Fitur Figma apa yang paling tepat Anda gunakan pada kontainer kartu tersebut?",
+      "options": [
+        "Mengatur constraints elemen teks menjadi top dan bottom",
+        "Mengaktifkan fitur Auto Layout dengan arah vertikal",
+        "Menggunakan fungsi grid layout dengan ukuran fleksibel",
+        "Mengunci rasio aspek frame utama agar tidak berubah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim developer melaporkan bahwa struktur layer pada file Figma Anda sangat berantakan, sehingga mereka kesulitan membedakan mana komponen yang aktif dan mana elemen dekoratif latar belakang. Tindakan paling efisien apa yang dapat Anda lakukan langsung di Figma untuk merapikan nama dan urutan layer tersebut secara masal?",
+      "options": [
+        "Menggunakan plugin pihak ketiga untuk mereset dan menstruktur ulang layer",
+        "Memilih seluruh layer terkait lalu menggunakan fitur rename massal bawaan",
+        "Menghapus semua layer lama dan membuat ulang dari awal dengan teliti",
+        "Mengelompokkan setiap elemen ke dalam group terpisah secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun aset ikon aplikasi untuk sistem operasi Android dan iOS. Anda ingin memastikan bahwa saat ikon tersebut diekspor dalam format SVG, ukuran file tetap kecil dan garis path tidak mengalami distorsi skala. Fitur apa yang harus Anda pastikan aktif pada elemen vektor ikon tersebut sebelum diserahkan?",
+      "options": [
+        "Mengubah seluruh path vektor menjadi komponen master tunggal",
+        "Menonaktifkan fitur stroke scaling pada panel properti stroke",
+        "Mengunci proporsi ukuran frame pembungkus ikon secara absolut",
+        "Menambahkan latar belakang transparan pada setiap artboard ikon"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah proyek kolaborasi besar, seorang desainer junior tidak sengaja mengubah struktur master component tombol utama yang berdampak buruk pada ratusan halaman lain. Fitur apa di Figma yang dapat Anda gunakan untuk melacak riwayat perubahan dan memulihkan versi file sebelum kesalahan tersebut terjadi?",
+      "options": [
+        "Menggunakan fitur undo berulang kali pada panel riwayat lokal",
+        "Meminta bantuan dukungan teknis untuk membatalkan unggahan",
+        "Melihat riwayat versi file melalui menu riwayat revisi dokumen",
+        "Mencari cadangan file otomatis yang tersimpan di folder unduhan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin membuat sebuah menu navigasi samping (sidebar) yang dapat diperkecil (collapse) dan diperbesar (expand) dengan animasi transisi yang halus di dalam satu frame yang sama tanpa harus membuat halaman baru. Fitur interaksi apa yang paling tepat digunakan?",
+      "options": [
+        "Memanfaatkan fitur interactive components dengan state berbeda",
+        "Menggunakan transisi smart animate pada tingkat prototipe",
+        "Membuat alur navigasi terpisah dengan tautan halaman luar",
+        "Mengandalkan efek geser manual pada panel presentasi layar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sebuah halaman landing page dengan bagian galeri foto yang dapat digeser secara horizontal menggunakan gestur sentuh (swipe) pada ponsel. Bagaimana cara mengatur area frame tersebut di Figma agar dapat diuji coba secara nyata pada mode prototype?",
+      "options": [
+        "Mengatur ukuran frame galeri melebihi layar utama dan mengaktifkan overflow scrolling horizontal",
+        "Membuat banyak halaman artboard duplikat lalu menghubungkannya dengan transisi geser",
+        "Menambahkan efek bayangan tebal pada batas tepi kanan frame galeri foto utama",
+        "Mengubah orientasi seluruh dokumen proyek menjadi lanskap secara permanen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan inspeksi desain pada panel Inspect, Anda melihat nilai koordinat posisi elemen sering kali menghasilkan angka desimal yang tidak bulat (misalnya 12.5px). Langkah pencegahan apa yang paling efektif agar hal ini tidak terjadi pada desain Anda berikutnya?",
+      "options": [
+        "Menyalakan fitur snap to pixel grid pada menu preferensi tampilan",
+        "Selalu membulatkan setiap angka secara manual melalui panel properti",
+        "Mengubah satuan ukuran dari piksel menjadi persen pada pengaturan file",
+        "Menghindari penggunaan elemen auto layout pada tata letak kompleks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk membuat varian komponen tombol yang memiliki status loading (berputar). Fitur lanjutan apa di Figma yang memungkinkan Anda membuat animasi putar tersebut terjadi secara otomatis di dalam komponen tanpa interaksi klik?",
+      "options": [
+        "Menggunakan pemicu setelah jeda waktu dengan animasi smart animate antar varian",
+        "Membuat video GIF eksternal lalu memasukkannya ke dalam kanvas desain",
+        "Mengandalkan plugin pihak ketiga untuk menjalankan skrip animasi berkelanjutan",
+        "Menghubungkan tombol dengan halaman eksternal secara berulang-ulang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah sistem desain, Anda memiliki komponen kartu yang berisi teks judul dan deskripsi. Anda ingin memastikan bahwa teks deskripsi secara otomatis membungkus (wrap) ke baris berikutnya ketika lebar kartu dipersempit oleh pengguna. Pengaturan teks apa yang harus diaktifkan pada elemen teks tersebut?",
+      "options": [
+        "Mengubah jenis lapisan teks dari auto width menjadi fixed size",
+        "Mengatur parameter pembatasan teks menjadi batas maksimum dua baris",
+        "Memilih mode penyesuaian lebar otomatis pada panel properti teks",
+        "Mengaktifkan fungsi pemotongan teks otomatis jika melebihi batas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang halaman keranjang belanja dengan daftar produk yang dinamis. Beberapa produk memiliki catatan khusus yang membuat tinggi kartu produk berbeda-beda. Bagaimana cara memastikan tata letak elemen di bawah keranjang otomatis menyesuaikan tanpa bergeser secara manual?",
+      "options": [
+        "Mengelompokkan seluruh elemen dalam satu frame besar dengan fitur Auto Layout vertikal",
+        "Menggunakan fitur Constraints pada setiap elemen kartu produk agar posisinya tetap terkunci",
+        "Mengatur ukuran bounding box setiap kartu produk secara manual menggunakan skala piksel",
+        "Membuat halaman terpisah untuk setiap variasi jumlah produk yang mungkin dipilih pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mendesain antarmuka aplikasi kasir digital, Anda perlu membuat tabel daftar barang belanjaan yang bisa digulir ke bawah, namun bagian header kolom tabel harus selalu terlihat di bagian atas saat digulir. Fitur apa yang paling tepat digunakan pada frame tabel tersebut?",
+      "options": [
+        "Mengaktifkan pengaturan Clip content pada panel properti frame utama tabel",
+        "Menentukan opsi Overflow scrolling vertikal dan mengatur posisi fixed pada header",
+        "Menduplikasi baris header secara manual di setiap segmen daftar barang belanjaan",
+        "Memanfaatkan plugin pihak ketiga untuk mengunci posisi layer header secara permanen"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

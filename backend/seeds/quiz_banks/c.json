@@ -1,0 +1,306 @@
+{
+  "skill": "C",
+  "skill_key": "c",
+  "questions": [
+    {
+      "question": "Anda adalah seorang Software Engineer yang menggunakan bahasa C di perusahaan IoT. Program mikrokontroler Anda sering mengalami crash acak setelah berjalan selama beberapa jam. Hasil analisis menunjukkan adanya memory leak pada fungsi alokasi dinamis. Langkah paling tepat untuk mengatasi masalah ini secara permanen adalah",
+      "options": [
+        "Mengganti semua tipe data pointer dengan tipe data dasar agar tidak perlu alokasi memori heap",
+        "Memastikan setiap pemanggilan fungsi malloc selalu diikuti dengan free pada blok fungsi yang sama",
+        "Menurunkan frekuensi clock mikrokontroler agar proses pengumpulan sampah memori berjalan lancar",
+        "Memperbesar ukuran stack size pada file konfigurasi linker compiler agar memori tidak meluber"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek sistem embedded menggunakan C, Anda menemukan sebuah fungsi yang memodifikasi variabel global yang juga diakses oleh Routine Layanan Interupsi (ISR). Agar kompiler tidak melakukan optimasi yang mengabaikan perubahan variabel tersebut, kata kunci apa yang wajib Anda tambahkan pada deklarasi variabel?",
+      "options": [
+        "Deklarasi kata kunci static pada variabel agar ruang lingkupnya terbatas pada file tersebut",
+        "Deklarasi kata kunci const agar nilai variabel tidak dapat diubah secara tidak sengaja",
+        "Deklarasi kata kunci volatile agar kompiler membaca ulang nilai dari alamat memori fisik",
+        "Deklarasi kata kunci extern agar variabel dapat diakses lintas modul file program C"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis modul driver dalam bahasa C untuk perangkat keras dengan memori terbatas. Anda perlu mendefinisikan struktur data untuk paket data jaringan. Cara paling efisien untuk mencegah padding byte otomatis oleh kompiler pada struct tersebut adalah",
+      "options": [
+        "Menggunakan direktif preprocessor seperti pragmapack untuk menyelaraskan byte struct",
+        "Mengubah seluruh elemen struct menjadi tipe data integer agar ukurannya seragam",
+        "Menyusun urutan variabel dari yang paling besar ukurannya hingga yang paling kecil",
+        "Menambahkan variabel dummy bertipe char di antara setiap field struct yang ada"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi server berbasis C mengalami segmentasi fault saat membaca string dari soket jaringan. Debugger menunjukkan pointer bernilai NULL diteruskan ke fungsi strlen(). Praktik pencegahan terbaik sebelum memproses pointer tersebut adalah",
+      "options": [
+        "Menggunakan blok try catch untuk menangkap eksepsi pointer null secara otomatis",
+        "Menambahkan pemeriksaan kondisi penolakan jika pointer bernilai null sebelum dipakai",
+        "Membungkus pemanggilan fungsi strlen dengan blok makro preprocessor ifdef",
+        "Menginisialisasi ulang seluruh segmen memori heap menggunakan fungsi memset"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan melakukan refactoring kode C legacy yang menggunakan fungsi strcpy secara masif, yang sering memicu kerentanan buffer overflow. Fungsi pustaka standar mana yang paling aman sebagai pengganti untuk mencegah masalah tersebut?",
+      "options": [
+        "Mengganti fungsi strcpy secara langsung menggunakan fungsi strncpy tanpa parameter batas",
+        "Mengganti fungsi strcpy dengan fungsi sprintf untuk memformat string secara otomatis",
+        "Mengganti fungsi strcpy dengan fungsi strncpy yang menyertakan batas ukuran buffer",
+        "Mengganti fungsi strcpy dengan fungsi strcat agar ukuran buffer diperluas dinamis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan firmware C, Anda mendapati modul Anda memakan waktu kompilasi yang sangat lama karena banyak file menyertakan file header yang sama berulang kali. Solusi standar industri untuk mencegah masalah ini adalah",
+      "options": [
+        "Menambahkan mekanisme pengaman include guard seperti ifndef pada setiap file header",
+        "Menggabungkan semua file kode sumber C menjadi satu file raksasa untuk kompilasi",
+        "Menghapus semua file header dan menuliskan deklarasi fungsi langsung di file utama",
+        "Menggunakan kompiler versi terbaru yang mendukung fitur optimasi multi-threading"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis fungsi dalam C yang mengembalikan pointer ke array lokal yang dideklarasikan di dalam fungsi tersebut. Saat program berjalan, data yang ditunjuk pointer tersebut rusak atau berubah. Apa akar penyebab masalah ini?",
+      "options": [
+        "Array lokal menggunakan alokasi memori heap yang otomatis dihapus oleh sistem operasi",
+        "Array lokal berada di stack frame yang akan hilang setelah fungsi selesai dieksekusi",
+        "Pointer tidak diinisialisasi dengan nilai referensi nol sebelum dikembalikan ke pemanggil",
+        "Kompiler melakukan optimasi kode dengan memindahkan array ke dalam register CPU"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya potensi integer overflow pada modul perhitungan aritmatika C untuk sistem finansial. Operasi perkalian dua variabel bertipe integer menyebabkan nilai berbalik menjadi negatif. Langkah mitigasi yang tepat adalah",
+      "options": [
+        "Melakukan casting tipe data ke ukuran yang lebih besar sebelum melakukan operasi",
+        "Menambahkan fungsi pembulatan otomatis pada setiap hasil akhir operasi matematika",
+        "Mengubah seluruh variabel numerik di dalam program menjadi bentuk string teks",
+        "Menggunakan fungsi operator modulus untuk membatasi rentang nilai variabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan code review pada program C rekan kerja, Anda melihat penggunaan operator bitwise alih-alih operator aritmatika biasa untuk mempercepat operasi perkalian dengan angka dua. Apa risiko utama dari pendekatan ini jika tidak hati-hati?",
+      "options": [
+        "Menurunkan kompatibilitas kode karena operator bitwise hanya jalan di arsitektur 64-bit",
+        "Menimbulkan bug logika jika diterapkan pada variabel bertipe data bertanda negatif",
+        "Meningkatkan konsumsi daya prosesor secara signifikan saat mengeksekusi instruksi",
+        "Menghasilkan peringatan error saat proses kompilasi oleh GCC versi terbaru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu membuat fungsi callback dalam C untuk algoritma sorting generik menggunakan qsort dari standard library. Agar fungsi perbandingan Anda sesuai dengan spesifikasi qsort, tanda tangan (signature) parameter apa yang harus digunakan?",
+      "options": [
+        "Menerima dua parameter pointer ke tipe data spesifik dan mengembalikan nilai boolean",
+        "Menerima dua parameter nilai integer langsung dan mengembalikan nilai selisih keduanya",
+        "Menerima dua parameter pointer bertipe void dan mengembalikan nilai integer penanda",
+        "Menerima satu parameter struktur data gabungan dan mengembalikan pointer kosong"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan firmware C untuk perangkat IoT yang berjalan 24/7 dan mendapati memori terus menyusut seiring waktu. Setelah dianalisis menggunakan Valgrind, ditemukan bahwa fungsi tertentu mengalokasikan memori via malloc namun gagal membebaskannya pada jalur penanganan error. Langkah perbaikan paling tepat apa yang harus Anda lakukan?",
+      "options": [
+        "Mengganti seluruh fungsi alokasi dinamis dengan variabel global statis",
+        "Menambahkan pemanggilan free pada setiap titik keluar fungsi yang gagal",
+        "Membiarkannya karena sistem operasi akan membersihkannya saat reset",
+        "Menggunakan fungsi calloc agar otomatis melakukan dealokasi memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek sistem embedded menggunakan C, Anda perlu membaca data sensor 16-bit dari register memori eksternal yang dipetakan pada alamat tertentu. Agar kompiler tidak melakukan optimasi yang mengabaikan pembacaan ulang nilai register tersebut, kualifikasi tipe apa yang wajib Anda gunakan?",
+      "options": [
+        "Menggunakan kualifikasi tipe volatile pada deklarasi pointer register",
+        "Menambahkan keyword static pada setiap fungsi pembacaan data sensor",
+        "Mengubah tipe data menjadi const agar nilainya tidak berubah secara tidak sengaja",
+        "Memakai tipe register storage class agar variabel disimpan di dalam CPU"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis modul komunikasi serial dalam C yang menerima paket data biner dari mikrokontroler lain. Struct data yang Anda buat sering mengalami ketidaksesuaian ukuran akibat padding memori otomatis oleh kompiler. Bagaimana cara paling aman untuk memastikan tata letak struct sesuai dengan byte wire-format?",
+      "options": [
+        "Mengubah semua tipe data di dalam struct menjadi tipe char array",
+        "Menambahkan variabel dummy padding secara manual di antara field struct",
+        "Menggunakan direktif kompiler seperti pragma pack untuk menghilangkan padding",
+        "Memastikan seluruh anggota struct menggunakan tipe data berukuran sama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah program C multithreaded mengalami kondisi balapan (race condition) saat beberapa thread mencoba memperbarui variabel counter bersamaan. Anda diminta mengamankan bagian kritis tersebut menggunakan Pthreads tanpa menurunkan performa secara drastis pada sistem dengan banyak CPU core. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Mengganti variabel counter biasa dengan atomic operations dari C11",
+        "Membuat proses baru menggunakan fork setiap kali counter akan diubah",
+        "Menghentikan semua thread lain menggunakan sinyal kill sebelum update",
+        "Memindahkan variabel counter ke dalam file konfigurasi eksternal disk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan static code analysis pada codebase C perusahaan, ditemukan peringatan 'implicit declaration of function'. Rekan kerja Anda memanggil fungsi kustom tanpa menyertakan file header yang sesuai di bagian atas file sumber. Apa risiko utama dari masalah ini pada arsitektur 64-bit?",
+      "options": [
+        "Program akan langsung mengalami stack overflow saat kompilasi dimulai",
+        "Kompiler salah mengasumsikan nilai kembalian bertipe int, memotong pointer 64-bit",
+        "Sistem operasi akan memblokir eksekusi file biner karena masalah izin file",
+        "Nilai argumen fungsi akan ditukar posisinya secara acak oleh linker"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan fungsi pemrosesan citra dalam C yang menggunakan array 2D berukuran besar. Anda melihat pola akses loop melakukan iterasi secara kolom terlebih dahulu alih-alih baris, yang menyebabkan cache miss tinggi. Perbaikan kode seperti apa yang harus dilakukan?",
+      "options": [
+        "Menukar urutan indeks loop agar mengakses elemen memori secara beruntun (row-major)",
+        "Menggunakan alokasi memori satu dimensi dan melakukan indeks manual dengan perkalian",
+        "Memindahkan seluruh data citra dari RAM utama ke dalam cache L1 secara manual",
+        "Menulis ulang fungsi tersebut menggunakan bahasa assembly khusus arsitektur x86"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam modul parser protokol jaringan berbasis C, Anda sering melakukan casting pointer buffer byte mentah ke pointer struct tertentu. Analisis keamanan menunjukkan potensi masalah perataan memori (alignment fault) pada arsitektur ARM tertentu. Bagaimana cara teraman mengakses data tak-selaras tersebut?",
+      "options": [
+        "Melakukan salinan byte demi byte menggunakan memcpy ke variabel struct lokal",
+        "Menggunakan operator bitwise shift untuk menyusun ulang byte secara manual",
+        "Memaksa arsitektur CPU untuk mengabaikan kesalahan alignment lewat interrupt",
+        "Mengubah semua tipe data di dalam struct menjadi tipe uint8_t tunggal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati fungsi pustaka pihak ketiga dalam bahasa C yang menerima pointer fungsi callback tanpa argumen konteks (void* user_data). Saat Anda mencoba mengirim data state lokal dari modul Anda ke callback tersebut, Anda tergoda menggunakan variabel global. Apa alternatif terbaik untuk menghindari variabel global?",
+      "options": [
+        "Menggunakan thread-local storage untuk menyimpan pointer state tersebut secara aman",
+        "Membungkus fungsi callback dan state ke dalam satu file sumber terpisah",
+        "Mencari alternatif pustaka lain yang mendukung argumen konteks tambahan",
+        "Menyimpan pointer state pada alamat memori stack dari fungsi pemanggil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi server C mengalami lonjakan penggunaan CPU dan terkadang crash saat memproses string UTF-8 yang tidak valid dari klien. Fungsi strlen standar dipanggil pada buffer yang tidak selalu diakhiri null-byte (null-terminated). Fungsi pengganti apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan strnlen dengan batasan ukuran buffer maksimum yang jelas",
+        "Mengubah string menjadi array integer sebelum menghitung panjangnya",
+        "Menambahkan null-byte secara paksa di setiap akhir buffer yang diterima",
+        "Menggunakan fungsi strcpy untuk menyalin string ke buffer baru yang aman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis pustaka enkripsi dalam C di mana kunci rahasia disimpan sementara di dalam buffer memori lokal. Setelah kunci selesai digunakan, Anda khawatir data kunci tersebut masih tertinggal di RAM dan dapat dibaca oleh proses lain. Fungsi apa yang harus dipanggil sebelum fungsi berakhir?",
+      "options": [
+        "Memanggil memset_s atau fungsi secure zeroing untuk menghapus isi buffer",
+        "Memanggil free untuk mengembalikan blok memori langsung ke sistem operasi",
+        "Memanggil fclose untuk menutup deskriptor file dari memori virtual",
+        "Memanggil fflush untuk membersihkan buffer cache dari tingkat hardware"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang antarmuka C untuk pustaka perangkat lunak yang ditulis oleh tim Anda. Agar pengguna pustaka dapat meneruskan data arbitrer ke fungsi callback tanpa menggunakan variabel global, praktik terbaik apa yang harus diterapkan pada desain tanda tangan fungsi?",
+      "options": [
+        "Menyertakan parameter tambahan bertipe void* sebagai konteks pengguna pada fungsi callback",
+        "Memanfaatkan variabel eksternal yang dideklarasikan dengan kata kunci volatile dan static",
+        "Menggunakan makro preprocessor untuk menyuntikkan data langsung ke dalam badan fungsi",
+        "Membungkus fungsi callback dan datanya ke dalam satu struktur global tunggal di memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek sistem embedded berbasis C, Anda perlu memastikan bahwa pembacaan nilai dari sebuah register status perangkat keras (yang nilainya dapat berubah sewaktu-waktu di luar kendali program) tidak dioptimalkan secara keliru oleh kompiler. Tindakan apa yang paling tepat?",
+      "options": [
+        "Menambahkan kata kunci register pada deklarasi variabel pointer register tersebut",
+        "Mendeklarasikan variabel penunjuk register dengan menambahkan kata kunci volatile",
+        "Menggunakan fungsi pembungkus dengan proteksi mutex untuk setiap akses pembacaan",
+        "Menonaktifkan seluruh tingkat optimasi kompiler pada saat proses pembangunan sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah program C di lingkungan POSIX membaca blok data dari file descriptor. Untuk menghindari pemblokiran eksekusi utas utama saat data belum siap, Anda perlu mengubah status file descriptor tersebut menjadi non-blocking. Fungsi sistem apa yang paling tepat digunakan?",
+      "options": [
+        "fcntl dengan argumen flag F_SETFL dan penambahan O_NONBLOCK",
+        "ioctl dengan kode permintaan FIONBIO dan parameter pointer integer satu",
+        "setsockopt dengan level SOL_SOCKET dan opsi SO_NONBLOCK yang aktif",
+        "poll dengan pengaturan timeout bernilai nol pada struktur peninjauan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit keamanan pada kode C untuk aplikasi perbankan, Anda menemukan fungsi yang menerima input panjang buffer dari pengguna dan menyalin data menggunakan memcpy. Apa langkah mitigasi utama yang wajib dilakukan untuk mencegah kerentanan buffer overflow?",
+      "options": [
+        "Mengganti memcpy dengan fungsi strncpy untuk membatasi karakter null terminator",
+        "Memastikan ukuran tujuan selalu divalidasi secara ketat sebelum proses penyalinan",
+        "Menjalankan program di dalam wadah virtual terisolasi untuk membatasi dampak",
+        "Menambahkan penanganan sinyal SIGSEGV untuk menangkap memori yang terkorupsi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis modul driver perangkat C yang memerlukan alokasi blok memori DMA berkelanjutan secara fisik. Sistem operasi menyediakan fungsi khusus untuk ini, tetapi sering gagal jika fragmentasi memori tinggi. Pendekatan desain apa yang sebaiknya diambil?",
+      "options": [
+        "Melakukan alokasi memori saat inisialisasi sistem dan mempertahankannya selama siklus hidup",
+        "Memecah blok memori besar menjadi potongan kecil menggunakan linked list dinamis standar",
+        "Mengandalkan fungsi malloc standar karena manajemen memori virtual akan mengaturnya",
+        "Membuat antrean permintaan alokasi ulang yang berjalan secara otomatis di latar belakang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam kode C tingkat lanjut, Anda sering melihat penggunaan teknik 'flexible array member' pada akhir sebuah struct. Apa keuntungan utama dari pola desain ini dibandingkan menyimpan pointer biasa di dalam struct tersebut?",
+      "options": [
+        "Memungkinkan kompiler melakukan vektorisasi otomatis pada operasi elemen array",
+        "Menghilangkan satu operasi alokasi heap terpisah dan mengurangi overhead fragmentasi",
+        "Memastikan keselarasan memori yang ketat sesuai dengan arsitektur perangkat keras",
+        "Mencegah akses out-of-bounds secara otomatis pada waktu eksekusi oleh sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah fungsi dalam program C multithreaded yang memperbarui penghitung statistik global menggunakan operasi increment standar (++counter). Terkadang nilai akhir tidak sesuai dengan jumlah total kejadian. Bagaimana cara memperbaikinya secara efisien?",
+      "options": [
+        "Mengubah tipe data penghitung menjadi volatile agar selalu dibaca dari memori fisik",
+        "Menggunakan fungsi atomik bawaan kompiler atau pustaka sinkronisasi perangkat keras",
+        "Membungkus setiap operasi increment dengan pengecekan status kunci mutex penuh",
+        "Memindahkan variabel penghitung ke dalam tumpukan lokal masing-masing thread"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi server C mengalami penurunan kinerja yang drastis akibat alokasi dan dealokasi memori heap ukuran kecil yang terlalu sering (memory churn). Pola desain apa yang paling tepat diterapkan untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti fungsi alokasi standar dengan pustaka pihak ketiga sepertijemalloc",
+        "Menerapkan pola kolam memori atau memory pool untuk objek berukuran seragam",
+        "Menggunakan teknik penghitungan referensi otomatis pada setiap blok memori",
+        "Memperbesar ukuran halaman memori virtual sistem operasi melalui konfigurasi kernel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menulis kode C untuk mikrokontroler dengan sumber daya sangat terbatas, Anda perlu mendefinisikan struktur data paket jaringan agar tidak memiliki padding tambahan dari kompiler. Aturan apa yang harus digunakan pada deklarasi struct tersebut?",
+      "options": [
+        "Menempatkan semua variabel dengan tipe data terbesar di bagian awal struktur data",
+        "Menambahkan atribut penentu keselarasan seperti __attribute__((packed)) pada struct",
+        "Menggunakan pointer terarah alih-alih tipe data primitif langsung di dalam anggota",
+        "Memastikan total ukuran struktur data selalu kelipatan dari ukuran kata prosesor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang men-debug aplikasi C yang mengalami perilaku tidak menentu (undefined behavior) yang sulit direplikasi. Analisis menunjukkan adanya penggunaan memori yang telah dibebaskan (use-after-free). Alat bantu apa yang paling tepat digunakan selama proses kompilasi untuk mendeteksi masalah ini?",
+      "options": [
+        "Mengaktifkan flag optimasi tingkat tinggi seperti -O3 pada kompiler GCC atau Clang",
+        "Menggunakan instrumen AddressSanitizer dengan menyertakan flag -fsanitize=address",
+        "Menjalankan analisis statis berbasis komentar kode menggunakan alat pemindai eksternal",
+        "Menambahkan pustaka pelacak memori manual yang mencatat setiap panggilan malloc"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

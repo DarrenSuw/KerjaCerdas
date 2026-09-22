@@ -1,0 +1,306 @@
+{
+  "skill": "Nginx",
+  "skill_key": "nginx",
+  "questions": [
+    {
+      "question": "Anda mendapati lonjakan traffic bot scraping pada API backend perusahaan. Anda diminta memblokir alamat IP eksternal tertentu secara permanen di tingkat Nginx sebelum request mencapai aplikasi PHP. Di mana direktif allow dan deny yang tepat harus diletakkan?",
+      "options": [
+        "Di dalam blok http global untuk memblokir seluruh domain utama",
+        "Di dalam blok events agar pemrosesan koneksi langsung ditolak",
+        "Di dalam blok server atau location yang menangani rute API tersebut",
+        "Di dalam file konfigurasi mime.types agar sinkron dengan parser"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengelola server web Nginx untuk e-commerce. Pengguna melaporkan bahwa saat melakukan *checkout*, koneksi WebSocket sering terputus setelah tepat 60 detik tidak ada aktivitas data besar. Pengaturan apa yang paling tepat disesuaikan di blok location untuk mencegah timeout ini?",
+      "options": [
+        "Mengubah nilai parameter send_timeout menjadi 300s",
+        "Menaikkan batas waktu proxy_read_timeout menjadi 300s",
+        "Memperpanjang durasi keepalive_timeout ke angka 300s",
+        "Menyesuaikan konfigurasi client_body_timeout ke 300s"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim frontend baru saja mendeploy SPA (Single Page Application) React ke server Nginx. Ketika pengguna merefresh halaman pada URL /dashboard/settings, server merespons dengan error 404 Not Found. Konfigurasi blok server mana yang harus diperbaiki?",
+      "options": [
+        "Menambahkan argumen try_files $uri $uri/ /index.html;",
+        "Mengaktifkan modul autoindex pada direktori root aplikasi",
+        "Membuat symlink dari direktori settings ke file index.js",
+        "Menambahkan aturan rewrite permanen untuk ekstensi html"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Node.js di belakang reverse proxy Nginx mengalami error 502 Bad Gateway secara acak saat jam sibuk. Berdasarkan log error, Nginx gagal terhubung ke upstream karena kehabisan portephemeral akibat tingginya koneksi TIME_WAIT. Solusi konfigurasi upstream apa yang paling efektif?",
+      "options": [
+        "Menurunkan nilai parameter keepalive_requests pada blok http",
+        "Menambahkan direktif keepalive dengan jumlah koneksi idle tertentu",
+        "Mengganti metode load balancing dari round-robin menjadi ip_hash",
+        "Mengaktifkan penanganan proxy_next_upstream untuk error timeout"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja memperbarui sertifikat SSL Let's Encrypt pada server Nginx tanpa melakukan restart total pada layanan (zero downtime). Perintah Linux apa yang harus Anda jalankan untuk menerapkan file sertifikat baru tersebut secara aman?",
+      "options": [
+        "sudo systemctl restart nginx",
+        "sudo nginx -s reload",
+        "sudo systemctl force-reload nginx",
+        "sudo nginx -c /etc/nginx/nginx.conf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta meningkatkan performa file statis (gambar, CSS, JS) pada server Nginx agar browser klien dapat menyimpannya dalam cache lokal selama 30 hari. Direktif mana yang paling tepat ditempatkan pada blok location file statis?",
+      "options": [
+        "expires 30d; add_header Cache-Control \"public, no-transform\";",
+        "add_header X-Cache-Status HIT; proxy_cache_valid 200 30d;",
+        "sendfile on; tcp_nopush on; keepalive_timeout 2592000;",
+        "open_file_cache max=1000 inactive=30d; valid=30d;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam rangka migrasi infrastruktur, Anda perlu mengarahkan seluruh trafik HTTP dari domain lama (example.com) ke domain baru (example.co.id) secara permanen sambil mempertahankan path URL dan query string yang diakses pengguna. Blok server mana yang paling tepat?",
+      "options": [
+        "return 301 https://example.co.id$request_uri;",
+        "rewrite ^/(.*)$ https://example.co.id/$1 redirect;",
+        "try_files $uri $uri/ @redirect_to_new_domain;",
+        "proxy_pass https://example.co.id$request_uri;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin melindungi halaman login admin (/admin-panel) dari serangan brute force dengan membatasi jumlah request maksimal 5 request per menit per alamat IP. Bagian konfigurasi mana yang mendefinisikan aturan pembatasan ini?",
+      "options": [
+        "limit_req_zone $binary_remote_addr zone=admin_limit:10m rate=5r/m;",
+        "limit_conn_zone $server_addr zone=addr:10m limit=5;",
+        "client_body_timeout 12s; limit_rate 5k;",
+        "auth_basic_user_file /etc/nginx/.htpasswd; limit=5r/m;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah file unggahan (upload) berukuran 15MB ditolak oleh Nginx dengan kode error 413 Request Entity Too Large sebelum mencapai script backend. Parameter apa yang harus ditambahkan atau diubah pada konfigurasi Nginx untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah batas maksimum melalui client_max_body_size 20M;",
+        "Menaikkan nilai parameter client_header_buffer_size menjadi 32k;",
+        "Menyesuaikan pengaturan large_client_header_buffers 4 16k;",
+        "Memperbesar kapasitas alokasi proxy_buffer_size menjadi 20m;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs berita berbasis Nginx menerima lonjakan trafik mendadak dan mengalami beban CPU tinggi akibat proses kompresi konten teks yang berulang kali untuk setiap request. Bagaimana cara mengoptimalkan direktif gzip agar Nginx tidak melakukan kompresi secara redundan?",
+      "options": [
+        "Menambahkan header Vary: Accept-Encoding secara manual pada blok server",
+        "Mengaktifkan modul gzip_static agar Nginx langsung melayani file terkompresi",
+        "Memindahkan proses kompresi gzip sepenuhnya ke level load balancer eksternal",
+        "Meningkatkan level kompresi gzip dari angka 6 menjadi level maksimum 9"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati file log akses Nginx tumbuh sangat cepat hingga menghabiskan ruang disk server produksi. Langkah apa yang paling tepat untuk mengotomatisasi rotasi log harian tanpa menghentikan proses Nginx yang sedang berjalan?",
+      "options": [
+        "Membuat cron job yang menjalankan perintah logrotate dengan konfigurasi bawaan Nginx",
+        "Mengubah parameter access_log off pada file nginx.conf untuk mematikan pencatatan",
+        "Menghapus manual file log lama menggunakan perintah rm -rf setiap jam tertentu",
+        "Membuat skrip Bash untuk memindahkan file log aktif lalu merestart layanan systemd"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi berbasis PHP-FPM di server Anda sering mengalami proses antrean yang panjang karena eksekusi skrip backend yang lama. Konfigurasi direktif apa pada blok location Nginx yang harus disesuaikan agar timeout koneksi ke PHP-FPM tidak terlalu cepat terputus?",
+      "options": [
+        "Mengubah nilai fastcgi_read_timeout menjadi durasi yang lebih lama",
+        "Memperbesar alokasi buffer memori melalui fastcgi_buffer_size",
+        "Menaikkan batas ukuran file lewat parameter client_max_body_size",
+        "Menambahkan jumlah worker_connections pada blok events utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengamankan direktori direktori sensitif /backup pada server Nginx agar hanya bisa diakses oleh alamat IP internal kantor (192.168.10.0/24), sementara IP lain harus menerima status Forbidden. Blok konfigurasi mana yang paling tepat?",
+      "options": [
+        "location /backup { allow 192.168.10.0/24; deny all; }",
+        "location /backup { deny 192.168.10.0/24; allow all; }",
+        "location /backup { restrict ip 192.168.10.0/24; }",
+        "location /backup { auth_basic off; satisfy any; }"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang meminta Anda untuk menambahkan custom header X-Request-ID pada setiap respons HTTP yang dikirimkan oleh Nginx untuk keperluan tracing sistem distributed. Direktif apa yang harus Anda gunakan di dalam blok server?",
+      "options": [
+        "proxy_set_header X-Request-ID $request_id;",
+        "add_header X-Request-ID $request_id always;",
+        "send_header X-Request-ID $remote_addr;",
+        "log_format custom X-Request-ID $request_id;"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mendistribusikan beban trafik (load balancing) ke tiga instance backend server aplikasi secara merata, tetapi server ketiga memiliki spesifikasi hardware setengah dari dua server lainnya. Metode penyeimbangan beban apa yang paling tepat di Nginx?",
+      "options": [
+        "Menggunakan algoritma ip_hash agar sesi pengguna tetap konsisten",
+        "Menggunakan algoritma least_conn untuk memantau koneksi aktif",
+        "Menambahkan parameter weight pada deklarasi server di blok upstream",
+        "Menggunakan metode random two dengan pilihan least loaded"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Server Nginx Anda bertindak sebagai reverse proxy yang melayani domain utama dan beberapa subdomain dinamis. Bagaimana cara mendefinisikan server_name agar dapat menangkap seluruh subdomain tingkat pertama secara otomatis?",
+      "options": [
+        "Menggunakan wildcard server_name *.example.com;",
+        "Menggunakan ekspresi reguler server_name ~^(?<subdomain>.+)\\.example\\.com$;",
+        "Menggunakan multi-domain server_name example.com sub.*.example.com;",
+        "Menggunakan direktif tangkap otomatis server_name _dynamic_subdomains;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi web internal perusahaan sering diakses melalui jaringan publik, dan Anda ingin menambahkan lapisan autentikasi dasar (Basic Auth) berbasis file sandi sebelum pengguna masuk ke halaman utama Nginx. Modul dan direktif apa yang diperlukan?",
+      "options": [
+        "Menggunakan auth_basic dengan file hasil utilitas htpasswd",
+        "Menggunakan secure_link dengan token enkripsi berbasis waktu",
+        "Menggunakan http_auth_jwt dengan validasi kunci publik RSA",
+        "Menggunakan satisfy any dengan kombinasi pembatasan IP address"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati proses worker Nginx sering mengalami pembatasan file descriptor saat melayani puluhan ribu koneksi bersamaan (too many open files). Parameter apa di tingkat sistem operasi dan konfigurasi Nginx yang harus ditingkatkan?",
+      "options": [
+        "Meningkatkan nilai worker_rlimit_nofile dan batas limit systemd",
+        "Mengurangi nilai keepalive_timeout agar koneksi idle cepat terputus",
+        "Menurunkan nilai worker_processes agar tidak berebut sumber daya",
+        "Mengaktifkan modul sendfile dan memperbesar ukuran client_body_buffer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Untuk keperluan audit keamanan, Anda diminta mengubah format log default Nginx agar mencatat waktu respons upstream dan alamat IP asli klien di balik load balancer Cloudflare. Variabel log apa yang harus ditambahkan ke log_format?",
+      "options": [
+        "Menggunakan variabel $upstream_response_time dan $http_cf_connecting_ip",
+        "Menggunakan variabel $request_time dan $remote_addr secara langsung",
+        "Menggunakan variabel $upstream_status dan $proxy_add_x_forwarded_for",
+        "Menggunakan variabel $connection_requests dan $http_x_forwarded_for"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Server Nginx Anda melayani domain utama dan Anda ingin memastikan semua trafik masuk yang menggunakan HTTP secara otomatis dialihkan ke HTTPS dengan status kode permanen. Blok mana yang paling tepat digunakan?",
+      "options": [
+        "Blok location / dengan aturan rewrite regex internal",
+        "Blok server terpisah yang mendengarkan port 80 dan mengembalikan 301",
+        "Blok upstream khusus untuk menangani enkripsi SSL secara otomatis",
+        "Blok events untuk memetakan ulang port masuk sebelum diproses"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mencegah hotlinking gambar dari situs web lain yang mencuri bandwidth server Anda. Bagaimana cara Nginx mendeteksi dan menolak akses tersebut?",
+      "options": [
+        "Memeriksa kecocokan nilai header HTTP Referer pada blok location",
+        "Membatasi jumlah request per detik berdasarkan alamat IP sumber",
+        "Mengharuskan autentikasi HTTP Basic untuk setiap permintaan gambar",
+        "Memblokir User-Agent tertentu yang tidak dikenal menggunakan map"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web memerlukan penyimpanan sesi pengguna di server, dan Anda menggunakan Nginx upstream dengan multiple backend. Agar pengguna selalu diarahkan ke backend yang sama, metode load balancing apa yang harus dipilih?",
+      "options": [
+        "Menggunakan metode penyeimbangan beban least_conn",
+        "Mengaktifkan direktif ip_hash pada blok upstream backend",
+        "Menambahkan parameter random pada argumen server upstream",
+        "Mengandalkan pembobotan weight secara proporsional merata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menonaktifkan informasi versi Nginx yang muncul pada halaman error default dan header respons HTTP guna meningkatkan keamanan melalui 'security through obscurity'. Direktif apa yang digunakan?",
+      "options": [
+        "Menyetel server_tokens off pada tingkat blok http atau server",
+        "Menghapus modul http_autoindex_module dari kompilasi binary",
+        "Mengubah string header Server secara manual lewat modul headers",
+        "Menonaktifkan pengiriman error_page kustom pada blok server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam arsitektur microservices, Anda perlu meneruskan request ke backend pool berdasarkan awalan URL, misalnya /api/v1/ ke upstream serverA dan /api/v2/ ke serverB. Blok apa yang paling tepat diatur?",
+      "options": [
+        "Penggunaan beberapa blok location dengan pencocokan awalan",
+        "Pemisahan blok server dengan nama server_name yang berbeda",
+        "Pengaturan peta variabel map di dalam blok http secara global",
+        "Pemanfaatan modul stream untuk routing berbasis lapisan transport"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan perubahan besar pada file konfigurasi Nginx dan ingin memastikan tidak ada kesalahan sintaks sebelum menerapkan perubahan tersebut ke lingkungan produksi. Perintah apa yang harus dijalankan?",
+      "options": [
+        "nginx -s reload untuk memuat ulang konfigurasi secara aman",
+        "systemctl restart nginx untuk memulai ulang seluruh layanan",
+        "nginx -t untuk melakukan pengujian sintaks konfigurasi",
+        "nginx -v untuk memverifikasi versi binary yang terpasang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin membatasi unduhan file agar setiap koneksi klien tidak menggunakan bandwidth lebih dari 500KB per detik guna mencegah monopoli jaringan. Direktif Nginx apa yang harus digunakan?",
+      "options": [
+        "Mengatur limit_rate bernilai 500k pada blok location terkait",
+        "Membatasi koneksi maksimal lewat limit_conn_zone secara ketat",
+        "Menggunakan modul throttle_bandwidth pada level blok http",
+        "Menurunkan alokasi buffer melalui client_max_body_size"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengonfigurasi Nginx agar secara otomatis mengompresi respons teks, HTML, dan CSS sebelum dikirim ke klien guna menghemat bandwidth. Di mana direktif tersebut harus diletakkan dalam blok konfigurasi?",
+      "options": [
+        "Di dalam blok server utama tanpa syarat tambahan",
+        "Di dalam blok http dengan menyertakan tipe MIME terkait",
+        "Di dalam blok location khusus file statis saja",
+        "Di dalam blok upstream untuk server backend aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web memerlukan koneksi persisten melalui WebSocket yang melalui Nginx reverse proxy. Klien melaporkan koneksi sering terputus setelah 60 detik diam. Parameter apa yang perlu ditambahkan?",
+      "options": [
+        "Mengatur proxy_read_timeout menjadi durasi lebih lama",
+        "Menaikkan batas ukuran buffer proxy_buffers secara berkala",
+        "Mengaktifkan modul caching khusus untuk protokol WebSocket",
+        "Menurunkan nilai keepalive_timeout pada blok server utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa alamat IP klien yang tercatat di aplikasi backend PHP selalu berupa IP lokal Nginx (127.0.0.1) karena berada di belakang reverse proxy. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Menambahkan header X-Real-IP menggunakan proxy_set_header",
+        "Mengubah konfigurasi port listen pada file pool PHP-FPM",
+        "Mematikan fungsi resolver internal pada direktif server Nginx",
+        "Mengganti protokol komunikasi backend dari TCP ke Unix socket"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend mendeploy aplikasi Single Page Application (SPA) berbasis Vue.js ke Nginx. Saat pengguna mengakses sub-halaman lalu melakukan refresh browser, Nginx mengembalikan error 404 Not Found. Konfigurasi apa yang harus ditambahkan pada blok location?",
+      "options": [
+        "try_files $uri $uri/ /index.html;",
+        "rewrite ^/(.*)$ /index.html break;",
+        "error_page 404 =200 /index.html;",
+        "fastcgi_intercept_errors on;"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

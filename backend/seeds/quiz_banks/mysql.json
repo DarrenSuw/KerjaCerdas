@@ -1,0 +1,306 @@
+{
+  "skill": "MySQL",
+  "skill_key": "mysql",
+  "questions": [
+    {
+      "question": "Sebuah tabel `transaksi` dengan 5 juta baris di database e-commerce mengalami penurunan performa drastis saat query pencarian berdasarkan `tanggal_transaksi` dan `status` dijalankan bersamaan. Langkah awal apa yang paling tepat untuk menganalisis masalah ini?",
+      "options": [
+        "Menjalankan perintah EXPLAIN pada query tersebut untuk melihat rencana eksekusi",
+        "Langsung menghapus data transaksi yang sudah berumur lebih dari satu tahun",
+        "Mengubah tipe data kolom tanggal_transaksi dari DATETIME menjadi TIMESTAMP",
+        "Melakukan restart layanan MySQL server pada jam sibuk untuk membersihkan cache"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati tabel `log_aktivitas` terus tumbuh sangat cepat hingga puluhan gigabyte dan menguras ruang disk server produksi. Query SELECT harian kini berjalan sangat lambat. Strategi pemeliharaan apa yang paling efektif diterapkan?",
+      "options": [
+        "Membuat tabel arsip terpisah dan memindahkan data lama secara berkala",
+        "Mengubah mesin penyimpanan tabel dari InnoDB menjadi MyISAM untuk efisiensi",
+        "Menghapus indeks pada tabel tersebut untuk mempercepat proses penulisan data",
+        "Menaikkan kapasitas RAM server secara fisik tanpa mengubah struktur tabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi kasir mengalami error 'Deadlock found when trying to get lock' saat jam promosi flash sale di mana banyak kasir memperbarui stok barang yang sama secara bersamaan. Bagaimana cara meredam masalah ini pada level aplikasi atau query?",
+      "options": [
+        "Mengurutkan urutan akses baris tabel secara konsisten di setiap transaksi",
+        "Menonaktifkan fitur autocommit pada koneksi database secara permanen",
+        "Mengganti level isolasi transaksi dari Repeatable Read menjadi Read Uncommitted",
+        "Menambahkan kolom baru untuk mencatat jumlah antrean akses kasir"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim developer melaporkan bahwa query laporan bulanan sering gagal karena timeout setelah 30 detik. Query tersebut melakukan JOIN kompleks antara tabel `orders`, `customers`, dan `items`. Sebagai Database Administrator, apa tindakan preventif terbaik?",
+      "options": [
+        "Membuat materialized view buatan menggunakan tabel ringkasan teragregasi",
+        "Menaikkan nilai parameter max_allowed_packet di file konfigurasi MySQL",
+        "Menambah alokasi buffer pool size hingga 90 persen dari total kapasitas RAM",
+        "Meminta tim developer menulis ulang query menggunakan subquery bertingkat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah query pencarian teks pada kolom `deskripsi_produk` menggunakan operator LIKE '%keyword%' berjalan sangat lambat pada tabel dengan 1 juta produk. Fitur MySQL apa yang harus diimplementasikan untuk mengoptimalkan pencarian ini?",
+      "options": [
+        "Membuat Full-Text Index pada kolom deskripsi_produk dan gunakan MATCH AGAINST",
+        "Mengganti tipe data kolom deskripsi_produk dari TEXT menjadi VARCHAR(255)",
+        "Membuat Unique Index pada kolom deskripsi_produk agar pencarian lebih terstruktur",
+        "Menggunakan fungsi LOWER() pada setiap parameter pencarian untuk akurasi data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk menambahkan kolom baru `email` yang harus bernilai unik pada tabel `karyawan` yang sudah berisi 500.000 data, di mana beberapa data lama memiliki duplikasi email. Pendekatan migrasi apa yang paling aman?",
+      "options": [
+        "Bersihkan data duplikat terlebih dahulu, lalu tambahkan indeks unik secara online",
+        "Langsung jalankan perintah ALTER TABLE dengan klaim ADD UNIQUE pada kolom",
+        "Buat tabel baru dengan struktur yang diinginkan lalu salin data secara manual",
+        "Nonaktifkan pemeriksaan kunci asing sebelum menjalankan perintah ALTER TABLE"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah proses batch job malam hari yang melakukan update massal pada jutaan baris data menyebabkan beban CPU server melonjak 100% dan aplikasi utama ikut terganggu. Bagaimana cara membatasi dampak proses tersebut?",
+      "options": [
+        "Memecah proses update menjadi batch kecil dengan jeda waktu menggunakan LIMIT",
+        "Menjalankan proses batch job pada sesi koneksi yang memiliki prioritas tinggi",
+        "Mematikan sementara fitur binary logging selama proses batch job berlangsung",
+        "Mengubah metode update menjadi operasi penghapusan dan penyisipan ulang data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan sering mengalami kegagalan koneksi dengan pesan 'Too many connections' pada saat jam-jam sibuk kantor. Langkah konfigurasi apa yang paling tepat untuk mengatasi kendala ini?",
+      "options": [
+        "Menganalisis dan menaikkan parameter max_connections serta mengoptimalkan connection pooling",
+        "Menurunkan nilai wait_timeout agar koneksi yang menganggur langsung diputus paksa",
+        "Meminta pengembang aplikasi untuk menutup koneksi database secara manual di setiap baris kode",
+        "Mengganti mesin database utama dari MySQL ke sistem NoSQL berbasis dokumen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati ukuran file log transaksi (ib_logfile) di server MySQL membengkak dan memakan sebagian besar ruang penyimpanan direktori data. Apa tindakan penanganan yang aman dilakukan?",
+      "options": [
+        "Mengatur ukuran log file yang sesuai di konfigurasi dan lakukan restart terkontrol",
+        "Menghapus file log tersebut secara manual menggunakan perintah rm di terminal",
+        "Menjalankan perintah RESET MASTER untuk membersihkan riwayat log biner",
+        "Mengubah parameter innodb_flush_log_at_trx_commit menjadi angka nol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tabel master `wilayah` sering dibaca oleh aplikasi namun sangat jarang diubah datanya. Untuk mengurangi beban I/O disk pada server utama, strategi desain apa yang paling efektif?",
+      "options": [
+        "Menerapkan arsitektur Read Replica dan mengarahkan query baca tabel wilayah ke sana",
+        "Memindahkan tabel wilayah ke dalam memori menggunakan penyimpanan berbasis HEAP",
+        "Melakukan sharding tabel wilayah berdasarkan provinsi ke dalam database berbeda",
+        "Mengaktifkan fitur query cache secara global pada konfigurasi server MySQL"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tabel `riwayat_pesanan` memiliki kolom `status_pesanan` dan sering digunakan untuk filter data dengan nilai status yang hanya berjumlah 4 kategori. Namun, query pencarian dengan status tertentu berjalan lambat karena melakukan full table scan. Langkah apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah tipe data kolom status_pesanan menjadi ENUM agar lebih efisien",
+        "Membuat indeks komposit baru yang mencakup kolom status_pesanan",
+        "Melakukan partisi tabel berdasarkan rentang tanggal pesanan masuk",
+        "Mengubah mesin penyimpanan tabel dari InnoDB ke MyISAM untuk kecepatan baca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan sebuah query analitik yang melakukan JOIN antara tabel `penjualan` dan `pelanggan` membutuhkan waktu eksekusi yang sangat lama dan memblokir operasi tulis lain. Bagaimana cara menganalisis rencana eksekusi query tersebut untuk menemukan bottleneck?",
+      "options": [
+        "Menjalankan perintah SHOW PROCESSLIST untuk melihat status koneksi aktif",
+        "Menambahkan klausul LIMIT pada akhir query untuk membatasi hasil",
+        "Menggunakan perintah EXPLAIN di depan query untuk melihat penggunaan indeks",
+        "Memeriksa file error log MySQL untuk mencari jejak query yang bermasalah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tabel `pengguna` menggunakan tipe data INT pada kolom primary key `id_pengguna`. Pertumbuhan jumlah pengguna saat ini mendekati batas maksimal nilai integer tersebut dan dikhawatirkan akan segera habis. Tindakan preventif apa yang harus dilakukan?",
+      "options": [
+        "Mengubah tipe data kolom id_pengguna menjadi BIGINT agar kapasitasnya bertambah",
+        "Menghapus data pengguna lama yang tidak aktif secara berkala setiap bulan",
+        "Mengaktifkan fitur autoincrement step agar penomoran melompat dua angka",
+        "Membuat tabel arsip terpisah untuk menampung data pengguna yang baru"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce sering mengalami inkonsistensi saldo dompet digital pengguna karena proses transfer dana dilakukan dalam beberapa query terpisah tanpa pengamanan transaksi. Mekanisme apa di MySQL yang harus diterapkan pada kode aplikasi?",
+      "options": [
+        "Menggunakan fungsi Stored Procedure untuk membungkus logika bisnis",
+        "Memanfaatkan blok START TRANSACTION, COMMIT, dan ROLLBACK",
+        "Mengunci seluruh tabel tujuan menggunakan perintah LOCK TABLES WRITE",
+        "Menambahkan foreign key constraint yang menghubungkan tabel saldo dan mutasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Server database produksi mengalami lonjakan penggunaan memori secara drastis hingga memicu out-of-memory killer sistem operasi. Konfigurasi penting apa pada file my.cnf yang paling krusial untuk dibatasi ukurannya?",
+      "options": [
+        "Menurunkan nilai parameter max_allowed_packet untuk setiap koneksi",
+        "Mengurangi ukuran buffer pool InnoDB agar sesuai dengan kapasitas RAM",
+        "Meningkatkan kapasitas query_cache_size untuk mempercepat baca data",
+        "Membatasi jumlah maximal join buffer size pada sesi pengguna aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tabel `katalog_produk` perlu menampung data spesifikasi produk yang strukturnya sangat dinamis dan berbeda-beda tiap kategori barang. Tipe data apa yang paling efektif digunakan pada kolom spesifikasi tersebut mulai versi MySQL 5.7?",
+      "options": [
+        "Menggunakan tipe data BLOB untuk menyimpan representasi string terkompresi",
+        "Membuat tabel relasi one-to-many terpisah untuk setiap atribut spesifikasi",
+        "Menggunakan tipe data TEXT dengan format penulisan terstruktur delimiter",
+        "Memanfaatkan tipe data JSON untuk fleksibilitas penyimpanan dan pencarian"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda diminta untuk membuat salinan struktur dan data dari tabel `invoice` ke tabel baru `invoice_backup` secara cepat di lingkungan database production tanpa mengganggu layanan. Pendekatan mana yang paling efisien?",
+      "options": [
+        "Menggunakan perintah CREATE TABLE invoice_backup AS SELECT * FROM invoice",
+        "Menjalankan perintah mysqldump melalui terminal server secara langsung",
+        "Membuat tabel kosong terlebih dahulu lalu melakukan proses INSERT bertahap",
+        "Melakukan ekspor data ke format CSV melalui aplikasi klien database"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem reporting harian sering gagal karena error 'Lock wait timeout exceeded' saat mencoba memperbarui tabel ringkasan yang sedang diakses oleh aplikasi utama. Solusi administratif apa yang dapat disesuaikan pada sesi query tersebut?",
+      "options": [
+        "Mengubah tingkat isolasi transaksi menjadi READ UNCOMMITTED pada sesi laporan",
+        "Menaikkan batas nilai innodb_lock_wait_timeout pada konfigurasi global server",
+        "Mematikan fitur automatic commit pada semua koneksi aplikasi yang berjalan",
+        "Membuat indeks baru pada kolom yang menjadi kriteria pencarian laporan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim auditor meminta riwayat perubahan data pada tabel `karyawan` untuk keperluan investigasi keamanan. Fitur bawaan apa yang paling tepat disiapkan jika developer tidak mencatatnya di level aplikasi?",
+      "options": [
+        "Mengaktifkan fungsi general query log untuk merekam seluruh perintah SQL",
+        "Membuat skema Trigger BEFORE UPDATE dan BEFORE INSERT ke tabel audit",
+        "Memanfaatkan fitur Event Scheduler untuk menyalin tabel setiap tengah malam",
+        "Mengandalkan binlog server untuk mengekstrak data perubahan secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tabel `notifikasi` berisi jutaan baris data lama yang sudah tidak pernah diakses lagi dan membuat ukuran database membengkak. Strategi manajemen data apa yang paling efektif untuk membersihkan data tanpa mengunci tabel terlalu lama?",
+      "options": [
+        "Menjalankan perintah DELETE FROM notifikasi WHERE tanggal < batas_waktu",
+        "Melakukan proses TRUNCATE TABLE notifikasi lalu mengisi ulang data terbaru",
+        "Menghapus data secara bertahap menggunakan batasan LIMIT dalam perulangan",
+        "Melakukan DROP TABLE langsung pada tabel lama dan membuat yang baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tabel `transaksi` dengan 5 juta baris di database e-commerce mengalami penurunan performa drastis saat query pencarian berdasarkan `tanggal_transaksi` dan `id_pelanggan` dijalankan. Langkah apa yang paling tepat untuk menganalisis masalah ini?",
+      "options": [
+        "Menjalankan perintah ANALYZE TABLE untuk memperbarui statistik indeks tabel",
+        "Menambahkan prefix EXPLAIN pada query tersebut untuk melihat rencana eksekusi",
+        "Mengubah tipe data kolom tanggal menjadi DATETIME agar pencarian lebih cepat",
+        "Melakukan restart layanan MySQL untuk membersihkan cache query yang usang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati tabel `log_aktivitas` terus tumbuh sangat cepat hingga puluhan gigabyte dan menguras ruang disk server produksi. Strategi pengelolaan data apa yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Membuat jadwal event untuk menghapus data log yang berumur lebih dari 30 hari",
+        "Mengonversi mesin penyimpanan tabel log dari InnoDB menjadi MyISAM",
+        "Menerapkan teknik partisi tabel berdasarkan rentang waktu harian atau bulanan",
+        "Melakukan kompresi tabel secara manual menggunakan utilitas mysqldump"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi kasir mengalami error 'Deadlock found when trying to get lock' saat jam promosi flash sale di mana banyak kasir memperbarui stok barang yang sama secara bersamaan. Bagaimana cara meredam masalah ini pada tingkat query?",
+      "options": [
+        "Mengubah urutan akses baris tabel secara konsisten di semua transaksi aplikasi",
+        "Menambahkan klausa FORCE INDEX pada setiap perintah UPDATE stok barang",
+        "Mengganti tingkat isolasi transaksi dari REPEATABLE READ ke SERIALIZABLE",
+        "Menonaktifkan fitur autocommit pada koneksi database sebelum memulai transaksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim developer melaporkan bahwa query laporan bulanan sering gagal karena timeout setelah 30 detik. Query tersebut melakukan JOIN kompleks pada tabel besar tanpa filter yang memadai. Tindakan preventif apa yang paling tepat dilakukan?",
+      "options": [
+        "Menaikkan parameter max_execution_time secara global di file konfigurasi",
+        "Meminta tim developer melakukan refactoring query dan menerapkan indeks",
+        "Menambahkan kapasitas RAM pada server database untuk menampung temporary table",
+        "Membuat tabel turunan baru yang diperbarui setiap kali aplikasi melakukan insert"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query pencarian teks pada kolom `deskripsi_produk` menggunakan operator LIKE '%keyword%' berjalan sangat lambat pada tabel berukuran besar. Solusi berbasis fitur MySQL apa yang paling tepat untuk menggantikan operator tersebut?",
+      "options": [
+        "Membuat indeks unik gabungan pada kolom nama dan deskripsi produk",
+        "Memanfaatkan indeks Full-Text Search dengan fungsi MATCH() AGAINST()",
+        "Mengubah kolom deskripsi produk menjadi tipe data BLOB agar lebih ringkas",
+        "Membuat kolom turunan berisi huruf kapital untuk pencarian case-insensitive"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menambahkan kolom baru `email` yang harus bernilai unik pada tabel `karyawan` yang sudah berisi 500.000 baris data tanpa mengunci tabel terlalu lama di jam kerja. Pendekatan apa yang sebaiknya diambil?",
+      "options": [
+        "Langsung menjalankan perintah ALTER TABLE dengan klausa ADD UNIQUE KEY",
+        "Membuat tabel sementara, menyalin data, lalu melakukan rename tabel secara atomik",
+        "Menambahkan indeks biasa terlebih dahulu, lalu mengubahnya menjadi unik secara bertahap",
+        "Menggunakan fitur online DDL bawaan MySQL untuk penambahan indeks unik"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah proses batch job malam hari yang melakukan update massal pada jutaan baris data menyebabkan beban CPU server melonjak hingga 100% dan mengganggu operasional sistem lain. Bagaimana cara mengoptimalkan proses batch tersebut?",
+      "options": [
+        "Membagi proses update besar menjadi beberapa batch kecil dengan jeda waktu",
+        "Menjalankan perintah update menggunakan thread paralel melalui stored procedure",
+        "Menaikkan prioritas proses MySQL di sistem operasi menggunakan perintah nice",
+        "Menghapus semua indeks pada tabel sebelum update dan memasangnya kembali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan sering mengalami kegagalan koneksi dengan pesan 'Too many connections' pada saat jam-jam sibuk kantor. Langkah konfigurasi apa yang paling tepat untuk disesuaikan pada file my.cnf?",
+      "options": [
+        "Menaikkan nilai parameter max_connections dan sesuaikan batasan sistem operasi",
+        "Memperpanjang nilai parameter wait_timeout untuk menjaga koneksi tetap terbuka",
+        "Menurunkan nilai max_allowed_packet agar penggunaan memori per koneksi berkurang",
+        "Mengaktifkan kembali fitur query cache untuk mengurangi beban pemrosesan koneksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati ukuran file log transaksi (undo/redo log) di server MySQL membengkak dan memakan sebagian besar ruang penyimpanan disk. Tindakan administratif apa yang paling aman untuk dilakukan?",
+      "options": [
+        "Menghapus file log secara manual melalui terminal saat layanan database mati",
+        "Melakukan restart layanan MySQL agar sistem melakukan inisialisasi ulang log",
+        "Menyesuaikan parameter ukuran file log di konfigurasi dan lakukan restart terkontrol",
+        "Menjalankan perintah PURGE BINARY LOGS untuk membersihkan riwayat transaksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tabel master `wilayah` sering dibaca oleh aplikasi namun sangat jarang diubah datanya. Untuk mengurangi beban I/O disk pada server, strategi penyimpanan apa yang paling optimal?",
+      "options": [
+        "Menggunakan storage engine MEMORY agar seluruh data disimpan di dalam RAM",
+        "Menerapkan teknik sharding pada tabel wilayah berdasarkan provinsi",
+        "Mengubah tipe penyimpanan tabel menjadi MyISAM untuk memanfaatkan pembacaan cepat",
+        "Membuat tabel arsip terpisah yang hanya diakses saat akhir bulan saja"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Jira",
+  "skill_key": "jira",
+  "questions": [
+    {
+      "question": "Tim Anda sedang mengerjakan proyek besar dengan metode Scrum di Jira. Saat sprint baru akan dimulai, Product Owner ingin memasukkan tiket mendadak yang tidak ada di backlog sprint planning. Apa tindakan yang paling tepat dilakukan oleh Scrum Master?",
+      "options": [
+        "Menolak tiket tersebut karena melanggar komitmen sprint yang sudah disepakati bersama",
+        "Meminta tim mengurangi ruang lingkup pekerjaan lain agar tiket baru bisa masuk kapasitas",
+        "Menambahkan tiket ke active sprint secara langsung tanpa mengubah kapasitas beban kerja",
+        "Membuat sprint terpisah khusus untuk menangani tiket mendadak tersebut di minggu ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang QA menemukan bug kritis pada tiket yang statusnya sedang 'In Testing' di board Jira. Apa langkah terbaik yang harus dilakukan QA tersebut pada tiket di Jira?",
+      "options": [
+        "Membuat tiket baru tipe bug dan langsung menutup tiket fitur yang sedang diuji",
+        "Mengubah status tiket kembali ke 'In Progress' dan melampirkan bukti tangkapan layar",
+        "Memindahkan status tiket ke 'To Do' agar bisa diambil ulang oleh pengembang lain",
+        "Membiarkan status tetap di 'In Testing' sambil menunggu pengembang memperbaiki kode"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah proyek, Anda mendapati banyak sub-tugas (sub-tasks) terbengkalai di kolom 'In Progress' meskipun tiket utama (parent issue) sudah berstatus 'Done'. Bagaimana cara merapikan board Jira agar masalah ini terlihat transparan?",
+      "options": [
+        "Menghapus semua sub-tugas yang tertinggal agar tidak mengotori laporan metrik",
+        "Mengubah status seluruh sub-tugas secara manual menjadi 'Done' tanpa verifikasi",
+        "Membuat aturan otomatisasi (Automation) untuk menutup sub-tugas saat parent selesai",
+        "Memindahkan beban kerja sub-tugas tersebut ke dalam backlog sprint berikutnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer proyek meminta laporan mingguan mengenai hambatan (blockers) yang memperlambat tim developer. Fitur bawaan Jira manakah yang paling cepat dan akurat untuk menyajikan data ini?",
+      "options": [
+        "Melihat diagram Control Chart untuk melacak waktu siklus penyelesaian tiket",
+        "Menggunakan filter JQL dengan parameter 'flagged = obstruksi' atau block link",
+        "Membuka laporan Velocity Chart guna menghitung rata-rata story points per sprint",
+        "Mengecek halaman Time Tracking report pada setiap tiket yang melewati tenggat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memastikan bahwa seorang developer tidak dapat memindahkan tiket ke kolom 'Done' sebelum kode mereka direview oleh rekan tim. Fitur Jira apa yang harus dikonfigurasi?",
+      "options": [
+        "Menambahkan batasan kolom (Column Constraints) berdasarkan jumlah maksimum tiket",
+        "Membuat aturan validasi alur kerja (Workflow Validation) pada transisi status",
+        "Mengaktifkan fitur pemberitahuan email otomatis setiap kali status tiket berubah",
+        "Membatasi hak akses proyek hanya untuk peran Administrator dan Lead Developer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan estimasi perencanaan sprint menggunakan Story Points, tim Anda sering berdebat panjang karena ukuran tiket terlalu besar. Apa solusi pengelolaan backlog yang tepat di Jira?",
+      "options": [
+        "Mengubah satuan estimasi dari Story Points menjadi jam kerja agar lebih presisi",
+        "Memecah (split) tiket epik yang besar menjadi beberapa user story yang lebih kecil",
+        "Menaikkan batas kapasitas sprint board agar semua tiket besar bisa ditampung",
+        "Menyerahkan sepenuhnya penentuan angka estimasi kepada Product Owner seorang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang stakeholder non-teknis ingin memantau progres rilis fitur tanpa harus melihat detail teknis di board Scrum yang rumit. Tampilan Jira apa yang paling efektif dibagikan kepada mereka?",
+      "options": [
+        "Memberikan akses penuh sebagai Project Administrator untuk melihat pengaturan",
+        "Mengirimkan tautan langsung ke halaman Active Sprint setiap hari kerja",
+        "Membuatkan Jira Dashboard dengan gadget pie chart status dan roadmap rilis",
+        "Mengekspor seluruh data backlog ke format CSV dan mengirimkannya via email"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim运维 (Operations) dan tim Development menggunakan satu proyek Jira yang sama, namun mereka sering kebingungan karena jenis tiket dan alur kerja mereka sangat berbeda. Langkah perbaikan terbaik di Jira adalah?",
+      "options": [
+        "Memisahkan mereka ke dalam dua Project yang berbeda namun menggunakan filter global",
+        "Menggabungkan semua jenis tiket menjadi satu jenis dengan alur kerja yang sangat panjang",
+        "Membuat Issue Type Scheme dan Workflow Scheme yang terpisah untuk tiap tim",
+        "Menonaktifkan fitur board Kanban dan hanya mengandalkan tampilan daftar isu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan untuk menarik data laporan berapa lama waktu rata-rata yang dibutuhkan sebuah bug sejak pertama kali dibuat hingga selesai diperbaiki. Laporan bawaan Jira mana yang harus Anda gunakan?",
+      "options": [
+        "Control Chart untuk mengukur cycle time penyelesaian masalah di board",
+        "Sprint Report untuk melihat daftar tiket yang diselesaikan dalam satu sprint",
+        "Burndown Chart untuk memantau sisa pekerjaan harian menuju akhir tenggat",
+        "Version Report untuk mengecek persentase kelengkapan target rilis versi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tiket penting di board Jira secara tidak sengaja terhapus oleh anggota tim yang baru bergabung. Sebagai Jira Administrator, bagaimana cara Anda mengembalikan tiket tersebut beserta komentarnya?",
+      "options": [
+        "Membuat ulang tiket baru dengan judul yang sama dan meminta tim menulis ulang komentar",
+        "Menggunakan fitur pemulihan dari tempat sampah (Trash) di pengaturan proyek",
+        "Melakukan rollback database server Jira ke titik waktu sebelum tiket tersebut dihapus",
+        "Mengimpor kembali data menggunakan file CSV cadangan yang dibuat minggu lalu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda sering mengeluh bahwa board Jira terlalu penuh dengan tiket lama dari sprint sebelumnya yang tidak selesai. Apa tindakan terbaik untuk merapikan board tanpa kehilangan data historis?",
+      "options": [
+        "Menghapus semua tiket yang belum selesai agar board kembali bersih",
+        "Memindahkan tiket yang belum selesai ke backlog atau sprint berikutnya",
+        "Membuat proyek baru di Jira dan meminta tim pindah ke proyek tersebut",
+        "Mengubah status semua tiket sisa menjadi 'Done' secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang developer baru sering lupa mengisi kolom 'Component' dan 'Epic Link' saat membuat tiket baru. Sebagai Jira Admin, bagaimana cara Anda mencegah hal ini?",
+      "options": [
+        "Membuat dokumen panduan tertulis dan membagikannya ke grup chat tim",
+        "Menegur developer tersebut secara langsung setiap kali membuat kesalahan",
+        "Mengonfigurasi Field Configuration untuk membuat kolom tersebut wajib diisi",
+        "Mengubah izin akses agar developer tidak bisa membuat tiket baru sendiri"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer Anda meminta agar setiap kali ada tiket berlabel 'Keuangan' yang masuk, tiket tersebut otomatis ditugaskan ke bagian finance. Fitur apa di Jira yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan Jira Automation untuk mendeteksi label dan mengubah assignee",
+        "Membuat board terpisah khusus untuk departemen keuangan secara manual",
+        "Mengatur ulang Agile/Scrum board filter agar hanya menampilkan label itu",
+        "Meminta semua anggota tim untuk memantau label tersebut secara bergantian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam rapat Retrospective, tim developer mengeluh bahwa mereka tidak tahu tiket mana yang paling mendesak karena prioritasnya sering berubah. Langkah apa yang harus diambil di Jira Board?",
+      "options": [
+        "Menambahkan lebih banyak pilihan tingkat prioritas baru yang lebih spesifik",
+        "Menyembunyikan kolom prioritas agar developer fokus pada tugas yang ada",
+        "Mengaktifkan fitur warna berdasarkan prioritas di card layout setting board",
+        "Menyusun ulang urutan tiket di Product Backlog berdasarkan prioritas bisnis"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah tiket bug telah diperbaiki oleh developer dan diverifikasi oleh QA, namun Product Owner menolak untuk menutupnya karena belum sesuai ekspektasi bisnis. Apa yang harus dilakukan pada tiket tersebut?",
+      "options": [
+        "Membiarkan status tiket tetap pada posisi 'In Testing' sampai disetujui",
+        "Memindahkan tiket kembali ke status 'In Progress' atau status revisi khusus",
+        "Langsung menekan tombol 'Done' karena QA sudah menyatakan lolos uji",
+        "Menghapus tiket lama dan membuat tiket baru khusus untuk revisi bisnis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Scrum Anda bekerja dengan beberapa sub-tim yang berbeda fitur, namun semuanya berada dalam satu project Jira. Bagaimana cara memudahkan setiap sub-tim melihat tiket mereka sendiri?",
+      "options": [
+        "Membuat beberapa board terpisah dengan JQL filter yang spesifik per sub-tim",
+        "Memecah project tersebut menjadi beberapa project Jira yang berdiri sendiri",
+        "Meminta anggota tim menggunakan fitur pencarian manual setiap kali bekerja",
+        "Mengubah nama semua tiket dengan awalan nama sub-tim yang bersangkutan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang anggota tim melaporkan bahwa notifikasi email dari Jira masuk terlalu banyak dan mengganggu konsentrasi kerja mereka. Di mana pengaturan untuk mengatasi hal ini?",
+      "options": [
+        "Masuk ke Project Settings lalu matikan fitur notifikasi untuk seluruh tim",
+        "Mengubah pengaturan Personal Settings pada bagian Email Notifications",
+        "Meminta Jira Administrator untuk menghapus akun email dari sistem",
+        "Membuat aturan filter email di aplikasi mail client pribadi masing-masing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat penutupan sprint (Sprint Close), Jira memperingatkan bahwa masih ada beberapa tiket yang belum selesai. Keputusan apa yang harus diambil oleh Scrum Master?",
+      "options": [
+        "Memaksa mengubah status tiket menjadi 'Done' agar metrik sprint terlihat bagus",
+        "Menghapus tiket yang belum selesai dari sistem agar tidak menjadi beban",
+        "Memindahkan tiket yang belum selesai ke Active Sprint berikutnya atau Backlog",
+        "Membiarkan sprint tetap terbuka sampai semua tiket benar-benar selesai"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin agar setiap kali tiket mencapai status 'Ready for Deploy', sistem otomatis mengirimkan pesan pemberitahuan ke channel Slack tim DevOps. Fitur apa yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan fitur bawaan Jira Automation untuk integrasi webhook ke Slack",
+        "Menghubungkan akun Slack pribadi dengan setiap tiket secara manual",
+        "Menginstal plugin pihak ketiga berbayar untuk sinkronisasi seluruh chat",
+        "Meminta DevOps untuk terus memantau board Jira setiap satu jam sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen ingin melihat estimasi total kapasitas kerja tim untuk tiga sprint ke depan dalam bentuk grafik batang yang jelas. Fitur bawaan Jira mana yang harus Anda tampilkan?",
+      "options": [
+        "Control Chart untuk melihat siklus waktu penyelesaian tugas harian",
+        "Velocity Chart untuk melihat tren kapasitas dan poin yang diselesaikan",
+        "Pie Chart Report berdasarkan kategori komponen yang paling sering dibuat",
+        "Burndown Chart untuk memantau sisa pekerjaan dalam satu sprint berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang Product Owner meminta agar tiket dengan label 'VIP-Client' otomatis muncul di bagian paling atas pada Active Sprint board tim Anda, terlepas dari prioritas bawaannya. Fitur Jira apa yang paling tepat dikonfigurasi oleh Admin untuk memenuhi permintaan ini?",
+      "options": [
+        "Mengatur ulang urutan kolom status pada board settings",
+        "Membuat filter JQL khusus untuk mengurutkan berdasarkan label",
+        "Menggunakan fitur Quick Filters agar PO bisa menyaring tiket",
+        "Menambahkan aturan pengurutan (Swimlanes or Card Layout/Ranking)"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim QA Anda melaporkan bahwa mereka sering salah memasukkan tiket ke project yang salah karena menu pembuatan isu menampilkan terlalu banyak jenis issue type yang tidak relevan. Langkah apa yang harus diambil Jira Administrator untuk merapikannya?",
+      "options": [
+        "Menghapus jenis isu lama yang sudah tidak terpakai dari database",
+        "Membuat Issue Type Scheme baru dan mengaitkannya ke project tersebut",
+        "Menonaktifkan notifikasi untuk jenis isu yang tidak relevan di project",
+        "Memindahkan tiket lama ke project arsip agar tidak terlihat lagi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah rapat perencanaan, tim sepakat mengubah definisi 'Done' untuk menyertakan dokumen persetujuan legal. Saat ini, banyak tiket lama berstatus 'Done' yang tidak memiliki dokumen tersebut. Bagaimana Anda menangani hal ini di Jira?",
+      "options": [
+        "Membuat status baru khusus untuk revisi dokumen legal di workflow",
+        "Mengubah semua tiket lama secara manual satu per satu ke Backlog",
+        "Membuat custom field baru untuk checklist legal dan menambahkannya ke layar",
+        "Menghapus tiket lama dan membuat ulang tiket baru dengan aturan baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang developer melaporkan bahwa tombol 'Transition' untuk memindahkan tiket dari 'In Progress' ke 'In Review' tiba-tiba hilang dari tampilan board-nya. Sebagai Jira Admin, apa pemeriksaan pertama yang paling logis?",
+      "options": [
+        "Memeriksa apakah izin transisi workflow dibatasi oleh peran atau kondisi tertentu",
+        "Menghapus cache browser dan melakukan hard refresh pada halaman Jira",
+        "Meminta developer tersebut untuk keluar dan masuk kembali ke akun Jira",
+        "Menambahkan user tersebut sebagai Project Administrator baru di project"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen meminta laporan analitik mengenai produktivitas tim berupa grafik garis yang menunjukkan jumlah tiket yang diselesaikan setiap minggu selama kuartal ini. Fitur bawaan Jira manakah yang paling cepat menyediakannya?",
+      "options": [
+        "Membuat dashboard baru dengan gadget 'Control Chart'",
+        "Menggunakan gadget 'Created vs Resolved Issues Report'",
+        "Mengekspor seluruh data project ke format CSV lalu mengolahnya",
+        "Membuat filter JQL yang digabungkan dengan fitur ekspor Excel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pemasaran dan tim IT ingin menggunakan satu instance Jira yang sama, namun data tiket pemasaran tidak boleh sama sekali terlihat oleh anggota tim IT karena alasan kerahasiaan. Solusi arsitektur Jira apa yang harus Anda terapkan?",
+      "options": [
+        "Membuat dua project terpisah dengan pengaturan Project Permission yang ketat",
+        "Menggunakan satu project yang sama namun memisahkan isu lewat komponen",
+        "Membuat board terpisah di dalam satu project yang sama untuk setiap tim",
+        "Mengatur Security Level pada setiap isu yang dibuat oleh tim pemasaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pembersihan project, Anda menemukan ratusan tiket di backlog dengan status 'To Do' yang sudah berumur lebih dari 6 bulan dan tidak pernah disentuh. Apa tindakan terbaik yang disarankan untuk menjaga kesehatan performa board?",
+      "options": [
+        "Menghapus seluruh tiket tersebut secara permanen dari database Jira",
+        "Memindahkan tiket tersebut ke project khusus arsip dengan skema terpisah",
+        "Mengubah status tiket secara massal menggunakan fungsi Bulk Change ke 'Closed'",
+        "Menutup backlog lama dan membuat versi baru untuk menampung tiket aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang developer ingin memastikan bahwa setiap kali dia membuat sub-task, judul dari sub-task tersebut otomatis mengikuti pola tertentu yang seragam. Fitur otomatisasi (Automation) apa yang paling tepat diatur di Jira?",
+      "options": [
+        "Automation rule dengan pemicu 'Issue Created' dan tindakan 'Edit issue fields'",
+        "Automation rule dengan pemicu 'Field value changed' dan tindakan 'Send email'",
+        "Mengatur default value pada skema layar untuk field summary sub-task",
+        "Membuat template deskripsi standar pada pengaturan global project"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA sering kesulitan mencari tiket bug yang spesifik karena deskripsi yang diisi oleh pelapor tidak terstruktur dengan baik. Sebagai Admin, bagaimana cara paling efektif mengatasi masalah ini di tingkat sistem?",
+      "options": [
+        "Menggunakan fitur Field Configuration untuk membuat deskripsi bersifat wajib",
+        "Mengubah Issue Type Screen Scheme untuk menampilkan template teks pada field deskripsi",
+        "Membuat aturan otomatisasi untuk menghapus tiket yang deskripsinya kosong",
+        "Mengirimkan pesan peringatan otomatis kepada user yang membuat tiket tanpa deskripsi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer Anda ingin melihat seberapa konsisten tim dalam memperkirakan pekerjaan dengan membandingkan total Story Points yang direncanakan versus yang diselesaikan per sprint. Laporan apa yang harus Anda buka di Jira?",
+      "options": [
+        "Membuka laporan 'Velocity Chart' di dalam menu laporan project Scrum",
+        "Membuka laporan 'Burndown Chart' dari sprint yang sedang berjalan saat ini",
+        "Membuat gadget 'Average Age Chart' pada halaman dashboard utama tim",
+        "Menggunakan laporan 'Cumulative Flow Diagram' untuk melihat tren harian"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

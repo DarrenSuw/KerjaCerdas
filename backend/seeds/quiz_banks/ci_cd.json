@@ -1,0 +1,306 @@
+{
+  "skill": "CI/CD",
+  "skill_key": "ci/cd",
+  "questions": [
+    {
+      "question": "Tim Anda menggunakan GitHub Actions untuk aplikasi e-commerce. Saat developer melakukan push ke branch utama, proses build memakan waktu sangat lama karena selalu mengunduh dependensi Node.js dari internet setiap kali pipeline berjalan. Langkah apa yang paling tepat untuk mengoptimalkan pipeline ini?",
+      "options": [
+        "Menghapus folder node_modules sebelum setiap tahap build dijalankan",
+        "Menggunakan fitur caching bawaan untuk menyimpan direktori node_modules",
+        "Memindahkan seluruh dependensi eksternal ke dalam kode sumber utama aplikasi",
+        "Membatasi jumlah developer yang boleh melakukan push ke branch utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi fintech di Indonesia mengalami kegagalan pada tahap deployment produksi karena konfigurasi database staging masih terbawa ke lingkungan production. Bagaimana cara terbaik mengelola variabel rahasia ini dalam pipeline CI/CD?",
+      "options": [
+        "Menyimpan semua konfigurasi production langsung di dalam file Dockerfile",
+        "Menggunakan environment secrets pada platform CI/CD dan injeksi saat runtime",
+        "Menuliskan kredensial dalam bentuk teks biasa di file konfigurasi publik",
+        "Meminta setiap developer untuk mengingat dan memasukkan manual saat deploy"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa pipeline GitLab CI/CD sering gagal pada tahap integrasi tes karena kontainer database belum sepenuhnya siap menerima koneksi saat tes mulai berjalan. Solusi teknis apa yang harus diterapkan pada file konfigurasi?",
+      "options": [
+        "Menambahkan perintah sleep dengan durasi yang sangat lama di awal tes",
+        "Menghapus seluruh pengujian integrasi dari pipeline untuk mempercepat build",
+        "Menggunakan service health check agar pipeline menunggu database siap",
+        "Menjalankan tes secara berulang-ulang sampai database merespons dengan benar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek migrasi sistem ke Kubernetes, tim DevOps ingin memastikan bahwa setiap gambar Docker yang lolos tahap unit test saja yang boleh dideploy ke kluster produksi. Pendekatan keamanan apa yang paling efektif?",
+      "options": [
+        "Memberikan akses penuh ke semua developer untuk melakukan manual kubectl apply",
+        "Menggunakan sistem tag otomatis dan validasi signature gambar sebelum deploy",
+        "Membiarkan sistem produksi menarik gambar terbaru secara otomatis setiap jam",
+        "Menyimpan semua file konfigurasi Kubernetes dalam bentuk zip di email tim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup logistik mendapati bahwa proses deployment manual ke server VPS sering menyebabkan human error, seperti salah versi aplikasi. Tim memutuskan untuk menerapkan Continuous Deployment. Apa indikator utama bahwa proses ini berhasil?",
+      "options": [
+        "Setiap merge ke branch production langsung memicu build dan rilis otomatis",
+        "Developer harus mengisi formulir approval sebelum kode masuk ke server",
+        "Tim QA melakukan pengecekan manual selama dua hari sebelum rilis",
+        "Server produksi direstart secara berkala setiap kali akhir pekan tiba"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Ketika menjalankan pipeline Jenkins untuk aplikasi Java, proses build sering gagal di tengah jalan karena keterbatasan memori pada server agent (OutOfMemoryError). Langkah penanganan apa yang paling tepat?",
+      "options": [
+        "Menurunkan jumlah tes otomatis agar penggunaan memori menjadi lebih sedikit",
+        "Melakukan scale-out agent Jenkins atau mengonfigurasi batas alokasi memori JVM",
+        "Mengganti seluruh bahasa pemrograman aplikasi dari Java ke bahasa lain",
+        "Menjalankan seluruh tahapan pipeline secara berurutan pada satu thread tunggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA mengeluhkan bahwa bug sering lolos ke lingkungan staging meskipun pipeline CI/CD selalu hijau (sukses). Setelah diselidiki, tahap pengujian end-to-end tidak mencakup skenario transaksi pembayaran. Apa tindakan perbaikan pada pipeline?",
+      "options": [
+        "Menghapus tahapan pengujian unit untuk menghemat waktu eksekusi pipeline",
+        "Menambahkan tahapan integration dan e2e testing khusus skenario pembayaran",
+        "Menaikkan batas waktu timeout pada server CI/CD tanpa mengubah skrip test",
+        "Meminta tim QA melakukan pengujian ulang secara manual setelah rilis selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menyiapkan strategi rollback otomatis di ArgoCD untuk aplikasi berbasis Kubernetes. Jika rilis versi baru mengalami crash loop, mekanisme apa yang harus diandalkan?",
+      "options": [
+        "Menghapus seluruh namespace Kubernetes dan membuat ulang dari awal",
+        "Memanfaatkan fitur automated sync dengan sinkronisasi revisi Git sebelumnya",
+        "Menghubungi penyedia cloud untuk mengembalikan snapshot server fisik",
+        "Meminta developer melakukan hotfix langsung di server production via SSH"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah pipeline multi-stage Docker build, ukuran image akhir aplikasi Go sangat besar karena menyertakan perkakas kompilasi (compiler). Bagaimana cara memperbaiki hal ini dalam skrip CI/CD?",
+      "options": [
+        "Menggunakan teknik multi-stage build untuk memisahkan stage build dan runtime",
+        "Menghapus file log aplikasi secara berkala menggunakan cron job di dalam container",
+        "Menggunakan base image berbasis sistem operasi yang paling berat dan lengkap",
+        "Menyimpan kode sumber lengkap di dalam direktori root image produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan Anda menerapkan kebijakan compliance yang ketat, di mana setiap commit kode harus melalui proses static code analysis (SonarQube) sebelum bisa digabungkan. Bagaimana cara mengintegrasikan aturan ini secara efektif?",
+      "options": [
+        "Memasang webhook pemindai yang akan memblokir merge request jika ada critical bug",
+        "Mengirimkan hasil pemindaian melalui pesan grup chat setiap akhir bulan saja",
+        "Membiarkan merge request tetap bisa digabungkan meskipun skor kualitas nol",
+        "Melakukan pengecekan kode secara manual dengan membaca baris demi baris teks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda menggunakan GitLab CI untuk aplikasi web bersekala besar. Pipeline sering memakan waktu lebih dari 30 menit karena setiap *job* selalu mengunduh ulang *dependencies* Node.js dari internet. Apa langkah paling efektif untuk mempercepat durasi pipeline tersebut?",
+      "options": [
+        "Menghapus tahapan *unit test* agar proses *build* bisa berjalan lebih cepat",
+        "Memanfaatkan fitur *cache* GitLab CI pada direktori modul node_modules",
+        "Mengurangi jumlah *branch* aktif agar tidak ada *trigger* yang tidak perlu",
+        "Membeli server fisik baru dengan spesifikasi RAM yang jauh lebih tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi perbankan digital menggunakan Jenkins untuk otomasi rilis. Saat *pipeline* mencapai tahap *deploy* ke lingkungan *production*, proses sering terhenti karena memerlukan persetujuan manual dari manajer teknik. Fitur apa di Jenkins yang paling tepat untuk menangani skenario ini?",
+      "options": [
+        "Menambahkan plugin keamanan tambahan untuk enkripsi token akses",
+        "Menggunakan langkah interaktif input agar eksekusi menunggu respons",
+        "Membuat *branch* khusus *hotfix* yang mengabaikan semua aturan validasi",
+        "Mengubah peran akses pengguna langsung melalui manajemen kredensial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa rahasia seperti *API key* pihak ketiga dan kata sandi basis data tertulis secara langsung di dalam file konfigurasi YAML pada *repository* Git. Tindakan apa yang harus segera dilakukan dalam kerangka kerja CI/CD yang aman?",
+      "options": [
+        "Menghapus baris kode tersebut dan melakukan rotasi kredensial segera",
+        "Menyembunyikan file konfigurasi tersebut menggunakan perintah .gitignore",
+        "Membiarkannya karena sudah diamankan oleh jaringan privat perusahaan",
+        "Memindahkan file konfigurasi ke folder tersembunyi di dalam *repository*"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda mengalami lonjakan trafik saat kampanye harbolnas. Tim DevOps ingin memastikan bahwa *pipeline* pengujian beban (load testing) otomatis berjalan sebelum rilis ke *production*. Di mana posisi terbaik menempatkan tahapan ini?",
+      "options": [
+        "Sebelum tahap pengujian unit kode lokal oleh para pengembang",
+        "Sesudah tahap *deployment* berhasil dilakukan di lingkungan *staging*",
+        "Pada awal sebelum proses kompilasi kode sumber dimulai sama sekali",
+        "Bersamaan dengan proses pembersihan log server setelah rilis selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam implementasi *Continuous Delivery* menggunakan GitHub Actions, manajer produk ingin agar setiap versi rilis yang stabil secara otomatis ditandai dengan nomor versi berbasis *Semantic Versioning* di Git. Pendekatan apa yang paling efisien?",
+      "options": [
+        "Membuat skrip manual yang dijalankan via terminal lokal setiap minggu",
+        "Menggunakan *action* pihak ketiga yang menganalisis pesan komitmen git",
+        "Meminta tim QA untuk memasukkan nomor versi secara manual ke server",
+        "Menonaktifkan sistem *tagging* otomatis dan fokus pada nomor cabang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan mikro di perusahaan Anda sering mengalami kegagalan *deployment* di Kubernetes karena masalah versi citra Docker yang tidak konsisten menggunakan tag 'latest'. Bagaimana cara terbaik memperbaiki praktik manajemen citra ini di CI/CD?",
+      "options": [
+        "Menggunakan nilai hash SHA256 atau nomor versi unik dari commit Git",
+        "Menambahkan kapasitas memori pada klaster Kubernetes secara berkala",
+        "Menghapus mekanisme *rolling update* dan kembali ke pembaruan manual",
+        "Mematikan fitur validasi otomatis pada manifes penyebaran aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang sering mengeluh bahwa *pipeline* CI/CD memakan waktu lama karena menjalankan seluruh rangkaian pengujian integrasi yang memakan waktu 2 jam untuk setiap perubahan kecil pada teks antarmuka. Apa solusi desain *pipeline* yang tepat?",
+      "options": [
+        "Memisahkan pengujian menjadi tahap cepat dan tahap malam terjadwal",
+        "Menghapus seluruh pengujian integrasi dan hanya mengandalkan QA manual",
+        "Menjalankan semua pengujian secara berurutan dalam satu pekerjaan tunggal",
+        "Mengurangi standar kualitas kode agar proses validasi menjadi lebih longgar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menjalankan *pipeline* berbasis kontainer Docker di server agen CI yang sama secara terus-menerus, disk server sering penuh karena penumpukan lapisan citra yang tidak terpakai. Langkah pemeliharaan apa yang harus diintegrasikan ke *pipeline*?",
+      "options": [
+        "Menambahkan perintah pembersihan sistem penampung secara berkala",
+        "Melakukan format ulang seluruh hard disk server agen setiap bulan",
+        "Membatasi ukuran maksimum file log aplikasi di dalam kode sumber",
+        "Memindahkan direktori penyimpanan basis data ke mesin server lain"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menerapkan strategi *Blue-Green Deployment* untuk meminimalkan waktu henti saat pembaruan aplikasi. Bagaimana mekanisme perpindahan trafik yang benar setelah lingkungan hijau (green) siap dan teruji?",
+      "options": [
+        "Mengarahkan penyeimbang beban (load balancer) sepenuhnya ke lingkungan hijau",
+        "Mematikan server lingkungan biru secara paksa sebelum menguji lingkungan hijau",
+        "Mengubah konfigurasi DNS publik agar mengarah ke alamat IP server biru lama",
+        "Menghapus basis data produksi lama dan menggantinya dengan data kosong"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem pemantauan mendeteksi adanya lonjakan tingkat kesalahan HTTP 500 segera setelah *pipeline* CI/CD menyelesaikan *deployment* otomatis ke *production*. Langkah mitigasi otomatis apa yang paling tepat dipicu oleh sistem?",
+      "options": [
+        "Melakukan rollback cepat ke versi stabil sebelumnya yang tercatat",
+        "Mengirimkan surel peringatan kepada seluruh pelanggan terdampak",
+        "Membuat cabang perbaikan baru di sistem kontrol versi secara otomatis",
+        "Menambah jumlah replika pod aplikasi di klaster untuk menyerap beban"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa proses build Docker di GitLab CI memakan waktu sangat lama karena setiap job selalu mengunduh ulang dependensi npm dari awal. Langkah paling efektif untuk mengatasi masalah ini adalah",
+      "options": [
+        "Menghapus folder node_modules sebelum setiap perintah build dijalankan",
+        "Memanfaatkan fitur caching GitLab CI untuk direktori node_modules",
+        "Mengganti agen runner dengan spesifikasi CPU dan RAM yang lebih tinggi",
+        "Memindahkan seluruh proses instalasi dependensi ke dalam tahap lokal developer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi Node.js di lingkungan staging sering mengalami error koneksi database sesaat setelah deployment otomatis selesai melalui GitHub Actions. Setelah ditelusuri, aplikasi mencoba melakukan migrasi schema sebelum database siap menerima koneksi. Solusi terbaik pada pipeline adalah",
+      "options": [
+        "Menambahkan jeda waktu statis menggunakan perintah sleep selama satu menit",
+        "Menjalankan perintah migrasi secara manual setelah notifikasi Telegram masuk",
+        "Membuat skrip health check pada job untuk memastikan kesiapan database",
+        "Menghapus tahap migrasi otomatis dan menyerahkannya kepada tim DBA"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menggunakan Jenkins untuk pipeline CI/CD aplikasi monolitik. Pipeline sering gagal di tengah jalan dengan galat 'Java heap space out of memory' pada tahap build Maven. Pendekatan perbaikan yang paling tepat untuk masalah ini adalah",
+      "options": [
+        "Menyesuaikan konfigurasi parameter MAVEN_OPTS untuk membatasi heap memory",
+        "Memecah aplikasi monolitik tersebut menjadi puluhan layanan mikro terpisah",
+        "Melakukan restart pada server utama Jenkins setiap malam secara berkala",
+        "Mengurangi jumlah unit test yang dijalankan agar proses lebih cepat selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam implementasi GitOps menggunakan ArgoCD di kluster Kubernetes, Anda ingin memastikan bahwa developer dapat menguji perubahan manifes secara lokal sebelum melakukan merge ke branch produksi. Praktik terbaik untuk alur ini adalah",
+      "options": [
+        "Memberikan akses langsung ke file konfigurasi produksi di server Kubernetes",
+        "Menyimpan seluruh parameter rahasia di dalam repositori publik terpusat",
+        "Menggunakan alat validasi statis seperti Conftest atau Kubeconform di CI",
+        "Mematikan fitur sinkronisasi otomatis agar tidak terjadi perubahan mendadak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda menerapkan aturan bahwa setiap image Docker yang akan didorong ke container registry privat harus dipindai terlebih dahulu terhadap kerentanan CVE kritis. Langkah implementasi yang paling tepat dalam pipeline CI adalah",
+      "options": [
+        "Menjalankan pemindai kerentanan seperti Trivy setelah image berhasil diunggah",
+        "Menggunakan versi base image yang paling lama agar tidak ada pembaruan",
+        "Mengabaikan peringatan keamanan jika aplikasi sudah berjalan stabil di lokal",
+        "Menambahkan langkah pemindaian keamanan sebelum perintah push dijalankan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah tim developer mengeluhkan bahwa pipeline CI/CD di Bitbucket Pipelines berjalan sangat lambat karena menjalankan seluruh rangkaian integration test yang memakan waktu 45 menit pada setiap commit kecil. Cara paling efektif mengoptimalkan alur kerja ini adalah",
+      "options": [
+        "Menerapkan mekanisme parallel job untuk membagi beban pengujian",
+        "Menghapus seluruh integration test dan hanya mengandalkan manual testing",
+        "Menaikkan batas waktu maksimal eksekusi pipeline menjadi satu jam",
+        "Menonaktifkan pipeline otomatis dan menjalankannya hanya pada akhir pekan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa kredensial akses AWS S3 tertulis secara hardcode di dalam file konfigurasi GitLab CI. Untuk menjaga keamanan tanpa mengganggu proses build, tindakan perbaikan yang harus segera dilakukan adalah",
+      "options": [
+        "Mengenkripsi seluruh repositori kode sumber menggunakan kunci privat RSA",
+        "Memindahkan kredensial tersebut ke dalam fitur GitLab CI/CD Variables",
+        "Menghapus tahap deployment ke S3 dan mengunggah berkas secara manual",
+        "Mengubah izin akses IAM pada AWS S3 menjadi publik untuk semua pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika melakukan deployment aplikasi berbasis Kubernetes menggunakan Helm chart, pipeline sering gagal karena terjadi konflik penamaan resource yang sudah ada. Strategi mitigasi yang tepat pada perintah Helm adalah",
+      "options": [
+        "Menambahkan parameter --atomic atau --wait pada saat eksekusi helm upgrade",
+        "Selalu menghapus seluruh kluster Kubernetes sebelum deployment dimulai",
+        "Menggunakan satu nama release yang sama untuk seluruh namespace aplikasi",
+        "Mematikan mekanisme validasi skema YAML pada klien Helm di server CI"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menerapkan strategi Canary Deployment untuk layanan pembayaran agar meminimalkan dampak jika terjadi kegagalan pada rilis baru. Mekanisme operasional yang paling sesuai adalah",
+      "options": [
+        "Mengarahkan 100% pengguna ke versi baru secara langsung tanpa pengujian",
+        "Menghentikan sementara layanan pembayaran selama proses pembaruan sistem",
+        "Mengarahkan sebagian kecil trafik pengguna ke versi baru secara bertahap",
+        "Membuat server terpisah yang hanya bisa diakses oleh tim internal saja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pipeline GitHub Actions mengalami kegagalan terus-menerus karena agen runner kehabisan ruang penyimpanan disk akibat penumpukan cache dan layer Docker yang tidak terpaksa dibersihkan. Langkah preventif terbaik adalah",
+      "options": [
+        "Menambahkan langkah pembersihan otomatis docker system prune di akhir job",
+        "Membeli kapasitas hard disk tambahan yang berukuran sangat besar sekali",
+        "Mematikan fitur caching pada seluruh repositori yang ada di organisasi",
+        "Menghindari penggunaan Docker di dalam pipeline dan memakai binary langsung"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

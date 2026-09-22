@@ -1,0 +1,306 @@
+{
+  "skill": "Kotlin",
+  "skill_key": "kotlin",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi e-commerce dan mendapati aplikasi sering mengalami crash dengan pesan 'NullPointerException' saat memproses data pengguna dari API. Pendekatan idiomatik Kotlin apa yang paling tepat untuk mencegah masalah ini secara permanen pada lapisan data?",
+      "options": [
+        "Menggunakan blok try-catch di setiap pemanggilan API untuk menangkap null",
+        "Memanfaatkan tipe data nullable (?) dan operator safe call (?) serta elvis (?:)",
+        "Melakukan pengecekan if (data != null) secara manual pada setiap variabel",
+        "Mengubah semua model data menjadi bertipe lateinit var agar tidak null"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda melaporkan bahwa aplikasi perbankan mengalami kebocoran memori (memory leak) karena proses berat di background terus berjalan meskipun Activity sudah ditutup. Bagaimana Anda harus menangani operasi asynchronous ini menggunakan Kotlin Coroutines?",
+      "options": [
+        "Mengimplementasikan interface CoroutineScope pada Activity dan memanggil cancel",
+        "Mengganti semua coroutine dengan AsyncTask bawaan Android yang lebih aman",
+        "Membuat instance GlobalScope baru di setiap fungsi agar independen dari lifecycle",
+        "Menggunakan lifecycleScope atau viewModelScope yang otomatis membatalkan pekerjaan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam proyek fintech, Anda perlu memastikan bahwa fungsi untuk menghitung bunga pinjaman hanya dapat diakses dan dieksekusi oleh satu thread dalam satu waktu untuk menghindari race condition. Fitur Kotlin manakah yang paling efisien untuk kebutuhan ini?",
+      "options": [
+        "Menggunakan keyword synchronized pada fungsi Kotlin untuk mengunci eksekusi",
+        "Memanfaatkan Mutex dari kotlinx.coroutines.sync dengan blok suspend kuncinya",
+        "Mengubah seluruh struktur data menjadi thread-safe menggunakan ConcurrentHashMap",
+        "Menjalankan perhitungan tersebut di dalam Dispatchers.IO tanpa batasan lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat modul utilitas untuk format mata uang Rupiah yang sering digunakan di berbagai bagian aplikasi. Pendekatan OOP Kotlin mana yang paling bersih untuk membuat fungsi ekstensi ini tanpa mewarisi kelas String?",
+      "options": [
+        "Membuat fungsi biasa di dalam companion object dari kelas String",
+        "Membuat fungsi ekstensi (extension function) fun String.toRupiah(): String",
+        "Membuat kelas turunan baru yang mewarisi fungsi dari tipe data String",
+        "Membuat fungsi global statis menggunakan anotasi @JvmStatic di dalam file"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berita Anda memuat daftar artikel yang sangat panjang dan sering melakukan filter berdasarkan kategori. Untuk menghindari penurunan performa UI, operasi koleksi Kotlin manakah yang harus Anda gunakan pada list tersebut?",
+      "options": [
+        "Mengubah list menjadi Sequence sebelum melakukan operasi filter dan map",
+        "Menggunakan fungsi eager evaluation seperti filter { } langsung pada List",
+        "Memindahkan seluruh proses filtering koleksi ke dalam main thread aplikasi",
+        "Melakukan iterasi manual menggunakan perulangan for-loop tradisional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain arsitektur modul jaringan menggunakan Retrofit di Kotlin. Anda ingin fungsi pemanggilan API dapat mengembalikan hasil sukses atau gagal secara eksplisit tanpa melempar exception ke pemanggil. Tipe data apa yang sebaiknya Anda gunakan?",
+      "options": [
+        "Menggunakan tipe data dasar Any dan melakukan casting manual saat diterima",
+        "Memanfaatkan Sealed Class atau Sealed Interface untuk merepresentasikan state",
+        "Menggunakan tipe data Boolean untuk menandakan status berhasil atau gagal",
+        "Membuat kelas Enum dengan parameter pesan error dan data objek bersyarat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi logistik, Anda memiliki kelas konfigurasi yang nilainya hanya boleh diinisialisasi sekali ketika pertama kali diakses oleh komponen tertentu untuk menghemat sumber daya. Fitur delegasi apa yang harus digunakan?",
+      "options": [
+        "Menggunakan delegasi properti standard dengan keyword lazy { }",
+        "Membuat variabel tersebut menjadi mutable dengan nilai awal berupa null",
+        "Menggunakan lateinit var agar bisa diisi nilai kapan saja setelah dibuat",
+        "Memanfaatkan delegasi Obesrvable untuk mendeteksi perubahan nilai properti"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat sebuah fungsi builder kustom di Kotlin untuk menyusun layout komponen secara deklaratif yang mirip dengan DSL (Domain Specific Language) Gradle. Fitur bahasa apa yang paling krusial untuk implementasi ini?",
+      "options": [
+        "Extension properties dengan dukungan backing field secara langsung",
+        "Higher-order functions dengan lambda ber-receiver (lambda with receiver)",
+        "Penggunaan operator overloading untuk menggabungkan objek komponen",
+        "Inline classes untuk mengoptimalkan penggunaan memori saat runtime"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya bug aneh pada perhitungan diskon karena nilai properti dapat diubah secara tidak sengaja oleh kelas lain di luar modul. Dalam prinsip kelas data (data class) Kotlin, bagaimana cara mencegah modifikasi tidak sah ini?",
+      "options": [
+        "Mendefinisikan semua properti di dalam primary constructor menggunakan val",
+        "Menambahkan kata kunci private di depan setiap variabel dalam kelas data",
+        "Membuat fungsi setter kustom yang menolak perubahan nilai properti tersebut",
+        "Mengubah data class menjadi open class agar tidak bisa diakses langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengintegrasikan pustaka Java lama ke dalam proyek Kotlin baru Anda. Java method tersebut menerima callback interface dengan satu metode tunggal. Bagaimana cara Anda memanggil metode tersebut di Kotlin agar kodenya lebih ringkas?",
+      "options": [
+        "Membuat kelas anonim baru yang mengimplementasikan interface Java tersebut",
+        "Memanfaatkan konversi SAM (Single Abstract Method) secara otomatis via lambda",
+        "Membungkus pemanggilan tersebut dengan coroutine builder runBlocking",
+        "Mengubah kode Java tersebut secara manual menjadi fungsi ekstensi Kotlin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi HRIS, Anda perlu membuat fungsi untuk memproses daftar absensi karyawan di mana setiap elemen harus divalidasi dan diubah ke format laporan secara berurutan. Pendekatan koleksi mana yang paling efisien untuk menghindari pembuatan objekantara yang tidak perlu pada data berskala besar?",
+      "options": [
+        "Menggunakan fungsi standar list langsung dengan map dan filter berantai",
+        "Mengonversi list menjadi Sequence sebelum melakukan operasi transformasi",
+        "Membuat perulangan for-loop manual dengan mutable list penampung baru",
+        "Memanfaatkan fungsi parallelStream dari pustaka standar Java interop"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun fitur chat pada aplikasi ojek online. Pesan baru sering masuk dari background thread, namun pembaruan UI pada RecyclerView harus selalu dieksekusi di main thread. Bagaimana cara aman memastikan blok kode UI berjalan di thread yang tepat?",
+      "options": [
+        "Membungkus kode pembaruan dengan Dispatchers.Main menggunakan coroutine scope",
+        "Memanggil metode runBlocking agar eksekusi thread utama menunggu data selesai",
+        "Mengubah thread secara manual menggunakan Thread.sleep() sebelum akses adapter",
+        "Memanfaatkan GlobalScope.launch tanpa parameter untuk mempercepat eksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada aplikasi direktori UMKM, Anda memiliki data profil toko yang bersifat hierarkis dan opsional. Anda ingin mengakses nama pemilik dari objek toko yang mungkin bernilai null sampai ke nested object-nya tanpa menulis blok if-else bersarang yang panjang. Fitur Kotlin apa yang paling tepat digunakan?",
+      "options": [
+        "Operator elvis ?: untuk memberikan nilai default pada setiap variabel objek",
+        "Operator safe call ?. secara berantai untuk menavigasi properti hierarki",
+        "Fungsi ekstensi let untuk memeriksa keberadaan data secara imperatif",
+        "Blok try-catch untuk menangkap potensi NullPointerException secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat modul pemrosesan transaksi dompet digital. Anda ingin memastikan bahwa fungsi validasi PIN hanya menerima parameter berupa string angka dengan panjang tepat enam digit dan menghindari validasi manual berulang di dalam fungsi bisnis. Fitur lanjutan apa yang bisa dimanfaatkan?",
+      "options": [
+        "Membuat fungsi inline dengan reified type parameter untuk memeriksa tipe data",
+        "Memanfaatkan value class untuk membungkus string dan menerapkan validasi di init",
+        "Menggunakan sealed class untuk merepresentasikan setiap digit PIN yang dimasukkan",
+        "Menerapkan konsep delegation properti agar nilai string otomatis terpotong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi PPOB, Anda sering menerima data respons API yang struktur JSON-nya sangat dinamis tergantung jenis tagihan. Anda ingin memetakan data tersebut ke hierarki class Kotlin yang merepresentasikan berbagai jenis produk pembayaran secara aman. Struktur class apa yang paling ideal?",
+      "options": [
+        "Menggunakan data class dengan konstruktor sekunder untuk setiap jenis tagihan",
+        "Membuat open class standar dan melakukan casting manual menggunakan operator as",
+        "Memanfaatkan sealed interface atau sealed class untuk hierarki tipe tertutup",
+        "Mendeklarasikan object singleton untuk setiap varian respons yang mungkin muncul"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis pustaka berbagi (shared library) untuk modul analitik aplikasi multi-platform. Anda perlu mendefinisikan sebuah antarmuka yang memiliki beberapa metode abstrak dan beberapa metode dengan implementasi default agar klien tidak wajib mengimplementasikan semuanya. Fitur apa yang harus digunakan pada Kotlin?",
+      "options": [
+        "Membuat abstract class karena interface Kotlin murni tidak boleh ada implementasi",
+        "Membuat interface standar karena Kotlin secara native mendukung metode berbadan",
+        "Menggunakan anotasi @JvmDefault pada setiap fungsi di dalam antarmuka biasa",
+        "Mendeklarasikan companion object di dalam interface untuk menampung fungsi default"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi manajemen inventaris gudang, Anda memiliki fungsi untuk memperbarui status stok barang. Anda ingin memastikan bahwa pemanggilan fungsi tersebut menjadi jauh lebih mudah dibaca dengan memperbolehkan pemanggil melewatkan beberapa argumen opsional tanpa harus membuat banyak fungsi overloading. Fitur bahasa apa yang harus diterapkan?",
+      "options": [
+        "Menetapkan nilai default (default arguments) pada parameter fungsi yang bersangkutan",
+        "Mengubah fungsi biasa menjadi infix function agar terlihat seperti operator",
+        "Membuat extension function pada kelas data stok barang yang ingin diperbarui",
+        "Menerapkan higher-order function yang menerima lambda sebagai konfigurasi status"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengoptimalkan performa aplikasi pemesanan tiket bioskop. Anda mendapati sebuah fungsi utilitas kecil yang sering dipanggil ribuan kali di dalam perulangan render UI, yang menyebabkan overhead alokasi objek memori yang cukup tinggi. Solusi bahasa Kotlin apa yang paling tepat?",
+      "options": [
+        "Menandai fungsi utilitas tersebut dengan kata kunci inline agar kodenya disisipkan",
+        "Mengubah fungsi utilitas menjadi private method di dalam companion object",
+        "Membungkus pemanggilan fungsi ke dalam coroutine dengan Dispatchers.Default",
+        "Mengganti fungsi biasa menjadi tailrec function untuk optimalisasi rekursi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam modul laporan keuangan aplikasi akuntansi, Anda perlu melakukan agregasi data transaksi yang kompleks menggunakan beberapa fungsi transformasi secara berurutan. Anda ingin menulis blok kode yang mengakses anggota objek target secara langsung tanpa harus berulang kali menuliskan nama variabel objek tersebut. Cakupan fungsi apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi cakupan run untuk mengeksekusi blok dan mengembalikan hasil",
+        "Menggunakan fungsi cakupan with untuk merujuk objek konteks sebagai this",
+        "Menggunakan fungsi cakupan also untuk melakukan operasi tambahan pada objek",
+        "Menggunakan fungsi cakupan let untuk melakukan pemeriksaan null secara aman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem manajemen state untuk aplikasi e-learning. Anda ingin membuat komponen penampil status pemuatan (loading, success, error) yang memastikan bahwa setiap kemungkinan state wajib ditangani secara komprehensif oleh pembuat UI tanpa perlu blok else penutup. Struktur data apa yang paling sesuai?",
+      "options": [
+        "Interface biasa yang diimplementasikan oleh berbagai kelas turunan di file terpisah",
+        "Enum class standar dengan konstanta yang merepresentasikan kondisi layar",
+        "Sealed class yang menampung berbagai varian data state di dalam satu file modul",
+        "Data class tunggal dengan parameter status bertipe string bebas tanpa batasan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi pencatatan keuangan. Anda memiliki fungsi untuk mengambil daftar transaksi dari database lokal. Agar UI tidak terblokir saat kueri berjalan di background thread, fitur apa di Kotlin Coroutines yang paling tepat digunakan?",
+      "options": [
+        "Mengubah fungsi utama menjadi bertipe synchronized agar aman dipanggil",
+        "Membuat fungsi tersebut menggunakan modifier suspend dan Dispatchers.IO",
+        "Menggunakan fungsi runBlocking untuk menahan thread utama sampai selesai",
+        "Menjalankan proses tersebut di dalam blok GlobalScope tanpa pembatasan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi e-wallet, Anda sering menerima objek data dari API lama berupa kelas Java yang menggunakan getter dan setter standar. Bagaimana cara terbaik mengakses properti tersebut di Kotlin?",
+      "options": [
+        "Memanggil method get dan set secara manual seperti di bahasa Java",
+        "Membuat wrapper kelas baru di Kotlin untuk menerjemahkan method tersebut",
+        "Menggunakan sintaks properti bawaan Kotlin yang otomatis mendeteksinya",
+        "Mengubah kode sumber Java tersebut secara langsung menjadi data class"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat modul validasi formulir pendaftaran merchant. Anda ingin memastikan bahwa kode validasi nomor KTP, NPWP, dan Email dapat dikelompokkan dengan rapi di dalam satu file tanpa harus membuat hierarki kelas yang kompleks. Fitur OOP apa yang paling tepat?",
+      "options": [
+        "Memanfaatkan Sealed Class untuk mendefinisikan tipe data tertutup",
+        "Menggunakan Object Declaration untuk membuat singleton helper kelas",
+        "Menerapkan konsep Inner Class agar dapat mengakses fungsi luar",
+        "Membuat Abstract Class dengan fungsi abstrak untuk setiap validator"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA menemukan bahwa kalkulator poin loyalitas sering mengalami inkonsistensi nilai karena beberapa coroutine mengubah variabel total poin secara bersamaan. Bagaimana cara mengatasi kondisi race condition ini di Kotlin?",
+      "options": [
+        "Mengubah tipe data variabel poin menjadi objek tipe primitif standar",
+        "Membungkus proses perubahan nilai poin menggunakan Mutex atau Atomicfu",
+        "Menjalankan seluruh operasi kalkulasi poin secara berurutan di Main Thread",
+        "Menandai variabel poin dengan keyword volatile agar selalu terbaca baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi manajemen tugas, Anda ingin membuat fungsi ekstensi untuk kelas String yang dapat memvalidasi format kode proyek perusahaan (misal: 'PROJ-123'). Di mana sebaiknya Anda mendeklarasikan fungsi ekstensi tersebut?",
+      "options": [
+        "Di dalam blok kelas String sebagai fungsi anggota internal yang baru",
+        "Sebagai fungsi global di dalam file utilitas terpisah yang dapat diimport",
+        "Di dalam companion object dari kelas String agar bisa dipanggil langsung",
+        "Sebagai fungsi anonim di dalam fungsi utama tempat string tersebut dipakai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem caching untuk aplikasi berita agar tidak melakukan parsing JSON berulang kali untuk artikel yang sama. Fitur delegasi properti mana di Kotlin yang paling efisien untuk menangani inisialisasi berat ini?",
+      "options": [
+        "Menggunakan lazy standard delegate untuk menunda komputasi hingga diakses",
+        "Memanfaatkan notNull delegate agar variabel tidak boleh bernilai kosong",
+        "Menggunakan observable delegate untuk memantau perubahan data cache",
+        "Menerapkan vetoable delegate untuk membatasi nilai yang masuk ke cache"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis fungsi pemrosesan batch untuk data transaksi jutaan baris menggunakan Kotlin Flow. Anda perlu melakukan transformasi data dengan operasi asinkron pada setiap item. Operator Flow mana yang harus digunakan?",
+      "options": [
+        "Menggunakan operator map standar untuk mengubah bentuk data secara linier",
+        "Memanfaatkan operator flatMapConcat untuk memproses data secara berurutan",
+        "Menggunakan operator transform untuk fleksibilitas emisi data kustom",
+        "Memanfaatkan operator mapLatest untuk membatalkan proses item sebelumnya"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam proyek aplikasi kasir, Anda memiliki hierarki kelas pembayaran (Cash, Qris, CreditCard). Anda ingin membuat fungsi untuk menampilkan instruksi pembayaran yang berbeda untuk setiap jenis kelas tersebut secara aman tanpa pengecekan tipe manual. Fitur apa yang mendukung ini?",
+      "options": [
+        "Penerapan ekspresi when yang bersifat exhaustive pada Sealed Interface",
+        "Penggunaan operator is untuk memeriksa tipe data secara manual di runtime",
+        "Pembuatan fungsi polimorfik dengan keyword open pada setiap kelas turunan",
+        "Pemanfaatan Generic type parameter pada fungsi penampil instruksi bayar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat komponen kustom untuk form input di aplikasi pinjaman online di mana beberapa parameter opsional seperti hint, icon, dan error message dapat diatur secara fleksibel tanpa membuat konstruktor yang terlalu panjang. Pola apa yang paling idiomatik di Kotlin?",
+      "options": [
+        "Membuat design pattern Builder kustom menggunakan kelas Java konvensional",
+        "Menggunakan konstruktor sekunder bertingkat dengan pemanggilan this()",
+        "Memanfaatkan named arguments dan default parameters pada fungsi konstruktor",
+        "Membuat objek konfigurasi terpisah yang harus diisi sebelum komponen dibuat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi pelacak kurir Anda perlu memancarkan data lokasi secara terus-menerus ke beberapa komponen UI secara bersamaan (misalnya peta dan teks koordinat). Komponen StateFlow mana di Kotlin yang paling tepat untuk skenario hot stream ini?",
+      "options": [
+        "Menggunakan Channel biasa untuk mengirim data satu arah antar komponen",
+        "Memanfaatkan StateFlow karena menyimpan nilai terakhir dan disiarkan ke observer",
+        "Menggunakan SharedFlow murni tanpa nilai awal untuk menangkap setiap event lokasi",
+        "Memanfaatkan LiveData bawaan Android untuk konsistensi siklus hidup aktivitas"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

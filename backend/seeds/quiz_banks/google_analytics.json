@@ -1,0 +1,306 @@
+{
+  "skill": "Google Analytics",
+  "skill_key": "google analytics",
+  "questions": [
+    {
+      "question": "Sebuah situs e-commerce fesyen lokal di Jakarta melihat peningkatan drastis pada metrik 'Bounce Rate' di halaman keranjang belanja (cart) mencapai 85%. Apa langkah analisis pertama yang paling tepat untuk mendiagnosis masalah ini?",
+      "options": [
+        "Mengganti seluruh desain tata letak halaman utama situs web",
+        "Memeriksa laporan Event Tracking untuk melihat error pada tombol checkout",
+        "Menurunkan anggaran iklan media sosial untuk mengurangi traffic baru",
+        "Menambahkan lebih banyak banner promo diskon di halaman keranjang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim digital marketing Anda menjalankan kampanye iklan promo 12.12 melalui Instagram Ads, Google Ads, dan TikTok Ads secara bersamaan. Agar performa konversi dari masing-masing platform dapat dibandingkan secara akurat di Google Analytics 4 (GA4), apa yang harus Anda pastikan terpasang pada tautan iklan?",
+      "options": [
+        "Penggunaan kode UTM parameter yang konsisten dan terstandarisasi",
+        "Penambahan skrip piksel Meta secara manual pada setiap tombol CTA",
+        "Pembuatan akun Google Tag Manager baru khusus untuk platform TikTok",
+        "Pengaktifan fitur Enhanced E-commerce pada dasbor backend website"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta melaporkan jumlah pengguna unik (Total Users) yang berhasil melakukan pendaftaran akun (sign_up) selama bulan lalu. Di mana Anda harus melihat data spesifik ini pada antarmuka standar Google Analytics 4?",
+      "options": [
+        "Menu Reports > Acquisition > Traffic acquisition",
+        "Menu Reports > Engagement > Events, lalu cari event sign_up",
+        "Menu Admin > Data Streams > Event parameters configuration",
+        "Menu Explore > Free form dengan dimensi Device Category"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer Anda ingin mengetahui halaman artikel mana saja di blog perusahaan yang paling efektif membuat pembaca bertahan lama sebelum akhirnya mengeklik tautan produk. Laporan standar GA4 mana yang paling relevan untuk diakses?",
+      "options": [
+        "Laporan Tech Details dengan metrik App version dan screen resolution",
+        "Laporan User Attributes dengan dimensi rentang usia dan minat audiens",
+        "Laporan Pages and screens dengan metrik User engagement dan Views",
+        "Laporan Monetization dengan dimensi Item name dan Purchase revenue"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah situs portal berita Indonesia mendapati bahwa metrik 'Session duration' rata-rata sangat rendah (di bawah 20 detik) untuk pengguna dari perangkat mobile, meskipun jumlah klik iklan sangat tinggi. Apa indikasi awal yang paling logis dari data tersebut?",
+      "options": [
+        "Konten artikel sangat mendalam sehingga pembaca langsung paham",
+        "Kecepatan muat halaman mobile lambat atau penempatan iklan mengganggu",
+        "Target demografi pengguna mobile terlalu tua untuk membaca berita",
+        "Sistem GA4 gagal merekam data sesi dari semua pengguna smartphone"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin melacak berapa banyak pengguna yang mengunduh brosur PDF produk dalam bentuk file (.pdf) dari situs web perusahaan manufaktur Anda. Fitur bawaan GA4 apa yang secara otomatis mendeteksi aktivitas ini tanpa perlu konfigurasi kustom yang rumit?",
+      "options": [
+        "Enhanced Measurement untuk unduhan file (file_download)",
+        "Custom Dimension untuk ekstensi dokumen digital",
+        "Conversion Rate Optimization tool pada dasbor admin",
+        "Server-side tagging untuk pelacakan dokumen internal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit bulanan pada properti GA4 situs web travel, Anda menemukan lonjakan traffic mencurigakan yang berasal dari kota kecil di luar negeri dengan durasi sesi persis 0 detik dan halaman dilihat 1. Langkah mitigasi apa yang harus segera diambil?",
+      "options": [
+        "Memblokir alamat IP tersebut melalui pengaturan Firewall server hosting",
+        "Membuat filter internal traffic untuk menyaring aktivitas bot atau spam",
+        "Menghapus seluruh data historis tahun lalu agar laporan kembali normal",
+        "Menghentikan semua kampanye iklan berbayar di luar negeri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang baru saja merilis aplikasi mobile berbasis Flutter untuk iOS dan Android. Anda ditugaskan memastikan data analytics dari aplikasi tersebut masuk ke laporan GA4 yang sama dengan website perusahaan. Apa yang harus dibuat terlebih dahulu di panel admin GA4?",
+      "options": [
+        "Menambahkan dua Data Streams baru, satu untuk iOS dan satu untuk Android",
+        "Membuat akun Google Analytics 4 yang benar-benar terpisah dari website",
+        "Mengaktifkan integrasi Google Search Console pada menu properti",
+        "Menghapus tag pelacakan lama berbasis Universal Analytics di aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Direktur pemasaran ingin melihat alur perjalanan pengguna (user journey) mulai dari pertama kali datang ke halaman utama, melihat produk, hingga akhirnya melakukan transaksi pembelian. Fitur eksplorasi (Explore) mana di GA4 yang paling tepat digunakan untuk menyajikan data visual ini?",
+      "options": [
+        "Eksplorasi Funnel exploration dengan langkah tahapan yang ditentukan",
+        "Eksplorasi Cohort exploration untuk mengukur retensi pelanggan",
+        "Eksplorasi User lifetime untuk melihat nilai seumur hidup pelanggan",
+        "Eksplorasi Segment overlap untuk membandingkan kelompok audiens"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah klinik kecantikan online ingin mengukur keberhasilan tombol 'Reservasi WhatsApp' yang ada di pojok kanan bawah setiap halaman web. Dalam terminologi Google Analytics 4, tindakan pengguna mengeklik tombol tersebut paling tepat dikonfigurasi sebagai apa?",
+      "options": [
+        "Sebuah metrik kustom bertipe mata uang rupiah",
+        "Sebuah dimensi kustom dengan cakupan berbasis pengguna",
+        "Sebuah Conversion Event yang ditandai dari event kustom",
+        "Sebuah segmen audiens otomatis berdasarkan lokasi geografis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah situs web marketplace properti mendapati laporan Google Analytics 4 menunjukkan lonjakan transaksi e-commerce yang tidak wajar dari satu kota kecil di luar negeri tanpa riwayat kampanye iklan di sana. Langkah awal apa yang paling tepat untuk memverifikasi keabsahan data tersebut?",
+      "options": [
+        "Membuat segmen khusus untuk kota tersebut guna memantau perilaku klik mereka secara mendalam",
+        "Memeriksa laporan DebugView untuk melihat apakah ada pengujian internal yang sedang aktif",
+        "Memeriksa laporan Traffic Acquisition untuk melihat apakah ada lonjakan Referral Spam atau bot",
+        "Menghapus properti GA4 yang lama dan membuat aliran data (data stream) baru yang bersih"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda bertanggung jawab atas situs web agensi pariwisata. Manajemen ingin tahu dari mana asal pengunjung yang paling banyak mengisi formulir pemesanan paket tur. Di mana Anda harus melihat data ini pada antarmuka GA4?",
+      "options": [
+        "Menu Reports, pilih Acquisition, lalu klik halaman Traffic acquisition",
+        "Menu Reports, pilih Engagement, lalu klik halaman Landing pages",
+        "Menu Explore, buat laporan baru dengan dimensi Event name dan metrik Conversions",
+        "Menu Admin, pilih Data Streams, lalu aktifkan laporan sumber konversi otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim produk perusahaan fintech ingin mengetahui apakah pengguna lebih sering mengklik tombol 'Daftar Sekarang' di bagian atas (header) atau di bagian bawah (footer) halaman utama. Bagaimana cara melacak interaksi ini secara spesifik di GA4?",
+      "options": [
+        "Membuat kustomisasi Event di GA4 dengan nama berbeda berdasarkan parameter ID tombol yang diklik",
+        "Mengandalkan laporan Enhanced Measurement bawaan untuk melacak seluruh klik tombol di halaman",
+        "Membuat laporan jalur (Path exploration) dengan titik awal dari halaman utama situs web",
+        "Menggunakan fitur Content Experiments untuk menguji variasi tata letak tombol secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs portal berita lokal mengalami penurunan drastis pada jumlah tayangan halaman (Pageviews) secara keseluruhan bulan ini, namun metrik Total Users relatif stabil. Apa analisis awal yang paling rasional untuk menjelaskan kondisi ini?",
+      "options": [
+        "Terjadi penurunan minat pembaca baru terhadap topik berita utama yang diterbitkan bulan ini",
+        "Ada perubahan struktur navigasi situs yang membuat pembaca mengakses lebih sedikit halaman per sesi",
+        "Kode pelacakan Google Analytics terpasang dua kali di setiap halaman situs berita tersebut",
+        "Terjadi pemblokiran massal pada ekstensi browser pembaca yang memicu gangguan pencatatan sesi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk memantau performa kampanye peluncuran produk baru melalui newsletter email. Agar tautan di dalam email tersebut terbaca dengan akurat di laporan Traffic Acquisition GA4, format apa yang wajib Anda gunakan pada URL tautan?",
+      "options": [
+        "Menambahkan parameter pelacakan UTM seperti utm_source, utm_medium, dan utm_campaign",
+        "Menambahkan parameter khusus seperti ga_source, ga_medium, dan ga_content pada akhir tautan",
+        "Memastikan tautan tersebut menggunakan protokol HTTPS dengan sertifikat SSL yang valid",
+        "Menggunakan layanan pemendek tautan eksternal agar klik dapat dilacak melalui dasbor pihak ketiga"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan SaaS B2B meluncurkan fitur kalkulator harga online di situs mereka. Anda ingin mengukur berapa banyak pengguna yang berhasil mencapai langkah terakhir kalkulator sebelum mereka meninggalkan halaman. Fitur apa di GA4 yang paling tepat digunakan?",
+      "options": [
+        "Menandai event kustom dari langkah akhir kalkulator tersebut sebagai Conversion di dalam GA4",
+        "Mengubah metrik Engagement Rate khusus untuk halaman kalkulator melalui menu Admin",
+        "Membuat filter pengecualian internal agar data dari tim pengembang tidak tercampur",
+        "Mengaktifkan laporan Funnel Exploration otomatis melalui menu rekomendasi Google"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit bulanan pada akun GA4 perusahaan logistik, Anda menyadari bahwa data pendapatan transaksi e-commerce tercatat jauh lebih tinggi dibandingkan laporan sistem internal perusahaan. Apa penyebab teknis yang paling sering memicu masalah ini?",
+      "options": [
+        "Pengguna memuat ulang (refresh) halaman konfirmasi pesanan berkali-kali tanpa ada pencegahan duplikasi event",
+        "Sistem GA4 secara otomatis menambahkan estimasi pajak dan biaya pengiriman ke dalam nilai transaksi",
+        "Terjadi kesalahan pengaturan zona waktu pada properti GA4 yang menggabungkan data dua hari berbeda",
+        "Penggunaan mata uang yang berbeda antara laporan internal perusahaan dan pengaturan mata uang di GA4"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer pemasaran ingin melihat perbandingan efisiensi konversi antara pengunjung dari perangkat seluler (Mobile) dan komputer (Desktop) secara berdampingan dalam satu tampilan laporan. Fitur GA4 mana yang paling cepat mengakomodasi kebutuhan ini?",
+      "options": [
+        "Menggunakan teknik analisis Free Form di menu Explore dengan dimensi Device category",
+        "Menggunakan fitur perbandingan (Comparison) bawaan di bagian atas laporan standar GA4",
+        "Membuat dua properti GA4 terpisah untuk memisahkan data trafik seluler dan desktop",
+        "Mengekspor seluruh data mentah ke Google BigQuery lalu menjalankan kueri SQL khusus"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs e-commerce fesyen ingin mengetahui produk mana yang paling sering dilihat oleh pengguna tetapi jarang sekali dimasukkan ke keranjang belanja. Laporan standar mana di GA4 yang menyajikan data perilaku produk semacam ini?",
+      "options": [
+        "Laporan Monetization, lalu pilih opsi Ecommerce purchases",
+        "Laporan Engagement, lalu pilih opsi Landing pages dan ubah dimensinya",
+        "Laporan Monetization, lalu pilih opsi User purchase journey",
+        "Laporan Engagement, lalu pilih opsi Pages and screens"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja mengubah struktur direktori URL situs web perusahaan dari '/blog/artikel-a' menjadi '/artikel/artikel-a'. Apa langkah krusial yang harus dilakukan di GA4 agar data historis kunjungan halaman tersebut tetap dapat dianalisis secara konsisten?",
+      "options": [
+        "Membuat aturan modifikasi event (Event modification) di GA4 untuk menyamakan jalur URL",
+        "Memperbarui peta pengalihan URL (URL redirect) di server, sementara GA4 akan otomatis mengenali perubahan",
+        "Membuat properti GA4 baru khusus untuk struktur URL yang baru agar data lama tidak rusak",
+        "Menghapus data lama secara manual melalui menu Admin agar laporan tidak menampilkan halaman 404"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs e-commerce kecantikan mendapati bahwa laporan e-commerce pembelian di GA4 tidak mencatat data transaksi dari pengguna yang menggunakan browser dengan ekstensi pemblokir iklan (ad-blocker). Langkah teknis apa yang paling tepat untuk meminimalkan kehilangan data ini?",
+      "options": [
+        "Menggunakan implementasi pelacakan berbasis server (Server-Side Tagging) via Google Tag Manager",
+        "Meminta pengguna untuk menonaktifkan ad-blocker melalui pop-up interaktif setiap kali berkunjung",
+        "Memindahkan seluruh skrip Google Analytics langsung ke dalam tag <head> HTML tanpa GTM",
+        "Membuat event kustom manual yang memicu ulang pengiriman data setiap kali halaman dimuat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menganalisis efektivitas tombol 'Hubungi Sales' di situs web korporat. Tombol tersebut mengarahkan pengguna ke aplikasi WhatsApp eksternal. Di GA4, fitur bawaan apa yang harus Anda pastikan aktif untuk merekam interaksi ini tanpa harus membuat event kustom yang rumit?",
+      "options": [
+        "Mengaktifkan pelacakan Enhanced Measurement untuk outbund clicks",
+        "Mengaktifkan fitur Data Import berdasarkan nomor telepon WhatsApp",
+        "Membuat Custom Definition berjenis User Property untuk mencatat klik WhatsApp",
+        "Menyetel ulang rentang waktu pelaporan sesi default menjadi 30 menit"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim konten Anda menerbitkan artikel bersponsor dan ingin melacak seberapa dalam pembaca menggulir halaman tersebut. Di GA4, bagaimana cara paling efektif untuk memverifikasi apakah metrik kedalaman guliran ini sudah terekam?",
+      "options": [
+        "Memeriksa laporan real-time atau DebugView saat melakukan uji gulir halaman hingga 90%",
+        "Menunggu laporan kustom mingguan yang dikirim otomatis melalui email manajer",
+        "Melihat metrik Bounce Rate harian pada halaman artikel terkait di panel utama",
+        "Membandingkan jumlah Total Users dengan Active Users di rentang tanggal kemarin"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan rintisan pendidikan online ingin melacak pendaftaran webinar gratis yang diselesaikan melalui formulir tersembunyi (iframe). Apa pendekatan implementasi terbaik di Google Tag Manager agar konversi ini terbaca akurat di GA4?",
+      "options": [
+        "Menggunakan kustom event listener berbasis postMessage untuk mendeteksi pengiriman formulir dalam iframe",
+        "Memanfaatkan pelacakan Enhanced Measurement otomatis untuk form submission bawaan Google Analytics",
+        "Menghubungkan langsung akun Google Ads dengan GA4 tanpa melalui perantara Google Tag Manager",
+        "Mengandalkan laporan akuisisi traffic untuk melihat sumber pengguna yang mengisi formulir iframe"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melihat anomali di GA4 di mana metrik 'Users' jauh lebih tinggi daripada 'Sessions' untuk kampanye iklan pencarian tertentu. Apa penyebab paling logis dari kondisi operasional seperti ini?",
+      "options": [
+        "Banyak pengguna mengklik iklan yang sama berulang kali dalam sesi terpisah atau menggunakan beberapa perangkat",
+        "Terjadi duplikasi penempatan tag Google Analytics di dalam kode sumber halaman arahan kampanye",
+        "Pengaturan sesi kedaluwarsa diubah menjadi lebih lama dari standar industri yaitu 30 menit",
+        "Sistem Google Analytics mengalami penundaan pemrosesan data (data latency) secara massal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal berita lokal ingin mengetahui kategori berita mana yang paling sering dikunjungi oleh pembaca setia (returning users) dibandingkan pengguna baru. Laporan eksplorasi (Exploration) apa di GA4 yang paling tepat digunakan?",
+      "options": [
+        "Free Form exploration dengan dimensi kategori berita dan metrik pengguna aktif",
+        "User Lifetime exploration untuk melihat total nilai umur pengguna berdasarkan kategori",
+        "Funnel exploration untuk melacak tahapan pembaca dari beranda ke artikel berita",
+        "Cohort exploration untuk mengelompokkan pembaca berdasarkan tanggal kedatangan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa data lintas domain (cross-domain tracking) antara situs utama perusahaan dan toko online pihak ketiga tidak berjalan mulus, sehingga ID pengguna berubah saat berpindah situs. Di mana letak konfigurasi paling tepat untuk memperbaikinya?",
+      "options": [
+        "Menambahkan domain situs pihak ketiga pada pengaturan 'Configure your domains' di properti GA4",
+        "Mengubah kode pelacakan dasar di Google Tag Manager dengan menambahkan variabel cookie kustom",
+        "Membuat properti GA4 terpisah khusus untuk toko online dan menggabungkannya via Looker Studio",
+        "Menyesuaikan parameter UTM pada setiap tautan yang mengarah dari situs utama ke toko online"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer produk meminta laporan tentang persentase pengguna yang berhasil melewati langkah pertama dari proses registrasi empat langkah. Fitur analisis apa di GA4 yang paling efisien untuk menyajikan data penurunan (drop-off) tersebut?",
+      "options": [
+        "Funnel Exploration dengan mendefinisikan setiap langkah registrasi sebagai langkah terpisah",
+        "Path Exploration dengan melihat jalur mundur dari halaman sukses registrasi",
+        "Segment Overlap untuk melihat irisan pengguna yang gagal di langkah pertama dan kedua",
+        "User Explorer untuk memeriksa log aktivitas setiap pengguna secara individu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs web e-commerce baru saja meluncurkan program loyalitas dan ingin melacak level keanggotaan pengguna (Bronze, Silver, Gold) di GA4 sebagai data demografi internal. Fitur apa yang harus Anda buat di antarmuka admin GA4?",
+      "options": [
+        "User Property yang diperbarui setiap kali status keanggotaan pengguna berubah di database",
+        "Event Parameter biasa yang dikirimkan bersamaan dengan setiap event kunjungan halaman",
+        "Custom Metric berjenis mata uang untuk menghitung poin keanggotaan yang terkumpul",
+        "Content Grouping berdasarkan kategori warna tingkat keanggotaan pengguna situs"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeteksi lonjakan traffic rujukan (referral traffic) yang mencurigakan dari situs spam tak dikenal di laporan GA4 Anda yang merusak akurasi data. Langkah pencegahan jangka panjang apa yang paling dianjurkan di GA4?",
+      "options": [
+        "Membuat filter properti berbasis aturan untuk menyaring atau mengabaikan traffic referral yang tidak diinginkan",
+        "Memblokir alamat IP dari server situs spam tersebut langsung melalui panel hosting website",
+        "Menghapus seluruh tag Google Analytics dan memasangnya kembali dengan wadah GTM yang baru",
+        "Mengubah nama parameter UTM default agar situs spam tidak dapat mendeteksi kampanye Anda"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

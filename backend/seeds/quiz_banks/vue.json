@@ -1,0 +1,306 @@
+{
+  "skill": "Vue.js",
+  "skill_key": "vue",
+  "questions": [
+    {
+      "question": "Anda sedang membangun aplikasi e-commerce dengan Vue 3 Composition API. Halaman daftar produk sering mengalami lag saat pengguna mengetik kata kunci pencarian karena fungsi filter dijalankan langsung pada array produk yang masif di setiap keystroke. Pendekatan apa yang paling tepat untuk mengatasi masalah performa ini?",
+      "options": [
+        "Menggunakan fungsi computed property untuk menyimpan cache hasil filter berdasarkan input string",
+        "Memanfaatkan hook watchEffect untuk mendeteksi perubahan input dan langsung memperbarui DOM",
+        "Menerapkan teknik debouncing pada fungsi handler input sebelum nilai state pencarian diperbarui",
+        "Memindahkan seluruh logika penyaringan data ke dalam lifecycle hook onMounted komponen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Di sebuah aplikasi dashboard perusahaan logistik berbasis Vue.js, komponen tabel sering gagal dirender dan merusak seluruh aplikasi ketika terjadi error pada jaringan API. Bagaimana cara elegan menangkap error tersebut pada tingkat komponen tanpa menghentikan aplikasi secara keseluruhan?",
+      "options": [
+        "Menambahkan blok try-catch di dalam setiap fungsi template ekspresi untuk mencegah crash",
+        "Mengimplementasikan opsi hook onErrorCaptured di dalam komponen induk untuk menangani error anak",
+        "Membuat global plugin yang otomatis me-reload halaman ketika terjadi eksepsi pada komponen",
+        "Memanfaatkan fungsi nextTick untuk memastikan DOM sudah siap sebelum data tabel dimuat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim frontend Anda menggunakan Pinia sebagai state management di aplikasi Vue 3. Anda perlu mengambil data profil pengguna saat aplikasi pertama kali dimuat, namun data tersebut hanya boleh diambil sekali dan dibagikan ke berbagai komponen. Di mana tempat terbaik untuk menempatkan pemanggilan action store ini?",
+      "options": [
+        "Di dalam file utama main.js tepat setelah instance Vue dibuat dan sebelum di-mount",
+        "Di dalam opsi created pada setiap komponen anak yang membutuhkan data profil tersebut",
+        "Di dalam fungsi setup komponen root App.vue atau langsung di dalam definisi store Pinia",
+        "Di dalam watcher global yang memantau perubahan rute menggunakan Vue Router router.beforeEach"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membuat form registrasi multi-langkah di Vue 3. Data input pengguna harus tetap utuh meskipun pengguna berpindah-pindah antar tab langkah tanpa ingin merender ulang komponen form setiap kali tab diganti. Fitur bawaan Vue apa yang paling tepat digunakan?",
+      "options": [
+        "Membungkus komponen tab di dalam elemen <keep-alive> untuk mempertahankan state komponen",
+        "Menyimpan seluruh data input sementara ke dalam local storage melalui lifecycle onUnmounted",
+        "Menggunakan dynamic v-bind pada komponen agar instance lama tidak pernah dihancurkan",
+        "Membuat custom directive untuk mendengarkan perubahan visibilitas elemen DOM secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Vue 3 yang menggunakan Vite, Anda mendapati ukuran bundle JavaScript awal sangat besar karena memuat seluruh modul chart dashboard yang jarang digunakan. Strategi optimasi apa yang harus diterapkan pada router untuk mengurangi ukuran bundle awal?",
+      "options": [
+        "Mengganti semua impor komponen statis menjadi fungsi async dengan dynamic import() pada rute",
+        "Memecah file konfigurasi vite.config.js menjadi beberapa chunk plugin secara manual",
+        "Memindahkan pustaka chart ke dalam direktori public agar dimuat secara terpisah oleh browser",
+        "Menggunakan metode Vue.use() untuk mendaftarkan pustaka chart secara global di file main.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat komponen kustom untuk input nomor telepon di Vue 3 yang menggunakan v-model. Di dalam komponen anak tersebut, bagaimana cara yang benar untuk memperbarui nilai yang dikirimkan kembali ke komponen induk tanpa melanggar prinsip unipolar data flow?",
+      "options": [
+        "Mengubah langsung props yang diterima dari induk menggunakan operator penugasan lokal",
+        "Memancarkan event dengan nama khusus update:modelValue dan menyertakan nilai baru sebagai argumen",
+        "Membuat salinan lokal dari props tersebut di dalam objek reactive lalu memodifikasinya",
+        "Mengakses instance komponen induk melalui ref internal untuk memanggil fungsi setter secara langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web fintech menggunakan Vue Router. Anda ingin melindungi halaman riwayat transaksi agar hanya bisa diakses oleh pengguna yang sudah memiliki token otentikasi. Pendekatan keamanan mana yang paling standar dan direkomendasikan?",
+      "options": [
+        "Memeriksa keberadaan token di dalam lifecycle onMounted pada setiap komponen halaman privat",
+        "Menambahkan properti meta kustom pada definisi rute dan mengeceknya melalui router.beforeEach",
+        "Membuat pembungkus komponen Layout khusus yang otomatis melakukan redirect jika token kosong",
+        "Menambahkan pengkondisian v-if pada file App.vue untuk menyembunyikan rute yang tidak sah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan komponen daftar produk dengan ribuan item menggunakan Vue 3. Setiap item memiliki struktur DOM yang kompleks dan interaktif. Kapan waktu yang tepat untuk mempertimbangkan penggunaan teknik virtual scrolling?",
+      "options": [
+        "Ketika DOM mengalami penurunan frame rate secara drastis saat proses rendering awal list panjang",
+        "Ketika memori browser melonjak tinggi akibat terlalu banyak event listener yang menumpuk di memori",
+        "Ketika proses pengambilan data API dari server memakan waktu lebih dari tiga detik untuk merespons",
+        "Ketika struktur data array produk terlalu dalam dan memiliki banyak properti bertingkat bersarang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi internal kantor, Anda perlu membuat reusable logic untuk memantau ukuran jendela browser (window resize) dan menggunakannya di beberapa komponen yang berbeda. Fitur Vue 3 apa yang paling bersih untuk mengekstraksi logika ini?",
+      "options": [
+        "Membuat Mixin global yang berisi hook mounted dan unmounted untuk event window",
+        "Membuat Custom Composition Function (Composable) dengan awalan nama 'use'",
+        "Membuat Global Directive yang dipasang pada elemen root setiap komponen halaman",
+        "Membuat Parent Component khusus yang membungkus seluruh logika ukuran layar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan unit testing pada komponen Vue 3 menggunakan Vitest dan Vue Test Utils, Anda mendapati bahwa assertion pada elemen teks gagal karena perubahan state reaktif belum tercermin di DOM. Perintah apa yang harus dipanggil sebelum melakukan pengecekan DOM?",
+      "options": [
+        "Memanggil fungsi asinkron await wrapper.vm.$forceUpdate() untuk memaksa render ulang",
+        "Memanggil fungsi asinkron await wrapper.trigger('update') pada elemen target",
+        "Memanggil fungsi asinkron await nextTick() yang diimpor dari pustaka Vue",
+        "Memanggil fungsi asinkron await wrapper.setProps({}) untuk memicu siklus pembaruan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan dashboard analitik menggunakan Vue 3 yang menampilkan grafik kompleks dengan Chart.js. Saat pengguna berpindah menu, grafik sering gagal diperbarui dengan data baru meskipun state sudah berubah. Apa tindakan paling tepat untuk memperbaikinya?",
+      "options": [
+        "Menggunakan fungsi watch untuk memantau perubahan data dan memicu metode pembaruan grafik di dalam onMounted",
+        "Membungkus elemen canvas grafik dengan v-if agar elemen dihancurkan dan dibuat ulang setiap kali data berubah",
+        "Memanfaatkan hook onBeforeUnmount untuk menghapus instance chart lama lalu membuat yang baru pada onUpdated",
+        "Menjalankan perintah forceUpdate pada instance komponen induk setiap kali pengguna melakukan navigasi menu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Di aplikasi HRIS berbasis Vue 3, Anda membuat komponen modal konfirmasi yang bisa dipanggil dari berbagai halaman berbeda. Bagaimana cara terbaik mengelola visibilitas modal ini agar state-nya dapat diakses secara global tanpa prop drilling?",
+      "options": [
+        "Membuat store Pinia khusus untuk status modal dan menyertakan komponen modal di root layout aplikasi",
+        "Menggunakan provide di root komponen dan inject pada setiap komponen anak yang membutuhkan modal",
+        "Menyimpan referensi elemen DOM modal ke dalam local storage agar bisa dibaca oleh halaman manapun",
+        "Memanfaatkan Event Bus global untuk mengirimkan sinyal buka dan tutup modal antar komponen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati performa aplikasi Vue 3 menurun drastis ketika pengguna mengetik di kolom pencarian instan (live search) karena fungsi pencarian terpanggil di setiap keystroke. Pendekatan apa yang paling efisien untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah metode pengambilan data dari REST API menjadi GraphQL agar payload lebih ringkas",
+        "Menerapkan teknik debounce pada fungsi pemanggil API menggunakan utilitas seperti lodash",
+        "Memindahkan logika pencarian dari Composition API ke dalam computed property reaktif",
+        "Menambahkan atribut lazy pada v-model di elemen input pencarian untuk menunda eksekusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi portal berita menggunakan Vue 3 SSR (Server-Side Rendering) dengan Nuxt. Anda menemukan error hidrasi (hydration mismatch) pada komponen penampil tanggal publikasi. Apa penyebab utama masalah tersebut?",
+      "options": [
+        "Format tanggal menggunakan zona waktu lokal browser yang berbeda antara server dan klien",
+        "Komponen tanggal dirender menggunakan async component tanpa fallback loading state",
+        "Variabel tanggal didefinisikan menggunakan ref() alih-alih reactive() di dalam setup script",
+        "Atribut v-html digunakan untuk merender string tanggal yang berasal dari database relasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Vue 3 Composition API, Anda perlu membuat komponen kartu profil yang menerima data user tetapi juga memperbolehkan pengguna mengubah nama panggilan langsung di dalam kartu tersebut. Bagaimana implementasi props dan event yang benar?",
+      "options": [
+        "Mengubah langsung nilai prop user.name di dalam komponen anak saat input berubah",
+        "Membuat salinan prop ke local ref dan memancarkan event update:name ke komponen induk",
+        "Menggunakan fungsi defineModel() untuk membuat binding dua arah yang aman pada prop nama",
+        "Memanfaatkan context.emit untuk memaksa komponen induk melakukan re-render ulang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim QA melaporkan adanya memory leak pada aplikasi single-page Vue 3 ketika pengguna sering membuka dan menutup panel chat melayang. Setelah diselidiki, event listener global pada window tidak dibersihkan. Di mana hook yang tepat untuk membersihkannya?",
+      "options": [
+        "Menempatkan pembersihan listener di dalam fungsi callback onDeactivated komponen",
+        "Memanggil fungsi removeEventListener di dalam siklus hidup onUnmounted komponen",
+        "Menuliskan logika pembersihan pada bagian akhir dari fungsi watcher reaktif",
+        "Memanfaatkan hook onBeforeUpdate untuk menghapus listener lama sebelum diganti"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk komponen Vue 3 yang mengambil data dari API eksternal saat dimuat. Bagaimana cara terbaik menguji komponen ini menggunakan Vitest tanpa benar-benar melakukan panggilan jaringan yang lambat?",
+      "options": [
+        "Menjalankan server mock lokal menggunakan Express setiap kali perintah test dieksekusi",
+        "Memodifikasi file konfigurasi Vite untuk menonaktifkan semua koneksi HTTP keluar",
+        "Menggunakan vi.mock untuk meniru modul layanan API dan mengembalikan data dummy yang diinginkan",
+        "Membungkus komponen dengan Suspense dan menunggu promise selesai menggunakan await nextTick"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam aplikasi manajemen inventaris gudang berbasis Vue 3, Anda perlu memastikan bahwa daftar stok barang hanya dihitung ulang oleh computed property jika kategori filter aktif berubah, bukan setiap kali data baris tabel disentuh. Bagaimana cara menyusunnya?",
+      "options": [
+        "Memastikan computed property hanya mengakses variabel reaktif kategori filter yang relevan saja",
+        "Mengganti computed property dengan fungsi biasa yang dipanggil langsung di dalam template HTML",
+        "Menambahkan argumen deep true pada opsi computed property agar pembaruan lebih selektif",
+        "Memaksa pembaruan manual menggunakan metode triggerRef setiap kali data tabel dimodifikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menambahkan animasi transisi yang mulus saat elemen daftar item dihapus dari DOM menggunakan komponen <TransitionGroup> di Vue 3. Kelas CSS apa yang bertanggung jawab mengatur posisi elemen yang tersisa saat sebuah item dihilangkan?",
+      "options": [
+        "Menggunakan kelas dengan akhiran -leave-active untuk mengatur durasi animasi penghapusan",
+        "Menggunakan kelas dengan akhiran -move untuk mendefinisikan transisi perubahan posisi",
+        "Menggunakan kelas dengan akhiran -enter-from untuk menentukan titik awal pergerakan item",
+        "Menggunakan kelas dengan akhiran -slag untuk menangani penyesuaian tata letak grid otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web korporat menggunakan Vue Router membutuhkan proteksi akses rute berdasarkan peran (role) pengguna yang disimpan di Pinia store. Di mana tempat paling ideal untuk menerapkan logika pemeriksaan hak akses ini?",
+      "options": [
+        "Menambahkan pengecekan if-else di dalam hook onMounted pada setiap komponen halaman utama",
+        "Membuat fungsi middleware kustom di dalam komponen App.vue sebelum router-view dirender",
+        "Memanfaatkan fitur router.beforeEach global navigation guard untuk memvalidasi peran sebelum navigasi",
+        "Menuliskan pengalihan halaman di dalam konfigurasi properti redirect pada file definisi rute"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi point of sale (POS) kasir dengan Vue 3. Transaksi melibatkan scan barcode cepat yang memicu event input berulang kali ke komponen keranjang belanja. Bagaimana Anda mencegah pemrosesan state yang berlebihan tanpa mengorbankan responsivitas UI?",
+      "options": [
+        "Menggunakan fungsi debounce pada event handler input barcode untuk menunda eksekusi update state",
+        "Membungkus seluruh logika pemrosesan keranjang belanja dengan fungsi throttle pada rentang waktu tertentu",
+        "Memanfaatkan computed property reaktif untuk memantau perubahan input secara langsung secara sinkron",
+        "Menonaktifkan sementara elemen input DOM menggunakan atribut disabled setiap kali barcode dipindai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di sebuah dashboard analitik keuangan Vue 3, Anda perlu menampilkan ringkasan data transaksi yang diambil dari API. Data mentah harus diformat ke dalam mata uang Rupiah dan tanggal Indonesia sebelum ditampilkan. Pendekatan mana yang paling efisien dan sesuai praktik terbaik Vue?",
+      "options": [
+        "Membuat method helper global yang dipanggil langsung di dalam interpolasi template setiap kali data dirender",
+        "Menulis fungsi transform data di dalam lifecycle hook onMounted setiap kali komponen selesai dimuat",
+        "Mendefinisikan custom Vue filters yang dapat dipasang secara global pada instance aplikasi utama",
+        "Memanfaatkan Vue computed properties untuk mentransformasikan data mentah menjadi format siap tayang"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda membuat komponen form dinamis di Vue 3 di mana daftar input field bisa bertambah dan berkurang secara dinamis oleh pengguna. Saat menghapus salah satu baris di tengah, Anda mendapati state komponen anak tertukar. Atribut apa yang wajib disertakan pada perulangan v-for untuk mencegah masalah ini?",
+      "options": [
+        "Menambahkan indeks numerik iterasi v-for sebagai kunci unik pada elemen pembungkus terluar",
+        "Menggunakan nilai string acak yang digenerate otomatis melalui fungsi Math.random() pada setiap render",
+        "Menyematkan properti ID unik yang stabil dari data model backend pada atribut special v-bind:key",
+        "Memanfaatkan panjang array saat ini dikurangi indeks elemen sebagai penanda posisi unik komponen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam aplikasi manajemen proyek Vue 3, Anda menggunakan Pinia untuk mengelola state daftar tugas. Sebuah komponen anak perlu mengubah status tugas tertentu. Apa cara paling bersih dan sesuai arsitektur Pinia untuk melakukan pembaruan ini?",
+      "options": [
+        "Mengubah langsung properti state store dari dalam komponen anak secara mutlak tanpa perantara",
+        "Memanggil action yang didefinisikan di dalam store Pinia yang bertugas memodifikasi state terkait",
+        "Memancarkan custom event berantai melalui emit ke komponen induk tertinggi agar diteruskan ke store",
+        "Membuat salinan lokal dari state store menggunakan reactive() lalu mensinkronisasikannya secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun aplikasi dashboard multi-bahasa menggunakan Vue 3 dan Vue Router. Anda ingin memastikan bahwa setiap kali rute berubah, judul tab browser (document.title) otomatis menyesuaikan dengan halaman yang sedang dikunjungi. Di mana tempat paling tepat mengeksekusi logika ini?",
+      "options": [
+        "Menulis kode perubahan judul di dalam lifecycle hook onMounted pada setiap komponen halaman utama",
+        "Memasang global beforeEach navigation guard pada instance Vue Router untuk menangkap perpindahan rute",
+        "Membuat watcher global di root component App.vue yang memantau perubahan objek route secara reaktif",
+        "Menyisipkan skrip pembaruan judul dokumen secara langsung di dalam templat HTML layout utama aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web logistik berbasis Vue 3 memuat komponen peta interaktif yang sangat berat ukurannya. Komponen ini hanya perlu ditampilkan ketika pengguna menekan tab 'Peta Lokasi'. Bagaimana cara Anda mengoptimalkan pemuatan komponen ini agar tidak membebani initial bundle?",
+      "options": [
+        "Menggunakan fungsi defineAsyncComponent dari Vue bersama dynamic import untuk memuat komponen secara lazy",
+        "Membungkus komponen peta dengan tag <KeepAlive> agar statusnya tetap terjaga saat berpindah tab",
+        "Menempatkan komponen peta di dalam elemen bersyarat v-if dengan penundaan menggunakan fungsi setTimeout",
+        "Memecah komponen peta menjadi beberapa sub-komponen kecil yang diimpor secara statis di level atas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Vue 3 Anda mengalami penurunan memori (memory leak) karena event listener window.resize yang didaftarkan di dalam komponen tidak dibersihkan saat komponen dihancurkan. Di Composition API, bagaimana cara mengatasi hal ini?",
+      "options": [
+        "Menghapus event listener secara manual dengan memanggil window.removeEventListener di dalam blok onUnmounted",
+        "Memanfaatkan fungsi onBeforeUnmount untuk mereset seluruh variabel reaktif yang terikat pada jendela browser",
+        "Mengandalkan mekanisme garbage collection bawaan Vue 3 yang otomatis membersihkan listener global",
+        "Memindahkan pendaftaran event listener dari komponen lokal ke file konfigurasi utama main.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Vue 3 Composition API, Anda ingin membuat composable function `useLocalStorage` agar state sinkron dengan browser localStorage. Agar komponen lain dapat merespons perubahan state tersebut secara reaktif lintas tab, apa fungsi reaktif yang tepat digunakan?",
+      "options": [
+        "Menggunakan fungsi ref() atau reactive() biasa untuk menampung nilai data string dari localStorage",
+        "Membuat custom ref menggunakan customRef() untuk mengontrol secara manual proses pelacakan dan pemicuan",
+        "Memanfaatkan fungsi shallowRef() agar performa pembacaan data memori menjadi jauh lebih optimal",
+        "Menggunakan readOnly computed property agar data local storage tidak bisa dimodifikasi sembarangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test menggunakan Vitest untuk komponen Vue 3 yang menampilkan pesan sambutan berdasarkan props 'username'. Bagaimana cara Anda meneruskan props tersebut saat melakukan mounting komponen dengan Vue Test Utils?",
+      "options": [
+        "Menyertakan properti props di dalam objek konfigurasi opsi mount, contohnya mount(Component, { props: { username: 'Budi' } })",
+        "Mengatur nilai props secara langsung pada instance komponen hasil render menggunakan method setProps setelah mounting",
+        "Memodifikasi objek global Vue instance sebelum proses mount dengan mendefinisikan nilai default props",
+        "Menggunakan helper function wrapper.setProps() sesaat sebelum melakukan assertion pada teks elemen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah form pemesanan tiket bioskop di Vue 3, Anda perlu memastikan tombol 'Bayar' hanya aktif jika input nama, nomor kursi, dan metode pembayaran semuanya telah terisi valid. Pendekatan reaktif mana yang paling tepat untuk status tombol ini?",
+      "options": [
+        "Membuat fungsi method biasa yang dipanggil pada atribut disabled tombol untuk mengecek kondisi variabel form",
+        "Mendefinisikan computed property yang menggabungkan seluruh variabel form tersebut menjadi satu nilai boolean",
+        "Membuat watcher terpisah untuk masing-masing field input yang akan mengubah variabel status tombol secara manual",
+        "Memanfaatkan variabel ref global yang diperbarui nilainya setiap kali event input dipicu pada elemen form"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

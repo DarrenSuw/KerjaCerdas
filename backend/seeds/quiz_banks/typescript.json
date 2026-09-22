@@ -1,0 +1,306 @@
+{
+  "skill": "TypeScript",
+  "skill_key": "typescript",
+  "questions": [
+    {
+      "question": "Anda sedang membangun dashboard analitik dan menerima data mentah dari API backend berupa string JSON. Untuk menghindari kesalahan runtime saat mengakses properti objek yang tidak diketahui, fitur TypeScript apa yang paling tepat digunakan sebelum merender data ke komponen UI?",
+      "options": [
+        "Menggunakan tipe data 'any' pada argumen fungsi pemroses",
+        "Membuat sebuah custom type guard function untuk validasi struktur",
+        "Mematikan pemeriksaan strict mode pada file konfigurasi tsconfig",
+        "Melakukan cast langsung menggunakan keyword as tanpa pengecekan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di proyek e-commerce TokoOnline, Anda perlu membuat fungsi helper reusable yang bisa menerima array berisi item keranjang belanja atau array produk, lalu mengembalikan elemen pertamanya dengan tipe data yang sesuai tanpa kehilangan informasi tipe aslinya. Bagaimana cara mendefinisikan fungsi tersebut?",
+      "options": [
+        "Menggunakan generic type parameter pada deklarasi fungsi",
+        "Membuat overload function dengan tipe data number dan string",
+        "Mengembalikan tipe data union dari semua interface yang mungkin",
+        "Memanfaatkan tipe data object bawaan dari pustaka standard JS"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend Anda menggunakan komponen tombol yang sangat fleksibel dengan puluhan props opsional. Untuk mencegah duplikasi kode, Anda ingin membuat tipe baru yang hanya mengambil subset properti tertentu (seperti 'label' dan 'onClick') dari interface ButtonProps yang sudah ada. Fitur apa yang harus digunakan?",
+      "options": [
+        "Membuat interface baru secara manual dari awal tanpa turunan",
+        "Menggunakan conditional types dengan inferensi tingkat lanjut",
+        "Memanfaatkan utility type bawaan seperti Pick dari TypeScript",
+        "Mengubah seluruh properti interface utama menjadi opsional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat mengintegrasikan pustaka pihak ketiga lama ke proyek TypeScript, Andamendapatkan error merah karena modul tersebut tidak memiliki deklarasi tipe resmi. Langkah cepat dan aman apa yang harus diambil agar proses build tetap berjalan lancar?",
+      "options": [
+        "Menghapus pustaka tersebut dan mencari alternatif yang lebih baru",
+        "Membuat file deklarasi ambient module kustom dengan ekstensi d.ts",
+        "Mengubah ekstensi file kode sumber Anda dari ts menjadi js biasa",
+        "Mengabaikan peringatan compiler dengan menambah komentar khusus"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam modul manajemen pengguna, Anda memiliki tipe data profil yang berisi data sensitif. Anda diminta membuat fungsi pembaruan profil yang menerima objek berisi sebagian data saja (partial update). Utility type apa yang paling tepat untuk parameter fungsi tersebut?",
+      "options": [
+        "Menggunakan utility type Required untuk memastikan data lengkap",
+        "Membuat tipe duplikat baru dengan seluruh properti bertanda tanya",
+        "Memanfaatkan utility type Partial untuk membuat properti opsional",
+        "Menggunakan Readonly agar objek parameter tidak bisa diubah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis fungsi logika bisnis yang memproses status pesanan ('PENDING', 'PROCESSING', 'COMPLETED', 'CANCELLED'). Agar compiler TypeScript dapat mendeteksi jika ada kondisi status baru yang belum ditangani dalam blok switch-case, teknik apa yang sebaiknya diterapkan?",
+      "options": [
+        "Menggunakan union string literal dipadu dengan pengecekan exhaustiveness",
+        "Mendefinisikan status menggunakan tipe data enum numerik standar",
+        "Menambahkan blok default yang melempar error string umum",
+        "Membuat fungsi validator runtime tambahan menggunakan pustaka Joi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fungsi utilitas di aplikasi fintech Anda menerima parameter yang bisa berupa string atau number, dan mengembalikan tipe keluaran yang sama persis dengan tipe input yang dimasukkan. Bagaimana cara merepresentasikan perilaku tersebut secara akurat di TypeScript?",
+      "options": [
+        "Menggunakan tipe data union string | number pada signature fungsi",
+        "Memanfaatkan mekanisme function overloading dengan dua implementasi",
+        "Menentukan tipe kembalian fungsi secara eksplisit sebagai any",
+        "Menggunakan teknik conditional types berdasarkan input parameter"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendapati masalah performa IDE yang melambat drastis karena file konfigurasi tsconfig.json mencakup seluruh direktori node_modules dan folder build secara tidak sengaja. Properti apa di tsconfig.json yang harus Anda periksa dan perbarui?",
+      "options": [
+        "Mengatur ulang target kompilasi JavaScript ke versi ES5",
+        "Mengonfigurasi properti exclude atau include dengan benar",
+        "Menonaktifkan pemeriksaan strictNullChecks pada proyek",
+        "Menambah alokasi memori heap untuk proses eksekusi tsc"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi mobile React Native, Anda sering menggunakan tipe data gabungan (discriminated union) untuk state navigasi layar. Properti apa yang wajib ada di setiap anggota union agar TypeScript bisa mengenali tipe spesifik secara otomatis?",
+      "options": [
+        "Sebuah properti penanda literal bersama dengan nilai yang unik",
+        "Sebuah fungsi callback khusus untuk menangani perubahan state",
+        "Nomor indeks numerik berurutan untuk setiap elemen objek",
+        "Metadata waktu pembuatan objek dalam format timestamp milidetik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memastikan bahwa konfigurasi aplikasi utama yang dimuat saat startup tidak boleh diubah oleh bagian kode manapun selama siklus hidup aplikasi berjalan. Utility type apa yang harus diterapkan pada objek konfigurasi tersebut?",
+      "options": [
+        "Menerapkan utility type NonNullable pada setiap properti objek",
+        "Menggunakan utility type Record untuk memetakan key string",
+        "Memanfaatkan utility type Readonly untuk mengunci mutabilitas",
+        "Membungkus objek konfigurasi dengan modifier tipe as const"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Di aplikasi logistik, Anda perlu membuat fungsi pencarian yang menerima data array objek kurir atau array objek gudang. Anda ingin memastikan fungsi tersebut hanya menerima kedua tipe data tersebut tanpa menggunakan tipe `any`. Pendekatan TypeScript apa yang paling tepat?",
+      "options": [
+        "Menggunakan union type pada parameter fungsi dengan array dari kedua interface",
+        "Membuat tipe generik tunggal yang dibatasi dengan extends union interface",
+        "Mendefinisikan tipe data menggunakan tipe dasar object tanpa properti spesifik",
+        "Memaksa konversi tipe data input menggunakan operator as sebelum diproses"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membangun fitur form registrasi multi-langkah, Anda memiliki interface data form yang besar. Anda ingin membuat komponen khusus untuk langkah pertama yang hanya membutuhkan sebagian kecil properti dari interface utama tanpa menulis ulang kodenya. Apa fitur TypeScript terbaik yang digunakan?",
+      "options": [
+        "Menggunakan utilitas bawaan Omit untuk membuang properti yang tidak relevan",
+        "Membuat interface baru yang menduplikasi seluruh struktur data form utama",
+        "Menggunakan utilitas bawaan Pick untuk memilih properti yang dibutuhkan saja",
+        "Mengubah semua properti interface utama menjadi opsional secara global"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan modul pembayaran yang menghasilkan kode referensi unik. Agar aman dan tidak tertukar dengan string biasa di bagian kode lain, Anda ingin membuat tipe data khusus berbasis string. Bagaimana cara mendeklarasikannya di TypeScript?",
+      "options": [
+        "Membuat alias tipe dengan menggabungkan string primitif dan tipe unik kosong",
+        "Menggunakan tipe enum numerik yang dikonversi otomatis menjadi string",
+        "Membuat kelas wrapper khusus yang mengenkapsulasi nilai string tersebut",
+        "Memanfaatkan tipe data any untuk memberikan kebebasan manipulasi nilai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek sistem manajemen inventaris, Anda menerima data respons API dari server legacy di mana beberapa properti objeknya mungkin bernilai `null` atau `undefined`. Anda ingin mengakses properti bersarang tanpa memicu error runtime. Fitur TypeScript apa yang membantu?",
+      "options": [
+        "MengaktifkanstrictNullChecks pada berkas konfigurasi kompiler utama",
+        "Menggunakan operator optional chaining saat mengakses properti bersarang",
+        "Memaksa assertion non-null di setiap akhir pemanggilan properti objek",
+        "Membungkus seluruh pemanggilan objek dengan blok try catch standar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis pustaka utilitas internal untuk format mata uang. Fungsi Anda menerima angka dan mengembalikan string terformat, namun terkadang menerima nilai kosong. Anda ingin TypeScript memaksa pemanggil fungsi untuk menangani kondisi nilai kosong tersebut. Apa pendekatannya?",
+      "options": [
+        "Menggunakan tipe parameter opsional dengan nilai default string kosong",
+        "Menambahkan tipe union null pada tipe kembalian fungsi utilitas tersebut",
+        "Membuat tipe parameter menerima union angka dan null secara eksplisit",
+        "Menggunakan tipe data unknown agar pemanggil melakukan pengecekan tipe"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim backend memperbarui skema database, mengubah tipe ID pengguna dari string menjadi number di seluruh tabel. Anda perlu memperbarui tipe data TypeScript yang tersebar di puluhan file tanpa menggantinya satu per satu secara manual. Fitur apa yang paling efektif?",
+      "options": [
+        "Membuat interface turunan baru yang mewarisi tipe data ID yang lama",
+        "Menggunakan type alias terpusat untuk tipe ID sehingga cukup ubah satu tempat",
+        "Mengganti semua tipe data ID di setiap komponen menggunakan fungsi Replace",
+        "Memanfaatkan fitur type assertion global pada file entri utama aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat komponen tabel data generik yang bisa menampilkan data dari entitas apa saja (pengguna, produk, transaksi). Anda ingin membatasi agar tipe generik tersebut wajib memiliki properti id bertipe string. Bagaimana cara menulis deklarasinya?",
+      "options": [
+        "Membatasi tipe generik menggunakan klausa extends dengan objek berproperti id",
+        "Menambahkan kondisi ternary pada tipe generik untuk memeriksa properti id",
+        "Memaksa tipe generik untuk selalu mengimplementasikan interface id",
+        "Menggunakan tipe Intersection langsung pada parameter fungsi komponen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi HR, data karyawan memiliki status aktif yang dinamis. Anda ingin membuat tipe data baru yang mengambil semua kunci (keys) dari interface Karyawan sebagai union string. Fitur utilitas apa yang harus digunakan?",
+      "options": [
+        "Memanfaatkan operator utilitas Record untuk memetakan kunci objek",
+        "Menggunakan operator pemetaan kunci keyof pada interface Karyawan",
+        "Membuat tipe data manual berupa union string dari semua nama properti",
+        "Memanfaatkan utilitas Extract untuk mengambil kunci spesifik karyawan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis fungsi middleware untuk validasi data request. Fungsi tersebut menerima objek dan mengembalikan objek yang sama, namun semua propertinya dijamin bertipe string. Utility type apa yang paling tepat untuk tipe kembaliannya?",
+      "options": [
+        "Menggunakan utilitas Record dengan kunci string dan nilai string",
+        "Membuat interface baru dengan properti manual bertipe data string",
+        "Memanfaatkan utilitas Partial untuk membuat properti menjadi opsional",
+        "Menggunakan utilitas Readonly untuk mengunci nilai properti objek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat migrasi proyek JavaScript ke TypeScript, Anda menemukan fungsi callback lama yang menerima jumlah argumen dinamis tidak tentu. Untuk menghindari error kompilasi yang memblokir proses build awal, tipe apa yang paling aman digunakan sementara?",
+      "options": [
+        "Menggunakan tipe data any untuk menonaktifkan pengecekan tipe total",
+        "Menggunakan tipe data unknown untuk memaksa validasi tipe di dalam fungsi",
+        "Mendefinisikan array kosong sebagai representasi parameter callback",
+        "Membuat tipe generik kosong tanpa batasan untuk menampung argumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di modul manajemen cuti karyawan, Anda memiliki array data pengajuan cuti. Anda perlu mencari pengajuan pertama yang statusnya 'REJECTED' menggunakan metode find. Agar TypeScript tidak menganggap objek hasilnya mungkin bernilai undefined tanpa pengecekan ekstra, pendekatan apa yang paling tepat?",
+      "options": [
+        "Menggunakan operator non-null assertion (!) langsung pada akhir pemanggilan fungsi find",
+        "Memastikan tipe data elemen array didefinisikan secara eksplisit dan menangani kondisi undefined",
+        "Melakukan casting tipe data hasil return menggunakan kata kunci as sembarang objek",
+        "Mengubah konfigurasi tsconfig.json untuk mengabaikan pengecekan nilai null dan undefined"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat fungsi helper untuk memformat nomor telepon pengguna Indonesia. Fungsi ini menerima parameter string atau null. Anda ingin memastikan bahwa jika nilainya null, fungsi langsung mengembalikan string kosong tanpa menulis blok if yang panjang. Fitur TypeScript apa yang paling bersih digunakan?",
+      "options": [
+        "Menggunakan optional chaining dan nullish coalescing operator pada parameter input",
+        "Membuat overloading function terpisah khusus untuk menangani nilai null saja",
+        "Memanfaatkan tipe data any agar fungsi bisa menerima nilai apa pun tanpa error",
+        "Menggunakan type guard manual dengan typeof di dalam blok try-catch terpadu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek aplikasi kasir, Anda menerima data payload dari scanner barcode yang bertipe unknown. Sebelum memproses properti sku dan price di dalamnya, Anda harus memastikan struktur data tersebut aman. Bagaimana cara terbaik memvalidasinya di TypeScript?",
+      "options": [
+        "Langsung melakukan type assertion ke interface produk demi mempercepat eksekusi",
+        "Membuat custom type guard function yang memeriksa keberadaan properti secara runtime",
+        "Menggunakan tipe data record dinamis tanpa validasi tipe data properti di dalamnya",
+        "Mematikan opsi strictNullChecks pada compiler agar data unknown bisa langsung dipakai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan dashboard laporan keuangan. Anda memiliki fungsi yang menerima periode waktu berupa string literal: 'HARIAN', 'MINGGUAN', atau 'BULANAN'. Untuk mencegah developer lain memasukkan string sembarang, bagaimana Anda mendefinisikan tipenya?",
+      "options": [
+        "Menggunakan tipe data enum standar TypeScript untuk menampung daftar pilihan tersebut",
+        "Menggunakan tipe data union string literal untuk membatasi nilai yang diperbolehkan",
+        "Menggunakan tipe data string generik yang dilengkapi dengan komentar JSDoc khusus",
+        "Menggunakan tipe data object bersarang dengan kunci string dinamis dan nilai boolean"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di proyek SaaS HRIS, Anda memiliki interface Karyawan yang besar. Untuk halaman profil ringkas, Anda hanya butuh menampilkan nama dan email. Alih-alih membuat interface baru, fitur utility type apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan utility type Pick untuk mengambil properti nama dan email saja",
+        "Menggunakan utility type Omit untuk membuang seluruh properti selain keduanya",
+        "Menggunakan utility type Partial untuk membuat semua properti menjadi opsional",
+        "Menggunakan utility type Required untuk memastikan data keduanya selalu terisi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membangun fitur filter produk e-commerce, fungsi pencarian Anda menerima objek kriteria yang semua propertinya opsional (kategori, harga, lokasi). Namun, di dalam fungsi, Anda ingin memastikan objek kriteria tersebut memiliki tipe di mana semua propertinya wajib diisi (untuk query database). Utility type apa yang cocok?",
+      "options": [
+        "Menggunakan utility type Partial untuk melonggarkan tipe data parameter fungsi",
+        "Menggunakan utility type Required untuk mengubah semua properti opsional jadi wajib",
+        "Menggunakan utility type Readonly agar objek kriteria tidak bisa dimodifikasi",
+        "Menggunakan utility type Record untuk memetakan string ke tipe data any"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat fungsi untuk menyimpan konfigurasi aplikasi ke local storage. Agar objek konfigurasi tersebut tidak sengaja diubah oleh bagian kode lain setelah dimuat, modifier apa yang sebaiknya diterapkan pada properti interface konfigurasi tersebut?",
+      "options": [
+        "Menambahkan modifier private pada setiap properti di dalam interface utama",
+        "Menambahkan modifier readonly pada setiap properti atau menggunakan utility type Readonly",
+        "Menambahkan modifier protected agar hanya bisa diakses oleh kelas turunan saja",
+        "Menambahkan modifier static pada objek konfigurasi agar menempel pada memori global"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek sistem tiket bioskop, Anda mendapati fungsi pemesanan kursi yang argumennya sangat banyak dan sering tertukar posisinya. Sebagai refaktorisasi, bagaimana cara mengubah parameter fungsi tersebut agar lebih aman di TypeScript?",
+      "options": [
+        "Mengubah parameter tunggal menjadi objek dengan tipe interface yang terstruktur jelas",
+        "Mengubah seluruh parameter fungsi menjadi bertipe any agar fleksibel dipanggil",
+        "Menggunakan array tuple dengan jumlah elemen tetap tanpa nama properti yang jelas",
+        "Memecah fungsi utama menjadi sepuluh fungsi kecil tanpa parameter sama sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis pustaka komponen UI internal. Anda ingin membuat komponen Card yang bisa menerima elemen anak (children) berupa teks, elemen JSX, atau array dari keduanya. Tipe data apa yang paling tepat untuk props children di React dengan TypeScript?",
+      "options": [
+        "Menggunakan tipe data React.ReactNode untuk mencakup semua kemungkinan konten anak",
+        "Menggunakan tipe data string[] karena mayoritas komponen hanya merender teks biasa",
+        "Menggunakan tipe data HTMLElement standar yang diturunkan dari DOM browser",
+        "Menggunakan tipe data JSX.Element tunggal agar struktur DOM selalu konsisten"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda menggunakan pustaka manajemen state eksternal. Anda sering kali harus mengambil tipe data dari bentuk state store yang sudah ada tanpa mendefinisikannya ulang secara manual dari awal. Fitur TypeScript apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan operator typeof dikombinasikan dengan indexed access type keyof",
+        "Menggunakan utility type ReturnType pada fungsi pembuat state yang tersedia",
+        "Menggunakan type assertion manual menggunakan kata kunci as pada setiap variabel",
+        "Membuat interface baru dengan menyalin seluruh struktur properti secara manual"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

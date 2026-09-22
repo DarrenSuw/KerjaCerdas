@@ -1,0 +1,306 @@
+{
+  "skill": "Rust",
+  "skill_key": "rust",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan layanan mikro backend di Rust untuk sistem e-commerce. Saat memproses payload JSON dari request pengguna menggunakan serde, aplikasi panik ketika field tertentu tidak ditemukan. Bagaimana cara terbaik menangani optional field tanpa membuat kode panik?",
+      "options": [
+        "Menggunakan tipe Option<T> pada struct dan menambahkan anotasi skip",
+        "Menggunakan tipe Option<T> pada struct dan memanfaatkan operator unwrap",
+        "Menggunakan tipe Option<T> pada struct dan menangani nilai None secara aman",
+        "Menggunakan tipe Result<T, E> pada struct dan melakukan panic manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam tim pengembang fintech, Anda menulis fungsi untuk menghitung saldo akun yang menggunakan multithreading. Kompiler Rust mengeluhkan error 'cannot borrow data as mutable more than once at a time'. Langkah paling tepat untuk mengatasi masalah ownership ini adalah:",
+      "options": [
+        "Membungkus data bersama dengan Arc dan Mutex agar aman diakses lintas thread",
+        "Membuat salinan data di setiap thread menggunakan fungsi clone secara langsung",
+        "Mengubah semua referensi variabel menjadi tipe data primitif yang berukuran tetap",
+        "Menonaktifkan sistem borrow checker menggunakan blok kode unsafe di Rust"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah modul pengolahan citra digital di aplikasi mobile membaca file gambar besar ke memori. Untuk menghindari overhead alokasi heap yang berlebihan, Anda ingin menyimpan data buffer pada stack dengan ukuran yang ditentukan saat runtime. Fitur Rust apa yang paling tepat digunakan?",
+      "options": [
+        "Memanfaatkan crate pihak ketiga yang menyediakan alokator kustom stack",
+        "Menggunakan tipe data Vec<u8> standar dengan kapasitas yang telah dipesan",
+        "Menggunakan tipe array primitif dengan ukuran dinamis berbasis ekspresi",
+        "Menggunakan tipe slice tak berukuran dengan alokasi manual via Box"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain API klien HTTP menggunakan tokio dan reqwest. Saat melakukan beberapa permintaan jaringan secara bersamaan, Anda perlu mengumpulkan hasilnya ke dalam sebuah vektor. Fungsi apa dari ekosistem async Rust yang efisien untuk ini?",
+      "options": [
+        "Menggunakan join_all dari crate futures untuk mengeksekusi future secara paralel",
+        "Menggunakan perulangan for konvensional untuk menunggu setiap future selesai",
+        "Menggunakan std::thread::spawn untuk menjalankan setiap request di OS thread",
+        "Menggunakan tokio::spawn pada setiap iterasi tanpa menunggu hasilnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat mengoptimalkan performa modul parsing log server, Anda menemukan banyak alokasi string baru yang tidak perlu. Bagaimana cara memanfaatkan lifetimes di Rust untuk membuat parser yang berjalan tanpa alokasi heap (zero-allocation)?",
+      "options": [
+        "Menggunakan tipe String yang di-mutasi secara in-place pada setiap iterasi baris",
+        "Menggunakan referensi &str dengan lifetime yang terikat pada data input asli",
+        "Menggunakan tipe Cow<'a, str> untuk menunda alokasi hingga data dimodifikasi",
+        "Menggunakan Box<str> untuk memastikan data disimpan di lokasi memori tetap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat pustaka (library) Rust untuk enkripsi data internal perusahaan. Pustaka ini menggunakan struktur data kompleks yang harus aman dibagikan antar thread tanpa kondisi balapan (race conditions). Trait mana yang wajib diimplementasikan pada struktur tersebut?",
+      "options": [
+        "Trait Send dan Sync untuk menjamin keamanan perpindahan antar thread",
+        "Trait Clone dan Copy untuk memastikan duplikasi data berjalan dengan benar",
+        "Trait Default dan Debug untuk mempermudahinisiasi dan pelacakan error",
+        "Trait AsRef dan AsMut untuk konversi tipe referensi yang aman dan cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek IoT, Anda menulis kode yang berinteraksi langsung dengan register hardware melalui pointer mentah (raw pointers). Blok kode khusus apa yang harus digunakan di Rust untuk mengizinkan operasi dereference pointer mentah tersebut?",
+      "options": [
+        "Menggunakan blok kode khusus bertuliskan keyword async untuk operasi I/O",
+        "Menggunakan blok kode khusus bertuliskan keyword unsafe untuk melewati borrow checker",
+        "Menggunakan blok kode khusus bertuliskan keyword extern untuk fungsi FFI",
+        "Menggunakan blok kode khusus bertuliskan keyword dyn untuk dynamic dispatch"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi kalkulasi finansial yang kompleks. Anda ingin memastikan bahwa kode panik ketika nilai input negatif dimasukkan. Bagaimana cara menulis atribut pengujian yang benar di Rust?",
+      "options": [
+        "Menambahkan atribut #[should_panic] di atas fungsi pengujian unit tersebut",
+        "Menambahkan atribut #[test_panic] di dalam blok pengujian fungsi utama",
+        "Menambahkan atribut #[ignore] agar test dijalankan secara terpisah",
+        "Menambahkan atribut #[cfg(test)] pada modul pengujian yang bersangkutan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah layanan web backend mengalami lonjakan trafik dan Anda perlu mengelola koneksi database PostgreSQL menggunakan sqlx. Pendekatan manajemen koneksi pool apa yang paling idiomatik di Rust untuk aplikasi async?",
+      "options": [
+        "Membuat koneksi baru pada setiap request HTTP yang masuk ke server",
+        "Membagikan instance PgPool tunggal secara aman menggunakan pembungkus Arc",
+        "Membuka satu koneksi global yang diakses bergantian lewat mutex",
+        "Membuat thread pool terpisah untuk setiap query database yang dieksekusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain trait kustom untuk sistem plugin aplikasi. Beberapa implementasi trait ini memerlukan tipe data asosiasi (associated types) yang fleksibel ditentukan oleh masing-masing struct pengimplementasi. Bagaimana sintaks penulisan trait tersebut?",
+      "options": [
+        "Mendefinisikan tipe generik <T> langsung pada nama deklarasi trait",
+        "Menggunakan keyword type di dalam blok trait untuk tipe data asosiasi",
+        "Menggunakan lifetime bounds 'a pada setiap fungsi di dalam trait",
+        "Mengimplementasikan trait turunan menggunakan keyword dyn secara eksplisit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun layanan gerbang pembayaran (payment gateway) di Rust yang memerlukan pengelolaan status transaksi bersama antar thread secara aman tanpa overhead kunci mutlak (mutex). Mekanisme apa yang paling tepat digunakan untuk membungkus data status tersebut?",
+      "options": [
+        "Menggunakan tipe data Arc yang digabung dengan Mutex untuk akses aman",
+        "Menggunakan pointer mentah yang dikelola secara manual lewat blok unsafe",
+        "Menggunakan variabel global mutable dengan anotasi statis tak aman",
+        "Menggunakan struktur data standar vector dengan operasi sinkronisasi atomik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem inventaris gudang, Anda menerima data JSON dari pemasok luar yang strukturnya sering berubah dan tidak lengkap. Bagaimana cara terbaik memparsing payload tersebut menggunakan pustaka serde di Rust?",
+      "options": [
+        "Menggunakan makro turunan Deserialize standar pada struktur data ketat",
+        "Memetakan data langsung ke tipe data primitif tanpa validasi skema awal",
+        "Memanfaatkan tipe data Option untuk setiap field yang bersifat opsional",
+        "Menulis parser manual berbasis string slice untuk setiap atribut objek"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain worker pool asinkron menggunakan tokio untuk memproses ribuan laporan penjualan bulanan secara paralel. Salah satu tugas memblokir thread karena komputasi berat. Langkah apa yang harus diambil agar runtime tokio tidak terhambat?",
+      "options": [
+        "Menjalankan seluruh tugas berat tersebut langsung di dalam fungsi async utama",
+        "Memindahkan logika komputasi berat ke dalam fungsi pemblokir khusus tokio",
+        "Menurunkan prioritas thread pool sistem operasi untuk proses latar belakang",
+        "Mengganti seluruh pemanggilan jaringan asinkron menjadi sinkron berulir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps melaporkan penggunaan memori layanan mikro pelacakan kurir melonjak tinggi akibat alokasi string berulang saat membaca log teks besar. Bagaimana cara mengoptimalkan kode untuk menghindari alokasi heap yang berlebihan?",
+      "options": [
+        "Menggunakan tipe data String secara konsisten pada setiap fungsi parser",
+        "Memanfaatkan reference string slice agar menunjuk langsung ke buffer",
+        "Melakukan kloning data string secara agresif pada setiap iterasi loop",
+        "Mengubah semua struktur data teks menjadi array byte berukuran tetap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mengintegrasikan pustaka C warisan (legacy) untuk pembacaan sidik jari pada mesin absensi kantor, Anda perlu menulis fungsi yang berinteraksi dengan memori tak aman. Bagaimana cara memastikan blok kode tersebut tetap mematuhi aturan keamanan Rust?",
+      "options": [
+        "Membungkus blok kode pemanggilan fungsi C di dalam blok unsafe sempit",
+        "Menandai seluruh modul aplikasi utama sebagai kode tak aman demi kemudahan",
+        "Menghindari penggunaan sistem tipe Rust sepenuhnya saat pertukaran data",
+        "Menggunakan pointer mentah tanpa validasi batas memori pada fungsi publik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis fungsi validasi pinjaman bank yang harus mengembalikan error kustom dengan pesan spesifik jika aturan bisnis dilanggar, atau hasil sukses jika valid. Pola penanganan error apa yang paling idiomatik di Rust?",
+      "options": [
+        "Menggunakan makro panic! setiap kali ditemukan pelanggaran aturan bisnis",
+        "Mengembalikan kode angka integer negatif sebagai penanda jenis kegagalan",
+        "Memanfaatkan tipe enumerasi kustom yang dibungkus dalam wadah Result",
+        "Mengabaikan nilai error dan mengembalikan nilai default kosong ke pemanggil"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur analitik data penjualan memerlukan pemrosesan koleksi angka yang sangat besar menggunakan iterator bawaan Rust. Mengapa pendekatan iterator seringkali lebih disukai dibanding perulangan manual berbasis indeks?",
+      "options": [
+        "Iterator secara otomatis menduplikasi data ke memori sekunder untuk cadangan",
+        "Kompiler dapat mengoptimalkan rantai iterator menjadi kode mesin yang setara",
+        "Iterator memaksa alokasi heap untuk setiap elemen yang berhasil diproses",
+        "Penggunaan iterator menghilangkan kebutuhan untuk mendeklarasikan variabel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang pustaka klien HTTP internal untuk berinteraksi dengan berbagai layanan mikro perusahaan. Anda ingin memastikan bahwa struktur konfigurasi klien dapat digunakan bersama oleh berbagai thread tanpa kondisi balapan (data race). Trait apa yang wajib diimplementasikan?",
+      "options": [
+        "Trait Send dan Sync untuk menjamin keamanan perpindahan antar thread",
+        "Trait Clone dan Copy agar struktur data dapat digandakan secara bebas",
+        "Trait Debug dan Display untuk keperluan pencatatan log sistem error",
+        "Trait Default untuk menyediakan nilai awal kosong pada konfigurasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengujian unit untuk modul kalkulator pajak penghasilan, Anda perlu memastikan fungsi menolak rentang nilai negatif dengan memicu kepanikan (panic). Atribut pengujian apa yang digunakan pada fungsi pengujian tersebut?",
+      "options": [
+        "Menambahkan atribut khusus untuk mengabaikan pengujian jika gagal berjalan",
+        "Menambahkan atribut penanda ekspektasi panik pada blok fungsi pengujian",
+        "Menambahkan atribut penanda bahwa fungsi uji dijalankan secara asinkron",
+        "Menambahkan atribut untuk membatasi waktu eksekusi maksimal pengujian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengoptimalkan penggunaan memori pada struktur data pesanan pelanggan yang sering disalin antar fungsi. Alih-alih memindahkan kepemilikan (ownership) secara terus menerus, pendekatan apa yang paling tepat diterapkan pada parameter fungsi?",
+      "options": [
+        "Mengubah seluruh struktur data menjadi bentuk referensi mentah tak aman",
+        "Menggunakan peminjaman referensi immutabel atau mutabel secara tepat",
+        "Selalu melakukan kloning data secara eksplisit di awal setiap fungsi",
+        "Menghapus parameter fungsi dan memanfaatkan variabel global bersama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis modul pembaca konfigurasi server yang harus membaca file teks besar. Untuk menghindari penyalinan data yang tidak perlu, Anda ingin mengembalikan referensi irisan string (&str) yang menunjuk langsung ke memori file yang dipetakan ke memori (memory-mapped). Bagaimana Anda memastikan kompiler Rust menerima umur (lifetime) referensi tersebut?",
+      "options": [
+        "Menggunakan tipe data String dan melakukan kloning manual pada setiap baris data konfigurasi",
+        "Menyematkan parameter lifetime eksplisit yang menghubungkan umur referensi hasil ke referensi data input",
+        "Mengubah seluruh fungsi menjadi asinkron menggunakan pustaka tokio agar masa hidup memori diatur runtime",
+        "Membungkus hasil fungsi dengan struktur data Rc untuk mengelola referensi bersama secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan sistem manajemen armada logistik, Anda membuat struktur data Kendaraan yang dibagikan dan dimodifikasi secara aman oleh beberapa thread pekerja (worker threads). Operasi pembaruan koordinat GPS sangat sering terjadi. Tipe pembungkus pintar (smart pointer) manakah yang paling efisien dan aman untuk skenario ini?",
+      "options": [
+        "Menggunakan Arc yang membungkus Mutex untuk memastikan akses eksklusif aman lintas thread",
+        "Menggunakan Rc yang membungkus RefCell untuk meminimalkan overhead overhead penguncian",
+        "Menggunakan Box yang langsung menunjuk ke data mutable di heap tanpa sinkronisasi tambahan",
+        "Menggunakan Cell murni tanpa pengaman pointer karena data koordinat berbentuk primitif f64"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah layanan mikro notifikasi WhatsApp di perusahaan Anda menerima antrean pesan masuk. Anda perlu menulis fungsi pemrosesan yang dapat menerima berbagai jenis payload pesan (teks, gambar, atau dokumen) yang semuanya mengimplementasikan trait Pesanan. Bagaimana cara Anda mendefinisikan parameter fungsi tersebut agar mendukung polimorfisme statis?",
+      "options": [
+        "Menggunakan tipe trait object dengan sintaks dyn Pesanan di dalam pointer Box",
+        "Menggunakan parameter generik dengan batasan trait impl Pesanan atau T: Pesanan",
+        "Menggunakan enum internal yang mencakup seluruh varian payload pesan yang mungkin",
+        "Menggunakan tipe dinamis Any untuk melakukan casting tipe secara manual saat runtime"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mengoptimalkan layanan API pencarian produk e-commerce, Anda mendapati bahwa fungsi pencarian sering mengembalikan hasil kosong. Alih-alih mengembalikan vektor kosong yang memicu alokasi heap baru, Anda ingin menggunakan tipe data opsional standar Rust. Manakah pendekatan idiomatis yang paling tepat?",
+      "options": [
+        "Mengembalikan tipe Option<Vec<Produk>> dan membungkus vektor dalam beberapa lapisan",
+        "Mengembalikan referensi irisan &[Produk] yang bernilai kosong jika tidak ada hasil",
+        "Mengembalikan tipe Result<Vec<Produk>, ErrorKosong> untuk setiap pencarian hampa",
+        "Menggunakan pointer mentah (raw pointer) yang dapat bernilai null jika data tidak ditemukan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengintegrasikan modul Rust dengan pustaka C pihak ketiga untuk pembacaan kartu RFID absensi karyawan. Fungsi C tersebut menerima pointer ke buffer memori dan panjangnya. Bagaimana cara Anda menulis blok kode aman yang berinteraksi dengan fungsi tak aman (unsafe) tersebut?",
+      "options": [
+        "Menjalankan seluruh fungsi Rust utama di dalam satu blok unsafe yang sangat besar",
+        "Membungkus pemanggilan fungsi C dalam blok unsafe kecil dan memvalidasi pointer di luar blok",
+        "Menggunakan makro c_str untuk mengonversi otomatis tipe data string tanpa blok unsafe",
+        "Mengubah tanda tangan fungsi C eksternal menjadi fungsi aman menggunakan atribut safe"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sistem pemrosesan transaksi dompet digital, Anda ingin memastikan bahwa fungsi transfer dana tidak dapat mengabaikan status hasil operasi (berhasil atau gagal), karena hal ini dapat berakibat fatal pada saldo nasabah. Fitur apa dari sistem tipe Rust yang memaksa pengembang menangani kemungkinan error?",
+      "options": [
+        "Atribut kompiler #[must_use] pada tipe kembalian Result yang memicu peringatan jika diabaikan",
+        "Penggunaan mekanisme exception try-catch bawaan yang menghentikan program secara otomatis",
+        "Penerapan kata kunci panic! di setiap akhir fungsi untuk mendeteksi kegagalan tersembunyi",
+        "Penggunaan pointer opsional yang secara otomatis bernilai nol jika transaksi gagal dieksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis modul enkripsi data token akses pengguna menggunakan pustaka pihak ketiga. Modul ini menggunakan tipe data kustom yang besar. Untuk menghindari penyalinan data saat diteruskan antar fungsi, Anda mengimplementasikan trait Drop untuk pembersihan memori kustom, namun kompiler menolak implementasi trait Copy. Apa alasan desain di balik penolakan ini?",
+      "options": [
+        "Rust melarang tipe data apa pun untuk memiliki ukuran lebih dari kilobyte di dalam memori stack",
+        "Tipe data yang mengimplementasikan Drop mengatur pembersihan sumber daya unik dan tidak boleh disalin secara implisit",
+        "Trait Copy hanya dapat diterapkan pada tipe data primitif seperti angka bulat dan boolean saja",
+        "Kompiler Rust memerlukan anotasi lifetime manual tambahan sebelum trait Copy dapat digabungkan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan backend pelaporan pajak daerah menulis data log aktivitas ke dalam file teks secara bersamaan dari berbagai thread handler HTTP. Untuk menghindari korupsi data akibat kondisi balapan (race condition), struktur penulis file dibungkus dalam mekanisme sinkronisasi thread. Manakah struktur tipe standar yang paling tepat digunakan?",
+      "options": [
+        "std::sync::Mutex<std::fs::File> untuk mengamankan akses penulisan file secara bergantian",
+        "std::cell::RefCell<std::fs::File> untuk mengizinkan perubahan mutabilitas interior thread tunggal",
+        "std::rc::Rc<std::fs::File> untuk membagikan kepemilikan file secara bebas tanpa penguncian",
+        "std::sync::atomic::AtomicPtr<std::fs::File> untuk memperbarui pointer file secara instan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem manajemen inventaris gudang, Anda membuat struktur data bersarang yang kompleks. Anda ingin fungsi pembantu Anda dapat menerima argumen berupa referensi ke berbagai jenis tipe data string (baik String yang dimiliki maupun &str pinjaman) secara fleksibel tanpa konversi manual yang bertele-tele. Trait apa yang sebaiknya Anda gunakan sebagai batasan parameter?",
+      "options": [
+        "Menggunakan batasan trait Into<String> pada parameter fungsi untuk fleksibilitas alokasi",
+        "Menggunakan batasan trait AsRef<str> pada parameter fungsi untuk menerima berbagai jenis string",
+        "Menggunakan tipe data Cow<'a, str> secara langsung pada tanda tangan parameter fungsi",
+        "Menggunakan tipe data Box<str> untuk memaksa seluruh string dipindahkan ke memori heap"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan pembacaan konfigurasi aplikasi dari lingkungan sistem (environment variables) saat startup. Jika variabel tertentu tidak ditemukan, program harus langsung berhenti dengan pesan kesalahan yang jelas dan informatif. Metode mana dari tipe Option atau Result yang paling idiomatis untuk tujuan ini?",
+      "options": [
+        "Memanggil metode unwrap() agar program langsung panik dengan pesan bawaan sistem",
+        "Memanggil metode expect(\"pesan kustom\") untuk memberikan konteks kegagalan saat panik",
+        "Memanggil metode unwrap_or_default() untuk mengisi nilai kosong secara otomatis",
+        "Memanggil metode map_err() untuk mengubah kesalahan menjadi jenis error kustom"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

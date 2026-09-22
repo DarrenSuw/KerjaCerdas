@@ -1,0 +1,306 @@
+{
+  "skill": "Linear Algebra",
+  "skill_key": "linear algebra",
+  "questions": [
+    {
+      "question": "Sebagai data scientist di sebuah marketplace Indonesia, Anda diminta memprediksi harga rumah di Jabodetabek menggunakan regresi linear berganda. Matriks fitur $X$ memiliki ukuran besar dan beberapa variabel prediktor memiliki korelasi tinggi satu sama lain (multikolinearitas). Langkah aljabar linear apa yang paling tepat untuk mengatasi instabilitas perhitungan invers matriks $X^T X$?",
+      "options": [
+        "Mengalikan matriks fitur dengan nilai rata-rata dari setiap kolom data",
+        "Menambahkan parameter regularisasi L2 pada diagonal matriks sebelum diinvers",
+        "Melakukan operasi transpose pada seluruh baris matriks agar ukurannya mengecil",
+        "Mengganti nilai matriks yang kosong dengan nilai median dari variabel terkait"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim logistik perusahaan e-commerce ingin mengoptimalkan rute pengiriman paket dari satu gudang pusat ke lima titik hub di Jakarta. Setiap rute memiliki biaya bahan bakar yang direpresentasikan dalam bentuk sistem persamaan linear. Metode faktorisasi matriks apa yang paling efisien untuk diimplementasikan dalam sistem backend Python guna menyelesaikan sistem tersebut berulang kali?",
+      "options": [
+        "Menggunakan eliminasi Gauss-Jordan secara langsung pada matriks bobot",
+        "Menerapkan dekomposisi LU untuk memisahkan matriks segitiga atas dan bawah",
+        "Mencari determinan matriks biaya menggunakan ekspansi kofaktor baris",
+        "Menghitung nilai eigen dari matriks transpos untuk mendapatkan solusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah agensi pemasaran digital menganalisis efektivitas iklan media sosial menggunakan matriks transisi Markov untuk melacak perpindahan minat konsumen antar 4 merek lokal. Setelah 10 siklus kampanye, distribusi pangsa pasar mulai stabil. Konsep aljabar linear apakah yang merepresentasikan kondisi pangsa pasar yang stabil tersebut?",
+      "options": [
+        "Vektor eigen yang bersesuaian dengan nilai eigen bernilai satu",
+        "Hasil kali titik antara vektor probabilitas awal dan matriks identitas",
+        "Invers dari matriks transisi dikalikan dengan jumlah total konsumen",
+        "Trace dari matriks transisi yang dibagi dengan jumlah variabel kategori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Computer Vision untuk sistem absensi kantor berbasis wajah di Jakarta, gambar karyawan direpresentasikan sebagai matriks piksel berukuran besar. Untuk mempercepat waktu komputasi tanpa kehilangan fitur dominan wajah, Anda perlu mereduksi dimensi matriks tersebut. Teknik aljabar linear apa yang harus diterapkan?",
+      "options": [
+        "Singular Value Decomposition untuk membuang nilai singular yang kecil",
+        "Transformasi Fourier diskrit untuk mengubah domain spasial ke frekuensi",
+        "Operasi perkalian matriks silang untuk menyamakan jumlah baris dan kolom",
+        "Pencarian ruang null dari matriks citra untuk menghapus background foto"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer produksi pabrik garmen di Bandung memiliki model aljabar linear untuk alokasi bahan baku kain, benang, dan kancing guna memproduksi tiga jenis pakaian. Ketika harga bahan baku impor berubah, matriks koefisien kendala mengalami sedikit gangguan (perturbasi). Analisis aljabar linear apa yang perlu diperhatikan untuk memastikan kestabilan solusi?",
+      "options": [
+        "Menghitung norma matriks untuk membandingkan ukuran panjang vektor",
+        "Memeriksa bilangan kondisi matriks untuk mengukur sensitivitas galat",
+        "Mencari ruang kolom matriks untuk mengetahui batas kapasitas produksi",
+        "Menentukan sudut antara vektor kendala menggunakan hasil kali dalam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank nasional menggunakan sistem skoring kredit berbasis bobot linear dari 6 variabel finansial nasabah. Dalam proses audit model, ditemukan bahwa salah satu variabel (rasio utang) dapat ditulis sebagai kombinasi linear persis dari dua variabel lainnya. Apa dampak kondisi ini terhadap matriks kovarians data?",
+      "options": [
+        "Matriks kovarians akan menjadi matriks diagonal dengan nilai positif",
+        "Determinan dari matriks kovarians akan bernilai tepat atau mendekati nol",
+        "Trace dari matriks kovarians akan meningkat secara eksponensial",
+        "Matriks kovarians berubah menjadi matriks simetris definit positif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim riset game online lokal sedang merancang mesin fisika 3D untuk pergerakan karakter. Rotasi dan translasi objek di dalam ruang 3D dilakukan secara berurutan menggunakan transformasi geometri. Representasi matematis apa yang paling tepat untuk menggabungkan beberapa operasi transformasi tersebut menjadi satu matriks efisien?",
+      "options": [
+        "Penjumlahan matriks transformasi posisi dengan matriks skala objek",
+        "Perkalian beruntun matriks transformasi homogen berukuran 4x4",
+        "Invers matriks rotasi dikalikan dengan vektor posisi awal karakter",
+        "Penggabungan ruang eigen dari matriks posisi sumbu X, Y, dan Z"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan telekomunikasi besar di Indonesia ingin mengelompokkan jutaan pelanggan berdasarkan pola penggunaan data harian mereka menggunakan algoritma K-Means. Pada tahap awal, jarak Euclidean antara titik data dan pusat kluster dihitung secara masif. Operasi aljabar linear dasar apa yang mendasari perhitungan jarak tersebut dalam bentuk matriks?",
+      "options": [
+        "Norma Euclidean dari selisih vektor data yang dihitung via operasi dot product",
+        "Perkalian silang antara matriks pusat kluster dan matriks transposing data",
+        "Pencarian nilai eigen dari matriks jarak kuadrat antar titik pelanggan",
+        "Reduksi dimensi matriks fitur menggunakan proyeksi orthogonal Gram-Schmidt"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan membangun sistem rekomendasi film untuk platform streaming lokal. Matriks interaksi pengguna dan film sangat besar tetapi sangat sedikit yang terisi (sparse matrix). Untuk menemukan preferensi tersembunyi, Anda memfaktorkan matriks tersebut menjadi dua matriks berdimensi rendah. Sifat aljabar linear apa yang dimanfaatkan dalam metode faktorisasi matriks ini?",
+      "options": [
+        "Setiap matriks persegi selalu dapat didekomposisi menjadi matriks diagonal",
+        "Matriks berperingkat rendah dapat mendekati matriks asli yang besar",
+        "Ruang baris dan ruang kolom matriks selalu memiliki dimensi yang berbeda",
+        "Operasi transpose pada matriks sparse akan menghasilkan matriks identitas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lembaga survei politik di Jakarta menggunakan pemodelan vektor untuk menganalisis sentimen publik dari hasil scraping media sosial. Terdapat dua isu utama yang diwakili oleh dua vektor berdimensi tinggi. Untuk mengukur tingkat kemiripan orientasi opini antara kedua isu tersebut terlepas dari volume total tweet, operasi aljabar linear apa yang paling tepat digunakan?",
+      "options": [
+        "Menghitung selisih mutlak antara panjang kedua vektor referensi",
+        "Mencari nilai kosinus sudut antara kedua vektor melalui normalisasi",
+        "Mengalikan kedua vektor dengan matriks proyeksi ortogonal standar",
+        "Menjumlahkan komponen vektor terbesar dari masing-masing kategori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis rantai pasok di perusahaan FMCG, Anda memodelkan aliran distribusi barang dari 3 pabrik ke 4 distributor regional menggunakan perkalian matriks. Saat mereview kode Python rekan kerja, ditemukan kesalahan dimensi matriks perkalian yang menghasilkan error. Apa langkah perbaikan yang paling tepat?",
+      "options": [
+        "Menukar urutan matriks dan melakukan transpos pada matriks hasil perkalian",
+        "Menyesuaikan jumlah kolom matriks pertama agar sama dengan jumlah baris matriks kedua",
+        "Menambahkan variabel dummy pada matriks terkecil agar ukurannya menjadi kuadrat",
+        "Melakukan normalisasi min-max pada semua elemen matriks sebelum dikalikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur elektronik di Cikarang memproduksi dua jenis komponen dengan sistem persamaan linear kendala kapasitas mesin. Saat mencoba mencari solusi unik menggunakan eliminasi Gauss, baris terakhir matriks augmentasi berubah menjadi semua nol kecuali kolom konstanta. Apa interpretasi praktis dari kondisi ini?",
+      "options": [
+        "Sistem produksi sangat efisien dan menghasilkan keuntungan maksimal tanpa batas",
+        "Kapasitas mesin belum terpakai secara optimal sehingga perlu penambahan shift",
+        "Sistem persamaan tidak memiliki solusi karena kendala produksi saling kontradiktif",
+        "Terdapat variabel bebas yang menunjukkan adanya solusi tak hingga untuk produksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim riset energi surya sedang menganalisis efisiensi panel surya berdasarkan intensitas cahaya dan suhu harian. Mereka memiliki matriks kovarians dari data sensor. Untuk mereduksi fitur yang berkolerasi tinggi sebelum dimasukkan ke model regresi, operasi aljabar linear apa yang harus diterapkan?",
+      "options": [
+        "Dekomposisi nilai singular untuk mengekstrak komponen utama yang ortogonal",
+        "Inversi matriks penuh untuk mendapatkan bobot pengaruh secara langsung",
+        "Perkalian matriks silang dengan vektor satuan untuk standarisasi skala data",
+        "Transformasi determinan untuk mengukur total varians dari seluruh sensor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola portofolio investasi saham untuk klien korporat. Risiko portofolio dihitung menggunakan bentuk kuadratik (quadratic form) dari matriks kovarians aset dan vektor alokasi dana. Jika klien ingin meminimalkan risiko total dengan kendala total bobot dana adalah 100%, metode aljabar linear apa yang paling tepat?",
+      "options": [
+        "Penerapan eliminasi Gauss-Jordan pada sistem persamaan diferensial parsial",
+        "Penggunaan pengali Lagrange untuk menyelesaikan optimasi berkendala linear",
+        "Pencarian nilai eigen dominan pada matriks korelasi seluruh aset saham",
+        "Normalisasi vektor bobot menggunakan norma Euclidean dari return historis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan fitur pencarian produk pada aplikasi e-commerce, deskripsi teks produk dan kata kunci pencarian diubah menjadi vektor dalam ruang berdimensi tinggi. Untuk menentukan tingkat kemiripan semantik antara produk dan kueri pengguna, operasi vektor apa yang paling efisien digunakan?",
+      "options": [
+        "Penghitungan jarak Euclidean antara titik ujung kedua vektor fitur",
+        "Perkalian silang untuk menghasilkan vektor ortogonal baru di ruang laten",
+        "Pengukuran kosinus sudut antara kedua vektor representasi teks",
+        "Penjumlahan elemen demi elemen setelah dilakukan penskalaan logaritmik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan jalan raya perkotaan di Surabaya dimodelkan sebagai graf berarah, di mana arus lalu lintas di tiap persimpangan direpresentasikan oleh sistem persamaan linear homogen. Hasil perhitungan menunjukkan determinan matriks koefisien sistem tersebut bernilai nol. Apa makna kondisi ini bagi perencana transportasi?",
+      "options": [
+        "Volume kendaraan di setiap ruas jalan sudah mencapai titik jenuh absolut",
+        "Model matematika gagal karena ada kesalahan pengukuran data sensor jalan",
+        "Arus lalu lintas sangat stabil dan tidak dipengaruhi oleh jam sibuk harian",
+        "Terdapat pola kemacetan bersiklus yang memungkinkan banyak solusi alternatif"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebagai pengembang perangkat lunak simulasi reservoir migas, Anda menggunakan matriks spars besar untuk menyelesaikan persamaan diferensial parsial aliran fluida bawah permukaan. Metode langsung seperti eliminasi Gauss memakan memori berlebih. Transformasi matriks apa yang biasanya dipilih untuk efisiensi komputasi?",
+      "options": [
+        "Faktorisasi Cholesky untuk matriks simetris definit positif",
+        "Pencarian nilai determinan menggunakan ekspansi kofaktor Laplace",
+        "Penyusunan ulang matriks menjadi bentuk diagonal sempurna",
+        "Penambahan matriks identitas skala kecil untuk regularisasi numerik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengolahan citra medis CT-scan paru-paru di rumah sakit, rekonstruksi gambar 3D dari proyeksi 2D sinar-X melibatkan penyelesaian sistem persamaan linear skala besar yang sangat rentan terhadap derau (noise) sensor. Pendekatan aljabar linear apa yang direkomendasikan untuk stabilitas numerik?",
+      "options": [
+        "Penyelesaian langsung menggunakan invers matriks Moore-Penrose pseudoinverse",
+        "Penggunaan metode regularisasi Tikhonov untuk meredam pengaruh galat pengukuran",
+        "Penskalaan ulang intensitas piksel menggunakan operasi translasi matriks",
+        "Reduksi dimensi spasial menggunakan transformasi Fourier diskrit cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik menggunakan pemodelan Markov untuk memperkirakan perpindahan pangsa pasar antar tiga jasa kurir di Indonesia setiap tahun. Vektor probabilitas pangsa pasar saat ini dikalikan dengan matriks transisi probabilitas. Setelah dikalikan berulang kali, vektor hasil akhirnya menjadi konstan. Dalam aljabar linear, vektor konstan ini disebut sebagai:",
+      "options": [
+        "Vektor basis ortonormal dari ruang kolom matriks transisi",
+        "Vektor eigen yang bersesuaian dengan nilai eigen bernilai negatif satu",
+        "Vektor singular hasil dekomposisi nilai batas minimum sistem",
+        "Vektor eigen utama yang bersesuaian dengan nilai eigen satu"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim pengendali kualitas pabrik baja mencatat dimensi panjang, lebar, dan tebal lembaran plat besi. Analisis komponen utama (PCA) menunjukkan bahwa nilai eigen pertama jauh lebih besar daripada nilai eigen lainnya. Keputusan operasional apa yang dapat diambil berdasarkan hasil aljabar linear ini?",
+      "options": [
+        "Proses produksi sangat tidak stabil dan memerlukan kalibrasi ulang total",
+        "Variasi kualitas plat besi sebagian besar dikendalikan oleh satu faktor utama",
+        "Ketiga ukuran tersebut saling bebas dan tidak memiliki korelasi fisik",
+        "Pengukuran tebal plat besi dapat diabaikan karena tidak signifikan secara statistik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai data engineer di perusahaan fintech, Anda perlu mempercepat proses query matriks transaksi pengguna berukuran besar ($100.000 \\times 100.000$) yang sangat jarang (sparse). Teknik dekomposisi matriks apa yang paling tepat digunakan untuk mereduksi dimensi tanpa kehilangan informasi utama dari nilai eigen yang signifikan?",
+      "options": [
+        "Singular Value Decomposition untuk mereduksi rank matriks",
+        "Eliminasi Gauss-Jordan untuk mencari invers eksak matriks",
+        "Operasi baris elementer manual secara iteratif pada memori",
+        "Transformasi Fourier cepat untuk mengubah data ke domain frekuensi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup agritech memodelkan pertumbuhan populasi hama pertanian di berbagai wilayah menggunakan sistem persamaan diferensial linear homogen. Untuk menentukan apakah populasi akan stabil atau meledak secara eksponensial dalam jangka panjang, analisis aljabar linear apa yang harus dilakukan pada matriks koefisien sistem tersebut?",
+      "options": [
+        "Menghitung nilai eigen dan vektor eigen untuk melihat tanda bagian real",
+        "Mencari determinan matriks untuk memastikan nilainya selalu bernilai nol",
+        "Melakukan normalisasi L2 pada setiap baris matriks koefisien sistem",
+        "Menghitung trace matriks untuk mengetahui jumlah total variabel sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem navigasi robot gudang otomatis (AGV) di Cikarang, posisi orientasi robot direpresentasikan menggunakan matriks rotasi homogen 3x3. Anda mendapati bahwa akumulasi galat pembulatan komputer membuat matriks transformasi kehilangan sifat ortogonalnya. Langkah perbaikan aljabar linear apa yang paling tepat?",
+      "options": [
+        "Menerapkan proses ortonormalisasi Gram-Schmidt pada vektor kolom matriks",
+        "Menambahkan matriks identitas kecil untuk mendistorsi nilai diagonal utama",
+        "Menghitung ulang invers matriks menggunakan metode eliminasi Gauss",
+        "Melakukan penskalaan ulang dengan membagi setiap elemen dengan determinan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim manajemen risiko bank digital menganalisis korelasi harian antar 15 instrumen investasi. Matriks kovarians yang dihasilkan bersifat simetris dan positif semi-definit. Untuk menghilangkan multikolinearitas antar variabel sebelum dimasukkan ke model regresi, transformasi berbasis spektral apa yang paling efisien?",
+      "options": [
+        "Diagonalisasi matriks menggunakan dekomposisi eigen untuk rotasi komponen",
+        "Pencarian ruang null space untuk mereduksi jumlah dimensi fitur data",
+        "Perhitungan norm Frobenius untuk mengukur besar energi total matriks",
+        "Penerapan operasi transposisi untuk membalik orientasi baris dan kolom"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai pengembang mesin pencari lokal, Anda memetakan dokumen teks ke dalam ruang vektor berdimensi tinggi menggunakan pembobotan TF-IDF. Untuk mengukur tingkat kemiripan semantik antara kueri pengguna dan dokumen katalog, operasi aljabar linear dasar apa yang paling tepat dieksekusi oleh sistem backend?",
+      "options": [
+        "Perhitungan produk titik dinormalisasi atau kosinus sudut antar vektor",
+        "Penjumlahan vektor elementer untuk menggabungkan seluruh kata dokumen",
+        "Pencarian determinan matriks term-dokumen untuk validasi independensi",
+        "Perkalian silang vektor untuk menghasilkan bidang ortogonal dokumen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur otomotif di Karawang menggunakan sistem kendali otomatis untuk lengan robotik perakitan. Sistem ini dimodelkan dalam bentuk ruang keadaan (state-space) linier. Agar sistem kendali stabil dan dapat dikontrol dari kondisi awal manapun, kondisi aljabar linear apa yang harus dipenuhi oleh matriks sistem dan kontrol?",
+      "options": [
+        "Matriks kontrolabilitas harus memiliki rank penuh sesuai dimensi state",
+        "Determinan dari matriks transisi state harus bernilai tepat sama dengan satu",
+        "Semua elemen pada diagonal utama matriks sistem harus bernilai positif",
+        "Trace dari matriks gabungan sistem harus bernilai minimum secara global"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek komputasi awan untuk analisis citra satelit pemetaan lahan di Kalimantan, Anda perlu menyelesaikan sistem persamaan linear besar $Ax = b$ di mana $Ax$ merepresentasikan operator diferensial parsial. Karena ukuran matriks $A$ sangat masif dan simetris positif definit, metode numerik iteratif apa yang paling optimal?",
+      "options": [
+        "Metode Conjugate Gradient untuk konvergensi tercepat pada matriks simetris",
+        "Metode inversi Gauss-Jordan langsung untuk mendapatkan solusi eksak",
+        "Aturan Cramer untuk menghitung determinan parsial setiap variabel",
+        "Metode dekomposisi LU standar tanpa optimasi struktur matriks spars"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Analis keuangan korporat sedang memodelkan struktur modal optimal menggunakan program linear multivariat. Dalam proses optimasi portofolio dengan batasan anggaran, apa representasi geometris dari himpunan seluruh solusi yang memenuhi semua pertidaksamaan linear kendala tersebut?",
+      "options": [
+        "Sebuah polihedron konveks tertutup di dalam ruang vektor berdimensi $n$",
+        "Sebuah garis lurus tak berhingga yang melewati titik pusat koordinat",
+        "Sebuah titik tunggal optimal yang memiliki nilai gradien minimum mutlak",
+        "Sebuah ruang bagian sub-vektor yang ortogonal terhadap bidang anggaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim peneliti bioinformatika menganalisis urutan DNA menggunakan perbandingan matriks jarak Levenshtein yang diubah menjadi representasi ruang vektor kernel. Untuk mempercepat proses klasterisasi sejenis, mereka memproyeksikan data ke sub-ruang eigen terbesar. Konsep aljabar linear apakah yang mendasari pemilihan sub-ruang tersebut?",
+      "options": [
+        "Teorema Aproksimasi Eckart-Young untuk rank rendah optimal via SVD",
+        "Sifat distributif perkalian matriks terhadap operasi penjumlahan skalar",
+        "Keluasan ruang null space yang menjamin keunikan solusi homogen",
+        "Eksistensi invers kiri untuk matriks yang memiliki kolom linier dependen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam perancangan struktur jembatan bentang panjang oleh konsultan teknik sipil di Jakarta, analisis elemen hingga (Finite Element Method) menghasilkan matriks kekakuan global struktur. Langkah aljabar linear awal apa yang mutlak dilakukan untuk menerapkan kondisi batas tumpuan tetap pada persamaan gaya $KU = F$?",
+      "options": [
+        "Memodifikasi baris dan kolom matriks kekakuan sesuai derajat kebebasan tetap",
+        "Menjumlahkan seluruh elemen matriks kekakuan untuk mendapatkan beban total",
+        "Mencari nilai eigen maksimum untuk mendeteksi frekuensi resonansi struktur",
+        "Melakukan transposisi penuh pada matriks kekakuan agar menjadi simetris"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

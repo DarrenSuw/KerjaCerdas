@@ -1,0 +1,306 @@
+{
+  "skill": "React",
+  "skill_key": "react",
+  "questions": [
+    {
+      "question": "Anda sedang membangun dashboard analitik untuk klien e-commerce di Jakarta. Grafik utama sering mengalami lag saat pengguna mengubah rentang tanggal karena proses kalkulasi data mentah yang berat di sisi klien. Langkah apa yang paling tepat untuk mengoptimalkan performa komponen ini?",
+      "options": [
+        "Membungkus fungsi kalkulasi data dengan useMemo agar hasil komputasi di-cache antar render",
+        "Memindahkan seluruh array data mentah ke dalam variabel global di luar komponen React",
+        "Mengganti semua komponen functional di halaman tersebut menjadi class component lama",
+        "Menghapus fungsi pembersih useEffect agar data tersimpan permanen di memori browser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa aplikasi web fintech mengalami penurunan performa (re-render berlebihan) pada tabel transaksi harian setiap kali pengguna mengetik di kolom pencarian global. Bagaimana cara paling efektif mencegah re-render pada baris tabel yang tidak berubah?",
+      "options": [
+        "Menggunakan fungsi useCallback pada event handler pencarian di komponen induk",
+        "Membungkus komponen baris tabel menggunakan React.memo untuk membandingkan props",
+        "Menambahkan atribut key unik berbasis waktu saat memetakan array data transaksi",
+        "Memaksa browser melakukan hard reload setiap kali input pencarian mulai diketik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi portal berita, Anda perlu mengambil data artikel berdasarkan ID yang didapat dari URL menggunakan React Router. Data harus diambil setiap kali parameter ID di URL berubah. Di mana lokasi kode fetch data yang paling tepat?",
+      "options": [
+        "Di dalam fungsi helper terpisah yang dipanggil langsung pada tingkat atas file komponen",
+        "Di dalam blok kode render komponen sebelum elemen JSX dikembalikan ke browser",
+        "Di dalam hook useEffect dengan menyertakan parameter ID sebagai bagian dari dependency array",
+        "Di dalam fungsi penanganan event klik tombol navigasi pada halaman sebelumnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat formulir pendaftaran merchant dengan banyak langkah (multi-step form). State data formulir harus diakses oleh beberapa komponen anak yang posisinya sangat dalam di bawah pohon komponen, tanpa membuat prop drilling yang rumit. Solusi bawaan React apa yang paling tepat?",
+      "options": [
+        "Membuat custom hook yang memanfaatkan Context API untuk distribusi state formulir",
+        "Menyimpan seluruh nilai input form secara langsung ke dalam cookies browser",
+        "Membuat objek window global untuk menampung data formulir secara sementara",
+        "Memaksa pengiriman data ke server di setiap perpindahan antar langkah formulir"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi manajemen inventaris sering mengalami error 'Can't perform a React state update on an unmounted component' di konsol browser ketika pengguna berpindah halaman dengan cepat sebelum proses fetch data selesai. Bagaimana cara memperbaiki masalah ini?",
+      "options": [
+        "Menonaktifkan peringatan konsol browser menggunakan konfigurasi file webpack",
+        "Menambahkan flag boolean di dalam cleanup function useEffect untuk membatalkan update state",
+        "Membuat fungsi penundaan waktu setTimeout dengan durasi tetap pada setiap pemanggilan API",
+        "Mengubah seluruh struktur routing aplikasi agar berjalan secara sinkron penuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan memperbaiki halaman profil pengguna yang memuat komponen tombol kustom. Tombol ini menerima fungsi callback dari induknya. Agar komponen tombol tidak melakukan render ulang yang tidak perlu saat induknya memperbarui state lain, apa yang harus dilakukan?",
+      "options": [
+        "Membungkus fungsi callback di komponen induk dengan hook useCallback sebelum dikirim",
+        "Mengubah fungsi callback menjadi variabel state lokal di dalam komponen tombol",
+        "Menghapus semua argumen yang diterima oleh fungsi callback pada komponen induk",
+        "Memindahkan logika fungsi callback langsung ke dalam file konfigurasi CSS"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi pemesanan tiket bioskop, Anda mendapati bahwa perhitungan total harga tiket sering terpanggil dua kali saat mode pengembangan (Development Mode) diaktifkan, namun berjalan normal saat di-build untuk produksi. Apa penyebab utama perilaku ini?",
+      "options": [
+        "Adanya kebocoran memori pada browser yang digunakan untuk melakukan pengujian lokal",
+        "Koneksi internet lokal yang tidak stabil saat memuat dependensi pihak ketiga",
+        "Fitur Strict Mode di React secara sengaja mendeteksi efek samping dengan menjalankan render ganda",
+        "Kesalahan konfigurasi pada file package.json bagian skrip build produksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengintegrasikan pustaka pihak ketiga berbasis DOM non-React (seperti peta interaktif Leaflet) ke dalam aplikasi React. Hook mana yang paling tepat digunakan untuk menginisialisasi peta tersebut agar hanya dibuat sekali saat komponen pertama kali dimuat?",
+      "options": [
+        "Menggunakan useLayoutEffect dengan array dependensi kosong untuk manipulasi DOM langsung",
+        "Menggunakan useEffect dengan array dependensi kosong agar berjalan sekali saat mount",
+        "Menjalankan inisialisasi peta langsung di dalam fungsi utama komponen tanpa hook",
+        "Menggunakan useMemo untuk mengembalikan objek peta ke dalam variabel lokal komponen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi e-learning memiliki fitur timer ujian. Pengembang sebelumnya menggunakan setInterval di dalam useEffect, tetapi waktu hitung mundur menjadi tidak akurat dan melompat-lompat setelah komponen mengalami beberapa kali re-render. Bagaimana cara memperbaiki implementasi ini?",
+      "options": [
+        "Memindahkan fungsi setInterval ke luar komponen React agar berjalan di server",
+        "Menghapus array dependensi dari useEffect agar interval diatur ulang setiap detik",
+        "Menggunakan fungsi updater state (prevState => ...) di dalam setState untuk menghindari closure usang",
+        "Mengganti useEffect dengan lifecycle method componentDidMount pada class component"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim QA melaporkan bahwa halaman riwayat transaksi terasa lambat merespons saat daftar transaksi mencapai ribuan item. Daftar tersebut dirender menggunakan fungsi map standar tanpa teknik khusus. Pendekatan apa yang paling efektif untuk mengatasi masalah UI freezing ini?",
+      "options": [
+        "Menerapkan teknik virtualisasi daftar (windowing) agar hanya elemen yang tampak di layar yang dirender",
+        "Menambahkan atribut style display none pada item transaksi yang berada di luar layar",
+        "Memecah komponen daftar menjadi seratus file terpisah yang diimpor secara manual",
+        "Mengurangi jumlah properti objek transaksi langsung dari database server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi kasir (POS) untuk minimarket. Saat kasir mengetik pencarian produk dengan cepat, fungsi pencarian API terpanggil pada setiap keystroke, membebani server. Bagaimana cara paling tepat menangani optimasi ini di React?",
+      "options": [
+        "Menggunakan teknik debounce pada fungsi pemanggil API di dalam useEffect",
+        "Menyimpan seluruh hasil pencarian ke dalam state global Redux Toolkit",
+        "Membungkus komponen input pencarian dengan fungsi React.memo saja",
+        "Menambahkan atribut autoFocus pada elemen input agar fokus tetap terjaga"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam panel admin logistik, Anda perlu menampilkan daftar ribuan resi pengiriman yang diperbarui secara real-time via WebSocket. Setiap kali pesan masuk, tabel mengalami re-render total dan membuat browser macet. Langkah apa yang paling efektif untuk mengatasinya?",
+      "options": [
+        "Memindahkan koneksi WebSocket ke dalam komponen induk paling atas",
+        "Menerapkan virtualisasi daftar menggunakan pustaka seperti react-window",
+        "Mengganti seluruh komponen tabel HTML dengan elemen div biasa",
+        "Membungkus komponen baris tabel dengan useMemo untuk caching data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi HRD mengalami bug di mana form pengajuan cuti sering mengirimkan data ganda karena pengguna mengklik tombol 'Simpan' beberapa kali dengan cepat sebelum proses async selesai. Bagaimana solusi React terbaik untuk mencegah hal ini?",
+      "options": [
+        "Menonaktifkan tombol submit dan mengubah state loading menjadi true saat handler berjalan",
+        "Menghapus atribut type='submit' dari tombol agar tidak bisa ditekan berulang kali",
+        "Menambahkan setTimeout 5 detik pada fungsi handler sebelum API dipanggil",
+        "Membuat variabel global di luar komponen untuk mencatat status klik tombol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa ukuran bundle JavaScript aplikasi e-commerce Anda sangat besar karena memuat seluruh halaman admin dan halaman pembeli secara bersamaan. Pendekatan apa yang harus diterapkan pada routing React?",
+      "options": [
+        "Memecah kode menggunakan React.lazy dan Suspense untuk setiap halaman utama",
+        "Memindahkan semua logika pengambilan data ke dalam Server Side Rendering",
+        "Menggabungkan seluruh file komponen ke dalam satu file index.js utama",
+        "Menghapus semua pustaka pihak ketiga yang tidak memiliki tipe TypeScript"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi manajemen proyek, Anda menggunakan Context API untuk menyimpan data tema dan bahasa aplikasi. Namun, setiap kali pengguna mengubah preferensi bahasa, seluruh komponen sidebar ikut ter-render ulang meskipun tidak menggunakan data bahasa. Apa perbaikan arsitektur yang tepat?",
+      "options": [
+        "Memecah Context menjadi beberapa bagian yang lebih kecil sesuai domain datanya",
+        "Menggunakan pustaka manajemen state eksternal seperti Zustand atau Redux",
+        "Membungkus komponen sidebar dengan useCallback agar tidak terpengaruh",
+        "Memindahkan penyimpanan preferensi bahasa langsung ke dalam LocalStorage"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat komponen kustom untuk modal konfirmasi pembayaran yang dapat dibuka dari berbagai halaman berbeda. Modal ini sering gagal dirender karena elemen DOM target belum siap saat dipanggil. Bagaimana pola React yang paling tepat untuk mengatasinya?",
+      "options": [
+        "Menggunakan React Portal untuk merender modal di luar hierarki DOM utama",
+        "Membuat state global khusus untuk menyimpan posisi koordinat elemen modal",
+        "Menambahkan penundaan waktu menggunakan setInterval pada fungsi pembuka",
+        "Meletakkan elemen modal secara langsung di dalam tag body dokumen HTML"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi portal berita memiliki halaman artikel yang sering dikeluhkan lambat karena mengambil data profil penulis secara berurutan setelah data artikel selesai dimuat. Bagaimana cara mengoptimalkan proses pengambilan data ini di React?",
+      "options": [
+        "Menjalankan kedua proses fetch secara paralel menggunakan Promise.all di useEffect",
+        "Memindahkan proses pengambilan data profil penulis ke dalam komponen layout",
+        "Menggunakan custom hook terpisah untuk setiap permintaan data ke server",
+        "Menyimpan seluruh data penulis dan artikel ke dalam Redux secara bersamaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memperbaiki aplikasi dashboard keuangan yang mengalami lonjakan penggunaan memori (memory leak) karena event listener window resize tetap aktif setelah komponen grafik ditutup. Di mana kode pembersihan harus diletakkan?",
+      "options": [
+        "Di dalam fungsi cleanup (return value) dari useEffect yang mendaftarkan listener",
+        "Di dalam fungsi pembantu terpisah yang dipanggil saat tombol tutup diklik",
+        "Di dalam metode componentDidMount untuk memastikan listener terpasang benar",
+        "Di dalam hook useLayoutEffect sebelum komponen mulai dirender ke layar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam fitur keranjang belanja e-commerce, Anda perlu menghitung total harga secara otomatis setiap kali daftar produk berubah. Namun, perhitungan ini membebani CPU jika daftar produk sangat panjang. Hook apa yang paling tepat digunakan?",
+      "options": [
+        "Gunakan useMemo untuk menyimpan hasil perhitungan total harga berdasarkan array produk",
+        "Gunakan useCallback untuk mengingat fungsi perhitungan harga agar tidak dibuat ulang",
+        "Gunakan useEffect untuk memperbarui state total harga setiap ada perubahan produk",
+        "Gunakan useRef untuk menyimpan nilai total harga secara langsung tanpa state"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA menemukan bug pada aplikasi telemedicine di mana token otentikasi kedaluwarsa tidak memicu proses logout otomatis, sehingga pengguna terjebak di halaman dashboard kosong. Bagaimana cara menangani efek samping navigasi ini secara bersih?",
+      "options": [
+        "Menggunakan useNavigate dari React Router di dalam interceptor Axios saat terjadi error 401",
+        "Membuat komponen Wrapper khusus yang mengecek status token menggunakan setInterval",
+        "Menambahkan kondisi if-else pada setiap fungsi render komponen di dalam aplikasi",
+        "Menyimpan status token kedaluwarsa ke dalam state global pada komponen root"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi food delivery di mana pengguna sering mengubah jumlah pesanan di keranjang belanja. Setiap perubahan langsung memicu pembaruan state global, membuat antarmuka terasa lambat. Bagaimana cara paling tepat menangani kasus ini?",
+      "options": [
+        "Menggunakan hook useTransition untuk menunda prioritas render pembaruan state keranjang",
+        "Memindahkan seluruh state keranjang belanja dari state global ke state lokal komponen",
+        "Membungkus fungsi pembaruan state dengan useCallback untuk menghindari re-create fungsi",
+        "Menghapus fitur pembaruan otomatis dan mewajibkan pengguna menekan tombol simpan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi e-commerce, Anda membuat komponen daftar produk yang mendukungInfinite Scroll. Saat pengguna menggulir ke bawah, data produk baru dimuat. Namun, sering terjadi pemanggilan API berulang kali untuk halaman yang sama saat proses scroll cepat. Pendekatan apa yang paling efektif?",
+      "options": [
+        "Membatasi jumlah total produk yang bisa dimuat maksimal hingga seratus item saja",
+        "Menggunakan pustaka manajemen state eksternal untuk menyimpan cache hasil API",
+        "Menerapkan teknik debounce pada event listener scroll atau memantau status loading",
+        "Menonaktifkan fitur infinite scroll dan menggantinya dengan tombol paginasi biasa"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dashboard logistik menampilkan peta interaktif menggunakan pustaka pihak ketiga. Saat komponen unmount, aplikasi mengalami memory leak karena event listener pada peta tidak dibersihkan. Di mana letak kode pembersihan yang benar?",
+      "options": [
+        "Di dalam fungsi callback pembersih (cleanup) yang dikembalikan oleh useEffect",
+        "Di dalam metode siklus hidup componentWillUnmount jika menggunakan komponen kelas",
+        "Di dalam fungsi penanganan event klik tombol tutup yang berada di luar peta",
+        "Di dalam blok kode catch pada saat pemanggilan data peta dari peladen API"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun fitur unggah dokumen KTP pada aplikasi fintech. Pengguna dapat membatalkan proses unggah di tengah jalan menggunakan AbortController. Bagaimana cara mengintegrasikannya dengan React useEffect saat komponen ditutup?",
+      "options": [
+        "Memanggil fungsi pembatalan secara langsung di luar hook tanpa kondisi apapun",
+        "Menjalankan fungsi pembatalan pada fungsi cleanup yang ada di dalam useEffect",
+        "Membuat state khusus untuk melacak status aktif komponen dan menghentikan proses",
+        "Mengabaikan proses pembatalan karena browser akan otomatis menghentikannya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam aplikasi portal berita, Anda mendapati bahwa komponen sidebar kategori selalu ikut merender ulang setiap kali pengguna mengetik di kolom pencarian utama, padahal props sidebar tidak berubah. Langkah optimasi apa yang paling tepat?",
+      "options": [
+        "Mengubah struktur direktori file komponen agar sidebar terpisah dari input",
+        "Memindahkan state pencarian dari komponen induk langsung ke dalam Redux store",
+        "Membungkus komponen sidebar menggunakan fungsi React.memo untuk pencegahan",
+        "Menghapus fitur pencarian real-time dan menggantinya dengan tombol submit"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat aplikasi kasir digital yang membutuhkan penyimpanan lokal (localStorage) untuk menyimpan preferensi cetak struk kasir. Agar tidak memblokir render awal halaman, bagaimana cara inisialisasi state yang paling optimal?",
+      "options": [
+        "Mengisi nilai awal state dengan memanggil localStorage langsung di tingkat atas komponen",
+        "Menggunakan fungsi inisialisasi lambat (lazy initial state) pada hook useState",
+        "Mengambil data dari localStorage di dalam useEffect dan langsung memperbarui state",
+        "Menyimpan preferensi cetak tersebut ke dalam cookie browser agar lebih cepat diakses"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang mendapati bahwa ukuran file bundle JavaScript aplikasi web HRD sangat besar. Setelah dianalisis, modul pustaka grafik chart yang berukuran besar ikut dimuat pada halaman login yang sama sekali tidak membutuhkannya. Solusi apa yang harus diterapkan?",
+      "options": [
+        "Menerapkan teknik code splitting menggunakan React.lazy dan komponen Suspense",
+        "Menghapus pustaka grafik tersebut dan menggantinya dengan gambar statis biasa",
+        "Memindahkan seluruh kode pustaka grafik ke dalam berkas CSS global aplikasi",
+        "Melakukan kompresi ulang berkas menggunakan perkakas build pihak ketiga tersendiri"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan form pendaftaran karyawan baru, terdapat validasi sandi yang kompleks dan berjalan di setiap ketukan huruf (on-change). Hal ini membuat pengetikan terasa patah-patah. Bagaimana cara memperbaiki pengalaman pengguna?",
+      "options": [
+        "Memindahkan seluruh proses validasi sandi dari sisi klien ke peladen backend",
+        "Menggunakan teknik debounce pada fungsi validasi sandi agar berjalan lebih lambat",
+        "Mengubah validasi agar hanya berjalan saat pengguna selesai mengetik atau blur",
+        "Menghapus fitur validasi kekuatan sandi dan membiarkan sandi apa saja diinput"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun aplikasi forum diskusi. Komponen daftar komentar menggunakan indeks array sebagai nilai key pada elemen list-nya. Ketika pengguna menghapus komentar di tengah daftar, urutan komponen menjadi kacau. Apa penyebab utama masalah ini?",
+      "options": [
+        "Penggunaan indeks array sebagai key menghambat rekonsiliasi elemen React secara akurat",
+        "State global aplikasi tidak diperbarui secara otomatis setelah penghapusan data",
+        "Fungsi penghapusan komentar pada komponen induk tidak menggunakan useCallback",
+        "Komponen daftar komentar tidak dibungkus dengan React.memo untuk optimasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi dashboard investasi menggunakan custom hook untuk mengambil data harga saham secara berkala setiap lima detik. Ketika pengguna berpindah tab halaman, pengambilan data tetap berjalan dan membebani jaringan. Bagaimana cara mengatasinya?",
+      "options": [
+        "Menambahkan kondisi pengecekan visibilitas dokumen sebelum menjalankan fetch data",
+        "Mengubah durasi interval pengambilan data menjadi satu menit saat tab tidak aktif",
+        "Menghapus custom hook tersebut dan menggantinya dengan tombol refresh manual",
+        "Memindahkan proses pengambilan data saham langsung ke dalam file web worker"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

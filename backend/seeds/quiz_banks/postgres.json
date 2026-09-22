@@ -1,0 +1,306 @@
+{
+  "skill": "PostgreSQL",
+  "skill_key": "postgres",
+  "questions": [
+    {
+      "question": "Sebuah tabel `transaksi` di sistem e-commerce mengalami lonjakan data harian hingga mencapai 50 juta baris, membuat query pencarian berdasarkan rentang tanggal dan status pembayaran menjadi sangat lambat. Langkah apa yang paling tepat untuk mengoptimalkan performa kueri tersebut?",
+      "options": [
+        "Menambahkan indeks komposit pada kolom tanggal transaksi dan status pembayaran",
+        "Mengubah tipe data kolom tanggal dari timestamp menjadi integer epoch time",
+        "Melakukan partisi tabel secara horizontal berdasarkan rentang waktu bulanan",
+        "Meningkatkan parameter shared_buffers dan work_mem di file konfigurasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi fintech lokal sering mengalami deadlocks pada tabel `saldo_akun` saat ribuan pengguna melakukan transfer dana bersamaan. Bagaimana cara paling aman mendiagnosis transaksi mana saja yang saling mengunci di database produksi?",
+      "options": [
+        "Memeriksa log error PostgreSQL untuk melihat stack trace aplikasi yang gagal",
+        "Menjalankan kueri pada view pg_stat_activity dan pg_locks yang bergabung",
+        "Mengaktifkan ekstensi pg_stat_statements untuk melihat durasi rata-rata kueri",
+        "Memakai perintah EXPLAIN ANALYZE pada setiap fungsi transfer yang berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta memigrasikan data profil pengguna dari database legacy ke tabel PostgreSQL baru yang memiliki kolom JSONB untuk menyimpan preferensi fleksibel. Kueri mana yang paling efisien untuk memperbarui data preferensi tema gelap bagi pengguna dengan ID tertentu?",
+      "options": [
+        "UPDATE users SET preferences = preferences || '{\"theme\": \"dark\"}'::jsonb WHERE id = 101;",
+        "UPDATE users SET preferences = jsonb_set(preferences, '{theme}', '\"dark\"') WHERE id = 101;",
+        "UPDATE users SET preferences['theme'] = 'dark' WHERE id = 101;",
+        "UPDATE users SET preferences = to_jsonb(json_hash('theme', 'dark')) WHERE id = 101;"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query laporan bulanan di sistem logistik memakan waktu 45 detik karena melakukan operasi JOIN dan GROUP BY pada tabel berukuran besar. Setelah diperiksa dengan EXPLAIN ANALYZE, perencana kueri melakukan sequential scan padahal indeks sudah dibuat. Apa penyebab paling umum dari masalah ini?",
+      "options": [
+        "Statistik tabel sudah kedaluwarsa sehingga optimizer salah memilih rencana eksekusi",
+        "Format tanggal pada klausa WHERE tidak cocok dengan zona waktu server database",
+        "Penggunaan tipe data VARCHAR tanpa batasan panjang pada kolom kunci gabungan",
+        "Sistem operasi kehabisan ruang disk sementara untuk melakukan operasi sorting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim backend melaporkan bahwa koneksi ke database PostgreSQL sering terputus dengan pesan 'FATAL: too many connections for role'. Sebagai DBA, pendekatan apa yang paling tepat untuk mengatasi masalah ini tanpa merusak performa aplikasi secara drastis?",
+      "options": [
+        "Menaikkan batas maksimum koneksi max_connections di file postgresql.conf",
+        "Menerapkan connection pooler seperti PgBouncer di antara aplikasi dan database",
+        "Menurunkan nilai timeout agar koneksi menganggur segera diputus otomatis",
+        "Membuat peran database terpisah untuk setiap mikroservis yang terhubung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menghapus 10 juta data log usang dari tabel `audit_trail` yang ukurannya mencapai 80 GB. Menggunakan perintah DELETE biasa menyebabkan lonjakan beban I/O dan pembengkakan transaction log. Strategi alternatif apa yang paling efisien?",
+      "options": [
+        "Membuat tabel baru dengan data yang dipertahankan lalu mengganti nama tabel lama",
+        "Menggunakan perintah TRUNCATE TABLE dengan opsi CASCADE untuk menghapus relasi",
+        "Menjalankan perintah DELETE secara bertahap dalam loop kecil menggunakan batasan LIMIT",
+        "Mengubah tabel menjadi terpartisi dan langsung menghapus partisi data yang usang"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah kolom teks pada tabel `produk` perlu dicari berdasarkan kata kunci nama produk secara fleksibel, termasuk toleransi kesalahan ketik ringan. Indeks jenis apa yang harus dibuat agar pencarian teks ini berkinerja tinggi?",
+      "options": [
+        "Indeks B-tree standar dengan operator perbandingan teks bertipe varchar_ops",
+        "Indeks GIN menggunakan ekstensi pg_trgm untuk pencarian berbasis trigram",
+        "Indeks BRIN karena sangat cocok untuk tabel berukuran besar dan dinamis",
+        "Indeks Hash yang dioptimalkan khusus untuk pencarian kesamaan string persis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem pencatatan audit keuangan yang menuntut kepatuhan ketat, di mana data transaksi yang sudah masuk tidak boleh diubah atau dihapus oleh siapa pun, bahkan oleh pengguna dengan hak akses superuser. Fitur PostgreSQL apa yang harus diimplementasikan?",
+      "options": [
+        "Row-Level Security dengan kebijakan pembatasan operasi UPDATE dan DELETE",
+        "Tablespace terenkripsi dengan izin akses read-only yang dikunci oleh sistem",
+        "Write-Ahead Logging mode arsip penuh dengan replikasi sinkron multi-node",
+        "Fitur Write Once Read Many (WORM) melalui konfigurasi tabel di tingkat engine"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proses autovacuum pada tabel inti database perusahaan Anda berjalan terlalu lambat, menyebabkan akumulasi baris mati (dead tuples) yang tinggi dan ukuran tabel membengkak. Bagaimana cara paling aman menangani tabel spesifik tersebut tanpa mengganggu beban kerja produksi secara keseluruhan?",
+      "options": [
+        "Menonaktifkan autovacuum global dan menjadwalkan VACUUM FULL manual setiap malam",
+        "Menyesuaikan parameter penyimpanan tabel seperti autovacuum_vacuum_scale_factor secara lokal",
+        "Menghentikan sementara layanan aplikasi dan menjalankan perintah REINDEX secara paralel",
+        "Menurunkan nilai maintenance_work_mem secara drastis untuk mempercepat proses pemindaian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proses migrasi data skala besar gagal di tengah jalan akibat kegagalan koneksi jaringan, namun Anda ingin memastikan seluruh rangkaian perintah SQL dalam skrip tersebut dibatalkan sepenuhnya tanpa menyisakan perubahan parsial. Perintah pengendali transaksi apa yang harus digunakan di awal dan akhir skrip?",
+      "options": [
+        "Menggunakan blok perintah BEGIN di awal skrip dan ROLLBACK jika terjadi kesalahan",
+        "Mengaktifkan mode autocommit off dan menjalankan perintah SAVEPOINT secara berkala",
+        "Memastikan setiap pernyataan SQL dieksekusi dalam blok exception handling PL/pgSQL",
+        "Menggunakan perintah LOCK TABLE dalam mode exclusive sebelum memulai migrasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem e-commerce Anda mencatat data klik pengguna secara real-time ke dalam satu tabel besar. Seiring berjalannya waktu, query laporan harian semakin lambat karena tabel memuat ratusan juta baris data historis yang jarang diakses. Pendekatan apa yang paling efektif untuk menjaga performa query tetap optimal tanpa mengubah kode aplikasi secara masif?",
+      "options": [
+        "Melakukan kompresi tabel menggunakan utilitas pg_compress bawaan sistem operasi",
+        "Menerapkan partisi tabel berbasis rentang tanggal pada kolom waktu pencatatan",
+        "Membuat materialized view harian yang diperbarui secara manual setiap jam kerja",
+        "Memindahkan seluruh data historis ke dalam format file CSV di cloud storage"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi manajemen inventaris sering mengalami lonjakan beban tulis (write amplification) pada jam sibuk, membuat proses commit transaksi melambat drastis. Setelah diperiksa, tabel memiliki 15 indeks b-tree karena berbagai kebutuhan pelaporan lama. Langkah perbaikan manakah yang paling tepat?",
+      "options": [
+        "Mengubah tipe data seluruh kolom teks menjadi varchar(255) untuk memperkecil ukuran indeks",
+        "Menghapus indeks yang jarang digunakan dan menggabungkannya dengan indeks komposit",
+        "Menonaktifkan sementara proses autovacuum agar tidak berebut sumber daya I/O disk",
+        "Menaikkan parameter maintenance_work_mem pada file konfigurasi postgresql.conf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa query pencarian teks pada kolom catatan pelanggan menggunakan operator LIKE dengan awalan dan akhiran wildcard (%kata%) selalu mengabaikan indeks B-tree yang sudah dibuat. Fitur bawaan PostgreSQL apa yang harus Anda manfaatkan untuk mengoptimalkan pencarian teks tersebut?",
+      "options": [
+        "Membuat indeks GIN menggunakan ekstensi pg_trgm untuk pencarian berbasis trigram",
+        "Mengubah kolom catatan menjadi tipe data bytea agar dapat dikompresi otomatis",
+        "Membuat functional index yang mengubah semua teks menjadi huruf besar secara permanen",
+        "Menggunakan ekstensi fuzzystrmatch untuk melakukan perbandingan jarak Levenshtein"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah query analitik kompleks yang melibatkan JOIN empat tabel besar tiba-tiba dieksekusi dengan rencana eksekusi (execution plan) yang sangat buruk setelah statistik tabel kedaluwarsa. Perintah SQL apa yang harus Anda jalankan segera untuk memperbarui statistik tanpa mengunci tabel?",
+      "options": [
+        "REINDEX TABLE nama_tabel;",
+        "VACUUM FULL nama_tabel;",
+        "ANALYZE nama_tabel;",
+        "UPDATE STATISTICS nama_tabel;"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi pembayaran Anda memerlukan jaminan bahwa saldo akun tidak pernah bernilai negatif akibat transaksi bersamaan. Selain menggunakan tipe data numeric, mekanisme integritas data apa yang wajib diterapkan pada level skema database?",
+      "options": [
+        "Menambahkan pembatasan CHECK constraint pada kolom saldo agar bernilai lebih besar atau sama dengan nol",
+        "Membuat trigger database yang otomatis menolak transaksi jika saldo kurang dari nol",
+        "Menggunakan foreign key berelasi ke tabel master mata uang untuk validasi otomatis",
+        "Menerapkan unique constraint pada kombinasi kolom id_akun dan jumlah_mutasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim developer melaporkan bahwa query laporan bulanan memakan waktu lebih lama dari biasanya dan memenuhi disk temporary file. Anda menemukan bahwa work_mem default terlalu kecil untuk operasi sorting data yang besar. Bagaimana cara aman mengatur parameter ini khusus untuk sesi koneksi query tersebut?",
+      "options": [
+        "Mengubah baris work_mem pada file postgresql.conf lalu merestart layanan database",
+        "Menjalankan perintah SET LOCAL work_mem = '256MB'; tepat sebelum menjalankan query",
+        "Menambahkan hint komentar /*+ WORK_MEM(256MB) */ di dalam teks query SQL",
+        "Meminta administrator sistem menaikkan alokasi RAM swap pada server fisik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu memantau query mana saja yang saat ini sedang aktif berjalan dan memakan waktu paling lama di server produksi PostgreSQL. Ekstensi bawaan apa yang harus diaktifkan untuk menganalisis waktu eksekusi kumulatif dari query tersebut?",
+      "options": [
+        "pg_stat_statements",
+        "pg_buffercache",
+        "pg_prewarm",
+        "pg_trgm"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah proses ETL malam hari gagal melakukan insert data massal karena ruang disk pada partisi direktori base PostgreSQL hampir habis (99%). Tindakan darurat apa yang paling aman dilakukan untuk membebaskan ruang disk sementara tanpa kehilangan data penting?",
+      "options": [
+        "Menghapus file log transaksi secara manual dari direktori pg_wal menggunakan perintah rm",
+        "Menjalankan VACUUM FULL pada seluruh database untuk memadatkan kembali ukuran file tabel",
+        "Memindahkan file konfigurasi pg_hba.conf ke partisi lain yang memiliki kapasitas kosong",
+        "Membersihkan tabel-tabel penampung sementara (staging) dan file arsip log lama yang sudah tidak terpakai"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam arsitektur High Availability PostgreSQL menggunakan Replication Streaming (Primary-Standby), standby server tiba-tiba mengalami lag replikasi yang sangat tinggi karena operasi tulis yang masif di primary. Parameter apa di file konfigurasi standby yang mengatur waktu tunggu pembatalan query agar tidak terjadi konflik pemulihan?",
+      "options": [
+        "wal_keep_size",
+        "max_standby_streaming_delay",
+        "hot_standby_feedback",
+        "replication_timeout"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memastikan bahwa kredensial akses aplikasi yang terhubung ke PostgreSQL menggunakan metode enkripsi yang kuat dan aman dari penyadapan jaringan lokal. Pengaturan apa yang harus dikonfigurasi pada baris file pg_hba.conf untuk host aplikasi?",
+      "options": [
+        "Menggunakan metode autentikasi md5 atau scram-sha-256 dengan syarat koneksi menggunakan SSL",
+        "Mengubah baris autentikasi menjadi trust khusus untuk alamat IP server aplikasi",
+        "Menambahkan parameter password_encryption bernilai plaintext pada baris koneksi",
+        "Mengaktifkan modul ident untuk memetakan nama pengguna sistem operasi secara langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tabel `riwayat_pesanan` berukuran 120 GB membutuhkan penambahan kolom baru `status_notifikasi` dengan nilai default 'PENDING'. Jika Anda mengeksekusi perintah `ALTER TABLE riwayat_pesanan ADD COLUMN status_notifikasi VARCHAR(20) DEFAULT 'PENDING';` secara langsung pada jam operasional puncak, apa risiko utama yang terjadi pada sistem?",
+      "options": [
+        "Perintah akan langsung ditolak karena PostgreSQL melarang penambahan kolom dengan nilai default pada tabel besar",
+        "PostgreSQL akan menulis ulang seluruh tabel dan menahan Exclusive Lock, menyebabkan semua operasi baca dan tulis terblokir",
+        "Kolom baru hanya akan muncul setelah proses autovacuum selesai membersihkan baris mati di latar belakang",
+        "Hanya operasi tulis pada baris lama yang akan mengalami perlambatan signifikan selama proses penambahan kolom"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan sebuah query pencarian produk yang menggunakan fungsi UPPER pada kolom `nama_produk` (`WHERE UPPER(nama_produk) = 'KEMEJA BATIK'`), membuat indeks pada kolom tersebut tidak terpakai dan menyebabkan Sequential Scan. Pendekatan apa yang paling efisien untuk mengoptimalkan query ini?",
+      "options": [
+        "Mengubah tipe data kolom `nama_produk` menjadi CITEXT untuk mengabaikan perbedaan huruf besar dan kecil secara otomatis",
+        "Membuat sebuah Functional Index pada ekspresi `UPPER(nama_produk)` agar perencana query dapat menggunakan indeks tersebut",
+        "Mengganti operator perbandingan pada query menggunakan fungsi ILIKE tanpa perlu mengubah struktur indeks yang ada",
+        "Membuat ulang indeks standar pada kolom `nama_produk` dengan menambahkan opsi parameter case-insensitive di konfigurasinya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tabel `pengguna` memiliki kolom `email` yang sering dijadikan parameter pencarian unik, namun beberapa data tersimpan dengan campuran huruf kapital dan kecil secara tidak konsisten. Bagaimana cara terbaik memastikan keunikan email sekaligus mempermudah pencarian tanpa mengubah input asli dari pengguna?",
+      "options": [
+        "Menambahkan constraint UNIQUE pada ekspresi fungsi `LOWER(email)` saat mendefinisikan tabel atau indeks",
+        "Membuat trigger BEFORE INSERT yang otomatis mengubah nilai kolom `email` menjadi huruf kecil sebelum disimpan",
+        "Menggunakan tipe data khusus email yang secara bawaan melakukan normalisasi huruf kapital pada database",
+        "Menambahkan fungsi validasi pada tingkat aplikasi untuk mencegah pendaftaran email dengan huruf kapital"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem Anda menggunakan arsitektur Primary-Standby untuk replikasi streaming. Tiba-tiba administrator melaporkan bahwa disk pada server primary hampir penuh karena server standby tertinggal jauh dalam menerima WAL. Langkah mitigasi apa yang paling tepat untuk menghentikan pembengkakan disk di primary?",
+      "options": [
+        "Menghapus file WAL secara manual di direktori pg_wal pada server primary untuk membebaskan ruang penyimpanan",
+        "Mengaktifkan parameter `wal_keep_size` dengan nilai yang sangat kecil agar primary tidak menyimpan WAL lama",
+        "Menghapus atau menonaktifkan sementara slot replikasi yang bermasalah agar primary tidak lagi menahan WAL",
+        "Melakukan restart pada layanan PostgreSQL di server primary untuk memaksa pembersihan cache penyimpanan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa tabel `log_aktivitas` mengalami pertumbuhan bloat yang sangat parah setelah proses penghapusan data massal, di mana ukuran fisik file tabel tetap besar meskipun jumlah barisnya sedikit. Perintah apa yang paling aman digunakan untuk merampingkan kembali ukuran tabel tersebut di lingkungan produksi tanpa mengunci tabel secara eksklusif dalam waktu lama?",
+      "options": [
+        "Menjalankan perintah VACUUM FULL log_aktivitas untuk memadatkan seluruh ruang kosong di dalam tabel",
+        "Menginstal dan menjalankan ekstensi pg_repack untuk membangun ulang tabel secara online tanpa ACCESS EXCLUSIVE lock",
+        "Menjalankan perintah REINDEX TABLE log_aktivitas untuk mengembalikan ruang kosong yang dipakai oleh indeks",
+        "Melakukan drop pada tabel tersebut lalu membuat ulang strukturnya dari backup data harian terbaru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query analitik harian membutuhkan waktu eksekusi yang lama karena harus membaca jutaan baris dari tabel `transaksi`. Anda ingin mempercepat proses ini dengan membuat Materialized View. Tantangan operasional utama apa yang harus Anda antisipasi setelah menerapkan solusi ini?",
+      "options": [
+        "Materialized View tidak mendukung pembuatan indeks tambahan untuk mempercepat pencarian data di dalamnya",
+        "Data di dalam Materialized View bersifat statis dan memerlukan proses refresh manual atau terjadwal agar tetap sinkron",
+        "Setiap ada perubahan data pada tabel dasar, Materialized View akan otomatis terkunci dan memperlambat transaksi",
+        "PostgreSQL membatasi ukuran maksimal Materialized View tidak boleh melebihi kapasitas memori RAM server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah skenario investigasi performa, Anda melihat sebuah query menunjukkan waktu eksekusi aktual (`actual time`) yang jauh lebih besar daripada estimasi biaya (`cost`) yang diprediksi oleh perencana query. Apa penyebab paling umum dari kondisi diskrepansi statistik ini di PostgreSQL?",
+      "options": [
+        "Nilai parameter `work_mem` terlalu besar sehingga proses eksekusi query mengalami gangguan alokasi memori",
+        "Statistik pada tabel terkait sudah usang atau belum diperbarui oleh proses VACUUM dan ANALYZE",
+        "Penggunaan tipe data yang tidak konsisten pada klausa JOIN antar tabel yang berbeda skema",
+        "Server PostgreSQL sedang mengalami kekurangan kapasitas CPU fisik saat query tersebut dieksekusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Anda memerlukan fitur di mana data transaksi yang dimasukkan ke dalam tabel `arsip_keuangan` tidak boleh diubah atau dihapus oleh siapa pun, termasuk oleh pengguna dengan hak akses database superuser, guna memenuhi audit kepatuhan. Fitur bawaan PostgreSQL apa yang harus Anda manfaatkan?",
+      "options": [
+        "Mengaktifkan fitur Row Level Security (RLS) dengan kebijakan menolak operasi UPDATE dan DELETE",
+        "Mengatur konfigurasi parameter `default_transaction_read_only` menjadi bernilai true secara global",
+        "Memanfaatkan mode penyimpanan tabel khusus bernama PostgreSQL Worm dengan modul Compliance",
+        "Mengubah parameter mode tabel `datestyle` dan mengunci izin hak akses menggunakan perintah REVOKE"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin melakukan pemeliharaan rutin pada indeks B-tree yang sering mengalami pembaruan data intensif di tabel `sesi_pengguna` guna mencegah fragmentasi indeks, tanpa mengganggu aplikasi yang sedang berjalan membaca dan menulis data. Perintah SQL apa yang harus Anda eksekusi?",
+      "options": [
+        "REINDEX TABLE CONCURRENTLY sesi_pengguna;",
+        "VACUUM ANALYZE sesi_pengguna;",
+        "REINDEX INDEX sesi_pengguna_pkey;",
+        "ALTER TABLE sesi_pengguna REBUILD INDEX;"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tabel `pesanan` memiliki partisi berdasarkan rentang tanggal (`RANGE partitioning`). Anda perlu menghapus seluruh data arsip dari bulan Januari 2022 yang berada di dalam partisi khusus `pesanan_y2022m01`. Pendekatan mana yang paling efisien dan cepat tanpa menimbulkan beban I/O yang tinggi?",
+      "options": [
+        "Menjalankan perintah DELETE FROM pesanan WHERE tanggal >= '2022-01-01' AND tanggal < '2022-02-01';",
+        "Melakukan perintah DROP TABLE pesanan_y2022m01 secara langsung untuk menghapus seluruh data partisi seketika",
+        "Mengubah definisi partisi dengan perintah ALTER TABLE DETACH PARTITION diikuti pembersihan background",
+        "Menjalankan perintah TRUNCATE TABLE pesanan PARTITION (pesanan_y2022m01);"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

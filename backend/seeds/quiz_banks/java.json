@@ -1,0 +1,306 @@
+{
+  "skill": "Java",
+  "skill_key": "java",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan layanan microservice pemesanan tiket dengan Spring Boot di salah satu e-commerce Indonesia. Saat beban trafik melonjak tinggi karena flash sale, latensi database meningkat drastis dan menyebabkan thread pool aplikasi habis (exhaustion) karena menunggu koneksi. Pendekatan mitigasi apa yang paling tepat diterapkan pada kode Java Anda?",
+      "options": [
+        "Menggunakan pola Circuit Breaker dengan Resilience4j pada panggilan ke database",
+        "Menaikkan kapasitas maksimal thread pool server Tomcat secara ekstrem",
+        "Menghapus seluruh mekanisme pengelolaan transaksi untuk mempercepat eksekusi",
+        "Mengubah semua tipe data entitas database dari Object menjadi tipe primitif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa aplikasi backend pengolahan data mutasi rekening bank sering mengalami OutOfMemoryError (Heap Space) setelah berjalan selama beberapa hari. Setelah dianalisis menggunakan heap dump, ditemukan bahwa objek kustom disimpan secara masif di dalam static HashMap global tanpa pernah dibersihkan. Solusi arsitektur Java apa yang paling tepat untuk memperbaiki masalah ini?",
+      "options": [
+        "Mengganti static HashMap dengan struktur data berbasis WeakHashMap atau Guava Cache",
+        "Menjalankan perintah System.gc() secara manual di setiap akhir method controller",
+        "Menambahkan argumen JVM -Xmx dengan ukuran yang tak terbatas pada server",
+        "Mengubah seluruh method di dalam service menjadi bersifat synchronized"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem pembayaran digital, Anda perlu memastikan bahwa saldo dompet digital pengguna tidak mengalami race condition saat terjadi transaksi bersamaan (concurrent). Anda menggunakan Spring Data JPA dengan database PostgreSQL. Strategi apa yang paling tepat untuk mencegah inkonsistensi data tersebut?",
+      "options": [
+        "Menambahkan anotasi @Version pada entitas untuk menerapkan optimistic locking",
+        "Membuat seluruh kelas service menjadi stateless tanpa menggunakan transaksi",
+        "Mengubah level isolasi database menjadi READ UNCOMMITTED untuk kecepatan",
+        "Menghindari penggunaan ORM dan menulis seluruh query secara manual tanpa index"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis unit test menggunakan JUnit 5 dan Mockito untuk sebuah service Java yang menghitung potongan harga berdasarkan aturan bisnis yang kompleks. Service tersebut bergantung pada komponen eksternal untuk mengambil data profil pengguna. Bagaimana cara Anda menguji logika kalkulasi harga secara terisolasi?",
+      "options": [
+        "Membuat mock untuk komponen data profil dan mengatur ekspektasi nilai kembaliannya",
+        "Menghubungkan langsung unit test ke database staging perusahaan yang aktif",
+        "Menghapus semua anotasi test dan menjalankan aplikasi secara manual di browser",
+        "Menggunakan Thread.sleep() untuk menunggu proses eksternal selesai berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi enterprise Java EE yang dideploy di WildFly mengalami penurunan performa yang signifikan. Dari hasil thread dump, terlihat banyak worker thread berada dalam status WAITING pada objek antrean internal (BlockingQueue). Apa langkah investigasi awal yang paling logis dilakukan?",
+      "options": [
+        "Menganalisis pola konsumsi produsen dan konsumen pada antrean untuk mendeteksi bottleneck",
+        "Melakukan restart pada mesin virtual Java tanpa memeriksa log sama sekali",
+        "Mengurangi alokasi memori RAM fisik pada sistem operasi server produksi",
+        "Mengganti seluruh kode bahasa Java menjadi bahasa skrip eksternal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melakukan code review untuk modul integrasi logistik yang memproses ribuan data resi secara sekuensial menggunakan perulangan for biasa pada Java Stream, dan prosesnya berjalan sangat lambat. Fitur Java apa yang paling tepat disarankan untuk mempercepat pemrosesan data yang independen tersebut?",
+      "options": [
+        "Menggunakan parallelStream() untuk mendistribusikan beban ke beberapa thread",
+        "Mengganti struktur data ArrayList menjadi LinkedList pada seluruh parameter",
+        "Menambahkan blok try-catch kosong di setiap iterasi perulangan data",
+        "Mengubah akses modifier dari kelas service menjadi private sepenuhnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan pajak online yang Anda buat menggunakan Spring Boot membutuhkan mekanisme penjadwalan (scheduling) untuk mengirimkan pengingat email setiap tengah malam. Fitur bawaan apa dari Spring Framework yang paling tepat digunakan tanpa menambah pustaka pihak ketiga yang kompleks?",
+      "options": [
+        "Menggunakan anotasi @Scheduled pada method yang dideklarasikan dalam bean",
+        "Membuat Infinite Loop di dalam konstruktor kelas utama dengan Thread.sleep",
+        "Menghubungkan aplikasi ke crontab sistem operasi Linux melalui Runtime.getRuntime",
+        "Mengandalkan fungsi manual dari administrator database untuk memicu email"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi e-wallet, Anda sering mendapati exception NullPointerException pada lapisan service ketika mencoba mengakses properti dari objek transaksi yang bernilai null dari database. Sebagai developer Java modern (Java 17+), praktik terbaik apa yang harus diterapkan pada method penanganan data tersebut?",
+      "options": [
+        "Membungkus hasil pencarian database dengan tipe Optional dan memanfaatkan method map atau oElse",
+        "Membiarkan exception tersebut terjadi agar sistem secara otomatis melakukan restart sendiri",
+        "Selalu menggunakan blok try-catch yang menangkap Throwable di setiap baris kode",
+        "Menghindari penggunaan tipe data objek dan hanya menggunakan tipe primitif byte"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk membuat REST API di Spring Boot yang menerima payload JSON berukuran besar dari sistem mitra logistik. Anda ingin memastikan bahwa struktur data JSON tersebut valid dan sesuai dengan batasan bisnis (seperti format nomor resi dan rentang tanggal) sebelum diproses ke database. Apa pendekatan standar industri yang harus digunakan?",
+      "options": [
+        "Menambahkan anotasi validasi Bean Validation seperti @NotNull dan @Pattern pada DTO",
+        "Membuat fungsi manual menggunakan operator substring dan charAt pada string payload",
+        "Mengabaikan validasi input dan menyerahkan sepenuhnya pada integritas database",
+        "Mengubah format payload dari JSON menjadi teks biasa tanpa struktur yang jelas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Java batch processing memproses file CSV berukuran 2 GB yang berisi data jutaan pelanggan. Aplikasi tersebut sering mengalami kegagalan karena kehabisan memori saat mencoba membaca seluruh baris file sekaligus ke dalam memori utama. Bagaimana cara refaktor kode pembacaan file yang paling efisien?",
+      "options": [
+        "Menggunakan BufferedReader atau pustaka streaming untuk membaca file baris per baris",
+        "Membaca seluruh file sekaligus lalu memotong array string menggunakan operator split",
+        "Meminta tim infrastruktur untuk membeli RAM server baru dengan kapasitas 1 Terabyte",
+        "Mengonversi file CSV menjadi format gambar PNG sebelum diunggah ke aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur notifikasi WhatsApp massal menggunakan Java ExecutorService. Setiap kali proses berjalan, beberapa thread gagal karena koneksi database terputus sesaat, namun Anda ingin proses pengiriman pesan lain tetap berjalan tanpa menghentikan seluruh batch. Pendekatan apa yang paling tepat diterapkan pada tingkat pemanggilan task?",
+      "options": [
+        "Membungkus logika pemrosesan di dalam blok try-catch untuk menangkap exception dan mencatatnya ke log",
+        "Menggunakan Thread.setDefaultUncaughtExceptionHandler untuk mereset koneksi database secara otomatis",
+        "Mengubah ExecutorService menjadi CachedThreadPool agar thread baru dibuat saat terjadi kegagalan",
+        "Memanfaatkan CompletableFuture.allOf() untuk membatalkan seluruh thread pool jika ada satu error"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem e-commerce yang menangani flash sale, Anda mendapati performa pembacaan data produk sangat lambat karena tingginya query ke database relational. Anda memutuskan untuk mengimplementasikan caching menggunakan Spring Cache dengan Redis. Apa langkah implementasi yang krusial agar data cache tidak mengalami stale data saat admin mengubah stok produk?",
+      "options": [
+        "Menambahkan anotasi @CacheEvict pada method update stok admin untuk menghapus cache yang relevan",
+        "Menggunakan anotasi @Cacheable dengan parameter timeout dinamis pada layer database repository",
+        "Mengonfigurasi Redis agar melakukan flush otomatis setiap kali terjadi transaksi checkout berhasil",
+        "Menulis interceptor khusus yang melakukan polling database setiap satu detik untuk menyegarkan cache"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah layanan fintech P2P lending menggunakan JPA/Hibernate untuk mengelola entitas pinjaman. Saat melakukan query daftar peminjam beserta riwayat pembayarannya dalam jumlah besar, aplikasi mengalami masalah performa drastis yang dikenal sebagai N+1 Select Problem. Bagaimana cara paling efektif mengatasi masalah ini di level query JPQL?",
+      "options": [
+        "Menggunakan klausa JOIN FETCH pada query JPQL untuk memuat relasi data dalam satu kali eksekusi SQL",
+        "Menambahkan anotasi @Transactional(readOnly = true) pada service method yang memanggil data tersebut",
+        "Mengubah strategi fetch type pada relasi entity dari LAZY menjadi EAGER secara global di application.properties",
+        "Memecah query menjadi beberapa pagination kecil menggunakan limit dan offset secara manual di Java"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat modul laporan keuangan bulanan di aplikasi enterprise yang menghasilkan file PDF besar. Proses ini sering memicuGarbage Collector bekerja terlalu sering dan memperlambat respons API lain. Strategi pengelolaan memori apa yang paling tepat untuk menghindari masalah ini?",
+      "options": [
+        "Menggunakan streaming API dan menulis data langsung ke OutputStream secara bertahap tanpa menampungnya di heap",
+        "Menaikkan parameter -Xmx dan -Xms pada konfigurasi JVM startup agar alokasi heap awal lebih besar",
+        "Memaksa pemanggilan System.gc() secara berkala di dalam looping pembuatan baris laporan keuangan",
+        "Memindahkan seluruh objek laporan ke dalam static HashMap agar tidak perlu dibuat ulang setiap request"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan adanya potensi SQL Injection pada aplikasi Spring Boot legacy yang menggunakan JDBC Template murni dengan penggabungan String secara manual. Sebagai Lead Developer, bagaimana Anda memperbaiki kerentanan ini dengan cepat dan aman?",
+      "options": [
+        "Mengganti penggabungan String dengan NamedParameterJdbcTemplate dan menggunakan map parameter bind values",
+        "Menambahkan library sanitasi input pihak ketiga untuk membersihkan karakter khusus sebelum masuk ke SQL",
+        "Mengaktifkan fitur escape SQL otomatis pada file konfigurasi application.yml di modul database",
+        "Mengubah seluruh query SQL mentah menjadi stored procedure di sisi database tanpa mengubah kode Java"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi microservice HRIS Anda berkomunikasi dengan layanan absensi menggunakan RestTemplate. Terkadang layanan absensi lambat merespons, menyebabkan thread di aplikasi Anda menumpuk (thread pool exhaustion). Desain pattern apa yang harus diterapkan untuk mencegah kegagalan beruntun ini?",
+      "options": [
+        "Menerapkan Circuit Breaker pattern menggunakan Resilience4j pada pemanggilan RestTemplate",
+        "Mengganti RestTemplate dengan HttpURLConnection murni agar manajemen socket lebih terkontrol",
+        "Menambahkan retry interceptor sebanyak sepuluh kali dengan jeda waktu satu detik pada setiap error",
+        "Membuat asynchronous wrapper menggunakan Future tanpa batas ukuran antrean thread pool"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengimplementasikan sistem audit trail di aplikasi perbankan di mana setiap perubahan data entitas harus dicatat otomatis oleh Hibernate. Fitur JPA/Hibernate manakah yang paling tepat digunakan untuk kebutuhan ini tanpa mengubah kode service secara masif?",
+      "options": [
+        "Menggunakan Hibernate EntityListeners bersama dengan anotasi @PreUpdate dan @PrePersist",
+        "Menulis interceptor JDBC kustom yang memindai setiap statement SQL yang dikirim ke database",
+        "Membuat aspect AOP di Spring yang memonitor semua method setter pada seluruh model entity",
+        "Menggunakan Scheduled Executor untuk melakukan diff database secara periodik setiap tengah malam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi SaaS multi-tenant di Indonesia, setiap tenant memiliki skema database terpisah namun menggunakan codebase Java yang sama. Pendekatan arsitektur Spring Data JPA mana yang paling tepat untuk menangani dynamic database routing ini?",
+      "options": [
+        "Menggunakan AbstractRoutingDataSource dari Spring untuk menentukan connection source secara dinamis berdasarkan TenantContext",
+        "Membuat beberapa instance application context terpisah untuk setiap tenant yang berjalan di port berbeda",
+        "Memanfaatkan fitur multi-tenancy bawaan Hibernate dengan discriminator column pada setiap tabel master",
+        "Menulis custom JDBC driver yang memodifikasi string koneksi URL secara runtime pada setiap transaksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati memory leak pada aplikasi Spring Boot yang berjalan 24/7 di production server akibat penggunaan ThreadLocal untuk menyimpan token autentikasi pengguna. Apa langkah perbaikan kode yang wajib dilakukan pada method filter atau interceptor?",
+      "options": [
+        "Memanggil method remove() pada objek ThreadLocal di dalam blok finally setelah request selesai diproses",
+        "Mengubah deklarasi variabel ThreadLocal menjadi static final agar siklus hidupnya dikelola JVM",
+        "Mengganti ThreadLocal dengan ConcurrentHashMap global yang memetakan ID thread ke token pengguna",
+        "Menambahkan anotasi @Scope(value = \"request\") pada kelas yang mendeklarasikan variabel ThreadLocal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah service Java mengonsumsi pesan dari Apache Kafka dengan konfigurasi manual offset commit. Ketika terjadi kegagalan business logic di tengah processing batch data, Anda ingin memastikan pesan tersebut tidak hilang dan tidak langsung di-commit. Bagaimana penanganan error yang benar?",
+      "options": [
+        "Menangkap exception, melakukan rollback transaksi lokal, dan tidak memanggil acknowledgment commit offset",
+        "Memanggil method consumer.commitSync() secara manual di dalam blok catch untuk mencatat posisi error",
+        "Mengirim pesan yang gagal tersebut ke Kafka topic utama agar bisa langsung diproses ulang seketika",
+        "Mematikan aplikasi secara paksa menggunakan System.exit(1) agar Kafka broker otomatis melakukan rebalance"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi backend logistik yang memproses data pengiriman secara paralel menggunakan CompletableFuture. Saat salah satu task gagal di tengah jalan, proses keseluruhan langsung berhenti tanpa mengembalikan status fallback. Apa pendekatan terbaik untuk menangani kegagalan tersebut agar task lain tetap selesai atau memiliki nilai cadangan?",
+      "options": [
+        "Menggunakan method exceptionally atau handle pada objek CompletableFuture sebelum melakukan operasi join.",
+        "Mmembungkus seluruh blok pemanggilan kode paralel ke dalam satu blok try-catch-finally yang masif.",
+        "Mengubah semua implementasi CompletableFuture kembali menjadi pemanggilan secara sinkron dan sekuensial.",
+        "Menambahkan anotasi @AsyncErrorHandler pada tingkat method utama yang memicu proses paralel tersebut."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Spring Boot untuk sistem manajemen inventaris mengalami lonjakan koneksi database yang drastis saat jam sibuk, menyebabkan error 'HikariPool - Connection is not available'. Analisis menunjukkan banyak query laporan berjalan lambat dan menahan koneksi. Langkah mitigasi apa yang paling tepat diterapkan pada konfigurasi pool?",
+      "options": [
+        "Menaikkan batas maksimum connection pool Hikari secara drastis agar dapat menampung semua antrean proses.",
+        "Memisahkan datasource baca dan tulis, serta mengarahkan query laporan berat ke read-replica khusus.",
+        "Menonaktifkan mekanisme connection pooling dan membuka koneksi baru secara langsung untuk setiap request.",
+        "Menambahkan waktu timeout koneksi menjadi tanpa batas agar aplikasi tidak pernah gagal saat query lambat."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati method di service Spring Boot memanggil repository berkali-kali di dalam sebuah perulangan (looping) untuk mengambil data relasi, yang memicu masalah N+1 Select Query. Bagaimana cara paling efisien menyelesaikan masalah ini di tingkat JPA/Hibernate?",
+      "options": [
+        "Mengubah semua tipe relasi entitas database dari Lazy Loading menjadi Eager Loading secara permanen.",
+        "Menambahkan anotasi @Transactional(readOnly = true) pada kelas service yang memproses perulangan tersebut.",
+        "Menggunakan JOIN FETCH di dalam JPQL custom query atau menambahkan anotasi @EntityGraph pada method repository.",
+        "Menulis ulang seluruh query menggunakan native SQL mentah tanpa melalui entity manager Hibernate."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan aplikasi e-learning, sebuah method kalkulasi nilai akhir siswa sering dipanggil dari berbagai modul dan rentan mengalami duplikasi logika. Anda ingin membuat method tersebut dapat diwariskan dan diimplementasikan ulang secara fleksibel pada Java 8+. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat kelas abstrak murni yang memiliki constructor publik dengan parameter wajib untuk semua subclass.",
+        "Memanfaatkan default method di dalam sebuah interface untuk menyediakan logika bawaan yang bisa dioverride.",
+        "Menggunakan teknikMultiple Inheritance dengan cara mendeklarasikan beberapa kelas induk sekaligus.",
+        "Membuat utility class dengan kumpulan method static yang harus dipanggil secara langsung oleh setiap modul."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps melaporkan bahwa aplikasi Java enterprise Anda membutuhkan waktu startup yang sangat lama di lingkungan Kubernetes saat proses autoscaling terjadi. Anda diminta mengoptimalkan performa startup tersebut. Langkah apa yang paling relevan untuk dicoba?",
+      "options": [
+        "Menaikkan alokasi resource CPU dan memory pada file deployment Kubernetes untuk setiap pod.",
+        "Mengaktifkan fitur Lazy Initialization pada konteks Spring Bean dan memperbarui versi library.",
+        "Menghapus seluruh file konfigurasi application.properties dan memindahkannya ke environment variable.",
+        "Mengubah struktur database relasional menjadi sistem database berbasis dokumen NoSQL."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk komponen kalkulator diskon pajak menggunakan JUnit 5. Anda ingin menguji berbagai kombinasi input parameter (misal: status member, total belanja, kategori barang) tanpa menulis banyak method test terpisah. Fitur JUnit 5 apa yang harus digunakan?",
+      "options": [
+        "Menggunakan anotasi @TestFactory bersama dengan DynamicTest untuk menghasilkan skenario pengujian secara dinamis.",
+        "Memanfaatkan anotasi @ParameterizedTest yang dikombinasikan dengan sumber data seperti @CsvSource atau @MethodSource.",
+        "Membuat kelas helper terpisah yang berisi loop perulangan kondisi logika pengujian di dalam method @Test.",
+        "Mengandalkan framework Mockito untuk melakukan stubbing berbagai kombinasi parameter input secara otomatis."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi Spring Batch memproses jutaan data transaksi harian dan mengalami penurunan performa secara bertahap sebelum akhirnya berhenti. Investigasi menunjukkan entity manager menyimpan terlalu banyak objek di dalam persistence context pertama (first-level cache). Bagaimana cara mengatasi masalah manajemen memori ini?",
+      "options": [
+        "Menambahkan pemanggilan method entityManager.clear() secara berkala di dalam setiap eksekusi chunk processing.",
+        "Menonaktifkan fitur transaction management sepenuhnya pada langkah step configuration Spring Batch.",
+        "Meningkatkan ukuran alokasi JVM heap memory melalui argumen -Xmx pada saat menjalankan aplikasi.",
+        "Mengubah cakupan (scope) dari seluruh bean step configuration menjadi prototype scope."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa objek konfigurasi kustom sering kali diinisialisasi berulang kali di berbagai tempat melalui pemanggilan constructor secara langsung, melanggar prinsip desain modular. Desain pattern apa yang paling tepat diterapkan untuk memastikan hanya ada satu instance objek konfigurasi tersebut selama siklus hidup aplikasi?",
+      "options": [
+        "Menerapkan pattern Abstract Factory untuk memproduksi objek konfigurasi berdasarkan parameter sistem.",
+        "Menggunakan pattern Singleton dengan konstruktor privat dan metode pengakses statis yang aman dari thread.",
+        "Menerapkan pattern Builder untuk mempermudah pembangunan objek konfigurasi yang kompleks secara bertahap.",
+        "Memanfaatkan pattern Prototype untuk melakukan kloning objek konfigurasi saat dibutuhkan di modul lain."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah service Spring Boot Anda memanggil REST API pihak ketiga yang tidak stabil dan sering mengalami timeout. Untuk mencegah aplikasi Anda kehabisan resource thread karena menunggu respons yang lama, mekanisme apa yang harus diintegrasikan?",
+      "options": [
+        "Mengganti seluruh protokol komunikasi HTTP menjadi berbasis gRPC agar transfer data menjadi lebih padat.",
+        "Menambahkan library Resilience4j untuk menerapkan pola Circuit Breaker dan Timeout pada pemanggilan luar.",
+        "Membuat sistem antrean pesan berbasis RabbitMQ untuk menampung setiap request HTTP yang gagal.",
+        "Menaikkan batas maksimal connection timeout pada konfigurasi RestTemplate atau WebClient aplikasi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memastikan bahwa data sensitif berupa token akses pengguna tidak pernah tercetak secara tidak sengaja ke file log aplikasi akibat pemanggilan otomatis method toString() pada objek domain. Pendekatan apa yang paling aman dilakukan di Java?",
+      "options": [
+        "Menghapus total implementasi method toString() pada semua kelas entitas domain aplikasi.",
+        "Melakukan masking nilai token secara manual di dalam method toString() atau menggunakan record Java.",
+        "Mengubah level logging global aplikasi dari INFO menjadi ERROR pada file konfigurasi logback.",
+        "Menambahkan anotasi khusus keamanan pada tingkat kelas untuk mengenkripsi seluruh file log."
+      ],
+      "correct_index": 1
+    }
+  ]
+}

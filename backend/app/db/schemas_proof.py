@@ -41,6 +41,7 @@ class QuizAttempt(TimestampedModel):
     answers: list[int] = []
     score: int = 0
     passed: bool = False
+    status: Literal["in_progress", "submitted", "abandoned"] = "in_progress"
     # See models_proof.QuizAttempt.proof_eligible.
     proof_eligible: bool = True
 

@@ -1,0 +1,306 @@
+{
+  "skill": "Negotiation",
+  "skill_key": "negotiation",
+  "questions": [
+    {
+      "question": "Anda mewakili perusahaan agensi digital yang sedang bernegosiasi dengan klien korporat. Klien meminta penambahan fitur pembuatan video tanpa mau menaikkan budget awal. Apa langkah negosiasi paling taktis yang harus Anda ambil?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas demi menjaga margin laba proyek",
+        "Menerima permintaan itu dengan syarat durasi proyek keseluruhan diperpanjang",
+        "Menawarkan pengurangan pada komponen fitur lain yang setara nilainya",
+        "Memberikan tambahan gratis sebagai bentuk investasi hubungan jangka panjang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai manajer pengadaan (procurement), Anda sedang menawar harga bahan baku dengan pemasok utama. Pemasok menolak menurunkan harga karena inflasi biaya logistik. Bagaimana cara Anda memecah kebuntuan ini?",
+      "options": [
+        "Mengancam akan memutus kontrak dan beralih ke kompetitor mereka",
+        "Mengusulkan komitmen volume pembelian tahunan yang lebih besar",
+        "Meminta diskon khusus secara pribadi kepada sales representatif mereka",
+        "Menerima harga baru tersebut demi kelancaran operasional pabrik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang bernegosiasi gaji dengan calon atasan di perusahaan baru. Tawaran gaji pokok mereka di bawah ekspektasi Anda, namun posisi tersebut sangat strategis untuk karier Anda. Apa respons terbaik yang bisa Anda berikan?",
+      "options": [
+        "Meminta peninjauan ulang gaji pokok setelah masa percobaan tiga bulan",
+        "Menegosiasikan kompensasi non-moneter seperti fleksibilitas waktu kerja",
+        "Menolak tawaran tersebut secara sopan dan mencari perusahaan lain",
+        "Menerima tawaran apa adanya tanpa melakukan negosiasi lanjutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi Anda dan divisi keuangan sedang berselisih mengenai alokasi anggaran proyek kuartal depan. Masing-masing pihak bersikeras pada pendiriannya dalam rapat pleno. Langkah apa yang paling tepat untuk mencairkan suasana?",
+      "options": [
+        "Melaporkan kebuntuan ini langsung kepada Direktur Utama perusahaan",
+        "Mengajak pimpinan divisi keuangan berdiskusi empat mata untuk mencari titik tengah",
+        "Mengalah pada semua permintaan keuangan demi menghindari konflik berkepanjangan",
+        "Mengirimkan memo resmi yang menyatakan bahwa keputusan keuangan tidak realistis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menegosiasikan perpanjangan sewa kantor dengan pemilik gedung yang bersikeras menaikkan harga sewa sebesar 25%. Kenaikan ini jauh di atas batas anggaran perusahaan Anda. Bagaimana strategi negosiasi yang efektif?",
+      "options": [
+        "Membayar kenaikan tersebut dan memotong anggaran operasional divisi lain",
+        "Mengajukan perpanjangan kontrak jangka panjang dengan skema kenaikan bertahap",
+        "Mengosongkan gedung dan mencari lokasi baru yang jauh dari pusat kota",
+        "Mengirimkan surat somasi hukum terkait kenaikan harga sewa yang tidak wajar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Vendor IT Anda terlambat menyelesaikan sistem aplikasi sesuai tenggat waktu kontrak, yang merugikan operasional perusahaan Anda. Vendor meminta tambahan waktu tanpa penalti. Sikap apa yang harus Anda tunjukkan dalam meja perundingan?",
+      "options": [
+        "Membatalkan kontrak kerja sama secara sepihak dan menuntut ganti rugi penuh",
+        "Memberikan tambahan waktu dengan syarat adanya penalti denda keterlambatan",
+        "Menyetujui perpanjangan waktu tersebut tanpa syarat untuk menjaga hubungan baik",
+        "Memberikan tambahan waktu dan meminta fitur tambahan gratis sebagai kompensasi"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam negosiasi kerja sama B2B, calon mitra besar menuntut klausul eksklusivitas yang melarang Anda melayani kompetitor mereka di industri yang sama. Mitra tersebut belum menjamin volume order minimum. Apa yang harus Anda lakukan?",
+      "options": [
+        "Menolak klausul eksklusivitas kecuali mereka menjamin kuota pembelian minimum",
+        "Menyetujui klausul tersebut karena gengsi bekerja sama dengan perusahaan besar",
+        "Meminta bayaran di muka secara penuh sebelum menyetujui syarat eksklusivitas",
+        "Mengabaikan klausul tersebut dan tetap melayani kompetitor secara sembunyi-sembunyi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mewakili tim sales yang meminta keringanan target penjualan kepada manajemen pusat karena kondisi pasar yang sedang lesu. Manajemen pusat ragu dan meminta bukti konkret. Apa argumen terbaik untuk mendukung negosiasi Anda?",
+      "options": [
+        "Menyatakan bahwa target saat ini membuat tim mengalami stres dan kelelahan",
+        "Menunjukkan data penurunan daya beli pasar beserta analisis performa kompetitor",
+        "Mengancam akan merombak seluruh tim sales jika target tidak segera diturunkan",
+        "Meminta bos Anda untuk memanipulasi laporan pencapaian bulan sebelumnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan kunci di tim Anda mengajukan pengunduran diri karena mendapat tawaran gaji yang jauh lebih tinggi di perusahaan lain. Anda ingin mempertahankannya karena keterbatasan tenaga ahli. Langkah awal negosiasi apa yang paling bijak?",
+      "options": [
+        "Langsung menyetujui kenaikan gaji setara dengan tawaran perusahaan baru",
+        "Mengajak berdiskusi untuk memahami motivasi kepindahannya di luar faktor gaji",
+        "Mengingatkan karyawan tersebut tentang ikatan dinas dan etika profesional",
+        "Menyebarkan informasi bahwa perusahaan baru tersebut memiliki reputasi buruk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan negosiasi harga akhir dengan klien ritel yang menawar dengan sangat agresif hingga mendekati harga pokok produksi Anda. Klien mengisyaratkan akan pindah ke kompetitor. Tindakan taktis apa yang paling tepat?",
+      "options": [
+        "Menurunkan harga di bawah modal demi memenangkan pangsa pasar ritel tersebut",
+        "Menjelaskan nilai tambah layanan Anda dan menawarkan opsi kuantitas minimum order",
+        "Memarahi klien karena dianggap tidak menghargai kualitas produk buatan Anda",
+        "Menghentikan proses negosiasi detik itu juga tanpa memberikan penjelasan apapun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai manajer operasional, Anda bernegosiasi dengan perusahaan logistik mitra untuk menaikkan SLA pengiriman harian. Mitra keberatan karena biaya bahan bakar naik, namun Anda tidak bisa menaikkan anggaran saat ini. Langkah terbaik apa yang harus Anda ambil?",
+      "options": [
+        "Mengancam akan memutuskan kontrak jika mereka menolak tuntutan peningkatan layanan tersebut",
+        "Menawarkan penyesuaian volume pengiriman minimum bulanan sebagai kompensasi efisiensi biaya mereka",
+        "Meminta diskon harga layanan sebesar 15 persen untuk mengimbangi kenaikan biaya operasional mereka",
+        "Menerima penolakan mereka dan mencari vendor baru yang mau memberikan layanan lebih murah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mewakili perusahaan rintisan yang sedang bernegosiasi dengan calon investor strategis. Investor menuntut hak veto atas keputusan operasional harian yang menurut Anda akan menghambat kelincahan tim. Bagaimana cara Anda merespons?",
+      "options": [
+        "Menolak mentah-mentah tuntutan tersebut demi mempertahankan kontrol penuh atas perusahaan",
+        "Menyetujui semua syarat mereka demi mendapatkan dana segar secepat mungkin untuk ekspansi",
+        "Mengalihkan diskusi ke pembatasan hak veto hanya untuk keputusan finansial strategis tertentu",
+        "Menunda negosiasi tanpa batas waktu sampai investor mencabut seluruh syarat tambahan mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pertemuan negosiasi perpanjangan kontrak tahunan dengan klien utama, mereka mengeluhkan penurunan performa tim Anda dalam tiga bulan terakhir akibat rotasi staf. Mereka meminta potongan harga 20 persen. Sikap Anda yang paling tepat adalah?",
+      "options": [
+        "Mengakui masalah tersebut, memaparkan rencana perbaikan SOP, dan menawarkan bonus layanan ekstra",
+        "Menolak potongan harga secara tegas karena masalah tersebut sudah diselesaikan secara internal",
+        "Menyalahkan klien atas lambatnya proses persetujuan dokumen yang memicu keterlambatan kerja",
+        "Memberikan potongan harga penuh agar hubungan baik tetap terjaga tanpa membahas performa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memimpin negosiasi pengadaan perangkat lunak kantor dengan penyedia lisensi global. Mereka tidak bisa menurunkan harga satuan, tetapi Anda butuh efisiensi anggaran. Solusi win-win apa yang sebaiknya Anda tawarkan?",
+      "options": [
+        "Membatalkan pembelian perangkat lunak tersebut dan mencari alternatif open-source gratis",
+        "Meminta tambahan lisensi gratis untuk modul pelatihan dan masa tenggat pembayaran lebih lama",
+        "Memaksa mereka memberikan potongan harga khusus pasar Indonesia di bawah standar global",
+        "Mengurangi jumlah lisensi yang dibeli drastis agar total pengeluaran sesuai batas anggaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai supervisor produksi, Anda bernegosiasi dengan serikat pekerja yang menuntut kenaikan tunjangan shift malam sebesar 50 persen. Anggaran departemen Anda sangat terbatas. Bagaimana strategi negosiasi yang paling efektif?",
+      "options": [
+        "Menolak permintaan karena dianggap terlalu membebani keuangan perusahaan secara permanen",
+        "Memberikan kenaikan tunjangan tunai sesuai permintaan untuk menghindari ancaman mogok kerja",
+        "Menawarkan opsi penggantian jam kerja fleksibel dan kupon makan malam sebagai bentuk insentif",
+        "Melaporkan tindakan serikat pekerja tersebut kepada pihak berwajib atas pelanggaran aturan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda bernegosiasi dengan agensi pemasaran eksternal untuk peluncuran produk baru. Mereka meminta uang muka (down payment) sebesar 70 persen, sementara kebijakan keuangan perusahaan Anda maksimal hanya memperbolehkan 40 persen. Apa langkah kompromi terbaik?",
+      "options": [
+        "Membayar 70 persen dengan syarat agensi menandatangani jaminan performa berbasis pencapaian milestone",
+        "Mencari agensi lain yang mau menerima uang muka 40 persen tanpa pengecualian aturan internal",
+        "Meminta persetujuan khusus direktur keuangan untuk melanggar aturan demi kelancaran proyek",
+        "Menolak bekerja sama dengan agensi tersebut dan menyerahkan proyek sepenuhnya ke tim internal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menegosiasikan tenggat waktu penyelesaian proyek dengan klien yang terkenal sering mengubah cakupan kerja (scope creep). Klien meminta penambahan fitur besar tanpa mengubah jadwal akhir. Respons taktis Anda adalah?",
+      "options": [
+        "Menyetujui permintaan tersebut dan meminta tim bekerja lembur demi kepuasan klien",
+        "Menolak tegas penambahan fitur dan mengakhiri sesi pertemuan saat itu juga",
+        "Menjelaskan konsekuensi penambahan fitur terhadap jadwal dan menawarkan opsi penyesuaian tenggat atau biaya",
+        "Mengerjakan fitur tambahan tersebut secara diam-diam tanpa memperbarui dokumen kontrak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai manajer HR, Anda bernegosiasi dengan kandidat eksekutif senior yang meminta fasilitas mobil dinas di luar paket kompensasi standar perusahaan. Perusahaan tidak menyediakan fasilitas tersebut untuk level manajerial. Langkah negosiasi Anda?",
+      "options": [
+        "Menolak permintaan kandidat dan menyuruhnya menerima paket standar atau batalkan tawaran",
+        "Memberikan pengecualian khusus dan membelikan mobil dinas baru demi mendapatkan kandidat tersebut",
+        "Mengonversi nilai fasilitas mobil tersebut ke dalam bentuk tunjangan transportasi bulanan yang fleksibel",
+        "Mengurangi gaji pokok kandidat secara signifikan demi menutupi biaya sewa mobil dinas tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mewakili departemen legal perusahaan dalam negosiasi klausul ganti rugi (indemnity) dengan mitra bisnis asing. Mitra menuntut batasan tanggung jawab hukum yang sangat merugikan pihak Anda jika terjadi sengketa. Apa langkah terbaik?",
+      "options": [
+        "Menerima klausul tersebut agar kesepakatan bisnis cepat tercapai dan tidak kehilangan momentum",
+        "Mengusulkan pembatasan tanggung jawab yang seimbang dan memasukkan yurisdiksi hukum yang netral",
+        "Meminta mitra asing mengubah seluruh draf kontrak berdasarkan hukum positif negara asal Anda",
+        "Memutuskan hubungan komunikasi dan mencari mitra lain yang mau mengikuti standar kontrak Anda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai manajer proyek di sebuah perusahaan konstruksi, Anda sedang bernegosiasi dengan sub-kontraktor yang meminta perpanjangan waktu dua minggu karena keterlambatan pengiriman material impor. Proyek Anda memiliki batas waktu yang ketat dari pemilik gedung. Apa langkah terbaik yang harus Anda ambil?",
+      "options": [
+        "Menyetujui perpanjangan waktu tersebut secara penuh untuk menjaga hubungan baik jangka panjang.",
+        "Menolak permintaan dan memberlakukan denda harian sesuai kontrak untuk menegakkan kedisiplinan.",
+        "Mengajukan kompromi dengan memperpendek durasi perpanjangan dan meminta mereka menambah shift kerja.",
+        "Melaporkan masalah ini langsung ke pemilik gedung agar mereka yang memutuskan tenggat waktunya."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mewakili perusahaan FMCG yang sedang bernegosiasi penempatan produk di jaringan supermarket nasional. Pihak supermarket meminta potongan harga (rabat) yang sangat tinggi yang dapat menggerus margin keuntungan Anda. Bagaimana strategi negosiasi yang paling tepat?",
+      "options": [
+        "Menolak mentah-mentah permintaan rabat tersebut dan mencari jaringan supermarket regional lain.",
+        "Menawarkan besaran rabat yang mereka minta dengan syarat mereka menaikkan volume pesanan minimal.",
+        "Menyetujui rabat tersebut demi ekspansi pasar sambil menaikkan harga jual produk ke konsumen.",
+        "Meminta bantuan manajemen puncak untuk menekan pihak manajemen supermarket secara personal."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah rapat negosiasi anggaran tahunan dengan divisi operasional, mereka menuntut tambahan dana 40% untuk peremajaan mesin. Perusahaan sedang melakukan efisiensi ketat. Sebagai kepala keuangan, pendekatan apa yang paling efektif?",
+      "options": [
+        "Memangkas anggaran mereka sebesar 50% terlebih dahulu sebagai ruang tawar untuk mencapai titik tengah.",
+        "Meminta mereka membuat daftar prioritas mesin mana yang paling kritis untuk diganti tahun ini saja.",
+        "Menyetujui anggaran tersebut secara bertahap dengan syarat mereka menyerahkan laporan laba rugi bulanan.",
+        "Menolak seluruh pengajuan dan menyuruh mereka menggunakan mesin yang ada sampai rusak total."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai manajer akun di perusahaan penyedia layanan SaaS, Anda sedang menghadapi klien yang ingin membatalkan langganan tahunan karena merasa fitur pelaporan di sistem Anda kurang lengkap. Langkah negosiasi apa yang harus diutamakan?",
+      "options": [
+        "Mengembalikan sisa dana langganan secara penuh agar perusahaan Anda tidak mendapat ulasan buruk.",
+        "Menawarkan pembuatan kustomisasi fitur pelaporan khusus dengan biaya tambahan yang disubsidi.",
+        "Menjelaskan bahwa fitur tersebut tidak ada dalam kontrak awal dan menolak pembatalan langganan.",
+        "Mengalihkan perhatian mereka ke fitur lain yang sudah unggul tanpa membahas masalah pelaporan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin tim negosiasi untuk pengadaan sistem keamanan siber. Penawar terendah memenuhi semua spesifikasi teknis dasar, tetapi reputasi layanan purnajualnya kurang baik di industri. Bagaimana Anda menyikapi hal ini dalam negosiasi?",
+      "options": [
+        "Langsung memilih penawar tersebut karena harganya paling hemat sesuai arahan efisiensi perusahaan.",
+        "Memasukkan klausul penalti finansial yang ketat terkait waktu tanggap darurat ke dalam draf kontrak.",
+        "Mencoret penawar tersebut dan langsung beralih ke penawar kedua yang harganya jauh lebih mahal.",
+        "Meminta diskon tambahan sebesar 20% sebagai kompensasi atas risiko layanan purnajual yang buruk."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam negosiasi pembagian wilayah penjualan (sales territory) dengan rekan kerja setingkat, terjadi klaim ganda atas satu kota potensial yang menghasilkan omzet tinggi. Apa langkah penyelesaian terbaik yang harus diambil?",
+      "options": [
+        "Membawa konflik ini langsung ke meja direktur penjualan agar diputuskan secara sepihak.",
+        "Mengajak rekan tersebut menghitung potensi pasar bersama dan membagi target secara proporsional.",
+        "Mengalah sepenuhnya demi menjaga keharmonisan hubungan kerja tim dalam jangka panjang.",
+        "Meminta atasan langsung untuk memberikan kota tersebut kepada Anda berdasarkan masa kerja."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai pengelola gedung perkantoran, Anda bernegosiasi dengan penyewa lama yang meminta keringanan biaya sewa karena penurunan omzet bisnis mereka akibat situasi makroekonomi. Apa respons yang paling bijaksana?",
+      "options": [
+        "Menolak permintaan tersebut dan langsung mencari penyewa baru yang sanggup membayar penuh.",
+        "Memberikan diskon sewa sementara selama tiga bulan dengan opsi evaluasi berkala berdasarkan penjualan.",
+        "Menurunkan harga sewa secara permanen agar mereka tidak pindah ke gedung kompetitor.",
+        "Meminta mereka membayar separuh harga sekarang dan separuhnya lagi dibayar tahun depan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang bernegosiasi dengan divisi HR mengenai jadwal cuti tahunan Anda yang berbenturan dengan jadwal peluncuran proyek besar yang Anda pimpin. HR menolak pengajuan cuti Anda. Bagaimana cara Anda bernegosiasi?",
+      "options": [
+        "Membatalkan rencana cuti secara total dan meminta kompensasi berupa uang lembur dari perusahaan.",
+        "Mengajukan penundaan cuti seminggu dan memastikan seluruh tugas krusial didelegasikan dengan baik.",
+        "Tetap mengambil cuti sesuai jadwal karena itu adalah hak normatif karyawan yang diatur undang-undang.",
+        "Mengancam akan mengundurkan diri jika cuti Anda tidak disetujui sesuai tanggal pengajuan awal."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda sedang bernegosiasi dengan konsultan eksternal untuk restrukturisasi organisasi. Konsultan meminta pembayaran di muka sebesar 50%, sementara kebijakan keuangan perusahaan melarang pembayaran di muka melebihi 25%. Langkah kompromi apa yang efektif?",
+      "options": [
+        "Melanggar kebijakan internal demi kelancaran proyek restrukturisasi yang sangat mendesak ini.",
+        "Membatalkan kerja sama dengan konsultan tersebut dan mencari konsultan lain yang fleksibel.",
+        "Membagi pembayaran di muka menjadi beberapa termin berdasarkan pencapaian milestone pekerjaan.",
+        "Meminta pemilik perusahaan untuk memberikan dispensasi khusus kepada bagian keuangan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai manajer pemasaran, Anda bernegosiasi dengan stasiun TV swasta untuk slot iklan prime time dengan anggaran terbatas. Pihak stasiun menolak menurunkan harga. Langkah taktis apa yang paling tepat?",
+      "options": [
+        "Mengancam akan memindahkan seluruh sisa anggaran iklan tahun depan ke kompetitor mereka",
+        "Menawarkan durasi kontrak yang lebih panjang sebagai kompensasi potongan harga",
+        "Meminta pimpinan perusahaan Anda untuk menelepon direktur stasiun TV secara langsung",
+        "Menerima harga awal namun meminta tambahan slot tayang di jam malam yang sepi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mewakili perusahaan manufaktur dalam negosiasi pasokan bahan baku baja. Pemasok meminta kenaikan harga 15% akibat fluktuasi kurs, sementara anggaran Anda sudah dikunci. Bagaimana Anda merespons?",
+      "options": [
+        "Menerima kenaikan 15% namun meminta penundaan pembayaran tempo hingga 90 hari",
+        "Mencari pemasok baru di luar negeri untuk menekan posisi tawar pemasok lama",
+        "Mengajukan kenaikan bertahap 7% sekarang dan mengevaluasi ulang kembali kuartal depan",
+        "Menolak keras dan menghentikan seluruh komunikasi sampai mereka menurunkan tuntutan"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

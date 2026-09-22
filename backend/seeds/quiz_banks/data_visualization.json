@@ -1,0 +1,306 @@
+{
+  "skill": "Data Visualization",
+  "skill_key": "data visualization",
+  "questions": [
+    {
+      "question": "Anda bekerja sebagai Data Analyst di sebuah e-commerce Indonesia. Tim manajemen meminta dashboard performa penjualan bulanan regional Jawa. Visualisasi apa yang paling tepat untuk membandingkan total penjualan antar 6 provinsi dengan cepat tanpa membuat mata lelah?",
+      "options": [
+        "Diagram lingkaran (pie chart) dengan enam bagian irisan berbeda",
+        "Diagram batang horizontal (horizontal bar chart) yang diurutkan",
+        "Diagram tebar (scatter plot) untuk melihat korelasi antar kota",
+        "Diagram garis (line chart) untuk menunjukkan tren setiap provinsi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank nasional ingin menampilkan pergerakan rasio kredit macet (NPL) secara harian selama kuartal terakhir dalam laporan eksekutif. Jenis visualisasi manakah yang paling sesuai untuk menangkap tren waktu tersebut secara efektif?",
+      "options": [
+        "Diagram garis (line chart) dengan titik data harian yang jelas",
+        "Diagram batang bertumpuk (stacked bar chart) untuk setiap hari",
+        "Peta sebaran geografis (geographic map) kantor cabang bank",
+        "Diagram kotak (box plot) untuk distribusi nilai harian NPL"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain dashboard untuk manajer operasional logistik di Jakarta. Manajer tersebut harus segera melihat metrik utama: persentase pengiriman tepat waktu, rata-rata durasi kirim, dan total paket hari ini. Komponen visual apa yang harus diletakkan di bagian paling atas?",
+      "options": [
+        "Tabel besar yang memuat data mentah seluruh pengiriman hari ini",
+        "Kartu angka besar (scorecard atau KPI cards) untuk setiap metrik",
+        "Diagram lingkaran kompleks untuk memecah persentase wilayah",
+        "Diagram area bertumpuk untuk melihat volume pengiriman per jam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim marketing sebuah startup edutech meluncurkan kampanye iklan digital di berbagai platform. Mereka ingin melihat hubungan antara anggaran iklan yang dikeluarkan dan jumlah pendaftaran siswa baru. Visualisasi mana yang paling tepat untuk analisis ini?",
+      "options": [
+        "Diagram garis ganda untuk melihat pergerakan waktu",
+        "Diagram batang vertikal untuk membandingkan total anggaran",
+        "Diagram tebar (scatter plot) untuk menguji korelasi variabel",
+        "Diagram lingkaran untuk porsi anggaran tiap platform iklan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyiapkan presentasi untuk dewan direksi perusahaan FMCG mengenai pangsa pasar produk mie instan di 5 kota besar di Indonesia. Total persentase dari kelima kota tersebut harus merepresentasikan 100% dari total pasar utama. Grafik apa yang paling direkomendasikan?",
+      "options": [
+        "Diagram batang vertikal terpisah untuk setiap kota",
+        "Diagram lingkaran (pie chart) proporsional yang sederhana",
+        "Diagram garis tren bulanan penjualan mie instan",
+        "Diagram tebar untuk melihat hubungan harga dan volume"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi memiliki data churn rate pelanggan dari 34 provinsi di Indonesia. Anda diminta membuat peta sebaran untuk mengidentifikasi provinsi mana yang memiliki tingkat churn tertinggi secara sekilas. Fitur visual apa yang harus diandalkan?",
+      "options": [
+        "Peta choropleth dengan gradasi warna yang merepresentasikan nilai rasio",
+        "Peta titik dengan ukuran ikon yang sama persis di setiap ibu kota",
+        "Tabel geografis vertikal yang diurutkan berdasarkan abjad provinsi",
+        "Diagram batang horizontal raksasa yang mencakup 34 kategori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan keuangan tahunan perusahaan ritel, Anda perlu menunjukkan bagaimana laba bersih perusahaan terakumulasi dari pendapatan kotor setelah dikurangi berbagai komponen biaya operasional, pajak, dan retur. Visualisasi apa yang paling komunikatif untuk alur finansial ini?",
+      "options": [
+        "Diagram lingkaran ganda untuk membandingkan pendapatan dan biaya",
+        "Diagram air terjun (waterfall chart) untuk komponen penambah dan pengurang",
+        "Diagram sebar untuk menunjukkan varians laba tiap kuartal",
+        "Diagram garis tunggal dari awal tahun hingga akhir tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain dashboard inventori gudang yang memantau 50 jenis barang. Aturannya, jika stok barang berada di bawah batas minimum, sel tersebut harus langsung menarik perhatian pengawas gudang. Praktik desain visual terbaik apa yang harus diterapkan pada tabel tersebut?",
+      "options": [
+        "Menggunakan warna latar belakang merah secara bersyarat (conditional formatting)",
+        "Mencetak seluruh teks laporan dengan ukuran font yang jauh lebih besar",
+        "Membuat animasi kedip pada semua baris data secara bersamaan",
+        "Mengubah seluruh palet warna dashboard menjadi monokrom gelap"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "HR Manager sebuah perusahaan manufaktur ingin melihat distribusi tingkat absensi karyawan berdasarkan rentang usia dan masa kerja dalam satu tampilan tunggal untuk mendeteksi pola kelelahan kerja. Visualisasi manakah yang paling efektif?",
+      "options": [
+        "Peta panas (heatmap) dengan sumbu usia dan sumbu masa kerja",
+        "Diagram garis tunggal yang merata-ratakan seluruh data karyawan",
+        "Diagram lingkaran untuk setiap kelompok usia secara terpisah",
+        "Tabel teks matriks besar tanpa pewarnaan atau visual pendukung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menyajikan data penjualan kuartalan dari tahun 2018 hingga 2023 untuk melihat pertumbuhan jangka panjang sekaligus kontribusi musiman di tiap kuartal. Kombinasi pendekatan visual seperti apa yang paling tepat?",
+      "options": [
+        "Menggunakan diagram batang terpisah untuk setiap kuartal tanpa garis tren",
+        "Menggunakan diagram garis utama untuk tren tahunan dan heatmap untuk musiman",
+        "Menggunakan diagram lingkaran untuk setiap tahun secara berdampingan",
+        "Menggunakan diagram tebar acak tanpa sumbu waktu yang jelas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta oleh VP of Sales menyajikan data pencapaian target penjualan dari 10 cabang ritel di Pulau Jawa. Cabang mana yang performanya paling mendekati rata-rata keseluruhan tidak perlu ditonjolkan secara ekstrem. Jenis visualisasi apa yang paling efektif untuk membandingkan pencapaian seluruh cabang secara adil dalam satu layar?",
+      "options": [
+        "Diagram lingkaran berlapis untuk menunjukkan proporsi kontribusi",
+        "Grafik garis berganda guna melihat tren harian pencapaian sales",
+        "Diagram batang horizontal dengan garis rata-rata referensi vertikal",
+        "Peta sebaran geografis interaktif dengan titik ukuran berbeda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital ingin memantau penurunan jumlah transaksi harian pengguna baru pada 7 hari pertama setelah pendaftaran (onboarding funnels). Format visualisasi manakah yang paling akurat untuk mengidentifikasi hari keberapa drop-off terbesar terjadi?",
+      "options": [
+        "Bagan corong bertahap untuk menunjukkan persentase penurunan",
+        "Diagram tebar korelasi antara hari aktif dan volume transaksi",
+        "Grafik area bertumpuk guna melihat akumulasi volume harian",
+        "Peta panas matriks interaktif berdasarkan kelompok umur"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain dashboard analitik untuk tim Customer Service maskapai penerbangan yang harus merespons komplain dengan cepat. Data menunjukkan waktu tunggu antrean. Elemen visual mana yang harus diletakkan pada posisi paling kiri atas area pandang utama (F-pattern)?",
+      "options": [
+        "Grafik tren historis durasi penanganan tiket dalam setahun",
+        "Tabel besar berisi daftar seluruh tiket komplain aktif hari ini",
+        "Kartu angka tunggal metrik rata-rata durasi tunggu saat ini",
+        "Diagram lingkaran komposisi jenis kategori keluhan pelanggan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim Product Manager ingin menganalisis korelasi antara durasi waktu pengguna menghabiskan di aplikasi marketplace (sumbu X) dengan jumlah barang yang dimasukkan ke keranjang belanja (sumbu Y) dari 5.000 sampel pengguna aktif. Grafik apa yang paling tepat?",
+      "options": [
+        "Diagram batang bertumpuk untuk melihat total interaksi",
+        "Diagram tebar guna mendeteksi pola sebaran titik data",
+        "Grafik garis tren waktu untuk memantau lonjakan harian",
+        "Diagram kotak garis untuk melihat kuartil sebaran data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan triwulanan perusahaan properti, Anda memiliki data porsi kontribusi penjualan dari 4 kategori hunian (Apartemen, Rumah Tapak, Ruko, SOHO) yang totalnya selalu 100 persen. Direktur meminta Anda menghindari penggunaan diagram lingkaran. Alternatif visual terbaik apa yang harus digunakan?",
+      "options": [
+        "Diagram batang terkelompok untuk setiap jenis properti",
+        "Grafik garis tunggal dengan penanda titik persentase",
+        "Bagan batang 100 persen bertumpuk secara horizontal",
+        "Peta pohon untuk melihat hierarki nilai transaksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Bandung ingin memantau tingkat kerusakan produk pada 6 mesin tenun berbeda selama 12 bulan terakhir. Agar manajer pabrik bisa langsung melihat mesin mana dan bulan apa yang mengalami lonjakan kerusakan tanpa membaca angka satu persatu, teknik desain apa yang paling tepat?",
+      "options": [
+        "Penerapan warna gradasi sel pada tabel matriks silang",
+        "Pembuatan grafik batang terpisah untuk tiap mesin tenun",
+        "Penyusunan tabel teks dengan format tebal pada nilai tertinggi",
+        "Penggunaan grafik radar multi-sumbu untuk setiap periode"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang laporan eksekutif untuk investor asing mengenai ekspansi kafe di Indonesia. Mereka ingin melihat perbandingan metrik pendapatan kotor, biaya operasional, dan laba bersih dari 5 kota besar secara bersamaan dalam satu bidang pandang tanpa membuat mata lelah. Pendekatan visual apa yang paling disarankan?",
+      "options": [
+        "Menggabungkan tiga metrik berbeda dalam satu grafik garis rumit",
+        "Membuat visualisasi panel kecil berulang dengan skala seragam",
+        "Menggunakan diagram laba-laba raksasa dengan banyak variabel",
+        "Menampilkan tabel data mentah lengkap dengan warna mencolok"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim operasi jalan tol ingin menganalisis volume kendaraan yang melintas di 10 gerbang tol utama berdasarkan jam dalam sehari untuk mengantisipasi kemacetan. Format visualisasi apa yang paling efektif menampilkan pola waktu sibuk secara keseluruhan?",
+      "options": [
+        "Diagram batang vertikal terpisah untuk setiap gerbang tol",
+        "Grafik garis tipis bertumpuk yang saling berpotongan padat",
+        "Peta panas matriks jam dalam sehari versus gerbang tol",
+        "Diagram lingkaran proporsi volume per jam operasional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat infografis publik untuk kampanye literasi keuangan mengenai distribusi kekayaan penduduk di suatu wilayah. Data menunjukkan ketimpangan yang ekstrem di mana sebagian kecil kelompok memiliki porsi sangat besar. Skala sumbu apa yang harus Anda atur pada grafik untuk mewakili data tersebut secara jujur?",
+      "options": [
+        "Menggunakan skala logaritmik untuk meredam jarak ekstrem",
+        "Memotong sumbu vertikal agar perbedaan kecil terlihat jelas",
+        "Mengubah satuan data agar grafik terlihat lebih seimbang",
+        "Membalik posisi kategori agar kelompok kecil berada di atas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah rumah sakit swasta ingin memantau durasi antrean pasien poli umum sepanjang hari kerja. Manajemen menetapkan batas toleransi waktu tunggu adalah 30 menit. Desain warna apa yang paling tepat diterapkan pada batang grafik untuk langsung menarik perhatian pada pelanggaran batas tersebut?",
+      "options": [
+        "Memberikan warna biru gradasi cerah pada seluruh batang grafik",
+        "Mewarnai batang yang melebihi batas dengan warna kontras merah",
+        "Menggunakan warna hijau tua untuk seluruh batang tanpa terkecuali",
+        "Mengganti warna setiap jam secara acak agar terlihat menarik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di perusahaan logistik yang melayani pengiriman ke seluruh Indonesia. Manajer operasional meminta visualisasi untuk membandingkan biaya pengiriman rata-rata berdasarkan berat paket dan jarak tempuh. Jenis chart apa yang paling tepat Anda gunakan?",
+      "options": [
+        "Diagram batang bertumpuk",
+        "Diagram garis tren waktu",
+        "Diagram pencar (scatter plot)",
+        "Diagram lingkaran proporsi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform streaming musik lokal ingin menunjukkan persentase genre musik yang paling banyak didengarkan oleh pengguna Gen Z di Indonesia. Terdapat 8 genre berbeda dengan total 100%. Visualisasi mana yang paling efektif tanpa membuat audiens salah menginterpretasikan proporsi?",
+      "options": [
+        "Diagram batang mendatar berurutan",
+        "Diagram lingkaran dengan 8 irisan",
+        "Diagram donat berlapis ganda",
+        "Diagram area bertumpuk bulanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim ekspansi ritel fashion ingin melihat sebaran performa omzet dan jumlah transaksi dari 50 gerai fisik di pusat perbelanjaan Jabodetabek. Mereka ingin langsung melihat kelompok gerai mana yang berkinerja tinggi, sedang, dan rendah dalam satu tampilan. Pendekatan visual apa yang paling tepat?",
+      "options": [
+        "Peta panas (heatmap) dua dimensi",
+        "Tabel teks berisi angka rinci",
+        "Diagram garis multi-seri harian",
+        "Diagram pai 3D berputar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat dashboard untuk memantau performa bulanan 12 tenaga sales asuransi. Agar manajer dapat langsung mengenali siapa yang mencapai target dan siapa yang di bawah target, teknik desain apa yang harus Anda terapkan pada tabel data?",
+      "options": [
+        "Mewarnai seluruh latar sel dengan warna kontras",
+        "Menggunakan conditional formatting dengan ikon",
+        "Menyusun nama sales berdasarkan abjad terbalik",
+        "Menambahkan grafik garis kecil di setiap kolom"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs berita daring ingin menyajikan data jumlah kunjungan halaman selama 24 jam terakhir pada hari pemilu. Grafik garis yang dihasilkan sangat fluktuatif karena lonjakan tiap menit. Apa langkah terbaik yang harus Anda ambil untuk menyajikan tren yang lebih mudah dibaca oleh pembaca umum?",
+      "options": [
+        "Memperbesar skala sumbu vertikal secara ekstrem",
+        "Mengubah visualisasi menjadi diagram lingkaran",
+        "Melakukan penghalusan data menggunakan rata-rata bergerak",
+        "Menghilangkan label angka pada sumbu horizontal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam laporan tahunan perusahaan agrikultur, Anda ingin menunjukkan alur penurunan volume pupuk dari pabrik pusat hingga sampai ke tangan distributor di 5 pulau besar Indonesia. Format visual apa yang paling komunikatif untuk menggambarkan tahapan alur tersebut?",
+      "options": [
+        "Diagram alir proses atau bagan sankey",
+        "Diagram pencar untuk analisis korelasi",
+        "Diagram batang bergerombol vertikal",
+        "Diagram radar untuk perbandingan multi-variabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim keamanan siber sebuah bank digital ingin mendeteksi pola waktu anomali login mencurigakan yang terjadi sepanjang minggu. Mereka memerlukan visualisasi matriks yang menunjukkan hari dalam seminggu pada sumbu vertikal dan jam dalam sehari pada sumbu horizontal. Visualisasi apa yang dimaksud?",
+      "options": [
+        "Peta panas kalender (calendar heatmap)",
+        "Diagram garis tren waktu kumulatif",
+        "Diagram batang bertumpuk 100 persen",
+        "Diagram tebar dengan garis regresi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain dashboard keuangan untuk direksi yang sering memantau metrik via ponsel saat bepergian. Ruang layar sangat terbatas, tetapi mereka ingin melihat status pencapaian laba bersih terhadap target tahunan secara instan. Elemen visual ringkas apa yang paling tepat disematkan?",
+      "options": [
+        "Tabel matriks dengan 50 baris data keuangan",
+        "Indikator kartu angka tunggal dengan mini sparkline",
+        "Diagram batang 3D dengan rotasi sudut miring",
+        "Diagram lingkaran ganda berdampingan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lembaga riset pasar ingin membandingkan profil kompetensi dari 4 merek smartphone di Indonesia berdasarkan 6 aspek: kamera, baterai, harga, layar, performa, dan desain. Visualisasi apa yang paling sesuai untuk membandingkan keseluruhan aspek tersebut secara bersamaan pada satu objek?",
+      "options": [
+        "Diagram jaring laba-laba atau radar chart",
+        "Diagram garis tren historis tahunan",
+        "Diagram batang terpisah untuk setiap aspek",
+        "Diagram sebar dengan skala logaritmik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional pabrik perakitan kendaraan ingin melacak progres penyelesaian target produksi harian bulan ini yang terdiri dari 4 tahap perakitan berbeda. Visualisasi apa yang paling intuitif untuk menunjukkan pencapaian target kumulatif tiap tahap secara visual?",
+      "options": [
+        "Diagram batang horizontal berbentuk diagram goni",
+        "Diagram lingkaran proporsi total produksi",
+        "Diagram batang bertumpuk 100 persen horizontal",
+        "Diagram garis dengan penanda titik acak"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

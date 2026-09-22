@@ -13,6 +13,7 @@ export default function TalentSearch({ job }) {
     const [candidates, setCandidates] = useState([])
     const [loading, setLoading] = useState(false)
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => {
         if (!job?.id) return undefined
         let alive = true

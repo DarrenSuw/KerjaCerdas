@@ -1,0 +1,306 @@
+{
+  "skill": "Sales",
+  "skill_key": "sales",
+  "questions": [
+    {
+      "question": "Calon pembeli bilang \"harganya mahal\". Respons awal yang tepat…",
+      "options": [
+        "Langsung turunkan harga",
+        "Tanyakan dibanding apa, lalu jelaskan manfaat yang relevan baginya",
+        "Bilang produk lain lebih mahal",
+        "Akhiri percakapan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebelum menawarkan produk ke pelanggan baru, langkah paling penting…",
+      "options": [
+        "Menjelaskan semua fitur",
+        "Menggali kebutuhan pelanggan dengan pertanyaan",
+        "Memberi diskon",
+        "Membandingkan dengan kompetitor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Target bulan ini 40 transaksi, sudah tercapai 25 di minggu ke-3. Tindakan terbaik…",
+      "options": [
+        "Santai karena masih ada waktu",
+        "Hitung sisa per hari dan fokus ke prospek yang paling siap membeli",
+        "Minta target diturunkan",
+        "Tunggu pelanggan datang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan lama tidak membeli lagi 3 bulan. Langkah yang baik…",
+      "options": [
+        "Hapus dari daftar",
+        "Hubungi untuk menanyakan kabar dan kebutuhan terbarunya",
+        "Kirim promo tiap hari",
+        "Tunggu dia kembali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Follow-up setelah presentasi penjualan sebaiknya dilakukan…",
+      "options": [
+        "Tidak perlu",
+        "1-2 hari setelahnya dengan ringkasan dan langkah berikutnya",
+        "Setelah sebulan",
+        "Hanya jika pelanggan menghubungi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Cross-selling artinya…",
+      "options": [
+        "Menjual ke kota lain",
+        "Menawarkan produk pelengkap yang relevan dengan pembelian pelanggan",
+        "Menjual dengan harga lebih rendah",
+        "Menjual lewat marketplace"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pemilik kafe di Jakarta tertarik dengan mesin espresso Anda yang harganya Rp45 juta, tetapi dia ragu karena arus kas bulan ini sedang ketat. Strategi penanganan keberatan (objection handling) apa yang paling tepat untuk menutup penjualan tanpa merusak margin?",
+      "options": [
+        "Memberikan diskon tunai langsung sebesar 15 persen agar transaksi bisa segera disetujui hari ini.",
+        "Menawarkan skema cicilan melalui program pembiayaan alat usaha dengan tenor yang meringankan arus kas.",
+        "Menyarankan kafe tersebut membeli mesin bekas berkualitas rendah yang harganya sesuai anggaran mereka.",
+        "Meminta manajer untuk memberikan bonus tambahan berupa biji kopi gratis senilai harga mesin."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menjual software HRIS kepada perusahaan manufaktur menengah. Saat melakukan product demo, HR Manager tampak antusias, namun Direktur Keuangan terus-menerus memotong dan menanyakan soal ROI (Return on Investment). Langkah taktis apa yang harus Anda ambil?",
+      "options": [
+        "Mengabaikan Direktur Keuangan dan fokus melanjutkan presentasi fitur-fitur canggih kepada HR Manager.",
+        "Menghentikan demo fitur dan beralih membahas simulasi penghematan biaya operasional serta efisiensi waktu.",
+        "Menunda rapat hari itu dan menjadwalkan ulang pertemuan khusus hanya dengan HR Manager saja.",
+        "Meminta maaf karena software ini memang ditujukan untuk departemen HR bukan divisi keuangan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja menerima daftar 100 leads dingin dari hasil pameran industri logistik di Surabaya. Apa langkah pertama yang paling efektif untuk menyaring dan mengonversi leads tersebut?",
+      "options": [
+        "Mengirimkan brosur katalog produk lengkap beserta daftar harga terbaru melalui pesan massal WhatsApp.",
+        "Menghubungi satu per satu untuk langsung menawarkan sesi presentasi produk minggu depan di kantor mereka.",
+        "Melakukan kualifikasi awal berdasarkan kriteria anggaran, otoritas, kebutuhan, dan waktu pembelian mereka.",
+        "Memasukkan seluruh data ke sistem CRM dan menunggu mereka menghubungi Anda jika butuh bantuan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik meminta proposal penawaran harga untuk armada truk komersial. Anda tahu kompetitor utama sedang memberikan diskon besar. Bagaimana cara Anda menyusun penawaran agar tidak terjebak perang harga?",
+      "options": [
+        "Menurunkan harga penawaran Anda di bawah harga kompetitor agar perusahaan tersebut tidak pindah ke lain hati.",
+        "Menonjolkan nilai tambah berupa garansi servis gratis 24 jam dan pelatihan pengemudi yang tidak dimiliki kompetitor.",
+        "Mengirimkan surat penolakan secara halus karena persaingan harga yang tidak sehat di pasar logistik saat ini.",
+        "Meminta persetujuan direksi untuk memberikan potongan harga khusus yang bersifat rahasia bagi klien tersebut."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan negosiasi kontrak tahunan penyediaan bahan baku dengan seorang purchasing manager korporasi. Klien meminta tambahan volume produk gratis sebesar 20 persen di luar kontrak yang disepakati. Keputusan apa yang harus Anda ambil?",
+      "options": [
+        "Menyetujui permintaan tersebut agar kontrak tahunan segera ditandatangani dan target kuartal tercapai.",
+        "Menolak tegas permintaan tersebut karena akan merugikan perusahaan dan merusak standar harga pasar.",
+        "Menolak permintaan gratis namun menawarkan diskon volume bertingkat jika mereka menaikkan target pembelian.",
+        "Mengalihkan pembicaraan ke topik lain dan berharap klien melupakan permintaan tambahan barang gratis itu."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien korporat besar mendadak membatalkan pembelian sistem keamanan kantor sehari sebelum penandatanganan kontrak karena alasan efisiensi anggaran mendadak dari kantor pusat. Apa tindakan terbaik Anda saat itu?",
+      "options": [
+        "Menerima pembatalan tersebut dan segera menghapus nama klien dari daftar prioritas prospek aktif.",
+        "Mengirimkan pesan kekecewaan kepada kontak utama karena mereka tidak profesional dalam berbisnis.",
+        "Menawarkan opsi kontrak pembiayaan bertahap dengan pembayaran pertama yang jauh lebih kecil dan fleksibel.",
+        "Meminta atasan Anda untuk menelepon direktur mereka dan memaksa agar kontrak tetap dilanjutkan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam industri penjualan alat kesehatan rumah sakit, Anda mendapati bahwa decision maker (keputusan akhir) sering kali berbeda dengan orang yang pertama kali Anda temui di rumah sakit tersebut. Bagaimana strategi penanganan akun ini?",
+      "options": [
+        "Hanya fokus membina hubungan baik dengan staf pengadaan yang pertama kali menerima proposal Anda.",
+        "Meminta staf tersebut untuk menjembatani pertemuan langsung dengan kepala bagian medis dan direktur.",
+        "Mengirimkan sampel produk langsung ke ruang direktur rumah sakit tanpa melalui prosedur resmi.",
+        "Membatalkan prospek tersebut karena birokrasi rumah sakit dinilai terlalu rumit dan membuang waktu."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan metode SPIN Selling saat menghadapi pemilik pabrik tekstil yang mengeluhkan mesin lama mereka sering rusak. Pertanyaan jenis apa yang paling tepat diajukan berikutnya untuk memperbesar urgensi pembelian?",
+      "options": [
+        "Menanyakan berapa banyak mesin yang saat ini mereka miliki di area pabrik produksi utama.",
+        "Menanyakan seberapa besar kerugian finansial yang timbul setiap kali lini produksi berhenti mendadak.",
+        "Menjelaskan secara rinci spesifikasi teknis mesin baru buatan Jerman yang baru saja Anda impor.",
+        "Meminta mereka untuk segera menandatangani surat pemesanan mesin baru sebelum stok habis."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan startup fintech membalas email penawaran layanan cloud server Anda dengan kalimat: 'Saat ini kami sudah terikat kontrak dengan provider lain sampai enam bulan ke depan.' Respons email yang paling strategis adalah...",
+      "options": [
+        "Membalas dengan kalimat kasar bahwa provider lama mereka memiliki performa server yang sangat buruk.",
+        "Mengucapkan terima kasih dan berjanji akan menghubungi mereka kembali tepat satu bulan sebelum kontrak habis.",
+        "Meminta mereka untuk memutus kontrak lama sekarang juga agar bisa segera beralih menggunakan layanan Anda.",
+        "Mengabaikan balasan tersebut karena peluang penjualan dianggap sudah tertutup untuk jangka pendek."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab atas penjualan ruang kantor co-working space. Seorang calon penyewa potensial meminta waktu berpikir selama dua minggu setelah melakukan survei lokasi. Apa teknik follow-up yang paling efektif?",
+      "options": [
+        "Menelpon setiap hari kerja untuk menanyakan apakah mereka sudah membuat keputusan final atau belum.",
+        "Mengirimkan informasi pembaruan bahwa sisa unit ruangan dengan pemandangan terbaik tinggal tersisa dua unit.",
+        "Membiarkan mereka berpikir sendiri tanpa gangguan sampai batas waktu dua minggu tersebut berakhir.",
+        "Mengirimkan surat pembatalan penawaran agar mereka merasa panik dan segera menghubungi Anda kembali."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang prospek dari industri ritel meminta diskon tambahan sebesar 20% di luar ketentuan perusahaan agar mereka mau menandatangani kontrak minggu ini. Sebagai tenaga sales, tindakan paling tepat yang Anda ambil adalah...",
+      "options": [
+        "Menyetujui diskon tersebut agar target penjualan bulanan segera tercapai tanpa kendala",
+        "Menolak permintaan dan menawarkan nilai tambah berupa layanan ekstra dengan harga tetap",
+        "Mengabaikan permintaan diskon itu dan menunggu sampai mereka menghubungi Anda kembali",
+        "Memberikan diskon setengahnya sembari meminta mereka memperpanjang durasi kontrak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mempresentasikan produk software akuntansi kepada seorang pemilik UMKM di Bandung. Di tengah penjelasan fitur canggih, ia tampak mengantuk dan mulai memainkan ponselnya. Respon Anda yang paling efektif adalah...",
+      "options": [
+        "Melanjutkan presentasi dengan nada bicara yang lebih keras agar perhatiannya kembali",
+        "Berhenti sejenak dan menanyakan langsung tantangan pencatatan keuangan yang dihadapinya",
+        "Meminta maaf karena penjelasannya terlalu panjang dan segera menutup sesi pertemuan",
+        "Mengalihkan topik pembicaraan ke fitur laporan pajak otomatis yang paling populer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur di Cikarang mengirimkan email berisi penolakan atas penawaran mesin produksi Anda karena sudah terikat kontrak eksklusif dengan kompetitor hingga tahun depan. Langkah strategis Anda berikutnya adalah...",
+      "options": [
+        "Menghapus data kontak mereka karena peluang bisnis sudah tertutup rapat untuk saat ini",
+        "Mengirimkan pesan kemarahan karena mereka lebih memilih produk dari kompetitor",
+        "Mencatat tanggal kedaluwarsa kontrak mereka dan menjadwalkan follow-up tiga bulan sebelum habis",
+        "Menawarkan produk lain yang sama sekali tidak berhubungan dengan mesin produksi pabrik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati seorang klien VIP yang biasanya memesan produk secara rutin setiap bulan, mendadak frekuensi pembeliannya menurun drastis selama dua siklus terakhir. Langkah awal yang harus Anda lakukan...",
+      "options": [
+        "Langsung mengirimkan katalog produk baru dengan asumsi mereka butuh variasi",
+        "Menghubungi mereka secara personal untuk menanyakan kepuasan terhadap layanan sebelumnya",
+        "Melaporkan penurunan tersebut kepada manajer agar diberikan sanksi administratif",
+        "Menunggu sampai mereka melakukan pemesanan ulang secara mandiri seperti biasa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi negosiasi akhir pengadaan seragam kantor untuk sebuah bank swasta, pihak klien meminta penyerahan barang dipercepat dari 30 hari menjadi 10 hari kerja. Kapasitas produksi normal Anda adalah 20 hari. Sikap Anda...",
+      "options": [
+        "Menolak tegas permintaan tersebut karena melanggar Standar Operasional Prosedur perusahaan",
+        "Menyanggupi permintaan mereka dan menyerahkan risikonya kepada bagian gudang produksi",
+        "Menjelaskan kapasitas normal dan menawarkan opsi pengiriman parsial untuk kebutuhan mendesak",
+        "Meminta tambahan biaya pengiriman darat sebesar 50% tanpa membahas batas waktu produksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja menyelesaikan pertemuan pertama dengan seorang direktur operasional rumah sakit swasta. Ia meminta Anda mengirimkan seluruh brosur harga produk alat kesehatan lewat WhatsApp. Tindakan follow-up yang paling profesional...",
+      "options": [
+        "Mengirimkan dokumen PDF seluruh katalog harga beserta ringkasan solusi spesifik untuk rumah sakit mereka",
+        "Mengirimkan satu per satu foto produk setiap jam agar mereka terus mengingat penawaran Anda",
+        "Menunggu balasan pesan dari mereka selama dua minggu sebelum mengirimkan pesan pengingat",
+        "Menelpon nomor pribadi sang direktur keesokan paginya untuk menanyakan keputusan pembelian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang sales pemula di tim Anda merasa frustrasi karena dari 50 panggilan telepon prospek yang dilakukan hari ini, semuanya gagal menghasilkan jadwal meeting. Sebagai rekan senior, saran paling membangun untuknya adalah...",
+      "options": [
+        "Menyarankan agar ia mengubah skrip percakapan dan fokus memahami masalah utama prospek",
+        "Meminta ia menambah jumlah panggilan telepon harian menjadi dua kali lipat dari sebelumnya",
+        "Menyuruhnya untuk berhenti menelepon dan beralih sepenuhnya ke media sosial perusahaan",
+        "Mengambil alih seluruh sisa daftar kontak prospek agar target tim tidak terganggu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memasarkan produk bahan bangunan ramah lingkungan kepada seorang kontraktor proyek perumahan besar. Kontraktor tersebut menyatakan tertarik, tetapi pemilik proyek utama melarang penggunaan material baru yang belum familiar. Cara Anda mengatasi hambatan ini...",
+      "options": [
+        "Meminta kontraktor untuk mengabaikan instruksi pemilik proyek demi kebaikan bangunan",
+        "Menyediakan data sertifikasi uji lab resmi dan referensi proyek sukses sebelumnya untuk diyakinkan ke pemilik proyek",
+        "Menawarkan potongan harga ekstrem agar pemilik proyek bersedia mengambil risiko",
+        "Menyuruh kontraktor mencari proyek lain yang tidak menggunakan aturan ketat tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir kuartal, Anda mengetahui bahwa pencapaian penjualan tim Anda masih kurang 30% dari target minimal perusahaan. Strategi mitigasi yang paling rasional untuk diterapkan minggu ini adalah...",
+      "options": [
+        "Fokus menutup transaksi dari daftar prospek kategori hot leads yang sudah berada di tahap negosiasi akhir",
+        "Melakukan kampanye iklan masif di media sosial untuk menjaring pelanggan baru dari nol",
+        "Mengajukan cuti bersama kepada manajemen agar beban pikiran target penjualan berkurang",
+        "Memberikan bonus pribadi dari kantong sendiri kepada klien yang mau membeli produk Anda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan presentasi proposal pengadaan sistem keamanan digital kepada dewan direksi perusahaan logistik, salah satu direktur melontarkan kritik tajam bahwa harga produk Anda jauh di atas rata-rata pasar. Respon verbal Anda yang paling tepat...",
+      "options": [
+        "Mengakui bahwa produk Anda memang mahal dan meminta maaf atas penetapan harga tersebut",
+        "Menjelaskan kembali rincian komponen biaya tinggi yang sebanding dengan garansi serta efisiensi jangka panjang",
+        "Menyebutkan bahwa kompetitor sebelah menjual barang palsu sehingga harganya bisa jauh lebih murah",
+        "Mengubah topik pembicaraan dengan membahas fitur lain yang tidak berkaitan dengan anggaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menawarkan jasa digital marketing kepada pemilik toko oleh-oleh di Surabaya. Saat ditanya soal biaya, ia langsung mengeluh bahwa anggaran promosinya sangat ketat tahun ini. Tindakan paling tepat yang harus Anda lakukan adalah",
+      "options": [
+        "Menjelaskan bahwa kualitas layanan agensi Anda sepadan dengan biaya yang dikeluarkan",
+        "Mengganti fokus pembicaraan dari harga ke potensi peningkatan omzet melalui studi kasus",
+        "Menawarkan potongan harga langsung sebesar 30% agar kontrak bisa segera disepakati",
+        "Meminta maaf atas tingginya tarif layanan dan menyarankan mereka mencari agensi lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang calon pembeli korporat meminta dikirimkan penawaran harga via email tanpa mau memberikan nomor telepon atau jadwal meeting. Sebagai sales B2B yang efektif, langkah awal terbaik Anda adalah",
+      "options": [
+        "Mengirimkan brosur lengkap beserta daftar harga standar perusahaan Anda secara detail",
+        "Mengabaikan email tersebut karena prospek yang tidak mau ditelepon biasanya tidak serius",
+        "Mengirim email balasan singkat yang menawarkan panggilan 10 menit untuk memahami kebutuhan spesifik",
+        "Langsung memberikan diskon khusus di dalam email penawaran guna menarik perhatian mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pertemuan tatap muka dengan seorang manajer pengadaan hotel, ia memuji fitur produk linen hotel Anda tetapi menyebutkan bahwa vendor lama mereka memberikan tempo pembayaran 90 hari, sedangkan perusahaan Anda hanya 30 hari. Respons strategis Anda adalah",
+      "options": [
+        "Menolak aturan tersebut karena kebijakan keuangan perusahaan menetapkan maksimal 30 hari",
+        "Mengajukan skema pembayaran bertahap dengan jaminan volume pesanan bulanan yang stabil",
+        "Meminta mereka membayar tunai di muka demi mendapatkan diskon harga tambahan yang besar",
+        "Menurunkan kualitas bahan linen agar perusahaan Anda bisa menanggung risiko tempo 90 hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima keluhan dari klien penting bahwa sistem software yang mereka beli kemarin mengalami kendala teknis saat jam sibuk. Tim teknis sedang memperbaikinya, namun klien tampak sangat marah. Langkah komunikasi pertama yang harus Anda ambil adalah",
+      "options": [
+        "Menjelaskan secara rinci bahwa kendala teknis tersebut adalah masalah yang wajar di sistem baru",
+        "Menghubungi klien secara langsung untuk meminta maaf, mendengarkan kekecewaannya, dan memberi update berkala",
+        "Mengirimkan email formal yang berisi prosedur standar pengajuan komplain perusahaan kepada departemen IT",
+        "Menunggu hingga tim teknis selesai memperbaiki masalah sepenuhnya sebelum menghubungi klien kembali"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

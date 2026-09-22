@@ -1,0 +1,306 @@
+{
+  "skill": "Supply Chain Management",
+  "skill_key": "supply chain management",
+  "questions": [
+    {
+      "question": "Sebuah perusahaan manufaktur di Cikarang menghadapi lonjakan waktu tunggu (lead time) pengiriman bahan baku impor dari 30 hari menjadi 60 hari akibat disrupsi pelabuhan internasional. Langkah mitigasi jangka pendek apa yang paling tepat diambil oleh manajer rantai pasok?",
+      "options": [
+        "Menghentikan sementara seluruh lini produksi untuk menghemat biaya operasional",
+        "Meningkatkan safety stock dan segera mencari pemasok alternatif di dalam negeri",
+        "Meminta bagian penjualan menurunkan target omset tahunan secara drastis",
+        "Mengurangi jumlah tenaga kerja di gudang utama untuk menekan biaya simpan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah kepala gudang logistik e-commerce di Surabaya. Selama periode kampanye belanja 11.11, tingkat kesalahan pick and pack melonjak hingga 8 persen. Tindakan operasional apa yang harus diprioritaskan untuk mengatasi masalah ini?",
+      "options": [
+        "Memberikan sanksi pemotongan gaji kepada seluruh staf operasional gudang",
+        "Mengubah tata letak gudang secara total saat hari pengiriman sedang memuncak",
+        "Mengimplementasikan proses double-checking dan memperketat kontrol kualitas",
+        "Menghentikan pengiriman pesanan reguler dan hanya fokus pada barang mahal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Distributor produk FMCG di Jakarta mengalami masalah biaya pengiriman logistik yang membengkak hingga 35 persen dari total margin keuntungan. Strategi optimasi rute mana yang paling efektif untuk diterapkan oleh tim distribusi?",
+      "options": [
+        "Mengganti seluruh armada truk besar dengan sepeda motor tanpa memperhitungkan kapasitas",
+        "Menggunakan software manajemen rute untuk konsolidasi pengiriman dan optimalisasi muatan",
+        "Menaikkan harga jual produk ke semua konsumen akhir secara sepihak dan serentak",
+        "Menghapus jadwal pengiriman rutin dan hanya mengirim barang jika armada sudah penuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit rutin rantai pasok pabrik tekstil di Bandung, ditemukan adanya risiko ketergantungan yang tinggi pada satu pemasok tunggal untuk benang katun khusus. Kebijakan pengadaan apa yang paling tepat untuk memitigasi risiko ini?",
+      "options": [
+        "Menerapkan strategi dual-sourcing dengan mengembangkan hubungan dengan pemasok kedua",
+        "Memutus kontrak dengan pemasok saat ini dan memproduksi sendiri benang dari nol",
+        "Membeli seluruh stok benang tahunan dalam satu waktu tanpa negosiasi harga",
+        "Mengubah spesifikasi produk akhir agar tidak lagi menggunakan bahan baku benang katun"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan farmasi di Jakarta Selatan mendapati produk vaksin tertentu sering kadaluarsa di gudang cabang sebelum sempat didistribusikan ke rumah sakit. Metode pengelolaan inventaris apa yang harus segera ditegakkan oleh supervisor gudang?",
+      "options": [
+        "Metode Last-In, First-Out (LIFO) untuk memastikan barang terbaru yang cepat dikirim",
+        "Metode First-In, First-Out (FIFO) guna memprioritaskan pengeluaran stok masa kedaluwarsa terdekat",
+        "Metode Economic Order Quantity (EOQ) untuk menghitung frekuensi pembelian yang ideal",
+        "Metode Vendor Managed Inventory (VMI) dengan menyerahkan seluruh kontrol ke rumah sakit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pusat distribusi ritel modern di Semarang mengalami masalah lambatnya proses bongkar muat (inbound) barang dari pemasok sehingga menyebabkan antrean truk di area loading dock. Langkah perbaikan proses yang paling logis adalah?",
+      "options": [
+        "Menutup area loading dock dan melarang truk pemasok masuk ke area pabrik",
+        "Menerapkan sistem penjadwalan kedatangan truk (dock appointment system) yang terstruktur",
+        "Mengurangi jumlah petugas bongkar muat untuk menghemat anggaran operasional harian",
+        "Meminta sopir truk untuk membongkar barang mereka sendiri tanpa bantuan alat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer logistik perusahaan elektronik di Karawang menerima keluhan bahwa tingkat kerusakan produk (damage rate) saat pengiriman ke luar pulau meningkat. Keputusan pengemasan (packaging) seperti apa yang harus diambil?",
+      "options": [
+        "Menggunakan metode pembungkusan yang lebih tipis agar biaya material bisa ditekan",
+        "Mengganti material pelindung seperti bubble wrap dan menambahkan palet kayu yang kokoh",
+        "Menghentikan semua jalur pengiriman logistik laut dan hanya menggunakan jalur udara",
+        "Meminta pelanggan untuk mengambil sendiri barang rusak langsung ke pabrik utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan makanan olahan beku (frozen food) mengalami komplain dari pelanggan karena produk mencair di tengah jalan sebelum sampai tujuan. Aspek rantai pasok apa yang paling krusial untuk dievaluasi ulang?",
+      "options": [
+        "Sistem pemesanan pembelian bahan baku dari petani lokal mitra perusahaan",
+        "Integrasi rantai pendingin (cold chain management) dan pemantauan suhu armada",
+        "Strategi pemasaran digital yang digunakan oleh divisi penjualan di media sosial",
+        "Desain logo kemasan luar produk agar terlihat lebih menarik bagi konsumen akhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan suku cadang otomotif di Bekasi ingin mengurangi biaya penyimpanan (holding cost) gudang tanpa mengorbankan tingkat ketersediaan produk bagi lini perakitan. Pendekatan manajemen inventaris apa yang paling sesuai?",
+      "options": [
+        "Menimbun bahan baku dalam jumlah masif untuk mengantisipasi krisis 5 tahun ke depan",
+        "Mengadopsi sistem Just-In-Time (JIT) bekerja sama erat dengan pemasok komponen",
+        "Menghapus seluruh gudang penyimpanan dan meletakkan komponen di area terbuka",
+        "Meningkatkan target safety stock hingga 200 persen dari rata-rata penggunaan normal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika melakukan evaluasi kinerja vendor logistik pihak ketiga (3PL), manajer pengadaan mendapati sering terjadi keterlambatan pengiriman last-mile di wilayah Indonesia Timur. Langkah kolaboratif apa yang sebaiknya dilakukan dengan vendor tersebut?",
+      "options": [
+        "Memutus kontrak kerja sama secara sepihak dan mencari vendor baru keesokan harinya",
+        "Melakukan evaluasi bersama berdasarkan Key Performance Indicators (KPI) dan SLA yang disepakati",
+        "Menolak membayar seluruh tagihan bulanan sebagai bentuk hukuman atas keterlambatan",
+        "Mengambil alih seluruh armadanya dan memecat para pengemudi yang bertugas di lapangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik perakitan elektronik di Batam mengalami kekurangan komponen kritis akibat hambatan bea cukai di pelabuhan. Sebagai Supply Chain Manager, tindakan taktis apa yang paling tepat diambil dalam minggu pertama untuk menjaga lini produksi tetap berjalan?",
+      "options": [
+        "Menghentikan seluruh lini produksi dan merumahkan karyawan sampai komponen tiba",
+        "Mencari pemasok alternatif lokal atau regional yang dapat memasok komponen substitusi",
+        "Mengurangi target produksi akhir tahun secara sepihak tanpa memberitahu manajemen",
+        "Menunggu proses kepabeanan selesai sambil mengenakan denda kepada pemasok lama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan distributor pupuk di Palembang ingin mengoptimalkan rute pengiriman armada truk ke 15 kios pertanian di berbagai kabupaten. Pendekatan analitis apa yang paling tepat digunakan oleh tim logistik?",
+      "options": [
+        "Menggunakan aplikasi manajemen rute berbasis algoritma Vehicle Routing Problem (VRP)",
+        "Menyerahkan penentuan rute sepenuhnya kepada masing-masing sopir truk harian",
+        "Mengirimkan truk secara acak setiap hari berdasarkan urutan abjad nama kabupaten",
+        "Membatasi pengiriman hanya ke lima kios terdekat dari lokasi gudang pusat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola rantai pasok untuk produk segar (sayuran organik) dari petani di Lembang ke supermarket di Jakarta. Dalam distribusi, sering terjadi penyusutan berat dan kerusakan fisik akibat metode pengemasan yang salah. Langkah perbaikan operasional mana yang paling efektif?",
+      "options": [
+        "Mengganti seluruh armada truk pengiriman dengan kendaraan berpendingin jenis kontainer",
+        "Menerapkan standar wadah plastik berlubang yang ergonomis dan pelatihan penanganan",
+        "Meminta petani melakukan pemanenan pada malam hari untuk menghindari terik matahari",
+        "Membebankan seluruh biaya kerugian barang rusak kepada pihak sopir ekspedisi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan FMCG nasional mendapati tingkat akurasi stok (inventory accuracy) antara sistem ERP dengan fisik di gudang pusat Cakung sangat rendah, mencapai selisih 15 persen. Apa prioritas tindakan pertama yang harus dilakukan kepala gudang?",
+      "options": [
+        "Melakukan audit fisik menyeluruh (stock opname total) dan membekukan transaksi sementara",
+        "Memecat staf bagian pencatatan inventaris yang dianggap tidak teliti dalam bekerja",
+        "Mengubah sistem software ERP lama dengan membeli lisensi software baru yang mahal",
+        "Menaikkan batas toleransi selisih stok di dalam laporan keuangan akhir bulan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Distributor alat kesehatan di Surabaya menghadapi fluktuasi permintaan rumah sakit yang sangat tinggi dan tidak terduga untuk alat suntik. Metode pengendalian inventaris apa yang paling tepat diterapkan untuk item kritikal ini?",
+      "options": [
+        "Memesan dalam jumlah tetap yang sangat besar sekali dalam setahun untuk diskon",
+        "Menetapkan sistem pemesanan berkala setiap awal bulan tanpa melihat sisa stok",
+        "Menerapkan model stok pengaman (safety stock) dinamis dan titik pemesanan ulang (ROP)",
+        "Mengandalkan sepenuhnya sistem cetak berdasarkan pesanan masuk dari rumah sakit"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik garmen di Solo sering mengalami keterlambatan pengiriman ekspor karena jadwal keberangkatan kapal kargo (vessel schedule) di pelabuhan Tanjung Mas sering berubah-ubah. Strategi mitigasi risiko logistik apa yang sebaiknya diambil?",
+      "options": [
+        "Memindahkan seluruh moda pengiriman ekspor menjadi menggunakan pesawat kargo",
+        "Meminta pembeli internasional untuk memperpanjang batas waktu pengiriman barang",
+        "Berkoordinasi dengan forwarder untuk memesan ruang muat lebih awal dan rute alternatif",
+        "Mengurangi jumlah produksi garmen agar beban logistik di pelabuhan ikut menurun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer pengadaan material bangunan di Medan mendapati harga semen dari pemasok utama naik secara fluktuatif setiap bulannya, menggerus margin keuntungan proyek. Pendekatan negosiasi kontrak apa yang paling strategis untuk mengatasi hal ini?",
+      "options": [
+        "Memutus kontrak kerja sama dan mencari pemasok baru yang menawarkan harga termurah",
+        "Membuat kontrak jangka panjang dengan klausul penetapan harga tetap atau batas atas",
+        "Membeli seluruh kebutuhan semen proyek untuk tiga tahun kedepan secara tunai",
+        "Menaikkan harga jual proyek kepada klien secara mendadak tanpa pemberitahuan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan e-grocery di Jakarta Selatan menghadapi masalah tingginya tingkat pengembalian barang (return rate) dari pelanggan akibat produk makanan ringan yang hancur dalam perjalanan. Langkah perbaikan apa yang harus dievaluasi pada proses packing?",
+      "options": [
+        "Mengganti kurir pengiriman instan dengan layanan pengiriman reguler darat",
+        "Menambahkan bahan pelindung seperti bubble wrap dan dus berstandar beban",
+        "Melarang pelanggan untuk melakukan pengembalian barang yang sudah dibeli",
+        "Meminta produsen makanan ringan untuk mempertebal rasa dan kualitas bumbu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mengevaluasi kinerja pabrik perakitan di Sidoarjo, ditemukan bahwa pemanfaatan kapasitas gudang bahan baku sudah mencapai 98 persen, menyebabkan proses penataan barang melambat. Solusi jangka pendek yang paling rasional adalah...",
+      "options": [
+        "Membangun gedung gudang baru di sebelah pabrik yang memakan waktu satu tahun",
+        "Menyewa fasilitas gudang penyangga (buffer warehouse) terdekat di kawasan industri",
+        "Menjual separuh bahan baku yang menumpuk di pasar bebas dengan harga murah",
+        "Menghentikan aktivitas pengiriman barang keluar gudang selama beberapa minggu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pabrik pengolahan udang di Lampung menghadapi keluhan dari buyer di Jepang mengenai ketidakpastian waktu kedatangan kontainer berpendingin di pelabuhan tujuan. Langkah visibilitas rantai pasok apa yang harus diimplementasikan?",
+      "options": [
+        "Memasang perangkat IoT pemantau suhu dan lokasi GPS real-time pada setiap kontainer",
+        "Mengganti perusahaan pelayaran internasional setiap bulan untuk membandingkan tarif",
+        "Membuat laporan manual berbasis kertas yang dikirimkan melalui pos setiap minggu",
+        "Meminta buyer untuk mengambil sendiri muatan kontainer langsung di pelabuhan muat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan kosmetik lokal di Bandung berencana meluncurkan produk baru hasil kolaborasi influencer. Mengingat tren pasar sangat cepat berubah dan sulit diprediksi, strategi peramalan permintaan (demand forecasting) apa yang paling tepat diterapkan?",
+      "options": [
+        "Menggunakan data historis penjualan produk lama yang tidak relevan sama sekali",
+        "Mengandalkan metode peramalan kualitatif berdasarkan jajak pendapat media sosial",
+        "Memproduksi dalam jumlah masif sekalian untuk menekan biaya per unit secara total",
+        "Menunggu hingga tren pasar benar-benar reda baru mulai memproduksi barang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur komponen mesin di Tangerang sering mendapati lini produksi berhenti mendadak karena baut spesifik tertentu habis tanpa pemberitahuan di sistem. Langkah operasional apa yang paling tepat untuk mengatasi masalah ini secara permanen?",
+      "options": [
+        "Membeli stok dalam jumlah besar untuk seluruh jenis baut agar tidak pernah kehabisan",
+        "Menerapkan sistem pemesanan otomatis berbasis titik pesan ulang dan kartu Kanban",
+        "Meminta bagian produksi untuk menghitung manual setiap baut yang tersisa setiap jam",
+        "Mengganti seluruh pemasok baut dengan vendor baru yang berlokasi di luar negeri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengelola pengiriman keramik hias dari sentra kerajinan di Kasongan, Bantul, menuju galeri seni di Jakarta. Mengingat produk sangat rentan pecah, strategi mitigasi risiko apa yang paling efektif dalam perencanaan rantai pasok?",
+      "options": [
+        "Menggunakan armada truk bak terbuka untuk mempercepat proses bongkar muat barang",
+        "Memilih perusahaan logistik termurah tanpa memperhitungkan jenis asuransi kargo",
+        "Menerapkan pengemasan berlapis menggunakan bahan peredam dan paletisasi khusus",
+        "Mengirimkan seluruh barang dalam satu truk besar tanpa pembatas seKAT dalam kabin"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik pakan ternak di Sidoarjo mendapati bahwa biaya penyimpanan (holding cost) di gudang sangat tinggi akibat menumpuknya bahan baku jagung lokal yang dibeli dalam jumlah masif saat musim panen. Keputusan taktis apa yang sebaiknya diambil oleh manajer rantai pasok?",
+      "options": [
+        "Menghentikan total pembelian jagung lokal dan beralih sepenuhnya pada impor luar negeri",
+        "Membangun gudang tambahan di sebelah pabrik untuk menampung sisa kelebihan jagung",
+        "Menjual segera seluruh sisa stok jagung ke kompetitor terdekat dengan harga murah",
+        "Menegosiasikan pengiriman secara bertahap (kontrak payung) dengan kelompok petani lokal"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam memonitor kinerja rantai pasok produk mi instan di Makassar, Anda menemukan bahwa siklus kas (cash-to-cash cycle time) perusahaan melar karena pelanggan ritel sering menunda pembayaran sementara tenggat bayar ke pemasok tepung kian ketat. Apa tindakan preventif terbaik?",
+      "options": [
+        "Memberikan potongan harga besar bagi pelanggan ritel yang membayar di muka",
+        "Menghentikan pasokan produk ke seluruh pelanggan ritel yang memiliki piutang",
+        "Memperpanjang waktu produksi pabrik untuk meningkatkan volume penjualan segera",
+        "Menaikkan harga jual produk mi instan secara sepihak untuk menutupi defisit kas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pusat distribusi suku cadang alat berat di Balikpapan mengalami kendala tingginya waktu henti (downtime) alat berat klien karena lambatnya suku cadang pengganti tiba dari Jakarta. Langkah perbaikan proses apa yang paling efisien?",
+      "options": [
+        "Memindahkan lokasi pusat distribusi utama perusahaan langsung ke pulau Jawa",
+        "Mendirikan gudang satelit penyangga (buffer stock) di area dekat lokasi tambang klien",
+        "Meminta klien untuk membeli dan menyimpan sendiri semua cadangan suku cadang",
+        "Menggunakan jasa kurir ekspres udara untuk setiap pengiriman suku cadang kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Solo mendapati pasokan benang katun dari satu-satunya pemasok utama terganggu karena kebakaran pabrik vendor tersebut. Sebagai manajer pengadaan, tindakan mitigasi apa yang seharusnya sudah disiapkan sebelumnya?",
+      "options": [
+        "Mengembangkan strategi sumber ganda (dual sourcing) dengan beberapa pemasok alternatif",
+        "Menghentikan lini produksi kain katun secara permanen dan beralih ke bahan sintetik",
+        "Menuntut ganti rugi secara hukum kepada pemasok tanpa memikirkan kelangsungan stok",
+        "Menurunkan kualitas kain yang diproduksi agar penggunaan benang katun berkurang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan distributor produk pembersih rumah tangga di Denpasar mendapati biaya distribusi per produk melonjak karena armada truk sering berjalan setengah kosong saat mengirim ke toko-toko kecil. Solusi logistik apa yang paling tepat?",
+      "options": [
+        "Menolak pesanan dari toko-toko kecil yang tidak mencapai minimum kuota pengiriman",
+        "Membeli armada truk baru yang ukurannya jauh lebih kecil untuk efisiensi bahan bakar",
+        "Bermitra dengan penyedia layanan konsolidasi muatan pihak ketiga (3plikasi logistik)",
+        "Menaikkan biaya layanan pengiriman secara drastis kepada seluruh pemilik toko kecil"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah industri pengolahan rumput laut di Makassar ingin memastikan bahwa produk ekspor mereka memenuhi standar kualitas internasional dan dapat dilacak asal-usulnya jika terjadi komplain dari buyer luar negeri. Sistem apa yang wajib diintegrasikan dalam rantai pasok?",
+      "options": [
+        "Mencatat seluruh transaksi keuangan harian secara manual di buku besar akuntansi",
+        "Menerapkan sistem penelusuran (traceability system) berbasis batch dan nomor lot",
+        "Mengganti seluruh tenaga kerja manusia di pabrik dengan mesin otomatis canggih",
+        "Menghapus prosedur pemeriksaan kualitas demi mempercepat waktu muat kontainer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer logistik perusahaan furnitur di Jepara menerima laporan bahwa banyak produk meja kayu mengalami kerusakan goresan akibat gesekan selama pengiriman jarak jauh ke Medan. Apa langkah perbaikan operasional yang paling mendesak?",
+      "options": [
+        "Mengganti perusahaan jasa ekspedisi pengiriman laut dengan maskapai penerbangan",
+        "Meningkatkan standar pengepakan dengan pelindung sudut dan lembaran busa tebal",
+        "Mengurangi ukuran meja kayu agar lebih mudah ditata di dalam kontainer tertutup",
+        "Menurunkan harga jual meja yang cacat langsung kepada pembeli di kota tujuan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

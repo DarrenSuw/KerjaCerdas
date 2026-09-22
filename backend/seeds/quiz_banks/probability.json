@@ -1,0 +1,306 @@
+{
+  "skill": "Probability",
+  "skill_key": "probability",
+  "questions": [
+    {
+      "question": "Tim digital marketing sebuah startup fintech di Jakarta menjalankan dua variasi iklan (A dan B) untuk akuisisi pengguna baru. Iklan A menghasilkan conversion rate 5% dari 2.000 klik, sedangkan Iklan B menghasilkan conversion rate 6% dari 1.500 klik. Jika seorang pengguna baru dipilih secara acak dari total konversi kedua iklan, berapa probabilitas pengguna tersebut berasal dari Iklan A?",
+      "options": [
+        "Sekitar 0,457 atau 45,7%",
+        "Sekitar 0,500 atau 50,0%",
+        "Sekitar 0,543 atau 54,3%",
+        "Sekitar 0,571 atau 57,1%"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional rumah sakit di Bandung menganalisis data kedatangan pasien darurat di IGD. Rata-rata kedatangan adalah 3 pasien per jam. Berapa probabilitas tepat ada 5 pasien yang datang dalam suatu rentang waktu 1 jam tertentu?",
+      "options": [
+        "Sekitar 0,089 atau 8,9%",
+        "Sekitar 0,101 atau 10,1%",
+        "Sekitar 0,149 atau 14,9%",
+        "Sekitar 0,168 atau 16,8%"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah restoran cepat saji di Bali memonitor keluhan pelanggan. Diketahui 2% dari total transaksi berujung pada komplain makanan dingin. Jika seorang pengawas mengambil sampel acak 150 transaksi pada hari Minggu, berapa probabilitas ditemukan tidak ada satupun transaksi yang mendapat komplain makanan dingin?",
+      "options": [
+        "Sekitar 0,048 atau 4,8%",
+        "Sekitar 0,050 atau 5,0%",
+        "Sekitar 0,183 atau 18,3%",
+        "Sekitar 0,367 atau 36,7%"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim risk management sebuah bank menganalisis kredit macet. Berdasarkan historis, 5% nasabah dari segmen UMKM berisiko mengalami gagal bayar. Jika bank menyetujui 4 kredit secara independen untuk nasabah UMKM baru, berapa probabilitas sekurang-kurangnya satu dari nasabah tersebut mengalami gagal bayar?",
+      "options": [
+        "Sekitar 0,1855 atau 18,55%",
+        "Sekitar 0,2000 atau 20,00%",
+        "Sekitar 0,8145 atau 81,45%",
+        "Sekitar 0,9500 atau 95,00%"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pusat perbelanjaan di Medan melakukan undian akhir tahun dengan total 500 kupon undian yang dimasukkan dalam kotak. Sebanyak 100 kupon milik member VIP dan sisanya member reguler. Jika manajemen menarik 3 kupon secara berurutan tanpa pengembalian untuk 3 hadiah berbeda, berapa probabilitas ketiga kupon yang terambil semuanya adalah milik member VIP?",
+      "options": [
+        "Sekitar 0,0074 atau 0,74%",
+        "Sekitar 0,0080 atau 0,80%",
+        "Sekitar 0,0240 atau 2,40%",
+        "Sekitar 0,1250 atau 12,50%"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan pengembang aplikasi seluler di Yogyakarta mendeteksi bahwa server utama mereka mengalami gangguan (downtime) dengan probabilitas 0,003 pada setiap hari kerja. Asumsikan kejadian antarhari saling bebas. Berapa probabilitas server mengalami downtime tepat 2 hari dalam periode 30 hari kerja?",
+      "options": [
+        "Sekitar 0,010 atau 1,0%",
+        "Sekitar 0,014 atau 1,4%",
+        "Sekitar 0,027 atau 2,7%",
+        "Sekitar 0,090 atau 9,0%"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tim quality control di pabrik garmen Cikarang mengecek sampel 50 kaos dari total produksi harian sebanyak 1.000 kaos. Berdasarkan data historis, probabilitas sebuah kaos mengalami cacat jahit adalah 0,04. Berapa probabilitas tepat 2 kaos dari sampel tersebut mengalami cacat jahit?",
+      "options": [
+        "Menggunakan distribusi binomial dengan probabilitas sekitar 0,277",
+        "Menggunakan distribusi poisson dengan probabilitas sekitar 0,184",
+        "Menggunakan distribusi hipergeometrik dengan probabilitas sekitar 0,342",
+        "Menggunakan distribusi normal dengan probabilitas sekitar 0,125"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya mencatat waktu pengiriman paket dalam kota mengikuti distribusi normal dengan rata-rata 45 menit dan simpangan baku 10 menit. Jika SLA perusahaan menetapkan pengiriman harus selesai dalam waktu kurang dari 60 menit, berapa estimasi probabilitas sebuah paket memenuhi SLA tersebut?",
+      "options": [
+        "Sekitar 0,8413 atau 84,13%",
+        "Sekitar 0,9332 atau 93,32%",
+        "Sekitar 0,9772 atau 97,72%",
+        "Sekitar 0,6915 atau 69,15%"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah call center layanan pelanggan telekomunikasi di Makassar mencatat durasi panggilan masuk mengikuti distribusi normal dengan rata-rata 4 menit dan simpangan baku 1 menit. Manajer operasional ingin memastikan efisiensi agen dengan menetapkan target durasi. Berapakah probabilitas bahwa sebuah panggilan telepon yang masuk akan berlangsung lebih dari 5,5 menit?",
+      "options": [
+        "Probabilitas durasi di atas batas adalah 0,042",
+        "Probabilitas durasi di atas batas adalah 0,067",
+        "Probabilitas durasi di atas batas adalah 0,091",
+        "Probabilitas durasi di atas batas adalah 0,135"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim HR sebuah perusahaan manufaktur di Karawang sedang menyeleksi kandidat untuk posisi supervisor. Dari 50 pelamar yang memenuhi syarat administrasi, 30 orang berlatar belakang teknik mesin dan 20 orang teknik industri. Jika HR secara acak memanggil 2 orang untuk wawancara tahap pertama tanpa pengembalian, berapa probabilitas bahwa kedua orang yang terpanggil berlatar belakang teknik mesin?",
+      "options": [
+        "Probabilitas terpanggil sekitar 0,347",
+        "Probabilitas terpanggil sekitar 0,367",
+        "Probabilitas terpanggil sekitar 0,421",
+        "Probabilitas terpanggil sekitar 0,600"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pemeliharaan infrastruktur jaringan telekomunikasi di Bandung mencatat bahwa gangguan jaringan fiber optik terjadi secara independen dengan rata-rata 1,5 kali dalam sebulan. Untuk menyusun anggaran operasional darurat, manajer perlu menghitung probabilitas bahwa dalam satu bulan tertentu tidak terjadi sama sekali gangguan jaringan pada wilayah tersebut.",
+      "options": [
+        "Probabilitas tidak ada gangguan adalah sekitar 0,115",
+        "Probabilitas tidak ada gangguan adalah sekitar 0,223",
+        "Probabilitas tidak ada gangguan adalah sekitar 0,358",
+        "Probabilitas tidak ada gangguan adalah sekitar 0,472"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur elektronik di Batam mendeteksi kerusakan pada konveyor pabrik. Waktu antar kerusakan (inter-arrival time) mengikuti distribusi eksponensial dengan rata-rata 50 jam. Berapa probabilitas konveyor tidak mengalami kerusakan sama sekali selama 20 jam ke depan?",
+      "options": [
+        "Sekitar 0,6703 dihitung menggunakan fungsi kepekatan peluang distribusi eksponensial",
+        "Sekitar 0,4000 berdasarkan rasio langsung antara waktu operasional dan rata-rata",
+        "Sekitar 0,8187 diperoleh dari invers eksponensial rata-rata kerusakan mesin",
+        "Sekitar 0,3678 menggunakan konstanta Euler untuk estimasi kegagalan sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Departemen HR sebuah perusahaan telekomunikasi di Malang sedang merekrut staf IT. Dari 10 kandidat yang masuk tahap akhir (6 pria dan 4 wanita), perusahaan akan memilih 3 orang secara acak untuk posisi yang tersedia. Berapa probabilitas yang terpilih adalah tepat 2 orang pria dan 1 wanita?",
+      "options": [
+        "Sekitar 0,5238 menggunakan kombinasi pemilihan sampel ruang sampel hipergeometrik",
+        "Sekitar 0,6000 karena proporsi awal kandidat pria adalah 60% dari total pelamar",
+        "Sekitar 0,4286 dihitung dengan mengabaikan total kandidat perempuan tersisa",
+        "Sekitar 0,7143 berdasarkan perbandingan faktorial antara pria dan wanita terpilih"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah kafe populer di Yogyakarta menganalisis metode pembayaran pelanggan. Dari data transaksi, 60% menggunakan dompet digital, 30% menggunakan kartu debit, dan 10% tunai. Pelanggan dompet digital memiliki peluang 40% membeli kue pendamping, sedangkan kartu debit 25%, dan tunai 10%. Jika seorang pelanggan membeli kue pendamping, berapa probabilitas ia membayar dengan dompet digital?",
+      "options": [
+        "Sekitar 0,7111 dihitung menggunakan Teorema Bayes dari total probabilitas pembelian kue",
+        "Sekitar 0,6000 karena porsi pengguna dompet digital mendominasi transaksi kafe",
+        "Sekitar 0,2400 hasil perkalian langsung antara porsi pengguna dan peluang beli kue",
+        "Sekitar 0,5238 diperoleh dengan membagi peluang bersyarat dengan total pembayaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA sebuah pabrik farmasi di Tangerang menguji efektivitas obat baru. Uji klinis menunjukkan probabilitas pasien sembuh total adalah 0,80. Jika diberikan kepada 5 pasien secara independen, berapa probabilitas sedikitnya 4 pasien akan sembuh total?",
+      "options": [
+        "Sekitar 0,7373 dengan menjumlahkan probabilitas tepat 4 dan tepat 5 pasien",
+        "Sekitar 0,4096 karena dihitung hanya untuk kasus tepat 4 pasien sembuh",
+        "Sekitar 0,8192 berdasarkan perkalian langsung peluang sukses empat orang",
+        "Sekitar 0,9222 diperoleh dari komplemen probabilitas kurang dari dua pasien"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan ritel online di Surabaya sedang mengevaluasi performa pengiriman barang. Dari data historis, probabilitas pesanan dikirim tepat waktu adalah 0,85. Jika pada hari Senin terdapat 4 pesanan terpisah yang diproses, berapa probabilitas tepat tiga pesanan terkirim tepat waktu?",
+      "options": [
+        "Sekitar 0,3685 karena mengikuti distribusi binomial dengan n=4 dan p=0,85",
+        "Sekitar 0,2156 karena dihitung menggunakan kumulatif distribusi poisson",
+        "Sekitar 0,4210 karena peluang dasar dikalikan dengan jumlah total pesanan",
+        "Sekitar 0,1500 karena merupakan sisa peluang dari satu pesanan terlambat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim manajemen risiko bank swasta di Jakarta mengkaji persetujuan KPR. Berdasarkan data masa lalu, 70% pengajuan disetujui tanpa syarat, 20% disetujui dengan syarat tambahan, dan 10% ditolak. Jika seorang analis mengambil 2 berkas secara acak tanpa pengembalian, berapakah probabilitas kedua berkas tersebut disetujui tanpa syarat?",
+      "options": [
+        "Sebesar 0,4900 sebagai hasil kuadrat langsung dari peluang tunggal",
+        "Sebesar 0,4737 dengan memperhitungkan pengurangan jumlah sampel total",
+        "Sebesar 0,4200 karena menggunakan aturan perkalian kejadian bersyarat",
+        "Sebesar 0,4000 hasil dari estimasi konservatif tim kepatuhan internal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Semarang mendapati bahwa waktu tunggu truk pengangkut di pelabuhan terdistribusi secara normal dengan rata-rata 45 menit dan simpangan baku 10 menit. Manajemen ingin mengetahui probabilitas sebuah truk harus menunggu lebih dari 60 menit.",
+      "options": [
+        "Sekitar 0,0668 dengan mencari area di bawah kurva normal standar z > 1,5",
+        "Sekitar 0,1587 karena berada pada posisi satu simpangan baku di atas rata-rata",
+        "Sekitar 0,9332 berdasarkan akumulasi persentase kumulatif dari nilai z positif",
+        "Sekitar 0,3085 dihitung dari selisih batas atas terhadap nilai tengah distribusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik komponen otomotif di Cikarang menggunakan dua mesin berbeda untuk memproduksi baut. Mesin X menghasilkan 60% dari total produksi dengan tingkat cacat 2%, sedangkan Mesin Y menghasilkan 40% dengan tingkat cacat 5%. Jika sebuah baut cacat ditemukan di gudang, berapa probabilitas baut tersebut berasal dari Mesin X?",
+      "options": [
+        "Sekitar 0,3750 dihitung menggunakan Teorema Bayes pada probabilitas bersyarat",
+        "Sekitar 0,6000 karena kapasitas produksi Mesin X jauh lebih besar daripada Y",
+        "Sekitar 0,2400 berdasarkan rasio langsung antara cacat mesin dan total produk",
+        "Sekitar 0,4555 diperoleh dari pembagian tingkat cacat mesin terhadap total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform edutech di Bandung mencatat rata-rata jumlah pendaftar kursus baru adalah 3 orang per jam pada jam kerja. Jika sistem server mereka dirancang untuk mengantisipasi lonjakan, berapakah probabilitas tepat ada 5 pendaftar dalam satu jam tertentu?",
+      "options": [
+        "Sekitar 0,1008 menggunakan pendekatan fungsi probabilitas distribusi Poisson",
+        "Sekitar 0,2240 dihitung berdasarkan asumsi independensi distribusi binomial",
+        "Sekitar 0,1804 diperoleh dari rasio faktorial terhadap rata-rata historis",
+        "Sekitar 0,0504 karena peluang melambat secara eksponensial setiap jam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pemeliharaan jalan tol di Bali mencatat bahwa jumlah kecelakaan ringan dalam satu bulan di suatu titik rawan mengikuti distribusi Poisson dengan rata-rata 1,5 kejadian per bulan. Berapa probabilitas terjadi paling banyak 1 kecelakaan dalam bulan tersebut?",
+      "options": [
+        "Sekitar 0,5578 dengan menjumlahkan probabilitas nol kejadian dan satu kejadian",
+        "Sekitar 0,2231 karena hanya menghitung peluang terjadinya tepat satu kecelakaan",
+        "Sekitar 0,7823 diperoleh dari akumulasi fungsi kumulatif hingga nilai dua",
+        "Sekitar 0,3347 dihitung berdasarkan sisa peluang dari kejadian lebih dari dua"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal e-commerce di Surabaya menganalisis metode pembayaran pembeli. Sebanyak 40% menggunakan e-wallet, 35% transfer bank, dan sisanya kartu kredit. Jika dipilih 3 pembeli secara acak berturut-turut tanpa pengembalian, berapa probabilitas ketiganya menggunakan metode transfer bank?",
+      "options": [
+        "0,0385",
+        "0,0428",
+        "0,0512",
+        "0,0297"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim analis data sebuah bank di Semarang mengkaji pengajuan kartu kredit. Sebanyak 60% pengaju adalah laki-laki dan 40% perempuan. Dari data masa lalu, 30% pengaju laki-laki disetujui, sedangkan dari pengaju perempuan hanya 20% yang disetujui. Jika seorang nasabah terpilih secara acak dan ternyata pengajuannya disetujui, berapa probabilitas nasabah tersebut adalah perempuan?",
+      "options": [
+        "0,3077",
+        "0,2857",
+        "0,3529",
+        "0,2414"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan pengembang perangkat lunak di Malang mencatat rata-rata laporan bug yang masuk dari sistem adalah 2 laporan per jam. Berapa probabilitas bahwa dalam satu jam tertentu, tim teknik menerima tepat 3 laporan bug?",
+      "options": [
+        "0,1804",
+        "0,2231",
+        "0,1428",
+        "0,2650"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Departemen HR sebuah perusahaan konsultan di Jakarta menguji pelamar kerja dengan tes psikologi yang memiliki skor berdistribusi normal dengan rata-rata 75 dan simpangan baku 10. Jika manajemen hanya ingin meloloskan pelamar yang berada pada 15% skor teratas, berapa batas minimum nilai tes yang harus dicapai oleh seorang pelamar?",
+      "options": [
+        "83,45",
+        "85,37",
+        "82,10",
+        "86,05"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pusat layanan pelanggan asuransi di Bandung menerima klaim harian. Berdasarkan catatan operasional, rata-rata waktu penanganan satu klaim oleh agen adalah 12 menit dengan asumsi distribusi eksponensial. Berapa probabilitas seorang agen menyelesaikan penanganan klaim dalam waktu kurang dari 10 menit?",
+      "options": [
+        "0,5654",
+        "0,6123",
+        "0,4346",
+        "0,3877"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah restoran waralaba di Medan memiliki dua cabang utama, Cabang A dan Cabang B. Cabang A menangani 60% dari seluruh pesanan harian dengan tingkat kepuasan pelanggan 90%. Cabang B menangani sisanya dengan tingkat kepuasan 80%. Jika seorang pelanggan mengeluh tidak puas, berapa probabilitas pesanan tersebut berasal dari Cabang B?",
+      "options": [
+        "0,5263",
+        "0,4737",
+        "0,4000",
+        "0,6000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim logistik sebuah pabrik elektronik di Batam memantau kerusakan komponen yang dikirim oleh dua supplier. Supplier X menyuplai 70% komponen dengan tingkat cacat 2%, sedangkan Supplier Y menyuplai 30% komponen dengan tingkat cacat 5%. Jika sebuah komponen dipilih secara acak dari gudang dan ditemukan cacat, berapa probabilitas komponen tersebut berasal dari Supplier X?",
+      "options": [
+        "0,4828",
+        "0,5172",
+        "0,7000",
+        "0,5833"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah tim riset pasar di Denpasar melakukan survei preferensi liburan. Dari 100 responden, 45 orang menyukai wisata pantai, 35 orang menyukai wisata pegunungan, dan 15 orang menyukai keduanya. Jika seorang responden dipilih secara acak, berapa probabilitas ia menyukai wisata pantai atau wisata pegunungan?",
+      "options": [
+        "0,8000",
+        "0,6500",
+        "0,7500",
+        "0,9000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional pabrik tekstil di Solo mencatat bahwa tingkat cacat benang pada mesin rajut otomatis adalah 4% per gulungan. Jika seorang staf mengambil sampel acak sebanyak 50 gulungan untuk diperiksa, berapa probabilitas ditemukan paling banyak 2 gulungan yang cacat?",
+      "options": [
+        "0,4768",
+        "0,6767",
+        "0,5421",
+        "0,3145"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

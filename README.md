@@ -109,7 +109,7 @@ flowchart TD
     classDef modal fill:#C8F26B,stroke:#090A0F,stroke-width:2px,color:#090A0F,font-weight:bold
     classDef action fill:#00D2D3,stroke:#090A0F,stroke-width:2px,color:#090A0F,font-weight:bold
 
-    A["📊 Dasbor Pencari Kerja\n(Metrik & Top 3 Match)"]:::page --> B["📄 Unggah CV PDF / Edit"]:::page
+    A["📊 Dasbor Pencari Kerja\n(Metrik & Top 3 Match)"]:::page --> B["📄 Profil Saya"]:::page
     B -->|AI Gemini 3.1 Parser| C["🎯 Hasil Pencocokan AI\n(Semantic & Skill Match)"]:::ai
     
     C -->|Buka Detail| D["🔍 Modal Detail Lowongan\nExplainable AI 5-Dimensi"]:::modal

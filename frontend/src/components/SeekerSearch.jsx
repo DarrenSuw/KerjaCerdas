@@ -117,19 +117,6 @@ export default function SeekerSearch() {
         ? onsiteOffset < onsiteTotal || remoteOffset < remoteTotal
         : offset < total
 
-    useEffect(() => {
-        handleSearch()
-        fetchJobRegions()
-            .then(res => setRegions(res?.items || []))
-            .catch(err => { console.error('Failed to load regions', err); setRegions([]) })
-        fetchJobIndustries()
-            .then(res => setIndustries(res?.items || []))
-            .catch(err => { console.error('Failed to load industries', err); setIndustries([]) })
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
-    useEffect(() => {
-        if (isRemoteMode && selectedRegion) setSelectedRegion('')
-    }, [isRemoteMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSearch = async (e) => {
         if (e) e.preventDefault()
@@ -172,6 +159,21 @@ export default function SeekerSearch() {
             setLoading(false)
         }
     }
+
+    useEffect(() => {
+        handleSearch()
+        fetchJobRegions()
+            .then(res => setRegions(res?.items || []))
+            .catch(err => { console.error('Failed to load regions', err); setRegions([]) })
+        fetchJobIndustries()
+            .then(res => setIndustries(res?.items || []))
+            .catch(err => { console.error('Failed to load industries', err); setIndustries([]) })
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    useEffect(() => {
+        if (isRemoteMode && selectedRegion) setSelectedRegion('')
+    }, [isRemoteMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const loadMore = async () => {
         if (loadingMore || !hasMore) return

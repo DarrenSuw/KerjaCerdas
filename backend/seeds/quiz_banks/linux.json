@@ -1,0 +1,306 @@
+{
+  "skill": "Linux",
+  "skill_key": "linux",
+  "questions": [
+    {
+      "question": "Seorang system administrator mendapati server produksi berbasis Ubuntu mengalami lonjakan penggunaan disk secara drastis pada partisi /var. Perintah apa yang paling tepat untuk mengidentifikasi direktori mana saja di dalam /var yang memakan kapasitas terbesar?",
+      "options": [
+        "df -h /var --sort=size",
+        "du -h --max-depth=1 /var | sort -hr",
+        "ls -lSh /var/log",
+        "find /var -type f -size +100M"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi web berbasis Node.js di server CentOS milik perusahaan tiba-tiba berhenti merespons (down). Log sistem menunjukkan kernel melakukan 'Out-Of-Memory (OOM) killer' pada proses tersebut. Langkah preventif awal apa yang paling tepat dilakukan tanpa menambah kapasitas RAM fisik?",
+      "options": [
+        "Membuat dan mengaktifkan file swap tambahan di sistem",
+        "Mengubah parameter swappiness kernel menjadi nilai 0",
+        "Menonaktifkan layanan firewall agar memori tidak terbebani",
+        "Melakukan kompilasi ulang kernel Linux dengan dukungan PAE"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk mengecek baris terakhir dari file log akses Nginx (/var/log/nginx/access.log) secara real-time untuk memantau trafik serangan DDoS yang sedang berlangsung. Perintah mana yang paling efisien digunakan?",
+      "options": [
+        "cat /var/log/nginx/access.log | grep -v '200'",
+        "tail -f /var/log/nginx/access.log",
+        "less +G /var/log/nginx/access.log",
+        "head -n -1 /var/log/nginx/access.log"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Proses backup harian gagal karena akun service account tidak memiliki izin (permission denied) untuk menulis ke direktori /backup/db. File kepemilikan direktori tersebut saat ini adalah root:root. Perintah apa yang harus dijalankan agar user 'backupusr' dapat menulis ke direktori tersebut dengan aman?",
+      "options": [
+        "chmod 777 /backup/db",
+        "chown -R backupusr:backupusr /backup/db",
+        "chmod +s /backup/db",
+        "chgrp root /backup/db"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah server database perusahaan mengalami kendala koneksi jaringan yang sering putus-putus. Anda perlu memeriksa status interface jaringan eth0, termasuk statistik error paket data dan jumlah bytes yang ditransmisikan. Perintah apa yang paling tepat?",
+      "options": [
+        "ip route show dev eth0",
+        "netstat -an | grep eth0",
+        "ifconfig eth0 up",
+        "ip -s link show eth0"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda perlu menjadwalkan sebuah script backup database agar berjalan otomatis setiap hari Senin pukul 02:30 dini hari menggunakan cron. Format penulisan crontab manakah yang benar?",
+      "options": [
+        "30 2 * * 1 /path/to/backup.sh",
+        "30 2 1 * * /path/to/backup.sh",
+        "2 30 * * 1 /path/to/backup.sh",
+        "1 30 2 * * /path/to/backup.sh"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan troubleshooting masalah port konflik pada server web Apache, Anda ingin melihat proses apa yang sedang mendengarkan (listening) pada port 80 secara detail beserta PID-nya. Perintah manakah yang paling akurat?",
+      "options": [
+        "ps aux | grep 80",
+        "ss -tulpn | grep ':80'",
+        "ping -c 1 localhost:80",
+        "traceroute -p 80 localhost"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Developer melaporkan bahwa aplikasi PHP-FPM di server staging mengalami error 502 Bad Gateway. Anda mendapati service php8.1-fpm mati. Perintah systemd apa yang tepat untuk menjalankan kembali service tersebut sekaligus memastikan service otomatis aktif saat server reboot?",
+      "options": [
+        "systemctl restart php8.1-fpm",
+        "systemctl start php8.1-fpm",
+        "systemctl enable --now php8.1-fpm",
+        "systemctl reload php8.1-fpm"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "File konfigurasi aplikasi teks (.env) di server produksi tidak sengaja terhapus, namun aplikasi yang sedang berjalan masih membacanya di memori. Bagaimana cara Anda memulihkan isi teks file tersebut dengan memanfaatkan proses yang sedang berjalan di Linux?",
+      "options": [
+        "Menyalin isi file dari direktori /proc/[PID]/fd/",
+        "Mengekstrak ulang dari cache RAM menggunakan perintah dd",
+        "Melakukan dump memori kernel menggunakan utility coreutils",
+        "Mencari file temporary di direktori /var/tmp secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati performa I/O disk server database sangat lambat. Setelah diperiksa dengan top, load average tinggi karena proses 'iowait' yang besar. Tool interaktif berbasis terminal apa yang paling tepat digunakan untuk melihat proses spesifik mana yang sedang membaca atau menulis ke disk secara real-time?",
+      "options": [
+        "htop",
+        "vmstat",
+        "iotop",
+        "sar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang DevOps engineer perlu mencari tahu direktori mana saja di dalam /var/www yang memakan kapasitas penyimpanan paling besar untuk membersihkan file sampah. Perintah mana yang paling tepat digunakan?",
+      "options": [
+        "du -h --max-depth=1 /var/www | sort -hr",
+        "df -h --total /var/www | grep total",
+        "ls -lSh /var/www/* | head -n 10",
+        "find /var/www -type f -size +100M"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Java di server produksi mengalami lonjakan penggunaan memori hingga menyebabkan Out-Of-Memory (OOM) Killer aktif. Anda ingin melihat proses apa yang baru saja dihentikan oleh OOM Killer beserta detail waktunya. Di file log mana informasi ini tercatat?",
+      "options": [
+        "/var/log/syslog atau /var/log/messages",
+        "/var/log/auth.log atau /var/log/secure",
+        "/var/log/kern.log atau dmesg",
+        "/var/log/dpkg.log atau /var/log/apt/history.log"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin memindahkan seluruh isi direktori /var/www/html lama ke server baru melalui jaringan yang tidak aman secara efisien, dengan memastikan kepemilikan file dan izin akses aslinya tetap terjaga serta menampilkan progres transfer. Utilitas mana yang paling tepat?",
+      "options": [
+        "scp -r -v /var/www/html user@remote:/var/www/",
+        "rsync -avz --progress /var/www/html/ user@remote:/var/www/html/",
+        "tar -czf - /var/www/html | ssh user@remote 'tar -xzf -'",
+        "sftp -r /var/www/html user@remote:/var/www/"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah server web Nginx mengalami lonjakan traffic dari IP mencurigakan yang melakukan brute-force ke halaman login. Anda ingin segera memblokir alamat IP tersebut di level firewall iptables server CentOS secara permanen. Perintah apa yang harus dijalankan?",
+      "options": [
+        "iptables -A INPUT -s 192.168.1.50 -j DROP && service iptables save",
+        "ufw deny from 192.168.1.50 to any port 80,443",
+        "firewall-cmd --zone=public --add-rich-rule='rule family=\"ipv4\" source address=\"192.168.1.50\" reject'",
+        "ip route add blackhole 192.168.1.50"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengaudit izin akses sebuah file skrip rahasia deploy.sh agar hanya bisa dieksekusi dan dibaca oleh pemiliknya (user root), serta sama sekali tidak bisa diakses oleh grup atau pengguna lain. Notasichmod berapa yang harus diterapkan?",
+      "options": [
+        "chmod 755 deploy.sh",
+        "chmod 700 deploy.sh",
+        "chmod 600 deploy.sh",
+        "chmod 400 deploy.sh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berbasis Python di server Ubuntu Anda membutuhkan library eksternal baru, namun Anda dilarang menginstalnya secara global menggunakan pip system untuk menghindari konflik dependensi. Apa langkah standar yang harus dilakukan?",
+      "options": [
+        "Membuat dan mengaktifkan virtual environment menggunakan venv",
+        "Menggunakan opsi sudo pip install --user package_name",
+        "Mengubah konfigurasi environment variables di file /etc/environment",
+        "Mengunduh source code manual dan meletakkannya di /usr/local/lib"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Developer meminta Anda untuk mencari semua file log dengan ekstensi .log di dalam direktori /var/log yang ukuran filenya lebih besar dari 50 Megabita. Perintah find manakah yang paling akurat untuk kebutuhan ini?",
+      "options": [
+        "find /var/log -name \"*.log\" -size +50M",
+        "find /var/log -type f -name \"*.log\" -size +50M",
+        "find /var/log -maxdepth 2 -iname \"*.log\" -size +50MB",
+        "find /var/log -type f -name \"*.log\" -file-size 50m"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proses daemon custom berjalan di background dan Anda perlu memantau penggunaan CPU serta memorinya secara real-time setiap 2 detik, namun Anda hanya ingin melihat proses milik user 'www-data'. Fitur filter interaktif apa yang bisa digunakan pada perintah top?",
+      "options": [
+        "Tekan tombol 'u' lalu ketik 'www-data'",
+        "Tekan tombol 'f' lalu pilih kolom user www-data",
+        "Tekan tombol 'c' untuk menampilkan command line lengkap",
+        "Tekan tombol 'M' untuk mengurutkan berdasarkan memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengedit baris konfigurasi tertentu di dalam file teks yang sangat panjang menggunakan script bash secara non-interaktif, tanpa membuka text editor seperti nano atau vim. Utilitas baris perintah apa yang paling tepat?",
+      "options": [
+        "awk '{print $0}' config.txt > output.txt",
+        "sed -i 's/old_val/new_val/g' config.txt",
+        "grep -v 'old_val' config.txt > config.txt",
+        "cut -d'=' -f2 config.txt"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem operasi Ubuntu server Anda gagal melakukan booting karena kesalahan penulisan parameter pada file /etc/fstab saat melakukan mounting partisi disk tambahan. Apa cara paling aman untuk memperbaikinya?",
+      "options": [
+        "Melakukan reinstall sistem operasi karena file fstab tidak bisa dipulihkan",
+        "Masuk ke Recovery Mode atau Emergency Mode melalui GRUB untuk mengedit fstab",
+        "Boot menggunakan Live USB lalu langsung memformat ulang partisi yang error",
+        "Menghapus file /etc/fstab secara paksa menggunakan perintah rm -rf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang system administrator menerima laporan bahwa layanan web berbasis Docker di server produksi tidak dapat diakses melalui port 80. Saat diperiksa, port tersebut sudah terikat oleh proses lain. Perintah apa yang paling tepat untuk mengidentifikasi proses apa yang sedang menggunakan port 80 di sistem Linux tersebut?",
+      "options": [
+        "netstat -tulnp | grep :80",
+        "ps aux | grep httpd",
+        "systemctl status nginx",
+        "lsof -i :80"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang melakukan migrasi data website e-commerce ke server baru. Agar struktur direktori, kepemilikan file (owner), dan izin akses (permission) tetap sama persis selama proses salin melalui jaringan SSH, parameter apa yang wajib disertakan pada perintah rsync?",
+      "options": [
+        "rsync -avz /var/www/html/ user@dest:/var/www/html/",
+        "rsync -rvp /var/www/html/ user@dest:/var/www/html/",
+        "rsync -luv /var/www/html/ user@dest:/var/www/html/",
+        "rsync -cvz /var/www/html/ user@dest:/var/www/html/"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah server basis data mengalami lonjakan beban yang tidak biasa di malam hari. Anda diminta untuk menganalisis query SQL apa saja yang sedang berjalan aktif saat itu langsung dari terminal Linux tanpa masuk ke konsol database. Utilitas bawaan manakah yang paling tepat digunakan untuk melihat aktivitas proses secara real-time?",
+      "options": [
+        "vmstat 2 10",
+        "top -c",
+        "iostat -xz 1",
+        "sar -u 1 5"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim security perusahaan meminta Anda untuk membatasi hak akses file konfigurasi database agar file tersebut hanya bisa dibaca dan ditulis oleh pemiliknya saja, serta tidak boleh bisa diakses sama sekali oleh grup atau pengguna lain. Notasi octal chmod berapa yang harus Anda terapkan?",
+      "options": [
+        "chmod 644 config.php",
+        "chmod 700 config.php",
+        "chmod 600 config.php",
+        "chmod 750 config.php"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi microservice berbasis Go di server produksi sering mengalami crash karena kehabisan memori. Anda ingin menyelidiki apakah kernel Linux telah menghentikan proses tersebut menggunakan mekanisme OOM Killer. Perintah apa yang paling akurat untuk memverifikasi hal ini pada log sistem?",
+      "options": [
+        "journalctl -u docker.service",
+        "grep -i oom /var/log/syslog",
+        "dmesg -T | grep -i oom",
+        "cat /var/log/messages | tail -n 50"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu melakukan pencarian file konfigurasi secara cepat di seluruh direktori sistem yang memiliki ukuran lebih besar dari 50 Megabita untuk tujuan pembersihan disk. Perintah find manakah yang paling efisien untuk dijalankan?",
+      "options": [
+        "find / -size +50M -print",
+        "find / -type f -size +50M",
+        "find / -name \"*config*\" -size +50M",
+        "find / -exec ls -lh {} + | grep 50M"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Server perusahaan mengalami masalah jaringan di mana nama domain eksternal tidak dapat diselesaikan (DNS resolution failure). File konfigurasi manakah di sistem Linux yang harus Anda periksa pertama kali untuk memastikan alamat IP server DNS yang digunakan sudah benar?",
+      "options": [
+        "/etc/hosts",
+        "/etc/resolv.conf",
+        "/etc/network/interfaces",
+        "/etc/nsswitch.conf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah skrip otomatisasi backup di server staging gagal dijalankan karena jalur direktori tujuan memiliki spasi di tengah namanya (contoh: /var/www/backup data). Bagaimana cara terbaik menuliskan variabel path tersebut di dalam skrip bash agar dikenali sebagai satu argumen utuh?",
+      "options": [
+        "tar -czf backup.tar.gz \\/var\\/www\\/backup\\ data",
+        "tar -czf backup.tar.gz \"/var/www/backup data\"",
+        "tar -czf backup.tar.gz /var/www/backup\\ data",
+        "tar -czf backup.tar.gz ' /var/www/backup data '"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menambahkan baris konfigurasi baru secara otomatis ke bagian akhir dari file teks nginx.conf tanpa harus membuka text editor interaktif seperti nano atau vim. Perintah manakah yang paling tepat digunakan?",
+      "options": [
+        "echo \"worker_processes auto;\" > /etc/nginx/nginx.conf",
+        "sed -i '$a worker_processes auto;' /etc/nginx/nginx.conf",
+        "cat /etc/nginx/nginx.conf >> worker_processes auto;",
+        "awk '{print}' /etc/nginx/nginx.conf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem operasi Ubuntu server mendadak tidak dapat melakukan booting setelah Anda mengubah hak kepemilikan direktori utama secara rekursif. Anda masuk melalui mode pemulihan (recovery mode). Perintah apa yang tepat untuk mengembalikan kepemilikan direktori /usr menjadi milik root secara utuh?",
+      "options": [
+        "chown -R root:root /usr",
+        "chmod -R 755 /usr",
+        "chgrp -R root /usr",
+        "usermod -aG root /usr"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

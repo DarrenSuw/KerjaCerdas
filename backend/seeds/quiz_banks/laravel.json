@@ -1,0 +1,306 @@
+{
+  "skill": "Laravel",
+  "skill_key": "laravel",
+  "questions": [
+    {
+      "question": "Tim Anda sedang mengembangkan sistem e-commerce di Laravel dan mendapati performa halaman produk sangat lambat saat diakses banyak pengguna karena kueri database yang berulang ke tabel kategori. Solusi paling tepat untuk mengatasi masalah N+1 query ini pada Eloquent adalah...",
+      "options": [
+        "Menambahkan indeks pada kolom foreign key di migration database",
+        "Menggunakan method eager loading dengan fungsi with() pada kueri",
+        "Membuat database view khusus untuk menggabungkan tabel produk",
+        "Mengubah konfigurasi driver database dari MySQL ke PostgreSQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat fitur upload dokumen KTP pada aplikasi HRIS. Dokumen tersebut harus aman dan tidak boleh diakses publik melalui URL langsung, melainkan hanya bisa diunduh oleh admin yang berwenang melalui controller. Konfigurasi storage Laravel yang paling tepat adalah...",
+      "options": [
+        "Menyimpan file pada disk public dan membuat symlink ke storage",
+        "Menyimpan file pada disk local dan mengaksesnya via folder app",
+        "Menyimpan file pada disk private dan menggunakan Storage::download()",
+        "Menyimpan file pada folder public root menggunakan fungsi move()"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi fintech berbasis Laravel milik perusahaan Anda mengalami lonjakan trafik transaksi. Untuk mencegah pengguna melakukan klik ganda tombol 'Bayar' yang menyebabkan transaksi ganda terproses, mekanisme bawaan Laravel apa yang paling efektif digunakan pada route/controller?",
+      "options": [
+        "Menerapkan middleware throttle pada route endpoint pembayaran tersebut",
+        "Membuat validasi unique pada kolom database untuk setiap request masuk",
+        "Menggunakan helper cache()->lock() untuk mengunci proses per pengguna",
+        "Memanfaatkan database transaction commit dan rollback secara manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek sistem manajemen inventaris, Anda perlu memastikan bahwa perubahan stok barang dan pencatatan riwayat log mutasi harus berhasil bersamaan atau gagal total jika terjadi error di tengah jalan, guna menjaga integritas data. Pendekatan terbaik dalam kode Laravel adalah...",
+      "options": [
+        "Memanggil method save() secara berurutan pada kedua model Eloquent",
+        "Membungkus proses logika bisnis di dalam blok DB::transaction()",
+        "Membuat queue job terpisah untuk mencatat log mutasi barang",
+        "Menggunakan try-catch block dan menghapus data manual jika gagal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi laporan keuangan perusahaan Anda harus mengirimkan email rekapitulasi harian kepada puluhan manajer setiap pukul 05.00 pagi. Agar proses pengiriman email tidak membuat proses request HTTP menjadi lama atau timeout, arsitektur Laravel yang harus diimplementasikan adalah...",
+      "options": [
+        "Menjalankan proses pengiriman email langsung di dalam controller utama",
+        "Membuat perintah Artisan custom yang dijadwalkan via cron job server",
+        "Menggunakan fitur Job Queues dengan dispatch ke background worker",
+        "Memanfaatkan event listener sinkronus untuk memicu pengiriman email"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati sistem API Laravel perusahaan sering mengalami serangan brute force pada endpoint halaman login. Cara paling cepat dan elegan untuk membatasi jumlah percobaan login yang gagal per alamat IP dalam rentang waktu tertentu adalah...",
+      "options": [
+        "Menulis logika pengecekan session manual di dalam AuthController",
+        "Menggunakan middleware pembatas bawaan seperti throttle:5,1 pada route",
+        "Membuat tabel database baru untuk mencatat log percobaan login gagal",
+        "Mengubah konfigurasi session driver dari file menjadi database storage"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi Laravel ke server production, Anda ingin memperbarui struktur tabel database lewat migrasi tanpa menghapus data yang sudah ada dan tanpa memasukkan mode maintenance secara manual. Perintah Artisan yang paling aman dijalankan adalah...",
+      "options": [
+        "php artisan migrate:fresh --seed",
+        "php artisan migrate:refresh",
+        "php artisan migrate --force",
+        "php artisan migrate:reset"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim frontend meminta data API dari Laravel yang menyertakan atribut tambahan berupa nama lengkap hasil penggabungan nama depan dan belakang, namun atribut tersebut tidak tersimpan di kolom database. Fitur Eloquent apa yang paling tepat untuk mendefinisikan hal ini?",
+      "options": [
+        "Membuat database accessor dengan format attribute camelCase",
+        "Menambahkan kolom baru melalui migration dan mengisi mutator",
+        "Melakukan transformasi data manual menggunakan collection map",
+        "Menyimpan nilai gabungan tersebut ke dalam tabel relasi terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun dashboard admin di mana pengguna dengan role 'Kasir' tidak boleh mengakses menu 'Laporan Keuangan', meskipun mereka mengetahui URL endpoint-nya. Pendekatan otorisasi terbaik yang disediakan Laravel untuk kasus ini adalah...",
+      "options": [
+        "Melakukan pengecekan kondisi if-else berdasarkan role di awal method controller",
+        "Menggunakan fitur Gate atau Policy yang dikombinasikan dengan middleware",
+        "Menyimpan informasi hak akses menu ke dalam cookie browser pengguna",
+        "Membuat tabel relasi baru antara user dan menu untuk validasi di view"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Laravel yang Anda kelola mengalami penurunan performa kueri pencarian data pelanggan yang kompleks. Setelah dianalisis dengan Laravel Debugbar, terdapat banyak kueri lambat. Cara paling tepat untuk mempercepat pencarian tanpa mengubah logika controller adalah...",
+      "options": [
+        "Menghapus relasi Eloquent yang tidak terpakai pada model pelanggan",
+        "Menambahkan database index pada kolom yang sering dijadikan parameter pencarian",
+        "Meningkatkan kapasitas memori RAM pada server VPS hosting aplikasi",
+        "Mengubah seluruh kueri Eloquent menjadi raw SQL query menggunakan DB facade"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi e-learning perusahaan Anda memiliki fitur unduh sertifikat PDF. Proses pembuatan PDF ini memakan waktu sekitar 10 detik, yang membuat pengguna harus menunggu lama di browser. Pendekatan apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menggunakan Laravel Queue untuk memproses pembuatan sertifikat di background job",
+        "Menaikkan batas timeout pada file konfigurasi web server Nginx secara signifikan",
+        "Melakukan kompresi otomatis pada semua gambar aset yang ada di dalam view PDF",
+        "Memindahkan logika pembuatan PDF langsung ke dalam kode JavaScript frontend"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem Point of Sale (POS), seorang kasir sering melakukan klik ganda pada tombol 'Bayar' saat koneksi internet lambat, yang mengakibatkan data transaksi duplikat masuk ke database. Solusi Laravel manakah yang paling efektif mencegah hal ini?",
+      "options": [
+        "Menggunakan middleware throttle untuk membatasi jumlah klik pada route pembayaran",
+        "Memanfaatkan method lockForUpdate() pada query builder saat melakukan penyimpanan",
+        "Menambahkan validasi unique pada kolom nomor referensi transaksi di tabel database",
+        "Menggunakan fitur cache driver untuk menyimpan status klik tombol dalam memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa password pengguna tersimpan dalam bentuk teks biasa (plain text) di database pada sistem lama yang sedang dimigrasikan ke Laravel. Bagaimana Anda memastikan keamanan password pada sistem baru ini?",
+      "options": [
+        "Menggunakan fungsi enkripsi bawaan Laravel untuk mengamankan data string password",
+        "Memanfaatkan facade Hash dengan algoritma bcrypt atau argon2 untuk hashing password",
+        "Menerapkan fungsi md5 dengan tambahan salt acak sebelum disimpan ke tabel pengguna",
+        "Mengubah tipe data kolom password menjadi binary agar tidak bisa dibaca langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi multi-tenant di mana setiap perusahaan klien memiliki database terpisah namun menggunakan codebase Laravel yang sama. Fitur apa yang paling tepat digunakan untuk mengatur koneksi dinamis ini?",
+      "options": [
+        "Menggunakan fitur database seeding untuk menduplikasi tabel secara otomatis",
+        "Mengatur konfigurasi database secara manual pada setiap file controller aplikasi",
+        "Memanfaatkan fitur dynamic connection switching pada Eloquent ORM Laravel",
+        "Membuat middleware khusus untuk mengubah file .env secara real-time"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur impor data Excel berisi 50.000 baris data produk sering mengalami kegagalan akibat kehabisan memori (memory limit exceeded) pada server. Pendekatan Laravel Excel manakah yang paling tepat untuk kasus ini?",
+      "options": [
+        "Menggunakan metode chunking atau pembacaan baris per baris secara bertahap",
+        "Menaikkan batasan memory_limit pada file php.ini server production secara drastis",
+        "Memecah file Excel pengguna menjadi puluhan file kecil sebelum diunggah ke sistem",
+        "Menonaktifkan semua event listener Eloquent selama proses impor data berlangsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi manajemen proyek Anda membutuhkan fitur notifikasi real-time ke browser pengguna ketika ada tugas baru yang ditugaskan kepada mereka tanpa melakukan refresh halaman. Komponen Laravel apa yang harus diintegrasikan?",
+      "options": [
+        "Menggunakan fitur Laravel Task Scheduler untuk mengecek tugas baru secara periodik",
+        "Memanfaatkan Laravel Broadcast dengan Pusher atau Laravel Reverb untuk WebSocket",
+        "Mengaktifkan fitur database notification dan melakukan AJAX polling setiap detik",
+        "Membuat perintah Artisan custom yang berjalan terus-menerus di latar belakang server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa query SQL yang dihasilkan oleh Eloquent pada halaman daftar produk sangat banyak (mencapai 100+ query untuk 20 produk) karena relasi kategori diakses di dalam loop Blade. Apa solusi paling optimal untuk masalah ini?",
+      "options": [
+        "Menambahkan indeks pada kolom foreign key kategori di dalam migrasi database",
+        "Menggunakan teknik eager loading dengan method dengan fungsi 'with' pada query",
+        "Memindahkan seluruh logika pengolahan data produk ke dalam stored procedure",
+        "Mengaktifkan query caching pada konfigurasi database utama aplikasi Laravel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada aplikasi e-wallet, data saldo pengguna harus sangat konsisten dan akurat. Jika terjadi kegagalan pada saat proses transfer dana antar akun, perubahan saldo di kedua akun harus dibatalkan sekaligus. Fitur Laravel apa yang harus digunakan?",
+      "options": [
+        "Memanfaatkan fitur database transaction menggunakan facade DB::transaction",
+        "Membuat log manual untuk mencatat setiap perubahan saldo yang terjadi di sistem",
+        "Menggunakan event dan listener terpisah untuk setiap tahap proses transfer dana",
+        "Menambahkan blok try-catch pada setiap query pembaruan saldo di controller"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu membuat RESTful API di Laravel yang hanya bisa diakses oleh aplikasi mobile resmi perusahaan. Mekanisme autentikasi apa yang paling tepat dan aman untuk skenario ini?",
+      "options": [
+        "Menggunakan Laravel Sanctum untuk autentikasi berbasis token API yang aman",
+        "Menyimpan token rahasia di dalam file konfigurasi dan mengeceknya via middleware",
+        "Memanfaatkan sesi bawaan Laravel yang biasa digunakan pada aplikasi berbasis web",
+        "Menggunakan autentikasi HTTP Basic standar pada setiap endpoint API yang dibuat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem pengaduan warga memiliki form publik yang rentan terhadap spam pengiriman data otomatis oleh bot. Bagaimana cara terbaik melindungi endpoint form tersebut di Laravel tanpa mengganggu pengalaman pengguna?",
+      "options": [
+        "Menambahkan validasi CAPTCHA dan memanfaatkan middleware rate limiting bawaan",
+        "Membuat tabel database khusus untuk mencatat alamat IP yang pernah mengirim data",
+        "Menggunakan enkripsi CSRF token yang diperbarui setiap kali halaman dimuat ulang",
+        "Menonaktifkan metode HTTP POST pada route jika berasal dari luar domain aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda memiliki tabel pesanan yang sangat besar dan proses rekapitulasi bulanan sering mengalami timeout. Anda diminta mengoptimalkan performa kueri agregasi ini tanpa membebani database utama saat jam kerja. Langkah apa yang paling tepat?",
+      "options": [
+        "Membuat tabel database terpisah untuk rekapitulasi dan mengisinya secara berkala menggunakan Laravel Schedule",
+        "Menambahkan indeks pada kolom tanggal pesanan di tabel utama agar proses pencarian data lebih cepat",
+        "Memindahkan seluruh logika perhitungan agregasi data bulanan langsung ke dalam komponen Blade",
+        "Menyalakan fitur query log Laravel untuk menganalisis bagian kueri mana yang paling lambat dieksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur impor data karyawan dari file CSV berukuran besar. Untuk menghindari masalah kehabisan memori PHP, teknik pemrosesan apa yang harus digunakan pada Eloquent atau Query Builder?",
+      "options": [
+        "Menggunakan method chunk() untuk memproses data secara bertahap dalam potongan baris tertentu",
+        "Menampung seluruh isi file CSV ke dalam satu variabel array multidimensi sebelum disimpan",
+        "Mematikan fungsi pengumpulan garbage collection PHP agar proses baca data berjalan lebih cepat",
+        "Menggunakan method get() biasa dengan tambahan fungsi limit dan offset pada setiap iterasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sistem manajemen cuti karyawan, seorang atasan sering mengeluhkan bahwa tautan persetujuan cuti di email tidak bisa diakses karena status login mereka terhapus. Bagaimana cara membuat tautan aman yang tetap bisa diakses tanpa harus login?",
+      "options": [
+        "Memanfaatkan fitur Signed Routes bawaan Laravel untuk menghasilkan URL unik dengan masa kedaluwarsa",
+        "Menyimpan kredensial username dan password pengguna secara langsung di dalam parameter URL email",
+        "Membuat middleware khusus yang otomatis mencatat token sesi pengguna ke dalam database lokal",
+        "Menggunakan enkripsi parameter GET standar tanpa menyertakan tanda tangan digital pada URL"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk menambahkan log aktivitas setiap kali data profil pengguna diperbarui oleh admin. Agar kode controller tetap bersih dan prinsip SOLID terjaga, di mana logika pencatatan log tersebut sebaiknya diletakkan?",
+      "options": [
+        "Membuat Model Observer pada model User untuk menangani event update secara otomatis",
+        "Menuliskan perintah simpan log secara langsung di dalam baris kode form request validation",
+        "Menambahkan fungsi log di dalam file konfigurasi utama agar terpanggil secara global",
+        "Membuat middleware khusus yang memeriksa perubahan data pada setiap permintaan HTTP"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem inventaris gudang Anda sering mengalami selisih data akibat proses update stok yang dilakukan bersamaan oleh beberapa petugas pada barang yang sama. Mekanisme pengamanan apa yang harus diterapkan pada kueri database?",
+      "options": [
+        "Menggunakan pessimistic locking dengan method lockForUpdate() di dalam blok database transaction",
+        "Menambahkan pengecekan kondisi waktu secara manual menggunakan fungsi Carbon sebelum disimpan",
+        "Membuat antrean job terpisah agar proses pembaruan data stok berjalan secara serial satu per satu",
+        "Menonaktifkan fitur penyimpanan cache aplikasi agar data stok selalu diambil langsung dari disk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi SaaS multi-perusahaan yang Anda kelola membutuhkan fitur kustomisasi tema warna unik untuk setiap klien. Di mana tempat terbaik untuk memuat konfigurasi dinamis ini agar tersedia di seluruh tampilan?",
+      "options": [
+        "Memuatnya melalui Service Provider kustom yang membagikan data variabel ke seluruh view aplikasi",
+        "Menyimpan nilai warna tersebut ke dalam file env server dan membacanya lewat fungsi config",
+        "Membuat middleware global yang selalu menulis ulang file CSS utama pada setiap permintaan HTTP",
+        "Menyisipkan kueri database langsung di dalam file tata letak utama setiap halaman Blade"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa endpoint API daftar transaksi sering mengembalikan data yang tidak konsisten karena masalah zona waktu server database dan aplikasi yang berbeda. Bagaimana cara mengatasinya secara elegan di Laravel?",
+      "options": [
+        "Mengatur zona waktu aplikasi secara konsisten di file konfigurasi app.php dan menggunakan mutator",
+        "Mengubah tipe data kolom tanggal di database menjadi string teks agar formatnya tidak berubah",
+        "Meminta tim frontend untuk melakukan konversi zona waktu secara manual pada perangkat pengguna",
+        "Menghapus seluruh pengaturan zona waktu di server dan menyerahkannya pada pengaturan browser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat API publik yang diakses oleh aplikasi pihak ketiga. Anda ingin membatasi jumlah permintaan (rate limiting) secara spesifik berdasarkan token API klien yang dikirimkan. Fitur Laravel apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat konfigurasi RateLimiter kustom di RouteServiceProvider berdasarkan token klien",
+        "Menggunakan middleware throttle bawaan dengan parameter alamat IP perangkat pengguna",
+        "Menyimpan jumlah akses harian klien secara manual ke dalam tabel cache database",
+        "Membuat tabel log terpisah dan mengecek jumlah akses menggunakan pengecekan middleware"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Anda memiliki fitur unggah avatar profil. Beberapa pengguna mengunggah gambar berukuran sangat besar sehingga memenuhi penyimpanan server. Bagaimana cara mengatasinya sebelum file disimpan?",
+      "options": [
+        "Memanfaatkan package manipulasi gambar untuk mengubah ukuran dan kompresi sebelum disimpan ke disk",
+        "Menolak semua file gambar yang memiliki ekstensi selain format PNG dengan ukuran kecil",
+        "Menggunakan fungsi PHP mentah untuk memindahkan file langsung ke folder public tanpa validasi",
+        "Menaikkan batas kapasitas unggah file maksimal di dalam file pengaturan konfigurasi web server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek sistem tiket dukungan pelanggan, status tiket dapat berubah dari 'Open' menjadi 'In Progress', 'Resolved', atau 'Closed'. Untuk mencegah perubahan status yang tidak valid, pendekatan desain apa yang paling tepat pada model Laravel?",
+      "options": [
+        "Menerapkan state pattern atau validasi transisi status di dalam method model sebelum data disimpan",
+        "Melakukan validasi status hanya pada bagian form input sisi tampilan frontend menggunakan JavaScript",
+        "Membuat tabel database baru untuk setiap kemungkinan transisi status yang bisa terjadi",
+        "Menyerahkan validasi aturan status sepenuhnya pada mekanisme foreign key constraint database"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

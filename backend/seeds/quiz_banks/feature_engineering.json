@@ -1,0 +1,306 @@
+{
+  "skill": "Feature Engineering",
+  "skill_key": "feature engineering",
+  "questions": [
+    {
+      "question": "Anda sedang membangun model untuk memprediksi risiko gagal pinjam di platform fintech P2P lending. Variabel 'pendapatan_bulanan' memiliki distribusi yang sangat condong ke kanan (right-skewed) dengan beberapa outlier ekstrem dari nasabah korporat. Langkah transformasi apa yang paling tepat sebelum memasukkannya ke model regresi logistik?",
+      "options": [
+        "Melakukan transformasi logaritmik untuk meredam rentang nilai ekstrem",
+        "Membuang seluruh baris data yang bernilai di atas persentil ke-95",
+        "Melakukan standardisasi Z-score agar rata-rata bernilai nol dan varians satu",
+        "Mengganti nilai ekstrem tersebut menggunakan rata-rata dari seluruh data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek data science untuk aplikasi e-commerce Indonesia, Anda memiliki kolom kategorikal 'provinsi_pengiriman' dengan 34 kategori unik. Sebagian besar provinsi memiliki jumlah transaksi yang sangat sedikit. Teknik encoding apa yang paling efektif untuk mencegah curse of dimensionality?",
+      "options": [
+        "Menggunakan one-hot encoding standar untuk seluruh 34 provinsi",
+        "Menerapkan target encoding dengan smoothing berbasis rata-rata global",
+        "Mengubah seluruh provinsi luar Jawa menjadi satu kategori umum 'Lainnya'",
+        "Melakukan label encoding berdasarkan urutan abjad nama provinsi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis data log transaksi sebuah dompet digital. Terdapat kolom timestamp 'waktu_transaksi'. Fitur turunan apa yang paling informatif untuk menangkap pola perilaku belanja bulanan pengguna gajian di Indonesia?",
+      "options": [
+        "Mengekstrak hari dalam seminggu untuk melihat pola akhir pekan",
+        "Membuat indikator biner apakah tanggal transaksi berada di rentang 25-5",
+        "Menghitung selisih detik antara transaksi saat ini dan transaksi sebelumnya",
+        "Mengambil nilai jam transaksi untuk mendeteksi jam istirahat kantor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Model churn prediction untuk layanan telekomunikasi seluler mengalami penurunan performa karena data 'durasi_panggilan_rata_rata' memiliki banyak nilai kosong (missing values) hingga 40%. Pendekatan imputation mana yang paling aman untuk menjaga integritas prediktif?",
+      "options": [
+        "Mengisi nilai kosong dengan angka nol karena diasumsikan tidak menelepon",
+        "Menggunakan teknik KNN imputer berdasarkan kemiripan profil pelanggan lain",
+        "Menghapus seluruh kolom tersebut dari set data pelatihan model machine learning",
+        "Mengisi nilai kosong dengan menggunakan nilai median dari keseluruhan data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat model machine learning untuk memprediksi harga mobil bekas. Variabel 'tahun_keluaran' dan 'kilometer_terpaksa' memiliki korelasi linear yang sangat tinggi (multikolinearitas) dengan harga mobil. Tindakan feature engineering apa yang tepat?",
+      "options": [
+        "Membuat fitur interaksi baru dengan mengalikan tahun keluaran dan kilometer",
+        "Menghapus salah satu variabel yang redundan untuk menyederhanakan model",
+        "Melakukan normalisasi min-max pada kedua variabel secara terpisah",
+        "Mengubah kedua variabel numerik tersebut menjadi kategori ordinal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek deteksi fraud kartu kredit, variabel 'jumlah_transaksi' memiliki rentang dari Rp10.000 hingga Rp50.000.000. Anda menggunakan algoritma berbasis berbasis jarak seperti K-Nearest Neighbors. Transformasi skala apa yang wajib diterapkan?",
+      "options": [
+        "Min-Max Scaling agar rentang nilai jatuh persis antara 0 dan 1",
+        "Log Transformation untuk memperkecil jarak skala yang terlalu lebar",
+        "StandardScaler agar distribusi data memiliki mean nol dan varians satu",
+        "RobustScaler menggunakan median dan IQR untuk tahan terhadap outlier"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang memproses data teks ulasan aplikasi dari pengguna di Play Store yang bercampur antara Bahasa Indonesia formal, bahasa gaul, dan bahasa daerah. Langkah feature engineering teks apa yang harus dilakukan sebelum TF-IDF?",
+      "options": [
+        "Langsung mengubah seluruh teks menjadi bentuk representasi n-grams",
+        "Melakukan case folding, tokenisasi, dan penghapusan kata depan umum",
+        "Menerjemahkan semua ulasan ke bahasa Inggris menggunakan translator API",
+        "Menghitung panjang karakter total dari setiap ulasan pengguna aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan validasi silang (cross-validation) untuk model credit scoring, Anda mendapati performa model sangat tinggi saat pelatihan tetapi buruk saat pengujian. Investigasi menunjukkan adanya kebocoran data (data leakage) pada proses feature engineering. Di mana letak kesalahannya?",
+      "options": [
+        "Melakukan imputasi nilai kosong menggunakan rata-rata seluruh dataset sebelum split",
+        "Menggunakan teknik oversampling SMOTE pada data latih setelah pembagian data",
+        "Menerapkan one-hot encoding pada data uji menggunakan kategori dari data latih",
+        "Menghitung fitur agregat historis hanya berdasarkan data sebelum tanggal cutoff"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memprediksi tingkat hunian hotel berdasarkan lokasi geografis (latitude dan longitude). Algoritma pohon keputusan (decision tree) kurang optimal menangkap jarak spasial langsung. Fitur baru apa yang sebaiknya direkayasa?",
+      "options": [
+        "Menjumlahkan nilai koordinat latitude dan longitude menjadi satu kolom",
+        "Menghitung jarak Haversine dari titik koordinat hotel ke pusat kota terdekat",
+        "Mengubah koordinat desimal tersebut menjadi string teks alamat lengkap",
+        "Melakukan binning koordinat secara terpisah menjadi kategori grid kasar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam membangun sistem rekomendasi produk untuk situs e-commerce, Anda memiliki data matriks interaksi pengguna dan produk yang sangat jarang (sparse matrix). Teknik feature engineering apa yang digunakan untuk mereduksi dimensi matriks tersebut?",
+      "options": [
+        "Principal Component Analysis untuk mencari arah varians data terbesar",
+        "Matrix Factorization menggunakan teknik SVD untuk mendapatkan latent features",
+        "Recursive Feature Elimination untuk membuang kolom dengan bobot terendah",
+        "Chi-Square Feature Selection untuk memilih kategori produk yang relevan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja sebagai Data Scientist di aplikasi supermarket online. Anda memiliki data riwayat pembelian berupa daftar item dalam bentuk string untuk setiap transaksi (misal: 'Beras, Minyak Goreng, Gula'). Bagaimana cara paling efektif mengubah kolom ini menjadi fitur numerik untuk model prediksi keranjang belanja?",
+      "options": [
+        "Menggunakan teknik One-Hot Encoding setelah melakukan tokenisasi item unik",
+        "Mengubah string tersebut menjadi nilai hash numerik menggunakan fungsi hashing",
+        "Menghitung jumlah total karakter pada setiap baris string daftar item",
+        "Mengganti setiap nama item dengan nomor urut alfabetis abjad"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan model prediksi cuaca untuk sektor pertanian di Indonesia, Anda mendapati bahwa arah angin diukur dalam derajat kompas dari 0 hingga 360. Nilai 0 dan 360 memiliki arti fisik yang sama namun secara numerik sangat berjauhan. Apa langkah feature engineering terbaik untuk mengatasi masalah ini?",
+      "options": [
+        "Melakukan normalisasi min-max agar nilai berada dalam rentang nol dan satu",
+        "Membagi seluruh nilai derajat kompas dengan angka 360 untuk memperkecil skala",
+        "Mentransformasikan variabel menjadi komponen sinus dan cosinus secara terpisah",
+        "Membuang kolom arah angin karena nilai sudut melingkar tidak bisa diproses"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun model untuk mendeteksi lonjakan trafik pada layanan cloud penyedia server lokal. Data deret waktu menunjukkan pola musiman harian yang kuat. Fitur berbasis waktu apa yang paling tepat diekstrak untuk menangkap pola jam sibuk perkantoran?",
+      "options": [
+        "Menggunakan selisih waktu mutlak antara baris data saat ini dan data awal",
+        "Membuat fitur biner terpisah untuk menandai setiap jam kerja aktif secara eksplisit",
+        "Menghitung rata-rata kumulatif dari seluruh transaksi sejak server pertama kali aktif",
+        "Mengubah format tanggal menjadi nomor urut hari dalam satu tahun kalender"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada dataset klaim asuransi kesehatan, kolom 'jumlah_klaim' memiliki distribusi yang sangat condong ke kanan (right-skewed) dengan beberapa nilai ekstrem yang sangat besar. Model Linear Regression Anda sensitif terhadap outlier ini. Transformasi apa yang harus diterapkan?",
+      "options": [
+        "Melakukan transformasi logaritmik pada nilai klaim sebelum dimasukkan ke model",
+        "Menghapus semua baris data yang memiliki nilai di atas persentil sembilan puluh",
+        "Mengganti seluruh nilai ekstrem dengan nilai rata-rata dari keseluruhan kolom",
+        "Melakukan penskalaan min-max pada kolom klaim agar berada di antara nol dan satu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data demografi pelanggan layanan streaming musik. Kolom 'usia' memiliki beberapa nilai yang hilang (missing values). Karena algoritma yang digunakan tidak bisa menangani missing values, dan Anda ingin mempertahankan informasi bahwa data tersebut awalnya tidak ada, pendekatan apa yang sebaiknya diambil?",
+      "options": [
+        "Mengisi nilai kosong dengan nilai modus dari kolom usia seluruh pelanggan aktif",
+        "Mengisi nilai kosong dengan median usia lalu membuat kolom indikator biner baru",
+        "Menghapus seluruh baris data pelanggan yang memiliki informasi usia tidak lengkap",
+        "Mengabaikan proses imputasi karena algoritma modern otomatis mengisi nilai kosong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek analisis sentimen ulasan produk lokal, Anda mendapati banyak singkatan bahasa gaul dan typo. Sebelum mengekstrak fitur TF-IDF, teknik text preprocessing apa yang paling krusial dilakukan untuk mengurangi dimensi matriks fitur yang membengkak?",
+      "options": [
+        "Melakukan stemming untuk mengembalikan kata ke bentuk dasar dan menghapus stopwords",
+        "Mengubah seluruh huruf menjadi huruf kapital untuk mempertegas penekanan emosi",
+        "Menghapus semua tanda baca dan mengubah teks menjadi huruf kecil secara konsisten",
+        "Menambahkan kamus sinonim buatan untuk mengganti setiap kata dengan padanan kata formal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model credit scoring dan memiliki fitur 'jumlah_tunggakan_kartu_kredit' dan 'total_limit_kredit'. Domain expert menyarankan bahwa rasio antara kedua variabel tersebut sangat penting untuk mendeteksi risiko kredit macet. Apa jenis feature engineering yang sedang disarankan?",
+      "options": [
+        "Feature hashing untuk mengurangi kompleksitas ruang penyimpanan data numerik",
+        "Interaction terms atau pembentukan fitur turunan melalui operasi aritmatika",
+        "Target encoding untuk mengganti nilai kategorikal dengan probabilitas target",
+        "Dimensionality reduction menggunakan Principal Component Analysis otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup logistik ingin memprediksi durasi pengiriman paket berdasarkan titik koordinat pickup dan dropoff. Algoritma Gradient Boosting yang digunakan kesulitan mempelajari hubungan jarak garis lurus dari koordinat mentah. Fitur baru apa yang paling efektif ditambahkan?",
+      "options": [
+        "Menghitung jarak Haversine antara koordinat pickup dan dropoff sebagai fitur jarak",
+        "Menjumlahkan nilai latitude dan longitude dari titik awal dan titik akhir pengiriman",
+        "Mengubah koordinat geografis menjadi format string teks alamat jalan raya lengkap",
+        "Menghitung selisih absolut antara nilai latitude awal dan latitude akhir saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola data transaksi e-commerce di mana kolom 'metode_pembayaran' memiliki 25 kategori berbeda, namun 80% transaksi didominasi oleh hanya 3 kategori utama, sementara sisanya memiliki frekuensi sangat rendah. Teknik encoding apa yang paling aman untuk mencegah overfitting?",
+      "options": [
+        "One-Hot Encoding untuk seluruh 25 kategori tanpa pengecualian apapun",
+        "Label Encoding dengan memberikan nomor urut acak dari 1 hingga 25",
+        "Mengelompokkan kategori berfrekuensi rendah menjadi 'Lainnya' sebelum One-Hot Encoding",
+        "Target Encoding langsung pada ke-25 kategori tanpa teknik smoothing tambahan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan feature engineering untuk model deteksi penipuan transaksi kartu kredit, Anda membuat fitur agregat seperti 'rata-rata jumlah transaksi pengguna dalam 7 hari terakhir'. Mengapa perhitungan fitur agregat ini harus dilakukan secara hati-hati pada data historis?",
+      "options": [
+        "Untuk memastikan tidak terjadi kebocoran data dari masa depan ke masa lalu",
+        "Agar ukuran file dataset hasil ekspor tidak melebihi kapasitas memori RAM komputer",
+        "Karena perhitungan agregat waktu akan mengubah tipe data menjadi datetime secara otomatis",
+        "Untuk menghindari penggunaan algoritma machine learning berbasis pohon keputusan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model untuk memprediksi risiko gagal bayar pinjaman online. Kolom 'riwayat_keterlambatan' berisi teks tanggal jatuh tempo pembayaran masa lalu yang dipisahkan koma. Apa langkah feature engineering awal yang paling tepat untuk mengolah data tersebut?",
+      "options": [
+        "Mengubah string tersebut menjadi nilai rata-rata jumlah hari keterlambatan per nasabah.",
+        "Melakukan one-hot encoding pada setiap tanggal unik yang ada di dalam kolom.",
+        "Menghapus kolom tersebut karena format string tidak dapat dibaca oleh algoritma.",
+        "Mengganti seluruh nilai string dengan modus dari tanggal keterlambatan tersering."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan model prediksi harga properti di Jabodetabek, Anda mendapati kolom 'luas_tanah' memiliki korelasi non-linier yang kuat terhadap target harga. Algoritma yang Anda gunakan adalah Linear Regression. Apa teknik rekayasa fitur yang paling efektif?",
+      "options": [
+        "Melakukan standardisasi Z-score agar distribusi data menjadi rata-rata nol.",
+        "Menerapkan transformasi logaritmik atau kuadratik pada kolom luas tanah.",
+        "Melakukan binning data kontinu tersebut menjadi kategori kecil, sedang, besar.",
+        "Mengisi nilai yang hilang pada kolom tersebut menggunakan regresi linier."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edutech ingin memprediksi tingkat kelulusan siswa pada kursus online. Terdapat fitur 'waktu_akses_malam' dan 'waktu_akses_siang'. Untuk mengurangi multikolinearitas dan menangkap pola perilaku belajar secara komprehensif, fitur apa yang sebaiknya dibuat?",
+      "options": [
+        "Menghitung selisih absolut antara durasi akses malam dan siang hari.",
+        "Membuat rasio proporsi waktu akses malam terhadap total waktu akses harian.",
+        "Mengalikan kedua fitur tersebut untuk mendapatkan interaksi non-linear.",
+        "Melakukan normalisasi min-max pada masing-masing fitur waktu akses."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis data transaksi retail modern di Indonesia untuk segmentasi pelanggan. Variabel 'total_belanja_bulanan' memiliki beberapa outlier ekstrem akibat pembelian grosir korporat. Sebelum memasukkannya ke model K-Means clustering, tindakan terbaik adalah:",
+      "options": [
+        "Melakukan clipping atau winsorization pada persentil tertentu untuk membatasi nilai ekstrim.",
+        "Menghapus seluruh baris data yang memiliki nilai transaksi di atas rata-rata kelompok.",
+        "Mengganti nilai outlier ekstrem tersebut dengan nilai rata-rata keseluruhan data.",
+        "Mengubah tipe data numerik tersebut menjadi variabel kategorikal ordinal."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek deteksi churn pelanggan sebuah aplikasi streaming lokal, Anda memiliki fitur tanggal pendaftaran ('tanggal_daftar') dan tanggal berhenti langganan ('tanggal_berhenti'). Fitur durasi aktif berlangganan paling tepat direkayasa melalui:",
+      "options": [
+        "Menghitung selisih hari antara tanggal berhenti dan tanggal daftar sebagai variabel numerik.",
+        "Mengekstrak nama bulan dari tanggal daftar dan tahun dari tanggal berhenti langganan.",
+        "Melakukan one-hot encoding pada kombinasi hari dan bulan pendaftaran pelanggan.",
+        "Mengonversi kedua tanggal tersebut menjadi representasi teks naratif yang panjang."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model prediksi konversi iklan digital. Kolom 'perangkat_pengguna' memiliki nilai unik seperti Android, iOS, Windows, dan Mac. Karena mayoritas trafik berasal dari Android, teknik encoding apa yang paling tepat untuk menghindari sparsity?",
+      "options": [
+        "Target encoding berdasarkan tingkat konversi historis dari masing-masing perangkat.",
+        "Frequency encoding yang mengganti nama perangkat dengan jumlah kemunculannya.",
+        "One-hot encoding standar tanpa menghapus kategori apa pun dari kolom tersebut.",
+        "Label encoding berurutan berdasarkan abjad nama perangkat yang tersedia."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sistem rekomendasi produk fashion, Anda ingin memanfaatkan deskripsi produk yang berupa teks naratif berbahasa Indonesia. Untuk mengubah teks tersebut menjadi representasi numerik yang siap masuk ke model machine learning, pendekatan standar yang efektif adalah:",
+      "options": [
+        "Menggunakan TF-IDF Vectorizer setelah melakukan tahap tokenisasi dan stopword removal.",
+        "Menghitung jumlah karakter total pada setiap deskripsi produk sebagai fitur tunggal.",
+        "Melakukan label encoding pada setiap kata pertama yang muncul di dalam kalimat.",
+        "Mengubah setiap huruf vokal dalam teks deskripsi menjadi kode angka biner."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menangani data sensor suhu dari pabrik manufaktur di Cikarang. Terdapat beberapa missing values yang terjadi secara acak akibat gangguan koneksi internet singkat. Metode imputasi fitur numerik deret waktu yang paling menjaga tren data adalah:",
+      "options": [
+        "Mengisi missing value menggunakan metode interpolasi linear berdasarkan titik sebelum dan sesudah.",
+        "Mengganti seluruh nilai yang hilang dengan angka nol agar mudah dideteksi algoritma.",
+        "Mengisi nilai kosong menggunakan nilai maksimum dari seluruh kolom sensor tersebut.",
+        "Menghapus baris data yang memiliki nilai kosong tanpa memedulikan urutan waktu."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan model credit scoring bank digital, terdapat variabel 'pendapatan' dan 'jumlah_tanggungan'. Anda ingin membuat fitur baru yang mencerminkan kapasitas finansial riil pemohon pinjaman. Fitur turunan terbaik adalah:",
+      "options": [
+        "Membagi total pendapatan dengan jumlah tanggungan ditambah satu untuk menghindari pembagian dengan nol.",
+        "Menjumlahkan nilai pendapatan dengan jumlah tanggungan untuk mendapatkan skor total.",
+        "Mengalikan pendapatan tahunan dengan persentase suku bunga pinjaman yang diajukan.",
+        "Mencari selisih antara jumlah tanggungan dikali standar biaya hidup dengan pendapatan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data log aktivitas pengguna pada aplikasi SuperApp. Fitur 'waktu_akses' dicatat dalam format jam (0-23). Karena pola perilaku pengguna menunjukkan kebiasaan malam hari yang mirip dengan dini hari, transformasi fitur yang tepat adalah:",
+      "options": [
+        "Menerapkan transformasi sinus dan kosinus siklik pada variabel jam akses tersebut.",
+        "Melakukan normalisasi min-max agar rentang jam berada di antara nilai nol dan satu.",
+        "Mengubah variabel kontinu jam menjadi kategori waktu pagi, siang, sore, dan malam.",
+        "Menambahkan nilai konstanta tertentu pada setiap jam akses untuk menggeser kurva."
+      ],
+      "correct_index": 0
+    }
+  ]
+}

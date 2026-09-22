@@ -1,0 +1,306 @@
+{
+  "skill": "Employee Relations",
+  "skill_key": "employee relations",
+  "questions": [
+    {
+      "question": "Seorang karyawan senior di departemen penjualan secara terbuka menolak instruksi kerja baru dari manajer mudanya dengan alasan pengalaman. Hal ini mulai memicu gesekan di tim. Langkah awal apa yang harus diambil HR?",
+      "options": [
+        "Langsung memberikan surat peringatan ketiga karena insubordinasi berat",
+        "Memanggil karyawan tersebut untuk mendengar perspektifnya secara empatik",
+        "Memindahkan manajer muda tersebut ke divisi lain untuk meredakan situasi",
+        "Membuat kebijakan tertulis baru mengenai hierarki dan kepatuhan kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dua staf operasional kedapatan sering bertengkar secara verbal di ruang istirahat akibat perbedaan pembagian tugas shift malam. Sebagai HR, intervensi pertama yang paling tepat adalah...",
+      "options": [
+        "Melakukan mediasi terpisah dilanjutkan mediasi bersama untuk mencari akar masalah",
+        "Memberikan sanksi potong gaji kepada keduanya agar jera dan tidak mengulanginya",
+        "Mengubah jadwal kerja mereka secara permanen agar tidak pernah bertemu lagi",
+        "Melaporkan perselisihan pribadi tersebut kepada direktur operasional perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan mengajukan keluhan resmi (grievance) bahwa atasannya sering memberikan tugas di luar jam kerja dengan nada intimidatif di grup WhatsApp kantor. Tindakan investigasi awal HR yang tepat adalah...",
+      "options": [
+        "Meminta atasan tersebut segera meminta maaf secara terbuka di depan tim",
+        "Mengumpulkan bukti chat dan meminta keterangan dari kedua belah pihak secara objektif",
+        "Menutup grup WhatsApp kantor secara total untuk menjaga kesehatan mental karyawan",
+        "Menyarankan karyawan tersebut untuk mengabaikan pesan di luar jam kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan harus melakukan efisiensi dan merumahkan 15% karyawan. Manajemen meminta HR merancang komunikasi pemutusan hubungan kerja (PHK) yang meminimalkan risiko gejolak. Strategi komunikasi terbaik adalah...",
+      "options": [
+        "Mengumumkan daftar nama karyawan terdampak melalui email massal perusahaan",
+        "Mengadakan rapat pleno seluruh karyawan untuk menjelaskan kondisi keuangan perusahaan",
+        "Mengadakan sesi tatap muka konfidensial dengan pendekatan empatik dan transparan",
+        "Menyerahkan surat PHK melalui kurir ke rumah masing-masing tanpa tatap muka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Hasil survei keterlibatan karyawan (employee engagement) menunjukkan penurunan drastis pada divisi IT akibat kurangnya apresiasi dari manajemen. Langkah tindak lanjut HR yang paling strategis adalah...",
+      "options": [
+        "Membagikan bonus tunai mendadak menggunakan dana cadangan darurat perusahaan",
+        "Mengadakan workshop motivasi wajib bagi seluruh jajaran pimpinan divisi IT",
+        "Memfasilitasi sesi focus group discussion untuk merumuskan program apresiasi",
+        "Mengganti seluruh kepala tim di divisi IT dengan figur pemimpin yang baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan mengajukan cuti melahirkan, namun ia khawatir posisinya akan tergeser karena posisinya sedang krusial. Kebijakan komunikasi HR untuk meredakan kecemasan ini adalah...",
+      "options": [
+        "Menjamin tertulis hak cutinya dan mengatur penugasan sementara pengganti",
+        "Meminta karyawan tersebut tetap siaga memantau pekerjaan selama masa cuti",
+        "Menunda hak cuti melahirkan hingga proyek besar yang sedang berjalan selesai",
+        "Mengurangi durasi cuti melahirkan dengan kompensasi uang lembur tambahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan mengajukan surat pengunduran diri secara mendadak karena mendapat tawaran gaji jauh lebih tinggi di kompetitor, padahal ia sedang memegang proyek penting. Respon HR yang konstruktif adalah...",
+      "options": [
+        "Menolak surat pengunduran diri tersebut sampai proyek selesai dikerjakan",
+        "Melakukan sesi exit interview mendalam untuk memahami motivasi kepindahannya",
+        "Menawarkan kenaikan gaji instan yang melampaui standar internal perusahaan",
+        "Meminta karyawan tersebut segera meninggalkan kantor hari ini juga tanpa beban"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Terdapat desas-desus di kalangan karyawan bahwa perusahaan akan pindah lokasi kantor ke kota lain tahun depan, memicu keresahan massal. Langkah komunikasi krisis (crisis communication) bagi HR adalah...",
+      "options": [
+        "Mengabaikan rumor tersebut karena dianggap angin lalu oleh manajemen puncak",
+        "Mengadakan town hall meeting transparan untuk menyampaikan fakta dan rencana",
+        "Mengancam akan memberikan sanksi tegas kepada penyebar isu di internal kantor",
+        "Membuat pengumuman bahwa perusahaan tidak pernah memiliki rencana relokasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang manajer dilaporkan oleh bawahannya melakukan pelecehan verbal ringan berulang kali. Manajer tersebut adalah top performer yang menyumbang 40% revenue perusahaan. Sikap HR yang profesional menghadapi dilema ini adalah...",
+      "options": [
+        "Melindungi manajer tersebut karena kontribusinya sangat vital bagi perusahaan",
+        "Mengabaikan laporan bawahan demi menjaga stabilitas pendapatan finansial",
+        "Menjalankan prosedur investigasi internal secara independen tanpa memandang status",
+        "Memindahkan pelapor ke divisi lain agar tidak sering berinteraksi dengan manajer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Karyawan di pabrik mengeluhkan fasilitas kantin yang tidak layak dan mengancam akan melakukan aksi mogok kerja besok pagi. Tindakan preventif darurat yang harus dilakukan HR malam ini adalah...",
+      "options": [
+        "Menghubungi kepolisian setempat untuk mengamankan area sekitar pabrik",
+        "Mengirimkan memo ancaman pemecatan bagi siapa saja yang ikut mogok kerja",
+        "Berdialog dengan perwakilan Serikat Pekerja untuk mendengarkan tuntutan dan solusi",
+        "Menutup operasional pabrik selama sepekan penuh untuk melakukan renovasi total"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan teladan mengajukan cuti panjang dengan alasan pribadi yang mendesak, namun beban kerja tim sedang berada di puncak. Sebagai HR, langkah terbaik apa yang harus Anda ambil untuk menangani situasi ini?",
+      "options": [
+        "Menolak pengajuan cuti secara tegas demi menjaga produktivitas tim di masa sibuk",
+        "Meminta karyawan menunda cuti dan memberikan kompensasi bonus finansial khusus",
+        "Berdiskusi dengan manajer untuk meredistribusi tugas dan mencari tenaga bantuan sementara",
+        "Menyetujui cuti tanpa syarat dan membiarkan tim menyelesaikan beban kerja yang ada"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dua orang karyawan dari divisi berbeda sering berselisih paham dalam rapat proyek lintas fungsi, yang kini mulai menghambat progres kerja tim. Apa tindakan awal yang paling tepat bagi HR?",
+      "options": [
+        "Memanggil keduanya secara terpisah untuk mendengarkan perspektif dan mencari akar masalah",
+        "Memberikan surat peringatan tertulis agar mereka tidak mengulangi perselisihan di rapat",
+        "Memindahkan salah satu karyawan ke proyek lain untuk menghindari konflik berkelanjutan",
+        "Mengadakan rapat mediasi terbuka di depan seluruh anggota tim untuk menyelesaikan isu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang manajer divisi meminta HR untuk memecat bawahannya karena dianggap kurang ramah dan sering diam saat briefing pagi. Sebagai praktisi HR, bagaimana respons Anda?",
+      "options": [
+        "Menyetujui permintaan tersebut karena manajer memiliki hak penuh atas anggota timnya",
+        "Menolak permintaan dan menyarankan manajer untuk mencari pengganti sendiri secara mandiri",
+        "Meminta manajer memberikan data kinerja objektif dan merancang sesi pembinaan terlebih dahulu",
+        "Langsung melakukan pemutusan hubungan kerja demi menjaga keharmonisan relasi dengan manajer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan baru menunjukkan kinerja yang sangat baik, namun rekan-rekan satu timnya mengeluhkan sikapnya yang sombong dan tertutup. Langkah konstruktif apa yang harus dilakukan HR?",
+      "options": [
+        "Mengabaikan keluhan tersebut selama target penjualan atau KPI individu karyawan tercapai",
+        "Mengadakan sesi umpan balik personal dengan pendekatan empatik mengenai pentingnya kerja tim",
+        "Memindahkan karyawan tersebut ke divisi lain agar dinamika tim lama kembali kondusif",
+        "Menegur seluruh tim yang iri dan meminta mereka lebih profesional dalam bekerja sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen berencana menerapkan kebijakan jam kerja fleksibel yang baru. Sebagian besar karyawan senior menolak karena sudah nyaman dengan jam kerja konvensional. Strategi komunikasi HR yang paling tepat adalah?",
+      "options": [
+        "Memberlakukan kebijakan baru secara langsung tanpa diskusi guna mempercepat transformasi",
+        "Mengancam akan memberikan sanksi administratif bagi karyawan yang menolak aturan baru",
+        "Mengadakan sesi sosialisasi dua arah untuk mendengarkan kekhawatiran dan menjelaskan manfaatnya",
+        "Membatalkan rencana kebijakan tersebut demi menjaga kepuasan kelompok karyawan senior"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan terdeteksi sering datang terlambat 15-30 menit selama dua minggu berturut-turut. Saat dikonfirmasi secara informal, ia mengaku sedang merawat anggota keluarga yang sakit keras di rumah. Apa langkah HR selanjutnya?",
+      "options": [
+        "Langsung menerbitkan surat peringatan pertama sesuai dengan aturan kehadiran perusahaan",
+        "Memeriksakan absensi karyawan lain untuk memastikan tidak ada kecemburuan sosial di kantor",
+        "Menawarkan opsi pengaturan jam kerja alternatif atau cuti darurat yang tersedia di perusahaan",
+        "Memotong gaji secara langsung tanpa peringatan agar kedisiplinan tetap terjaga di kantor"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah exit interview, seorang karyawan berprestasi menyatakan resign karena merasa jenjang kariernya mandek dan tidak ada transparansi promosi. Tindakan strategis apa yang harus diambil HR?",
+      "options": [
+        "Menaikkan gaji karyawan tersebut secara drastis agar ia bersedia membatalkan pengunduran diri",
+        "Mengevaluasi sistem manajemen karier internal dan mengomunikasikan jalur promosi secara transparan",
+        "Mengabaikan masukan tersebut karena keluar adalah hak pribadi setiap individu karyawan",
+        "Melaporkan keluhan tersebut kepada jajaran direksi tanpa memberikan rekomendasi solusi perbaikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang supervisor kedapatan memberikan pujian secara berlebihan dan hadiah pribadi hanya kepada satu staf tertentu, memicu kecurigaan adanya favoritisme di tim. Bagaimana HR menyikapi hal ini?",
+      "options": [
+        "Meminta supervisor tersebut menjaga batasan profesional dan mereview ulang standar penilaian kerja",
+        "Memindahkan staf penerima hadiah ke departemen lain untuk menghentikan isu favoritisme",
+        "Membiarkan situasi tersebut asalkan tidak ada laporan resmi tertulis yang masuk ke meja HR",
+        "Memberikan teguran keras kepada staf penerima hadiah karena dianggap memanfaatkan situasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Karyawan di kantor cabang daerah merasa diabaikan oleh kantor pusat karena kebijakan dan tunjangan yang diberikan berbeda jauh dengan kantor pusat. Langkah pendekatan employee relations yang efektif adalah?",
+      "options": [
+        "Mengirimkan surat edaran resmi yang menjelaskan bahwa anggaran kantor pusat memang lebih besar",
+        "Mengadakan kunjungan kerja rutin dan dialog terbuka untuk menyerap aspirasi karyawan cabang",
+        "Menyerahkan seluruh kewenangan penyelesaian masalah kepada kepala cabang masing-masing",
+        "Menaikkan tunjangan kantor cabang secara instan tanpa memperhitungkan kondisi finansial pusat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan senior menolak untuk menggunakan sistem software HR baru yang baru diluncurkan, dengan alasan sudah terlalu tua untuk belajar teknologi baru. Apa langkah coaching yang tepat oleh HR?",
+      "options": [
+        "Memberikan pelatihan privat yang sabar serta menunjukkan kemudahan penggunaan sistem tersebut",
+        "Mengancam akan menurunkan pangkat karyawan jika tetap menolak menggunakan sistem baru",
+        "Memperbolehkan karyawan tersebut tetap menggunakan cara manual seperti sistem yang lama",
+        "Melaporkan ketidakpatuhan tersebut langsung kepada CEO agar diberi sanksi disipliner berat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan mengajukan pengunduran diri via WhatsApp kepada HR, padahal ia sedang memegang proyek penting yang harus selesai dalam dua minggu. Tindakan awal HR yang paling tepat adalah",
+      "options": [
+        "menolak pengunduran diri tersebut dan mewajibkannya tetap bekerja sampai proyek selesai sepenuhnya",
+        "meminta karyawan tersebut membuat surat resmi dan menjadwalkan sesi diskusi empat mata",
+        "langsung mencari pengganti eksternal untuk mengambil alih tugas proyek tanpa konfirmasi",
+        "menerima pengunduran diri secara efektif hari itu juga agar tidak mengganggu tim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional mengeluhkan seorang staf yang sering terlihat lelah dan lesu di kantor, namun staf tersebut menolak ketika disarankan mengambilcuti sakit. Langkah mediasi HR yang tepat adalah",
+      "options": [
+        "memaksa karyawan tersebut mengambil cuti tahunan demi menjaga produktivitas tim",
+        "melakukan pendekatan personal untuk memahami kendala dan menawarkan opsi penyesuaian beban kerja",
+        "memberikan surat peringatan karena kondisi fisik yang menurun mengganggu standar kerja",
+        "mengabaikan situasi tersebut selama target pekerjaan bulanan staf itu masih tercapai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan melaporkan kepada HR bahwa ia mendengar rekan kerjanya menyebar informasi palsu mengenai kondisi keuangan perusahaan. Respon pertama HR sebaiknya",
+      "options": [
+        "memanggil terlapor untuk langsung menjatuhkan sanksi skorsing atas pencemaran nama baik",
+        "mengirimkan pengumuman resmi ke seluruh perusahaan untuk membantah isu finansial tersebut",
+        "mengumpulkan bukti awal dan memanggil pelapor serta saksi untuk klarifikasi secara objektif",
+        "mengabaikan laporan tersebut karena hanya bersumber dari desas-desus lisan antar pegawai"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan ingin mengubah skema insentif penjualan yang berpotensi menurunkan pendapatan variabel sebagian sales senior. Strategi komunikasi employee relations yang paling efektif adalah",
+      "options": [
+        "langsung memberlakukan kebijakan baru melalui surel massal pada awal bulan depan",
+        "mengadakan sesi sosialisasi dua arah untuk menjelaskan rasional bisnis dan mendengarkan masukan",
+        "memberikan bonus kompensasi satu kali di awal untuk meredam potensi protes dari sales senior",
+        "menunda penerapan kebijakan hingga seluruh tenaga sales sepakat menandatangani aturan baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang staf HR mendapati laporan absensi menunjukkan adanya dugaan titip absen yang melibatkan dua orang staf administrasi. Langkah investigasi awal yang harus diambil adalah",
+      "options": [
+        "langsung memotong gaji kedua karyawan tersebut sebagai efek jera atas kecurangan",
+        "melakukan pemeriksaan data rekaman CCTV dan meminta keterangan terpisah dari kedua staf",
+        "melaporkan tindakan tersebut kepada direktur utama untuk langsung diproses pemutusan hubungan kerja",
+        "membuat peraturan baru tentang absensi sidik jari tanpa perlu menginvestigasi kasus lalu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi marketing sering menggunakan grup WhatsApp kantor untuk membahas pekerjaan hingga tengah malam, yang mulai dikeluhkan mengganggu waktu istirahat karyawan. Kebijakan HR untuk menangani hal ini adalah",
+      "options": [
+        "membubarkan grup WhatsApp tersebut dan melarang segala bentuk komunikasi di luar jam kerja",
+        "membuat pedoman etika komunikasi digital dan batasan jam operasional pesan instan kantor",
+        "mengharuskan perusahaan membayar uang lembur untuk setiap pesan yang dibalas malam hari",
+        "menyerahkan sepenuhnya kepada kebijakan masing-masing individu dalam merespons pesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan difabel netra yang baru bergabung mengalami kesulitan mengakses perangkat lunak internal perusahaan yang belum ramah aksesibilitas. Tindakan yang perlu dilakukan HR adalah",
+      "options": [
+        "meminta rekan satu tim untuk selalu membantu menyelesaikan tugas berbasis komputer karyawan tersebut",
+        "berkoordinasi dengan tim IT untuk melakukan penyesuaian sistem agar kompatibel dengan teknologi bantu",
+        "memindahkan karyawan tersebut ke posisi administratif lain yang tidak memerlukan penggunaan komputer",
+        "memberikan pelatihan tambahan khusus komputer agar karyawan tersebut dapat beradaptasi mandiri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Karyawan di lini produksi mengeluhkan suhu ruangan kerja yang terlalu panas akibat kerusakan AC sentral, sementara perbaikan membutuhkan waktu dua minggu. Solusi mitigasi employee relations terbaik adalah",
+      "options": [
+        "meminta karyawan bersabar dan tetap fokus bekerja karena perbaikan sedang dalam proses",
+        "menyediakan kipas angin portabel tambahan, mengatur waktu istirahat lebih sering, dan menyediakan air minum",
+        "menghentikan seluruh aktivitas produksi pabrik hingga sistem pendingin udara selesai diperbaiki total",
+        "memberikan cuti berbayar bagi seluruh karyawan lini produksi selama proses perbaikan berlangsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan menunjukkan penurunan kinerja drastis setelah mengalami musibah keluarga besar. Pendekatan empati yang tepat dari seorang atasan langsung adalah",
+      "options": [
+        "memberikan teguran tertulis agar karyawan segera memisahkan masalah pribadi dan profesional",
+        "mengajak berbicara secara empatik, menawarkan dukungan konseling, dan menyesuaikan tenggat tugas sementara",
+        "mengalihkan seluruh tanggung jawab pekerjaannya ke rekan tim lain tanpa melibatkan karyawan tersebut",
+        "membiarkan kinerjanya menurun selama beberapa bulan ke depan sampai ia pulih dengan sendirinya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Terdapat ketegangan antara staf tetap dan staf kontrak baru terkait perbedaan fasilitas asuransi kesehatan yang disediakan perusahaan. Langkah strategis HR untuk meredam isu keadilan ini adalah",
+      "options": [
+        "menjelaskan regulasi ketenagakerjaan dan mengevaluasi kesenjangan benefit secara bertahap untuk jangka panjang",
+        "menghapuskan fasilitas asuransi staf tetap agar tercipta kesetaraan total di lingkungan kerja",
+        "melarang staf tetap membahas fasilitas kesehatan mereka di area publik kantor demi menjaga suasana",
+        "memberikan tambahan tunjangan tunai kepada staf kontrak untuk menutupi perbedaan fasilitas asuransi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Customer Success",
+  "skill_key": "customer success",
+  "questions": [
+    {
+      "question": "Penggunaan platform SaaS oleh akun enterprise B2B menurun 60% dalam sebulan terakhir, sementara masa pembaruan kontrak tersisa 3 bulan lagi. Langkah awal apa yang paling tepat dilakukan oleh Customer Success Manager (CSM)?",
+      "options": [
+        "Mengirimkan email penawaran diskon perpanjangan otomatis jika memperbarui kontrak bulan ini.",
+        "Menghubungi Champion di klien untuk mengevaluasi kendala penggunaan dan mengatur sesi retraining.",
+        "Menunggu hingga 1 bulan sebelum masa renewal untuk mengontak kembali pimpinan perusahaan.",
+        "Mengirimkan panduan fitur terbaru secara otomatis melalui sistem CRM tanpa koordinasi lanjutan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sponsor utama (C-Level) di perusahaan klien baru saja mengundurkan diri. PIC baru yang menggantikannya belum mengenal produk Anda dan berencana mengevaluasi vendor lain. Bagaimana CSM harus bersikap?",
+      "options": [
+        "Meminta tim sales menghubungi tim pengadaan klien untuk menegaskan sanksi penalti pembatalan kontrak.",
+        "Mengatur rapat perkenalan, menyampaikan laporan Value/ROI yang telah dicapai, dan memetakan kebutuhan baru.",
+        "Mengirimkan materi pemasaran produk terbaru dan meminta pimpinan lama merekomendasikan layanan Anda.",
+        "Menawarkan penurunan harga lisensi secara langsung agar pimpinan baru tidak berpindah ke kompetitor."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien tingkat menengah secara konsisten melebihi batas kuota penggunaan bulanan dan sering meminta kustomisasi alur kerja. Masa perpanjangan kontrak mereka masih 6 bulan lagi. Apa pendekatan strategis CSM?",
+      "options": [
+        "Memberikan batasan sistem secara ketat agar mereka menyadari keterbatasan paket yang sedang berjalan.",
+        "Menggratiskan penggunaan batas kuota tambahan sampai masa renewal berikutnya demi menjaga kepuasan.",
+        "Meminta tim Tech Support langsung menolak permintaan alur kerja kustom sebelum upgrade dilakukan.",
+        "Menjadwalkan Business Review untuk menunjukkan dampak bisnis penggunaan mereka dan menawarkan paket Enterprise."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Ganguan sistem (bug) kritis terjadi pada platform Anda saat jam operasional puncak klien VIP, yang berdampak pada operasional bisnis mereka. Klien sangat marah melalui saluran komunikasi. Apa respons terbaik CSM?",
+      "options": [
+        "Menyampaikan penyesalan, memberikan pembaruan status perbaikan berkala, dan berkoordinasi langsung dengan tim teknis.",
+        "Menyalahkan tim infrastruktur server dan berjanji akan memberikan kompensasi diskon untuk tagihan bulan depan.",
+        "Meminta klien secara langsung membuat tiket bantuan resmi di portal dukungan agar tim teknis memprosesnya.",
+        "Mengabaikan pesan sementara sampai tim engineering selesai memperbaiki masalah tersebut secara keseluruhan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah akun baru telah menandatangani kontrak 2 minggu lalu, tetapi belum juga menyelesaikan integrasi data teknis meskipun telah dikirimkan pengingat rutin. Bagaimana tindakan CSM untuk mengatasi hambatan onboarding ini?",
+      "options": [
+        "Menjadwalkan alokasi waktu teknis khusus untuk mendampingi tim IT klien secara langsung dalam proses integrasi.",
+        "Mengirimkan surat peringatan resmi bahwa masa garansi produk akan hangus jika tidak segera diintegrasikan.",
+        "Melaporkan keterlambatan tersebut kepada jajaran manajemen puncak perusahaan klien agar tim IT ditegur.",
+        "Memperpanjang masa aktif akun secara gratis selama satu bulan tanpa melakukan koordinasi tambahan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyiapkan materi Quarterly Business Review (QBR) untuk dihadiri oleh jajaran C-Level dari klien e-commerce skala besar. Fokus materi apa yang paling relevan untuk dipresentasikan?",
+      "options": [
+        "Rincian daftar tiket masalah teknis yang berhasil diselesaikan oleh tim dukungan pelanggan selama 3 bulan terakhir.",
+        "Penjelasan mendalam mengenai daftar fitur-fitur teknis baru yang akan diluncurkan pada kuartal mendatang.",
+        "Analisis dampak ROI, pencapaian target bisnis klien, dan rekomendasi langkah strategis periode berikutnya.",
+        "Perbandingan rinci harga paket berlangganan perusahaan Anda dengan beberapa kompetitor utama di pasar."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien penting mengancam tidak akan memperbarui kontrak kecuali fitur khusus yang mereka minta dibangun dalam 2 minggu. Fitur tersebut tidak ada dalam roadmap produk perusahaan Anda. Apa tindakan CSM?",
+      "options": [
+        "Memenuhi permintaan tersebut dengan memaksa tim pengembang mengubah jadwal peluncuran fitur produk utama.",
+        "Langsung menolak permintaan tersebut secara tegas karena fitur tersebut tidak sesuai dengan rencana pengembangan.",
+        "Memahami kebutuhan mendasar klien, lalu menawarkan alternatif solusi yang ada atau penyesuaian alur kerja.",
+        "Menjanjikan fitur akan selesai dalam 2 minggu agar kontrak diperpanjang, lalu mencari alasan keterlambatan nanti."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien lama yang memiliki tingkat penggunaan produk tinggi memberikan nilai 3/10 (Detractor) pada survei Net Promoter Score (NPS) kuartalan. Bagaimana CSM harus merespons temuan ini?",
+      "options": [
+        "Mengirimkan survei ulang melalui email dengan harapan klien salah menekan angka saat memberikan penilaian.",
+        "Membatasi komunikasi dengan klien agar situasi tidak memburuk sampai penilaian NPS kuartal berikutnya.",
+        "Meminta tim Sales membujuk klien agar mau mengubah nilai survei tersebut demi pencapaian target tim.",
+        "Menghubungi klien untuk menggali akar masalah, memahami kekecewaan mereka, dan menyusun langkah perbaikan."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim Sales baru saja menyerahkan (handover) klien baru skala besar kepada CSM. Informasi apa yang paling krusial untuk dipastikan oleh CSM sebelum memulai Kick-off Meeting?",
+      "options": [
+        "Mengasumsikan kebutuhan klien sama dengan klien lain di industri yang serupa tanpa perlu konfirmasi ulang.",
+        "Meninjau ekspektasi klien, janji masa Sales, poin masalah utama, dan indikator keberhasilan (KPI) klien.",
+        "Meminta klien mengisi ulang form registrasi awal untuk memastikan data yang dicatat sales tidak keliru.",
+        "Membiarkan tim Sales memimpin proses onboarding sampai instalasi sistem selesai dilakukan sepenuhnya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan menetapkan penyesuaian harga berlangganan naik sebesar 15% saat perpanjangan kontrak. Klien loyal menyatakan keberatan dan mempertimbangkan pindah vendor. Bagaimana CSM menangani situasi ini?",
+      "options": [
+        "Menyampaikan bahwa kenaikan harga adalah kebijakan mutlak manajemen yang tidak dapat diganggu gugat sama sekali.",
+        "Memberikan potongan harga secara diam-diam tanpa persetujuan tim keuangan agar klien tidak pindah ke kompetitor.",
+        "Menjelaskan nilai tambah baru, peningkatan infrastruktur, dan berdiskusi opsi penyesuaian paket sesuai anggaran.",
+        "Menyaratkan klien untuk merekomendasikan perusahaan lain jika ingin mendapatkan harga lama sebelum kenaikan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pengguna kunci dari klien korporat melaporkan bahwa fitur pelaporan utama lambat dimuat, padahal mereka harus melakukan presentasi ke direksi dalam waktu dua jam. Apa langkah awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Menghubungi tim teknik untuk eskalasi darurat sambil meminta tangkapan layar kendala dari klien.",
+        "Menjelaskan kepada klien bahwa lonjakan trafik sedang terjadi dan menyarankan mereka memakai data kemarin.",
+        "Membuat tiket baru di sistem internal dan menjadwalkan panggilan tindak lanjut besok pagi.",
+        "Mengirimkan panduan tertulis mengenai cara mengoptimalkan filter data agar laporan lebih cepat."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Klien enterprise menunjukkan penurunan tingkat adopsi fitur analitik lanjutan secara drastis selama dua bulan berturut-turut. Sebagai CSM, strategi apa yang paling tepat untuk membalikkan keadaan ini?",
+      "options": [
+        "Mengirimkan surel massal berisi artikel panduan fitur analitik terbaru dari pusat bantuan.",
+        "Mengadakan sesi lokakarya ulang khusus bagi tim operasional klien untuk memetakan ulang nilai guna fitur tersebut.",
+        "Memberikan diskon tambahan pada tagihan bulan berikutnya sebagai kompensasi rendahnya penggunaan.",
+        "Menunggu hingga jadwal pertemuan kuartalan berikutnya untuk membahas masalah penurunan adopsi ini."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan panggilan peninjauan bulanan, manajer operasional klien mengeluhkan bahwa antarmuka pengguna aplikasi baru saja diubah dan membuat tim mereka kebingungan. Bagaimana Anda merespons situasi ini?",
+      "options": [
+        "Menyarankan agar tim mereka segera beradaptasi karena pembaruan tersebut dibuat berdasarkan masukan mayoritas pasar.",
+        "Mengirimkan tautan catatan rilis resmi agar mereka bisa membaca sendiri alasan di balik perubahan desain tersebut.",
+        "Memvalidasi rasa frustrasi mereka, lalu mengirimkan video panduan singkat serta menawarkan sesi demo langsung besok.",
+        "Mengabaikan keluhan tersebut karena perubahan antarmuka berada di luar cakupan tanggung jawab layanan pelanggan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan rintisan yang menjadi klien Anda meminta penundaan pembayaran faktur langganan tahunan selama 45 hari karena kendala arus kas internal yang mendesak. Tindakan apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas sesuai dengan ketentuan penagihan standar perusahaan yang berlaku.",
+        "Berkoordinasi dengan bagian keuangan untuk mengevaluasi opsi restrukturisasi pembayaran jangka pendek bagi klien.",
+        "Langsung menonaktifkan akses akun klien tersebut pada hari jatuh tempo guna menghindari risiko kerugian lebih besar.",
+        "Menanggung tagihan tersebut menggunakan dana pribadi agar hubungan baik dengan klien tetap terjaga dengan baik."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima surel dari seorang direktur klien yang menyatakan ketidakpuasan mendalam atas penanganan tiket kendala teknis oleh tim dukungan yang memakan waktu tiga hari tanpa hasil. Apa langkah penanganan pertama Anda?",
+      "options": [
+        "Membalas surel tersebut dengan menyalahkan tim dukungan teknis yang lambat dalam menyelesaikan tiket.",
+        "Mengambil alih tiket tersebut, berkoordinasi langsung dengan kepala teknik, dan menelepon direktur untuk meminta maaf.",
+        "Menutup tiket lama dan meminta klien untuk membuka tiket baru agar mendapatkan antrean penanganan yang segar.",
+        "Mengirimkan survei kepuasan pelanggan kepada direktur tersebut untuk mengukur tingkat kekecewaan mereka."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien meminta penambahan fitur spesifik yang tidak tercakup dalam roadmap produk perusahaan Anda dalam waktu dekat. Bagaimana cara Anda menyampaikan penolakan tanpa merusak hubungan kerja?",
+      "options": [
+        "Mengatakan bahwa permintaan mereka mustahil untuk diwujudkan karena bertentangan dengan visi jangka panjang.",
+        "Berjanji secara lisan bahwa fitur tersebut akan segera dibuat agar klien merasa senang untuk sementara waktu.",
+        "Menjelaskan alasan keterbatasan prioritas pengembang dan menawarkan solusi alternatif menggunakan fitur yang sudah ada.",
+        "Meneruskan permintaan tersebut langsung ke tim pengembang tanpa memedulikan kapasitas dan jadwal rilis saat ini."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pertemuan penutupan kontrak tahunan, klien memuji kinerja Anda secara keseluruhan namun meminta penurunan harga langganan sebesar 20% sebagai syarat perpanjangan. Langkah apa yang paling bijak?",
+      "options": [
+        "Menyetujui potongan harga tersebut seketika demi mengamankan angka pencapaian perpanjangan kontrak tahun ini.",
+        "Menolak mentah-mentah permintaan tersebut dan membiarkan klien memutuskan untuk berhenti berlangganan.",
+        "Menawarkan nilai tambah berupa pelatihan gratis atau peningkatan batas fitur tertentu tanpa mengubah harga pokok.",
+        "Mengalihkan tanggung jawab negosiasi harga tersebut sepenuhnya kepada departemen penjualan tanpa keterlibatan Anda."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang juara internal (champion) di perusahaan klien yang selalu memperjuangkan produk Anda tiba-tiba berhenti bekerja. Apa tindakan proaktif yang harus segera Anda lakukan?",
+      "options": [
+        "Menunggu hingga kontrak berakhir untuk mencari tahu siapa pengganti posisi orang tersebut di perusahaan klien.",
+        "Menghentikan sementara komunikasi dengan klien tersebut sampai manajemen mereka menunjuk pengganti resmi.",
+        "Memetakan pemangku kepentingan lain di perusahaan klien dan mengatur pertemuan perkenalan ulang untuk membangun relasi.",
+        "Mengirimkan penawaran diskon khusus kepada manajemen klien agar mereka tidak membatalkan kontrak yang berjalan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Hasil analisis data menunjukkan bahwa salah satu divisi di perusahaan klien memiliki tingkat retensi pengguna harian yang sangat rendah, sementara divisi lain sangat aktif. Apa strategi intervensi Anda?",
+      "options": [
+        "Mengurangi biaya langganan secara proporsional untuk divisi yang memiliki tingkat penggunaan produk yang rendah.",
+        "Menyusun program pelatihan bertarget yang disesuaikan khusus dengan kebutuhan operasional divisi yang kurang aktif.",
+        "Menghapus akses akun dari divisi yang tidak aktif agar lisensi tersebut dapat dialihkan ke divisi lain.",
+        "Mengirimkan peringatan tertulis kepada manajer divisi tersebut mengenai rendahnya kedisiplinan penggunaan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien melaporkan kehilangan data historis penting akibat kesalahan operasional staf mereka sendiri saat menggunakan platform Anda. Bagaimana Anda menanggapi situasi krisis ini?",
+      "options": [
+        "Menyatakan bahwa kehilangan data tersebut sepenuhnya merupakan tanggung jawab kelalaian internal staf klien.",
+        "Membantu memeriksa ketersediaan cadangan data di sistem pemulihan dan memandu proses pemulihan jika memungkinkan.",
+        "Menolak memberikan bantuan karena sistem keamanan platform Anda berfungsi dengan normal tanpa ada gangguan.",
+        "Meminta klien untuk langsung merekrut konsultan eksternal guna memperbaiki kerusakan basis data mereka."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pengguna akhir dari klien korporat menghubungi Anda karena mereka tidak sengaja menghapus folder kerja penting dan meminta Anda mengembalikannya dari cadangan sistem. Apa langkah penanganan pertama yang paling tepat?",
+      "options": [
+        "Langsung meneruskan permintaan ke tim DevOps untuk melakukan pemulihan basis data secara menyeluruh",
+        "Memeriksa kebijakan retensi data perusahaan dan memandu pengguna memanfaatkan fitur tempat sampah internal",
+        "Menolak permintaan tersebut secara tegas karena pemulihan data adalah tanggung jawab internal klien",
+        "Membuat tiket eskalasi darurat dengan tingkat prioritas tertinggi agar segera ditangani oleh insinyur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien enterprise mengeluhkan bahwa laporan analitik mingguan yang dihasilkan sistem sering terlambat dikirim ke email manajemen puncak mereka. Bagaimana Anda merespons kendala operasional ini?",
+      "options": [
+        "Menyarankan manajemen puncak untuk mengunduh laporan secara manual langsung melalui dasbor aplikasi",
+        "Melakukan investigasi bersama tim dukungan teknis untuk memeriksa log pengiriman dan menjadwalkan ulang",
+        "Mengubah format laporan menjadi bentuk tabel sederhana agar proses pengiriman menjadi jauh lebih ringan",
+        "Memberikan kompensasi berupa penambahan kuota penyimpanan gratis sebagai bentuk permohonan maaf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi orientasi (onboarding) dengan staf operasional klien baru, Anda mendapati bahwa sebagian besar peserta tampak kebingungan dan tidak dapat mengikuti langkah-langkah praktis. Apa tindakan preventif terbaik?",
+      "options": [
+        "Menghentikan sesi pelatihan segera dan meminta mereka membaca panduan tertulis secara mandiri",
+        "Melanjutkan materi sesuai jadwal agar seluruh silabus pelatihan dapat terselesaikan tepat waktu",
+        "Menyesuaikan kecepatan penjelasan, memecah kelompok, dan menawarkan sesi pendampingan lanjutan",
+        "Menghubungi manajer klien untuk melaporkan kurangnya kesiapan staf mereka dalam menggunakan sistem"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah akun strategis menyampaikan bahwa mereka ingin membatalkan langganan karena menemukan solusi kompetitor yang menawarkan fitur serupa dengan harga lebih murah. Apa strategi retensi awal Anda?",
+      "options": [
+        "Segera menyetujui pembatalan tersebut dan mengirimkan formulir penutupan akun secara resmi",
+        "Menawarkan diskon besar-besaran secara spontan tanpa persetujuan manajemen internal perusahaan",
+        "Mengajak mereka berdiskusi untuk menyoroti nilai investasi jangka panjang dan keunggulan layanan",
+        "Membandingkan kelemahan produk kompetitor secara langsung untuk menjatuhkan reputasi mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati lonjakan tiket bantuan berulang dari satu klien yang sama terkait kesalahan validasi format unggah data. Pendekatan proaktif apa yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Membuat templat file unggah standar yang telah divalidasi dan mengadakan sesi pelatihan singkat khusus",
+        "Menugaskan agen khusus untuk selalu menangani setiap tiket yang dikirimkan oleh klien tersebut",
+        "Menaikkan batas waktu respons tiket untuk mendorong tim mereka membaca dokumentasi secara teliti",
+        "Mengirimkan peringatan tertulis bahwa frekuensi tiket yang tinggi dapat mengganggu layanan dukungan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Klien melaporkan bahwa integrasi antara platform Anda dan sistem ERP internal mereka terputus setelah pihak klien melakukan pembaruan perangkat lunak mereka. Langkah awal apa yang harus Anda ambil?",
+      "options": [
+        "Menyalahkan tim IT klien karena melakukan pembaruan tanpa berkoordinasi terlebih dahulu",
+        "Meminta klien untuk menulis ulang seluruh kode integrasi agar sesuai dengan standar platform Anda",
+        "Berkoordinasi dengan tim teknik internal untuk memeriksa status API dan log kesalahan sinkronisasi",
+        "Mengirimkan panduan umum tentang cara menghubungkan kembali aplikasi pihak ketiga ke dasbor klien"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pembuat keputusan di perusahaan klien jarang membuka email Anda dan tidak pernah menghadiri panggilan peninjauan berkala, padahal tingkat penggunaan produk mereka sangat tinggi. Bagaimana cara Anda mendekati mereka?",
+      "options": [
+        "Mengirimkan pesan singkat yang berisi ringkasan nilai bisnis dan dampak positif produk bagi divisi mereka",
+        "Terus mengirimkan undangan rapat berulang setiap minggu sampai mereka merasa terganggu dan merespons",
+        "Menghentikan seluruh komunikasi berkala karena mereka sudah mandiri dalam menggunakan produk",
+        "Menghubungi pengguna akhir di bawah kepemimpinan mereka untuk mengeluhkan sikap atasan tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit akun triwulanan, Anda menemukan bahwa 40% lisensi berbayar yang dibeli oleh klien tidak pernah diaktifkan oleh karyawan mereka. Apa langkah konsultatif yang tepat?",
+      "options": [
+        "Membiarkannya saja karena hal tersebut tetap mendatangkan pendapatan penuh bagi perusahaan Anda",
+        "Menghubungi bagian keuangan klien untuk menawarkan penurunan jumlah lisensi pada periode berikutnya",
+        "Mengadakan sesi peninjauan ulang dengan manajer HR klien untuk merancang strategi adopsi internal",
+        "Menghapus akun lisensi yang tidak aktif secara sepihak untuk menghemat kapasitas server perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien baru mengeluhkan bahwa proses konfigurasi awal aplikasi terlalu rumit dan memakan waktu lama dari perkiraan awal mereka. Tanggapan yang paling membangun dari seorang CSM adalah:",
+      "options": [
+        "Menyatakan bahwa kerumitan tersebut wajar untuk sistem enterprise dengan tingkat keamanan tinggi",
+        "Memvalidasi perasaan mereka, lalu menawarkan sesi pendampingan tambahan bersama spesialis implementasi",
+        "Menyuruh mereka menyewa konsultan eksternal pihak ketiga untuk menyelesaikan pengaturan sistem",
+        "Menurunkan ekspektasi mereka terhadap fungsi dasar aplikasi agar tidak merasa terbebani lagi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan klien meminta penyesuaian SLA (Service Level Agreement) khusus yang jauh lebih ketat dari standar perusahaan Anda demi kelanjutan kontrak mereka. Apa tindakan internal yang harus Anda lakukan?",
+      "options": [
+        "Langsung menandatangani dokumen perubahan SLA untuk mengamankan nilai kontrak tahunan tersebut",
+        "Menolak permintaan secara mutlak karena melanggar kebijakan operasional standar perusahaan",
+        "Melakukan analisis risiko bersama tim hukum dan teknik untuk mengevaluasi kemampuan pemenuhan",
+        "Mengabaikan permintaan tersebut dan fokus pada perpanjangan kontrak dengan syarat normal"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

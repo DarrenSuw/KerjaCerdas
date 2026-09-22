@@ -1,0 +1,306 @@
+{
+  "skill": "SEM",
+  "skill_key": "sem",
+  "questions": [
+    {
+      "question": "Kampanye Google Search untuk produk fesyen muslim baru saja berjalan selama dua minggu dengan menggunakan strategi Target CPA. Namun, sistem Google memberikan status 'Limited by Budget' dan tidak ada konversi yang tercatat sama sekali dalam 7 hari terakhir. Langkah apa yang paling tepat untuk keluar dari fase pembelajaran yang mandek ini?",
+      "options": [
+        "Menurunkan target CPA sebesar 50% agar sistem lebih mudah mendapat data",
+        "Mengubah strategi penawaran sementara ke maksimalkan konversi tanpa batas CPA",
+        "Menghapus semua kata kunci phrase match dan fokus pada exact match",
+        "Menaikkan target CPA di atas rata-rata industri agar iklan langsung tayang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengaudit akun Google Ads milik klien perusahaan B2B software HR. Anda menemukan bahwa ekstensi situs (sitelink extensions) yang aktif tidak relevan dengan halaman tujuan penelusuran spesifik. Bagaimana dampak langsung perbaikan ekstensi ini terhadap performa iklan?",
+      "options": [
+        "Menurunkan rasio klik-tayang secara drastis karena gangguan visual",
+        "Meningkatkan relevansi iklan dan berpotensi menaikkan skor kualitas",
+        "Mempercepat habisnya anggaran harian karena tambahan tautan aktif",
+        "Menghilangkan kebutuhan untuk melakukan optimasi pada halaman landas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola kampanye Google Ads untuk sebuah aplikasi e-commerce lokal di Indonesia. Budget harian sebesar Rp 500.000 habis sebelum jam 14.00 setiap hari, padahal waktu belanja puncak audiens terjadi pada malam hari. Apa langkah taktis pertama yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti strategi penawaran menjadi maksimalkan klik",
+        "Menurunkan target wilayah geografis dari nasional ke jabodetabek",
+        "Mengubah metode penayangan iklan dari standar menjadi dipercepat",
+        "Mengurangi bid maksimum demi memperpanjang durasi tayang"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah restoran franchise kopi di Surabaya ingin memaksimalkan kunjungan fisik ke gerai melalui kampanye penelusuran lokal (local campaigns/performance max). Fitur apa yang wajib diintegrasikan ke dalam akun Google Ads untuk mengukur efektivitas kampanye secara akurat?",
+      "options": [
+        "Menghubungkan akun Google Analytics 4 dengan target e-commerce",
+        "Mengaktifkan pelaporan konversi panggilan telepon langsung dari iklan",
+        "Menghubungkan profil bisnis Google dan mengaktifkan pelaporan kunjungan toko",
+        "Memasang pixel pelacakan khusus pada tombol menu pemesanan online"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kampanye Search Anda menggunakan broad match modifier (sekarang bagian dari phrase/broad match) dan menghasilkan banyak impresi dari kota-kota di luar area layanan operasional jasa logistik Anda di Bali. Pengaturan mana di Google Ads yang harus segera diperiksa dan disesuaikan?",
+      "options": [
+        "Opsi lokasi penargetan untuk memilih kehadiran fisik di lokasi target",
+        "Penjadwalan iklan untuk membatasi jam operasional pengiriman",
+        "Pengecualian penempatan iklan pada jaringan mitra pencarian google",
+        "Penyesuaian perangkat untuk mengurangi tayangan dari pengguna seluler"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa biaya per klik (CPC) rata-rata untuk kata kunci 'asuransi mobil terbaik' melonjak hingga 40% dalam sebulan terakhir, sementara posisi rata-rata iklan Anda turun dari 1.5 ke 3.2. Analisis metrik apa yang paling mendesak untuk dilakukan?",
+      "options": [
+        "Memeriksa skor kualitas kata kunci dan relevansi halaman landas",
+        "Menambah jumlah kata kunci negatif untuk memperketat jangkauan",
+        "Mengganti seluruh salindia teks iklan dengan penawaran diskon",
+        "Memindahkan seluruh anggaran ke jaringan display untuk menekan biaya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform kursus online ingin meluncurkan kampanye iklan penelusuran untuk menyasar pendaftar baru. Agar pesan iklan sangat relevan dengan apa yang diketik pengguna, praktik penulisan iklan mana yang paling efektif diterapkan pada grup iklan tersebut?",
+      "options": [
+        "Menggunakan satu judul yang sama persis untuk semua grup iklan",
+        "Memanfaatkan penyisipan kata kunci otomatis pada teks judul iklan",
+        "Menulis judul iklan yang sangat panjang untuk mendominasi layar",
+        "Menghindari penggunaan merek kompetitor dalam deskripsi iklan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan laporan bulanan SEM untuk manajemen puncak sebuah perusahaan retail. Metrik utama apa yang paling tepat disajikan untuk membuktikan bahwa kampanye berbayar memberikan dampak finansial langsung terhadap bisnis?",
+      "options": [
+        "Total impresi dan jangkauan audiens unik di mesin pencari",
+        "Rasio klik-tayang dan skor kualitas rata-rata dari seluruh kampanye",
+        "Biaya per klik rata-rata dan total volume klik yang masuk ke website",
+        "Laba atas pengeluaran iklan dan total pendapatan yang dihasilkan konversi"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah startup properti meluncurkan perumahan baru di Bandung. Mereka ingin memastikan bahwa iklan hanya muncul ketika calon pembeli mencari properti dengan spesifikasi 'rumah minimalis 2 lantai bandung'. Jenis pencocokan kata kunci apa yang paling tepat digunakan untuk mengontrol anggaran secara ketat?",
+      "options": [
+        "Pencocokan luas untuk menjangkau variasi kata kunci seluas mungkin",
+        "Pencocokan frasa untuk menangkap urutan kata kunci yang relevan",
+        "Pencocokan tepat untuk menargetkan maksud penelusuran yang spesifik",
+        "Pencocokan luas dengan modifikasi manual pada setiap kata"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah klinik kecantikan di Jakarta mencatatkan klik yang tinggi pada kampanye Google Search mereka, tetapi tingkat konversi (formulir booking terisi) sangat rendah. Berdasarkan laporan search terms, banyak klik berasal dari kata kunci informatif seperti 'cara mengatasi jerawat batu'. Apa tindakan perbaikan yang harus Anda ambil?",
+      "options": [
+        "Menambahkan kata kunci tersebut sebagai kata kunci negatif",
+        "Meningkatkan anggaran harian untuk mendatangkan lebih banyak traffic",
+        "Membuat halaman landing baru khusus untuk tips perawatan wajah",
+        "Mengubah jenis pencocokan kata kunci menjadi broad match"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah toko furnitur online ingin menguji dua variasi judul (headline) iklan yang berbeda untuk melihat mana yang menghasilkan CTR lebih tinggi. Fitur apa di Google Ads yang paling tepat digunakan untuk keperluan ini?",
+      "options": [
+        "Membuat dua kampanye terpisah dengan target wilayah geografis yang dibedakan",
+        "Memanfaatkan fitur Responsive Search Ad dengan menyematkan beberapa variasi judul",
+        "Menggunakan fitur Google Analytics untuk melacak pergerakan kursor pengguna",
+        "Mengubah strategi penawaran dari manual CPC menjadi target impression share"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kampanye Google Search untuk produk herbal lokal menunjukkan Quality Score yang rendah (3/10) pada kata kunci utama. Hal ini membuat CPC menjadi sangat mahal. Tindakan prioritas apa yang harus Anda lakukan untuk menaikkan Quality Score tersebut?",
+      "options": [
+        "Meningkatkan anggaran harian secara signifikan agar algoritma Google memprioritaskan iklan",
+        "Menambahkan lebih banyak kata kunci dengan variasi luas ke dalam satu ad group yang sama",
+        "Menyelaraskan teks iklan dan mempercepat waktu muat halaman landing page tujuan",
+        "Mengganti seluruh ekstensi iklan dengan nomor telepon layanan pelanggan yang aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah hotel butik di Bali ingin meningkatkan pemesanan kamar langsung melalui website selama musim liburan. Strategi penawaran (bid strategy) otomatis mana yang paling tepat dipilih pada awal kampanye?",
+      "options": [
+        "Maximize Clicks untuk mengumpulkan data kunjungan sebanyak mungkin ke situs web",
+        "Maximize Conversions dengan menetapkan target nilai konversi yang spesifik",
+        "Target Impression Share untuk memastikan selalu menduduki peringkat teratas",
+        "Manual CPC agar Anda memiliki kontrol penuh terhadap biaya setiap klik iklan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati rasio konversi (conversion rate) kampanye Google Search produk skincare anjlok drastis dalam tiga hari terakhir, padahal volume klik stabil. Apa langkah investigasi pertama yang harus Anda lakukan?",
+      "options": [
+        "Segera menaikkan anggaran iklan untuk mendatangkan lebih banyak calon pembeli baru",
+        "Memeriksa apakah halaman landing page mengalami gangguan teknis atau tombol checkout rusak",
+        "Mengganti seluruh judul iklan dengan kalimat promosi diskon yang lebih agresif",
+        "Menghapus semua kata kunci yang berkinerja buruk dan menggantinya dengan yang baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola akun SEM untuk sebuah dealer mobil di Jakarta. Budget bulanan cepat habis namun lead yang masuk berkualitas rendah karena banyak klik dari pencarian suku cadang bekas. Langkah taktis apa yang paling tepat diambil di Google Ads?",
+      "options": [
+        "Menurunkan bid maksimum pada semua kata kunci agar budget bertahan lebih lama sepanjang hari",
+        "Menambahkan kata kunci negatif terkait suku cadang dan memantau laporan term pencarian",
+        "Mengubah tipe pencocokan kata kunci utama dari phrase match menjadi broad match",
+        "Membuat grup iklan baru khusus untuk menjaring pengguna yang mencari onderdil murah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand fashion lokal ingin menayangkan iklan penelusuran khusus pada akhir pekan saat orang-orang berbelanja. Pengaturan apa yang harus Anda ubah di panel Google Ads untuk mengakomodasi kebutuhan ini?",
+      "options": [
+        "Mengatur penyesuaian penawaran lokasi berdasarkan jarak dari toko fisik terdekat",
+        "Mengaktifkan fitur penjadwalan iklan (ad schedule) untuk hari Sabtu dan Minggu",
+        "Membuat kampanye terpisah dengan menaikkan target CPA khusus akhir pekan",
+        "Menggunakan strategi penawaran otomatis maximize conversion value pada hari kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan B2B SaaS Anda meluncurkan software akuntansi baru. Anda ingin memastikan iklan hanya tampil ketika target audiens mencari solusi spesifik, bukan sekadar istilah umum. Tipe pencocokan kata kunci apa yang paling aman digunakan?",
+      "options": [
+        "Menggunakan broad match agar sistem AI Google menemukan variasi pencarian terbaik",
+        "Menggunakan phrase match atau exact match untuk membatasi relevansi pencarian",
+        "Menggunakan dynamic search ads agar Google otomatis membaca isi landing page",
+        "Menggabungkan semua jenis kata kunci dalam satu kampanye tanpa batasan tipe"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda melihat bahwa ekstensi callout dan sitelink pada kampanye SEM Anda memiliki performa impresi yang sangat rendah. Cara terbaik untuk meningkatkan visibilitas ekstensi tersebut adalah...",
+      "options": [
+        "Meningkatkan posisi iklan dengan menaikkan bid dan memperbaiki relevansi kata kunci",
+        "Menghapus ekstensi yang ada dan membuat akun Google Ads baru dari awal",
+        "Memindahkan seluruh ekstensi tersebut menjadi bagian dari judul utama iklan",
+        "Mengurangi jumlah teks pada deskripsi iklan agar ekstensi mendapat ruang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal berita online ingin mempromosikan rubrikinvestasi khusus melalui Google Ads dengan anggaran terbatas. Metrik utama apa yang paling tepat dijadikan acuan keberhasilan harian selain biaya per konversi?",
+      "options": [
+        "Jumlah total impresi iklan yang muncul di halaman pertama pencarian Google",
+        "Rasio klik-tayang (CTR) untuk mengukur daya tarik pesan dan judul iklan",
+        "Frekuensi penayangan iklan kepada pengguna unik yang sama setiap jam",
+        "Jumlah ekstensi gambar yang berhasil disetujui oleh sistem kebijakan Google"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mengoptimalkan akun Google Ads untuk klien agensi properti, Anda menemukan bahwa 70% klik berasal dari perangkat seluler (smartphone), namun konversinya hampir nihil. Tindakan apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Menurunkan penyesuaian bid (bid adjustment) untuk perangkat seluler secara signifikan",
+        "Menghapus semua kata kunci yang sering dicari menggunakan perangkat mobile",
+        "Meningkatkan anggaran khusus untuk penayangan di perangkat komputer desktop",
+        "Membuat teks iklan yang jauh lebih panjang khusus untuk pengguna smartphone"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menangani kampanye Google Ads untuk sebuah brand suplemen kesehatan di e-commerce. Dalam dua minggu terakhir, impresi iklan sangat tinggi namun rasio klik (CTR) berada di bawah 1%. Langkah optimasi awal apa yang paling tepat Anda ambil?",
+      "options": [
+        "Menaikkan tawaran biaya per klik maksimum agar posisi iklan naik ke paling atas",
+        "Meninjau laporan istilah penelusuran dan menambahkan kata kunci negatif yang tidak relevan",
+        "Mengganti seluruh kelompok iklan dengan menggunakan kata kunci jenis pencocokan luas",
+        "Membuat halaman landas baru dengan desain yang lebih interaktif dan animasi bergerak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital mengalami lonjakan biaya per klik (CPC) sebesar 50% pada kata kunci brand mereka sendiri karena kompetitor gencar memasang iklan di nama brand tersebut. Tindakan strategis apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Menghentikan sementara kampanye agar anggaran tidak habis tersedot perang penawaran",
+        "Melaporkan kompetitor tersebut secara hukum kepada pihak pengelola mesin pencari",
+        "Meningkatkan Quality Score melalui relevansi iklan dan mengoptimalkan target lokasi",
+        "Menurunkan anggaran harian secara drastis untuk memaksa sistem menurunkan CPC"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan B2B software HR ingin memastikan bahwa formulir unduh e-book gratis di website mereka tercatat sebagai konversi di Google Ads. Apa langkah teknis utama yang harus dipastikan telah terpasang dengan benar?",
+      "options": [
+        "Pemasangan tag Google Ads dan Google Analytics 4 dengan pelacakan peristiwa yang tepat",
+        "Pengaktifan fitur perpanjangan otomatis anggaran bulanan di dasbor penagihan",
+        "Penambahan ekstensi panggilan telepon pada setiap grup iklan yang aktif",
+        "Penggunaan strategi penawaran target pangsa impresi pada tingkat kampanye"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kampanye Google Ads untuk produk FMCG minuman collagen baru berjalan empat hari dan belum mendapatkan satupun konversi pembelian di website. Apa keputusan paling rasional yang harus Anda ambil?",
+      "options": [
+        "Segera mematikan kampanye dan merombak total materi visual di landing page",
+        "Menaikkan target biaya per perolehan konversi hingga dua kali lipat dari awal",
+        "Menunggu fase pembelajaran sistem selesai dan terus memantau metrik mikro seperti klik",
+        "Mengubah strategi penawaran otomatis menjadi maksimalkan klik secepat mungkin"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengelola kampanye iklan penelusuran untuk peluncuran gadget baru. Anggaran harian sering habis sebelum jam 15.00 sore. Langkah optimasi mana yang paling tepat untuk meratakan penayangan iklan sepanjang hari?",
+      "options": [
+        "Mengubah strategi penawaran menjadi maksimalkan klik dengan batas CPC maksimal",
+        "Mengurangi jumlah kata kunci yang bertindak sebagai pencocokan frasa di grup iklan",
+        "Memperluas cakupan wilayah geografis penayangan iklan ke seluruh provinsi",
+        "Menaikkan anggaran harian atau menurunkan tawaran bid untuk memperlambat konsumsi"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda menemukan bahwa ekstensi gambar (image extensions) pada kampanye Google Search untuk produk fashion anak memberikan kontribusi peningkatan CTR yang signifikan. Namun, beberapa gambar produk lama masih tampil. Apa tindakan yang harus dilakukan?",
+      "options": [
+        "Menghapus seluruh ekstensi gambar dan menggantinya dengan teks ekstensi",
+        "Memperbarui aset gambar dengan foto produk koleksi terbaru yang beresolusi tinggi",
+        "Menaikkan anggaran harian kampanye untuk mengimbangi performa gambar tersebut",
+        "Mengubah strategi penawaran dari manual CPC ke target impression share"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan jasa penyedia sewa mobil mewah di Bali mendapati banyak klik iklan berasal dari luar negeri, padahal layanan hanya untuk warga lokal pemegang KTP. Pengaturan apa yang perlu segera Anda perbaiki?",
+      "options": [
+        "Mengubah opsi penargetan lokasi menjadi orang yang berada di lokasi target",
+        "Menambahkan bahasa asing ke dalam judul iklan agar tidak salah sasaran",
+        "Membatasi penayangan iklan hanya pada hari kerja senin sampai jumat saja",
+        "Menurunkan anggaran harian sebesar 50 persen untuk mengurangi jangkauan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit mingguan pada akun SEM klien ritel online, Anda melihat metrik 'Search Impression Share (Lost to Rank)' sangat tinggi di angka 60%. Langkah taktis apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menambahkan daftar kata kunci negatif baru untuk menyaring lalu lintas",
+        "Meningkatkan kualitas iklan dan menaikkan tawaran bid untuk kata kunci utama",
+        "Memperluas wilayah geografis penargetan iklan ke kota-kota tier dua",
+        "Mengganti landing page dengan template yang memuat lebih banyak teks deskriptif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola akun Google Search untuk layanan logistik B2B. Anda mendapati bahwa sebagian besar konversi terjadi pada malam hari, padahal jam operasional sales tim hanya pukul 09.00-17.00. Bagaimana cara Anda menyikapi hal ini dalam pengaturan kampanye?",
+      "options": [
+        "Membuat penyesuaian jadwal iklan untuk menaikkan bid pada jam malam hari",
+        "Menonaktifkan penayangan iklan secara total di luar jam operasional sales",
+        "Mengatur penyesuaian penawaran dan jadwal iklan agar fokus di jam kerja",
+        "Membiarkan pengaturan apa adanya karena sistem otomatis sudah bekerja optimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah klinik gigi di Bandung ingin memaksimalkan pendaftaran pasien baru melalui kampanye Google Ads dengan anggaran terbatas. Kata kunci apa yang paling efektif untuk menekan biaya tanpa kehilangan intensi pembelian?",
+      "options": [
+        "Menggunakan kata kunci luas seperti 'dokter gigi' untuk menjangkau banyak orang",
+        "Menggunakan kata kunci frasa seperti 'pasang kawat gigi di bandung terdekat'",
+        "Menggunakan kata kunci kompetitor dari klinik gigi terbesar di kota tersebut",
+        "Menggunakan kata kunci tunggal yang berhubungan dengan kesehatan umum"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

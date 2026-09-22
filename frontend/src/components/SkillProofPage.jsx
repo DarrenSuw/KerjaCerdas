@@ -22,11 +22,10 @@ export default function SkillProofPage() {
             .finally(() => setLoading(false))
     }, [])
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => { load() }, [load])
 
     const mine = data.items.filter((i) => i.proof !== 'missing')
-    const mineKeys = new Set(mine.map((i) => i.key))
-    const others = data.bank.filter((b) => !mineKeys.has(b.skill))
     const proven = mine.filter((i) => i.proof === 'quiz' || i.proof === 'hr_confirmed').length
 
     return (
@@ -60,34 +59,42 @@ export default function SkillProofPage() {
                                     <span style={{ fontSize: 12, color: KC.mute }}>Lulus {item.proof_date} · berlaku 6 bulan</span>
                                 )}
                             </div>
-                            {item.quiz_available && item.proof === 'claimed' && (
-                                <button style={topBtn(KC.orange, '#fff')} onClick={() => setQuizSkill(item.skill)}>
-                                    <PlayCircle size={15} /> Buktikan
-                                </button>
-                            )}
-                            {!item.quiz_available && item.proof === 'claimed' && (
-                                <span style={{ fontSize: 12, color: KC.mute }}>Kuis belum tersedia · dibuktikan saat wawancara</span>
-                            )}
+                            {(() => {
+                                const isClaimed = item.proof === 'claimed'
+                                const capped = item.daily_attempts_used >= item.daily_attempts_cap
+                                if (!isClaimed) return null
+                                if (!item.quiz_available) {
+                                    return <span style={{ fontSize: 12, color: KC.mute }}>Kuis belum tersedia · dibuktikan saat wawancara</span>
+                                }
+                                if (capped) {
+                                    const resetDate = item.cap_resets_at
+                                        ? new Date(item.cap_resets_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long' })
+                                        : 'besok'
+                                    const statusText = item.last_attempt_status === 'abandoned'
+                                        ? 'Kuis dibatalkan — tidak dihitung sebagai lulus'
+                                        : 'Sudah dicoba hari ini'
+                                    return (
+                                        <span style={{ fontSize: 12, color: KC.mute, textAlign: 'right' }}>
+                                            {statusText}<br />
+                                            <b style={{ color: KC.ink }}>Coba lagi {resetDate}</b>
+                                        </span>
+                                    )
+                                }
+                                return (
+                                    <button style={topBtn(KC.orange, '#fff')} onClick={() => setQuizSkill(item.skill)}>
+                                        <PlayCircle size={15} /> Buktikan
+                                    </button>
+                                )
+                            })()}
+
                         </div>
                     ))}
                 </div>
             </BrutalCard>
 
-            {others.length > 0 && (
-                <BrutalCard color={KC.surface}>
-                    <div style={{ fontWeight: 900, marginBottom: 10 }}>Kuis lain yang tersedia</div>
-                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                        {others.map((b) => (
-                            <button key={b.skill} style={topBtn()} onClick={() => setQuizSkill(b.label)}>
-                                <PlayCircle size={15} /> {b.label}
-                            </button>
-                        ))}
-                    </div>
-                </BrutalCard>
-            )}
-
             {quizSkill && (
                 <QuizModal
+                    key={quizSkill}
                     skill={quizSkill}
                     onClose={() => setQuizSkill(null)}
                     onDone={() => { load(); loadSeekerProfile() }}

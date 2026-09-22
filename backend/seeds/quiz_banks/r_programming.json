@@ -1,0 +1,306 @@
+{
+  "skill": "R Programming",
+  "skill_key": "r programming",
+  "questions": [
+    {
+      "question": "Anda bekerja sebagai Data Analyst di sebuah e-commerce Jakarta. Anda memiliki data transaksi jutaan baris dalam data frame 'df_transaksi' dan perlu menghitung rata-rata nilai transaksi per kategori produk menggunakan fungsi dasar R secara efisien tanpa loop. Fungsi apa yang paling tepat digunakan?",
+      "options": [
+        "tapply(df_transaksi$nilai, df_transaksi$kategori, mean)",
+        "aggregate(nilai ~ kategori, data = df_transaksi, FUN = mean)",
+        "by(df_transaksi$nilai, df_transaksi$kategori, mean)",
+        "rowMeans(df_transaksi$nilai, by = df_transaksi$kategori)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim marketing meminta laporan bulanan dalam bentuk file CSV. Saat Anda mengekspor data frame menggunakan write.csv(), karakter teks berhuruf khusus dari nama pelanggan sering kali berubah menjadi karakter aneh saat dibuka di Excel oleh klien. Parameter apa yang harus ditambahkan agar file terbaca sempurna?",
+      "options": [
+        "fileEncoding = 'UTF-8'",
+        "sep = ';', dec = ','",
+        "row.names = FALSE",
+        "na = 'NA'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membersihkan data log server perusahaan yang berukuran besar. Kolom 'timestamp' terbaca sebagai tipe data character dengan format 'DD-MM-YYYY HH:MM:SS'. Anda ingin mengekstrak hanya informasi bulan untuk analisis tren musiman. Pendekatan mana yang paling aman dan idiomatis menggunakan lubridate?",
+      "options": [
+        "as.numeric(substr(df$timestamp, 4, 5))",
+        "month(dmy_hms(df$timestamp), label = TRUE)",
+        "format(as.Date(df$timestamp), '%m')",
+        "strftime(df$timestamp, format = '%B')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam script R untuk automated daily report, terkadang proses membaca file API eksternal gagal karena koneksi putus, yang mengakibatkan script berhenti total dan menghentikan proses selanjutnya. Mekanisme penanganan error apa yang harus Anda terapkan?",
+      "options": [
+        "Menggunakan fungsi stopifnot() sebelum memanggil API",
+        "Membungkus pemanggilan API dengan fungsi tryCatch()",
+        "Membuat kondisi if-else untuk mengecek status HTTP secara manual",
+        "Menambahkan argumen na.rm = TRUE pada fungsi pembaca data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis survei kepuasan pelanggan dengan banyak nilai kosong (NA) pada berbagai kolom numerik. Saat menghitung korelasi antar variabel menggunakan cor(), hasilnya selalu NA. Bagaimana cara mengatasi hal ini pada fungsi korelasi tersebut?",
+      "options": [
+        "Mengubah semua nilai NA menjadi angka nol menggunakan replace_na()",
+        "Menambahkan argumen use = 'complete.obs' di dalam fungsi cor()",
+        "Menghapus seluruh baris data menggunakan na.omit() sebelum analisis",
+        "Menggunakan fungsi summary() terlebih dahulu untuk membersihkan data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat fungsi kustom di R untuk menghitung proyeksi pajak penghasilan karyawan. Fungsi tersebut sering menerima argumen opsional berupa persentase potongan diskon. Bagaimana cara menetapkan nilai default 10 persen jika pengguna tidak memasukkan argumen tersebut?",
+      "options": [
+        "Mendefinisikan argumen dengan sintaks diskon = 0.10 di dalam header fungsi",
+        "Membuat validasi kondisi if(missing(diskon)) { diskon <- 0.10 } di dalam tubuh fungsi",
+        "Menggunakan fungsi default.args(diskon = 0.10) sebelum mendeklarasikan fungsi",
+        "Menetapkan nilai null dengan sintaks diskon = NULL lalu mengubahnya di awal fungsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki data frame penjualan dengan kolom customer_id dan ingin menggabungkannya dengan data demografi dari tabel lain, namun beberapa pelanggan tidak memiliki data demografi. Anda ingin memastikan semua baris dari data penjualan tetap ada dan data demografi yang tidak cocok diisi NA. Fungsi join mana dari dplyr yang harus dipakai?",
+      "options": [
+        "inner_join(penjualan, demografi, by = 'customer_id')",
+        "left_join(penjualan, demografi, by = 'customer_id')",
+        "right_join(penjualan, demografi, by = 'customer_id')",
+        "full_join(penjualan, demografi, by = 'customer_id')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis data churn telekomunikasi menggunakan model regresi logistik (glm). Anda ingin melihat ringkasan model termasuk nilai p-value untuk setiap koefisien prediktor. Fungsi apa yang paling tepat untuk mengekstrak informasi tersebut dari objek model?",
+      "options": [
+        "summary(model_logit)$coefficients",
+        "anova(model_logit, test = 'Chisq')",
+        "coefficients(model_logit)",
+        "predict(model_logit, type = 'response')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Script R Anda memproses 50 file CSV berukuran sedang secara berurutan menggunakan perulangan for loop standar, dan prosesnya memakan waktu hampir 3 jam. Anda memiliki laptop dengan prosesor 8-core. Pendekatan apa yang paling efektif untuk mempercepat eksekusi proses tersebut?",
+      "options": [
+        "Mengganti perulangan for dengan fungsi sapply() bawaan base R",
+        "Memanfaatkan paralel processing menggunakan library parallel danfuture",
+        "Mengonversi seluruh file CSV menjadi satu file berformat RDS",
+        "Menghapus semua objek tidak terpakai menggunakan fungsi gc()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat laporan interaktif menggunakan Shiny untuk manajemen puncak. Saat pengguna mengubah pilihan filter dropdown wilayah, seluruh aplikasi terasa lambat karena memuat ulang dataset besar dari database berulang kali. Fungsi reaktif apa yang harus digunakan untuk mengoptimalkan kinerja ini?",
+      "options": [
+        "reactiveVal() untuk menyimpan nilai state tombol",
+        "eventReactive() untuk memicu perhitungan hanya saat tombol submit ditekan",
+        "isolate() untuk menghentikan reaktivitas pada semua input pengguna",
+        "reactive() untuk menyimpan hasil subset data agar tidak dihitung ulang jika tidak perlu"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda diminta menganalisis data penjualan bulanan nasional menggunakan library dplyr. Anda perlu menghitung total pendapatan dan rata-rata diskon per wilayah, namun hasil output sering gagal karena kolom nilai transaksi mengandung karakter mata uang 'Rp' dan titik pemisah ribuan. Langkah transformasi paling tepat sebelum agregasi adalah?",
+      "options": [
+        "Menggunakan fungsi mutate dengan gsub untuk menghapus karakter non-numerik lalu konversi ke tipe data numeric",
+        "Langsung menerapkan fungsi summarize dengan argumen na.rm = TRUE agar karakter otomatis diabaikan sistem",
+        "Mengubah seluruh kolom data frame menjadi tipe data factor sebelum menjalankan operasi group_by",
+        "Memanfaatkan fungsi parse_date_time untuk membersihkan format string string mata uang pada kolom numerik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Data Scientist di sebuah bank digital, Anda membangun model credit scoring menggunakan data latih yang sangat tidak seimbang (hanya 2% yang gagal bayar). Ketika Anda melakukan evaluasi model menggunakan fungsi predict pada data uji, metrik apa yang paling tepat dipantau untuk menghindari bias akurasi yang menyesatkan?",
+      "options": [
+        "Mengandalkan nilai akurasi total keseluruhan karena mudah dipahami oleh jajaran manajemen operasional",
+        "Menghitung Area Under the ROC Curve (AUC-ROC) atau Precision-Recall Curve menggunakan library pROC",
+        "Melihat nilai Mean Squared Error (MSE) untuk mengukur tingkat deviasi prediksi pada kelas minoritas",
+        "Menggunakan koefisien determinasi R-squared guna mengukur seberapa baik varians data terjelaskan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis script R untuk memproses data operasional logistik harian. Script tersebut menghasilkan objek data frame yang sangat besar dan membuat memori RAM komputer lokal hampir habis. Pendekatan paling efisien dalam hal manajemen memori saat menyimpan objek tersebut ke disk lokal adalah?",
+      "options": [
+        "Menyimpan data menggunakan fungsi save.image() agar seluruh environment workspace terkompresi",
+        "Mengekspor data ke format CSV standar menggunakan fungsi write.csv tanpa parameter tambahan",
+        "Menyimpan objek dalam format biner terkompresi menggunakan fungsi saveRDS atau library fst",
+        "Mencetak seluruh baris data ke dalam file teks biasa menggunakan fungsi sink() secara berkala"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pembuatan dashboard Shiny untuk pemantauan server perusahaan, Anda mendapati bahwa fungsi pembacaan database SQL berjalan setiap kali pengguna menggeser slider filter, membuat aplikasi sangat lambat. Bagaimana cara mengatasi masalah performa tersebut secara reaktif?",
+      "options": [
+        "Membungkus query database di dalam fungsi reactive() atau isolate() untuk membatasi eksekusi ulang",
+        "Menghapus seluruh komponen UI input slider dan menggantinya dengan tombol actionButton statis",
+        "Meningkatkan kapasitas RAM server fisik tempat aplikasi Shiny dijalankan tanpa mengubah script R",
+        "Memindahkan seluruh kode pemrosesan data dari server.R ke dalam file global.R tanpa pengecualian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima data survei karyawan dalam format Excel (.xlsx) dengan beberapa sheet terpisah yang strukturnya mirip. Untuk menggabungkan seluruh sheet tersebut menjadi satu data frame yang rapi menggunakan library tidyverse, kombinasi fungsi apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi read.table berulang kali dengan mendefinisikan nomor sheet secara manual",
+        "Memakai fungsi read_excel dari readxl digabung dengan map_df dari purrr untuk iterasi nama sheet",
+        "Mengekspor setiap sheet manual ke CSV via Microsoft Excel lalu gabungkan dengan base merge",
+        "Memanfaatkan fungsi load() untuk membaca seluruh sheet Excel langsung ke dalam Global Environment"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan analisis teks (Text Mining) pada ulasan produk e-commerce berbahasa Indonesia untuk mendeteksi sentimen pelanggan. Setelah membuat Corpus dan Document-Term Matrix (DTM), ukuran matriks menjadi sangat besar dan jarang (sparse). Langkah preprocessing apa yang paling tepat untuk mengurangi sparsilitas tanpa kehilangan makna utama?",
+      "options": [
+        "Menghapus kata-kata yang frekuensi kemunculannya sangat tinggi dan sangat rendah menggunakan removeSparseTerms",
+        "Mengubah seluruh karakter huruf besar menjadi huruf kecil menggunakan fungsi base tolower secara agresif",
+        "Menambahkan lebih banyak stop words umum bahasa Inggris ke dalam daftar stop_words bawaan",
+        "Melakukan imputasi nilai kosong pada sel matriks yang kosong menggunakan rata-rata kolom terdekat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat sebuah fungsi kustom di R untuk menghitung komisi sales berdasarkan target bulanan. Terkadang, rekan kerja memasukkan argumen berupa teks atau nilai negatif yang menyebabkan fungsi berhenti error secara tiba-tiba di tengah proses batch processing. Mekanisme pengamanan (error handling) apa yang harus diterapkan di dalam fungsi tersebut?",
+      "options": [
+        "Mengabaikan semua jenis error dengan mematikan fungsi warning menggunakan options(warn = -1)",
+        "Membungkus logika utama di dalam blok tryCatch() untuk menangkap kondisi error dan memberikan pesan informatif",
+        "Menambahkan fungsi browser() di setiap baris kode agar eksekusi berhenti saat ada parameter salah",
+        "Memaksa program keluar menggunakan fungsi stopifnot() di awal script tanpa pengecekan tipe data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan join dua data frame besar di R menggunakan fungsi left_join dari dplyr, jumlah baris pada data hasil akhir membengkak secara tidak wajar (banyak duplikasi baris). Diagnosis paling akurat untuk masalah ini adalah?",
+      "options": [
+        "Terdapat nilai NA pada kolom kunci (key column) di kedua tabel yang sedang digabungkan",
+        "Kunci penggabungan pada tabel sebelah kanan (right table) memiliki nilai duplikat (many-to-many relationship)",
+        "Tipe data pada kolom kunci berbeda, di mana satu sisi bertipe character dan sisi lain numeric",
+        "Kapasitas memori RAM komputer tidak mencukupi untuk menampung hasil join secara optimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat visualisasi sebaran gaji karyawan berdasarkan posisi dan kota penempatan menggunakan ggplot2. Agar grafik batang mudah dibaca oleh manajemen tanpa teks label yang saling bertumpuk, modifikasi sumbu apa yang paling tepat diterapkan?",
+      "options": [
+        "Menghapus semua label sumbu Y menggunakan fungsi theme(axis.text.y = element_blank())",
+        "Membalik sumbu koordinat menggunakan fungsi coord_flip() agar label kategori tampil secara horizontal",
+        "Memperkecil ukuran font keseluruhan plot hingga ukuran 3pt menggunakan parameter base_size",
+        "Mengubah tipe grafik dari bar chart menjadi pie chart standar menggunakan fungsi coord_polar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan pipeline data otomatis menggunakan Rscript di server Linux perusahaan, script Anda perlu membaca konfigurasi kredensial database dari environment variables sistem operasi agar aman dari kebocoran kode. Fungsi bawaan R apa yang paling tepat digunakan untuk mengambil nilai variabel tersebut?",
+      "options": [
+        "Membaca langsung file teks konfigurasi eksternal menggunakan fungsi readLines('config.txt')",
+        "Meminta input interaktif dari pengguna menggunakan fungsi readline(prompt = 'Masukkan password: ')",
+        "Mengambil nilai variabel sistem menggunakan fungsi Sys.getenv('DB_PASSWORD')",
+        "Menyimpan password dalam bentuk teks biasa di dalam file script utama R yang di-commit ke Git"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menganalisis data transaksi penjualan retail yang memiliki kolom tanggal dengan format teks 'DD/MM/YYYY'. Agar dapat dianalisis berdasarkan rentang waktu bulanan menggunakan paket lubridate, fungsi apa yang paling tepat Anda gunakan untuk mengubah tipe data kolom tersebut?",
+      "options": [
+        "Menggunakan fungsi as.Date() dengan argumen format yang sesuai",
+        "Menggunakan fungsi dmy() dari paket lubridate secara langsung",
+        "Menggunakan fungsi parse_date_time() dengan format spesifik",
+        "Menggunakan fungsi ymd() setelah membalik urutan string teks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menjalankan script analisis data bulanan di RStudio, Anda mendapati bahwa proses pembersihan data teks memakan waktu sangat lama karena menggunakan perulangan for loop pada data frame berisi 500 ribu baris. Pendekatan mana yang paling efisien untuk mempercepat proses tersebut?",
+      "options": [
+        "Mengganti perulangan dengan fungsi vektorisasi bawaan atau stringr",
+        "Memecah data frame menjadi 10 bagian kecil menggunakan fungsi split",
+        "Menjalankan garbage collection manual dengan fungsi gc() setiap iterasi",
+        "Mengonversi data frame menjadi matrix sebelum melakukan manipulasi teks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima data mentah dari tim operasional berupa file teks berformat CSV, namun pemisah kolomnya menggunakan titik koma (;) dan desimal menggunakan koma (,). Fungsi read.csv() standar menghasilkan error saat membaca data ini. Apa solusi terbaik untuk mengatasinya?",
+      "options": [
+        "Mengubah semua tanda koma menjadi titik menggunakan teks editor luar",
+        "Menggunakan fungsi read.csv2() yang secara default sesuai format tersebut",
+        "Menggunakan fungsi read.delim() dengan tambahan argumen sep sama dengan koma",
+        "Mengimpor sebagai teks biasa lalu memecahnya dengan fungsi strsplit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam script R untuk pemrosesan data harian, Anda perlu memastikan bahwa direktori kerja script Anda otomatis merujuk ke folder tempat script tersebut disimpan, terlepas dari komputer rekan kerja yang menjalankannya. Paket dan fungsi apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fungsi setwd() dengan path absolut komputer lokal Anda",
+        "Menggunakan fungsi here() dari paket here untuk manajemen path relatif",
+        "Menggunakan fungsi getwd() untuk mendeteksi direktori aktif saat ini",
+        "Menggunakan fungsi file.path() digabung dengan system.file() bawaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat visualisasi distribusi gaji karyawan menggunakan ggplot2. Karena distribusi sangat miring ke kanan (skewed), Anda ingin mengubah skala sumbu X menjadi logaritmik agar pola data lebih terlihat jelas. Penambahan layer apa yang paling tepat?",
+      "options": [
+        "Menambahkan fungsi scale_x_log10() pada objek plot ggplot2",
+        "Menambahkan fungsi coord_trans(x = 'log10') pada objek plot",
+        "Mentransformasi data gaji dengan log10() sebelum dimasukkan ke aes",
+        "Menambahkan layer geom_density() dengan parameter log bernilai true"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menggabungkan data master produk dan data transaksi penjualan. Namun, setelah melakukan inner_join, jumlah baris data transaksi meningkat drastis. Setelah diperiksa, ternyata kunci penggabung pada tabel master produk tidak unik. Apa tindakan pencegahan terbaik sebelum melakukan join?",
+      "options": [
+        "Melakukan duplikasi pada tabel transaksi agar jumlah kolomnya seimbang",
+        "Menghapus semua baris yang memiliki nilai duplikat pada tabel master",
+        "Memeriksa keunikan kunci pada tabel master dengan fungsi get_dupes()",
+        "Menggunakan fungsi distinct() pada kunci tabel master sebelum join"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat melakukan pemodelan machine learning menggunakan paket tidymodels, Anda mendapati bahwa variabel prediktor kategorikal memiliki banyak kategori yang jarang muncul (infrequent levels). Langkah preprocessing apa yang paling tepat dalam recipe untuk mengatasi hal ini?",
+      "options": [
+        "Menambahkan step_other() untuk mengelompokkan kategori jarang",
+        "Menambahkan step_rm() untuk menghapus kolom prediktor tersebut",
+        "Menambahkan step_impute_mode() untuk mengisi kategori yang hilang",
+        "Menambahkan step_novel() untuk menangani kategori baru di data uji"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis sebuah fungsi kustom di R untuk menghitung margin keuntungan proyek. Anda ingin memastikan bahwa jika pengguna fungsi memasukkan nilai negatif pada biaya proyek, fungsi akan segera berhenti dan memunculkan pesan error yang informatif. Fungsi apa yang harus digunakan di dalam fungsi kustom tersebut?",
+      "options": [
+        "Menggunakan fungsi warning() untuk mencatat peringatan di konsol",
+        "Menggunakan fungsi stop() untuk menghentikan eksekusi dan memberi pesan",
+        "Menggunakan fungsi message() untuk memberikan informasi kesalahan",
+        "Menggunakan fungsi assert() dari paket base untuk validasi argumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengolahan data log server perusahaan, Anda memiliki kolom teks yang berisi alamat IP dan port yang digabung, contohnya '192.168.1.10:8080'. Anda ingin memisahkan alamat IP dan port tersebut menjadi dua kolom terpisah. Fungsi apa dari paket tidyr yang paling efisien?",
+      "options": [
+        "Menggunakan fungsi unnest() dengan memecah string berdasarkan titik dua",
+        "Menggunakan fungsi separate() untuk memecah satu kolom menjadi dua kolom",
+        "Menggunakan fungsi spread() untuk mendistribusikan nilai ke kolom baru",
+        "Menggunakan fungsi pivot_longer() untuk menstruktur ulang data teks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan fungsi group_by() dan summarize() dari dplyr untuk menghitung rata-rata penjualan per cabang. Namun, hasil akhir kolom rata-rata berisi nilai NaN atau NA karena beberapa cabang tidak memiliki catatan transaksi. Bagaimana cara menghilangkan baris dengan nilai NA tersebut dari hasil akhir?",
+      "options": [
+        "Menambahkan argumen na.rm = TRUE di dalam fungsi summarize",
+        "Menambahkan fungsi drop_na() atau filter(!is.na()) setelah summarize",
+        "Menggunakan fungsi complete() pada data sebelum melakukan grouping",
+        "Menggunakan fungsi replace_na() dengan nilai nol sebelum summarize"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "ETL",
+  "skill_key": "etl",
+  "questions": [
+    {
+      "question": "Sebuah perusahaan e-commerce di Jakarta mengalami kegagalan pada pipeline ETL harian karena tabel target di data warehouse mengalami lock akibat kueri analitik yang berjalan bersamaan. Langkah mitigasi apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah jadwal eksekusi ETL ke jam sibuk siang hari",
+        "Menerapkan teknik staging tabel dan operasi atomic swap",
+        "Menghapus indeks pada tabel target secara permanen",
+        "Menaikkan kapasitas memori server sumber data operasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang pipeline ETL untuk mengkonsumsi data dari layanan REST API pihak ketiga yang sering mengalami timeout dan rate limiting. Strategi implementasi apa yang paling efektif pada proses extraction?",
+      "options": [
+        "Mengambil seluruh data dalam satu panggilan API besar",
+        "Menjalankan skrip ekstraksi setiap satu detik secara paralel",
+        "Menggunakan exponential backoff dan mekanisme chunking",
+        "Mematikan validasi SSL agar koneksi berjalan lebih cepat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim analis melaporkan adanya duplikasi data transaksi pada laporan bulanan yang bersumber dari pipeline ETL. Setelah diperiksa, duplikasi terjadi karena job ETL dijalankan ulang akibat kegagalan jaringan di tengah proses. Bagaimana cara mendesain ulang proses load agar bersifat idempotent?",
+      "options": [
+        "Menggunakan operasi upsert berdasarkan primary key alami",
+        "Selalu melakukan truncate pada tabel target sebelum insert",
+        "Menambahkan kolom auto-increment baru pada tabel fakta",
+        "Menyimpan log error ke dalam tabel database transaksional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah bank nasional ingin memigrasikan data nasabah dari database legacy on-premise ke cloud data warehouse. Data tersebut bersifat sensitif dan diatur oleh regulasi privasi data yang ketat. Kapan waktu yang paling tepat untuk melakukan proses masking atau anonymization?",
+      "options": [
+        "Setelah data berhasil dimuat ke dalam tabel reporting",
+        "Dilakukan secara manual oleh tim analis setelah query",
+        "Pada tahap staging sebelum data dimuat ke target akhir",
+        "Langsung pada database produksi sumber tanpa salinan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa job ETL yang memproses data log klik web berukuran 50 GB mengalami kehabisan memori (OOM) pada transformation layer menggunakan Pandas di Python. Solusi arsitektural apa yang paling tepat untuk mengatasi kendala ini?",
+      "options": [
+        "Membeli lisensi server dengan kapasitas RAM 1 Terabyte",
+        "Memproses data secara iteratif menggunakan chunk atau PySpark",
+        "Mengompresi file log menjadi format ZIP sebelum dibaca",
+        "Mengurangi jumlah kolom pada log tanpa analisis kebutuhan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah pipeline ETL yang memproses data dari berbagai cabang ritel di seluruh Indonesia, format penulisan tanggal sangat beragam (DD-MM-YYYY, YYYY/MM/DD, dll). Pendekatan apa yang paling efisien untuk menangani masalah ini pada tahap transformation?",
+      "options": [
+        "Meminta seluruh cabang mengubah sistem kasir mereka",
+        "Mengabaikan baris data yang format tanggalnya berbeda",
+        "Membuat fungsi parsing tanggal dengan multi-format fallback",
+        "Menyimpan tanggal mentah sebagai teks tanpa konversi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah startup fintech ingin memindahkan data transaksional secara near real-time dari PostgreSQL ke BigQuery untuk kebutuhan fraud detection. Metode ETL apa yang paling sesuai untuk skenario ini?",
+      "options": [
+        "Batch processing menggunakan cron job setiap tengah malam",
+        "Change Data Capture (CDC) berbasis log streaming",
+        "Full dump database menggunakan file CSV setiap jam",
+        "Manual export data melalui GUI database management tool"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab atas pemeliharaan pipeline ETL yang sudah berjalan lama. Beberapa kolom sumber data sering berubah tipe datanya secara tiba-tiba tanpa pemberitahuan, menyebabkan job gagal. Mekanisme apa yang harus ditambahkan ke dalam pipeline?",
+      "options": [
+        "Menonaktifkan notifikasi error agar log tidak penuh",
+        "Menerapkan automated data contract dan schema validation",
+        "Membuat dokumentasi manual yang diperbarui tiap minggu",
+        "Mengubah semua tipe data target menjadi string universal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik memiliki tabel fakta pengiriman dengan ratusan juta baris yang membuat kueri dashboard menjadi sangat lambat. Sebagai data engineer, strategi pemodelan apa yang harus diterapkan pada tabel target ETL?",
+      "options": [
+        "Melakukan denormalisasi ekstrem menjadi satu tabel datar",
+        "Menerapkan partisi berdasarkan tanggal dan klasterisasi",
+        "Menghapus data historis yang berumur lebih dari satu bulan",
+        "Memindahkan seluruh database ke arsitektur NoSQL document"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pipeline ETL harian Anda berhasil menyelesaikan proses load, tetapi nilai total pendapatan melenceng jauh dari laporan keuangan resmi. Tahap pengujian apa yang terlewat dalam siklus pengembangan ETL tersebut?",
+      "options": [
+        "Uji beban jaringan menggunakan tools stress testing",
+        "Validasi data reconciliation dan perbandingan row count",
+        "Pengujian kecepatan eksekusi kueri pada data warehouse",
+        "Verifikasi hak akses pengguna pada database staging"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pipeline ETL perusahaan retail mengumpulkan data transaksi dari 50 cabang yang mengirimkan file CSV setiap malam melalui SFTP. Seringkali beberapa cabang telat mengirim file, membuat job ETL gagal total karena menunggu file tersebut. Bagaimana cara terbaik mendesain ulang penanganan file ini?",
+      "options": [
+        "Mengubah jadwal ETL menjadi seminggu sekali agar semua cabang sempat mengirim data",
+        "Menerapkan mekanisme sensor file dengan timeout dan logging cabang yang terlambat",
+        "Membuat skrip otomatis untuk menduplikasi file cabang lain jika ada yang terlambat",
+        "Mengabaikan file yang terlambat dan langsung memproses data yang sudah masuk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola pipeline ETL harian yang mengambil data dari database operasional ke data warehouse. Seiring pertumbuhan bisnis, waktu eksekusi kueri ekstraksi melonjak dari 15 menit menjadi 4 jam, mengganggu jam kerja operasional. Pendekatan apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Melakukan ekstraksi penuh setiap satu jam sekali tanpa filter waktu",
+        "Mengganti database operasional dengan server yang memiliki kapasitas RAM lebih besar",
+        "Mengubah strategi ekstraksi menjadi inkremental menggunakan kolom timestamp atau ID",
+        "Menghapus indeks pada tabel sumber untuk mempercepat proses baca data mentah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem ETL menerima data JSON bersarang (nested) dari aplikasi mobile. Struktur data tersebut sering berubah di mana field baru ditambahkan oleh tim developer tanpa pemberitahuan, menyebabkan pipeline gagal pada tahap transformasi. Solusi apa yang paling efektif?",
+      "options": [
+        "Menolak semua data baru dan meminta developer menghentikan pembaruan aplikasi",
+        "Menggunakan skema fleksibel dan tipe data semi-terstruktur seperti JSON/Variant di staging",
+        "Mengunci tabel staging agar developer tidak bisa mengubah struktur data lagi",
+        "Membuat tabel relasional baru setiap kali ada satu field tambahan dari aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim data warehouse mengeluhkan bahwa proses pemuatan (load) data harian sebesar 20 GB ke tabel fakta berukuran besar memakan waktu terlalu lama dan mengunci tabel bagi pengguna. Teknik pemuatan apa yang sebaiknya diterapkan?",
+      "options": [
+        "Melakukan operasi TRUNCATE pada tabel utama sebelum memasukkan seluruh data",
+        "Menggunakan teknik partisi tabel dan memuat data langsung ke partisi tanggal harian",
+        "Menjalankan perintah UPDATE pada seluruh baris yang ada di tabel setiap malam",
+        "Menggabungkan seluruh data historis dan baru menjadi satu file CSV besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses transformasi ETL, Anda perlu menggabungkan (join) data pelanggan dari sistem CRM dan data transaksi dari database operasional. Kedua sistem menggunakan kunci unik yang berbeda format (CRM menggunakan string dengan strip, operasional angka murni). Langkah apa yang harus diambil?",
+      "options": [
+        "Melakukan join langsung dan mengabaikan baris yang kuncinya tidak cocok",
+        "Menghapus data pelanggan yang format kuncinya tidak sesuai standar perusahaan",
+        "Melakukan normalisasi string pada tahap pembersihan data sebelum melakukan join",
+        "Membuat database perantara yang menggabungkan kedua sistem secara fisik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan media sosial ingin memantau aktivitas pengguna secara langsung untuk keperluan analitik kilat. Arsitektur ETL konvensional berbasis batch setiap malam dinilai tidak memadai. Pendekatan arsitektur apa yang paling sesuai?",
+      "options": [
+        "Mengubah jadwal batch ETL menjadi setiap satu jam sekali secara konsisten",
+        "Menerapkan pipeline berbasis streaming menggunakan Apache Kafka dan Apache Flink",
+        "Membuat skrip manual yang dijalankan analis setiap kali laporan baru dibutuhkan",
+        "Memindahkan seluruh database operasional ke cloud untuk akses langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pipeline ETL Anda mengambil data mata uang asing dari API publik. Terkadang API tersebut mengembalikan nilai kosong atau format angka yang rusak karena gangguan jaringan, menyebabkan seluruh job berhenti. Bagaimana cara mengamankan pipeline ini?",
+      "options": [
+        "Menghentikan penggunaan API publik dan memakai kurs tetap selamanya",
+        "Menerapkan penanganan pengecualian (exception handling) dan nilai default/fallback",
+        "Menghapus seluruh transaksi pada hari di mana API tersebut mengalami gangguan",
+        "Membiarkan job gagal agar tim IT segera memperbaiki jaringan internet"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa tabel dimensi produk di data warehouse mengalami perubahan harga secara berkala, tetapi laporan historis penjualan menunjukkan harga produk saat ini, bukan harga saat transaksi terjadi. Konsep pemodelan apa yang harus diterapkan pada ETL?",
+      "options": [
+        "Slowly Changing Dimension (SCD) tipe 2 untuk melacak riwayat perubahan harga",
+        "Menimpa (overwrite) data lama dengan harga terbaru agar selalu konsisten",
+        "Membuat tabel baru setiap kali ada satu produk yang mengalami perubahan harga",
+        "Menghilangkan kolom harga dari tabel dimensi dan meletakkannya di file terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job ETL memproses file log berukuran sangat besar dan sering mengalami kegagalan di tengah jalan akibat lonjakan penggunaan memori. Pendekatan pemrosesan data apa yang paling tepat untuk menghindari masalah ini?",
+      "options": [
+        "Membaca seluruh file log sekaligus ke dalam memori RAM agar proses lebih cepat",
+        "Membagi file log menjadi beberapa bagian kecil dan memprosesnya secara iteratif (chunking)",
+        "Meningkatkan spesifikasi server secara terus-menerus tanpa mengubah kode program",
+        "Menghapus setengah dari baris data log secara acak sebelum proses dimulai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebelum data hasil transformasi dimuat ke tabel produksi data warehouse, Anda perlu memastikan bahwa tidak ada nilai null pada kolom kunci utama dan nilai total transaksi berada dalam batas wajar. Tahapan apa yang sedang Anda lakukan?",
+      "options": [
+        "Data Profiling dan Data Quality Validation pada tahap staging",
+        "Penyimpanan arsip file mentah ke dalam cloud object storage",
+        "Konfigurasi ulang jaringan virtual private cloud (VPC)",
+        "Pembuatan visualisasi dashboard eksekutif untuk laporan bulanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pipeline ETL harian membaca data dari database operasional MySQL dan memuatnya ke Google BigQuery. Selama akhir pekan, volume data melonjak tiga kali lipat dan menyebabkan job ETL gagal karena batas kuota query harian BigQuery terlampaui. Langkah mitigasi apa yang paling efektif untuk mengatasi masalah ini secara berkelanjutan?",
+      "options": [
+        "Mengganti seluruh arsitektur ETL menjadi pemrosesan real-time menggunakan Kafka.",
+        "Mengubah strategi ekstraksi menjadi incremental load berdasarkan waktu dan memecah proses load batch.",
+        "Meningkatkan kapasitas server database MySQL sumber agar kueri berjalan lebih cepat.",
+        "Menghapus data historis di BigQuery setiap akhir pekan untuk mengosongkan kuota penyimpanan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa proses transformasi pada job ETL harian memakan waktu 4 jam karena melakukan operasi lookup ke tabel dimensi berukuran besar secara berulang di dalam baris iterasi. Bagaimana cara paling tepat untuk mengoptimalkan performa transformasi tersebut?",
+      "options": [
+        "Melakukan broadcast join atau memuat tabel dimensi ke dalam memori cache lokal sebelum proses join.",
+        "Memecah file sumber menjadi 10 bagian kecil agar proses iterasi baris berjalan secara paralel.",
+        "Memindahkan seluruh logika transformasi ke dalam laporan dashboard BI menggunakan kalkulasi.",
+        "Menghapus indeks pada tabel dimensi di data warehouse untuk mempercepat proses pencarian."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik mendeteksi bahwa data alamat pengiriman dari mitra pihak ketiga sering kali mengandung singkatan yang tidak konsisten (misal: 'Jl.', 'Jalan', 'Jln'). Langkah apa yang harus diterapkan pada tahap transformasi ETL untuk membersihkan inkonsistensi ini?",
+      "options": [
+        "Membuat tabel master referensi pemetaan teks dan menerapkan fungsi standarisasi string.",
+        "Menolak semua baris data yang menggunakan singkatan tidak baku pada tahap ekstraksi.",
+        "Meminta seluruh mitra logistik untuk memperbarui aplikasi mereka sesuai format perusahaan.",
+        "Mengabaikan perbedaan penulisan karena sistem analitik modern dapat membacanya."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pipeline ETL Anda mengambil data dari sistem legacy yang menggunakan zona waktu berbeda (UTC) dibandingkan operasional bisnis di Indonesia (WIB). Ketika data transaksi tengah malam dimuat, tanggal transaksi sering kali geser ke hari sebelumnya. Solusi apa yang paling tepat?",
+      "options": [
+        "Mengubah zona waktu pada seluruh server aplikasi operasional sumber ke WIB.",
+        "Menambahkan konversi zona waktu secara eksplisit pada tahap transformasi sebelum pemuatan.",
+        "Melakukan penyesuaian manual pada laporan akhir bulan oleh tim finance.",
+        "Membiarkan data apa adanya karena selisih waktu hanya beberapa jam saja."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim keamanan data perusahaan meminta agar nomor kartu kredit (PAN) yang ada pada file log transaksi disamarkan (masking) sebelum disimpan ke data warehouse. Di bagian mana dari arsitektur ETL proses masking ini paling tepat dilakukan?",
+      "options": [
+        "Setelah data berhasil dimuat ke tabel produksi data warehouse menggunakan kueri SQL.",
+        "Di dalam tahap transformasi sebelum data dimuat ke staging area data warehouse.",
+        "Langsung di dalam database sumber operasional sebelum proses ekstraksi dimulai.",
+        "Pada layer visualisasi laporan BI saat pengguna akhir membuka dashboard."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah job ETL mengalami kegagalan karena file CSV dari vendor eksternal kadang kala memiliki header kolom yang berubah urutannya secara acak setiap awal bulan. Bagaimana mendesain mekanisme ekstraksi yang tahan terhadap perubahan ini?",
+      "options": [
+        "Membuat skrip validasi yang membaca header file dan memetakan kolom berdasarkan nama bukan posisi.",
+        "Menghubungi vendor setiap bulan untuk meminta format file dikembalikan seperti semula.",
+        "Menggunakan indeks posisi kolom tetap dan mengabaikan perubahan nama header.",
+        "Memproses file secara manual menggunakan spreadsheet sebelum dimasukkan ke pipeline."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertugas memindahkan data dari tabel berukuran 5 TB ke data warehouse baru. Ekstraksi penuh (full load) akan memakan waktu berhari-hari dan mengganggu performa server operasional. Pendekatan ETL apa yang paling tepat digunakan untuk migrasi ini?",
+      "options": [
+        "Melakukan full load pada akhir pekan saat jam kantor libur tanpa menggunakan teknik lain.",
+        "Menggunakan teknik migrasi bertahap (chunking/pagination) berdasarkan rentang ID atau tanggal secara paralel.",
+        "Mematikan server operasional selama migrasi agar tidak ada data baru yang masuk.",
+        "Menyalin seluruh file data mentah hard disk server sumber menggunakan kurir fisik."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proses ETL harian menerima data transaksi dalam berbagai mata uang. Nilai tukar mata uang diambil dari tabel referensi kurs harian. Apa langkah terbaik yang harus dilakukan ETL jika tanggal transaksi jatuh pada hari libur nasional di mana kurs tidak diperbarui?",
+      "options": [
+        "Menghentikan proses ETL dan mengirimkan alarm darurat ke tim keuangan.",
+        "Menggunakan nilai kurs dari hari kerja bursa terakhir yang tersedia sebelum tanggal transaksi.",
+        "Mengisi nilai tukar dengan angka nol agar mudah dideteksi oleh analis.",
+        "Melompati baris data transaksi yang terjadi pada hari libur nasional tersebut."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pipeline ETL yang memproses data klik situs web, sering ditemukan baris data yang rusak atau korup akibat gangguan jaringan pengguna. Agar job ETL tidak berhenti total ketika menemui data rusak, praktik penanganan error apa yang harus diterapkan?",
+      "options": [
+        "Menghentikan seluruh pipeline segera setelah ditemukan satu baris data yang rusak.",
+        "Mengabaikan semua error secara total dan melanjutkan proses tanpa pencatatan.",
+        "Mengarahkan baris data yang rusak ke tabel penampung error (dead-letter queue/staging error) dan melanjutkan proses data valid.",
+        "Menghapus seluruh file log harian jika ditemukan satu baris yang tidak sesuai format."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan ritel ingin memastikan bahwa job ETL harian tidak memuat data duplikat jika job tersebut harus dijalankan ulang (re-run) karena kegagalan sebelumnya. Sifat apa yang harus dimiliki oleh proses load pada pipeline tersebut?",
+      "options": [
+        "Idempotent, di mana menjalankan proses yang sama berulang kali menghasilkan状态 yang konsisten tanpa duplikasi.",
+        "Append-only, di mana setiap eksekusi selalu menambahkan data baru di akhir tabel tanpa pengecekan.",
+        "Volatile, di mana data lama langsung dihapus secara permanen sebelum proses ekstraksi.",
+        "Sequential, di mana proses harus dijalankan berurutan tepat sekali sehari tanpa boleh diulang."
+      ],
+      "correct_index": 0
+    }
+  ]
+}

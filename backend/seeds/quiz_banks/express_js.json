@@ -1,0 +1,306 @@
+{
+  "skill": "Express.js",
+  "skill_key": "express.js",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan API pencatatan transaksi dengan Express.js. Beberapa klien melaporkan bahwa respons terkadang lambat dan server sering mengalami crash tak terduga karena kegagalan pada operasi database async. Apa pendekatan terbaik untuk mencegah server crash akibat unhandled rejection di Express.js versi modern?",
+      "options": [
+        "Membungkus setiap pemanggilan database dengan blok try-catch secara manual pada controller",
+        "Menggunakan middleware penanganan error global di akhir tumpukan middleware aplikasi",
+        "Memanfaatkan fungsi async handler kustom yang meneruskan error ke fungsi next()",
+        "Mengandalkan fitur bawaan Node.js untuk menangkap seluruh exception secara otomatis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi E-commerce yang Anda tangani mengalami lonjakan trafik saat flash sale. Tim DevOps melihat penggunaan memori (RAM) pada server Express.js melonjak drastis dan proses event loop sering terblokir. Setelah diselidiki, masalah ini berasal dari middleware logging yang mencetak payload request berukuran besar ke konsol secara sinkron. Bagaimana cara paling tepat memperbaiki masalah ini?",
+      "options": [
+        "Mengganti middleware logging sinkron dengan pustaka berbasis stream seperti Morgan",
+        "Menaikkan batas alokasi memori heap V8 Node.js melalui argumen baris perintah",
+        "Memindahkan proses logging payload request ke dalam blok setImmediate lokal",
+        "Mengurangi jumlah worker cluster PM2 agar alokasi memori per proses lebih terkontrol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk mengamankan endpoint API autentikasi di Express.js dari serangan Brute Force. Tim keamanan menyarankan pembatasan jumlah permintaan (rate limiting) khusus untuk rute login. Implementasi manakah yang paling efektif dan sesuai standar industri?",
+      "options": [
+        "Menyimpan hitungan percobaan login ke dalam variabel global di dalam file router",
+        "Menggunakan middleware express-rate-limit yang dikonfigurasi pada rute login spesifik",
+        "Membuat middleware kustom yang mengecek alamat IP langsung dari header request",
+        "Mengandalkan mekanisme proteksi DDoS bawaan dari Nginx reverse proxy sepenuhnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek aplikasi fintech, Anda mendapati kode Express.js yang ditulis oleh pengembang sebelumnya sangat sulit dipelihara karena seluruh logika rute, validasi, dan akses database menumpuk di dalam satu file app.js. Apa langkah refaktorisasi arsitektur yang paling tepat?",
+      "options": [
+        "Memisahkan logika rute menggunakan modul express.Router dan mengelompokkan controller",
+        "Memindahkan seluruh logika bisnis ke dalam fungsi middleware global yang independen",
+        "Mengubah struktur proyek menjadi arsitektur monolitik berlapis menggunakan framework lain",
+        "Memecah file app.js menjadi beberapa file terpisah yang diimpor menggunakan require()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Express.js Anda berada di belakang Nginx reverse proxy. Klien melaporkan bahwa alamat IP mereka terbaca sebagai IP lokal (127.0.0.1) alih-alih IP publik asli pada log aplikasi. Pengaturan Express.js apa yang harus diaktifkan untuk mengatasi masalah ini?",
+      "options": [
+        "Mengaktifkan pengaturan app.set('trust proxy', true) pada instance Express",
+        "Menambahkan header X-Forwarded-For secara manual pada setiap objek respons",
+        "Mengubah konfigurasi port server Express agar mendengarkan port Nginx",
+        "Membuat middleware kustom untuk membaca header host dari setiap permintaan masuk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun layanan mikro untuk mengunggah berkas foto profil pengguna. Klien sering mengirimkan data multipart/form-data. Middleware apa yang paling tepat dipasang pada rute Express.js untuk menangani unggahan berkas tersebut secara efisien?",
+      "options": [
+        "body-parser dengan konfigurasi ekstensi urlencoded untuk tipe data biner",
+        "multer yang dikonfigurasi untuk memproses data multipart pada rute spesifik",
+        "express.json yang dipadukan dengan modul file-system bawaan Node.js",
+        "cors untuk mengizinkan transfer data biner lintas domain secara aman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah endpoint pembaruan profil pengguna di aplikasi Express.js sering gagal karena data yang dikirimkan klien tidak lengkap atau tipe datanya salah, yang menyebabkan error pada ORM database. Pendekatan validasi data masuk mana yang paling bersih dan direkomendasikan?",
+      "options": [
+        "Menulis fungsi pengecekan if-else manual di awal setiap fungsi pengendali rute",
+        "Menggunakan pustaka validasi skema seperti Joi atau express-validator pada rute",
+        "Memanfaatkan fitur validasi bawaan dari objek permintaan req.body di Express",
+        "Menyerahkan penanganan validasi sepenuhnya pada tingkat skema basis data SQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Express.js Anda harus melayani klien dari berbagai domain front-end yang berbeda (React dan Mobile App). Saat aplikasi front-end melakukan permintaan POST, browser memblokirnya karena masalah kebijakan keamanan asal. Solusi middleware apa yang harus diterapkan pada aplikasi?",
+      "options": [
+        "Menambahkan header manual Access-Control-Allow-Origin pada setiap objek respons",
+        "Menggunakan dan mengonfigurasi middleware cors pada tingkat aplikasi Express",
+        "Mengubah tipe konten permintaan HTTP dari application/json menjadi text/plain",
+        "Menonaktifkan kebijakan CORS pada peramban web melalui konfigurasi klien"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Express.js mengalami kebocoran memori (memory leak) setelah berjalan selama beberapa hari di lingkungan produksi. Analisis menunjukkan adanya penambahan listener secara terus-menerus pada eventemitter tanpa pernah dihapus. Bagaimana cara terbaik mencegah masalah ini pada kode Express?",
+      "options": [
+        "Melakukan restart otomatis pada proses server menggunakan PM2 setiap satu jam",
+        "Memastikan pembersihan listener atau penggunaan metode sekali pakai (once)",
+        "Menurunkan batas maksimum ukuran heap V8 Node.js agar aplikasi cepat mati",
+        "Menghapus seluruh modul pihak ketiga yang menggunakan EventEmitter internal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan API publik, Anda perlu memastikan bahwa respons JSON yang dikirimkan ke klien selalu konsisten formatnya, terlepas dari apakah permintaan berhasil atau gagal. Desain penanganan respons apa yang paling profesional di Express.js?",
+      "options": [
+        "Mengirim respons langsung menggunakan res.send() dengan struktur data bebas",
+        "Membuat fungsi utilitas pembantu respons standar untuk konsistensi struktur JSON",
+        "Mengubah prototipe objek response Express secara global untuk menyisipkan data",
+        "Meminta klien menyesuaikan diri dengan bentuk data apa pun yang dikirim server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat API pencatatan absensi karyawan di Express.js di mana sering terjadi operasi database ganda yang harus sukses atau gagal bersamaan. Apa cara terbaik mengelola transaksi database di dalam rute Express.js?",
+      "options": [
+        "Menjalankan query secara berurutan menggunakan fungsi callback bertingkat tanpa penanganan khusus",
+        "Memanfaatkan sesi transaksi dari ODM/ORM pilihan dengan blok try-catch dan melakukan rollback manual jika gagal",
+        "Menggunakan fungsi asynchronous standar dan membiarkan database melakukan pembatalan otomatis secara instan",
+        "Menulis seluruh query SQL mentah di dalam satu fungsi middleware global tanpa parameter pengendali error"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Express.js Anda menerima data webhook pembayaran dari pihak ketiga yang terkadang mengirimkan payload sangat besar hingga menyebabkan error parsing. Bagaimana cara Anda mengonfigurasi body-parser bawaan agar tidak terjadi crash?",
+      "options": [
+        "Mengubah batas ukuran maksimum payload pada fungsi express.json dengan opsi parameter limit yang sesuai",
+        "Menghapus middleware body-parser sepenuhnya dan membaca stream data secara manual di setiap fungsi rute",
+        "Menambahkan blok try-catch di sekitar pemanggilan fungsi middleware express.json di berkas utama aplikasi",
+        "Membuat middleware kustom untuk menghapus header Content-Type dari setiap permintaan webhook yang masuk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem logistik, Anda perlu memastikan bahwa setiap request yang masuk ke endpoint laporan harus melalui validasi token JWT dan pengecekan hak akses peran (role). Bagaimana pola implementasi terbaik di Express.js?",
+      "options": [
+        "Menulis logika validasi token dan peran secara langsung di dalam baris pertama setiap fungsi pengendali rute",
+        "Membuat dua fungsi middleware terpisah dan memasangnya secara berurutan pada definisi rute yang membutuhkan proteksi",
+        "Menggabungkan seluruh logika autentikasi dan otorisasi ke dalam satu file konfigurasi database pusat aplikasi",
+        "Memanfaatkan fungsi bawaan aplikasi untuk memeriksa header authorization secara otomatis pada setiap metode HTTP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa endpoint pencarian produk di aplikasi Express.js lambat ketika pengguna mengirimkan parameter kueri kosong atau tidak valid. Di mana dan bagaimana Anda sebaiknya menangani validasi parameter kueri ini?",
+      "options": [
+        "Melakukan validasi menggunakan pustaka skema seperti Joi atau Express-validator di dalam middleware sebelum mencapai logika bisnis",
+        "Memeriksa keberadaan parameter satu persatu menggunakan kondisi if-else di dalam fungsi pengendali basis data",
+        "Mengabaikan parameter yang tidak valid dan langsung mengembalikan seluruh data produk yang ada ke sisi klien",
+        "Menulis fungsi penanganan error global untuk menangkap parameter kosong dan menggantinya dengan nilai default"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Express.js Anda sering berhenti mendadak (crash) di lingkungan produksi karena ada fungsi asynchronous yang melemparkan error tanpa tertangkap (unhandled rejection). Langkah preventif apa yang harus diambil?",
+      "options": [
+        "Memasang blok try-catch di setiap baris kode yang berhubungan langsung dengan operasi input dan output",
+        "Menambahkan listener pada objek process untuk menangkap event unhandledRejection dan melakukan pencatatan log",
+        "Mengubah seluruh fungsi asynchronous di dalam pengendali rute menjadi fungsi sinkron menggunakan teknik khusus",
+        "Memaksa aplikasi untuk melakukan restart otomatis setiap kali terjadi penurunan performa memori server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fitur ekspor laporan penjualan di aplikasi Express.js membutuhkan waktu pemrosesan hingga 30 detik, yang sering kali mengakibatkan klien mengalami timeout. Solusi arsitektur apa yang paling tepat untuk masalah ini?",
+      "options": [
+        "Meningkatkan batas waktu timeout pada server web Nginx dan konfigurasi internal aplikasi Express.js",
+        "Menggunakan pola antrean pekerjaan (job queue) seperti BullMQ, mengembalikan status 202 Accepted, lalu memproses di latar belakang",
+        "Memecah data laporan menjadi bagian-bagian sangat kecil agar dapat diselesaikan dalam waktu kurang dari satu detik",
+        "Mengubah metode pengiriman data dari format JSON menjadi teks biasa untuk mempercepat proses serialisasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memantau performa kesehatan (health check) aplikasi Express.js yang berjalan di klaster Kubernetes agar dapat mendeteksi kapan aplikasi siap menerima lalu lintas. Rute apa yang sebaiknya Anda sediakan?",
+      "options": [
+        "Membuat rute khusus yang menjalankan tes beban ke database utama setiap kali ada permintaan pemeriksaan",
+        "Menyediakan rute ringan yang memeriksa koneksi kritis seperti database dan cache, lalu merespons dengan status HTTP yang sesuai",
+        "Mengandalkan halaman utama aplikasi sebagai indikator utama kesiapan sistem melalui pengecekan kode status HTTP",
+        "Membuat skrip terpisah di luar aplikasi Express.js untuk memantau penggunaan CPU melalui log sistem operasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi e-learning, Anda perlu mencegah pengguna melakukan spam pada endpoint pengiriman kuis. Bagaimana cara menerapkan rate limiting yang spesifik hanya untuk endpoint tersebut di Express.js?",
+      "options": [
+        "Menggunakan pustaka express-rate-limit dan menerapkannya sebagai middleware khusus hanya pada definisi rute kuis terkait",
+        "Menyimpan alamat IP setiap pengguna ke dalam tabel database sementara dan menghapusnya setelah batas waktu tercapai",
+        "Menulis logika penghitung waktu manual di dalam fungsi middleware global untuk semua rute yang ada di aplikasi",
+        "Mengatur konfigurasi pembatasan koneksi secara langsung di dalam berkas pengaturan server web pengantar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Express.js Anda perlu mengunduh data dari layanan pihak ketiga eksternal yang terkadang lambat dan tidak stabil, sehingga membuat thread utama tertahan. Bagaimana cara mengelolanya dengan aman?",
+      "options": [
+        "Menggunakan modul HTTP bawaan Node.js tanpa pustaka tambahan untuk mengontrol aliran data secara manual",
+        "Memanfaatkan klien HTTP seperti Axios atau Fetch dengan pengaturan batas waktu (timeout) dan mekanisme percobaan ulang (retry)",
+        "Menjalankan proses pengunduhan tersebut di dalam middleware sinkron agar urutan eksekusi tetap terjaga dengan baik",
+        "Memindahkan seluruh logika pemanggilan API eksternal ke dalam fungsi pengendali basis data utama aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan untuk menambahkan dokumentasi API interaktif menggunakan Swagger pada proyek Express.js yang sudah berjalan. Pendekatan apa yang paling efisien untuk memelihara dokumentasi tersebut?",
+      "options": [
+        "Menulis seluruh dokumentasi API secara manual dalam format dokumen terpisah di luar repositori kode sumber",
+        "Menggunakan komentar JSDoc langsung di atas fungsi rute Express.js dan memprosesnya dengan Pustaka Swagger JSDoc",
+        "Membuat aplikasi dokumentasi terpisah menggunakan bahasa pemrograman lain yang mendukung pembuatan spesifikasi otomatis",
+        "Mengandalkan fitur pembuatan dokumentasi otomatis bawaan dari kerangka kerja Express.js tanpa konfigurasi tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur unduh laporan bulanan di Express.js yang menghasilkan file PDF besar. Klien mengeluhkan koneksi sering terputus di tengah jalan karena proses pembuatan file memakan waktu lama. Bagaimana cara terbaik menangani pengiriman data besar ini agar efisien di Express.js?",
+      "options": [
+        "Menggunakan method res.sendFile() untuk mengirimkan path file sementara yang telah disimpan",
+        "Membaca seluruh file ke memori buffer menggunakan fs.readFileSync lalu mengirimnya via res.send()",
+        "Membuat stream data file menggunakan fs.createReadStream dan mempipanya langsung ke objek response",
+        "Menampung seluruh data biner dalam variabel global string sebelum dikirimkan menggunakan res.json()"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah endpoint pendaftaran akun di aplikasi Express.js Anda menerima payload JSON yang sangat besar dari pihak yang tidak bertanggung jawab, menyebabkan server kehabisan memori. Langkah mitigasi apa yang paling tepat diterapkan pada middleware Express?",
+      "options": [
+        "Mengatur batas ukuran payload maksimum pada konfigurasi bawaan express.json({ limit: '10kb' })",
+        "Membuat middleware custom untuk menghitung jumlah karakter string dari setiap request body",
+        "Menambahkan modul kompresi gzip pada seluruh rute aplikasi menggunakan pustaka compression",
+        "Memvalidasi tipe data menggunakan regular expression di dalam setiap fungsi handler controller"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi internal perusahaan, Anda ingin memastikan bahwa setiap request yang mengakses rute `/admin/*` harus menyertakan token JWT yang valid di header Authorization. Di mana dan bagaimana cara menerapkan pengecekan ini?",
+      "options": [
+        "Menulis fungsi validasi token secara manual di dalam baris pertama setiap fungsi endpoint admin",
+        "Membuat fungsi middleware autentikasi dan memasangnya spesifik sebelum rute admin didefinisikan",
+        "Mengandalkan pengaturan database PostgreSQL untuk menolak akses tabel admin secara otomatis",
+        "Memodifikasi konfigurasi server HTTP Node.js native untuk menyaring header sebelum masuk Express"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Express.js Anda berjalan di dalam kontainer Docker dan sering dimatikan secara paksa oleh orkestrator saat proses deployment karena proses pembersihan koneksi database belum selesai. Bagaimana cara menangani graceful shutdown pada aplikasi Express Anda?",
+      "options": [
+        "Memanggil process.exit(0) secara langsung di dalam baris kode paling akhir file entry point",
+        "Menangkap sinyal SIGTERM, menutup server HTTP terlebih dahulu, lalu menutup koneksi database",
+        "Menggunakan modul tambahan PM2 cluster untuk merestart otomatis proses yang mengalami kendala",
+        "Menambahkan blok try-catch pada fungsi utama aplikasi untuk mengabaikan sinyal sistem operasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa log aplikasi Express.js di lingkungan produksi sangat berantakan dan sulit dilacak karena menggunakan console.log biasa tanpa format yang jelas. Pustaka logging mana yang paling ideal dan standar industri untuk diadopsi?",
+      "options": [
+        "Menggunakan modul readline bawaan Node.js untuk mencetak setiap baris log ke terminal secara manual",
+        "Memasang pustaka Winston atau Pino untuk menghasilkan log terstruktur berformat JSON dengan level prioritas",
+        "Mengganti seluruh fungsi cetak log dengan menulis langsung ke file teks menggunakan modul fs sinkronus",
+        "Membuat pustaka pencatatan kustom dari awal yang menyimpan data log ke dalam tabel database relasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah endpoint pencatatan transaksi di aplikasi Express.js Anda kadang menerima duplikasi request dari klien seluler akibat masalah jaringan yang buruk. Pendekatan apa yang paling efektif untuk mencegah duplikasi data tersimpan di database?",
+      "options": [
+        "Membuat indeks unik pada kolom referensi transaksi di database dan menangani error pelanggaran unik",
+        "Menambahkan jeda waktu setTimeout selama 5 detik di awal setiap handler controller rute transaksi",
+        "Menonaktifkan mekanisme retry otomatis pada sisi aplikasi klien seluler secara permanen tanpa kecuali",
+        "Menghapus seluruh riwayat data transaksi yang masuk dalam rentang waktu satu menit secara periodik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan API e-commerce, Anda perlu melakukan beberapa kueri database secara paralel (mengambil data profil, keranjang belanja, dan status pesanan) untuk mempercepat waktu respons endpoint. Bagaimana cara menulis kode Express yang paling optimal?",
+      "options": [
+        "Menjalankan kueri secara berurutan menggunakan teknik async/await biasa satu per satu ke database",
+        "Menggunakan Promise.all([query1(), query2(), query3()]) untuk menjalankan kueri secara bersamaan",
+        "Membungkus setiap kueri database ke dalam blok callback terpisah yang saling bersarang mendalam",
+        "Membuat thread worker terpisah untuk setiap kueri database menggunakan modul worker_threads"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Express.js Anda terintegrasi dengan layanan pembayaran pihak ketiga yang sesekali mengalami timeout. Agar aplikasi tidak mengalami gangguan performa yang berkepanjangan saat layanan tersebut lambat, pola apa yang harus diterapkan?",
+      "options": [
+        "Menaikkan batas waktu timeout server Node.js menjadi tidak terbatas pada tingkat konfigurasi global",
+        "Mengimplementasikan pola Circuit Breaker untuk menghentikan sementara panggilan saat kegagalan meningkat",
+        "Mengabaikan respon dari pihak ketiga dan langsung menganggap transaksi berhasil demi kenyamanan pengguna",
+        "Mengulang panggilan jaringan secara tak terbatas menggunakan perulangan while loop hingga berhasil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menambahkan penanganan error terpusat (centralized error handling) pada aplikasi Express.js agar format respons error konsisten dan tidak membocorkan informasi stack trace sensitif ke klien. Bagaimana struktur middleware error tersebut?",
+      "options": [
+        "Membuat fungsi middleware dengan tiga parameter (req, res, next) yang diletakkan di awal file server",
+        "Membuat fungsi middleware khusus dengan empat parameter (err, req, res, next) di akhir daftar rute",
+        "Menempatkan blok try-catch di setiap baris kode pengendali rute tanpa menggunakan middleware khusus",
+        "Mengandalkan event listener global pada objek process.on('uncaughtException') untuk menangani error HTTP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa beberapa endpoint API mengalami masalah cache di browser pengguna, di mana data lama masih ditampilkan meskipun sudah ada pembaruan di server. Header HTTP apa yang harus diset oleh Express.js untuk mencegah caching?",
+      "options": [
+        "Menyetel header Cache-Control dengan nilai 'no-store, no-cache, must-revalidate, proxy-revalidate'",
+        "Menyetel header Cache-Control dengan nilai 'public, max-age=31536000' pada setiap respons API",
+        "Menambahkan header Expires dengan tanggal waktu lampau pada setiap objek respons Express",
+        "Menghapus seluruh header respons HTTP standar dan membiarkan browser mengatur sendiri secara default"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

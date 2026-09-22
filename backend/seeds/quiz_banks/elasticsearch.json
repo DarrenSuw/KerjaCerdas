@@ -1,0 +1,306 @@
+{
+  "skill": "Elasticsearch",
+  "skill_key": "elasticsearch",
+  "questions": [
+    {
+      "question": "Sebuah e-commerce di Jakarta mengalami lonjakan trafik saat flash sale. Tim DevOps melihat cluster Elasticsearch mengalami 'JVM Out of Memory' (OOM) secara berkala pada node master. Apa langkah mitigasi pertama yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Melakukan restart pada seluruh node cluster secara bersamaan",
+        "Menurunkan ukuran heap size JVM agar tidak memakan RAM fisik",
+        "Memisahkan dedicated master node dari data node untuk stabilitas",
+        "Menghapus seluruh index lama yang berukuran besar dari cluster"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mendesain mapping untuk log transaksi keuangan yang memiliki field status berupa string. Field ini sering digunakan untuk agregasi dan filtering eksak tanpa stemming. Tipe data Elasticsearch apa yang paling efisien untuk field tersebut?",
+      "options": [
+        "Menggunakan tipe data keyword untuk efisiensi term-level query",
+        "Menggunakan tipe data text dengan analyzer standard bawaan",
+        "Menggunakan tipe data integer setelah melakukan mapping kode angka",
+        "Menggunakan tipe data wildcard untuk pencarian pola teks fleksibel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi portal berita lokal mengalami masalah pencarian di mana kata 'membaca' tidak mencocokkan dokumen dengan kata 'baca'. Analisis apa yang harus dilakukan pada index settings untuk memperbaiki masalah ini?",
+      "options": [
+        "Menambahkan filter lowercase pada custom analyzer di index",
+        "Mengganti standard tokenizer dengan keyword tokenizer pada field",
+        "Mengonfigurasi stemmer token filter yang sesuai untuk bahasa Indonesia",
+        "Menggunakan match_phrase query daripada match query standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim data engineering melaporkan bahwa proses indexing data log harian sebesar 50GB berjalan sangat lambat di cluster Elasticsearch 3-node. Pengaturan apa yang paling efektif disesuaikan pada index template untuk mempercepat proses bulk indexing?",
+      "options": [
+        "Menaikkan jumlah replica shard menjadi minimal dua per index",
+        "Menurunkan interval refresh_interval menjadi setiap satu detik",
+        "Menonaktifkan dynamic mapping untuk seluruh field dokumen baru",
+        "Menambah jumlah primary shard dan menaikkan refresh_interval"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dashboard monitoring menunjukkan cluster Elasticsearch berada dalam status 'Yellow'. Pemeriksaan menunjukkan bahwa beberapa replica shard gagal dialokasikan ke node lain. Apa penyebab paling umum dari kondisi status shard ini?",
+      "options": [
+        "Kapasitas disk pada salah satu data node telah mencapai batas maksimum",
+        "Jumlah node aktif di dalam cluster kurang dari jumlah replica shard",
+        "Terjadi konflik mapping tipe data pada field dokumen yang masuk",
+        "Proses garbage collection JVM sedang berjalan sangat lama di node"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu melakukan migrasi data jutaan dokumen dari index lama ke index baru dengan struktur mapping yang telah diperbarui. Fitur native Elasticsearch apa yang paling tepat digunakan untuk proses ini secara aman?",
+      "options": [
+        "Menggunakan API _reindex untuk menyalin data antar index secara langsung",
+        "Melakukan export ke file CSV lalu import ulang menggunakan Logstash",
+        "Membuat snapshot repository ke cloud storage lalu restore index baru",
+        "Menulis skrip Python untuk membaca scroll API dan melakukan bulk insert"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem pencarian produk e-commerce harus mengembalikan hasil pencarian berdasarkan kedekatan geografis gudang penjual dengan lokasi pembeli di Jakarta. Query DSL apa yang harus digunakan dalam skenario ini?",
+      "options": [
+        "Menggunakan match query dengan tambahan boost pada field kota",
+        "Menggunakan term query berdasarkan kode pos lokasi pembeli",
+        "Menggunakan geo_distance query atau sort berbasis geo_point",
+        "Menggunakan range query pada koordinat latitude dan longitude"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Data log aplikasi perbankan harus diarsip setelah 30 hari dan dihapus otomatis setelah 90 hari untuk memenuhi regulasi OJK. Fitur manajemen apa di Elasticsearch yang dirancang khusus untuk otomatisasi siklus hidup data ini?",
+      "options": [
+        "Cross-Cluster Replication untuk mencadangkan data secara berkala",
+        "Index Lifecycle Management untuk transisi hot-warm-cold-delete",
+        "Watcher API untuk memicu skrip penghapusan berdasarkan tanggal",
+        "Snapshot and Restore policy untuk memindahkan data ke cold storage"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query pencarian teks bebas di aplikasi HRD terasa lambat ketika mencari string parsial di tengah kata (misalnya mencari 'bud' untuk menemukan 'Budianto'). Konfigurasi mapping apa yang harus diterapkan agar pencarian substring ini performant?",
+      "options": [
+        "Menggunakan standard tokenizer tanpa mengubah setelan default",
+        "Mengaktifkan fielddata pada field nama untuk pencarian in-memory",
+        "Menggunakan wildcard query dengan awalan tanda bintang ganda",
+        "Menerapkan edge_ngram token filter pada custom analyzer di field"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat melakukan analisis log keamanan, Anda ingin mengetahui jumlah alamat IP unik yang mengakses sistem dalam rentang waktu satu jam terakhir. Jenis aggregations apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan terms aggregation untuk menghitung kemunculan setiap IP",
+        "Menggunakan cardinality aggregation dengan estimasi berbasis HyperLogLog+",
+        "Menggunakan histogram aggregation berdasarkan interval waktu per menit",
+        "Menggunakan stats aggregation untuk mendapatkan nilai unik dan rata-rata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi marketplace mendapati query pencarian produk dengan filter kategori dan urutan harga sering melambat. Analisis slowlog menunjukkan query tersebut sering dipakai jutaan pengguna secara bersamaan. Fitur Elasticsearch apa yang paling tepat diaktifkan untuk mempercepat eksekusi query yang berulang ini?",
+      "options": [
+        "Menggunakan mekanisme request cache untuk menyimpan hasil query yang identik",
+        "Memperbesar ukuran heap memory Java Virtual Machine pada setiap node data",
+        "Menambahkan jumlah primary shard pada index produk agar paralelisme naik",
+        "Mengubah tipe data field kategori dari keyword menjadi text berserta analyzer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang melaporkan bahwa pencarian nama pelanggan dengan teknik autocomplete sering gagal ketika pengguna salah mengetik satu huruf (typo). Fitur query apa yang harus diintegrasikan ke backend pencarian untuk mengatasi masalah ini?",
+      "options": [
+        "Menerapkan match query dengan parameter operator disesuaikan ke and",
+        "Menggunakan fuzzy query atau match query dengan parameter fuzziness",
+        "Membuat field baru bertipe integer untuk menghitung panjang karakter",
+        "Memaksa pencarian menggunakan wildcard query di awal dan akhir string"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah cluster Elasticsearch di perusahaan logistik mengalami lonjakan beban CPU yang drastis pada node tertentu saat proses bulk indexing berjalan. Setelah diselidiki, routing dokumen dilakukan secara default tanpa penentuan ID kustom. Langkah mitigasi apa yang paling efektif?",
+      "options": [
+        "Menurunkan jumlah refresh_interval index menjadi minus satu",
+        "Menentukan routing key yang spesifik berdasarkan ID cabang logistik",
+        "Menambahkan replica shard baru untuk mendistribusikan beban tulis",
+        "Mengurangi ukuran batch pada proses bulk request dari aplikasi client"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah index analitik transaksi harian memiliki ukuran mencapai 80GB per shard, jauh melebihi rekomendasi praktik terbaik. Operasi apa yang harus dilakukan pada index tersebut untuk menjaga performa cluster tetap stabil?",
+      "options": [
+        "Melakukan proses reindex ke index baru dengan jumlah shard yang lebih banyak",
+        "Menjalankan API shrink untuk mengurangi jumlah shard tanpa mengubah struktur",
+        "Mengubah replica index tersebut menjadi nol lalu mengembalikannya ke satu",
+        "Menghapus dokumen lama menggunakan query delete secara terjadwal berkala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan internal perusahaan mengalami masalah ketika melakukan agregasi data (terms aggregation) pada field string berukuran besar, yang menyebabkan error circuit breaker karena memori heap habis. Bagaimana cara mengatasi masalah mapping ini?",
+      "options": [
+        "Memastikan field tersebut memiliki tipe data keyword dan bukan text",
+        "Menonaktifkan doc_values pada mapping field untuk menghemat memori",
+        "Menaikkan batas persentase heap memory untuk fielddata cache di cluster",
+        "Mengganti fungsi terms aggregation dengan query range berbasis tanggal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal lowongan kerja ingin menampilkan hasil pencarian di mana kecocokan judul pekerjaan memiliki bobot tiga kali lebih penting daripada deskripsi pekerjaan. Query DSL mana yang paling tepat digunakan untuk skenario ini?",
+      "options": [
+        "Menggunakan query bool dengan klaim must untuk judul dan should untuk deskripsi",
+        "Memanfaatkan multi_match query dengan menyertakan parameter boost pada field judul",
+        "Menggabungkan dua match query terpisah di dalam struktur constant_score",
+        "Menerapkan function_score query untuk menghitung ulang nilai relevansi dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pemeliharaan rutin pada node Elasticsearch di data center, Anda perlu mematikan salah satu node fisik secara aman tanpa memicu replikasi ulang shard yang dapat membebani jaringan. Pengaturan cluster apa yang harus diterapkan terlebih dahulu?",
+      "options": [
+        "Mengubah cluster routing allocation awareness ke zona ketersediaan lain",
+        "Mengatur cluster transient setting dengan menaikkan nilai cluster routing allocation enable ke none",
+        "Menonaktifkan fitur autocompletion dan indeksasi real-time pada seluruh node",
+        "Menurunkan parameter translog durability dari request menjadi async"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim keamanan siber ingin mendeteksi pola serangan brute force dengan memantau alamat IP yang gagal login lebih dari lima kali dalam rentang waktu sepuluh menit. Jenis agregasi Elasticsearch apa yang paling tepat dipakai bersamaan?",
+      "options": [
+        "Menggunakan terms aggregation pada IP, didalamnya diberi sub-agregasi filter status gagal",
+        "Menggunakan date_histogram aggregation dikombinasikan dengan metric top_hits",
+        "Memanfaatkan percentile aggregation pada durasi waktu akses setiap alamat IP",
+        "Menggunakan significant_terms aggregation untuk mencari anomali kemunculan IP"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem manajemen dokumen hukum memerlukan fitur pencarian yang dapat menemukan frasa persis seperti undang-undang ketenagakerjaan tanpa mengabaikan urutan kata di dalamnya. Query apa yang paling tepat digunakan?",
+      "options": [
+        "Match query dengan menyertakan operator and untuk memastikan semua term ada",
+        "Match phrase query dengan menentukan nilai slop yang sesuai kebutuhan",
+        "Query string query dengan membubuhkan tanda kurung siku pada kata kunci",
+        "Wildcard query yang mencakup seluruh kombinasi susunan kata dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati proses indexing log aplikasi sering gagal karena ada beberapa dokumen yang memiliki tipe data field tidak konsisten, misalnya field umur kadang dikirim sebagai integer dan kadang sebagai string. Solusi terbaik untuk mencegah error ini di masa depan adalah?",
+      "options": [
+        "Menggunakan dynamic templates pada index mapping untuk menangkap tipe data fleksibel",
+        "Memperbaiki kode aplikasi pengirim log agar konsisten mengirim tipe data yang sesuai mapping",
+        "Menonaktifkan validasi schema pada pengaturan cluster elasticsearchyml secara global",
+        "Mengubah tipe data field tersebut menjadi text agar semua format bisa diterima"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi chat enterprise ingin memastikan bahwa pencarian pesan teks dalam bahasa Indonesia dapat mengabaikan imbuhan umum seperti 'me-', 'ber-', atau '-kan'. Analyzer bawaan mana yang paling tepat dikonfigurasi pada field pesan untuk kebutuhan ini?",
+      "options": [
+        "Menggunakan standard analyzer dengan lowercase filter",
+        "Menggunakan Indonesian analyzer dengan custom stemmer",
+        "Menggunakan keyword analyzer dengan stop words filter",
+        "Menggunakan whitespace analyzer tanpa token filter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa query pencarian teks pada index produk sering mengonsumsi memori heap yang sangat besar karena banyaknya field unik yang dicari secara bersamaan. Pendekatan apa yang paling efektif untuk mengoptimalkan penggunaan memori ini tanpa mengubah fungsionalitas pencarian?",
+      "options": [
+        "Menggabungkan beberapa field pencarian ke dalam satu field khusus menggunakan parameter _source",
+        "Membuat custom field copy_to yang menggabungkan teks dari beberapa field ke satu field pencarian terpusat",
+        "Menonaktifkan doc_values pada semua field teks yang digunakan untuk query pencarian utama",
+        "Menaikkan batasan index_options pada seluruh mapping menjadi offsets untuk mempercepat pencarian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tim riset pasar ingin melakukan analisis teks untuk mengelompokkan ulasan pelanggan berdasarkan kemiripan makna, bukan sekadar kecocokan kata kunci yang sama. Fitur Elasticsearch apa yang harus diintegrasikan untuk mencapai tujuan ini?",
+      "options": [
+        "Menggunakan dense vector field bersama model machine learning eksternal untuk semantic search",
+        "Mengaktifkan fuzzy query dengan parameter fuzziness otomatis pada setiap field ulasan",
+        "Menerapkan custom script score untuk menghitung panjang karakter dari setiap ulasan",
+        "Memanfaatkan wildcard query untuk mencocokan pola kalimat yang kompleks di ulasan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pembaruan struktur mapping pada index produksi yang aktif, Anda ingin menghindari waktu henti aplikasi dan mencegah konflik tipe data pada dokumen baru. Strategi migrasi zero-downtime apa yang paling tepat diterapkan?",
+      "options": [
+        "Langsung memperbarui mapping index yang ada menggunakan endpoint Put Mapping API",
+        "Menghapus index lama, membuat index baru dengan mapping benar, lalu melakukan reindex",
+        "Membuat index baru, mengarahkan tulis ke alias, lalu melakukan reindex dari index lama",
+        "Menghentikan cluster, mengubah file konfigurasi yml, lalu melakukan restart rolling node"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem manajemen inventaris memerlukan pelacakan pergerakan barang antar gudang secara real-time. Ketika terjadi perubahan status stok, update dokumen harus segera tercermin tanpa menunggu interval refresh default. Konfigurasi apa yang paling tepat disesuaikan pada index tersebut?",
+      "options": [
+        "Mengubah parameter index.refresh_interval menjadi 1s atau menggunakan ?refresh=true pada API request",
+        "Menonaktifkan fitur translog sepenuhnya untuk mempercepat proses penulisan data ke disk",
+        "Menaikkan jumlah replica shard menjadi minimal tiga untuk menjamin ketersediaan data realtime",
+        "Menggunakan bulk API dengan ukuran batch yang lebih kecil untuk mengurangi antrean di memory buffer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform media sosial ingin menampilkan tren topik yang sedang dibicarakan secara nasional setiap jam. Agregasi apa yang harus digunakan untuk mengelompokkan postingan berdasarkan tagar dan menghitung jumlah kemunculannya dari yang terbanyak?",
+      "options": [
+        "Menggunakan date_histogram aggregation dikombinasikan dengan sub-agregasi significant_text",
+        "Menggunakan terms aggregation pada field tagar dengan menentukan ukuran atau urutan yang sesuai",
+        "Menggunakan range aggregation pada field timestamp dengan filter kata kunci populer di dalamnya",
+        "Menggunakan stats aggregation untuk menghitung total dokumen yang memiliki field tagar aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim operasional mencatat bahwa penggunaan heap memory pada node data sering mengalami lonjakan tinggi akibat proses pencarian yang menyertakan pengurutan pada field teks (string). Solusi arsitektur apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Memastikan field teks tersebut memiliki sub-field bertipe keyword yang digunakan khusus untuk sorting",
+        "Menonaktifkan fitur fielddata caching secara global melalui file elasticsearch.yml di setiap node",
+        "Menaikkan ukuran dynamic buffer pool untuk mengimbangi beban sorting string yang besar di memori",
+        "Mengganti tipe data field teks tersebut menjadi integer agar proses sorting berjalan lebih ringan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertanggung jawab mengelola cluster Elasticsearch dengan kapasitas penyimpanan yang terus bertambah setiap hari. Agar performa pencarian data lama tidak menurun dan biaya penyimpanan tetap efisien, arsitektur manajemen data apa yang sebaiknya diterapkan?",
+      "options": [
+        "Menggunakan fitur Rollover API dan Index Lifecycle Management (ILM) untuk memindahkan data ke hot, warm, dan cold tier",
+        "Menghapus data secara manual setiap akhir bulan menggunakan script cron yang memanggil Delete Index API",
+        "Menaikkan jumlah primary shard pada index utama secara berkala seiring bertambahnya volume data harian",
+        "Menyatukan seluruh data historis ke dalam satu index raksasa dan memperbanyak jumlah replica shard"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi lowongan kerja memiliki fitur pencarian di mana pelamar ingin mencari posisi pekerjaan yang mencakup kata 'software' tetapi secara tegas mengecualikan posisi yang menyebutkan kata 'senior'. Jenis klausa query apa yang harus digunakan?",
+      "options": [
+        "Menggunakan bool query dengan klausa must untuk 'software' dan klausa must_not untuk 'senior'",
+        "Menggunakan bool query dengan klausa should untuk 'software' dan klausa filter untuk 'senior'",
+        "Menggunakan match query biasa dengan menambahkan tanda minus di depan kata senior",
+        "Menggunakan multi_match query dengan tipe cross_fields dan parameter operator and"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah portal berita online mendapati bahwa proses pencarian artikel berdasarkan tanggal publikasi sering lambat ketika rentang waktu yang dipilih sangat luas. Pengaturan index apa yang dapat dioptimalkan untuk mempercepat query berbasis rentang waktu dan angka?",
+      "options": [
+        "Mengaktifkan doc_values dan memastikan field bertipe date terindeks dengan baik tanpa analisis teks",
+        "Mengubah tipe data field tanggal menjadi text agar bisa dianalisis oleh standard analyzer",
+        "Menambahkan custom token filter bertipe pattern_replace pada field tanggal di dalam mapping",
+        "Menonaktifkan fitur _source pada index tersebut untuk menghemat ruang penyimpanan di disk"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

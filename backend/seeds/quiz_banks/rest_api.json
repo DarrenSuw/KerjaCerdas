@@ -1,0 +1,306 @@
+{
+  "skill": "REST API",
+  "skill_key": "rest api",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi mobile e-commerce di Jakarta dan mendapati respons endpoint GET /api/v1/products memakan waktu hingga 4 detik karena mengembalikan 5.000 data sekaligus. Pendekatan apa yang paling tepat diterapkan pada REST API tersebut untuk memperbaiki performa?",
+      "options": [
+        "Mengubah metode HTTP dari GET menjadi POST agar data dikompresi otomatis",
+        "Menerapkan parameter pagination berbasis limit dan offset atau kursor",
+        "Menghapus semua validasi token autentikasi pada header request",
+        "Memindahkan seluruh database relasional ke penyimpanan berbasis file"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem pembayaran fintech lokal di Indonesia mengalami lonjakan trafik drastis saat flash sale, menyebabkan database sering down akibat request POST /api/v1/charge yang berulang. Solusi arsitektur API manakah yang paling efektif mencegah kegagalan sistem?",
+      "options": [
+        "Menaikkan kapasitas RAM server database utama secara vertikal",
+        "Mengubah format payload data dari JSON menjadi format XML murni",
+        "Menerapkan mekanisme rate limiting dan antrean pesan asinkron",
+        "Menonaktifkan sementara enkripsi HTTPS untuk mempercepat proses"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mendesain endpoint REST API untuk memperbarui status pesanan kurir logistik secara parsial (hanya mengubah kolom 'status_pengiriman'). Metode HTTP manakah yang paling sesuai dengan standar RESTful?",
+      "options": [
+        "Menggunakan metode POST dengan menyertakan seluruh objek data lama",
+        "Menggunakan metode PUT dengan mengirimkan seluruh entitas pesanan",
+        "Menggunakan metode PATCH dengan mengirimkan field yang diubah saja",
+        "Menggunakan metode DELETE lalu membuat ulang data dengan status baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi frontend web perusahaan Anda sering gagal memproses data tanggal dari REST API karena inkonsistensi zona waktu antara server backend di UTC dan client di WIB (GMT+7). Standar apa yang sebaiknya disepakati dan diterapkan pada API?",
+      "options": [
+        "Mengirimkan string tanggal bebas sesuai input lokal pengguna",
+        "Menggunakan format standar ISO 8601 dengan indikator zona waktu UTC",
+        "Mengonversi semua tanggal menjadi angka timestamp desimal acak",
+        "Meminta client mendeteksi zona waktu secara manual tanpa bantuan server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa endpoint POST /api/v1/users mengembalikan status code 200 OK meskipun proses pembuatan akun gagal karena email sudah terdaftar di database. Tindakan perbaikan apa yang harus Anda lakukan pada kode backend?",
+      "options": [
+        "Mengganti status code respons error tersebut menjadi 409 Conflict",
+        "Mengubah status code respons error tersebut menjadi 500 Server Error",
+        "Membiarkan status 200 namun menambahkan pesan teks kosong di body",
+        "Mengubah metode HTTP endpoint menjadi GET untuk validasi ulang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengintegrasikan layanan pihak ketiga (third-party API) yang sering mengalami timeout acak selama 5-10 detik. Agar aplikasi utama Anda tidak ikut mengalami gangguan atau thread exhaustion, pola desain (design pattern) apa yang harus diterapkan?",
+      "options": [
+        "Menghapus mekanisme penanganan error agar proses berjalan terus",
+        "Menambahkan fungsi rekursi tak terbatas pada setiap pemanggilan API",
+        "Menerapkan pola circuit breaker dengan fallback response yang aman",
+        "Mengubah seluruh arsitektur aplikasi menjadi monolith berbasis PHP"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan media sosial meluncurkan fitur profil publik. Endpoint GET /api/v1/users/{id} diakses jutaan kali per hari dengan data yang sangat jarang berubah. Strategi optimasi manakah yang paling tepat untuk mengurangi beban server?",
+      "options": [
+        "Mengimplementasikan HTTP caching menggunakan header seperti ETag",
+        "Menghapus fitur autentikasi agar proses routing menjadi lebih ringkas",
+        "Menurunkan batas maksimal ukuran payload JSON hingga 10 byte",
+        "Memaksa client melakukan polling data setiap satu detik sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain API untuk aplikasi SaaS HRIS. Karyawan hanya boleh melihat data gaji mereka sendiri, tetapi seorang admin divisi HR boleh melihat data seluruh karyawan. Mekanisme keamanan manakah yang harus divalidasi di dalam server API?",
+      "options": [
+        "Melakukan pengecekan role dan kepemilikan resource pada setiap request",
+        "Menyembunyikan tombol menu gaji pada antarmuka aplikasi frontend",
+        "Mengandalkan kerahasiaan URL endpoint agar tidak diketahui karyawan",
+        "Menggunakan enkripsi AES pada parameter URL query string saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi mobile Anda perlu mengunduh data master wilayah (provinsi, kabupaten, kecamatan, kelurahan) yang saling berelasi hierarkis. Bagaimana cara merancang struktur endpoint REST API yang paling intuitif?",
+      "options": [
+        "Membuat satu endpoint tunggal yang mencampur seluruh data tanpa parameter",
+        "Menggunakan nested resource path seperti /provinces/{id}/regencies",
+        "Membuat endpoint terpisah yang tidak memiliki kaitan relasi sama sekali",
+        "Menggunakan metode PUT untuk mengambil data hierarki wilayah tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim internal Anda mengubah struktur skema database pada tabel produk, yang mengakibatkan perubahan nama field pada response JSON dari 'product_name' menjadi 'nama_produk'. Tanpa merusak aplikasi mobile versi lama yang masih beredar di pengguna, bagaimana cara mengelolanya?",
+      "options": [
+        "Memblokir total akses dari aplikasi versi lama secara sepihak",
+        "Melakukan versioning pada URL endpoint, contohnya dari /v1/ ke /v2/",
+        "Mengubah kembali skema database agar sesuai dengan aplikasi lama",
+        "Meminta pengguna menghapus cache memori pada perangkat seluler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang endpoint pencarian katalog produk dengan banyak filter (kategori, rentang harga, lokasi, urutan). Apa metode HTTP dan pendekatan payload terbaik untuk skenario ini?",
+      "options": [
+        "Menggunakan POST dengan payload JSON agar data filter yang kompleks aman dari batas panjang URL",
+        "Menggunakan GET dengan parameter query string standar agar URL mudah dibagikan dan di-cache",
+        "Menggunakan PUT dengan mengirimkan objek state pencarian lengkap pada body request",
+        "Menggunakan PATCH dengan mengirimkan array perubahan filter secara parsial ke server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah API publik perusahaan logistik sering disalahgunakan oleh pihak luar untuk melakukan scraping data resi secara otomatis dalam skala masif. Langkah mitigasi apa yang paling efektif diterapkan pada REST API tersebut?",
+      "options": [
+        "Menerapkan mekanisme rate limiting berbasis token bucket pada setiap IP dan API key",
+        "Mengubah seluruh method HTTP GET pada endpoint publik menjadi POST dengan enkripsi",
+        "Memindahkan seluruh dokumentasi API ke jaringan intranet agar tidak bisa diakses publik",
+        "Mengharuskan klien mengirimkan kredensial password admin pada setiap parameter header"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi web dashboard admin Anda perlu memantau status pesanan secara real-time tanpa harus melakukan polling HTTP berulang kali ke server setiap detik. Solusi arsitektur API apa yang paling tepat?",
+      "options": [
+        "Menggunakan arsitektur GraphQL subscription untuk menggantikan seluruh REST endpoint lama",
+        "Menggunakan protokol WebSockets untuk menjaga koneksi persisten dua arah dengan klien",
+        "Menggunakan cron job di sisi server untuk mengirim push notification via email berkala",
+        "Menggunakan teknik long polling dengan memperpanjang timeout koneksi GET hingga 5 menit"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati endpoint POST /api/v1/transactions kadang mencatat transaksi ganda di database karena pengguna menekan tombol 'Bayar' dua kali saat jaringan lambat. Bagaimana cara mengatasi masalah idempotency ini?",
+      "options": [
+        "Mengharuskan klien menghasilkan dan mengirimkan header Idempotency-Key unik per transaksi",
+        "Memvalidasi duplikasi data dengan memeriksa kesamaan waktu timestamp di database server",
+        "Mengubah metode HTTP dari POST menjadi PUT agar setiap request bersifat idempotent murni",
+        "Menambahkan penundaan timer debounce selama 10 detik di sisi tombol aplikasi frontend"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend mengeluhkan bahwa endpoint GET /api/v1/dashboard mengembalikan data yang terlalu besar berisi ringkasan seluruh modul, padahal halaman tertentu hanya butuh bagian profil saja. Bagaimana desain API yang ideal?",
+      "options": [
+        "Membuat endpoint terpisah yang spesifik untuk setiap halaman frontend yang ada",
+        "Menerapkan parameter query sparse fieldsets agar klien bisa memilih field yang diinginkan",
+        "Memecah respons JSON menjadi beberapa bagian file terpisah yang harus diunduh manual",
+        "Meminta tim frontend melakukan filtering data secara mandiri setelah data diterima"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan microservice internal perlu memanggil REST API lain yang rentan mengalami lonjakan latensi sesaat. Agar kegagalan tidak merembet ke service lain, pola ketahanan apa yang harus dipasang?",
+      "options": [
+        "Menerapkan pola Circuit Breaker untuk menghentikan pemanggilan sementara saat error tinggi",
+        "Menaikkan batas timeout koneksi HTTP client hingga batas maksimal tanpa batasan waktu",
+        "Menonaktifkan mekanisme autentikasi token untuk mempercepat proses transmisi paket",
+        "Mengganti seluruh protokol komunikasi sinkron menjadi transfer file via FTP terjadwal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengunggah file foto profil pengguna berukuran besar ke server melalui REST API. Format data dan metode apa yang paling tepat digunakan pada request tersebut?",
+      "options": [
+        "Menggunakan JSON dengan string berformat Base64 pada method PUT di endpoint profil",
+        "Menggunakan multipart/form-data dengan method POST pada endpoint unggahan khusus",
+        "Menggunakan plain text stream dengan method PATCH langsung ke direktori penyimpanan",
+        "Menggunakan URL query parameters dengan method GET untuk mengirimkan path direktori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem API autentikasi Anda menggunakan token JWT. Ketika pengguna melakukan aksi 'Logout', bagaimana cara terbaik memastikan token tersebut langsung tidak dapat digunakan kembali sebelum masa kedaluwarsa?",
+      "options": [
+        "Menghapus token secara langsung dari LocalStorage browser menggunakan perintah skrip",
+        "Memasukkan token yang dicabut ke dalam daftar hitam (blacklist) di Redis server",
+        "Memperpanjang masa kedaluwarsa token secara otomatis hingga batas waktu maksimal",
+        "Mengubah secret key enkripsi JWT di server setiap kali ada pengguna yang logout"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah endpoint GET /api/v1/reports/sales menghasilkan laporan berat yang memakan waktu 15 detik untuk diproses oleh database. Apa status HTTP code yang paling tepat dikembalikan jika server memprosesnya secara asinkron?",
+      "options": [
+        "200 OK dengan menyertakan data kosong sementara di dalam body respons JSON",
+        "202 Accepted dengan menyertakan URL status pengecekan pada header Location",
+        "204 No Content untuk memberitahu klien bahwa proses sedang berjalan di latar",
+        "503 Service Unavailable agar klien menghentikan proses permintaan laporan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memperbarui versi API dari v1 ke v2 karena ada perubahan struktur payload yang merusak kompatibilitas lama (breaking changes). Di mana letak penempatan versi yang paling sesuai dengan standar industri?",
+      "options": [
+        "Menyertakannya sebagai parameter query string opsional pada setiap akhir URL path",
+        "Menuliskannya secara eksplisit di dalam struktur path URL seperti /api/v2/resources",
+        "Mengirimkannya melalui custom header HTTP tambahan yang wajib diisi oleh klien",
+        "Menyimpan informasi versi di dalam payload JSON body pada setiap metode request"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur impor data produk massal di mana admin mengunggah file CSV berisi 10.000 baris melalui REST API. Proses ini memakan waktu hingga 3 menit, sehingga koneksi HTTP sering terputus di tengah jalan. Pendekatan arsitektur apa yang paling tepat untuk menangani skenario ini?",
+      "options": [
+        "Menggunakan mekanisme asynchronous dengan message broker dan mengembalikan status 202 Accepted beserta URL polling",
+        "Memecah file CSV di sisi client menjadi 100 file terpisah dan mengirimkannya secara paralel menggunakan Promise.all",
+        "Meningkatkan batas timeout pada Nginx dan load balancer hingga 5 menit untuk menjaga koneksi TCP tetap terbuka",
+        "Mengubah metode transfer data dari REST API payload JSON biasa menjadi format XML dengan kompresi Gzip"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa aplikasi web sering mengalami error saat menampilkan data transaksi karena nilai mata uang desimal kadang dibaca sebagai string atau mengalami pembulatan yang salah di JavaScript. Perubahan apa yang harus Anda lakukan pada desain payload JSON dari REST API?",
+      "options": [
+        "Mengubah tipe data nilai mata uang pada response API menjadi string agar presisi angka tidak hilang di client",
+        "Menggunakan tipe data floating point standar dan menambahkan header khusus yang mendefinisikan skala desimal",
+        "Meminta tim frontend untuk melakukan parsing manual menggunakan fungsi parseInt pada setiap string numerik",
+        "Mengonversi seluruh nilai mata uang menjadi satuan terkecil (sen) dalam bentuk integer sebelum dikirim ke client"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah aplikasi mobile perbankan memerlukan keamanan ekstra untuk mencegah serangan Man-in-the-Middle (MitM) dan pemalsuan request pada endpoint transfer dana kritis. Selain menggunakan HTTPS, praktik keamanan REST API apa yang wajib diterapkan?",
+      "options": [
+        "Menambahkan enkripsi payload end-to-end menggunakan kunci simetris yang ditanam secara hardcode di aplikasi mobile",
+        "Menerapkan mekanisme HMAC signature pada header request yang divalidasi menggunakan timestamp dan secret token",
+        "Memastikan semua parameter sensitif dikirim melalui HTTP header kustom alih-alih menggunakan body request JSON",
+        "Melakukan obfuscation kode sumber aplikasi mobile agar endpoint URL API tidak dapat dibaca oleh decompiler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain endpoint REST API untuk sistem manajemen inventaris gudang yang menerima update stok dari berbagai cabang secara bersamaan. Terkadang dua cabang mengirim update untuk produk yang sama persis dalam detik yang sama, menyebabkan data saling menimpa (race condition). Mekanisme HTTP apa yang paling efektif untuk mencegah masalah ini?",
+      "options": [
+        "Menggunakan header If-Match dengan nilai ETag pada request PUT untuk memastikan data belum diubah pihak lain",
+        "Menambahkan parameter timestamp otomatis pada body request untuk diurutkan berdasarkan waktu kedatangan server",
+        "Mengubah metode HTTP dari PUT menjadi POST agar setiap perubahan dicatat sebagai entri riwayat baru di database",
+        "Menerapkan pembatasan rate limit yang ketat pada IP address gudang agar request dikirim secara berurutan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda memiliki halaman keranjang belanja yang sering melakukan request berulang ke endpoint GET /api/v1/cart setiap kali pengguna menavigasi halaman. Hal ini membebani server database secara tidak perlu karena isi keranjang jarang berubah drastis dalam waktu singkat. Strategi caching HTTP apa yang paling tepat diterapkan?",
+      "options": [
+        "Memanfaatkan header Cache-Control dengan direktif no-store agar data keranjang selalu diambil langsung dari server",
+        "Mengonfigurasi header Expires dengan waktu kedaluwarsa tetap selama 24 jam untuk seluruh respons keranjang belanja",
+        "Menggunakan validasi cache berbasis header ETag dan Last-Modified yang merespons dengan status 304 Not Modified",
+        "Menyimpan data keranjang belanja secara lokal di browser menggunakan LocalStorage tanpa melibatkan pemanggilan API"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik ingin menyediakan REST API publik bagi mitra bisnis untuk melacak status pengiriman paket. Mitra mengeluhkan bahwa struktur dokumentasi API sering kedaluwarsa dan tidak sinkron dengan implementasi aktual kode backend. Solusi standar industri apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menulis file dokumentasi manual dalam format PDF dan mengirimkannya via email setiap kali ada pembaruan endpoint",
+        "Mengintegrasikan spesifikasi OpenAPI (Swagger) yang divalidasi otomatis dengan kode sumber dan dapat diakses interaktif",
+        "Membuat halaman wiki internal perusahaan yang harus diperbarui oleh developer setiap kali selesai melakukan deploy",
+        "Menggunakan komentar kode yang komprehensif di dalam fungsi controller agar dapat diekstrak menjadi dokumentasi HTML"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah endpoint GET /api/v1/analytics mengalami performa yang sangat lambat karena melakukan agregasi data dari jutaan baris tabel database secara langsung pada setiap request. Pendekatan optimasi backend apa yang paling tepat untuk merespons masalah ini?",
+      "options": [
+        "Melakukan proses pre-aggregation data secara terjadwal (background worker) dan menyimpan hasilnya ke tabel cache khusus",
+        "Menambahkan indeks komposit pada seluruh kolom tabel database yang terlibat dalam klausa WHERE dan ORDER BY",
+        "Meningkatkan spesifikasi server database secara vertikal dengan menambah kapasitas RAM dan jumlah inti CPU",
+        "Memecah satu endpoint agregasi tersebut menjadi puluhan endpoint kecil yang dipanggil secara paralel oleh client"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi super-app menggunakan satu gateway API terpusat untuk meneruskan request ke berbagai microservice di backend. Ketika salah satu microservice layanan pembayaran mengalami gangguan total, error tersebut merambat dan membuat seluruh gateway API ikut hang karena kehabisan thread koneksi. Pola desain ketahanan apa yang harus diterapkan pada gateway API?",
+      "options": [
+        "Menerapkan pola rate limiting berbasis alamat IP pengguna pada setiap request yang masuk ke gateway API",
+        "Menggunakan pola circuit breaker untuk menghentikan panggilan sementara ke layanan yang bermasalah dan mengembalikan fallback",
+        "Menambahkan mekanisme retry otomatis tanpa batas waktu tunggu pada setiap request yang gagal menerima respons",
+        "Membuat tabel antrean database terpusat di gateway untuk menampung seluruh request hingga layanan pulih kembali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan REST API untuk aplikasi layanan kesehatan, endpoint GET /api/v1/patients mengembalikan daftar seluruh pasien terdaftar. Karena data sangat besar, Anda perlu menerapkan paginasi. Mengapa pendekatan keyset (cursor-based) pagination lebih disarankan dibandingkan offset-based pagination untuk data berskala besar?",
+      "options": [
+        "Keyset pagination memungkinkan klien melompat langsung ke halaman acak mana pun dengan memasukkan nomor halaman spesifik",
+        "Offset pagination memerlukan memori server yang sangat besar untuk merender seluruh halaman sebelum dikirim ke klien",
+        "Keyset pagination menghindari performa database yang menurun drastis dan mencegah duplikasi atau data terlewat saat ada penyisipan baru",
+        "Offset pagination tidak dapat digunakan bersamaan dengan parameter pengurutan data berdasarkan tanggal pembuatan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang merancang sistem webhook agar sistem pihak ketiga dapat menerima notifikasi instan ketika status pembayaran berhasil. Tantangan utamanya adalah server penerima pihak ketiga sering down sementara, sehingga notifikasi gagal terkirim. Strategi pengiriman apa yang harus diimplementasikan pada sistem webhook Anda?",
+      "options": [
+        "Mengirim ulang notifikasi secara otomatis menggunakan algoritma exponential backoff dan mencatat status kegagalan untuk audit",
+        "Mengubah mekanisme notifikasi webhook menjadi protokol WebSocket permanen agar koneksi tetap terjalin secara real-time",
+        "Meminta pihak ketiga menyediakan alamat IP statis agar koneksi jaringan tidak terputus saat proses pengiriman data",
+        "Menyimpan data notifikasi ke dalam cookie browser pengguna yang sedang melakukan pembayaran hingga berhasil dibaca"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

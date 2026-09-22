@@ -136,7 +136,7 @@ export default function PublicJobPage() {
                 </BrutalCard>
             )}
 
-            {quizSkill && <QuizModal skill={quizSkill} onClose={() => setQuizSkill(null)} onDone={() => { loadSkills(); loadSeekerProfile() }} />}
+            {quizSkill && <QuizModal key={quizSkill} skill={quizSkill} onClose={() => setQuizSkill(null)} onDone={() => { loadSkills(); loadSeekerProfile() }} />}
             {reporting && <ReportJobModal code={job.public_code} reasons={job.report_reasons} onClose={() => setReporting(false)} />}
         </Shell>
     )

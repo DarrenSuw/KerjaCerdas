@@ -1,0 +1,306 @@
+{
+  "skill": "HTML",
+  "skill_key": "html",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan halaman detail produk untuk e-commerce lokal. Bagian judul produk menggunakan tag h1, namun tim SEO meminta agar setiap halaman hanya memiliki tepat satu tag h1 utama demi performa perayapan mesin pencari. Apa tindakan terbaik yang harus Anda ambil pada struktur HTML?",
+      "options": [
+        "Mengubah seluruh heading di halaman tersebut menjadi tag h2 agar aman dari duplikasi",
+        "Memastikan hanya ada satu elemen h1 yang membungkus nama produk utama di halaman itu",
+        "Menghapus tag h1 dan menggantinya dengan tag p yang diberi ukuran font besar dan tebal",
+        "Membuat beberapa tag h1 di setiap bagian penting agar visibilitas produk semakin meningkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs berita portal nasional meminta Anda merapikan struktur kode HTML lama agar mudah dibaca oleh screen reader tunanetra. Bagian menu navigasi utama saat ini masih menggunakan tag div biasa. Elemen semantik apa yang paling tepat untuk menggantikannya?",
+      "options": [
+        "Menggunakan tag header khusus untuk membungkus seluruh menu navigasi situs",
+        "Menggunakan tag section agar mesin pencari tahu bahwa ini bagian terpisah",
+        "Menggunakan tag nav untuk mendefinisikan kelompok tautan navigasi utama",
+        "Menggunakan tag aside karena posisi navigasi berada di sisi halaman web"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain form pendaftaran kerja online. Kolom nomor telepon wajib diisi oleh pelamar dengan format angka saja. Atribut HTML5 apa yang paling tepat disematkan pada tag input untuk memvalidasi dan memunculkan keypad numerik di perangkat seluler?",
+      "options": [
+        "Menambahkan atribut type='tel' dan pola regex pada elemen input form",
+        "Menambahkan atribut type='number' tanpa batasan karakter tambahan",
+        "Memakai atribut type='text' dengan tambahan fungsi javascript bawaan",
+        "Memanfaatkan atribut type='phone' agar browser langsung mengenalinya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim desain menyerahkan aset banner promo berukuran besar untuk website perusahaan. Agar halaman website tidak terasa berat saat diakses pengguna dengan koneksi seluler lambat di luar Jawa, teknik pemuatan gambar apa yang harus diterapkan pada tag img?",
+      "options": [
+        "Menambahkan atribut fetchpriority='high' agar gambar diunduh lebih awal",
+        "Menambahkan atribut loading='lazy' agar gambar dimuat saat hampir digulir",
+        "Menghapus tag img dan memindahkannya seluruhnya ke dalam file CSS eksternal",
+        "Menambahkan atribut async pada tag img untuk mempercepat waktu render"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat halaman tabel data transaksi keuangan bulanan yang panjang. Saat pengguna menggulir ke bawah, header tabel sering kali tidak terlihat sehingga membingungkan pembaca. Tag HTML apa yang harus digunakan untuk mengelompokkan baris judul tabel agar tata letaknya lebih terstruktur?",
+      "options": [
+        "Menggunakan tag tfoot di bagian paling atas untuk menahan posisi judul",
+        "Menggunakan tag tbody untuk membungkus seluruh baris data termasuk judul",
+        "Menggunakan tag thead untuk mengelompokkan baris kepala tabel",
+        "Menggunakan tag caption agar judul tabel selalu menempel di layar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek pembuatan landing page aplikasi fintech, Anda diminta membuat tombol aksi (CTA) utama yang ketika diklik akan mengarahkan pengguna langsung menuju bagian unduh aplikasi di halaman yang sama. Atribut apa yang harus dipasang pada tag anchor agar tautan internal ini berfungsi?",
+      "options": [
+        "Mengisi atribut href dengan nilai berupa ID elemen target yang diawali tanda pagar",
+        "Mengisi atribut target dengan nilai blang agar terbuka di tab browser baru",
+        "Mengisi atribut rel dengan nilai internal untuk mempercepat lompatan halaman",
+        "Mengisi atribut name dengan nama bagian tujuan yang dituju oleh pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs web travel agent menampilkan ikon-ikon fasilitas hotel menggunakan tag i konvensional. Auditor aksesibilitas menyarankan agar ikon dekoratif tersebut diabaikan oleh screen reader agar tidak membunyikan teks yang tidak perlu. Atribut apa yang harus ditambahkan pada elemen ikon tersebut?",
+      "options": [
+        "Menambahkan atribut title kosong pada elemen ikon dekoratif tersebut",
+        "Menambahkan atribut aria-hidden='true' untuk menyembunyikannya dari alat bantu",
+        "Menambahkan atribut role='presentation' pada wadah pembungkus ikon",
+        "Menambahkan atribut alt='' langsung di dalam tag ikon fasilitas hotel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun halaman FAQ (Pertanyaan yang Sering Diajukan) untuk layanan perbankan digital. Struktur HTML apa yang paling modern dan semantik untuk membuat daftar pertanyaan yang dapat diklik untuk membuka jawaban ringkasnya?",
+      "options": [
+        "Menggunakan kombinasi tag details dan summary untuk interaksi buka-tutup bawaan",
+        "Menggunakan elemen table dengan baris tersembunyi yang diatur via HTML murni",
+        "Menggunakan elemen list item biasa yang dilengkapi atribut action khusus browser",
+        "Menggunakan elemen article dan section secara bergantian untuk setiap tanya jawab"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pembuatan form registrasi akun, Anda perlu memastikan bahwa kolom alamat email wajib diisi sebelum tombol submit dapat dikirim oleh sistem browser. Atribut HTML apa yang paling tepat disematkan pada elemen input tersebut?",
+      "options": [
+        "Menambahkan atribut validate pada elemen form utama halaman web",
+        "Menambahkan atribut mandatory pada tag input email yang bersangkutan",
+        "Menambahkan atribut required langsung di dalam tag input email",
+        "Menambahkan atribut checked untuk memastikan kolom sudah terisi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin menyisipkan video tutorial internal perusahaan berformat MP4 langsung ke dalam halaman dashboard karyawan tanpa menggunakan plugin pihak ketiga. Tag HTML apa yang paling tepat digunakan beserta kontrol pemutarnya?",
+      "options": [
+        "Menggunakan tag media dengan atribut source dan player bawaan sistem",
+        "Menggunakan tag video dengan menyertakan atribut controls di dalamnya",
+        "Menggunakan tag object dengan sumber file video berformat MP4 lokal",
+        "Menggunakan tag embed yang dilengkapi atribut autoplay dan controls"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menambahkan gambar profil pengguna pada halaman dashboard akun. Agar gambar tetap aman dimuat meskipun file aslinya gagal diunggah atau terhapus di server, atribut apa yang wajib Anda sertakan di dalam tag img?",
+      "options": [
+        "Menyertakan atribut title yang berisi nama lengkap pengguna yang bersangkutan",
+        "Menyertakan atribut alt yang mendeskripsikan isi gambar profil tersebut",
+        "Menyertakan atribut loading dengan nilai lazy untuk efisiensi data",
+        "Menyertakan atribut srcset untuk mengatur resolusi layar berbagai perangkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan halaman profil perusahaan, Anda perlu menyisipkan peta interaktif dari Google Maps ke dalam layout situs. Elemen HTML mana yang paling tepat digunakan untuk menyematkan halaman eksternal tersebut secara aman?",
+      "options": [
+        "Menggunakan elemen object dengan sumber tautan peta yang valid",
+        "Menggunakan elemen iframe dengan menyertakan URL sematan peta",
+        "Menggunakan elemen embed yang dihubungkan langsung ke API peta",
+        "Menggunakan elemen canvas untuk merender ulang peta interaktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs berita online ingin menampilkan kutipan panjang dari narasumber ahli di tengah artikel. Elemen HTML semantik apa yang paling tepat untuk membungkus blok kutipan panjang tersebut?",
+      "options": [
+        "Menggunakan elemen cite untuk menandai sumber kutipan teks",
+        "Menggunakan elemen blockquote untuk membedakan kutipan blok",
+        "Menggunakan elemen q untuk menyisipkan teks kutipan pendek",
+        "Menggunakan elemen address untuk informasi kontak narasumber"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat form pengaturan akun di mana pengguna dapat memilih satu atau lebih hobi dari daftar pilihan yang tersedia. Elemen input apa yang paling tepat digunakan untuk kebutuhan pilihan ganda ini?",
+      "options": [
+        "Elemen input dengan tipe radio dan nama atribut yang seragam",
+        "Elemen input dengan tipe checkbox dan nama atribut unik",
+        "Elemen input dengan tipe text yang dilengkapi fitur autocomplete",
+        "Elemen input dengan tipe select yang mengaktifkan multiple"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang meminta Anda menyusun struktur navigasi utama di bagian atas halaman web korporat. Elemen HTML semantik mana yang harus digunakan untuk membungkus daftar tautan navigasi tersebut?",
+      "options": [
+        "Membungkus daftar tautan menggunakan elemen section utama",
+        "Membungkus daftar tautan menggunakan elemen nav khusus",
+        "Membungkus daftar tautan menggunakan elemen header terpusat",
+        "Membungkus daftar tautan menggunakan elemen aside samping"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam halaman riwayat transaksi e-commerce, Anda menampilkan daftar barang pesanan menggunakan list tidak berurutan. Elemen HTML apa yang harus membungkus setiap item nama barang di dalam daftar tersebut?",
+      "options": [
+        "Menggunakan elemen item untuk setiap baris data produk",
+        "Menggunakan elemen li untuk menandai setiap elemen daftar",
+        "Menggunakan elemen dl untuk daftar definisi nama barang",
+        "Menggunakan elemen tr untuk baris tabel daftar produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan halaman artikel blog yang panjang. Di bagian awal artikel, Anda ingin membuat daftar isi yang ketika diklik akan langsung melompat ke sub-bagian tertentu di halaman yang sama. Atribut apa yang harus disematkan pada elemen tujuan lompatan tersebut?",
+      "options": [
+        "Menambahkan atribut name dengan nilai unik pada elemen target",
+        "Menambahkan atribut id dengan nilai unik pada elemen target",
+        "Menambahkan atribut class dengan nama unik pada elemen target",
+        "Menambahkan atribut href dengan tautan relatif pada elemen target"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik meminta Anda membuat form pelacakan paket. Kolom input resi harus memiliki teks petunjuk samar di dalamnya yang akan hilang saat pengguna mulai mengetik. Atribut apa yang digunakan untuk membuat teks petunjuk tersebut?",
+      "options": [
+        "Menggunakan atribut value untuk mengisi teks awal input",
+        "Menggunakan atribut placeholder untuk menampilkan teks panduan",
+        "Menggunakan atribut label untuk mendefinisikan kolom input",
+        "Menggunakan atribut title untuk menampilkan keterangan tooltip"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan layout dashboard admin, Anda ingin mengelompokkan beberapa widget statistik independen yang bisa berdiri sendiri dalam satu halaman. Elemen HTML semantik mana yang paling tepat untuk setiap widget tersebut?",
+      "options": [
+        "Menggunakan elemen article untuk mewakili konten mandiri",
+        "Menggunakan elemen section untuk membagi bagian dokumen",
+        "Menggunakan elemen div umum tanpa makna semantik khusus",
+        "Menggunakan elemen aside untuk informasi pelengkap samping"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat halaman web multibahasa untuk perusahaan multinasional di Jakarta. Tag meta apa di dalam bagian head yang harus diatur agar dokumen HTML dapat merender karakter khusus bahasa asing dengan benar?",
+      "options": [
+        "Mengatur tag meta viewport untuk skala perangkat seluler",
+        "Mengatur tag meta charset dengan nilai utf-8 standar",
+        "Mengatur tag meta description untuk optimasi mesin pencari",
+        "Mengatur tag meta author untuk informasi pembuat dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang halaman detail lowongan kerja di portal karir. Agar sistem pencari seperti Google dapat membaca informasi tanggal penutupan lowongan dengan akurat, elemen HTML semantik apa yang paling tepat digunakan untuk membungkus tanggal tersebut?",
+      "options": [
+        "<data value=\"2023-12-31\">31 Desember 2023</data>",
+        "<span class=\"deadline\">31 Desember 2023</span>",
+        "<time datetime=\"2023-12-31\">31 Desember 2023</time>",
+        "<strong id=\"closing-date\">31 Desember 2023</strong>"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pembuatan form pendaftaran event perusahaan, Anda perlu mengelompokkan beberapa pilihan bidang pekerjaan yang saling eksklusif (hanya boleh pilih satu) agar mudah diakses keyboard. Atribut apa yang wajib disamakan pada elemen input radio tersebut?",
+      "options": [
+        "Menggunakan atribut id yang sama pada setiap elemen input",
+        "Menggunakan atribut name yang bernilai sama pada setiap input",
+        "Menambahkan atribut group yang sama di dalam tag form",
+        "Menyatukan seluruh input ke dalam satu tag select khusus"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs e-commerce fesyen ingin menampilkan galeri foto produk dengan deskripsi singkat di bawah setiap gambar. Struktur HTML semantik apa yang paling tepat untuk membungkus setiap pasangan gambar dan keterangan tersebut?",
+      "options": [
+        "Menggunakan elemen div dengan class galeri item",
+        "Menggunakan elemen table berukuran satu kolom",
+        "Menggunakan elemen section dengan tag article",
+        "Menggunakan elemen figure yang berisi img dan figcaption"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang membangun halaman dasbor analitik yang menampilkan grafik performa penjualan harian. Grafik tersebut dibuat menggunakan elemen SVG inline di dalam dokumen HTML. Agar pengguna dengan gangguan penglihatan tetap mendapat informasi yang jelas, elemen tambahan apa yang wajib disematkan di dalam SVG?",
+      "options": [
+        "Menyertakan tag title dan desc di dalam elemen root svg",
+        "Memberikan atribut alt langsung pada tag pembuka svg",
+        "Menambahkan tag canvas tersembunyi di bawah elemen svg",
+        "Menyisipkan teks penjelasan di dalam atribut aria-label"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam halaman situs berita, Anda ingin menampilkan sebuah istilah teknis khusus beserta definisi singkatnya yang akan muncul saat kursor diarahkan ke kata tersebut. Elemen HTML apa yang paling sesuai untuk kebutuhan ini?",
+      "options": [
+        "Menggunakan tag span dengan atribut title bawaan",
+        "Menggunakan elemen semantic abbr untuk singkatan atau istilah",
+        "Menggunakan tag quote untuk membungkus kata kunci",
+        "Menggunakan elemen definition list khusus untuk teks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun halaman pengaturan privasi akun pengguna. Di bagian akhir, terdapat teks panjang mengenai syarat dan ketentuan layanan yang harus disetujui tanpa memenuhi seluruh layar. Elemen HTML apa yang paling tepat untuk membuat kotak teks dengan bilah gulir (scroll) di dalamnya?",
+      "options": [
+        "Menggunakan elemen textarea dengan atribut read-only",
+        "Menggunakan tag div yang diberi styling overflow CSS",
+        "Menggunakan elemen dialog modal pop-up interaktif",
+        "Menggunakan tag iframe yang memuat halaman dokumen lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pembuatan aplikasi web Point of Sale (POS) untuk kasir toko retail, Anda perlu memastikan tombol aksi 'Bayar Tunai' dapat diakses secara cepat menggunakan kombinasi tombol keyboard (shortcut). Atribut HTML apa yang digunakan untuk menetapkan pintasan tombol tersebut?",
+      "options": [
+        "Menggunakan atribut shortcut pada elemen button",
+        "Menggunakan atribut accesskey pada elemen button",
+        "Menggunakan atribut tabindex untuk navigasi fokus",
+        "Menggunakan atribut hotkey untuk interaksi cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web instansi pemerintahan mengharuskan dokumen HTML memuat informasi metadata standar seperti penulis, deskripsi halaman, dan charset agar terbaca optimal oleh mesin pencari. Di dalam tag bagian mana informasi tersebut harus diletakkan?",
+      "options": [
+        "Diletakkan di dalam tag body sebelum konten utama",
+        "Diletakkan di dalam tag header di bagian atas dokumen",
+        "Diletakkan di dalam tag head sebelum tag title",
+        "Diletakkan di dalam tag footer pada akhir dokumen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat halaman formulir umpan balik (feedback) pelanggan. Kolom komentar masukan harus memungkinkan pengguna mengetik teks panjang berbentuk paragraf secara leluasa. Elemen HTML apa yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan tag input dengan tipe text berukuran besar",
+        "Menggunakan elemen textarea tanpa batas baris kaku",
+        "Menggunakan tag paragraph yang dapat diedit langsung",
+        "Menggunakan elemen fieldset khusus untuk blok teks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek redesign website korporat, Anda perlu membuat bagian footer yang berisi tautan media sosial, hak cipta, dan alamat kantor. Elemen HTML semantik apa yang paling tepat untuk mewakili bagian footer tersebut?",
+      "options": [
+        "Menggunakan elemen section khusus untuk bagian bawah",
+        "Menggunakan elemen footer di tingkat akar atau penutup",
+        "Menggunakan tag div dengan id bernilai footer-area",
+        "Menggunakan elemen address untuk seluruh isi footer"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

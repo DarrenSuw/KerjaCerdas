@@ -1,0 +1,306 @@
+{
+  "skill": "Microsoft Azure",
+  "skill_key": "microsoft azure",
+  "questions": [
+    {
+      "question": "Sebuah startup e-commerce di Jakarta mengalami lonjakan trafik tak terduga saat flash sale, menyebabkan database Azure SQL melebihi batas DTU (Database Transaction Units) 100%. Tim DevOps perlu segera memulihkan performa tanpa downtime yang lama. Langkah taktis apa yang paling tepat diambil?",
+      "options": [
+        "Melakukan migrasi langsung ke Azure Cosmos DB dengan model NoSQL",
+        "Melakukan scale-up tier database Azure SQL secara temporer ke tier yang lebih tinggi",
+        "Membuat replika baca baru di region Singapura untuk mendistribusikan beban tulis",
+        "Menghentikan seluruh layanan aplikasi sementara untuk membersihkan tabel log transaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan media nasional ingin mendistribusikan video berita berukuran besar ke seluruh pengguna di Indonesia dengan latensi minimal. Layanan Azure mana yang harus dikonfigurasi bersama dengan Azure Blob Storage untuk mencapai tujuan ini?",
+      "options": [
+        "Mengonfigurasi Azure Traffic Manager dengan metode routing berbasis geografis",
+        "Memanfaatkan Azure Front Door untuk mempercepat rute jaringan aplikasi web",
+        "Mengintegrasikan Azure CDN untuk melakukan caching aset statis di edge node terdekat",
+        "Menerapkan Azure Application Gateway dengan fitur Web Application Firewall aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim audit internal meminta bukti bahwa semua data nasabah bank di Azure Blob Storage terenkripsi menggunakan kunci yang dikelola sepenuhnya oleh bank, bukan oleh Microsoft. Mekanisme enkripsi apa yang harus diterapkan?",
+      "options": [
+        "Mengaktifkan fitur enkripsi sisi klien menggunakan Azure Key Vault milik perusahaan",
+        "Membuat akun penyimpanan baru dengan replikasi zona ganda dan enkripsi transparan",
+        "Menggunakan Customer-Managed Keys (CMK) yang terintegrasi dengan Azure Key Vault",
+        "Menerapkan enkripsi Infrastructure-level menggunakan Service-Managed Keys standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi enterprise berjalan di Azure Virtual Machines di region Southeast Asia. Arsitek Cloud diminta merancang pemulihan bencana (DR) ke region East Asia dengan RPO di bawah 15 menit. Strategi apa yang paling efisien?",
+      "options": [
+        "Menggunakan Azure Site Recovery untuk mereplikasi VM secara berkala ke region target",
+        "Membuat skrip PowerShell untuk melakukan backup harian ke Azure Backup Vault",
+        "Menyiapkan template ARM untuk deploy ulang infrastruktur secara manual saat darurat",
+        "Membangun klaster aktif-aktif menggunakan Azure Load Balancer antar dua region"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi berbasis microservices di Azure Kubernetes Service (AKS) sering mengalami kegagalan komunikasi antar pod karena masalah resolusi DNS internal klaster. Komponen mana yang harus diperiksa atau di-troubleshoot?",
+      "options": [
+        "Memeriksa konfigurasi Network Security Group pada subnet node pool klaster",
+        "Menganalisis status dan log dari pod CoreDNS yang berjalan di namespace kube-system",
+        "Memvalidasi ulang pengaturan Azure Application Gateway Ingress Controller",
+        "Memastikan kuota IP address pada Azure CNI subnet belum sepenuhnya habis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan finansial ingin memastikan bahwa tidak ada developer yang dapat menghapus Resource Group produksi secara sengaja maupun tidak sengaja. Kebijakan tata kelola Azure apa yang paling tepat diterapkan?",
+      "options": [
+        "Menerapkan Azure Policy dengan efek Deny untuk semua operasi penghapusan",
+        "Memberikan peran Reader pada level langganan dan Contributor pada level resource",
+        "Menetapkan Management Lock dengan tipe CanNotDelete pada tingkat Resource Group",
+        "Membatasi akses jaringan melalui Azure Firewall agar tidak bisa diakses publik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim data science memerlukan lingkungan komputasi berbasis GPU yang dapat otomatis mati di luar jam kerja untuk menghemat biaya operasional bulanan. Layanan Azure apa yang paling sesuai untuk kebutuhan ini?",
+      "options": [
+        "Membuat Azure Virtual Machines standar dengan penjadwalan Azure Automation",
+        "Menggunakan Azure Databricks dengan klaster interaktif berfitur auto-termination",
+        "Memanfaatkan Azure Kubernetes Service dengan node pool berbasis GPU yang aktif",
+        "Menyediakan Azure Container Instances dengan konfigurasi restart policy never"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lembaga pemerintahan ingin menghubungkan data center lokal di Jakarta secara aman dan privat ke Azure VNet tanpa melewati internet publik, dengan jaminan SLA tinggi. Konektivitas apa yang harus dipilih?",
+      "options": [
+        "Membuat terowongan VPN Site-to-Site menggunakan Azure VPN Gateway standar",
+        "Mengaktifkan koneksi peering langsung menggunakan layanan Azure ExpressRoute",
+        "Menggunakan Azure Bastion untuk koneksi remote administrator yang terenkripsi",
+        "Menerapkan Azure Point-to-Site VPN untuk setiap perangkat di data center"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi web perusahaan mengalami lonjakan trafik musiman. Tim ingin memastikan kapasitas server bertambah otomatis saat CPU usage > 80% dan berkurang saat sepi untuk efisiensi biaya. Fitur apa yang harus dikonfigurasi?",
+      "options": [
+        "Mengaktifkan Availability Set dengan minimum dua virtual machine terpisah",
+        "Memasang Azure Monitor Alert yang mengirim email notifikasi ke tim operation",
+        "Mengonfigurasi aturan Autoscale pada App Service Plan atau Virtual Machine Scale Set",
+        "Meningkatkan kapasitas SKU server ke tier yang memiliki memori lebih besar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Departemen keuangan mendapati tagihan Azure bulanan membengkak dan sulit melacak divisi mana yang menghabiskan anggaran terbanyak. Langkah proaktif apa yang harus segera diambil oleh Cloud Administrator?",
+      "options": [
+        "Membuat struktur Tag standar pada setiap resource dan mengatur Azure Budgets",
+        "Memindahkan semua resource perusahaan ke dalam satu Resource Group utama",
+        "Mengubah semua tipe layanan dari pay-as-you-go menjadi Reserved Instances 3 tahun",
+        "Menghapus semua resource yang tidak aktif menggunakan Azure Advisor recommendations"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya menggunakan Azure SQL Database untuk aplikasi operasional harian. Selama jam sibuk, performa kueri menurun drastis akibat tingginya transaksi. Sebagai Cloud Engineer, tindakan apa yang paling tepat untuk mengatasi masalah ini secara cepat tanpa mengubah kode aplikasi?",
+      "options": [
+        "Melakukan migrasi instan database ke Azure Cosmos DB untuk fleksibilitas NoSQL",
+        "Mengaktifkan fitur auto-scaling pada tier layanan untuk menambah DTU atau vCore",
+        "Membuat ulang seluruh indeks pada tabel utama di dalam production database",
+        "Memindahkan beban baca ke Azure Blob Storage menggunakan teknik lazy loading"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang di sebuah startup fintech ingin menyebarkan kode aplikasi web terbaru ke Azure App Service secara otomatis setiap kali ada perubahan yang digabung ke branch utama di GitHub. Fitur apa yang harus dikonfigurasi pada Azure App Service?",
+      "options": [
+        "Mengaktifkan deployment center dengan integrasi langsung ke repository GitHub",
+        "Membuat Azure Function untuk memantau webhook dan mengunduh file ZIP manual",
+        "Menyiapkan Azure Bastion agar tim DevOps bisa melakukan pull kode via SSH",
+        "Menggunakan Azure Container Registry untuk menyimpan image aplikasi web"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi perbankan digital memiliki kebijakan keamanan yang ketat. Seluruh koneksi dari luar hanya boleh masuk melalui satu titik masuk terpusat yang melakukan inspeksi trafik web dan SSL termination sebelum diteruskan ke backend pool. Layanan Azure mana yang paling sesuai?",
+      "options": [
+        "Azure Load Balancer dengan konfigurasi port forwarding eksternal",
+        "Azure Application Gateway dengan Web Application Firewall terintegrasi",
+        "Azure Traffic Manager berbasis DNS untuk routing pengguna berdasarkan lokasi",
+        "Azure Virtual Network NAT Gateway untuk mengamankan trafik keluar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur menyimpan dokumen penting di Azure Blob Storage. Auditor mewajibkan agar file-file laporan keuangan tahun lalu tidak boleh dihapus atau diubah oleh siapa pun, bahkan oleh Administrator akun penyimpanan itu sendiri, selama minimal 5 tahun ke depan. Fitur apa yang harus diaktifkan?",
+      "options": [
+        "Menerapkan aturan Azure Backup dengan retensi vault selama lima tahun",
+        "Mengaktifkan policy soft delete pada akun penyimpanan blob dengan durasi lama",
+        "Mengonfigurasi immutable storage dengan policy berbasis waktu (time-based)",
+        "Membatasi akses jaringan menggunakan service endpoints pada subnet tertentu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim DevOps mengelola kluster Azure Kubernetes Service (AKS) untuk aplikasi e-commerce. Mereka mendapati bahwa pod aplikasi sering gagal merespons ketika terjadi lonjakan trafik karena kehabisan memori. Konfigurasi apa yang harus diterapkan pada deployment manifest Kubernetes?",
+      "options": [
+        "Menambahkan environment variabel untuk memperbesar ukuran heap memori Java",
+        "Menentukan nilai resource limits dan requests pada spesifikasi container pod",
+        "Mengubah jenis Azure Disk yang mendasari Persistent Volume menjadi Premium SSD",
+        "Meningkatkan ukuran VM node pool di portal Azure ke SKU yang lebih tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit swasta ingin memindahkan arsip rekam medis digital berukuran besar yang jarang diakses ke cloud untuk menghemat biaya penyimpanan jangka panjang. Akses terhadap data ini sangat jarang, namun harus bisa diambil dalam hitungan jam jika diperlukan. Tier Azure Blob Storage mana yang paling efisien?",
+      "options": [
+        "Menggunakan tier penyimpanan Hot untuk akses data yang sangat cepat",
+        "Memilih tier penyimpanan Cool untuk data yang diakses setiap beberapa minggu",
+        "Memanfaatkan tier penyimpanan Archive untuk biaya simpan paling rendah",
+        "Menyimpan data pada Azure Files dengan redundansi lokal standar (LRS)"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan multinasional di Jakarta memiliki kantor cabang di Medan dan Bali. Mereka ingin menghubungkan jaringan lokal di kedua cabang tersebut ke satu Azure VNet secara aman melalui internet tanpa membuat jalur leased line yang mahal. Layanan Azure apa yang harus diimplementasikan?",
+      "options": [
+        "Membuat koneksi site-to-site VPN menggunakan Azure VPN Gateway",
+        "Menggunakan Azure ExpressRoute untuk koneksi privat berkecepatan tinggi",
+        "Menyiapkan Azure Bastion untuk akses remote desktop yang aman ke server",
+        "Mengonfigurasi Azure VNet peering antar kantor cabang dan cloud VNet"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang di perusahaan konsultan ingin menguji coba skrip otomatisasi infrastruktur tanpa membuat resource secara permanen di subscription utama. Pendekatan manajemen Azure apa yang paling tepat untuk mengisolasi lingkungan percobaan mereka secara mandiri?",
+      "options": [
+        "Membuat Resource Group baru dengan nama khusus di dalam subscription produksi",
+        "Membuat Subscription terpisah di bawah Tenant yang sama untuk tim tersebut",
+        "Menggunakan satu Virtual Machine bersama dan membagi akses folder direktori",
+        "Membatasi izin akses lewat Role-Based Access Control pada satu Resource Group"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web perusahaan mengalami serangan Distributed Denial of Service (DDoS) yang mencoba melumpuhkan server dengan membanjiri lapisan aplikasi (layer 7). Layanan perlindungan apa di Azure yang dirancang khusus untuk mendeteksi dan meredam jenis serangan tersebut?",
+      "options": [
+        "Azure Firewall dengan aturan filtering berbasis FQDN dan alamat IP",
+        "Azure DDoS Protection Standard yang dipasangkan dengan Application Gateway",
+        "Network Security Group yang memblokir rentang IP publik yang mencurigakan",
+        "Azure Front Door dengan perlindungan Web Application Firewall aktif"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah platform edukasi online ingin menjalankan fungsi latar belakang (background tasks) untuk memproses video yang diunggah pengguna tanpa harus mengelola server virtual secara manual. Layanan serverless mana di Azure yang paling tepat untuk memicu proses saat file baru masuk ke storage?",
+      "options": [
+        "Menyiapkan Azure Virtual Machines dengan skrip daemon penjadwal cron",
+        "Menggunakan Azure Functions yang terhubung ke trigger Azure Blob Storage",
+        "Membuat Azure Kubernetes Service dengan worker node khusus pemrosesan",
+        "Menyewa Azure App Service Plan dengan instance dedicated untuk background job"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform ride-hailing di Indonesia perlu menyimpan data profil pengguna yang sangat dinamis dan membutuhkan latensi baca-tulis milidetik di berbagai region (Jakarta dan Singapura). Layanan database Azure mana yang paling tepat dipilih?",
+      "options": [
+        "Azure SQL Database dengan geo-replication aktif",
+        "Azure Cosmos DB dengan multi-region write",
+        "Azure Database for PostgreSQL Managed Instance",
+        "Azure Table Storage dengan replikasi global"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang ingin memastikan bahwa aplikasi berbasis kontainer mereka di Azure Container Instances dapat diakses melalui satu alamat IP publik yang stabil meskipun container direstart. Pendekatan arsitektur apa yang harus digunakan?",
+      "options": [
+        "Menggunakan Azure Load Balancer di depan instance kontainer",
+        "Mengonfigurasi public IP langsung pada setiap file konfigurasi kontainer",
+        "Menghubungkan container instances ke Azure Application Gateway",
+        "Memanfaatkan Azure Container Apps dengan ingress internal aktif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan retail ingin memigrasikan database SQL Server on-premise berukuran 2 TB ke Azure tanpa mengubah kode aplikasi, namun ingin meminimalkan waktu henti (downtime) saat cutover migrasi. Fitur migrasi Azure apa yang paling sesuai?",
+      "options": [
+        "Azure Database Migration Service dengan mode online",
+        "Backup dan restore manual menggunakan Azure Blob Storage",
+        "Ekspor skema langsung melalui SQL Server Management Studio",
+        "Pembuatan replika baca menggunakan Azure SQL Managed Instance"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim keamanan siber perusahaan asuransi menemukan adanya aktivitas login mencurigakan dari luar negeri pada akun administrator Azure portal. Fitur keamanan bawaan Azure mana yang paling efektif mendeteksi dan mencegah ancaman ini secara otomatis?",
+      "options": [
+        "Azure Firewall dengan aturan pembatasan geografis",
+        "Microsoft Entra ID Protection berbasis analisis risiko",
+        "Network Security Groups dengan pemblokiran port eksternal",
+        "Azure Bastion untuk mengamankan sesi manajemen virtual machine"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agrikultur ingin mengumpulkan data telemetri dari ribuan sensor IoT di berbagai perkebunan kelapa sawit secara real-time. Layanan Azure apa yang paling tepat digunakan sebagai pintu masuk utama data tersebut?",
+      "options": [
+        "Azure Event Hubs untuk ingestion data skala besar",
+        "Azure Storage Queue untuk menampung pesan sensor",
+        "Azure SQL Database dengan prosedur tersimpan khusus",
+        "Azure App Service API Apps untuk menerima webhook sensor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan media online ingin menjalankan proses transkode video secara paralel menggunakan sekumpulan Virtual Machine yang akan otomatis dibuat saat ada file masuk dan dihancurkan setelah selesai. Fitur Azure mana yang harus digunakan?",
+      "options": [
+        "Azure Virtual Machine Scale Sets dengan aturan autoscaling",
+        "Azure Batch untuk penjadwalan komputasi paralel skala besar",
+        "Azure Kubernetes Service dengan horizontal pod autoscaler",
+        "Azure Functions dengan integrasi binding Blob Storage"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim operasional ingin memantau performa dan mendiagnosis masalah latensi pada aplikasi web multi-tier yang didistribusikan di berbagai layanan Azure. Alat observabilitas terpusat apa yang harus diaktifkan?",
+      "options": [
+        "Azure Monitor dan Application Insights untuk telemetri",
+        "Azure Advisor untuk rekomendasi optimasi biaya bulanan",
+        "Microsoft Defender for Cloud untuk pemindaian kerentanan",
+        "Azure Log Analytics workspace dengan aturan alert kustom"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik memiliki beberapa Virtual Machine yang harus dapat berkomunikasi secara aman melalui jaringan privat tanpa melintasi internet publik, meskipun berada di Resource Group yang berbeda. Konfigurasi jaringan apa yang harus diterapkan?",
+      "options": [
+        "Menghubungkan kedua Virtual Network menggunakan VNet Peering",
+        "Memasang Azure VPN Gateway jenis site-to-site antar subnet",
+        "Menggunakan Public IP dengan pembatasan aturan NSG yang ketat",
+        "Mengaktifkan layanan Azure ExpressRoute dengan sirkuit privat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah bank digital ingin memastikan bahwa kunci enkripsi yang melindungi data sensitif di database mereka dikelola secara mandiri dan dapat dicabut aksesnya kapan saja jika diperlukan. Layanan Azure mana yang harus diintegrasikan?",
+      "options": [
+        "Azure Key Vault dengan opsi Customer-Managed Keys",
+        "Storage Account Encryption dengan kunci bawaan Microsoft",
+        "Azure Information Protection untuk dokumen klien bank",
+        "Disk Encryption pada level sistem operasi Virtual Machine"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang ingin menerapkan praktik Infrastructure as Code (IaC) untuk membuat arsitektur Azure secara konsisten di lingkungan staging dan production. Alat bawaan Azure apa yang paling direkomendasikan?",
+      "options": [
+        "Azure Resource Manager (ARM) templates atau Bicep",
+        "Azure DevOps Pipeline dengan skrip PowerShell manual",
+        "Azure CLI scripts yang dijalankan langsung dari terminal",
+        "Azure Portal deployment center dengan ekspor templat"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

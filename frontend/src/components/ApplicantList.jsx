@@ -49,7 +49,7 @@ export default function ApplicantList({ job }) {
             </div>
             {anyLocked && (
                 <BrutalCard color={KC.yellowSoft} padding={14}>
-                    <b>Semua pelamar diperingkat di setiap paket, termasuk Spark.</b> Beacon (Rp49.000 / lowongan / 30 hari) menambah pertanyaan wawancara AI, ekspor CSV, dan pencarian kandidat yang belum melamar.
+                    <b>Semua pelamar diperingkat di setiap paket, termasuk Spark.</b> Beacon menambah pertanyaan wawancara AI, ekspor CSV, dan pencarian kandidat yang belum melamar.
                     <button style={{ ...topBtn(KC.orange, '#fff'), marginLeft: 10 }} onClick={() => openUpgradeModal({ plan: 'beacon', jobId: job?.id })}>Beli Beacon</button>
                 </BrutalCard>
             )}
