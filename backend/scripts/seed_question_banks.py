@@ -38,15 +38,43 @@ SKILLS_TO_SEED = [
     "Figma", "Adobe XD", "UI/UX Design", "Canva", "Adobe Photoshop", "Adobe Illustrator", 
     "Product Management", "Agile/Scrum", "Jira", "Notion",
 
-    # Finance & business
-    "Financial Modeling", "Accounting", "Microsoft Word", "Microsoft PowerPoint", 
-    "Project Management", "Business Development", "Digital Marketing", "SEO", "Google Analytics", 
-    "Social Media Marketing", "Content Writing", "Copywriting",
+    # Finance & accounting
+    "Akuntansi", "Financial Modeling", "Financial Analysis", "Perpajakan", "Audit", "Budgeting", 
+    "Cost Accounting", "Investment Analysis", "Corporate Finance",
+
+    # Business & management
+    "Business Development", "Business Analysis", "Strategic Planning", "Operations Management", 
+    "Supply Chain Management", "Project Management", "Change Management", "Risk Management", 
+    "Negotiation",
+
+    # Sales & marketing
+    "Digital Marketing", "SEO", "SEM", "Social Media Marketing", "Content Marketing", 
+    "Email Marketing", "Sales Strategy", "Account Management", "Brand Management", 
+    "Market Research", "Copywriting", "E-commerce Management",
+
+    # HR & admin
+    "Human Resources", "Recruitment", "Talent Acquisition", "Payroll", "Employee Relations", 
+    "Training & Development", "Office Administration", "Procurement",
+
+    # Customer & operations
+    "Customer Success", "Call Center Operations", "Logistics", "Warehouse Management", 
+    "Quality Assurance", "Quality Control",
+
+    # Communication
+    "Public Speaking", "Business Writing", "Presentation Skills", "Bahasa Mandarin",
+
+    # Analytical foundations
+    "Statistics", "Calculus", "Linear Algebra", "Probability", "Econometrics",
+
+    # Office productivity & other common claims
+    "Accounting", "Microsoft Word", "Microsoft PowerPoint", "Google Analytics",
 
     # Other technical
     "Cybersecurity", "Network Administration", "Blockchain", "IoT", "Embedded Systems", 
     "AutoCAD", "SAP"
 ]
+
+SKILLS_TO_SEED = list(dict.fromkeys(SKILLS_TO_SEED))
 
 async def seed_banks():
     await init_db()
