@@ -452,7 +452,7 @@ export function MobileBottomNav() {
                                             display: 'flex', alignItems: 'center', gap: 12,
                                             width: '100%', padding: '12px 16px',
                                             background: isActive ? '#FFF1EB' : '#FFFFFF',
-                                            border: \`1.5px solid \${isActive ? '#FF4800' : 'rgba(9,10,15,0.1)'}\`,
+                                            border: `1.5px solid ${isActive ? '#FF4800' : 'rgba(9,10,15,0.1)'}`,
                                             borderRadius: 12,
                                             color: isActive ? '#FF4800' : '#090A0F',
                                             fontWeight: isActive ? 800 : 700, fontSize: 14,
