@@ -3,11 +3,12 @@
  * Optimized with Enterprise Neobrutalism theme, categorized navigation groups,
  * live badge counters, and ergonomic compact layout.
  */
+import { useState } from 'react'
 import {
     LayoutDashboard, Search, BarChart3, ShieldCheck, Bookmark,
     Building2, Briefcase, Users, LogOut,
     FileText, User, ClipboardList, Sparkles, PlusCircle, Bot,
-    SlidersHorizontal,
+    SlidersHorizontal, LayoutGrid, X
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import useStore from '../store/useStore'
@@ -66,11 +67,19 @@ const EMPLOYER_GROUPS = [
 ]
 
 // Mobile bottom nav: 5 items for seeker, 4 items for employer (per mobile design spec)
-const SEEKER_MOBILE_NAV = [
+const SEEKER_MOBILE_PRIMARY = [
     { id: 'seeker-dashboard', label: 'Home', icon: LayoutDashboard },
     { id: 'seeker-match', label: 'Match', icon: Sparkles },
     { id: 'seeker-skill-gap', label: 'Skill', icon: BarChart3 },
     { id: 'seeker-applications', label: 'Lamaran', icon: ClipboardList },
+    { id: 'lainnya', label: 'Lainnya', icon: LayoutGrid, isAction: true },
+]
+
+const SEEKER_LAINNYA_ITEMS = [
+    { id: 'seeker-search', label: 'Cari Lowongan', icon: Search },
+    { id: 'seeker-saved', label: 'Tersimpan', icon: Bookmark },
+    { id: 'seeker-profile', label: 'Profil Saya', icon: User },
+    { id: 'seeker-verification', label: 'Bukti Skill (Kuis)', icon: ShieldCheck },
     { id: 'seeker-advisor', label: 'Advisor', icon: Bot },
 ]
 
@@ -331,50 +340,136 @@ export default function Sidebar() {
  */
 export function MobileBottomNav() {
     const { userRole, activeView, navigate, isAuthenticated } = useStore()
+    const [showLainnya, setShowLainnya] = useState(false)
     if (!isAuthenticated) return null
 
     const allowedForRole = ALLOWED_VIEWS[userRole] || new Set()
-    const mobileNav = (userRole === 'employer' ? EMPLOYER_MOBILE_NAV : SEEKER_MOBILE_NAV).filter(
-        (item) => allowedForRole.has(item.id)
-    )
+    const isEmployer = userRole === 'employer'
+    
+    const mobileNav = isEmployer 
+        ? EMPLOYER_MOBILE_NAV.filter(item => allowedForRole.has(item.id))
+        : SEEKER_MOBILE_PRIMARY.filter(item => item.isAction || allowedForRole.has(item.id))
+
+    const lainnyaItems = SEEKER_LAINNYA_ITEMS.filter(item => allowedForRole.has(item.id))
 
     return (
-        <nav
-            className="mobile-bottom-nav"
-            style={{
-                gridTemplateColumns: `repeat(${mobileNav.length}, 1fr)`,
-                background: '#090A0F',
-                borderTop: '2px solid #090A0F',
-            }}
-        >
-            {mobileNav.map(item => {
-                const Icon = item.icon
-                const active = activeView === item.id
-                return (
-                    <button
-                        key={item.id}
-                        id={`mobile-nav-${item.id}`}
-                        onClick={() => navigate(item.id)}
-                        aria-current={active ? 'page' : undefined}
-                        style={{
-                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
-                            padding: '6px 4px', background: 'transparent', border: 'none', cursor: 'pointer',
-                            color: active ? '#FF4800' : 'rgba(255,255,255,0.5)',
-                            transition: 'color .15s', minWidth: 0,
+        <>
+            <nav
+                className="mobile-bottom-nav"
+                style={{
+                    gridTemplateColumns: `repeat(${mobileNav.length}, 1fr)`,
+                    background: '#090A0F',
+                    borderTop: '2px solid #090A0F',
+                }}
+            >
+                {mobileNav.map(item => {
+                    const Icon = item.icon
+                    const active = activeView === item.id || (item.id === 'lainnya' && showLainnya)
+                    return (
+                        <button
+                            key={item.id}
+                            id={`mobile-nav-${item.id}`}
+                            onClick={() => {
+                                if (item.id === 'lainnya') {
+                                    setShowLainnya(!showLainnya)
+                                } else {
+                                    setShowLainnya(false)
+                                    navigate(item.id)
+                                }
+                            }}
+                            aria-current={active && item.id !== 'lainnya' ? 'page' : undefined}
+                            style={{
+                                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
+                                padding: '6px 4px', background: 'transparent', border: 'none', cursor: 'pointer',
+                                color: active ? '#FF4800' : 'rgba(255,255,255,0.5)',
+                                transition: 'color .15s', minWidth: 0,
+                            }}
+                        >
+                            <Icon size={18} />
+                            <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 0.2, whiteSpace: 'nowrap' }}>{item.label}</span>
+                            {active && item.id !== 'lainnya' && (
+                                <span style={{
+                                    width: 4, height: 4, borderRadius: '50%', background: '#FF4800',
+                                    marginTop: -2,
+                                }} />
+                            )}
+                        </button>
+                    )
+                })}
+            </nav>
+
+            {/* Bottom Sheet Drawer for Lainnya */}
+            {showLainnya && !isEmployer && (
+                <div 
+                    className="fixed inset-0 z-[100] flex flex-col justify-end" 
+                    style={{ background: 'rgba(9,10,15,0.4)', backdropFilter: 'blur(3px)' }} 
+                    onClick={() => setShowLainnya(false)}
+                >
+                    <style>{`
+                        @keyframes slideUpDrawer {
+                            from { transform: translateY(100%); }
+                            to { transform: translateY(0); }
+                        }
+                    `}</style>
+                    <div
+                        className="w-full bg-[#FEFEFE] flex flex-col pb-safe"
+                        style={{ 
+                            borderTopLeftRadius: 16, borderTopRightRadius: 16,
+                            borderTop: '2px solid #090A0F',
+                            borderLeft: '2px solid #090A0F',
+                            borderRight: '2px solid #090A0F',
+                            boxShadow: '0 -4px 0 #090A0F',
+                            padding: '20px 16px 28px',
+                            animation: 'slideUpDrawer 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards'
                         }}
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        <Icon size={18} />
-                        <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 0.2, whiteSpace: 'nowrap' }}>{item.label}</span>
-                        {active && (
-                            <span style={{
-                                width: 4, height: 4, borderRadius: '50%', background: '#FF4800',
-                                marginTop: -2,
-                            }} />
-                        )}
-                    </button>
-                )
-            })}
-        </nav>
+                        <div className="flex justify-between items-center mb-4 px-1">
+                            <h3 className="font-extrabold text-[#090A0F] text-lg">Menu Lainnya</h3>
+                            <button 
+                                onClick={() => setShowLainnya(false)}
+                                aria-label="Tutup menu"
+                                style={{
+                                    width: 32, height: 32, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    background: 'rgba(9,10,15,0.06)', color: '#090A0F'
+                                }}
+                            >
+                                <X size={20} />
+                            </button>
+                        </div>
+                        <div className="flex flex-col gap-2 overflow-y-auto max-h-[60vh] custom-scrollbar pb-4">
+                            {lainnyaItems.map((item) => {
+                                const Icon = item.icon
+                                const isActive = activeView === item.id
+                                return (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => {
+                                            navigate(item.id)
+                                            setShowLainnya(false)
+                                        }}
+                                        style={{
+                                            display: 'flex', alignItems: 'center', gap: 12,
+                                            width: '100%', padding: '12px 16px',
+                                            background: isActive ? '#FFF1EB' : '#FFFFFF',
+                                            border: \`1.5px solid \${isActive ? '#FF4800' : 'rgba(9,10,15,0.1)'}\`,
+                                            borderRadius: 12,
+                                            color: isActive ? '#FF4800' : '#090A0F',
+                                            fontWeight: isActive ? 800 : 700, fontSize: 14,
+                                            textAlign: 'left',
+                                            transition: 'all 0.12s ease'
+                                        }}
+                                    >
+                                        <Icon size={18} color={isActive ? '#FF4800' : '#64748B'} strokeWidth={isActive ? 2.5 : 2} />
+                                        {item.label}
+                                    </button>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
     )
 }
 
