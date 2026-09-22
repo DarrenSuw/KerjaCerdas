@@ -46,6 +46,16 @@ class TestQuiz:
         assert "correct_index" not in str(attempt)
         assert attempt["draft_bank"] is False  # starter bank is now seeded as reviewed=True
 
+    def test_validate_question_rejects_misaligned_correct_index(self) -> None:
+        from backend.app.services.quiz import generator
+
+        reason = generator.validate_question(
+            "Manakah langkah paling aman saat menerima uang tunai di kasir?",
+            ["Lanjutkan tanpa cek", "Mencatat transaksi dan mengecek kembalian", "Minta uang tambahan", "Tutup kasir"],
+            3,
+        )
+        assert reason == "correct_index tidak sesuai dengan opsi yang tersedia"
+
     def test_pass_gives_quiz_proof(self, client: TestClient, seeker_h: dict) -> None:
         attempt = client.post("/api/v1/quiz/start", json={"skill": "MS Excel"}, headers=seeker_h).json()
         result = client.post("/api/v1/quiz/submit", headers=seeker_h, json={

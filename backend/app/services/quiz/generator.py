@@ -105,7 +105,40 @@ class GenerationError(Exception):
     """Raised when AI question generation fails."""
 
 
-def validate_question(q_text: str, options: list[str], correct: int) -> str | None:
+def _coerce_correct_index(raw: object, options: list[str]) -> int | None:
+    """Accept several answer formats and map them to the real 0..3 option index.
+
+    The persisted contract is `correct_index`, but some malformed generations may
+    still arrive as a letter (`"B"`), a 1-based number (`"2"`), or a literal
+    text match of the option itself. All of these are mechanically valid to
+    normalize as long as they resolve unambiguously to exactly one option.
+    """
+    cleaned = [str(o).strip() for o in options]
+    if not cleaned:
+        return None
+
+    if isinstance(raw, int):
+        return raw if 0 <= raw < len(cleaned) else None
+    if isinstance(raw, str):
+        text = raw.strip()
+        if not text:
+            return None
+        if text.upper() in "ABCD":
+            idx = "ABCD".index(text.upper())
+            return idx if 0 <= idx < len(cleaned) else None
+        if text.isdigit():
+            idx = int(text)
+            return idx if 0 <= idx < len(cleaned) else None
+        # Accept a literal answer string if it matches one option exactly (after
+        # trimming). This catches formatting drift like "A. Jakarta" vs "Jakarta".
+        for idx, opt in enumerate(cleaned):
+            if text.casefold() == opt.casefold() or _strip_option_label(text).casefold() == opt.casefold():
+                return idx
+        return None
+    return None
+
+
+def validate_question(q_text: str, options: list[str], correct: int | str | None) -> str | None:
     """Return None when the item is servable, else a short reason it is not.
 
     Mechanical only — no AI, no network. Every rule here exists because it is a
@@ -124,8 +157,10 @@ def validate_question(q_text: str, options: list[str], correct: int) -> str | No
         return "ada pilihan lebih dari 200 karakter"
     if len({o.casefold() for o in cleaned}) != 4:
         return "ada pilihan yang duplikat"
-    if not isinstance(correct, int) or not 0 <= correct < 4:
-        return "correct_index di luar jangkauan"
+
+    correct_index = _coerce_correct_index(correct, cleaned)
+    if correct_index is None:
+        return "correct_index tidak sesuai dengan opsi yang tersedia"
 
     lowered = [o.casefold() for o in cleaned]
     if any(pat in o for o in lowered for pat in _BANNED_OPTION_PATTERNS):
@@ -134,13 +169,13 @@ def validate_question(q_text: str, options: list[str], correct: int) -> str | No
     # A correct answer that is far longer than every distractor is guessable
     # without knowing the subject — the single most common giveaway in
     # AI-written multiple choice.
-    answer_len = len(cleaned[correct])
-    longest_distractor = max(len(o) for i, o in enumerate(cleaned) if i != correct)
+    answer_len = len(cleaned[correct_index])
+    longest_distractor = max(len(o) for i, o in enumerate(cleaned) if i != correct_index)
     if answer_len > 2 * longest_distractor:
         return "jawaban benar jauh lebih panjang dari pengecoh"
 
     # The stem must not contain the answer verbatim.
-    if len(cleaned[correct]) >= 12 and cleaned[correct].casefold() in text.casefold():
+    if len(cleaned[correct_index]) >= 12 and cleaned[correct_index].casefold() in text.casefold():
         return "jawaban benar tersalin di dalam pertanyaan"
 
     return None
@@ -204,7 +239,8 @@ async def generate_questions(
             continue
         q_text = str(item.get("question", "")).strip()
         options = [_strip_option_label(o) for o in item.get("options", [])][:4]
-        correct = item.get("correct_index", 0)
+        raw_correct = item.get("correct_index", item.get("correct_answer", item.get("correct_letter", 0)))
+        correct = _coerce_correct_index(raw_correct, options)
 
         # A repeat of something already banked is worse than useless: it would
         # count toward the target while shrinking the pool of distinct items
@@ -220,7 +256,7 @@ async def generate_questions(
                 skill_label=label,
                 question=q_text,
                 options=options,
-                correct_index=correct if isinstance(correct, int) and 0 <= correct < 4 else 0,
+                correct_index=correct if correct is not None else 0,
                 reviewed=problem is None,
                 active=problem is None,
                 source="ai_draft" if problem else "ai_auto",
