@@ -1,0 +1,306 @@
+{
+  "skill": "Pandas",
+  "skill_key": "pandas",
+  "questions": [
+    {
+      "question": "Anda bekerja sebagai Data Analyst di sebuah e-commerce Jakarta. Anda memiliki DataFrame `df_transaksi` dengan kolom tanggal bertipe string 'tanggal_pesanan' dalam format 'YYYY-MM-DD'. Anda ingin memfilter data hanya untuk transaksi yang terjadi pada tahun 2023. Kode Pandas manakah yang paling efisien untuk melakukannya?",
+      "options": [
+        "df_transaksi[df_transaksi['tanggal_pesanan'].str.startswith('2023')]",
+        "df_transaksi[pd.to_datetime(df_transaksi['tanggal_pesanan']).dt.year == 2023]",
+        "df_transaksi[df_transaksi['tanggal_pesanan'].astype(str).str.contains('2023')]",
+        "df_transaksi[df_transaksi['tanggal_pesanan'].apply(lambda x: '2023' in x)]"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim operasional memberikan file CSV data gaji karyawan yang kotor. Kolom 'gaji_pokok' terbaca sebagai tipe data string karena berisi karakter 'Rp' dan titik pemisah ribuan (contoh: 'Rp 5.500.000'). Bagaimana cara membersihkan kolom tersebut menjadi tipe data numerik integer di Pandas?",
+      "options": [
+        "df['gaji_pokok'].str.replace('Rp ', '').str.replace('.', '').astype(int)",
+        "df['gaji_pokok'].replace({'Rp ': '', '.': ''}, regex=True).astype('int64')",
+        "df['gaji_pokok'].str.extract('(\\d+)').astype(int) * 1000000",
+        "pd.to_numeric(df['gaji_pokok'].str.replace('Rp ', '').str.replace('.', ''))"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang menganalisis data log akses aplikasi dari server kantor. Kolom 'user_id' memiliki banyak nilai yang kosong (NaN) karena beberapa pengunjung tidak login. Anda diminta untuk mengisi nilai NaN tersebut dengan string khusus 'GUEST_USER' tanpa mengubah kolom lainnya. Metode apa yang harus digunakan?",
+      "options": [
+        "df['user_id'].fillna('GUEST_USER', inplace=True)",
+        "df['user_id'].replace(np.nan, 'GUEST_USER', inplace=True)",
+        "df['user_id'].interpolate(method='pad', value='GUEST_USER')",
+        "df['user_id'].dropna().reindex(columns=['user_id'], fill_value='GUEST_USER')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki dua DataFrame: `df_pelanggan` (berisi ID dan Nama) dan `df_transaksi` (berisi ID Pelanggan dan Total Belanja). Anda ingin menghasilkan laporan yang hanya menampilkan pelanggan yang *pasti* memiliki riwayat transaksi di kedua tabel tersebut, dengan menghapus baris yang tidak memiliki kecocokan ID. Fungsi merge apa yang tepat?",
+      "options": [
+        "pd.merge(df_pelanggan, df_transaksi, on='id', how='outer')",
+        "pd.merge(df_pelanggan, df_transaksi, on='id', how='left')",
+        "pd.merge(df_pelanggan, df_transaksi, on='id', how='inner')",
+        "pd.merge(df_pelanggan, df_transaksi, on='id', how='right')"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengolahan data penjualan bulanan cabang supermarket, Anda perlu menghitung total omset dan rata-rata diskon sekaligus dikelompokkan berdasarkan kolom 'nama_cabang'. Metode agregasi Pandas manakah yang paling tepat untuk kebutuhan ini?",
+      "options": [
+        "df.groupby('nama_cabang').agg({'omset': 'sum', 'diskon': 'mean'})",
+        "df.groupby('nama_cabang').sum().mean(numeric_only=True)",
+        "df.pivot_table(index='nama_cabang', values=['omset', 'diskon'], aggfunc='total')",
+        "df.groupby('nama_cabang').apply(lambda x: x[['omset', 'diskon']].describe())"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati file CSV berukuran sangat besar (4 GB) berisi data transaksi ritel nasional, sementara laptop kerja Anda hanya memiliki RAM 8 GB. Saat mencoba membaca file dengan `pd.read_csv()`, komputer mengalami lag parah akibat kehabisan memori. Pendekatan Pandas terbaik untuk mengatasi masalah ini adalah?",
+      "options": [
+        "Membaca file menggunakan parameter chunksize di pd.read_csv untuk memproses secara iteratif",
+        "Menggunakan parameter low_memory=False pada fungsi pembacaan CSV standar",
+        "Mengubah ekstensi file menjadi format Excel (.xlsx) sebelum dibaca ke dalam Pandas",
+        "Membaca seluruh file terlebih dahulu lalu langsung menghapus kolom yang tidak penting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat dashboard performa sales. Anda memiliki DataFrame `df` dengan kolom multi-index pada barisnya. Anda ingin meratakan (flatten) struktur indeks tersebut kembali menjadi kolom biasa agar mudah diexport ke format CSV standar. Fungsi apa yang harus dipanggil?",
+      "options": [
+        "df.stack().reset_index()",
+        "df.reset_index(drop=False)",
+        "df.unstack().reset_index()",
+        "df.columns.droplevel()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik mencatat waktu pengiriman paket. Kolom 'durasi_kirim_jam' memiliki beberapa outlier ekstrem akibat kesalahan input data (misal: -5 jam atau 9999 jam). Anda diminta memfilter DataFrame untuk hanya mempertahankan data yang berada di antara persentil ke-5 dan persentil ke-95. Cara paling ringkas di Pandas adalah?",
+      "options": [
+        "df[(df['durasi_kirim_jam'] > 0) & (df['durasi_kirim_jam'] < 1000)]",
+        "df[df['durasi_kirim_jam'].between(df['durasi_kirim_jam'].quantile(0.05), df['durasi_kirim_jam'].quantile(0.95))]",
+        "df.drop(df[df['durasi_kirim_jam'] < df['durasi_kirim_jam'].std()].index)",
+        "df.clip(lower=df['durasi_kirim_jam'].quantile(0.05), upper=df['durasi_kirim_jam'].quantile(0.95))"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengubah bentuk DataFrame `df_suhu` yang mencatat suhu harian di berbagai kota. Format awal memiliki kolom 'Kota', 'Januari', 'Februari', 'Maret'. Anda ingin mengubahnya menjadi format panjang (long format) dengan kolom 'Kota', 'Bulan', dan 'Suhu'. Fungsi Pandas manakah yang harus digunakan?",
+      "options": [
+        "pd.pivot(df_suhu, index='Kota', columns='Bulan', values='Suhu')",
+        "df_suhu.melt(id_vars=['Kota'], var_name='Bulan', value_name='Suhu')",
+        "df_suhu.transpose().reset_index()",
+        "df_suhu.stack().reset_index()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis data absensi karyawan. Anda memiliki kolom waktu 'waktu_datang' bertipe datetime. Anda ingin membuat kolom baru bernama 'kategori_datang' yang bernilai 'Terlambat' jika jam datang lebih dari jam 08:30:00, dan 'Tepat Waktu' jika sebaliknya. Cara paling efisien di Pandas tanpa perulangan for adalah?",
+      "options": [
+        "df['kategori_datang'] = df['waktu_datang'].apply(lambda x: 'Terlambat' if x.time() > pd.to_datetime('08:30:00').time() else 'Tepat Waktu')",
+        "df.loc[df['waktu_datang'].dt.time > pd.to_datetime('08:30:00').time(), 'kategori_datang'] = 'Terlambat'",
+        "conditions = [df['waktu_datang'].dt.time > pd.to_datetime('08:30:00').time()]; choices = ['Terlambat']; df['kategori_datang'] = np.select(conditions, choices, default='Tepat Waktu')",
+        "df['kategori_datang'] = np.where(df['waktu_datang'].dt.strftime('%H:%M:%S') > '08:30:00', 'Terlambat', 'Tepat Waktu')"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda memproses data inventori gudang dengan DataFrame `df_gudang` yang memiliki kolom 'nama_barang' dan 'stok'. Anda ingin menemukan 5 barang dengan stok paling sedikit untuk dilaporkan ke bagian pembelian, tanpa mengubah urutan asli DataFrame secara permanen.",
+      "options": [
+        "df_gudang.sort_values(by='stok').head(5)",
+        "df_gudang.nsmallest(5, 'stok')",
+        "df_gudang.sort_index(by='stok').tail(5)",
+        "df_gudang.min(by='stok', n=5)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam analisis kepuasan pelanggan, Anda memiliki DataFrame `df_ulasan` dengan kolom 'kategori' dan 'skor'. Anda perlu menghitung skor rata-rata serta deviasi standar untuk setiap kategori produk guna melihat variasi kepuasan.",
+      "options": [
+        "df_ulasan.groupby('kategori')['skor'].aggregate(['mean', 'std'])",
+        "df_ulasan.pivot_table(index='kategori', values='skor', aggfunc='avg')",
+        "df_ulasan.groupby('kategori'].describe()[['mean', 'std']]",
+        "df_ulasan.set_index('kategori').rolling('skor').agg(['mean', 'std'])"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima data transaksi harian berupa string tanggal dalam berbagai format yang tidak beraturan pada kolom 'tgl_transaksi'. Anda ingin mengubah kolom ini menjadi tipe data datetime Pandas agar bisa dianalisis per bulan.",
+      "options": [
+        "df_transaksi['tgl_transaksi'].astype('datetime64')",
+        "pd.to_datetime(df_transaksi['tgl_transaksi'], errors='coerce')",
+        "df_transaksi['tgl_transaksi'].to_dt_format('%Y-%m-%d')",
+        "pd.DatetimeIndex(df_transaksi['tgl_transaksi'], parse=True)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai data analyst fintech, Anda ingin menggabungkan dua tabel: `df_akun` (berisi nomor rekening) dan `df_mutasi` (berisi riwayat mutasi). Anda hanya ingin mempertahankan baris rekening yang memiliki catatan mutasi saja.",
+      "options": [
+        "pd.merge(df_akun, df_mutasi, on='no_rekening', how='outer')",
+        "pd.merge(df_akun, df_mutasi, on='no_rekening', how='left')",
+        "pd.merge(df_akun, df_mutasi, on='no_rekening', how='inner')",
+        "pd.merge(df_akun, df_mutasi, on='no_rekening', how='right')"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membersihkan data karyawan. Kolom 'status_aktif' berisi teks 'Aktif' dan 'Tidak Aktif' dengan variasi spasi tambahan yang mengganggu (misal: 'Aktif '). Anda ingin merapikan teks tersebut sebelum melakukan filter data.",
+      "options": [
+        "df_karyawan['status_aktif'].str.strip()",
+        "df_karyawan['status_aktif'].replace(' ', '')",
+        "df_karyawan['status_aktif'].apply(lambda x: x.trim())",
+        "df_karyawan['status_aktif'].clean_whitespace()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek riset pasar, Anda memiliki DataFrame `df_responden` dengan kolom 'pendapatan' dan 'pengeluaran'. Anda perlu membuat kolom baru 'rasio_hemat' yang nilainya dihitung berdasarkan kondisi tertentu pada kolom pengeluaran.",
+      "options": [
+        "df_responden.assign(rasio_hemat = np.where(df['pengeluaran'] < 2000000, 'Tinggi', 'Rendah'))",
+        "df_responden.map(rasio_hemat, lambda x: 'Tinggi' if x < 2000000 else 'Rendah')",
+        "df_responden.loc[:, 'rasio_hemat'] = df_responden['pengeluaran'].eval('< 2000000')",
+        "df_responden.filter(items=['pengeluaran']).transform(lambda x: 'Tinggi')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menganalisis data penjualan multi-tahun dan memiliki DataFrame dengan indeks bertingkat (MultiIndex). Anda ingin meratakan indeks tersebut kembali menjadi kolom biasa agar mudah diekspor ke format Excel.",
+      "options": [
+        "df.flatten_index()",
+        "df.reset_index()",
+        "df.unstack(level=-1)",
+        "df.drop_levels()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat laporan ringkasan matriks silang (cross-tabulation) untuk melihat hubungan antara 'metode_pembayaran' dan 'wilayah_cabang' berdasarkan jumlah frekuensi transaksi.",
+      "options": [
+        "pd.crosstab(df['metode_pembayaran'], df['wilayah_cabang'])",
+        "df.pivot(index='metode_pembayaran', columns='wilayah_cabang', values='count')",
+        "df.groupby(['metode_pembayaran', 'wilayah_cabang']).sum()",
+        "df.join('metode_pembayaran', 'wilayah_cabang').count()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bekerja dengan data sensor IoT pabrik yang merekam suhu setiap detik. File terlalu besar, namun Anda hanya ingin membaca 50.000 baris pertama untuk uji coba awal skrip Python Anda.",
+      "options": [
+        "pd.read_csv('sensor.csv', rows=50000)",
+        "pd.read_csv('sensor.csv', limit=50000)",
+        "pd.read_csv('sensor.csv', nrows=50000)",
+        "pd.read_csv('sensor.csv', max_rows=50000)"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_penjualan` yang berisi data harian dari Januari hingga Desember. Anda ingin menghitung total penjualan kumulatif (cumulative sum) sepanjang tahun tersebut untuk melihat tren pertumbuhan.",
+      "options": [
+        "df_penjualan['penjualan'].cumsum()",
+        "df_penjualan['penjualan'].rolling(window=365).sum()",
+        "df_penjualan['penjualan'].sum(axis=0, cumulative=True)",
+        "df_penjualan['penjualan'].aggregate('cumsum')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_karyawan` dengan kolom 'tanggal_masuk'. Anda perlu menghitung masa kerja masing-masing karyawan dalam tahun penuh terhitung sampai hari ini. Metode Pandas apa yang paling tepat digunakan setelah kolom tersebut diubah ke tipe datetime?",
+      "options": [
+        "Mengurangkan tanggal hari ini dengan kolom tersebut lalu membaginya dengan `pd.Timedelta(days=365.25)`",
+        "Menggunakan fungsi bawaan `df_karyawan['tanggal_masuk'].dt.year_diff(pd.Timestamp('today'))`",
+        "Memakai metode `df_karyawan['tanggal_masuk'].diff()` untuk menghitung selisih tahun",
+        "Mengonversi kolom ke format string lalu menggunakan fungsi `.str.slice()` untuk mengambil tahun"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengolah data keuangan, Anda mendapati kolom 'kode_cabang' berisi kode numerik seperti '01', '02', namun terbaca sebagai integer 1 dan 2, sehingga angka nol di depannya hilang. Bagaimana cara terbaik mengembalikannya menjadi string dua digit di Pandas?",
+      "options": [
+        "Menggunakan `df['kode_cabang'].astype(str).str.zfill(2)`",
+        "Memakai metode matematika `df['kode_cabang'] * 10 + '0'`",
+        "Mengubah tipe data dengan `df['kode_cabang'].astype('category')`",
+        "Menjalankan perintah `df['kode_cabang'].apply(lambda x: str(x).pad(2))`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengekstrak daftar 10 nama produk terlaris dari DataFrame `df_penjualan` berdasarkan kolom 'jumlah_terjual' secara descending. Fungsi Pandas mana yang paling efisien untuk mendapatkan baris-baris tersebut?",
+      "options": [
+        "Menggunakan `df_penjualan.nlargest(10, 'jumlah_terjual')`",
+        "Memakai kombinasi `df_penjualan.sort_values('jumlah_terjual').head(10)`",
+        "Menjalankan fungsi `df_penjualan.top(10, by='jumlah_terjual')`",
+        "Menggunakan metode `df_penjualan.nsmallest(10, 'jumlah_terjual', ascending=False)`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_cabang` dengan kolom 'kota' dan 'pendapatan'. Anda ingin mengubah bentuknya agar setiap 'kota' menjadi nama kolom baru dan 'pendapatan' menjadi isi sel di dalamnya. Fungsi apa yang harus dipanggil?",
+      "options": [
+        "Menggunakan metode `df_cabang.pivot(columns='kota', values='pendapatan')`",
+        "Memakai fungsi agregasi `df_cabang.melt(id_vars='kota')`",
+        "Menjalankan perintah `df_cabang.stack(level='kota')`",
+        "Menggunakan metode `df_cabang.unstack(level='pendapatan')`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data log server yang memiliki kolom timestamp 'waktu'. Anda ingin meresampling data tersebut untuk menghitung jumlah akses per jam. Langkah awal apa yang wajib dilakukan pada DataFrame sebelum memanggil `.resample('H')`?",
+      "options": [
+        "Mengatur kolom 'waktu' sebagai indeks DataFrame menggunakan `.set_index()`",
+        "Mengurutkan nilai DataFrame menggunakan `.sort_values('waktu')`",
+        "Mengubah tipe data kolom 'waktu' menjadi string format ISO",
+        "Melakukan grouping manual menggunakan `.groupby('waktu')`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_feedback` yang berisi kolom teks ulasan 'komentar'. Anda perlu menyaring baris ulasan yang secara spesifik mengandung kata 'kecewa' tanpa peduli huruf besar atau kecil. Cara penulisan query Pandas yang tepat adalah:",
+      "options": [
+        "`df_feedback[df_feedback['komentar'].str.contains('kecewa', case=False, na=False)]`",
+        "`df_feedback[df_feedback['komentar'].lower() == 'kecewa']`",
+        "`df_feedback.filter(like='kecewa', axis='komentar')`",
+        "`df_feedback[df_feedback['komentar'].match('(?i)kecewa')]`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_gaji` dan ingin mengisi nilai yang hilang (NaN) pada kolom 'tunjangan' dengan nilai rata-rata dari kolom itu sendiri. Kode Pandas mana yang paling ringkas dan aman untuk dilakukan?",
+      "options": [
+        "`df_gaji['tunjangan'] = df_gaji['tunjangan'].fillna(df_gaji['tunjangan'].mean())`",
+        "`df_gaji['tunjangan'].replace(np.nan, df_gaji['tunjangan'].average())`",
+        "`df_gaji.fillna(value={'tunjangan': df_gaji.mean()})`",
+        "`df_gaji['tunjangan'].interpolate(method='mean')`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menggabungkan dua DataFrame menggunakan `pd.merge()`. Setelah proses join selesai, bagaimana cara Anda memastikan bahwa tidak ada duplikasi kunci yang tidak disengaja pada sisi 'one' (misalnya tabel master relasi)?",
+      "options": [
+        "Menggunakan parameter `validate='one_to_many'` atau parameter validasi relasi lainnya di dalam `pd.merge()`",
+        "Memeriksa panjang DataFrame hasil merge apakah sama dengan penjumlahan kedua tabel",
+        "Menjalankan metode `.is_unique` pada kolom kunci setelah proses merge selesai",
+        "Memakai fungsi `.drop_duplicates()` secara otomatis pada parameter `pd.merge()`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki DataFrame `df_transaksi` dengan kolom 'kategori' dan 'total'. Anda ingin mendapatkan baris dengan 'total' tertinggi untuk setiap 'kategori' yang ada. Metode Pandas apa yang paling tepat?",
+      "options": [
+        "`df_transaksi.sort_values('total', ascending=False).groupby('kategori').first()`",
+        "`df_transaksi.groupby('kategori').max('total')`",
+        "`df_transaksi.pivot_table(index='kategori', aggfunc='max')`",
+        "`df_transaksi.filter(by='kategori', top=1)`"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melakukan rekayasa fitur (feature engineering) pada kolom numerik 'usia' di DataFrame `df_nasabah`. Anda ingin mengelompokkannya menjadi kategori: 'Muda', 'Dewasa', dan 'Senior'. Fungsi apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fungsi `pd.cut()` dengan menentukan batas bin dan label yang diinginkan",
+        "Memakai fungsi `pd.qcut()` agar pembagian jumlah data di setiap kategori rata",
+        "Menggunakan metode `.map()` dengan kamus kondisi rentang angka",
+        "Menulis fungsi kustom berbasis perulangan `for` iterrows pada DataFrame"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

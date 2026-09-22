@@ -1,0 +1,306 @@
+{
+  "skill": "Human Resources",
+  "skill_key": "human resources",
+  "questions": [
+    {
+      "question": "Perusahaan Anda berencana menerapkan kebijakan pemotongan gaji akibat penurunan performa bisnis secara drastis. Apa langkah hukum awal di Indonesia yang wajib dilakukan HR sebelum kebijakan ini diterapkan?",
+      "options": [
+        "Mengumumkan kebijakan baru melalui surel resmi perusahaan",
+        "Melaporkan rencana tersebut langsung ke Kementerian Ketenagakerjaan",
+        "Melakukan perundingan bipartit dengan karyawan atau Serikat Pekerja",
+        "Meminta seluruh karyawan menandatangani surat pernyataan setuju"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima laporan adanya dugaan pelecehan verbal yang dilakukan oleh seorang supervisor senior terhadap staf junior di divisi operasional. Apa tindakan pertama yang harus diambil oleh tim HR?",
+      "options": [
+        "Melakukan investigasi independen secara rahasia dan objektif",
+        "Memberikan surat peringatan keras kepada supervisor tersebut",
+        "Memindahkan staf junior ke divisi lain untuk menghindari kontak",
+        "Meminta kedua belah pihak untuk menyelesaikan masalah secara damai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proses rekrutmen posisi Manajer Keuangan, Anda menemukan kandidat yang sangat kompeten secara teknis tetapi menunjukkan sikap arogan saat wawancara. Keputusan apa yang sebaiknya diambil oleh HR?",
+      "options": [
+        "Meloloskan kandidat karena kemampuan teknis jauh lebih penting",
+        "Menolak kandidat karena berisiko merusak budaya kerja tim",
+        "Memberikan tes psikologi tambahan untuk membuktikan asumsi",
+        "Menyerahkan keputusan akhir sepenuhnya kepada direktur keuangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tingkat absensi dan keterlambatan di pabrik manufaktur meningkat 25% dalam tiga bulan terakhir. Sebagai HR Manager, strategi analitik apa yang paling tepat untuk mencari akar masalahnya?",
+      "options": [
+        "Langsung memberikan sanksi tegas berupa pemotongan bonus kehadiran",
+        "Menganalisis data absensi berdasarkan shift, lini produksi, dan supervisor",
+        "Mengadakan rapat umum seluruh karyawan untuk menegakkan kedisiplinan",
+        "Merekrut lebih banyak tenaga pengawas keamanan di setiap area pabrik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan berprestasi tinggi mengajukan pengunduran diri karena mendapat tawaran gaji 40% lebih tinggi dari perusahaan lain. Sebagai HR Business Partner, langkah awal apa yang paling tepat untuk merespons situasi ini?",
+      "options": [
+        "Langsung menyetujui resign dan segera membuka lowongan pengganti",
+        "Mengajak diskusi mendalam untuk memahami motivasi selain gaji",
+        "Meminta manajer langsung untuk menaikkan gajinya saat itu juga",
+        "Menolak surat pengunduran diri dengan alasan kontrak belum selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan tetap mangkir (tidak hadir tanpa keterangan) selama 4 hari berturut-turut tanpa pemberitahuan. Berdasarkan UU Ketenagakerjaan di Indonesia, prosedur apa yang harus dilakukan HR sebelum melakukan PHK?",
+      "options": [
+        "Langsung menerbitkan surat pemutusan hubungan kerja di hari kelima",
+        "Mengirimkan panggilan tertulis secara patut sebanyak dua kali berturut-turut",
+        "Memblokir akses sistem perusahaan dan menahan gaji bulan berjalan",
+        "Melaporkan tindakan tersebut ke kepolisian setempat atas dasar wanprestasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan rintisan (startup) Anda mengalami pertumbuhan pesat dan membutuhkan perombakan struktur organisasi. Bagaimana HR sebaiknya mengomunikasikan perubahan ini kepada karyawan lama?",
+      "options": [
+        "Membagikan diagram struktur baru melalui grup WhatsApp perusahaan",
+        "Mengadakan town hall meeting untuk menjelaskan visi dan dampak perubahan",
+        "Memberikan kontrak kerja baru dengan penyesuaian posisi secara sepihak",
+        "Membiarkan manajer masing-masing departemen menjelaskan kepada timnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil survei keterlibatan karyawan (employee engagement) menunjukkan skor terendah pada aspek 'kesempatan pengembangan karier'. Program HR apa yang paling efektif dan efisien untuk merespons hasil ini?",
+      "options": [
+        "Menaikkan anggaran pelatihan eksternal untuk seluruh jajaran staf",
+        "Membuat program pelatihan silang (cross-training) dan jalur promosi yang transparan",
+        "Merekrut konsultan karier eksternal untuk melakukan sesi konseling privat",
+        "Memberikan kenaikan pangkat otomatis bagi karyawan yang sudah bekerja 3 tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang paket kompensasi dan benefit untuk menarik talenta teknologi (tech talent) yang sangat langka di pasaran. Strategi penawaran apa yang paling kompetitif?",
+      "options": [
+        "Menawarkan gaji pokok sangat tinggi di atas standar industri tanpa tunjangan",
+        "Menekankan fasilitas kantor mewah seperti ruang game dan makanan gratis",
+        "Kombinasi gaji kompetitif, fleksibilitas kerja jarak jauh, dan opsi kepemilikan saham",
+        "Menjanjikan bonus tahunan dalam jumlah besar tanpa kepastian pencairan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang manajer lini menolak memberikan cuti melahirkan kepada karyawannya dengan alasan proyek sedang padat. Apa tindakan yang harus diambil oleh HR?",
+      "options": [
+        "Mendukung keputusan manajer demi kepentingan penyelesaian proyek",
+        "Mengingatkan manajer tentang hak normatif karyawan sesuai regulasi ketenagakerjaan",
+        "Meminta karyawan untuk menunda waktu cutinya sampai proyek benar-benar selesai",
+        "Memberikan kompensasi uang lembur tambahan sebagai pengganti hak cuti"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang karyawan mengajukan klaim pengobatan untuk anggota keluarga yang tidak tercantum dalam daftar tertanggung polis asuransi kesehatan perusahaan. HR menerima nota protes dari karyawan tersebut karena merasa aturan ini tidak disosialisasikan dengan baik. Langkah pertama apa yang paling tepat diambil oleh HR?",
+      "options": [
+        "Menolak klaim secara tegas dengan melampirkan salinan polis yang telah dibagikan saat onboarding untuk menghindari preseden buruk",
+        "Memeriksa ulang bukti sosialisasi polis asuransi dan mendiskusikan opsi kebijakan diskresi khusus untuk kasus ini dengan manajemen",
+        "Langsung menyetujui klaim tersebut demi menjaga hubungan baik dan segera memperbarui modul sosialisasi manfaat karyawan",
+        "Meminta karyawan untuk menanggung setengah biaya pengobatan tersebut agar perusahaan tidak mengalami kerugian finansial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi exit interview, seorang karyawan kunci menyatakan bahwa alasan utamanya resign adalah gaya kepemimpinan atasannya yang toksik dan mikromanajemen. Atasan tersebut merupakan top performer dalam hal pencapaian target bisnis. Bagaimana sikap HR menghadapi situasi ini?",
+      "options": [
+        "Mengabaikan keluhan tersebut karena performa bisnis atasan jauh lebih penting bagi kelangsungan operasional perusahaan",
+        "Segera memproses pemutusan hubungan kerja atasan tersebut berdasarkan laporan dari karyawan yang sudah mengundurkan diri",
+        "Mengonfirmasi pola kepemimpinan tersebut melalui data turnover tim dan memberikan coaching kepemimpinan kepada sang atasan",
+        "Membujuk karyawan yang resign untuk bertahan dengan menawarkan kenaikan gaji di atas rata-rata departemen lain"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda akan menutup salah satu kantor cabang di luar pulau karena efisiensi, berdampak pada pemutusan hubungan kerja (PHK) massal bagi 30 karyawan lokal. Langkah awal komunikasi yang wajib diprioritaskan oleh HR adalah...",
+      "options": [
+        "Mengirimkan surat pemberitahuan resmi melalui email massal agar informasi diterima oleh seluruh karyawan secara serentak",
+        "Mengadakan rapat tertutup dengan serikat pekerja atau perwakilan karyawan untuk merundingkan paket pesangon sesuai regulasi",
+        "Memasang pengumuman lowongan kerja di cabang lain agar karyawan lama bisa langsung mendaftar tanpa seleksi ulang",
+        "Meminta kepala cabang untuk mengumumkan penutupan kantor secara lisan pada jam istirahat siang hari ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati seorang kandidat potensial memalsukan tahun kelulusan pada CV untuk menutupi jeda waktu menganggur (employment gap) yang cukup lama. Hasil tes psikologi dan wawancara teknis menunjukkan nilai yang sangat memuaskan. Apa tindakan Anda?",
+      "options": [
+        "Melanjutkan proses rekrutmen karena pemalsuan kecil pada CV adalah hal lumrah di industri kreatif saat ini",
+        "Menggugurkan kandidat secara langsung karena pemalsuan data melanggar integritas dasar yang ditetapkan perusahaan",
+        "Meminta klarifikasi tertulis kepada kandidat saat sesi negosiasi gaji mengenai perbedaan data pada dokumen pendukung",
+        "Mengabaikan temuan tersebut asalkan referensi kerja dari perusahaan sebelumnya menyatakan hasil yang positif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil audit internal menemukan adanya praktik kerja lembur terselubung di divisi operasional di mana karyawan sering tidak mencatatkan jam lembur secara resmi namun tetap bekerja di kantor hingga malam atas perintah lisan supervisor. Apa langkah mitigasi HR?",
+      "options": [
+        "Menerbitkan surat peringatan keras kepada supervisor dan melarang seluruh karyawan lembur dalam kondisi apapun",
+        "Meminta bagian keuangan untuk menghitung lembur secara estimasi dan membayarkannya secara diam-diam",
+        "Merevisi SOP pencatatan waktu kerja, mensosialisasikan aturan lembur berbayar, dan melatih supervisor terkait kepatuhan",
+        "Mengubah status seluruh karyawan operasional menjadi pekerja borongan agar tidak terikat aturan jam kerja standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan perempuan mengambil cuti melahirkan sesuai ketentuan UU. Menjelang masa cutinya berakhir, ia mengajukan permohonan kerja jarak jauh (remote work) penuh karena kendala pengasuhan anak di kota domisilinya saat ini. Kebijakan kantor saat ini adalah hybrid 3 hari WFO. Respon HR yang paling tepat adalah...",
+      "options": [
+        "Menolak permohonan tersebut secara mutlak karena melanggar kebijakan hybrid perusahaan yang berlaku bagi semua staf",
+        "Menerima pengunduran diri karyawan secara baik-baik karena ia tidak dapat memenuhi kewajiban hadir di kantor",
+        "Mengkaji ulang beban kerja posisi tersebut dan mendiskusikan opsi penyesuaian sementara dengan kepala divisi terkait",
+        "Memberikan sanksi administratif karena dianggap mengajukan permintaan yang tidak sejalan dengan budaya kerja offline"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan merencanakan program transformasi digital yang menuntut seluruh staf administrasi menguasai sistem ERP baru dalam waktu dua bulan. Hasil assessment awal menunjukkan 40% karyawan senior gagap teknologi dan kesulitan mengikuti pelatihan. Apa tindakan HR?",
+      "options": [
+        "Melakukan pemutusan hubungan kerja massal bagi karyawan yang tidak lulus assessment demi kelancaran digitalisasi",
+        "Menyediakan program pendampingan khusus (peer mentoring) dan sesi pelatihan tambahan yang disesuaikan dengan kecepatan belajar mereka",
+        "Membebaskan kelompok karyawan senior tersebut dari kewajiban menggunakan sistem ERP selamanya",
+        "Menurunkan target pencapaian transformasi digital agar divisi administrasi tidak merasa terbebani oleh sistem baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kandidat external menolak tawaran kerja (job offer) resmi Anda karena perusahaan lain memberikan penawaran kompensasi finansial yang jauh lebih tinggi, padahal posisi tersebut sangat mendesak. Langkah strategis apa yang dapat diambil HR?",
+      "options": [
+        "Melaporkan tindakan kandidat tersebut kepada asosiasi HR sejenis agar masuk daftar hitam rekrutmen industri",
+        "Menaikkan komponen gaji pokok secara sepihak melebihi batas anggaran yang telah disetujui oleh Direktur Keuangan",
+        "Meninjau kembali komponen non-finansial seperti fleksibilitas kerja, jenjang karir, dan benefit tambahan untuk nilai tawar",
+        "Mengakhiri proses negosiasi dan langsung memanggil kandidat urutan kedua dengan kualifikasi yang setara"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah sesi town hall, muncul keluhan masif dari karyawan terkait ketidakjelasan indikator penilaian kinerja (KPI) yang berujung pada turunnya semangat kerja. Sebagai HR, inisiatif apa yang harus segera dilakukan?",
+      "options": [
+        "Menunda siklus penilaian kinerja tahun ini hingga waktu yang tidak ditentukan sampai situasi menjadi kondusif",
+        "Mengadakan workshop penyelarasan KPI bersama para manajer dan menyusun panduan target yang terukur bagi setiap divisi",
+        "Memberikan bonus rata kepada seluruh karyawan tanpa melihat hasil pencapaian agar suasana kembali harmonis",
+        "Meminta setiap karyawan untuk menentukan sendiri target kerja mereka agar tidak ada lagi protes di kemudian hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati perselisihan terbuka di ruang kerja antara dua anggota tim yang berbeda latar belakang budaya, yang berujung pada ucapan menyinggung SARA. Tindakan disipliner pertama yang wajib diambil HR adalah...",
+      "options": [
+        "Memecat kedua karyawan secara tidak hormat pada hari yang sama untuk memberikan efek jera kepada seluruh staf",
+        "Membiarkan mereka menyelesaikan masalah sendiri karena itu adalah urusan pribadi di luar jam operasional kantor",
+        "Memanggil kedua belah pihak secara terpisah untuk investigasi, meredakan situasi, dan menerapkan sanksi sesuai aturan perusahaan",
+        "Memindahkan salah satu karyawan ke cabang lain tanpa meminta klarifikasi mengenai akar permasalahan yang terjadi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan mengajukan pengunduran diri secara mendadak tanpa memenuhi masa pemberitahuan (notice period) 30 hari seperti yang tercantum dalam perjanjian kerja, karena harus langsung bekerja di tempat lain keesokan harinya. Langkah administratif apa yang paling tepat diambil oleh HR?",
+      "options": [
+        "Menahan ijazah asli karyawan tersebut sampai ia melunasi denda pengganti notice period sesuai aturan perusahaan.",
+        "Memproses surat pengunduran diri secara normal dan membayarkan sisa hak gaji prorata tanpa mempermasalahkan aturan.",
+        "Menerbitkan surat keterangan kerja dengan catatan khusus mengenai pelanggaran notice period dan memotong hak gajinya jika diatur dalam kontrak.",
+        "Melaporkan tindakan karyawan tersebut ke Dinas Ketenagakerjaan setempat agar masuk dalam daftar hitam pencari kerja nasional."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses mediasi bipartit terkait perselisihan pemutusan hubungan kerja, karyawan menuntut pesangon di luar ketentuan Undang-Undang Ketenagakerjaan dengan ancaman akan memviralkan perusahaan di media sosial. Bagaimana sikap profesional HR menghadapi situasi ini?",
+      "options": [
+        "Memenuhi tuntutan tersebut demi menjaga reputasi merek perusahaan agar tidak jatuh di ruang publik digital.",
+        "Mengabaikan ancaman tersebut dan memutuskan komunikasi dengan karyawan untuk menunjukkan ketegasan manajemen.",
+        "Melaporkan akun media sosial karyawan kepada pihak kepolisian atas tuduhan pencemaran nama baik perusahaan.",
+        "Tetap berpedoman pada aturan perundang-undangan dan perjanjian kerja, serta mendokumentasikan seluruh proses mediasi secara tertulis."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Divisi penjualan mengalami penurunan produktivitas yang signifikan selama dua kuartal berturut-turut. Manajer penjualan meminta anggaran untuk pelatihan motivasi massal. Sebagai HR Business Partner, apa analisis awal yang harus Anda lakukan?",
+      "options": [
+        "Langsung menyetujui anggaran pelatihan motivasi agar semangat kerja tim penjualan segera pulih kembali.",
+        "Melakukan asesmen mendalam untuk membedakan apakah masalah ini bersumber dari kurangnya keterampilan atau faktor sistemik seperti kompensasi dan beban kerja.",
+        "Menyarankan pemecatan massal pada staf penjualan yang memiliki performa di bawah rata-rata tanpa investigasi lanjutan.",
+        "Mengubah sistem insentif penjualan secara sepihak untuk memaksa karyawan bekerja lebih giat."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan berencana menerapkan kebijakan bekerja dari rumah (WFH) secara permanen bagi divisi teknologi. Beberapa manajer mengeluhkan hilangnya kontrol terhadap kedisiplinan staf. Kebijakan manajemen kinerja apa yang paling tepat Anda rancang?",
+      "options": [
+        "Mewajibkan karyawan memasang aplikasi pemantau aktivitas yang mengambil tangkapan layar komputer setiap lima menit.",
+        "Menetapkan sistem penilaian yang berorientasi pada hasil dan output pekerjaan alih-alih menghitung jam kehadiran fisik di depan layar.",
+        "Mengharuskan karyawan melakukan panggilan video secara terus-menerus selama jam kerja berlangsung agar terpantau.",
+        "Meniadakan penilaian kinerja tahunan karena sistem kerja jarak jauh dianggap terlalu sulit untuk dievaluasi secara adil."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati seorang kandidat eksekutif yang lolos seluruh tahapan seleksi ternyata memiliki hubungan keluarga dekat dengan salah satu anggota Dewan Direksi. Langkah transparansi apa yang harus ditempuh HR?",
+      "options": [
+        "Membatalkan proses rekrutmen kandidat tersebut secara diam-diam untuk menghindari konflik kepentingan di kemudian hari.",
+        "Melanjutkan proses penawaran kerja tanpa melaporkan hubungan tersebut agar tidak mencampuri urusan pemegang saham.",
+        "Meminta kandidat membuat surat pernyataan pengungkapan hubungan afiliasi dan memastikan proses rekrutmen lolos audit tata kelola perusahaan.",
+        "Menyerahkan keputusan mutlak penerimaan kandidat tersebut sepenuhnya kepada keluarga yang menjabat di jajaran direksi."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan dilaporkan sering tidur di meja kerja saat jam operasional. Setelah diajak bicara secara informal, ia mengaku mengalami kelelahan ekstrim akibat harus merawat orang tua sakit di rumah sepanjang malam. Tindakan humanis dan sesuai regulasi apa yang bisa ditawarkan HR?",
+      "options": [
+        "Memberikan Surat Peringatan ketiga secara langsung karena tidur di kantor adalah pelanggaran berat terhadap disiplin kerja.",
+        "Menawarkan opsi penyesuaian jam kerja sementara atau cuti tanpa bayar jangka pendek, serta mengarahkan pada fasilitas konseling perusahaan.",
+        "Meminta karyawan tersebut untuk segera memilih antara mengundurkan diri atau dipecat karena kinerjanya terganggu.",
+        "Mengabaikan perilaku tersebut karena masalah keluarga adalah ranah privat yang tidak boleh dicampuri oleh pihak kantor."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pelaksanaan survei kepuasan karyawan, tingkat partisipasi divisi operasional lapangan sangat rendah di bawah 30%. Apa strategi komunikasi HR yang paling efektif untuk meningkatkan partisipasi pada periode berikutnya?",
+      "options": [
+        "Memberikan sanksi administratif berupa pemotongan tunjangan kehadiran bagi karyawan yang tidak mengisi survei.",
+        "Mengubah format survei menjadi kuesioner kertas fisik yang dibagikan bersama slip gaji dan menyediakan pojok bantu pengisian di area pabrik.",
+        "Mengirimkan surel pengingat otomatis setiap hari ke komputer kerja staf lapangan agar mereka segera merespons.",
+        "Menghapus survei untuk divisi tersebut dan menggantinya dengan asumsi bahwa mereka sudah cukup puas."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional ingin memberikan promosi jabatan kepada seorang staf berprestasi, tetapi mengabaikan prosedur internal perusahaan yang mewajibkan masa kerja minimal dua tahun dan publikasi lowongan internal. Langkah korektif apa yang harus diambil HR?",
+      "options": [
+        "Menolak permintaan promosi tersebut secara kaku dan menegur manajer secara terbuka di hadapan tim manajemen.",
+        "Menyetujui promosi tersebut dengan dalih prestasi individu lebih penting daripada aturan administratif perusahaan.",
+        "Memfasilitasi diskusi dengan manajer untuk mengecualikan aturan secara permanen bagi seluruh karyawan berprestasi.",
+        "Menjelaskan risiko preseden buruk dan membantu manajer memproses kandidat melalui jalur uji kompetensi yang dipercepat sesuai prosedur yang berlaku."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Perusahaan Anda menerapkan sistem gaji berbasis kinerja (pay-for-performance). Namun, manajer departemen cenderung memberikan nilai rata-rata yang sama (inflasi nilai) kepada seluruh bawahannya agar tidak ada yang merasa tersaingi. Intervensi HR apa yang paling tepat?",
+      "options": [
+        "Melakukan kalibrasi nilai kinerja lintas departemen secara berkala dan melatih para manajer tentang distribusi penilaian yang objektif.",
+        "Mengambil alih seluruh proses penilaian kinerja karyawan di setiap departemen secara terpusat oleh tim HR.",
+        "Menghapuskan sistem pay-for-performance dan kembali menggunakan sistem kenaikan gaji merata berbasis masa kerja.",
+        "Memberikan sanksi pemotongan anggaran operasional kepada manajer yang gagal memberikan nilai variatif pada timnya."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang karyawan disabilitas netra diterima bekerja di bagian layanan pelanggan (call center). Tim fasilitas kantor mengeluhkan perlunya biaya renovasi yang mahal untuk menyesuaikan perangkat aksesibilitas. Bagaimana cara HR merespons situasi ini?",
+      "options": [
+        "Membatalkan penawaran kerja dengan alasan infrastruktur perusahaan belum siap menunjang kebutuhan khusus tersebut.",
+        "Membebankan biaya pembelian perangkat aksesibilitas khusus langsung ke anggaran gaji bulanan karyawan yang bersangkutan.",
+        "Mencari solusi subsidi pemerintah atau penyedia teknologi asistif pihak ketiga, serta mengevaluasi penyesuaian tugas yang inklusif dan efisien.",
+        "Memindahkan karyawan tersebut ke posisi administratif back-office tanpa fasilitas teknologi khusus agar tidak merepotkan."
+      ],
+      "correct_index": 2
+    }
+  ]
+}

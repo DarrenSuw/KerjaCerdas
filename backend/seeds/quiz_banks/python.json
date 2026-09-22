@@ -1,0 +1,306 @@
+{
+  "skill": "Python",
+  "skill_key": "python",
+  "questions": [
+    {
+      "question": "Anda sedang memproses file log transaksi berukuran 8 GB yang melebihi kapasitas RAM laptop Anda. Pendekatan Python manakah yang paling efisien untuk membaca dan menghitung total nilai transaksi tanpa mengalami out-of-memory?",
+      "options": [
+        "Menggunakan generator fungsi dengan yield untuk membaca file secara baris demi baris",
+        "Membaca seluruh file sekaligus menggunakan metode readlines() pada objek file",
+        "Memuat file ke dalam pandas DataFrame dengan opsi chunksize berukuran kecil",
+        "Membuka file menggunakan modul mmap untuk memetakan seluruh file ke memori virtual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi web Django mengalami lonjakan beban latensi pada endpoint laporan bulanan. Anda mendapati adanya masalah N+1 query pada ORM Django saat mengambil data pesanan beserta profil pelanggannya. Solusi apa yang paling tepat diterapkan?",
+      "options": [
+        "Menambahkan dekorator cache_page pada fungsi view untuk menyimpan hasil render HTML",
+        "Menggunakan method select_related atau prefetch_related pada queryset model pesanan",
+        "Menulis ulang query menggunakan raw SQL dengan koneksi database secara langsung",
+        "Meningkatkan kapasitas connection pooling pada konfigurasi database settings.py"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis fungsi Python untuk memvalidasi tanggal lahir dari input pengguna. Namun, beberapa pengguna memasukkan format string yang tidak konsisten (DD-MM-YYYY, YYYY/MM/DD, dll.). Cara paling aman dan bersih untuk mengatasinya adalah:",
+      "options": [
+        "Membuat blok if-else bersarang untuk mendeteksi panjang string dan memotongnya",
+        "Memanfaatkan modul dateutil.parser untuk mengurai berbagai format secara otomatis",
+        "Memaksa pengguna memasukkan format spesifik melalui regex replacement manual",
+        "Menggunakan metode strptime dengan mencoba berbagai format dalam blok try-except"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Data Science meminta Anda menyiapkan skrip Python untuk membersihkan kolom teks ulasan produk e-commerce yang penuh dengan emoji dan karakter typo. Operasi mana yang paling tepat untuk menghapus semua emoji dari string teks tersebut?",
+      "options": [
+        "Menggunakan metode replace untuk setiap emoji umum yang ditemukan di pasaran",
+        "Melakukan filtering karakter dengan memeriksa apakah ord(c) berada di luar rentang ASCII",
+        "Memanfaatkan pustaka emoji untuk mendeteksi dan menghapus simbol secara spesifik",
+        "Menerapkan ekspresi reguler untuk menghapus karakter di luar alfabet lokal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati proses ETL (Extract, Transform, Load) harian berjalan sangat lambat karena melakukan iterasi baris per baris (iterrows) pada DataFrame pandas yang berisi 2 juta data penjualan. Bagaimana cara mempercepat proses transformasi ini?",
+      "options": [
+        "Mengubah struktur DataFrame menjadi list of dictionaries sebelum melakukan perulangan",
+        "Mengganti iterrows dengan metode apply bersama fungsi lambda yang telah dioptimasi",
+        "Menggunakan operasi vektorisasi bawaan pandas atau fungsi numpy yang kompatibel",
+        "Memecah DataFrame menjadi beberapa file CSV kecil dan memprosesnya secara paralel"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan microservice FastAPI, Anda perlu memastikan bahwa koneksi ke database PostgreSQL ditutup dengan benar setelah setiap HTTP request selesai, bahkan jika terjadi error pada endpoint. Pendekatan terbaik di FastAPI adalah:",
+      "options": [
+        "Membuat fungsi middleware kustom yang memantau status siklus hidup aplikasi",
+        "Menggunakan blok try-finally di dalam setiap fungsi endpoint secara manual",
+        "Memanfaatkan dependency injection dengan struktur generator dan kata kunci yield",
+        "Menghandle penutupan koneksi melalui event handler startup dan shutdown"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah skrip background worker Python mengalami kebocoran memori (memory leak) yang sulit dilacak setelah berjalan selama beberapa hari. Alat bantu bawaan atau pustaka manakah yang paling efektif untuk mendiagnosis objek apa saja yang menumpuk di memori?",
+      "options": [
+        "Menggunakan modul cProfile untuk mengukur waktu eksekusi setiap fungsi",
+        "Memanfaatkan pustaka tracemalloc untuk melacak alokasi blok memori Python",
+        "Menerapkan modul logging standar untuk mencatat penggunaan RAM setiap jam",
+        "Mengandalkan fungsi sys.getsizeof() pada variabel global utama di dalam skrip"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang fungsi kalkulasi finansial kompleks yang sering dipanggil dengan parameter argumen yang sama berulang kali dalam satu sesi aplikasi. Agar eksekusi menjadi instan, dekorator apa yang paling tepat disematkan pada fungsi tersebut?",
+      "options": [
+        "Menggunakan fungsi lru_cache dari pustaka bawaan functools",
+        "Membuat kamus global manual untuk menyimpan riwayat hasil perhitungan",
+        "Menerapkan dekorator dataclass untuk mengoptimalkan penyimpanan atribut",
+        "Memanfaatkan modul weakref untuk referensi objek yang efisien memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengunduh 500 gambar produk secara bersamaan dari URL eksternal ke dalam sistem lokal. Mengingat proses ini bersifat I/O bound, pendekatan konkurensi apa yang paling efisien di Python?",
+      "options": [
+        "Menggunakan modul multiprocessing untuk memaksimalkan penggunaan inti CPU",
+        "Memanfaatkan pustaka asyncio bersama httpx untuk operasi asynchronous",
+        "Menerapkan ThreadPoolExecutor dari modul concurrent.futures standar",
+        "Menjalankan proses secara sekuensial dengan jeda waktu sleep yang singkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menulis unit test menggunakan pytest untuk fungsi yang memanggil API eksternal berbayar, Anda ingin menghindari panggilan jaringan nyata selama pengujian otomatis. Fitur pytest apa yang harus Anda gunakan?",
+      "options": [
+        "Membuat file konfigurasi pytest.ini untuk menonaktifkan koneksi internet",
+        "Memanfaatkan fitur fixtures bawaan pytest untuk mengganti fungsi pemanggil API",
+        "Menggunakan pustaka mocking eksternal seperti unittest.mock untuk menambal fungsi",
+        "Menulis ulang fungsi utama agar menerima parameter flag mode development"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan skrip Python untuk mengimpor data CSV dari sistem mitra ke database internal. Data tersebut sering kali mengandung baris dengan encoding karakter yang rusak (corrupt) atau tidak dikenal, yang menyebabkan skrip berhenti di tengah jalan. Bagaimana cara paling aman menangani hal ini?",
+      "options": [
+        "Membaca file dengan parameter errors='ignore' untuk melewati karakter rusak dan melanjutkan proses",
+        "Menggunakan blok try-except pada setiap pemanggilan baris file untuk mencatat error ke log khusus",
+        "Mengonversi seluruh file ke format biner terlebih dahulu sebelum dibaca menggunakan modul pandas",
+        "Membuka file dengan menentukan argumen encoding_errors='replace' pada fungsi open bawaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skrip otomasi laporan harian, Anda perlu menggabungkan kamus (dictionary) konfigurasi default dengan konfigurasi spesifik cabang toko yang diinput oleh pengguna. Jika ada kunci yang sama, nilai dari konfigurasi cabang harus menimpa default. Pendekatan Pythonic apa yang paling tepat?",
+      "options": [
+        "Melakukan iterasi manual pada kunci konfigurasi cabang dan memperbarui kamus default secara iteratif",
+        "Menggunakan operator gabungan union pipa (|) yang diperkenalkan pada versi Python modern untuk menggabungkan keduanya",
+        "Membuat salinan kamus default terlebih dahulu lalu memanggil metode update dengan argumen konfigurasi cabang",
+        "Memanfaatkan fungsi zip untuk menyatukan daftar kunci dan nilai dari kedua kamus secara bersamaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fungsi utilitas Python menerima argumen berupa list data transaksi yang dapat dimodifikasi oleh fungsi lain secara tidak sengaja di bagian program lain. Anda ingin memastikan list argumen tersebut bersifat read-only di dalam fungsi Anda. Apa yang harus dilakukan?",
+      "options": [
+        "Mengubah tipe data argumen menjadi set di awal fungsi agar elemen tidak bisa diubah urutannya",
+        "Melakukan konversi list menjadi tuple sebelum melakukan pemrosesan lebih lanjut di dalam fungsi",
+        "Membuat salinan dalam (deep copy) dari list tersebut menggunakan modul copy bawaan Python",
+        "Menambahkan dekorator khusus immutability pada definisi fungsi untuk mengunci parameter input"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah fungsi Python yang menghitung tarif pajak wilayah berjalan lambat karena dipanggil berulang kali dengan parameter angka yang persis sama dalam satu siklus request. Bagaimana cara paling efisien mengoptimalkannya tanpa menulis ulang logika matematika?",
+      "options": [
+        "Menggunakan fungsi bawaan lru_cache dari modul functools untuk menyimpan hasil komputasi fungsi tersebut",
+        "Memindahkan logika fungsi tersebut ke dalam modul C eksternal menggunakan pustaka Cython",
+        "Menerapkan teknik multithreading agar kalkulasi tarif pajak dapat berjalan secara paralel",
+        "Mengubah fungsi biasa menjadi sebuah generator agar hasil kalkulasi disimpan secara lazy evaluation"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menulis kode Python untuk memparsing respons JSON dari API payment gateway pihak ketiga, struktur data sering kali tidak lengkap dan beberapa kunci opsional bisa tidak muncul, yang memicu KeyError. Cara teraman untuk mengakses kunci bersarang ini adalah:",
+      "options": [
+        "Selalu membungkus setiap akses kunci bersarang dengan blok try-except KeyError yang spesifik",
+        "Menggunakan metode get secara berantai dengan nilai default None pada setiap tingkat akses kamus",
+        "Memvalidasi seluruh struktur JSON menggunakan pustaka skema eksternal sebelum dibaca program",
+        "Mengubah seluruh objek JSON menjadi string terlebih dahulu lalu melakukan pencarian regex"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa skrip pengujian berbasis Python gagal mendeteksi perubahan status pada variabel global yang dimodifikasi oleh thread latar belakang (background thread). Apa penyebab utama masalah sinkronisasi memori ini?",
+      "options": [
+        "Ketiadaan tipe data eksplisit pada deklarasi variabel global yang menyebabkan konflik pengetikan",
+        "Penggunaan struktur data list yang tidak aman terhadap operasi tulis lintas thread secara simultan",
+        "Optimasi kompiler atau cache CPU lokal thread yang membuat perubahan nilai tidak terlihat oleh thread lain",
+        "Pembatasan Global Interpreter Lock yang melarang thread latar belakang mengubah variabel utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun CLI tool dengan Python untuk manajemen server internal. Tool tersebut menerima argumen opsional yang cukup banyak. Pustaka standar mana yang paling tepat dan bersih digunakan untuk mengelola argumen baris perintah ini?",
+      "options": [
+        "Memanfaatkan modul sys secara langsung untuk memparsing argumen berdasarkan posisi indeks list",
+        "Menggunakan modul argparse bawaan untuk mendefinisikan argumen, jenis data, dan bantuan otomatis",
+        "Menulis parser manual menggunakan metode string splitting pada string argumen gabungan",
+        "Mengandalkan modul getopt gaya lama untuk kompatibilitas dengan skrip shell sistem operasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fungsi Python mengembalikan generator yang menghasilkan baris data dari database secara streaming. Pemanggil fungsi terkadang berhenti membaca data di tengah jalan. Bagaimana Anda memastikan koneksi kursor database di dalam generator tersebut tetap tertutup?",
+      "options": [
+        "Menempatkan logika penutupan kursor di dalam blok try-finally di dalam fungsi generator tersebut",
+        "Mengandalkan mekanisme Garbage Collector Python untuk mendeteksi generator yang tidak aktif",
+        "Meminta pemanggil generator untuk selalu memanggil metode close secara manual setelah selesai",
+        "Mengubah generator menjadi list biasa agar memori dan koneksi langsung dibebaskan setelah selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu membandingkan dua objek kustom dalam aplikasi Python agar dapat diurutkan berdasarkan prioritas dan tanggal. Apa cara paling bersih untuk mengimplementasikan metode perbandingan ini di dalam kelas?",
+      "options": [
+        "Menulis manual keenam metode perbandingan __lt__, __le__, __gt__, __ge__, __eq__, dan __ne__",
+        "Menggunakan dekorator total_ordering dari modul functools bersama dengan implementasi __eq__ dan satu metode perbandingan",
+        "Mengubah objek kustom menjadi dictionary standar agar dapat diurutkan secara otomatis oleh fungsi sorted",
+        "Mengimplementasikan fungsi hash kustom yang menggabungkan prioritas dan tanggal menjadi satu angka unik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam skrip migrasi data, Anda perlu membaca file teks konfigurasi yang berisi pasangan kunci-nilai dengan format 'KUNCI = NILAI', namun sering kali diselingi baris kosong dan komentar yang diawali tanda pagar (#). Pendekatan iterasi baris yang paling bersih adalah:",
+      "options": [
+        "Melakukan split pada setiap baris berdasarkan tanda sama dengan dan mengabaikan panjang list hasil",
+        "Membuat list comprehension yang langsung mengevaluasi setiap baris tanpa filter kondisi awal",
+        "Memanfaatkan generator expression dengan kondisi filter untuk melewati baris kosong dan komentar",
+        "Membaca seluruh file ke dalam memori string besar lalu memotongnya menggunakan indeks karakter"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur notifikasi WhatsApp menggunakan pustaka eksternal yang terkadang mengalami timeout jaringan. Anda ingin memastikan fungsi pengiriman mencoba ulang (retry) secara otomatis hingga 3 kali sebelum memunculkan error. Pendekatan idiomatik apa yang sebaiknya Anda gunakan di Python?",
+      "options": [
+        "Menggunakan blok try-except bersarang dengan loop for manual untuk menghitung sisa percobaan.",
+        "Memanfaatkan dekorator dari pustaka pihak ketiga seperti tenacity untuk menangani logika percobaan ulang.",
+        "Menulis fungsi rekursif yang memanggil dirinya sendiri tanpa batas saat terjadi pengecualian jaringan.",
+        "Mengandalkan fitur bawaan dari interpreter Python untuk melakukan restart otomatis pada blok kode."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek analisis data penjualan, Anda menerima data harga produk dalam bentuk string (contoh: \"Rp 1.500.000,50\") dan harus mengubahnya menjadi tipe data float untuk keperluan perhitungan matematis. Cara paling bersih dan aman di Python adalah:",
+      "options": [
+        "Melakukan casting langsung dengan fungsi float() setelah menghapus titik dan mengganti koma.",
+        "Menggunakan ekspresi reguler untuk mengekstrak hanya karakter angka lalu membaginya.",
+        "Membuat fungsi pembersih kustom yang mengganti pemisah ribuan dan desimal secara berurutan.",
+        "Memanfaatkan metode locale untuk parsing otomatis sesuai standar regional bahasa Indonesia."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu membaca file konfigurasi format JSON berukuran kecil yang sering diperbarui oleh admin sistem secara bersamaan di server produksi. Untuk menghindari kondisi balap (race condition) atau file terbaca setengah, apa yang harus Anda terapkan saat membaca file tersebut?",
+      "options": [
+        "Membuka file dengan mode akses eksklusif biner menggunakan pustaka os bawaan sistem.",
+        "Menggunakan modul filelock pihak ketiga untuk mengamankan proses pembacaan file.",
+        "Menambahkan jeda waktu acak sebelum fungsi open() dieksekusi oleh thread aplikasi.",
+        "Membaca file langsung ke dalam memori menggunakan buffered stream tanpa penguncian."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan web Python Anda menerima payload JSON yang sangat besar dari klien. Untuk menghemat memori server, Anda memutuskan untuk memproses data tersebut secara inkremental tanpa memuat seluruh objek ke RAM. Pustaka mana yang paling tepat digunakan?",
+      "options": [
+        "Modul json standar dengan parameter parse_float khusus untuk streaming data.",
+        "Pustaka pihak ketiga ijson yang menyediakan parser JSON berbasis iterator.",
+        "Modul pickle untuk mendserialisasi data langsung ke dalam bentuk generator.",
+        "Fungsi built-in iter() yang dikombinasikan dengan metode readlines pada string."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis fungsi pembantu untuk menggabungkan dua path direktori dan nama file dalam skrip deployment lintas platform (Windows dan Linux). Praktik terbaik apa yang harus diikuti agar kode Anda aman dari kesalahan pemisah path?",
+      "options": [
+        "Menggunakan operator penambahan string standar dengan karakter garis miring terbalik.",
+        "Memanfaatkan fungsi os.path.join atau modul pathlib untuk resolusi path otomatis.",
+        "Mengganti semua karakter pemisah secara manual menggunakan metode replace pada string.",
+        "Menulis fungsi pengecekan sistem operasi menggunakan modul sys untuk menentukan pemisah."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sistem pengelolaan inventaris gudang, Anda memiliki objek kelas Produk yang sering dimasukkan ke dalam struktur data set untuk pencarian cepat. Agar objek tersebut dapat berfungsi dengan baik di dalam set, metode spesial apa yang wajib Anda implementasikan di dalam kelas tersebut?",
+      "options": [
+        "Hanya metode __str__ untuk representasi teks yang mudah dibaca oleh sistem.",
+        "Metode __eq__ dan __hash__ secara bersamaan untuk memastikan keunikan objek.",
+        "Metode __len__ dan __getitem__ agar objek dapat diiterasi dengan cepat.",
+        "Hanya metode __init__ untuk menginisialisasi atribut unik setiap produk."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis skrip migrasi basis data dan ingin memastikan bahwa jika terjadi kesalahan di tengah proses, seluruh perubahan database dibatalkan (rollback). Pola manajemen konteks apa yang paling aman digunakan di Python bersama koneksi SQL?",
+      "options": [
+        "Menggunakan blok try-except-finally manual untuk memanggil metode rollback secara eksplisit.",
+        "Memanfaatkan statement 'with' pada objek koneksi database yang mendukung protokol context manager.",
+        "Mengandalkan mekanisme garbage collection otomatis dari Python untuk membersihkan transaksi.",
+        "Menjalankan perintah SQL ROLLBACK secara manual di setiap awal baris iterasi data."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fungsi pemrosesan gambar di aplikasi Anda menerima argumen opsional berupa daftar filter efek. Anda mendapati bahwa memberikan list kosong sebagai nilai default argumen menyebabkan efek samping yang tidak diinginkan pada pemanggilan berikutnya. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Mengubah nilai default argumen menjadi None dan menginisialisasi list kosong di dalam fungsi.",
+        "Menggunakan tuple sebagai pengganti list untuk memastikan nilai default tidak dapat diubah.",
+        "Menambahkan dekorator fungsi untuk mereset argumen setiap kali fungsi tersebut dipanggil.",
+        "Membuat salinan dalam dari argumen menggunakan modul copy di awal isi fungsi."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu memantau folder unggahan dokumen secara real-time untuk mendeteksi file PDF baru yang masuk, lalu memprosesnya secara asinkron. Pendekatan paling efisien di Python untuk menangani event sistem file ini adalah:",
+      "options": [
+        "Membuat loop tak terbatas yang memindai isi folder menggunakan os.listdir setiap detik.",
+        "Memanfaatkan pustaka pihak ketiga seperti watchdog untuk mendengarkan event sistem operasi.",
+        "Menggunakan modul subprocess untuk menjalankan perintah pemantauan bawaan OS.",
+        "Menjadwalkan skrip berjalan setiap menit menggunakan cron job sistem operasi server."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi keuangan, Anda perlu memastikan bahwa variabel kurs mata uang penting tidak dapat diubah secara tidak sengaja oleh modul lain setelah diinisialisasi. Fitur tipe data apa di Python yang dapat membantu mendeteksi kesalahan ini lebih awal?",
+      "options": [
+        "Menggunakan modul typing dengan anotasi Final untuk mendeklarasikan konstanta.",
+        "Membungkus variabel tersebut di dalam kelas privat dengan metode getter khusus.",
+        "Memanfaatkan tipe data tuple secara ketat untuk seluruh variabel nilai mata uang.",
+        "Menjalankan linter eksternal secara manual sebelum setiap proses commit kode."
+      ],
+      "correct_index": 0
+    }
+  ]
+}

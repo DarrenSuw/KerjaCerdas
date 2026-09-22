@@ -1,0 +1,306 @@
+{
+  "skill": "Statistics",
+  "skill_key": "statistics",
+  "questions": [
+    {
+      "question": "Sebuah platform e-commerce di Jakarta ingin menguji apakah desain halaman checkout baru dapat meningkatkan tingkat penyelesaian transaksi (conversion rate). Dari data uji coba acak terhadap 10.000 pengguna, nilai p-value yang didapat adalah 0,03 dengan tingkat signifikansi (alpha) 5%. Sebagai data analyst, apa rekomendasi yang paling tepat untuk manajemen?",
+      "options": [
+        "Menolak hipotesis nol dan menyarankan peluncuran desain baru karena perbedaan tersebut signifikan secara statistik",
+        "Menerima hipotesis nol karena tingkat kepercayaan uji coba tersebut masih berada di bawah angka 99 persen",
+        "Mengulang kembali eksperimen dengan menambah durasi waktu karena ukuran sampel 10.000 pengguna kurang besar",
+        "Mengabaikan nilai p-value dan fokus pada selisih rata-rata transaksi harian sebelum dan sesudah uji coba"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pemasaran sebuah bank digital di Indonesia ingin memprediksi jumlah unduhan aplikasi berdasarkan anggaran iklan media sosial bulanan. Berdasarkan analisis regresi linear sederhana, diperoleh nilai R-squared (R²) sebesar 0,85. Bagaimana interpretasi praktis dari metrik tersebut bagi pengambil keputusan?",
+      "options": [
+        "Anggaran iklan media sosial menyebabkan kenaikan unduhan sebesar 85 persen setiap bulan secara konsisten",
+        "Variasi besarnya anggaran iklan mampu menjelaskan 85 persen variasi pada jumlah unduhan aplikasi bulanan",
+        "Model regresi tersebut memiliki tingkat akurasi sebesar 85 persen untuk meramalkan tren pasar di masa depan",
+        "Sebanyak 85 persen pengguna baru aplikasi tersebut datang secara langsung dari tayangan iklan media sosial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja sebagai analis rantai pasok di perusahaan FMCG nasional. Distribusi waktu pengiriman barang dari pabrik ke gudang regional menunjukkan kemencengan ke kanan (right-skewed) dengan adanya beberapa keterlambatan ekstrem karena masalah cuaca. Metrik statistik manakah yang paling akurat untuk melaporkan 'waktu pengiriman tipikal' kepada manajemen?",
+      "options": [
+        "Menggunakan nilai rata-rata hitung (mean) agar seluruh data keterlambatan ekstrem tetap diperhitungkan secara utuh",
+        "Menggunakan nilai simpangan baku (standard deviation) untuk mengukur seberapa jauh variasi waktu pengiriman",
+        "Menggunakan nilai median karena tidak terdistorsi oleh nilai ekstrem dari kasus keterlambatan yang jarang terjadi",
+        "Menggunakan nilai modus untuk menunjukkan durasi waktu pengiriman yang paling sering dialami oleh armada truk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan rumah sakit swasta di Surabaya mencatat waktu tunggu pasien di instalasi gawat darurat. Karena data tidak berdistribusi normal dan ukuran sampel kecil, Anda diminta memilih metode pengujian hipotesis yang tepat untuk membandingkan rata-rata waktu tunggu sebelum dan sesudah pelatihan staf. Uji statistik apa yang sebaiknya Anda gunakan?",
+      "options": [
+        "Melakukan uji Wilcoxon signed-rank test karena data tidak memenuhi asumsi normalitas untuk uji parametrik",
+        "Melakukan uji paired t-test setelah mentransformasi seluruh data mentah menggunakan fungsi logaritma natural",
+        "Melakukan uji Mann-Whitney U test untuk membandingkan dua kelompok independen sebelum dan sesudah pelatihan",
+        "Melakukan uji ANOVA satu arah untuk mendeteksi perbedaan varians antar kelompok sampel secara simultan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi seluler di Bandung ingin memperkirakan rata-rata pulsa bulanan pelanggan prabayar di Jawa Barat. Dengan tingkat kepercayaan 95 persen dan margin of error yang diinginkan sebesar Rp2.000, berapa langkah awal yang harus dilakukan sebelum menghitung ukuran sampel minimal?",
+      "options": [
+        "Menentukan jumlah total populasi pelanggan aktif prabayar di seluruh wilayah operasional perusahaan tersebut",
+        "Menetapkan perkiraan nilai deviasi standar dari pengeluaran pulsa berdasarkan hasil survei pendahuluan",
+        "Menghitung nilai median dan kuartil dari data transaksi pulsa pelanggan pada periode bulan sebelumnya",
+        "Memastikan bahwa distribusi data pengeluaran pulsa seluruh pelanggan mengikuti pola kurva normal baku"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam menganalisis faktor-faktor yang memengaruhi churn rate pelanggan layanan internet rumah, Anda mendapati adanya korelasi yang sangat tinggi (multikolinearitas parah) antara variabel 'jumlah perangkat terhubung' dan 'jumlah penggunaan data gigabyte'. Langkah perbaikan apa yang paling tepat dalam pemodelan regresi?",
+      "options": [
+        "Mengeluarkan salah satu variabel yang berkolerasi tinggi atau menggabungkannya menjadi satu indeks gabungan",
+        "Menambahkan variabel kontrol baru yang tidak memiliki hubungan linier dengan variabel dependen utama",
+        "Mengubah model regresi linear menjadi regresi non-linear untuk mengakomodasi interaksi antar variabel",
+        "Melakukan normalisasi ulang pada kedua variabel menggunakan metode min-max scaling sebelum dianalisis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik komponen otomotif di Karawang mengambil sampel acak 50 buah piston dari mesin cetak A dan 50 buah dari mesin cetak B untuk menguji perbedaan diameter rata-rata. Nilai F-test untuk varians menghasilkan p-value sebesar 0,02. Apa implikasi dari hasil F-test tersebut terhadap pemilihan uji t (t-test) selanjutnya?",
+      "options": [
+        "Harus menggunakan uji t dua sampel yang berasumsi bahwa varians antar kedua kelompok populasi adalah sama",
+        "Harus menggunakan uji t dua sampel yang tidak berasumsi varians sama atau menggunakan koreksi Welch",
+        "Harus membatalkan pengujian perbedaan rata-rata karena kedua mesin terbukti memiliki kualitas yang berbeda",
+        "Harus menggabungkan kedua sampel menjadi satu kelompok besar untuk menguji hipotesis rata-rata gabungan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional sebuah gudang logistik ingin memantau tingkat kerusakan barang harian menggunakan peta kendali statistik (statistical process control). Data yang dicatat adalah jumlah barang rusak per 1.000 unit pengiriman. Jenis peta kendali (control chart) manakah yang paling sesuai untuk skenario ini?",
+      "options": [
+        "Menggunakan X-bar dan R chart untuk memantau rata-rata berat dan dimensi fisik barang yang dikirim",
+        "Menggunakan P-chart atau C-chart untuk melacak jumlah cacat atau proporsi barang rusak per sampel",
+        "Menggunakan Pareto chart untuk mengidentifikasi jenis kerusakan barang yang paling sering terjadi",
+        "Menggunakan Scatter plot untuk melihat hubungan antara jumlah pengiriman harian dan tingkat kerusakan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah lembaga riset pasar di Yogyakarta melakukan survei kepuasan pelanggan terhadap layanan transportasi publik. Dari 1.000 responden yang dipilih secara acak bertingkat (stratified random sampling), diperoleh margin of error sebesar 3 persen pada tingkat kepercayaan 95 persen. Apa arti spesifik dari interval keyakinan tersebut?",
+      "options": [
+        "Terdapat probabilitas 95 persen bahwa hasil survei pada sampel mencerminkan kondisi populasi sebenarnya dengan akurasi mutlak",
+        "Jika survei diulang dengan metode serupa berkali-kali, 95 persen dari interval yang terbentuk akan mencakup nilai parameter populasi",
+        "Sebanyak 95 persen dari total keseluruhan populasi pengguna transportasi publik merasa puas dengan layanan yang diberikan",
+        "Tingkat kebenaran dari jawaban yang diberikan oleh responden dalam sampel tersebut dapat dipertanggungjawabkan sebesar 95 persen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim product management sebuah aplikasi edutech ingin mengetahui apakah durasi belajar siswa (dalam jam per minggu) berdampak pada kelulusan ujian sertifikasi (lulus/tidak lulus). Teknik analisis statistik manakah yang paling tepat digunakan untuk menjawab pertanyaan bisnis ini?",
+      "options": [
+        "Analisis regresi linear berganda untuk memprediksi skor nilai ujian akhir siswa berdasarkan jam belajar",
+        "Analisis regresi logistik untuk memperkirakan probabilitas seorang siswa lulus ujian berdasarkan jam belajar",
+        "Analisis deret waktu untuk meramalkan tren kelulusan siswa pada beberapa periode ujian di masa depan",
+        "Analisis korelasi Pearson untuk mengukur kekuatan hubungan linier antara jam belajar dan status kelulusan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Data Analyst di sebuah startup agritech, Anda diminta menganalisis data hasil panen petani mitra yang bervariasi secara ekstrem akibat perbedaan cuaca di tiap daerah. Metrik pemusatan data manakah yang paling tepat Anda gunakan untuk melaporkan rata-rata hasil panen agar tidak terdistorsi oleh nilai ekstrem (outlier)?",
+      "options": [
+        "Menggunakan nilai rata-rata hitung karena mencakup seluruh data aktual di lapangan",
+        "Menggunakan nilai median karena lebih tahan terhadap pengaruh nilai ekstrem",
+        "Menggunakan nilai modus untuk melihat hasil panen yang paling sering muncul",
+        "Menggunakan selisih antara nilai tertinggi dan terendah untuk akurasi data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Human Resources di sebuah perusahaan manufaktur besar ingin mengevaluasi apakah program pelatihan kepemimpinan yang baru efektif meningkatkan skor kinerja karyawan. Data skor diambil dari 30 orang manajer yang sama sebelum dan sesudah mengikuti pelatihan. Uji statistik apa yang paling tepat digunakan?",
+      "options": [
+        "Uji t dua sampel independen untuk membandingkan varians kedua kelompok",
+        "Uji chi-square untuk melihat asosiasi antara pelatihan dan kategori kinerja",
+        "Uji t berpasangan karena data diambil dari subjek yang sama dalam dua kondisi",
+        "Uji ANOVA satu arah untuk menguji perbedaan rata-rata dari banyak kelompok"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang melakukan analisis multikolinearitas dalam model regresi linier untuk memprediksi tingkat penjualan properti di Surabaya. Nilai Variance Inflation Factor (VIF) untuk variabel luas bangunan dan jumlah kamar tidur sangat tinggi yaitu 12,5. Tindakan praktis apa yang paling tepat Anda ambil?",
+      "options": [
+        "Menghapus salah satu variabel yang redundan atau menggabungkannya menjadi satu",
+        "Menambahkan lebih banyak sampel data sekunder untuk menurunkan nilai VIF",
+        "Mengubah model regresi linier menjadi regresi non-linier agar data fit",
+        "Melakukan transformasi logaritma pada kedua variabel yang bermasalah tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan FMCG ingin meluncurkan varian rasa baru keripik singkong. Sebelum produksi massal, Anda melakukan uji hipotesis untuk memastikan tingkat kesukaan konsumen minimal mencapai skala 7 dari 10. Jika Anda ingin menghindari risiko meloloskan produk gagal ke pasar, nilai signifikansi (alpha) berapa yang sebaiknya Anda ketatkan?",
+      "options": [
+        "Menetapkan alpha pada level 0,10 untuk memperbesar peluang lolos uji",
+        "Menetapkan alpha pada level 0,01 untuk memperketat batas penolakan",
+        "Menetapkan alpha sama dengan beta agar terjadi keseimbangan risiko",
+        "Meniadakan nilai alpha dan fokus pada besarnya ukuran sampel data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek riset pasar untuk industri kosmetik lokal, Anda mendapati distribusi data pendapatan responden memiliki ekor panjang ke kanan (skewed positif). Agar analisis inferensial selanjutnya dapat menggunakan asumsi normalitas, langkah transformasi data apa yang paling lazim diterapkan?",
+      "options": [
+        "Melakukan transformasi akar kuadrat atau logaritma natural pada variabel",
+        "Menghapus seluruh data yang berada di bawah persentil ke-25 responden",
+        "Mengganti nilai yang miring dengan nilai rata-rata dari total sampel",
+        "Melakukan standarisasi z-score tanpa mengubah bentuk distribusi data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai analis risiko di perusahaan pembiayaan kendaraan bermotor, Anda diminta menghitung probabilitas seorang debitur mengalami gagal bayar berdasarkan riwayat kredit dan status pekerjaan mereka. Pendekatan probabilitas teoretis apa yang paling sesuai untuk membangun model prediktif ini?",
+      "options": [
+        "Probabilitas klasik berdasarkan asumsi ruang sampel yang berbobot sama",
+        "Probabilitas subjektif berdasarkan intuisi manajer risiko yang berpengalaman",
+        "Probabilitas empiris atau frekuensi relatif berdasarkan data historis kredit",
+        "Probabilitas aksiomatik murni tanpa memerlukan data masa lalu debitur"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer operasional sebuah rantai restoran cepat saji ingin menguji apakah rata-rata waktu layanan drive-thru berbeda secara signifikan antara cabang Jakarta, Bandung, dan Surabaya. Uji statistik manakah yang paling tepat untuk membandingkan rata-rata dari ketiga kelompok lokasi tersebut sekaligus?",
+      "options": [
+        "Analisis varians satu arah (One-Way ANOVA) guna menghindari error kumulatif",
+        "Uji t dua sampel independen yang dilakukan secara bergantian antar kota",
+        "Analisis regresi logistik multinomial untuk mendeteksi perbedaan waktu",
+        "Uji Mann-Whitney U untuk membandingkan median waktu layanan tiap kota"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan melakukan proyek segmentasi pelanggan untuk aplikasi dompet digital. Karena variabel demografi dan perilaku transaksi sangat beragam dan tidak memiliki label kelas sebelumnya, teknik statistik multivariat apa yang paling tepat Anda pilih?",
+      "options": [
+        "Analisis diskriminan linier untuk mengklasifikasikan kategori pelanggan",
+        "Analisis klaster non-hierarki seperti K-Means untuk pengelompokan alami",
+        "Analisis jalur (path analysis) untuk menguji hubungan kausalitas langsung",
+        "Analisis komponen utama (PCA) untuk mereduksi dimensi data transaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online ingin menguji apakah tata letak banner iklan baru memengaruhi durasi baca pengunjung. Karena ukuran sampel sangat besar (n = 15.000), uji normalitas Kolmogorov-Smirnov menunjukkan hasil yang signifikan secara statistik (menolak normalitas). Keputusan analitis apa yang paling tepat Anda ambil?",
+      "options": [
+        "Membatalkan uji hipotesis karena asumsi normalitas data mutlak dilanggar",
+        "Mengabaikan pelanggaran normalitas tersebut karena Teorema Limit Pusat berlaku",
+        "Membuang 10.000 data acak agar ukuran sampel menjadi kecil dan normal",
+        "Mengubah seluruh variabel kontinu menjadi data kategorikal ordinal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam memvalidasi model credit scoring baru di sebuah bank nasional, Anda mendapati bahwa model memiliki akurasi total 95%, namun gagal mendeteksi 80% dari sedikit nasabah yang sebenarnya gagal bayar. Metrik evaluasi tambahan apa yang paling krusial untuk Anda periksa guna mengungkap kelemahan model tersebut?",
+      "options": [
+        "Menghitung nilai spesifisitas dan tingkat positif palsu model secara detail",
+        "Memeriksa matriks kebingungan untuk melihat metrik recall dan precision",
+        "Mengukur koefisien korelasi Pearson antara prediksi dan nilai aktual",
+        "Melihat nilai R-squared dari model regresi linier yang mendasarinya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis data di sebuah perusahaan logistik, Anda mengamati bahwa biaya pengiriman bulanan sangat dipengaruhi oleh anomali biaya bahan bakar yang melonjak drastis pada bulan tertentu. Metrik sentral manakah yang paling tepat Anda gunakan untuk melaporkan biaya tipikal kepada manajemen agar tidak terdistorsi oleh lonjakan tersebut?",
+      "options": [
+        "Nilai rata-rata aritmatika karena mencakup seluruh total biaya aktual secara transparan",
+        "Nilai median karena lebih tahan terhadap nilai ekstrem atau outlier dalam distribusi data",
+        "Nilai modus karena menunjukkan frekuensi biaya bahan bakar yang paling sering terjadi",
+        "Nilai simpangan baku karena mengukur tingkat penyebaran data dari titik pusatnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rantai minimarket nasional ingin meluncurkan program keanggotaan baru. Anda diminta menentukan ukuran sampel minimum dari populasi 2 juta pelanggan dengan tingkat kepercayaan 95% dan margin of error 5%. Langkah statistik apa yang paling tepat untuk menentukan jumlah responden tersebut?",
+      "options": [
+        "Menggunakan rumus Slovin dengan asumsi varians maksimum proporsi populasi sebesar 0,5",
+        "Mengambil tepat 10 persen dari total populasi agar representasi regional terpenuhi",
+        "Menghitung rata-rata transaksi harian lalu dikalikan dengan jumlah hari dalam sebulan",
+        "Melakukan uji pilot pada 30 sampel acak untuk mencari simpangan baku populasi total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim product management aplikasi ride-hailing ingin menguji apakah penambahan fitur 'tip pengemudi' meningkatkan rata-rata nominal transaksi per perjalanan. Data sampel berpasangan sebelum dan sesudah fitur dirilis terkumpul, namun distribusi datanya terbukti tidak normal. Uji hipotesis apa yang harus Anda pilih?",
+      "options": [
+        "Uji t berpasangan (Paired Sample t-test) karena membandingkan dua kondisi subjek sama",
+        "Uji ANOVA satu arah untuk mendeteksi varians antar kelompok sebelum dan sesudah",
+        "Uji Wilcoxon Signed-Rank karena data berpasangan dan tidak memenuhi asumsi normalitas",
+        "Uji Mann-Whitney U karena sampel bersifat independen dan berasal dari dua kelompok"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menganalisis performa penjualan bulanan produk fashion di berbagai kota, Anda menemukan nilai koefisien korelasi Pearson antara pengeluaraniklan digital dan volume penjualan bernilai r = 0,85 dengan p-value < 0,01. Kesimpulan praktis apa yang paling akurat dari hasil statistik tersebut?",
+      "options": [
+        "Peningkatan anggaran iklan digital terbukti secara mutlak menyebabkan lonjakan penjualan",
+        "Terdapat hubungan linier positif yang kuat dan signifikan secara statistik antara iklan dan penjualan",
+        "Sebagian besar variasi penjualan di kota-kota tersebut sepenuhnya dipengaruhi oleh faktor iklan",
+        "Besaran anggaran iklan digital tidak memiliki keterkaitan linier dengan volume penjualan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis kualitas di pabrik manufaktur elektronik di Cikarang, Anda mengambil sampel harian produk komponen untuk menguji apakah proporsi produk cacat telah melampaui batas toleransi mutu perusahaan sebesar 3%. Uji hipotesis satu sampel apa yang paling tepat digunakan?",
+      "options": [
+        "Uji Z satu sampel untuk proporsi populasi terhadap nilai acuan standar perusahaan",
+        "Uji t dua sampel independen untuk membandingkan tingkat kerusakan antar shift kerja",
+        "Uji Chi-Square goodness-of-fit untuk melihat keselarasan kategori produk cacat",
+        "Uji Friedman untuk mengukur peringkat kerusakan komponen dari waktu ke waktu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan properti di Bali ingin memodelkan harga rumah berdasarkan luas tanah, jumlah kamar, dan jarak ke pantai. Setelah menjalankan regresi linier berganda, nilai Variance Inflation Factor (VIF) untuk variabel luas tanah tercatat sebesar 11,2. Tindakan analitis apa yang harus Anda ambil?",
+      "options": [
+        "Menambahkan variabel interaksi baru ke dalam model untuk meningkatkan nilai koefisien determinasi",
+        "Mengabaikan nilai VIF tersebut karena fokus utama model adalah akurasi prediksi bukan interpretasi",
+        "Mengatasi masalah multikolinearitas tinggi dengan mengeluarkan atau menggabungkan variabel terkait",
+        "Mengubah skala data variabel independen menggunakan standarisasi z-score agar VIF menurun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim Human Resources sebuah bank besar ingin mengetahui apakah terdapat perbedaan tingkat kepuasan kerja (skala Likert 1-5) antara karyawan divisi IT, Operasional, dan Pemasaran. Uji statistik parametrik apa yang harus Anda gunakan untuk menguji perbedaan rata-rata ketiga kelompok tersebut?",
+      "options": [
+        "Uji t independen dua sampel untuk membandingkan skor kepuasan antar divisi secara berpasangan",
+        "Analisis varians satu arah (One-Way ANOVA) karena membandingkan rata-rata lebih dari dua kelompok",
+        "Analisis regresi logistik multinomial untuk memprediksi probabilitas kelompok divisi karyawan",
+        "Uji Kruskal-Wallis untuk menguji perbedaan median tanpa asumsi distribusi normal data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengevaluasi performa mesin cetak kemasan di pabrik makanan ringan. Berdasarkan data historis panjang, diketahui simpangan baku populasi kerusakan kemasan adalah 2 mm. Anda mengambil sampel acak 36 kemasan dan ingin mengestimasi rata-rata populasi dengan tingkat keyakinan 95%. Distribusi probabilitas apa yang tepat untuk menyusun interval kepercayaan tersebut?",
+      "options": [
+        "Distribusi normal (Z) karena simpangan baku populasi diketahui dan ukuran sampel memadai",
+        "Distribusi t-Student karena ukuran sampel masih berada di bawah angka 40 pengamatan",
+        "Distribusi Chi-Square karena analisis berfokus pada varians dari sampel kemasan",
+        "Distribusi Binomial karena pengukuran kerusakan kemasan bersifat dikotomis ya atau tidak"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform streaming musik lokal ingin menganalisis preferensi genre musik berdasarkan kelompok usia pengguna (Remaja, Dewasa Muda, Dewasa). Anda merancang tabel kontingensi untuk menguji asosiasi antara usia dan genre favorit. Uji statistik apa yang paling tepat digunakan untuk menganalisis tabel silang tersebut?",
+      "options": [
+        "Uji korelasi Rank Spearman untuk mengukur kekuatan hubungan monoton antar variabel",
+        "Uji Chi-Square Independence untuk menguji hubungan antara dua variabel kategori",
+        "Uji Mann-Whitney U untuk membandingkan perbedaan peringkat antar kelompok usia",
+        "Uji z proporsi berganda untuk menguji perbedaan persentase genre musik tertentu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam melakukan peramalan penjualan bulanan produk FMCG menggunakan model time series, Anda mendapati bahwa nilai error (residual) dari model ARIMA menunjukkan pola tren yang sistematis dari waktu ke waktu. Apa implikasi statistik dari kondisi tersebut terhadap model Anda?",
+      "options": [
+        "Model sudah optimal karena residual mencerminkan variasi acak yang wajar dalam bisnis",
+        "Model melanggar asumsi white noise sehingga masih ada informasi tren yang belum tertangkap",
+        "Model menderita heteroskedastisitas sehingga perlu ditransformasi menggunakan logaritma",
+        "Model memiliki tingkat multikolinearitas temporal yang tinggi antar periode waktu pengamatan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

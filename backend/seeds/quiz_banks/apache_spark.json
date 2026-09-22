@@ -1,0 +1,306 @@
+{
+  "skill": "Apache Spark",
+  "skill_key": "apache spark",
+  "questions": [
+    {
+      "question": "Sebuah e-commerce Indonesia mengalami lonjakan data log transaksi harian sebesar 50 GB menjadi 500 GB saat Harbolnas. Tim data engineer menggunakan Apache Spark untuk memproses log tersebut di cluster YARN. Namun, tugas (job) sering gagal karena executor mengalami 'Container killed by YARN for exceeding memory limits'. Langkah optimal apa yang harus diambil untuk mengatasi masalah ini?",
+      "options": [
+        "Mengurangi jumlah partisi data secara drastis agar ukuran setiap partisi menjadi sangat besar di memori",
+        "Menaikkan alokasi spark.executor.memory dan menyesuaikan spark.memory.fraction untuk alokasi execution",
+        "Mengubah format penyimpanan data input dari Parquet menjadi CSV agar lebih mudah dibaca oleh driver",
+        "Mematikan mekanisme garbage collection di Spark UI dan menambah jumlah core per executor menjadi maksimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menggabungkan (join) dua DataFrame besar di PySpark: tabel transaksi penjualan (100 juta baris) dan tabel master produk (5 ribu baris). Proses join default berjalan lambat karena terjadi shuffle data yang masif di jaringan klaster. Bagaimana cara paling efisien untuk mengoptimalkan operasi join ini?",
+      "options": [
+        "Melakukan repartition pada kedua DataFrame menggunakan kolom kunci join sebelum perintah join dijalankan",
+        "Menggunakan fungsi broadcast pada DataFrame tabel master produk agar didistribusikan ke seluruh executor",
+        "Meningkatkan nilai spark.sql.shuffle.partitions menjadi 2000 untuk memperkecil ukuran setiap partisi",
+        "Mengonversi kedua DataFrame menjadi Pandas DataFrame terlebih dahulu agar proses join berjalan di satu mesin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi Spark Streaming membaca data dari Kafka untuk memantau transaksi penipuan (fraud) perbankan secara real-time. Setelah beberapa jam berjalan, latensi pemrosesan (processing time) terus meningkat melebihi interval batch yang ditentukan, menyebabkan antrean data di Kafka. Apa tindakan diagnostik pertama yang paling tepat dilakukan?",
+      "options": [
+        "Memeriksa Spark UI pada tab Executor untuk melihat apakah terjadi ketidakseimbangan data atau GC pause yang lama",
+        "Langsung menambah jumlah node instance pada cloud cluster tanpa melihat metrik internal aplikasi",
+        "Mengubah mode checkpointing dari HDFS ke local disk agar penulisan metadata menjadi jauh lebih cepat",
+        "Menurunkan tingkat log level menjadi DEBUG untuk mencatat setiap baris data yang masuk ke dalam memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pembacaan file CSV berukuran besar dari AWS S3 ke dalam Spark DataFrame, proses eksekusi memakan waktu sangat lama dan menghabiskan sumber daya driver. Setelah diselidiki, masalah ini disebabkan oleh karakteristik file yang memiliki jutaan baris kecil tanpa kompresi terdistribusi. Solusi apa yang paling tepat untuk memperbaiki masalah I/O ini?",
+      "options": [
+        "Menambahkan argumen inferSchema=True pada fungsi pembacaan CSV agar tipe data langsung terdeteksi otomatis",
+        "Mengonversi file CSV tersebut ke format columnar seperti Parquet dan menyimpannya kembali dengan partisi yang baik",
+        "Meningkatkan ukuran driver memory secara masif agar mampu menampung seluruh baris CSV dalam satu node",
+        "Menggunakan fungsi collect() pada tahap awal pembacaan file agar data langsung terkumpul di memori lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pipeline data warehouse sebuah perusahaan telekomunikasi, Anda mendapati bahwa sebuah DataFrame Spark yang sama harus digunakan berkali-kali dalam perhitungan metrik yang berbeda (misal: ARPU,Churn Rate, dan Trafik). Tanpa caching, Spark selalu membaca ulang dan memproses ulang dari awal. Pendekatan mana yang paling efisien untuk menghindari komputasi berulang ini?",
+      "options": [
+        "Menjalankan perintah df.cache() atau df.persist() setelah transformasi awal yang berat selesai dilakukan",
+        "Menulis DataFrame tersebut ke dalam temporary CSV file di disk lokal setiap selesai satu tahap metrik",
+        "Menggunakan fungsi broadcast secara agresif pada setiap kolom numerik yang ada di dalam DataFrame",
+        "Memecah DataFrame menjadi ribuan file kecil menggunakan fungsi repartition sebelum dihitung metriknya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job PySpark mengalami kegagalan dengan pesan 'java.lang.OutOfMemoryError: Java heap space' pada driver node. Analisis kode menunjukkan bahwa developer sering menggunakan aksi collect() untuk mengambil hasil agregasi data berukuran 5 GB ke dalam memori lokal driver. Bagaimana cara memperbaiki pola penulisan kode ini?",
+      "options": [
+        "Mengganti aksi collect() dengan fungsi take(n) atau menulis langsung hasil DataFrame ke storage eksternal",
+        "Menambahkan konfigurasi spark.driver.maxResultSize menjadi tidak terbatas agar driver tidak pernah error",
+        "Mengubah bahasa pemrograman dari PySpark murni menjadi Scala agar penggunaan heap space jauh lebih efisien",
+        "Menjalankan ulang job pada jam malam saat beban jaringan klaster sedang berada di titik terendah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain pipeline ETL harian menggunakan Spark SQL untuk menulis data ke tabel partitioned Hive/Parquet. Data harian sering mengalami koreksi sehingga proses ETL harus melakukan overwrite pada partisi tanggal tertentu tanpa merusak partisi tanggal lainnya. Konfigurasi Spark SQL apa yang harus diaktifkan?",
+      "options": [
+        "Mengatur spark.sql.sources.partitionOverwriteMode menjadi dynamic",
+        "Mengatur spark.sql.shuffle.partitions menjadi nilai minimum yaitu 1",
+        "Menggunakan perintah DROP PARTITION secara manual sebelum perintah INSERT dijalankan",
+        "Mengaktifkan mode kompresi snappy pada seluruh konfigurasi writer Spark"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menjalankan job Spark pada data log klik pengguna, Anda menemukan adanya skew data yang parah pada kolom 'category_id', di mana 80% data terkonsentrasi pada satu ID populer. Hal ini menyebabkan satu executor bekerja sangat lama sementara yang lain sudah selesai (straggler task). Teknik mitigasi apa yang paling efektif untuk mengatasi skew data ini?",
+      "options": [
+        "Melakukan filtering total pada category_id yang memiliki volume data tinggi agar tidak diproses sama sekali",
+        "Menerapkan teknik salting dengan menambahkan nilai acak pada kunci join atau groupBy untuk mendistribusikan beban",
+        "Menurunkan jumlah core per executor agar kecepatan eksekusi setiap task menjadi seragam di semua node",
+        "Memaksa Spark untuk menggunakan teknik merge join alih-alih sort-merge join melalui hint query"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Machine Learning menggunakan Spark MLlib untuk melatih model klasifikasi pada dataset teks yang besar. Setelah model dilatih, pipeline transformasi fitur dan model estimator perlu disimpan agar dapat digunakan kembali oleh aplikasi backend produksi dalam format standar. Metode apa yang harus digunakan untuk menyimpan artefak tersebut?",
+      "options": [
+        "Menyimpan objek model menggunakan library Python pickle standar langsung ke distributed file system",
+        "Menggunakan method .write().save() pada pipeline model Spark agar dapat dimuat kembali secara lintas platform",
+        "Mengekstrak bobot koefisien model ke dalam file teks biasa menggunakan fungsi printSchema()",
+        "Melakukan serialisasi manual seluruh objek DataFrame ke dalam format JSON menggunakanudf"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah job Spark membaca data dari database operasional (RDBMS) menggunakan JDBC dengan konfigurasi pembacaan default. Proses pembacaan berjalan sangat lambat karena hanya menggunakan satu koneksi tunggal (single-threaded). Bagaimana cara mengonfigurasi pembacaan JDBC agar Spark dapat membaca tabel secara paralel dari database?",
+      "options": [
+        "Menambahkan parameter lowerBound, upperBound, numPartitions, dan nama kolom numerik pada opsi pembacaan JDBC",
+        "Meningkatkan nilai spark.executor.cores menjadi angka maksimal yang didukung oleh node klaster",
+        "Mengubah query SQL pada opsi pembacaan dengan menambahkan fungsi LIMIT dan OFFSET secara dinamis",
+        "Melakukan cache pada koneksi database sebelum objek DataFrame didefinisikan di dalam skrip PySpark"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job Spark membaca file JSON bersarang (nested) dari data log aplikasi mobile untuk dianalisis oleh tim Product. Struktur data memiliki array dan struct yang dalam, menyebabkan job berjalan lambat dan memakan memori tinggi saat parsing. Langkah optimasi apa yang paling efektif untuk diterapkan?",
+      "options": [
+        "Mengubah format penyimpanan menjadi CSV sebelum dibaca oleh Spark",
+        "Mendefinisikan explicit schema menggunakan StructType saat membaca file",
+        "Menaikkan jumlah executor memory secara drastis pada konfigurasi Spark",
+        "Melakukan broadcast pada seluruh file JSON sebelum di-parsing ke DataFrame"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis pipeline ETL di PySpark yang memproses data finansial harian. Setelah melakukan proses transformasi yang kompleks dan penggabungan beberapa DataFrame, DataFrame hasil akhir dibaca ulang sebanyak 5 kali untuk menghasilkan laporan yang berbeda. Apa tindakan terbaik yang harus diambil untuk efisiensi eksekusi?",
+      "options": [
+        "Menyimpan DataFrame akhir ke local disk worker nodes menggunakan saveAsTable",
+        "Melakukan proses repartitioning pada DataFrame sebelum setiap laporan dibuat",
+        "Menerapkan metode .cache() atau .persist() pada DataFrame akhir sebelum laporan",
+        "Memecah DataFrame akhir menjadi beberapa file CSV terpisah secara manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah job PySpark gagal dengan pesan error 'Org.apache.spark.shuffle.FetchFailedException' dan 'Container killed by YARN for exceeding memory limits' saat melakukan operasi groupBy pada kolom dengan kardinalitas tinggi. Bagaimana cara paling tepat mengatasi masalah shuffle ini?",
+      "options": [
+        "Menurunkan nilai parameter spark.sql.shuffle.partitions dari default ke angka kecil",
+        "Menaikkan nilai parameter spark.sql.shuffle.partitions agar ukuran partition lebih kecil",
+        "Menghapus semua operasi transformasi lazy dan menggantinya dengan loop Python",
+        "Menggunakan fungsi collect() terlebih dahulu untuk memproses data di driver node"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati job PySpark berjalan sangat lambat pada tahap akhir (stage terakhir) karena beberapa task memakan waktu jauh lebih lama dibandingkan ratusan task lainnya yang sudah selesai. Berdasarkan analisis Spark UI, hal ini disebabkan oleh distribusi ukuran data yang tidak merata pada key tertentu. Pendekatan apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Melakukan teknik salting pada key yang bermasalah sebelum melakukan operasi join",
+        "Menambah jumlah worker node secara fisik pada cluster tanpa mengubah kode program",
+        "Mengubah mode eksekusi Spark dari distributed menjadi single-node multithreading",
+        "Menonaktifkan fitur Catalyst Optimizer agar eksekusi query berjalan lebih natural"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah arsitektur data lake, job Spark Streaming membaca data dari event hub dan menuliskan hasilnya ke tabel Delta Lake secara micro-batch. Terkadang terjadi kegagalan sistem mendadak, dan saat restart, beberapa data tercatat dua kali (duplicate) di tabel tujuan. Fitur apa dari Delta Lake yang harus diaktifkan untuk mencegah hal ini?",
+      "options": [
+        "Menggunakan fitur ACID transactions dengan perintah MERGE INTO atau idempotent writes",
+        "Mengaktifkan kompresi Snappy pada setiap file parquet yang dihasilkan oleh stream",
+        "Meningkatkan durasi micro-batch interval menjadi 10 menit untuk keamanan data",
+        "Mematikan fitur checkpointing agar Spark membersihkan state secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Data Engineering melaporkan bahwa job Spark memakan waktu lama saat membaca ribuan file CSV kecil (masing-masing berukuran 2 KB) yang diunggah ke HDFS oleh sistem operasional lama. Strategi apa yang paling tepat untuk memperbaiki performa I/O pada pipeline ini?",
+      "options": [
+        "Menggunakan fungsi coalesce(1) pada awal pembacaan file untuk menyatukan data",
+        "Melakukan proses compaction file kecil menjadi file Parquet yang lebih besar secara berkala",
+        "Menaikkan jumlah core per executor agar proses pembacaan file berjalan paralel",
+        "Menghapus header dari setiap file CSV menggunakan script bash sebelum dibaca Spark"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menggabungkan DataFrame besar (50 juta baris) dengan DataFrame referensi kecil (2.000 baris, ukuran kurang dari 5 MB) menggunakan operasi join di PySpark. Agar tidak terjadi shuffle yang membebani jaringan cluster, pendekatan apa yang harus digunakan?",
+      "options": [
+        "Menggunakan fungsi broadcast dari pyspark.sql.functions pada DataFrame kecil",
+        "Melakukan sort pada kedua DataFrame berdasarkan kolom join sebelum digabungkan",
+        "Menulis kedua DataFrame ke disk terlebih dahulu sebelum menjalankan operasi join",
+        "Mengubah DataFrame besar menjadi RDD agar proses join berjalan secara native"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job PySpark melakukan agregasi harian pada data transaksi dan menulis hasilnya ke tabel Hive. Setelah beberapa bulan, query analitik menjadi sangat lambat karena Spark harus memindai seluruh direktori tabel setiap kali filter tanggal diterapkan. Solusi arsitektur apa yang harus diterapkan pada penulisan data tersebut?",
+      "options": [
+        "Melakukan partitioning pada tabel Hive berdasarkan kolom tanggal transaksi",
+        "Mengonversi format penyimpanan dari Parquet kembali ke format teks berformat JSON",
+        "Menambahkan indeks B-Tree pada kolom string di dalam file Parquet secara manual",
+        "Menaikkan ukuran executor memory agar proses full table scan berjalan di memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memproses data teks dalam jumlah besar untuk analisis sentimen, engineer menulis UDF (User Defined Function) Python custom untuk melakukan cleaning teks. Job berjalan lambat karena overhead serialisasi antara JVM dan Python worker. Bagaimana cara terbaik mengoptimalkan proses ini dalam PySpark?",
+      "options": [
+        "Menulis ulang logika UDF tersebut menggunakan built-in SQL functions bawaan Spark",
+        "Mengubah semua tipe data string di DataFrame menjadi tipe data binary sebelum diproses",
+        "Menjalankan script Python secara terpisah di luar cluster Spark menggunakan cron",
+        "Menaikkan alokasi driver memory pada konfigurasi spark-submit agar lebih luas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job Spark Structured Streaming membaca dari Apache Kafka dan melakukan stateful aggregation (misalnya menghitung running total per pengguna). Job sering terhenti karena JVM mengalami garbage collection (GC) pause yang lama akibat akumulasi objek di dalam memory state. Langkah mitigasi apa yang paling tepat?",
+      "options": [
+        "Mengganti state store provider default dengan RocksDB state store implementation",
+        "Menurunkan ukuran batch size streaming menjadi milidetik terkecil yang mungkin",
+        "Menghapus semua checkpoint location agar Spark membuat state baru dari awal",
+        "Menggunakan fungsi dropDuplicates() tanpa mendefinisikan watermark pada stream"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job PySpark mengalami kegagalan berulang kali dengan pesan error 'ExecutorLostFailure' dan 'FetchFailedException' saat memproses shuffle data berskala besar di cluster YARN. Analisis log menunjukkan bahwa error ini dipicu oleh garbage collection (GC) pause yang terlalu lama pada executor. Langkah mitigasi apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengganti format penyimpanan file input dari Parquet menjadi CSV agar ukuran partisi lebih kecil",
+        "Menurunkan jumlah core per executor dan menambah alokasi off-heap memory serta tuning G1GC",
+        "Meningkatkan ukuran driver memory secara drastis untuk menampung metadata shuffle",
+        "Menonaktifkan fitur adaptive query execution agar pengelolaan memori lebih deterministik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah job Spark SQL melakukan full table scan pada tabel Hive berpartisipasi tanggal ketika query hanya memfilter kolom 'store_id'. Akibatnya, query berjalan lambat dan memakan sumber daya cluster yang masif. Bagaimana cara paling efektif memperbaiki performa query tersebut?",
+      "options": [
+        "Menambahkan indeks B-Tree pada kolom store_id menggunakan perintah SQL standar",
+        "Mengubah urutan filter klausa WHERE agar mengecek kolom partisi tanggal terlebih dahulu",
+        "Melakukan re-partition tabel secara fisik di disk berdasarkan kolom store_id dan tanggal",
+        "Mengonversi format file tabel menjadi ORC agar kompresi data menjadi jauh lebih optimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah pipeline pengolahan data telekomunikasi, sebuah job PySpark melakukan pembacaan data dari direktori HDFS yang berisi 500.000 file log kecil berukuran rata-rata 10 KB. Proses pembacaan ini menghabiskan waktu yang sangat lama hanya pada tahap persiapan task. Solusi arsitektural apa yang paling tepat untuk masalah ini?",
+      "options": [
+        "Menggunakan fungsi repartition() tepat setelah pembacaan DataFrame untuk meratakan beban",
+        "Menjalankan proses compaction secara berkala untuk menggabungkan file kecil menjadi file besar",
+        "Menaikkan parameter spark.default.parallelism agar jumlah task dapat disesuaikan otomatis",
+        "Memanfaatkan fungsi coalesce() dengan argumen boolean true pada awal tahapan pembacaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah job Spark Structured Streaming membaca data transaksi dari Kafka dan menuliskan hasilnya ke sistem penyimpanan cloud dengan operasi append. Setelah beberapa jam berjalan, memori pada driver node terus meningkat hingga terjadi Out of Memory (OOM). Investigasi menunjukkan bahwa checkpoint location tidak dibersihkan dan terjadi akumulasi state. Apa tindakan perbaikan yang harus dilakukan?",
+      "options": [
+        "Mengimplementasikan mekanisme watermarking dan pembatasan durasi state pada operasi agregasi",
+        "Menurunkan kecepatan baca dari Kafka dengan mengatur batasan maxOffsetsPerTrigger secara ketat",
+        "Mengganti mode output streaming dari append menjadi complete agar state otomatis di-reset",
+        "Menghapus folder checkpoint secara manual dari sistem file saat job streaming sedang aktif berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengoptimalkan pipeline ETL yang menggabungkan tabel fakta penjualan (200 juta baris) dengan tabel dimensi produk (5.000 baris, ukuran 2 MB). Saat ini job menggunakan sort-merge join standar dan berjalan lambat karena proses shuffle. Bagaimana cara paling optimal menulis ulang kode PySpark tersebut?",
+      "options": [
+        "Melakukan proses cache pada tabel fakta penjualan sebelum operasi join dieksekusi",
+        "Memaksa Spark melakukan shuffle hash join dengan mengatur hint pada kedua DataFrame",
+        "Menggunakan mekanisme broadcast join untuk mengirim tabel dimensi ke seluruh executor",
+        "Meningkatkan jumlah partition shuffle secara manual melalui konfigurasi spark.sql.shuffle.partitions"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah job PySpark melakukan agregasi kompleks pada data clickstream e-commerce yang memiliki skew data ekstrem pada kolom 'user_id' karena adanya akun bot. Beberapa task memakan waktu berjam-jam sementara yang lain selesai dalam hitungan detik. Pendekatan teknik apa yang paling tepat untuk mengatasi skew ini?",
+      "options": [
+        "Melakukan teknik salting pada kolom user_id dengan menambahkan angka acak sebelum operasi join",
+        "Menambahkan operasi dropDuplicates pada kolom user_id di awal tahapan transformasi data",
+        "Menggunakan fungsi broadcast pada DataFrame clickstream agar data disalin ke semua node",
+        "Menurunkan jumlah executor instance di cluster agar alokasi resource lebih terpusat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan pipeline data, Anda menulis sebuah UDF (User Defined Function) Python kustom untuk melakukan masking nomor kartu kredit pada DataFrame Spark yang berisi 50 juta baris. Setelah dijalankan, job berjalan jauh lebih lambat dibandingkan fungsi bawaan (builtin) Spark SQL. Apa akar penyebab utama penurunan performa tersebut?",
+      "options": [
+        "Python UDF menyebabkan serialisasi data bolak-balik antara JVM dan proses worker Python secara terus-menerus",
+        "Fungsi Python UDF tidak dapat memanfaatkan fitur Catalyst Optimizer untuk menyusun execution plan",
+        "Penggunaan Python UDF secara otomatis menonaktifkan mekanisme lazy evaluation pada DataFrame",
+        "Tipe data string pada nomor kartu kredit tidak kompatibel secara langsung dengan struktur memori Python"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job Spark menulis data hasil agregasi harian ke dalam format Parquet dengan struktur partisi berdasarkan tahun, bulan, dan tanggal. Seiring berjalannya waktu, jumlah file partisi menjadi sangat masif dan menyebabkan metadata overhead yang tinggi saat query dibaca. Tindakan pemeliharaan apa yang harus dijadwalkan secara rutin?",
+      "options": [
+        "Menjalankan perintah VACUUM untuk menghapus file snapshot lama yang tidak lagi digunakan",
+        "Melakukan proses OPTIMIZE atau file compaction untuk menggabungkan file kecil dalam partisi",
+        "Mengubah format penyimpanan dari Parquet ke CSV agar pengelolaan file partisi lebih sederhana",
+        "Menghapus direktori partisi lama secara manual menggunakan perintah system operasi pada HDFS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pembacaan data dari tabel eksternal berformat Delta Lake berukuran besar, Anda mendapati bahwa query membaca seluruh file riwayat perubahan (history) padahal hanya membutuhkan data snapshot terbaru. Konfigurasi atau metode apa yang harus digunakan untuk mengoptimalkan pembacaan ini?",
+      "options": [
+        "Menggunakan opsi waktu pembacaan atau versi spesifik seperti option('versionAsOf', N)",
+        "Menjalankan perintah Z-Order clustering pada kolom utama sebelum query dijalankan kembali",
+        "Menambahkan fungsi cache() pada DataFrame DeltaTable sebelum menerapkan filter klausa WHERE",
+        "Mengatur ulang parameter spark.databricks.delta.optimizeWrite.enabled menjadi bernilai true"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job PySpark membaca data dari database operasional PostgreSQL menggunakan JDBC dengan konfigurasi pembacaan default satu koneksi. Proses pembacaan memakan waktu lama dan membuat beban database melonjak tinggi. Bagaimana cara mendesain ulang pembacaan JDBC agar berjalan paralel dan aman bagi database?",
+      "options": [
+        "Mengaktifkan fitur broadcast pada koneksi JDBC agar seluruh tabel langsung ditarik ke driver",
+        "Menentukan parameter partitionColumn, lowerBound, upperBound, dan numPartitions pada opsi pembacaan",
+        "Menambahkan fungsi repartition() pada DataFrame hasil baca JDBC sebelum transformasi dilakukan",
+        "Meningkatkan ukuran fetchsize pada konfigurasi JDBC driver hingga mencapai batas maksimal memori"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

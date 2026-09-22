@@ -1,0 +1,306 @@
+{
+  "skill": "Sales Strategy",
+  "skill_key": "sales strategy",
+  "questions": [
+    {
+      "question": "Anda adalah Account Manager di perusahaan SaaS B2B. Klien potensial tingkat enterprise di Jakarta menunda penandatanganan kontrak karena mereka ragu dengan keamanan data penyimpanan cloud Anda. Apa langkah strategis terbaik untuk mengatasi keraguan ini?",
+      "options": [
+        "Memberikan diskon tambahan 20 persen untuk biaya langganan tahunan pertama",
+        "Mengirimkan sertifikasi ISO dan laporan audit pihak ketiga yang relevan",
+        "Meminta CEO Anda untuk menelepon langsung pimpinan perusahaan tersebut",
+        "Menawarkan migrasi data gratis dikerjakan oleh tim teknis internal mereka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan FMCG nasional meluncurkan produk minuman herbal baru di minimarket seluruh Jawa. Dalam evaluasi bulan pertama, tingkat penjualan ulang (repeat order) sangat rendah meskipun distribusi awal tinggi. Strategi penjualan mana yang paling tepat untuk diperbaiki?",
+      "options": [
+        "Mengganti seluruh tim sales lapangan dengan tenaga pemasaran yang lebih junior",
+        "Mengurangi target distribusi bulanan agar stok di toko tidak terlalu menumpuk",
+        "Memperkuat promosi tingkat konsumen dan program insentif bagi pramusaji toko",
+        "Menurunkan harga jual ke distributor agar margin keuntungan mereka naik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memimpin tim sales B2B di Surabaya. Data menunjukkan 60 persen prospek potensial hilang pada tahap negosiasi harga karena kalah bersaing dengan kompetitor lokal yang menawarkan harga lebih murah. Bagaimana penyesuaian strategi yang paling efektif?",
+      "options": [
+        "Ikut menurunkan harga produk hingga di bawah harga rata-rata kompetitor",
+        "Membuat paket bundel layanan purna jual untuk meningkatkan nilai persepsi",
+        "Melaporkan masalah perang harga ini kepada manajemen untuk revisi margin",
+        "Fokus mencari prospek baru di luar wilayah Surabaya yang sepi pesaing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan teknologi logistik tempat Anda bekerja ingin berekspansi menyasar sektor UMKM digital di Bandung. Metode pendekatan penjualan (sales approach) apa yang paling efisien diterapkan dalam skala besar?",
+      "options": [
+        "Merekrut sales door-to-door untuk mengunjungi setiap toko fisik setiap hari",
+        "Mengandalkan iklan media sosial berbayar tanpa keterlibatan tenaga sales",
+        "Membangun tim inside sales berbasis telepon dan webinar demo produk",
+        "Mengadakan pameran dagang eksklusif di pusat perbelanjaan kelas atas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir kuartal ketiga, pencapaian target tim sales Anda baru mencapai 60 persen. Manajemen meminta Anda mengambil tindakan taktis untuk mengejar ketertinggalan tanpa merusak citra merek dalam jangka panjang. Langkah apa yang Anda ambil?",
+      "options": [
+        "Memaksa tim melipatgandakan panggilan dingin kepada daftar prospek acak",
+        "Memberikan insentif khusus bagi sales yang menutup deal klien strategis",
+        "Memberikan diskon cuci gudang besar-besaran untuk semua jenis layanan",
+        "Memalsukan pencatatan laporan prospek agar terlihat mendekati target"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menangani klien korporat besar di sektor perbankan yang selama ini loyal, tetapi mulai menunjukkan tanda-tanda ketidakpuasan akibat lambatnya respon layanan pelanggan. Apa strategi retensi yang paling tepat?",
+      "options": [
+        "Menaikkan biaya layanan tahunan untuk menutupi biaya perbaikan sistem",
+        "Mengabaikan keluhan kecil dan fokus mencari klien pengganti yang baru",
+        "Mengunjungi mereka bersama direktur operasional untuk audit layanan",
+        "Mengirimkan surel otomatis berisi permohonan maaf dan panduan FAQ"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menyusun target penjualan tahun depan untuk produk alat kesehatan di rumah sakit swasta Indonesia, faktor eksternal mana yang paling krusial untuk dimasukkan ke dalam model proyeksi penjualan?",
+      "options": [
+        "Jadwal pemilihan umum nasional dan perubahan regulasi birokrasi impor",
+        "Tren gaya hidup masyarakat urban terhadap penggunaan suplemen herbal",
+        "Jumlah lulusan fakultas kedokteran baru di universitas negeri ternama",
+        "Kenaikan upah minimum regional buruh pabrik di kawasan industri utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup penyedia solusi HR Tech mengalami siklus penjualan (sales cycle) yang sangat panjang, rata-rata memakan waktu 6 bulan dari prospek hingga closing. Strategi apa yang dapat mempercepat proses tersebut untuk klien korporat?",
+      "options": [
+        "Meminta klien langsung membayar di muka sebelum presentasi produk",
+        "Mengurangi jumlah fitur demo agar presentasi menjadi lebih singkat",
+        "Melibatkan pengambil keputusan utama lebih awal melalui uji coba gratis",
+        "Mengganti tenaga penjual dengan sistem otomatisasi chatbot sepenuhnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja merekrut tiga tenaga sales junior yang belum berpengalaman di industri bahan bangunan. Apa strategi orientasi (onboarding) lapangan yang paling efektif dalam 30 hari pertama?",
+      "options": [
+        "Meminta mereka langsung mencari klien baru secara mandiri tanpa pendampingan",
+        "Menugaskan mereka untuk mengikuti dan mengamati senior melakukan kunjungan",
+        "Memberikan modul teori produk setebal 500 halaman untuk dihafal di kantor",
+        "Menyerahkan basis data klien mati untuk dihidupkan kembali tanpa target"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan distribusi Anda ingin meluncurkan lini produk baru yang harganya 40 persen lebih mahal dari produk petahana di pasar. Strategi penetrasi pasar mana yang paling minim risiko penolakan dari mitra distributor?",
+      "options": [
+        "Memaksa distributor memborong stok dalam jumlah besar di minggu pertama",
+        "Menawarkan sistem konsinyasi dengan jaminan margin lebih tinggi bagi mitra",
+        "Menjual langsung secara online dengan harga jauh lebih murah dari distributor",
+        "Menghentikan suplai produk lama agar mitra terpaksa mengambil produk baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah Head of Sales di perusahaan penyedia solar panel industri. Tim Anda kesulitan menjual ke pabrik-pabrik di Cikarang karena biaya investasi awal (CAPEX) dianggap terlalu tinggi oleh pemilik pabrik meskipun mereka sadar akan penghematan jangka panjang. Langkah strategis apa yang paling tepat untuk mengatasi hambatan ini?",
+      "options": [
+        "Memberikan diskon besar-besaran langsung pada pembelian unit agar periode pengembalian modal lebih cepat.",
+        "Mengubah model penawaran menjadi skema sewa beli atau berbasis langganan tanpa investasi awal yang besar.",
+        "Membuat proposal teknis yang lebih mendalam mengenai efisiensi energi untuk meyakinkan divisi teknik pabrik.",
+        "Melaporkan kepada manajemen bahwa pasar Cikarang belum siap dan mengalihkan fokus ke wilayah luar Jawa."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur bahan bangunan lokal ingin masuk ke proyek pembangunan Ibu Kota Nusantara (IKN). Kompetitor dari merek multinasional sudah lebih dulu mendominasi spesifikasi proyek di tingkat konsultan perencana. Apa strategi masuk pasar (go-to-market) terbaik bagi tim sales Anda?",
+      "options": [
+        "Membuka kantor perwakilan operasional secara permanen langsung di kawasan inti pusat IKN.",
+        "Mengadakan pameran produk massal di kota-kota besar terdekat seperti Balikpapan dan Samarinda.",
+        "Menjalin aliansi strategis dengan kontraktor utama lokal dan menawarkan fleksibilitas pasokan.",
+        "Memasang iklan luar ruang berskala besar di sepanjang jalur logistik utama menuju lokasi proyek."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam industri agen perjalanan korporat di Jakarta, Anda mendapati klien utama sering membatalkan kontrak tahunan secara sepihak menjelang perpanjangan karena masalah layanan darurat di luar jam kerja. Bagaimana Anda merevisi strategi retensi akun ini?",
+      "options": [
+        "Mengganti seluruh tim layanan pelanggan dengan tenaga profesional yang memiliki sertifikasi pariwisata.",
+        "Membentuk divisi khusus layanan darurat 24/7 yang dipimpin oleh dedicated account manager senior.",
+        "Menurunkan harga kontrak tahunan sebesar 15 persen sebagai kompensasi atas kendala operasional lalu.",
+        "Menuntut penalti hukum yang lebih ketat dalam klausul perjanjian kerja sama berikutnya dengan klien."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin tim sales asuransi kesehatan kumpulan (corporate) di Medan. Tingkat konversi dari tahap presentasi proposal ke penutupan kontrak sangat rendah karena bagian HR perusahaan klien menganggap manfaat polis terlalu kaku. Strategi penjualan apa yang harus Anda terapkan?",
+      "options": [
+        "Menawarkan produk asuransi dengan skema fleksibel yang dapat dikustomisasi sesuai kebutuhan karyawan.",
+        "Menurunkan premi dasar secara agresif dengan mengurangi beberapa cakupan rawat inap standar.",
+        "Memperketat proses seleksi risiko medis bagi calon peserta perusahaan agar klaim mendatang terkendali.",
+        "Mengirimkan brosur digital interaktif setiap minggu ke email seluruh jajaran direksi perusahaan target."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah merek kosmetik lokal meluncurkan lini produk premium eksklusif untuk pasar klinik kecantikan di Bali. Pemilik klinik ragu menjual produk tersebut karena takut merusak reputasi jika hasilnya tidak sesuai. Pendekatan sales apa yang paling efektif?",
+      "options": [
+        "Memberikan bonus perjalanan wisata luar negeri bagi dokter penanggung jawab klinik yang mencapai target.",
+        "Menyediakan program uji coba gratis berserta pelatihan langsung dari dermatolog terkemuka untuk staf klinik.",
+        "Menyebarkan ulasan positif dari influencer kecantikan nasional di berbagai platform media sosial utama.",
+        "Menurunkan target minimal pembelian bulanan agar klinik tidak merasa terbebani risiko finansial."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda menjual sistem Point of Sales (POS) berbasis cloud untuk restoran dan kafe di Yogyakarta. Mayoritas pemilik UMKM kuliner menolak beralih karena sudah terbiasa menggunakan sistem kasir konvensional yang murah. Apa taktik sales yang paling jitu?",
+      "options": [
+        "Menekankan keunggulan teknologi cloud computing dalam laporan keuangan harian secara real-time.",
+        "Menunjukkan simulasi kerugian operasional akibat kecurangan kasir manual menggunakan studi kasus nyata.",
+        "Mengadakan seminar akuntansi bisnis kuliner secara rutin setiap bulan di berbagai kafe mitra.",
+        "Menawarkan migrasi data gratis dan pendampingan operasional langsung selama bulan pertama penggunaan."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda adalah Sales Director untuk perusahaan penyedia alat berat pertambangan di Kalimantan. Pasar sedang lesu akibat fluktuasi harga komoditas global, sehingga perusahaan tambang menunda pembelian unit baru. Bagaimana Anda mengarahkan tim sales untuk tetap menghasilkan pendapatan?",
+      "options": [
+        "Fokus menawarkan kontrak layanan pemeliharaan preventif dan penyediaan suku cadang untuk unit eksisting.",
+        "Memberikan opsi pembiayaan kredit lunak dengan jaminan aset tanah bagi perusahaan tambang skala kecil.",
+        "Mengalihkan seluruh sumber daya penjualan untuk mencari klien baru di sektor perkebunan kelapa sawit.",
+        "Melakukan PHK pada separuh anggota tim sales untuk menekan biaya operasional divisi penjualan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan agritech di Semarang menawarkan sistem manajemen rantai pasok untuk koperasi petani. Tantangan utamanya adalah rendahnya literasi digital di kalangan pengurus koperasi. Strategi komunikasi penjualan mana yang harus diubah oleh tim Anda?",
+      "options": [
+        "Mengganti materi presentasi teks dengan video tutorial praktis berbasis bahasa daerah yang mudah dipahami.",
+        "Menaikkan insentif komisi bagi sales yang berhasil menutup kontrak dengan koperasi berkinerja tinggi.",
+        "Meminta rekomendasi tertulis dari dinas pertanian setempat untuk dibagikan kepada setiap pengurus koperasi.",
+        "Mengadakan sayembara berhadiah uang tunai bagi koperasi pertama yang berhasil mengadopsi sistem."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam penjualan software ERP untuk perusahaan distributor skala menengah di Surabaya, proses pengambilan keputusan melibatkan banyak pemangku kepentingan (C-level, manajer IT, manajer keuangan) yang sering berbeda pendapat. Strategi penjualan apa yang paling tepat?",
+      "options": [
+        "Mengabaikan manajer operasional dan fokus melobi langsung pemegang saham mayoritas perusahaan.",
+        "Membuat matriks nilai (value matrix) terpisah yang menjawab kebutuhan spesifik setiap pemangku kepentingan.",
+        "Menggunakan satu presentasi umum yang sama untuk seluruh tingkatan manajemen agar pesan tidak berubah.",
+        "Memberikan penawaran harga khusus dengan batas waktu kedaluwarsa yang sangat singkat untuk mendesak keputusan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda bergerak di bidang jasa cybersecurity. Saat melakukan penawaran ke industri perbankan nasional, klien merasa sistem keamanan internal mereka sudah cukup kuat tanpa perlu solusi tambahan. Langkah strategis apa yang harus diambil tim sales?",
+      "options": [
+        "Menawarkan layanan audit celah keamanan (penetration testing) gratis guna membuktikan adanya risiko tersembunyi.",
+        "Mengirimkan daftar surat kabar yang memuat berita pembobolan data bank lain setiap minggu ke direksi.",
+        "Memberikan potongan harga lisensi tahunan sebesar 40 persen jika mereka langsung menandatangani kontrak.",
+        "Meminta bantuan regulator perbankan untuk mewajibkan penggunaan software keamanan tambahan tersebut."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menjual layanan cloud server ke perusahaan fintech lokal di Jakarta yang sangat memprioritaskan keamanan data. Saat meeting penentuan, CTO mereka meragukan keandalan sistem Anda dibandingkan pemain global raksasa. Apa langkah taktis terbaik yang harus Anda ambil?",
+      "options": [
+        "Menawarkan diskon harga 30 persen untuk mengimbangi selisih spesifikasi teknis",
+        "Mengajak mereka melakukan uji coba migrasi gratis dengan pendampingan insinyur lokal",
+        "Memberikan jaminan uang kembali jika sistem mengalami downtime dalam tiga bulan pertama",
+        "Menyajikan studi kasus perusahaan sejenis yang berhasil migrasi dan sertifikasi keamanan lokal"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah perusahaan FMCG di Surabaya mendapati produk deterjen baru mereka mengalami stagnasi penjualan di tingkat grosir tradisional karena toko ragu produk tidak laku. Bagaimana strategi penjualan lapangan yang paling efektif?",
+      "options": [
+        "Mengadakan undian berhadiah langsung bagi pemilik toko grosir yang mencapai kuota tertentu",
+        "Menerapkan skema titip jual dengan jaminan penarikan barang dan penggantian produk lama",
+        "Membagikan sampel gratis ukuran kecil kepada pembeli akhir di pasar tradisional sekitar grosir",
+        "Mengirimkan tim promosi khusus untuk mendampingi sales distributor melakukan edukasi produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Sales Manager di perusahaan logistik cold chain, Anda melihat tingginya tingkat churn rate dari klien pelaku usaha frozen food UMKM setelah bulan ketiga berlangganan. Apa tindakan preventif yang harus segera dieksekusi?",
+      "options": [
+        "Membuat program loyalitas berupa poin reward yang bisa ditukar dengan peralatan dapur",
+        "Menerapkan layanan peninjauan operasional bulanan dan edukasi manajemen inventaris",
+        "Mengirimkan tenaga sales baru secara berkala untuk menawarkan tambahan kuota pengiriman",
+        "Memberikan perpanjangan masa kontrak gratis satu bulan jika mereka memperpanjang layanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin tim sales properti komersial di Jakarta. Prospek utama seorang investor besar menunda keputusan pembelian ruko karena menunggu kepastian arah kebijakan suku bunga bank. Strategi closing apa yang paling tepat?",
+      "options": [
+        "Menawarkan skema cicilan bertahap langsung ke pengembang tanpa melalui lembaga perbankan",
+        "Memberikan potongan harga langsung yang signifikan jika transaksi diselesaikan minggu ini",
+        "Menyusun analisis potensi kenaikan nilai sewa properti untuk meyakinkan keuntungan jangka panjang",
+        "Meminta pimpinan perusahaan untuk melakukan pendekatan personal kepada direksi investor tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan Anda menyediakan software manajemen armada (fleet management) untuk perusahaan tambang di Kalimantan. Tantangan terbesar adalah sopir truk sering sengaja mematikan perangkat GPS. Bagaimana cara Anda menyakinkan manajemen puncak?",
+      "options": [
+        "Menawarkan sistem bonus finansial bagi sopir yang menjaga perangkat tetap aktif sepanjang jalan",
+        "Mengintegrasikan fitur tombol darurat dan pemantauan kesehatan sopir agar perangkat terasa berguna",
+        "Mengadakan pelatihan khusus bagi pengawas lapangan untuk menindak tegas pelanggaran sopir",
+        "Menyusun laporan kerugian bahan bakar akibat rute tidak terpantau untuk menunjukkan besarnya ROI"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam penjualan mesin pabrik tekstil di Bandung, Anda berhadapan dengan panitia pengadaan yang meminta spesifikasi teknis khusus yang hanya dimiliki oleh produk kompetitor utama. Langkah strategis apa yang harus diambil?",
+      "options": [
+        "Menyusun dokumen sanggahan resmi kepada manajemen puncak klien terkait efisiensi biaya alternatif",
+        "Mencari celah regulasi pengadaan untuk mendiskualifikasi syarat teknis yang dibuat kompetitor",
+        "Mengubah penawaran dengan menyoroti keunggulan total biaya kepemilikan yang lebih rendah",
+        "Menawarkan kerja sama dengan pihak prinsipal luar negeri untuk memodifikasi mesin sesuai permintaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform edutech B2B di Yogyakarta kesulitan meyakinkan yayasan sekolah swasta untuk memperbarui kontrak tahunan karena keterbatasan dana BOS. Apa pendekatan negosiasi yang paling solutif?",
+      "options": [
+        "Menawarkan skema pembayaran fleksibel yang disesuaikan dengan jadwal pencairan dana sekolah",
+        "Memberikan tambahan modul pelatihan gratis bagi guru agar nilai produk terlihat lebih tinggi",
+        "Mengurangi fitur aplikasi secara proporsional demi menurunkan harga langganan tahunan",
+        "Mengajak pihak sekolah mencari sponsor korporat lokal untuk menutupi biaya langganan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menangani penjualan bahan baku kimia industri di Cikarang. Klien lama Anda meminta penurunan harga sebesar 15 persen dengan ancaman pindah ke supplier baru dari luar negeri. Bagaimana Anda mempertahankan margin?",
+      "options": [
+        "Menurunkan kualitas bahan baku secara tersembunyi demi memenuhi permintaan harga rendah klien",
+        "Menawarkan paket layanan tambahan seperti pengiriman prioritas dan manajemen stok terjadwal",
+        "Memberikan potongan harga bertahap hanya jika volume pembelian mereka naik signifikan",
+        "Membiarkan klien pindah karena biaya logistik supplier luar negeri pada akhirnya akan merugikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan agrikultur modern Anda ingin memasarkan sistem irigasi otomatis kepada kelompok tani di Jawa Tengah yang terbiasa dengan metode konvensional. Strategi penetrasi pasar apa yang paling efektif?",
+      "options": [
+        "Membuka lahan percontohan gratis di salah satu desa dan melibatkan ketua kelompok tani langsung",
+        "Memberikan brosur infografis yang menjelaskan penghematan air secara rinci kepada kepala desa",
+        "Mengadakan seminar edukasi teknologi pertanian modern di balai kota kabupaten terdekat",
+        "Menjual produk dengan sistem bagi hasil dari peningkatan kuantitas panen musim berikutnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Key Account Manager di perusahaan telekomunikasi enterprise, Anda mendapati bahwa salah satu klien korporat terbesar Anda jarang menggunakan kuota data dedicated internet mereka secara penuh. Apa langkah pengelolaan akun yang tepat?",
+      "options": [
+        "Membiarkan kondisi tersebut karena tagihan bulanan tetap berjalan sesuai kontrak yang disepakati",
+        "Menurunkan kapasitas bandwidth mereka secara sepihak untuk mengalihkan sumber daya ke klien lain",
+        "Menawarkan penyesuaian paket layanan yang lebih sesuai kebutuhan dan mengenalkan solusi tambahan",
+        "Membujuk mereka untuk menjual sisa kapasitas bandwidth ke anak perusahaan atau mitra bisnisnya"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

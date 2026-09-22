@@ -1,0 +1,306 @@
+{
+  "skill": "Adobe Illustrator",
+  "skill_key": "adobe illustrator",
+  "questions": [
+    {
+      "question": "Anda diminta mendesain logo perusahaan yang nantinya harus dicetak dalam berbagai ukuran, mulai dari kartu nama hingga baliho besar. Fitur apa di Illustrator yang paling tepat digunakan agar logo tidak pecah saat diperbesar?",
+      "options": [
+        "Menggunakan format raster dengan resolusi 300 DPI",
+        "Membuat seluruh elemen berbasis vektor menggunakan path",
+        "Menerapkan efek Gaussian Blur pada setiap objek utama",
+        "Mengatur color mode dokumen menjadi RGB Color secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang klien meminta revisi teks pada brosur yang Anda buat, namun font asli yang digunakan klien tidak ada di komputer Anda sehingga terjadi missing font. Langkah paling efisien untuk menghindari masalah ini di masa depan sebelum file dikirim ke vendor cetak adalah...",
+      "options": [
+        "Mengubah seluruh teks menjadi bentuk kurva dengan Create Outlines",
+        "Menyimpan file kerja ke dalam format JPEG resolusi tinggi",
+        "Menyertakan file installer font tersebut ke dalam folder arsip",
+        "Mengganti semua jenis font dengan Arial atau Times New Roman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang pola (pattern) berulang untuk kemasan produk makanan. Cara paling efektif di Illustrator untuk membuat pola yang seamless tanpa celah adalah...",
+      "options": [
+        "Menyalin objek secara manual menggunakan kombinasi tombol Ctrl+C dan Ctrl+V",
+        "Memanfaatkan panel Pattern Options untuk mengatur ubin dan jarak antar objek",
+        "Menggunakan tool Blend untuk mendistribusikan objek secara merata ke samping",
+        "Mengekspor objek ke Photoshop lalu menggunakan fitur Pattern Stamp Tool"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah percetakan meminta file siap cetak untuk majalah dengan ketentuan warna harus akurat sesuai standar industri cetak offset di Indonesia. Pengaturan color mode apa yang wajib Anda pilih sejak awal pembuatan dokumen?",
+      "options": [
+        "Grayscale dengan standar dot gain 15 persen",
+        "RGB Color dengan profil sRGB IEC61966-2.1",
+        "CMYK Color dengan profil U.S. Web Coated SWOP",
+        "Bitmap dengan resolusi minimal 1200 pixels per inch"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat ilustrasi kompleks dengan puluhan objek tumpang tindih untuk banner promosi e-commerce. Anda ingin mewarnai area tertentu di tengah tumpukan garis tanpa harus memecah atau menghapus garis di sekitarnya. Tool apa yang paling tepat?",
+      "options": [
+        "Shape Builder Tool untuk menggabungkan dan memotong area",
+        "Direct Selection Tool untuk menarik titik anchor secara manual",
+        "Eraser Tool untuk menghapus bagian garis yang tidak diperlukan",
+        "Magic Wand Tool untuk memilih warna latar belakang secara cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Klien meminta poster dengan efek neon menyala untuk sebuah kafe. Anda ingin efek cahaya tersebut tetap bisa diubah tingkat keburamannya atau dihapus kapan saja tanpa merusak bentuk objek aslinya. Fitur apa yang sebaiknya digunakan?",
+      "options": [
+        "Rasterize menu untuk mengubah objek vektor menjadi gambar",
+        "Live Trace untuk mengonversi bitmap menjadi jalur vektor",
+        "Effect dari menu atas secara langsung pada objek gambar",
+        "Appearance Panel untuk menambahkan efek bergaya non-destruktif"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendesain serangkaian feed Instagram (9 artboard terpisah) untuk kampanye diskon bulanan. Saat diekspor menggunakan Export As, semua artboard tergabung menjadi satu file gambar yang panjang. Bagaimana cara mengekspornya menjadi 9 file terpisah secara otomatis?",
+      "options": [
+        "Menggunakan menu Export for Screens dan centang opsi Use Artboards",
+        "Menyimpan file kerja utama ke dalam format PDF halaman tunggal",
+        "Membuka satu per satu artboard lalu melakukan print manual",
+        "Memindahkan setiap artboard ke dokumen baru secara terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima file dari desainer lain di mana semua elemen teks dan ikon terkunci dalam satu grup besar dan sulit dipilih satu per satu. Pintasan keyboard apa yang paling cepat untuk membuka semua penguncian tersebut sekaligus?",
+      "options": [
+        "Tekan kombinasi tombol Ctrl + Alt + 2 pada keyboard",
+        "Tekan kombinasi tombol Ctrl + Shift + G pada keyboard",
+        "Tekan kombinasi tombol Ctrl + Shift + D pada keyboard",
+        "Tekan kombinasi tombol Ctrl + Alt + Shift + V pada keyboard"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Logo klien memiliki gradasi warna yang sangat kompleks dan halus. Ketika diekspor ke format EPS lawas untuk keperluan vendor tertentu, gradasi tersebut berubah menjadi garis-garis patah (banding). Langkah penanganan terbaik di Illustrator adalah...",
+      "options": [
+        "Mengurangi jumlah titik anchor pada objek utama logo",
+        "Menaikkan nilai Raster Effects Settings pada dokumen tersebut",
+        "Mengubah format ekspor langsung menjadi file bitmap PNG",
+        "Menurunkan resolusi dokumen agar proses rendering lebih ringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat ilustrasi isometrik untuk infografis perusahaan fintech. Fitur apa di Illustrator yang paling membantu Anda memproyeksikan objek datar menjadi bersudut isometrik secara akurat?",
+      "options": [
+        "Panel Pathfinder untuk memotong dan menggabungkan bentuk",
+        "Action Panel untuk merekam langkah transformasi manual",
+        "Free Transform Tool untuk memutar objek secara bebas",
+        "Plugin pihak ketiga atau aksi rotasi sudut 30 derajat manual"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang mendesain poster promosi konser yang memuat banyak objek vektor berukuran besar. Saat Anda menggeser objek, tampilan layar terasa patah-patah (lagging) sehingga proses kerja terhambat. Langkah apa yang paling tepat untuk mengatasi masalah performa tersebut?",
+      "options": [
+        "Mengurangi resolusi layar monitor secara keseluruhan melalui pengaturan sistem operasi",
+        "Mengaktifkan mode GPU Performance melalui menu preferensi atau pintasan tombol",
+        "Mengubah mode warna dokumen dari CMYK ke RGB agar pemrosesan data lebih ringan",
+        "Menurunkan kapasitas RAM yang dialokasikan untuk Adobe Illustrator via panel tugas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang klien meminta agar sebuah ilustrasi vektor lanskap diubah warnanya dari tema siang hari ke tema senja secara instan. Ilustrasi tersebut terdiri dari ratusan elemen terpisah dengan berbagai corak warna yang mirip. Fitur mana yang paling efisien untuk melakukan perubahan ini sekaligus?",
+      "options": [
+        "Menggunakan panel Recolor Artwork untuk memetakan ulang seluruh palet warna secara otomatis",
+        "Memilih setiap objek secara manual berdasarkan kesamaan warna menggunakan tombol Shift",
+        "Mengubah seluruh warna objek menjadi satu warna tunggal menggunakan perintah Global Swatch",
+        "Melakukan ungroup pada semua objek lalu menerapkan efek penyesuaian hue pada setiap layer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain karakter maskot dengan garis (stroke) yang bervariasi ketebalannya. Ketika Anda memperkecil ukuran maskot tersebut menjadi seperempat dari ukuran asli, garis-garis tipis pada detail wajahnya terlihat hilang dan proporsinya rusak. Pengaturan apa yang harus diaktifkan sebelumnya agar hal ini tidak terjadi?",
+      "options": [
+        "Mengunci nilai ketebalan stroke agar bersifat mutlak terhadap ukuran artboard dokumen",
+        "Mengaktifkan opsi Scale Strokes & Effects pada panel Transform sebelum mengubah ukuran",
+        "Mengubah seluruh garis stroke menjadi bentuk bidang isi menggunakan perintah Outline Stroke",
+        "Menaikkan resolusi raster effects setting pada menu effect dokumen sebelum proses skala"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat desain kemasan produk berbentuk kotak dengan beberapa sisi artboard yang saling terhubung. Anda ingin memastikan bahwa garis potongan (dielines) tidak ikut tercetak saat file diekspor menjadi PDF untuk klien. Tindakan paling tepat yang harus dilakukan adalah?",
+      "options": [
+        "Menghapus seluruh garis panduan sebelum mengekspor file akhir dari aplikasi",
+        "Membuat layer khusus untuk garis cetak dan menonaktifkan opsi cetak pada panel layer",
+        "Menurunkan nilai opasitas garis panduan hingga mendekati nol persen pada panel",
+        "Memindahkan garis potong ke luar area artboard utama agar terpotong otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien mengirimkan file logo berupa gambar raster JPEG resolusi rendah dan meminta Anda mengubahnya menjadi vektor yang tajam untuk keperluan papan reklame besar. Metode paling cepat dan presisi di Illustrator untuk mendapatkan hasil vektor berkualitas tinggi adalah?",
+      "options": [
+        "Menggambar ulang logo secara manual menggunakan alat Pen Tool secara menyeluruh",
+        "Menggunakan fitur Image Trace dengan memilih preset yang sesuai lalu melakukan expand",
+        "Menerapkan efek Live Trace dengan menaikkan nilai threshold hingga batas maksimal",
+        "Menambahkan filter Gaussian Blur pada gambar raster untuk menghaluskan piksel pecah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun laporan keuangan tahunan perusahaan dalam bentuk infografis. Anda memiliki data numerik berupa persentase yang harus divisualisasikan dalam bentuk diagram batang yang akurat secara proporsional. Alat apa yang paling tepat digunakan di Illustrator?",
+      "options": [
+        "Membuat kotak-kotak secara manual lalu menyesuaikan panjangnya berdasarkan skala angka",
+        "Memanfaatkan perangkat Column Graph Tool dan memasukkan data angka secara langsung",
+        "Menggunakan fitur 3D Extrude & Bevel untuk memberikan efek visual pada balok diagram",
+        "Menerapkan fitur Blend Tool di antara dua objek persegi dengan jarak yang telah ditentukan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah proyek desain merchandise kaos, Anda perlu menempatkan teks melingkar secara pas di atas dan di bawah ilustrasi lencana melingkar. Cara paling efektif untuk membuat teks mengikuti jalur melingkar tersebut adalah?",
+      "options": [
+        "Mengetik teks secara normal lalu memutar setiap huruf satu per satu secara manual",
+        "Menggunakan alat Type on a Path Tool pada garis tepi lingkaran yang sudah disiapkan",
+        "Menerapkan efek Warp Arc pada teks melalui menu Effect di panel atas aplikasi",
+        "Mengonversi huruf teks menjadi objek kurva lalu menyusunnya melingkar secara bebas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain poster pameran seni dengan latar belakang gelap dan ingin membuat teks utama seolah-olah memotong atau melubangi latar belakang tersebut sehingga warna di balik latar belakang terlihat. Teknik non-destruktif apa yang paling tepat digunakan?",
+      "options": [
+        "Menghapus bagian latar belakang secara langsung menggunakan Eraser Tool di sekitar teks",
+        "Membuat sebuah Clipping Mask dengan menempatkan teks di atas objek latar belakang",
+        "Menggunakan panel Pathfinder dengan fungsi Minus Front untuk memotong objek latar",
+        "Menerapkan teknik Opacity Mask dengan menggunakan teks berwarna hitam di atas latar"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang merancang ikon aplikasi seluler dengan berbagai ukuran tampilan. Anda ingin memastikan bahwa setiap sudut ikon menempel pas pada grid piksel agar tidak terlihat kabur (blur) saat diexport ke format PNG. Fitur apa yang harus diaktifkan?",
+      "options": [
+        "Mengaktifkan fungsi Snap to Pixel pada menu View saat membuat dan mengedit objek",
+        "Mengatur mode dokumen agar selalu menggunakan satuan piksel mutlak sejak awal",
+        "Menaikkan nilai Raster Effects pada opsi dokumen menjadi High 300 PPI secara permanen",
+        "Menggunakan panel Transform untuk membulatkan nilai koordinat posisi setiap objek"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat bayangan jatuh (drop shadow) yang sangat realistis dan kustom pada objek produk dalam katalog e-commerce, di mana bayangan tersebut memiliki gradasi kelembutan yang berbeda di setiap sisinya. Pendekatan mana yang paling profesional?",
+      "options": [
+        "Menggunakan efek bawaan Drop Shadow dengan mengatur jarak dan keburaman standar",
+        "Membuat objek bayangan secara manual menggunakan gradasi transparan dan Mesh Tool",
+        "Menerapkan filter Stylize Drop Shadow dengan memasukkan nilai warna khusus pada panel",
+        "Menyalin objek produk, membaliknya secara vertikal, lalu memberi efek kabur merata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain poster acara musik dengan efek teks meleleh yang rumit. Klien meminta agar teks tersebut masih bisa diedit ejaannya tanpa harus mengulang efek dari awal. Fitur apa yang paling tepat Anda gunakan?",
+      "options": [
+        "Menggunakan menu Envelope Distort dengan opsi Make with Warp",
+        "Mengubah teks menjadi bentuk kurva menggunakan perintah Create Outlines",
+        "Menerapkan efek distorsi langsung melalui panel Appearance pada teks",
+        "Memecah setiap huruf secara manual menggunakan panel Pathfinder"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyiapkan file ilustrasi vektor untuk keperluan sablon DTF (Direct to Film) kaos hitam. Percetakan meminta agar semua area transparan di bawah desain dibersihkan dan garis terluar objek tidak memiliki sisa warna putih. Langkah paling tepat di Illustrator adalah",
+      "options": [
+        "Menyeleksi seluruh objek lalu menerapkan perintah Flatten Transparency",
+        "Menggunakan Pathfinder panel untuk melakukan merge lalu crop background",
+        "Membuat jalur potong manual menggunakan tool Pen di sekeliling desain",
+        "Menyeleksi objek lalu menggunakan perintah Clean Up dari menu Object"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek desain pola batik modern, Anda perlu menata ratusan elemen daun kecil secara melingkar dan simetris mengelilingi sebuah lingkaran pusat. Cara paling efisien di Illustrator untuk menyusunnya adalah",
+      "options": [
+        "Menyalin objek satu per satu secara manual dengan bantuan Smart Guides",
+        "Membuat pola berulang otomatis menggunakan fitur Pattern Options",
+        "Menggunakan fitur Rotate Tool dengan kombinasi tombol Alt dan transform",
+        "Menerapkan efek Zig Zag berulang kali melalui menu Effect Distort"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima aset logo perusahaan dalam bentuk file PDF dari agensi luar. Ketika Anda membuka file tersebut di Illustrator, semua teks terpecah menjadi jalur kurva terpisah dan garis teksnya tidak rata. Apa tindakan terbaik untuk merapikannya kembali?",
+      "options": [
+        "Mengetik ulang seluruh teks secara manual menggunakan font standar",
+        "Memblok semua kurva teks lalu mengubahnya kembali menjadi Live Text",
+        "Mengelompokkan kurva tersebut lalu menyelaraskannya via panel Align",
+        "Menghapus teks lama dan meminta file asli berformat font kepada agensi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mendesain brosur lipat tiga (tri-fold brochure). Agar proses cetak dan potong di percetakan akurat, garis lipatan dan batas aman area cetak harus terlihat jelas tanpa ikut tercetak. Fitur apa yang harus Anda manfaatkan?",
+      "options": [
+        "Membuat garis bantu manual menggunakan guide lines pada setiap artboard",
+        "Menggunakan fitur Artboards panel untuk mengatur posisi lipatan kertas",
+        "Membuat layer khusus untuk garis potong dan mengaturnya sebagai non-printing",
+        "Memanfaatkan fitur Trim Marks dan Bleed langsung saat membuat dokumen baru"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda membuat ikon line art minimalis dengan ketebalan stroke 2 pt. Saat Anda memperbesar ukuran ikon tersebut 500% untuk baliho, proporsi ketebalan garisnya terlihat terlalu tipis. Cara tercepat agar ketebalan stroke otomatis ikut menyesuaikan skala adalah",
+      "options": [
+        "Mengubah semua stroke menjadi bentuk objek melalui menu Outline Stroke",
+        "Mencentang opsi Scale Strokes & Effects pada panel Transform sebelum diubah",
+        "Menaikkan nilai ketebalan stroke secara manual satu persatu pada setiap objek",
+        "Menerapkan efek Rescale pada menu Object Path sebelum memperbesar ukuran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah percetakan menolak file desain poster Anda karena masih mendeteksi adanya teks yang belum di-outline, padahal dokumen Anda sangat kompleks dan memiliki banyak artboard. Cara paling aman untuk memastikan semua teks berubah menjadi kurva tanpa merusak teks asli di file kerja Anda adalah",
+      "options": [
+        "Menyimpan salinan file baru lalu menekan Ctrl+A dan memilih Create Outlines",
+        "Menggunakan fitur Preflight di Illustrator untuk mendeteksi dan mengunci teks",
+        "Mengekspor langsung dokumen ke format PDF dengan pengaturan Standard X-1a",
+        "Mengubah format dokumen secara keseluruhan menjadi file gambar bitmap TIFF"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat infografis peta jalur transportasi kota yang rumit dengan banyak titik stasiun dan garis koneksi. Jika di kemudian hari posisi stasiun digeser, garis penghubung harus ikut bergerak otomatis tanpa digambar ulang. Fitur apa yang paling tepat?",
+      "options": [
+        "Menggunakan fitur Live Paint Bucket untuk mengisi warna jalur transportasi",
+        "Memanfaatkan fitur Global Edit untuk mengubah titik secara bersamaan",
+        "Menggambar jalur menggunakan Stroke khusus dengan fungsi Joint aktif",
+        "Menggunakan fitur Symbol Sprayer untuk menduplikasi titik stasiun kota"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendesain serangkaian banner media sosial dengan variasi warna latar belakang yang banyak. Anda ingin mengubah warna tema seluruh banner secara instan tanpa harus mengecat ulang satu per satu objek latar. Fitur apa yang harus digunakan?",
+      "options": [
+        "Membuat swatch warna baru lalu menyeretnya manual ke setiap latar belakang",
+        "Menggunakan fitur Recolor Artwork untuk memetakan ulang palet warna dokumen",
+        "Memanfaatkan panel Graphic Styles untuk menerapkan warna latar seragam",
+        "Mengelompokkan semua latar belakang lalu mengubah warnanya di panel Color"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang ilustrasi kemasan produk herbal dengan elemen daun dan bunga yang sangat padat. Kinerja komputer mulai melambat setiap kali Anda melakukan zoom in atau pan. Pengaturan apa di Illustrator yang dapat meringankan beban tampilan kerja?",
+      "options": [
+        "Mengubah mode tampilan dokumen dari GPU Preview menjadi CPU Preview",
+        "Menurunkan resolusi raster effects melalui menu Effect Document Raster",
+        "Menyembunyikan layer objek kompleks menggunakan panel Layers pencahayaan",
+        "Mengurangi jumlah maksimum Undo yang tersimpan di dalam menu Preferences"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

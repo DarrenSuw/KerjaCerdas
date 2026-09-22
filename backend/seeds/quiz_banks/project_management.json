@@ -1,0 +1,306 @@
+{
+  "skill": "Project Management",
+  "skill_key": "project management",
+  "questions": [
+    {
+      "question": "Anda memimpin proyek implementasi sistem HR di sebuah perusahaan manufaktur di Cikarang. Dua minggu sebelum tanggal peluncuran (go-live), manajer operasional meminta penambahan fitur pelaporan lembur baru yang belum ada di cakupan awal (scope). Apa langkah pertama yang paling tepat Anda ambil?",
+      "options": [
+        "Langsung menugaskan tim developer untuk lembur agar fitur tersebut selesai tepat waktu.",
+        "Menolak permintaan tersebut secara tegas karena melanggar dokumen cakupan proyek awal.",
+        "Menganalisis dampak perubahan terhadap jadwal, anggaran, dan sumber daya yang ada.",
+        "Melakukan peluncuran sesuai jadwal lalu memasukkan fitur tersebut pada fase berikutnya."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek pembangunan kantor cabang bank di Surabaya, Anda mendapati bahwa vendor utama terlambat mengirimkan material interior selama satu minggu dari jadwal yang disepakati. Bagaimana cara Anda menangani risiko ini sebagai Project Manager?",
+      "options": [
+        "Mengaktifkan rencana cadangan (contingency plan) dan mendiskusikan percepatan pengiriman dengan vendor.",
+        "Memotong pembayaran vendor sebesar persentase keterlambatan sesuai kontrak secara sepihak.",
+        "Mengubah tanggal penyelesaian akhir proyek secara otomatis untuk mengakomodasi keterlambatan.",
+        "Mengambil alih proses pengadaan material dengan memesan dari supplier lokal baru secara mandiri."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Proyek pengembangan aplikasi e-commerce yang Anda tangani mengalami pembengkakan biaya (cost overrun) sebesar 15% pada pertengahan siklus proyek akibat kenaikan harga server cloud. Langkah mitigasi apa yang paling tepat dilakukan?",
+      "options": [
+        "Menghentikan sementara seluruh aktivitas pengembangan sampai ada suntikan dana tambahan.",
+        "Melakukan evaluasi ulang anggaran untuk mencari pengeluaran yang dapat dipangkas atau ditunda.",
+        "Meminta persetujuan sponsor proyek untuk menambah anggaran tanpa melakukan evaluasi internal.",
+        "Mengurangi jumlah fitur produk secara drastis tanpa berkonsultasi dengan pemilik produk."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja ditunjuk memegang proyek migrasi data perusahaan logistik. Saat rapat kick-off, Anda melihat ketegangan antara tim IT internal dan konsultan eksternal yang saling menyalahkan atas kegagalan proyek sebelumnya. Tindakan awal apa yang harus Anda lakukan?",
+      "options": [
+        "Membuat aturan kerja baru dan memisahkan ruang kerja kedua tim agar tidak berinteraksi.",
+        "Melaporkan masalah ketegangan personal ini kepada Direktur SDM untuk segera diberi sanksi.",
+        "Mengadakan sesi penyelarasan ekspektasi dan membangun komitmen bersama terhadap tujuan proyek.",
+        "Mengganti beberapa anggota tim IT yang paling vokal dengan personel baru yang lebih kooperatif."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pemangku kepentingan (stakeholder) kunci dari divisi pemasaran sering tidak hadir dalam rapat status mingguan proyek kampanye digital, namun sering mengeluh bahwa arah proyek tidak sesuai keinginannya. Apa strategi komunikasi terbaik untuk menghadapi situasi ini?",
+      "options": [
+        "Mengabaikan keluhannya karena ia tidak pernah hadir dalam forum resmi yang sudah dijadwalkan.",
+        "Mengirimkan notulen rapat yang sangat panjang setiap minggu agar ia tetap membaca perkembangannya.",
+        "Mengubah jadwal rapat mingguan secara total demi menyesuaikan waktu luang pemangku kepentingan tersebut.",
+        "Mengadakan sesi sinkronisasi singkat secara terpisah dan mengirimkan ringkasan eksekutif berkala."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam proyek renovasi kantor pusat, kontraktor melaporkan adanya pipa air utama yang tidak tercatat dalam cetak biru lama dan harus dipindahkan segera. Hal ini berpotensi menghentikan pekerjaan selama tiga hari. Keputusan apa yang harus Anda ambil?",
+      "options": [
+        "Meminta kontraktor melanjutkan pekerjaan di area lain sambil Anda menghitung dampak jalur kritis.",
+        "Memerintahkan kontraktor untuk membongkar pipa tersebut tanpa memikirkan izin dari gedung.",
+        "Menunda seluruh proyek sampai pemilik gedung lama memberikan ganti rugi atas kesalahan cetak biru.",
+        "Menghentikan proyek secara permanen karena risiko keselamatan kerja dinilai terlalu tinggi."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang perangkat lunak Anda melaporkan bahwa mereka tidak dapat mencapai target sprint karena spesifikasi dari klien sering berubah di tengah jalan. Sebagai Scrum Master atau Project Manager, tindakan preventif apa yang paling efektif?",
+      "options": [
+        "Menerima semua perubahan klien agar tingkat kepuasan pelanggan tetap terjaga dengan baik.",
+        "Menerapkan proses kontrol perubahan formal dan mengunci backlog untuk durasi sprint berjalan.",
+        "Memperpanjang durasi setiap sprint menjadi satu bulan penuh untuk mengejar ketertinggalan pekerjaan.",
+        "Melarang klien untuk menghubungi tim pengembang secara langsung selama jam kerja berlangsung."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengelola proyek peluncuran produk FMCG baru. Hasil analisis Earned Value Management (EVM) menunjukkan nilai Schedule Performance Index (SPI) adalah 0,85 dan Cost Performance Index (CPI) adalah 1,12. Kondisi apa yang sedang dialami proyek Anda?",
+      "options": [
+        "Proyek berjalan lebih cepat dari jadwal namun mengalami pembiayaan yang melebihi anggaran awal.",
+        "Proyek mengalami keterlambatan dari jadwal namun penggunaan anggaran lebih efisien dari rencana.",
+        "Proyek berjalan tepat waktu dengan pengeluaran biaya yang persis sama dengan perencanaan awal.",
+        "Proyek mengalami keterlambatan parah dan anggaran perusahaan telah habis terkuras sepenuhnya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang hari peluncuran proyek sistem pembayaran digital, Lead Developer Anda mendadak mengundurkan diri karena menerima tawaran kerja di perusahaan lain. Dokumen teknis yang ditinggalkan belum sepenuhnya lengkap. Langkah darurat apa yang harus Anda prioritaskan?",
+      "options": [
+        "Merekrut developer senior baru melalui agency kilat dan langsung menugaskannya memegang sistem.",
+        "Menunda tanggal peluncuran proyek minimal tiga bulan ke depan sampai ada pengganti tetap.",
+        "Melakukan知识 transfer darurat dengan developer yang tersisa dan memetakan ulang beban kerja kritis.",
+        "Meminta bantuan konsultan eksternal untuk menulis ulang seluruh kode sistem pembayaran dari awal."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Proyek pembangunan fasilitas gudang telah selesai secara fisik. Sebelum serah terima resmi (handover) kepada bagian operasional, apa aktivitas penutup (closure) penting yang wajib Anda selesaikan bersama tim?",
+      "options": [
+        "Segera membubarkan seluruh tim proyek agar perusahaan tidak perlu membayar gaji bulan berikutnya.",
+        "Melakukan evaluasi pasca-proyek (lessons learned) dan memastikan seluruh administrasi vendor tuntas.",
+        "Membuang seluruh dokumen perencanaan proyek karena dianggap sudah tidak berguna lagi bagi perusahaan.",
+        "Langsung memulai proyek baru berikutnya tanpa melakukan dokumentasi serah terima formal."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin proyek digitalisasi rantai pasok perusahaan distributor nasional. Di tengah jalan, manajer operasional meminta penambahan fitur pelacakan armada real-time yang tidak ada di dalam dokumen cakupan awal (Scope Baseline). Apa tindakan pertama yang paling tepat?",
+      "options": [
+        "Langsung memerintahkan tim IT untuk memasukkan fitur tersebut agar operasional senang",
+        "Menolak permintaan tersebut secara tegas karena melanggar dokumen kontrak awal",
+        "Menganalisis dampak penambahan fitur terhadap anggaran, jadwal, dan risiko proyek",
+        "Melaporkan permintaan tersebut kepada jajaran direksi tanpa melakukan evaluasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek pembangunan pabrik kimia di Gresik, inspeksi kualitas independen menemukan bahwa standar ketebalan lapisan anti-korosi pada tangki utama berada di bawah spesifikasi teknis. Kontraktor beralasan standar tersebut sudah cukup untuk iklim lokal. Langkah manajerial apa yang harus Anda ambil?",
+      "options": [
+        "Menerima argumen kontraktor untuk menghindari keterlambatan penyelesaian proyek",
+        "Menghentikan pekerjaan terkait dan mewajibkan kontraktor memperbaiki sesuai spesifikasi",
+        "Meminta kompensasi finansial dari kontraktor tanpa perlu melakukan perbaikan fisik",
+        "Melakukan pengujian ulang secara mandiri menggunakan anggaran cadangan proyek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengelola proyek peluncuran lini produk kosmetik baru. Dua minggu menjelang batas akhir (deadline), desainer senior mengalami kecelakaan kerja dan harus cuti panjang. Beban kerja yang tersisa cukup tinggi. Bagaimana Anda mengelola situasi ini?",
+      "options": [
+        "Memaksa tim yang ada untuk bekerja lembur setiap hari sampai target tanggal tercapai",
+        "Mengurangi kualitas desain akhir demi mengejar tenggat waktu peluncuran produk",
+        "Menilai ulang sisa pekerjaan, mendaur ulang aset yang ada, dan merelokasi sumber daya",
+        "Mengundurkan tanggal peluncuran produk secara sepihak tanpa memberitahu manajemen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Proyek implementasi sistem Enterprise Resource Planning (ERP) di sebuah perusahaan ritel menghadapi resistensi kuat dari staf bagian gudang yang sudah terbiasa mencatat inventaris secara manual. Mereka sering mangkir dari sesi pelatihan. Strategi komunikasi apa yang paling efektif?",
+      "options": [
+        "Mengancam akan memberikan sanksi administratif bagi staf yang mangkir pelatihan",
+        "Melaporkan langsung ke bagian HR agar staf tersebut segera diberi surat peringatan",
+        "Mengabaikan staf gudang dan fokus melatih divisi lain yang lebih kooperatif",
+        "Mengadakan sesi khusus untuk mendengarkan kendala mereka dan menunjukkan manfaat sistem"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat melakukan tinjauan status bulanan proyek pembangunan gedung perkantoran, Anda mendapati bahwa jalur kritis (critical path) mengalami penundaan selama lima hari akibat cuaca ekstrem. Apa langkah mitigasi jadwal yang harus segera dieksekusi?",
+      "options": [
+        "Melakukan penambahan jam kerja atau tenaga kerja pada aktivitas jalur kritis",
+        "Memindahkan durasi penundaan tersebut ke aktivitas non-jalur kritis yang santai",
+        "Memperpanjang jadwal akhir proyek secara otomatis tanpa berkonsultasi",
+        "Mengurangi ruang lingkup pekerjaan lantai dasar untuk mengejar ketertinggalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mengambil alih proyek pengembangan aplikasi mobile perbankan yang sedang macet karena komunikasi yang buruk antara tim produk dan tim pengembang. Langkah awal apa yang paling strategis untuk membangun kembali ritme kerja?",
+      "options": [
+        "Mengganti seluruh anggota kedua tim dengan tenaga profesional yang baru",
+        "Membuat matriks RACI baru dan menetapkan prosedur eskalasi masalah yang jelas",
+        "Mengadakan rapat harian berdurasi tiga jam untuk memantau setiap baris kode",
+        "Menyerahkan seluruh keputusan teknis sepenuhnya kepada pemimpin tim pengembang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek ekspansi jaringan minimarket nasional, anggaran pengadaan rak display mengalami lonjakan harga bahan baku baja sebesar 20 di pasar. Sisa cadangan darurat (contingency reserve) proyek hanya tersisa 5. Tindakan manajerial apa yang paling tepat?",
+      "options": [
+        "Menghentikan seluruh pengadaan rak display dan menunggu harga baja turun normal",
+        "Menggunakan dana operasional rutin perusahaan tanpa izin untuk menutupi kekurangan",
+        "Mencari material alternatif yang memenuhi spesifikasi dan menegosiasikan ulang vendor",
+        "Mengurangi jumlah gerai yang akan dibuka dalam gelombang ekspansi pertama ini"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Proyek restrukturisasi jaringan logistik nasional telah mencapai tahap akhir. Namun, saat uji coba sistem manajemen gudang baru, ditemukan celah keamanan data minor yang tidak kritis bagi operasional harian. Apa keputusan terbaik yang harus Anda ambil?",
+      "options": [
+        "Melanjutkan serah terima proyek dan mencatat celah tersebut sebagai tiket perbaikan rutin",
+        "Menolak menandatangani berita acara serah terima sampai seluruh kode ditulis ulang",
+        "Membatalkan seluruh implementasi sistem dan kembali menggunakan metode lama",
+        "Meminta vendor memperbaiki celah tersebut sebelum serah terima meski lewat tenggat"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda memimpin proyek pembangunan jalan tol regional. Seorang pejabat pemda setempat secara informal meminta agar jalur akses tol digeser sedikit untuk melewati area lahan milik keluarganya. Bagaimana Anda merespons permintaan ini secara profesional?",
+      "options": [
+        "Menolak permintaan tersebut secara kasar untuk menghindari masalah hukum di masa depan",
+        "Menuruti permintaan tersebut secara diam-diam demi kelancaran perizinan birokrasi",
+        "Mengarahkan permintaan tersebut melalui mekanisme formal perubahan desain dan AMDAL",
+        "Mengabaikan perkataan pejabat tersebut karena disampaikan secara tidak resmi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah proyek agensi pemasaran digital untuk klien korporat besar, klien sering meminta revisi mendadak di luar perjanjian kerja sama (scope creep) tanpa bersedia menambah anggaran. Bagaimana Anda menangani situasi ini agar proyek tetap menguntungkan?",
+      "options": [
+        "Menerima semua revisi klien demi menjaga hubungan baik dan mendapatkan proyek masa depan",
+        "Menolak setiap permintaan revisi tambahan secara kaku berdasarkan dokumen kontrak",
+        "Menjelaskan dampak permintaan terhadap jadwal dan menyusun penawaran adendum kontrak",
+        "Meminta tim mengerjakan revisi tersebut secara sembunyi-sembunyi di luar jam kerja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memimpin proyek pembangunan pabrik di Karawang. Kontraktor utama mengajukan klaim perpanjangan waktu karena cuaca ekstrem yang tidak biasa selama musim hujan bulan lalu. Apa tindakan pertama yang harus Anda ambil?",
+      "options": [
+        "Menyetujui klaim tersebut secara penuh agar hubungan baik dengan kontraktor tetap terjaga",
+        "Memeriksa klausul kontrak terkait kondisi cuaca memaksa dan meminta data meteorologi resmi",
+        "Menolak permintaan tersebut secara tegas karena cuaca buruk adalah risiko bisnis kontraktor",
+        "Mengurangi cakupan pekerjaan proyek secara proporsional untuk mengimbangi keterlambatan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek implementasi software finansial, seorang anggota tim kunci dari divisi akuntansi tiba-tiba mengajukan cuti mendadak selama sebulan saat fase pengujian krusial. Bagaimana cara Anda mengatasinya?",
+      "options": [
+        "Menunda seluruh jadwal fase pengujian hingga anggota tim tersebut kembali bekerja aktif",
+        "Melakukan redistribusi tugas mendesak ke anggota tim lain yang memiliki keterampilan mirip",
+        "Meminta staf magang untuk mengambil alih seluruh tanggung jawab pengujian sistem tersebut",
+        "Mengabaikan ketidakhadirannya dan melanjutkan pengujian dengan personel yang tersisa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Proyek renovasi gudang logistik mengalami keterlambatan jadwal sebesar 10% akibat masalah perizinan lokal. Manajemen meminta agar tanggal selesai asli tetap dipertahankan. Strategi percepatan apa yang paling tepat?",
+      "options": [
+        "Mengurangi standar keselamatan kerja agar pekerjaan fisik dapat berjalan jauh lebih cepat",
+        "Melakukan 'crashing' pada aktivitas di jalur kritis dengan menambah jam kerja lembur tim",
+        "Menghapus seluruh tahapan uji coba kualitas akhir demi mengejar tenggat waktu peluncuran",
+        "Mengganti seluruh tim manajemen proyek dengan konsultan eksternal yang lebih berpengalaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat rapat peninjauan proyek bulanan, seorang direktur yang jarang hadir tiba-tiba meminta penambahan fitur baru yang cukup besar tanpa mengubah anggaran atau tenggat waktu. Apa respon terbaik Anda?",
+      "options": [
+        "Langsung menyetujuinya demi kepuasan pemangku kepentingan tingkat tinggi tersebut",
+        "Menolak permintaan itu secara langsung di hadapan peserta rapat tanpa memberikan alasan",
+        "Mendokumentasikan permintaan dan menganalisis dampaknya melalui proses kontrol perubahan",
+        "Mengerjakan fitur tersebut secara diam-diam dengan mengurangi alokasi dari tugas lain"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengelola proyek peluncuran aplikasi mobile. Hasil metrik kualitas menunjukkan jumlah bug minor masih tinggi menjelang tanggal rilis. Keputusan manajerial apa yang paling bijak?",
+      "options": [
+        "Meluncurkan aplikasi sesuai jadwal dan memperbaiki bug minor melalui pembaruan berkala",
+        "Menunda tanggal peluncuran tanpa batas waktu hingga seluruh bug minor berhasil dibersihkan",
+        "Menghentikan proyek secara permanen karena kualitas aplikasi dinilai belum memenuhi standar",
+        "Menyembunyikan laporan bug tersebut dari klien agar peluncuran dapat tetap berjalan mulus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pembangunan gedung kantor, pemasok utama material marmer mengalami kebangkrutan mendadak padahal material tersebut sangat spesifik. Langkah mitigasi apa yang harus segera dilakukan?",
+      "options": [
+        "Menunggu proses pengadilan kebangkrutan selesai untuk menagih ganti rugi material",
+        "Mencari pemasok alternatif yang menyediakan spesifikasi setara dan menilai dampak biayanya",
+        "Mengubah desain interior secara drastis menggunakan bahan lokal yang tersedia di pasaran",
+        "Menghentikan seluruh aktivitas konstruksi gedung hingga ditemukan pemasok baru yang murah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang sistem Anda mengalami konflik internal yang memanas akibat perbedaan pendapat teknis, sehingga produktivitas menurun drastis. Sebagai Project Manager, tindakan awal apa yang Anda ambil?",
+      "options": [
+        "Mengadakan sesi mediasi netral untuk mendengarkan kedua belah pihak dan mencari titik temu",
+        "Memecat pihak yang memulai perselisihan agar suasana kerja kembali kondusif dengan cepat",
+        "Membiarkan konflik tersebut selesai dengan sendirinya seiring berjalannya waktu proyek",
+        "Melaporkan masalah kepribadian tim ini langsung kepada jajaran direksi perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah proyek implementasi sistem ERP mendekati tahap akhir, namun anggaran cadangan risiko (contingency reserve) hampir habis akibat beberapa kejadian tak terduga. Apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Mengabaikan potensi risiko tersisa karena proyek sudah hampir selesai sepenuhnya",
+        "Mengurangi ruang lingkup pekerjaan yang kurang penting untuk mengamankan sisa dana",
+        "Meminta tambahan anggaran darurat kepada sponsor dengan menyajikan analisis risiko sisa",
+        "Menghentikan pembayaran kepada seluruh vendor pihak ketiga yang terlibat dalam proyek"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa salah satu anggota tim pelaksana sering melakukan kesalahan berulang dalam tugas administratif proyek. Pendekatan manajemen kinerja apa yang paling efektif?",
+      "options": [
+        "Memberikan teguran keras di depan seluruh anggota tim saat rapat status mingguan",
+        "Mengadakan sesi pembinaan (coaching) privat, mengidentifikasi akar masalah, dan memberi pelatihan",
+        "Langsung mengeluarkan surat peringatan keras tanpa memberikan kesempatan perbaikan",
+        "Memindahkan semua tugas administratif tersebut ke tangan Anda sendiri secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Proyek migrasi infrastruktur IT ke cloud telah selesai diuji coba. Sebelum melakukan cutover total ke sistem baru, apa dokumen formal yang wajib Anda amankan terlebih dahulu?",
+      "options": [
+        "Surat pengunduran diri dari vendor penyedia layanan cloud lama perusahaan",
+        "Berita acara serah terima dan persetujuan formal (sign-off) dari pemilik bisnis",
+        "Laporan keuangan lengkap perusahaan selama tiga tahun berturut-turut",
+        "Jadwal cuti seluruh karyawan divisi IT untuk enam bulan ke depan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

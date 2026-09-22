@@ -1,0 +1,306 @@
+{
+  "skill": "Quality Control",
+  "skill_key": "quality control",
+  "questions": [
+    {
+      "question": "Di lini produksi mie instan, inspektur QC menemukan lonjakan tingkat kerusakan kemasan sachet bumbu sebesar 4% dalam dua jam terakhir, melampaui batas toleransi 1%. Apa tindakan pertama yang paling tepat dilakukan?",
+      "options": [
+        "Menghentikan mesin pengemas terkait dan segera melaporkannya kepada supervisor produksi",
+        "Membiarkan proses tetap berjalan sambil menunggu jadwal istirahat shift berikutnya",
+        "Meminta bagian gudang untuk mengganti seluruh stok bumbu dengan merek yang baru",
+        "Menambah jumlah tenaga kerja manual untuk memilah kemasan yang rusak di ujung lini"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima keluhan dari pelanggan B2B bahwa satu palet produk susu UHT mengalami kembung sebelum tanggal kedaluwarsa. Langkah investigasi awal apa yang harus Anda lakukan di gudang?",
+      "options": [
+        "Memeriksa catatan suhu penyimpanan gudang dan mengambil sampel dari nomor batch yang sama",
+        "Menghubungi distributor logistik untuk meminta ganti rugi atas kerusakan barang di jalan",
+        "Memusnahkan seluruh stok susu UHT di gudang untuk mencegah komplain meluas",
+        "Mengubah prosedur operasional standar pengemasan produk untuk pengiriman berikutnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik garmen menggunakan metode inspeksi sampling AQL (Acceptance Quality Limit) 2.5 untuk lot pakaian sebanyak 1.200 pcs. Berdasarkan tabel standar, berapa pendekatan yang benar dalam mengambil sampel?",
+      "options": [
+        "Mengambil sampel secara acak dari berbagai tumpukan tanpa melihat nomor lot produksi",
+        "Mengambil sampel hanya dari kotak paling atas yang paling mudah dijangkau oleh tangan",
+        "Memilih produk yang tampak paling sempurna untuk mewakili standar kualitas pabrik",
+        "Mengambil sampel dari produk yang dikemas pada jam-jam terakhir menjelang pergantian shift"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada industri komponen otomotif, seorang operator QC melihat adanya sedikit goresan pada permukaan 5 dari 50 sampel piston yang diuji. Goresan ini tidak memengaruhi fungsi utama tetapi melanggar estetik visual standar perusahaan. Apa keputusan yang harus diambil?",
+      "options": [
+        "Menahan lot tersebut dan berkonsultasi dengan bagian teknik untuk evaluasi dampak lebih lanjut",
+        "Meloloskan lot tersebut karena fungsi utama komponen tidak mengalami gangguan teknis",
+        "Langsung menolak seluruh lot dan mengirimkannya kembali ke bagian pengecoran logam",
+        "Meminta operator memperhalus goresan tersebut menggunakan amplas di area pemeriksaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan audit ke pemasok bahan baku plastik lokal dan menemukan mereka menggunakan gudang penyimpanan yang terpapar langsung oleh sinar matahari terik. Risiko apa yang paling mungkin timbul pada kualitas bahan baku?",
+      "options": [
+        "Degradasi polimer yang menyebabkan penurunan kekuatan mekanis saat dicetak",
+        "Peningkatan kadar kelembapan air yang membuat bahan lebih cepat kering",
+        "Perubahan warna pigmen plastik menjadi lebih gelap secara merata di semua sisi",
+        "Kontaminasi bakteri patogen akibat suhu tinggi di dalam area penyimpanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan harian QC pabrik biskuit, ditemukan variasi berat bersih produk akhir yang tidak stabil (berkisar antara 95 gram hingga 105 gram, target 100 gram). Alat apa yang paling efektif digunakan untuk menganalisis akar masalah proses ini?",
+      "options": [
+        "Membuat diagram kontrol (control chart) untuk memantau stabilitas mesin penimbang",
+        "Melakukan survei kepuasan konsumen terhadap ukuran kemasan biskuit di pasaran",
+        "Mengganti seluruh mesin pencampur adonan dengan model terbaru yang berkapasitas besar",
+        "Menurunkan target berat standar produk menjadi 95 gram agar lolos spesifikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik komponen elektronik menghadapi masalah korsleting pada produk saklar lampu. Tim QC diminta untuk mencari akar penyebab menggunakan metode 5 Whys. Pertanyaan pertama apa yang paling logis diajukan?",
+      "options": [
+        "Mengapa komponen di dalam saklar mengalami korsleting saat dialiri arus listrik?",
+        "Mengapa departemen pembelian memilih vendor komponen kabel yang murah?",
+        "Mengapa operator lini perakitan tidak mengikuti pelatihan keselamatan kerja?",
+        "Mengapa manajemen perusahaan tidak memperbarui mesin uji kualitas sejak tahun lalu?"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memeriksa kedatangan bahan baku tepung terigu untuk produksi roti, Anda menemukan segel karung ada yang robek dan terdapat indikasi kutu beras di dalam beberapa kemasan. Apa tindakan penolakan (reject) yang harus didokumentasikan?",
+      "options": [
+        "Membuat Berita Acara Pemeriksaan Barang Datang yang ditandatangani bersama pihak vendor",
+        "Meminta bagian gudang segera membersihkan kutu tersebut agar tepung bisa tetap dipakai",
+        "Menyimpan karung yang rusak di sudut gudang tanpa memberitahu bagian pembelian",
+        "Mencatat jumlah karung yang utuh saja di dalam laporan penerimaan barang harian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen pabrik ingin menerapkan budaya kualitas 5S di area kerja QC. Kegiatan mana yang mencerminkan tahap 'Seiton' (Susun) secara tepat?",
+      "options": [
+        "Memberikan label penanda yang jelas dan tempat khusus untuk setiap alat ukur jangka sorong",
+        "Membuang semua dokumen catatan pemeriksaan mutu yang sudah lewat masa berlakunya",
+        "Membersihkan meja kerja dari debu dan sisa sampel setiap kali jam istirahat tiba",
+        "Membuat jadwal rutin bagi setiap staf untuk membersihkan lantai laboratorium pengujian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menemukan bahwa alat timbangan digital di laboratorium QC belum dikalibrasi ulang selama lebih dari 14 bulan, sementara jadwal kalibrasi tahunan telah terlewati. Langkah apa yang harus diambil terhadap data hasil pengujian selama sebulan terakhir?",
+      "options": [
+        "Melakukan tinjauan risiko dan pengujian ulang sampel cadangan menggunakan alat yang sudah dikalibrasi",
+        "Mengabaikan keterlambatan tersebut karena selisih penimbangan biasanya sangat kecil",
+        "Langsung merevisi angka pada laporan lama agar sesuai dengan estimasi standar pabrik",
+        "Mengkalibrasi ulang alat tersebut dan menganggap data lama sudah pasti benar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di pabrik pengolahan air minum dalam kemasan (AMDK), sensor inline mendeteksi ada 3 botol berturut-turut yang tutupnya kurang rapat dalam satu jam terakhir. Tindakan awal apa yang harus segera Anda ambil sebagai pengawas QC?",
+      "options": [
+        "Menghentikan mesin penutup botol sementara untuk memeriksa tekanan pneumatik kepala capping",
+        "Melanjutkan produksi sambil mencatat jumlah temuan dalam laporan shift malam",
+        "Membuang seluruh produk yang sudah masuk ke dalam dus pada hari tersebut",
+        "Meminta operator kebersihan untuk mencuci ulang seluruh sabuk konveyor berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang QC di pabrik kosmetik mendapati hasil uji mikrobiologi pada batch losion terbaru menunjukkan pertumbuhan bakteri di atas batas maksimum. Apa langkah investigasi pertama yang paling tepat dilakukan?",
+      "options": [
+        "Mengisolasi batch produk tersebut agar tidak masuk ke gudang distribusi jadi",
+        "Meminta bagian pemasaran untuk merevisi klaim produk pada kemasan sekunder",
+        "Menurunkan standar spesifikasi mikrobiologi demi menyelamatkan jadwal kirim",
+        "Mengganti seluruh pemasok bahan pengawet kimia tanpa melakukan uji lab"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proses produksi lemari pendingin (kulkas), ditemukan adanya fluktuasi arus listrik pada tahap uji kelayakan akhir (electrical safety test). Sebagai staf QC, apa tindakan preventif yang harus diprioritaskan?",
+      "options": [
+        "Memeriksa kondisi grounding dan stabilitas pasokan listrik pada panel pengujian utama",
+        "Melakukan pengecatan ulang bodi kulkas yang mengalami lecet pada sisi samping",
+        "Mengurangi waktu pengujian agar target unit harian pabrik tetap tercapai",
+        "Menyetujui pengiriman unit asalkan lampu indikator bagian dalam menyala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan inspeksi visual pada gulungan lembaran baja (coil) untuk industri manufaktur. Anda menemukan karat ringan pada bagian tepi luar gulungan sepanjang 2 meter. Keputusan QC yang paling tepat adalah?",
+      "options": [
+        "Memberi label karantina pada gulungan tersebut dan meminta bagian produksi memotong bagian yang berkarat",
+        "Meloloskan gulungan ke bagian stamping karena karat di tepi luar dianggap tidak terlalu berpengaruh",
+        "Menolak seluruh pasokan baja dari vendor tanpa membuat dokumentasi temuan cacat",
+        "Mengecat bagian tepi yang berkarat dengan cairan anti-karat lalu langsung mengirimkannya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pabrik cat tembok menerima komplain bahwa warna cat kaleng batch tertentu tidak sesuai dengan standar master warna (color swatch). Langkah awal analisis akar masalah yang wajib dilakukan tim QC adalah?",
+      "options": [
+        "Membandingkan resep takaran timbang bahan baku dengan catatan batch record produksi",
+        "Menyalahkan operator mesin aduk karena kurang teliti dalam melihat instruksi kerja",
+        "Menaikkan harga jual produk agar konsumen percaya bahwa kualitasnya sudah meningkat",
+        "Menghapus seluruh standar warna lama dan membuat standar baru yang lebih gelap"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada lini perakitan mainan anak plastik, ditemukan bagian sudut mainan terasa tajam dan berisiko melukai tangan pengguna. Apa tindakan korektif langsung yang harus diinstruksikan oleh QC?",
+      "options": [
+        "Menghentikan mesin cetak injeksi untuk memeriksa keausan pada celah cetakan (mold)",
+        "Meminta bagian HRD untuk memberikan pelatihan keselamatan kerja kepada staf",
+        "Menempelkan peringatan tertulis kecil pada kotak kemasan luar produk mainan",
+        "Menjual produk tersebut dengan harga diskon khusus di pasar grosir lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan memeriksa kedatangan bahan baku kawat tembaga untuk pabrik kabel. Hasil pengukuran diameter menggunakan mikrometer menunjukkan variasi tipis di bawah batas toleransi minimum. Sikap Anda sebagai QC adalah?",
+      "options": [
+        "Membuat Berita Acara Penolakan Barang dan mengembalikan gulungan kawat ke pemasok",
+        "Menerima barang tersebut karena perbedaannya sangat tipis dan sulit dilihat mata",
+        "Meminta diskon harga kepada pemasok tanpa mencatat temuan dalam laporan kualitas",
+        "Memotong kawat yang tipis secara manual di area gudang sebelum dipakai produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam audit internal proses pengemasan beras premium, ditemukan beberapa karung tidak tertutup jahitan dengan rapi sehingga rentan bocor. Instruksi penghentian sementara harus diberikan kepada siapa?",
+      "options": [
+        "Operator mesin jahit karung untuk segera menyetel ulang ketegangan benang",
+        "Petugas kebersihan pabrik agar membersihkan debu di sekitar area timbangan",
+        "Bagian keuangan agar segera membayarkan tagihan pembelian karung baru",
+        "Divisi pengiriman logistik agar mempercepat jadwal keberangkatan truk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang insinyur QC mendapati grafik kendali (control chart) untuk berat produk sabun batang menunjukkan tren peningkatan berat rata-rata selama 5 jam berturut-turut, meskipun masih dalam batas kendali. Apa interpretasi yang paling tepat?",
+      "options": [
+        "Proses mengalami pergeseran (shift) yang memerlukan penyesuaian pada mesin cetak",
+        "Kualitas produk dipastikan sempurna karena belum melewati batas spesifikasi atas",
+        "Timbangan digital di ruang QC mengalami kerusakan total pada sensor beratnya",
+        "Kelembaban udara di pabrik sedang turun drastis tanpa mempengaruhi formula"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan pemeriksaan produk mebel kayu ekspor, Anda mendapati kadar air (moisture content) kayu melebihi standar spesifikasi pembeli internasional. Tindakan pengendalian mutu yang harus diambil adalah?",
+      "options": [
+        "Mengembalikan kayu tersebut ke ruang pengering (kiln dry) hingga kadar air sesuai",
+        "Melapisi permukaan kayu dengan lapisan plitur tebal untuk mengunci kelembaban",
+        "Memaksa bagian produksi merakit mebel tersebut agar target pengapalan terpenuhi",
+        "Menurunkan standar kadar air perusahaan agar sesuai dengan kondisi kayu basah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di pabrik pengolahan makanan ringan, mesin pengemas otomatis tiba-tiba menyegel kantong dengan posisi miring pada 10% produk. Apa tindakan pertama yang paling tepat dilakukan oleh petugas QC?",
+      "options": [
+        "Menghentikan lini produksi sementara dan melaporkan masalah ke bagian teknik",
+        "Membiarkan mesin tetap berjalan sambil menyortir produk miring secara manual",
+        "Menurunkan kecepatan konveyor agar operator bisa merapikan kemasan satu per satu",
+        "Memperbarui parameter suhu pemanas segel tanpa berkoordinasi dengan teknisi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memimpin inspeksi kedatangan batch kardus kemasan sekunder untuk produk elektronik. Ditemukan 15 dari 100 sampel basah dan melengkung akibat hujan saat pengiriman. Keputusan apa yang harus diambil?",
+      "options": [
+        "Meloloskan seluruh batch karena kerusakan terjadi di luar tanggung jawab pabrik",
+        "Menolak seluruh lot pengiriman tersebut dan meminta penggantian dari vendor",
+        "Menerima barang dengan syarat vendor memberikan potongan harga faktur pembelian",
+        "Memilah kardus yang kering saja untuk digunakan dan membuang yang basah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang QC di pabrik komponen logam presisi mendapati hasil pengukuran diameter lubang poros menggunakan jangka sorong berada di batas toleransi maksimum. Langkah verifikasi lanjutan yang harus dilakukan adalah:",
+      "options": [
+        "Langsung meluluskan komponen tersebut karena masih berada dalam rentang toleransi",
+        "Menggunakan alat ukur yang lebih presisi seperti mikrometer luar untuk verifikasi",
+        "Meminta operator mesin untuk melubangi ulang semua benda kerja di batch itu",
+        "Melakukan pengujian tarik pada benda tersebut untuk melihat kekuatan strukturnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit proses produksi sabun cair, ditemukan konsistensi produk terlalu encer tidak sesuai spesifikasi viskositas. Tindakan investigasi akar masalah yang paling efektif adalah:",
+      "options": [
+        "Memeriksa ulang catatan batching pencampuran bahan baku dan suhu pemanasan",
+        "Menambahkan bahan pengental langsung ke dalam tangki penampungan akhir",
+        "Mengganti botol kemasan dengan ukuran yang lebih kecil untuk menyesuaikan volume",
+        "Menurunkan target standar viskositas pada dokumen panduan mutu perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pabrik sepatu ekspor menerima klaim dari pembeli luar negeri bahwa sol sepatu mudah lepas setelah seminggu pemakaian. Pengujian laboratorium QC apa yang seharusnya mendeteksi masalah ini sebelumnya?",
+      "options": [
+        "Uji ketahanan warna terhadap gesekan dan paparan sinar matahari langsung",
+        "Uji kekuatan rekat lem menggunakan mesin tarik pada bagian sol dan upper",
+        "Uji ketahanan beban tekan maksimum pada bagian tumit alas kaki sepatu",
+        "Uji kapasitas penyerapan air pada material kain pelapis dalam sepatu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pemeriksaan harian area produksi farmasi steril, Anda melihat petugas kebersihan meletakkan alat pel kotor di dekat meja pengisian produk. Tindakan korektif segera yang wajib Anda ambil adalah:",
+      "options": [
+        "Mencatat pelanggaran tersebut ke dalam buku laporan bulanan keselamatan kerja",
+        "Menghentikan aktivitas di area tersebut dan meminta sterilisasi ulang zona kritis",
+        "Menegur secara lisan petugas bersangkutan tanpa menghentikan proses produksi",
+        "Meminta supervisor kebersihan untuk membuat lembar evaluasi prosedur kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada lini perakitan alat dapur, ditemukan baut pengencang pegangan panci sering longgar setelah melalui tahap uji getar. Langkah perbaikan desain proses yang tepat adalah:",
+      "options": [
+        "Menambahkan mesin sortir otomatis untuk mendeteksi baut yang longgar",
+        "Mewajibkan penggunaan alat ukur momen puntir (torque wrench) tervalidasi",
+        "Mengganti jenis baut dengan ukuran yang jauh lebih panjang dari sebelumnya",
+        "Mengurangi durasi pengujian getar agar baut tidak sempat mengalami kelonggaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan perbedaan warna yang mencolok antara label cetak kemasan produk baru dengan master warna yang disetujui klien. Apa tindakan operasional QC yang paling tepat?",
+      "options": [
+        "Melanjutkan produksi sambil mengirimkan sampel foto lewat pesan singkat ke klien",
+        "Menahan proses pencetakan label dan meminta percetakan menyesuaikan kalibrasi tinta",
+        "Menyetujui cetakan tersebut karena perbedaan warna dianggap wajar oleh mesin",
+        "Mengubah standar master warna di dokumen spesifikasi agar cocok dengan cetakan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik lampu LED mendapati tingkat kegagalan produk saat uji penuaan (burn-in test selama 24 jam) melonjak dari 0,5% menjadi 3%. Analisis awal QC harus berfokus pada komponen apa?",
+      "options": [
+        "Kualitas bahan baku plastik luar kap lampu dan berat total komponen",
+        "Stabilitas tegangan catu daya listrik dan kualitas komponen driver LED",
+        "Desain kemasan luar kardus dan efisiensi ruang susun di gudang transit",
+        "Kecepatan putar kipas pendingin di ruang penyimpanan barang jadi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam inspeksi produk keramik lantai, ditemukan masalah permukaan keramik tidak rata (melengkung) setelah proses pembakaran di kiln. Langkah penanganan awal untuk mengontrol mutu adalah:",
+      "options": [
+        "Memisahkan keramik melengkung sebagai produk grade B dan mengecek profil suhu kiln",
+        "Memukul bagian yang melengkung menggunakan palu karet agar permukaannya kembali datar",
+        "Menjual keramik tersebut dengan harga normal tanpa memberikan informasi cacat",
+        "Menaikkan suhu pembakaran secara drastis pada siklus produksi berikutnya"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

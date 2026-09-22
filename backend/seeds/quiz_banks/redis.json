@@ -1,0 +1,306 @@
+{
+  "skill": "Redis",
+  "skill_key": "redis",
+  "questions": [
+    {
+      "question": "Tim backend e-commerce Anda mengalami masalah memori penuh (OOM) pada server Redis yang digunakan sebagai cache utama. Setelah dianalisis, banyak key lama yang tidak pernah diakses masih menumpuk di memori. Kebijakan eviksi (eviction policy) apa yang paling tepat dikonfigurasi pada Redis agar key yang jarang diakses otomatis terhapus saat memori hampir penuh?",
+      "options": [
+        "Menggunakan noeviction agar data penting tidak hilang secara otomatis",
+        "Menggunakan allkeys-lru untuk menghapus key yang paling jarang digunakan",
+        "Menggunakan volatile-ttl untuk menghapus key berdasarkan urutan abjad",
+        "Menggunakan volatile-random untuk menghapus key secara acak dan merata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati latensi Redis meningkat drastis saat memproses command HGETALL pada sebuah Hash key di production yang berisi lebih dari 500.000 field. Command apa yang sebaiknya Anda sarankan kepada developer untuk menggantikan HGETALL guna menghindari blocking pada single-threaded event loop Redis?",
+      "options": [
+        "Menggunakan HSCAN secara iteratif dalam batch kecil untuk mengambil data",
+        "Menggunakan HKEYS untuk mengambil seluruh nama field tanpa nilai datanya",
+        "Menggunakan HEXISTS untuk mengecek keberadaan field secara paralel",
+        "Menggunakan HDEL untuk membersihkan sebagian besar field yang tidak penting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi flash sale flash-deal di platform Anda mengalami lonjakan traffic tinggi yang menyebabkan fenomena 'cache stampede', di mana banyak request bersamaan gagal mendapati cache lalu membebani database utama secara masif. Strategi penanganan apa yang paling efektif diterapkan di sisi aplikasi dengan Redis?",
+      "options": [
+        "Mengosongkan seluruh isi database Redis setiap kali terjadi lonjakan traffic",
+        "Menggunakan Redis Pub/Sub untuk menyiarkan kegagalan cache ke semua worker",
+        "Menerapkan teknik mutex lock atau probabilistic early expiration pada cache",
+        "Mematikan fitur replikasi Redis sementara waktu untuk mempercepat proses baca"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan merancang sistem penghitungan jumlah pengguna aktif harian (DAU) secara real-time yang membutuhkan efisiensi memori sangat tinggi untuk jutaan user ID. Struktur data bawaan Redis manakah yang paling optimal digunakan untuk kasus ini?",
+      "options": [
+        "Redis List untuk menampung daftar ID pengguna yang melakukan login",
+        "Redis Set untuk menyimpan kumpulan ID unik pengguna setiap harinya",
+        "Redis Bitmap atau HyperLogLog untuk efisiensi bit dan estimasi kardinalitas",
+        "Redis Sorted Set dengan skor berupa timestamp login terakhir pengguna"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah layanan perbankan digital menggunakan Redis Cluster untuk skalabilitas. Saat melakukan eksekusi perintah MGET untuk mengambil beberapa key sekaligus, aplikasi mendapati error 'CROSSSLOT Keys in request don't hash to the same slot'. Bagaimana cara memperbaiki masalah tersebut?",
+      "options": [
+        "Memastikan semua key yang ingin diambil menggunakan hashtag kurung kurawal agar berada dalam hash slot yang sama",
+        "Menonaktifkan sementara fitur cluster mode di file konfigurasi redis.conf pada setiap node",
+        "Mengubah perintah MGET menjadi satu persatu menggunakan perintah GET secara serial dengan pipeline",
+        "Menaikkan batas timeout koneksi pada client Redis agar cluster sempat memetakan slot secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu memastikan data transaksi penting di Redis tetap aman dan tidak hilang seluruhnya jika server mengalami restart mendadak, namun Anda ingin meminimalkan overhead performa disk I/O. Konfigurasi persistensi apa yang paling ideal?",
+      "options": [
+        "Mematikan RDB dan hanya mengandalkan AOF dengan opsi appendfsync selalu (always)",
+        "Menggunakan RDB snapshot berkala dikombinasikan dengan AOF appendfsync setiap detik (everysec)",
+        "Menyimpan seluruh data secara eksklusif ke dalam memori eksternal menggunakan Redis Enterprise",
+        "Membuat replika read-only tanpa mengaktifkan mekanisme backup di node utama sama sekali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps melaporkan bahwa memori Redis sering mengalami fragmentasi yang tinggi (mem_fragmentation_ratio > 1.5), meskipun penggunaan data aktual di dalamnya relatif kecil. Langkah apa yang paling tepat dilakukan untuk mengatasi masalah ini?",
+      "options": [
+        "Melakukan restart total pada seluruh server fisik tempat Redis diinstal",
+        "Mengaktifkan fitur memory defragmentation dinamis di konfigurasi Redis",
+        "Menghapus seluruh database menggunakan perintah FLUSHALL secara berkala",
+        "Mengubah tipe data string menjadi integer untuk semua key yang tersimpan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi chat menggunakan fitur Redis Pub/Sub untuk mengirimkan pesan instan antar pengguna. Namun, beberapa client yang sempat terputus koneksinya (disconnected) mengeluhkan bahwa mereka kehilangan pesan yang dikirim saat mereka offline. Apa keterbatasan Redis Pub/Sub yang menyebabkan hal ini?",
+      "options": [
+        "Redis Pub/Sub tidak memiliki mekanisme penyimpanan atau antrean pesan untuk client yang offline",
+        "Koneksi jaringan client terhalang oleh aturan firewall perusahaan yang memblokir port Redis",
+        "Kapasitas memori RAM Redis tidak mencukupi untuk menampung riwayat pesan chat",
+        "Perintah PUBLISH tidak diizinkan berjalan di luar lingkungan arsitektur Redis Cluster"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun fitur leaderboards peringkat pemain game online yang diperbarui secara real-time setiap detik dengan performa tinggi. Struktur data Redis manakah yang paling tepat dan efisien untuk keperluan ini?",
+      "options": [
+        "Redis Hash dengan field nama pemain dan nilai berupa skor total permainan",
+        "Redis List dengan memasukkan data pemain baru di bagian sisi kiri antrean",
+        "Redis Sorted Set di mana skor pemain menjadi nilai score dan ID pemain menjadi member",
+        "Redis Stream yang mencatat setiap aktivitas perolehan poin dari semua pemain"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah script Lua dijalankan di Redis untuk melakukan transaksi multi-command yang kompleks. Tiba-tiba script tersebut mengalamiinfinite loop akibat kesalahan logika perulangan. Apa dampak langsung pada instance Redis saat kondisi ini terjadi?",
+      "options": [
+        "Redis akan otomatis melakukan restart mandiri dan memulihkan data dari file RDB terakhir",
+        "Redis akan memblokir seluruh perintah lain yang masuk karena sifat eksekusi script Lua yang atomik",
+        "Redis hanya akan menghentikan eksekusi script tersebut dan mengembalikan pesan error ke client",
+        "Redis akan mengalihkan beban kerja ke server replica secara otomatis tanpa gangguan latensi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem e-commerce Anda menggunakan Redis untuk menyimpan sesi pengguna dengan TTL 2 jam. Namun, lonjakan traffic membuat RAM server cepat penuh sebelum TTL habis. Strategi manajemen memori apa yang paling tepat diterapkan pada konfigurasi Redis?",
+      "options": [
+        "Mengubah kebijakan maxmemory-policy menjadi volatile-lru agar kunci ber-TTL yang jarang dipakai terhapus otomatis",
+        "Mematikan mekanisme persistensi RDB dan AOF sepenuhnya agar memori tidak terbebani proses disk I/O",
+        "Menurunkan parameter timeout klien menjadi 30 detik agar koneksi idle segera diputus oleh server Redis",
+        "Mengaktifkan fitur cluster sharding otomatis guna membagi beban penyimpanan ke node server tambahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati latensi aplikasi meningkat karena lonjakan pembacaan data profil pengguna dari Redis menggunakan perintah HGETALL pada sebuah Hash key yang berisi lebih dari 50.000 field. Langkah perbaikan manakah yang paling efektif?",
+      "options": [
+        "Mengganti struktur data Hash tersebut dengan tipe data String terkompresi JSON",
+        "Mengubah perintah menjadi HSCAN untuk melakukan iterasi data secara bertahap",
+        "Memecah Hash key besar tersebut menjadi beberapa key terpisah berdasarkan kategori",
+        "Menggunakan perintah HMGET untuk mengambil seluruh field dalam satu eksekusi tunggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform flash sale mengalami 'cache stampede' di Redis ketika data produk berdiskon tinggi kadaluwarsa, menyebabkan ribuan request langsung menghantam database utama secara bersamaan. Solusi paling tepat untuk mencegah masalah ini adalah?",
+      "options": [
+        "Menerapkan pola probabilistic early expiration atau mutex lock sebelum melakukan query ulang ke database",
+        "Menghapus seluruh data produk dari Redis setiap kali ada transaksi sukses yang masuk dari pengguna",
+        "Menaikkan batas kapasitas maksimal memori Redis agar data tidak pernah kedaluwarsa secara otomatis",
+        "Memindahkan penyimpanan cache produk dari Redis ke memori internal aplikasi backend secara permanen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim produk meminta metrik Unique Visitors harian secara real-time dengan jutaan data kunjungan, namun kapasitas RAM Redis terbatas. Struktur data Redis manakah yang paling efisien untuk kebutuhan ini?",
+      "options": [
+        "Menggunakan tipe data Sorted Set dengan skor berupa timestamp kunjungan setiap pengguna",
+        "Menggunakan tipe data Hash di mana setiap field merepresentasikan ID unik pengguna",
+        "Menggunakan struktur data HyperLogLog untuk memperkirakan jumlah kardinalitas memori minimal",
+        "Menggunakan tipe data List untuk menampung seluruh daftar ID pengguna yang mengakses sistem"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi perbankan Anda menggunakan Redis Cluster. Saat menjalankan perintah MGET untuk mengambil saldo beberapa akun sekaligus, terjadi error 'CROSSSLOT Keys in request don't hash to the same slot'. Bagaimana cara mengatasi kendala tersebut?",
+      "options": [
+        "Menggunakan teknik hash tags (misal: {user:1000}balance) agar kunci-kunci tersebut berada pada slot hash yang sama",
+        "Mematikan mode kluster dan menjalankan Redis dalam arsitektur master-slave tunggal konvensional",
+        "Menonaktifkan validasi cross-slot pada file konfigurasi redis.conf di setiap node kluster",
+        "Mengganti perintah MGET dengan eksekusi perintah GET secara berurutan menggunakan pipeline"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan memastikan data keranjang belanja pengguna di Redis tidak hilang saat terjadi pemadaman listrik mendadak pada server. Konfigurasi persistensi apa yang paling seimbang antara performa dan keamanan data?",
+      "options": [
+        "Mengandalkan penyimpanan data secara murni di dalam memori tanpa mengaktifkan RDB maupun AOF",
+        "Menggunakan snapshot RDB setiap jam dikombinasikan dengan AOF appendfsync setiap detik",
+        "Mengaktifkan AOF dengan pengaturan appendfsync selalu (always) pada setiap perintah tulis",
+        "Melakukan replikasi sinkron ke sepuluh node replica sebelum mengonfirmasi data berhasil ditulis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "DevOps melaporkan mem_fragmentation_ratio pada server Redis production bernilai 1.8, sementara penggunaan RSS jauh lebih besar dari padaused_memory. Tindakan preventif apa yang dapat dilakukan?",
+      "options": [
+        "Melakukan restart total pada instance Redis saat jam sibuk transaksi tinggi",
+        "Mengaktifkan fitur defragmentasi memori otomatis aktif (activedefrag yes) pada Redis",
+        "Menurunkan nilai parameter maxmemory agar sistem operasi segera membuang cache kernel",
+        "Menghapus seluruh kunci yang memiliki masa kedaluwarsa pendek menggunakan perintah FLUSHALL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Fitur chat real-time menggunakan Redis Pub/Sub mengalami kehilangan pesan pada beberapa klien mobile yang sedang mengalami gangguan koneksi internet sementara. Bagaimana cara arsitektur sistem diperbaiki?",
+      "options": [
+        "Mengganti mekanisme Pub/Sub dengan Redis Streams untuk mendukung fitur consumer groups dan penahanan pesan",
+        "Menambahkan ukuran buffer output klien di Redis agar pesan tersimpan lebih lama di antrean memori",
+        "Menggunakan perintah SUBSCRIBE secara berulang-ulang dari sisi klien setiap kali koneksi terputus",
+        "Memaksa klien mobile untuk melakukan polling HTTP secara berkala ke database setiap detik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem leaderboard game online memerlukan pencatatan skor jutaan pemain dengan kemampuan mengambil peringkat 10 besar tercepat serta pembaruan skor secara instan. Struktur data apa yang harus dipilih?",
+      "options": [
+        "Sorted Set (ZSET) karena menyediakan kompleksitas waktu O(log(N)) untuk penambahan dan pencarian",
+        "Set karena mendukung operasi himpunan data unik tanpa duplikasi nilai skor pemain",
+        "List karena memungkinkan penyisipan elemen baru secara berurutan di bagian ujung data",
+        "Bitmap karena sangat efisien dalam merepresentasikan status kehadiran dan skor biner pemain"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah script Lua kompleks yang berjalan di Redis mendadak macet dan menyebabkan semua perintah lain di-block (Blocked for too long). Fitur apa yang dapat digunakan untuk menghentikan eksekusi script tersebut tanpa merestart server?",
+      "options": [
+        "Menjalankan perintah CLIENT KILL pada koneksi klien yang mengeksekusi script tersebut",
+        "Mengirimkan perintah SCRIPT KILL untuk menghentikan script yang belum mengubah data",
+        "Menjalankan perintah CONFIG RESETSTAT untuk membersihkan status antrean internal server",
+        "Menggunakan perintah SHUTDOWN NOSAVE untuk mematikan proses tanpa menulis data rusak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem e-commerce Anda menggunakan Redis untuk menyimpan keranjang belanja dengan TTL 24 jam. Tim infrastructure melaporkan bahwa penggunaan memori Redis terus meningkat linier hingga mendekati batas maksimal, meskipun jumlah pengguna aktif harian stabil. Apa langkah mitigasi paling tepat yang harus diterapkan pada konfigurasi Redis?",
+      "options": [
+        "Mengubah kebijakan maxmemory-policy menjadi volatile-lru untuk menghapus key yang memiliki TTL",
+        "Mengaktifkan mekanisme RDB snapshot setiap jam untuk membersihkan data keranjang yang usang",
+        "Menurunkan parameter timeout klien agar koneksi idle segera terputus dan membebaskan RAM",
+        "Memindahkan penyimpanan keranjang belanja sepenuhnya ke dalam struktur data Set tanpa TTL"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola Redis instance yang bertindak sebagai cache untuk katalog produk. Saat melakukan deployment kode baru, latensi aplikasi melonjak drastis secara bersamaan karena ribuan proses membaca key produk yang belum masuk ke cache. Strategi apa yang paling efektif untuk mencegah masalah ini pada rilis berikutnya?",
+      "options": [
+        "Menggunakan teknik cache warming dengan melakukan pre-load data produk populer sebelum aplikasi dibuka",
+        "Memperpanjang durasi TTL pada seluruh key produk agar data tidak pernah kadaluwarsa secara mendadak",
+        "Menonaktifkan mekanisme eviction memory di Redis agar tidak ada data produk yang terhapus otomatis",
+        "Mengganti struktur data String dengan Hash agar proses pengambilan data produk menjadi lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur analitik di aplikasi fintech Anda memerlukan penyimpanan data klik stream dalam jumlah besar per detik. Anda mendapati RAM server Redis cepat habis karena overhead memori dari tipe data String. Struktur data apa yang paling optimal untuk menghemat penggunaan memori pada kasus ini?",
+      "options": [
+        "Memanfaatkan tipe data Sorted Set untuk mengurutkan timestamp kejadian klik secara kronologis",
+        "Menggunakan tipe data Hash dengan key kecil dan field terkompresi untuk menekan overhead metadata",
+        "Memecah data string menjadi beberapa key terpisah dengan pola penamaan berbasis namespace",
+        "Memanfaatkan struktur data Stream yang dirancang khusus untuk append-only log berkapasitas besar"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim backend melaporkan bahwa sebuah operasi penghapusan key berukuran sangat besar (Linked List dengan jutaan elemen) menggunakan perintah DEL menyebabkan Redis mengalami jeda (blocking) yang signifikan pada production. Bagaimana cara mengatasi masalah ini tanpa menghentikan layanan?",
+      "options": [
+        "Mengganti perintah DEL dengan UNLINK agar penghapusan memori dilakukan secara asynchronous di background",
+        "Membatasi ukuran maksimal linked list di sisi aplikasi sebelum data tersebut disimpan ke dalam Redis",
+        "Menjalankan perintah FLUSHDB secara berkala pada jam sepi untuk membersihkan sampah memori",
+        "Mengubah arsitektur penyimpanan dari single instance menjadi Redis Cluster dengan shard terbanyak"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Anda menggunakan Redis sebagai penyimpan token autentikasi. Untuk keamanan, token harus otomatis kedaluwarsa setelah 30 menit. Namun, Anda melihat CPU usage Redis melonjak tinggi secara konsisten. Apa penyebab utama yang paling mungkin dari skenario ini?",
+      "options": [
+        "Penggunaan perintah KEYS * secara berlebihan oleh tim developer untuk memantau token aktif",
+        "Algoritma lazy expiration kewalahan karena terlalu banyak key yang kedaluwarsa secara bersamaan",
+        "Konfigurasi appendfsync diset ke always sehingga setiap pembuatan token langsung ditulis ke disk",
+        "Kapasitas network bandwidth server Redis telah mencapai batas maksimal akibat ukuran token"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem pembatasan rate limiting (API throttling) di Redis untuk mencegah serangan brute force pada endpoint login. Kriteria utama adalah akurasi tinggi dan efisiensi memori untuk jutaan user unik per hari. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Menyimpan setiap percobaan login user ke dalam struktur List dengan batasan panjang maksimum",
+        "Memanfaatkan struktur data HyperLogLog untuk mencatat dan menghitung jumlah percobaan login",
+        "Menggunakan kombinasi perintah INCR dan EXPIRE pada key unik per user setiap kali mencoba login",
+        "Menyimpan log akses lengkap ke dalam Hash key dengan field berupa timestamp presisi milidetik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah sistem notifikasi real-time menggunakan Redis Pub/Sub mengalami masalah di mana pesan sering terkirim terlambat atau menumpuk pada buffer klien tertentu yang koneksinya lambat (slow consumer). Apa risiko kritis dari kondisi ini pada arsitektur Redis Pub/Sub?",
+      "options": [
+        "Redis akan otomatis memutuskan koneksi klien tersebut jika ukuran output buffer melewati batas client-output-buffer-limit",
+        "Seluruh pesan di channel tersebut akan dihentikan pengirimannya ke semua klien hingga klien lambat melakukan disconnect",
+        "Redis akan memindahkan pesan yang menumpuk ke disk sekunder menggunakan mekanisme swap memory sementara",
+        "Klien lain di channel yang sama akan ikut mengalami penurunan performa jaringan secara drastis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam arsitektur Redis Sentinel untuk high availability, aplikasi Anda kadang mengalami kegagalan koneksi sesaat ketika terjadi proses failover master ke slave baru. Langkah apa yang harus diimplementasikan pada konfigurasi klien aplikasi?",
+      "options": [
+        "Menggunakan connection pooling dengan logika retry dan penanganan reconnect otomatis khusus Sentinel",
+        "Menghubungkan aplikasi langsung ke IP address masing-masing slave secara bergantian saat master mati",
+        "Meningkatkan parameter timeout pada koneksi TCP agar klien menunggu proses failover selesai",
+        "Mengubah mode replikasi Redis menjadi multi-master aktif untuk menghilangkan waktu jeda failover"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa operasi pembacaan data profil pengguna dari Redis Hash mengalami peningkatan latensi. Setelah diperiksa melalui perintah slowlog, ditemukan bahwa perintah HGETALL sering digunakan pada Hash key yang memiliki ribuan field. Bagaimana cara memperbaiki masalah ini secara arsitektural?",
+      "options": [
+        "Mengganti perintah HGETALL dengan HMGET untuk mengambil hanya field spesifik yang dibutuhkan aplikasi",
+        "Mengubah tipe data Hash menjadi beberapa key String terpisah untuk setiap atribut profil pengguna",
+        "Memindahkan penyimpanan profil pengguna ke dalam relational database dan hanya cache data utama",
+        "Mengaktifkan fitur kompresi otomatis di level Redis untuk memperkecil ukuran payload Hash"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu memastikan bahwa data transaksi keuangan sementara di Redis tidak hilang apabila server mengalami reboot mendadak, namun dengan dampak minimal pada performa tulis (write throughput). Konfigurasi persistensi mana yang paling ideal?",
+      "options": [
+        "Mengandalkan murni pada RDB snapshot setiap 1 jam sekali untuk menjaga performa tulis tetap maksimal",
+        "Mengaktifkan AOF (Append Only File) dengan opsi appendfsync setiap detik (everysec)",
+        "Menggunakan kombinasi AOF dengan appendfsync diset ke always untuk menjamin zero data loss",
+        "Menonaktifkan seluruh persistensi disk dan membuat replika read-only di server terpisah"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

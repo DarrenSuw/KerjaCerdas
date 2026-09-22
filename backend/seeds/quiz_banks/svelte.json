@@ -1,0 +1,306 @@
+{
+  "skill": "Svelte",
+  "skill_key": "svelte",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan dashboard analitik menggunakan Svelte. Anda perlu menampilkan daftar ribuan data transaksi yang terus diperbarui secara real-time. Bagian manakah dari sintaks Svelte yang paling tepat digunakan untuk mengoptimalkan reaktivitas variabel total pendapatan?",
+      "options": [
+        "Menggunakan deklarasi reaktif dengan label titik dua ($:) untuk variabel turunan",
+        "Membuat store khusus berbasis writable untuk menampung hasil kalkulasi",
+        "Memanfaatkan fungsi onMount untuk memicu perhitungan ulang secara berkala",
+        "Menulis fungsi helper biasa yang dipanggil langsung di dalam markup HTML"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di dalam aplikasi e-commerce Svelte, Anda ingin memastikan bahwa komponen keranjang belanja (Cart.svelte) dapat diakses dan diubah dari berbagai halaman berbeda tanpa harus melakukan prop drilling secara manual. Solusi manakah yang paling efisien?",
+      "options": [
+        "Membuat custom store menggunakan fungsi writable dari modul svelte/store",
+        "Memanfaatkan LocalStorage browser secara langsung di dalam setiap komponen",
+        "Mengirimkan fungsi callback melalui event dispatcher bertingkat dari root",
+        "Menyimpan seluruh state keranjang ke dalam cookie HTTP-only di sisi server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah animasi transisi fade saat menutup modal di Svelte terasa patah-patah karena DOM dihapus sebelum animasi selesai. Bagaimana cara memperbaiki perilaku transisi tersebut agar berjalan mulus?",
+      "options": [
+        "Menambahkan properti duration yang lebih lama pada parameter transisi bawaan",
+        "Menggunakan direktif transition:fade alih-alih memisahkan intro dan outro",
+        "Membungkus elemen modal dengan blok conditional {#if} yang tepat",
+        "Mengatur durasi animasi CSS secara manual di dalam blok style scoped"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya memory leak pada aplikasi web Svelte perusahaan Anda. Setelah diselidiki, hal ini terjadi karena event listener window resize yang didaftarkan pada onMount tidak pernah dibersihkan saat komponen dihancurkan. Langkah perbaikan apa yang harus Anda ambil?",
+      "options": [
+        "Mengembalikan fungsi cleanup atau unmount dari dalam blok kode onMount",
+        "Memindahkan pendaftaran event listener tersebut ke dalam file layout utama",
+        "Memanfaatkan store Svelte otomatis untuk menangani lifecycle event browser",
+        "Menambahkan atribut khusus removeOnDestroy pada deklarasi elemen window"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat komponen form input reusable di Svelte dan ingin mendukung penggunaan modifier bind:value dari komponen induk dengan mudah. Fitur Svelte apa yang dirancang khusus untuk menangani skenario binding dua arah ini?",
+      "options": [
+        "Menggunakan dispatcher kustom dengan payload event detail yang sesuai",
+        "Memanfaatkan direktif export let berpasangan dengan event on:input",
+        "Menerapkan binding langsung menggunakan sintaks dollar bind kustom",
+        "Menggunakan fitur binding props bawaan dengan direktif bind:propName"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek SvelteKit untuk portal berita, Anda perlu mengambil data artikel secara server-side sebelum halaman dirender untuk kebutuhan SEO. Di file manakah fungsi pemuatan data tersebut harus diletakkan?",
+      "options": [
+        "Di dalam file komponen Svelte menggunakan blok pemanggilan onMount",
+        "Di dalam file pendamping khusus dengan ekstensi .js atau .ts bernama +page.server",
+        "Di dalam file konfigurasi global aplikasi yang berada pada root direktori",
+        "Di dalam fungsi middleware server Node.js kustom sebelum proses routing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menerapkan optimisasi performa saat merender daftar item tabel yang sangat panjang di Svelte dengan menggunakan teknik keyed each blocks. Mengapa penambahan key unik pada blok each sangat krusial di Svelte?",
+      "options": [
+        "Agar kompiler Svelte dapat mendaur ulang elemen DOM secara akurat saat ada perubahan urutan",
+        "Untuk mencegah terjadinya duplicate key error pada konsol browser saat runtime",
+        "Memungkinkan Svelte melakukan lazy loading gambar pada setiap baris tabel secara otomatis",
+        "Memastikan memori browser langsung dibebaskan begitu item dihapus dari memori"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah komponen Svelte memerlukan manipulasi DOM secara langsung (misalnya memanggil method focus() pada elemen input saat halaman dimuat). Pendekatan idiomatik apa yang disediakan Svelte untuk kasus ini?",
+      "options": [
+        "Menggunakan fungsi querySelector standar dokumen JavaScript di dalam onMount",
+        "Memanfaatkan variabel referensi lokal yang diikat menggunakan direktif bind:this",
+        "Mengakses langsung objek event target yang dikirimkan oleh browser native",
+        "Membuat ID unik pada elemen lalu mencarinya via fungsi getElementById"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi multi-bahasa menggunakan Svelte dan perlu membuat slot konten fleksibel di dalam komponen Card. Svelte mendukung fitur slot bernama (named slots). Bagaimana cara komponen anak mendefinisikan area fallback jika induk tidak menyediakan slot tersebut?",
+      "options": [
+        "Menuliskan konten cadangan di dalam tag pembuka dan penutup elemen slot itu sendiri",
+        "Membuat variabel reaktif khusus bertipe string untuk menampung teks default",
+        "Memeriksa keberadaan props children menggunakan fungsi helper bawaan Svelte",
+        "Menggunakan direktif fallback khusus pada atribut tag slot di komponen anak"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi SvelteKit ke lingkungan production menggunakan static adapter, Anda mendapati bahwa halaman dinamis dengan parameter slug gagal menghasilkan file HTML pramerender. Apa tindakan korektif yang harus dilakukan?",
+      "options": [
+        "Menambahkan fungsi pemetaan rute dinamis menggunakan export const entries",
+        "Mengubah konfigurasi adapter menjadi node server agar mendukung parameter",
+        "Membuat file catch-all route tunggal untuk menangkap seluruh parameter slug",
+        "Menonaktifkan opsi prerender pada file konfigurasi svelte.config.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun aplikasi manajemen inventaris menggunakan Svelte. Anda perlu memperbarui state array `items` ketika pengguna mengeklik tombol hapus pada salah satu item. Pendekatan reaktif mana yang paling tepat agar UI langsung memperbarui tampilannya?",
+      "options": [
+        "Membuat fungsi mutasi langsung seperti items.pop() lalu memanggil render ulang manual",
+        "Melakukan assignment ulang menggunakan metode filter seperti items = items.filter(i => i.id !== id)",
+        "Menggunakan fungsi push array standar yang otomatis memicu siklus render komponen",
+        "Membungkus array items ke dalam objek khusus store dengan method update kustom"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di dalam komponen form pendaftaran Svelte, Anda ingin memvalidasi nilai input password secara real-time dan memperbarui variabel `isStrong` secara otomatis setiap kali variabel `password` berubah. Cara paling idiomatik di Svelte adalah...",
+      "options": [
+        "Membuat reactive declaration menggunakan tanda dolar seperti $: isStrong = password.length > 8",
+        "Memasang event listener on:input pada elemen input untuk menjalankan fungsi validasi manual",
+        "Menggunakan onMount lifecycle hook untuk memantau perubahan nilai password dari DOM",
+        "Memanfaatkan fungsi watch bawaan dari modul Svelte store untuk mendeteksi perubahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki komponen kustom `CustomButton.svelte` dan ingin meneruskan event klik dari tombol HTML di dalamnya ke komponen induk tanpa harus mendefinisikan ulang setiap event handler. Apa cara terbaik di Svelte?",
+      "options": [
+        "Menggunakan dispatcher kustom dari createEventDispatcher dan memanggilnya di setiap event",
+        "Meneruskan objek event secara manual melalui props fungsi callback dari komponen induk",
+        "Menggunakan forward event tanpa argumen pada elemen HTML dengan menuliskan on:click",
+        "Menangkap event secara global di tingkat window menggunakan store subscription khusus"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah aplikasi kasir berbasis Svelte, Anda membuat writable store bernama `cartStore` untuk menyimpan daftar item belanja. Di dalam komponen `Checkout.svelte`, Anda ingin membaca nilai store tersebut tanpa harus berlangganan (subscribe) manual dan melakukan cleanup saat komponen unmount. Pendekatan mana yang paling bersih?",
+      "options": [
+        "Menggunakan fungsi get() dari svelte/store di dalam fungsi handler tombol",
+        "Memanggil method subscribe di onMount dan menyimpannya ke variabel lokal",
+        "Menggunakan awalan tanda dolar pada nama store seperti $cartStore di bagian markup",
+        "Membuat turunan store baru menggunakan fungsi derived untuk menghindari memori bocor"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan dashboard analitik menggunakan SvelteKit dan ingin memastikan halaman laporan penjualan hanya bisa diakses oleh pengguna yang sudah login. Di mana tempat paling tepat untuk menempatkan logika pemeriksaan autentikasi ini?",
+      "options": [
+        "Di dalam blok onMount pada komponen halaman utama laporan penjualan",
+        "Di dalam file load function pada file layout atau page server SvelteKit",
+        "Melalui reactive statement di dalam komponen root aplikasi SvelteKit",
+        "Menggunakan middleware kustom yang berjalan di sisi klien sebelum render"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat komponen `Modal.svelte` yang mendukung konten fleksibel menggunakan fitur slot. Namun, Anda juga ingin menyediakan konten cadangan (fallback) jika pengguna tidak memasukkan konten apa pun ke dalam slot tersebut. Bagaimana cara menulisnya di Svelte?",
+      "options": [
+        "Menambahkan parameter default pada tag slot seperti <slot>Konten Default</slot>",
+        "Memeriksa keberadaan anak komponen menggunakan properti khusus $$slots di blok script",
+        "Menggunakan kondisi if bersarang untuk mendeteksi apakah slot memiliki elemen turunan",
+        "Membuat prop opsional bertipe string untuk menggantikan fungsi slot yang kosong"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek SvelteKit, Anda memiliki endpoint API server (`+server.js`) yang menerima data JSON dari klien. Bagaimana cara mengambil payload JSON yang dikirimkan melalui method POST di dalam fungsi handler `POST` tersebut?",
+      "options": [
+        "Membaca langsung dari objek global process.env yang disediakan oleh SvelteKit",
+        "Memanggil method request.json() yang tersedia di dalam parameter objek event",
+        "Menggunakan helper function readBody dari modul internal svelte/node",
+        "Mengambil data dari properti form data yang otomatis diurai oleh router server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati performa aplikasi Svelte menurun karena ada fungsi komputasi berat yang dijalankan setiap kali komponen dirender ulang, padahal argumen masukannya tidak berubah. Cara paling efektif untuk mengoptimalkannya adalah...",
+      "options": [
+        "Membungkus fungsi tersebut dengan deklarasi reaktif berbasis dependensi spesifik",
+        "Memindahkan seluruh logika berat tersebut ke dalam file modul JavaScript terpisah",
+        "Menjalankan fungsi komputasi hanya sekali di dalam siklus hidup onMount komponen",
+        "Mengubah fungsi berat tersebut menjadi asynchronous menggunakan Promise.resolve"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membangun fitur tema gelap (dark mode) di aplikasi Svelte, Anda ingin menyimpan preferensi pengguna ke dalam `localStorage` dan menyinkronkannya dengan sebuah store agar dapat diakses lintas komponen. Pendekatan reaktif store yang paling tepat adalah...",
+      "options": [
+        "Membuat custom store yang membaca dan menulis ke localStorage setiap kali method update dipanggil",
+        "Menggunakan writable store biasa lalu memperbarui localStorage manual di setiap komponen",
+        "Memanfaatkan efek samping dari reactive statement dolar untuk menulis langsung ke DOM",
+        "Menyimpan status tema di cookie server agar bisa dibaca langsung saat proses SSR"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menambahkan transisi geser (slide) saat sebuah elemen peringatan (alert) muncul atau hilang dari DOM di Svelte. Modul mana yang harus diimpor dan bagaimana cara memasangnya pada elemen tersebut?",
+      "options": [
+        "Mengimpor slide dari svelte/transition lalu memasangnya menggunakan direktif transition:slide",
+        "Mengimpor animasiSlide dari svelte/animate lalu menerapkannya lewat atribut animate:slide",
+        "Mengimpor slideEffect dari svelte/easing dan memanggilnya di dalam event handler on:click",
+        "Mengimpor transisi custom dari svelte/motion lalu menghubungkannya dengan variabel store"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat komponen Svelte yang menampilkan data kurs mata uang secara real-time. Data ini diterima melalui WebSocket. Anda ingin memastikan bahwa koneksi WebSocket ditutup dengan benar saat komponen dihancurkan untuk mencegah kebocoran memori. Apa cara yang paling tepat di Svelte?",
+      "options": [
+        "Menggunakan fungsi onMount dan mengembalikan fungsi cleanup dari callback tersebut",
+        "Membuat file terpisah untuk logika WebSocket lalu mengimpornya ke dalam blok script",
+        "Menempatkan logika penutupan koneksi di dalam blok markup kondisi if reaktif",
+        "Memanfaatkan event listener bawaan browser pada objek window di dalam komponen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di dalam aplikasi SvelteKit, Anda memiliki halaman detail produk (`[id]/+page.svelte`). Anda ingin mengambil data produk berdasarkan parameter URL `id` dan juga melewatkan query parameter tambahan dari URL (misalnya `ref=promo`) ke fungsi load. Bagaimana cara mengakses query parameter tersebut di fungsi `load` SvelteKit?",
+      "options": [
+        "Menggunakan properti params yang tersedia langsung pada objek parameter fungsi load",
+        "Membaca properti url.searchParams dari objek event yang diterima oleh fungsi load",
+        "Mengambil data dari store halaman global menggunakan fungsi get dari svelte/store",
+        "Mengakses objek window.location secara langsung di dalam blok kode server-side"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur unggah foto profil pada aplikasi Svelte. Anda ingin menampilkan pratinjau gambar secara lokal sebelum benar-benar diunggah ke server menggunakan objek `FileReader`. Di mana tempat paling tepat menuliskan logika reaktif untuk mendeteksi perubahan file input?",
+      "options": [
+        "Menggunakan direktif bind:files pada elemen input dan memantaunya lewat blok reaktif $:",
+        "Menambahkan event handler on:load pada elemen gambar untuk memicu fungsi pembacaan",
+        "Membuat writable store khusus untuk menampung data binary dari file yang dipilih",
+        "Memanggil fungsi fetch secara asinkron setiap kali tombol unggah ditekan pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek SvelteKit, Anda ingin mengatur agar layout tertentu hanya diterapkan pada halaman admin dan tidak mencakup halaman publik utama. Struktur folder SvelteKit apa yang harus Anda buat?",
+      "options": [
+        "Membuat folder khusus admin dengan file +layout.svelte dan mengecualikan folder publik",
+        "Menggunakan route group dengan membuat folder bernama `(admin)` yang berisi +layout.svelte",
+        "Menambahkan kondisi pengecekan path URL menggunakan hook handle di file hooks.server.js",
+        "Membuat komponen layout tunggal di root dan melakukan render kondisional berbasis store"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah state turunan di Svelte perlu dihitung ulang hanya ketika salah satu dari dua variabel dasar berubah. Anda menuliskan `$code = a + b`. Namun, Anda ingin menghindari perhitungan jika variabel `a` bernilai nol. Bagaimana cara menuliskan blok reaktif yang tepat?",
+      "options": [
+        "Menggunakan fungsi computed bawaan Svelte seperti yang ada pada framework lain",
+        "Membuat custom store yang memuat fungsi logika kalkulasi khusus di dalam file store",
+        "Menuliskan blok reaktif dengan pernyataan kondisi if di dalam blok script komponen",
+        "Memanfaatkan lifecycle hook beforeUpdate untuk mengevaluasi nilai variabel setiap saat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun aplikasi dasbor menggunakan Svelte di mana pengguna dapat menyeret dan melepaskan (drag and drop) kartu widget. Anda perlu memperbarui urutan array state `widgets` setelah proses drop selesai. Mengapa mutasi langsung seperti `widgets[0] = widgets[1]` terkadang tidak memicu pembaruan UI di Svelte?",
+      "options": [
+        "Svelte melacak perubahan state berdasarkan operasi penugasan (assignment) ulang variabel",
+        "Array di dalam JavaScript tidak mendukung operasi indeks langsung pada komponen Svelte",
+        "Svelte memerlukan pemanggilan fungsi khusus bernama forceUpdate setiap mengubah array",
+        "Operasi drag and drop memblokir thread utama sehingga event reaktif terabaikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi SvelteKit, Anda ingin mengamankan sebuah halaman API endpoint (`+server.js`) agar hanya bisa diakses oleh pengguna yang sudah memiliki token otentikasi yang valid di cookies. Di mana Anda harus memvalidasi token tersebut?",
+      "options": [
+        "Di dalam fungsi load pada file +page.server.js yang mendampingi halaman terkait",
+        "Di dalam fungsi handler method (seperti GET atau POST) di dalam file +server.js",
+        "Di dalam blok onMount yang ada pada komponen Svelte utama di sisi klien",
+        "Di dalam fungsi handle yang didefinisikan pada file hooks.client.js aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat komponen dropdown kustom di Svelte. Anda ingin komponen induk dapat mendengarkan event kustom bernama `select` yang dikirimkan oleh komponen dropdown tersebut saat opsi dipilih. Bagaimana cara komponen anak mengirimkan event tersebut?",
+      "options": [
+        "Mengimpor dan memanggil fungsi dispatch dari modul svelte dengan nama event dan data",
+        "Menggunakan fungsi createEventDispatcher dari svelte untuk menghasilkan fungsi pemicu event",
+        "Memanggil langsung fungsi onSelect yang diterima sebagai props dari komponen induk",
+        "Mengubah nilai writable store global yang dibagikan antara induk dan anak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan ukuran bundle aplikasi SvelteKit untuk production. Anda memiliki pustaka chart pihak ketiga yang cukup besar yang hanya boleh dimuat di sisi klien (browser) karena mengakses objek `window` secara langsung. Bagaimana cara memuat pustaka tersebut dengan benar?",
+      "options": [
+        "Mengimpor pustaka di bagian atas file +page.svelte dengan flag khusus clientOnly",
+        "Memuat pustaka secara dinamis menggunakan fungsi import() di dalam blok onMount",
+        "Menempatkan impor pustaka di dalam file hooks.client.js agar dimuat belakangan",
+        "Membungkus impor pustaka dengan blok kondisi if ($browser) di dalam file layout"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat animasi transisi kustom di Svelte menggunakan fungsi transition bawaan yang mengubah properti `opacity` dan `scale` secara bersamaan pada sebuah elemen. Apa parameter yang harus dikembalikan oleh fungsi transisi kustom tersebut agar Svelte dapat menjalankannya?",
+      "options": [
+        "Sebuah objek yang memiliki properti duration dan fungsi css yang mengembalikan string CSS",
+        "Sebuah fungsi interpolasi berbasis waktu yang langsung memodifikasi style DOM secara periodik",
+        "Sebuah Promise yang diselesaikan ketika durasi animasi CSS pada elemen selesai dijalankan",
+        "Sebuah objek konfigurasi yang berisi elemen target DOM dan durasi milidetik transisi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

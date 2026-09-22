@@ -1,0 +1,306 @@
+{
+  "skill": "Investment Analysis",
+  "skill_key": "investment analysis",
+  "questions": [
+    {
+      "question": "Anda sedang menganalisis laporan keuangan PT XYZ Tbk yang bergerak di sektor ritel untuk rencana investasi jangka menengah. Anda menemukan bahwa perusahaan mencatatkan pertumbuhan laba bersih yang sangat tinggi, namun arus kas dari aktivitas operasi bernilai negatif selama dua tahun berturut-turut. Langkah analisis apa yang paling tepat untuk dilakukan selanjutnya?",
+      "options": [
+        "Membatalkan rencana investasi karena laba bersih tidak didukung oleh kas aktual",
+        "Memeriksa catatan atas laporan keuangan untuk melihat investasi modal kerja atau piutang",
+        "Menghitung ulang rasio solvabilitas guna memastikan kemampuan membayar utang jangka pendek",
+        "Membandingkan margin laba kotor perusahaan dengan rata-rata industri ritel nasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis di sebuah perusahaan sekuritas, Anda diminta menilai valuasi PT ABC yang baru saja melakukan penawaran umum perdana (IPO). Perusahaan ini memiliki tingkat pertumbuhan yang tinggi dan belum membagikan dividen secara konsisten. Metode valuasi relatif manakah yang paling relevan untuk digunakan?",
+      "options": [
+        "Price to Book Value karena mencerminkan nilai aset bersih secara konservatif",
+        "Dividend Discount Model karena memperhitungkan ekspektasi arus kas masa depan",
+        "Price to Earnings Ratio karena laba bersih sudah mencerminkan kinerja operasional",
+        "Price to Sales Ratio atau EV/EBITDA karena mengabaikan struktur modal dan laba negatif"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Manajemen PT Makmur Sejahtera berencana menerbitkan obligasi untuk ekspansi pabrik di tengah tren kenaikan suku bunga acuan Bank Indonesia. Sebagai analis kredit, bagaimana Anda mengevaluasi risiko suku bunga terhadap kemampuan bayar perusahaan?",
+      "options": [
+        "Melihat rasio cakupan bunga atau Interest Coverage Ratio terhadap proyeksi beban bunga baru",
+        "Menghitung durasi obligasi untuk memastikan kecocokan dengan profil investor institusi",
+        "Menganalisis volatilitas harga saham perusahaan di Bursa Efek Indonesia secara harian",
+        "Membandingkan imbal hasil obligasi tersebut dengan yield Surat Berharga Negara tenor sama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengevaluasi proyek pembangunan gudang logistik dengan nilai investasi awal Rp50 miliar. Proyek ini memiliki estimasi arus kas masuk yang tidak merata selama 5 tahun ke depan dan tingkat diskonto (cost of capital) sebesar 12%. Metodologi penganggaran modal mana yang paling tepat untuk mengukur tingkat pengembalian riil dalam persentase?",
+      "options": [
+        "Menghitung Net Present Value untuk melihat total nilai tambah moneter bagi pemegang saham",
+        "Menggunakan Payback Period guna mengetahui waktu pemulihan modal investasi awal",
+        "Menghitung Internal Rate of Return untuk membandingkannya langsung dengan biaya modal",
+        "Menerapkan Profitability Index untuk menilai efisiensi penggunaan dana per rupiah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Anugerah Energi memiliki rasio Debt to Equity Ratio (DER) sebesar 2,5 kali, jauh di atas rata-rata industri sebesar 1,2 kali. Namun, manajemen mengklaim struktur modal ini optimal karena sebagian besar utang bersumber dari pinjaman afiliasi dengan bunga rendah. Bagaimana sikap analis dalam menilai risiko keuangan ini?",
+      "options": [
+        "Mengabaikan tingginya DER karena pinjaman afiliasi tidak melibatkan risiko kredit eksternal",
+        "Tetap memperhitungkan pinjaman afiliasi sebagai kewajiban dan menguji sensitivitas beban bunga",
+        "Menurunkan proyeksi pendapatan secara drastis untuk mengimbangi tingginya risiko kebangkrutan",
+        "Mengubah metode valuasi dari berbasis arus kas menjadi berbasis aset bersih yang likuid"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam menyusun model proyeksi keuangan untuk emiten properti, Anda perlu memperkirakan pendapatan pra-penjualan (marketing sales) untuk tiga tahun ke depan. Variabel makroekonomi domestik manakah yang memiliki korelasi langsung dan paling krusial untuk dimasukkan ke dalam asumsi model?",
+      "options": [
+        "Tingkat inflasi inti dan cadangan devisa nasional yang dikelola oleh bank sentral",
+        "Suku bunga KPR perbankan serta pertumbuhan produk domestik bruto regional",
+        "Fluktuasi nilai tukar rupiah terhadap dolar Amerika Serikat untuk bahan baku impor",
+        "Indeks keyakinan konsumen sektor manufaktur dan tingkat pengangguran terbuka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis portofolio investasi reksa dana campuran milik klien institusional. Portofolio tersebut terdiri dari 50% saham berkapitalisasi besar, 30% obligasi korporasi, dan 20% kas. Klien meminta untuk meningkatkan potensi imbal hasil tanpa menambah risiko pasar secara signifikan. Tindakan penyeimbangan ulang apa yang paling logis?",
+      "options": [
+        "Memindahkan seluruh porsi kas ke dalam saham lapis ketiga yang memiliki volatilitas tinggi",
+        "Mengalihkan sebagian porsi obligasi korporasi ke obligasi pemerintah dengan tenor lebih panjang",
+        "Mengurangi porsi obligasi korporasi dan menambah alokasi pada saham berdividen stabil",
+        "Menjual saham berkapitalisasi besar dan memborong instrumen derivatif berjangka pendek"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur tekstil di Jawa Barat mengalami penurunan marjin laba kotor secara konsisten selama empat kuartal akibat kenaikan harga bahan baku kapas global dan upah minimum regional. Sebagai analis ekuitas, rekomendasi investasi apa yang paling tepat untuk diberikan?",
+      "options": [
+        "Melakukan aksi beli karena harga bahan baku global biasanya bersifat siklikal pendek",
+        "Menurunkan proyeksi laba bersih dan memberikan rekomendasi netral atau kurangi",
+        "Menaikkan target harga saham berdasarkan asumsi efisiensi mesin produksi otomatis",
+        "Menyarankan manajemen untuk menerbitkan saham baru guna melunasi utang operasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menghitung Weighted Average Cost of Capital (WACC) untuk PT Logistik Nusantara yang berencana ekspansi. Perusahaan menggunakan 60% ekuitas dan 40% utang. Diketahui biaya ekuitas 14%, biaya utang sebelum pajak 9%, dan tarif pajak perusahaan 22%. Berapa nilai WACC yang tepat untuk dimasukkan ke model DCF?",
+      "options": [
+        "10,81%",
+        "11,20%",
+        "12,12%",
+        "12,40%"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Solusi Digital mencatatkan rasio Return on Equity (ROE) yang sangat mengesankan sebesar 35% tahun lalu. Berdasarkan analisis DuPont tiga komponen, Anda mendapati bahwa margin laba bersih perusahaan tipis, perputaran aset rendah, namun rasio leverage keuangan sangat tinggi. Apa kesimpulan utama dari analisis profil risiko perusahaan ini?",
+      "options": [
+        "Kinerja profitabilitas sangat efisien berkat keunggulan operasional dan inovasi teknologi",
+        "Pertumbuhan bisnis ditopang oleh pendanaan utang yang agresif sehingga rentan terhadap guncangan",
+        "Perusahaan memiliki posisi kas yang sangat kuat untuk melakukan ekspansi organik tanpa pinjaman",
+        "Efisiensi penggunaan aset tetap menjadi motor utama penciptaan nilai bagi pemegang saham"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang meninjau saham PT Bank Mega Tbk (MEGA) untuk dimasukkan ke dalam portofolio investasi reksa dana pendapatan tetap. Dalam analisis fundamental perbankan, indikator manakah yang paling tepat Anda gunakan untuk menilai efisiensi operasional bank tersebut?",
+      "options": [
+        "Net Interest Margin untuk melihat kemampuan bank menekan biaya dana",
+        "Return on Assets untuk mengukur tingkat profitabilitas dari aset total",
+        "Biaya Operasional terhadap Pendapatan Operasional guna efisiensi",
+        "Loan to Deposit Ratio untuk memantau likuiditas penyaluran kredit"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai analis di manajer investasi, Anda diminta mengevaluasi prospek PT Astra Agro Lestari Tbk (AALI) di tengah fluktuasi harga minyak kelapa sawit mentah (CPO). Faktor eksternal apa yang paling krusial untuk dimasukkan dalam asumsi sensitivitas model DCF?",
+      "options": [
+        "Kebijakan tarif bea keluar ekspor dan mandat biodiesel domestik",
+        "Fluktuasi nilai tukar rupiah terhadap yen Jepang secara langsung",
+        "Tingkat suku bunga acuan bank sentral Amerika Serikat secara ketat",
+        "Pertumbuhan volume penjualan kendaraan bermotor roda empat nasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Nusantara Infrastructure Tbk berencana mengakuisisi hak konsesi jalan tol baru. Dalam menyusun model Discounted Cash Flow (DCF), pendekatan apa yang paling akurat untuk memproyeksikan arus kas bebas unlevered (FCFF) proyek infrastruktur tersebut?",
+      "options": [
+        "Mengasumsikan pertumbuhan pendapatan konstan sesuai inflasi umum",
+        "Memperhitungkan tarif tol berdasarkan eskalasi regulasi dan proyeksi volume",
+        "Mengabaikan biaya modal pemeliharaan karena dianggap tidak material",
+        "Menggunakan asumsi margin laba bersih yang sama dengan sektor industri ritel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan analisis horisontal pada laporan posisi keuangan PT Unilever Indonesia Tbk (UNVR) untuk melihat tren modal kerja bersih. Indikasi apa yang paling mungkin Anda temukan jika siklus konversi kas (Cash Conversion Cycle) melar secara signifikan?",
+      "options": [
+        "Peningkatan efisiensi penagihan piutang dari pelanggan ritel modern",
+        "Penurunan drastis hari persediaan akibat percepatan proses produksi",
+        "Kebutuhan tambahan modal kerja operasional yang dibiayai utang jangka pendek",
+        "Kenaikan posisi kas dan setara kas secara otomatis di neraca keuangan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menilai kewajaran harga saham PT Telkom Indonesia Tbk (TLTL) dibandingkan kompetitor utamanya, Anda memutuskan menggunakan metode Relative Valuation berbasis EV/EBITDA. Mengapa metrik ini lebih dipilih dibandingkan Price to Earnings Ratio (PER) untuk sektor telekomunikasi?",
+      "options": [
+        "EV/EBITDA mengabaikan pengaruh struktur modal dan beban depresiasi aset masif",
+        "PER tidak dapat dihitung jika perusahaan mencatatkan kerugian bersih operasional",
+        "EV/EBITDA secara langsung mencerminkan dividen tunai yang dibagikan kepada pemegang",
+        "PER selalu menghasilkan nilai valuasi yang lebih rendah daripada nilai pasar wajar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Indofood CBP Sukses Makmur Tbk (ICBP) berencana menerbitkan surat utang berdenominasi dolar AS untuk mendanai akuisisi strategis. Risiko apa yang harus paling diwaspadai oleh analis investasi dalam menilai kelayakan kredit penerbitan tersebut?",
+      "options": [
+        "Risiko fluktuasi nilai tukar rupiah terhadap dolar AS yang menggerus laba",
+        "Risiko penurunan harga komoditas gandum di pasar berjangka internasional",
+        "Risiko kenaikan upah minimum regional pabrik pengolahan di Indonesia",
+        "Risiko perubahan preferensi konsumen terhadap produk mi instan lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menganalisis laporan arus kas PT Aneka Tambang Tbk (ANTM). Selama tiga tahun berturut-turut, perusahaan mencatatkan arus kas dari aktivitas operasi positif, namun arus kas dari aktivitas investasi negatif yang sangat besar karena ekspansi tambang nikel. Bagaimana interpretasi yang tepat?",
+      "options": [
+        "Perusahaan mengalami kesulitan likuiditas akut dalam menutup biaya operasional",
+        "Perusahaan sedang berada dalam fase pertumbuhan ekspansif menggunakan kas internal",
+        "Manajemen gagal mengelola modal kerja sehingga terjadi inefisiensi produksi",
+        "Perusahaan harus segera melikuidasi aset tetap untuk menghindari kebangkrutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Kalbe Farma Tbk (KLBF) memiliki posisi kas bersih (net cash) yang kuat tanpa utang berbunga jangka panjang. Dalam menghitung biaya modal rata-rata tertimbang (WACC) untuk proyek riset obat baru, bagaimana perlakuan yang benar terhadap komponen biaya utang?",
+      "options": [
+        "Biaya utang dihitung menggunakan suku bunga pinjaman bank komersial terbesar",
+        "Komponen biaya utang diabaikan sehingga WACC hanya mencerminkan biaya ekuitas",
+        "Bobot utang dimasukkan sebesar nilai pasar aset lancar dikurangi liabilitas",
+        "Biaya utang diambil dari rata-rata tertimbang seluruh obligasi pemerintah aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengevaluasi penawaran umum perdana (IPO) saham PT GoTo Gojek Tokopedia Tbk. Menggunakan metode SOTP (Sum-of-The-Parts), tantangan utama apa yang biasanya dihadapi analis dalam menentukan nilai wajar perusahaan ekosistem digital tersebut?",
+      "options": [
+        "Kesulitan menentukan tingkat pertumbuhan terminal untuk setiap lini bisnis secara terpisah",
+        "Ketiadaan data historis keuangan karena perusahaan baru berdiri kurang dari setahun",
+        "Kompleksitas valuasi sinergi silang antarsegmen bisnis yang memiliki model berbeda",
+        "Kewajiban hukum untuk menyamakan metrik valuasi dengan perusahaan manufaktur konvensional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah dana pensiun di Jakarta ingin mengalokasikan dana ke Surat Berharga Negara (SBN) seri FR dengan tenor 10 tahun. Sebagai analis investasi, metrik apa yang paling tepat Anda gunakan untuk mengukur sensitivitas harga obligasi tersebut terhadap perubahan suku bunga pasar?",
+      "options": [
+        "Yield to Maturity untuk memperkirakan tingkat pengembalian total tahunan",
+        "Modified Duration untuk mengestimasi persentase perubahan harga obligasi",
+        "Current Yield untuk menghitung perbandingan kupon terhadap harga pasar",
+        "Credit Spread untuk memonitor risiko gagal bayar penerbit obligasi negara"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis laporan laba rugi PT Semen Indonesia Tbk (SMGR) untuk kuartal berjalan. Beban pokok penjualan (COGS) mengalami lonjakan signifikan akibat kenaikan harga bahan bakar batu bara, sementara harga jual rata-rata produk belum disesuaikan. Tindakan analitis manakah yang paling tepat untuk mengukur dampak langsung kondisi ini terhadap profitabilitas operasional?",
+      "options": [
+        "Menghitung perubahan marjin laba kotor untuk melihat seberapa besar efisiensi biaya produksi tergerus",
+        "Menganalisis rasio lancar guna memastikan likuiditas perusahaan tetap aman dalam jangka pendek",
+        "Memeriksa laporan arus kas aktivitas pendanaan untuk melihat sumber alternatif pelunasan utang",
+        "Menilai tingkat perputaran piutang usaha untuk mendeteksi potensi keterlambatan penagihan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai analis di sebuah sekuritas, Anda diminta menghitung nilai intrinsik saham PT Mitra Adiperkasa Tbk (MAPI) menggunakan metode Free Cash Flow to Equity (FCFE). Proyeksi menunjukkan peningkatan modal kerja bersih yang cukup agresif dalam tiga tahun ke depan karena ekspansi gerai baru. Bagaimana perlakuan perubahan modal kerja tersebut dalam perhitungan FCFE?",
+      "options": [
+        "Ditambahkan ke laba bersih karena mencerminkan kas masuk dari aktivitas operasional",
+        "Diabaikan karena pos modal kerja hanya relevan untuk perhitungan valuasi berbasis aset",
+        "Pengurang dari arus kas karena peningkatan modal kerja menyerap kas aktual perusahaan",
+        "Dikurangkan langsung dari total liabilitas jangka pendek pada tahun proyeksi berjalan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Indah Kiat Pulp & Paper Tbk (INKP) memiliki porsi utang dalam mata uang USD yang cukup besar, sementara sebagian besar pendapatannya menggunakan Rupiah. Di tengah tren pelemahan nilai tukar Rupiah terhadap USD, langkah evaluasi risiko apa yang harus Anda prioritaskan dalam model keuangan?",
+      "options": [
+        "Memproyeksikan kenaikan biaya bunga dan rugi selisih kurs yang akan menekan laba bersih",
+        "Menghitung ulang rasio perputaran persediaan untuk mengantisipasi penurunan permintaan",
+        "Menurunkan tingkat diskonto (cost of equity) dalam model valuasi DCF secara proporsional",
+        "Menaikkan asumsi pertumbuhan pendapatan ekspor secara agresif di tahun berikutnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengevaluasi dua proyek investasi penambahan armada kapal bagi emiten pelayaran PT Samudera Indonesia Tbk (SMDR). Proyek A memiliki NPV lebih besar tetapi IRR lebih rendah dibanding Proyek B karena perbedaan pola arus kas masuk. Konflik indikator ini biasanya diselesaikan dengan cara apa dalam pengambilan keputusan investasi?",
+      "options": [
+        "Memilih Proyek B karena IRR yang lebih tinggi menjamin pengembalian persentase modal lebih cepat",
+        "Memilih Proyek A karena NPV mengukur penambahan nilai absolut kekayaan pemegang saham",
+        "Merata-ratakan kedua nilai metrik tersebut untuk mendapatkan hasil kompromi yang seimbang",
+        "Mengandalkan periode pengembalian modal (payback period) untuk mengabaikan kedua metrik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan perkebunan kelapa sawit, PT London Sumatra Indonesia Tbk (LSIP), mencatat fluktuasi harga jual CPO yang tajam. Dalam menyusun skenario stress test untuk valuasi perusahaan, variabel sensitivitas manakah yang paling krusial untuk diuji dampaknya terhadap marjin EBITDA?",
+      "options": [
+        "Biaya pemeliharaan infrastruktur kantor pusat dan lisensi perangkat lunak administrasi",
+        "Biaya tenaga kerja pemanen tandan buah segar dan harga pupuk kimia global",
+        "Komposisi pendanaan antara pinjaman bank sindikasi domestik dan penerbitan sukuk",
+        "Tingkat pajak penghasilan badan sesuai dengan ketentuan undang-undang perpajakan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis efisiensi penggunaan aset pada PT Ace Hardware Indonesia Tbk (ACES). Selama dua tahun terakhir, perputaran aset tetap (fixed asset turnover) mengalami penurunan meskipun pendapatan relatif stabil. Apa implikasi utama dari temuan ini bagi analisis fundamental?",
+      "options": [
+        "Perusahaan berhasil melakukan efisiensi operasional dengan mengurangi investasi aset baru",
+        "Produktivitas dari ekspansi gerai atau fasilitas pendukung belum sebanding dengan nilai perolehannya",
+        "Struktur modal perusahaan terlalu bergantung pada pembiayaan utang jangka panjang",
+        "Marjin laba bersih perusahaan mengalami lonjakan akibat efisiensi biaya overhead"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam melakukan analisis kredit untuk penerbitan obligasi korporasi PT Medco Energi Internasional Tbk (MEDC), Anda memeriksa rasio EBITDA to Interest Coverage. Mengapa rasio ini lebih dipilih oleh analis obligasi dibandingkan rasio Return on Equity (ROE) untuk menilai risiko gagal bayar?",
+      "options": [
+        "EBITDA to Interest Coverage mengukur kemampuan kas operasional langsung untuk membayar beban bunga utang",
+        "ROE hanya mencerminkan tingkat pengembalian bagi pemegang saham biasa tanpa memperhitungkan kreditor",
+        "EBITDA memperhitungkan unsur depresiasi aset tetap yang tidak berdampak pada kas perusahaan",
+        "Rasio cakupan bunga diwajibkan oleh regulator pasar modal untuk semua emiten sektor energi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Dayamitra Telekomunikasi Tbk (Mitratel) memiliki model bisnis penyewaan menara telekomunikasi dengan kontrak jangka panjang bereskalasi tetap. Saat menilai saham ini menggunakan metode Discounted Cash Flow (DCF), asumsi pertumbuhan terminal (terminal growth rate) yang paling rasional adalah...",
+      "options": [
+        "Ditetapkan jauh di atas pertumbuhan Produk Domestik Bruto (PDB) nasional karena tingginya penetrasi data",
+        "Disamakan dengan tingkat inflasi jangka panjang atau pertumbuhan ekonomi jangka panjang yang moderat",
+        "Dibuat bernilai nol karena aset menara telekomunikasi akan mengalami penyusutan penuh pada akhirnya",
+        "Dihitung berdasarkan rata-rata pertumbuhan laba bersih historis selama tiga tahun terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menelaah laporan keuangan konsolidasian PT Astra International Tbk (ASII) yang memiliki lini bisnis terdiversifikasi mulai otomotif hingga jasa keuangan. Pendekatan valuasi sum-of-the-parts (SOTP) dipilih karena...",
+      "options": [
+        "Setiap segmen bisnis memiliki karakteristik pertumbuhan, risiko, dan multiples pasar yang berbeda",
+        "Metode SOTP menghilangkan kebutuhan untuk menghitung biaya modal tertimbang (WACC) konsolidasian",
+        "Perusahaan tidak memiliki utang berbunga pada tingkat entitas induk sehingga valuasi lebih sederhana",
+        "Standar akuntansi keuangan mewajibkan penggunaan metode tersebut untuk konglomerasi multisektor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah reksa dana pendapatan tetap berencana membeli obligasi korporasi berperingkat BBB dengan yield to maturity (YTM) yang tinggi. Sebagai analis risiko, evaluasi kritis apa yang harus disampaikan kepadakomite investasi sebelum pembelian disetujui?",
+      "options": [
+        "Risiko gagal bayar dan volatilitas harga akibat potensi penurunan peringkat kredit lebih tinggi",
+        "Likuiditas instrumen di pasar sekunder biasanya sangat tinggi sehingga mudah diperjualbelikan",
+        "Kewajiban pembayaran kupon obligasi tersebut dijamin sepenuhnya oleh penjamin emisi efek",
+        "Pajak penghasilan atas kupon obligasi korporasi lebih besar dibandingkan Surat Berharga Negara"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

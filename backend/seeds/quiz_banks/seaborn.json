@@ -1,0 +1,306 @@
+{
+  "skill": "Seaborn",
+  "skill_key": "seaborn",
+  "questions": [
+    {
+      "question": "Sebagai Data Analyst di sebuah e-commerce Indonesia, Anda diminta memvisualisasikan distribusi total belanja pelanggan. Grafik manakah dari Seaborn yang paling tepat digunakan untuk melihat bentuk sebaran data sekaligus mendeteksi adanya outlier?",
+      "options": [
+        "sns.countplot(data=df, x='total_belanja')",
+        "sns.boxplot(data=df, x='total_belanja')",
+        "sns.scatterplot(data=df, x='total_belanja', y='id')",
+        "sns.barplot(data=df, x='total_belanja', y='kategori')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis data kepuasan karyawan di kantor cabang Jakarta dan Surabaya menggunakan Seaborn. Anda ingin membuat diagram batang yang otomatis menghitung jumlah (count) karyawan per kategori tingkat kepuasan. Fungsi apa yang harus dipanggil?",
+      "options": [
+        "sns.barplot(data=df, x='tingkat_kepuasan', estimator=len)",
+        "sns.histplot(data=df, x='tingkat_kepuasan', discrete=True)",
+        "sns.countplot(data=df, x='tingkat_kepuasan')",
+        "sns.displot(data=df, x='tingkat_kepuasan', kind='hist')"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam laporan bulanan fintech tempat Anda bekerja, Anda perlu menampilkan korelasi antara 6 variabel finansial (pendapatan, skor kredit, jumlah pinjaman, dll). Fungsi Seaborn mana yang paling efisien untuk menghasilkan matriks korelasi berbentuk heatmap?",
+      "options": [
+        "sns.heatmap(df.corr(), annot=True, cmap='coolwarm')",
+        "sns.pairplot(df, hue='status_pinjaman', palette='viridis')",
+        "sns.jointplot(data=df, x='pendapatan', y='skor_kredit', kind='kde')",
+        "sns.lmplot(data=df, x='pendapatan', y='jumlah_pinjaman', hue='risiko')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat `sns.boxplot(data=df, x='kategori_produk', y='harga', hue='wilayah')` untuk laporan ritel. Namun, label sumbu X (nama kategori produk) bertumpuk dan sulit dibaca karena terlalu panjang. Bagaimana cara paling tepat memperbaikinya menggunakan objek Axes dari matplotlib?",
+      "options": [
+        "Menggunakan plt.title('Distribusi Harga') sebelum memanggil Seaborn",
+        "Menggunakan plt.xticks(rotation=45, ha='right') setelah plot dibuat",
+        "Mengubah parameter orientasi boxplot menjadi horizontal secara manual",
+        "Menghapus parameter hue agar label sumbu X otomatis muat di layar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menyajikan tren penjualan harian selama setahun untuk 3 jenis produk berbeda dalam satu bidang gambar (figure), dengan membagi plot menjadi 3 kolom terpisah berdasarkan jenis produk. Fungsi tingkat tinggi (figure-level) Seaborn apa yang paling tepat?",
+      "options": [
+        "sns.catplot(data=df, x='tanggal', y='penjualan', kind='bar', col='produk')",
+        "sns.relplot(data=df, x='tanggal', y='penjualan', kind='line', col='produk')",
+        "sns.jointplot(data=df, x='tanggal', y='penjualan', hue='produk', kind='scatter')",
+        "sns.pairplot(df, vars=['tanggal', 'penjualan'], hue='produk')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat membuat `sns.scatterplot(data=df, x='lama_bekerja', y='gaji', hue='tingkat_pendidikan')` untuk data HR, legenda yang dihasilkan menutupi sebagian titik data penting di sudut kanan atas. Langkah apa yang paling tepat untuk merapikannya?",
+      "options": [
+        "Menggunakan plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')",
+        "Mengubah parameter fit_reg di dalam fungsi scatterplot menjadi False",
+        "Menghapus argumen hue agar legenda otomatis hilang dari area plot",
+        "Memperkecil ukuran seluruh titik data menggunakan parameter s yang kecil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan menganalisis hubungan antara jam belajar dan skor ujian siswa di suatu sekolah, dengan membedakan warna titik berdasarkan status bimbingan belajar. Fungsi Seaborn mana yang menyediakan garis regresi linier secara otomatis beserta area interval kepercayaan (confidence interval)?",
+      "options": [
+        "sns.scatterplot(data=df, x='jam_belajar', y='skor', hue='bimbel')",
+        "sns.lmplot(data=df, x='jam_belajar', y='skor', hue='bimbel')",
+        "sns.jointplot(data=df, x='jam_belajar', y='skor', kind='reg')",
+        "sns.regplot(data=df, x='jam_belajar', y='skor', color='blue')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam analisis logistik rantai pasok, Anda ingin melihat distribusi probabilitas dari waktu pengiriman barang (dalam hari). Anda ingin grafik menampilkan kurva estimasi densitas kernel (KDE) yang mulus sekaligus histogram frekuensinya. Fungsi mana yang harus digunakan?",
+      "options": [
+        "sns.kdeplot(data=df, x='waktu_pengiriman', cumulative=True)",
+        "sns.displot(data=df, x='waktu_pengiriman', kde=True, stat='density')",
+        "sns.histplot(data=df, x='waktu_pengiriman', element='step', fill=False)",
+        "sns.boxplot(data=df, x='waktu_pengiriman', showmeans=True)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menyajikan beberapa metrik performa karyawan dalam format grid scatter plot multivariat (pair plot) menggunakan Seaborn. Namun, dataset Anda sangat besar (50.000 baris) sehingga proses rendering sangat lambat. Pendekatan apa yang paling bijak untuk mengatasi hal ini?",
+      "options": [
+        "Mengganti sns.pairplot dengan sns.heatmap langsung tanpa agregasi data",
+        "Melakukan subsampling data terlebih dahulu (misal mengambil 1.000 baris acak) sebelum dimasukkan ke pairplot",
+        "Mengubah parameter kind di pairplot menjadi 'kde' agar prosesnya lebih cepat",
+        "Menghapus semua kolom bertipe numerik dari DataFrame sebelum visualisasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang dashboard eksekutif dengan tema gelap (dark mode) menggunakan Seaborn. Bagaimana cara mengatur gaya visual (style) keseluruhan plot agar cocok dengan latar belakang gelap?",
+      "options": [
+        "sns.set_theme(style='darkgrid', palette='deep')",
+        "sns.set_style('whitegrid', {'axes.facecolor': 'black'})",
+        "sns.set_palette('dark')",
+        "plt.style.use('dark_background') sebelum memanggil fungsi Seaborn"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai Data Analyst di sebuah startup ride-hailing, Anda membuat diagram batang (`sns.barplot`) untuk menampilkan rata-rata tarif perjalanan berdasarkan kota. Judul plot yang dihasilkan menumpuk dengan sumbu X karena nama kotanya panjang. Kode mana yang paling tepat untuk memperbaiki tata letak visual tersebut?",
+      "options": [
+        "plt.title('Rata-rata Tarif'); plt.xticks(rotation=45)",
+        "sns.set_context('paper'); plt.tight_layout()",
+        "sns.despine(); plt.xticks(ha='right')",
+        "plt.figure(figsize=(10, 6)); plt.xticks(rotation=45)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data churn pelanggan telekomunikasi dan ingin membandingkan proporsi pelanggan yang berhenti berdasarkan metode pembayaran menggunakan diagram hitung (`sns.countplot`). Anda ingin memastikan batang untuk setiap metode pembayaran tersusun secara vertikal dengan warna palet 'Set2'. Parameter apa yang harus digunakan?",
+      "options": [
+        "sns.countplot(data=df, x='metode_pembayaran', palette='Set2')",
+        "sns.countplot(data=df, y='metode_pembayaran', color='Set2')",
+        "sns.countplot(data=df, x='metode_pembayaran', hue='metode_pembayaran', palette='Set2')",
+        "sns.countplot(data=df, x='metode_pembayaran', orient='v', palette='Set2')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek analisis properti di Jakarta, Anda menggunakan `sns.jointplot` untuk melihat hubungan antara luas tanah dan harga rumah, sekaligus melihat distribusi masing-masing variabel di tepi plot. Bagaimana cara mengubah jenis plot marginal di bagian tepi menjadi KDE plot alih-alih histogram default?",
+      "options": [
+        "g = sns.JointPlot(data=df, x='luas', y='harga', marginal_kws={'kind': 'kde'})",
+        "g = sns.jointplot(data=df, x='luas', y='harga', kind='kde')",
+        "g = sns.jointplot(data=df, x='luas', y='harga'); g.plot_marginals(sns.kdeplot)",
+        "g = sns.jointplot(data=df, x='luas', y='harga', type='kde')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menyajikan perbandingan distribusi gaji karyawan antar departemen menggunakan `sns.violinplot`. Namun, Anda juga ingin melihat titik-titik data individual di dalam violins tersebut agar sebaran aslinya terlihat jelas oleh manajemen. Argumen tambahan apa yang harus disematkan?",
+      "options": [
+        "sns.violinplot(data=df, x='departemen', y='gaji', showmeans=True)",
+        "sns.violinplot(data=df, x='departemen', y='gaji', inner='quartile')",
+        "sns.violinplot(data=df, x='departemen', y='gaji', inner='points')",
+        "sns.violinplot(data=df, x='departemen', y='gaji', inner='box')"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebagai analis di perusahaan media, Anda ingin membuat `sns.lmplot` untuk memodelkan hubungan antara anggaran iklan dan jumlah unduhan aplikasi. Anda ingin garis regresi dipisah menjadi subplot terpisah berdasarkan kategori platform (Android dan iOS). Parameter apa yang harus digunakan?",
+      "options": [
+        "sns.lmplot(data=df, x='anggaran', y='unduhan', col='platform')",
+        "sns.lmplot(data=df, x='anggaran', y='unduhan', hue='platform', split=True)",
+        "sns.lmplot(data=df, x='anggaran', y='unduhan', row='platform', separate=True)",
+        "sns.lmplot(data=df, x='anggaran', y='unduhan', facet_kws={'hue': 'platform'})"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menggunakan `sns.FacetGrid` untuk membuat plot tren penjualan multi-panel berdasarkan wilayah operasional. Setelah plot dibuat melalui fungsi mapping, Anda menyadari bahwa judul setiap subplot (facet title) tidak sesuai dengan nama wilayahnya. Metode apa yang tepat dipanggil pada objek FacetGrid untuk memperbaikinya?",
+      "options": [
+        "g.set_axis_labels('Bulan', 'Penjualan'); g.add_legend()",
+        "g.set_titles(col_template='Wilayah: {col_name}'); plt.show()",
+        "g.fig.suptitle('Judul Baru'); plt.subplots_adjust(top=0.9)",
+        "g.map(plt.title, 'Wilayah'); plt.tight_layout()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam analisis risiko kredit bank, Anda membuat `sns.histplot` untuk melihat distribusi plafon pinjaman. Anda ingin garis kurva estimasi kernel density (KDE) ikut digambar di atas histogram tersebut untuk memperhalus visualisasi bentuk distribusinya. Parameter apa yang harus diaktifkan?",
+      "options": [
+        "sns.histplot(data=df, x='plafon', density=True, smooth=True)",
+        "sns.histplot(data=df, x='plafon', stat='probability', curve=True)",
+        "sns.histplot(data=df, x='plafon', kde=True, stat='density')",
+        "sns.histplot(data=df, x='plafon', fill=True, add_kde=True)"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang meneliti data metrik kesehatan pasien di rumah sakit dan ingin menampilkan matriks korelasi non-parametrik (Spearman) menggunakan `sns.heatmap`. Agar nilai korelasi (-1 hingga 1) tertulis jelas di setiap sel kotak heatmap, parameter apa yang wajib ditambahkan?",
+      "options": [
+        "sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm')",
+        "sns.heatmap(corr_matrix, values=True, decimal=2, palette='coolwarm')",
+        "sns.heatmap(corr_matrix, show_values=True, precision=2, color='coolwarm')",
+        "sns.heatmap(corr_matrix, labels=True, format='float', cmap='coolwarm')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat `sns.stripplot` untuk menunjukkan sebaran rating kepuasan pelanggan terhadap berbagai jenis layanan. Karena jumlah data sangat besar, titik-titik data saling menumpuk dan sulit dihitung kepadatannya. Parameter apa yang harus diubah agar titik-titik tersebut sedikit bergeser secara acak ke samping?",
+      "options": [
+        "sns.stripplot(data=df, x='layanan', y='rating', spread=True)",
+        "sns.stripplot(data=df, x='layanan', y='rating', jitter=True)",
+        "sns.stripplot(data=df, x='layanan', y='rating', dodge=True)",
+        "sns.stripplot(data=df, x='layanan', y='rating', offset=0.2)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan triwulanan perusahaan logistik, Anda membuat `sns.displot` dengan parameter `kind='kde'` untuk membandingkan distribusi berat paket antar kurir. Anda ingin membuat kurva tersebut terisi warna di bawah garisnya (filled area). Argumen apa yang harus disertakan?",
+      "options": [
+        "sns.displot(data=df, x='berat', hue='kurir', kind='kde', shade=True)",
+        "sns.displot(data=df, x='berat', hue='kurir', kind='kde', fill=True)",
+        "sns.displot(data=df, x='berat', hue='kurir', kind='kde', color_fill=True)",
+        "sns.displot(data=df, x='berat', hue='kurir', kind='kde', area=True)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Data Analyst di platform edutech, Anda membuat `sns.boxplot` untuk menampilkan distribusi skor ujian siswa berdasarkan metode belajar. Garis hitam tebal di tengah kotak pada visualisasi tersebut merepresentasikan nilai apa secara statistik?",
+      "options": [
+        "Nilai rata-rata aritmatika dari kelompok tersebut",
+        "Nilai tengah atau median dari data kelompok",
+        "Kuartil pertama dari distribusi data sampel",
+        "Simpangan baku dari keseluruhan data ujian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis data operasional gudang dan membuat scatter plot menggunakan `sns.scatterplot`. Agar titik-titik data yang saling bertumpuk (overplotting) karena ukuran dataset yang besar dapat terlihat jelas tingkat kepadatannya, parameter tambahan apa yang paling tepat disesuaikan?",
+      "options": [
+        "Mengubah parameter alpha menjadi transparan",
+        "Menambahkan argumen fit_reg bernilai benar",
+        "Memperbesar ukuran marker menggunakan s",
+        "Mengatur palet warna dengan argumen palette"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek analisis ritel, Anda menggunakan `sns.countplot` untuk melihat jumlah transaksi per hari dalam seminggu. Urutan hari pada sumbu X tampil secara acak alfabetis. Bagaimana cara paling tepat agar sumbu X terurut secara kronologis dari Senin hingga Minggu?",
+      "options": [
+        "Menggunakan parameter order dengan list hari yang benar",
+        "Mengatur argumen orient secara manual menjadi vertikal",
+        "Mengubah tipe data kolom hari menjadi float desimal",
+        "Menambahkan argumen sort bernilai true pada fungsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyajikan laporan eksekutif mengenai pertumbuhan pengguna bulanan menggunakan `sns.lineplot`. Agar garis tren tidak patah-patah secara ekstrem akibat adanya nilai yang hilang (missing values), penyesuaian apa yang perlu dilakukan pada DataFrame sebelum plotting?",
+      "options": [
+        "Melakukan imputasi nilai hilang dengan metode interpolasi",
+        "Menghapus seluruh baris yang memiliki nilai kosong total",
+        "Mengubah format kolom tanggal menjadi tipe string standar",
+        "Melakukan normalisasi min-max pada variabel target"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membuat visualisasi menggunakan `sns.displot` untuk distribusi pendapatan merchant, teks label pada sumbu X terlihat saling bertumpuk dan sulit dibaca. Fungsi matplotlib apa yang paling tepat dipanggil setelahnya untuk merotasi label tersebut?",
+      "options": [
+        "plt.xticks(rotation=45) untuk memutar posisi label",
+        "plt.xlabel(rotation='vertical') untuk sumbu",
+        "plt.tight_layout(pad=2.0) untuk merapikan margin",
+        "plt.setp(ax.get_xticklabels(), visible=False)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan membuat visualisasi hierarki metrik performa cabang menggunakan `sns.clustermap`. Setelah plot dihasilkan, Anda menyadari bahwa skala antar variabel sangat berbeda jauh sehingga variabel dengan angka besar mendominasi klasterisasi. Parameter apa yang harus diaktifkan?",
+      "options": [
+        "Mengaktifkan parameter standard_scale sama dengan 1",
+        "Menambahkan argumen robust bernilai true pada fungsi",
+        "Mengubah parameter method klaster menjadi average",
+        "Mengatur argumen metric korelasi menjadi pearson"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis kepuasan pelanggan aplikasi perbankan, Anda menggunakan `sns.kdeplot` bivariat untuk melihat densitas antara usia dan saldo tabungan. Agar area kerapatan memiliki gradasi warna yang intuitif bagi pembaca laporan, argumen apa yang harus diatur?",
+      "options": [
+        "Mengatur parameter fill bernilai true pada fungsi",
+        "Menambahkan argumen cumulative bernilai true",
+        "Mengubah parameter levels menjadi angka integer",
+        "Mengatur argumen thresh menjadi nilai desimal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat plot multi-panel menggunakan `sns.FacetGrid` untuk membandingkan kinerja penjualan tiap wilayah. Setelah objek grid dibuat, Anda ingin menambahkan garis horisontal rata-rata keseluruhan pada setiap panel subplot. Metode apa yang harus digunakan?",
+      "options": [
+        "Memanggil method map dengan fungsi plt.axhline",
+        "Menggunakan fungsi plt.axhline secara langsung",
+        "Menambahkan parameter line di dalam inisialisasi",
+        "Memanggil method refline dengan nilai rata-rata"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang merancang laporan akhir tahun dengan ukuran gambar kustom menggunakan matplotlib dan Seaborn. Agar ukuran figure spesifik (misal 10x6 inci) diterapkan dengan benar sebelum fungsi Seaborn dipanggil, baris kode apa yang harus dieksekusi terlebih dahulu?",
+      "options": [
+        "Menggunakan plt.figure(figsize=(10, 6)) di awal",
+        "Mengatur sns.set_context(rc={'figure.size': 10})",
+        "Menulis sns.set_figsize(width=10, height=6)",
+        "Memanggil plt.rcParams['plot.size'] = [10, 6]"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis churn telekomunikasi, Anda menggunakan `sns.histplot` dengan parameter `hue='status_churn'` untuk melihat jumlah pelanggan. Batang visualisasi saling menumpuk dan menutupi satu sama lain. Agar batang tampil berdampingan, parameter apa yang harus diubah?",
+      "options": [
+        "Mengubah parameter multiple menjadi 'dodge'",
+        "Mengatur argumen element bernilai 'step'",
+        "Menambahkan parameter stat bernilai 'count'",
+        "Mengubah argumen common_norm menjadi false"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

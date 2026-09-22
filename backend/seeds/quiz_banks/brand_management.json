@@ -1,0 +1,306 @@
+{
+  "skill": "Brand Management",
+  "skill_key": "brand management",
+  "questions": [
+    {
+      "question": "Sebuah merek kopi lokal di Jakarta mengalami penurunan penjualan sebesar 15% dalam dua kuartal berturut-turut akibat maraknya gerai kopi asing baru. Langkah strategis apa yang paling tepat diambil oleh Brand Manager?",
+      "options": [
+        "Menurunkan harga seluruh produk secara drastis untuk memenangi perang harga",
+        "Mengganti total identitas visual dan logo agar terlihat lebih modern dan kebaratan",
+        "Memperkuat narasi keunikan biji kopi Nusantara dan meluncurkan program loyalitas",
+        "Menghentikan semua kegiatan pemasaran digital dan fokus pada pembagian brosur"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mengelola lini produk kosmetik halal yang baru diakuisisi oleh perusahaan. Hasil riset menunjukkan konsumen target merasa bingung karena merek ini sering disamakan dengan produk perawatan tubuh biasa. Apa tindakan pertama yang harus dilakukan?",
+      "options": [
+        "Membuat kampanye digital yang menonjolkan sertifikasi halal dan bahan alami pilihan",
+        "Menutup akun media sosial lama dan membuat nama merek baru dari nol tanpa transisi",
+        "Mengalihkan seluruh anggaran iklan ke media cetak tradisional di kota-kota besar",
+        "Merekrut influencer kecantikan internasional untuk mengulas produk secara berkala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan rintisan (startup) teknologi finansial di Indonesia menerima banyak keluhan di media sosial terkait lambatnya layanan pelanggan, yang mulai mencoreng reputasi merek. Sebagai Brand Manager, apa prioritas penanganan Anda?",
+      "options": [
+        "Menghapus semua komentar negatif di akun media sosial resmi perusahaan",
+        "Membuat pernyataan resmi di media massa nasional untuk menyangkal masalah tersebut",
+        "Berkoordinasi dengan tim operasional untuk memperbaiki sistem dan merespons cepat",
+        "Mengadakan undian berhadiah besar untuk mengalihkan perhatian publik dari isu itu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Merek pakaian muslim lokal ingin memperluas pangsa pasar ke kalangan profesional muda urban. Desain saat ini dinilai terlalu konservatif. Strategi penyesuaian citra merek (rebranding) mana yang paling efektif?",
+      "options": [
+        "Meluncurkan koleksi kapsul hasil kolaborasi dengan desainer mode kontemporer",
+        "Mengubah total konsep toko offline menjadi kafe dan galeri seni modern",
+        "Menghentikan lini produk lama dan hanya menjual pakaian formal pria dewasa",
+        "Memasang iklan baliho besar di seluruh jalan protokol tanpa mengubah desain produk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memimpin tim merek untuk produk mi instan. Pesaing utama baru saja meluncurkan varian rasa baru yang viral. Manajemen mendesak Anda untuk segera meniru produk tersebut minggu depan. Bagaimana sikap profesional Anda?",
+      "options": [
+        "Menyetujui permintaan manajemen dan langsung memproduksi barang tiruan tanpa uji",
+        "Menolak tegas karena meniru adalah tindakan melanggar etika bisnis",
+        "Mengusulkan riset kilat untuk mencari celah diferensiasi rasa yang belum disentuh pesaing",
+        "Meminta anggaran tambahan untuk menuntut pesaing atas pelanggaran hak cipta"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah merek mobil niaga ringan ingin memperkuat posisinya di segmen pengusaha logistik UMKM di Pulau Jawa. Pesan kampanye seperti apa yang paling resonan untuk target audiens ini?",
+      "options": [
+        "Menonjolkan teknologi canggih dari Eropa yang ramah lingkungan dan mewah",
+        "Fokus pada ketangguhan mesin, efisiensi bahan bakar, dan kemudahan suku cadang",
+        "Menampilkan selebriti papan atas yang sedang berkendara di kota metropolitan",
+        "Menekankan desain futuristik dan pilihan warna cat eksterior yang sangat beragam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil analisis metrik merek menunjukkan bahwa tingkat kesadaran (brand awareness) produk deterjen Anda sangat tinggi, tetapi niat beli (purchase intent) konsumen sangat rendah. Keputusan anggaran pemasaran mana yang paling rasional?",
+      "options": [
+        "Menambah porsi iklan televisi nasional secara masif untuk meningkatkan visibilitas",
+        "Mengalihkan dana ke program promosi penjualan langsung dan aktivasi di titik penjualan",
+        "Memotong anggaran pemasaran hingga 50% untuk menaikkan margin keuntungan bersih",
+        "Mengganti agensi iklan kreatif yang saat ini menangani pembuatan materi promosi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Merek makanan ringan anak-anak mendapat kritik dari asosiasi konsumen karena kemasannya dinilai terlalu mirip dengan mainan sehingga membahayakan jika tertelan. Langkah mitigasi merek jangka pendek yang harus diambil adalah:",
+      "options": [
+        "Mengabaikan kritik tersebut karena penjualan bulanan sedang berada di puncak",
+        "Mengubah desain kemasan secara bertahap sambil memperkuat edukasi pengawasan orang tua",
+        "Menuntut balik asosiasi konsumen tersebut melalui jalur hukum dengan tuduhan pencemaran",
+        "Menghentikan total produksi dan menutup pabrik hingga isu di media sosial mereda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja merumuskan panduan identitas merek (brand guidelines) yang baru untuk sebuah rantai hotel lokal. Tantangan terbesarnya adalah memastikan staf di 20 cabang berbeda menerapkannya secara konsisten. Apa langkah implementasi terbaik?",
+      "options": [
+        "Mengirimkan dokumen PDF panduan melalui email ke seluruh manajer cabang",
+        "Mengadakan pelatihan interaktif dan audit berkala untuk seluruh tim operasional hotel",
+        "Meminta kantor pusat yang langsung mengambil alih semua urusan desain promosi",
+        "Menyerahkan sepenuhnya kepada kreativitas masing-masing manajer cabang hotel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek cat tembok premium ingin masuk ke pasar perumahan subsidi pemerintah. Agar tidak merusak citra eksklusif yang sudah dibangun selama puluhan tahun, strategi arsitektur merek (brand architecture) apa yang sebaiknya digunakan?",
+      "options": [
+        "Menggunakan nama merek utama secara langsung pada produk cat murah tersebut",
+        "Membentuk sub-merek (sub-brand) atau merek endoser dengan identitas visual tersendiri",
+        "Menjual cat tersebut tanpa merek agar konsumen tidak mengetahui produsen aslinya",
+        "Mengubah total positioning merek utama agar sejajar dengan produk kelas ekonomi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek air minum dalam kemasan (AMDK) lokal menghadapi isu negatif di Twitter mengenai dugaan kualitas sumber air pabrik baru mereka. Sentimen negatif mulai menyebar cepat di kalangan konsumen urban. Langkah awal apa yang paling tepat dilakukan oleh manajer merek?",
+      "options": [
+        "Segera menarik seluruh produk dari pasaran agar isu mereda secara cepat",
+        "Melakukan audit internal, merilis klarifikasi resmi berbasis data, dan memantau percakapan",
+        "Membuat kampanye iklan tandingan bertema nasionalisme untuk mengalihkan isu",
+        "Menutup sementara akun media sosial resmi merek hingga badai media mereda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan FMCG Anda ingin meluncurkan lini produk sabun mandi organik dengan harga premium di Indonesia. Hasil pra-uji menunjukkan konsumen ragu membayar mahal karena merek Anda identik dengan produk massal ekonomis. Strategi penamaan apa yang paling efektif?",
+      "options": [
+        "Memakai nama merek utama dengan tambahan kata organik di belakangnya",
+        "Menggunakan nama perusahaan induk agar tingkat kepercayaan langsung tinggi",
+        "Membuat sub-merek baru yang berdiri sendiri tanpa asosiasi langsung ke merek utama",
+        "Mengubah total logo merek utama agar terlihat lebih mewah dan mahal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform e-commerce lokal ingin memperkuat loyalitas pelanggan di kota tier-2 dan tier-3 Indonesia. Analisis menunjukkan pelanggan di sana sangat sensitif terhadap harga dan promo gratis ongkir. Program apa yang paling tepat dirancang untuk membangun loyalitas jangka panjang?",
+      "options": [
+        "Mengadakan undian berhadiah mobil mewah setiap akhir tahun bagi pengguna setia",
+        "Membangun program keanggotaan eksklusif dengan akses layanan prioritas kilat",
+        "Membuat sistem poin gamifikasi yang bisa ditukar langsung dengan kebutuhan sembako",
+        "Memberikan diskon besar-besaran setiap hari tanpa batasan minimal transaksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengambil alih merek suplemen kesehatan herbal yang sudah mapan namun dianggap 'kuno' oleh generasi milenial dan Gen Z. Desain kemasan dan gaya komunikasi masih era 90-an. Langkah revitalisasi merek mana yang harus diprioritaskan?",
+      "options": [
+        "Mengganti total formula produk agar memiliki rasa manis yang disukai anak muda",
+        "Melakukan rebranding visual kemasan dan kolaborasi dengan kreator konten kesehatan",
+        "Menurunkan harga jual produk secara drastis untuk menarik pembeli volume besar",
+        "Menghentikan penjualan di toko kelontong tradisional dan fokus ke pasar ekspor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rantai restoran siap saji lokal ingin meluncurkan menu baru hasil kolaborasi dengan seniman jalanan urban. Tantangannya adalah menu tersebut memiliki bahan baku musiman yang terbatas. Bagaimana cara merancang strategi komunikasi merek untuk peluncuran ini?",
+      "options": [
+        "Memasarkannya sebagai menu permanen dengan sistem pre-order online yang ketat",
+        "Menjualnya secara eksklusif dalam jumlah terbatas dan waktu singkat untuk menciptakan urgensi",
+        "Memberikan sampel gratis dalam jumlah masif di semua cabang untuk menguji pasar",
+        "Menjadikan menu tersebut sebagai bonus gratis setiap pembelian paket keluarga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil riset pasar menunjukkan bahwa merek laptop lokal Anda memiliki nilai persepsi kualitas (perceived quality) yang tinggi, tetapi pangsa pasar (market share) tertinggal jauh dari merek global karena konsumen merasa layanan purnajual tidak jelas. Kebijakan merek apa yang paling mendesak?",
+      "options": [
+        "Menggandakan anggaran iklan televisi untuk memperkuat kesan prestisius produk",
+        "Mengintegrasikan garansi nasional dan memperluas pusat servis resmi yang mudah diakses",
+        "Membuat lini produk baru dengan spesifikasi lebih rendah untuk menekan harga jual",
+        "Menghentikan penjualan online dan mewajibkan pembelian langsung di toko fisik utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan pengembang properti di Indonesia ingin meluncurkan klaster perumahan baru khusus untuk pasangan muda. Riset menunjukkan mereka sangat memprioritaskan aspek ramah lingkungan dan ruang kerja di rumah. Pesan inti merek (brand positioning) apa yang paling relevan?",
+      "options": [
+        "Hunian termegah di pusat kota dengan fasilitas kolam renang olympic size",
+        "Investasi properti paling aman dengan garansi kenaikan harga sewa tertinggi",
+        "Kawasan hunian hijau terpadu yang mendukung produktivitas kerja dan gaya hidup lestari",
+        "Perumahan eksklusif dengan sistem keamanan ketat dan penjagaan personal 24 jam"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Merek produk perawatan rambut Anda mendapati bahwa penjualan secara online melonjak, namun tingkat pembelian ulang (repeat order) sangat rendah. Evaluasi menunjukkan pelanggan kecewa karena ekspektasi dari iklan influencer tidak sesuai kenyataan produk. Apa tindakan korektif merek yang tepat?",
+      "options": [
+        "Menghentikan seluruh kerja sama dengan influencer dan beralih ke billboard luar ruang",
+        "Menyelaraskan narasi pesan iklan influencer agar sesuai dengan manfaat fungsional produk",
+        "Memberikan bonus produk acak pada setiap pembelian kedua untuk mengejutkan pelanggan",
+        "Menaikkan harga produk guna menyaring konsumen yang memiliki ekspektasi terlalu tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek alas kaki lokal berencana merayakan hari jadinya yang ke-10 dengan meluncurkan produk edisi khusus berkolaborasi dengan musisi indie ternama. Agar nilai merek (brand equity) terdongkrak maksimal, pendekatan distribusi mana yang harus dipilih?",
+      "options": [
+        "Menjual produk secara bebas di seluruh pasar malam dan toko grosir tradisional",
+        "Menerapkan sistem undian pembeli dan penjualan terbatas secara daring untuk menciptakan eksklusivitas",
+        "Membagikan produk secara cuma-cuma kepada seluruh pegawai internal perusahaan",
+        "Menyediakan stok melimpah di setiap minimarket agar mudah dijangkau semua orang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda menaungi dua merek kue kering: satu merek premium untuk hampers korporat, satu lagi merek ekonomis untuk jajanan harian di warung. Terjadi perdebatan internal untuk menggunakan pabrik dan kemasan sekunder yang sama demi efisiensi biaya. Apa risiko terbesar dari keputusan ini?",
+      "options": [
+        "Biaya logistik pengiriman akan meningkat drastis karena rute distribusi yang berbeda",
+        "Terjadinya kanibalisme pasar yang mengikis citra eksklusif merek premium akibat asosiasi",
+        "Pemerintah akan mengenakan pajak tambahan untuk produk makanan kemasan ganda",
+        "Konsumen produk ekonomis akan menolak membeli karena desain kemasannya terlalu mewah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek susu UHT lokal mendapati volume penjualan di minimarket turun drastis setelah pesaing multinasional memberikan diskon besar-besaran selama tiga bulan. Sebagai Brand Manager, langkah strategis apa yang paling tepat untuk mempertahankan pangsa pasar tanpa merusak margin keuntungan jangka panjang?",
+      "options": [
+        "Mengikuti perang harga secara agresif dengan memotong harga jual hingga setara dengan produk pesaing",
+        "Mengalihkan fokus anggaran promosi dari ritel modern ke program loyalitas langsung berbasis aplikasi",
+        "Meluncurkan kampanye yang menyoroti keunggulan kandungan lokal dan kesegaran rantai pasok",
+        "Menghentikan sementara produksi ukuran kemasan 1 liter dan fokus pada ukuran kecil yang murah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memegang merek cat kuku halal yang ingin masuk ke pasar Gen Z. Hasil riset menunjukkan mereka menganggap merek Anda membosankan dibandingkan merek independen baru. Apa tindakan awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Mengubah seluruh logo perusahaan dan menghilangkan elemen tradisional pada kemasan lama",
+        "Menggandeng kreator konten kecantikan independen untuk pengembangan palet warna edisi terbatas",
+        "Menurunkan harga produk sebesar 30 persen untuk menarik minat pembeli pertama di e-commerce",
+        "Membuat iklan televisi nasional yang dibintangi oleh artis senior ternama untuk mendongkrak citra"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek frozen food premium mengalami keluhan konsumen di ulasan e-commerce karena produk sering mencair saat sampai di tangan pembeli luar kota. Hal ini mulai mengancam reputasi merek. Apa prioritas tindakan Anda?",
+      "options": [
+        "Menutup layanan pengiriman luar kota dan hanya melayani area Jabodetabek saja",
+        "Mengganti mitra logistik konvensional dengan penyedia jasa kurir berpendingin khusus",
+        "Memberikan voucher ganti rugi otomatis kepada setiap pembeli yang mengajukan komplain",
+        "Menghapus fitur ulasan negatif di halaman produk agar calon pembeli tidak melihatnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan rintisan agritech meluncurkan merek sayuran organik segar untuk konsumen urban. Kendalanya, konsumen ragu akan keaslian organik karena harganya mirip dengan sayuran konvensional. Keputusan merek apa yang paling tepat?",
+      "options": [
+        "Menaikkan harga produk jauh di atas rata-rata pasar untuk memvalidasi klaim kualitas premium",
+        "Mencantumkan sertifikasi resmi pertanian organik dengan transparan pada bagian depan kemasan",
+        "Menyediakan layanan pengiriman gratis setiap hari tanpa minimum pembelian untuk semua pelanggan",
+        "Mengubah nama merek agar terdengar lebih modern dan menggunakan bahasa asing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek sarung tenun tradisional ingin menjangkau pasar profesional muda saat perayaan Lebaran. Selama ini merek tersebut identik dengan produk orang tua. Strategi komunikasi apa yang paling efektif?",
+      "options": [
+        "Membuat konten video naratif tentang anak muda sukses yang tetap bangga mengenakan tenun saat bekerja",
+        "Mengubah desain motif sarung menjadi pola abstrak modern tanpa unsur tradisional sama sekali",
+        "Menjual produk secara eksklusif hanya melalui toko fisik konvensional di pasar tekstil utama",
+        "Memasang baliho besar di jalan protokol kota besar dengan menampilkan foto model paruh baya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Merek lampu LED lokal mendapati tingkat retur (pengembalian barang) yang tinggi di toko bangunan karena instruksi pemasangan pada kotak kemasan membingungkan pembeli awam. Apa langkah taktis perbaikan merek yang harus dilakukan?",
+      "options": [
+        "Menarik seluruh produk dari toko bangunan dan menggantinya dengan jenis lampu pijar lama",
+        "Mengadakan pelatihan langsung bagi seluruh pemilik toko bangunan tentang cara memasang lampu",
+        "Mendesain ulang kemasan dengan menyertakan ilustrasi langkah pemasangan visual yang sangat sederhana",
+        "Menaikkan masa garansi produk dari satu tahun menjadi tiga tahun untuk meyakinkan pembeli"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah merek hotel budget nasional ingin menarik wisatawan milenial yang gemar bekerja secara remote (digital nomad). Fasilitas apa yang sebaiknya ditonjolkan dalam pesan komunikasi merek di media sosial?",
+      "options": [
+        "Ketersediaan kolam renang infinity rooftop yang luas dengan pemandangan cakrawala kota",
+        "Kecepatan jaringan internet stabil dan area kerja bersama (co-working space) yang nyaman",
+        "Menu sarapan prasmanan tradisional nusantara yang disajikan setiap hari sepanjang pagi",
+        "Layanan antar-jemput bandara gratis menggunakan kendaraan listrik ber-AC"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memimpin merek minuman herbal bubuk saset. Pesaing baru masuk dengan klaim penyembuhan instan yang meragukan secara medis, namun sangat diminati pasar. Sikap etis dan strategis merek Anda sebaiknya adalah:",
+      "options": [
+        "Ikut membuat klaim khasiat berlebihan agar penjualan tidak turun drastis dalam jangka pendek",
+        "Melaporkan pesaing ke lembaga pengawas sambil memperkuat edukasi manfaat jangka panjang berbasis riset",
+        "Memangkas anggaran pemasaran secara total dan menunggu konsumen sadar sendiri akan kualitas",
+        "Mengubah produk menjadi cairan siap minum dalam botol plastik tanpa mengubah formula dasar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah merek perkakas pertukangan lokal ingin meyakinkan tukang bangunan profesional bahwa kualitas produk mereka setara dengan merek impor. Selama ini tukang meragukan ketahanannya. Program pemasaran apa yang paling tepat?",
+      "options": [
+        "Mengirimkan brosur spesifikasi teknis cetak ke seluruh kantor kontraktor besar di Indonesia",
+        "Mengadakan kompetisi keahlian tukang nasional dengan hadiah utama uang tunai puluhan juta rupiah",
+        "Menyelenggarakan uji ketahanan terbuka di proyek konstruksi langsung disaksikan para kepala tukang",
+        "Menggunakan artis ibu kota yang gemar hobi pertukangan sebagai duta merek produk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah merek dompet kulit lokal mengalami lonjakan penjualan dari konsumen internasional berkat ulasan seorang influencer global. Namun, kapasitas produksi perajin lokal terbatas sehingga pesanan sering terlambat. Apa keputusan manajemen merek yang paling bijak?",
+      "options": [
+        "Menerima seluruh pesanan masuk dan menunda pengiriman hingga beberapa bulan ke depan tanpa pemberitahuan",
+        "Membuka sistem pre-order transparan dengan batasan kuota harian demi menjaga standar kualitas kerajinan",
+        "Mengalihkan seluruh proses produksi secara massal ke pabrik mesin luar negeri untuk mengejar kecepatan",
+        "Menghentikan kerja sama dengan influencer tersebut dan fokus kembali berjualan di pasar lokal saja"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

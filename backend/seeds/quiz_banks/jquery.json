@@ -1,0 +1,306 @@
+{
+  "skill": "jQuery",
+  "skill_key": "jquery",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan halaman dashboard admin lokal. Anda perlu mengambil data ringkasan penjualan dari API backend setiap kali tombol 'Muat Ulang' diklik, lalu menampilkan hasilnya di dalam elemen div dengan ID #sales-data tanpa me-refresh seluruh halaman. Metode jQuery mana yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan $.get() untuk mengambil data dan metode .html() untuk memperbarui tampilan",
+        "Menggunakan $.ajaxSetup() untuk mengatur ulang koneksi lalu memanggil .submit() pada form",
+        "Menggunakan $.load() langsung pada elemen tombol untuk memicu pembaruan otomatis",
+        "Menggunakan $.getJSON() dan memasukkan hasilnya langsung ke dalam atribut .val()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam form pendaftaran karyawan baru, Anda diminta memastikan tombol 'Kirim' hanya bisa diklik setelah pengguna mencentang kotak persetujuan syarat dan ketentuan. Bagaimana cara menulis kode jQuery yang paling efisien untuk menangani kondisi ini?",
+      "options": [
+        "Membuat fungsi perulangan setiap detik untuk mengecek status centang kotak",
+        "Menggunakan event handler 'change' pada kotak centang untuk mengubah atribut disabled tombol",
+        "Menambahkan event handler 'hover' pada tombol untuk mendeteksi kesiapan pengguna",
+        "Mengubah properti CSS display dari tombol secara manual menggunakan metode .css()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs e-commerce lokal memiliki daftar produk yang dimuat secara dinamis melalui AJAX. Ketika pengguna mengklik tombol 'Hapus' pada salah satu produk, elemen produk tersebut tidak merespons peristiwa klik. Apa penyebab utama masalah ini dan bagaimana solusinya dengan jQuery?",
+      "options": [
+        "Elemen ditambahkan setelah DOM siap, gunakan event delegation dengan metode .on() pada parent",
+        "Library jQuery belum diinisialisasi ulang, jalankan ulang fungsi jQuery(document).ready()",
+        "Format data JSON rusak, gunakan fungsi JSON.parse() sebelum memanggil elemen tersebut",
+        "Metode .remove() tidak dapat digunakan pada elemen dinamis, harus diganti dengan .empty()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang fitur pencarian instan (live search) pada direktori karyawan. Agar server tidak kewalahan menerima permintaan setiap kali satu huruf diketik, Anda perlu memberi jeda (debounce) pada input pengguna sebelum AJAX dijalankan. Bagaimana pendekatan jQuery yang tepat?",
+      "options": [
+        "Menggunakan event 'keydown' lalu langsung memanggil fungsi $.ajax() di dalam perulangan",
+        "Menggunakan event 'keyup' yang dikombinasikan dengan fungsi setTimeout dan clearTimeout",
+        "Menggunakan metode .delay() bawaan jQuery tepat sebelum memanggil fungsi .trigger()",
+        "Menggunakan event 'focusout' untuk menunda pengiriman data sampai input selesai diisi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya memori bocor (memory leak) pada aplikasi web SPA sederhana yang Anda buat menggunakan jQuery, karena banyak event handler menumpuk pada elemen yang sering dimuat ulang. Metode apa yang harus Anda gunakan sebelum elemen tersebut dihapus dari DOM?",
+      "options": [
+        "Menjalankan metode .detach() agar semua memori elemen otomatis dibersihkan oleh browser",
+        "Memanggil metode .off() untuk menghapus semua event listener yang terikat sebelum elemen dihapus",
+        "Mengubah nilai atribut CSS elemen tersebut menjadi display none menggunakan metode .hide()",
+        "Membersihkan cache browser secara otomatis menggunakan fungsi $.clearQueue() pada dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat galeri foto interaktif di mana pengguna bisa menyembunyikan gambar dengan efek animasi memudar (fade out), lalu mengubah teks tombol dari 'Sembunyikan' menjadi 'Tampilkan'. Bagaimana cara merangkai method chaining jQuery yang benar?",
+      "options": [
+        "$('#galeri').fadeOut(400).text('Tampilkan')",
+        "$('#galeri').fadeOut(400, function() { $('#btn').text('Tampilkan'); })",
+        "$('#galeri').animate({opacity: 0}, 'slow', $('#btn').text('Tampilkan'))",
+        "$('#galeri').hide('slow').promise().done($('#btn').val('Tampilkan'))"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam halaman manajemen inventaris gudang, terdapat tabel panjang dengan baris data yang banyak. Anda ingin membuat fitur filter tabel instan berdasarkan input teks pengguna dengan menyembunyikan baris yang tidak cocok. Pendekatan jQuery mana yang paling optimal?",
+      "options": [
+        "Menggunakan .filter() untuk menyaring elemen tr berdasarkan kecocokan teks, lalu menyembunyikan sisanya",
+        "Mengambil seluruh isi tabel ke dalam variabel array, mengurutkannya, lalu menulis ulang DOM dari awal",
+        "Mengirim permintaan AJAX ke server setiap kali satu karakter diketik untuk memuat ulang tabel",
+        "Menggunakan metode .slideToggle() secara bersamaan pada semua elemen baris yang ada di tabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi portal berita lokal menggunakan infinite scroll. Ketika pengguna menggulir halaman hingga mendekati bawah, permintaan AJAX dikirim untuk memuat berita tambahan dan menambahkannya ke bagian bawah kontainer berita. Metode jQuery mana yang paling tepat untuk menambahkan HTML baru tersebut?",
+      "options": [
+        "Menggunakan metode .prepend() untuk menempatkan berita baru di awal kontainer utama",
+        "Menggunakan metode .append() untuk menyisipkan elemen HTML baru di akhir kontainer",
+        "Menggunakan metode .html() untuk menimpa seluruh konten lama dengan konten berita baru",
+        "Menggunakan metode .wrap() untuk membungkus elemen lama dengan data berita tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang memperbaiki bug pada form multistep (formulir bertahap). Pengguna sering menekan tombol 'Lanjut' berkali-kali dengan cepat, menyebabkan permintaan AJAX terkirim ganda ke server. Bagaimana cara mencegah hal ini menggunakan jQuery?",
+      "options": [
+        "Menonaktifkan tombol menggunakan .prop('disabled', true) saat permintaan AJAX dimulai dan mengaktifkannya kembali saat selesai",
+        "Menggunakan metode .stop(true, true) pada tombol untuk menghentikan semua animasi antarmuka yang sedang berjalan",
+        "Menambahkan fungsi .clearQueue() pada elemen form setiap kali tombol lanjut diklik oleh pengguna",
+        "Mengubah tipe data tombol dari submit menjadi reset secara otomatis menggunakan metode .attr()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada halaman profil pengguna, terdapat beberapa tab informasi (Biodata, Riwayat, Pengaturan). Ketika tab diklik, kelas CSS 'active' harus berpindah dari tab sebelumnya ke tab yang baru diklik, dan konten yang sesuai harus ditampilkan. Bagaimana cara menulis kode jQuery yang paling efektif?",
+      "options": [
+        "Menggunakan .addClass() pada tab yang diklik dan .removeClass() pada semua saudara (siblings) tab tersebut",
+        "Menghapus seluruh elemen DOM tab menggunakan .remove() lalu membuatnya ulang berdasarkan data baru",
+        "Menggunakan perulangan for standar JavaScript untuk mengecek satu persatu atribut kelas dari semua tab",
+        "Menggunakan metode .toggleClass() secara bergantian pada semua elemen tab tanpa pengecekan kondisi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat fitur keranjang belanja di situs e-commerce. Ketika pengguna mengubah jumlah produk pada elemen input dengan class '.qty-input', Anda perlu mengambil nilai baris tersebut untuk menghitung subtotal secara otomatis. Cara paling tepat untuk mendapatkan nilai input yang sedang diubah adalah:",
+      "options": [
+        "Menggunakan $(this).val() di dalam event handler change",
+        "Menggunakan $('.qty-input').text() setelah event submit",
+        "Menggunakan jQuery.attr('value') pada dokumen global",
+        "Menggunakan selector ID unik untuk setiap baris produk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sistem manajemen konten internal, Anda mendapati tombol-tombol aksi hapus baru ditambahkan ke dalam tabel secara dinamis melalui skrip AJAX setelah halaman dimuat. Ketika tombol baru ini diklik, event listener standar (.click()) tidak merespons. Pendekatan jQuery yang benar untuk mengatasi masalah ini adalah:",
+      "options": [
+        "Memuat ulang seluruh pustaka jQuery setelah AJAX selesai",
+        "Menggunakan delegasi event dengan method .on() pada elemen induk",
+        "Mengubah semua elemen tombol dinamis menjadi tag form biasa",
+        "Menambahkan atribut onclick langsung pada string HTML AJAX"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta memperbarui dashboard logistik agar status pengiriman diperbarui secara berkala setiap 5 detik tanpa memuat ulang halaman, menggunakan data JSON dari endpoint server. Fungsi AJAX jQuery yang paling ringkas untuk tugas ini adalah:",
+      "options": [
+        "$.ajaxSetup() dengan konfigurasi interval waktu global",
+        "$.getScript() untuk mengeksekusi ulang file logika utama",
+        "$.getJSON() yang dipanggil di dalam fungsi setInterval()",
+        "$.load() yang menargetkan kontainer body secara langsung"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam aplikasi HRIS, Anda perlu menonaktifkan tombol simpan dan mengubah teksnya menjadi 'Memproses...' saat form pengajuan cuti dikirimkan, guna mencegah klik ganda. Baris kode jQuery yang paling tepat untuk melakukan aksi ini adalah:",
+      "options": [
+        "$('#btnSimpan').prop('disabled', true).text('Memproses...');",
+        "$('#btnSimpan').attr('readonly', 'true').html('Memproses...');",
+        "$('#btnSimpan').css('opacity', '0.5').val('Memproses...');",
+        "$('#btnSimpan').hide().fadeIn().text('Memproses...');"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang fitur validasi form pendaftaran mitra. Anda perlu menambahkan class CSS 'is-invalid' pada elemen input teks yang kosong saat pengguna meninggalkan kolom tersebut (event blur). Cara menuliskan manipulasi class yang paling efisien adalah:",
+      "options": [
+        "Menggunakan method .addClass('is-invalid') pada konteks $(this)",
+        "Menggunakan pengecekan kondisi .attr('class', 'is-invalid')",
+        "Menggunakan manipulasi DOM murni dengan selector tag form",
+        "Menggunakan fungsi .toggleClass() tanpa memeriksa kondisi awal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada halaman laporan keuangan perusahaan, terdapat beberapa baris tabel yang disembunyikan secara default. Anda ingin membuat tombol 'Tampilkan Semua' yang ketika diklik akan membuka baris-baris tersebut dengan efek geser turun secara mulus. Method jQuery yang paling sesuai adalah:",
+      "options": [
+        "Menggunakan .slideDown() pada elemen baris yang tersembunyi",
+        "Menggunakan .fadeIn() dikombinasikan dengan perulangan each",
+        "Menggunakan .show() dengan parameter waktu milidetik",
+        "Menggunakan .animate({height: 'auto'}, 'slow') secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memperbaiki bug pada halaman dashboard di mana tooltip kustom terus menumpuk di memori browser karena event mouseenter yang terikat berulang kali pada elemen grafik tanpa dibersihkan. Cara yang benar untuk mencegah penumpukan event ini adalah:",
+      "options": [
+        "Menghapus elemen grafik menggunakan method .empty()",
+        "Memanggil method .off() sebelum mengikat ulang event .on()",
+        "Menambahkan parameter sekali pakai pada opsi selector",
+        "Memuat ulang pustaka jQuery setiap kali grafik digambar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah modul e-learning, pengguna dapat mencetak sertifikat pelatihan setelah membaca materi hingga selesai. Tombol cetak harus mengambil nilai ID pengguna dari atribut data-userid pada kontainer utama. Cara mengambil nilai atribut data tersebut menggunakan jQuery adalah:",
+      "options": [
+        "Menggunakan method .data('userid') pada elemen kontainer",
+        "Menggunakan method .find('userid') pada objek dokumen",
+        "Menggunakan method .val('userid') pada elemen wrapper",
+        "Menggunakan method .attr('data-id') secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun aplikasi POS (Point of Sale) kasir. Ketika kasir menekan tombol pintasan keyboard tertentu, fokus layar harus langsung berpindah ke kolom input 'Cari Barcode'. Perintah jQuery yang tepat untuk memberikan fokus adalah:",
+      "options": [
+        "Menggunakan method .select() pada elemen input barcode",
+        "Menggunakan method .focus() pada selector input barcode",
+        "Menggunakan method .trigger('click') pada elemen input",
+        "Menggunakan method .active() pada elemen target form"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada halaman pengaturan akun, terdapat beberapa pilihan preferensi notifikasi berupa checkbox. Anda ingin menulis fungsi utilitas jQuery untuk mengambil semua nilai (value) dari checkbox yang dicentang ke dalam sebuah array JavaScript. Cara paling efektif adalah:",
+      "options": [
+        "Menggunakan .map() pada checkbox tercentang diikuti .get()",
+        "Menggunakan perulangan .each() manual dengan push ke array",
+        "Menggunakan method .val() langsung pada elemen form induk",
+        "Menggunakan selector gabungan dengan method .toArray()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan dashboard analitik penjualan. Setiap kali pengguna mengubah rentang tanggal pada elemen select, Anda perlu mengambil data grafik terbaru dari server tanpa memuat ulang halaman. Metode jQuery manakah yang paling tepat untuk menangani kebutuhan asinkron ini?",
+      "options": [
+        "Menggunakan fungsi $.ajax() untuk konfigurasi permintaan HTTP secara fleksibel",
+        "Memanfaatkan method .load() langsung pada elemen wadah grafik",
+        "Mengaktifkan fungsi $.getScript() untuk memuat ulang pustaka grafik",
+        "Menggunakan method .submit() pada elemen form pembungkus filter"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada form pemesanan tiket kereta, Anda diminta menampilkan pesan galat (error) berwarna merah tepat di bawah kolom nomor identitas jika input kosong saat form disubmit. Cara paling efisien untuk menyisipkan elemen pesan tersebut menggunakan jQuery adalah:",
+      "options": [
+        "Memanggil method .append() pada elemen input nomor identitas",
+        "Menggunakan method .after() pada elemen input nomor identitas",
+        "Menjalankan fungsi .prepend() pada elemen pembungkus form utama",
+        "Memanfaatkan method .before() pada tombol kirim form pemesanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sistem inventaris gudang, terdapat tombol aksi hapus yang dinamis ditambahkan lewat AJAX setelah halaman dimuat. Anda ingin memastikan event klik pada semua tombol hapus (baik yang lama maupun yang baru) berfungsi dengan benar. Pendekatan jQuery manakah yang harus digunakan?",
+      "options": [
+        "Menggunakan method .on() dengan delegasi event pada elemen induk statis",
+        "Memasang langsung event listener .click() pada setiap tombol saat dibuat",
+        "Memanggil fungsi .live() pada kelas CSS tombol hapus yang bersangkutan",
+        "Menggunakan method .bind() di dalam fungsi pemuatan data AJAX selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memperbaiki bug performa pada halaman daftar produk e-commerce di mana pengguna mengeluhkan browser sering melambat saat mengetik di kolom pencarian cepat. Solusi jQuery terbaik untuk mengatasi masalah ini adalah:",
+      "options": [
+        "Membatasi eksekusi fungsi pencarian menggunakan teknik penundaan waktu",
+        "Menonaktifkan sementara input teks menggunakan method .prop('disabled')",
+        "Menghapus semua event listener lama dengan memanggil .off() berkala",
+        "Memaksa pembersihan cache memori DOM menggunakan fungsi $.clearQueue()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada halaman profil pengguna, Anda perlu mengambil nilai (value) dari beberapa checkbox hobi yang dipilih pengguna saat tombol simpan ditekan. Method jQuery manakah yang paling tepat untuk mengumpulkan nilai-nilai tersebut ke dalam sebuah array?",
+      "options": [
+        "Memakai fungsi .val() digabungkan dengan method iterasi .each()",
+        "Menggunakan method .data() untuk membaca atribut kustom checkbox",
+        "Memanfaatkan fungsi .serializeArray() pada elemen form profil",
+        "Menjalankan method .text() pada setiap elemen label yang aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat efek transisi saat panel menu navigasi samping (sidebar) ditutup. Panel harus bergeser menutup perlahan dan menghilang dalam durasi 400 milidetik. Method animasi jQuery apa yang paling sesuai?",
+      "options": [
+        "Menggunakan method .slideUp() untuk menyembunyikan elemen ke atas",
+        "Memanfaatkan fungsi .fadeOut() untuk menghilangkan elemen secara halus",
+        "Menjalankan method .animate() dengan mengubah properti lebar elemen",
+        "Memanggil fungsi .toggle() dengan parameter durasi waktu transisi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam halaman manajemen pengguna korporat, baris tabel perlu disorot (diberikan background kuning) ketika kursor mouse berada di atasnya, dan kembali normal saat kursor menjauh. Cara penulisan jQuery yang paling bersih untuk skenario ini adalah:",
+      "options": [
+        "Menggunakan method .hover() dengan menyediakan dua fungsi handler",
+        "Memasang event terpisah .mouseenter() dan .mouseleave() secara manual",
+        "Menggabungkan method .on('mouseover mouseout') pada elemen baris",
+        "Memanfaatkan fungsi .toggleClass() di dalam event handler .click()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun wizard pendaftaran merchant multi-langkah. Pada langkah kedua, Anda perlu menghapus atribut 'disabled' dari tombol lanjut agar bisa diklik oleh pengguna. Method jQuery yang tepat untuk mengubah properti DOM tersebut adalah:",
+      "options": [
+        "Menggunakan method .removeAttr('disabled') pada tombol lanjut",
+        "Memanggil fungsi .prop('disabled', false) pada elemen tombol",
+        "Menjalankan method .attr('disabled', 'false') pada tombol terkait",
+        "Memanfaatkan fungsi .removeProp('disabled') pada elemen tombol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada aplikasi kasir (POS), Anda perlu memastikan bahwa setiap kali modal pembayaran ditutup, seluruh data input di dalamnya tereset total dan event handler terkait dibersihkan untuk mencegah memori bocor. Pendekatan jQuery manakah yang paling tepat?",
+      "options": [
+        "Mengosongkan isi HTML wadah modal menggunakan method .empty()",
+        "Menghapus elemen modal secara permanen menggunakan method .remove()",
+        "Menyembunyikan modal secara perlahan menggunakan method .fadeOut()",
+        "Mengatur ulang form internal dan melepas event dengan method .off()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengambil semua teks dari elemen daftar tugas (list item) yang memiliki kelas CSS 'completed' pada halaman manajemen tugas harian. Selector jQuery manakah yang paling efisien untuk mengambil kumpulan elemen tersebut?",
+      "options": [
+        "Memanggil selector gabungan elemen dan kelas 'li.completed'",
+        "Menggunakan method penyaringan .filter('.completed') pada elemen 'li'",
+        "Memanfaatkan fungsi pencarian .find('.completed') dari elemen induk",
+        "Menjalankan selector berbasis atribut '[class*=\"completed\"]' pada 'li'"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

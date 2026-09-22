@@ -1,0 +1,306 @@
+{
+  "skill": "Gaussian Processes",
+  "skill_key": "gaussian processes",
+  "questions": [
+    {
+      "question": "Anda bekerja sebagai Data Scientist di perusahaan telekomunikasi Indonesia untuk memprediksi kekuatan sinyal 4G di berbagai titik geografis berdasarkan data pengukuran sampel. Mengapa Anda memilih Gaussian Process Regression (GPR) dibandingkan Linear Regression biasa?",
+      "options": [
+        "GPR memberikan estimasi ketidakpastian (variance) secara alami di setiap titik prediksi",
+        "GPR dapat berjalan ribuan kali lebih cepat pada dataset berukuran besar tanpa optimasi",
+        "GPR tidak memerlukan pemilihan fungsi kernel untuk memodelkan hubungan spasial",
+        "GPR secara otomatis menjamin distribusi data target selalu berdistribusi normal baku"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup logistik di Jakarta menggunakan Gaussian Process untuk memprediksi waktu pengiriman kurir berdasarkan jarak dan cuaca. Seiring bertambahnya data harian menjadi 50.000 baris, waktu training model menjadi sangat lambat. Pendekatan apa yang paling tepat untuk mengatasi masalah kompleksitas komputasi $O(N^3)$ ini?",
+      "options": [
+        "Mengubah seluruh variabel kategorikal menjadi one-hot encoding sebelum proses fitting",
+        "Menggunakan metode Sparse Gaussian Processes dengan memanfaatkan set point induksi",
+        "Menurunkan nilai parameter noise variance agar matriks kovarians lebih mudah di-inverse",
+        "Mengganti fungsi kernel kuadratik eksponensial dengan kernel linear tanpa regularisasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang model untuk mengoptimalkan hyperparameter sebuah model deep learning dengan metode Bayesian Optimization. Anda menggunakan Gaussian Process sebagai surrogate model. Apa fungsi utama acquisition function dalam konteks ini?",
+      "options": [
+        "Menghitung gradien bobot neural network pada setiap epoch iterasi pelatihan",
+        "Menentukan titik hyperparameter berikutnya dengan menyeimbangkan eksplorasi dan eksploitasi",
+        "Memperbarui matriks kovarians kernel secara berkala untuk mengurangi galat prediksi",
+        "Mengubah ruang pencarian kontinu menjadi diskrit agar komputasi berjalan lebih efisien"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pemetaan curah hujan di Badan Meteorologi, Anda mendapati bahwa data curah hujan memiliki pola tren musiman tahunan yang berulang sekaligus fluktuasi lokal yang cepat. Kernel apa yang paling tepat Anda kombinasikan untuk menangkap karakteristik tersebut?",
+      "options": [
+        "Penjumlahan antara kernel Linear dan kernel White Noise untuk menangkap tren global",
+        "Perkalian antara kernel RBF konstan dengan kernel Sigmoid tanpa parameter panjang skala",
+        "Penjumlahan antara kernel Periodic untuk pola musiman dan kernel RBF untuk fluktuasi lokal",
+        "Penggunaan kernel Matern 3/2 secara tunggal karena sudah mengakomodasi semua jenis pola"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim IoT pertanian pintar ingin memantau suhu tanah rumah kaca menggunakan sensor yang rentan terhadap malfungsi sesaat (lonjakan data anomali). Saat menerapkan Gaussian Process, parameter mana pada kernel yang paling efektif untuk meredam pengaruh dari noise sensor tersebut?",
+      "options": [
+        "Menyesuaikan nilai hyperparameter length-scale agar jangkauan spasial kernel lebih luas",
+        "Menambahkan komponen white noise kernel untuk mengakomodasi varians galat observasi",
+        "Memperbesar nilai signal variance agar amplitudo fluktuasi data sensor lebih dominan",
+        "Menghapus semua titik data historis yang memiliki nilai di atas rata-rata populasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan analisis sensitivitas pada model harga properti di Surabaya menggunakan GPR. Hasil prediksi menunjukkan nilai mean yang akurat, namun nilai standard deviation (ketidakpastian) sangat tinggi di kawasan pusat kota. Apa interpretasi praktis dari kondisi ini?",
+      "options": [
+        "Model mengalami overfitting parah akibat pemilihan length-scale kernel yang terlalu kecil",
+        "Distribusi target harga properti di pusat kota tidak memenuhi asumsi stasioneritas spasial",
+        "Jumlah data sampel pelatihan di kawasan pusat kota sangat sedikit atau memiliki variasi tinggi",
+        "Terjadi kebocoran data antara set pelatihan dan set pengujian pada wilayah komersial"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah pabrik manufaktur di Cikarang menggunakan Gaussian Process untuk memonitor keausan mesin pabrik dari waktu ke waktu. Karena proses fisik ini memiliki batasan nilai yang tidak boleh negatif, modifikasi apa yang biasanya diterapkan pada kerangka kerja GP standar?",
+      "options": [
+        "Menerapkan transformasi warping atau metode GP non-gaussian seperti Poisson/Cox process",
+        "Memotong secara langsung semua hasil prediksi model yang bernilai negatif menjadi nol",
+        "Mengganti fungsi kernel RBF dengan kernel polinomial berderajat tinggi tanpa bias",
+        "Menambahkan konstanta positif yang besar pada setiap fitur masukan sebelum normalisasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta memilih antara kernel Matern 3/2 dan kernel RBF (Squared Exponential) untuk memodelkan kontur topografi dasar laut yang memiliki banyak ketidakteraturan tajam. Manakah pilihan terbaik dan alasannya?",
+      "options": [
+        "Kernel RBF, karena menghasilkan fungsi yang sangat mulus dan cocok untuk kontur alami",
+        "Kernel Matern 3/2, karena tidak menuntut asumsi kemulusan tak hingga seperti halnya RBF",
+        "Kernel RBF, karena memiliki jumlah hyperparameter yang lebih sedikit untuk dioptimalkan",
+        "Kernel Matern 3/2, karena waktu komputasi invers matriksnya terbukti jauh lebih cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam implementasi GPR untuk estimasi cadangan nikel, Anda mendapati bahwa proses optimasi hyperparameter lewat Maximum Marginal Likelihood sering terjebak pada local optima. Langkah mitigasi apa yang paling dianjurkan?",
+      "options": [
+        "Menggunakan inisialisasi multi-start dengan berbagai titik awal nilai parameter secara acak",
+        "Menurunkan ambang batas toleransi konvergensi agar algoritma berhenti lebih cepat",
+        "Mengganti seluruh fungsi aktivasi pada model regresi dengan fungsi linear bertingkat",
+        "Menghilangkan proses normalisasi pada fitur input agar gradien fungsi objektif melandai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform e-commerce ingin memodelkan kepuasan pelanggan berdasarkan waktu muat halaman web menggunakan Gaussian Process. Karena hubungan keduanya sangat non-linier dan kompleks, Anda memutuskan untuk menggunakan Deep Gaussian Processes. Apa keunggulan utama arsitektur ini dibanding GP standar?",
+      "options": [
+        "Mampu mempelajari representasi fitur bertingkat yang menangkap non-linieritas kompleks",
+        "Menjamin waktu pelatihan model selalu berbanding linear terhadap jumlah sampel data",
+        "Menghilangkan kebutuhan sama sekali terhadap penentuan fungsi kernel di setiap lapisannya",
+        "Memungkinkan penggunaan algoritma梯度 turun stokastik standar tanpa matriks kovarians"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai seorang Data Scientist di perusahaan energi terbarukan, Anda menggunakan Gaussian Process Regression (GPR) untuk memetakan kecepatan angin tahunan di wilayah pesisir Jawa. Saat melatih model dengan ribuan titik data observasi, proses komputasi pelatihan menjadi sangat lambat dan memakan memori berlebih. Pendekatan apa yang paling tepat untuk mengatasi kendala penskalaan kubik ini?",
+      "options": [
+        "Mengganti fungsi kernel RBF dengan kernel Linear untuk mengurangi kompleksitas matriks kovarians",
+        "Menerapkan metode Sparse Gaussian Process menggunakan sekumpulan titik induksi (inducing points)",
+        "Melakukan normalisasi ulang pada variabel target angin menggunakan transformasi logaritmik",
+        "Menurunkan tingkat kepercayaan noise observation secara manual hingga batas minimum"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan model GPR untuk memprediksi tingkat polusi udara (PM2.5) di berbagai titik stasiun pemantauan di DKI Jakarta. Hasil evaluasi menunjukkan bahwa model terlalu percaya diri (overconfident) memberikan estimasi varians yang sangat kecil di area yang jauh dari sensor pengamatan. Modifikasi apa yang paling tepat untuk memperbaiki ketidakpastian model di wilayah kosong tersebut?",
+      "options": [
+        "Menambahkan nilai jitter kecil secara diagonal ke dalam matriks kovarians pelatihan",
+        "Mengubah fungsi mean prior dari konstan menjadi fungsi polinomial berderajat tinggi",
+        "Menyesuaikan parameter amplitudo dan panjang karakteristik (length-scale) pada kernel",
+        "Meningkatkan bobot regularisasi L2 pada parameter bobot akhir model regresi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek eksplorasi nikel di Sulawesi, Anda menggunakan GPR untuk mengestimasi kadar logam berdasarkan koordinat geografis pengeboran. Data geologis menunjukkan adanya fluktuasi tajam yang tidak mulus pada skala spasial yang kecil. Jenis fungsi kernel manakah yang paling sesuai untuk merepresentasikan karakteristik geologis yang kasar (rough) ini?",
+      "options": [
+        "Kernel Radial Basis Function (RBF) standar dengan parameter skala panjang lebar",
+        "Kernel Rational Quadratic untuk menangkap variasi skala spasial yang beragam",
+        "Kernel Matérn dengan parameter derajat kehalusan v yang bernilai kecil (misal 0.5)",
+        "Kernel Cosine periodic untuk mengakomodasi pola perulangan lapisan batuan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan rumah sakit di Indonesia ingin memodelkan tingkat hunian tempat tidur ICU menggunakan GPR dengan memasukkan faktor musiman mingguan dan tren tahunan. Kernel gabungan manakah yang harus Anda susun untuk mencerminkan pola periodik sekaligus tren jangka panjang tersebut?",
+      "options": [
+        "Penjumlahan antara kernel RBF untuk tren dan kernel Periodic untuk pola musiman",
+        "Perkalian antara kernel Linear untuk tren dan kernel White Noise untuk galat",
+        "Penjumlahan antara kernel Exponential dan kernel Matérn 5/2 tanpa komponen tren",
+        "Perkalian antara kernel Constant dan kernel Rational Quadratic secara eksklusif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa data deret waktu penjualan ritel bulanan yang dimodelkan dengan GPR memiliki tingkat kebisingan (noise) pengukuran yang heterogen di setiap periode akibat faktor promosi yang tidak menentu. Bagaimana cara memodifikasi asumsi model Gaussian Process untuk menangani heteroscedastic noise ini?",
+      "options": [
+        "Menggunakan fungsi kernel periodik murni tanpa melibatkan komponen matriks identitas",
+        "Memodelkan varians noise sebagai fungsi input tambahan yang dipelajari secara terpisah",
+        "Menetapkan nilai noise variance secara seragam bernilai satu pada seluruh titik data",
+        "Menerapkan transformasi differencing tingkat pertama pada variabel target penjualan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan prediksi suhu permukaan laut menggunakan GPR di Badan Meteorologi, proses optimasi hyperparameter melalui Maximum Likelihood Estimation (MLE) terjebak pada local optima yang menghasilkan kurva prediksi datar. Langkah perbaikan apa yang paling tepat untuk mengatasi masalah pemilihan hyperparameter yang buruk ini?",
+      "options": [
+        "Mengulangi proses optimasi dari beberapa titik awal (multiple random restarts) secara acak",
+        "Mengganti seluruh arsitektur model menjadi jaringan saraf tiruan feed-forward biasa",
+        "Menghilangkan fungsi kernel dan menggantinya dengan regresi linier berganda",
+        "Menurunkan jumlah iterasi optimizer hingga batas minimum untuk mempercepat proses"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam studi kasus pemetaan kualitas sinyal seluler di daerah berbukit, Anda ingin memastikan bahwa model GPR tidak menghasilkan prediksi kekuatan sinyal yang bernilai negatif secara fisik. Pendekatan transformasi apa yang lazim diterapkan pada target output sebelum dilatih menggunakan Gaussian Process?",
+      "options": [
+        "Melakukan standarisasi z-score agar rata-rata target menjadi nol dan varians satu",
+        "Menerapkan transformasi invers logistik atau warping agar output terbatas pada rentang tertentu",
+        "Mengalikan seluruh nilai target dengan konstanta positif yang bernilai besar",
+        "Menghapus semua titik data yang memiliki nilai kekuatan sinyal mendekati ambang batas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan pengolahan air minum di Bandung menggunakan GPR untuk memprediksi tingkat pH air berdasarkan sensor kimia online. Karena sensor terkadang mengalami lonjakan sinyal akibat gelembung udara, fungsi kernel mana yang sebaiknya ditambahkan untuk menangani lonjakan galat independen (outliers) tersebut?",
+      "options": [
+        "Menambahkan komponen kernel White Noise ke dalam struktur kernel utama",
+        "Menambahkan komponen kernel Dot Product untuk memperkuat korelasi linier",
+        "Mengganti kernel spasial dengan kernel Spectral Mixture berdimensi tinggi",
+        "Menghapus fungsi mean prior dan menggunakan zero-mean function sepenuhnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membandingkan performa antara model GPR dan XGBoost untuk memprediksi harga properti komersial di Jakarta. Keunggulan utama apa dari GPR yang membuat Anda memilihnya untuk tugas ini dibandingkan XGBoost dalam konteks pengambilan keputusan investasi?",
+      "options": [
+        "GPR memiliki kecepatan pelatihan yang jauh lebih tinggi pada dataset berukuran besar",
+        "GPR menyediakan estimasi ketidakpastian (predictive variance) yang terkalibrasi dengan baik",
+        "GPR tidak memerlukan penyesuaian hyperparameter sama sekali pada fungsi kernelnya",
+        "GPR secara otomatis dapat menangani data teks kategorikal tanpa proses encoding"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan agritekntek menggunakan GPR untuk memetakan kelembapan tanah di perkebunan kelapa sawit Kalimantan. Anda mendapati bahwa model terlalu percaya diri pada area yang sangat jauh dari titik sensor mana pun, menghasilkan varians prediktif yang tidak realistis rendah. Penyesuaian apa yang harus dilakukan pada model?",
+      "options": [
+        "Menaikkan nilai noise parameter (alpha) pada fungsi likelihood model GPR secara global",
+        "Menambahkan parameter panjang karakteristik (length-scale) pada kernel untuk memperluas jangkauan",
+        "Memilih fungsi kernel Rational Quadratic untuk menangkap variasi skala spasial yang berbeda",
+        "Mengubah prior mean function dari konstanta nol menjadi fungsi tren linier berbobot"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek pemodelan tingkat polusi udara di Jakarta menggunakan GPR, Anda ingin memastikan bahwa model tidak menghasilkan prediksi konsentrasi gas negatif yang secara fisik tidak mungkin terjadi. Bagaimana cara terbaik menangani batasan fisik ini dalam kerangka Gaussian Process?",
+      "options": [
+        "Menerapkan fungsi transformasi invers pada target data sebelum pelatihan dan mengembalikannya saat prediksi",
+        "Menggunakan pendekatan warped Gaussian Process untuk memetakan ruang keluaran ke domain yang valid",
+        "Memotong secara manual semua hasil prediksi yang bernilai negatif menjadi tepat sama dengan nol",
+        "Menambahkan penalti regularisasi L2 yang kuat pada bobot matriks kovarians kernel eksponensial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun sistem pemantauan struktur jembatan di Surabaya menggunakan GPR untuk mendeteksi anomali getaran. Model sering memberikan alarm palsu karena adanya fluktuasi frekuensi tinggi yang bersifat acak dari lalu lintas harian. Modifikasi kernel manakah yang paling tepat untuk meredam gangguan tersebut?",
+      "options": [
+        "Menambahkan komponen White Noise Kernel ke dalam komposisi kernel utama model GPR",
+        "Mengganti kernel Matern dengan kernel Periodic untuk menangkap pola harian secara kaku",
+        "Memperkecil nilai parameter amplitude secara drastis pada fungsi kernel kovarians",
+        "Menggunakan kernel Dot Product untuk menghilangkan pengaruh komponen frekuensi tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya menggunakan GPR untuk memprediksi waktu tempuh pengiriman barang antar-kecamatan. Evaluasi menunjukkan bahwa model mengalami underfitting yang parah karena mengasumsikan hubungan yang terlalu halus. Langkah optimasi hyperparameter manakah yang harus diprioritaskan?",
+      "options": [
+        "Memperbesar nilai parameter length-scale pada kernel agar cakupan spasial menjadi lebih luas",
+        "Mengoptimalkan ulang hyperparameter kernel dengan menurunkan batas bawah panjang karakteristik",
+        "Menurunkan nilai jitter pada proses optimasi batas bawah marginal likelihood secara iteratif",
+        "Menghapus fitur kategorikal wilayah dan hanya memusatkan model pada koordinat lintang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam implementasi GPR untuk memprediksi tinggi gelombang laut di Selat Sunda, data observasi dari pelampung cuaca sering kali mengalami lonjakan ekstrem sesaat akibat badai petir lokal. Pendekatan penanganan noise apa yang paling tepat agar model tidak terdistorsi?",
+      "options": [
+        "Menggunakan fungsi likelihood Student-t alih-alih Gaussian untuk mengakomodasi pencilan berat",
+        "Menghapus secara otomatis semua baris data yang memiliki nilai simpangan lebih dari dua sigma",
+        "Menerapkan filter Kalman terlebih dahulu pada seluruh deret waktu sebelum dimasukkan ke GPR",
+        "Mengganti seluruh fungsi kernel spasial dengan kernel polinomial berderajat tinggi untuk fleksibilitas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang sistem optimasi desain sayap pesawat nirawak menggunakan Bayesian Optimization berbasis GPR. Pada tahap eksplorasi lanjut, fungsi perolehan (acquisition function) terjebak pada area lokal yang sub-optimal. Apa tindakan penyesuaian parameter yang paling tepat?",
+      "options": [
+        "Meningkatkan parameter eksplorasi seperti koefisien kappa pada Upper Confidence Bound (UCB)",
+        "Mengurangi jumlah sampel titik awal secara signifikan untuk mempercepat konversi iterasi",
+        "Mengganti metode akuisisi dari Expected Improvement menjadi random sampling murni",
+        "Memperketat ambang batas konvergensi agar iterasi berhenti lebih awal pada titik terbaik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik pengolahan baja di Cikarang menggunakan GPR untuk memprediksi suhu tungku peleburan berdasarkan beberapa sensor suhu historis. Anda mencurigai adanya pergeseran tren musiman jangka panjang dalam data operasional pabrik tersebut. Komposisi kernel apa yang paling sesuai?",
+      "options": [
+        "Penjumlahan antara kernel RBF untuk tren halus dan kernel Periodic untuk pola siklus operasional",
+        "Perkalian antara kernel Linear dan kernel White Noise untuk menangkap fluktuasi acak harian",
+        "Penggunaan kernel Matern 5/2 tunggal dengan nilai length-scale yang diset sangat besar",
+        "Kombinasi kernel Rational Quadratic dengan kernel Dot Product tanpa komponen periodik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pemetaan kandungan mineral nikel di Sulawesi menggunakan GPR, Anda mendapati bahwa tingkat kepercayaan prediksi (uncertainty) sangat tinggi di area yang padat titik bor, yang mengindikasikan masalah numerik pada matriks kovarians. Apa penyebab teknis yang paling mungkin?",
+      "options": [
+        "Terjadinya ketidakstabilan numerik akibat matriks kovarians yang hampir singular karena titik data terlalu dekat",
+        "Penggunaan fungsi kernel yang tidak memiliki turunan kontinu pada titik asal koordinat geospasial",
+        "Nilai noise parameter yang diset terlalu tinggi sehingga meredam sinyal varians dari data pelatihan",
+        "Kesalahan dalam pemilihan fungsi mean prior yang membuat skala keluaran tidak cocok dengan data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan model GPR untuk memperkirakan beban listrik puncak harian di sistem kelistrikan Jawa-Bali. Model menunjukkan performa yang sangat baik pada hari kerja, namun gagal total memprediksi beban pada hari libur nasional. Penyesuaian arsitektur apa yang paling tepat?",
+      "options": [
+        "Menambahkan variabel indikator biner hari libur sebagai fitur tambahan pada fungsi mean GPR",
+        "Memperbesar nilai parameter noise pada kernel untuk menyerap ketidakpastian hari libur",
+        "Mengganti kernel RBF dengan kernel eksponensial sederhana untuk mengurangi kompleksitas",
+        "Melakukan pelatihan ulang model secara terpisah dengan membuang seluruh data hari kerja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pemantauan debit air bendungan di Jawa Tengah menggunakan GPR, Anda mendapati bahwa fluktuasi harian tinggi air memiliki pola periodik mingguan dan musiman yang kuat. Pemilihan fungsi kernel gabungan manakah yang paling tepat untuk menangkap tren musiman sekaligus fluktuasi acak jangka pendek pada data tersebut?",
+      "options": [
+        "Menjumlahkan kernel RBF murni dengan kernel White Noise secara independen",
+        "Mengalikan kernel Periodic dengan kernel Matern 3/2 untuk modulasi tren",
+        "Menggunakan kernel Linear tunggal tanpa tambahan komponen kernel lainnya",
+        "Memakai kernel Rational Quadratic murni tanpa komponen periodik sama sekali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan sistem pemeliharaan prediktif untuk turbin angin di Pembangkit Listrik Tenaga Bayu (PLTB) Sidrap menggunakan GPR. Data getaran sensor menunjukkan adanya lonjakan noise pengamatan yang tidak konsisten akibat gangguan elektromagnetik sesaat. Parameter noise mana pada model GPR yang perlu diatur atau diestimasi untuk menangani variasi ketidakpastian observasi tersebut?",
+      "options": [
+        "Menambah nilai parameter panjang skala (length-scale) pada kernel spasial",
+        "Mengonfigurasi parameter varians noise (sigma_n squared) pada fungsi kovarians",
+        "Menurunkan batas ambang toleransi iterasi pada algoritma optimasi gradient descent",
+        "Menghapus komponen prior mean function agar model kembali menjadi zero-mean"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

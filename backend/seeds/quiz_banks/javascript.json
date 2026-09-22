@@ -1,0 +1,306 @@
+{
+  "skill": "JavaScript",
+  "skill_key": "javascript",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi e-commerce dan mendapati halaman web melambat drastis ketika pengguna mengetik di kolom pencarian cepat (search bar). Fungsi pencarian memicu panggilan API setiap kali tombol ditekan. Pendekatan JavaScript apa yang paling tepat untuk mengatasi masalah performa ini?",
+      "options": [
+        "Menggunakan teknik debouncing pada fungsi pemanggil API pencarian",
+        "Mengubah fungsi penanganan event input menjadi asynchronous penuh",
+        "Memindahkan seluruh logika pencarian ke dalam blok try-catch lokal",
+        "Menggunakan metode throttle untuk membatasi frekuensi render DOM"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan bug di sistem dashboard keuangan di mana nilai total saldo sering kali salah hitung karena masalah presisi desimal saat menjumlahkan angka bertipe float (contoh: 0.1 + 0.2). Bagaimana cara memperbaiki perhitungan ini dalam JavaScript secara aman?",
+      "options": [
+        "Melakukan konversi nilai float menjadi integer dengan mengalikannya sebelum operasi",
+        "Menggunakan objek BigDecimal pihak ketiga yang kompatibel dengan ES6",
+        "Memastikan semua variabel dideklarasikan menggunakan kata kunci let, bukan var",
+        "Mengubah representasi angka menjadi string sebelum melakukan operasi aritmatika"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam modul laporan bulanan, Anda harus mengambil data dari tiga API independen secara bersamaan menggunakan Promise.all(). Namun, jika salah satu API gagal, Anda ingin proses tetap berjalan dan mengembalikan data dari API yang berhasil saja tanpa membatalkan keseluruhan proses. Apa yang harus digunakan?",
+      "options": [
+        "Mengganti Promise.all() dengan metode baru yaitu Promise.allSettled()",
+        "Membungkus masing-masing pemanggilan API dengan blok try-catch terpisah",
+        "Menggunakan struktur perulangan async/await secara sekuensial biasa",
+        "Memanfaatkan fungsi pembantu Promise.race() dengan timeout dinamis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati memori aplikasi web dashboard mengalami kebocoran (memory leak) setelah pengguna sering membuka dan menutup modal pop-up yang berisi grafik interaktif. Apa penyebab utama yang paling sering terjadi pada skenario ini di JavaScript?",
+      "options": [
+        "Lupa menghapus event listener DOM dan referensi timer saat komponen modal ditutup",
+        "Menggunakan struktur data Map alih-alih objek literal untuk menyimpan state grafik",
+        "Kurangnya deklarasi tipe data yang ketat pada parameter fungsi pembentuk grafik",
+        "Penyimpanan data state lokal yang terlalu besar di dalam memori cache browser"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fungsi utilitas pemformatan tanggal sering dipanggil ribuan kali dalam satu siklus render tabel data karyawan. Kinerja aplikasi menurun karena kalkulasi berulang untuk input yang sama. Optimasi JavaScript apa yang paling efektif diterapkan?",
+      "options": [
+        "Menerapkan teknik memoization untuk menyimpan hasil kalkulasi tanggal sebelumnya",
+        "Mengganti fungsi bawaan Date dengan library eksternal yang berukuran lebih kecil",
+        "Mengubah fungsi pemformatan tersebut menjadi generator function ES6",
+        "Menjalankan proses pemformatan tanggal di dalam blok web worker terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima data JSON dari backend legacy di mana struktur objeknya sangat bersarang (nested) dan sering kali bernilai null atau undefined pada properti tengahnya (contoh: response.data.user.address.city). Cara modern apa di JavaScript untuk mengakses properti ini secara aman tanpa error?",
+      "options": [
+        "Memanfaatkan operator optional chaining (?.) saat mengakses properti objek",
+        "Membuat fungsi helper rekursif untuk memeriksa keberadaan setiap kunci objek",
+        "Menggunakan blok try-catch bersarang pada setiap tingkatan akses properti",
+        "Melakukan evaluasi string menggunakan fungsi global eval sebelum parsing"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan refactor kode lama, Anda melihat penggunaan callback berantai yang sangat dalam (callback hell) pada proses unggah dokumen, validasi, dan penyimpanan database. Pendekatan ES6+ apa yang paling bersih untuk merapikan alur asinkron ini?",
+      "options": [
+        "Mengubah fungsi-fungsi tersebut menjadi berbasis Promise dan menggunakan async/await",
+        "Memecah callback menjadi beberapa fungsi global terpisah yang saling memanggil",
+        "Menggunakan fitur Proxy JavaScript untuk memantau perubahan status asynchronous",
+        "Menerapkan pola desain Singleton pada modul pengelola dokumen utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi web perusahaan Anda perlu memproses file CSV berukuran 50MB di sisi klien (browser) sebelum diunggah. Jika diproses langsung di thread utama, antarmuka pengguna akan membeku (freezing). Solusi JavaScript apa yang paling tepat?",
+      "options": [
+        "Menjalankan proses parsing CSV di dalam latar belakang menggunakan Web Workers",
+        "Memecah file CSV menjadi potongan kecil menggunakan fungsi rekursif setTimeout",
+        "Menggunakan fitur SharedArrayBuffer untuk berbagi memori antar komponen UI",
+        "Memaksa browser melakukan render ulang menggunakan requestAnimationFrame"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi kalkulasi diskon keranjang belanja. Fungsi tersebut bergantung pada tanggal hari ini untuk menentukan diskon promo. Bagaimana cara terbaik menangani ketergantungan waktu ini dalam pengujian unit?",
+      "options": [
+        "Melakukan mocking pada objek Date atau melewatkan parameter tanggal secara opsional",
+        "Mengubah zona waktu sistem operasi komputer lokal saat menjalankan test runner",
+        "Menunggu hingga tanggal promo yang sebenarnya tiba sebelum menjalankan test",
+        "Membuat salinan fungsi terpisah yang memiliki nilai tanggal yang di-hardcode"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah modul konfigurasi aplikasi menggunakan objek literal yang sering dibaca oleh berbagai bagian kode lain. Untuk mencegah modul lain secara tidak sengaja mengubah nilai konfigurasi tersebut di tengah jalan, fitur JavaScript apa yang harus digunakan?",
+      "options": [
+        "Menerapkan Object.freeze() pada objek konfigurasi sebelum mengekspornya",
+        "Mengubah seluruh properti objek menjadi fungsi getter tanpa setter",
+        "Menyimpan konfigurasi di dalam variabel lokal privat menggunakan closure",
+        "Membungkus objek konfigurasi di dalam struktur data Set yang bersifat unik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat fitur keranjang belanja e-commerce. Ketika pengguna mengubah jumlah produk, total harga harus langsung diperbarui tanpa membuat halaman berkedip. Pendekatan JavaScript apa yang paling tepat untuk mengelola reaktivitas state harga secara efisien di DOM?",
+      "options": [
+        "Menggunakan getter dan setter kustom untuk mendeteksi perubahan nilai variabel state total.",
+        "Membuat fungsi pembaruan DOM manual yang dipanggil setiap kali tombol kuantitas diklik.",
+        "Memanfaatkan objek Proxy untuk memicu fungsi render ulang DOM secara otomatis saat state berubah.",
+        "Menghapus seluruh elemen DOM keranjang dan membangun ulang dari awal menggunakan innerHTML."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dashboard logistik melakukan polling data posisi kurir setiap 2 detik menggunakan setInterval. Namun, ketika tab browser tidak aktif, proses tersebut tetap berjalan dan membebani CPU klien. Bagaimana cara mengatasi masalah ini secara optimal?",
+      "options": [
+        "Mengganti setInterval dengan setTimeout rekursif yang hanya berjalan saat dokumen terlihat.",
+        "Memanfaatkan Visibility API untuk menghentikan dan melanjutkan interval berdasarkan status fokus tab.",
+        "Membungkus kode interval di dalam blok try-catch dengan penundaan waktu yang diperpanjang.",
+        "Menggunakan Web Worker agar proses polling berjalan di thread terpisah dari UI utama browser."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengintegrasikan sistem pembayaran pihak ketiga yang hanya menyediakan fungsi berbasis callback lama (error-first callback). Anda ingin menggunakan sintaks async/await agar kode lebih mudah dibaca. Apa cara terbaik untuk menerapkannya?",
+      "options": [
+        "Mengubah pustaka pihak ketiga tersebut secara langsung agar mengembalikan objek Promise standar.",
+        "Membungkus fungsi callback tersebut ke dalam constructor Promise baru secara manual.",
+        "Menggunakan metode Object.assign untuk mengubah struktur fungsi callback menjadi async.",
+        "Memanggil fungsi callback di dalam blok async tanpa perlu penanganan tambahan apapun."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam modul laporan analitik, Anda menerima array transaksi berisi jutaan data. Anda perlu menyaring transaksi di atas satu juta rupiah, lalu menjumlahkannya. Pendekatan metode array mana yang paling optimal secara memori?",
+      "options": [
+        "Menggunakan filter terlebih dahulu untuk menyaring data, kemudian map untuk mengubah bentuknya.",
+        "Melakukan chaining method filter diikuti langsung oleh reduce dalam satu baris ekspresi.",
+        "Menggunakan satu iterasi metode reduce tunggal untuk melakukan penyaringan dan penjumlahan sekaligus.",
+        "Membuat perulangan for...of manual untuk menghindari pembuatan array sementara di memori."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah aplikasi SaaS HRD mengalami lonjakan penggunaan CPU yang tinggi pada klien saat menampilkan grafik absensi bulanan. Analisis menunjukkan fungsi transformasi data memproses ulang dataset yang sama secara berulang. Teknik apa yang paling tepat untuk mengoptimalkannya?",
+      "options": [
+        "Menerapkan teknik memoization untuk menyimpan hasil komputasi dari argumen fungsi yang sama.",
+        "Memindahkan seluruh proses pengolahan data grafik tersebut ke dalam fungsi generator.",
+        "Menggunakan operator spread secara masif untuk menduplikasi objek data sebelum diproses.",
+        "Menjalankan proses transformasi data di dalam fungsi debounce berdurasi 300 milidetik."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang sistem plugin dinamis di mana skrip JavaScript pihak ketiga dimuat secara asinkron ke dalam halaman web utama. Anda perlu memastikan kode utama menunggu skrip tersebut selesai dimuat sebelum mengeksekusi fungsinya. Apa mekanisme DOM yang tepat?",
+      "options": [
+        "Menambahkan atribut defer pada elemen script yang disuntikkan secara dinamis ke dokumen.",
+        "Membuat penanganan event listener untuk event 'load' pada elemen script yang dibuat.",
+        "Menggunakan fungsi setInterval untuk memeriksa keberadaan variabel global setiap 100ms.",
+        "Memanfaatkan setTimeout dengan estimasi waktu muat rata-rata jaringan pengguna."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim frontend mengeluhkan bahwa variabel konfigurasi global sering tidak sengaja diubah oleh modul lain secara tidak terduga, menyebabkan bug sulit dilacak. Bagaimana cara merancang objek konfigurasi agar propertinya tidak bisa diubah atau ditambah?",
+      "options": [
+        "Mendefinisikan objek menggunakan kata kunci const dan menyimpannya dalam fungsi privat.",
+        "Menerapkan metode Object.freeze() pada objek konfigurasi sebelum diekspor ke modul lain.",
+        "Menggunakan fungsi Object.seal() agar properti yang ada tetap bisa dimodifikasi nilainya.",
+        "Menghapus referensi objek global dan menggantinya dengan variabel lokal di setiap file."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati aplikasi web mengalami penurunan performa (jank) karena animasi transisi halaman yang kompleks berjalan bersamaan dengan pemuatan data besar di latar belakang. API apa yang paling tepat untuk menjadwalkan tugas pemuatan data agar tidak mengganggu kelancaran animasi?",
+      "options": [
+        "requestAnimationFrame untuk menjadwalkan pemrosesan data tepat sebelum frame berikutnya.",
+        "requestIdleCallback untuk mengeksekusi tugas pemuatan saat browser berada dalam status longgar.",
+        "queueMicrotask untuk memprioritaskan eksekusi data di antrean mikro-tugas JavaScript.",
+        "setTimeout dengan parameter waktu tunda nol untuk melepaskan eksekusi dari thread utama."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi multi-bahasa, Anda perlu memformat mata uang Rupiah dan tanggal sesuai standar lokal pengguna. Fitur JavaScript bawaan apa yang paling direkomendasikan untuk menangani kebutuhan ini tanpa pustaka eksternal?",
+      "options": [
+        "Menggunakan objek global Date.toLocaleString() dan Number.toLocaleString() dengan opsi lokal.",
+        "Membuat fungsi regex kustom untuk menyisipkan titik pemisah ribuan pada string angka.",
+        "Memanfaatkan pustaka String.prototype untuk memanipulasi format teks secara manual.",
+        "Mengandalkan fungsi bawaan toFixed() yang dikombinasikan dengan penggabungan string."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi manajemen tugas memiliki daftar item yang sangat panjang. Pengguna sering menghapus item secara acak, dan Anda mencurigai ada referensi memori yang tertinggal karena elemen DOM masih terikat pada event listener. Struktur data apa yang paling tepat untuk menyimpan referensi elemen DOM agar aman dari memory leak?",
+      "options": [
+        "Menyimpan seluruh referensi elemen DOM di dalam sebuah objek literal global yang terpusat.",
+        "Menggunakan struktur data Array standar untuk mencatat semua elemen yang aktif.",
+        "Memanfaatkan WeakMap untuk mengasosiasikan data tambahan dengan elemen DOM tanpa mencegah garbage collection.",
+        "Menggunakan Set untuk memastikan setiap elemen DOM yang disimpan bersifat unik."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membuat fitur keranjang belanja e-commerce. Ketika pengguna mengubah jumlah produk, total harga harus diperbarui seketika menggunakan metode `reduce` pada array item. Namun, kode Anda sering menghasilkan NaN saat keranjang kosong. Bagaimana cara memperbaikinya dengan benar?",
+      "options": [
+        "Memberikan nilai awal (initial value) 0 sebagai argumen kedua pada metode reduce",
+        "Memeriksa apakah array item bernilai null sebelum memanggil fungsi reduce",
+        "Mengubah tipe data harga produk dari string menjadi float menggunakan parseFloat",
+        "Menambahkan blok try-catch di dalam callback function dari metode reduce"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa aplikasi sering mengalami 'freeze' beberapa detik ketika memuat data tabel transaksi ribuan baris dari server. Anda diminta memindahkan proses transformasi data berat tersebut agar tidak memblokir UI thread utama browser. Solusi manakah yang paling tepat?",
+      "options": [
+        "Menggunakan Web Workers untuk memproses transformasi data di latar belakang",
+        "Membungkus proses transformasi data ke dalam blok setTimeout dengan delay 0",
+        "Memecah data array besar menjadi potongan kecil menggunakan fungsi slice",
+        "Memanfaatkan fitur async/await pada fungsi pemrosesan data tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem absensi karyawan, Anda perlu memastikan bahwa fungsi pengiriman data GPS hanya dijalankan sekali setiap 5 detik meskipun tombol 'Absen' diklik berulang kali oleh pengguna yang tidak sabar. Teknik apa yang paling efektif untuk diterapkan pada event handler tombol?",
+      "options": [
+        "Menerapkan teknik throttling pada fungsi event listener tombol absen",
+        "Menerapkan teknik debouncing pada fungsi event listener tombol absen",
+        "Menonaktifkan tombol secara permanen setelah klik pertama berhasil",
+        "Menggunakan bendera boolean global untuk membatasi eksekusi fungsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis modul integrasi payment gateway di mana fungsi pemanggilan API pembayaran dapat gagal karena masalah jaringan yang bersifat sementara. Anda ingin mengulang pemanggilan API tersebut secara otomatis sebanyak 3 kali sebelum menyerah. Pendekatan rekursif async/await manakah yang paling bersih?",
+      "options": [
+        "Membuat fungsi rekursif yang memanggil dirinya sendiri di dalam blok catch dengan sisa percobaan dikurangi satu",
+        "Menggunakan perulangan for loop standar yang membungkus blok try-catch dengan jeda waktu tetap",
+        "Memanfaatkan library pihak ketiga seperti lodash untuk melakukan retry pada fungsi async secara otomatis",
+        "Menambahkan penundaan waktu menggunakan setTimeout di luar fungsi utama pemanggilan API pembayaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi dashboard analitik Anda menggunakan objek JavaScript besar sebagai cache data sementara. Setelah beberapa jam digunakan, penggunaan memori browser terus meningkat. Analisis menunjukkan referensi objek lama tidak pernah dibersihkan. Struktur data apa di JavaScript modern yang paling tepat untuk menggantikan objek biasa agar memori dapat terhapus otomatis?",
+      "options": [
+        "Menggunakan WeakMap untuk menyimpan cache dengan kunci objek yang dapat di-garbage collect",
+        "Menggunakan struktur data Map standar dengan metode clear() yang dipanggil berkala",
+        "Menggunakan Set untuk menyimpan referensi unik dari objek data yang sedang aktif saja",
+        "Mengubah objek cache menjadi array of objects agar mudah dihapus dengan splice"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima respons data dari backend berupa objek profil pengguna yang sangat kompleks dan sering kali properti di dalamnya bernilai null atau undefined. Ketika mencoba mengakses properti yang dalam, aplikasi sering crash karena TypeError. Fitur JavaScript apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Memanfaatkan operator optional chaining (?.) saat mengakses properti objek yang bersarang",
+        "Menggunakan operator nullish coalescing (??) untuk memberikan nilai default pada setiap properti",
+        "Membuat fungsi utilitas rekursif untuk membersihkan seluruh nilai null pada objek tersebut",
+        "Memastikan backend mengirimkan struktur data yang konsisten tanpa nilai null atau undefined"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi manajemen dokumen, Anda perlu membaca file teks lokal yang dipilih pengguna melalui elemen `<input type=\"file\">` sebelum diunggah ke server. API JavaScript apa yang harus digunakan untuk membaca konten file tersebut secara asinkron di sisi klien?",
+      "options": [
+        "Menggunakan objek FileReader untuk membaca isi file sebagai teks atau data URL",
+        "Memanfaatkan objek XMLHttpRequest untuk mengambil isi file dari direktori lokal",
+        "Menggunakan fungsi fetch API dengan protokol khusus membaca jalur file lokal",
+        "Mengakses langsung properti buffer dari objek file yang dipilih pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati kode lama yang menggunakan variabel `var` di dalam loop `for` dengan fungsi `setTimeout`, di mana semua iterasi mencetak nilai indeks terakhir yang sama. Bagaimana cara memperbaiki masalah cakupan variabel (scope) ini tanpa mengubah struktur loop secara drastis?",
+      "options": [
+        "Mengganti deklarasi variabel iterator dari var menjadi let untuk menciptakan block scope",
+        "Membungkus fungsi setTimeout di dalam fungsi IIFE (Immediately Invoked Function Expression)",
+        "Menyimpan nilai indeks ke dalam atribut data khusus pada elemen DOM terdekat",
+        "Mengubah fungsi setTimeout menjadi fungsi sinkronus menggunakan perulangan biasa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur pencarian produk menampilkan hasil saat pengguna mengetik. Anda ingin memastikan bahwa jika pengguna mengetik cepat, permintaan pencarian ke server hanya dikirimkan sekali setelah pengguna berhenti mengetik selama 300 milidetik. Teknik apa yang harus diimplementasikan?",
+      "options": [
+        "Menerapkan teknik debouncing pada fungsi pemanggilan API pencarian produk",
+        "Menerapkan teknik throttling pada fungsi pemanggilan API pencarian produk",
+        "Membatalkan request sebelumnya menggunakan objek AbortController di setiap ketikan",
+        "Menyimpan hasil pencarian sebelumnya ke dalam memori lokal browser (localStorage)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis modul helper untuk validasi form pendaftaran karyawan. Anda ingin memastikan objek konfigurasi aturan validasi yang Anda buat tidak dapat dimodifikasi secara tidak sengaja oleh bagian kode lain di aplikasi. Metode JavaScript apa yang harus digunakan?",
+      "options": [
+        "Menerapkan Object.freeze() pada objek konfigurasi aturan validasi tersebut",
+        "Menggunakan kata kunci const saat mendeklarasikan variabel objek konfigurasi",
+        "Mengatur properti objek menggunakan Object.defineProperty dengan writable false",
+        "Membuat salinan objek menggunakan metode structuredClone sebelum dibagikan"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

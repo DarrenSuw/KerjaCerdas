@@ -1,0 +1,306 @@
+{
+  "skill": "MongoDB",
+  "skill_key": "mongodb",
+  "questions": [
+    {
+      "question": "Tim backend e-commerce melaporkan bahwa query pencarian produk berdasarkan nama dan kategori sering mengalami latensi tinggi di atas 2 detik saat jam sibuk. Koleksi 'products' saat ini memiliki 5 juta dokumen tanpa indeks sekunder. Langkah paling efektif apa yang harus Anda ambil?",
+      "options": [
+        "Melakukan sharding pada koleksi products berdasarkan kategori produk",
+        "Membuat compound index pada field nama produk dan kategori produk",
+        "Menaikkan spesifikasi RAM pada instance server database MongoDB",
+        "Mengubah struktur dokumen menjadi embedded array untuk setiap kategori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi fintech lokal Anda mencatat transaksi harian hingga jutaan data. Tabel mutasi rekening sering mengalami bottleneck karena dokumen mutasi terus bertambah besar seiring waktu. Strategi apa yang paling tepat diterapkan pada MongoDB untuk menangani data historis ini secara otomatis?",
+      "options": [
+        "Menggunakan fitur TTL Index untuk menghapus data secara otomatis",
+        "Menerapkan Time Series Collections untuk optimasi penyimpanan data",
+        "Memindahkan data lama ke database relasional terpisah setiap malam",
+        "Melakukan kompresi manual pada setiap dokumen transaksi lama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain skema untuk aplikasi ojek online di mana seorang driver dapat memiliki banyak kendaraan, dan satu kendaraan dapat disewa oleh driver berbeda dalam periode waktu tertentu. Pendekatan pemodelan data mana yang paling efisien untuk relasi many-to-many ini di MongoDB?",
+      "options": [
+        "Menyimpan array ID kendaraan di dalam dokumen driver secara langsung",
+        "Menggunakan dua koleksi terpisah dan menghubungkannya dengan reference ID",
+        "Memasukkan seluruh data detail kendaraan ke dalam sub-dokumen driver",
+        "Melakukan denormalisasi total dengan menggabungkan semua entitas ke satu dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query agregasi untuk laporan bulanan penjualan e-commerce sering gagal dengan error 'Exceeded memory limit for $group, readonly'. Analisis menunjukkan tahap grouping memproses dokumen dalam jumlah besar. Solusi apa yang paling tepat untuk mengatasi masalah tersebut?",
+      "options": [
+        "Menambahkan parameter allowDiskUse bernilai true pada perintah agregasi",
+        "Meningkatkan ukuran batch size pada kursor driver aplikasi backend",
+        "Memecah satu pipeline agregasi besar menjadi beberapa query terpisah",
+        "Menghapus indeks yang tidak terpakai untuk mengosongkan RAM server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi logistik Anda membutuhkan konsistensi data yang ketat saat proses 'checkout' pesanan yang melibatkan pengurangan stok produk dan pembuatan record pembayaran secara bersamaan. Fitur MongoDB apa yang harus digunakan untuk memastikan operasi ini aman?",
+      "options": [
+        "Distributed lock berbasis Redis sebelum melakukan operasi tulis",
+        "Write concern dengan tingkat majority untuk setiap operasi insert",
+        "Multi-document ACID transactions untuk menjaga integritas data",
+        "Atomic update operators seperti $inc dan $push pada level dokumen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menemukan bahwa operasi pencarian teks pada kolom 'deskripsi_produk' menggunakan regex operator (^kata.*) berjalan sangat lambat pada koleksi dengan 2 juta data. Bagaimana cara Anda mengoptimalkan fitur pencarian tersebut di MongoDB?",
+      "options": [
+        "Membuat unique index pada field deskripsi_produk yang akan dicari",
+        "Menggunakan Text Index dan operator $text untuk melakukan pencarian",
+        "Melakukan indexing menggunakan tipe data hashed pada field deskripsi",
+        "Mengganti operator regex dengan operator $where agar lebih fleksibel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem analitik media sosial menggunakan MongoDB Replica Set dengan 3 node. Tiba-tiba primary node mengalami kegagalan hardware, dan proses failover memakan waktu lebih lama dari SLA yang ditentukan. Konfigurasi apa yang perlu ditinjau untuk mempercepat failover?",
+      "options": [
+        "Menurunkan nilai write concern dari majority menjadi w: 1 pada aplikasi",
+        "Menaikkan nilai priority pada salah satu secondary node secara manual",
+        "Menyesuaikan parameter heartbeatTimeoutSecs dan electionTimeoutMillis",
+        "Menambahkan arbiter node baru untuk mempercepat kuorum pemilihan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi HRIS perusahaan Anda mengalami lonjakan beban baca pada akhir bulan saat proses slip gaji. Untuk menjaga performa aplikasi utama, arsitektur pembacaan data mana yang paling ideal diterapkan pada MongoDB Replica Set?",
+      "options": [
+        "Mengatur read preference aplikasi ke mode secondaryPreferred untuk laporan",
+        "Melakukan pembacaan langsung ke node arbiter untuk menghemat memori",
+        "Membuat cluster sharding terpisah khusus untuk menangani proses laporan",
+        "Mengubah read concern menjadi linearizable pada setiap query laporan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim data engineering ingin melakukan analisis real-time terhadap perubahan data pengguna di MongoDB tanpa membebani operational database utama. Fitur bawaan MongoDB apa yang paling tepat digunakan untuk kebutuhan ini?",
+      "options": [
+        "Melakukan dump database secara berkala setiap satu jam sekali",
+        "Memanfaatkan Change Streams untuk mendengarkan perubahan data",
+        "Mengaktifkan profiler level 2 untuk mencatat semua operasi kueri",
+        "Membuat background task cron job untuk melakukan query polling"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edukasi online mencatat log aktivitas siswa yang tumbuh sangat masif hingga melewati kapasitas disk server tunggal. Keputusan arsitektur apa yang harus diambil ketika strategi replikasi biasa tidak lagi mencukupi?",
+      "options": [
+        "Melakukan migrasi total dari MongoDB ke database berbasis SQL",
+        "Menerapkan sharded cluster dengan shard key yang distribusinya merata",
+        "Mengaktifkan kompresi data Snappy pada storage engine WiredTiger",
+        "Menghapus log lama secara otomatis menggunakan script pembersihan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem manajemen inventaris gudang mengalami masalah di mana stok barang sering mengalami inkonsistensi saat terjadi transaksi penjualan serentak dari beberapa cabang. Pendekatan apa yang paling tepat diterapkan pada operasi database untuk menjamin integritas data stok?",
+      "options": [
+        "Menggunakan multi-document ACID transactions pada collection terkait",
+        "Mengubah seluruh struktur data menjadi satu dokumen besar terdenormalisasi",
+        "Menonaktifkan journaling pada storage engine WiredTiger untuk kecepatan",
+        "Melakukan pengecekan manual via aplikasi setelah proses update selesai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi marketplace mendapati bahwa query untuk menampilkan daftar produk berdasarkan filter harga dan rating berjalan lambat seiring bertambahnya jumlah produk. Apa langkah optimasi awal yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Membuat compound index pada field harga dan rating di collection produk",
+        "Menambahkan secondary node baru pada konfigurasi replica set yang ada",
+        "Melakukan restart berkala pada service mongod setiap jam sibuk",
+        "Memindahkan seluruh data produk ke dalam RAM menggunakan cache eksternal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim DBA mendapati penggunaan RAM pada server MongoDB produksi melonjak drastis hingga 95% setelah penambahan fitur baru. Analisis menunjukkan banyak query melakukan collection scan. Tindakan preventif apa yang harus segera diimplementasikan?",
+      "options": [
+        "Mengaktifkan profiler database untuk mengidentifikasi query lambat tanpa indeks",
+        "Melakukan upgrade kapasitas RAM server secara fisik ke tier yang lebih tinggi",
+        "Mengurangi ukuran wiredTigerCacheSizeGB agar tidak memakan memori OS",
+        "Menghapus seluruh data log historis untuk membebaskan ruang penyimpanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta merancang skema database untuk platform streaming musik di mana sebuah lagu dapat memiliki banyak artis dan seorang artis dapat memiliki banyak lagu. Pola relasi apa yang paling efisien untuk menangani kasus ini di MongoDB?",
+      "options": [
+        "Menggunakan two-way referencing dengan menyimpan array ObjectID pada kedua sisi",
+        "Menyimpan seluruh data artis di dalam dokumen lagu secara terdenormalisasi",
+        "Membuat collection terpisah khusus untuk menampung relasi many-to-many",
+        "Menggabungkan nama artis sebagai string tunggal di dalam dokumen lagu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi sistem absensi kantor mencatat data check-in karyawan setiap detik dan ukuran koleksi tumbuh sangat cepat. Perusahaan hanya membutuhkan data detail untuk 90 hari terakhir, sementara data lama hanya untuk arsip tahunan. Fitur MongoDB apa yang paling tepat digunakan?",
+      "options": [
+        "Mengonfigurasi Time-To-Live (TTL) index pada field tanggal absensi",
+        "Membuat cron job eksternal untuk menghapus data lama setiap tengah malam",
+        "Menggunakan fungsi $out dalam aggregation pipeline untuk memindahkan data",
+        "Membagi collection manual menggunakan script aplikasi berdasarkan bulan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi portal berita mengalami lonjakan trafik yang tinggi pada artikel breaking news. Database sering mengalami bottleneck pada dokumen artikel tersebut karena ribuan pembaca melakukan increment pada counter 'jumlah_dilihat'. Bagaimana cara mengoptimalkan dokumen ini?",
+      "options": [
+        "Menerapkan pola bucket pattern untuk mengelompokkan update view per jam",
+        "Menggunakan teknik sharding berdasarkan field ID artikel di cluster",
+        "Mematikan fitur write concern pada driver aplikasi untuk mempercepat tulis",
+        "Memindahkan field counter view ke dalam tabel relational terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim keamanan siber perusahaan meminta agar data nomor kartu kredit pengguna yang tersimpan di MongoDB dienkripsi pada level field sebelum disimpan ke disk. Fitur MongoDB Enterprise apa yang harus diaktifkan?",
+      "options": [
+        "Menggunakan Client-Side Field Level Encryption sebelum data dikirim ke server",
+        "Mengaktifkan Transparent Data Encryption pada level storage engine WiredTiger",
+        "Membuat hashing function MD5 pada aplikasi sebelum melakukan operasi insert",
+        "Menggunakan TLS/SSL certificate untuk mengenkripsi jalur komunikasi jaringan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi SaaS multi-tenant menggunakan satu database MongoDB. Seiring pertumbuhan klien, performa query klien besar mulai berdampak buruk pada klien kecil. Strategi arsitektur apa yang harus dipilih untuk mengisolasi beban kerja?",
+      "options": [
+        "Menerapkan sharded cluster dengan shard key yang merepresentasikan ID tenant",
+        "Membuat replica set terpisah yang didedikasikan secara khusus untuk setiap klien",
+        "Menambahkan indeks unik pada setiap collection untuk mempercepat pencarian",
+        "Meningkatkan ukuran cache RAM pada instance server database utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan migrasi struktur dokumen di production di mana field 'nama_depan' dan 'nama_belakang' digabungkan menjadi 'nama_lengkap'. Setelah migrasi, aplikasi lama masih sering melakukan query menggunakan field lama yang sudah dihapus. Bagaimana cara mencegah error pada aplikasi?",
+      "options": [
+        "Membuat computed field atau menggunakan aggregation pipeline pada view",
+        "Melakukan rollback migrasi dan mengembalikan struktur dokumen ke bentuk lama",
+        "Mengubah source code aplikasi secara massal menggunakan automated script",
+        "Menambahkan index pada field baru agar query lama otomatis menyesuaikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah cluster MongoDB Sharded mengalami ketidakseimbangan data yang parah (jumbo chunks) pada salah satu shard key yang memiliki nilai monotonik (seperti timestamp). Langkah perbaikan apa yang harus dilakukan pada arsitektur sharding?",
+      "options": [
+        "Mengganti strategi shard key menjadi hashed shard key atau compound key",
+        "Menambahkan lebih banyak node mongod ke dalam shard yang mengalami overload",
+        "Menonaktifkan proses balomer otomatis agar ukuran chunk tidak bertambah",
+        "Menghapus data historis secara berkala untuk mengurangi ukuran dokumen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda memiliki fitur keranjang belanja. Saat pengguna menambahkan produk, sering terjadi race condition di mana stok berkurang minus karena banyak pengguna checkout bersamaan. Bagaimana cara mengatasinya secara aman di MongoDB?",
+      "options": [
+        "Mengambil data stok dulu via aplikasi lalu melakukan update nilai baru secara langsung",
+        "Membuat transaksi multi-document dengan session untuk menjamin konsistensi",
+        "Menggunakan atomic operator seperti $inc dengan kondisi query stok lebih besar dari nol",
+        "Melakukan lock seluruh koleksi produk menggunakan perintah lock table sebelum update"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi HRIS mencatat data absensi jutaan karyawan setiap bulan. Tim manajemen meminta laporan rekapitulasi kehadiran per departemen yang dieksekusi secara real-time. Apa langkah optimal untuk mempercepat query agregasi ini?",
+      "options": [
+        "Membuat compound index yang mencakup field pengelompokan dan filter di tahap awal pipeline",
+        "Menambahkan stage $sort di akhir pipeline agregasi untuk mengurutkan hasil akhir",
+        "Menjalankan perintah hint() secara manual untuk memaksa penggunaan seluruh index yang ada",
+        "Memindahkan seluruh dokumen mentah ke dalam RAM server sebelum proses map-reduce"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan pajak perusahaan mengalami lonjakan beban baca pada akhir tahun. DBA menyarankan pembuatan Read Preference agar beban baca didistribusikan ke secondary node. Opsi mana yang paling tepat untuk laporan non-kritis?",
+      "options": [
+        "Mengatur read preference menjadi primaryPreferred untuk memastikan data paling segar",
+        "Mengatur read preference menjadi secondaryPreferred agar pembacaan dialihkan ke secondary",
+        "Mengatur read preference menjadi nearest untuk memilih node dengan latensi jaringan terendah",
+        "Mengatur read preference menjadi primary untuk menjamin konsistensi tingkat tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain skema untuk platform event management di mana sebuah event memiliki kapasitas peserta yang sangat besar dan tiket terjual terus bertambah dalam array peserta. Dokumen mendekati batas ukuran 16MB. Bagaimana desain terbaiknya?",
+      "options": [
+        "Memindahkan daftar peserta ke koleksi terpisah dengan referensi ID event menggunakan relasi one-to-many",
+        "Mengubah struktur dokumen menjadi nested array berlapis untuk menampung data peserta tambahan",
+        "Mengompresi data string peserta menggunakan algoritma gzip sebelum disimpan ke dalam array dokumen",
+        "Memecah dokumen event menjadi beberapa dokumen dengan _id yang sama menggunakan fungsi $merge"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi logistik mencatat koordinat GPS kurir setiap 10 detik. Data geospasial ini digunakan untuk mencari kurir terdekat dari lokasi pickup. Fitur apa yang harus diterapkan pada koleksi lokasi tersebut?",
+      "options": [
+        "Membuat index tipe Text pada field koordinat untuk pencarian string lokasi yang cepat",
+        "Membuat index tipe 2dsphere pada field koordinat untuk mendukung query geospasial berbasis GeoJSON",
+        "Membuat index tipe Hashed pada field koordinat agar distribusi data merata di sharded cluster",
+        "Membuat compound index biasa pada latitude dan longitude secara terpisah untuk operasi range"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi fintech lokal Anda sering mengalami kelambatan saat memproses mutasi rekening pengguna karena dokumen transaksi dalam koleksi terus bertambah besar tanpa batasan waktu. Strategi apa yang paling tepat untuk mengelolanya?",
+      "options": [
+        "Melakukan drop seluruh koleksi setiap akhir bulan dan membuat ulang koleksi kosong",
+        "Menggunakan fitur Time-Series Collection dengan mendefinisikan field waktu dan metadata",
+        "Membuat cron job harian untuk menghapus data lama menggunakan perintah remove tanpa index",
+        "Memindahkan data lama ke dalam file CSV secara manual melalui shell script setiap malam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa proses unit test pada aplikasi backend sering gagal karena data test antar test case saling mencemari di database MongoDB. Bagaimana cara mengisolasi data test dengan benar?",
+      "options": [
+        "Menghapus seluruh database utama setelah setiap test case selesai dijalankan",
+        "Menggunakan instance MongoDB Memory Server atau database terisolasi per sesi test",
+        "Menjalankan perintah db.repairDatabase() di setiap awal baris kode pengujian",
+        "Mematikan proses mongod dan merestart layanan service setiap kali test dimulai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online mendapati bahwa lonjakan pembaca pada artikel populer menyebabkan query pembacaan dokumen artikel membebani satu node saja. Fitur MongoDB apa yang paling efektif untuk mengurangi beban baca tersebut?",
+      "options": [
+        "Mengaktifkan sharding dengan shard key berdasarkan kategori artikel berita",
+        "Mengaktifkan fitur Client-Side Field Level Encryption untuk mengamankan data artikel",
+        "Mengaktifkan fitur Read Concern majority untuk setiap operasi baca artikel",
+        "Menggunakan Hedged Reads pada replica set agar pembacaan dikirim ke node tercepat"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda menemukan bahwa query pencarian produk dengan filter status dan sorting tanggal sering melakukan COLLSCAN (Collection Scan) meskipun sudah ada index pada kedua field tersebut. Apa penyebab utamanya?",
+      "options": [
+        "Urutan field pada pembuatan index compound tidak sesuai dengan urutan field pada filter dan sort",
+        "Ukuran dokumen di dalam koleksi sudah melebihi batas maksimal standar 16 megabyte",
+        "Koleksi tersebut belum diatur menggunakan mode sharding untuk mendistribusikan beban",
+        "Penggunaan operator $in pada query membuat mesin penyimpanan mengabaikan index yang ada"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi SaaS multi-tenant Anda mendapati salah satu klien besar melakukan operasi tulis masif yang membuat cache WiredTiger penuh oleh data klien tersebut, sehingga mengganggu performa klien lain. Bagaimana cara mengatasinya?",
+      "options": [
+        "Membatasi ukuran dokumen maksimal untuk seluruh klien melalui schema validation",
+        "Memisahkan klien besar tersebut ke dalam database atau cluster MongoDB terdedikasi",
+        "Menurunkan nilai cache size WiredTiger di file konfigurasi mongod.conf secara drastis",
+        "Menonaktifkan fitur journaling pada server database untuk mempercepat proses tulis"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Angular",
+  "skill_key": "angular",
+  "questions": [
+    {
+      "question": "Tim frontend Anda mendapati bahwa aplikasi Angular yang dibuat mengalami penurunan performa drastis saat memuat daftar transaksi yang sangat panjang di halaman riwayat. Apa langkah optimasi paling tepat yang harus Anda terapkan pada komponen daftar tersebut?",
+      "options": [
+        "Mengganti seluruh siklus hidup komponen dengan hook ngDoCheck manual",
+        "Menerapkan strategi deteksi perubahan OnPush dan teknik virtual scrolling",
+        "Memindahkan seluruh logika pemrosesan data transaksi ke dalam berkas template",
+        "Menonaktifkan sistem enkapsulasi tampilan view encapsulation pada komponen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun portal e-commerce dengan Angular dan perlu mencegah pengguna yang belum memiliki peran 'Admin' mengakses rute manajemen produk. Mana pendekatan interceptor atau guard modern yang paling sesuai?",
+      "options": [
+        "Membuat fungsi guard berbasis CanActivateFn yang mengembalikan nilai boolean",
+        "Membuat kelas lama yang mengimplementasikan antarmuka CanActivate global",
+        "Menulis logika validasi peran pengguna langsung di dalam konstruktor komponen",
+        "Memanfaatkan fungsi pengecekan DOM native di dalam berkas routing modul utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi pelaporan pajak perusahaan Anda sering mengalami kegagalan langganan (subscription) yang menumpuk di memori ketika pengguna berpindah-pindah tab dengan cepat, menyebabkan memory leak. Bagaimana cara paling elegan mengatasinya menggunakan RxJS?",
+      "options": [
+        "Menggunakan operator takeUntil dengan Subject destroy yang dipanggil di ngOnDestroy",
+        "Menambahkan blok try-catch pada setiap pemanggilan metode subscribe di layanan",
+        "Membuat variabel global penampung data untuk menghentikan aliran data secara paksa",
+        "Mematikan mekanisme asynchronous pada HttpClient secara manual di modul utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan membuat form pendaftaran merchant yang kompleks dengan validasi bersarang dan dinamis di Angular. Pendekatan formulir mana yang paling tepat dipilih untuk skenario ini?",
+      "options": [
+        "Reactive Forms karena memberikan kontrol penuh dan kemudahan uji unit program",
+        "Template-driven Forms karena lebih cepat ditulis tanpa perlu mendeklarasikan FormGroup",
+        "Two-way data binding murni menggunakan direktif ngModel di seluruh elemen input",
+        "Formulir HTML standar tanpa modul FormsModule atau ReactiveFormsModule sama sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi dashboard analitik Anda perlu mengambil data dari tiga API berbeda secara bersamaan sebelum merender grafik utama. Operator RxJS manakah yang paling efisien untuk menggabungkan ketiga panggilan tersebut?",
+      "options": [
+        "Menggunakan operator switchMap untuk membatalkan permintaan data yang lambat",
+        "Menggunakan operator forkJoin untuk menunggu semua permintaan selesai bersamaan",
+        "Menggunakan operator concatMap secara berurutan untuk menjaga antrean jaringan",
+        "Menggunakan operator debounceTime untuk menunda eksekusi data hingga stabil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mengonfigurasi fitur Lazy Loading untuk modul laporan keuangan pada aplikasi Angular perusahaan, rute tidak mau terunduh secara asinkron. Bagian mana dari kode konfigurasi routing yang biasanya terlewat?",
+      "options": [
+        "Menghilangkan properti loadChildren dengan fungsi import() dinamis pada rute",
+        "Tidak mendaftarkan komponen laporan keuangan ke dalam array declarations modul",
+        "Lupa menambahkan dekorator Injectable pada layanan utama modul laporan tersebut",
+        "Kurang mendefinisikan path kosong pada berkas routing komponen utama aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat direktif kustom di Angular yang secara otomatis mengubah latar belakang input teks menjadi merah jika panjang karakter melebihi batas. Metode apa yang harus digunakan untuk membaca nilai elemen host?",
+      "options": [
+        "Menggunakan dekorator HostListener untuk memantau perubahan properti natif",
+        "Menggunakan dekorator ElementRef dan Renderer2 untuk manipulasi DOM yang aman",
+        "Menggunakan layanan HttpClient untuk mengirim validasi langsung ke server pusat",
+        "Menggunakan fungsi ChangeDetectorRef untuk memaksa pembaruan tampilan instan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi fintech Anda membutuhkan sistem penanganan error terpusat untuk semua respons HTTP yang gagal dari backend. Fitur Angular manakah yang paling tepat untuk mengimplementasikannya?",
+      "options": [
+        "Membuat fungsi HttpInterceptor yang menangkap dan memproses ulang kesalahan API",
+        "Membuat direktif global yang memantau setiap elemen tombol di seluruh aplikasi",
+        "Menulis blok penanganan error terpisah di dalam setiap komponen secara manual",
+        "Mengubah konfigurasi zona waktu aplikasi pada berkas lingkungan produksi utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek tim berskala besar, Anda mendapati bahwa waktu build produksi aplikasi Angular sangat lambat. Pendekatan arsitektur apa yang paling efektif untuk mempercepat proses kompilasi dan ukuran bundle?",
+      "options": [
+        "Memecah aplikasi menjadi beberapa fitur independen dengan arsitektur standalone components",
+        "Menggabungkan seluruh komponen aplikasi ke dalam satu modul utama agar mudah diakses",
+        "Menaikkan batas alokasi memori Node.js pada komputer pengembang secara permanen",
+        "Menghapus semua pengujian unit otomatis agar proses build mengabaikan folder test"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menguji komponen Angular yang menerima data pengguna melalui Input decorator dan memancarkan aksi via Output EventEmitter. Alat bantu pengujian apa yang paling tepat untuk mensimulasikan interaksi ini?",
+      "options": [
+        "Memanfaatkan utilitas TestBed bersama ComponentFixture untuk menyuntikkan data",
+        "Menggunakan skrip pengujian berbasis konsol browser tanpa kerangka kerja pengujian",
+        "Menulis kode server ekspres terpisah untuk menangani permintaan HTTP tiruan",
+        "Mengandalkan plugin editor teks pihak ketiga untuk memverifikasi sintaks HTML"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi HRIS menggunakan Angular. Ketika pengguna berpindah dari halaman profil ke halaman absensi, proses pemuatan data profil sebelumnya masih terus berjalan di background dan kadang menimpa state data absensi yang baru. Bagaimana cara paling tepat menyelesaikan masalah pembatalan HTTP request yang usang ini?",
+      "options": [
+        "Menambahkan variabel boolean global di service untuk menghentikan proses fetch data yang sedang berjalan",
+        "Memanfaatkan operator switchMap pada RxJS untuk secara otomatis membatalkan request lama saat request baru masuk",
+        "Menggunakan fungsi setTimeout di dalam blok ngOnDestroy untuk menunda eksekusi pembersihan data selama 2 detik",
+        "Memanggil method location.back() secara paksa di dalam komponen profil saat router event mulai mendeteksi navigasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa form ubah kata sandi di aplikasi perbankan Anda sering mengalami masalah di mana validasi kustom pencocokan password baru dan konfirmasi password tidak ter-trigger ketika pengguna mengetik di kolom konfirmasi saja. Pendekatan FormGroup manakah yang paling tepat untuk menangani validasi lintas-kontrol ini?",
+      "options": [
+        "Menambahkan validator langsung pada masing-masing FormControl secara terpisah dengan argumen referensi silang",
+        "Membuat fungsi validator kustom tingkat grup pada level FormGroup utama yang mencakup kedua kontrol tersebut",
+        "Memanggil method updateValueAndValidity secara manual di dalam event listener native DOM input HTML",
+        "Memecah form tersebut menjadi dua komponen terpisah yang saling berkomunikasi menggunakan EventEmitter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi inventaris logistik Anda memiliki tabel data besar dengan 500 baris yang diperbarui secara real-time setiap detik via WebSocket. Setiap pembaruan kecil menyebabkan seluruh halaman mengalami lag yang parah. Strategi perubahan deteksi (Change Detection) apa yang paling efektif untuk mengatasi hal ini?",
+      "options": [
+        "Mengubah strategi deteksi perubahan komponen tabel menjadi OnPush dan memicu pembaruan lewat ChangeDetectorRef secara selektif",
+        "Mematikan total fitur zone.js di file polyfills.ts dan melakukan render ulang seluruh aplikasi menggunakan requestAnimationFrame",
+        "Menghapus semua penggunaan direktif bawaan Angular seperti ngFor dan menggantinya dengan manipulasi DOM vanilla JavaScript",
+        "Membungkus seluruh template komponen tabel dengan async pipe tanpa menggunakan struktur data RxJS yang memadai"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat sebuah komponen widget cuaca yang dapat disematkan di berbagai halaman berbeda tanpa harus mendaftarkannya ke dalam NgModule tertentu. Fitur modern Angular apa yang paling tepat digunakan untuk membangun komponen mandiri ini?",
+      "options": [
+        "Mengubah semua modul aplikasi menjadi dynamic import menggunakan sistem loadChildren berbasis string path",
+        "Memanfaatkan fitur Standalone Components agar komponen dapat langsung mengimpor dependensinya tanpa NgModule",
+        "Membuat instance komponen secara manual menggunakan ComponentFactoryResolver di dalam file main.ts utama",
+        "Mendaftarkan komponen tersebut ke dalam array entryComponents di modul akar aplikasi secara global"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi portal berita, Anda mendapati bahwa ukuran file bundle JavaScript utama (main.js) sangat besar karena memuat seluruh pustaka charting pihak ketiga yang hanya dipakai di halaman statistik. Langkah optimasi build apa yang harus diterapkan?",
+      "options": [
+        "Memindahkan seluruh pustaka pihak ketiga ke dalam folder assets dan memuatnya via tag script di index.html",
+        "Mengonfigurasi rute halaman statistik agar menggunakan fitur lazy loading dengan fungsi loadComponent atau loadChildren",
+        "Menghapus direktori node_modules yang tidak terpakai dan menjalankan perintah npm prune secara berkala",
+        "Mengaktifkan mode kompresi gzip pada server Nginx tempat aplikasi dikerahkan untuk mengurangi ukuran file"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi e-learning Anda membutuhkan mekanisme komunikasi antar komponen yang tidak memiliki hubungan parent-child langsung (misalnya, tombol keranjang belanja di header dan tombol beli di halaman detail kursus). Pendekatan arsitektur layanan apa yang paling dianjurkan di Angular?",
+      "options": [
+        "Membuat instance kelas global baru secara manual menggunakan kata kunci 'new' di dalam setiap konstruktor komponen",
+        "Memanfaatkan state management berbasis RxJS dengan Subject atau BehaviorSubject di dalam sebuah service yang di-provided di root",
+        "Menyimpan semua data interaktif komponen ke dalam penyimpanan local storage browser dan membaca perubahannya secara berkala",
+        "Menggunakan event emitter global yang menempel pada objek window browser untuk melempar dan menangkap custom event"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test menggunakan Jasmine dan TestBed untuk komponen Angular yang mengambil data dari sebuah UserService. Test gagal karena komponen langsung melakukan panggilan HTTP nyata saat diinisialisasi. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Menghapus seluruh blok beforeEach di dalam file spec dan menulis ulang pengujian tanpa menggunakan TestBed",
+        "Menyediakan mock service tiruan menggunakan properti providers di TestBed.configureTestingModule untuk mengganti UserService",
+        "Memaksa koneksi internet komputer pengujian terputus agar panggilan HTTP otomatis gagal dan mengembalikan error kosong",
+        "Menambahkan modifier async di setiap fungsi it agar pengujian menunggu proses jaringan selesai dengan sendirinya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi manajemen proyek Anda sering mengalami error 'ExpressionChangedAfterItHasBeenCheckedError' pada konsol browser ketika status loading diperbarui secara tidak sinkron di dalam siklus hidup komponen. Praktik penanganan apa yang paling aman untuk mencegah error ini?",
+      "options": [
+        "Mengubah nilai variabel status loading di dalam blok setTimeout kosong untuk menunda perubahan ke siklus berikutnya",
+        "Memanggil method applicationRef.tick() secara manual setiap kali variabel status loading mengalami perubahan nilai",
+        "Menonaktifkan mekanisme pengecekan error produksi Angular dengan mengatur mode environment ke production di main.ts",
+        "Menggunakan async pipe pada template HTML atau memicu pembaruan via ChangeDetectorRef secara eksplisit jika diperlukan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ingin membuat sebuah direktif atribut kustom yang dapat memformat input mata uang Rupiah secara otomatis saat pengguna mengetik di elemen input form. Hook siklus hidup (lifecycle hook) Angular manakah yang tepat untuk membersihkan event listener native guna mencegah kebocoran memori?",
+      "options": [
+        "Mengimplementasikan interface OnDestroy dan menghapus referensi event listener di dalam method ngOnDestroy",
+        "Menulis logika pembersihan memori di dalam method ngOnChanges setiap kali nilai properti input direktif berubah",
+        "Memanggil method clearInterval di dalam blok constructor direktif segera setelah elemen HTML berhasil dimuat",
+        "Memanfaatkan hook ngOnInit untuk mendaftarkan sekaligus mencopot kembali event listener DOM secara bersamaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi Angular ke server produksi berbasis cloud, halaman aplikasi gagal dimuat dan menampilkan layar putih bersih ketika pengguna melakukan refresh (F5) pada rute bersarang (nested routes). Konfigurasi apa yang umumnya terlewat pada server web?",
+      "options": [
+        "Server belum diatur untuk mengarahkan semua permintaan URL kembali ke file utama index.html aplikasi",
+        "File konfigurasi angular.json belum mencantumkan ekstensi file TypeScript yang dibutuhkan oleh server",
+        "Kunci sertifikat SSL pada server kedaluwarsa sehingga browser memblokir eksekusi skrip JavaScript eksternal",
+        "Versi Node.js di lingkungan server produksi tidak sesuai dengan versi yang terinstal di komputer pengembang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan aplikasi portal layanan publik di mana pengguna sering mengisi form multi-langkah yang panjang. Anda diminta memastikan bahwa data yang diisi tidak hilang jika pengguna tidak sengaja melakukan refresh halaman. Pendekatan reaktif apa yang paling tepat diterapkan pada FormGroup di Angular?",
+      "options": [
+        "Menyimpan nilai valueChanges dari form ke dalam localStorage secara debounced",
+        "Membuat interceptor HTTP khusus untuk mencatat setiap perubahan input ke server",
+        "Memanfaatkan router state untuk menyimpan snapshot form sebelum navigasi",
+        "Menggunakan event window.beforeunload untuk memaksa sinkronisasi state global"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi dashboard logistik Anda menampilkan daftar pengiriman yang sangat panjang menggunakan *infinite scrolling*. Tim QA melaporkan bahwa setelah pengguna melakukan *scroll* ke bawah selama beberapa menit, browser menjadi lambat dan penggunaan memori melonjak drastis. Bagaimana cara paling efektif mengatasi masalah ini di Angular?",
+      "options": [
+        "Menggunakan teknik paginasi server-side dan membatasi jumlah data per halaman",
+        "Menerapkan modul CdkVirtualScrollViewport dari komponen Angular CDK",
+        "Menambahkan operator RxJS debounceTime pada setiap aksi scroll pengguna",
+        "Membersihkan DOM secara manual menggunakan ElementRef di dalam lifecycle hook"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun aplikasi manajemen gudang dengan fitur pencarian real-time. Ketika pengguna mengetik kata kunci pada kotak pencarian, aplikasi sering kali mengirimkan *request* HTTP berlebih ke backend pada setiap ketukan tombol. Solusi berbasis RxJS apa yang paling tepat untuk mengoptimalkan proses ini?",
+      "options": [
+        "Menggabungkan operator switchMap dengan delay statis pada aliran data",
+        "Memakai operator distinctUntilChanged dan exhaustMap untuk memblokir request",
+        "Menerapkan kombinasi debounceTime, distinctUntilChanged, dan switchMap",
+        "Menggunakan operator mergeMap bersama dengan takeUntil untuk manajemen memori"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah modul analitik penjualan, Anda memiliki komponen berat yang hanya perlu dirender jika pengguna mengklik tab laporan spesifik. Untuk menghemat sumber daya saat inisialisasi awal, bagaimana cara terbaik memuat komponen tersebut secara dinamis di Angular?",
+      "options": [
+        "Memanfaatkan fungsi import() dinamis bersama dengan ViewContainerRef",
+        "Menggunakan direktif bawaan ngIf dengan strategi OnPush pada komponen",
+        "Membungkus komponen tersebut ke dalam sebuah lazy-loaded routing module",
+        "Memanggil layanan renderer2 untuk menyuntikkan template HTML secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Angular enterprise Anda mengalami eksekusi siklus *change detection* yang terlalu sering karena komponen anak yang independen terus memicu pemeriksaan ulang dari induknya. Apa langkah arsitektural pertama yang harus diambil?",
+      "options": [
+        "Mengubah strategi deteksi perubahan komponen anak menjadi ChangeDetectionStrategy.OnPush",
+        "Menonaktifkan zone.js secara global di level konfigurasi aplikasi main.ts",
+        "Mengganti seluruh pemanfaatan Reactive Forms dengan pendekatan Template-driven",
+        "Memindahkan semua logika pengambilan data dari komponen ke dalam satu service global"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim backend memperbarui skema autentikasi menggunakan HTTP-only cookie untuk token akses, namun aplikasi Angular Anda masih perlu mengetahui status login pengguna (aktif/tidak) untuk mengatur tampilan menu navigasi. Bagaimana cara paling aman mengelola state status autentikasi ini?",
+      "options": [
+        "Menyimpan salinan token JWT di dalam local storage setelah proses login berhasil",
+        "Membuat sebuah BehaviorSubject di dalam AuthService yang diperbarui via interceptor",
+        "Melakukan polling berkala ke endpoint API profil menggunakan interval RxJS",
+        "Membaca nilai cookie langsung di dalam komponen TypeScript menggunakan document.cookie"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk komponen Angular yang menampilkan daftar transaksi keuangan. Komponen ini bergantung pada sebuah service eksternal untuk mengambil data API. Apa pendekatan penulisan *unit test* yang paling sesuai menggunakan TestBed?",
+      "options": [
+        "Melakukan mock pada service eksternal menggunakan Jasmine spy dan menyediakan data tiruan",
+        "Menghubungkan langsung komponen ke server staging untuk memastikan integrasi data valid",
+        "Memanggil method HTTP secara nyata dengan HttpClientTestingModule dan menangkapnya",
+        "Menguji komponen secara terisolasi tanpa mendeklarasikan module dependensi apapun"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur unggah dokumen pada aplikasi HRIS sering gagal ketika koneksi internet pengguna tidak stabil, menyebabkan pengguna harus mengulang proses dari awal. Mekanisme RxJS apa yang paling tepat untuk menangani otomatisasi percobaan ulang (*retry*) pada layanan HTTP tersebut?",
+      "options": [
+        "Menggunakan operator retryWhen yang dikombinasikan dengan delay berjenjang",
+        "Memanfaatkan operator catchError untuk melempar ulang error ke komponen utama",
+        "Menerapkan operator timeout untuk membatasi durasi maksimal tunggu respons",
+        "Menggabungkan operator finalize dengan subscribe berulang di dalam service"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mengoptimalkan waktu muat awal (*initial load time*) aplikasi e-learning berbasis Angular. Setelah dianalisis melalui source-map-explorer, ditemukan bahwa beberapa pustaka pihak ketiga berukuran besar dimuat padahal hanya dipakai di halaman tertentu. Langkah apa yang paling tepat dilakukan?",
+      "options": [
+        "Memindahkan seluruh pustaka pihak ketiga tersebut ke dalam folder assets aplikasi",
+        "Melakukan import pustaka secara lokal di dalam komponen spesifik dan memuatnya secara dinamis",
+        "Mengonfigurasi ulang file angular.json untuk menggabungkan semua file vendor menjadi satu",
+        "Menghapus pustaka tersebut dan menulis ulang seluruh fungsi utilitas secara mandiri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi pelaporan pajak Anda memiliki form kompleks dengan beberapa field yang nilainya saling mempengaruhi (misalnya, pilihan jenis badan usaha mengubah opsi pajak yang tersedia). Pendekatan apa yang paling bersih untuk mengelola logika reaktif antar field ini pada Reactive Forms?",
+      "options": [
+        "Memantau perubahan nilai menggunakan method valueChanges pada kontrol terkait",
+        "Menggunakan event binding (ngModelChange) langsung di dalam berkas template HTML",
+        "Menulis fungsi pengecekan manual di dalam lifecycle hook ngDoCheck komponen",
+        "Membuat direktif kustom yang memodifikasi DOM secara langsung berdasarkan event"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

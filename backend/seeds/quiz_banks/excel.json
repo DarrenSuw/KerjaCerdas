@@ -1,0 +1,306 @@
+{
+  "skill": "Excel",
+  "skill_key": "excel",
+  "questions": [
+    {
+      "question": "Kolom B2:B20 berisi total penjualan harian. Rumus untuk menjumlahkan semuanya adalah…",
+      "options": [
+        "=SUM(B2:B20)",
+        "=COUNT(B2:B20)",
+        "=TOTAL(B2-B20)",
+        "=ADD(B2,B20)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kamu ingin menghitung berapa sel di C2:C50 yang berisi kata \"Lunas\". Fungsi yang tepat…",
+      "options": [
+        "=SUMIF(C2:C50,\"Lunas\")",
+        "=COUNTIF(C2:C50,\"Lunas\")",
+        "=IF(C2:C50=\"Lunas\")",
+        "=VLOOKUP(\"Lunas\",C2:C50)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Rumus =A2*B2 disalin ke baris 3 menjadi =A3*B3. Agar B2 tidak ikut berubah, tulis…",
+      "options": [
+        "=A2*B2!",
+        "=A2*$B$2",
+        "=A2*(B2)",
+        "=A2*#B2"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu perlu mengambil harga barang dari tabel master berdasarkan kode barang. Fungsi yang paling tepat…",
+      "options": [
+        "CONCAT",
+        "VLOOKUP / XLOOKUP",
+        "ROUND",
+        "TODAY"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Data 500 baris perlu dilihat hanya untuk kota \"Bekasi\" tanpa menghapus data lain. Langkah tercepat…",
+      "options": [
+        "Hapus baris selain Bekasi",
+        "Gunakan fitur Filter",
+        "Ketik ulang data Bekasi",
+        "Ubah warna font"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil =C2/D2 menampilkan #DIV/0!. Artinya…",
+      "options": [
+        "Rumus salah ketik",
+        "D2 bernilai 0 atau kosong",
+        "Angka terlalu besar",
+        "Sel dikunci"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima laporan keuangan di mana kolom nama karyawan berisi huruf acak besar-kecil seperti 'budi SANTOSO'. Anda perlu merapikannya menjadi 'Budi Santoso' pada seluruh 500 baris data secara instan tanpa rumus tambahan. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fitur Flash Fill dengan mengetikkan contoh di baris pertama",
+        "Membuat kolom baru dengan rumus PROPER dan menariknya ke bawah",
+        "Menggunakan fitur Text to Columns dengan pemisah spasi",
+        "Menerapkan Conditional Formatting untuk mendeteksi kapitalisasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Atasan meminta Anda menggabungkan data penjualan dari 12 sheet berbeda (Januari sampai Desember) yang memiliki format kolom identik ke dalam satu sheet rekapitulasi. Langkah paling efisien di Excel untuk mengatasi hal ini adalah...",
+      "options": [
+        "Menyalin dan menempel data satu per satu dari setiap sheet secara manual",
+        "Membuat rumus konsolidasi 3D menggunakan fungsi SUM dengan rentang sheet",
+        "Menulis macro VBA kustom untuk melakukan iterasi pada setiap sheet file",
+        "Menggunakan fitur Consolidate pada tab Data dengan fungsi sum"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda memiliki tabel data transaksi besar dan ingin menyorot baris secara otomatis jika kolom Status bernilai 'Tertunda' dan nilai transaksi di atas Rp 10.000.000. Metode apa yang harus diterapkan pada Conditional Formatting?",
+      "options": [
+        "Menggunakan aturan Highlight Cells Rules dengan teks spesifik",
+        "Membuat aturan baru berbasis rumus dengan fungsi AND dan penguncian kolom",
+        "Memanfaatkan color scales berdasarkan nilai pada kolom transaksi saja",
+        "Menggunakan data bars untuk membandingkan besar kecilnya nominal transaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan stok gudang, Anda perlu mencari harga barang menggunakan kode SKU. Namun, kolom SKU berada di sebelah kanan kolom Harga Barang pada tabel referensi master. Fungsi apa yang paling tepat untuk kasus ini?",
+      "options": [
+        "Menggabungkan fungsi VLOOKUP dengan fungsi MATCH di dalam tabel master",
+        "Menggunakan fungsi XLOOKUP karena dapat mencari ke kiri maupun ke kanan",
+        "Memakai fungsi HLOOKUP dengan mengatur baris referensi ke posisi bawah",
+        "Mengubah posisi kolom master terlebih dahulu agar VLOOKUP dapat berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat laporan bulanan untuk manajemen. Ketika sel parameter bulan dikosongkan, rumus VLOOKUP menghasilkan pesan error #N/A yang merusak tampilan grafik. Bagaimana cara menyembunyikan error tersebut tanpa menghapus rumus aslinya?",
+      "options": [
+        "Membungkus rumus VLOOKUP yang ada dengan fungsi IFERROR",
+        "Menambahkan kondisi IF untuk memeriksa apakah sel kosong dengan ISBLANK",
+        "Mengubah pengaturan Options di Excel untuk menyembunyikan semua error",
+        "Menghapus referensi sel kosong agar fungsi pencarian tidak dieksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda harus menganalisis data transaksi penjualan selama tiga tahun terakhir yang berisi lebih dari 100.000 baris untuk melihat tren penjualan per wilayah secara fleksibel. Fitur mana yang paling tepat dan ringan digunakan?",
+      "options": [
+        "Membuat tabel master baru dengan rumus SUMIFS bertingkat yang kompleks",
+        "Memasukkan seluruh data mentah ke dalam lembar kerja lalu menyaringnya",
+        "Meringkas dan memfilter data tersebut menggunakan PivotTable interaktif",
+        "Menulis serangkaian fungsi pembantu dengan operasi matematika array"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima file CSV dari sistem lain di mana kolom tanggal terbaca sebagai teks biasa dengan format '20231025'. Anda perlu mengubahnya menjadi format tanggal serial agar bisa dihitung selisih hari. Langkah tercepat untuk mengatasinya adalah...",
+      "options": [
+        "Menggunakan fitur Text to Columns, pilih Delimited, lalu atur format tanggal",
+        "Menulis rumus DATE dengan fungsi MID untuk memotong tahun, bulan, dan hari",
+        "Mengganti format cell melalui menu Format Cells menjadi bentuk tanggal",
+        "Memasukkan rumus matematika sederhana dengan mengalikan teks dengan angka 1"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah laporan komisi penjualan, seorang sales berhak mendapat bonus jika penjualannya di atas 50 juta DAN kepuasan pelanggan di atas 85. Jika tidak, bonusnya nol. Fungsi logika apa yang paling tepat untuk kolom bonus?",
+      "options": [
+        "Menggunakan fungsi OR tunggal di dalam pernyataan logika fungsi IF",
+        "Menggabungkan fungsi IF dengan fungsi AND untuk menguji kedua syarat",
+        "Membuat fungsi bertingkat menggunakan fungsi IFS untuk setiap rentang",
+        "Memanfaatkan fungsi COUNTIFS untuk menghitung total syarat yang terpenuhi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang template laporan absensi karyawan. Anda ingin memastikan bahwa kolom 'Jenis Cuti' hanya bisa diisi dengan pilihan yang sudah ditentukan (Sakit, Izin, Cuti Tahunan) guna menghindari kesalahan ketik pengguna. Fitur apa yang harus diterapkan?",
+      "options": [
+        "Menerapkan aturan Data Validation dengan kriteria pengaturan List",
+        "Menggunakan fitur Conditional Formatting untuk menandai input salah",
+        "Membuat perlindungan lembar kerja dengan mengunci sel-sel tertentu",
+        "Menambahkan fungsi VLOOKUP referensi silang pada kolom bantuan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Laporan pengeluaran kantor Anda memiliki sub-total dan total keseluruhan di dalam baris-baris datanya. Saat Anda menggunakan fungsi SUM biasa untuk rekapitulasi akhir, angka yang dihasilkan menjadi dua kali lipat karena menjumlahkan sub-total. Fungsi apa yang harus digunakan untuk mencegah hal ini?",
+      "options": [
+        "Mengganti rumus penjumlahan biasa dengan menggunakan fungsi SUBTOTAL",
+        "Menghapus baris sub-total secara manual sebelum melakukan perhitungan",
+        "Membuat kolom tersembunyi yang hanya berisi data bersih tanpa total",
+        "Menggunakan fungsi SUMIF dengan kriteria mengecualikan kata sub-total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat rekapitulasi penjualan di mana baris menampilkan nama cabang dan kolom menampilkan bulan, lalu sel temuannya harus menjumlahkan omzet dari kriteria tersebut. Formula apa yang paling efisien?",
+      "options": [
+        "Menggunakan fungsi SUMIF dengan menggabungkan beberapa kriteria rentang",
+        "Menggunakan fungsi SUMIFS untuk mencocokkan cabang dan bulan sekaligus",
+        "Menggunakan rumus VLOOKUP bertingkat dengan bantuan fungsi MATCH",
+        "Menggunakan fungsi IF bercabang yang digabung dengan operasi logika AND"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah laporan daftar hadir memiliki kolom tanggal di A2:A100. Atasan meminta Anda menghitung berapa banyak baris yang jatuh pada hari 'Senin' saja. Fungsi pendukung apa yang paling tepat dikombinasikan dengan SUMPRODUCT?",
+      "options": [
+        "Memakai fungsi WEEKDAY pada rentang kriteria untuk menyaring angka 2",
+        "Memakai fungsi TEXT dengan format 'dddd' untuk mendeteksi teks Senin",
+        "Memakai fungsi DAYOFWEEK untuk mengekstrak nama hari dari sel tanggal",
+        "Memakai fungsi DATEVALUE untuk memvalidasi format hari kerja aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengekspor data keuangan dari sistem ERP perusahaan, dan kolom 'Nominal' terbaca sebagai teks karena ada simbol 'Rp' di depannya sehingga tidak bisa dijumlahkan. Cara tercepat mengubahnya menjadi angka adalah...",
+      "options": [
+        "Memakai fitur Text to Columns dengan memisahkan karakter mata uang",
+        "Membuat kolom baru menggunakan rumus VALUE untuk mengonversi teks",
+        "Memakai fitur Find and Replace untuk menghapus 'Rp ' lalu enter data",
+        "Mengubah format sel melalui kotak dialog Format Cells ke jenis Currency"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam file rekap gaji karyawan, Anda sering melakukan kesalahan pengetikan pada kolom status 'Tetap' atau 'Kontrak' sehingga laporan berantakan. Fitur apa yang harus dipasang agar sel hanya bisa diklik dari pilihan dropdown?",
+      "options": [
+        "Memanfaatkan menu Conditional Formatting untuk membatasi input data",
+        "Mengaktifkan fitur Data Validation dengan sumber data tipe List",
+        "Membuat form VBA Macro sederhana untuk tombol input data karyawan",
+        "Menggunakan fitur Protect Sheet untuk mengunci sel teks tertentu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda memiliki tabel database penjualan yang sangat lebar (kolom A sampai Z). Saat Anda menggulir layar ke bawah untuk melihat data baris ke-500, judul kolom di baris 1 ikut menghilang. Apa langkah paling tepat untuk mengatasinya?",
+      "options": [
+        "Memilih opsi Freeze Top Row pada menu Freeze Panes tab View",
+        "Menggunakan fitur Split Screen untuk membagi tampilan lembar kerja",
+        "Menyalin baris judul tabel setiap 20 baris secara berkala manual",
+        "Mengubah format tabel menjadi bentuk objek Excel Table standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat grafik batang untuk presentasi direksi, tetapi salah satu batang datanya memiliki nilai yang jauh lebih besar dibanding yang lain sehingga grafik terlihat tidak proporsional. Solusi terbaik agar grafik tetap terbaca adalah...",
+      "options": [
+        "Mengubah skala sumbu vertikal grafik menjadi bentuk Logarithmic scale",
+        "Menghapus data nilai tertinggi tersebut agar grafik lebih merata",
+        "Memecah data besar menjadi lembar kerja terpisah tanpa grafik",
+        "Mengganti tipe grafik batang vertikal menjadi grafik lingkaran pie"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah file laporan penjualan ukuran filenya membengkak menjadi 45 MB padahal hanya berisi teks dan angka biasa tanpa gambar. Setelah dicek, tidak ada rumus kompleks. Apa penyebab paling umum dan cara memperbaikinya?",
+      "options": [
+        "Banyak format sel kosong di luar batas tabel, hapus baris/kolom sisa",
+        "Koneksi eksternal rusak, hapus tautan melalui menu Edit Links",
+        "Cache memori menumpuk, lakukan restart aplikasi Microsoft Excel",
+        "Gunakan fungsi Paste Values untuk menghilangkan rumus yang berat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyembunyikan kolom 'Gaji Pokok' yang bersifat rahasia dari staf biasa saat file dibagikan, namun manajer tetap harus bisa melihat dan mengedit seluruh data termasuk kolom tersebut. Langkah pengamanan terbaik adalah...",
+      "options": [
+        "Menyembunyikan kolom lalu memproteksi sheet dengan kata sandi",
+        "Mengubah warna teks kolom gaji menjadi putih agar tidak terlihat",
+        "Menghapus kolom gaji sebelum file dikirim ke staf operasional",
+        "Menggunakan fitur Hide pada kolom tanpa mengunci lembar kerja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu membandingkan dua daftar nama supplier dari dua divisi berbeda (Kolom A dan Kolom B) untuk mencari siapa saja yang muncul di kedua daftar tersebut. Rumus formula cepat di kolom C untuk mendeteksinya adalah...",
+      "options": [
+        "Menggunakan fungsi ISNUMBER yang dikombinasikan dengan MATCH",
+        "Menggunakan fungsi SEARCH untuk mencocokan karakter teks parsial",
+        "Menggunakan fungsi COUNT untuk menghitung total teks sel ganda",
+        "Menggunakan fungsi FIND untuk melacak posisi karakter spesifik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Atasan meminta laporan pencapaian target bulanan yang otomatis berubah warna latar belakang selnya menjadi merah jika target kurang dari 80%, kuning jika 80-99%, dan hijau jika 100% atau lebih. Fitur apa yang harus digunakan?",
+      "options": [
+        "Memanfaatkan aturan kustom pada fitur Conditional Formatting",
+        "Membuat fungsi IF bertingkat di dalam pengaturan format sel",
+        "Memakai fitur Custom Number Format dengan kode warna teks",
+        "Menggunakan fungsi Filter otomatis berdasarkan warna kriteria"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima laporan absensi di mana data nama karyawan tercampur dengan spasi berlebih di awal, tengah, dan akhir (contoh: '  Budi   Santoso  '). Fungsi Excel apa yang paling tepat digunakan untuk membersihkan spasi berlebih tersebut agar rapi?",
+      "options": [
+        "=CLEAN(A2)",
+        "=TRIM(A2)",
+        "=REPLACE(A2, \"  \", \" \")",
+        "=SUBSTITUTE(A2, \" \", \"\")"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan penjualan, Anda ingin memberikan label status 'Tinggi' jika total penjualan di sel B2 melebihi 100 juta, 'Sedang' jika di atas 50 juta, dan 'Rendah' untuk sisanya. Rumus fungsi IF bertingkat yang paling tepat adalah...",
+      "options": [
+        "=IF(B2>100000000, \"Tinggi\", IF(B2>50000000, \"Sedang\", \"Rendah\"))",
+        "=IF(B2>50000000, \"Sedang\", IF(B2>100000000, \"Tinggi\", \"Rendah\"))",
+        "=IF(B2<50000000, \"Rendah\", IF(B2<100000000, \"Sedang\", \"Tinggi\"))",
+        "=IF(B2>100000000, \"Tinggi\", IF(B2>50000000, \"Rendah\", \"Sedang\"))"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menghitung rata-rata penjualan khusus untuk wilayah 'Surabaya' pada rentang data tabel penjualan regional yang besar. Fungsi yang paling tepat untuk kebutuhan ini adalah...",
+      "options": [
+        "=SUMIF(C2:C100, \"Surabaya\", D2:D100)",
+        "=AVERAGEIF(C2:C100, \"Surabaya\", D2:D100)",
+        "=COUNTIF(C2:C100, \"Surabaya\")",
+        "=AVERAGEIFS(D2:D100, C2:C100)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengekstrak 4 karakter terakhir dari nomor Seri Faktur pajak yang berada di sel A2 (misalnya mengambil '2024' dari 'INV-2024') untuk keperluan laporan pajak. Fungsi yang tepat adalah...",
+      "options": [
+        "=LEFT(A2, 4)",
+        "=MID(A2, 4, 4)",
+        "=RIGHT(A2, 4)",
+        "=LEN(A2, 4)"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

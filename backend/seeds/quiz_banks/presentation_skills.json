@@ -1,0 +1,306 @@
+{
+  "skill": "Presentation Skills",
+  "skill_key": "presentation skills",
+  "questions": [
+    {
+      "question": "Anda harus mempresentasikan laporan keuangan kuartalan kepada jajaran Direksi yang terkenal sangat sibuk dan kritis. Di tengah presentasi, seorang Direktur memotong dengan pertanyaan detail tentang penurunan margin di satu lini produk yang sebenarnya baru akan dibahas sepuluh slide kemudian. Apa tindakan paling tepat yang Anda ambil?",
+      "options": [
+        "Meminta beliau untuk menunggu sampai slide terkait muncul agar alur presentasi tidak terganggu",
+        "Menjawab ringkas dalam 30 detik, lalu menjadwalkan pembahasan mendalam di akhir sesi",
+        "Menghentikan presentasi saat itu juga dan langsung melompat ke slide margin produk tersebut",
+        "Menjelaskan secara detail seluruh data historis lini produk itu untuk memuaskan rasa ingin tahunya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Slide presentasi proposal proyek Anda untuk klien korporat dipenuhi oleh teks naratif yang panjang dan tabel data yang padat karena diminta oleh atasan. Saat latihan, durasi Anda selalu melampaui batas waktu 15 menit yang diberikan. Strategi penyampaian apa yang paling efektif untuk mengatasi kendala ini?",
+      "options": [
+        "Membacakan seluruh teks di slide dengan tempo sangat cepat agar semua materi tersampaikan",
+        "Meminta penambahan waktu 10 menit kepada panitia sebelum memulai sesi presentasi",
+        "Menyoroti poin kunci secara lisan dan merangkum teks padat tanpa membacanya kata demi kata",
+        "Melewati seluruh slide yang berisi tabel data agar waktu presentasi tetap sesuai jadwal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir sesi presentasi produk baru kepada calon mitra strategis, suasana ruangan terasa pasif dan tidak ada satupun peserta yang mengajukan pertanyaan saat Anda membuka sesi tanya jawab. Bagaimana teknik paling profesional untuk merangsang interaksi audiens?",
+      "options": [
+        "Segera menutup rapat dan menyuruh mereka menghubungi tim sales lewat email",
+        "Menunggu dalam keheningan total hingga akhirnya ada seseorang yang merasa risih dan bertanya",
+        "Mengajukan pertanyaan pancingan berdasarkan isu yang sering mereka hadapi di industri",
+        "Menyalahkan materi yang kurang menarik sehingga audiens bingung mau bertanya apa"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa proyektor di ruang rapat utama rusak total tepat lima menit sebelum Anda harus mempresentasikan strategi pemasaran tahunan di hadapan klien penting. Tidak ada ruangan lain yang tersedia. Langkah mitigasi cepat apa yang harus Anda lakukan?",
+      "options": [
+        "Membatalkan pertemuan dan menjadwalkan ulang setelah proyektor diperbaiki teknisi kantor",
+        "Mengirimkan dokumen slide ke ponsel masing-masing peserta agar mereka baca sendiri",
+        "Mengubah format menjadi diskusi meja bundar dengan membagikan salinan cetak ringkas",
+        "Berbicara tanpa alat peraga sama sekali dan mengandalkan hafalan penuh selama satu jam"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah forum sosialisasi kebijakan HR yang baru di perusahaan, beberapa karyawan senior menunjukkan gestur tubuh melipat tangan di dada, mengerutkan dahi, dan terlihat menolak perubahan tersebut. Sebagai presenter, bagaimana cara Anda merespons bahasa tubuh mereka secara konstruktif?",
+      "options": [
+        "Menegur mereka secara langsung di depan umum agar bersikap lebih kooperatif",
+        "Mengabaikan ekspresi mereka dan fokus menatap audiens lain yang tersenyum",
+        "Mengakui adanya tantangan adaptasi dan membuka ruang bagi kekhawatiran mereka",
+        "Mempercepat tempo bicara agar sesi segera selesai dan ketegangan mereda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membawakan materi teknis yang sangat rumit mengenai migrasi sistem IT kepada para manajer operasional yang berlatar belakang non-teknis. Agar materi mudah dipahami dan tidak membosankan, pendekatan visual seperti apa yang sebaiknya Anda gunakan pada slide?",
+      "options": [
+        "Menampilkan diagram alur arsitektur sistem asli yang penuh dengan kode pemrograman",
+        "Menggunakan analogi sederhana berupa diagram visual tahapan perpindahan kantor",
+        "Menyalin seluruh teks panduan teknis resmi dari vendor software ke dalam slide",
+        "Memasukkan tabel matriks perbandingan server yang sangat rinci dan kecil ukurannya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan presentasi virtual melalui aplikasi konferensi video, Anda menyadari bahwa fitur berbagi layar (screen share) mengalami gangguan teknis dan slide Anda tidak bisa dilihat oleh para peserta di cabang daerah. Apa tindakan paling sigap yang harus diambil?",
+      "options": [
+        "Meminta peserta membuka file PDF materi yang sudah dikirim ke grup chat sebelum rapat",
+        "Menghentikan rapat online saat itu juga dan menyuruh peserta membaca laporan tertulis",
+        "Mematikan kamera Anda agar fokus suara lebih jelas saat menjelaskan isi slide",
+        "Menyalahkan koneksi internet peserta yang buruk sehingga tidak bisa melihat layar Anda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda harus menyampaikan kabar kurang menyenangkan mengenai penundaan peluncuran proyek akibat kendala rantai pasok kepada pihak manajemen puncak. Teknik pembuka (opening) mana yang paling tepat untuk membangun kredibilitas dan transparansi?",
+      "options": [
+        "Memulai dengan lelucon segar untuk mencairkan suasana agar atasan tidak terlalu marah",
+        "Langsung menyalahkan vendor luar negeri atas keterlambatan pengiriman material utama",
+        "Menyatakan langsung fakta penundaan, penyebab utama, dan solusi mitigasi yang disiapkan",
+        "Menceritakan panjang lebar sejarah perjuangan tim dalam mengatasi masalah logistik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang peserta senior di sesi pelatihan internal terus menerus mendebat argumen Anda dengan contoh kasus yang tidak relevan, sehingga mengaburkan esensi materi utama. Bagaimana cara Anda mengendalikan situasi ini tanpa merusak reputasi peserta tersebut?",
+      "options": [
+        "Mengonfrontasi datanya dan membuktikan di depan umum bahwa contohnya salah",
+        "Mengapresiasi sudut pandangnya, lalu memarkir topik tersebut untuk dibahas pasca-sesi",
+        "Mengusir peserta keluar ruangan karena dianggap mengganggu jalannya presentasi",
+        "Diam saja dan membiarkan peserta tersebut mengambil alih sisa waktu presentasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja menyelesaikan presentasi pitchnya startup Anda di hadapan para investor modal ventura. Waktu presentasi dibatasi hanya 5 menit dan sesi tanya jawab menyusul. Apa fokus utama yang harus Anda tonjolkan dalam durasi yang sangat singkat tersebut?",
+      "options": [
+        "Menjelaskan secara mendalam seluruh baris kode teknologi aplikasi yang Anda kembangkan",
+        "Menjabarkan biografi lengkap seluruh anggota tim pendiri beserta latar belakang pendidikannya",
+        "Menyoroti masalah besar pasar, solusi unik produk Anda, dan potensi keuntungan bisnis",
+        "Membahas rencana operasional harian kantor dan detail pembagian tugas staf administrasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang memimpin presentasi hasil riset pasar di hadapan klien penting. Di tengah pemaparan, seorang peserta memotong pembicaraan dan menuduh metodologi survei Anda cacat karena sampelnya terlalu kecil. Apa tindakan paling tepat yang harus Anda ambil?",
+      "options": [
+        "Mengabaikan kritikan tersebut dan langsung melanjutkan slide berikutnya agar waktu presentasi tidak habis",
+        "Membela diri secara tegas dengan menyebutkan reputasi lembaga riset Anda yang sudah teruji di industri",
+        "Mencatat masukannya dengan tenang, jelaskan batasan metodologi secara singkat, lalu tawarkan diskusi mendalam setelah sesi",
+        "Meminta bantuan atasan Anda yang duduk di barisan belakang untuk mengambil alih menjawab pertanyaan tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda harus mempresentasikan pencapaian tim selama satu tahun kepada Direktur Utama. Data menunjukkan performa kuartal pertama sangat buruk, namun melonjak drastis di tiga kuartal berikutnya. Bagaimana cara terbaik menyusun alur narasi slide Anda?",
+      "options": [
+        "Fokus penuh pada kesuksesan kuartal akhir dan menutupi kegagalan awal agar bos langsung merasa senang",
+        "Mengakui penurunan di awal sebagai fase pembelajaran strategis, lalu soroti faktor pendorong kebangkitan di kuartal berikutnya",
+        "Memulai presentasi dengan meminta maaf atas hasil buruk di awal tahun demi menurunkan ekspektasi mereka",
+        "Menampilkan seluruh data secara acak agar direksi bisa menyimpulkan tren performa perusahaan sendiri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan presentasi proposal anggaran kepada tim keuangan, Anda menyadari bahwa salah satu angka proyeksi biaya di slide utama salah ketik dan jauh lebih rendah dari nilai aktual. Apa langkah taktis yang harus Anda ambil seketika?",
+      "options": [
+        "Diam saja berharap tidak ada peserta yang jeli melihat angka yang salah tersebut sampai presentasi selesai",
+        "Segera hentikan presentasi, minta maaf atas kesalahan ketik, lalu sebutkan angka koreksinya secara lisan dengan percaya diri",
+        "Langsung mematikan proyektor dan menjadwalkan ulang rapat pada hari lain setelah slide diperbaiki total",
+        "Menyalahkan vendor pembuat desain slide yang lalai dalam melakukan pengecekan data terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diundang menjadi pembicara dalam webinar industri dengan 300 peserta daring. Setelah berbicara selama 15 menit, kolom obrolan (chatbox) mulai ramai dengan keluhan bahwa suara Anda sering terputus-putus. Apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Tetap melanjutkan presentasi dengan volume suara yang lebih keras karena materi harus selesai tepat waktu",
+        "Menghentikan pembicaraan sejenak, beralih ke jaringan cadangan atau mematikan kamera video untuk menghemat bandwidth",
+        "Menutup aplikasi konferensi video secara total lalu meminta panitia untuk menggantikan posisi Anda",
+        "Meminta peserta untuk memperbaiki perangkat audio di komputer mereka masing-masing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus menjelaskan konsep transformasi digital yang sangat abstrak kepada jajaran komisaris yang berusia senior. Strategi penyampaian seperti apa yang paling efektif untuk situasi ini?",
+      "options": [
+        "Menggunakan banyak istilah teknis mutakhir agar mereka terkesan dengan tingkat penguasaan materi Anda",
+        "Menghindari penggunaan diagram sama sekali dan membaca seluruh teks yang ada di modul panduan",
+        "Menggunakan analogi bisnis yang dekat dengan pengalaman mereka serta menunjukkan dampak nyata pada efisiensi biaya",
+        "Meminta konsultan eksternal untuk datang dan menjelaskan seluruh konsep teknis tersebut menggantikan Anda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir sesi presentasi program kesejahteraan karyawan baru, seorang manajer pabrik mengajukan keberatan panjang lebar mengenai jam operasional yang tidak relevan dengan topik utama. Bagaimana Anda merespons agar rapat tetap kondusif?",
+      "options": [
+        "Menghentikan pertanyaannya secara kasar karena sudah melenceng jauh dari agenda utama sosialisasi",
+        "Mengucapkan terima kasih atas perhatiannya, validasi masalah tersebut, lalu parkir isu itu untuk dibahas di sesi terpisah",
+        "Mengubah seluruh isi kebijakan saat itu juga demi mengakomodasi keinginan manajer pabrik tersebut",
+        "Mengabaikan pertanyaannya dan langsung menutup rapat tanpa memberikan kesempatan klarifikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mempresentasikan laporan tahunan perusahaan. Anda memiliki waktu 10 menit, namun bahan materi yang harus disampaikan mencakup 50 halaman laporan tebal. Langkah awal apa yang harus Anda ambil dalam merancang presentasi?",
+      "options": [
+        "Memasukkan seluruh 50 halaman ke dalam slide dengan memperkecil ukuran font agar semuanya terbaca",
+        "Memilih hanya tiga poin paling krusial yang berdampak langsung pada arah strategis perusahaan ke depan",
+        "Berbicara dengan kecepatan tinggi agar seluruh isi dokumen bisa tersampaikan dalam batas waktu 10 menit",
+        "Meminta penambahan durasi waktu menjadi satu jam penuh kepada panitia penyelenggara rapat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda akan mempresentasikan hasil audit internal yang sensitif di hadapan kepala divisi yang kinerjanya baru saja dinilai buruk. Bagaimana cara Anda menjaga profesionalisme selama pemaparan?",
+      "options": [
+        "Menghindari kontak mata sama sekali dengan kepala divisi tersebut sepanjang sesi presentasi berlangsung",
+        "Fokus menyajikan temuan berbasis data objektif secara netar tanpa nada menghakimi personal",
+        "Menyindir kinerja buruk divisi tersebut di depan umum agar yang bersangkutan merasa jera",
+        "Melompati bagian temuan negatif dan hanya membahas poin-poin administratif yang aman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati audiens di barisan depan mulai menguap dan memainkan ponsel pintar mereka saat Anda baru memasuki slide kelima. Teknik apa yang paling tepat untuk mengembalikan fokus mereka?",
+      "options": [
+        "Menegur peserta tersebut secara langsung dengan nada tinggi agar yang lain ikut merasa takut",
+        "Melontarkan pertanyaan terbuka yang memancing partisipasi audiens atau mengubah nada suara menjadi lebih dinamis",
+        "Mempercepat tempo bicara agar siksaan presentasi ini cepat berakhir bagi mereka",
+        "Memadamkan seluruh lampu ruangan rapat agar perhatian mereka kembali tertuju pada layar proyektor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus memimpin sesi lokakarya interaktif secara hybrid (sebagian peserta luring dan sebagian daring). Tantangan terbesar adalah memastikan kedua kelompok merasa dilibatkan. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Fokus sepenuhnya pada peserta luring karena mereka hadir secara fisik di dalam ruangan yang sama",
+        "Mengabaikan peserta luring dan hanya berinteraksi melalui kolom chat dengan peserta daring",
+        "Menugaskan seorang fasilitator khusus untuk memantau pertanyaan peserta daring dan meninjaunya secara bergantian",
+        "Membaca seluruh pesan teks dari peserta daring sendiri sambil terus menulis di papan tulis putih"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mempresentasikan strategi pemasaran digital baru kepada jajaran manajemen. Di tengah sesi, seorang manajer senior menyela dengan nada sinis bahwa strategi tersebut mirip dengan kampanye gagal tahun lalu. Apa tindakan paling profesional yang harus Anda ambil?",
+      "options": [
+        "Mengabaikan komentarnya dan segera melanjutkan slide agar tidak kehabisan waktu presentasi",
+        "Mendengarkan dengan tenang, mengakui kemiripannya, lalu menjelaskan perbedaan kunci dan perbaikan risetnya",
+        "Meminta bantuan moderator ruangan untuk menegur manajer tersebut agar tidak memotong pembicaraan",
+        "Menjelaskan secara mendetail mengapa pendapat manajer tersebut keliru berdasarkan data internal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus menyampaikan laporan evaluasi kinerja triwulanan kepada tim operasional. Dari data yang ada, kinerja tim mengalami penurunan signifikan akibat masalah eksternal. Bagaimana cara terbaik membuka presentasi ini?",
+      "options": [
+        "Langsung menampilkan angka penurunan terbesar di slide pertama untuk memberi kejutan agar mereka lebih fokus",
+        "Memulai dengan menegur kedisiplinan tim secara umum sebelum membahas data kinerja bulanan",
+        "Mengapresiasi kerja keras mereka di awal, lalu menyajikan data objektif terkait tantangan eksternal secara transparan",
+        "Membahas pencapaian divisi lain terlebih dahulu agar suasana hati audiens menjadi lebih cair dan positif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah presentasi virtual pitching produk ke calon klien luar kota, koneksi internet Anda tiba-tiba terputus selama tiga menit di tengah penjelasan fitur utama. Saat Anda berhasil masuk kembali, tindakan apa yang paling tepat?",
+      "options": [
+        "Meminta maaf singkat atas kendala teknis, lalu melanjutkan penjelasan dari titik terakhir secara ringkas",
+        "Mengulangi seluruh materi dari awal presentasi agar tidak ada informasi penting yang terlewatkan",
+        "Menyalahkan penyedia layanan internet lokal dan melanjutkan sesi tanya jawab langsung tanpa materi",
+        "Mengirimkan dokumen presentasi melalui kolom chat dan meminta mereka membaca sendiri sisanya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain slide presentasi infografis yang sangat estetik untuk dewan direksi, namun saat ditampilkan di ruang rapat, kombinasi warna teks dan latar belakang ternyata sulit dibaca karena pencahayaan ruangan terlalu terang. Apa langkah cepat terbaik Anda?",
+      "options": [
+        "Mematikan seluruh lampu ruangan agar layar proyektor terlihat lebih kontras dan jelas",
+        "Membacakan seluruh isi teks di setiap slide secara lengkap tanpa mengandalkan tampilan visual",
+        "Menyesuaikan posisi duduk audiens agar mereka bisa melihat layar dengan sudut pandang lebih baik",
+        "Mengubah mode penjelasan menjadi ringkasan lisan bernada naratif sambil melewati detail teks visual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta memberikan pelatihan aplikasi internal baru kepada karyawan bagian administrasi yang mayoritas berusia di atas 50 tahun dan kurang akrab dengan teknologi. Strategi penyampaian seperti apa yang paling efektif?",
+      "options": [
+        "Menggunakan istilah teknis tingkat lanjut agar mereka memahami sistem kerja di balik aplikasi tersebut",
+        "Meminta mereka membaca manual panduan setebal 50 halaman sebelum sesi dimulai secara mandiri",
+        "Mendemonstrasikan langkah demi langkah secara perlahan dengan analogi sederhana yang dekat dengan pekerjaan harian",
+        "Memberikan kuis mendadak di awal sesi untuk menguji pemahaman dasar mereka tentang komputer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Anda sedang menjelaskan alur kerja baru dalam rapat koordinasi lintas divisi, seorang peserta mengajukan pertanyaan yang sebenarnya sudah dibahas secara mendalam pada slide sebelumnya. Bagaimana Anda meresponsnya?",
+      "options": [
+        "Menyindir peserta tersebut karena tidak memperhatikan penjelasan Anda sejak awal presentasi",
+        "Menjawab pertanyaannya dengan sabar dan merangkum poin tersebut tanpa membuat peserta merasa malu",
+        "Meminta peserta lain di ruangan tersebut untuk menjawab pertanyaan yang baru saja diajukan",
+        "Mengabaikan pertanyaan tersebut karena dianggap membuang waktu dan melanjutkan topik berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus mempresentasikan proposal anggaran operasional tahun depan kepada Direktur Keuangan. Beliau dikenal sangat menyukai efisiensi waktu dan langsung pada inti permasalahan (data kuantitatif). Pendekatan struktur presentasi mana yang paling tepat?",
+      "options": [
+        "Menyajikan latar belakang sejarah perusahaan selama lima tahun terakhir sebelum masuk ke angka anggaran",
+        "Memulai dengan kesimpulan kebutuhan anggaran utama dan dampak finansialnya, lalu mendetailkan datanya",
+        "Menjelaskan proses panjang penyusunan anggaran yang melibatkan seluruh kepala bagian di perusahaan",
+        "Menceritakan kisah sukses penggunaan anggaran tahun lalu melalui pendekatan naratif yang emosional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir sesi presentasi proyeksi penjualan, seorang rekan kerja mencatat adanya kesalahan ketik pada salah satu label grafik di slide Anda. Kesalahan tersebut tidak mengubah hasil akhir data. Sikap Anda yang paling tepat adalah?",
+      "options": [
+        "Mendebat rekan kerja tersebut dengan menyatakan bahwa data tersebut sudah diverifikasi oleh tim ahli",
+        "Menghentikan presentasi saat itu juga dan menjadwalkan ulang pertemuan di lain hari",
+        "Berterima kasih atas koreksinya, mengakui kesalahan pengetikan ringan tersebut, dan melanjutkan pembahasan",
+        "Mengubah topik pembicaraan dengan cepat untuk mengalihkan perhatian audiens dari kesalahan tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati durasi presentasi Anda dipotong oleh panitia acara dari 30 menit menjadi hanya 10 menit karena keterlambatan agenda sebelumnya. Padahal, slide Anda berjumlah 25 halaman. Tindakan darurat apa yang harus Anda ambil?",
+      "options": [
+        "Tetap menyampaikan 25 slide dengan cara berbicara tiga kali lebih cepat dari biasanya",
+        "Menyaring dan hanya mempresentasikan 3 slide inti yang berisi ringkasan eksekutif dan rekomendasi",
+        "Menolak untuk maju presentasi karena materi sudah dipersiapkan secara komprehensif untuk 30 menit",
+        "Meminta waktu tambahan kepada peserta meskipun harus memotong jadwal istirahat mereka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus menyampaikan hasil survei kepuasan pelanggan yang menunjukkan penurunan drastis pada layanan purna jual perusahaan di hadapan para manajer cabang. Teknik komunikasi non-verbal apa yang paling mendukung kredibilitas Anda?",
+      "options": [
+        "Berdiri tegak dengan postur terbuka, melakukan kontak mata merata, dan menggunakan gestur tangan yang tenang",
+        "Berjalan mondar-mandir dengan cepat di depan ruangan untuk menunjukkan tingkat kekhawatiran yang tinggi",
+        "Melipat tangan di dada dan duduk di kursi untuk menunjukkan ketegasan atas hasil evaluasi tersebut",
+        "Menghindari kontak mata langsung dengan para manajer cabang agar mereka tidak merasa terintimidasi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

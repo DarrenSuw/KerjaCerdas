@@ -1,0 +1,306 @@
+{
+  "skill": "Microsoft PowerPoint",
+  "skill_key": "microsoft powerpoint",
+  "questions": [
+    {
+      "question": "Anda diminta menyiapkan presentasi untuk rapat direksi besok pagi. Atasan meminta agar transisi antar slide berjalan otomatis tanpa perlu diklik manual karena presentasi akan diputar di lobby kantor. Fitur mana yang harus Andaatur di PowerPoint?",
+      "options": [
+        "Menggunakan menu Custom Slide Show untuk looping",
+        "Mengatur durasi pada opsi After di panel Transitions",
+        "Mengaktifkan Narrate Slide Show pada tab Recording",
+        "Mengubah settingan Advance Slide melalui menu Rehearse"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan presentasi proposal proyek ke klien, Anda ingin langsung melompat ke slide Lampiran (Lampiran A) tanpa harus melewati slide-slide detail teknis di tengah. Cara paling efisien saat presentasi berlangsung adalah:",
+      "options": [
+        "Klik kanan pada layar, pilih See All Slides, lalu pilih slide Lampiran",
+        "Mengetik nomor slide Lampiran di keyboard lalu menekan tombol Enter",
+        "Menggunakan fitur Hyperlink yang sudah dipasang pada halaman agenda",
+        "Keluar sebentar dari mode slideshow lalu scroll ke bagian bawah file"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima file PowerPoint dari divisi keuangan yang berisi tabel angka yang sangat padat dan sulit dibaca oleh peserta rapat. Agar data tersebut lebih mudah dipahami secara visual dalam waktu singkat, tindakan terbaik Anda adalah:",
+      "options": [
+        "Mengubah tabel tersebut menjadi format SmartArt tipe Matrix",
+        "Memperkecil ukuran font tabel agar seluruh angka muat dalam satu slide",
+        "Memecah data tabel keuangan tersebut menjadi tiga slide terpisah",
+        "Menyalin tabel mentah tersebut langsung ke dalam bentuk grafik batang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "File presentasi perusahaan yang akan Anda bawa ke ruang rapat klien berukuran sangat besar (lebih dari 50MB) karena banyak menggunakan foto resolusi tinggi. Apa langkah preventif terbaik agar file tidak mengalami lag saat dibuka?",
+      "options": [
+        "Mengompres semua gambar lewat opsi Compress Pictures di menu Picture Format",
+        "Menyimpan ulang file presentasi dalam format ber-ekstensi PPSX",
+        "Memindahkan seluruh foto beresolusi tinggi tersebut ke dalam format PDF",
+        "Menghapus cache temporary file PowerPoint yang ada di direktori sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang deck presentasi pemasaran produk baru dan ingin memastikan semua judul slide memiliki jarak, ukuran, dan posisi yang presisi tanpa harus mengukurnya secara manual satu per satu. Fitur apa yang paling tepat diaktifkan?",
+      "options": [
+        "Membuat struktur slide master baru khusus untuk bagian judul",
+        "Memanfaatkan panduan visual berupa Gridlines dan Smart Guides",
+        "Menggunakan fungsi Arrange lalu pilih Distribute Horizontally",
+        "Memasukkan kotak teks dengan ukuran pixel yang sama di tiap slide"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Direktur Utama meminta Anda mencetak bahan tayang presentasi menjadi handout untuk peserta rapat, di mana satu halaman kertas berisi tiga slide lengkap dengan garis untuk catatan tangan di sebelah kanannya. Pengaturan mana yang harus dipilih saat mencetak?",
+      "options": [
+        "Mengubah orientasi halaman cetak dari Portrait menjadi Landscape",
+        "Memilih opsi Print Layout menjadi Handouts 3 Slides per Page",
+        "Mengatur menu Full Page Slides menjadi bagian Notes Pages",
+        "Menggunakan fitur Outline View sebelum melakukan perintah cetak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus mempresentasikan laporan bulanan di mana Anda perlu membaca catatan kecil (script penjelasan) yang hanya boleh dilihat oleh Anda sendiri di layar laptop, sementara audiens di proyektor hanya melihat slide bersih. Pengaturan layar apa yang harus diaktifkan?",
+      "options": [
+        "Menghubungkan kabel proyektor dengan mode Duplicate Display",
+        "Mengaktifkan opsi Use Presenter View pada tab Slide Show",
+        "Membuat dua file presentasi terpisah untuk layar utama dan proyektor",
+        "Menggunakan fitur Reading View agar teks catatan muncul di bawah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah logo perusahaan berformat PNG dengan latar belakang putih harus ditempatkan di atas bentuk kotak berwarna gelap pada slide penutup. Namun, kotak putih di sekitar logo merusak estetika desain. Cara tercepat memperbaikinya di PowerPoint adalah:",
+      "options": [
+        "Menggunakan fitur Remove Background pada menu Picture Format",
+        "Mengonversi gambar tersebut menjadi objek bentuk vektor SVG",
+        "Menambahkan efek transparansi tinggi pada area bingkai gambar",
+        "Memotong bagian tepi logo menggunakan tool Crop to Shape"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menyusun laporan progres proyek yang terdiri dari 20 slide dan ingin mengelompokkan 5 slide pertama ke dalam satu bagian khusus (section) agar lebih mudah dikelola bersama tim. Langkah awal yang harus dilakukan adalah:",
+      "options": [
+        "Klik kanan di antara slide 1 dan 2, lalu pilih Add Section",
+        "Memilih kelima slide tersebut lalu menekan kombinasi tombol Ctrl+G",
+        "Memindahkan kelima slide tersebut ke dalam file presentasi baru",
+        "Mengubah tampilan slide menjadi Slide Sorter lalu kunci bagian awal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim HRD meminta Anda mendesain template sertifikat pelatihan di PowerPoint yang nantinya akan dibagikan ke peserta. Agar elemen desain seperti bingkai dan logo perusahaan tidak sengaja bergeser saat peserta mengetik nama mereka, di mana Anda harus meletakkan elemen tersebut?",
+      "options": [
+        "Menyimpan elemen desain sebagai gambar latar belakang slide aktif",
+        "Mengunci posisi objek menggunakan menu Selection Pane di PowerPoint",
+        "Menempatkan elemen tersebut langsung di dalam area Slide Master",
+        "Mengubah seluruh objek desain permanen menjadi format SmartArt"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat presentasi pitch deck untuk investor yang berisi banyak infografis dan ikon grafis bergaya datar. Agar keseluruhan slide tampak selaras dengan identitas visual perusahaan klien yang bernuansa modern, apa langkah paling efektif untuk mengubah warna seluruh ikon tersebut secara cepat tanpa harus mewarnainya satu per satu?",
+      "options": [
+        "Menggunakan fitur Format Shape untuk mengganti warna isi secara manual pada setiap elemen grafik",
+        "Memanfaatkan fitur Selection Pane untuk memilih seluruh ikon lalu mengubah warnanya sekaligus",
+        "Mengubah palet warna tema presentasi melalui tab Design sehingga ikon berbasis SVG otomatis menyesuaikan",
+        "Mengekspor semua ikon ke perangkat lunak desain lain untuk diberi warna baru lalu memasukkannya kembali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat mempresentasikan hasil riset pasar kepada calon klien penting, Anda ingin audiens hanya fokus pada pembicaraan Anda tanpa terdistraksi oleh slide yang sedang berjalan, sementara Anda tetap bisa melihat slide berikutnya. Pengaturan tampilan apa yang harus Anda aktifkan?",
+      "options": [
+        "Mengaktifkan fitur Presenter View agar Anda melihat catatan dan waktu, sementara layar utama menampilkan slide",
+        "Menekan tombol hitam pada keyboard untuk menggelapkan layar proyektor secara total selama berbicara",
+        "Mengubah mode penayangan menjadi Reading View agar jendela presentasi tidak memenuhi layar penuh",
+        "Mematikan fungsi perpindahan slide otomatis dan menggunakan mode penayangan kustom khusus proyektor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menyisipkan video durasi dua menit ke dalam slide presentasi keselamatan kerja. Anda ingin video tersebut langsung berputar secara otomatis tanpa ada jeda atau keharusan bagi Anda untuk mengklik tombol play saat presentasi berjalan. Bagaimana cara mengaturnya?",
+      "options": [
+        "Mengatur opsi pemutaran video pada tab Playback menjadi 'Automatically' pada bagian Start",
+        "Memberikan animasi masuk (entrance animation) berupa fade pada objek video tersebut",
+        "Mengubah format file video menjadi animasi GIF agar dapat langsung bergerak saat slide dibuka",
+        "Membuat hyperlink tersembunyi yang memicu pemutaran video seketika slide aktif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menyusun laporan keuangan triwulanan yang menampilkan data tabel dalam jumlah besar. Agar kolom header tabel tetap terlihat jelas dan tidak hilang dari pandangan ketika atasan Anda menggulir ke baris data bawah, fitur apa yang harus Anda terapkan?",
+      "options": [
+        "Menyalin ulang baris header secara manual pada setiap pergantian halaman slide presentasi",
+        "Mengunci posisi baris pertama tabel menggunakan fungsi pembekuan sel di PowerPoint",
+        "Memecah tabel besar tersebut menjadi beberapa slide terpisah dengan judul yang sama",
+        "Menggunakan fungsi 'Header Row' pada tab Table Design agar baris atas otomatis menonjol"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam sebuah rapat koordinasi lintas divisi, Anda ingin menunjukkan perbandingan pertumbuhan penjualan antar wilayah dengan menyandingkan diagram batang dan diagram garis dalam satu area visual yang bersih. Langkah paling tepat di PowerPoint adalah?",
+      "options": [
+        "Membuat dua slide terpisah yang masing-masing berisi satu jenis diagram untuk dibahas bergantian",
+        "Memanfaatkan fitur Combo Chart untuk menggabungkan dua tipe grafik berbeda dalam satu kanvas",
+        "Menggunakan bentuk kotak transparan untuk menumpuk dua grafik terpisah secara manual",
+        "Mengimpor gambar grafik dari perangkat lunak lain yang sudah digabung sebelumnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati file presentasi kantor memiliki ukuran sangat besar karena memuat banyak foto dokumentasi kegiatan beresolusi tinggi. Atasan meminta file tersebut dikirim via email yang memiliki batasan kapasitas lampiran. Tindakan terbaik apa yang harus Anda lakukan di dalam PowerPoint?",
+      "options": [
+        "Menggunakan fitur 'Compress Pictures' untuk memperkecil resolusi gambar tanpa menghapus bagian tepi foto",
+        "Menghapus seluruh animasi dan transisi yang membebani memori penyimpanan file presentasi",
+        "Mengonversi setiap slide gambar menjadi format PDF sebelum dikirimkan kepada rekan kerja",
+        "Memotong bagian pinggir setiap foto menggunakan fungsi crop agar ukuran filenya berkurang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat slide perkenalan tim manajemen baru di mana foto profil berbentuk lingkaran tersusun rapi dengan jarak horizontal dan vertikal yang presisi tanpa perlu mengukur posisinya satu persatu secara manual. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan panduan garis merah (Smart Guides) yang muncul otomatis saat menggeser objek",
+        "Memanfaatkan fitur 'Align' dan 'Distribute' pada tab Shape Format untuk meratakan posisi objek",
+        "Mengelompokkan seluruh foto profil ke dalam satu grup besar sebelum mengatur letaknya",
+        "Memasukkan seluruh foto ke dalam tabel tak terlihat agar posisinya terkunci secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan latihan presentasi, Anda menyadari bahwa durasi penyampaian materi terlalu panjang melebihi batas waktu 10 menit yang diberikan panitia seminar. Fitur apa di PowerPoint yang dapat membantu Anda memantau kecepatan bicara per slide secara real-time?",
+      "options": [
+        "Mengaktifkan menu 'Rehearse Timings' untuk merekam durasi latihan dan melihat waktu total serta per slide",
+        "Memasang stopwatch eksternal di sebelah laptop saat mode penayangan slide sedang berlangsung",
+        "Menghitung jumlah kata pada setiap kotak teks menggunakan fasilitas pemeriksa ejaan bawaan",
+        "Mengatur durasi transisi otomatis antar slide agar berhenti sendiri setelah waktu habis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyisipkan grafik interaktif dari lembar kerja Excel ke dalam slide PowerPoint sedemikian rupa sehingga setiap kali divisi keuangan memperbarui data di Excel, grafik pada slide presentasi Anda ikut berubah secara otomatis. Cara penempelan apa yang harus dipilih?",
+      "options": [
+        "Gunakan opsi 'Paste as Picture' agar tampilan grafik tidak berubah saat dipindahkan ke slide",
+        "Gunakan opsi 'Keep Source Formatting' agar gaya visual dari Excel tetap dipertahankan utuh",
+        "Gunakan opsi 'Paste Special' lalu pilih 'Paste Link' untuk menghubungkan data antar aplikasi",
+        "Gunakan opsi 'Use Destination Theme' agar warna grafik menyesuaikan tema presentasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang merancang diagram alur (flowchart) proses operasional pabrik yang cukup panjang dan bercabang di dalam satu slide. Agar bentuk kotak-kotak alur tersebut bergerak masuk secara berurutan sesuai alur proses saat diklik, fitur animasi apa yang paling tepat diterapkan?",
+      "options": [
+        "Menerapkan animasi 'Morph' antar duplikat slide untuk memperlihatkan perpindahan proses",
+        "Menggunakan animasi 'Fly In' secara bersamaan pada seluruh kotak flowchart yang ada",
+        "Memanfaatkan efek animasi berurutan dengan mengatur urutan 'Animation Pane' secara teliti",
+        "Mengubah seluruh diagram alur menjadi bentuk gambar tunggal yang diberi animasi masuk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyusun laporan penjualan tahunan dan ingin membuat navigasi interaktif berupa tombol menu di halaman utama yang bisa membawa audiens langsung ke bagian kategori produk tertentu tanpa harus melalui slide secara berurutan. Fitur apa yang paling tepat Anda gunakan?",
+      "options": [
+        "Menggunakan fitur Bookmark pada menu Insert untuk menandai target slide tujuan",
+        "Memanfaatkan fungsi Action atau Link pada objek bentuk untuk diarahkan ke slide tertentu",
+        "Mengaktifkan fitur Custom Slide Show untuk membuat jalur navigasi tersembunyi",
+        "Membuat animasi Trigger agar tombol merespons klik dan membuka slide yang dipilih"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan presentasi proposal di ruang rapat kantor, layar proyektor menampilkan seluruh slide lengkap dengan catatan presentasi Anda, sementara Anda ingin hanya slide bersih yang terlihat oleh audiens di layar utama. Langkah pengaturan apa yang harus Anda ambil?",
+      "options": [
+        "Mematikan fungsi Extended Desktop pada pengaturan sistem operasi komputer Anda",
+        "Menghapus seluruh teks catatan dari kotak catatan bawah sebelum memulai tayangan",
+        "Mengaktifkan dan mengonfigurasi fitur Use Presenter View pada tab Slide Show",
+        "Mengubah mode tayangan dari Full Screen menjadi Reading View melalui status bar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima file presentasi dari divisi kreatif yang menggunakan jenis huruf khusus (custom font) yang tidak terinstal di laptop kantor Anda, sehingga tampilan teks berubah berantakan saat dibuka. Tindakan preventif apa yang seharusnya dilakukan pengirim saat menyimpan file tersebut?",
+      "options": [
+        "Mengubah semua kotak teks menjadi format gambar PNG sebelum mengirimkan file",
+        "Menyimpan file dengan mencentang opsi Embed fonts in the file pada menu Save",
+        "Mengekspor seluruh materi presentasi ke dalam format dokumen PDF interaktif",
+        "Mengirimkan file instalasi font secara terpisah bersamaan dengan file presentasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk membuat slide presentasi infografis yang menampilkan pencapaian target bulanan menggunakan ikon-ikon vektor agar terlihat modern. Agar ikon-ikon tersebut dapat diubah warna dan ukurannya secara bebas tanpa pecah, format apa yang sebaiknya disisipkan?",
+      "options": [
+        "Menyisipkan file gambar berformat PNG beresolusi tinggi dari galeri daring",
+        "Menggunakan fitur Icons bawaan dari tab Insert lalu mengubahnya menjadi bentuk",
+        "Menempelkan gambar berformat JPEG yang sudah disunting melalui aplikasi editor",
+        "Mengimpor berkas grafis berformat GIF animasi bergerak untuk menarik perhatian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah presentasi teknis, Anda ingin menampilkan diagram alur proses kerja yang kompleks di mana setiap langkah muncul satu per satu sesuai dengan penjelasan lisan Anda, namun kotak-kotak proses tersebut harus bergerak mulus dari satu titik ke titik berikutnya. Efek apa yang paling tepat diaplikasikan?",
+      "options": [
+        "Menerapkan efek transisi Morph pada slide yang berisi diagram alur tersebut",
+        "Memberikan animasi Exit berjenis Fade secara berurutan pada setiap kotak",
+        "Mengatur durasi animasi Entrance berjenis Wipe dengan kecepatan sangat lambat",
+        "Membuat beberapa duplikat slide dengan posisi objek yang digeser secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu membagikan salinan presentasi kepada peserta pelatihan dalam bentuk dokumen cetak rangkap dua slide per halaman vertikal yang disertai ruang kosong di sampingnya untuk catatan tangan peserta. Fitur cetak apa yang harus Anda pilih di dialog Print?",
+      "options": [
+        "Mengubah opsi cetak dari Full Page Slides menjadi pilihan Handouts jenis 2 Slides",
+        "Memilih opsi Notes Pages pada menu pengaturan cetak dokumen presentasi",
+        "Mengatur ukuran halaman cetak menjadi Custom Layout dengan skala 50 persen",
+        "Mengekspor slide ke aplikasi pengolah kata dan mencetaknya melalui program tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat merancang slide penutup presentasi, Anda ingin menaruh logo perusahaan di pojok kanan bawah agar posisinya persis di tempat yang sama pada semua slide tanpa harus menyalin dan menempelkannya secara manual satu per satu. Di mana Anda harus meletakkan logo tersebut?",
+      "options": [
+        "Menempelkan logo pada slide master utama melalui menu View lalu Slide Master",
+        "Menggunakan fitur Header and Footer untuk menyisipkan gambar logo ke semua slide",
+        "Membuat grup objek logo dengan latar belakang slide melalui menu Selection Pane",
+        "Menyimpan logo sebagai latar belakang default melalui format background gambar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyajikan data tren penjualan kuartal lalu menggunakan diagram garis di PowerPoint. Agar data tersebut tetap terhubung secara otomatis jika suatu saat bagian keuangan mengubah angka di file sumber Excel, cara penempelan apa yang harus dipilih?",
+      "options": [
+        "Menyalin tabel dari Excel lalu menempelkannya menggunakan opsi Paste as Picture",
+        "Menggunakan perintah Paste Special lalu memilih opsi Paste Link Workbook",
+        "Melakukan ekspor file Excel menjadi gambar vektor sebelum dimasukkan ke slide",
+        "Mengetik ulang data angka tersebut langsung ke dalam fasilitas chart PowerPoint"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati file presentasi perusahaan berukuran sangat besar hingga 80 Megabita karena memuat puluhan foto dokumentasi kegiatan beresolusi tinggi yang dipangkas ukurannya secara visual saja. Langkah cepat apa yang dapat Anda lakukan di PowerPoint untuk memperkecil ukuran file tersebut?",
+      "options": [
+        "Menghapus metadata file melalui jendela properti dokumen di sistem operasi",
+        "Menggunakan fitur Compress Pictures pada tab Picture Format untuk membuang area terpotong",
+        "Menyimpan ulang presentasi ke dalam format lama versi 97-2003 Presentation",
+        "Mengubah semua format foto yang ada menjadi file bitmap berukuran kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menyusun laporan keuangan yang terdiri dari tabel data yang panjang dan terpotong ke halaman slide berikutnya. Agar baris judul tabel (header) tetap otomatis muncul di bagian atas tabel pada slide lanjutan, pengaturan apa yang harus dilakukan?",
+      "options": [
+        "Mencentang kotak opsi Header Row pada tab Table Design setelah tabel dipilih",
+        "Menambahkan baris kosong secara manual dan mengetik ulang judul di slide kedua",
+        "Memecah tabel besar menjadi beberapa tabel kecil agar pas dalam satu halaman",
+        "Mengubah orientasi slide dari lanskap menjadi potret agar area muat lebih panjang"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

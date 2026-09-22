@@ -1,0 +1,306 @@
+{
+  "skill": "Administrasi",
+  "skill_key": "administrasi",
+  "questions": [
+    {
+      "question": "Cara penamaan file yang paling memudahkan pencarian…",
+      "options": [
+        "dokumen_baru_final_fix.docx",
+        "2026-09_Invoice_PTMaju_No015.pdf",
+        "scan1.pdf",
+        "untitled.docx"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ada 3 tugas: laporan diminta atasan hari ini, arsip rutin, dan rapat minggu depan. Urutan prioritas…",
+      "options": [
+        "Arsip - rapat - laporan",
+        "Laporan hari ini - arsip - persiapan rapat",
+        "Rapat - arsip - laporan",
+        "Kerjakan acak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Surat masuk dari klien sebaiknya…",
+      "options": [
+        "Ditumpuk di meja",
+        "Dicatat di agenda surat masuk, diberi nomor, lalu diteruskan ke yang berwenang",
+        "Langsung dibuang setelah dibaca",
+        "Disimpan di tas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjadwalkan rapat untuk 6 orang dari divisi berbeda, langkah efisien…",
+      "options": [
+        "Telepon satu per satu setiap hari",
+        "Cek kalender bersama, usulkan 2-3 pilihan waktu, kirim undangan resmi",
+        "Tentukan sendiri tanpa konfirmasi",
+        "Tunggu semua orang kosong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Data karyawan (alamat, nomor HP) di spreadsheet sebaiknya…",
+      "options": [
+        "Dibagikan ke grup umum",
+        "Disimpan dengan akses terbatas hanya untuk yang berwenang",
+        "Dicetak dan ditempel",
+        "Dikirim ke email pribadi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Notulen rapat yang baik minimal berisi…",
+      "options": [
+        "Semua obrolan kata per kata",
+        "Keputusan, tindak lanjut, penanggung jawab, dan tenggat",
+        "Daftar hadir saja",
+        "Opini penulis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima faktur tagihan vendor untuk kantor cabang Surabaya, namun alamat pengiriman barang di surat jalan berbeda dengan kota cabang tersebut. Langkah awal yang paling tepat adalah...",
+      "options": [
+        "Langsung meneruskan faktur ke bagian keuangan untuk segera diproses pembayaran",
+        "Menghubungi pihak vendor untuk meminta klarifikasi dan revisi dokumen terkait",
+        "Memasukkan faktur tersebut ke dalam arsip pending tanpa melakukan tindakan",
+        "Membatalkan seluruh pesanan barang dan mencari vendor pengganti di Surabaya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kurir datang membawa paket dokumen rahasia dari instansi pemerintah untuk Direktur Utama yang sedang dinas luar kota selama seminggu. Tindakan administratif yang harus Anda ambil adalah...",
+      "options": [
+        "Menolak paket tersebut dan meminta kurir datang kembali minggu depan",
+        "Menerima dokumen, mencatat di buku ekspedisi, dan melapor ke sekretaris pimpinan",
+        "Membuka amplop dokumen untuk memindai isinya lalu mengirim lewat pesan singkat",
+        "Menitipkan paket dokumen tersebut kepada petugas keamanan di pintu lobi utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pimpinan meminta Anda menyiapkan bahan presentasi untuk rapat direksi besok pagi, namun data mentah dari divisi operasional belum lengkap. Apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Menunda pembuatan bahan presentasi sampai data dari operasional benar-benar lengkap",
+        "Membuat presentasi dengan asumsi data sendiri agar pekerjaan cepat selesai",
+        "Segera berkoordinasi dengan kepala divisi operasional untuk meminta percepatan data",
+        "Melaporkan kepada pimpinan bahwa divisi operasional tidak bekerja dengan baik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam mengelola ruang penyimpanan arsip fisik kantor yang semakin penuh, Anda mendapati dokumen-dokumen transaksi dari tahun 2015. Kebijakan pengelolaan yang tepat adalah...",
+      "options": [
+        "Memusnahkan seluruh dokumen lama tersebut tanpa berkoordinasi dengan bagian hukum",
+        "Memindahkan dokumen ke kotak arsip inaktif sesuai jadwal retensi dan prosedur",
+        "Membiarkan dokumen tetap menumpuk di lemari arsip utama lantai operasional",
+        "Membakar dokumen lama di halaman belakang kantor pada akhir jam kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan memesan tiket pesawat dan hotel untuk perjalanan dinas manajer ke Medan. Setelah pemesanan selesai, langkah administratif penting berikutnya adalah...",
+      "options": [
+        "Langsung menghapus riwayat pemesanan agar memori komputer tetap bersih",
+        "Menyimpan bukti transaksi dan mengirimkan jadwal lengkap ke email manajer",
+        "Meminta manajer mengganti biaya pemesanan menggunakan uang pribadi dulu",
+        "Mengabaikan konfirmasi pemesanan karena maskapai sudah pasti mencatatnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kantor Anda menerapkan sistem pengarsipan digital bersama di cloud storage. Agar anggota tim lain tidak sengaja menghapus atau mengubah master template surat, tindakan pengaturan akses yang benar adalah...",
+      "options": [
+        "Memberikan akses penuh edit kepada seluruh staf tanpa terkecuali",
+        "Mengunci folder master dan memberikan izin akses baca saja bagi tim",
+        "Menyimpan semua file penting hanya di komputer lokal meja kerja Anda",
+        "Memproteksi setiap file dengan kata sandi yang sama untuk semua orang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat jam istirahat kantor, telepon berdering terus-menerus sementara rekan meja sebelah sedang istirahat keluar. Sikap profesional yang harus Anda tunjukkan adalah...",
+      "options": [
+        "Membiarkan telepon berdering karena bukan merupakan tanggung jawab utama Anda",
+        "Mengangkat telepon dengan sopan, menyebutkan identitas kantor, dan mencatat pesan",
+        "Mematikan sambungan kabel telepon sementara agar suasana menjadi lebih tenang",
+        "Mengangkat telepon lalu meminta penelepon menelepon kembali setelah jam istirahat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan selisih pencatatan pada buku kas kecil (petty cash) saat melakukan rekonsiliasi bulanan dengan bukti bon pembelian. Langkah koreksi administratif yang tepat adalah...",
+      "options": [
+        "Menutupi selisih dana tersebut menggunakan uang pribadi Anda sendiri",
+        "Melaporkan temuan selisih kepada bagian keuangan dan melampirkan bukti bon",
+        "Mengubah nominal pada bon pembelian agar sesuai dengan sisa uang kas",
+        "Menghapus catatan transaksi yang bermasalah dari lembar laporan bulanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir tahun anggaran, departemen Anda harus menghabiskan sisa anggaran alat tulis kantor (ATK). Cara pengadaan administratif yang paling akuntabel adalah...",
+      "options": [
+        "Membeli barang dalam jumlah berlebihan tanpa melihat kebutuhan riil ruangan",
+        "Membuat daftar inventaris kebutuhan nyata dan memesan melalui vendor resmi kantor",
+        "Membeli barang pribadi pegawai dengan menggunakan nota pembelian kantor",
+        "Mengambil uang tunai dari sisa anggaran untuk dibagikan sebagai bonus lembur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang tamu penting datang ke kantor tanpa membuat janji temu sebelumnya, sementara atasan Anda sedang berada dalam rapat tertutup. Tindakan resepsionis atau staf administrasi yang profesional adalah...",
+      "options": [
+        "Meminta tamu tersebut untuk langsung masuk ke dalam ruang rapat atasan",
+        "Menolak kedatangan tamu secara tegas karena tidak memiliki janji temu",
+        "Menyambut tamu dengan ramah, mempersilakan duduk, dan menghubungi sekretaris",
+        "Meminta tamu menunggu di luar gedung kantor sampai rapat selesai total"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima email pengaduan dari pelanggan yang sangat marah karena keterlambatan pengiriman produk. Langkah awal administratif yang paling tepat untuk meredam situasi adalah",
+      "options": [
+        "Mengabaikan email tersebut sampai manajer layanan pelanggan kembali masuk kerja",
+        "Membalas dengan templat standar perusahaan tanpa menyebutkan masalah spesifik",
+        "Segera mencatat keluhan, mengirim konfirmasi penerimaan, dan meneruskan ke log tim",
+        "Menghubungi nomor pribadi pelanggan di luar jam kerja untuk meminta maaf langsung"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses rekapitulasi absensi bulanan karyawan, Anda menemukan satu orang tidak melakukan clock-out selama tiga hari berturut-turut. Tindakan administratif yang harus diambil adalah",
+      "options": [
+        "Mengasumsikan karyawan tersebut lembur penuh dan langsung menambahkannya ke total jam",
+        "Menghapus data kehadiran tiga hari tersebut agar perhitungan gaji tidak mengalami error",
+        "Mengonfirmasi langsung kepada karyawan bersangkutan dan meminta formulir koreksi",
+        "Memotong gaji karyawan tersebut secara proporsional karena kelalaian absensi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Atasan meminta Anda mengirimkan dokumen penawaran kerja sama penting ke klien di luar kota melalui ekspedisi kilat. Agar proses pelacakan dan pertanggungjawaban jelas, yang harus Anda lakukan setelah pengiriman adalah",
+      "options": [
+        "Menyimpan lembar resi fisik di dalam laci meja kerja pribadi Anda tanpa dicatat",
+        "Memasukkan nomor resi ke lembar kendali pengiriman dan memindai bukti resi ke folder tim",
+        "Membuang kertas resi pengiriman setelah kurir meninggalkan area lobi kantor",
+        "Menunggu hingga klien menelepon untuk mengabarkan bahwa dokumen sudah diterima"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan inventarisasi aset inventaris kantor, Anda menemukan tiga unit laptop lama yang sudah rusak berat dan tidak ekonomis untuk diperbaiki. Langkah administratif yang tepat adalah",
+      "options": [
+        "Membuang unit tersebut langsung ke tempat sampah umum di luar area gedung kantor",
+        "Membagikan perangkat tersebut kepada staf internal secara acak tanpa prosedur",
+        "Membuat Berita Acara Penghapusan Aset dan mengajukannya ke bagian keuangan",
+        "Membiarkan laptop tetap tercatat di neraca aset agar laporan tidak perlu diubah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mendistribusikan memo internal kebijakan baru perusahaan kepada seluruh 150 karyawan. Agar penyebarannya efektif dan dapat diverifikasi, cara terbaik adalah",
+      "options": [
+        "Mencetak satu eksemplar dan menempelkannya di dinding dekat mesin pendingin air",
+        "Mengirimkan email massal berformat PDF dengan fitur tanda terima baca kepada staf",
+        "Menitipkan pesan verbal secara berantai melalui rekan kerja di setiap divisi",
+        "Menaruh salinan kertas di atas meja masing-masing staf saat mereka sedang istirahat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Penyedia layanan internet kantor mengirimkan tagihan bulanan melalui email, namun nominalnya berbeda dari kontrak langganan yang telah disepakati tahun lalu. Sikap Anda sebagai staf administrasi adalah",
+      "options": [
+        "Langsung melakukan transfer pembayaran sesuai nominal tagihan terbaru agar internet tidak putus",
+        "Mengabaikan tagihan tersebut sampai pihak vendor mengirimkan surat teguran kedua",
+        "Menghubungi bagian penagihan vendor untuk konfirmasi dan melampirkan salinan kontrak",
+        "Membatalkan langganan secara sepihak dan mencari vendor baru tanpa melapor ke atasan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kantor cabang baru memerlukan pasokan alat kebersihan rutin setiap bulannya. Sebagai pengelola administrasi pengadaan, langkah awal penyusunan kontrak vendor baru adalah",
+      "options": [
+        "Membuat daftar kebutuhan spesifik, estimasi anggaran, dan kriteria evaluasi rekanan",
+        "Langsung menandatangani kontrak kerja sama jangka panjang dengan penawar pertama",
+        "Meminta staf operasional membeli kebutuhan tersebut secara tunai di pasar swalayan",
+        "Menunggu hingga stok habis total sebelum mulai mencari informasi kontak vendor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang mantan karyawan datang ke kantor untuk meminta legalisir fotokopi paklaring (surat pengalaman kerja) yang diterbitkan tiga tahun lalu. Prosedur administratif yang benar adalah",
+      "options": [
+        "Menolak permintaan tersebut karena masa kerja di perusahaan sudah berlalu lama",
+        "Memeriksa keaslian dokumen asli, mencocokkan dengan arsip HR, lalu membubuhkan cap",
+        "Meminta mantan karyawan tersebut menulis ulang surat pengalaman kerjanya sendiri",
+        "Memberikan cap legalisir langsung pada fotokopi tanpa perlu memeriksa arsip digital"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab mengelola ruang rapat utama. Dua manajer berbeda meminta penggunaan ruangan di jam dan tanggal yang persis sama. Langkah mediasi administratif yang tepat adalah",
+      "options": [
+        "Memberikan ruangan kepada manajer yang jabatannya lebih tinggi secara hierarki",
+        "Membatalkan kedua jadwal rapat tersebut dan meminta keduanya mencari tempat lain",
+        "Memeriksa urgensi agenda masing-masing rapat dan berdiskusi dengan kedua pihak",
+        "Memberikan ruangan kepada pihak yang pertama kali mengirimkan formulir peminjaman"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Setiap akhir bulan, Anda harus menyusun laporan rekapitulasi penggunaan kendaraan operasional kantor berdasarkan lembar log pengemudi. Kendala umum yang sering terjadi adalah catatan jarak tempuh yang tidak diisi pengemudi. Cara mengatasinya secara sistematis adalah",
+      "options": [
+        "Mengosongkan data kendaraan tersebut pada laporan akhir bulan kepada manajemen",
+        "Membuat estimasi angka acak agar tabel laporan terlihat rapi dan seimbang",
+        "Membuat SOP pengisian log wajib paraf harian dan melakukan verifikasi mingguan",
+        "Memotong uang bensin pengemudi yang lalai tanpa melakukan konfirmasi lebih dulu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima paket dokumen tender dari instansi pemerintah yang ditujukan kepada Kepala Divisi Pengadaan. Di sampul luar paket tertera label \"Sangat Rahasia\". Tindakan pertama yang paling tepat untuk dilakukan adalah...",
+      "options": [
+        "Membuka amplop untuk memindai isi dokumen sebelum menyerahkannya",
+        "Mencatat tanggal, waktu terima, dan nomor resi ke buku agenda surat",
+        "Menghubungi instansi pengirim untuk meminta konfirmasi isi dokumen",
+        "Menyimpan paket di laci meja Anda sampai Kepala Divisi kembali masuk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan pemeriksaan berkala pada inventaris ruang kerja, Anda menemukan sebuah proyektor kantor bernilai tinggi yang tidak memiliki label kode aset perusahaan. Langkah administratif awal yang harus Anda ambil adalah...",
+      "options": [
+        "Membuat label inventaris sementara dan mencatatnya ke daftar aset",
+        "Membiarkannya karena tidak mengganggu fungsi operasional harian",
+        "Melaporkan kehilangan kepada bagian keamanan gedung secara resmi",
+        "Memindahkan proyektor tersebut ke dalam lemari arsip terkunci"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang kurir logistik datang menyerahkan barang pesanan kantor, namun jumlah fisik barang yang diterima kurang dua buah dari surat jalan yang disertakan. Keputusan administrasi yang benar adalah...",
+      "options": [
+        "Menolak seluruh kiriman barang dan meminta kurir membawanya kembali",
+        "Menerima barang dan langsung melunasi pembayaran faktur kepada vendor",
+        "Memberikan catatan kekurangan pada surat jalan dan meminta tanda tangan kurir",
+        "Meminta kurir mencari sisa barang tersebut di gudang pusat pengiriman"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta untuk merapikan ratusan file dokumen perusahaan di komputer kantor agar mudah ditemukan kembali oleh tim. Metode pengorganisasian digital yang paling efektif adalah...",
+      "options": [
+        "Menggabungkan seluruh file ke dalam satu folder utama berukuran besar",
+        "Membuat struktur folder berdasarkan tahun, departemen, dan jenis dokumen",
+        "Menyimpan semua file langsung di desktop agar cepat diakses setiap saat",
+        "Mengunggah file secara acak ke folder bersama tanpa sistem penamaan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

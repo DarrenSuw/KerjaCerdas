@@ -1,0 +1,306 @@
+{
+  "skill": "Kubernetes",
+  "skill_key": "kubernetes",
+  "questions": [
+    {
+      "question": "Sebuah pod aplikasi backend di cluster Kubernetes perusahaan Anda terus-menerus mengalami restart setelah beberapa detik berjalan akibat lonjakan trafik pagi hari. Saat Anda mengecek menggunakan perintah 'kubectl describe pod', status menunjukkan OOMKilled. Tindakan taktis apa yang paling tepat untuk mengatasi masalah darurat ini?",
+      "options": [
+        "Melakukan restart pada seluruh node cluster untuk membebaskan RAM",
+        "Menaikkan batas limit memori pada file manifest deployment aplikasi",
+        "Mengurangi jumlah replika pod secara drastis melalui perintah scale",
+        "Mengubah kebijakan restart pod dari Always menjadi OnFailure"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mendeploy sebuah aplikasi web ke cluster produksi yang membutuhkan penyimpanan persisten untuk menyimpan file unggahan pengguna, di mana data tersebut harus tetap aman meskipun pod mengalami reschedule ke node lain. Jenis objek Kubernetes manakah yang harus Anda konfigurasikan?",
+      "options": [
+        "PersistentVolumeClaim dan menghubungkannya ke volume pod",
+        "EmptyDir volume yang diatur langsung di dalam file pod spec",
+        "ConfigMap untuk menampung direktori path penyimpanan lokal",
+        "HostPath volume yang mengarah langsung ke disk fisik node"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan bahwa layanan frontend di environment staging tidak dapat diakses melalui browser, meskipun pod-pod aplikasi terpantau dalam status Running. Anda menemukan bahwa Service bertipe ClusterIP sedang digunakan. Solusi konfigurasi apa yang paling tepat agar layanan dapat diuji dari luar cluster?",
+      "options": [
+        "Mengubah tipe Service menjadi NodePort atau memasang Ingress",
+        "Menghapus network policy yang memblokir akses port 80",
+        "Menambahkan variabel lingkungan eksternal ke dalam deployment",
+        "Membuat ReplicaSet baru untuk menduplikasi endpoint layanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan rollout versi terbaru aplikasi e-commerce, pengguna melaporkan error koneksi sesaat karena pod versi lama langsung dimatikan sebelum benar-benar selesai memproses transaksi yang sedang berjalan. Mekanisme Kubernetes apa yang perlu Anda sesuaikan untuk mencegah masalah ini pada deployment berikutnya?",
+      "options": [
+        "Mengaktifkan horizontal pod autoscaler dengan metrik kustom",
+        "Mengonfigurasi liveness probe dengan durasi timeout lebih lama",
+        "Menambahkan preStop lifecycle hook dan pre-check termination grace",
+        "Menggunakan strategy Recreate pada konfigurasi deployment manifest"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati salah satu node di managed Kubernetes cluster (seperti GKE atau EKS) tidak merespons dan berada dalam status NotReady akibat masalah hardware. Pod-pod stateful yang berjalan di node tersebut tidak kunjung otomatis berpindah ke node sehat. Apa penyebab utama lambatnya proses migrasi beban kerja tersebut?",
+      "options": [
+        "Parameter node uncordon belum dieksekusi secara manual",
+        "Cluster autoscaler memerlukan waktu jeda untuk provisioning node",
+        "Default toleration timeout pod terhadap node mati memakan waktu",
+        "Kapasitas resource CPU pada node lain sudah sepenuhnya habis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah service microservice memanggil service lain di namespace berbeda dalam satu cluster yang sama, namun koneksi gagal dengan pesan time-out. Konfigurasi Kubernetes apa yang paling mungkin menjadi penyebab utama terhalangnya komunikasi antar-namespace ini?",
+      "options": [
+        "Ketiadaan konfigurasi Ingress Controller di namespace tujuan",
+        "Penerapan NetworkPolicy yang membatasi ingress lintas namespace",
+        "Perbedaan label selector pada objek Service dan Endpoint pod",
+        "Pengaturan resource quota yang melebihi batas maksimal cluster"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu memperbarui kredensial database yang digunakan oleh aplikasi production secara berkala tanpa harus membangun ulang image container atau melakukan downtime redeployment. Pendekatan manajemen konfigurasi Kubernetes manakah yang paling aman untuk diterapkan?",
+      "options": [
+        "Menyimpan kredensial plain text langsung di dalam file Dockerfile",
+        "Menggunakan Kubernetes Secret dan memuatnya sebagai environment",
+        "Menulis kredensial baru ke dalam file konfigurasi ConfigMap publik",
+        "Menyertakan file konfigurasi database di dalam PersistentVolume"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Cluster Kubernetes Anda mengalami penurunan performa yang signifikan. Setelah diselidiki melalui metrics-server, ditemukan bahwa satu namespace menggunakan resource CPU yang tidak wajar akibat proses background yang terjebak dalam infinite loop. Kebijakan apa yang harus segera diterapkan untuk mencegah satu namespace memonopoli seluruh resource cluster?",
+      "options": [
+        "Membatasi jumlah node worker melalui cloud provider console",
+        "Menerapkan ResourceQuota dan LimitRange pada namespace tersebut",
+        "Mengubah update strategy deployment menjadi RollingUpdate lambat",
+        "Menonaktifkan sementara kube-dns untuk mengurangi beban jaringan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps ingin memastikan bahwa pod untuk modul pembayaran kritis hanya dijadwalkan pada node worker khusus yang memiliki spesifikasi hardware bersertifikasi keamanan tinggi. Properti apa pada konfigurasi pod spec yang harus Anda atur untuk memenuhi kebutuhan ini?",
+      "options": [
+        "Node selector atau node affinity yang mencocokkan label node",
+        "Inisialisasi initContainers untuk melakukan verifikasi keamanan",
+        "Pengaturan priority class dengan angka prioritas tertinggi",
+        "Konfigurasi horizontal pod autoscaler berbasis custom metrics"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pod aplikasi sering kali dianggap siap menerima trafik oleh load balancer padahal koneksi ke cache Redis internal belum sepenuhnya terbentuk saat aplikasi baru pertama kali menyala. Akibatnya, terjadi error pada request pertama pengguna. Fitur probe mana yang tepat untuk mengatasi skenario ini?",
+      "options": [
+        "Startup probe yang dikombinasikan dengan liveness probe",
+        "Readiness probe untuk menunda trafik hingga siap sepenuhnya",
+        "Liveness probe untuk merestart pod jika cache tidak merespons",
+        "Lifecycle hook postStart untuk menguji koneksi cache Redis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi monolitik migrasi ke Kubernetes membutuhkan konfigurasi environment variable yang sensitif seperti API key pihak ketiga. Bagaimana cara paling aman menyuntikkan nilai rahasia ini ke dalam kontainer saat runtime?",
+      "options": [
+        "Menyimpan nilai langsung di dalam manifest Deployment YAML",
+        "Membuat resource Secret dan memasangnya via volume atau envFrom",
+        "Menuliskan kredensial di dalam Dockerfile sebelum proses build image",
+        "Menyimpan file konfigurasi teks biasa di dalam persistent volume cluster"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati pemanfaatan CPU pada node pool di cluster Kubernetes melonjak drastis, menyebabkan beberapa pod mengalami eviksi. Langkah apa yang paling tepat untuk mengidentifikasi pod mana yang mengonsumsi resource paling tinggi secara real-time?",
+      "options": [
+        "Menjalankan perintah kubectl describe nodes pada setiap node cluster",
+        "Memeriksa log dari kube-system controller manager menggunakan kubectl logs",
+        "Menjalankan perintah kubectl top pods --all-namespaces untuk melihat penggunaan",
+        "Membuka dashboard Kubernetes UI dan melihat status health check setiap pod"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda menerapkan kebijakan keamanan ketat di mana kontainer aplikasi yang berjalan di cluster produksi tidak boleh memiliki akses root demi mencegah eskalasi hak istimewa. Bagian mana pada konfigurasi Pod spec yang harus diatur untuk memenuhi aturan ini?",
+      "options": [
+        "Menambahkan parameter imagePullPolicy menjadi Always pada setiap kontainer",
+        "Mengonfigurasi securityContext dengan mengatur runAsNonRoot bernilai true",
+        "Menentukan batasan limits CPU dan memory secara spesifik di resources section",
+        "Mengaktifkan network policy default-deny untuk semua ingress dan egress traffic"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda melakukan pembaruan citra (image tag) pada sebuah Deployment menggunakan perintah kubectl set image. Namun, proses rollout mandek dan pod baru tidak kunjung aktif karena kapasitas cluster sudah penuh. Perintah apa yang efektif untuk membatalkan rollout dan kembali ke versi stabil sebelumnya?",
+      "options": [
+        "Menjalankan perintah kubectl rollout undo deployment/nama-deployment",
+        "Menghapus seluruh resource pod yang baru saja dibuat secara manual satu-satu",
+        "Melakukan restart pada service mesh proxy yang terpasang di dalam cluster",
+        "Mengubah nilai replicas pada file manifest YAML menjadi angka nol lalu apply"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah job batch processing harian dijalankan di Kubernetes untuk melakukan rekapitulasi data transaksi. Anda ingin memastikan resource pod job tersebut otomatis terhapus beberapa jam setelah selesai agar tidak menumpuk di cluster. Fitur apa yang harus dikonfigurasi?",
+      "options": [
+        "Mengatur parameter activeDeadlineSeconds pada bagian spec dari job",
+        "Menambahkan label khusus cleanup pada metadata agar mudah difilter",
+        "Mengaktifkan fitur TTL mechanism dengan mengisi ttlSecondsAfterFinished",
+        "Membuat cronjob terpisah untuk menghapus pod yang berstatus Completed"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta memastikan bahwa ingress controller di cluster Kubernetes dapat mengarahkan trafik HTTPS masuk berdasarkan domain aplikasi yang berbeda. Objek Kubernetes apa yang harus dibuat bersamaan dengan Ingress resource untuk menyediakan enkripsi TLS?",
+      "options": [
+        "Membuat objek Service dengan tipe LoadBalancer di namespace kube-system",
+        "Menyiapkan objek Secret tipe kubernetes.io/tls yang berisi sertifikat valid",
+        "Mengonfigurasi objek NetworkPolicy untuk membuka port 443 pada firewall",
+        "Mendaftarkan objek ConfigMap yang mendefinisikan mapping port dan protokol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pod aplikasi backend mengalami kegagalan sistem file lokal karena node tempatnya berjalan mengalami restart, dan data yang ditulis aplikasi hilang begitu saja. Jenis volume apa yang seharusnya digunakan untuk memastikan data tetap persisten terikat siklus hidup pod?",
+      "options": [
+        "Menggunakan volume tipe emptyDir pada definisi kontainer di pod spec",
+        "Memanfaatkan hostPath volume yang menunjuk langsung ke direktori node",
+        "Menerapkan PersistentVolumeClaim yang terhubung ke storageclass cloud",
+        "Menyimpan seluruh data sementara di dalam memori tmpfs kontainer aktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim keamanan meminta agar komunikasi antar microservice di cluster Kubernetes diisolasi secara ketat berdasarkan namespace. Objek Kubernetes apa yang harus diterapkan untuk memblokir trafik jaringan yang tidak diinginkan antar pod?",
+      "options": [
+        "Membuat aturan Ingress routing pada objek load balancer eksternal",
+        "Mengonfigurasi ServiceMesh authorization policy menggunakan Envoy",
+        "Menerapkan resource NetworkPolicy dengan seleksi selector yang tepat",
+        "Menonaktifkan kube-dns forwarding untuk namespace yang ingin diisolasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu melakukan maintenance pada node worker tertentu tanpa menyebabkan downtime pada aplikasi yang sedang berjalan di node tersebut. Perintah kubectl apa yang harus dijalankan pertama kali sebelum mematikan node tersebut?",
+      "options": [
+        "Menjalankan perintah kubectl drain untuk mengosongkan node dari pod aktif",
+        "Menghapus node dari cluster secara permanen menggunakan kubectl delete node",
+        "Mengubah status node menjadi unschedulable menggunakan perintah kubectl taint",
+        "Memindahkan seluruh konfigurasi service ke node lain dengan kubectl replace"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi backend di Kubernetes membutuhkan akses ke API server cluster untuk melakukan otomatisasi pembuatan resource lain. Pendekatan apa yang paling aman dan sesuai praktik terbaik untuk memberikan hak akses tersebut kepada pod?",
+      "options": [
+        "Menyimpan token admin cluster secara hardcode di dalam file konfigurasi aplikasi",
+        "Menggunakan ServiceAccount yang terikat dengan Role dan RoleBinding yang spesifik",
+        "Memberikan akses penuh kepada pod dengan mencentang opsi privileged container",
+        "Membuat user baru di kubeconfig lalu menyalin file kredensial ke dalam image"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pod aplikasi mengalami crash loop karena kehabisan memori saat memproses data besar. Anda perlu membatasi penggunaan memori agar pod tersebut di-terminate dengan bersih ketika melewati batas, tanpa mempengaruhi node secara keseluruhan. Apa yang harus Anda konfigurasi pada manifest pod?",
+      "options": [
+        "Menambahkan parameter limits dan requests pada bagian container resources di file YAML",
+        "Mengubah nilai maxSurge dan maxUnavailable pada strategi deployment aplikasi tersebut",
+        "Membuat objek LimitRange baru di dalam namespace yang sama secara spesifik",
+        "Menurunkan nilai parameter liveness probe agar pengecekan kesehatan lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa sebuah StatefulSet mengalami masalah saat melakukan scaling down karena volume persistent yang terikat tidak otomatis terhapus, meninggalkan orphan PVC di cluster. Bagaimana cara memastikan PVC ikut terhapus otomatis di masa mendatang?",
+      "options": [
+        "Mengaktifkan fitur volumeClaimTemplates dengan kebijakan hapus otomatis pada metadata",
+        "Menambahkan konfigurasi persistentVolumeReclaimPolicy dengan nilai Delete pada PV",
+        "Mengonfigurasi properti volumeBindingMode menjadi Immediate pada storage class",
+        "Membuat Controller khusus untuk memantau lifecycle PVC yang tidak lagi terikat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi berbasis Node.js di cluster Kubernetes memerlukan konfigurasi zona waktu Indonesia Bagian Barat (WIB) dan beberapa parameter koneksi database yang dibaca dari file eksternal. Pendekatan apa yang paling efisien dan aman untuk menerapkannya?",
+      "options": [
+        "Menyimpan seluruh konfigurasi teks biasa langsung di dalam file Dockerfile citra aplikasi",
+        "Memasukkan variabel tersebut secara hardcode di dalam argumen perintah container pod",
+        "Menggunakan objek ConfigMap yang dimount sebagai environment variable atau file volume",
+        "Membuat cluster role binding baru yang memberikan akses baca ke node environment host"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan troubleshooting pada sebuah pod yang gagal berjalan, Anda melihat status pod tersebut menunjukkan 'ImagePullBackOff'. Langkah awal apa yang paling tepat untuk mendiagnosis akar permasalahan tersebut?",
+      "options": [
+        "Memeriksa log dari container sebelumnya menggunakan perintah kubectl logs dengan flag -p",
+        "Menjalankan perintah kubectl describe pod untuk melihat pesan error spesifik dari container runtime",
+        "Melakukan restart pada layanan kube-proxy di node tempat pod tersebut dijadwalkan",
+        "Menghapus objek service account yang terikat pada deployment aplikasi yang bermasalah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memastikan bahwa deployment layanan pembayaran tidak mengalami downtime ketika dilakukan pembaruan versi (rolling update). Konfigurasi strategi mana yang harus diatur pada spesifikasi Deployment?",
+      "options": [
+        "Mengatur strategy type menjadi Recreate dengan timeout termination yang diperpanjang",
+        "Mengatur strategy type menjadi RollingUpdate dengan maxSurge 1 dan maxUnavailable 0",
+        "Mengatur strategy type menjadi RollingUpdate dengan maxSurge 0 dan maxUnavailable 1",
+        "Mengatur replica set statis dengan menggunakan selector label nodeAffinity yang kaku"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pod di cluster Anda menerima trafik dari service, namun trafik tersebut sering terputus karena aplikasi membutuhkan waktu sekitar 30 detik untuk melakukan pemanasan (warming up) cache sebelum siap melayani. Solusi apa yang paling tepat diterapkan?",
+      "options": [
+        "Menambahkan livenessProbe denganinitialDelaySeconds yang diset selama 30 detik",
+        "Menambahkan readinessProbe denganinitialDelaySeconds atau periodSeconds yang sesuai",
+        "Menaikkan kapasitas resource CPU limit agar proses startup aplikasi berjalan lebih cepat",
+        "Mengubah jenis service Kubernetes dari ClusterIP menjadi NodePort untuk akses langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk memberikan akses sementara kepada auditor eksternal agar dapat membaca log dan status pod di namespace 'finance' tanpa memberikan izin untuk mengubah resource apa pun. Objek RBAC apa yang harus dibuat?",
+      "options": [
+        "ClusterRole dengan verb baca dan ClusterRoleBinding yang mencakup seluruh cluster",
+        "Role dengan verb get, list, watch pada resource pod dan log, diikat dengan RoleBinding",
+        "ServiceAccount khusus dengan token rahasia yang ditempelkan langsung pada konfigurasi pod",
+        "NetworkPolicy yang mengizinkan IP address auditor masuk ke dalam namespace finance"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi microservice di cluster Kubernetes Anda perlu memanggil layanan pihak ketiga melalui internet publik yang hanya mengizinkan akses dari IP address static tertentu. Bagaimana cara memastikan egress trafik dari pod memiliki IP publik yang konsisten?",
+      "options": [
+        "Menggunakan LoadBalancer service type dengan annotasi IP eksternal dari provider cloud",
+        "Mengarahkan seluruh trafik keluar melalui Egress Gateway dengan NAT dan IP elastis khusus",
+        "Menambahkan aturan iptables manual pada setiap node worker di dalam cluster Kubernetes",
+        "Mengonfigurasi kube-dns agar memetakan domain eksternal ke IP internal cluster proxy"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa pod-pod baru di sebuah deployment gagal dijadwalkan dan berstatus 'Pending'. Melalui perintah describe pod, ditemukan pesan '0/5 nodes are available: 3 insufficient cpu, 2 node(s) had taints that did not match'. Tindakan apa yang paling tepat dilakukan?",
+      "options": [
+        "Menambahkan tolerations pada pod spec yang sesuai dengan taint node atau menambah node pool",
+        "Menghapus semua NetworkPolicy yang membatasi komunikasi antar pod di dalam namespace",
+        "Melakukan restart pada komponen kube-scheduler untuk membersihkan antrean pod yang nyangkut",
+        "Mengubah strategi update deployment dari rolling update menjadi recreate secara permanen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah database StatefulSet memerlukan urutan startup yang spesifik di mana pod-0 harus berjalan dan siap sepenuhnya sebelum pod-1 dapat mulai melakukan proses inisialisasi replikasi. Fitur apa pada StatefulSet yang mengatur hal ini?",
+      "options": [
+        "Mengaktifkan properti podManagementPolicy dengan nilai set ke Parallel",
+        "Mengaktifkan properti podManagementPolicy dengan nilai set ke OrderedReady",
+        "Menggunakan initContainers dengan script pengecekan DNS service endpoint manual",
+        "Membuat beberapa Deployment terpisah dengan selector label yang saling mengunci"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Corporate Finance",
+  "skill_key": "corporate finance",
+  "questions": [
+    {
+      "question": "PT Sejahtera Abadi memiliki rasio cakupan bunga (Interest Coverage Ratio) sebesar 1,2x pada tahun buku berjalan akibat penurunan marjin laba operasional. Tindakan preventif apa yang harus segera diambil divisi keuangan untuk menghindari wanprestasi?",
+      "options": [
+        "Mengajukan restrukturisasi utang berupa perpanjangan tenor kepada kreditur",
+        "Membagikan dividen tunai tahun ini untuk menjaga kepercayaan pemegang saham",
+        "Menggunakan laba ditahan untuk melakukan pembelian kembali saham publik",
+        "Mengalihkan seluruh kas operasional untuk investasi instrumen pasar uang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam penyusunan anggaran kas (cash budget) bulanan untuk kuartal depan, Anda menemukan defisit kas pada bulan kedua akibat pembayaran THR karyawan dan cicilan pokok pinjaman yang jatuh tempo bersamaan. Keputusan pendanaan jangka pendek apa yang paling tepat?",
+      "options": [
+        "Menjual kepemilikan saham portofolio anak usaha secara mendadak",
+        "Memanfaatkan fasilitas pinjaman rekening koran yang telah disetujui bank",
+        "Menunda pembayaran seluruh biaya operasional rutin hingga bulan ketiga",
+        "Menghentikan sementara seluruh proyek modal yang sedang berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Maju Bersatu sedang merencanakan ekspansi pabrik dengan nilai investasi awal Rp15 miliar. Proyek ini diperkirakan menghasilkan arus kas bersih Rp4 miliar per tahun selama 5 tahun. Jika tingkat diskonto (cost of capital) perusahaan adalah 12%, apa langkah finansial terbaik yang harus direkomendasikan kepada BOD?",
+      "options": [
+        "Melanjutkan proyek karena nilai NPV bernilai positif di atas nol",
+        "Menolak proyek karena periode pengembalian modal lebih dari 4 tahun",
+        "Menunda proyek sampai tingkat suku bunga acuan BI mengalami penurunan",
+        "Menerima proyek karena tingkat IRR berada di bawah tingkat diskonto"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai manajer keuangan di sebuah perusahaan ritel nasional, Anda mendapati siklus konversi kas (Cash Conversion Cycle) meningkat tajam dari 45 hari menjadi 75 hari dalam dua kuartal terakhir. Langkah operasional apa yang paling efektif untuk memulihkan likuiditas perusahaan?",
+      "options": [
+        "Mengurangi plafon fasilitas pinjaman jangka pendek pada bank mitra",
+        "Memperpanjang tenggat waktu pembayaran utang dagang kepada pemasok",
+        "Memperketat kebijakan kredit pelanggan dan mempercepat penagihan piutang",
+        "Melakukan penjualan aset tetap yang kurang produktif untuk kas darurat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Nusantara Logistik membutuhkan pendanaan Rp50 miliar untuk armada baru. Manajemen berencana menerbitkan obligasi dengan kupon 10% di tengah kondisi makroekonomi di mana suku bunga pasar cenderung turun. Strategi struktur modal manakah yang paling efisien untuk meminimalkan beban bunga?",
+      "options": [
+        "Menerbitkan obligasi dengan opsi konversi menjadi saham di masa depan",
+        "Menggunakan pinjaman sindikasi bank dengan skema suku bunga mengambang",
+        "Menerbitkan obligasi dengan tenor panjang dan opsi beli (callable bonds)",
+        "Melakukan rights issue untuk menambah modal disetor tanpa beban bunga"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menganalisis kelayakan akuisisi perusahaan kompetitor. Target memiliki rasio Debt to Equity (DER) 2,5x, jauh di atas rata-rata industri 1,0x. Pendekatan valuasi mana yang paling krusial untuk disesuaikan dalam model DCF (Discounted Cash Flow) Anda?",
+      "options": [
+        "Menaikkan proyeksi pertumbuhan pendapatan jangka panjang target",
+        "Menghitung ulang biaya modal tertimbang dengan struktur modal baru",
+        "Menggunakan metode valuasi berbasis aset bersih ketimbang laba bersih",
+        "Menurunkan tingkat terminal growth rate untuk mengantisipasi risiko"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur multinasional di Cikarang melakukan transaksi impor bahan baku senilai USD 2 juta yang harus dibayar dalam 90 hari. Mengingat volatilitas nilai tukar Rupiah terhadap Dolar AS yang tinggi, instrumen lindung nilai apa yang paling sesuai?",
+      "options": [
+        "Melakukan transaksi forward contract untuk mengunci kurs di masa depan",
+        "Membeli opsi saham emiten eksportir sebagai lindung nilai silang",
+        "Menyimpan seluruh kelebihan kas dalam bentuk valuta asing di kas perusahaan",
+        "Meminta supplier memberikan diskon tunai untuk pembayaran di muka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen PT Kreasi Digital sedang mempertimbangkan kebijakan dividen untuk tahun fiskal ini. Perusahaan sedang berada dalam fase pertumbuhan tinggi (high growth) dan membutuhkan banyak dana untuk riset produk. Kebijakan dividen apa yang paling rasional dipilih?",
+      "options": [
+        "Menetapkan rasio pembayaran dividen yang tetap tinggi demi stabilitas",
+        "Meniadakan dividen tunai dan mengalirkan laba untuk pendanaan internal",
+        "Membagikan dividen dalam bentuk saham bonus secara berkala",
+        "Melakukan pinjaman bank khusus untuk membagikan dividen kas kepada publik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengevaluasi dua proyek investasi yang mutually exclusive. Proyek A memiliki IRR 22% dengan NPV Rp5 miliar. Proyek B memiliki IRR 28% dengan NPV Rp3,5 miliar. Investasi awal kedua proyek adalah sama. Proyek mana yang harus dipilih berdasarkan prinsip keuangan korporat?",
+      "options": [
+        "Proyek B karena tingkat pengembalian internal jauh lebih tinggi",
+        "Proyek A karena memberikan tambahan nilai kekayaan absolut yang lebih besar",
+        "Kedua proyek dapat diambil secara bersamaan untuk diversifikasi risiko",
+        "Menolak keduanya karena tingkat IRR dan NPV saling bertentangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Agro Palma berencana melakukan ekspansi lahan sawit. Berdasarkan analisis sensitivitas, variabel apa yang paling dominan mempengaruhi perubahan nilai NPV proyek dalam jangka panjang?",
+      "options": [
+        "Fluktuasi harga jual CPO di pasar internasional dan tingkat produktivitas",
+        "Perubahan tarif pajak penghasilan badan yang ditetapkan oleh pemerintah",
+        "Kenaikan biaya pemeliharaan kantor pusat secara umum setiap tahun",
+        "Besarnya biaya administrasi pembukaan rekening bank untuk operasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Global Telekomunikasi berencana menerbitkan medium term notes (MTN) senilai Rp200 miliar untuk melunasi utang bank yang jatuh tempo. Tim Tresuri melaporkan bahwa kondisi likuiditas pasar obligasi korporasi sedang mengalami pengetatan (tight liquidity) akibat keluarnya dana asing. Strategi mitigasi risiko refinancing apa yang paling efektif untuk diterapkan?",
+      "options": [
+        "Mengubah instrumen pendanaan menjadi rights issue secara penuh untuk menghindari risiko kegagalan penempatan di pasar sekunder",
+        "Menerbitkan MTN dengan menyertakan fitur konversi saham serta memperpendek tenor guna menarik minat investor institusional",
+        "Melakukan negosiasi ulang dengan bank kreditur eksisting untuk restrukturisasi dan perpanjangan fasilitas pinjaman yang ada",
+        "Menunda seluruh pembayaran utang pokok dan bunga sampai kondisi makroekonomi domestik kembali stabil dan suku bunga turun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Bima Perkasa mencatatkan laba bersih yang signifikan pada laporan laba rugi tahun ini, namun divisi keuangan melaporkan adanya defisit kas operasional yang parah sehingga perusahaan kesulitan membayar gaji karyawan tepat waktu. Analisis manakah yang paling akurat untuk menjelaskan fenomena tersebut?",
+      "options": [
+        "Perusahaan mencatat lonjakan piutang usaha dan penumpukan persediaan barang jadi yang belum terserap oleh pasar ritel",
+        "Manajemen melakukan investasi besar pada instrumen surat berharga jangka pendek yang tidak memiliki likuiditas harian",
+        "Beban penyusutan aset tetap tahun ini terlalu tinggi sehingga menggerus arus kas masuk bersih dari aktivitas operasional",
+        "Adanya pembayaran utang dividen tunai tahun lalu yang baru dicairkan pada periode buku berjalan oleh pemegang saham"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam rangka persiapan Penawaran Umum Perdana (IPO) saham PT Tirta Mandiri di Bursa Efek Indonesia, underwriter menyarankan agar perusahaan melakukan pembersihan pembukuan (clean-up) terkait transaksi pihak berelasi (related party transactions) yang terjadi di masa lalu. Apa tujuan utama dari tindakan korporasi tersebut dalam perspektif corporate finance?",
+      "options": [
+        "Menghilangkan kewajiban pajak tangguhan yang tercatat pada laporan posisi keuangan konsolidasian tahun sebelumnya",
+        "Memastikan valuasi harga saham perdana mencerminkan kinerja fundamental yang wajar dan transparan bagi investor publik",
+        "Meningkatkan rasio perputaran aset tetap agar terlihat lebih efisien dibandingkan rata-rata perusahaan sejenis di bursa",
+        "Mengurangi jumlah saham beredar agar persentase kepemilikan pendiri tidak mengalami dilusi yang terlalu besar saat IPO"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Bumi Resources Mineral memiliki utang dalam denominasi USD sebesar USD 50 juta yang akan jatuh tempo dalam tiga tahun, sementara pendapatan operasional perusahaan sepenuhnya dalam Rupiah. Manajemen memutuskan untuk melakukan lindung nilai (hedging) menggunakan instrumen cross-currency swap. Apa risiko finansial utama yang tetap harus diantisipasi oleh manajer keuangan?",
+      "options": [
+        "Fluktuasi harga komoditas global yang menentukan volume ekspor produk pertambangan ke pasar internasional",
+        "Perubahan suku bunga referensi domestik yang berdampak langsung pada biaya operasional alat berat penambangan",
+        "Risiko kredit counterparty dari lembaga keuangan penyedia swap apabila terjadi gejolak likuiditas sistemik",
+        "Kewajiban pembayaran pajak penghasilan badan tambahan atas selisih kurs yang timbul dari kontrak derivatif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Anugerah Retailindo berencana membuka 50 gerai baru di berbagai kota di luar pulau Jawa. Manajemen puncak meminta tim keuangan melakukan analisis skenario (scenario analysis) terhadap parameter penjualan dan biaya sewa. Manakah metodologi evaluasi risiko yang paling tepat digunakan untuk mengukur probabilitas distribusi NPV dari ekspansi tersebut?",
+      "options": [
+        "Menghitung titik impas (break-even point) operasional secara statis berdasarkan proyeksi volume penjualan tahun pertama",
+        "Melakukan simulasi Monte Carlo untuk memasukkan variabel acak dan melihat sebaran kemungkinan hasil pengembalian",
+        "Mengubah satu per satu variabel biaya sewa dan harga jual untuk melihat sensitivitas marjinal terhadap nilai NPV",
+        "Menggunakan tingkat diskonto yang sangat tinggi untuk mengkompensasi ketidakpastian pasar ritel di luar Jawa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Pharma Medika memiliki kas internal yang melimpah dan tidak memiliki peluang investasi ekspansi dengan positive NPV dalam jangka pendek. Pemegang saham mayoritas menuntut pembagian dividen tunai yang tinggi, namun komisaris independen menyarankan program pembelian kembali saham (share buyback). Keputusan manakah yang memberikan fleksibilitas keuangan terbaik bagi perusahaan?",
+      "options": [
+        "Membagikan seluruh kelebihan kas sebagai dividen khusus karena memberikan sinyal positif kepastian imbal hasil kas",
+        "Menjalankan program share buyback secara bertahap karena dapat meningkatkan laba per saham (EPS) tanpa mengikat komitmen dividen",
+        "Menahan seluruh laba ditahan untuk ditempatkan pada deposito berjangka guna menjaga rasio likuiditas tetap tinggi",
+        "Menerbitkan saham bonus kepada seluruh pemegang saham eksisting sebagai pengganti pembayaran dividen tunai tahun ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Cipta Karya sedang mengevaluasi struktur modal optimal untuk menurunkan biaya modal rata-rata tertimbang (WACC). Saat ini perusahaan menggunakan 60% ekuitas dan 40% utang. Jika pajak penghasilan badan naik dari 22% menjadi 25%, apa dampak langsung terhadap komponen biaya utang dalam perhitungan WACC?",
+      "options": [
+        "Biaya utang setelah pajak akan mengalami penurunan sehingga turut menurunkan WACC perusahaan",
+        "Biaya utang sebelum pajak meningkat karena beban bunga pinjaman bank disesuaikan otomatis",
+        "Perusahaan harus menerbitkan saham baru untuk menyeimbangkan porsi modal terhadap utang",
+        "Tidak ada perubahan karena suku bunga pasar komersial tidak terpengaruh tarif pajak korporasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai analis keuangan di PT Sinar Maslahat, Anda mendapati bahwa proyek investasi gudang otomatis memiliki Net Present Value (NPV) positif sebesar Rp8 miliar, namun Internal Rate of Return (IRR)-nya berada di bawah tingkat diskonto (cost of capital) yang ditetapkan manajemen. Apa keputusan terbaik yang harus Anda ambil?",
+      "options": [
+        "Menolak proyek karena IRR gagal mencapai ambang batas minimum pengembalian modal",
+        "Menerima proyek karena NPV positif memberikan nilai tambah riil bagi pemegang saham",
+        "Meminta audit ulang karena terjadi kontradiksi matematis antara NPV dan metrik IRR",
+        "Menunda keputusan sampai nilai payback period memenuhi standar operasional divisi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Mega Sentosa menghadapi kendala likuiditas jangka pendek akibat piutang usaha yang tertagih rata-rata dalam 90 hari, sementara pemasok menuntut pembayaran dalam 30 hari. Untuk menutup gap kas ini tanpa menambah utang berbunga, langkah taktis apa yang paling tepat?",
+      "options": [
+        "Mengajukan pinjaman jangka panjang dengan jaminan aset tetap kepada bank komersial",
+        "Menerbitkan saham baru melalui rights issue untuk memperkuat modal kerja permanen",
+        "Menawarkan skema potongan harga tunai (cash discount) bagi pelanggan yang membayar cepat",
+        "Melakukan restrukturisasi total seluruh kewajiban lancar kepada kreditur utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Graha Reksa berencana mengakuisisi perusahaan rintisan teknologi. Dalam proses due diligence keuangan, Anda menemukan bahwa target memiliki liabilitas kontinjensi yang signifikan dari sengketa hukum yang belum selesai. Bagaimana perlakuan optimal dalam valuasi transaksi?",
+      "options": [
+        "Mengabaikan liabilitas tersebut karena belum tercatat resmi di neraca berjalan target",
+        "Menurunkan penawaran harga beli atau menetapkan dana escrow untuk proteksi risiko",
+        "Meminta penjual melunasi seluruh sengketa hukum sebelum penandatanganan akta jual",
+        "Memasukkan potensi kerugian tersebut ke dalam pos biaya operasional tahun pertama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen PT Bina Konstruksi sedang mempertimbangkan apakah akan menyewa (leasing) atau membeli langsung mesin berat senilai Rp10 miliar. Perusahaan berada dalam posisi laba kena pajak yang rendah akibat akumulasi rugi fiskal tahun lalu. Berdasarkan pertimbangan pajak, metode apa yang lebih menguntungkan?",
+      "options": [
+        "Operating lease karena pembayaran sewa langsung mengurangi laba bersih akuntansi",
+        "Pembelian tunai karena aset dapat disusutkan untuk menghemat pajak tahun berjalan",
+        "Financial lease karena seluruh angsuran pokok dapat dibebankan sebagai biaya bunga",
+        "Sewa pembiayaan dengan opsi beli agar beban depresiasi langsung dialihkan ke lessor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Samudera Raya memiliki kelebihan likuiditas kas idle sebesar Rp100 miliar selama tiga bulan ke depan sebelum digunakan untuk pembayaran proyek. Sebagai bendahara perusahaan, instrumen pasar uang mana yang paling tepat untuk mengoptimalkan imbal hasil dengan risiko likuiditas minimal?",
+      "options": [
+        "Saham berkapitalisasi besar di Indeks LQ45 untuk mendapatkan capital gain harian",
+        "Deposito berjangka 3 bulan atau instrumen Surat Berharga Komersial berperingkat tinggi",
+        "Obligasi korporasi berjangka waktu 5 tahun dengan tingkat kupon tetap yang tinggi",
+        "Penyertaan modal ventura pada startup teknologi agar portofolio semakin berdiversifikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Kirana Mandiri merencanakan ekspansi kapasitas produksi dengan meminjam dana dalam mata uang USD, sementara seluruh pendapatan penjualan diterima dalam Rupiah. Fluktuasi nilai tukar yang tajam dapat mengancam solvabilitas perusahaan. Strategi lindung nilai (hedging) apa yang paling efektif diterapkan?",
+      "options": [
+        "Melakukan pembelian kontrak berjangka valas (forward contract) sesuai jadwal jatuh tempo utang",
+        "Mempercepat penagihan piutang lokal dan memperpanjang masa pembayaran utang dagang",
+        "Mengonversi seluruh saldo kas operasional di bank menjadi bentuk mata uang asing",
+        "Menaikkan harga jual produk di pasar domestik secara proporsional setiap bulan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam evaluasi kinerja keuangan tahunan PT Surya Perkasa, Anda mendapati Return on Equity (ROE) perusahaan meningkat drastis, namun Return on Assets (ROA) justru mengalami penurunan. Analisis DuPont menunjukkan bahwa perubahan ini didorong oleh hal tersebut. Apa penyebab utamanya?",
+      "options": [
+        "Peningkatan efisiensi operasional pabrik dalam menekan biaya bahan baku langsung",
+        "Peningkatan marjin laba bersih melalui strategi penetapan harga produk premium",
+        "Peningkatan rasio leverage keuangan akibat penambahan utang berbunga yang besar",
+        "Penurunan total aset melalui penjualan aset tetap yang tidak produktif secara masif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Mandala Textile berniat melakukan restrukturisasi utang karena arus kas operasional tidak mampu menutup kewajiban pokok dan bunga bank yang jatuh tempo bulan ini. Langkah negosiasi awal yang paling logis dengan pihak kreditur perbankan adalah:",
+      "options": [
+        "Mengajukan permohonan pailit sukarela melalui Pengadilan Niaga setempat",
+        "Meminta perpanjangan tenor (extension) dan grace period untuk pembayaran pokok",
+        "Menghentikan seluruh aktivitas operasional pabrik guna menghemat kas darurat",
+        "Menerbitkan obligasi konversi tanpa jaminan untuk melunasi seluruh kredit bank"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Adhikari Niaga sedang menyusun proyeksi arus kas bebas (Free Cash Flow to Firm/FCFF) untuk keperluan valuasi perusahaan. Komponen mana di bawah ini yang TIDAK termasuk dalam perhitungan penyesuaian dari laba operasi bersih setelah pajak (NOPAT)?",
+      "options": [
+        "Penambahan kembali beban penyusutan dan amortisasi non-kas periode berjalan",
+        "Pengeluaran belanja modal (capital expenditures) untuk pemeliharaan aset tetap",
+        "Pembayaran beban bunga pinjaman bank setelah dikurangi perisai pajak",
+        "Perubahan kebutuhan modal kerja bersih (changes in net working capital)"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Sentosa Energi merencanakan investasi proyek PLTMH dengan masa konstruksi 2 tahun. Saat menghitung Net Present Value (NPV), manajemen mendiskon arus kas masa depan menggunakan WACC perusahaan. Apa dampak utama jika tingkat diskonto yang digunakan tidak mencerminkan risiko spesifik proyek energi terbarukan tersebut?",
+      "options": [
+        "Nilai terminal arus kas masa depan akan terhitung lebih rendah dari realisasi",
+        "Kelayakan investasi menjadi bias sehingga proyek berisiko tinggi dapat diterima",
+        "Estimasi biaya modal sendiri otomatis meningkat melampaui biaya utang baru",
+        "Perhitungan payback period mengalami pergeseran waktu secara proporsional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai Corporate Finance Manager di PT Batavia FMCG, Anda mendapati bahwa siklus konversi kas (Cash Conversion Cycle) perusahaan memburuk dari 45 hari menjadi 75 hari dalam setahun terakhir. Langkah operasional finansial mana yang paling efektif untuk membalikkan tren ini secara cepat?",
+      "options": [
+        "Menegosiasikan perpanjangan tenor pembayaran utang kepada pemasok utama",
+        "Mengurangi volume produksi harian guna menekan biaya overhead pabrik",
+        "Meningkatkan plafon fasilitas kredit modal kerja jangka pendek di bank",
+        "Membagikan dividen tunai interim guna menjaga kepercayaan investor ritel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Mega Logistik berencana menerbitkan obligasi tanpa jaminan (unsecured bonds) senilai Rp300 miliar untuk membiayai akuisisi armada truk baru. Agen pemeringkat memperingatkan bahwa tambahan utang ini akan menaikkan Debt to Equity Ratio (DER) melewati batas kovenan bank. Solusi pembiayaan alternatif apa yang paling tepat untuk memitigasi risiko pelanggaran kovenan tersebut?",
+      "options": [
+        "Mengonversi sebagian utang dagang jangka pendek menjadi instrumen wesel bayar",
+        "Menerbitkan saham baru melalui mekanisme Penambahan Modal Tanpa HMETD",
+        "Melakukan transaksi jual dan sewa-balik (sale and leaseback) pada aset gudang",
+        "Mengalihkan seluruh pendanaan proyek menggunakan fasilitas overdraft bank"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Kencana Agro memiliki eksposur pinjaman dalam mata uang USD sebesar USD 20 juta yang akan jatuh tempo dalam 6 bulan, sementara pendapatan operasional seluruhnya dalam Rupiah. Fluktuasi nilai tukar sangat volatil. Instrumen lindung nilai (hedging) apa yang paling cost-effective untuk mengamankan kewajiban tersebut?",
+      "options": [
+        "Membeli kontrak forward mata uang USD untuk tanggal jatuh tempo pinjaman",
+        "Membuka rekening giro khusus berdenominasi USD di bank komersial lokal",
+        "Menjual instrumen saham treasuri perusahaan di pasar reguler bursa efek",
+        "Mempercepat penagihan piutang usaha domestik dengan diskon tunai besar"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

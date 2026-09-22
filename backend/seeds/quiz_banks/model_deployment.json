@@ -1,0 +1,306 @@
+{
+  "skill": "Model Deployment",
+  "skill_key": "model deployment",
+  "questions": [
+    {
+      "question": "Sebuah tim Machine Learning di Jakarta baru saja mendeploy model credit scoring berbasis FastAPI di AWS ECS. Saat jam sibuk, latensi melonjak drastis dan beberapa request mengalami timeout. Langkah troubleshooting pertama apa yang paling tepat untuk mengatasi masalah operasional ini?",
+      "options": [
+        "Mengganti algoritma machine learning dengan regresi linier sederhana agar proses komputasi jauh lebih cepat",
+        "Menaikkan kapasitas resource instance dan mengaktifkan auto scaling berdasarkan metrik CPU utilization",
+        "Memindahkan seluruh database operasional ke dalam satu server fisik yang sama dengan aplikasi model",
+        "Menulis ulang seluruh kode layanan inference menggunakan bahasa pemrograman yang lebih rendah seperti C"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mendeploy model computer vision untuk mendeteksi kerusakan jalan raya pada edge device berupa mini PC di kantor cabang luar pulau. Keterbatasan utama yang harus diantisipasi dalam arsitektur deployment ini adalah...",
+      "options": [
+        "Koneksi internet yang tidak stabil dan kapasitas daya serta komputasi perangkat keras yang terbatas",
+        "Kepatuhan terhadap regulasi penyimpanan data pribadi nasabah perbankan nasional yang sangat ketat",
+        "Ketidakmampuan sistem operasi Linux dalam menjalankan bahasa pemrograman Python versi terbaru",
+        "Kebutuhan sinkronisasi data real-time dengan server pusat yang menggunakan teknologi mainframe"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup e-commerce lokal ingin meluncurkan model rekomendasi produk baru. Tim product ingin memastikan model baru ini benar-benar memberikan konversi penjualan lebih baik daripada model lama tanpa mengambil risiko berdampak buruk pada seluruh pengguna. Strategi deployment apa yang paling tepat?",
+      "options": [
+        "Melakukan blue-green deployment untuk menggantikan 100 persen traffic model lama secara instan",
+        "Menerapkan canary release atau A/B testing untuk mengarahkan sebagian kecil traffic ke model baru",
+        "Mematikan server model lama terlebih dahulu sebelum mengunggah file bobot model baru ke produksi",
+        "Menjalankan kedua model secara paralel dan menggabungkan hasil prediksi keduanya menggunakan rata-rata"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola endpoint model prediksi churn pelanggan di platform cloud. Belakangan ini, akurasi model menurun drastis karena tren ekonomi makro berubah, padahal data request masuk berjalan normal tanpa error sistem. Solusi jangka panjang apa yang harus diintegrasikan ke dalam pipeline?",
+      "options": [
+        "Menambahkan unit test pada kode unit aplikasi API agar unit testing selalu lulus sebelum deployment",
+        "Membangun sistem monitoring data drift dan concept drift untuk memicu automated retraining pipeline",
+        "Menurunkan threshold probabilitas prediksi model secara manual melalui file konfigurasi lingkungan",
+        "Melakukan restart berkala pada container Docker setiap malam untuk membersihkan cache memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Data Science menyerahkan file pickle model berukuran 3.5 GB untuk dideploy ke Kubernetes cluster produksi. Ukuran file ini membuat waktu startup pod menjadi sangat lambat dan membebani memori. Tindakan engineering apa yang harus Anda ambil?",
+      "options": [
+        "Melakukan kompresi model menggunakan teknik quantization atau pruning sebelum dibungkus ke image Docker",
+        "Menghapus seluruh file log historis dari server Kubernetes agar sisa kapasitas disk bertambah luas",
+        "Menggunakan instans server cloud dengan spesifikasi GPU kelas atas untuk mempercepat proses unduh file",
+        "Mengubah format penyimpanan model dari format serialisasi Python menjadi file teks biasa berekstensi txt"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skenario integrasi model NLP deteksi sentimen ulasan produk ke dalam sistem backend monolitik berbasis Java Spring Boot, pendekatan arsitektur apa yang paling bersih dan minim risiko kegagalan?",
+      "options": [
+        "Menulis ulang seluruh logika inferensi model machine learning langsung di dalam kode bahasa Java",
+        "Membungkus model Python sebagai microservice mandiri dengan REST API dan dikomunikasikan via HTTP",
+        "Menyimpan seluruh bobot model langsung di dalam tabel database relasional utama aplikasi backend",
+        "Mengonversi model machine learning menjadi fungsi stored procedure di dalam database PostgreSQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah bank digital ingin memastikan bahwa riwayat prediksi model persetujuan pinjaman dapat diaudit dan direproduksi kembali jika terjadi sengketa hukum di masa depan. Praktik MLOps apa yang wajib diterapkan pada sistem deployment?",
+      "options": [
+        "Mencatat versi kode, versi dataset pelatihan, dan parameter model menggunakan alat tracking seperti MLflow",
+        "Menyimpan seluruh hasil tangkapan layar antarmuka pengguna aplikasi web ke dalam folder arsip lokal",
+        "Memastikan semua pengembang memiliki akses penuh untuk menghapus data log transaksi di server produksi",
+        "Menggunakan algoritma machine learning yang paling sederhana agar proses perhitungan mudah diingat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa container Docker yang berisi model TensorFlow mengalami lonjakan memori secara kontinu (memory leak) setiap kali menerima request inferensi gambar berukuran besar. Langkah mitigasi operasional yang paling efektif adalah...",
+      "options": [
+        "Menambahkan batasan resource memory limit dan request pada konfigurasi pod Kubernetes serta membenahi manajemen memori kode",
+        "Meminta tim infrastruktur untuk mematikan fitur keamanan firewall pada jaringan cloud publik perusahaan",
+        "Mengganti sistem operasi container dari Alpine Linux menjadi sistem operasi berbasis Windows Server",
+        "Menaikkan batas waktu timeout pada load balancer agar proses eksekusi yang lambat tidak terputus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan logistik memerlukan sistem prediksi estimasi waktu pengiriman secara real-time dengan latensi di bawah 50 milidetik. Infrastruktur deployment seperti apa yang paling tepat dipilih?",
+      "options": [
+        "Menjalankan model secara batch setiap malam menggunakan skrip cron job di server lokal",
+        "Menggunakan serverless function dengan cold start tinggi untuk memproses setiap data masuk",
+        "Mendeploy model ke dedicated inference server yang di-cache di dalam memori menggunakan TorchScript atau ONNX",
+        "Mengandalkan query SQL kompleks langsung pada database transaksional operasional setiap ada request"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Ketika melakukan rolling update pada deployment model machine learning di Kubernetes, beberapa pengguna sempat mendapatkan error karena request dikirim ke pod lama yang sedang dalam proses terminasi. Konfigurasi apa yang harus diperbaiki?",
+      "options": [
+        "Menambahkan readinessProbe dan preStop hook pada konfigurasi deployment Kubernetes untuk menangani graceful shutdown",
+        "Menurunkan jumlah replika pod menjadi satu saja selama proses pembaruan aplikasi berlangsung",
+        "Menghapus fitur health check pada load balancer agar trafik tidak terganggu oleh proses internal kluster",
+        "Meminta pengguna untuk melakukan refresh manual pada browser mereka saat terjadi gangguan koneksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah model machine learning untuk deteksi fraud transaksi dompet digital mengalami lonjakan trafik tiba-tiba saat promo akhir bulan. Latensi prediksi melonjak drastis karena sumber daya CPU pada kontainer tunggal habis. Langkah penanganan paling efektif yang harus Anda lakukan adalah",
+      "options": [
+        "Melakukan horizontal pod autoscaling berbasis penggunaan CPU untuk menambah jumlah replika kontainer",
+        "Mengubah bahasa pemrograman model dari Python ke C++ untuk mempercepat waktu komputasi inferensi",
+        "Menaikkan ukuran instance server fisik di data center secara manual setiap kali ada event diskon",
+        "Mengganti algoritma machine learning dengan model decision tree yang lebih sederhana dan cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertanggung jawab mendeploy model NLP klasifikasi teks berbahasa Indonesia ke production menggunakan Triton Inference Server. Anda mendapati bahwa setiap request inference datang secara acak dan terpisah, mengakibatkan utilisasi GPU rendah. Cara paling tepat untuk mengoptimalkan throughput adalah",
+      "options": [
+        "Mengaktifkan fitur dynamic batching pada konfigurasi model agar request yang datang bersamaan diproses sekaligus",
+        "Menurunkan batas alokasi memori GPU secara maksimal agar kontainer dapat berjalan pada instance yang lebih murah",
+        "Memecah model NLP tersebut menjadi beberapa bagian kecil yang berjalan pada thread CPU yang terpisah",
+        "Menggunakan protokol komunikasi HTTP biasa alih-alih gRPC untuk mengurangi overhead jaringan lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Data Science merilis versi baru model prediksi harga rumah dengan format ONNX. Anda diminta melakukan deployment tanpa memutus layanan pengguna eksisting yang masih memakai versi lama. Strategi deployment yang paling aman untuk diterapkan adalah",
+      "options": [
+        "Melakukan canary deployment dengan mengarahkan sebagian kecil trafik ke versi baru sambil memantau error rate",
+        "Melakukan blue-green deployment dengan langsung mengganti seluruh router trafik ke environment versi baru",
+        "Menonaktifkan server produksi selama beberapa menit untuk mengganti file model lama dengan file ONNX baru",
+        "Menjalankan kedua model secara paralel pada satu kontainer dan merata-ratakan hasil prediksi akhir kedua versi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi mobile fintech di Indonesia membutuhkan model credit scoring offline yang tertanam langsung di dalam aplikasi Android. Format file model apa yang paling efisien untuk diintegrasikan ke dalam bundle aplikasi mobile tersebut",
+      "options": [
+        "Format TensorFlow Lite (TFLite) yang dirancang khusus untuk optimasi perangkat mobile dan edge",
+        "Format pickle standar Python yang berisi seluruh struktur objek model scikit-learn secara utuh",
+        "Format basis data SQLite yang menyimpan tabel bobot matriks hasil pelatihan dari server cloud",
+        "Format source code Python mentah yang harus dieksekusi oleh interpreter di dalam aplikasi mobile"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memonitor log dari model computer vision yang dideploy di cloud Kubernetes. Anda menemukan pesan error 'CUDA out of memory' secara berkala saat jam sibuk. Tindakan preventif yang paling tepat untuk mengatasi masalah tersebut adalah",
+      "options": [
+        "Membatasi ukuran batch maksimal pada API gateway dan mengatur limit alokasi memori GPU pada pod Kubernetes",
+        "Mengganti sistem operasi pada node cluster dari Linux Ubuntu menjadi Alpine Linux yang lebih ringan",
+        "Menghapus seluruh file log aplikasi agar ruang penyimpanan pada disk kontainer kembali menjadi lega",
+        "Melakukan retraining ulang model menggunakan dataset yang ukurannya sepuluh kali lebih kecil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam arsitektur MLOps, Anda diminta membangun sistem otomatisasi pengujian model sebelum masuk ke tahap production. Tahap apa yang paling krusial untuk dimasukkan ke dalam pipeline CI/CD khusus machine learning ini",
+      "options": [
+        "Pengujian regresi untuk memastikan performa metrik evaluasi model tidak turun di bawah ambang batas minimum",
+        "Pemeriksaan lisensi kode sumber pustaka Python yang digunakan oleh tim data science untuk penelitian",
+        "Pengujian kecepatan koneksi internet dari server development menuju repositori kode sumber pusat",
+        "Penyusunan laporan keuangan bulanan terkait biaya infrastruktur cloud yang dihabiskan oleh tim"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan media online ingin menerapkan sistem rekomendasi artikel berita secara real-time. Karena latensi jaringan merupakan isu utama bagi pengguna di luar Jawa, pendekatan arsitektur deployment manakah yang paling optimal",
+      "options": [
+        "Mendeploy model ke layanan Edge Computing atau CDN (Content Delivery Network) yang terdistribusi secara geografis",
+        "Memusatkan seluruh proses inferensi pada satu server pusat berkapasitas sangat besar di Jakarta",
+        "Melakukan proses batch inference setiap malam dan menyimpan hasilnya pada file Excel di email",
+        "Meminta pengguna mengunduh seluruh data artikel berita beserta model rekomendasi ke perangkat lokal mereka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa dependensi pustaka Python antara model Machine Learning A (membutuhkan PyTorch versi lama) dan model B (membutuhkan PyTorch versi terbaru) saling bertubrukan saat akan dijadikan satu layanan. Solusi deployment terbaik untuk masalah ini adalah",
+      "options": [
+        "Memisahkan kedua model ke dalam layanan microservice independen menggunakan kontainer Docker masing-masing",
+        "Menggabungkan kedua skrip Python ke dalam satu file utama dan menggunakan blok try-except untuk mengatasi error",
+        "Mengubah paksa kode model A agar kompatibel dengan pustaka versi terbaru tanpa melakukan pengujian ulang",
+        "Menghapus salah satu model yang memiliki ukuran file lebih besar agar tidak terjadi konflik pustaka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan migrasi endpoint API model machine learning dari lingkungan staging ke production, aplikasi backend utama gagal membaca format output JSON yang dikirimkan oleh model baru. Apa langkah antisipasi terbaik untuk mencegah hal ini di masa depan",
+      "options": [
+        "Menerapkan skema validasi kontrak data menggunakan pustaka seperti Pydantic atau JSON Schema pada input dan output API",
+        "Meminta tim backend mengubah seluruh kode mereka secara manual setiap kali ada perubahan versi model",
+        "Mengandalkan dokumentasi berbasis teks PDF yang dikirim melalui aplikasi pesan instan setiap ada pembaruan",
+        "Membiarkan model mengirimkan data mentah berbentuk string acak agar sistem backend yang menyesuaikan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menggunakan Prometheus dan Grafana untuk memantau performa model machine learning di production. Metrik operasional apa yang paling penting untuk dibuatkan dashboard pemantauannya selain latensi dan penggunaan CPU",
+      "options": [
+        "Distribusi nilai input atau output prediksi untuk mendeteksi adanya pergeseran data atau data drift",
+        "Jumlah baris kode yang ditulis oleh setiap anggota tim developer dalam kurun waktu satu minggu",
+        "Jumlah commit git yang dilakukan oleh tim data science pada branch utama repository model",
+        "Waktu rata-rata yang dihabiskan oleh tim manajemen untuk menyetujui anggaran server bulanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi fintech di Jakarta menggunakan model deep learning untuk verifikasi e-KTP secara real-time. Model tersebut memakan waktu startup container selama 45 detik karena harus mengunduh file bobot model sebesar 800 MB dari object storage setiap kali pod baru melakukan bootstrap. Strategi deployment apa yang paling tepat untuk memangkas waktu cold start tersebut?",
+      "options": [
+        "Menyimpan file bobot model langsung ke dalam image Docker saat proses build agar siap digunakan",
+        "Memanfaatkan volume persistent disk bersama yang dipasang ke setiap pod saat proses inisialisasi",
+        "Menggunakan inisialisasi container terpisah untuk mengunduh model sebelum aplikasi utama dijalankan",
+        "Mengubah format model menjadi quantized int8 agar ukuran file bobot menjadi jauh lebih kecil"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Data Science merilis versi v2 dari model prediksi churn yang menghasilkan probabilitas numerik, menggantikan versi v1 yang menghasilkan label biner (0 atau 1). Tanpa mengubah kode di backend layanan utama yang memanggil API, sistem mengalami error saat mengolah respons dari model baru. Pendekatan arsitektur apa yang seharusnya diterapkan pada deployment untuk mencegah masalah integrasi ini?",
+      "options": [
+        "Menerapkan pola API Gateway untuk mengubah format respons secara dinamis sebelum dikirim ke klien",
+        "Menambahkan lapisan adapter atau middleware pada server model deployment untuk menyeragamkan format output",
+        "Meminta tim backend segera memperbarui seluruh kode klien agar kompatibel dengan struktur data v2",
+        "Melakukan rollback model ke versi v1 sampai tim backend selesai menyesuaikan kode aplikasi utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengelola sistem MLOps untuk sebuah aplikasi ride-hailing. Anda mendapati bahwa distribusi data fitur input dari pengguna mengalami pergeseran signifikan (data drift) setelah hari raya, menyebabkan performa model estimasi tarif menurun. Langkah proaktif apa yang harus diintegrasikan ke dalam pipeline deployment untuk mendeteksi masalah ini secara otomatis?",
+      "options": [
+        "Menambahkan alat pemantau data drift seperti Evidently AI yang membandingkan data produksi dengan data latih",
+        "Mengubah strategi retraining model menjadi setiap satu jam sekali tanpa perlu memvalidasi metrik akurasi",
+        "Menurunkan ambang batas kepercayaan model secara otomatis setiap kali terjadi lonjakan transaksi harian",
+        "Membuat sistem fallback manual yang mengalihkan seluruh traffic pengguna ke aturan bisnis berbasis heuristik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup kesehatan berencana mendeploy model deteksi penyakit paru-paru pada perangkat edge berupa komputer medis tanpa akses internet yang stabil. Model tersebut sangat sensitif terhadap latensi jaringan dan privasi pasien. Model deployment pattern mana yang paling sesuai dengan batasan tersebut?",
+      "options": [
+        "Menempatkan model pada cloud publik dengan koneksi satelit berkecepatan tinggi ke rumah sakit",
+        "Mendeklarasikan arsitektur hybrid di mana inferensi awal dilakukan di cloud dan verifikasi di edge",
+        "Mendistribusikan model yang telah dioptimalkan langsung berjalan secara lokal di perangkat keras edge",
+        "Menggunakan layanan serverless cloud yang dapat diakses melalui jaringan seluler lokal terdekat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan proses Canary Deployment untuk model machine learning baru pada platform microservices, Anda ingin menguji apakah versi baru memberikan hasil prediksi yang stabil sebelum meluncurkannya ke 100% pengguna. Metrik operasional apa yang paling krusial untuk dipantau secara real-time selama fase pengujian ini?",
+      "options": [
+        "Perbedaan distribusi probabilitas output dan tingkat error rate antara versi lama dan versi baru",
+        "Jumlah total baris data yang berhasil diproses oleh database relasional dalam waktu satu jam",
+        "Kapasitas penggunaan ruang penyimpanan disk pada server basis data yang menampung log historis",
+        "Total biaya komputasi cloud yang dihabiskan oleh kedua versi model selama jam sibuk operasional"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa dependensi pustaka Python untuk dua model machine learning yang berjalan pada satu server fisik saling bertentangan versinya, menyebabkan salah satu layanan gagal menyala. Sebagai Machine Learning Engineer, solusi terbaik apa yang harus diterapkan pada lingkungan produksi?",
+      "options": [
+        "Menggabungkan kode kedua model ke dalam satu skrip Python raksasa menggunakan fungsi kondisional",
+        "Mengemas masing-masing model ke dalam container Docker terpisah dengan isolasi dependensi mandiri",
+        "Menghapus salah satu model yang jarang digunakan untuk menghemat ruang pustaka sistem operasi",
+        "Memaksa kedua model berjalan menggunakan versi pustaka tengah hasil kompromi antara keduanya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan media sosial ingin menerapkan model moderasi konten teks secara real-time. Karena keterbatasan anggaran infrastruktur cloud, model tidak boleh menggunakan instans GPU mahal, namun harus mampu melayani 200 permintaan per detik dengan latensi di bawah 100ms. Pendekatan rekayasa model apa yang paling tepat?",
+      "options": [
+        "Menggunakan model transformer ukuran penuh tanpa optimasi agar akurasi klasifikasi tetap maksimal",
+        "Melakukan kuantisasi bobot model dan mengekspornya ke format ONNX atau OpenVINO untuk CPU",
+        "Mengganti model machine learning dengan sistem berbasis aturan regex statis buatan tangan manusia",
+        "Menyewa layanan API pihak ketiga berbayar yang menjamin kecepatan tinggi tanpa batasan kuota"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform e-commerce di Surabaya meluncurkan model rekomendasi produk baru menggunakan FastAPI di dalam container Docker. Saat jam belanja malam hari, layanan API sering mengalami restart otomatis oleh Kubernetes dengan pesan 'OOMKilled'. Apa tindakan mitigasi teknis yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengurangi jumlah worker uvicorn dan menaikkan limit memori container pada spesifikasi resource deployment Kubernetes",
+        "Menurunkan tingkat akurasi model data science agar ukuran file bobot model saat diunduh menjadi jauh lebih kecil",
+        "Mengganti format serialisasi model dari pickle standar ke format ONNX agar proses inferensi berjalan lebih cepat",
+        "Memindahkan seluruh database transaksi operasional dari cloud publik ke server fisik lokal perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertanggung jawab mendeploy model NLP klasifikasi sentimen berbasis PyTorch ke production. Tim bisnis meminta agar latensi rata-rata respon API berada di bawah 50 milidetik. Langkah optimasi model apa yang paling efektif diterapkan sebelum melakukan containerisasi?",
+      "options": [
+        "Melakukan quantization bobot model dari float32 ke int8 serta mengonversinya ke format TorchScript atau ONNX",
+        "Menambahkan mekanisme retry otomatis pada kode klien setiap kali terjadi kegagalan koneksi jaringan",
+        "Mengubah bahasa pemrograman backend API dari Python ke Node.js agar pemrosesan data teks lebih optimal",
+        "Meningkatkan kapasitas bandwidth jaringan internet pada server cloud tempat container aplikasi dijalankan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah bank swasta di Jakarta menerapkan strategi Shadow Deployment untuk model credit scoring versi terbaru. Bagaimana cara kerja arsitektur sistem ini dalam menangani trafik pengguna yang masuk ke aplikasi?",
+      "options": [
+        "Trafik produksi dikirim ke model lama, sementara model baru menerima salinan data input yang sama dan hasilnya dicatat tanpa memengaruhi respon ke klien",
+        "Sebagian kecil pengguna secara acak dialihkan ke model baru sementara sebagian besar pengguna tetap menggunakan model lama",
+        "Aplikasi backend secara otomatis memilih model mana yang memberikan skor risiko paling rendah untuk setiap pemohon pinjaman",
+        "Model baru dijalankan hanya ketika model utama mengalami kegagalan sistem atau waktu respon melebihi batas toleransi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

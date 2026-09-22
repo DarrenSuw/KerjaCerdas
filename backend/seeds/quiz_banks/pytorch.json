@@ -1,0 +1,306 @@
+{
+  "skill": "PyTorch",
+  "skill_key": "pytorch",
+  "questions": [
+    {
+      "question": "Anda sedang melatih model klasifikasi gambar untuk e-commerce lokal menggunakan PyTorch. Saat memantau proses training, Anda mendapati bahwa penggunaan memori GPU terus meningkat secara linear pada setiap iterasi hingga terjadi out-of-memory (OOM). Langkah apa yang paling tepat untuk mengatasi masalah ini di dalam loop training?",
+      "options": [
+        "Menambahkan fungsi torch.no_grad() pada seluruh blok fungsi training loop",
+        "Memanggil metode .item() saat mengambil nilai loss untuk logging agar tidak menumpuk graph",
+        "Mengubah tipe data tensor dari float32 menjadi float64 sebelum dimasukkan ke dalam model",
+        "Mengganti optimizer dari Adam menjadi SGD agar footprint memori gradien lebih kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup fintech ingin menerapkan model NLP berbasis Transformer menggunakan PyTorch untuk analisis sentimen ulasan aplikasi. Karena panjang teks bervariasi, Anda menggunakan padding pada batch data. Apa tindakan krusial yang harus dilakukan pada proses training agar model tidak mempelajari representasi dari token padding tersebut?",
+      "options": [
+        "Mengatur argumen ignore_index pada fungsi loss cross_entropy sesuai dengan indeks token padding",
+        "Menambahkan layer MaskedLayer khusus sebelum token embedding dimasukkan ke encoder",
+        "Menghapus seluruh baris data dalam batch yang memiliki panjang kurang dari rata-rata",
+        "Memastikan semua tensor input dikonversi ke bentuk sparse tensor sebelum forward pass"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendeploy model computer vision PyTorch ke server produksi berbasis CPU. Agar waktu inferensi menjadi jauh lebih cepat tanpa kehilangan akurasi yang signifikan, teknik optimasi bawaan apa yang sebaiknya Anda terapkan pada model sebelum melayani traffic pengguna?",
+      "options": [
+        "Melakukan kuantisasi bobot model dari float32 ke int8 menggunakan torch.quantization",
+        "Mengubah seluruh arsitektur model menggunakan torch.jit.script untuk kompilasi JIT",
+        "Menerapkan torch.nn.DataParallel pada modul utama sebelum menerima request inferensi",
+        "Menurunkan resolusi tensor masukan secara otomatis menggunakan torchvision.transforms"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek deteksi penipuan transaksi dompet digital, dataset yang Anda miliki sangat tidak seimbang (hanya 0.5% data penipuan). Saat melatih model PyTorch, loss function yang digunakan menghasilkan gradien yang didominasi oleh kelas mayoritas. Solusi praktis apa yang paling tepat?",
+      "options": [
+        "Menghitung bobot kelas (class weights) secara manual dan memasukkannya ke parameter weight di loss function",
+        "Membuat kustom Dataset class yang secara otomatis membuang 90% data transaksi normal",
+        "Mengganti fungsi aktivasi akhir dari Sigmoid menjadi ReLU agar rentang output lebih luas",
+        "Menaikkan learning rate secara eksponensial pada setiap epoch untuk memaksa model belajar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mempercepat proses training model deep learning menggunakan dua buah GPU di server kantor. Kode PyTorch saat ini masih berjalan secara single-GPU. Pendekatan mana yang paling sedikit membutuhkan perubahan kode untuk memanfaatkan kedua GPU tersebut secara paralel?",
+      "options": [
+        "Menggunakan torch.nn.DataParallel untuk membungkus model utama sebelum proses training",
+        "Mengubah total struktur kode menggunakan torch.distributed.launch dengan backend MPI",
+        "Memecah dataset training menjadi dua bagian dan menjalankan dua skrip terpisah secara manual",
+        "Memanfaatkan torch.multiprocessing untuk membuat worker independen pada setiap batch"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan fine-tuning pre-trained model ResNet untuk klasifikasi jenis kain pabrik tekstil, Anda ingin membekukan (freeze) lapisan konvolusional awal agar bobot dasarnya tidak berubah, namun tetap melatih lapisanfully connected di bagian akhir. Bagaimana cara paling tepat menuliskan kode PyTorch untuk ini?",
+      "options": [
+        "Mengatur atribut param.requires_grad = False pada setiap parameter di lapisan awal model",
+        "Menghapus lapisan konvolusional awal dari objek model menggunakan del model.layer_name",
+        "Membuat optimizer baru yang hanya mendaftarkan parameter dari lapisan fully connected saja",
+        "Mengubah mode model menjadi model.eval() sebelum memasukkan data training ke dalam loop"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis kustom Dataset class di PyTorch untuk memuat data gambar beresolusi sangat tinggi dari disk lokal. Ketika training dimulai, pemanfaatan CPU melonjak hingga 100% sementara GPU sering berada dalam kondisi idle (GPU bottleneck). Parameter apa di DataLoader yang paling krusial untuk disesuaikan?",
+      "options": [
+        "Menaikkan nilai parameter num_workers agar proses pemuatan data berjalan secara multiasinkron",
+        "Menurunkan nilai batch_size secara drastis untuk mengurangi beban transfer data ke memori GPU",
+        "Mengaktifkan pin_memory=False agar alokasi memori pinned host tidak membebani sistem",
+        "Menambahkan argumen persistent_workers=False untuk membersihkan memori setiap akhir epoch"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model PyTorch Anda mengalami overfitting parah pada dataset latih yang relatif kecil. Anda memutuskan untuk menerapkan teknik Regularisasi Dropout. Di mana posisi penempatan layer Dropout yang paling efektif dalam sebuah modul kelas kustom berbasis PyTorch?",
+      "options": [
+        "Ditempatkan tepat setelah fungsi aktivasi non-linear pada lapisan tersembunyi yang padat",
+        "Ditempatkan persis sebelum lapisan input pertama menerima tensor data mentah",
+        "Ditempatkan di dalam fungsi loss kustom sebelum nilai error dikembalikan ke optimizer",
+        "Ditempatkan setelah lapisan fully connected terakhir sebelum menghasilkan nilai output"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menyimpan checkpoint model PyTorch untuk keperluan deployment dan kelanjutan training di kemudian hari. Praktik industri mana yang paling disarankan untuk menyimpan file checkpoint agar aman dan efisien?",
+      "options": [
+        "Menyimpan dictionary yang berisi model.state_dict(), optimizer.state_dict(), dan epoch menggunakan torch.save",
+        "Menyimpan seluruh objek model utuh beserta arsitektur kodenya menggunakan pickle secara langsung",
+        "Mengekspor model ke format teks JSON menggunakan modul torch.jit untuk dibaca ulang di produksi",
+        "Menyalin manual seluruh bobot tensor menggunakan perintah tensor.clone() ke dalam file eksternal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam eksperimen hyperparameter tuning untuk model PyTorch, Anda mendapati bahwa proses training sering kali terjebak pada local minima, ditunjukkan oleh loss yang mendatar terlalu awal. Teknik penjadwalan learning rate apa yang paling efektif di PyTorch untuk membantu keluar dari kondisi ini?",
+      "options": [
+        "Menggunakan ReduceLROnPlateau untuk menurunkan learning rate secara otomatis saat validation loss tidak membaik",
+        "Menggunakan ConstantLR dengan nilai yang sangat kecil sejak epoch pertama hingga akhir training",
+        "Menggunakan ExponentialLR untuk menaikkan nilai learning rate secara eksponensial di setiap iterasi",
+        "Menggunakan StepLR dengan interval tetap tanpa memantau metrik performa pada validation set"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melatih model PyTorch untuk sistem rekomendasi produk e-commerce. Setelah beberapa epoch, nilai loss pada data validasi mulai meningkat sementara loss pada data training terus menurun secara drastis. Tindakan paling tepat apa yang harus Anda lakukan pada pipeline training?",
+      "options": [
+        "Menambahkan teknik early stopping berdasarkan metrik loss validasi",
+        "Menaikkan jumlah epoch training untuk memperkuat memori model",
+        "Menghapus lapisan dropout agar jaringan saraf menjadi lebih kompleks",
+        "Mengganti fungsi optimasi dari Adam menjadi SGD tanpa momentum"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan model NLP untuk chatbot layanan pelanggan, Anda mendapati bahwa ukuran batch data teks bervariasi sangat jauh sehingga terjadi pemborosan memori komputasi saat padding. Bagaimana cara menangani masalah ini secara efisien di PyTorch?",
+      "options": [
+        "Menggunakan fungsi torch.utils.data.DataLoader dengan parameter batch_size tetap",
+        "Menerapkan teknik bucketing menggunakan pad_sequence dan custom collate_fn",
+        "Mengubah seluruh kalimat input menjadi satu tensor raksasa berukuran statis",
+        "Menjalankan proses training secara sekuensial satu per satu tanpa batch"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa RAM sistem komputer selalu habis (Out of Memory) ketika PyTorch DataLoader memuat dataset citra satelit berukuran besar ke dalam memori utama. Langkah optimal apa yang harus diterapkan pada kelas Dataset?",
+      "options": [
+        "Memuat seluruh citra ke dalam list Python di metode __init__",
+        "Membaca citra dari disk secara lazy di dalam metode __getitem__",
+        "Menaikkan nilai parameter num_workers menjadi dua kali lipat CPU",
+        "Mengonversi semua file citra menjadi format teks ASCII mentah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memonitor metrik loss dan akurasi model PyTorch secara real-time melalui web dashboard selama proses training berdurasi 12 jam. Pendekatan integrasi mana yang paling profesional digunakan?",
+      "options": [
+        "Mencetak nilai loss ke terminal menggunakan fungsi print setiap iterasi",
+        "Menyimpan seluruh metrik ke dalam file CSV lalu memplotnya setelah selesai",
+        "Menggunakan pustaka logging pihak ketiga seperti TensorBoard atau Wandb",
+        "Membuat server API Flask terpisah untuk membaca bobot file checkpoint"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan transfer learning pada model BERT untuk klasifikasi ulasan produk, Anda ingin memastikan bahwa tokenisasi teks dilakukan secara konsisten antara fase pelatihan dan inferensi produksi. Di mana tempat terbaik menyematkan proses tokenisasi?",
+      "options": [
+        "Di dalam metode forward dari kelas modul neural network kustom",
+        "Sebagai bagian dari pra-pemrosesan di dalam kelas kustom Dataset",
+        "Langsung di dalam fungsi loss sebelum menghitung backward pass",
+        "Di dalam skrip inferensi terpisah tanpa melibatkan komponen PyTorch"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang men-debug model PyTorch yang menghasilkan nilai gradien NaN (Not a Number) di tengah proses training. Alat bantu apa yang paling efektif untuk melacak asal mula kemunculan nilai NaN tersebut?",
+      "options": [
+        "Menggunakan context manager torch.autograd.detect_anomaly()",
+        "Menurunkan nilai learning rate secara manual menjadi sepersepuluh",
+        "Mengganti perangkat keras GPU dengan CPU untuk presisi data",
+        "Menghapus fungsi aktivasi ReLU dan menggantinya dengan Sigmoid"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek computer vision untuk pabrik manufaktur, Anda menggunakan mixed precision training (torch.cuda.amp) untuk mempercepat proses di GPU. Komponen mana yang wajib digunakan untuk mencegah underflow pada nilai gradien?",
+      "options": [
+        "Menggunakan objek GradScaler untuk menskalakan nilai loss",
+        "Mengubah seluruh tipe data tensor input menjadi float64 secara paksa",
+        "Mematikan fungsi autograd pada seluruh parameter backbone model",
+        "Menaikkan ukuran batch size secara drastis pada setiap iterasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain arsitektur jaringan saraf tiruan kustom di PyTorch dan ingin memastikan bahwa bentuk tensor (tensor shape) yang keluar dari suatu layer cocok dengan layer berikutnya. Metode apa yang paling aman untuk menguji hal ini?",
+      "options": [
+        "Langsung menjalankan training penuh selama satu epoch penuh",
+        "Membuat dummy tensor dengan ukuran batch kecil dan meneruskannya ke model",
+        "Membaca dokumentasi bentuk tensor dari pustaka pihak ketiga",
+        "Mengandalkan pesan error otomatis saat model dideploy ke server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menguji performa model PyTorch pada perangkat edge computing yang memiliki keterbatasan daya dan memori, teknik apa yang sebaiknya diaplikasikan pada model sebelumdeployment?",
+      "options": [
+        "Melakukan quantization untuk mengubah bobot dari float32 ke int8",
+        "Menambahkan lebih banyak lapisan linear untuk meningkatkan kapasitas",
+        "Mengganti semua fungsi aktivasi linier menjadi non-linier kompleks",
+        "Menyimpan seluruh riwayat gradien optimizer ke dalam file checkpoint"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengimplementasikan fungsi loss kustom (custom loss function) di PyTorch yang menggabungkan Cross Entropy dan regularisasi tambahan. Kelas apa yang harus diwarisi agar fungsi tersebut dapat diintegrasikan dengan autograd?",
+      "options": [
+        "Mewarisi kelas torch.nn.Module dan mengimplementasikan metode forward",
+        "Mewarisi kelas torch.utils.data.Dataset untuk membaca matriks loss",
+        "Mewarisi kelas torch.optim.Optimizer untuk memperbarui parameter",
+        "Mewarisi kelas torch.autograd.Function untuk mendefinisikan backward manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melatih model PyTorch untuk mendeteksi cacat produk tekstil. Di tengah proses, Anda melihat nilai loss tiba-tiba melonjak menjadi NaN. Langkah debugging paling tepat yang harus Anda lakukan adalah?",
+      "options": [
+        "Mengganti optimizer dari Adam menjadi SGD agar momentum tidak meledak",
+        "Menambahkan torch.autograd.set_detect_anomaly(True) untuk melacak operasi penyebab NaN",
+        "Mengurangi ukuran batch size secara drastis untuk menghemat alokasi VRAM GPU",
+        "Memperbesar nilai learning rate agar gradien bisa keluar dari area numerik yang rusak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi mobile fintech menggunakan model PyTorch quantized untuk sistem credit scoring. Saat proses konversi post-training quantization, akurasi model turun drastis. Pendekatan perbaikan terbaik untuk kasus ini adalah?",
+      "options": [
+        "Melakukan Quantization-Aware Training (QAT) sebelum model dikonversi ke INT8",
+        "Mengubah seluruh tipe data tensor input dari float32 langsung ke float64",
+        "Menghapus lapisan fully connected terakhir dan menggantinya dengan aktivasi ReLU",
+        "Menaikkan jumlah epoch training awal pada arsitektur model floating-point"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati proses training model PyTorch berjalan sangat lambat karena GPU utilization sering berada di bawah 30% akibat bottleneck pada CPU. Solusi arsitektural yang paling tepat adalah?",
+      "options": [
+        "Mengganti fungsi loss standar dengan kustom loss berbasis operasi PyTorch tensor",
+        "Menaikkan parameter num_workers pada DataLoader dan mengaktifkan pin_memory=True",
+        "Menurunkan resolusi gambar masukan agar ukuran batch fisik di memori GPU bertambah",
+        "Menghindari penggunaan mixed precision agar CPU tidak terbebani proses casting data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek NLP chatbot layanan pelanggan, kalimat input memiliki panjang yang sangat beragam sehingga padding menghasilkan banyak token sia-sia. Bagaimana cara menangani efisiensi batching ini di PyTorch?",
+      "options": [
+        "Menggunakan fungsi torch.nn.utils.rnn.pack_padded_sequence pada data masukan",
+        "Menyamakan seluruh panjang kalimat di dataset menjadi batas maksimum absolut",
+        "Memotong kalimat yang lebih panjang dari median tanpa memperhatikan konteks",
+        "Menonaktifkan mekanisme masking pada lapisan multi-head attention model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mendistribusikan proses training model PyTorch berukuran besar ke 4 GPU di dalam satu node server menggunakan metode Data Parallel. API native PyTorch mana yang paling disarankan untuk menghindari overhead GIL Python?",
+      "options": [
+        "Menggunakan torch.nn.DataParallel dengan membungkus seluruh modul model",
+        "Menggunakan modul torch.nn.parallel.DistributedDataParallel (DDP)",
+        "Menggunakan torch.multiprocessing secara manual untuk membuat proses terpisah",
+        "Menggunakan torch.backends.cudnn.benchmark untuk mempercepat komputasi GPU"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menerapkan transfer learning pada model ViT (Vision Transformer) untuk klasifikasi citra satelit pertanian, Anda ingin memastikan bobot pre-trained tidak rusak di awal training. Strategi apa yang paling tepat?",
+      "options": [
+        "Melakukan inisialisasi ulang pada semua parameter tensor bobot konvolusi",
+        "Menerapkan learning rate yang jauh lebih kecil pada backbone dibanding kepala kustom",
+        "Mengubah seluruh tipe data tensor model dari torch.float32 menjadi torch.int8",
+        "Mematikan fungsi dropout pada semua lapisan linear transformer secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis custom Dataset class untuk memuat data tabular berukuran puluhan gigabyte yang tidak muat di RAM. Metode apa yang wajib diimplementasikan di dalam kelas tersebut agar PyTorch DataLoader dapat bekerja optimal?",
+      "options": [
+        "Metode __init__ untuk memuat seluruh baris CSV langsung ke memori utama",
+        "Metode __len__ dan __getitem__ untuk membaca data secara lazy per indeks",
+        "Metode __iter__ yang mengembalikan generator tak terbatas dari file data",
+        "Metode __call__ untuk mengeksekusi normalisasi kolom secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Model segmentasi citra medis Anda mengalami masalah vanishing gradient pada lapisan terdalam jaringan encoder-decoder. Modifikasi kode PyTorch apa yang paling efektif mengatasi masalah ini?",
+      "options": [
+        "Menambahkan struktur residual connection atau skip connection antar lapisan",
+        "Mengganti seluruh fungsi aktivasi ReLU menjadi fungsi Sigmoid bernilai biner",
+        "Menaikkan bobot weight decay pada optimizer AdamW secara agresif",
+        "Menghapus semua lapisan batch normalization dari arsitektur jaringan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengekspor model PyTorch ke format ONNX agar dapat dijalankan padainference engine C++ di perangkat edge. Perintah PyTorch mana yang harus digunakan untuk proses ekspor ini?",
+      "options": [
+        "torch.save(model.state_dict(), 'model.onnx')",
+        "torch.onnx.export(model, dummy_input, 'model.onnx', ...)",
+        "model.to_onnx('model.onnx', input_shape=dummy_input.shape)",
+        "torch.jit.save(torch.jit.trace(model, dummy_input), 'model.onnx')"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam implementasi kustom loss function untuk regresi harga rumah yang sensitif terhadap outlier, Anda perlu menulis operasi matematika yang dapat diturunkan secara otomatis. Praktik terbaik dalam PyTorch adalah?",
+      "options": [
+        "Menggunakan operasi matematika yang sepenuhnya berasal dari modul torch",
+        "Mengubah tensor PyTorch menjadi numpy array, menghitung loss, lalu kembalikan",
+        "Membuat kelas turunan torch.autograd.Function tanpa menulis forward pass",
+        "Menggunakan perulangan iteratif berbasis Python native pada setiap elemen batch"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

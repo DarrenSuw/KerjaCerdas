@@ -1,0 +1,306 @@
+{
+  "skill": "Embedded Systems",
+  "skill_key": "embedded systems",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan perangkat IoT berbasis ESP32 untuk pemantauan gudang. Perangkat sering mengalami 'Brownout Reset' secara acak saat modul WiFi mulai melakukan transmisi data. Langkah mitigasi hardware apa yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menambahkan kapasitor elektrolit 100uF dan kapasitor keramik 100nF dekat pin 3V3 dan GND ESP32",
+        "Mengganti kabel USB dengan kabel yang memiliki resistansi lebih tinggi agar arus lebih stabil",
+        "Menurunkan frekuensi clock CPU dari 240MHz menjadi 80MHz melalui konfigurasi software",
+        "Menghubungkan ulang jalur ground sensor eksternal ke pin digital input terdekat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem embedded berbasis mikrokontroler STM32 membaca data dari sensor analog secara kontinyu menggunakan ADC. Tim QA melaporkan pembacaan sensor sangat berfluktuasi padahal sumber tegangan stabil. Solusi firmware apa yang paling efektif untuk meredam noise tanpa menambah komponen eksternal?",
+      "options": [
+        "Mengubah resolusi ADC dari 12-bit menjadi 8-bit untuk mempercepat waktu konversi data",
+        "Mengimplementasikan teknik Oversampling dan Digital Moving Average Filter pada nilai ADC",
+        "Mematikan fungsi DMA dan memindahkan pembacaan ADC ke dalam fungsi delay blocking",
+        "Menaikkan impedansi input pada pin mikrokontroler melalui register GPIO configuration"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merancang papan sirkuit pengendali motor DC industri menggunakan driver L298N dan mikrokontroler ATmega328P. Saat motor mulai dinyalakan, mikrokontroler sering melakukan reboot tiba-tiba. Pendekatan layout PCB apa yang paling krusial untuk mencegah masalah ini?",
+      "options": [
+        "Membuat jalur catu daya motor dan mikrokontroler menyatu pada satu titik tanpa pemisahan",
+        "Memperlebar jalur sinyal PWM dari mikrokontroler ke driver motor hingga dua kali lipat",
+        "Menerapkan teknik Star Grounding untuk memisahkan jalur ground daya tinggi dan logika",
+        "Menghapus semua kapasitor bypass pada jalur suplai mikrokontroler untuk menghemat area"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek smart meter listrik 1 fase menggunakan chip计量 (energy metering) khusus dan ESP32 yang berkomunikasi via UART, data yang diterima sering mengalami corrupt (frame error). Baudrate sudah diatur sama pada 9600. Apa tindakan troubleshooting pertama yang paling logis?",
+      "options": [
+        "Memeriksa kesesuaian level logika tegangan UART antara kedua chip dan menambah level shifter",
+        "Mengganti protokol komunikasi UART dengan protokol I2C jarak jauh untuk keandalan data",
+        "Menambahkan resistor pull-down eksternal pada jalur TX dan RX mikrokontroler",
+        "Menaikkan baudrate UART menjadi 115200 agar pengiriman data menjadi jauh lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perangkat pelacak GPS kendaraan (tracker) berbasis FreeRTOS mengalami system freeze setelah berjalan selama 3 hari. Analisis memori menunjukkan heap free terus menurun hingga habis. Apa penyebab paling umum dari masalah ini dalam konteks sistem operasi real-time?",
+      "options": [
+        "Penggunaan fungsi alokasi memori dinamis seperti pvPortMalloc tanpa diimbangi vPortFree",
+        "Prioritas task GPS diset terlalu tinggi sehingga task komunikasi seluler tidak pernah mendapat giliran",
+        "Ukuran stack size pada idle task terlalu kecil untuk menampung proses latar belakang",
+        "Gangguan elektromagnetik dari alternator kendaraan merusak register internal mikrokontroler"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengoptimalkan konsumsi daya node sensor berbasis baterai yang menggunakan protokol MQTT-SN via modul nRF24L01. Perangkat harus bertahan minimal 1 tahun. Strategi pengelolaan daya software apa yang harus diterapkan?",
+      "options": [
+        "Membuat mikrokontroler melakukan polling data ke server secara terus menerus setiap 1 milidetik",
+        "Menggunakan mode sleep mendalam (deep sleep) dan memanfaatkan timer eksternal untuk wake-up berkala",
+        "Membiarkan modul radio tetap menyala dalam mode RX aktif agar tidak kehilangan paket data masuk",
+        "Menjalankan proses enkripsi data kompleks menggunakan software secara real-time pada setiap siklus"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada pengujian EMC (Electromagnetic Compatibility) untuk produk mesin EDC perbankan, perangkat gagal pada uji ESD (Electrostatic Discharge) ketika kartu chip dimasukkan. Modifikasi desain hardware apa yang paling tepat untuk melindungi jalur kontak kartu?",
+      "options": [
+        "Menambahkan dioda TVS (Transient Voltage Suppressor) dua arah pada setiap jalur data kartu",
+        "Mengganti bahan casing plastik dengan aluminium murni tanpa grounding terhubung",
+        "Memperpanjang jalur PCB dari slot kartu menuju mikrokontroler untuk meredam tegangan",
+        "Menghapus resistor seri pembatas arus pada jalur komunikasi kartu untuk mempercepat sinyal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem akuisisi data industri menggunakan sensor suhu tipe K thermocouple dengan IC pengkondisi sinyal MAX6675 via SPI. Saat mesin pabrik besar di sebelah dinyalakan, suhu terbaca melompat secara tidak wajar. Langkah mitigasi hardware apa yang diperlukan?",
+      "options": [
+        "Mengganti kabel penghubung thermocouple dengan kabel biasa berukuran besar tanpa pelindung",
+        "Menggunakan kabel shielded twisted pair untuk thermocouple dan menghubungkan shield ke ground",
+        "Menghilangkan kapasitor filter pada jalur catu daya IC MAX6675 untuk respons lebih cepat",
+        "Menurunkan kecepatan clock SPI mikrokontroler hingga batas minimum yang diizinkan spesifikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis driver I2C kustom untuk membaca sensor suhu pada bus yang sama dengan 3 perangkat lain. Terkadang komunikasi macet (bus hang) di mana jalur SDA tertahan pada kondisi LOW secara permanen. Bagaimana cara pemulihan (recovery) di tingkat firmware?",
+      "options": [
+        "Melakukan reset total pada seluruh catu daya papan sirkuit menggunakan relay eksternal",
+        "Mengirimkan serangkaian pulsa clock (SCL toggle) manual hingga slave melepaskan jalur SDA",
+        "Mengubah alamat I2C perangkat secara dinamis melalui interupsi eksternal pada pin GPIO",
+        "Menunggu watchdog timer hardware melakukan reset sistem setelah timeout tercapai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan firmware untuk alat kesehatan portabel, fungsi pembacaan tombol menggunakan teknik polling di dalam loop utama menyebabkan keterlambatan respons pada tampilan layar OLED. Arsitektur software apa yang paling tepat untuk memperbaiki masalah ini?",
+      "options": [
+        "Mengganti teknik polling tombol dengan sistem berbasis Interrupt (ISR) atau state machine non-blocking",
+        "Menambahkan fungsi delay milidetik yang lebih lama di setiap akhir iterasi loop utama program",
+        "Memindahkan seluruh logika tampilan OLED ke dalam rutin interupsi tombol eksternal",
+        "Menghapus sistem operasi dan menggantinya dengan struktur program sekuensial linear murni"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang perangkat pemantau ketinggian air sungai jarak jauh menggunakan mikrokontroler berbasis baterai surya di daerah terpencil. Perangkat harus mengirim data setiap 1 jam via modem NB-IoT, namun sering kehabisan daya saat musim mendung. Apa tindakan paling tepat untuk memperpanjang usia baterai?",
+      "options": [
+        "Mengganti protokol transmisi data dari HTTP menjadi MQTT dengan QoS 0",
+        "Memanfaatkan mode deep sleep mikrokontroler dan mematikan suplai daya eksternal modem",
+        "Menurunkan frekuensi clock CPU mikrokontroler secara permanen saat beroperasi",
+        "Menambahkan modul kapasitor bank berukuran besar pada jalur input catu daya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem embedded berbasis ESP32 di pabrik tekstil mengalami *system reset* secara acak setiap kali mesin tenun berdaya besar di dekatnya dinyalakan. Hasil analisis menunjukkan adanya gangguan elektromagnetik (EMI) pada jalur catu daya. Solusi perangkat keras apa yang paling efektif diterapkan pada tahap *redesign* PCB?",
+      "options": [
+        "Mengganti regulator switching dengan linear regulator jenis LDO biasa",
+        "Menambahkan kapasitor decoupling bernilai kecil dekat pin VCC dan jalur ground yang solid",
+        "Memperlebar jalur tembaga untuk semua sinyal digital berkecepatan tinggi",
+        "Mengubah topologi jaringan komunikasi dari Wi-Fi menjadi kabel RS-485"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek timbangan digital industri menggunakan load cell dan chip HX711, pembacaan berat di layar sering berfluktuasi tidak stabil meskipun tidak ada beban di atas platform. Langkah mitigasi apa yang paling efektif untuk meredam noise tersebut?",
+      "options": [
+        "Mengganti kabel penghubung load cell dengan kabel jenis unshielded yang lebih tipis",
+        "Menerapkan algoritma digital filter seperti Moving Average atau Exponential Smoothing",
+        "Menambahkan resistor pull-up eksternal pada jalur clock dan data chip HX711",
+        "Meningkatkan tegangan eksitasi dari modul HX711 ke load cell secara maksimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perangkat gateway IoT berbasis Linuxembedded menggunakan protokol SPI untuk berkomunikasi dengan modul enkripsi hardware. Saat dilakukan uji beban tinggi, terjadi korupsi data pada transaksi SPI. Apa akar permasalahan yang paling mungkin terjadi?",
+      "options": [
+        "Konfigurasi polaritas clock (CPOL) atau fase clock (CPHA) yang tidak sinkron",
+        "Kapasitansi parasit yang terlalu tinggi pada jalur catu daya utama mikrokontroler",
+        "Pemilihan baud rate UART yang tidak sesuai dengan standar industri",
+        "Kurangnya resistor terminasi 120 Ohm di kedua ujung jalur komunikasi SPI"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan firmware untuk alat penyiram tanaman otomatis menggunakan Arduino Nano. Sistem sering mengalami *hang* atau perilaku tidak terduga setelah berjalan selama beberapa hari. Setelah diperiksa, ditemukan penggunaan fungsi dynamic memory allocation secara intensif pada fungsi yang sering dipanggil. Apa penyebab utamanya?",
+      "options": [
+        "Terjadinya fragmentasi memori heap yang berujung pada kehabisan RAM total",
+        "Keterbatasan kapasitas memori flash internal untuk menyimpan instruksi program",
+        "Kegagalan fungsi clock internal mikrokontroler akibat panas berlebih pada chip",
+        "Penumpukan data pada register stack akibat pemanggilan fungsi rekursif yang dalam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem kontrol katup solenoid industri menggunakan mikrokontroler 3.3V dan transistor MOSFET untuk switching beban 24V. Saat katup dimatikan, mikrokontroler sering mengalami *reset* mendadak. Komponen apa yang kurang pada rangkaian tersebut?",
+      "options": [
+        "Resistor pull-down pada gate MOSFET pengendali katup solenoid",
+        "Kapasitor elektrolit besar yang dipasang paralel dengan sumber catu daya 3.3V",
+        "Dioda flyback (freewheeling diode) yang dipasang antiparalel pada beban solenoid",
+        "Optocoupler berkecepatan tinggi untuk isolasi galvanik antara MCU dan MOSFET"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membaca data dari sensor digital yang menggunakan protokol 1-Wire pada jarak kabel sekitar 15 meter di dalam gedung pabrik. Komunikasi sering gagal mendeteksi kehadiran sensor. Apa modifikasi perangkat keras yang paling tepat?",
+      "options": [
+        "Mengganti resistor pull-up jalur data dengan nilai yang lebih kecil atau catu daya eksternal",
+        "Menambahkan chip transceiver RS-485 di kedua ujung kabel sensor 1-Wire",
+        "Mengubah topologi jaringan kabel dari bentuk bus menjadi bentuk bintang (star)",
+        "Menurunkan resistansi saluran ground menggunakan kabel tembaga berlapis ganda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan perangkat medis portabel berbasis baterai Li-ion, Anda menggunakan chip manajemen baterai (BMS) dengan komunikasi I2C. Perangkat harus masuk mode *shipment* (konsumsi daya hampir nol) sebelum dikemas ke dalam kardus distribusi. Bagaimana cara memicu mode ini dari firmware?",
+      "options": [
+        "Mengirimkan urutan byte perintah khusus ke register kontrol internal IC BMS",
+        "Memutuskan jalur koneksi fisik antara pin SDA dan SCL secara permanen",
+        "Memberikan tegangan tinggi sesaat pada pin input analog pengukur suhu",
+        "Mengubah status pin interrupt eksternal mikrokontroler menjadi mode high-impedance"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah papan sirkuit pengendali lampu jalan tenaga surya menggunakan mikrokontroler dengan memori EEPROM internal untuk menyimpan log kesalahan harian. Setelah 6 bulan beroperasi, sistem gagal menyimpan data log baru meskipun EEPROM belum penuh secara kapasitas alamat. Apa penyebab teknis kegagalan ini?",
+      "options": [
+        "Tercapainya batas siklus penulisan (write endurance) pada sel memori EEPROM",
+        "Kerusakan fisik pada kristal osilator eksternal pengatur waktu sistem operasi",
+        "Terjadinya korupsi data pada stack memory akibat interupsi sensor cahaya yang terlalu sering",
+        "Penurunan tegangan referensi internal ADC saat malam hari tiba"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang sistem embedded berbasis STM32 untuk mengontrol katup industri menggunakan komunikasi Modbus RTU via RS-485. Saat pengujian jarak panjang kabel 500 meter, data sering korup. Langkah apa yang paling tepat untuk mengatasi masalah integritas sinyal ini?",
+      "options": [
+        "Mengganti kabel komunikasi dengan kabel jenis UTP standar tanpa pelindung",
+        "Memasang resistor terminasi 120 ohm di kedua ujung terjauh kabel jaringan",
+        "Menaikkan baud rate komunikasi serial secara drastis untuk mempercepat data",
+        "Menghilangkan kapasitor decoupling pada pin catu daya transceiver RS-485"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perangkat IoT berbasis ESP8266 di pabrik sering terputus dari jaringan Wi-Fi setiap kali motor kompresor besar dinyalakan. Analisis menunjukkan adanya gangguan elektromagnetik (EMI) pada jalur catu daya. Solusi perangkat keras manakah yang paling efektif?",
+      "options": [
+        "Menambahkan induktor ferit bead dan kapasitor elektrolit besar dekat modul",
+        "Mengubah firmware untuk melakukan proses re-koneksi otomatis setiap detik",
+        "Memperpanjang antena eksternal menggunakan kabel koaksial kualitas tinggi",
+        "Menurunkan frekuensi clock CPU mikrokontroler untuk mengurangi beban arus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengembangan alat ukur portabel berbasis baterai dengan mikrokontroler AVR, Anda mendapati konsumsi arus saat mode sleep masih terlalu tinggi (mencapai 2 mA). Apa langkah pertama yang paling tepat untuk melacak penyebabnya?",
+      "options": [
+        "Mengganti baterai lithium dengan kapasitas yang jauh lebih besar di pasaran",
+        "Memeriksa status pin GPIO apakah ada yang mengambang atau menarik beban luar",
+        "Menulis ulang seluruh program aplikasi menggunakan bahasa pemrograman assembly",
+        "Menambahkan modul RTC eksternal untuk menggantikan timer internal chip"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan mikrokontroler tanpa unit floating-point (FPU) hardware untuk memproses data sensor dengan rumus matematika yang kompleks menggunakan angka desimal. Kinerja sistem sangat lambat. Bagaimana cara mengoptimalkan performanya?",
+      "options": [
+        "Mengganti seluruh tipe data variabel kode sumber menjadi double precision",
+        "Mengonversi perhitungan matematis tersebut menggunakan representasi fixed-point",
+        "Memindahkan seluruh fungsi pembacaan sensor ke dalam interupsi eksternal",
+        "Menambahkan modul memori eksternal jenis SRAM melalui jalur bus SPI cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem embedded berbasis FreeRTOS mengalami gejala *priority inversion* di mana task prioritas tinggi menunggu task prioritas rendah yang memegang resource bersama. Mekanisme sinkronisasi apa yang harus Anda gunakan untuk mencegah hal ini?",
+      "options": [
+        "Menggunakan binary semaphore standar tanpa fitur tambahan apa pun",
+        "Menggunakan mutex dengan fitur pewarisan prioritas (priority inheritance)",
+        "Menggunakan fungsi direct-to-task notification untuk komunikasi antar task",
+        "Menggunakan critical section murni dengan menonaktifkan seluruh interupsi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merancang papan sirkuit cetak (PCB) untuk perangkat IoT industri yang beroperasi di lingkungan bersuhu tinggi. Jalur sinyal analog dari sensor ke ADC mikrokontroler sering mengalami pembacaan yang bergeser (drift). Langkah desain PCB apa yang paling krusial?",
+      "options": [
+        "Memisahkan area bidang ground analog dan digital serta menyatukannya di satu titik",
+        "Membuat jalur sinyal analog sejajar rapat dengan jalur catu daya tegangan tinggi",
+        "Menggunakan lebar jalur tembaga yang sangat tipis untuk memperkecil kapasitansi",
+        "Menghilangkan semua vias pada area sekitar jalur sinyal analog yang sensitif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan firmware pembacaan RFID reader berbasis UART pada mikrokontroler, terkadang byte data awal hilang karena buffer internal penuh sebelum task utama sempat memprosesnya. Pendekatan arsitektur perangkat lunak apa yang paling tepat?",
+      "options": [
+        "Membuat fungsi delay blocking yang panjang di dalam loop utama program",
+        "Menggunakan mekanisme DMA (Direct Memory Access) atau ring buffer pada ISR UART",
+        "Menurunkan kecepatan transfer baud rate komunikasi serial secara drastis",
+        "Mengganti protokol komunikasi serial UART menjadi protokol I2C multi-master"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perangkat logger data berbasis ESP32 sering mengalami kerusakan file sistem SPIFFS/LittleFS pada memori Flash internal setelah beberapa bulan beroperasi akibat seringnya proses tulis. Strategi mitigasi apa yang paling tepat?",
+      "options": [
+        "Melakukan format ulang memori flash secara otomatis setiap kali perangkat boot",
+        "Menerapkan teknik wear leveling dan mengurangi frekuensi penyimpanan data log",
+        "Memindahkan seluruh fungsi penyimpanan file log ke dalam memori register CPU",
+        "Menaikkan tegangan kerja regulator internal chip untuk mempercepat tulis flash"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melakukan debugging komunikasi I2C antara mikrokontroler dan sensor eksternal menggunakan logika analyzer. Teramati kondisi bus macet (SCL terus-menerus bernilai LOW oleh slave). Prosedur pemulihan perangkat lunak apa yang harus diimplementasikan?",
+      "options": [
+        "Melakukan reset total pada seluruh catu daya papan sirkuit secara fisik",
+        "Mengirimkan sejumlah pulsa clock manual melalui GPIO SCL untuk mereset slave",
+        "Mengubah alamat hardware I2C sensor secara dinamis melalui register internal",
+        "Menaikkan nilai resistor pull-up pada jalur SDA dan SCL menjadi 47 kilo-ohm"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem embedded pengontrol mesin produksi menggunakan watchdog timer (WDT) internal untuk pemulihan otomatis dari hang. Namun, sistem sering mengalami reboot palsu saat melakukan operasi penulisan EEPROM yang memakan waktu lama. Bagaimana cara mengatasinya?",
+      "options": [
+        "Menonaktifkan fitur watchdog timer secara permanen selama sistem berjalan",
+        "Memperbarui nilai counter atau melakukan *refresh* WDT di tengah proses tulis",
+        "Memperpanjang durasi timeout watchdog hingga batas maksimum hardware",
+        "Memindahkan seluruh instruksi penulisan EEPROM ke dalam rutin interupsi timer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang sistem embedded berbasis mikrokontroler STM32 untuk membaca sensor tekanan secara periodik menggunakan DMA (Direct Memory Access) agar CPU tidak terbebani. Namun, data di buffer RAM sering terlihat usang atau tidak sinkron. Apa langkah debugging yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengurangi frekuensi clock CPU agar prosesor sempat menyalin data secara manual",
+        "Menambahkan instruksi pembersihan cache data CPU sebelum membaca buffer RAM",
+        "Memastikan interupsi dari periferal ADC memiliki prioritas tertinggi di NVIC",
+        "Mengganti mode transfer DMA dari circular menjadi mode normal sekali jalan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

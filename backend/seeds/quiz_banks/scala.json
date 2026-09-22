@@ -1,0 +1,306 @@
+{
+  "skill": "Scala",
+  "skill_key": "scala",
+  "questions": [
+    {
+      "question": "Tim backend Anda di e-commerce sedang memproses jutaan transaksi per hari menggunakan Akka Actors. Tiba-tiba terjadi lonjakan traffic flash sale dan beberapa aktor mengalami OutOfMemoryError karena antrean pesan (mailbox) membludak. Pendekatan mitigasi apa yang paling tepat?",
+      "options": [
+        "Mengganti semua struktur data immutable menjadi mutable agar penggunaan heap memory lebih efisien",
+        "Menerapkan pola backpressure pada pengirim pesan atau membatasi ukuran mailbox aktor tersebut",
+        "Menaikkan alokasi garbage collector heap size secara maksimal pada konfigurasi server JVM",
+        "Mematikan sistem logging asynchronous agar CPU fokus penuh memproses antrean pesan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis fungsi pemrosesan data log harian menggunakan pustaka Cats di Scala. Fungsi tersebut harus menggabungkan dua hasil validasi yang masing-masing bisa gagal (berisi pesan error) atau sukses. Type class mana dari Cats yang paling tepat digunakan untuk mengakumulasi semua error validasi tersebut?",
+      "options": [
+        "Monad transformer untuk menggabungkan Future dan Either secara monadik",
+        "Semigroup bersama dengan tipe data Validated untuk mengumpulkan error",
+        "Functor instance untuk melakukan mapping pada struktur data konteks",
+        "Eval monad untuk mengevaluasi ekspresi secara lazy pada memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan join dataset besar menggunakan Apache Spark dengan Scala, pekerjaan (job) sering mengalami kegagalan akibat OutOfMemoryError pada executor karena distribusi kunci data yang tidak merata (skewed data). Solusi kode mana yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Menambahkan operasi persist dengan level StorageLevel.MEMORY_ONLY pada kedua DataFrame",
+        "Melakukan broadcast join pada tabel kecil atau menambahkan salt pada kunci yang mengalami skew",
+        "Menurunkan nilai spark.sql.shuffle.partitions menjadi angka yang sangat kecil",
+        "Mengubah semua tipe data kolom join dari String menjadi Integer agar ukuran memori lebih kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah fungsi Scala yang menerima parameter dengan tipe By-Name (menggunakan tanda panah =>). Apa implikasi utama dari penggunaan parameter By-Name tersebut saat fungsi dipanggil?",
+      "options": [
+        "Ekspresi argumen dievaluasi tepat sekali sebelum fungsi dipanggil dan hasilnya disimpan",
+        "Argumen dievaluasi secara lazy setiap kali parameter tersebut diakses di dalam badan fungsi",
+        "Fungsi dapat dijalankan secara aman secara bersamaan oleh banyak thread tanpa sinkronisasi",
+        "Nilai argumen secara otomatis di-cache dalam memori untuk menghindari komputasi ulang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi layanan keuangan menggunakan Play Framework dan Scala, Anda perlu memastikan koneksi database JDBC aman dari kebocoran sumber daya saat terjadi eksekusi asynchronous. Pola mana yang paling tepat diterapkan?",
+      "options": [
+        "Menggunakan blok try-catch-finally tradisional di dalam blok Future.apply",
+        "Memanfaatkan metode Future.failed untuk menangkap exception secara global",
+        "Menggunakan Future dengan execution context khusus blocking dan monad resource management",
+        "Membungkus seluruh logika database ke dalam aktor tunggal tanpa thread pool"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain sebuah domain model untuk sistem inventori gudang menggunakan Scala case classes. Agar objek-objek tersebut aman digunakan sebagai kunci dalam peta (Map) atau elemen dalam set tanpa risiko inkonsistensi, apa syarat utama yang harus dipenuhi?",
+      "options": [
+        "Case classes secara otomatis menyediakan implementasi equals dan hashCode yang konsisten",
+        "Semua properti di dalam case class harus dideklarasikan menggunakan kata kunci var",
+        "Anda harus menulis manual trait Ordered untuk setiap kelas domain inventori",
+        "Kelas tersebut harus mewarisi java.util.HashMap agar mendukung operasi pencarian cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi microservice Scala mengalami penurunan performa drastis akibat pembuatan objek (object allocation) yang berlebihan di heap memory selama parsing JSON berukuran besar. Pendekatan idiomatik apa yang dapat mengurangi tekanan pada Garbage Collector?",
+      "options": [
+        "Mengganti seluruh koleksi standar Scala dengan Java ArrayList untuk operasi mutasi",
+        "Menggunakan pustaka JSON berbasis AST mutable dan menonaktifkan fitur type safety",
+        "Memanfaatkan pustaka parsing berbasis low-allocation atau struktur data nilai seperti value classes",
+        "Mengubah arsitektur aplikasi dari asynchronous non-blocking menjadi synchronous blocking"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menggunakan pustaka ZIO untuk menangani efek samping (effects) dalam aplikasi backend. Layanan Anda perlu melakukan panggilan HTTP eksternal dengan mekanisme percobaan ulang (retry) maksimum 3 kali jika terjadi kegagalan jaringan. Kombinasi fungsi ZIO mana yang paling tepat?",
+      "options": [
+        "Menggunakan zio.Schedule.recurs(3) yang dikombinasikan dengan metode retry pada efek ZIO",
+        "Membuat perulangan rekursif manual menggunakan blok while di dalam metode map",
+        "Memanfaatkan fitur Future.recoverWith untuk menangkap error secara imperatif",
+        "Menggunakan Thread.sleep di dalam blok try-catch standar Java standard library"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam kode Scala, Anda melihat penggunaan fitur Implicit Parameters untuk menyuntikkan konfigurasi ExecutionContext ke dalam pemanggilanFuture. Apa risiko utama jika compiler menemukan lebih dari satu nilai implicit yang cocok (ambiguous implicit values) dalam scope yang sama?",
+      "options": [
+        "Compiler akan otomatis memilih nilai implicit yang didefinisikan paling akhir",
+        "Aplikasi akan mengalami ConcurrentModificationException saat runtime",
+        "Proses kompilasi akan gagal dengan pesan error ambiguitas dari compiler",
+        "Nilai implicit akan diabaikan dan diganti dengan nilai default null"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi transformasi data kompleks di Scala menggunakan ScalaTest. Pola pengujian mana yang paling direkomendasikan untuk memastikan bahwa kode Anda bersih, mudah dibaca, dan mengikuti gaya Behavior-Driven Development (BDD)?",
+      "options": [
+        "Menggunakan gaya FunSuite dengan menulis metode test diawali kata kunci test",
+        "Menggunakan gaya WordSpec atau FlatSpec dengan struktur 'should' dan 'in'",
+        "Menggunakan kelas JUnitTestCase bawaan Java untuk kompatibilitas penuh",
+        "Menulis seluruh logika pengujian di dalam metode main pada objek Singleton"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan layanan analitik real-time di platform fintech menggunakan Apache Flink dan Scala. Anda perlu mempertahankan state transaksi per pengguna dalam jendela waktu tertentu. Mekanisme state management manakah yang paling tepat digunakan agar aplikasi tahan terhadap kegagalan node (fault-tolerant)?",
+      "options": [
+        "Menggunakan variabel mutable standar di dalam kelas operator Flink",
+        "Memanfaatkan Stateful Functions bawaan Flink dengan checkpointing",
+        "Menyimpan data state langsung ke dalam memori lokal JVM tanpa sinkronisasi",
+        "Mengandalkan basis data relasional eksternal pada setiap event masuk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda mendapati memori heap aplikasi backend Scala sering penuh akibat pembuatan objek String sementara yang berlebihan saat memparsing payload JSON besar menggunakan Play Framework. Optimasi tingkat lanjut apa yang sebaiknya diterapkan pada kode Scala Anda?",
+      "options": [
+        "Mengganti seluruh struktur data koleksi standar dengan Array biasa",
+        "Menggunakan fitur String pooling manual pada setiap variabel teks",
+        "Memanfaatkan pustaka JSON berbasis zero-allocation seperti Jackson dengan Scala module",
+        "Menurunkan ukuran maksimum alokasi heap JVM secara drastis via konfigurasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek integrasi sistem logistik menggunakan Scala dan Akka Streams, Anda harus membaca data dari Kafka, mengubah formatnya, lalu menulisnya ke database tanpa membebani memori jika terjadi lonjakan trafik. Fitur Akka Streams apa yang harus diimplementasikan?",
+      "options": [
+        "Menerapkan mekanisme backpressure otomatis antar stage aliran data",
+        "Menggunakan fungsi map biasa untuk menampung seluruh elemen dalam List",
+        "Menaikkan batas ukuran buffer internal secara manual hingga tak terbatas",
+        "Mematikan fitur asynchronous processing agar data diproses secara serial"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis kode pemrosesan data finansial di Scala menggunakan monad Either dari pustaka Cats untuk menangani error validasi. Anda ingin menggabungkan dua hasil validasi terpisah dan mengumpulkan semua pesan error jika keduanya gagal, bukan hanya berhenti di error pertama. Pendekatan mana yang paling tepat?",
+      "options": [
+        "Menggunakan for-comprehension standar dengan tipe data Either",
+        "Mengubah tipe data Either menjadi Validated dari pustaka Cats",
+        "Membungkus seluruh blok kode di dalam blok try-catch tradisional",
+        "Mengganti tipe data Either dengan pengecekan null manual di setiap baris"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan code review pada proyek microservice Scala baru, Anda melihat penggunaan fitur Future di dalam perulangan bersarang yang kompleks sehingga sulit dibaca dan rentan terhadap kebocoran sumber daya. Alternatif idiomatis apa yang paling dianjurkan untuk menyederhanakan alur asinkron tersebut?",
+      "options": [
+        "Mengubah semua pemanggilan fungsi asinkron menjadi blocking call",
+        "Menggunakan struktur for-comprehension yang membungkus pemanggilan Future",
+        "Membuat thread pool terpisah secara manual untuk setiap iterasi perulangan",
+        "Menghilangkan tipe kembalian Future dan menjalankan proses secara sinkron"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membangun modul pembaca konfigurasi aplikasi menggunakan Scala standard library. Anda ingin memastikan bahwa objek konfigurasi hanya diinisialisasi sekali saat pertama kali diakses dan thread-safe tanpa overhead sinkronisasi manual yang rumit. Konstruk bahasa apa yang paling tepat digunakan?",
+      "options": [
+        "Mendefinisikan konfigurasi di dalam sebuah object singleton menggunakan kata kunci lazy val",
+        "Membuat kelas biasa dengan metode instansiasi synchronized secara manual",
+        "Menggunakan mutable var di dalam kelas utama yang diakses oleh banyak thread",
+        "Memanfaatkan fungsi lokal di dalam blok main tanpa penyimpanan variabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem e-commerce menggunakan Scala dan Slick (Database Access Library), Anda perlu menjalankan beberapa operasi tulis (insert dan update) pada tabel berbeda dalam satu transaksi atomik. Bagaimana cara memastikan konsistensi data menggunakan Slick?",
+      "options": [
+        "Menjalankan operasi secara terpisah tanpa pengaman koneksi database",
+        "Menggunakan kombinasi DBIO.seq atau DBIO.action with transaction translation",
+        "Mematikan fitur auto-commit pada tingkat driver JDBC secara manual di kode",
+        "Menulis ulang seluruh query SQL mentah menggunakan JDBC connection murni"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa waktu kompilasi proyek Scala di CI/CD pipeline sangat lambat karena banyaknya penggunaan implicits yang kompleks dan makro. Pendekatan refaktorisasi mana yang dapat membantu mengurangi waktu kompilasi tanpa merusak logika bisnis?",
+      "options": [
+        "Memindahkan seluruh logika kode sumber ke dalam satu file tunggal yang besar",
+        "Mengganti fitur implicit resolution dengan struktur parameter eksplisit atau type class terstruktur",
+        "Menghapus semua pengujian unit test yang ada pada direktori test",
+        "Menaikkan versi kompiler Scala ke versi yang lebih lama secara signifikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan analitik data besar menggunakan Spark dengan Scala mengalami masalah NullPointerException secara acak pada pekerja (executor) saat memproses kolom teks yang tidak terstandarisasi. Fitur Scala apa yang paling tepat digunakan dalam transformasi DataFrame untuk menghindari masalah ini secara aman?",
+      "options": [
+        "Menggunakan pengecekan kondisi if (value != null) di setiap baris data",
+        "Memanfaatkan tipe data Option dan metode combinator seperti getOrElse",
+        "Mengabaikan pengecekan null dan membiarkan pekerjaan gagal total",
+        "Mengubah semua tipe data kolom menjadi integer tanpa konversi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang API publik untuk pustaka internal perusahaan menggunakan Scala. Anda ingin mencegah klien pustaka mengubah isi dari koleksi data yang dikembalikan oleh metode Anda. Jenis koleksi Scala mana yang harus Anda gunakan sebagai tipe kembalian?",
+      "options": [
+        "Menggunakan scala.collection.mutable.Buffer untuk fleksibilitas maksimal",
+        "Menggunakan java.util.ArrayList agar kompatibel dengan pustaka lama",
+        "Menggunakan scala.collection.immutable.Seq untuk menjamin sifat immutability",
+        "Menggunakan Array primitif standar Scala yang bersifat read-write"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim backend Anda di perusahaan dompet digital menemukan bahwa sebuah Akka Actor sering mengalami 'mailbox overload' karena menerima pesan lonjakan transaksi lebih cepat daripada waktu prosesnya. Langkah mitigasi apa yang paling tepat secara arsitektur?",
+      "options": [
+        "Mengubah semua definisi pesan aktor menjadi tipe mutable agar proses penyalinan data di dalam memori lebih cepat",
+        "Menerapkan pola backpressure atau membatasi ukuran mailbox serta menggunakan worker pool untuk distribusi beban",
+        "Menaikkan kapasitas heap memori JVM secara drastis pada server produksi tanpa mengubah kode pengiriman pesan",
+        "Mengganti seluruh sistem pengiriman pesan aktor menjadi pemanggilan fungsi sinkron secara langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis fungsi transformasi data log harian menggunakan pustaka Cats di Scala. Fungsi tersebut harus menggabungkan dua hasil validasi bertipe `ValidatedNel[String, Data]` di mana keduanya mungkin gagal dan Anda ingin mengumpulkan semua pesan error yang terjadi. Metode apa yang harus Anda panggil pada objek validated tersebut?",
+      "options": [
+        "Memanggil operator flatMap untuk merantai eksekusi fungsi validasi secara berurutan",
+        "Memanfaatkan metode mapN atau operator ap (<*>) yang disediakan oleh Applicative instance",
+        "Melakukan konversi manual menggunakan blok try-catch di dalam fungsi pemetaan data",
+        "Menggunakan fungsi filterNot untuk membuang seluruh data yang menghasilkan nilai error"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan join dua dataset besar berukuran ratusan gigabita menggunakan Apache Spark dengan Scala, pekerjaan (job) sering mengalami kegagalan akibat OutOfMemoryError (OOM) padaexecutor karena terjadinya data skew yang parah pada kunci tertentu. Strategi optimasi apa yang paling tepat diterapkan?",
+      "options": [
+        "Melakukan broadcast join pada kedua tabel secara bersamaan untuk mempercepat proses pencarian data",
+        "Menambahkan parameter konfigurasi JVM heap size pada driver dan mengabaikan kapasitas memori executor",
+        "Melakukan salt pada kunci join yang bermasalah untuk mendistribusikan beban data secara merata ke partisi lain",
+        "Mengubah seluruh struktur data DataFrame menjadi format RDD murni agar proses shuffle berjalan otomatis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati sebuah fungsi helper logging di basis kode Scala perusahaan yang menerima parameter pesan dengan tipe By-Name (menggunakan tanda panah `=> String`). Apa implikasi utama dari penggunaan tipe parameter tersebut terhadap eksekusi kode?",
+      "options": [
+        "Argumen dievaluasi sekali di awal pemanggilan fungsi dan nilainya disimpan dalam cache memori",
+        "Argumen tidak akan pernah dievaluasi sama sekali kecuali fungsi utama mendefinisikan ulang variabel",
+        "Argumen dievaluasi setiap kali variabel tersebut dipanggil di dalam tubuh fungsi yang bersangkutan",
+        "Argumen dievaluasi secara asinkron menggunakan thread pool terpisah sebelum fungsi utama dijalankan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan aplikasi layanan keuangan menggunakan Play Framework dan Scala, Anda perlu memastikan koneksi database relasional ditangani secara aman dalam transaksi yang mencakup beberapa operasi tulis. Pendekatan mana yang paling idiomatik di Scala untuk mengelola transaksi database?",
+      "options": [
+        "Membuka koneksi manual menggunakan JDBC mentah di dalam setiap pengendali (controller) HTTP",
+        "Memanfaatkan blok transaksi yang disediakan oleh pustaka akses data seperti Slick atau Doobie secara monadik",
+        "Menjalankan seluruh query SQL secara paralel menggunakan Future tanpa mempedulikan urutan eksekusi",
+        "Mematikan fitur manajemen transaksi otomatis dan melakukan commit manual pada setiap baris data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain sebuah domain model untuk sistem inventori gudang menggunakan Scala case classes. Agar objek-objek tersebut aman digunakan sebagai kunci dalam struktur data `Map` atau elemen dalam `Set`, praktik terbaik apa yang harus dipastikan pada definisi kelas tersebut?",
+      "options": [
+        "Memastikan semua atribut di dalam case class dideklarasikan menggunakan kata kunci var",
+        "Menghindari penggunaan tipe data primitif dan menggantinya dengan struktur kustom yang kompleks",
+        "Memastikan seluruh atribut dalam parameter konstruktor bersifat immutable menggunakan val",
+        "Menulis ulang metode toString secara manual untuk menghasilkan representasi JSON yang valid"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi microservice Scala mengalami penurunan performa drastis akibat pembuatan objek sementara yang berlebihan di dalam loop pemrosesan transaksi tinggi. Teknik apa yang paling efektif untuk mereduksi tekanan Garbage Collector (GC) pada kasus ini?",
+      "options": [
+        "Mengganti seluruh koleksi standar Scala dengan struktur data Java native yang tidak aman",
+        "Memanfaatkan fitur value classes (AnyVal) atau Scala 3 opaque type aliases untuk menghindari alokasi objek",
+        "Menurunkan frekuensi pemindaian Garbage Collector dengan mematikan fitur pemantauan JVM",
+        "Mengubah semua fungsi pemrosesan data menjadi rekursi ekor tanpa batas ukuran memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan pustaka ZIO untuk menangani efek samping dalam aplikasi backend pembayaran. Layanan Anda perlu melakukan panggilan HTTP eksternal dengan batas waktu (timeout) 3 detik dan melakukan percobaan ulang (retry) sebanyak 2 kali jika gagal. Kombinasi operator ZIO apa yang paling tepat?",
+      "options": [
+        "timeout(3.seconds) dipadukan dengan metode retry(Schedule.recurs(2)) pada ZIO effect",
+        "delay(3.seconds) dipadukan dengan metode repeat(Schedule.exponential(2)) pada instance Future",
+        "race(3.seconds) dipadukan dengan metode fallback(Schedule.once) pada objek ExecutionContext",
+        "async(3.seconds) dipadukan dengan metode ignore pada seluruh penanganan kesalahan eksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam basis kode Scala, Anda melihat penggunaan fitur `given` dan `using` (atau `implicit` pada Scala 2) untuk menyuntikkan konfigurasi `ExecutionContext` ke dalam beberapa fungsi layanan. Mengapa pola ini lebih disukai daripada meneruskan parameter secara eksplisit?",
+      "options": [
+        "Pola ini memaksa kompiler untuk menghentikan proses build jika terjadi kesalahan tipe data",
+        "Pola ini mengurangi boilerplate pengoperan argumen infrastruktur yang sama berulang kali di berbagai lapisan",
+        "Pola ini menghilangkan kebutuhan untuk melakukan penanganan eksepsi pada operasi asinkron",
+        "Pola ini secara otomatis mengubah fungsi sinkron menjadi pemanggilan jaringan terdistribusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi transformasi data kompleks di Scala menggunakan pustaka ScalaTest dengan gaya `AnyFunSuite`. Manakah struktur penulisan pengujian yang paling sesuai dengan praktik Clean Code?",
+      "options": [
+        "Menulis satu fungsi uji raksasa yang menguji seluruh logika bisnis aplikasi dari awal hingga akhir",
+        "Membuat pengujian yang saling bergantung secara berurutan di mana hasil tes kedua membutuhkan state dari tes pertama",
+        "Menggunakan blok test terpisah dengan deskripsi spesifik yang menguji satu kondisi skenario input terhadap ekspektasi output",
+        "Mematikan mekanisme assertion dan hanya mencetak hasil keluaran konsol ke terminal saat proses build"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

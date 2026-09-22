@@ -1,0 +1,306 @@
+{
+  "skill": "Budgeting",
+  "skill_key": "budgeting",
+  "questions": [
+    {
+      "question": "Sebuah proyek renovasi kantor mengalami pembengkakan biaya 20% pada akhir bulan kedua dari total durasi 4 bulan. Sebagai pengawas anggaran, apa tindakan preventif paling tepat yang harus segera dilakukan?",
+      "options": [
+        "Menghentikan seluruh pekerjaan renovasi sampai kontraktor menyerahkan laporan audit internal",
+        "Mengajukan permohonan penambahan dana darurat kepada pemegang saham tanpa syarat",
+        "Menganalisis ulang sisa pekerjaan dan merundingkan pembatasan ruang lingkup dengan kontraktor",
+        "Memotong anggaran operasional rutin bulanan kantor untuk menutupi kekurangan biaya proyek"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda adalah staf keuangan di sebuah startup. Pertengahan bulan ini, departemen pemasaran meminta tambahan dana sebesar Rp15 juta untuk kampanye media sosial mendadak karena ada tren viral. Apa langkah awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Langsung mencairkan dana dari kas kecil agar kampanye tidak kehilangan momentum viralnya",
+        "Meminta persetujuan direktur keuangan setelah mengecek pos anggaran mana yang bisa digeser",
+        "Menolak permintaan tersebut secara tegas karena tidak tercantum dalam Rencana Anggaran Tahunan",
+        "Meminta departemen pemasaran membuat proposal ulang untuk diajukan pada tahun anggaran depan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menyusun anggaran operasional cabang baru di Surabaya untuk tahun depan. Data historis inflasi dan kenaikan sewa ruko tidak tersedia secara pasti. Metode penyusunan anggaran apa yang paling aman digunakan?",
+      "options": [
+        "Zero-based budgeting agar setiap rupiah pengeluaran baru divalidasi dari nol tanpa asumsi lama",
+        "Incremental budgeting dengan menaikkan rata-rata 10 persen dari total pengeluaran cabang pusat",
+        "Static budgeting agar target biaya tidak berubah meskipun kondisi pasar di Surabaya fluktuatif",
+        "Participative budgeting dengan menyerahkan seluruh nominal tanpa batas ke kepala cabang baru"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan realisasi bulanan, Anda menemukan selisih (varians) positif yang sangat besar pada anggaran biaya logistik pengiriman barang. Setelah ditelusuri, ternyata volume penjualan naik drastis. Bagaimana Anda melaporkan hal ini kepada manajemen?",
+      "options": [
+        "Menyatakan bahwa departemen logistik telah gagal melakukan efisiensi biaya operasional",
+        "Menjelaskan bahwa varians tersebut wajar karena sejalan dengan pertumbuhan volume penjualan",
+        "Menyarankan manajemen untuk segera memangkas anggaran logistik pada bulan berikutnya",
+        "Mengabaikan selisih tersebut karena varians bernilai positif selalu menguntungkan perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan ritel tempat Anda bekerja merencanakan promo besar saat Hari Raya. Tim sales meminta anggaran iklan dinaikkan 50%. Sebagai manajer anggaran, bagaimana cara Anda mengevaluasi kelayakan permintaan ini?",
+      "options": [
+        "Menyetujui 50% dari permintaan dengan asumsi kenaikan penjualan akan menutupi biaya iklan",
+        "Membandingkan proyeksi tambahan margin kotor penjualan terhadap tambahan biaya iklan yang diminta",
+        "Meminta tim sales mencari sponsor pihak ketiga untuk menanggung separuh dari biaya iklan tersebut",
+        "Menolak kenaikan dan mempertahankan batas anggaran iklan sesuai dengan tahun sebelumnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir kuartal ketiga, departemen IT belum menyerap 40% anggaran pemeliharaan server yang telah disetujui. Kepala IT meminta izin untuk memborong lisensi software jangka panjang agar anggaran terserap habis. Sikap Anda sebagai pengelola anggaran adalah:",
+      "options": [
+        "Menyetujui pembelian agar sisa anggaran tidak hangus dan ditarik kembali oleh pusat",
+        "Menolak permintaan karena pengeluaran tersebut tidak mendesak dan melanggar prinsip efisiensi",
+        "Meminta kajian kebutuhan bisnis dan memverifikasi apakah lisensi tersebut benar-benar mendesak",
+        "Mengalihkan sisa anggaran tersebut secara otomatis ke pos biaya perjalanan dinas manajemen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati arus kas masuk (cash inflow) perusahaan mengalami keterlambatan dari klien utama, sementara kewajiban pembayaran gaji karyawan dan sewa kantor jatuh tempo minggu depan. Apa keputusan budgeting darurat yang harus diambil?",
+      "options": [
+        "Menunda pembayaran gaji karyawan sampai klien utama melunasi tagihan yang tertunggak",
+        "Memprioritaskan pembayaran gaji dan menunda pengeluaran non-esensial serta menegosiasi vendor",
+        "Mengambil pinjaman berbunga tinggi secara informal untuk menutupi seluruh tagihan jatuh tempo",
+        "Menghentikan semua proyek berjalan dan merumahkan sebagian karyawan secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses penyusunan anggaran tahunan, manajemen puncak meminta target laba dinaikkan 25%, sementara proyeksi pendapatan hanya tumbuh 5%. Sebagai penyusun anggaran, strategi penganggaran apa yang harus Anda formulasikan?",
+      "options": [
+        "Menaikkan target harga jual produk secara agresif tanpa memperhitungkan daya beli pasar",
+        "Melakukan identifikasi pemangkasan biaya operasional dan efisiensi rantai pasok secara ketat",
+        "Membuat asumsi pertumbuhan pendapatan yang tidak realistis agar target laba terlihat tercapai",
+        "Menurunkan kualitas bahan baku produk secara drastis untuk menghemat biaya produksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek pengembangan aplikasi IT mengalami penundaan (delay) selama dua bulan, yang berakibat pada molornya pembayaran termin konsultan eksternal ke tahun anggaran berikutnya. Bagaimana Anda menyesuaikan dokumen budgeting saat ini?",
+      "options": [
+        "Melakukan revisi anggaran (forecast) dengan menggeser alokasi dana konsultan ke periode anggaran baru",
+        "Mencairkan dana konsultan sekarang juga agar pencatatan keuangan tahun ini tetap seimbang",
+        "Menghapus alokasi dana tersebut dan meminta konsultan bekerja tanpa bayaran tambahan",
+        "Memasukkan biaya tersebut sebagai kerugian operasional pada laporan laba rugi bulan berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda baru saja ditunjuk sebagai manajer keuangan di pabrik manufaktur. Anda melihat biaya bahan baku selalu melampaui anggaran setiap bulan meskipun volume produksi tetap. Langkah investigasi awal apa yang paling tepat?",
+      "options": [
+        "Langsung mengganti seluruh supplier lama dengan supplier baru yang menawarkan harga lebih murah",
+        "Menaikkan harga jual produk jadi di pasaran untuk menutupi tingginya biaya bahan baku",
+        "Menganalisis laporan susut bahan (scrap), efisiensi mesin, dan potensi kenaikan harga pasar material",
+        "Memotong anggaran gaji bagian produksi untuk menutup selisih biaya bahan baku yang membengkak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir tahun fiskal, departemen umum memiliki sisa anggaran pemeliharaan gedung sebesar Rp100 juta dan berniat membelikannya gadget untuk seluruh staf agar anggaran tidak 'hangus'. Apa keputusan manajer keuangan?",
+      "options": [
+        "Menyetujui pembelian gadget karena hal tersebut hak prerogatif kepala departemen terkait.",
+        "Mengarahkan sisa dana untuk dibelikan material bangunan cadangan yang sesuai pos pemeliharaan.",
+        "Memblokir pengeluaran tersebut karena tidak sesuai dengan peruntukan pos anggaran yang disetujui.",
+        "Mengizinkan pembelian asalkan dibagikan hanya kepada karyawan yang berprestasi tinggi saja."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai pengawas anggaran di perusahaan logistik, Anda melihat lonjakan biaya BBM sebesar 30% akibat kenaikan tarif nasional, padahal kuota liter bensin sesuai rencana. Langkah penyesuaian anggaran yang paling tepat adalah?",
+      "options": [
+        "Mengurangi jumlah armada pengiriman agar total pengeluaran BBM kembali sesuai plafon awal.",
+        "Melakukan reallocating dari pos biaya operasional lain yang kurang terserap untuk menutup defisit.",
+        "Menghentikan seluruh operasional cabang sampai harga BBM nasional kembali turun ke level normal.",
+        "Meminta tambahan dana darurat kepada direksi tanpa mengubah rincian alokasi biaya bulanan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek konstruksi pabrik mencatat pengeluaran aktual per kuartal jauh lebih rendah dari anggaran, bukan karena efisiensi, melainkan keterlambatan perizinan dari instansi pemerintah. Apa tindakan preventif anggaran untuk kuartal berikutnya?",
+      "options": [
+        "Mencoret sisa anggaran tersebut dan mengalihkannya untuk bonus akhir tahun tim internal.",
+        "Melakukan rolling budget dan merevisi jadwal penarikan dana agar sesuai timeline perizinan.",
+        "Tetap mencairkan dana tersebut ke rekening proyek agar tidak dianggap hangus oleh manajemen.",
+        "Menurunkan target kinerja proyek secara permanen pada laporan tahunan perusahaan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer operasional mengajukan pembelian mesin baru seharga Rp500 juta di luar Rencana Anggaran Belanja (RAB) tahunan karena mesin lama rusak total. Sebagai analis anggaran, apa langkah pertama yang harus Anda lakukan?",
+      "options": [
+        "Langsung menolak pengajuan karena tidak tercantum dalam RAB yang telah disahkan pemegang saham.",
+        "Meminta manajer operasional mencari pinjaman bank swasta untuk mendanai pembelian mesin tersebut.",
+        "Menghitung analisis ROI dan mengevaluasi pos anggaran mana yang bisa digeser untuk mendanai mesin.",
+        "Menyetujui pembelian dan langsung membayarnya menggunakan cadangan kas operasional harian."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam evaluasi anggaran tahunan divisi HRD, ditemukan pos pelatihan karyawan hanya terserap 20% hingga bulan Oktober karena pandemi. Menjelang akhir tahun, HRD ingin menghabiskannya untuk vendor luar negeri. Sikap Anda?",
+      "options": [
+        "Mengizinkan penggunaan dana tersebut agar anggaran tahun depan tidak dipotong manajemen pusat.",
+        "Menolak penggunaan mendadak dan menyarankan agar sisa dana dikembalikan sebagai surplus laba.",
+        "Menyetujui setengahnya dan meminta HRD mencari program pelatihan lokal yang lebih cepat selesai.",
+        "Membiarkan HRD mentransfer dana tersebut ke rekening pribadi trainer sebagai uang muka tahun depan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda menerapkan sistem zero-based budgeting (ZBB) untuk tahun depan. Departemen legal bersikeras mempertahankan anggaran tahun lalu tanpa melampirkan rincian kegiatan baru. Respon Anda sebagai tim anggaran adalah?",
+      "options": [
+        "Menyetujui anggaran legal apa adanya demi menjaga hubungan baik antar departemen internal.",
+        "Meminta departemen legal merinci ulang setiap program kerja dan mengukur nilai ROI-nya dari nol.",
+        "Memotong otomatis anggaran departemen legal sebesar 10% sebagai bentuk hukuman kepatuhan.",
+        "Mengambil alih penyusunan anggaran legal sepenuhnya tanpa melibatkan kepala departemen."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah cabang ritel baru mencatatkan penjualan 50% di bawah target pada tiga bulan pertama beroperasi, sementara biaya sewa dan gaji tetap berjalan. Kebijakan revisi anggaran apa yang paling rasional?",
+      "options": [
+        "Menaikkan anggaran promosi secara agresif hingga tiga kali lipat tanpa batas waktu yang jelas.",
+        "Menutup cabang tersebut seketika dan memecat seluruh karyawan tanpa pesangon demi efisiensi.",
+        "Melakukan penghematan pada biaya utilitas dan memperketat batas operasional harian cabang.",
+        "Meminta kantor pusat menaikkan subsidi bulanan secara permanen tanpa evaluasi strategi pasar."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati departemen riset menggunakan anggaran proyek A untuk menutupi kekurangan biaya operasional proyek B tanpa persetujuan tertulis. Tindakan pengendalian anggaran apa yang harus diterapkan?",
+      "options": [
+        "Mengeluarkan teguran resmi, melakukan penyesuaian jurnal, dan memperketat kontrol otorisasi.",
+        "Membiarkan tindakan tersebut asalkan total pengeluaran dua proyek tidak melebihi total plafon.",
+        "Memindahkan seluruh sisa anggaran proyek B ke proyek A secara permanen mulai bulan depan.",
+        "Mencabut wewenang kepala riset dan membekukan seluruh kegiatan riset di perusahaan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pemberlakuan kenaikan tarif PPN menjadi 12% berdampak langsung pada harga bahan baku vendor utama Anda. Kontrak tahunan sudah ditandatangani dengan harga tetap. Bagaimana Anda mengelola dampak anggaran ini?",
+      "options": [
+        "Memutus kontrak vendor secara sepihak dan mencari vendor baru yang mau menanggung PPN.",
+        "Melakukan negosiasi ulang dengan vendor untuk membagi beban selisih pajak secara proporsional.",
+        "Mengabaikan kenaikan tersebut dan membiarkan vendor menanggung seluruh kerugian operasional.",
+        "Menaikkan harga jual produk ke konsumen sebesar 50% untuk menutupi potensi kenaikan biaya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek multi-tahun menghadapi lonjakan inflasi bahan baku baja sebesar 25% di tahun kedua. Kontrak dengan klien menggunakan skema fixed-price. Langkah mitigasi anggaran terbaik adalah?",
+      "options": [
+        "Menghentikan proyek di tengah jalan dan membayar penalti pembatalan kontrak kepada klien.",
+        "Menggunakan dana cadangan kontingensi proyek dan melakukan value engineering pada desain.",
+        "Memaksa klien membayar tambahan harga secara mendadak tanpa adendum kontrak resmi.",
+        "Mengurangi standar keselamatan kerja di lapangan demi menekan biaya pembelian baja."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek implementasi software baru mengalami pembengkakan biaya konsultan eksternal sebesar 15% pada fase migrasi data. Manajer proyek meminta tambahan dana dari cadangan taktis (contingency fund). Tindakan pertama Anda:",
+      "options": [
+        "Langsung mencairkan dana cadangan taktis karena fase migrasi data adalah bagian krusial proyek",
+        "Memeriksa apakah pembengkakan tersebut disebabkan oleh ruang lingkup kerja yang di luar kontrak awal",
+        "Meminta manajer proyek mencari sumber pendanaan dari pos lain yang memiliki surplus anggaran",
+        "Menghentikan kontrak konsultan eksternal dan melimpahkan pekerjaan migrasi ke tim internal IT"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai analis anggaran di perusahaan FMCG, Anda mendapati biaya distribusi melonjak 25% akibat kemacetan parah di jalur utama distribusi Jawa. Langkah preventif apa yang paling tepat untuk revisi anggaran kuartal berikutnya?",
+      "options": [
+        "Mengurangi jumlah armada pengiriman agar total biaya bahan bakar kembali sesuai pagu awal",
+        "Memasukkan komponen penyesuaian tarif logistik darurat dan rute alternatif ke dalam anggaran",
+        "Menunda seluruh pengiriman barang ke area tersebut sampai kondisi lalu lintas kembali normal",
+        "Membebankan selisih biaya tersebut langsung kepada pelanggan melalui kenaikan harga produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer Produksi mengajukan percepatan pembelian suku cadang mesin impor senilai Rp200 juta bulan ini untuk menghindari potensi pelemahan rupiah bulan depan. Posisi arus kas saat ini sedang ketat. Tindakan Anda sebagai pengelola anggaran adalah:",
+      "options": [
+        "Menolak permintaan karena tidak sesuai dengan jadwal likuiditas bulanan yang telah disahkan",
+        "Menyetujui penuh demi mengantisipasi risiko nilai tukar tanpa melihat kondisi kas harian",
+        "Menganalisis proyeksi arus kas masuk dan menawarkan penjadwalan ulang pembayaran bertahap",
+        "Meminta manajer tersebut memotong anggaran operasional rutin bulanan untuk menutupinya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Departemen operasional mencatatkan penghematan anggaran sebesar Rp150 juta pada akhir tahun berkat efisiensi energi. Kepala departemen meminta agar sisa dana tersebut dialihkan untuk bonus akhir tahun timnya. Keputusan Anda:",
+      "options": [
+        "Mengizinkan pengalihan dana karena departemen tersebut berhasil mencapai target efisiensi operasional",
+        "Menolak karena sisa anggaran harus dikembalikan ke kas perusahaan dan bonus diatur lewat HR",
+        "Menyetujui setengahnya agar motivasi kerja tim operasional tetap terjaga dengan baik untuk tahun depan",
+        "Meminta mereka membelanjakan sisa dana tersebut untuk aset inventaris kantor sebelum tutup buku"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam penyusunan anggaran biaya pemasaran digital, Anda menemukan bahwa asumsi biaya klik (CPC) pada platform iklan naik 40% dibanding tahun lalu. Langkah mitigasi anggaran yang paling rasional adalah:",
+      "options": [
+        "Menaikkan total anggaran pemasaran sebesar 40% secara linier agar jangkauan iklan tidak turun",
+        "Menghentikan seluruh iklan berbayar dan beralih sepenuhnya pada pemasaran organik tanpa biaya",
+        "Menyesuaikan target konversi dan mengoptimalkan segmentasi audiens untuk menjaga efisiensi",
+        "Meminta diskon khusus kepada penyedia platform iklan dengan dalih kontrak kerja sama jangka panjang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda merencanakan ekspansi membuka tiga kantor cabang baru. Bagian keuangan diminta memperkirakan titik impas (break-even point) untuk setiap cabang. Faktor variabel apa yang paling krusial untuk dimasukkan?",
+      "options": [
+        "Biaya sewa gedung jangka panjang dan penyusutan inventaris kantor cabang secara merata",
+        "Gaji pokok staf manajerial pusat yang mengawasi operasional cabang baru setiap bulannya",
+        "Biaya utilitas lokal, gaji staf operasional lokal, dan biaya pemasaran regional yang fluktuatif",
+        "Pajak penghasilan badan perusahaan secara keseluruhan yang dibayarkan pada akhir tahun fiskal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa biaya pemeliharaan armada kendaraan perusahaan terus melampaui anggaran bulanan sebesar Rp35 juta selama tiga bulan berturut-turut. Solusi berbasis anggaran yang paling tepat diambil adalah:",
+      "options": [
+        "Menambahkan alokasi dana pemeliharaan sebesar Rp35 juta pada anggaran rutin bulan berikutnya",
+        "Melakukan audit biaya untuk membandingkan opsi perbaikan total versus peremajaan unit kendaraan",
+        "Melarang penggunaan kendaraan operasional untuk keperluan di luar jam kerja kantor secara ketat",
+        "Mengurangi frekuensi servis berkala kendaraan dari setiap bulan menjadi setiap tiga bulan sekali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat meninjau laporan laba rugi tengah tahun, Anda melihat kontribusi margin produk lini B mengalami penurunan drastis meskipun volume penjualannya tinggi. Kebijakan anggaran apa yang perlu direkomendasikan?",
+      "options": [
+        "Menaikkan harga jual produk lini B secara agresif untuk menutup biaya produksi yang melonjak",
+        "Menghentikan lini produksi produk B secara permanen dan memindahkan dananya ke lini A",
+        "Melakukan analisis biaya berbasis aktivitas (ABC) untuk menekan komponen biaya produksi produk B",
+        "Menambah anggaran promosi produk lini B agar volume penjualannya bisa menutupi margin yang tipis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah divisi operasional tidak menggunakan dana pelatihan staf sebesar Rp50 juta hingga minggu terakhir bulan Desember karena kesibukan operasional. Mereka meminta izin untuk memborong perangkat gadget bagi staf agar dana tidak hangus. Sikap Anda:",
+      "options": [
+        "Menyetujui pembelian gadget tersebut agar penyerapan anggaran divisi mencapai 100% sempurna",
+        "Menolak karena pengadaan tersebut tidak sesuai dengan tujuan awal pos anggaran pelatihan SDM",
+        "Meminta mereka memindahkan dana tersebut ke pos biaya perjalanan dinas manajemen perusahaan",
+        "Memperbolehkan pembelian asalkan mendapat tanda tangan persetujuan dari direktur utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan menghadapi risiko fluktuasi suku bunga pinjaman bank yang cukup tinggi tahun depan. Sebagai penyusun anggaran keuangan, langkah mitigasi yang paling tepat adalah:",
+      "options": [
+        "Mengasumsikan suku bunga tetap rendah dalam proyeksi anggaran agar laba terlihat menarik bagi investor",
+        "Menyiapkan anggaran cadangan bunga (interest rate buffer) dan mempertimbangkan opsi lindung nilai",
+        "Melunasi seluruh pinjaman bank menggunakan dana kas operasional perusahaan secara mendadak",
+        "Menghentikan semua rencana ekspansi bisnis yang memerlukan pembiayaan utang bank komersial"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

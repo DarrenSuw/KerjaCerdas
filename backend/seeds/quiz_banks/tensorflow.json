@@ -1,0 +1,306 @@
+{
+  "skill": "TensorFlow",
+  "skill_key": "tensorflow",
+  "questions": [
+    {
+      "question": "Tim Anda di e-commerce lokal sedang membangun model deteksi produk cacat menggunakan TensorFlow. Saat proses training, loss pada data training terus menurun drastis, tetapi validation loss malah mulai meningkat secara konsisten setelah epoch ke-10. Apa tindakan praktis paling tepat yang harus Anda ambil?",
+      "options": [
+        "Menambahkan lebih banyak layer dense ke dalam arsitektur model CNN",
+        "Menerapkan teknik early stopping dan menambahkan dropout layer",
+        "Menaikkan jumlah epoch training sebanyak dua kali lipat dari sebelumnya",
+        "Memperbesar ukuran learning rate agar konvergensi tercapai lebih cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendeploy model klasifikasi teks berbasis TensorFlow ke server produksi dengan trafik tinggi di Jakarta. Saat beban puncak, latensi inferensi sangat tinggi dan penggunaan memori GPU melonjak tajam. Langkah optimasi model apa yang paling efektif untuk mengatasi kendala ini?",
+      "options": [
+        "Mengonversi model ke format TensorFlow Lite dengan quantisasi int8",
+        "Melakukan retraining ulang menggunakan arsitektur Transformer terbesar",
+        "Mengubah fungsi optimizer dari Adam menjadi Stochastic Gradient Descent",
+        "Menambah jumlah batch size saat melakukan inferensi di server produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup agritech meminta Anda membuat model prediksi hasil panen menggunakan data tabular historis yang memiliki rentang nilai sangat bervariasi (misal: curah hujan dalam milimeter dan luas lahan dalam hektar). Bagaimana cara Anda menyiapkan data tersebut menggunakan tf.data pipeline sebelum dimasukkan ke model?",
+      "options": [
+        "Langsung memasukkan tensor mentah tanpa normalisasi agar fitur asli terjaga",
+        "Menggunakan layer normalisasi seperti tf.keras.layers.Normalization dalam pipeline",
+        "Melakukan transformasi logaritma manual pada seluruh kolom data secara acak",
+        "Mengganti semua nilai kosong dengan angka nol menggunakan fungsi tf.fill"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model Computer Vision untuk mengenali rambu lalu lintas di Indonesia. Dataset gambar memiliki ukuran resolusi yang beragam mulai dari 200px hingga 4000px. Agar proses batching dalam tf.keras.Model.fit() berjalan lancar tanpa error dimensi, apa yang harus dilakukan?",
+      "options": [
+        "Menulis fungsi preprocessing kustom untuk melakukan resize setiap gambar ke ukuran tetap",
+        "Menggunakan tf.RaggedTensor agar model dapat menerima ukuran gambar yang berbeda secara langsung",
+        "Menghapus semua gambar yang memiliki resolusi di atas standar rata-rata dataset",
+        "Mengubah tipe data gambar menjadi integer 8-bit sebelum dimasukkan ke dalam pipeline"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model deteksi penipuan transaksi dompet digital yang Anda buat mengalami masalah false negative yang tinggi pada data minoritas (transaksi penipuan sangat sedikit dibanding transaksi normal). Modifikasi apa pada kode training TensorFlow Anda yang paling tepat?",
+      "options": [
+        "Menaikkan bobot kelas (class weights) atau menggunakan teknik focal loss pada compiler",
+        "Menurunkan nilai threshold probabilitas inferensi menjadi 0.99 untuk semua kelas",
+        "Mengurangi jumlah epoch training agar model tidak mempelajari pola transaksi normal",
+        "Menggunakan fungsi loss SparseCategoricalCrossentropy tanpa parameter tambahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin melakukan fine-tuning pada model MobileNetV2 pretrained untuk klasifikasi jenis kain batik lokal. Agar proses training efisien dan bobot dasar tidak rusak, bagaimana cara mengatur layer-layer model tersebut?",
+      "options": [
+        "Membekukan (freeze) seluruh layer dasar MobileNetV2 dan hanya melatih layer Dense tambahan",
+        "Membuka (unfreeze) semua layer dan menggunakan learning rate yang sama besar di awal",
+        "Menghapus setengah dari layer konvolusi awal untuk mempercepat proses komputasi",
+        "Melatih ulang seluruh parameter dari awal tanpa memanfaatkan bobot pre-trained ImageNet"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memantau training model deep learning menggunakan TensorBoard di server remote, Anda ingin melacak metrik custom seperti F1-Score secara real-time pada setiap akhir batch. Komponen TensorFlow mana yang paling tepat diimplementasikan?",
+      "options": [
+        "Membuat subclass dari tf.keras.callbacks.Callback untuk menghitung metrik per batch",
+        "Menggunakan fungsi tf.print() di dalam loop training manual setiap kali iterasi berjalan",
+        "Menyimpan seluruh prediksi ke file CSV eksternal lalu merender grafiknya dengan matplotlib",
+        "Mengandalkan metrik bawaan model seperti tf.keras.metrics.Accuracy secara otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi mobile banking memerlukan fitur pengenalan KTP secara offline menggunakan TensorFlow Lite. Ketika file model `.tflite` di-load di perangkat Android, aplikasi mendadak crash dengan pesan error bahwa operasi tertentu tidak didukung. Apa penyebab utama masalah ini?",
+      "options": [
+        "Model menggunakan custom TensorFlow ops yang tidak terdaftar dalam delegate TFLite bawaan",
+        "Versi sistem operasi Android pada perangkat uji sudah terlalu usang untuk menjalankan TFLite",
+        "Ukuran file model TFLite melebihi kapasitas memori RAM total yang dimiliki oleh perangkat",
+        "Format file model belum dikompresi menggunakan metode zip sebelum dimasukkan ke assets"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang arsitektur model sequence-to-sequence untuk chatbot layanan pelanggan berbahasa Indonesia. Mengingat kalimat memiliki panjang yang bervariasi dan urutan kata sangat krusial, layer Keras apa yang harus diletakkan setelah token embedding?",
+      "options": [
+        "Layer tf.keras.layers.Bidirectional(tf.keras.layers.LSTM()) atau GRU",
+        "Layer tf.keras.layers.Conv2D dengan ukuran kernel 3x3 dan fungsi ReLU",
+        "Layer tf.keras.layers.GlobalAveragePooling1D untuk meratakan dimensi",
+        "Layer tf.keras.layers.MaxPooling2D untuk mereduksi ukuran spasial teks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengolahan data berskala besar menggunakan cluster multi-GPU untuk melatih model TensorFlow, Anda mendapati bahwa GPU sering menganggur (idle) karena proses memuat data dari storage lambat. Bagaimana cara memperbaiki bottleneck ini pada tf.data?",
+      "options": [
+        "Menambahkan pemanggilan .cache() dan .prefetch(tf.data.AUTOTUNE) pada pipeline data",
+        "Mengurangi ukuran batch size secara ekstrem agar data lebih cepat terbaca oleh RAM",
+        "Menghilangkan fungsi shuffle agar proses pembacaan data berjalan secara sekuensial",
+        "Menggunakan format file teks biasa (.txt) alih-alih format biner yang dioptimalkan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa model TensorFlow untuk prediksi churn pelanggan telekomunikasi mengalami overfitting parah, di mana akurasi training mencapai 98% tetapi akurasi validasi mandek di 75%. Langkah paling efektif apa yang harus Anda implementasikan pada kode Keras untuk mengatasi masalah ini?",
+      "options": [
+        "Menambah jumlah hidden layers dan neuron agar kapasitas model meningkat secara signifikan",
+        "Menambahkan layer Dropout dan teknik L2 regularization pada dense layers yang ada",
+        "Mengganti fungsi loss dari binary crossentropy menjadi mean squared error untuk stabilitas",
+        "Meningkatkan learning rate pada optimizer Adam agar konvergensi berjalan lebih cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model rekomendasi video untuk platform streaming lokal menggunakan dataset besar yang tidak muat di memori RAM laptop Anda. Bagaimana cara terbaik memuat dan memproses data tersebut di TensorFlow?",
+      "options": [
+        "Menggunakan modul tf.data.Dataset dengan metode interleave dan prefetch untuk efisiensi I/O",
+        "Membaca seluruh file CSV menggunakan Pandas secara bertahap lalu memasukkannya ke NumPy array",
+        "Menaikkan alokasi swap memory pada sistem operasi agar seluruh data CSV dapat ditampung",
+        "Memecah file data menjadi bagian yang sangat kecil dan meloadnya manual dengan perulangan for"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model klasifikasi sentimen ulasan produk berbasis LSTM yang Anda buat memberikan hasil prediksi yang lambat saat melakukan inferensi batch di server CPU perusahaan. Pendekatan mana yang paling tepat untuk mempercepat proses inferensi tersebut?",
+      "options": [
+        "Melakukan konversi model ke format TensorFlow Lite dengan optimasi dynamic range quantization",
+        "Mengganti seluruh arsitektur recurrent dengan model berbasis Convolutional Neural Network 1D",
+        "Menurunkan threshold probabilitas output dari 0.5 menjadi 0.2 untuk mempercepat kalkulasi",
+        "Melakukan retraining ulang model menggunakan optimizer SGD dengan momentum konstan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan fine-tuning pada model BERT untuk analisis sentimen berbahasa Indonesia, Anda ingin memastikan bahwa bobot pada pre-trained encoder tidak ikut berubah pada beberapa epoch awal. Kode TensorFlow/Keras apa yang harus Anda terapkan?",
+      "options": [
+        "Mengatur argumen trainable menjadi bernilai False pada layer encoder sebelum proses compile",
+        "Menghapus optimizer khusus untuk encoder dan hanya memasang optimizer pada layer klasifikasi",
+        "Memberikan nilai learning rate nol pada fungsi callback ModelCheckpoint saat training",
+        "Menggunakan fungsi tf.stop_gradient secara manual di dalam fungsi custom training loop"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa loss dari model regresi harga properti di Jakarta mengalami fluktuasi yang sangat ekstrem dan kadang bernilai NaN selama proses training menggunakan optimizer Adam. Apa tindakan diagnostik awal yang paling tepat?",
+      "options": [
+        "Menurunkan nilai learning rate secara drastis atau menerapkan gradient clipping pada optimizer",
+        "Menghapus semua fitur numerik yang memiliki rentang nilai di bawah angka satu",
+        "Mengubah fungsi aktivasi dari ReLU menjadi Sigmoid pada semua hidden layers",
+        "Menambah ukuran batch size menjadi dua kali lipat dari konfigurasi sebelumnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah model deteksi objek menggunakan TensorFlow Object Detection API memberikan hasil bounding box yang buruk pada objek berukuran kecil di gambar jalan raya. Perubahan apa yang paling logis pada konfigurasi pipeline?",
+      "options": [
+        "Menyesuaikan parameter anchor box scales dan aspect ratios agar sesuai dengan ukuran objek kecil",
+        "Memperbesar ukuran resolusi gambar input menjadi dua kali lipat sebelum masuk ke augmentasi",
+        "Menurunkan nilai intersection over union pada tahap non-max suppression secara drastis",
+        "Menghilangkan proses data augmentation random crop pada tahap preprocessing dataset"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menyimpan arsitektur dan bobot model TensorFlow ke dalam satu file tunggal untuk keperluan deployment sederhana menggunakan TensorFlow Serving. Format penyimpanan apa yang harus Anda gunakan saat memanggil model.save()?",
+      "options": [
+        "Menyimpan dalam format direktori SavedModel bawaan TensorFlow dengan struktur aset lengkap",
+        "Menyimpan hanya file bobot berformat h5 dan menulis ulang arsitektur model dengan kode Python",
+        "Mengekspor bobot ke dalam file teks berformat CSV agar mudah dibaca oleh server lain",
+        "Menggunakan modul pickle bawaan Python untuk melakukan serialisasi seluruh objek model Keras"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam skenario di mana Anda menulis custom training loop di TensorFlow menggunakan tf.GradientTape, bagaimana cara Anda memperbarui bobot model secara manual setelah menghitung gradien?",
+      "options": [
+        "Memanggil optimizer.apply_gradients dengan memasukkanzip dari list gradien dan model.trainable_variables",
+        "Menggunakan fungsi model.optimizer.minimize langsung di dalam konteks blok tf.GradientTape",
+        "Menambahkan nilai gradien secara langsung ke variabel bobot menggunakan operator penugasan in-place",
+        "Memanggil metode model.fit_weights dengan menyertakan argumen gradien yang telah dihitung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model segmentasi citra medis berbasis U-Net yang Anda latih menggunakan TensorFlow menunjukkan memori GPU habis (OOM) saat ukuran batch dinaikkan. Teknik apa yang paling efektif diterapkan tanpa harus memperkecil ukuran batch?",
+      "options": [
+        "Mengaktifkan mixed precision training menggunakan kebijakan float16 untuk efisiensi memori VRAM",
+        "Mengurangi jumlah filter konvolusi pada setiap blok encoder menjadi seperempatnya",
+        "Mengganti fungsi aktivasi ReLU dengan LeakyReLU untuk mengurangi kompleksitas komputasi",
+        "Memindahkan sebagian besar operasi tensor dari GPU utama ke memori RAM sistem CPU"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengevaluasi performa model klasifikasi multi-kelas dengan metrik F1-Score makro di setiap akhir epoch training Keras, namun metrik bawaan hanya menyediakan akurasi. Apa pendekatan yang paling tepat?",
+      "options": [
+        "Membuat subclass dari tf.keras.metrics.Metric untuk menghitung F1-score secara custom dan menambahkannya ke model.compile",
+        "Menghitung F1-score secara manual menggunakan pustaka scikit-learn di dalam fungsi callback on_epoch_end",
+        "Mengubah target label klasifikasi menjadi format biner satu-satu agar metrik binary accuracy dapat dipakai",
+        "Memanfaatkan fungsi loss categorical crossentropy karena secara otomatis menghitung F1-score di belakang layar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melatih model prediksi harga tiket pesawat domestik menggunakan Keras. Model menunjukkan tanda-tanda konvergensi yang sangat lambat dan sering terjebak di local minima pada loss landscape. Pendekatan apa yang paling tepat untuk mengatasi masalah ini secara efisien?",
+      "options": [
+        "Mengganti optimizer SGD standar dengan Adam dan menerapkan learning rate schedule yang adaptif",
+        "Menghapus seluruh layer Dropout dan menambah ukuran batch size hingga dua kali lipat",
+        "Menaikkan jumlah epoch secara drastis tanpa mengubah arsitektur atau parameter optimizer",
+        "Mengubah fungsi loss dari Mean Squared Error menjadi Mean Absolute Error pada model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi Android logistik membutuhkan model TensorFlow Lite untuk membaca nomor resi paket dari kamera secara real-time. Ukuran model saat ini terlalu besar dan membuat latensi inferensi di HP kelas menengah menjadi tinggi. Langkah optimasi apa yang harus Anda lakukan?",
+      "options": [
+        "Melakukan post-training quantization pada bobot model dari float32 menjadi int8",
+        "Menambahkan lapisan konvolusi ekstra untuk meningkatkan akurasi ekstraksi fitur",
+        "Mengonversi model langsung ke format SavedModel agar kompatibel dengan runtime seluler",
+        "Meningkatkan resolusi citra masukan agar model lebih mudah mendeteksi teks resi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan training model deep learning untuk klasifikasi jenis kopi Nusantara menggunakan multi-GPU di server kantor, Anda mendapati bahwa utilisasi GPU pertama mencapai 95% sementara GPU lainnya berada di bawah 20%. Bagaimana cara memperbaiki alokasi beban kerja tersebut?",
+      "options": [
+        "Mengganti strategi distribusi dengan tf.distribute.MirroredStrategy untuk pembagian batch",
+        "Memindahkan seluruh pemrosesan augmentasi data mentah ke dalam fungsi tf.function",
+        "Menurunkan nilai learning rate secara proporsional terhadap jumlah GPU yang aktif",
+        "Menggunakan fungsi tf.config.set_soft_device_placement agar data berpindah otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa metrik akurasi validasi pada model deteksi kelayakan pinjaman online Anda stagnan sejak epoch kelima, sementara loss validasi mulai merangkak naik. Modifikasi apa yang paling tepat diterapkan pada callback Keras Anda?",
+      "options": [
+        "Menambahkan tf.keras.callbacks.EarlyStopping dengan memantau val_loss dan patience tertentu",
+        "Menggunakan tf.keras.callbacks.ModelCheckpoint untuk menyimpan bobot setiap awal epoch",
+        "Menurunkan nilai parameter momentum pada optimizer SGD secara manual setiap iterasi",
+        "Memperbesar ukuran data latih dengan teknik SMOTE pada dataframe sebelum training"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan sistem customer service otomatis menggunakan TensorFlow, Anda perlu memasukkan teks mentah berukuran variabel ke dalam model embedding. Bagaimana cara menyiapkan pipeline input agar efisien dan mendukung batching?",
+      "options": [
+        "Menggunakan layer tf.keras.layers.TextVectorization diikuti padding dengan tf.data.Dataset",
+        "Mengubah setiap kalimat menjadi matriks berukuran tetap menggunakan library pandas eksternal",
+        "Melakukan iterasi manual pada list string Python di dalam loop pelatihan model Keras",
+        "Mengonversi seluruh korpus teks menjadi file gambar satu dimensi sebelum dibaca model"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun custom training loop di TensorFlow menggunakan tf.GradientTape untuk model prediksi risiko kredit. Setelah menghitung gradien, Anda mendapati nilai gradien mengalami ledakan (exploding gradients) yang membuat loss menjadi NaN. Solusi apa yang paling tepat?",
+      "options": [
+        "Menerapkan pemotongan gradien atau gradient clipping sebelum memperbarui bobot optimizer",
+        "Menaikkan ukuran batch size secara drastis untuk meredam fluktuasi nilai gradien",
+        "Menghapus regularisasi L2 pada seluruh layer dense agar bobot bisa bergerak bebas",
+        "Mengganti inisialisasi bobot dari GlorotUniform menjadi RandomNormal berstandar besar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah model Computer Vision untuk inspeksi kualitas kelapa sawit membutuhkan input gambar berukuran 512x512 piksel. Namun, ketika data dimuat menggunakan tf.data.Dataset, konsumsi RAM melonjak drastis hingga sistem kehabisan memori. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Membangun pipeline dengan membaca jalur file secara malas dan melakukan decoding gambar per batch",
+        "Memuat seluruh array numpy citra ke dalam memori utama sebelum diubah menjadi objek tensor",
+        "Mengonversi seluruh format file gambar dari PNG menjadi format RAW yang tidak terkompresi",
+        "Menonaktifkan mekanisme prefetching dan caching pada konfigurasi objek tf.data.Dataset"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengevaluasi performa model klasifikasi multi-kelas untuk kategori produk e-commerce menggunakan metrik F1-Score makro di setiap akhir epoch training. Pendekatan mana yang paling tepat di TensorFlow?",
+      "options": [
+        "Membuat custom metric class yang menurunkan tf.keras.metrics.Metric dan menghitung F1 secara manual",
+        "Menggunakan argumen string bawaan 'f1_score' langsung di dalam method model.compile",
+        "Menghitung skor F1 menggunakan pustaka scikit-learn di dalam loop pelatihan epoch standar",
+        "Memanfaatkan tf.keras.metrics.CategoricalAccuracy dan mengubah ambang batas probabilitasnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model regresi deret waktu untuk memprediksi pasokan listrik PLN harian menunjukkan performa yang buruk pada data uji karena pergeseran tren musiman yang cepat. Strategi arsitektural apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Mengintegrasikan lapisan LSTM atau GRU dengan mekanisme Attention untuk menangkap pola jangka panjang",
+        "Menghapus seluruh fitur tanggal dan waktu, lalu hanya melatih model menggunakan data numerik murni",
+        "Mengubah arsitektur model menjadi fully-connected network sederhana dengan satu layer tersembunyi",
+        "Menurunkan frekuensi pengambilan sampel data dari harian menjadi tahunan untuk mengurangi noise"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan deployment model TensorFlow Serving ke lingkungan cloud Kubernetes, Anda mendapati bahwa signature def default dari model tidak mengenali nama tensor masukan yang dikirim oleh klien frontend. Apa penyebab utamanya?",
+      "options": [
+        "Model disimpan tanpa mendefinisikan nama argumen input yang jelas pada fungsi yang diberi dekorator tf.function",
+        "Klien frontend menggunakan protokol gRPC alih-alih protokol REST API standar untuk inferensi",
+        "Versi TensorFlow Serving di server lebih tua tiga minor version dibanding versi saat training",
+        "File konfigurasi model.config pada server tidak menyertakan parameter batch size otomatis"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

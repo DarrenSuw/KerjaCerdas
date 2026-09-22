@@ -1,0 +1,306 @@
+{
+  "skill": "Account Management",
+  "skill_key": "account management",
+  "questions": [
+    {
+      "question": "Dalam proyek implementasi sistem baru untuk klien enterprise, terjadi miskomunikasi antara tim internal Anda dan tim operasional klien yang menyebabkan tenggat waktu molor dua minggu. Bagaimana Anda mengelola ekspektasi klien?",
+      "options": [
+        "Menyalahkan tim internal Anda di depan klien untuk menunjukkan bahwa Anda berpihak pada mereka",
+        "Mengadakan pertemuan darurat untuk menyajikan akar masalah, rencana mitigasi, dan jadwal revisi yang realistis",
+        "Menyembunyikan keterlambatan tersebut sambil berharap tim teknis dapat mengejar ketertinggalan di akhir pekan",
+        "Meminta klien untuk menambah sumber daya manusia dari sisi mereka agar proyek bisa selesai tepat waktu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang klien utama Anda di industri FMCG tiba-tiba mengirim email mengeluhkan penurunan performa kampanye digital sebesar 30% dalam seminggu terakhir dan mengancam akan memutus kontrak. Langkah awal apa yang paling tepat Anda ambil?",
+      "options": [
+        "Segera menjadwalkan panggilan darurat dengan tim teknis internal untuk audit data sebelum merespons klien",
+        "Membalas email klien dengan menyalahkan algoritma platform media sosial yang sedang mengalami pemeliharaan",
+        "Mengirimkan proposal perpanjangan kontrak dengan diskon khusus untuk meredakan kekecewaan mereka",
+        "Meminta klien untuk mengirimkan ulang laporan metrik mingguan mereka guna diverifikasi ulang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola akun perusahaan SaaS B2B menengah. Saat melakukan pertemuan triwulanan (QBR), Anda melihat potensi besar untuk menawarkan modul enterprise baru, namun anggaran tahunan mereka sudah terkunci habis. Apa strategi terbaik Anda?",
+      "options": [
+        "Mendesak manajer keuangan mereka agar mengalokasikan dana darurat untuk modul baru tersebut",
+        "Menunda pembahasan modul baru hingga siklus penganggaran tahun depan dimulai kembali",
+        "Menawarkan uji coba gratis modul tersebut agar mereka dapat memasukkannya ke anggaran perubahan",
+        "Menurunkan harga modul saat ini agar sisa anggaran mereka cukup untuk membeli fitur baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien lama Anda menunjuk seorang manajer pemasaran baru yang tampaknya lebih menyukai kompetitor Anda dan jarang merespons email tindak lanjut Anda. Bagaimana cara Anda mempertahankan hubungan akun ini?",
+      "options": [
+        "Melaporkan sikap manajer baru tersebut langsung kepada direktur utama mereka yang dulu merekrut Anda",
+        "Mengajak manajer baru tersebut makan siang santai tanpa agenda jualan untuk mengenali prioritas bisnisnya",
+        "Mengurangi frekuensi komunikasi agar tidak dianggap mengganggu pekerjaan manajer baru tersebut",
+        "Mengirimkan surat peringatan terkait komitmen kerja sama yang tertera dalam dokumen perjanjian awal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir kuartal, Anda menyadari bahwa salah satu klien strategis belum menggunakan 60% kuota layanan konsultasi yang sudah mereka bayar di muka. Apa tindakan preventif yang harus Anda lakukan?",
+      "options": [
+        "Membiarkannya saja karena sisa kuota tersebut akan langsung hangus sesuai klausul kontrak perusahaan",
+        "Membuatkan laporan penggunaan fiktif agar metrik kepuasan internal terlihat tetap tinggi",
+        "Menghubungi mereka untuk menawarkan sesi strategi kilat agar mereka merasakan nilai penuh dari investasi",
+        "Memaksa mereka membeli paket tambahan untuk kuota bulan berikutnya sebelum kuota lama habis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur besar yang menjadi klien Anda meminta diskon harga sebesar 25% untuk perpanjangan kontrak tahun depan dengan alasan efisiensi anggaran perusahaan. Margin profit saat ini sudah berada di batas minimum. Respons apa yang paling tepat?",
+      "options": [
+        "Menolak permintaan diskon secara tegas dengan alasan kebijakan perusahaan tidak bisa ditawar",
+        "Menawarkan pengurangan cakupan layanan atau fitur agar sesuai dengan nominal anggaran baru mereka",
+        "Menyetujui diskon tersebut demi mengamankan angka retensi akun di laporan kinerja kuartal ini",
+        "Mengalihkan penanganan akun tersebut ke tim junior agar biaya operasional pelayanan menurun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien Anda menyampaikan komplain serius mengenai lambatnya waktu tanggapan tim dukungan pelanggan (support) dalam tiga tiket terakhir. Anda adalah Account Manager penanggung jawab utama. Bagaimana sikap Anda?",
+      "options": [
+        "Menjelaskan bahwa tim support memiliki SOP penanganan antrean yang tidak bisa diganggu gugat",
+        "Mengambil alih koordinasi penyelesaian masalah tersebut secara langsung dan meminta maaf atas ketidaknyamanan",
+        "Mengarahkan klien untuk langsung menghubungi kepala divisi operasional support perusahaan Anda",
+        "Memberikan kompensasi berupa penambahan durasi kontrak tanpa membahas akar permasalahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang memimpin rapat tinjauan tahunan dengan pemegang saham klien korporat. Salah satu petinggi mereka mempertanyakan ROI dari kerja sama dengan perusahaan Anda. Data apa yang paling efektif untuk Anda presentasikan?",
+      "options": [
+        "Daftar penghargaan industri yang berhasil dimenangkan oleh perusahaan Anda tahun ini",
+        "Jumlah total jam kerja yang telah dihabiskan oleh tim Anda untuk mengerjakan proyek mereka",
+        "Metrik kuantitatif peningkatan pendapatan dan efisiensi biaya yang dihasilkan berkat layanan Anda",
+        "Testimoni positif dari klien lain yang berada di sektor industri yang sama persis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien potensial dalam tahap negosiasi akhir meminta penambahan klausul penalti finansial yang sangat memberatkan pihak Anda jika terjadi keterlambatan kecil dalam pengiriman proyek. Apa langkah negosiasi terbaik Anda?",
+      "options": [
+        "Menerima seluruh klausul tersebut demi menutup kesepakatan penjualan sebelum akhir bulan",
+        "Menolak mentah-mentah permintaan tersebut karena dianggap tidak masuk akal dan merugikan",
+        "Mengajukan batasan tangung jawab (cap of liability) atau indikator performa yang lebih objektif",
+        "Mengabaikan klausul tersebut dalam draf akhir kontrak agar tidak perlu diperdebatkan lagi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendeteksi adanya sinyal churn (potensi berhenti berlangganan) dari data penggunaan aplikasi klien yang menurun drastis selama 30 hari berturut-turut, padahal belum ada keluhan yang masuk. Apa tindakan proaktif Anda?",
+      "options": [
+        "Menunggu hingga masa kontrak mereka habis untuk menawarkan paket pembaruan yang lebih murah",
+        "Mengirimkan survei kepuasan pelanggan otomatis melalui email tanpa personalisasi",
+        "Menghubungi PIC utama untuk menawarkan sesi peninjauan ulang pemanfaatan fitur guna mendiskusikan kendala tersembunyi",
+        "Menaikkan tier layanan mereka secara sepihak untuk meningkatkan keterikatan penggunaan sistem"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien penting meminta tambahan fitur kustom di luar cakupan kontrak awal tanpa biaya tambahan, dengan alasan sudah membayar mahal untuk layanan Anda. Bagaimana cara Anda menangani permintaan ini?",
+      "options": [
+        "Menyetujui permintaan tersebut demi menjaga hubungan baik dan menghindari risiko klien pindah ke kompetitor",
+        "Menolak secara tegas dengan merujuk pada dokumen kontrak awal agar batasan kerja tetap terjaga dengan jelas",
+        "Menawarkan penjadwalan ulang proyek saat ini agar tim dapat fokus mengerjakan fitur tambahan tersebut",
+        "Mendiskusikan dampak penambahan fitur terhadap linimasa lalu menawarkan pembuatan add-on berbayar"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat melakukan peninjauan bulanan, Anda menemukan bahwa staf tingkat operasional di perusahaan klien sering mengabaikan penggunaan modul pelaporan sistem Anda. Apa langkah preventif utama yang harus Anda ambil?",
+      "options": [
+        "Melaporkan rendahnya adopsi tersebut langsung kepada direktur klien agar mereka menegur bawahannya",
+        "Mengadakan sesi pelatihan ulang khusus dan membuat panduan praktis yang lebih ringkas bagi para pengguna",
+        "Mengambil alih tugas pembuatan laporan tersebut secara berkala untuk meringankan beban kerja operasional",
+        "Mengirimkan surel pengingat otomatis setiap minggu mengenai pentingnya mengisi laporan sistem secara rutin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien utama Anda mengabarkan secara mendadak bahwa anggaran pemasaran mereka untuk kuartal depan dipangkas sebesar 40 karena kondisi makroekonomi. Apa tindakan paling strategis bagi Anda?",
+      "options": [
+        "Menunggu hingga anggaran mereka pulih kembali sebelum menawarkan program pemasaran lanjutan",
+        "Menurunkan ruang lingkup layanan secara proporsional sambil memetakan ulang prioritas kampanye berdampak tinggi",
+        "Meminta klien untuk meminjam dana dari sumber lain demi mempertahankan performa kampanye saat ini",
+        "Menghentikan seluruh layanan kontrak yang sedang berjalan sampai mereka menemukan sumber dana baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima email dari direktur keuangan klien yang mempertanyakan efektivitas biaya dari langganan tahunan software Anda menjelang tenggat waktu perpanjangan kontrak. Bagaimana respons terbaik Anda?",
+      "options": [
+        "Mengirimkan brosur daftar fitur lengkap beserta daftar harga terbaru untuk meyakinkan mereka",
+        "Menyusun laporan khusus ROI yang menyoroti metrik penghematan dan pencapaian selama setahun terakhir",
+        "Memberikan potongan harga khusus langsung di balasan email untuk segera mengamankan tanda tangan",
+        "Mengabaikan email tersebut dan langsung menjadwalkan panggilan telepon tanpa persiapan data pendukung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah rapat koordinasi rutin, dua divisi internal di perusahaan klien saling berbeda pendapat mengenai prioritas fitur yang harus dikembangkan oleh tim Anda. Apa peran yang sebaiknya Anda ambil?",
+      "options": [
+        "Membiarkan kedua divisi tersebut menyelesaikan perdebatan internal mereka tanpa intervensi dari pihak Anda",
+        "Mengikuti semua permintaan dari divisi yang memegang anggaran terbesar agar proyek tetap berjalan lancar",
+        "Memfasilitasi diskusi berbasis metrik bisnis untuk membantu mereka menyelaraskan tujuan dan prioritas bersama",
+        "Memilih salah satu fitur secara acak agar proses pengembangan sistem dapat segera dilanjutkan oleh tim"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang juara internal (champion) di perusahaan klien yang selama ini menjadi pendukung utama produk Anda tiba-tiba mengundurkan diri. Apa langkah taktis pertama yang harus Anda lakukan?",
+      "options": [
+        "Segera meminta penggantinya untuk menandatangani perpanjangan kontrak jangka panjang minggu depan",
+        "Menghentikan sementara seluruh komunikasi dengan perusahaan tersebut sampai ada penunjukan struktur baru",
+        "Melakukan pemetaan pemangku kepentingan baru dan mengatur pertemuan transisi dengan manajer barunya",
+        "Mengirimkan surat pengunduran diri dari pengelolaan akun karena hilangnya kontak kunci utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien Anda mengeluhkan bahwa pelaporan analitik bulanan yang Anda kirimkan terlalu rumit dan tidak bisa langsung dipahami oleh jajaran direksi mereka. Bagaimana cara Anda merespons umpan balik ini?",
+      "options": [
+        "Menjelaskan bahwa format laporan tersebut sudah sesuai dengan standar industri dan prosedur baku perusahaan Anda",
+        "Mengurangi frekuensi pengiriman laporan menjadi per triwulan agar tim klien memiliki waktu lebih untuk membaca",
+        "Menyederhanakan format laporan dengan menonjolkan ringkasan eksekutif serta metrik utama yang berdampak bisnis",
+        "Menyarankan agar staf klien mengikuti kursus singkat mengenai cara membaca analitik data tingkat lanjut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati pesaing baru menawarkan harga 30 lebih murah untuk layanan sejenis kepada klien strategis Anda yang sedang memasuki masa perpanjangan kontrak. Strategi apa yang paling tepat?",
+      "options": [
+        "Ikut menurunkan harga secara drastis untuk menandingi penawaran kompetitor tanpa syarat apapun",
+        "Menyoroti nilai tambah, kualitas layanan purna jual, dan rekam jejak keberhasilan yang belum tentu dimiliki kompetitor",
+        "Mengancam akan memutuskan akses layanan secara sepihak jika mereka mencoba bernegosiasi dengan kompetitor",
+        "Mengabaikan penawaran kompetitor dan fokus pada pengiriman pesan rutin seperti biasa kepada klien"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Salah satu pengguna kunci di perusahaan klien melakukan kesalahan konfigurasi fatal yang mengakibatkan rusaknya data penting pada sistem Anda. Apa langkah penanganan akun yang paling profesional?",
+      "options": [
+        "Menyalahkan kelalaian pengguna tersebut melalui balasan tiket dukungan resmi demi melindungi reputasi tim internal",
+        "Membantu proses pemulihan data dari cadangan sistem, lalu mengadakan sesi tinjauan proses pencegahan kesalahan",
+        "Mengajukan penagihan biaya tambahan untuk layanan pemulihan data darurat di luar paket langganan rutin",
+        "Menutup akses akun pengguna tersebut secara permanen untuk menghindari risiko kesalahan operasional terulang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien korporat Anda meminta penundaan pembayaran faktur (invoice) jatuh tempo selama 60 hari karena adanya restrukturisasi internal kas mereka. Kebijakan internal perusahaan Anda adalah batas toleransi maksimal 14 hari. Langkah Anda?",
+      "options": [
+        "Menolak permintaan tersebut secara mutlak dan langsung menghentikan seluruh layanan sistem pada hari ke-15",
+        "Menyetujui perpanjangan penuh selama 60 hari demi mempertahankan hubungan baik jangka panjang dengan klien",
+        "Berdiskusi dengan manajemen internal untuk mencari solusi kompromi, seperti pembayaran bertahap dengan syarat tertentu",
+        "Mengabaikan jatuh tempo faktur tersebut dan menunggu hingga klien sendiri yang berinisiatif membayar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pembuat keputusan utama (decision maker) di perusahaan klien meminta diskon tambahan sebesar 15% di luar ketentuan kontrak saat penandatanganan perpanjangan kontrak tahunan. Apa langkah pertama yang paling tepat Anda ambil?",
+      "options": [
+        "Menyetujui permintaan tersebut agar kontrak segera tertutup demi mencapai target penjualan akhir bulan",
+        "Menolak secara tegas dengan mengacu pada kebijakan perusahaan mengenai batas maksimal diskon korporat",
+        "Menggali alasan di balik permintaan tersebut untuk memahami kebutuhan bisnis dan mencari alternatif nilai tambah",
+        "Mengesampingkan permintaan itu dan langsung mengirimkan dokumen perpanjangan kontrak versi awal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa tingkat kepuasan (CSAT) dari salah satu klien penting mengalami tren penurunan selama dua bulan berturut-turut tanpa adanya komplain spesifik yang masuk. Tindakan preventif apa yang harus segera Anda lakukan?",
+      "options": [
+        "Mengirimkan survei kepuasan pelanggan lanjutan untuk meminta detail permasalahan yang mereka hadapi",
+        "Menjadwalkan pertemuan tatap muka secara langsung untuk melakukan peninjauan layanan secara mendalam",
+        "Memberikan potongan harga khusus pada tagihan bulan berikutnya sebagai bentuk permohonan maaf dini",
+        "Menghubungi tim teknis internal untuk memeriksa ulang seluruh performa sistem yang digunakan klien"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menjalankan proyek migrasi data untuk klien enterprise, tim internal Anda mengalami keterlambatan selama tiga hari dari jadwal yang telah disepakati bersama klien. Bagaimana cara Anda mengomunikasikan hal ini kepada klien?",
+      "options": [
+        "Menunggu hingga seluruh proses migrasi benar-benar selesai baru melaporkannya bersama hasil akhir",
+        "Mengirimkan pesan singkat kepada kontak operasional klien untuk memberitahu adanya sedikit hambatan",
+        "Mengatur panggilan darurat dengan pemangku kepentingan utama untuk menjelaskan penyebab dan jadwal revisi",
+        "Menyalahkan vendor pihak ketiga yang menjadi mitra teknis dalam pengerjaan migrasi data tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Klien Anda mengajukan permintaan fitur baru yang kompleks dan membutuhkan waktu pengembangan dua bulan, namun mereka menegaskan bahwa fitur tersebut harus ada minggu depan. Apa respons terbaik Anda sebagai Account Manager?",
+      "options": [
+        "Menyanggupi permintaan tersebut demi menjaga hubungan baik dan menyerahkan tekanannya kepada tim produk",
+        "Menjelaskan kapasitas tim pengembang saat ini dan menawarkan solusi bertahap atau fitur alternatif sementara",
+        "Mengabaikan tenggat waktu yang diminta klien dan melanjutkan proses pengembangan sesuai jadwal normal",
+        "Meminta klien untuk merekrut developer tambahan agar tenggat waktu yang mereka inginkan dapat tercapai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pertemuan evaluasi triwulanan, direktur pemasaran klien memuji hasil kerja Anda namun secara tersirat menyiratkan ketidakpuasan terhadap kinerja anggota tim pelaksana Anda yang lain. Sikap profesional apa yang harus Anda tunjukkan?",
+      "options": [
+        "Membela anggota tim secara berlebihan dan menyatakan bahwa standar klien terlalu tinggi",
+        "Mencatat seluruh masukan tersebut dengan objektif dan berjanji untuk melakukan koordinasi internal",
+        "Meminta klien untuk langsung menegur anggota tim yang bersangkutan pada pertemuan berikutnya",
+        "Mengubah topik pembicaraan ke aspek lain yang kinerjanya dinilai sudah sangat baik oleh klien"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima informasi dari jaringan industri bahwa salah satu klien utama Anda sedang dalam proses akuisisi oleh perusahaan lain yang sudah memiliki kontrak eksklusif dengan kompetitor Anda. Langkah strategis apa yang paling mendesak?",
+      "options": [
+        "Segera menghentikan seluruh layanan yang sedang berjalan karena kontrak kemungkinan besar akan diputus",
+        "Membuat proposal penawaran harga banting untuk meyakinkan pemilik baru agar tetap menggunakan produk Anda",
+        "Mengidentifikasi posisi dan pengaruh sponsor internal Anda di struktur perusahaan yang baru untuk memperkuat posisi",
+        "Menunggu hingga proses akuisisi selesai secara resmi sebelum mengambil tindakan komunikasi apa pun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pengguna akhir (end-user) di perusahaan klien sering menelepon Anda langsung untuk urusan bantuan teknis remeh di luar jam kerja, padahal sudah ada SOP tiket bantuan resmi. Bagaimana cara Anda menyelesaikannya?",
+      "options": [
+        "Selalu melayani panggilannya kapan pun agar ia merasa diprioritaskan dan senang bekerja sama dengan Anda",
+        "Memblokir nomor telepon pribadi tersebut di luar jam operasional kantor demi menjaga keseimbangan hidup",
+        "Mengingatkan kembali jalur eskalasi resmi secara santun dan melibatkan atasan langsungnya jika diperlukan",
+        "Melaporkan perilaku pengguna tersebut kepada bagian HR perusahaan klien agar segera diberikan sanksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kontrak kerja sama dengan klien strategis akan berakhir dalam waktu 60 hari. Namun, kontak utama Anda di perusahaan klien sedang cuti panjang selama sebulan ke depan. Apa tindakan proaktif yang sebaiknya Anda ambil?",
+      "options": [
+        "Menunggu kontak utama tersebut kembali bekerja untuk memulai proses negosiasi perpanjangan kontrak",
+        "Menghubungi wakil direktur atau atasan dari kontak utama tersebut untuk membahas pembaruan kontrak lebih awal",
+        "Mengirimkan draf perpanjangan kontrak ke alamat email pribadi kontak utama yang sedang cuti",
+        "Menganggap kontrak otomatis diperpanjang sesuai klausul pembaharuan otomatis di dokumen awal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien Anda mengklaim bahwa ROI (Return on Investment) dari penggunaan platform Anda tidak sesuai dengan ekspektasi awal setelah berjalan selama enam bulan. Apa langkah analitis pertama yang harus Anda lakukan?",
+      "options": [
+        "Mengirimkan laporan ringkas mengenai total jam operasional sistem yang telah diakses oleh tim mereka",
+        "Melakukan audit penggunaan fitur dan metrik keberhasilan yang telah dicapai dibandingkan target awal",
+        "Menawarkan penambahan modul pelatihan gratis untuk meningkatkan keterampilan teknis staf mereka",
+        "Meminta maaf atas ketidaknyamanan tersebut dan menawarkan kompensasi berupa perpanjangan masa aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan peninjauan tagihan bulanan, Anda menyadari bahwa bagian keuangan klien telah membayar kelebihan jumlah nominal pada faktur terakhir. Langkah jujur dan profesional apa yang harus Anda ambil?",
+      "options": [
+        "Mengabaikannya sebagai keuntungan tambahan karena jarang sekali klien melakukan kesalahan pembayaran",
+        "Menghubungi bagian keuangan klien untuk memberitahu kelebihan tersebut dan menawarkan opsi pengembalian atau saldo",
+        "Menunggu hingga pihak keuangan klien menyadari sendiri kesalahan tersebut pada audit akhir tahun",
+        "Langsung memotong kelebihan pembayaran tersebut untuk menutupi biaya layanan tambahan di masa depan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

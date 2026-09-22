@@ -1,0 +1,306 @@
+{
+  "skill": "Next.js",
+  "skill_key": "nextjs",
+  "questions": [
+    {
+      "question": "Tim frontend Anda sedang mengembangkan portal berita e-commerce yang harus sangat cepat diakses oleh pengguna di seluruh Indonesia. Halaman produk harus dirender di server untuk SEO yang optimal, namun data harga dan stok berubah setiap detik. Strategi rendering apa yang paling tepat digunakan pada App Router?",
+      "options": [
+        "Menggunakan Static Site Generation dengan cron job build ulang setiap menit",
+        "Menggunakan Server-Side Rendering murni tanpa caching pada setiap request",
+        "Menggunakan Incremental Static Regeneration dengan revalidation berkala",
+        "Menggunakan Client-Side Rendering penuh untuk seluruh halaman produk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa waktu muat awal aplikasi Next.js perusahaan melambat karena ukuran bundle JavaScript yang besar akibat komponen pihak ketiga. Langkah paling efektif apa yang harus Anda lakukan pada komponen tersebut?",
+      "options": [
+        "Memindahkan seluruh logika komponen berat tersebut ke dalam file layout utama",
+        "Melakukan lazy loading komponen menggunakan fungsi dynamic import bawaan",
+        "Mengubah ekstensi file komponen dari ekstensi .tsx menjadi ekstensi .js biasa",
+        "Menonaktifkan fitur minifikasi kode pada berkas konfigurasi next.config.js"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi dashboard internal mengalami masalah memori bocor karena komponen klien terus menerus berlangganan ke layanan WebSocket tanpa membersihkan koneksi saat komponen ditutup. Di mana Anda harus menaruh logika pembersihan tersebut?",
+      "options": [
+        "Di dalam blok fungsi pengembalian dari hook useEffect komponen",
+        "Di dalam fungsi getServerSideProps pada tingkat halaman server",
+        "Di dalam berkas konfigurasi middleware global aplikasi Next.js",
+        "Di dalam fungsi penanganan kejadian klik tombol aksi pengguna"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta mengamankan halaman admin pada aplikasi Next.js agar hanya bisa diakses oleh pengguna yang memiliki token autentikasi valid di cookies. Pendekatan mana yang paling efisien untuk melakukan validasi sebelum halaman dirender?",
+      "options": [
+        "Melakukan pengecekan token di dalam hook useEffect pada setiap komponen klien",
+        "Memeriksa keberadaan dan keabsahan token langsung di dalam fungsi middleware",
+        "Membuat tabel basis data khusus untuk menyimpan status login setiap detik",
+        "Menggunakan pustaka manajemen state global Redux untuk menyimpan token"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi e-commerce Anda sering mengalami lonjakan traffic saat flash sale. Halaman keranjang belanja sering gagal memperbarui total harga karena masalah caching agresif pada fungsi fetch. Bagaimana cara mengatasi masalah cache ini?",
+      "options": [
+        "Menambahkan opsi cache: 'no-store' pada parameter fungsi fetch data tersebut",
+        "Menghapus seluruh direktori .next secara manual dari server produksi",
+        "Mengubah metode pengiriman data formulir dari POST menjadi metode GET",
+        "Menaikkan batas waktu timeout jaringan pada berkas konfigurasi server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati struktur folder App Router di proyek Anda sangat dalam dan membingungkan ketika melakukan impor modul antar komponen yang saling berjauhan. Solusi konfigurasi apa yang paling tepat untuk merapikannya?",
+      "options": [
+        "Menggunakan jalur relatif dengan banyak tanda titik dua dan garis miring",
+        "Memindahkan semua komponen kode sumber ke dalam satu direktori tunggal",
+        "Mengatur alias jalur modul pada berkas konfigurasi TypeScript atau Babel",
+        "Membuat berkas indeks perantara di setiap folder direktori komponen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah situs berita ingin memperbarui konten artikel secara instan setelah editor menekan tombol publikasi di CMS, tanpa harus menunggu jadwal revalidation ISR berikutnya. Fitur apa yang harus Anda implementasikan?",
+      "options": [
+        "Menjalankan perintah build ulang seluruh aplikasi lewat terminal server",
+        "Menggunakan endpoint API On-Demand Revalidation dengan fungsi revalidatePath",
+        "Mengubah seluruh komponen halaman artikel menjadi berbasis klien murni",
+        "Menghapus instansiasi basis data lalu menghubungkannya kembali secara paksa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Next.js Anda menampilkan pesan kesalahan hidrasi (hydration error) pada konsol browser karena perbedaan markup antara server dan klien. Apa penyebab paling umum dari masalah ini dalam pengembangan sehari-hari?",
+      "options": [
+        "Menggunakan fungsi pembacaan waktu lokal perangkat di dalam komponen server",
+        "Menyimpan data sesi pengguna di dalam cookies alih-alih di penyimpanan lokal",
+        "Menuliskan tag HTML yang tidak valid seperti elemen paragraf di dalam tombol",
+        "Menggunakan versi pustaka Node.js yang berbeda antara lokal dan produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengoptimalkan gambar banner berukuran besar di halaman utama agar metrik Core Web Vitals terutama LCP (Largest Contentful Paint) mendapat skor hijau. Komponen apa yang wajib Anda gunakan?",
+      "options": [
+        "Menggunakan tag standar HTML image dengan atribut loading lazy",
+        "Menggunakan komponen Image bawaan dari kerangka kerja Next.js",
+        "Menggunakan pustaka eksternal pihak ketiga untuk kompresi gambar",
+        "Mengubah format gambar mentah menjadi format bitmap tidak terkompresi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim backend menyediakan API endpoint baru yang memerlukan pengiriman kredensial sensitif seperti API key rahasia. Di mana tempat paling aman untuk memanggil API eksternal tersebut pada arsitektur Next.js?",
+      "options": [
+        "Dipanggil langsung dari dalam kode komponen klien yang berjalan di browser",
+        "Disimpan pada variabel lingkungan dengan awalan khusus yang terekspos klien",
+        "Dipanggil melalui Server Actions atau Route Handlers yang berjalan di server",
+        "Disematkan secara langsung di dalam string kode sumber repositori publik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim Anda membangun aplikasi katalog produk lokal dengan App Router. Halaman daftar produk perlu diperbarui otomatis setiap kali ada perubahan stok di database, tetapi harus tetap melayani jutaan pengguna dengan latensi minimal. Strategi caching dan rendering apa yang paling tepat?",
+      "options": [
+        "Menggunakan dynamic rendering penuh tanpa cache agar data selalu real-time setiap kali dikunjungi",
+        "Memanfaatkan Incremental Static Regeneration dengan fungsi revalidate pada fetch request data produk",
+        "Menerapkan client-side fetching dengan useEffect untuk mengambil seluruh data produk setelah halaman dimuat",
+        "Mengubah seluruh komponen halaman menjadi Server Side Rendering tradisional pada setiap permintaan masuk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menangani migrasi halaman profil pengguna di aplikasi Next.js. Halaman ini berisi data sensitif yang berbeda untuk setiap individu dan harus dirender di server demi alasan keamanan serta performa awal. Pendekatan rendering mana yang harus dipilih?",
+      "options": [
+        "Membuat halaman menjadi static export agar dapat disajikan langsung dari CDN terdekat",
+        "Mengonfigurasi halaman menggunakan dynamic rendering dengan membaca cookie atau header otentikasi",
+        "Menggunakan fungsi generateStaticParams untuk membuat halaman profil untuk setiap pengguna terdaftar",
+        "Merender halaman secara statis lalu melakukan client-side hydration untuk mengisi data profil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek e-commerce, Anda diminta menambahkan halaman checkout yang memerlukan penanganan form dinamis dan interaksi tombol pembayaran yang kompleks. Bagian mana dari halaman tersebut yang harus ditandai dengan direktif 'use client'?",
+      "options": [
+        "Seluruh file layout utama agar semua halaman turunan otomatis menjadi komponen interaktif",
+        "Hanya fungsi helper utilitas untuk menghitung total harga belanjaan di direktori lib",
+        "Komponen pembungkus form interaktif dan tombol aksi yang menggunakan state serta event listener",
+        "Fungsi server action yang bertugas menyimpan data transaksi ke database pusat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Next.js mengalami kegagalan proses build di Vercel karena komponen server mencoba mengakses objek window milik browser saat proses prerendering. Bagaimana cara paling tepat menyelesaikan masalah ini?",
+      "options": [
+        "Membungkus seluruh kode aplikasi di dalam blok try-catch untuk mengabaikan kesalahan saat build",
+        "Memindahkan logika yang mengakses objek window ke dalam hook useEffect atau komponen klien",
+        "Menonaktifkan proses static optimization secara global pada berkas konfigurasi next.config.js",
+        "Mengganti semua komponen server di dalam direktori app menjadi komponen klien tanpa terkecuali"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi portal perusahaan Anda sering mendulang error ketika pengguna memasukkan URL yang tidak valid. Anda ingin menyajikan tampilan halaman 404 yang konsisten dan sesuai dengan desain sistem perusahaan menggunakan App Router. File apa yang harus dibuat?",
+      "options": [
+        "Membuat berkas not-found.tsx pada level root direktori app untuk menangkap rute yang hilang",
+        "Mengonfigurasi fungsi khusus redirect pada file middleware.ts untuk setiap URL yang tidak terdaftar",
+        "Menambahkan penanganan rute manual menggunakan berkas catch-all [...slug]/page.tsx",
+        "Memodifikasi berkas error.tsx agar otomatis merespons ketika terjadi kesalahan halaman tidak ditemukan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengimplementasikan fitur pencarian produk instan di mana parameter kata kunci harus tercermin pada URL query string agar pengguna dapat membagikan tautan tersebut. Hook Next.js mana yang paling tepat digunakan untuk membaca parameter ini?",
+      "options": [
+        "Menggunakan hook useRouter untuk mendapatkan instance router dan membaca properti pathname",
+        "Memanfaatkan hook useSearchParams yang disediakan oleh pustaka next/navigation",
+        "Mengambil nilai query melalui parameter bawaan params di dalam komponen Server Page",
+        "Memanggil fungsi window.location.search secara langsung di dalam komponen klien interaktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya jeda navigasi yang cukup terasa saat pengguna berpindah antar halaman dashboard. Anda ingin meningkatkan pengalaman pengguna dengan memastikan halaman tujuan sudah dimuat terlebih dahulu di latar belakang saat tautan terlihat di layar. Komponen apa yang sebaiknya digunakan?",
+      "options": [
+        "Menggunakan tag HTML standar <a> untuk memastikan pemuatan ulang halaman berjalan sempurna",
+        "Memanfaatkan komponen <Link> bawaan dari next/link yang melakukanprefetch otomatis",
+        "Menambahkan pustaka router pihak ketiga untuk menggantikan sistem navigasi bawaan Next.js",
+        "Menerapkan event listener scroll manual untuk memicu pengambilan data halaman secara asinkron"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan performa SEO untuk halaman detail artikel blog. Selain menyertakan judul dan deskripsi meta, Anda perlu menambahkan struktur data JSON-LD. Di mana tempat paling tepat menempatkan metadata statis dan dinamis ini pada App Router?",
+      "options": [
+        "Menuliskannya di dalam berkas global layout.tsx menggunakan tag script mentah HTML",
+        "Mengekspor objek metadata statis atau fungsi generateMetadata pada file page.tsx halaman tersebut",
+        "Menambahkan tag meta secara langsung di dalam komponen klien menggunakan useEffect browser",
+        "Menyimpan seluruh konfigurasi metadata di dalam file konfigurasi next.config.js utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat sistem multi-bahasa (internasionalisasi) untuk situs web korporat dengan rute URL seperti /id/tentang dan /en/about. Pendekatan arsitektur routing apa yang paling disarankan dalam struktur App Router Next.js?",
+      "options": [
+        "Membuat folder dinamis [lang] di root direktori app untuk membungkus seluruh halaman aplikasi",
+        "Menggunakan direktori terpisah sepenuhnya untuk setiap bahasa tanpa berbagi komponen yang sama",
+        "Menyimpan seluruh teks terjemahan dalam state global klien dan mengubah bahasa tanpa mengubah URL",
+        "Mengandalkan fitur penerjemahan otomatis bawaan browser melalui konfigurasi header HTTP"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur unggah berkas dokumen perusahaan memerlukan proses validasi ukuran dan tipe file sebelum disimpan ke cloud storage. Di mana tempat paling aman dan efisien untuk mengeksekusi logika server-side ini pada Next.js App Router?",
+      "options": [
+        "Menuliskan fungsi validasi langsung di dalam komponen klien sebelum berkas dikirim",
+        "Menggunakan Server Actions yang didefinisikan dengan direktif 'use server' untuk memproses data",
+        "Membuat file middleware.ts untuk membaca stream data biner berkas yang masuk secara langsung",
+        "Menyimpan logika validasi pada fungsi render komponen server utama halaman tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda membangun aplikasi katalog produk dengan Next.js App Router. Anda ingin memastikan halaman detail produk dapat dimuat dengan cepat oleh mesin pencari namun tetap menampilkan harga terbaru yang diambil secara real-time setiap kali pengguna mengaksesnya. Pendekatan rendering apa yang paling tepat?",
+      "options": [
+        "Menggunakan Static Site Generation dengan fungsi generateStaticParams",
+        "Menggunakan Server-Side Rendering dengan opsi cache fetch bernilai no-store",
+        "Menggunakan Client-Side Rendering murni dengan useEffect untuk semua data",
+        "Menggunakan Incremental Static Regeneration dengan waktu revalidasi 1 hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan halaman dashboard keuangan di mana komponen grafik interaktif hanya boleh dirender di sisi browser karena menggunakan pustaka pihak ketiga yang mengakses objek window. Bagaimana cara mencegah error saat proses server rendering?",
+      "options": [
+        "Membungkus impor komponen grafik tersebut dengan fungsi dynamic import bawaan Next.js",
+        "Menambahkan atribut suppressHydrationWarning pada elemen pembungkus grafik di DOM",
+        "Memeriksa kondisi typeof window !== undefined di dalam fungsi render komponen utama",
+        "Memindahkan seluruh kode komponen grafik tersebut ke dalam direktori khusus app/api"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web logistik memerlukan halaman lacak paket yang sering dikunjungi. Agar server tidak kewalahan dan halaman dapat disajikan secara instan dari CDN terdekat, Anda memutuskan untuk menggunakan ISR (Incremental Static Regeneration). Konfigurasi manakah yang tepat pada file halaman?",
+      "options": [
+        "Mendeklarasikan variabel ekspor revalidate dengan angka detik pada level segmen halaman",
+        "Mengatur header Cache-Control secara manual di dalam fungsi middleware aplikasi",
+        "Memanggil metode router.refresh setiap kali komponen halaman selesai dimuat",
+        "Menambahkan parameter force-cache pada setiap fungsi pemanggilan data di fetch"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek sistem manajemen inventaris, Anda membuat rute API di app/api/items/route.ts untuk menangani penambahan data barang. Bagaimana cara membaca data JSON yang dikirimkan oleh klien melalui metode POST pada rute App Router tersebut?",
+      "options": [
+        "Mengambil langsung dari properti req.body yang tersedia pada parameter fungsi pengendali",
+        "Memanggil method await req.json() dari objek Request yang diteruskan ke fungsi pengendali",
+        "Menggunakan fungsi khusus parseBody dari modul internal Next.js server utils",
+        "Membaca aliran data masuk dengan mengimpor modul fs dan stdin secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengimplementasikan penanganan error kustom untuk seluruh rute di bawah direktori utama aplikasi menggunakan App Router. File apa yang harus Anda buat pada tingkat folder yang sesuai?",
+      "options": [
+        "Membuat file global-error.js atau global-error.tsx pada direktori akar folder app",
+        "Membuat file error-boundary.js di dalam folder komponen bersama di luar direktori app",
+        "Menambahkan fungsi tangkapan catch di dalam file layout.js utama tingkat akar",
+        "Mengonfigurasi penangan kesalahan global melalui berkas konfigurasi next.config.js"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyajikan aset gambar statis berupa logo perusahaan dengan ukuran file yang optimal dan mendukung format modern seperti WebP secara otomatis di aplikasi Next.js. Komponen manakah yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan elemen standar HTML img dengan atribut srcset dan loading lazy",
+        "Memanfaatkan komponen Image yang diimpor langsung dari pustaka next/image",
+        "Menggunakan komponen Picture yang disediakan oleh paket pustaka pihak ketiga",
+        "Memanggil fungsi optimasi gambar kustom yang didefinisikan dalam middleware"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat halaman blog dan ingin memanfaatkan fitur Metadata API baru di Next.js App Router untuk mengatur judul halaman secara dinamis berdasarkan parameter slug artikel. Fungsi apa yang harus diekspor dari file page.tsx?",
+      "options": [
+        "Mengekspor fungsi async bernama generateMetadata dengan parameter objek props",
+        "Mengekspor variabel konstanta bertipe objek bernama dynamicPageMetadata",
+        "Mengekspor fungsi khusus bernama setDocumentTitle di dalam blok useEffect",
+        "Mengekspor fungsi fetchSEOData yang mengembalikan string judul dan deskripsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda menggunakan Server Actions di Next.js untuk menangani proses pengiriman formulir pendaftaran akun tanpa perlu menulis endpoint API terpisah. Bagaimana cara menampilkan status proses loading (pending) saat aksi tersebut sedang diekspor?",
+      "options": [
+        "Memanfaatkan hook khusus useFormStatus yang disediakan oleh pustaka react-dom",
+        "Menggunakan state lokal useState biasa yang diatur manual di dalam fungsi onSubmit",
+        "Memeriksa status router.isMutating yang disediakan oleh router hook Next.js",
+        "Memanggil fungsi window.navigator.locks untuk melacak status eksekusi server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menambahkan aturan pengalihan (redirect) permanen untuk beberapa URL lama ke struktur URL baru yang bersih pada aplikasi Next.js Anda. Di mana tempat paling tepat untuk mengonfigurasi aturan tersebut secara global?",
+      "options": [
+        "Menuliskan fungsi redirect di dalam setiap file komponen halaman lama secara manual",
+        "Mengonfigurasi properti async redirects di dalam berkas konfigurasi next.config.js",
+        "Menambahkan logika pengalihan bersyarat di dalam fungsi handler file middleware.ts",
+        "Mengubah konfigurasi perutean server web Nginx yang menjadi proksi di depan aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi multi-tenant, Anda ingin mencegat (intercept) rute saat pengguna mengklik foto produk di halaman galeri untuk menampilkannya dalam bentuk modal, namun tetap mempertahankan tampilan halaman penuh jika tautan tersebut diakses langsung lewat URL. Konfigurasi folder apa yang digunakan?",
+      "options": [
+        "Membuat folder dengan awalan titik seperti (.modal) di dalam struktur direktori app",
+        "Membuat folder dengan konvensi tanda kurung siku ganda seperti [[...modal]]",
+        "Membuat folder dengan konvensi awalan tanda kurung dan titik seperti (..)(..)modal",
+        "Membuat folder dengan konvensi awalan titik dan kurung seperti (.)foto"
+      ],
+      "correct_index": 3
+    }
+  ]
+}

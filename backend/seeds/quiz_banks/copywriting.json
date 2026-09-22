@@ -1,0 +1,306 @@
+{
+  "skill": "Copywriting",
+  "skill_key": "copywriting",
+  "questions": [
+    {
+      "question": "Anda diminta menulis email blast untuk e-commerce fesyen lokal menjelang tanggal kembar (11.11). Target audiens adalah Gen Z yang menyukai gaya santai. Judul (subject line) mana yang paling efektif untuk mendongkrak tingkat buka (open rate)?",
+      "options": [
+        "Pemberitahuan Promo Spesial Harbolnas 11.11 Diskon Besar",
+        "Spesial 11.11: Diskon 50% untuk Semua Kategori Produk",
+        "Dompet tipis tapi mau tetap kece? Intip promo 11.11 ini",
+        "Katalog Resmi Penawaran Belanja Online Bulan November"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi fintech pencatatan keuangan UMKM ingin membuat postingan Instagram Carousel. Slide pertama (hook) mana yang paling tepat untuk menarik perhatian pemilik warung makan?",
+      "options": [
+        "Kenali fitur-fitur canggih aplikasi kami untuk efisiensi bisnis Anda",
+        "Kenapa uang warung dan uang belanja rumah sering tercampur?",
+        "Pentingnya melakukan digitalisasi pembukuan keuangan sejak dini",
+        "Tips mengelola arus kas usaha kuliner secara profesional dan akurat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis deskripsi produk untuk marketplace Shopee menjual botol minum (tumbler) tahan panas. Fokus utama yang harus ditonjolkan pada paragraf pembuka agar langsung memicu konversi adalah...",
+      "options": [
+        "Spesifikasi bahan stainless steel 304 food grade anti karat",
+        "Garansi resmi toko selama satu tahun ganti baru tanpa syarat",
+        "Es di dalam botol tetap utuh seharian meski ditaruh di bawah terik matahari",
+        "Dimensi produk tinggi 25 cm dengan kapasitas total 750 mililiter"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah klinik kecantikan di Jakarta Selatan meluncurkan perawatan jerawat baru. Call to Action (CTA) mana yang paling natural dan persuasif untuk iklan Reels Instagram?",
+      "options": [
+        "Segera klik tautan di profil untuk mengamankan jadwal konsultasi",
+        "Kunjungi situs web kami sekarang juga untuk membaca syarat dan ketentuan",
+        "Tekan tombol beli di bawah ini untuk mendapatkan produk perawatan wajah",
+        "Kirim pesan teks ke nomor layanan pelanggan kami untuk informasi harga"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis ulang (rewrite) halaman 'Tentang Kami' untuk sebuah perusahaan rintisan logistik B2B. Pendekatan copywriting mana yang paling efektif membangun kredibilitas klien korporat?",
+      "options": [
+        "Kami adalah perusahaan startup paling inovatif di bidang rantai pasok",
+        "Misi kami adalah mendunia dan menjadi pemimpin pasar logistik Asia",
+        "Kami memastikan pengiriman kargo Anda sampai tepat waktu tanpa drama",
+        "Didirikan oleh para ahli logistik berpengalaman lebih dari sepuluh tahun"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyusun teks notifikasi push aplikasi mobile untuk layanan pesan-antar makanan saat jam makan siang pukul 12.00. Kombinasi judul dan pesan pendek mana yang memiliki daya dorong tertinggi?",
+      "options": [
+        "Waktunya Makan Siang! / Diskon Rp15.000 menanti pesanan pertama Anda",
+        "Perut Keroncongan? / Sikat diskon 50% menu ayam geprek favoritmu sekarang",
+        "Promo Makanan Hari Ini / Silakan buka aplikasi untuk melihat restoran terdekat",
+        "Pemberitahuan Restoran / Nikmati santap siang lezat bersama rekan kantor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand skincare lokal mendapati tingkat keranjang belanja kosong (cart abandonment) yang tinggi di website mereka. Salinan teks (copy) pop-up exit-intent mana yang paling tepat untuk menahan calon pembeli?",
+      "options": [
+        "Jangan pergi dulu, masukkan email Anda untuk katalog produk terbaru",
+        "Tunggu! Selesaikan pembayaran sekarang dan dapatkan diskon tambahan 10%",
+        "Apakah Anda yakin ingin meninggalkan halaman keranjang belanja ini?",
+        "Penawaran terbatas khusus hari ini bagi pengunjung situs web kami"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah agensi properti memasarkan apartemen kelas menengah di pinggiran Jakarta untuk keluarga muda. Sudut pandang (angle) copywriting mana yang paling emosional dan relevan?",
+      "options": [
+        "Investasi properti paling menguntungkan dengan kenaikan harga fantastis",
+        "Hunian eksklusif bergaya arsitektur modern minimalis di kawasan elit",
+        "Bebas cicilan DP selama dua tahun pertama khusus pembelian bulan ini",
+        "Waktunya si kecil punya kamar sendiri, cicilan mulai dari tiga jutaan"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda merancang landing page untuk layanan SaaS (Software as a Service) HRIS di Indonesia. Sub-headline apa yang paling tepat untuk meredakan keraguan (objection) manajer HR perusahaan menengah?",
+      "options": [
+        "Aplikasi HR terbaik yang pernah dibuat oleh tim pengembang lokal",
+        "Gunakan sistem otomatisasi kami untuk menghemat waktu kerja Anda",
+        "Migrasi data gratis dan pendampingan tim ahli selama masa percobaan",
+        "Tingkatkan produktivitas karyawan perusahaan dengan teknologi awan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah brand kopi susu literan ingin membuat naskah iklan radio (voice over) berdurasi 30 detik untuk jam pulang kantor di Jakarta. Kalimat pembuka apa yang paling relevan dengan situasi pendengar?",
+      "options": [
+        "Hadapi kemacetan sepulang kantor dengan secangkir kopi susu dingin",
+        "Nikmati biji kopi pilihan nusantara yang disangrai oleh barista ahli",
+        "Selamat sore warga Jakarta yang sedang dalam perjalanan menuju rumah",
+        "Dapatkan promo beli dua gratis satu khusus untuk pembelian hari ini"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menyusun salinan teks untuk kampanye penarikan dana (fundraising) bencana alam di media sosial. Sudut pandang emosional mana yang paling etis dan efektif menggerakkan donasi cepat tanpa terkesan manipulatif?",
+      "options": [
+        "Bantu saudara kita di sana sebelum semuanya terlambat dan hancur total.",
+        "Hanya dengan seporsi makan siang, Anda bisa kembalikan senyum anak-anak korban gempa.",
+        "Mereka menderita kelaparan dan butuh uluran tangan Anda saat ini juga.",
+        "Salurkan donasi terbaik Anda lewat yayasan terpercaya kami sekarang."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat deskripsi produk di TikTok Shop untuk produk pembersih sepatu (sneaker cleaner). Format penulisan seperti apa yang paling efektif mempertahankan penonton agar menonton video sampai habis?",
+      "options": [
+        "Satu semprotan ajaib untuk mengembalikan warna asli sepatu putih kesayangan.",
+        "Cara pakai sangat mudah tinggal semprot sikat lalu lap dengan kain bersih.",
+        "Jangan cuci sepatu putih pakai deterjen biasa kalau tidak mau solnya cepat menguning.",
+        "Produk pembersih sepatu terlaris nomor satu dengan ribuan ulasan bintang lima."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform edutech ingin meningkatkan konversi pendaftaran webinar gratis tentang 'Karier di Industri Kreatif' melalui Meta Ads. Kalimat pembuka (hook) di teks iklan mana yang paling efektif memicu rasa ingin tahu audiens Gen Z?",
+      "options": [
+        "Pelajari rahasia sukses bekerja di industri kreatif bersama para ahli.",
+        "Gimana caranya kerja di agensi impian tanpa pengalaman magang?",
+        "Daftar segera webinar gratis kami khusus untuk pemuda Indonesia.",
+        "Industri kreatif sedang berkembang pesat dan butuh banyak talenta."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis *copy* untuk tombol (CTA) pada halaman pembayaran akhir layanan katering sehat harian yang sering ditinggalkan pengguna di tengah jalan. Teks tombol apa yang paling optimal menurunkan keraguan?",
+      "options": [
+        "Mulai Langganan Sekarang",
+        "Kirim Pesanan Makananmu",
+        "Konfirmasi dan Bayar Paket",
+        "Amankan Menu Sehat Minggu Ini"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah merek lokal tas kerja kulit asli ingin membuat salinan teks untuk banner billboard di jalan tol Sudirman, Jakarta. Mana pendekatan *copywriting* yang paling tepat mengingat durasi baca yang sangat singkat?",
+      "options": [
+        "Tas kulit asli buatan perajin lokal terbaik dengan garansi seumur hidup untuk Anda.",
+        "Tingkatkan rasa percaya diri di ruang rapat dengan tas kulit asli buatan lokal.",
+        "Kantor boleh pindah-pindah, gaya profesional tetap terjaga dengan tas kulit ini.",
+        "Investasi karier terbaik dimulai dari tas kulit berkualitas tinggi yang tahan lama."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi investasi saham pemula ingin menulis ulang teks notifikasi mingguan saat pasar modal sedang mengalami tren penurunan (bearish). Pendekatan pesan apa yang paling tepat untuk menjaga retensi pengguna?",
+      "options": [
+        "Pasar sedang merah, saatnya panik jual aset Anda sebelum rugi makin besar.",
+        "Jangan lewatkan kesempatan beli saham unggulan diskon besar minggu ini.",
+        "Pasar fluktuatif itu wajar, saatnya evaluasi portofolio jangka panjang Anda.",
+        "Semua portofolio sedang turun, tetaplah tenang dan buka aplikasi sekarang."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda merancang salinan teks untuk halaman FAQ (Pertanyaan yang Sering Diajukan) pada situs web klinik kesehatan mental daring. Nada suara (*tone of voice*) seperti apa yang paling tepat digunakan?",
+      "options": [
+        "Formal, klinis, dan menggunakan istilah psikologi medis yang akurat.",
+        "Hangat, empatik, menenangkan, dan menggunakan bahasa yang sangat membumi.",
+        "Ceria, penuh semangat, dan memotivasi pengguna untuk selalu berpikir positif.",
+        "Tegas, lugas, dan langsung pada poin operasional tanpa basa-basi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis teks sub-headline untuk peluncuran kartu kredit digital dari bank swasta. Manfaat utama apa yang paling menarik bagi kaum urban milenial di kota besar?",
+      "options": [
+        "Nikmati limit kredit tinggi dengan proses pengajuan yang sangat cepat.",
+        "Kelola semua pengeluaran bulanan dalam satu genggaman aplikasi pintar.",
+        "Kartu kredit digital bebas biaya tahunan selamanya untuk hidup tanpa ribet.",
+        "Diskon belanja di ribuan merchant pilihan tanpa perlu bawa dompet tebal."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah bengkel mobil modern di Surabaya ingin membuat pesan WhatsApp Blast kepada pelanggan lama yang sudah 6 bulan tidak servis rutin. Kalimat sapaan dan penawaran mana yang memiliki tingkat balasan tertinggi?",
+      "options": [
+        "Halo Kak, sudah 6 bulan nih mobilnya belum diservis, yuk booking sekarang.",
+        "Halo Kak, kangen ya sama bengkel kami? Dapatkan diskon servis bulan ini.",
+        "Halo Kak, mobil kesayangan sudah waktunya servis rutin agar tetap prima di jalan.",
+        "Halo Kak, khusus pelanggan setia ada gratis cek kaki-kaki mobil minggu ini."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah merek pakaian dalam pria meluncurkan lini produk baru berbahan bambu anti-bau. Judul utama (*headline*) iklan cetak mana yang paling kuat menyoroti manfaat utama produk bagi pekerja kantoran aktif?",
+      "options": [
+        "Celana dalam pria bahan bambu terbaik di kelasnya untuk aktivitas harian.",
+        "Ucapkan selamat tinggal pada rasa lembap dan bau tidak sedap sepanjang hari.",
+        "Kenyamanan maksimal dari serat bambu alami untuk pria modern masa kini.",
+        "Pakaian dalam antibakteri pertama di Indonesia dengan teknologi pendingin."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis teks ulasan produk (testimonial hook) untuk sebuah produk serum wajah lokal di halaman penjualan. Kutipan ulasan mana yang memiliki daya persuasi paling kuat bagi calon pembeli?",
+      "options": [
+        "Pengirimannya sangat cepat, dipacking pakai bubble wrap tebal, dan kurirnya ramah sekali.",
+        "Teksturnya agak cair tapi mudah meresap di kulit wajah saya yang cenderung berminyak.",
+        "Bekas jerawat hitam di pipi mulai memudar dalam 14 hari pemakaian rutin tanpa bikin purging.",
+        "Harganya sangat terjangkau dibanding produk impor dengan ukuran botol yang lumayan besar."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menulis naskah video pendek TikTok berdurasi 15 detik untuk produk jam tangan kayu lokal. Hook 3 detik pertama mana yang paling efektif memecah pola (pattern interrupt) penonton yang sedang *scrolling*?",
+      "options": [
+        "Kenapa jam tangan dari kayu ini bisa tahan air dan tidak mudah lapuk walau dipakai hujan-hujanan?",
+        "Pernahkah Anda membayangkan memakai sepotong hutan tropis yang elegan langsung di pergelangan tangan?",
+        "Stop scroll! Jam tangan lokal seharga jutaan rupiah ini sekarang sedang diskon besar khusus hari ini.",
+        "Halo pecinta fesyen, kali ini kami akan mengulas kelebihan jam tangan kayu buatan perajin lokal."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah restoran All You Can Eat BBQ di Bandung ingin membuat teks iklan Instagram Story dengan stiker tautan. Kalimat penawaran manakah yang menciptakan urgensi paling kuat bagi audiens Gen Z?",
+      "options": [
+        "Diskon spesial akhir pekan bagi Anda yang datang bersama keluarga tercinta ke outlet kami.",
+        "Slot meja tersisa 4 lagi untuk sesi malam ini! Amankan tempat sebelum kehabisan kuota.",
+        "Nikmati daging panggang sepuasnya tanpa batas waktu setiap hari Senin sampai Minggu.",
+        "Segera pesan tiket masuk Anda melalui tautan di bawah ini sebelum promonya berakhir."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menulis *copy* untuk halaman pembayaran (*checkout*) aplikasi tiket bus AKAP online. Teks mikro-copy apa yang paling tepat diletakkan di bawah tombol 'Bayar Sekarang' untuk meredakan keraguan pembeli?",
+      "options": [
+        "Transaksi Anda dijamin aman dengan sistem enkripsi data perbankan berstandar tinggi.",
+        "Tekan tombol ini untuk menyelesaikan proses pemesanan tiket perjalanan mudik Anda.",
+        "Pastikan jadwal keberangkatan dan nama penumpang sudah terisi dengan benar.",
+        "Terima kasih telah mempercayai layanan pemesanan tiket bus online terbaik kami."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform kursus *coding* online ingin mendatangkan pendaftar baru dari kalangan pekerja kantoran yang ingin alih profesi (career switcher). Judul utama (*headline*) landing page mana yang paling tepat sasaran?",
+      "options": [
+        "Belajar bahasa pemrograman terlengkap dari dasar bersama para mentor profesional di bidangnya.",
+        "Kuasai skill software engineer dalam 3 bulan, garansi kerja atau 100 persen uang kembali.",
+        "Ingin menjadi programmer handal? Daftar sekarang juga dan dapatkan modul belajar gratis.",
+        "Kursus IT bersertifikat internasional dengan metode belajar fleksibel untuk karyawan sibuk."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menyusun pesan siaran (*broadcast*) WhatsApp untuk toko kue kering menjelang Hari Raya Idulfitri. Kalimat pembuka mana yang paling ramah dan tidak terkesan spam?",
+      "options": [
+        "Halo Kak, daftar harga nastar dan kastengel terbaru kami sudah rilis, yuk silakan diborong.",
+        "Selamat pagi pelanggan setia, mohon maaf lahir batin, ingatkan kami jika butuh kue lebaran.",
+        "Halo Kak [Nama], semoga persiapan puasanya lancar ya. Udah nentuin kue buat hampers tahun ini?",
+        "Pemberitahuan penting: Pemesanan kue kering edisi lebaran akan ditutup dalam waktu dekat."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah brand suplemen penambah berat badan pria ingin merombak bagian *bullet points* manfaat produk di halaman produknya. Susunan poin mana yang menggunakan teknik *benefit-driven* terbaik?",
+      "options": [
+        "Mengandung 50 gram protein murni, vitamin B kompleks, dan ekstrak temulawak pilihan.",
+        "Bebas bahan kimia berbahaya, telah lulus uji BPOM, dan aman dikonsumsi setiap hari.",
+        "Badan lebih berisi dalam 30 hari, percaya diri meningkat, dan pakaian lama pas lagi.",
+        "Kemasan botol isi 60 kapsul, mudah ditelan, dan praktis dibawa saat bepergian."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat teks pada poster luar ruangan (billboard) untuk layanan dompet digital di area stasiun kereta commuter line. Prinsip copywriting apa yang paling wajib diterapkan?",
+      "options": [
+        "Gunakan paragraf panjang agar informasi fitur keamanan aplikasi tersampaikan secara detail.",
+        "Sertakan seluruh logo bank mitra dan sertifikasi keamanan agar dipercaya calon pengguna.",
+        "Buat teks yang sangat singkat dan langsung dipahami dalam waktu kurang dari 3 detik.",
+        "Gunakan gaya bahasa formal dan kaku agar mencerminkan institusi keuangan terpercaya."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi pelacak kebugaran (fitness tracker) lokal ingin menulis teks notifikasi push malam hari untuk pengguna yang belum mencapai target langkah kaki harian mereka. Pendekatan emosi apa yang paling memotivasi tanpa membuat guilt-trip?",
+      "options": [
+        "Gawat! Anda baru berjalan 2.000 langkah hari ini dan kesehatan Anda sedang terancam.",
+        "Ayo bergerak! 1.500 langkah lagi malam ini untuk menutup cincin aktivitas harianmu.",
+        "Kenapa malas sekali hari ini? Target langkah kaki Anda masih jauh dari pencapaian.",
+        "Jangan tidur dulu sebelum Anda menyelesaikan sisa target olahraga harian Anda sekarang."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan rintisan logistik rantai dingin (cold chain) untuk produk makanan beku ingin menyusun sub-headline untuk situs web B2B mereka. Kalimat mana yang paling efektif menyoroti solusi atas masalah utama klien korporat?",
+      "options": [
+        "Kami adalah perusahaan logistik terbaik yang memiliki armada truk berpendingin terlengkap.",
+        "Kirim makanan beku ke seluruh Indonesia dengan tarif kompetitif dan pelayanan prima.",
+        "Pastikan produk frozen food Anda tiba di tangan konsumen tanpa risiko mencair atau rusak.",
+        "Solusi pengiriman suhu terjaga yang menjaga kualitas produk Anda tetap segar hingga tujuan."
+      ],
+      "correct_index": 3
+    }
+  ]
+}

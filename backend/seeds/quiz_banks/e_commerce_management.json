@@ -1,0 +1,306 @@
+{
+  "skill": "E-commerce Management",
+  "skill_key": "e-commerce management",
+  "questions": [
+    {
+      "question": "Toko online Anda di Shopee mengalami lonjakan pesanan hingga 300% saat kampanye 11.11, namun tim gudang keteteran dan rasio keterlambatan pengiriman meningkat drastis. Apa langkah taktis pertama yang harus Anda ambil untuk menjaga reputasi toko?",
+      "options": [
+        "Menghentikan operasi toko secara permanen sampai semua pesanan lama selesai dikirimkan",
+        "Mengaktifkan mode libur toko segera agar tidak ada pesanan baru yang masuk ke sistem",
+        "Menaikkan harga seluruh produk secara drastis untuk menekan volume pesanan masuk",
+        "Menghubungi pihak kurir logistik untuk meminta penjemputan tambahan di hari yang sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola akun Tokopedia untuk brand fashion lokal. Data analytics menunjukkan bahwa tingkat keranjang belanja yang ditinggalkan (cart abandonment rate) mencapai 65% dalam sebulan terakhir. Strategi promosi apa yang paling efektif diterapkan untuk menekan angka tersebut?",
+      "options": [
+        "Mengirimkan voucher diskon khusus melalui fitur chat kepada pengguna yang meninggalkan produk di keranjang",
+        "Mengubah seluruh foto katalog produk menggunakan model profesional dengan resolusi tinggi",
+        "Menghapus produk-produk yang kurang populer dari halaman utama toko secara serentak",
+        "Memindahkan fokus iklan berbayar dari halaman kategori ke halaman pencarian umum"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah produk skincare baru yang Anda pasarkan di Lazada mendapatkan ulasan bintang 1 dari tiga pembeli berbeda karena mengalami kebocoran botol saat diterima. Tindakan operasional apa yang harus segera Anda prioritaskan?",
+      "options": [
+        "Membalas ulasan pembeli dengan menyalahkan pihak ekspedisi pengiriman logistik",
+        "Melakukan audit dan evaluasi terhadap standar pengemasan serta penambahan bubble wrap",
+        "Menurunkan harga jual produk tersebut sebesar 50% untuk menarik pembeli baru",
+        "Menghapus halaman produk tersebut dan membuat tautan baru dengan ulasan yang kosong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab atas anggaran iklan (ads budget) di TikTok Shop sebesar Rp15 juta per bulan. Setelah berjalan dua minggu, ROAS (Return on Ad Spend) bernilai 1.2, di bawah target perusahaan yaitu 3.0. Keputusan apa yang harus Anda ambil?",
+      "options": [
+        "Melipatgandakan anggaran iklan pada hari berikutnya untuk mengejar target penjualan bulanan",
+        "Menghentikan seluruh kampanye iklan berbayar dan beralih sepenuhnya ke metode organik",
+        "Mengalihkan alokasi anggaran ke konten video dan audiens yang menghasilkan konversi tertinggi",
+        "Meminta tim kreator untuk membuat lebih banyak konten video tanpa mengubah target penonton"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir bulan, performa penjualan produk FMCG di toko official store Anda tidak mencapai target bulanan, sementara stok gudang menumpuk banyak. Promosi taktis apa yang paling tepat dijalankan segera?",
+      "options": [
+        "Mengadakan kampanye flash sale berdurasi pendek dengan penawaran bundle produk",
+        "Mengirimkan email penawaran eksklusif kepada seluruh pelanggan baru yang belum pernah beli",
+        "Menaikkan anggaran iklan pencarian produk dengan kata kunci generik berbiaya tinggi",
+        "Mengubah desain tata letak halaman utama toko agar terlihat lebih elegan dan mewah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah ulasan negatif bernada ancaman viral muncul di kolom diskursus produk Anda karena kesalahan pengiriman varian warna oleh staf gudang. Apa langkah penanganan krisis yang paling tepat?",
+      "options": [
+        "Mengabaikan ulasan tersebut agar tidak menarik perhatian lebih banyak pengguna internet",
+        "Memblokir akun pembeli tersebut agar tidak bisa menulis komentar lanjutan di toko",
+        "Menghubungi pembeli secara pribadi via chat untuk menawarkan penggantian barang dan solusi",
+        "Melaporkan akun pembeli tersebut ke pihak kepolisian atas pencemaran nama baik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda melihat bahwa conversion rate toko online Anda turun 20% meskipun jumlah pengunjung (traffic) meningkat stabil di platform Blibli. Setelah dicek, deskripsi produk ternyata tidak mencantumkan ukuran secara detail. Perbaikan apa yang harus dilakukan?",
+      "options": [
+        "Menambahkan panduan ukuran lengkap dan memperjelas spesifikasi teknis pada halaman produk",
+        "Meningkatkan jumlah penayangan banner iklan diskon besar-besaran di halaman utama",
+        "Mengganti penyedia jasa pengiriman logistik dengan layanan pengiriman kilat sehari sampai",
+        "Menyewa lebih banyak influencer untuk membuat konten ulasan video di media sosial"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kompetitor utama Anda menurunkan harga produk sejenis sebesar 30% di platform e-commerce yang sama, mengakibatkan penurunan drastis pada penjualan produk andalan Anda. Bagaimana respons strategis Anda?",
+      "options": [
+        "Ikut menurunkan harga produk hingga di bawah harga modal agar bisa memenangkan perang harga",
+        "Mengadakan flash sale dengan harga rugi untuk merebut kembali pangsa pasar dari kompetitor",
+        "Menonaktifkan produk tersebut dan fokus menjual produk lain yang tidak memiliki kompetitor",
+        "Memperkuat nilai tambah produk seperti bonus bundling eksklusif dan layanan purnajual"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ingin meluncurkan kategori produk baru di Shopee Mall. Agar produk baru ini cepat mendapatkan traksi dan ulasan awal, strategi apa yang paling efektif dijalankan pada minggu pertama peluncuran?",
+      "options": [
+        "Menjual produk dengan harga normal tanpa promosi sambil menunggu organik traffic masuk",
+        "Memberikan harga khusus peluncuran dan sampel gratis bagi pembeli terpilih dengan syarat ulasan",
+        "Memasang iklan display berbiaya tinggi yang menargetkan seluruh pengguna di aplikasi",
+        "Membuat sayembara berhadiah uang tunai bagi siapa saja yang membagikan tautan produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Metrik Average Order Value (AOV) toko online fashion Anda stagnan di angka Rp120.000 selama tiga bulan terakhir, sementara biaya iklan terus naik. Fitur atau strategi apa yang paling tepat untuk menaikkan AOV?",
+      "options": [
+        "Memberikan diskon potongan harga langsung sebesar Rp10.000 untuk setiap pembelian produk",
+        "Menerapkan sistem minimum belanja untuk mendapatkan gratis ongkir dan membuat paket bundling",
+        "Menurunkan kuantitas minimal pembelian produk grosir agar lebih mudah diakses pembeli",
+        "Mengurangi variasi pilihan produk di toko untuk menyederhanakan proses keputusan pembeli"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati rasio 'add to cart' produk unggulan sangat tinggi di Tokopedia, tetapi 'checkout conversion rate' anjlok drastis dalam seminggu terakhir. Apa langkah taktis pertama yang harus Anda lakukan?",
+      "options": [
+        "Mengganti seluruh foto katalog dengan desain baru yang lebih estetik dan profesional",
+        "Menaikkan anggaran iklan berbayar untuk mendatangkan traffic baru yang lebih segar",
+        "Memeriksa ulang proses pembayaran, ongkir, dan ketersediaan stok di keranjang",
+        "Menurunkan harga jual produk sebesar 25 persen untuk menarik minat pembeli ragu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah kampanye Flash Sale di Shopee mendatangkan ribuan pesanan dalam 10 menit, namun sistem otomatis mendeteksi lonjakan pembeli fiktif dari akun-akun bot. Tindakan mitigasi apa yang paling tepat?",
+      "options": [
+        "Menonaktifkan seluruh fitur kampanye dan menutup toko sementara waktu",
+        "Membatasi pembelian per akun dan memantau transaksi mencurigakan secara manual",
+        "Membiarkan transaksi berjalan karena tetap mendongkrak metrik performa toko",
+        "Melaporkan kejadian tersebut kepada pihak kepolisian tanpa koordinasi platform"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Brand FMCG Anda menghadapi masalah tingginya retur barang dari pelanggan di Lazada karena kemasan rusak saat pengiriman kurir. Keputusan operasional apa yang harus segera diambil?",
+      "options": [
+        "Mengganti mitra logistik pengiriman dengan yang menawarkan tarif lebih murah",
+        "Menambahkan lapisan bubble wrap ekstra dan kardus pelindung yang lebih tebal",
+        "Menghapus opsi metode pembayaran COD untuk mengurangi angka pengembalian",
+        "Menolak semua klaim retur pelanggan dengan alasan kerusakan akibat ekspedisi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola TikTok Shop dan ingin memaksimalkan penjualan melalui fitur Live Streaming mingguan. Strategi retensi penonton manakah yang paling efektif untuk diterapkan?",
+      "options": [
+        "Memberikan kuis interaktif berhadiah voucher belanja eksklusif selama siaran",
+        "Memutar video rekaman siaran ulang secara terus-menerus sepanjang hari",
+        "Membatasi interaksi kolom komentar agar host dapat fokus pada presentasi",
+        "Menaikkan harga produk secara berkala untuk menciptakan kesan barang langka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Metrik 'Return on Ad Spend' (ROAS) untuk kampanye Tokopedia TopAds produk elektronik Anda turun di bawah target minimal selama tiga hari berturut-turut. Langkah optimasi apa yang harus dilakukan?",
+      "options": [
+        "Menambah total anggaran iklan harian sebesar dua kali lipat untuk memperluas jangkauan",
+        "Menghentikan seluruh iklan dan beralih sepenuhnya ke metode pemasaran organik",
+        "Meninjau kata kunci pencarian, membuang keyword non-produktif, dan optimasi bid",
+        "Mengganti deskripsi produk dengan menyalin teks dari toko kompetitor terlaris"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menjelang akhir kuartal, stok gudang menunjukkan kelebihan pasokan (overstock) pada produk kategori fashion musim lalu yang kurang diminati. Keputusan promosi apa yang paling logis?",
+      "options": [
+        "Mengadakan kampanye bundling eksklusif dengan produk baru yang sedang populer",
+        "Menyimpan produk tersebut di gudang tersembunyi hingga musim tahun depan tiba",
+        "Membiarkan harga tetap normal karena produk tersebut memiliki nilai historis",
+        "Menghapus halaman produk secara permanen dari katalog toko online Anda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima laporan performa bulanan bahwa rasio 'Chat Response Rate' toko Anda di Shopee turun menjadi 75% akibat lonjakan chat pelanggan. Apa dampak langsung kondisi ini terhadap operasional toko?",
+      "options": [
+        "Kehilangan akses permanen terhadap fitur promosi eksklusif dari pihak platform",
+        "Penurunan visibilitas toko pada hasil pencarian dan hilangnya lencana tertentu",
+        "Kenaikan otomatis biaya komisi penjualan yang harus dibayarkan kepada platform",
+        "Pembekuan saldo dompet penjual hingga batas waktu yang tidak ditentukan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah ulasan bintang satu dengan narasi menyesatkan muncul di halaman produk Anda, yang berpotensi merusak reputasi toko secara masif. Langkah respons pertama yang harus Anda ambil adalah?",
+      "options": [
+        "Membalas ulasan secara profesional, menawarkan solusi, dan melaporkan jika terbukti palsu",
+        "Menghapus ulasan tersebut secara paksa menggunakan akun admin pendukung alternatif",
+        "Membalas ulasan dengan nada emosional untuk membela kualitas produk toko Anda",
+        "Membiarkan ulasan tersebut tanpa tanggapan agar pembeli lain tidak menyadarinya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin meningkatkan nilai rata-rata transaksi per pesanan (Average Order Value) untuk produk kecantikan. Program promosi manakah yang paling tepat untuk dirancang?",
+      "options": [
+        "Memberikan diskon besar-besaran untuk pembelian satu buah produk terlaris",
+        "Menawarkan gratis ongkir khusus untuk pembelian dengan minimal belanja tertentu",
+        "Menurunkan ambang batas harga produk termurah di katalog toko online",
+        "Memberikan potongan harga langsung bagi pelanggan baru yang mendaftar akun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Data analitik menunjukkan bahwa sebagian besar pengunjung meninggalkan toko online Anda pada tahap pengisian alamat pengiriman karena estimasi ongkir yang dianggap mahal. Solusi logistik apa yang dapat dipertimbangkan?",
+      "options": [
+        "Bermitra dengan lebih banyak penyedia jasa ekspedisi dan integrasikan layanan fulfillment",
+        "Menaikkan harga produk utama untuk menutupi subsidi ongkos kirim yang diberikan",
+        "Menghapus layanan pengiriman instan dan hanya menyediakan opsi pengiriman reguler",
+        "Membatasi wilayah pengiriman hanya untuk area sekitar gudang utama saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola toko online produk herbal di Tokopedia. Menjelang musim pancaroba, tren pencarian produk penambah imun melonjak tajam, tetapi toko Anda belum memiliki produk tersebut. Langkah taktis apa yang paling tepat untuk menangkap peluang pasar ini dalam waktu singkat?",
+      "options": [
+        "Mengimpor produk herbal eksklusif dari luar negeri dengan estimasi kedatangan satu bulan",
+        "Membuat produk racikan sendiri di gudang tanpa izin edar resmi demi kecepatan",
+        "Mencari supplier lokal ber-BPOM yang menyediakan sistem dropship atau grosir instan",
+        "Menghentikan seluruh iklan produk lama dan fokus memproduksi lini produk baru dari nol"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah toko elektronik di Shopee mendapati komplain dari puluhan pembeli dalam sehari karena deskripsi produk salah mencantumkan kapasitas baterai powerbank. Sebagai pengelola, tindakan korektif apa yang harus segera dilakukan?",
+      "options": [
+        "Segera memperbarui deskripsi produk, broadcast chat permohonan maaf, dan tawarkan opsi retur",
+        "Menutup toko sementara waktu hingga semua stok powerbank lama terjual habis tanpa revisi",
+        "Menghapus semua ulasan negatif tersebut menggunakan fitur khusus laporan penjual",
+        "Membiarkan deskripsi apa adanya karena pembeli seharusnya membaca ulasan bukan deskripsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Data analitik TikTok Shop menunjukkan bahwa video konten pendek (Shorts) produk fashion Anda memiliki penayangan (views) yang sangat tinggi, namun tingkat klik ke keranjang kuning (CTR) sangat rendah. Evaluasi apa yang harus diterapkan pada konten berikutnya?",
+      "options": [
+        "Mengganti seluruh jenis produk fashion yang dijual dengan kategori produk elektronik",
+        "Memperpanjang durasi video menjadi minimal tiga menit untuk menjelaskan bahan",
+        "Menghapus tautan keranjang kuning agar penonton lebih fokus menonton video sampai habis",
+        "Memperjelas call-to-action (CTA) visual dan menempatkan pin produk di detik awal video"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ingin mengikuti program kampanye 'Pay Day Sale' di Lazada yang mensyaratkan diskon minimal 40%. Namun, margin keuntungan produk Anda saat ini hanya 35%. Keputusan strategis manakah yang paling aman bagi kesehatan finansial toko?",
+      "options": [
+        "Tetap mengikuti kampanye dengan diskon penuh dan menyerap kerugian demi volume penjualan",
+        "Membuat paket bundling produk lambat jual untuk menutupi penurunan margin diskon",
+        "Menolak ikut kampanye dan mengalihkan anggaran ke diskon internal mandiri yang terukur",
+        "Menaikkan harga normal produk sebesar 50% sehari sebelum kampanye agar diskon terlihat besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem admin chat toko Anda di Shopee mencatat bahwa pertanyaan terbanyak dari calon pembeli di akhir pekan adalah mengenai ketersediaan warna size tertentu, padahal informasi itu sudah ada di variasi produk. Apa solusi operasional jangka panjang yang paling efektif?",
+      "options": [
+        "Membuat template balasan otomatis (auto-reply) chat dan memperbesar banner panduan ukuran",
+        "Menonaktifkan fitur chat toko di akhir pekan agar admin fokus memproses pesanan masuk",
+        "Menaikkan harga produk khusus di akhir pekan untuk menyaring pembeli yang kurang teliti",
+        "Menghapus fitur variasi produk dan mewajibkan pembeli menulis warna di kolom catatan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah brand lokal makeup di Tokopedia mendapati tingkat pengembalian barang (return rate) meningkat drastis karena banyak pembeli mengeluh warna lipstik di dunia nyata jauh lebih gelap dibanding foto katalog. Langkah preventif apa yang paling tepat?",
+      "options": [
+        "Mengancam pembeli yang mengajukan pengembalian dengan melaporkan akun mereka",
+        "Mengganti foto katalog dengan swatch warna asli pada berbagai sk رنگ kulit (skin tone)",
+        "Menghentikan penjualan semua varian lipstik dan hanya menjual produk perawatan wajah",
+        "Menurunkan harga jual produk setengahnya agar pembeli merasa tidak rugi jika salah warna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati performa iklan berbayar (Paid Search) di Shopee untuk produk sepatu menunjukkan biaya klik (CPC) yang semakin mahal, sementara konversi penjualannya menurun drastis dibanding bulan lalu. Langkah optimasi apa yang harus diambil?",
+      "options": [
+        "Melakukan riset ulang kata kunci (keyword research) dan memangkas kata kunci yang berbiaya tinggi tanpa konversi",
+        "Melipatgandakan anggaran iklan harian secara masif untuk melawan dominasi kompetitor",
+        "Mengubah seluruh foto produk utama menjadi animasi bergerak tanpa teks informasi",
+        "Menurunkan kualitas deskripsi produk agar algoritma mengira produk tersebut baru"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Menjelang hari raya, jasa ekspedisi langganan toko online Anda mengumumkan batasan tanggal pengiriman terakhir sebelum libur panjang. Apa tindakan operasional yang wajib dilakukan pada dashboard e-commerce?",
+      "options": [
+        "Membiarkan toko tetap beroperasi seperti biasa tanpa ada pemberitahuan khusus ke pelanggan",
+        "Meliburkan seluruh karyawan gudang dan menutup permanen akun toko online",
+        "Memperbarui banner toko dan mengirim broadcast pengingat batas akhir pemesanan sebelum libur",
+        "Menaikkan berat produk secara sembarang di sistem agar ongkos kirim menjadi lebih mahal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja mengambil alih pengelolaan toko online peralatan rumah tangga yang memiliki reputasi buruk karena riwayat pengiriman lambat di masa lalu. Strategi pemulihan reputasi apa yang paling prioritas?",
+      "options": [
+        "Memberikan hadiah misterius bernilai tinggi secara acak pada setiap pesanan baru",
+        "Memperbaiki SLA pengemasan gudang menjadi kurang dari 12 jam dan aktif merespon komplain",
+        "Membuat akun toko baru dan menutup toko lama agar riwayat buruk hilang sepenuhnya",
+        "Mengabaikan ulasan buruk lama dan fokus memasang iklan berbayar dengan anggaran besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola toko online fashion di Shopee. Menjelang kampanye bulanan, Anda mendapati bahwa stok opname fisik di gudang berbeda 15% lebih rendah dibandingkan jumlah stok yang tercatat di sistem seller center. Langkah operasional apa yang paling tepat diambil untuk menghindari pembatalan pesanan otomatis?",
+      "options": [
+        "Segera menurunkan harga semua produk tersisa agar cepat habis terjual sebelum stok benar-benar kosong",
+        "Melakukan penyesuaian (adjustment) stok di sistem sesuai fisik gudang dan mengaktifkan fitur preorder",
+        "Membiarkan stok di sistem apa adanya agar toko terlihat memiliki stok banyak saat kampanye",
+        "Menonaktifkan toko sementara waktu selama masa kampanye hingga audit gudang selesai dilakukan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

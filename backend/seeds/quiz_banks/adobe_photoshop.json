@@ -1,0 +1,306 @@
+{
+  "skill": "Adobe Photoshop",
+  "skill_key": "adobe photoshop",
+  "questions": [
+    {
+      "question": "Anda bekerja di agensi periklanan dan diminta membuat poster promosi produk minuman. Foto botol diambil di meja kayu dengan latar belakang ruangan yang ramai dan tidak rapi. Teknik paling efisien di Photoshop untuk memisahkan botol secara presisi beserta bayangan halusnya agar bisa ditempatkan di latar baru adalah...",
+      "options": [
+        "Menggunakan Magic Wand Tool untuk klik area latar belakang lalu melakukan invert selection secara cepat",
+        "Memakai fitur Select Subject, lalu menyempurnakan tepiannya menggunakan Select and Mask Workspace",
+        "Melakukan penghapusan manual menggunakan Eraser Tool dengan ukuran brush yang sangat kecil",
+        "Membuat jalur potong kaku memakai Pen Tool tanpa tambahan teknik seleksi lanjutan pada tepi objek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang klien agensi e-commerce meminta Anda mengubah warna baju model dari merah terang menjadi biru navy pada 50 foto katalog produk. Metode non-destruktif apa yang paling tepat agar tekstur kain dan lipatannya tetap terlihat natural tanpa merusak piksel asli?",
+      "options": [
+        "Menambahkan layer Hue/Saturation dengan teknik clipping mask di atas foto model tersebut",
+        "Memakai Brush Tool untuk mengecat langsung di atas baju menggunakan mode blend Color",
+        "Menggunakan perintah Replace Color dari menu Image adjustments hingga warnanya berubah",
+        "Melakukan seleksi area baju lalu mengisi warna baru memakai Paint Bucket Tool secara langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima materi foto interior kantor dari klien untuk kebutuhan baliho ukuran 3x4 meter. Saat diperbesar, resolusi foto tersebut ternyata rendah dan terlihat pecah di beberapa sudut. Langkah awal terbaik di Photoshop untuk mengatasi masalah ini sebelum dicetak adalah...",
+      "options": [
+        "Mengubah nilai resolution pada Image Size langsung ke 300 DPI tanpa mengubah dimensi fisik",
+        "Memakai filter Neural Filters dengan fitur Super Zoom untuk memperbesar dan menambah detail",
+        "Menerapkan efek Gaussian Blur yang tinggi untuk menyamarkan bagian gambar yang pecah",
+        "Menggunakan tool Sharpen secara berulang pada seluruh area layer foto hingga terlihat tajam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendesain feed Instagram untuk brand fashion lokal. Klien ingin teks judul promosi tampak menyatu secara realistis di balik tubuh model yang berdiri di depan tembok. Cara terbaik mengatur susunan layer di Photoshop adalah...",
+      "options": [
+        "Menempatkan layer teks di urutan paling atas dari seluruh tumpukan layer dokumen",
+        "Menggabungkan layer teks dan layer model menjadi satu menggunakan perintah Merge Down",
+        "Menaruh layer teks di antara layer latar belakang tembok dan layer potongan tubuh model",
+        "Mengubah layer mode teks menjadi Multiply agar otomatis tembus ke bagian bawah model"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah foto lanskap pemandangan pantai untuk baliho pariwisata tampak terlalu gelap pada area bayangan tebing, sementara langitnya sudah terlalu terang. Fitur penyesuaian non-destruktif apa yang paling tepat untuk menyeimbangkan pencahayaan tersebut?",
+      "options": [
+        "Mengatur slider Brightness dan Contrast pada panel adjustment layer utama",
+        "Menggunakan adjustment layer Shadows/Highlights untuk mengontrol bagian kontras",
+        "Memakai tool Burn dan Dodge secara langsung di atas layer foto latar belakang",
+        "Menaikkan nilai Exposure secara keseluruhan pada panel properties dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek desain kemasan produk makanan ringan, Anda perlu menempatkan logo klien pada mockup bentuk kantong keripik yang melengkung. Teknik transformasi apa di Photoshop yang paling akurat untuk mengikuti kontur lengkungan kantong tersebut?",
+      "options": [
+        "Memakai fitur Warp Transform pada menu Edit untuk menarik titik referensi secara manual",
+        "Menggunakan perintah Free Transform standar lalu memutar sudut logo sesuai kebutuhan",
+        "Menerapkan efek Distort dengan menarik keempat sudut bounding box secara bersamaan",
+        "Memanfaatkan fungsi Perspective Crop untuk menyesuaikan bidang datar logo pada gambar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta merestorasi foto arsip keluarga tahun 1970-an yang memiliki banyak noda goresan debu dan bercak noda putih di wajah subjek. Tool paling efektif untuk membersihkan noda tersebut secara cepat dengan mencocokkan tekstur sekitar adalah...",
+      "options": [
+        "Clone Stamp Tool dengan mengambil titik sampel dari area baju subjek foto",
+        "Eraser Tool dengan tingkat kekerasan brush diatur pada angka nol persen",
+        "Spot Healing Brush Tool yang diusap langsung di atas area goresan noda",
+        "Blur Tool yang digosok perlahan hingga noda membaur dengan warna kulit"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah file desain brosur majalah memiliki ukuran file yang sangat besar karena terlalu banyak penggunaan layer teks dan raster tersembunyi. Tindakan profesional di Photoshop untuk mengoptimalkan ukuran file tanpa kehilangan elemen penting adalah...",
+      "options": [
+        "Menghapus seluruh layer folder history yang tersimpan di panel history dokumen",
+        "Mengonversi semua jenis layer teks menjadi bentuk Smart Objects secara massal",
+        "Melakukan flatten image pada seluruh halaman agar menjadi satu layer tunggal",
+        "Menghapus layer yang tidak terpakai dan merapikan serta menggabungkan grup terkait"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendesain aset banner website dengan elemen teks yang panjang dan kompleks. Klien sering meminta revisi ejaan teks tersebut di kemudian hari. Fitur apa yang harus Anda gunakan saat membuat teks agar paragraf dapat diubah dengan mudah tanpa merusak desain?",
+      "options": [
+        "Mengonversi teks menjadi shape vektor terlebih dahulu sebelum diberi efek tambahan",
+        "Membuat teks menggunakan Point Text dan mengetiknya dalam satu baris panjang",
+        "Memanfaatkan fitur Paragraph Text box dengan mengatur area kotak pembatas khusus",
+        "Melakukan rasterize layer teks agar kompatibel dengan berbagai versi perangkat lunak"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menyiapkan file master logo perusahaan untuk kebutuhan cetak offset maupun digital. Agar desainer lain dapat mengubah skala logo tanpa kehilangan kualitas vektor aslinya di Photoshop, format atau objek apa yang harus digunakan?",
+      "options": [
+        "Menyimpan logo dalam bentuk Smart Object yang bersumber dari file vektor eksternal",
+        "Mengubah seluruh bagian logo menjadi layer raster beresolusi tinggi 300 piksel per inci",
+        "Menerapkan efek Drop Shadow langsung pada layer raster logo utama perusahaan",
+        "Menggabungkan seluruh elemen logo ke dalam latar belakang transparan tunggal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain key visual untuk kampanye digital produk kosmetik. Klien meminta agar warna kulit model tampak lebih cerah secara merata tanpa menghilangkan tekstur pori-pori kulit aslinya. Fitur apa yang paling tepat Anda gunakan untuk memenuhi permintaan tersebut?",
+      "options": [
+        "Memakai Brush Tool dengan warna putih pada layer baru berformat blend mode soft light",
+        "Mengaplikasikan High Pass Filter dikombinasikan dengan pengaturan levels dasar",
+        "Memanfaatkan teknik Frequency Separation pada layer terpisah untuk memisahkan warna dan tekstur",
+        "Menurunkan nilai Saturasi dan menaikkan kontras menggunakan Hue/Saturation adjustment layer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang fotografer menyerahkan foto potret outdoor dengan kondisi langit siang hari yang tampak putih polos tanpa detail awan. Anda diminta mengganti langit tersebut dengan foto langit senja yang dramatis. Langkah manakah yang paling efisien untuk menyeleksi batas rambut model yang rumit?",
+      "options": [
+        "Menggunakan opsi Select and Mask dengan menyempurnakan bagian tepi menggunakan Refine Edge Brush",
+        "Membuat jalur seleksi manual secara teliti menggunakan Pen Tool mengelilingi setiap helai rambut",
+        "Memakai Magic Wand Tool dengan toleransi rendah untuk mengecat area putih langit secara instan",
+        "Menerapkan Color Range untuk mendeteksi warna putih secara otomatis di seluruh area kanvas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek desain poster bioskop, Anda perlu menyamakan tone warna dari tiga foto aktor yang diambil di lokasi berbeda agar terlihat menyatu dalam satu latar belakang. Cara non-destruktif apa yang harus Anda pilih?",
+      "options": [
+        "Menggunakan perintah Image > Adjustments > Match Color secara langsung pada file foto",
+        "Menambahkan adjustment layer Curves dan melakukan clipping mask ke masing-masing layer foto aktor",
+        "Memakai Dodge dan Burn Tool secara bergantian hingga tingkat kecerahan foto terlihat setara",
+        "Mengubah mode warna keseluruhan dokumen dari RGB Color menjadi CMYK Process sebelum dicetak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain konten carousel Instagram dengan total 5 slide yang bersambung secara visual. Agar proses ekspor menghasilkan potongan gambar terpisah tanpa garis putih antar slide, fitur Photoshop manakah yang harus diandalkan?",
+      "options": [
+        "Memotong gambar secara manual menggunakan Crop Tool dengan bantuan panduan grid",
+        "Mengekspor seluruh dokumen sebagai satu file PDF beresolusi tinggi untuk dipotong aplikasi lain",
+        "Membuat Frame Tool secara berurutan dan mengekspor setiap frame sebagai file terpisah",
+        "Memanfaatkan Slice Tool untuk membagi area kerja dan menyimpannya via Export As dengan opsi Slices"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah perusahaan properti meminta Anda membuat gambar ilustrasi interior dari file sketsa garis hitam putih mentah. Anda ingin mewarnai dinding ruangan pada layer terpisah di bawah sketsa. Mode layer apa yang paling tepat untuk garis sketsa tersebut?",
+      "options": [
+        "Mengatur mode layer garis sketsa menjadi Multiply agar warna putih latar belakang menjadi transparan",
+        "Mengubah mode layer sketsa menjadi Screen supaya garis hitam menjadi terlihat menyatu terang",
+        "Menggunakan mode layer Overlay untuk memberikan efek kontras tajam pada permukaan warna dinding",
+        "Memakai mode layer Normal dengan menurunkan nilai Opacity layer hingga batas minimum"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima aset grafis vektor berformat AI dari klien untuk dimasukkan ke dalam dokumen Photoshop berukuran besar. Agar elemen tersebut dapat diperbesar dan diperkecil berulang kali tanpa mengalami penurunan kualitas piksel, bagaimana cara memasukkannya?",
+      "options": [
+        "Membuka file AI langsung di Photoshop, lalu menyalin piksel gambarnya ke dalam dokumen kerja utama",
+        "Melakukan drag and drop file AI ke kanvas dan menekan tombol konversi piksel saat jendela pop-up muncul",
+        "Menempatkan file menggunakan perintah Place Linked atau Place Embedded agar objek tetap berformat Smart Object",
+        "Mengubah file vektor menjadi format Raster gambar standar sebelum ditempatkan pada layer background"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pembuatan layout kemasan produk frozen food, Anda harus memastikan garis potong dan area lipatan cetak tidak ikut tercetak pada hasil akhir produksi. Pengaturan panel Layers apa yang paling tepat untuk elemen garis cetak tersebut?",
+      "options": [
+        "Mengunci seluruh layer garis cetak agar tidak sengaja bergeser selama proses desain berlangsung",
+        "Menjadikan layer garis cetak sebagai Smart Object terpisah agar mudah diedit kembali oleh percetakan",
+        "Mengubah status layer garis cetak menjadi non-printable di dalam panel opsi layer lanjutan",
+        "Menempatkan garis cetak pada layer teratas dan menonaktifkan ikon mata visibilitas sebelum diekspor"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendesain infografis dengan teks penjelasan yang cukup panjang di dalam kotak berwarna solid. Klien sering meminta perubahan teks mendadak dan Anda ingin memastikan tata letak teks tidak keluar dari batas kotak tersebut. Teknik apa yang paling efektif?",
+      "options": [
+        "Menggunakan Type Tool dengan membuat bingkai Area Type Box dan mengatur opsi paragraf",
+        "Mengetik teks secara manual baris demi baris menggunakan Point Type dengan bantuan Smart Guides",
+        "Memecah setiap kalimat menjadi layer teks terpisah agar mudah digeser posisinya secara bebas",
+        "Mengubah teks menjadi bentuk shape vektor agar ukurannya dapat ditarik secara manual bebas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah foto produk sepatu putih terlihat kusam karena kondisi lantai studio yang memantulkan warna kekuningan. Anda ingin membersihkan warna latar belakang lantai menjadi putih bersih tanpa merusak bayangan natural di bawah sepatu. Langkah masking apa yang paling tepat?",
+      "options": [
+        "Menghapus seluruh area lantai menggunakan Eraser Tool berpinggiran lembut secara manual",
+        "Menambahkan Solid Color adjustment layer putih dan melukis pada mask menggunakan brush beropacity rendah",
+        "Membuat seleksi area lantai dengan Quick Selection dan langsung menekan tombol delete",
+        "Menggunakan Select Subject untuk menghapus seluruh latar belakang secara otomatis tanpa penyesuaian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan file presentasi pitch deck dalam bentuk gambar untuk klien korporat. Dokumen Photoshop Anda memiliki ratusan layer dari berbagai elemen desain. Cara paling praktis untuk merapikan panel layers adalah:",
+      "options": [
+        "Menggabungkan seluruh layer menjadi satu menggunakan perintah Flatten Image demi ringannya file",
+        "Menghapus layer-layer tersembunyi yang tidak terpakai dan mengelompokkan layer terkait ke dalam Layer Groups",
+        "Mengubah semua layer gambar menjadi Rasterized Layers secara permanen untuk menghemat memori RAM",
+        "Menyimpan file langsung ke format JPEG berkualitas maksimum agar susunan layer otomatis terkunci"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di agensi kreatif dan menerima foto model close-up untuk kampanye <i>skincare</i>. Klien meminta pori-pori kulit wajah dihaluskan namun tekstur kulit alami dan pori-pori halus tetap terlihat agar tidak terkesan plastik. Langkah apa yang paling tepat?",
+      "options": [
+        "Menggunakan filter Gaussian Blur pada seluruh layer wajah hingga mulus",
+        "Membuat layer duplikat, menerapkan High Pass filter, lalu mengubah blend mode",
+        "Membuat duplikat layer, menerapkan Surface Blur untuk menyamarkan noda kasar",
+        "Memanfaatkan teknik Frequency Separation untuk memisahkan warna dan tekstur"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang mendesain poster promosi <i>e-commerce</i> dengan latar belakang kompleks. Anda perlu menghapus objek manusia di latar belakang keramaian tanpa meninggalkan bekas suntingan yang terlihat janggal. Fitur mana yang paling efisien?",
+      "options": [
+        "Menggunakan tool Content-Aware Fill untuk menambal area objek manusia",
+        "Menyalin manual bagian latar bersih menggunakan Brush tool ukuran besar",
+        "Menutup seluruh area latar belakang dengan warna solid baru lewat mask",
+        "Memakai Clone Stamp tool dengan tingkat hardness diatur seratus persen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah foto makanan untuk menu restoran memiliki warna kuah sup yang tampak pucat dan kurang menggugah selera. Anda ingin menaikkan intensitas warna merah dan kuning pada kuah tanpa merusak warna objek lain di sekitarnya. Cara terbaiknya adalah...",
+      "options": [
+        "Menambahkan adjustment layer Hue/Saturation dan menggeser master slider",
+        "Membuat adjustment layer Selective Color untuk mengubah komponen warna merah",
+        "Membuat adjustment layer Hue/Saturation, pilih channel kuning dan merah",
+        "Menggunakan tool Brush dengan warna jingga terang di atas layer baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mendesain banner promosi digital yang menampilkan efek cahaya matahari dramatis menembus sela-sela gedung perkotaan. Agar efek cahaya tampak realistis dan berinteraksi baik dengan objek kota, metode apa yang digunakan?",
+      "options": [
+        "Melukis garis putih lurus dengan Brush tool pada layer baru di atas kota",
+        "Membuat layer baru, isi hitam, gunakan filter Lens Flare, lalu ubah mode",
+        "Menggambar bentuk poligon berwarna kuning emas dengan Opacity rendah",
+        "Membuat layer gradasi linier dari transparan ke putih di atas semua layer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien menyerahkan aset logo perusahaan berupa file raster beresolusi rendah yang pecah saat diperbesar di dokumen Photoshop. Anda harus mengubah logo tersebut menjadi tajam tanpa mengubah bentuk aslinya. Langkah yang paling tepat adalah...",
+      "options": [
+        "Melakukan trace manual menggunakan Pen tool untuk membuat ulang jalur path",
+        "Menerapkan filter Smart Sharpen berulang kali hingga tepi logo terlihat tegas",
+        "Mengubah mode warna dokumen menjadi Bitmap dengan threshold tinggi",
+        "Memperbesar ukuran gambar menggunakan fitur preserve details 2.0"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun aset visual untuk katalog produk furnitur. Foto kursi yang dipotong dari latar belakang aslinya menyisakan garis tepi berwarna putih sisa background lama (fringing). Cara tercepat untuk merapikannya adalah...",
+      "options": [
+        "Menggunakan Eraser tool dengan ukuran kecil untuk menghapus tepi piksel",
+        "Menerapkan perintah Defringe atau Remove White Matte pada layer mask",
+        "Menambahkan efek Outer Glow berwarna putih untuk menyamarkan garis",
+        "Menggeser posisi layer mask sejauh satu piksel ke arah bagian dalam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek desain kemasan botol parfum, Anda perlu menampilkan bayangan jatuh (drop shadow) di bawah botol agar terlihat berpijak secara nyata pada permukaan meja kaca. Teknik masking dan blending apa yang paling efektif?",
+      "options": [
+        "Menggambar bayangan hitam solid dengan Brush di bawah layer botol",
+        "Membuat duplikat botol, membalik vertikal, dan memberi Gaussian Blur",
+        "Menggunakan efek Drop Shadow bawaan layer style dengan spread tinggi",
+        "Melukis bayangan secara manual di layer terpisah dengan Soft Round Brush"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda menerima file PSD berukuran besar dengan puluhan layer teks yang menggunakan berbagai jenis huruf unik. Agar desainer lain tidak mengalami kendala font hilang saat membuka file tersebut di komputer berbeda, tindakan apa yang harus dilakukan?",
+      "options": [
+        "Mengubah seluruh layer teks menjadi bentuk Smart Object secara kolektif",
+        "Melakukan rasterize pada setiap layer teks agar berubah menjadi piksel",
+        "Menyimpan file dalam format TIFF terkompresi tanpa menyertakan layer",
+        "Mengonversi layer teks menjadi bentuk path vector di panel properties"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain poster konser musik dengan teknik pencampuran warna bergaya disko tahun 80-an, di mana foto hitam putih artis diberi warna gradasi kontras pada bagian gelap dan terang. Fitur adjustment apa yang paling tepat digunakan?",
+      "options": [
+        "Photo Filter dengan memilih opsi warna pemanasan atau pendinginan",
+        "Color Lookup dengan menerapkan tabel preset sinematik bawaan",
+        "Gradient Map dengan memetakan warna gelap ke biru dan terang ke pink",
+        "Channel Mixer dengan mengatur persentase komponen warna RGB manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyiapkan file aset visual untuk platform e-commerce yang membutuhkan variasi warna produk tas dalam satu klik ganti. Metode non-destruktif apa yang paling tepat untuk mewarnai ulang tas kulit berwarna cokelat menjadi hijau?",
+      "options": [
+        "Mewarnai langsung tas menggunakan Brush tool dengan Blend Mode Color",
+        "Membuat seleksi pas, lalu mengecat area tas dengan Paint Bucket tool",
+        "Menggunakan adjustment layer Hue/Saturation dengan membuat masking rapi",
+        "Mengubah mode gambar menjadi Indexed Color dan mengganti palet warna"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

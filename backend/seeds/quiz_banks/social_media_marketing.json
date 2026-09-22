@@ -1,0 +1,306 @@
+{
+  "skill": "Social Media Marketing",
+  "skill_key": "social media marketing",
+  "questions": [
+    {
+      "question": "Sebuah klinik kecantikan di Jakarta meluncurkan video Reels Instagram untuk perawatan wajah baru. Setelah 24 jam, jumlah penayangan (views) sangat tinggi, namun tingkat interaksi (engagement rate) sangat rendah dan tidak ada yang klik tautan booking. Apa langkah analisis awal yang paling tepat?",
+      "options": [
+        "Mengganti seluruh tim kreator konten karena dianggap gagal total membuat video",
+        "Meningkatkan anggaran iklan (ads) agar video tersebut menjangkau lebih banyak orang",
+        "Mengevaluasi kejelasan ajakan bertindak (CTA) dan kesesuaian target audiens",
+        "Menghapus video tersebut agar tidak merusak estetika grid profil Instagram"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Brand fashion lokal Anda mendadak viral di TikTok berkat ulasan seorang kreator. Stok produk terlaris habis dalam 4 jam, sementara ribuan komentar menanyakan jadwal restock. Sebagai social media specialist, apa tindakan prioritas Anda?",
+      "options": [
+        "Segera membuat video pengumuman resmi mengenai estimasi waktu restock produk",
+        "Menutup kolom komentar pada video viral tersebut untuk menghindari spam pertanyaan",
+        "Mengalihkan seluruh diskusi pembeli ke layanan pesan langsung (DM) secara manual",
+        "Membuat konten baru dengan produk lain yang stoknya masih tersedia di gudang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola akun LinkedIn perusahaan B2B software HR. Petinggi perusahaan ingin konten infografis produk dibagikan setiap hari. Namun, data menunjukkan jangkauan organik terus menurun. Strategi apa yang paling efektif untuk membalikkan keadaan?",
+      "options": [
+        "Mengurangi frekuensi posting dan fokus pada studi kasus nyata dari klien saat ini",
+        "Membeli paket pengikut (followers) instan untuk mendongkrak kredibilitas halaman",
+        "Menggunakan fitur iklan berbayar dengan target audiens global tanpa filter",
+        "Memperbanyak teks promosi penjualan langsung pada setiap gambar infografis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah kafe di Bandung mendapati komplain terbuka di kolom komentar Instagram mengenai pelayanan staf yang kurang ramah saat akhir pekan. Sebagai admin media sosial, langkah pertama apa yang harus Anda ambil?",
+      "options": [
+        "Menghapus komentar tersebut agar tidak dilihat oleh calon pelanggan baru",
+        "Membalas dengan data penjualan kafe yang selalu ramai setiap akhir pekan",
+        "Menanggapi secara profesional, meminta maaf, dan melanjutkan obrolan via DM",
+        "Mengabaikannya karena masalah tersebut merupakan tanggung jawab manajer operasional"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan menyiapkan kalender konten bulanan untuk produk suplemen kesehatan di Indonesia. Tanggal berapa fokus pembuatan konten edukasi pencegahan penyakit harus paling ditingkatkan?",
+      "options": [
+        "Minggu pertama bulan tersebut karena anggaran iklan baru saja diturunkan",
+        "Sepanjang musim pancaroba saat tren pencarian kesehatan masyarakat meningkat",
+        "Menjelang tengah malam setiap hari untuk memanfaatkan waktu luang pengguna",
+        "Hanya pada saat hari libur nasional ketika tingkat kesibukan kerja menurun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Laporan metrik bulanan menunjukkan bahwa tingkat konversi (conversion rate) dari iklan Meta (Instagram & Facebook) menurun drastis dibanding bulan lalu, meskipun klik tautan (CTR) meningkat. Apa diagnosis masalah yang paling rasional?",
+      "options": [
+        "Visual materi iklan sudah mulai mengalami kejenuhan di mata target audiens",
+        "Halaman landing (landing page) tujuan memiliki masalah teknis atau tidak relevan",
+        "Platform Meta sedang mengalami gangguan server secara menyeluruh di wilayah Asia",
+        "Anggaran harian yang ditetapkan terlalu kecil untuk menjangkau pasar potensial"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand produk ramah lingkungan ingin berkolaborasi dengan micro-influencer di TikTok. Apa kriteria utama yang harus Anda utamakan saat melakukan kurasi daftar influencer tersebut?",
+      "options": [
+        "Jumlah total pengikut (followers) minimal harus di atas 500 ribu akun aktif",
+        "Tingkat keterlibatan (engagement rate) audiens dan keselarasan nilai (values)",
+        "Tarif jasa endorsement terendah agar anggaran kampanye bisa lebih hemat",
+        "Lokasi geografis domisili kreator harus berpusat di wilayah Jabodetabek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menguji dua judul teks (copywriting) berbeda untuk iklan penarikan leads properti di Facebook. Apa praktik pengujian A/B (A/B testing) yang benar agar hasil analisis valid?",
+      "options": [
+        "Mengubah visual gambar, teks judul, dan target audiens sekaligus dalam satu waktu",
+        "Menjalankan kedua iklan dengan variabel teks berbeda namun mempertahankan target yang sama",
+        "Membandingkan performa iklan baru dengan iklan lama yang sudah berjalan selama setahun",
+        "Menghentikan iklan dengan performa terbaik setelah berjalan selama dua jam pertama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Platform X (Twitter) milik perusahaan fintech Anda mendadak ramai disorot netizen karena salah satu unggahan staf dianggap kurang sensitif. Langkah mitigasi krisis apa yang paling tepat?",
+      "options": [
+        "Segera menonaktifkan akun perusahaan untuk menghindari interaksi negatif lebih lanjut",
+        "Membuat cuitan candaan baru untuk mengalihkan perhatian publik dari isu tersebut",
+        "Merilis pernyataan permintaan maaf resmi dan menghentikan sementara semua postingan terjadwal",
+        "Menyalahkan pihak agensi eksternal yang membantu pembuatan materi konten tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen meminta Anda melaporkan keberhasilan kampanye media sosial kuartal ini. Metrik mana yang paling tepat disajikan untuk membuktikan dampak nyata terhadap pertumbuhan bisnis (revenue)?",
+      "options": [
+        "Jumlah total tayangan (impressions) dan jangkauan (reach) secara kumulatif",
+        "Pertumbuhan jumlah pengikut baru (follower growth) selama tiga bulan terakhir",
+        "Biaya per perolehan hasil (CPA) dan total penjualan yang berasal dari tautan sosial",
+        "Jumlah tanda suka (likes) dan komentar positif pada postingan kategori produk"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah brand F&B meluncurkan menu baru di Instagram dan ingin mengoptimalkan penggunaan fitur Instagram Stories untuk mendoring interaksi langsung dengan konsumen. Langkah taktis apa yang paling tepat dilakukan?",
+      "options": [
+        "Mengunggah 10 poster menu berbeda sekaligus dalam satu waktu agar audiens melihat variasi produk",
+        "Memasang stiker kuis atau jajak pendapat terkait preferensi rasa untuk memancing keterlibatan",
+        "Menyematkan semua tautan pembelian langsung ke situs web eksternal tanpa teks pendukung",
+        "Menggunakan teks berukuran sangat kecil agar audiens memperbesar layar untuk membaca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola akun TikTok untuk sebuah aplikasi dompet digital lokal. Video edukasi keuangan yang Anda unggah mendapat banyak komentar dari warganet yang menanyakan fitur pinjaman tertentu secara teknis. Tindakan komunitas apa yang paling efektif?",
+      "options": [
+        "Menghapus seluruh komentar tersebut agar lini masa tetap bersih dari pertanyaan rumit",
+        "Membuat video balasan menggunakan fitur video TikTok untuk menjawab pertanyaan yang sering muncul",
+        "Mengabaikan komentar tersebut karena tugas Anda hanya mengunggah konten utama semata",
+        "Meminta pengguna untuk menghubungi kantor pusat secara langsung melalui surat elektronik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kampanye iklan berbayar (Paid Social) untuk produk e-commerce fesyen Anda menunjukkan frekuensi (frequency) iklan mencapai angka 6,5 dalam waktu seminggu kepada audiens yang sama, sementara rasio klik-tayang (CTR) menurun drastis. Keputusan apa yang harus Anda ambil?",
+      "options": [
+        "Menambah anggaran harian secara masif untuk memaksa audiens melihat iklan lebih sering",
+        "Mengganti materi visual dan teks iklan untuk mengatasi kejenuhan audiens terhadap iklan",
+        "Memperluas wilayah target geografis ke seluruh provinsi tanpa mengubah materi visual",
+        "Menghentikan seluruh kegiatan pemasaran digital dan beralih sepenuhnya ke media cetak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan penyedia layanan logistik B2B ingin membangun otoritas merek di LinkedIn. Jenis pendekatan konten apa yang paling relevan untuk menarik perhatian para pengambil keputusan korporat?",
+      "options": [
+        "Membagikan infografis hasil riset rantai pasok industri beserta analisis singkat dari ahli internal",
+        "Mengunggah potongan video dansa tren terbaru yang sedang viral di kalangan kreator muda",
+        "Mengadakan siniar hiburan harian tentang gosip selebritas tanah air terkini secara rutin",
+        "Membuat kuis tebak-tebakan gambar kartun dengan hadiah voucer belanja produk ritel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang strategi pemasaran berbasis komunitas untuk lini produk perawatan rambut lokal. Fitur platform apa yang paling efektif dimanfaatkan untuk membangun kelompok pelanggan setia (loyalist)?",
+      "options": [
+        "Membuat grup siaran khusus atau komunitas tertutup di platform pesan instan dan media sosial",
+        "Mengirimkan surel penawaran promosi massal setiap hari kepada seluruh basis data pelanggan",
+        "Membeli ribuan pengikut pasif dari luar negeri untuk mendongkrak kredibilitas angka statistik",
+        "Menonaktifkan kolom komentar di semua unggahan agar tidak ada diskusi yang tidak terkontrol"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah hotel butik di Bali ingin meningkatkan pemesanan langsung melalui Instagram selama musim sepi kunjungan (low season). Strategi penawaran apa yang paling tepat disematkan pada konten promosi?",
+      "options": [
+        "Menawarkan diskon kilat eksklusif berbatas waktu dengan kode promo khusus pengikut media sosial",
+        "Memasang teks panjang yang menjelaskan sejarah pendirian bangunan hotel secara mendetail",
+        "Menggunakan musik latar belakang bergenre keras tanpa kaitan dengan suasana liburan",
+        "Menampilkan foto fasilitas kosong tanpa informasi harga maupun tautan pemesanan yang jelas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Analisis data analitik menunjukkan bahwa waktu terbaik (peak hours) audiens target Anda aktif di Instagram adalah pukul 19.00 hingga 21.00 WIB. Namun, Anda memiliki keterbatasan waktu kerja operasional tim. Bagaimana cara terbaik mengelola publikasi konten?",
+      "options": [
+        "Memaksa tim lembur setiap malam untuk menekan tombol unggah secara manual tepat waktu",
+        "Menggunakan fitur penjadwalan konten resmi untuk menerbitkan unggahan secara otomatis",
+        "Mengunggah seluruh konten mingguan pada pukul 08.00 pagi saat tim masuk kantor",
+        "Menghentikan publikasi di malam hari dan memindahkannya ke hari libur nasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan melacak efektivitas kampanye peluncuran produk melalui tautan di bio Instagram. Apa metode terbaik untuk memastikan akurasi data kunjungan dan konversi dari platform tersebut?",
+      "options": [
+        "Memasang parameter UTM (Urchin Tracking Module) pada tautan untuk memantau trafik di Google Analytics",
+        "Menghitung jumlah total komentar yang masuk pada hari unggahan dipublikasikan",
+        "Meminta setiap pelanggan mengirimkan bukti tangkapan layar melalui pesan langsung",
+        "Melihat estimasi jangkauan organik yang dilaporkan langsung oleh dasbor internal aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah jenjang pendidikan non-formal (kursus coding) ingin meningkatkan pendaftaran siswa baru lewat Meta Ads. Pendekatan visual seperti apa yang terbukti paling efektif dalam praktiknya?",
+      "options": [
+        "Menampilkan testimoni alumni sukses yang menceritakan perubahan karier setelah lulus",
+        "Menggunakan ilustrasi vektor abstrak yang tidak berhubungan dengan teknologi komputer",
+        "Memasang foto stok pemandangan alam bebas yang menenangkan tanpa kaitan materi",
+        "Menampilkan teks ketentuan syarat administrasi yang sangat panjang dan padat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengelola krisis komunikasi di media sosial akibat keterlambatan pengiriman pesanan massal, langkah awal apa yang harus segera diambil oleh tim media sosial?",
+      "options": [
+        "Menghapus semua unggahan promosi sebelumnya agar lini masa bersih dari komplain",
+        "Merilis pernyataan resmi yang empatik, transparan, dan menyediakan jalur penanganan khusus",
+        "Menutup seluruh akun media sosial perusahaan hingga masalah pengiriman selesai diatasi",
+        "Menyalahkan pihak ketiga penyedia jasa logistik secara terbuka di kolom komentar publik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah kedai kopi lokal ingin meningkatkan interaksi langsung dengan pelanggan setianya di Instagram. Fitur mana yang paling efektif digunakan secara konsisten untuk membangun kedekatan emosional dan mendapatkan umpan balik cepat?",
+      "options": [
+        "Membuat siaran langsung mingguan untuk diskusi santai",
+        "Menggunakan fitur Tanya Jawab di Stories secara berkala",
+        "Mengunggah video Reels tutorial meracik kopi setiap hari",
+        "Memasang tautan pemesanan instan pada bagian bio profil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola akun Instagram untuk produk skincare lokal. Tingkat keterlibatan (engagement rate) audiens menurun drastis selama sebulan terakhir meskipun jumlah pengikut bertambah. Langkah analisis awal apa yang paling tepat?",
+      "options": [
+        "Membeli paket penambahan komentar untuk mendongkrak algoritma",
+        "Mengganti seluruh palet warna visual feed agar tampak lebih estetis",
+        "Mengevaluasi ulang relevansi topik konten dengan minat pengikut baru",
+        "Menghentikan sementara semua unggahan organik dan fokus beriklan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan rintisan (startup) logistik ingin memperluas jangkauan pasar B2B melalui LinkedIn. Jenis format konten apa yang paling potensial dibagikan oleh para pengambil keputusan profesional?",
+      "options": [
+        "Infografis data efisiensi rantai pasok dan studi kasus sukses",
+        "Video pendek di balik layar gudang dengan musik tren terkini",
+        "Kuis interaktif mengenai sejarah perkembangan industri kurir",
+        "Opini pribadi CEO tentang tren budaya kerja di perkantoran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kampanye iklan berbayar Meta untuk produk fesyen wanita menunjukkan rasio klik-tayang (CTR) yang tinggi, tetapi tingkat pembelian (conversion rate) di situs web sangat rendah. Di mana letak potensi masalah utamanya?",
+      "options": [
+        "Targeting pemirsa iklan di Meta belum menjangkau pasar yang tepat",
+        "Teks ajakan bertindak (CTA) pada materi iklan kurang provokatif",
+        "Pengalaman pengguna pada halaman mendarat (landing page) buruk",
+        "Anggaran harian iklan yang dialokasikan terlalu kecil untuk bersaing"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati sebuah akun tiruan (fake account) di TikTok yang mengatasnamakan brand kecantikan Anda dan melakukan penipuan kepada konsumen. Apa tindakan darurat pertama yang harus diambil?",
+      "options": [
+        "Membuat video klarifikasi dengan menjelek-jelekkan akun penipu",
+        "Melaporkan akun tersebut melalui fitur resmi dan umumkan peringatan",
+        "Memblokir semua pengikut yang berinteraksi dengan akun palsu itu",
+        "Menutup sementara akun resmi brand Anda hingga investigasi selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand furnitur minimalis ingin memaksimalkan Pinterest untuk mendatangkan lalu lintas (traffic) ke situs web e-commerce mereka. Strategi visual apa yang wajib diterapkan pada setiap unggahan pin?",
+      "options": [
+        "Menggunakan gambar vertikal beresolusi tinggi dengan teks judul jelas",
+        "Menampilkan foto produk secara makro tanpa latar belakang ruangan",
+        "Membuat kolase foto horizontal berisi banyak produk sekaligus",
+        "Mengunggah video berdurasi panjang tentang proses pembuatan mebel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda merencanakan kampanye pemasaran influencer untuk produk camilan pedas di TikTok. Metrik utama apa yang harus dijadikan acuan utama dalam memilih kreator, bukan sekadar jumlah pengikut?",
+      "options": [
+        "Jumlah total penayangan pada video kreator dalam tiga bulan terakhir",
+        "Tingkat keterlibatan (engagement rate) dan kesesuaian audiens niche",
+        "Tarif kerja sama per video yang ditawarkan oleh manajer sang kreator",
+        "Frekuensi kreator tersebut mengunggah konten bersponsor setiap hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital meluncurkan fitur investasi emas mikro. Konten edukasi seperti apa di Reels Instagram yang paling efektif untuk audiens milenial pemula?",
+      "options": [
+        "Grafik rumit mengenai pergerakan pasar saham global harian",
+        "Simulasi praktis menabung setara harga secangkir kopi per hari",
+        "Wawancara formal dengan pakar ekonomi makro berdurasi panjang",
+        "Tabel perbandingan tingkat suku bunga dari berbagai bank swasta"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menguji efektivitas dua gambar banner berbeda untuk iklan Facebook (A/B testing). Variabel apa yang harus dijaga agar hasil pengujian akurat dan valid?",
+      "options": [
+        "Mengubah target audiens secara acak pada masing-masing banner",
+        "Menetapkan teks salinan (copywriting) dan anggaran iklan yang identik",
+        "Menayangkan banner kedua pada minggu berikutnya di jam berbeda",
+        "Menggunakan platform penayang iklan yang berlainan untuk tiap gambar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah hotel resor di Bali ingin mengukur laba atas belanja iklan (ROAS) dari kampanye Meta Ads untuk pemesanan kamar langsung. Apa elemen teknis yang wajib terpasang di situs web hotel?",
+      "options": [
+        "Tombol pintasan obrolan WhatsApp bisnis di pojok kanan bawah",
+        "Piksel Meta (Meta Pixel) dan pelacakan peristiwa pembelian",
+        "Sertifikat keamanan situs web SSL untuk enkripsi data kartu kredit",
+        "Plugin ulasan tamu dari pihak ketiga yang terverifikasi otomatis"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

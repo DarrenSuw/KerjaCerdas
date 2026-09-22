@@ -1,0 +1,306 @@
+{
+  "skill": "Procurement",
+  "skill_key": "procurement",
+  "questions": [
+    {
+      "question": "Sebuah proyek konstruksi kantor baru di Jakarta mendesak membutuhkan material semen khusus yang hanya dijual oleh sedikit distributor di Jabodetabek. Pemasok utama tiba-tiba menaikkan harga sepihak sebesar 20% di tengah kontrak payung yang sedang berjalan karena kelangkaan bahan baku di pasaran. Sebagai petugas procurement, tindakan apa yang sebaiknya Anda prioritaskan?",
+      "options": [
+        "Langsung menyetujui kenaikan harga agar proyek konstruksi tidak mengalami keterlambatan fatal",
+        "Memutus kontrak secara sepihak dan mencari pemasok baru di luar kota tanpa evaluasi ulang",
+        "Memeriksa klausul eskalasi harga dan force majeure pada dokumen kontrak sebelum bernegosiasi",
+        "Melaporkan masalah ini kepada manajemen puncak agar proyek dihentikan sementara waktu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang memimpin proses tender pengadaan sistem perangkat lunak HR untuk perusahaan multinasional berlokasi di Surabaya. Salah satu peserta tender adalah perusahaan rintisan (startup) lokal yang menawarkan fitur inovatif, namun secara finansial laporan neraca mereka menunjukkan rugi bersih selama dua tahun berturut-turut. Bagaimana cara paling bijak menangani penawaran ini?",
+      "options": [
+        "Mendiskualifikasi mereka secara otomatis demi menghindari risiko kebangkrutan vendor di masa depan",
+        "Menerima penawaran mereka karena inovasi produk jauh lebih penting daripada kesehatan finansial",
+        "Meminta jaminan garansi bank dan evaluasi mitigasi risiko kelangsungan bisnis jangka panjang",
+        "Mengabaikan aspek finansial dan fokus sepenuhnya pada harga penawaran terendah yang mereka ajukan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati indikasi kuat adanya praktik suap atau gratifikasi terselubung dari seorang sales manajer vendor langganan agar perusahaan Anda terus memperpanjang kontrak jasa logistik mereka. Kontrak tersebut bernilai besar dan kinerja operasional vendor selama ini sangat memuaskan. Langkah penanganan pertama yang paling tepat adalah:",
+      "options": [
+        "Melaporkan temuan tersebut melalui saluran pelanggaran whistleblowing system perusahaan",
+        "Meminta kenaikan potongan harga secara pribadi kepada sales tersebut sebagai kompensasi",
+        "Langsung memutus kontrak kerja sama dan memblokir vendor tersebut dari daftar rekanan",
+        "Mengabaikan tindakan tersebut asalkan kinerja pengiriman logistik tetap berjalan lancar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan ritel tempat Anda bekerja berencana melakukan pengadaan seragam baru untuk 5.000 karyawan di seluruh cabang Indonesia. Anda ditugaskan menyusun Rencana Anggaran Biaya (RAB) dan metode pemilihan vendor. Karakteristik pasar apa yang paling penting Anda analisis terlebih dahulu sebelum merilis dokumen penawaran (RFP)?",
+      "options": [
+        "Jumlah total penduduk usia produktif di wilayah sekitar pabrik tekstil potensial",
+        "Kapasitas produksi garmen, ketersediaan bahan baku kain, dan standar upah minimum",
+        "Tren mode pakaian internasional terbaru yang sedang digemari masyarakat perkotaan",
+        "Tingkat inflasi tahunan global dan fluktuasi nilai tukar mata uang asing terhadap rupiah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pengiriman komponen mesin impor dari Jerman tertahan di pelabuhan Tanjung Priok karena kesalahan administrasi pada dokumen Certificate of Origin (CoO) yang diterbitkan oleh vendor luar negeri tersebut. Produksi pabrik terancam berhenti dalam 3 hari. Sebagai staf procurement, tindakan taktis apa yang harus segera dilakukan?",
+      "options": [
+        "Menunggu vendor Jerman mengirimkan dokumen revisi via pos kilat internasional",
+        "Membatalkan seluruh pesanan komponen mesin tersebut dan meminta pengembalian dana",
+        "Berkoordinasi dengan bagian bea cukai dan meminta vendor menerbitkan dokumen digital terlegalisasi",
+        "Membiarkan barang di pelabuhan hingga denda penyimpanan mencapai batas maksimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta untuk mengevaluasi kinerja vendor (Vendor Performance Evaluation) penyedia jasa kebersihan (cleaning service) gedung kantor pusat. Berdasarkan SLA (Service Level Agreement), tingkat kebersihan sudah memenuhi standar, namun ada tiga catatan keluhan staf terkait sikap sopan santun petugas kebersihan. Bobot penilaian manakah yang paling ideal diterapkan?",
+      "options": [
+        "Memberikan nilai sempurna karena standar kebersihan fisik gedung sudah tercapai dengan baik",
+        "Memutus kontrak kerja sama vendor seketika tanpa memberikan kesempatan perbaikan kinerja",
+        "Mengabaikan keluhan staf karena perilaku personal di luar cakupan teknis pembersihan gedung",
+        "Menggabungkan indikator teknis kebersihan dengan aspek layanan pelanggan dalam penilaian"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam proses negosiasi harga pengadaan mesin genset senilai 2 miliar rupiah, pihak vendor bersikeras tidak mau menurunkan harga lagi. Namun, Anda mengetahui bahwa anggaran departemen terbatas dan manajemen menetapkan batas maksimal 1,85 miliar rupiah. Strategi konsesi apa yang paling tepat Anda tawarkan kepada vendor?",
+      "options": [
+        "Meminta penambahan cakupan garansi mesin menjadi 3 tahun dan gratis suku cadang pemeliharaan",
+        "Mengancam akan melaporkan perusahaan mereka ke asosiasi industri jika menolak harga Anda",
+        "Menerima harga awal vendor dan memotong anggaran dari pos pengeluaran departemen lain",
+        "Menurunkan spesifikasi teknis mesin secara drastis agar harganya sesuai dengan anggaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan Anda menerapkan sistem e-Procurement untuk meningkatkan transparansi pengadaan barang dan jasa. Saat ini, Anda sedang merancang kriteria evaluasi teknis untuk pengadaan sistem keamanan siber. Apa prinsip utama yang harus dijaga dalam menyusun dokumen lelang elektronik tersebut?",
+      "options": [
+        "Membuat spesifikasi teknis yang mengarah spesifik pada satu merek produk global tertentu",
+        "Memastikan spesifikasi bersifat fungsional dan terbuka untuk mendorong persaingan yang sehat",
+        "Menetapkan syarat administrasi yang sangat rumit guna menyaring peserta sejak awal seleksi",
+        "Membatasi jumlah vendor yang mendaftar demi mempercepat proses evaluasi administrasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik kimia di Karawang membutuhkan suku cadang mesin khusus dari produsen tunggal di Jepang yang harganya sangat tinggi dan tidak bisa ditawar. Saat Anda melakukan negosiasi, bagaimana strategi pengadaan yang paling efektif untuk menekan total biaya kepemilikan (Total Cost of Ownership)?",
+      "options": [
+        "Meminta diskon langsung berdasarkan volume pembelian tahunan dalam satu kali bayar di muka",
+        "Mencari komponen alternatif lokal yang memiliki spesifikasi mirip meski belum teruji mesin pabrik",
+        "Bernegosiasi mengenai garansi produk yang lebih panjang serta layanan perawatan gratis dari teknisi",
+        "Mengancam akan menghentikan kerja sama jangka panjang jika mereka tidak memberikan potongan harga khusus"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat memeriksa dokumen penawaran tender pengadaan armada logistik, Anda menemukan bahwa satu peserta tender memasukkan harga penawaran yang jauh di bawah HPS (Harga Perkiraan Sendiri) dan berada di bawah kewajaran biaya operasional pasar. Apa tindakan profesional yang harus Anda lakukan?",
+      "options": [
+        "Langsung mendiskualifikasi peserta tersebut karena mencurigakan dan berpotensi merugikan proyek",
+        "Melakukan klarifikasi mendalam (Aanwijzing khusus) untuk membuktikan apakah mereka sanggup memenuhi spesifikasi",
+        "Menerima penawaran tersebut karena perusahaan dapat menghemat anggaran pengadaan secara signifikan",
+        "Melaporkan peserta tersebut kepada pihak berwenang atas dugaan praktik persaingan usaha tidak sehat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda sedang mengalami keterlambatan arus kas (cash flow), sehingga pembayaran kepada vendor katering kantin kantor harus tertunda selama 45 hari dari termin normal 30 hari. Vendor mengancam akan menghentikan layanan mulai besok. Sebagai staf procurement, langkah apa yang harus segera Anda ambil?",
+      "options": [
+        "Mencari vendor katering baru secara mendadak untuk menggantikan vendor lama yang tidak kooperatif",
+        "Mengabaikan ancaman tersebut karena keterlambatan pembayaran adalah hal yang lumrah dalam bisnis",
+        "Berkomunikasi secara transparan dengan manajemen keuangan dan vendor untuk menjadwalkan pembayaran cicilan",
+        "Meminta manajemen mencairkan dana talangan pribadi untuk melunasi tagihan vendor tersebut hari ini"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda baru saja menandatangani kontrak pengadaan laptop operasional kantor dengan pihak distributor resmi. Seminggu kemudian, harga pasaran komponen global turun drastis, dan Anda mendapati harga dalam kontrak Anda 20 persen lebih tinggi dari harga pasar saat ini. Bagaimana sikap yang tepat dalam menghadapi situasi ini?",
+      "options": [
+        "Membatalkan kontrak secara sepihak dan menuntut distributor untuk menyesuaikan dengan harga pasar terbaru",
+        "Menerima kondisi tersebut sebagai risiko bisnis kontrak jangka pendek dan tetap menjalankan kewajiban",
+        "Mengajukan adendum renegosiasi harga dengan alasan klausul force majeure penurunan ekonomi global",
+        "Meminta vendor memberikan tambahan unit gratis sebagai kompensasi atas selisih harga pasar tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah proyek pembangunan gudang logistik di Surabaya mendesak membutuhkan penyewaan alat berat excavator. Waktu operasional tinggal 3 hari lagi, namun proses tender normal memakan waktu minimal 2 minggu. Langkah darurat apa yang sah secara prosedur pengadaan korporat?",
+      "options": [
+        "Langsung menunjuk langsung vendor langganan terdekat dengan persetujuan darurat dari Direksi",
+        "Meminta salah satu staf menggunakan dana pribadi untuk menyewa alat berat dan nanti direstitusi",
+        "Memperpanjang tenggat waktu proyek konstruksi sampai proses tender selesai dilakukan sepenuhnya",
+        "Menghubungi semua vendor secara informal dan memberikan kontrak kepada yang membalas paling cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam audit internal tahunan departemen pengadaan, ditemukan bahwa beberapa Purchase Order (PO) dipecah menjadi nominal kecil di bawah batas minimum otorisasi manajer agar tidak perlu melalui persetujuan tingkat direksi. Tindakan perbaikan sistemik apa yang harus diterapkan?",
+      "options": [
+        "Memberikan sanksi pemecatan kepada seluruh staf yang terlibat tanpa melakukan investigasi lanjutan",
+        "Menaikkan batas minimal otorisasi manajer agar tidak repot melakukan pemecahan dokumen PO",
+        "Memperketat sistem kontrol pada aplikasi e-Procurement untuk mendeteksi transaksi pecah pesanan",
+        "Menghapus ketentuan batas otorisasi dan menyerahkan semua keputusan pembelian kepada direktur utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengelola pengadaan alat pelindung diri (APD) untuk pabrik manufaktur. Hasil inspeksi acak gelombang pertama menunjukkan 5 persen dari total barang yang dikirim memiliki cacat jahitan minor yang tidak membahayakan keselamatan. Apa tindakan Anda terhadap batch pengiriman tersebut?",
+      "options": [
+        "Menolak seluruh total batch pengiriman dan meminta vendor mengganti baru dalam waktu 1x24 jam",
+        "Menerima barang tersebut dan meminta potongan harga proporsional untuk sisa pembayaran berikutnya",
+        "Melakukan sortir ulang bersama vendor, lalu retur hanya pada unit yang terbukti cacat produksi",
+        "Memaksa gudang menggunakan barang tersebut karena cacatnya hanya bersifat minor dan kosmetik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan farmasi tempat Anda bekerja berencana merelokasi gudang pusatnya. Anda ditugaskan mencari jasa ekspedisi pihak ketiga (3PL) untuk memindahkan seluruh inventaris bernilai tinggi. Kriteria krusial apa yang harus menjadi bobot penilaian tertinggi dalam evaluasi tender?",
+      "options": [
+        "Menawarkan tarif biaya pengiriman borongan yang paling murah di antara semua peserta tender",
+        "Memiliki polis asuransi kargo menyeluruh (comprehensive cargo insurance) serta rekam jejak nihil klaim",
+        "Menyediakan armada truk jenis terbaru dengan kapasitas muatan paling besar di pasaran saat ini",
+        "Memiliki hubungan kerja sama yang sudah terjalin lama dengan bagian keuangan perusahaan Anda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Vendor penyedia jasa pemeliharaan AC kantor pusat mengajukan penagihan bulanan dengan melampirkan berita acara penyelesaian pekerjaan yang ditandatangani oleh staf administrasi biasa, bukan oleh pejabat berwenang (User Department Head). Apa yang harus Anda lakukan sebagai bagian dari verifikasi tagihan?",
+      "options": [
+        "Langsung meneruskan dokumen penagihan tersebut ke bagian keuangan agar pembayaran tidak terlambat",
+        "Menolak memproses dokumen dan meminta vendor mendapatkan tanda tangan dari pejabat berwenang",
+        "Menandatangani sendiri berita acara tersebut mewakili user agar proses administrasi lekas selesai",
+        "Membayar separuh dari total nilai tagihan sambil menunggu konfirmasi lisan dari kepala departemen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengadakan layanan katering untuk 300 karyawan pabrik di Cikarang selama satu tahun. Vendor terpilih meminta uang muka (down payment) sebesar 50% sebelum layanan dimulai, padahal kebijakan perusahaan menetapkan maksimal 20%. Langkah mitigasi terbaik yang harus Anda ambil adalah",
+      "options": [
+        "Menolak kontrak dan langsung menunjuk vendor cadangan urutan kedua tanpa negosiasi ulang",
+        "Meminta persetujuan khusus direksi dengan melampirkan jaminan bank senilai uang muka tersebut",
+        "Membatalkan seluruh tender dan mengubah spesifikasi menu agar harga penawaran lebih murah",
+        "Menerima permintaan vendor demi kelancaran operasional pabrik dengan persetujuan manajer logistik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pembangunan gedung di Medan, vendor baja konstruksi mengalami keterlambatan pengiriman selama dua minggu dari jadwal kontrak, yang mengancam target penyelesaian proyek. Tindakan kontraktual awal yang paling tepat dilakukan oleh tim procurement adalah",
+      "options": [
+        "Langsung memutus kontrak secara sepihak dan mencari vendor baru di pasar lokal",
+        "Menerbitkan surat peringatan resmi serta mengenakan denda keterlambatan sesuai klausul kontrak",
+        "Meminta vendor menanggung biaya lembur pekerja konstruksi tanpa mengubah jadwal pengiriman",
+        "Melakukan negosiasi ulang untuk memperpanjang durasi proyek tanpa memperhitungkan denda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengevaluasi penawaran harga dari tiga vendor penyedia layanan internet kantor. Vendor A menawarkan harga termurah namun dengan SLA (Service Level Agreement) 95%. Vendor B dan C menawarkan harga lebih tinggi namun dengan SLA 99%. Mengingat operasional perusahaan sangat bergantung pada koneksi internet, keputusan pengadaan terbaik adalah",
+      "options": [
+        "Memilih Vendor A karena menghemat anggaran operasional perusahaan secara signifikan",
+        "Memilih Vendor B atau C dengan menimbang potensi kerugian akibat downtime jaringan",
+        "Meratifikasi ulang anggaran agar dapat menawar harga Vendor A dengan SLA yang lebih tinggi",
+        "Meminta ketiga vendor menurunkan harga penawaran mereka hingga setara dengan Vendor A"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan audit fisik inventaris kantor, Anda menemukan bahwa 50 unit printer yang dibeli tiga bulan lalu dari vendor rekanan belum pernah dikirimkan ke divisi pengguna, meskipun pembayaran telah dilakukan 100%. Langkah investigasi pertama yang harus Anda lakukan adalah",
+      "options": [
+        "Melaporkan kasus ini langsung ke pihak kepolisian atas dugaan tindak pidana penipuan",
+        "Memeriksa dokumen berita acara serah terima barang dan menghubungi bagian logistik gudang",
+        "Mengirimkan somasi hukum kepada direktur utama vendor penyedia printer tersebut",
+        "Meminta bagian keuangan untuk segera memblokir seluruh rekening pembayaran vendor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur di Semarang berencana mengganti sistem ERP lama. Tim IT menginginkan vendor X karena sudah terbiasa menggunakannya, sementara departemen keuangan merekomendasikan vendor Y yang harganya 30% lebih murah dengan fitur serupa. Sebagai procurement, langkah Anda adalah",
+      "options": [
+        "Menuruti sepenuhnya pilihan tim IT karena mereka yang akan mengoperasikan sistem tersebut",
+        "Memilih vendor Y secara otomatis karena memberikan penghematan anggaran yang paling besar",
+        "Memfasilitasi evaluasi teknis dan finansial bersama lintas departemen dengan bobot objektif",
+        "Membuka kembali proses tender dari awal untuk mencari vendor ketiga yang harganya di tengah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses pengadaan alat tulis kantor (ATK) tahunan menggunakan metode e-catalogue, Anda mendapati bahwa harga pasaran untuk produk tertentu di e-catalogue lebih tinggi 15% dibandingkan harga grosir umum di pasaran bebas. Tindakan profesional yang harus Anda ambil adalah",
+      "options": [
+        "Tetap membeli melalui e-catalogue demi kepatuhan administratif dan kemudahan audit",
+        "Melakukan negosiasi harga kepada penyedia e-catalogue atau melaporkan selisih harga tersebut",
+        "Membeli produk tersebut di pasar bebas secara tunai tanpa melalui sistem pengadaan resmi",
+        "Mengabaikan temuan tersebut karena selisih 15% masih dalam batas toleransi kewajaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima keluhan dari departemen pemasaran bahwa souvenir promosi yang dikirimkan oleh vendor memiliki kualitas cetak logo perusahaan yang luntur. Berdasarkan SOP pengadaan, langkah penyelesaian sengketa komersial yang harus ditempuh adalah",
+      "options": [
+        "Meminta departemen pemasaran memperbaiki sendiri souvenir tersebut menggunakan anggaran mereka",
+        "Menolak membayar sisa tagihan dan mewajibkan vendor mengganti seluruh barang yang cacat",
+        "Memotong pembayaran tagihan sebesar 10% sebagai kompensasi atas penurunan kualitas",
+        "Memutus kontrak kerja sama dan memasukkan vendor tersebut ke dalam daftar hitam perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda membutuhkan jasa konsultan hukum eksternal untuk menangani sengketa ketenagakerjaan. Karena sifat jasanya bersifat konfidensial dan membutuhkan keahlian spesifik, metode pengadaan yang paling tepat untuk diterapkan adalah",
+      "options": [
+        "Tender terbuka melalui media massa nasional agar transparan bagi publik luas",
+        "Penunjukan langsung kepada kantor hukum berkaliber tinggi dengan portofolio teruji",
+        "Tender terbatas dengan mengundang minimal sepuluh firma hukum umum di kota terdekat",
+        "Pengadaan langsung melalui katalog elektronik pemerintah tanpa seleksi kualifikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir tahun anggaran, departemen operasional mengajukan pengadaan furnitur kantor mendadak untuk menghabiskan sisa anggaran, padahal kebutuhan tersebut tidak tercantum dalam Rencana Kerja dan Anggaran Perusahaan (RKAP). Sikap Anda sebagai manajer procurement adalah",
+      "options": [
+        "Menyetujui pengadaan tersebut agar anggaran tahun berjalan terserap secara maksimal",
+        "Menolak permintaan tersebut dan menyarankan revisi RKAP resmi untuk tahun berikutnya",
+        "Memproses pembelian dengan memilih vendor yang menawarkan harga paling murah saja",
+        "Meminta persetujuan lisan dari bagian keuangan untuk mempercepat proses pembelian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan verifikasi dokumen legalitas vendor untuk pendaftaran vendor baru (Vendor Registration), Anda menemukan bahwa surat izin usaha perdagangan (SIUP) milik calon vendor telah habis masa berlakunya minggu lalu. Tindakan yang harus Anda ambil adalah",
+      "options": [
+        "Meloloskan vendor tersebut dengan syarat mereka berjanji memperbarui dokumen bulan depan",
+        "Menunda proses verifikasi dan meminta vendor mengunggah dokumen izin yang masih berlaku",
+        "Memalsukan tanggal kedaluwarsa dokumen agar proses tender tidak mengalami keterlambatan",
+        "Menerbitkan surat penunjukan pemenang sementara sambil menunggu dokumen baru diterbitkan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola pengadaan bahan baku utama untuk pabrik makanan. Menjelang musim liburan, permintaan melonjak drastis dan pemasok utama Anda menyatakan kapasitas produksinya sudah penuh. Apa langkah taktis pertama yang paling tepat untuk mengamankan rantai pasok?",
+      "options": [
+        "Membatalkan seluruh rencana produksi dan merumahkan sementara karyawan pabrik",
+        "Mengaktifkan daftar vendor cadangan yang telah lolos kualifikasi sebelumnya",
+        "Memaksa pemasok utama memenuhi kuota dengan ancaman pemutusan kontrak",
+        "Membeli bahan baku di pasar bebas secara tunai tanpa melalui prosedur tender"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam evaluasi penawaran tender pengadaan armada kendaraan operasional, Vendor A menawarkan harga total terendah namun masa garansi servisnya hanya 1 tahun, sedangkan Vendor B sedikit lebih mahal tapi memberikan garansi 3 tahun serta gratis suku cadang. Bagaimana Anda menentukan pemenang tender?",
+      "options": [
+        "Memilih Vendor A karena fokus utama divisi pengadaan adalah penghematan kas awal",
+        "Melakukan perhitungan Total Cost of Ownership (TCO) untuk melihat biaya jangka panjang",
+        "Membagi dua kuota pengadaan secara merata ke Vendor A dan Vendor B tanpa negosiasi",
+        "Meminta kedua vendor memberikan diskon tambahan melalui surat penawaran rahasia"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah vendor penyedia jasa keamanan (security) mengajukan permohonan kenaikan tarif bulanan di tengah jalan kontrak berjalan, dengan alasan kenaikan Upah Minimum Kabupaten (UMK). Kontrak awal bersifat harga tetap (fixed price). Sikap Anda sebagai procurement officer adalah:",
+      "options": [
+        "Langsung menyetujui kenaikan tersebut agar petugas keamanan tetap bekerja optimal",
+        "Menolak secara mutlak dan langsung mencari vendor pengganti di pasar terbuka",
+        "Mengkaji regulasi ketenagakerjaan terkait UMK dan klausul penyesuaian harga di kontrak",
+        "Meminta manajemen memotong anggaran departemen lain untuk menutupi selisih tarif"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

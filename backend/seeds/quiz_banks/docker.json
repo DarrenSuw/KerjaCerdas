@@ -1,0 +1,306 @@
+{
+  "skill": "Docker",
+  "skill_key": "docker",
+  "questions": [
+    {
+      "question": "Tim Anda mendapati bahwa image Docker aplikasi backend Node.js berukuran sangat besar (lebih dari 1GB), sehingga proses deployment di server produksi memakan waktu lama. Langkah apa yang paling tepat untuk memangkas ukuran image tersebut?",
+      "options": [
+        "Mengganti base image dari versi full ke versi Alpine Linux dan memakai multi-stage build",
+        "Menghapus folder node_modules secara manual menggunakan perintah RUN terpisah di Dockerfile",
+        "Memindahkan seluruh kode sumber aplikasi ke dalam direktori tersembunyi sebelum proses build",
+        "Menaikkan kapasitas bandwidth jaringan lokal pada server CI/CD agar proses unggah lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat Anda menjalankan perintah docker compose up -d di lingkungan staging, kontainer basis data (PostgreSQL) sering restart sendiri karena data di dalamnya hilang setiap kali kontainer dihapus. Solusi apa yang harus diterapkan pada file docker-compose.yml?",
+      "options": [
+        "Menambahkan variabel lingkungan khusus untuk mengunci status stateful pada kontainer",
+        "Menentukan direktori path lokal atau named volume pada bagian konfigurasi volumes",
+        "Mengubah parameter restart policy menjadi always agar kontainer otomatis menyala kembali",
+        "Membuat image turunan baru yang secara permanen menyimpan data di dalam layer image"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berbasis Laravel yang Anda kontainerisasi mengalami error saat diakses karena variabel lingkungan (environment variables) dari file .env terbaca kosong di dalam kontainer. Apa penyebab utama masalah ini?",
+      "options": [
+        "Perintah EXPOSE di dalam Dockerfile belum mendefinisikan port untuk file konfigurasi .env",
+        "Docker Daemon di server lokal belum diaktifkan fiturnya untuk membaca file konfigurasi tersembunyi",
+        "File .env tidak disertakan atau belum dilewatkan dengan benar melalui opsi env_file di Docker Compose",
+        "Format penulisan kode PHP di dalam container tidak mendukung pembacaan variabel sistem operasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mengamankan kontainer aplikasi produksi agar tidak berjalan dengan hak akses root (root privileges) demi mencegah celah keamanan eskalasi privilese. Bagaimana cara menerapkannya di Dockerfile?",
+      "options": [
+        "Menambahkan instruksi USER non-root setelah proses instalasi dependensi dan penyalinan file selesai",
+        "Menjalankan perintah docker run dengan menyertakan flag --privileged pada baris perintah terminal",
+        "Mengubah kepemilikan seluruh file direktori kerja menjadi root:root sebelum perintah ENTRYPOINT",
+        "Menghapus semua paket utilitas sistem operasi yang memiliki fungsi pengendali administratif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah kontainer layanan API mengalami lonjakan trafik yang tinggi di server produksi, menyebabkan penggunaan memori melonjak hingga memicu kernel Out-Of-Memory (OOM) Killer dan kontainer mati mendadak. Tindakan preventif apa yang paling tepat?",
+      "options": [
+        "Melakukan restart berkala pada server fisik menggunakan crontab setiap tengah malam",
+        "Membatasi alokasi sumber daya memori menggunakan parameter mem_limit pada Docker Compose",
+        "Menghapus mekanisme logging bawaan Docker agar ruang penyimpanan host tidak cepat penuh",
+        "Menaikkan nilai prioritas proses kontainer tersebut menggunakan perintah renice di host"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang men-debug aplikasi microservice di Docker di mana frontend tidak dapat terhubung ke backend meskipun kedua kontainer berada di mesin yang sama. Keduanya dibuat menggunakan docker run secara terpisah tanpa Docker Compose. Apa pendekatan terbaik untuk mengatasi masalah komunikasi ini?",
+      "options": [
+        "Mengubah alamat IP localhost di konfigurasi frontend menjadi alamat IP publik server fisik",
+        "Menggabungkan kode sumber frontend dan backend ke dalam satu direktori repository yang sama",
+        "Membuat network bridge baru menggunakan docker network create dan menghubungkan kedua kontainer ke sana",
+        "Membuka semua port jaringan pada firewall sistem operasi host agar lalu lintas data bebas diakses"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Proses build Docker image di server CI/CD selalu memakan waktu lama karena selalu mengunduh ulang dependensi Maven padahal file pom.xml tidak mengalami perubahan. Bagian mana dari Dockerfile yang perlu diperbaiki?",
+      "options": [
+        "Menyatukan perintah penyalinan seluruh kode sumber dengan perintah pengunduhan dependensi dalam satu baris",
+        "Menyalin file konfigurasi dependensi terlebih dahulu dan menjalankan unduhan sebelum menyalin seluruh kode sumber",
+        "Menghapus direktori cache Maven pada argumen build agar sistem selalu mengambil versi terbaru dari internet",
+        "Memindahkan proses kompilasi kode Java ke luar kontainer sebelum file JAR dimasukkan ke Dockerfile"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berbasis Python Flask di dalam kontainer Docker tidak merespons perubahan kode secara langsung saat Anda melakukan live coding di komputer lokal. Apa yang harus dikonfigurasi agar perubahan kode langsung berdampak tanpa build ulang image?",
+      "options": [
+        "Melakukan mounting direktori kode sumber lokal ke dalam direktori aplikasi di kontainer menggunakan bind mount",
+        "Mengaktifkan mode daemon pada Docker CLI agar kontainer otomatis mendeteksi perubahan file di host",
+        "Menjalankan perintah docker commit setiap kali ada baris kode baru yang disimpan di text editor",
+        "Menambahkan perintah WATCHMAN di dalam file Dockerfile untuk memantau aktivitas perubahan file"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim DevOps mendapati bahwa log aplikasi di dalam kontainer Docker terus menumpuk hingga menghabiskan ruang disk pada server produksi. Kebijakan logging (log driver) seperti apa yang paling tepat diterapkan pada Docker Daemon?",
+      "options": [
+        "Mematikan fungsi logging secara total dengan menyetel opsi log_driver ke mode null pada konfigurasi daemon",
+        "Mengarahkan seluruh keluaran log langsung ke direktori /dev/null melalui perintah volume mapping",
+        "Mengatur rotasi log dengan membatasi ukuran maksimum file dan jumlah arsip menggunakan opsi max-size dan max-file",
+        "Membuat cron job terjadwal untuk menghapus paksa file log sistem operasi host setiap satu jam sekali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda perlu mendistribusikan Docker image aplikasi internal perusahaan yang bersifat sensitif ke lingkungan staging, namun tidak ingin image tersebut bisa diakses oleh publik di Docker Hub. Langkah apa yang harus dilakukan?",
+      "options": [
+        "Menggunakan private registry perusahaan atau fitur private repository di Docker Hub yang memerlukan autentikasi",
+        "Menambahkan enkripsi AES pada seluruh file biner di dalam direktori root sebelum proses docker build dijalankan",
+        "Menyimpan file hasil export image ke dalam format tar dan membagikannya lewat aplikasi berkirim pesan",
+        "Mengubah nama tag image menjadi versi tersembunyi agar tidak terindeks oleh mesin pencari publik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi berbasis Go yang Anda jalankan di Docker mendadak mengalami error out-of-memory di server produksi. Anda perlu membatasi konsumsi memori maksimum kontainer tersebut menjadi 512 Megabyte agar tidak mengganggu layanan lain. Perintah Docker manakah yang paling tepat untuk diterapkan saat menjalankan kontainer?",
+      "options": [
+        "docker run -d --memory=512m my-go-app",
+        "docker run -d --ram-limit=512mb my-go-app",
+        "docker run -d --max-memory=512M my-go-app",
+        "docker run -d --limit-memory=512m my-go-app"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati file konfigurasi sensitif (.env) tanpa sengaja ikut ter-copy ke dalam Docker image saat proses build karena kurangnya konfigurasi pengecualian. Tindakan apa yang paling tepat untuk mencegah file tersebut terbawa ke dalam image akhir?",
+      "options": [
+        "Menghapus file tersebut manual dari dalam kontainer yang sedang berjalan",
+        "Membuat dan mengisi file .dockerignore dengan menyertakan nama file .env",
+        "Menambahkan baris perintah hapus file di bagian akhir dari Dockerfile utama",
+        "Memindahkan file konfigurasi ke direktori tersembunyi sebelum melakukan build"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kontainer aplikasi backend Java Anda tiba-tiba berhenti secara misterius di tengah malam tanpa meninggalkan jejak log yang jelas di dalam aplikasi. Langkah diagnostik awal apa yang paling tepat menggunakan Docker CLI untuk mengetahui apakah kontainer tersebut mati akibat kehabisan memori (OOMKilled)?",
+      "options": [
+        "Menjalankan perintah docker logs --tail=100 untuk melihat baris akhir log sistem",
+        "Menjalankan perintah docker inspect untuk memeriksa status kode keluar dan OOMKilled",
+        "Menjalankan perintah docker stats secara langsung untuk memantau trafik memori",
+        "Menjalankan perintah docker events untuk melacak aktivitas seluruh layanan server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan update pada layanan Nginx menggunakan Docker Compose di server produksi, Anda ingin memastikan proses pembaruan berjalan tanpa downtime bagi pengguna dengan mengganti kontainer lama secara bertahap. Konfigurasi tambahan apa yang paling tepat pada file Compose?",
+      "options": [
+        "Menambahkan parameter deploy.restart_policy dengan nilai always pada layanan",
+        "Menambahkan parameter deploy.update_config dengan pengaturan parallelism yang sesuai",
+        "Menambahkan parameter container_name ganda untuk proses salinan cadangan",
+        "Menambahkan parameter build.args untuk memaksa kompilasi ulang kode sumber"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu membagikan data unggahan pengguna agar tetap aman dan tidak hilang meskipun kontainer aplikasi web dihapus atau diregenerasi. Mekanisme penyimpanan apa di Docker yang paling tepat digunakan untuk skenario ini?",
+      "options": [
+        "Menggunakan tmpfs mounts agar data langsung tersimpan di dalam memori RAM server",
+        "Menggunakan anonymous volumes yang dibuat otomatis oleh Docker pada direktori sistem",
+        "Menggunakan named volumes atau bind mounts untuk menghubungkan direktori host",
+        "Menggunakan commit image secara berkala untuk menyimpan perubahan file runtime"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Server staging perusahaan Anda mengalami penurunan performa drastis akibat menumpuknya ratusan Docker image lama dan kontainer yang sudah berhenti. Perintah pembersihan apa yang paling aman untuk menghapus semua kontainer yang tidak aktif sekaligus image yang tidak memiliki tag (dangling)?",
+      "options": [
+        "Menjalankan perintah docker system prune -a untuk membersihkan total seluruh objek",
+        "Menjalankan perintah docker container prune dilanjutkan dengan docker image prune",
+        "Menjalankan perintah docker rm -f $(docker ps -a -q) untuk menghapus seluruhnya",
+        "Menjalankan perintah docker volume prune untuk mengosongkan seluruh ruang penyimpanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa aplikasi web React yang berjalan di kontainer Docker tidak dapat berkomunikasi dengan API backend yang berada di kontainer terpisah, meskipun keduanya menggunakan Docker Compose. Apa penyebab paling mendasar dari masalah jaringan ini?",
+      "options": [
+        "Kedua kontainer belum menggunakan jaringan kustom yang sama atau salah konfigurasi port",
+        "Versi Docker Engine pada komputer QA sudah kedaluwarsa dan tidak mendukung bridge network",
+        "File Dockerfile pada frontend kurang mendefinisikan perintah eksekusi port publik",
+        "Alamat IP lokal komputer QA selalu berubah setiap kali kontainer dinyalakan ulang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk memastikan bahwa layanan database MySQL di dalam kontainer selalu otomatis menyala kembali jika server fisik mengalami reboot atau layanan Docker daemon dimulai ulang. Pengaturan apa yang harus ditambahkan pada perintah docker run?",
+      "options": [
+        "Menambahkan flag argumen --restart=always pada perintah eksekusi kontainer",
+        "Menambahkan flag argumen --auto-start=true pada perintah eksekusi kontainer",
+        "Menambahkan flag argumen --policy=reboot pada perintah eksekusi kontainer",
+        "Menambahkan flag argumen --daemon-mode=on pada perintah eksekusi kontainer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah skrip otomatisasi deployment Anda gagal karena Docker CLI merespons dengan pesan 'permission denied' saat mencoba mengakses soket Unix. Langkah penanganan paling tepat tanpa mengorbankan aspek keamanan server adalah:",
+      "options": [
+        "Selalu menjalankan perintah Docker apa pun dengan awalan hak akses sudo secara konsisten",
+        "Mengubah kepemilikan file soket Docker agar bisa diakses bebas oleh semua pengguna sistem",
+        "Memasukkan akun pengguna yang aktif ke dalam grup sistem bernama docker di server",
+        "Mematikan fitur keamanan SELinux dan AppArmor yang berjalan pada sistem operasi host"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin melakukan audit keamanan berkala terhadap Docker image aplikasi internal sebelum diunggah ke registry perusahaan. Alat bawaan Docker CLI manakah yang paling tepat digunakan untuk memindai kerentanan keamanan pada image tersebut?",
+      "options": [
+        "Menggunakan perintah docker scan untuk menganalisis kerentanan pustaka pihak ketiga",
+        "Menggunakan perintah docker check untuk memvalidasi sintaksis konfigurasi image",
+        "Menggunakan perintah docker audit untuk memeriksa hak akses file dalam kontainer",
+        "Menggunakan perintah docker security untuk mendeteksi ancaman malware aktif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati proses deployment aplikasi Go di server produksi sering gagal karena port 8080 sudah digunakan oleh proses lain di host. Apa langkah paling tepat untuk mengatasi konflik port ini tanpa mengubah kode aplikasi?",
+      "options": [
+        "Mengubah port internal pada file Dockerfile di bagian instruksi EXPOSE",
+        "Memetakan port host yang berbeda ke port kontainer melalui parameter port mapping",
+        "Menghentikan seluruh layanan jaringan sistem operasi dengan perintah iptables",
+        "Menjalankan ulang daemon Docker menggunakan hak akses administrator penuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah kontainer worker Node.js di server produksi sering terhenti tiba-tiba saat memproses beban kerja berat. Anda ingin kontainer tersebut otomatis melakukan restart hanya jika mengalami kegagalan, bukan saat dihentikan secara manual. Konfigurasi restart policy apa yang paling sesuai?",
+      "options": [
+        "Atur kebijakan restart menjadi 'always' pada perintah docker run",
+        "Atur kebijakan restart menjadi 'on-failure' pada perintah docker run",
+        "Atur kebijakan restart menjadi 'unless-stopped' pada file konfigurasi",
+        "Atur kebijakan restart menjadi 'no' dan gunakan cron job eksternal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan Docker Compose untuk aplikasi e-commerce yang terdiri dari API dan database Redis. Anda ingin memastikan API baru bisa menerima koneksi setelah Redis benar-benar siap menerima perintah ping. Fitur Docker Compose apa yang harus digunakan?",
+      "options": [
+        "Menggunakan opsi depends_on dengan kondisi service_healthy",
+        "Menambahkan variabel lingkungan khusus jeda waktu di dalam file env",
+        "Menulis skrip bash eksternal untuk melakukan sleep selama 30 detik",
+        "Mengatur urutan layanan berdasarkan abjad nama kontainer di Compose"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan troubleshooting pada kontainer Nginx yang berjalan di server client, Anda perlu menyalin file konfigurasi nginx.conf dari dalam kontainer yang sedang berjalan ke mesin lokal untuk diperiksa. Perintah Docker apa yang paling tepat?",
+      "options": [
+        "Gunakan perintah docker export untuk mengambil file konfigurasi target",
+        "Gunakan perintah docker cp dari kontainer aktif menuju direktori host",
+        "Gunakan perintah docker commit lalu jalankan image baru di mesin lokal",
+        "Gunakan perintah docker pull untuk mengunduh ulang file dari registry"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa image Docker aplikasi backend perusahaan Anda berisi banyak riwayat layer sensitif dari proses build sebelumnya. Cara paling efektif untuk menghasilkan image yang bersih dan hanya berisi artefak final adalah:",
+      "options": [
+        "Menghapus manual direktori cache menggunakan perintah rm -rf di akhir build",
+        "Memanfaatkan fitur multi-stage build pada file Dockerfile yang digunakan",
+        "Menjalankan perintah docker system prune setelah proses build selesai",
+        "Memecah satu file Dockerfile besar menjadi sepuluh file terpisah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim infrastructure meminta Anda untuk membatasi penggunaan sumber daya CPU pada kontainer analitik data agar tidak melumpuhkan layanan utama di server yang sama. Parameter apa yang harus ditambahkan saat menjalankan kontainer?",
+      "options": [
+        "Gunakan flag --memory-swap untuk mengatur alokasi memori virtual kontainer",
+        "Gunakan flag --cpus untuk membatasi kuota penggunaan inti CPU kontainer",
+        "Gunakan flag --shm-size untuk memperbesar ukuran memori bersama sistem",
+        "Gunakan flag --pids-limit untuk membatasi jumlah proses aktif di kontainer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu memantau penggunaan CPU, memori, dan I/O jaringan secara real-time dari seluruh kontainer yang sedang aktif di server staging tanpa masuk ke dalam kontainer satu per satu. Perintah Docker apa yang paling tepat?",
+      "options": [
+        "Gunakan perintah docker top untuk melihat proses aktif setiap layanan",
+        "Gunakan perintah docker stats untuk memantau metrik sumber daya sistem",
+        "Gunakan perintah docker system df untuk melihat kapasitas penyimpanan data",
+        "Gunakan perintah docker events untuk melacak aktivitas daemon secara live"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menggunakan Docker Compose, Anda ingin mendefinisikan sekumpulan variabel konfigurasi yang bersifat rahasia (seperti password database) agar tidak tercatat secara plaintext di dalam file docker-compose.yml. Fitur apa yang sebaiknya digunakan?",
+      "options": [
+        "Membuat direktori khusus bernama secrets dan mereferensikannya di Compose",
+        "Menyimpan seluruh kredensial langsung pada instruksi ENV dalam Dockerfile",
+        "Menempatkan nilai rahasia di dalam komentar file konfigurasi YAML",
+        "Menggunakan argumen build-args saat mengeksekusi perintah docker compose"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa perubahan kecil pada file kode sumber aplikasi Python selalu memicu unduhan ulang dependensi pip yang besar saat proses docker build. Bagaimana cara mengoptimalkan Dockerfile agar cache build lebih efektif?",
+      "options": [
+        "Menyalin seluruh file proyek sekaligus sebelum menjalankan instalasi pip",
+        "Menyalin file requirements.txt dan instalasi pip terlebih dahulu sebelum kode sumber",
+        "Menghapus direktori cache pip secara manual di setiap awal baris perintah build",
+        "Menempatkan instruksi WORKDIR di bagian paling akhir dari file Dockerfile"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah kontainer layanan API mengalami masalah performa dan Anda perlu masuk ke dalam lingkungan shell interaktif kontainer tersebut untuk melakukan pengecekan diagnostik jaringan. Perintah apa yang harus Anda jalankan?",
+      "options": [
+        "Gunakan perintah docker attach pada kontainer yang sedang berjalan",
+        "Gunakan perintah docker exec dengan opsi interaktif untuk membuka bash",
+        "Gunakan perintah docker run dengan parameter interaktif dan image baru",
+        "Gunakan perintah docker commit untuk mengubah kontainer menjadi image"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

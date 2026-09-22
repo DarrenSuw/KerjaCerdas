@@ -1,0 +1,306 @@
+{
+  "skill": "Product Management",
+  "skill_key": "product management",
+  "questions": [
+    {
+      "question": "Anda adalah PM di aplikasi e-commerce lokal. Data analitik menunjukkan lonjakan drastis pada keranjang belanja yang ditinggalkan (cart abandonment) pada halaman pembayaran akhir. Apa langkah awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Langsung merombak total tampilan UI halaman pembayaran agar terlihat lebih modern",
+        "Melakukan sesi wawancara pengguna dan melihat rekaman sesi untuk mencari titik gesekan",
+        "Menurunkan biaya pengiriman secara permanen untuk memicu penyelesaian transaksi",
+        "Membuat fitur baru berupa pengingat WhatsApp otomatis bagi pengguna yang keluar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim sales B2B mendesak Anda untuk membuat fitur kustomisasi laporan yang hanya diminta oleh satu klien korporat terbesar, padahal klien tersebut menyumbang 30% pendapatan tahunan perusahaan. Bagaimana sikap Anda sebagai PM?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas demi menjaga fokus pada peta jalan produk umum",
+        "Langsung memasukkan fitur tersebut ke sprint berikutnya karena dampak finansial klien besar",
+        "Menganalisis apakah kebutuhan tersebut juga dirasakan oleh segmen industri klien serupa",
+        "Menyerahkan keputusan akhir kepada tim developer yang sedang mengerjakan modul terkait"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur baru pelacak keuangan telah dirilis seminggu lalu. Metrik adopsi sangat tinggi, namun retensi pengguna pada hari ketujuh anjlok drastis. Apa hipotesis awal yang paling masuk akal?",
+      "options": [
+        "Pengguna menghadapi hambatan psikologis atau teknis setelah pengalaman pertama selesai",
+        "Tim marketing salah menargetkan segmen audiens pada kampanye akuisisi minggu lalu",
+        "Antarmuka pengguna terlalu rumit sehingga tidak dipahami oleh pengguna berusia lanjut",
+        "Infrastruktur server backend mengalami gangguan kinerja saat memuat data historis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memprioritaskan backlog produk untuk kuartal depan menggunakan kerangka kerja RICE. Fitur A memiliki jangkauan (Reach) sangat luas tetapi dampak (Impact) rendah, sedangkan Fitur B memiliki jangkauan terbatas tetapi dampak bisnisnya sangat masif. Langkah apa yang tepat?",
+      "options": [
+        "Selalu memilih Fitur A karena metrik jumlah pengguna aktif bulanan lebih diutamakan",
+        "Menghitung skor akhir RICE secara objektif dengan memasukkan variabel keyakinan dan upaya",
+        "Memilih Fitur B karena dampak finansial langsung selalu mengalahkan metrik jangkauan",
+        "Meminta suara dari para pemangku kepentingan senior untuk menentukan pemenangnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang petinggi perusahaan meminta Anda menambahkan fitur chatbot berbasis AI pada aplikasi fintech Anda minggu depan. Anda tahu bahwa fitur ini belum divalidasi dan tim sedang kewalahan. Bagaimana cara Anda merespons?",
+      "options": [
+        "Menyetujui permintaan tersebut dan mengurangi cakupan fitur inti agar tenggat terpenuhi",
+        "Menolak secara tertulis melalui surel resmi dengan alasan kurangnya sumber daya manusia",
+        "Mengajak beliau mendiskusikan masalah spesifik pengguna yang ingin diselesaikan solusi itu",
+        "Membuat prototipe kilat dalam tiga hari tanpa melibatkan riset pengguna sebelumnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan pengujian beta (beta testing) untuk aplikasi super-app logistik, mitra pengemudi mengeluhkan tombol konfirmasi pengiriman terlalu kecil di bawah terik matahari. Rilis dijadwalkan lusa. Apa tindakan Anda?",
+      "options": [
+        "Menunda tanggal peluncuran publik sampai masalah ukuran tombol tersebut diperbaiki tuntas",
+        "Meluncurkan aplikasi sesuai jadwal dan merilis perbaikan kecil secepatnya pada pekan depan",
+        "Mengabaikan keluhan tersebut karena pengujian beta melibatkan sampel yang terlalu kecil",
+        "Mengganti seluruh desain warna aplikasi agar kontrasnya lebih tinggi terhadap sinar matahari"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menguji apakah penambahan opsi pembayaran dompet digital baru akan meningkatkan konversi pembelian tiket bioskop online. Metode pengujian apa yang paling valid?",
+      "options": [
+        "Membandingkan tingkat konversi bulan ini dengan bulan lalu setelah fitur dirilis ke publik",
+        "Menyebarkan kuesioner daring kepada seribu pengguna aktif tentang preferensi dompet digital",
+        "Menjalankan uji A/B dengan membagi lalu lintas pengguna secara acak ke dua versi halaman",
+        "Mengamati perilaku transaksi staf internal kantor saat memesan tiket menggunakan dompet digital"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Peta jalan produk (product roadmap) Anda untuk enam bulan ke depan telah disetujui manajemen. Tiba-tiba muncul regulasi baru dari pemerintah terkait perlindungan data pribadi yang berdampak langsung pada sistem login. Apa yang harus Anda lakukan?",
+      "options": [
+        "Melanjutkan roadmap semula karena kepatuhan hukum adalah tanggung jawab divisi legal",
+        "Meninjau ulang kapasitas tim dan merombak prioritas roadmap untuk menyisipkan kepatuhan",
+        "Meminta tambahan anggaran untuk merekrut konsultan eksternal demi menangani regulasi itu",
+        "Menghentikan seluruh pengembangan produk baru sampai masa transisi regulasi selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi perencanaan sprint (sprint planning), tim pengembang menyatakan bahwa mereka tidak akan mampu menyelesaikan seluruh user story yang sudah Anda susun karena estimasi kompleksitas meleset. Apa langkah konstruktif Anda?",
+      "options": [
+        "Memaksa tim lembur agar target komitmen awal sprint dapat tercapai sepenuhnya",
+        "Mengurangi ruang lingkup (scope) cerita pengguna terendah bersama konsensus tim",
+        "Mengambil alih tugas penulisan kode untuk mempercepat penyelesaian fitur mendesak",
+        "Melaporkan kegagalan tim tersebut kepada kepala divisi teknik pada hari yang sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Produk SaaS HR Anda memiliki tingkat churn rate yang tinggi pada segmen perusahaan rintisan (startup). Data exit survey menunjukkan mereka merasa produk terlalu rumit untuk skala tim kecil. Strategi produk apa yang paling tepat?",
+      "options": [
+        "Membuat paket harga khusus yang jauh lebih murah agar mereka tetap mau berlangganan",
+        "Menambahkan dokumentasi teks yang lebih panjang dan teknis pada pusat bantuan aplikasi",
+        "Mengembangkan mode tampilan sederhana yang menyembunyikan fitur tingkat lanjut khusus startup",
+        "Melepaskan segmen startup dan memfokuskan seluruh tenaga pemasaran pada korporasi besar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda memimpin produk dompet digital dan melihat adopsi fitur investasi mikro melambat signifikan setelah bulan pertama. Data menunjukkan pengguna masuk ke halaman investasi, namun berhenti saat melihat syarat minimum saldo awal. Langkah apa yang paling tepat diambil?",
+      "options": [
+        "Menghapus syarat saldo awal dan menggantinya dengan simulasi keuntungan harian",
+        "Mengadakan kampanye edukasi finansial massal melalui media sosial perusahaan",
+        "Memindahkan menu investasi ke halaman utama agar lebih mudah diakses pengguna",
+        "Melakukan eksperimen penurunan batas minimum saldo awal untuk melihat dampaknya"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Aplikasi edtech Anda mendapati penurunan tingkat penyelesaian kursus (completion rate) sebesar 25% pada kuartal ini. Analisis corong pengguna menunjukkan drop-off terbesar terjadi pada modul latihan ujian akhir. Apa tindakan pertama yang harus Anda lakukan?",
+      "options": [
+        "Mengganti seluruh instruruktur modul ujian dengan pakar industri yang lebih terkenal",
+        "Mengadakan wawancara mendalam dengan pengguna yang berhenti di modul tersebut",
+        "Memberikan sertifikat instan kepada pengguna tanpa harus menyelesaikan ujian akhir",
+        "Menambahkan animasi gamifikasi baru pada halaman dashboard utama aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai PM di platform marketplace properti, Anda menerima laporan bahwa fitur penjadwalan kunjungan agen sering mengalami pembatalan sepihak oleh konsumen. Cara terbaik mendefinisikan masalah ini untuk backlog tim adalah:",
+      "options": [
+        "Membuat ulang seluruh sistem antarmuka kalender pemesanan kunjungan agen",
+        "Menganalisis data log error sistem saat konsumen melakukan pembatalan jadwal",
+        "Memetakan ulang alur pengguna dan mewawancarai konsumen yang sering batal",
+        "Menaikkan denda pembatalan kunjungan bagi konsumen yang tidak hadir tepat waktu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim *Customer Support* mengeluhkan tingginya tiket terkait kendala pencairan dana pada aplikasi *payroll* UMKM Anda. Sebagai Product Manager, strategi mitigasi jangka pendek apa yang paling efektif?",
+      "options": [
+        "Menutup sementara fitur pencairan dana sambil menunggu perbaikan kode selesai",
+        "Menambahkan status pelacakan transaksi yang lebih transparan di dalam aplikasi",
+        "Merekrut sepuluh staf dukungan pelanggan tambahan untuk mempercepat antrean",
+        "Mengirimkan surel permohonan maaf secara berkala kepada seluruh pengguna aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun kriteria penerimaan (*acceptance criteria*) untuk fitur baru berupa program loyalitas poin. Manakah formulasi tujuan yang paling selaras dengan prinsip *Outcome-based Product Management*?",
+      "options": [
+        "Memastikan sistem poin dapat diakses oleh seratus ribu pengguna pada bulan pertama",
+        "Meningkatkan frekuensi transaksi bulanan pengguna aktif sebesar lima belas persen",
+        "Menyelesaikan integrasi basis data poin dengan sistem pembayaran dalam dua sprint",
+        "Membuat desain antarmuka penukaran poin yang disetujui oleh tim pemasaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fitur kolaborasi dokumen baru saja diluncurkan di aplikasi SaaS Anda. Metrik analitik menunjukkan klik pada tombol 'Undang Tim' sangat tinggi, tetapi jumlah undangan yang benar-benar terkirim mendekati nol. Apa hipotesis awal yang paling masuk akal?",
+      "options": [
+        "Pengguna tidak memahami nilai tambah dari fitur kolaborasi dokumen tersebut",
+        "Tombol undang tim mengalami gangguan teknis atau formulirnya terlalu rumit",
+        "Pengguna lebih menyukai pengiriman tautan secara manual melalui aplikasi lain",
+        "Kapasitas server penyimpanan dokumen tidak mencukupi untuk menampung tim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pertemuan perencanaan rilis produk, tim teknik meminta waktu tambahan dua minggu untuk melunasi utang teknis (*tech debt*) pada modul pembayaran. Sementara itu, tim bisnis menuntut peluncuran fitur promosi tepat waktu. Bagaimana Anda menengahi situasi ini?",
+      "options": [
+        "Menolak permintaan tim teknik dan memprioritaskan penuh peluncuran fitur promosi",
+        "Menunda peluncuran fitur promosi sepenuhnya hingga seluruh utang teknis lunas",
+        "Berkompromi dengan mengalokasikan sebagian kapasitas sprint untuk perbaikan kritis",
+        "Meminta manajemen eksekutif untuk mengambil keputusan akhir tanpa pertimbangan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi layanan kesehatan online Anda ingin memperluas pasar ke kota-kota tier 2 dan 3 di Indonesia. Tantangan utamanya adalah koneksi internet yang tidak stabil. Keputusan produk apa yang paling strategis untuk merespons hal ini?",
+      "options": [
+        "Mengembangkan mode ringan offline untuk fitur pencatatan riwayat resep medis",
+        "Mewajibkan pengguna menggunakan jaringan Wi-Fi untuk mengakses konsultasi video",
+        "Meningkatkan resolusi video konsultasi dokter agar kualitas diagnosis lebih akurat",
+        "Mengurangi jumlah fitur secara drastis untuk menghemat kapasitas memori telepon"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa metrik *Daily Active Users* (DAU) aplikasi berita Anda stagnan, meskipun jumlah unduhan terus meningkat setiap minggunya. Langkah analisis lanjutan manakah yang paling tepat untuk mendiagnosis akar masalah?",
+      "options": [
+        "Membandingkan efektivitas biaya akuisisi pengguna dari berbagai saluran pemasaran",
+        "Menghitung tingkat retensi kohort mingguan untuk melihat titik kehabisan minat",
+        "Melakukan survei kepuasan pelanggan kepada pengguna yang baru mengunduh aplikasi",
+        "Meninjau kembali strategi penetapan harga langganan bulanan tanpa iklan digital"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan uji kegunaan (*usability testing*) prototipe fitur dompet digital, sebagian besar responden lansia kesulitan membaca ukuran teks pada tombol konfirmasi transfer. Keputusan desain apa yang harus Anda ambil?",
+      "options": [
+        "Menghapus tombol konfirmasi transfer dan menggantinya dengan sistem gestur geser",
+        "Menyesuaikan ukuran tipografi dan kontras warna tombol agar sesuai standar aksesibilitas",
+        "Menyediakan panduan manual berbentuk video pendek di halaman bantuan aplikasi",
+        "Menyarankan pengguna lansia untuk meminta bantuan anggota keluarga saat bertransaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah PM di aplikasi pesan-antar makanan. Data analitik menunjukkan tingginya angka pengguna yang membatalkan pesanan di halaman pembayaran. Setelah diinvestigasi, hal ini terjadi karena biaya layanan akhir yang muncul mengejutkan pengguna. Langkah mitigasi apa yang paling tepat untuk diambil dalam waktu dekat?",
+      "options": [
+        "Mengubah kebijakan perusahaan untuk menghapus seluruh biaya layanan agar pembatalan langsung berhenti",
+        "Memindahkan rincian komponen biaya ke tahap awal sebelum pengguna mengisi alamat dan memilih menu",
+        "Menyembunyikan informasi biaya layanan pada halaman pembayaran dan menagihnya di akhir pengantaran",
+        "Mengirimkan pemberitahuan push notifikasi berisi promo diskon setelah pengguna membatalkan pesanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Fitur dompet digital baru yang Anda kelola mengalami penurunan volume transaksi sebesar 30% setelah minggu kedua peluncuran promosi cashback berakhir. Tim bisnis meminta anggaran tambahan untuk memperpanjang promo. Sebagai PM, bagaimana Anda merespons permintaan ini?",
+      "options": [
+        "Menyetujui perpanjangan anggaran promo secara penuh demi menjaga volume transaksi harian tetap tinggi",
+        "Menolak permintaan tim bisnis dan fokus sepenuhnya pada pengembangan fitur gamifikasi untuk jangka panjang",
+        "Menganalisis data retensi organik untuk memastikan apakah pengguna benar-benar mendapatkan nilai guna dari produk",
+        "Menghentikan total seluruh fitur dompet digital dan mengalihkan sumber daya tim ke proyek lini bisnis lain"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah tinjauan produk bulanan, CEO meminta Anda untuk langsung meluncurkan fitur investasi saham mikro yang belum selesai dikembangkan karena ada peluang tren pasar yang sedang viral. Sikap profesional apa yang harus Anda ambil?",
+      "options": [
+        "Menyetujui perintah CEO secara langsung dan meminta tim pengembang melakukan kerja lembur tanpa batas",
+        "Menolak permintaan tersebut secara tegas karena melanggar prinsip dasar manajemen produk yang kaku",
+        "Menjelaskan risiko teknis dan hukum terkait kepatuhan regulasi OJK, lalu menawarkan opsi MVP yang aman",
+        "Meluncurkan aplikasi versi mentah tanpa pengujian keamanan agar bisa langsung diakses oleh publik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi HR SaaS Anda mendapati keluhan dari manajer operasional bahwa proses persetujuan cuti karyawan terlalu lambat karena harus melalui tiga level hierarki. Apa langkah prioritas pertama yang harus Anda lakukan?",
+      "options": [
+        "Langsung menghapus seluruh sistem persetujuan cuti dan membuat otomatisasi tanpa batasan persetujuan",
+        "Melakukan wawancara mendalam dengan para manajer untuk memahami hambatan spesifik dalam alur kerja",
+        "Mengganti seluruh tim pengembang aplikasi dengan tim baru yang lebih berpengalaman dalam sistem HR",
+        "Menaikkan harga langganan bulanan perusahaan agar bisa merekrut tenaga dukungan teknis tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang memimpin pengembangan aplikasi logistik lokal. Mitra kurir sering mengeluhkan antarmuka aplikasi yang terlalu rumit saat mereka harus memindai paket di bawah terik matahari. Keputusan desain manakah yang paling efektif untuk masalah ini?",
+      "options": [
+        "Menambahkan animasi visual yang menarik dan teks panduan manual yang panjang pada halaman utama",
+        "Memperbesar ukuran tombol aksi utama, meningkatkan kontras warna, dan meminimalkan teks instruksi",
+        "Mewajibkan seluruh kurir untuk mengikuti pelatihan kelas daring selama dua hari sebelum menggunakan aplikasi",
+        "Mengurangi fitur pemindaian kode batang dan menggantinya dengan pencatatan nomor resi secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Data analitik platform e-commerce mode menunjukkan bahwa halaman produk memiliki rasio klik yang tinggi ke tombol 'tambah ke keranjang', tetapi tingkat pembelian akhirnya sangat rendah. Apa hipotesis awal yang paling logis untuk diuji melalui eksperimen?",
+      "options": [
+        "Pengguna mengalami kebingungan karena informasi ukuran dan ketersediaan stok barang kurang jelas",
+        "Tampilan gambar produk pada halaman utama kurang menarik perhatian calon pembeli baru",
+        "Kecepatan muat halaman ulasan pelanggan terlalu lambat saat diakses menggunakan jaringan seluler",
+        "Proses pendaftaran akun baru di aplikasi terlalu rumit dan memakan waktu terlalu lama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah fitur kolaborasi dokumen baru saja dirilis pada aplikasi SaaS produktivitas Anda. Metrik menunjukkan adopsi tinggi di minggu pertama, namun metrik retensi mingguan anjlok drastis. Apa tindakan analisis lanjutan yang paling tepat?",
+      "options": [
+        "Segera menghapus fitur tersebut dari menu utama agar tidak merusak reputasi keseluruhan aplikasi",
+        "Mengirimkan survei kepuasan singkat kepada pengguna yang berhenti menggunakan fitur setelah hari ketiga",
+        "Menaikkan anggaran pemasaran digital untuk menarik lebih banyak pengguna baru mencoba fitur tersebut",
+        "Mengubah seluruh warna antarmuka aplikasi menjadi warna yang lebih cerah untuk menarik perhatian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim teknik mengajukan usulan untuk melakukan perombakan total (refactoring) kode sumber aplikasi backend yang memakan waktu satu bulan penuh tanpa menghasilkan fitur baru bagi pengguna. Bagaimana cara Anda mengevaluasi usulan ini?",
+      "options": [
+        "Menolak mentah-mentah usulan tersebut karena tidak memberikan nilai tambah langsung kepada metrik bisnis",
+        "Menyetujui seluruh waktu yang diminta tim teknik tanpa melihat dampak terhadap rencana peluncuran fitur",
+        "Menimbang rasio antara risiko utang teknis saat ini terhadap dampak keterlambatan peluncuran fitur komersial",
+        "Meminta tim teknik menyelesaikan perombakan kode tersebut di luar jam kerja tanpa kompensasi tambahan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi travel lokal Anda berencana berekspansi ke pasar pengguna di luar kota besar. Hasil riset lapangan menunjukkan mayoritas calon pengguna memiliki keterbatasan memori penyimpanan ponsel dan kuota internet. Strategi produk apa yang paling tepat?",
+      "options": [
+        "Mengembangkan aplikasi berbasis web ringan (PWA) atau mengoptimalkan ukuran APK aplikasi utama sekecil mungkin",
+        "Menyediakan bonus kuota data gratis bekerja sama dengan operator seluler lokal untuk setiap pengunduhan",
+        "Menambahkan fitur multimedia berkualitas tinggi seperti video sinematik destinasi wisata di halaman utama",
+        "Mewajibkan pengguna mengunduh berkas data tambahan sebesar 500MB saat pertama kali masuk ke aplikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati laporan lonjakan komplain dari pengguna lansia yang kesulitan membaca teks nominal saldo di aplikasi perbankan digital Anda. Sebagai Product Manager, apa langkah penyelesaian jangka pendek yang paling bijak?",
+      "options": [
+        "Membuat aplikasi terpisah khusus untuk kelompok lansia dengan sistem navigasi yang sangat disederhanakan",
+        "Mengubah standar warna tema aplikasi secara keseluruhan menjadi mode gelap untuk semua segmen pengguna",
+        "Menambahkan opsi pengaturan ukuran font dinamis di menu profil dan memperbesar kontras warna teks saldo",
+        "Menyarankan kepada pengguna lansia untuk meminta bantuan anggota keluarga yang lebih muda saat bertransaksi"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

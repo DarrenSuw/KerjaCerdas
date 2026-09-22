@@ -1,0 +1,306 @@
+{
+  "skill": "Agile/Scrum",
+  "skill_key": "agile/scrum",
+  "questions": [
+    {
+      "question": "Di tengah Sprint berjalan, seorang manajer senior mendatangi Product Owner dan meminta penambahan fitur laporan baru yang dianggap sangat mendesak untuk klien VIP. Apa tindakan paling tepat yang harus diambil oleh Product Owner?",
+      "options": [
+        "Menolak langsung permintaan tersebut karena melanggar aturan Sprint Goal yang sudah disepakati bersama tim.",
+        "Memasukkan fitur tersebut ke dalam Sprint Backlog saat ini dan meminta salah satu pengembang mengerjakannya.",
+        "Mendiskusikan skala prioritas fitur baru ini dengan tim pengembang dan memasukkannya ke Product Backlog.",
+        "Menghentikan Sprint yang sedang berjalan dan langsung memulai Sprint baru khusus untuk fitur darurat ini."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Daily Standup di sebuah perusahaan e-commerce Jakarta, seorang programmer senior terus menerus membahas detail teknis arsitektur database yang rumit selama 10 menit. Anggota tim lain mulai terlihat bosan. Sebagai Scrum Master, apa yang sebaiknya Anda lakukan?",
+      "options": [
+        "Membiarkan diskusi berlanjut karena masalah arsitektur database sangat penting untuk kelangsungan sistem.",
+        "Menghentikan pembicaraan tersebut dan menjadwalkan sesi diskusi terpisah setelah Daily Standup selesai.",
+        "Mengambil alih sesi dan menjelaskan solusi teknis tersebut agar waktu 15 menit tidak terbuang sia-sia.",
+        "Menegur programmer tersebut di depan tim agar tidak mengulangi kesalahan yang sama esok hari."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda gagal menyelesaikan tiga User Story utama pada akhir Sprint karena estimasi awal terlalu optimis. Saat sesi Sprint Retrospective, apa fokus utama yang harus dibahas oleh tim?",
+      "options": [
+        "Mencari siapa anggota tim yang paling bertanggung jawab atas keterlambatan penyelesaian tugas tersebut.",
+        "Meminta maaf kepada manajemen dan berjanji akan melakukan lembur di Sprint berikutnya untuk mengejar ketertinggalan.",
+        "Mengevaluasi proses estimasi dan mengidentifikasi hambatan kolaborasi untuk perbaikan di Sprint depan.",
+        "Menaikkan kapasitas poin cerita di Sprint selanjutnya secara paksa agar produktivitas terlihat meningkat."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tim Scrum baru saja menyelesaikan fitur pembayaran QRIS. Saat sesi Sprint Review, stakeholder utama menyatakan ketidakpuasannya karena alur pembayaran terlalu panjang dan meminta perubahan total. Bagaimana sikap tim menghadapi situasi ini?",
+      "options": [
+        "Menganggap masukan tersebut tidak relevan karena fitur telah dibuat sesuai dengan kriteria penerimaan tertulis.",
+        "Mencatat masukan tersebut sebagai Product Backlog Item baru untuk diprioritaskan oleh Product Owner.",
+        "Langsung merevisi kode program saat itu juga agar stakeholder langsung menyetujui hasil kerja tim.",
+        "Menolak permintaan perubahan karena proses Sprint Review hanya bertujuan untuk demo, bukan revisi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi Backlog Refinement, tim pengembang merasa kesulitan memberikan estimasi ukuran untuk beberapa User Story karena kriteria yang diberikan Product Owner sangat minim. Apa langkah preventif terbaik?",
+      "options": [
+        "Memaksa tim memberikan estimasi kasar berdasarkan pengalaman proyek sebelumnya agar rapat cepat selesai.",
+        "Meminta Product Owner melengkapi kriteria penerimaan sebelum cerita tersebut masuk ke dalam Sprint planning.",
+        "Mengambil alih tugas penulisan kriteria tersebut agar tim bisa langsung melakukan voting ukuran tugas.",
+        "Menghapus User Story tersebut dari daftar Product Backlog secara permanen demi efisiensi waktu."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang anggota tim pengembang sering datang terlambat dan jarang merespons komunikasi di grup chat kantor selama jam kerja, sehingga tugasnya terbengkalai. Sebagai Scrum Master, langkah awal apa yang paling efektif?",
+      "options": [
+        "Melaporkan perilaku anggota tim tersebut langsung kepada Direktur HRD untuk diberikan surat peringatan.",
+        "Membahas kinerja individu tersebut secara terbuka di hadapan seluruh anggota tim saat Sprint Retrospective.",
+        "Mengajak yang bersangkutan melakukan diskusi empat mata secara empatik untuk mencari akar permasalahan.",
+        "Mengeluarkan anggota tim tersebut dari struktur Scrum Team demi menjaga kelancaran proyek perusahaan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Product Owner memiliki daftar 50 item di Product Backlog yang semuanya diberi label 'prioritas tinggi' oleh berbagai divisi bisnis yang berbeda di perusahaan. Apa tindakan yang harus diambil Product Owner?",
+      "options": [
+        "Meminta tim pengembang untuk mengerjakan seluruh 50 item tersebut secara bersamaan dalam satu Sprint.",
+        "Mengadakan pertemuan sinkronisasi lintas divisi guna menyusun urutan nilai bisnis dan dampak riil.",
+        "Menyerahkan penentuan urutan pengerjaan sepenuhnya kepada tim pengembang tanpa intervensi bisnis.",
+        "Memilih 50 item secara acak untuk dimasukkan ke dalam perencanaan Sprint berikutnya tanpa seleksi ketat."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir Sprint Planning, tim menyadari bahwa kapasitas mereka tidak cukup untuk menyelesaikan seluruh item yang dipilih oleh Product Owner. Keputusan apa yang paling sejalan dengan nilai-nilai Scrum?",
+      "options": [
+        "Tim memangkas durasi pengujian perangkat lunak agar semua target item dapat selesai tepat waktu.",
+        "Product Owner dan tim berdiskusi ulang untuk mengurangi cakupan pekerjaan agar sesuai kapasitas nyata.",
+        "Tim sepakat untuk bekerja lembur setiap malam demi mencapai target yang telah ditetapkan Product Owner.",
+        "Product Owner memaksa tim untuk menerima beban kerja tersebut karena komitmen awal tidak boleh diubah."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik menggunakan Scrum untuk aplikasi internal. Departemen operasional sering meminta perubahan kecil pada fitur pelacakan harian secara mendadak. Bagaimana cara Product Owner menjaga keseimbangan stabilitas Sprint?",
+      "options": [
+        "Menolak segala bentuk komunikasi dan permintaan dari departemen operasional selama Sprint berjalan.",
+        "Mengarahkan permintaan tersebut ke Product Backlog untuk dinilai nilainya pada perencanaan Sprint depan.",
+        "Mengizinkan tim mengubah kode langsung di lingkungan produksi tanpa melalui pengujian kualitas formal.",
+        "Membuat kuota khusus harian di dalam Sprint aktif untuk mengakomodasi semua permintaan operasional."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah tim Scrum di perusahaan fintech lokal mendapati bahwa QA (Quality Assurance) selalu kelebihan beban di hari-hari terakhir Sprint karena pengujian menumpuk di akhir. Sebagai Scrum Master, apa langkah paling tepat yang harus Anda fasilitasi?",
+      "options": [
+        "Meminta manajemen merekrut dua orang QA tambahan khusus untuk mengatasi hambatan tersebut",
+        "Mendorong pengembang dan QA berkolaborasi menguji cerita pengguna sejak awal siklus",
+        "Memperpanjang durasi Sprint dari dua minggu menjadi tiga minggu untuk memberi waktu QA",
+        "Membuat tiket terpisah untuk pengujian QA yang dikerjakan pada Sprint berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah Sprint Review produk marketplace, tim mendemonstrasikan fitur keranjang belanja baru. Stakeholder dari divisi komersial sangat antusias namun meminta agar tombol checkout dipindahkan ke bagian atas layar. Apa tindakan terbaik Product Owner?",
+      "options": [
+        "Langsung memerintahkan tim untuk mengubah kode tersebut esok pagi tanpa masuk backlog",
+        "Menolak permintaan tersebut karena desain awal sudah disetujui sebelum Sprint dimulai",
+        "Membuat item baru di Product Backlog dan mendiskusikannya untuk prioritas Sprint depan",
+        "Meminta stakeholder menyampaikan langsung kepada tim pengembang saat Daily Standup"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang Product Owner di perusahaan startup agritech sering tidak hadir dalam sesi Daily Standup dan sulit dihubungi ketika tim pengembang memiliki pertanyaan mendesak mengenai kriteria penerimaan (acceptance criteria). Bagaimana Scrum Master sebaiknya menangani situasi ini?",
+      "options": [
+        "Mengambil alih peran Product Owner untuk menjawab semua pertanyaan teknis dan bisnis",
+        "Membatalkan seluruh Sprint yang sedang berjalan hingga Product Owner bisa lebih aktif",
+        "Melaporkan ketidakhadiran tersebut kepada Direktur Utama agar Product Owner dipecat",
+        "Berdiskusi secara empat mata dengan Product Owner mengenai pentingnya ketersediaan bagi tim"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim Scrum Anda baru saja mengadopsi framework ini sebulan lalu. Saat Sprint Retrospective, anggota tim terlihat sungkan dan hanya memberikan komentar normatif karena takut dikritik atasan yang juga hadir. Apa yang harus dilakukan Scrum Master?",
+      "options": [
+        "Mengadakan sesi retrospektif khusus tanpa kehadiran manajer atau atasan struktural",
+        "Membuat kuesioner anonim digital dan membahas hasilnya tanpa menyebutkan nama pengirim",
+        "Mewajibkan setiap anggota tim berbicara minimal tiga kali selama sesi berlangsung",
+        "Mengganti format retrospektif menggunakan permainan tebak-tebakan agar suasana cair"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada sesi Sprint Planning untuk aplikasi perbankan digital, seorang pengembang senior bersikeras mengambil beban kerja dua kali lipat dari kapasitas historis tim karena merasa tertantang. Tindakan apa yang paling tepat diambil oleh Scrum Master?",
+      "options": [
+        "Mendukung keputusan tersebut karena menunjukkan motivasi kerja yang sangat tinggi",
+        "Mengingatkan tim pada kapasitas riwayat kecepatan sebelumnya untuk menjaga komitmen realistis",
+        "Meminta pengembang lain untuk mengikuti jejak senior tersebut demi target perusahaan",
+        "Mengurangi setengah dari estimasi waktu pengerjaan agar target ambisius itu tercapai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Product Owner membawa sebuah User Story yang sangat besar dan kompleks ke sesi Backlog Refinement. Tim sepakat bahwa cerita tersebut tidak mungkin selesai dalam satu Sprint. Apa langkah selanjutnya yang harus dilakukan tim dan Product Owner?",
+      "options": [
+        "Memecah cerita besar tersebut menjadi beberapa bagian yang lebih kecil dan independen",
+        "Mengerjakan cerita tersebut secara bertahap dan mengabaikan batasan waktu satu Sprint",
+        "Menghapus cerita tersebut dari Product Backlog karena dianggap terlalu rumit dikerjakan",
+        "Menaikkan estimasi poin cerita tersebut hingga tiga kali lipat dari ukuran standar tim"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tim pengembang menggunakan papan Kanban untuk memantau aliran tugas harian mereka. Mereka menyadari bahwa kolom 'In Testing' selalu penuh sementara kolom 'Done' hampir tidak pernah bertambah. Apa diagnosis utama dari masalah aliran kerja ini?",
+      "options": [
+        "Kapasitas server pengujian aplikasi kurang memadai untuk menampung data uji",
+        "Jumlah pengembang terlalu sedikit dibandingkan dengan jumlah personel tim bisnis",
+        "Adanya hambatan di tahap pengujian yang membatasi batas WIP (Work in Progress)",
+        "Durasi waktu Sprint yang ditetapkan perusahaan terlalu singkat bagi pengembang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan estimasi dengan metode Planning Poker, dua pengembang memberikan angka yang sangat kontras: satu orang memberikan 2 poin dan satu lagi memberikan 13 poin untuk User Story yang sama. Apa peran Scrum Master dalam situasi ini?",
+      "options": [
+        "Memilih angka tengah yaitu 8 poin agar keputusan bisa diambil dengan cepat",
+        "Memutuskan angka mana yang paling benar berdasarkan pengalaman masa lalu",
+        "Memfasilitasi diskusi agar kedua pengembang menjelaskan alasan di balik angka mereka",
+        "Mengabaikan kedua estimasi tersebut dan meminta Product Owner menebak ukurannya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan media daring ingin mengukur keberhasilan adopsi Scrum bukan dari jumlah fitur yang dirilis, tetapi dari nilai bisnis yang dihasilkan. Metrik apa yang paling tepat digunakan oleh Product Owner untuk tujuan ini?",
+      "options": [
+        "Jumlah baris kode yang berhasil ditulis oleh tim pengembang setiap bulannya",
+        "Tingkat retensi pengguna aktif harian dan peningkatan pendapatan iklan produk",
+        "Jumlah jam lembur yang dihindari oleh tim pengembang selama siklus Sprint",
+        "Frekuensi kehadiran anggota tim dalam setiap sesi upacara Scrum mingguan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di tengah Sprint berjalan, seorang manajer senior mendatangi Product Owner dan meminta penambahan fitur laporan baru yang dianggap sangat krusial untuk klien VIP. Apa tindakan paling tepat yang harus diambil oleh Product Owner?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas karena melanggar aturan perubahan ruang lingkup dalam Sprint.",
+        "Langsung memasukkan fitur tersebut ke dalam Sprint Backlog yang sedang berjalan demi kepuasan klien.",
+        "Mendiskusikan permintaan tersebut dengan tim pengembang untuk melihat dampak kapasitas sebelum memutuskan.",
+        "Menampung permintaan tersebut ke Product Backlog untuk diprioritaskan bersama item lain pada Sprint Planning berikutnya."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat Daily Standup di sebuah perusahaan e-commerce Jakarta, seorang programmer senior terus menerus membahas detail teknis arsitektur database yang rumit selama lebih dari tujuh menit. Bagaimana sebaiknya sikap Scrum Master menghadapi situasi ini?",
+      "options": [
+        "Membiarkan diskusi berlanjut karena topik tersebut sangat krusial bagi kualitas sistem ke depan.",
+        "Memotong pembicaraan dengan sopan dan menyarankan sesi diskusi terpisah setelah Daily Standup selesai.",
+        "Mengambil alih penjelasan teknis tersebut agar waktu 15 menit untuk seluruh tim tetap terjaga.",
+        "Meminta anggota tim lain untuk memberikan tanggapan secara bergantian guna mempercepat proses."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda gagal menyelesaikan tiga User Story utama pada akhir Sprint karena estimasi awal terlalu optimis. Saat sesi Sprint Retrospective, fokus utama apa yang harus diangkat oleh tim untuk perbaikan ke depan?",
+      "options": [
+        "Mencari tahu siapa anggota tim yang kinerjanya lambat sehingga target Sprint tidak tercapai.",
+        "Menambah durasi Sprint berikutnya menjadi tiga minggu agar kapasitas kerja menjadi lebih leluasa.",
+        "Mengevaluasi proses pembuatan estimasi dan menyesuaikan jumlah komitmen berdasarkan kecepatan historis.",
+        "Meminta Product Owner untuk mengurangi ekspektasi manajemen terhadap hasil kerja tim."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tim Scrum baru saja menyelesaikan fitur pembayaran QRIS. Saat sesi Sprint Review, stakeholder utama menyatakan ketidakpuasan karena alur tombol konfirmasi pembayaran dianggap membingungkan. Apa langkah yang paling tepat?",
+      "options": [
+        "Mengubah fungsi tombol tersebut secara langsung saat itu juga berdasarkan masukan stakeholder.",
+        "Membuat User Story baru untuk perbaikan desain antarmuka dan memasukkannya ke Product Backlog.",
+        "Menjelaskan kepada stakeholder bahwa desain tersebut sudah sesuai dengan spesifikasi awal yang disetujui.",
+        "Mengabaikan masukan tersebut karena pengujian internal sebelumnya tidak menemukan kendala."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi Backlog Refinement, tim pengembang merasa kesulitan memberikan ukuran estimasi untuk beberapa User Story karena cakupan teknisnya masih sangat kabur. Apa tindakan yang seharusnya dilakukan oleh Product Owner?",
+      "options": [
+        "Memaksa tim untuk memberikan tebakan angka agar proses perencanaan tidak mengalami hambatan.",
+        "Memecah atau memperjelas kriteria penerimaan cerita pengguna tersebut bersama tim sebelum Sprint Planning.",
+        "Meminta bantuan konsultan eksternal untuk melakukan analisis teknis secara mendalam.",
+        "Menghapus cerita pengguna tersebut dari daftar karena dinilai terlalu membuang waktu."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang anggota tim pengembang sering datang terlambat dan jarang merespons komunikasi di grup chat kantor selama jam kerja, sehingga tugas-tugas dalam Sprint sering terhambat. Bagaimana cara Scrum Master menangani masalah ini?",
+      "options": [
+        "Membawa masalah kedisiplinan tersebut langsung ke hadapan manajemen HR untuk diberikan surat peringatan.",
+        "Mengabaikannya selama anggota tim lain bersedia menutupi sisa pekerjaan yang tertunda.",
+        "Mengadakan sesi diskusi privat empat mata untuk mendengarkan kendala dan mencari solusi bersama.",
+        "Menyindir kebiasaan buruk tersebut secara terbuka di hadapan seluruh tim saat sesi Retrospective."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Product Owner memiliki daftar 50 item di Product Backlog yang semuanya diberi label 'prioritas tinggi' oleh berbagai divisi bisnis di perusahaan. Langkah apa yang paling tepat untuk mengatasi masalah prioritas yang tumpang tindih ini?",
+      "options": [
+        "Menyusun ulang urutan berdasarkan nilai bisnis jangka panjang dan berdiskusi dengan para pemangku kepentingan.",
+        "Mengerjakan semua item tersebut secara bersamaan dengan membagi tim menjadi beberapa kelompok kecil.",
+        "Menyerahkan keputusan pemilihan item sepenuhnya kepada tim pengembang tanpa intervensi bisnis.",
+        "Meminta anggaran tambahan untuk merekrut lebih banyak pengembang agar semua permintaan selesai."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Menjelang akhir Sprint Planning, tim menyadari bahwa kapasitas mereka tidak cukup untuk menyelesaikan seluruh item yang telah dipilih oleh Product Owner. Keputusan apa yang harus diambil secara kolaboratif?",
+      "options": [
+        "Memperpanjang jam kerja harian lembur demi mencapai seluruh target item yang sudah dipilih.",
+        "Meminta Product Owner mengurangi ruang lingkup atau mengeluarkan beberapa item dari Sprint Backlog.",
+        "Melanjutkan Sprint dengan asumsi bahwa tim akan bekerja lebih cepat dari biasanya.",
+        "Membatalkan seluruh rencana Sprint dan memulai kembali proses dari awal pada keesokan harinya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik menggunakan Scrum untuk aplikasi internal. Departemen operasional sering meminta perubahan ketentuan rute pengiriman saat Sprint sedang berjalan. Bagaimana cara Product Owner melindungi fokus tim pengembang?",
+      "options": [
+        "Menolak semua komunikasi langsung antara departemen operasional dan tim pengembang.",
+        "Menghentikan Sprint yang sedang berjalan setiap kali ada permintaan perubahan rute yang mendesak.",
+        "Menjelaskan proses Scrum dan mengarahkan semua permintaan perubahan baru ke Product Backlog.",
+        "Menyetujui perubahan tersebut dan meminta pengembang mengurangi waktu istirahat mereka."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tim Scrum di perusahaan fintech lokal mendapati bahwa QA (Quality Assurance) selalu kelebihan beban di hari-hari terakhir Sprint karena pengujian menumpuk di akhir. Apa solusi paling efektif yang harus diterapkan oleh tim?",
+      "options": [
+        "Menambahkan lebih banyak waktu jeda di antara setiap Sprint khusus untuk proses pengujian.",
+        "Mengurangi standar kualitas kode agar proses pengujian dapat diselesaikan dengan lebih cepat.",
+        "Mendorong pengujian dilakukan secara berkelanjutan sejak awal pengembangan oleh seluruh anggota tim.",
+        "Memisahkan tim QA dari tim pengembang agar mereka memiliki manajemen tugas yang terpisah."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Di tengah Sprint berjalan, seorang Head of Sales perusahaan e-commerce mendatangi Product Owner secara langsung dan meminta penyisipan fitur diskon kilat untuk promo tanggal kembar minggu depan. Bagaimana tindakan yang paling tepat bagi Product Owner?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas karena aturan Scrum melarang adanya perubahan selama Sprint berlangsung tanpa kecuali",
+        "Langsung memasukkan tugas tersebut ke papan Sprint saat ini dan meminta tim pengembang membagi beban kerja secara merata",
+        "Menerima permintaan tersebut, mencatatnya ke Product Backlog, lalu mendiskusikan dampaknya dengan tim pengembang",
+        "Meminta Head of Sales untuk langsung bernegosiasi dengan Scrum Master agar kapasitas tim dapat segera ditambah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat sesi Daily Standup sebuah tim startup kesehatan, seorang Backend Developer terus menerus menjelaskan detail teknis arsitektur basis data yang rumit terkait hambatan kerjanya. Anggota tim lain mulai tampak bosan dan kehilangan fokus. Apa yang seharusnya dilakukan oleh Scrum Master?",
+      "options": [
+        "Membiarkan penjelasan selesai agar masalah teknis tersebut mendapat pemahaman mendalam dari seluruh anggota tim",
+        "Menghentikan pembicaraan dengan sopan dan menjadwalkan sesi diskusi terpisah khusus untuk topik teknis tersebut",
+        "Mengambil alih jalannya rapat dan memberikan solusi arsitektur basis data secara langsung kepada pengembang",
+        "Menegur pengembang tersebut di depan tim agar tidak mengulangi kebiasaan berbicara terlalu lama saat rapat"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

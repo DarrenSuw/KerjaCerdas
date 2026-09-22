@@ -1,0 +1,306 @@
+{
+  "skill": "Machine Learning",
+  "skill_key": "machine learning",
+  "questions": [
+    {
+      "question": "Anda melatih model churn prediction untuk sebuah e-commerce di Jakarta. Dataset memiliki 95% pelanggan non-churn dan 5% pelanggan churn. Metrik evaluasi apa yang paling tepat untuk memantau performa model pada tahap awal pengembangan?",
+      "options": [
+        "Akurasi keseluruhan karena merepresentasikan populasi mayoritas",
+        "Precision dan Recall pada kelas minoritas pelanggan churn",
+        "Mean Squared Error untuk menghitung selisih probabilitas",
+        "R-squared untuk mengukur varians dari data pelanggan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah model klasifikasi risiko kredit yang Anda deploy mengalami penurunan performa (data drift) setelah 3 bulan karena kondisi makroekonomi berubah. Apa tindakan proaktif pertama yang harus dilakukan?",
+      "options": [
+        "Langsung menaikkan threshold probabilitas prediksi menjadi 0.8",
+        "Membuat arsitektur jaringan saraf tiruan yang jauh lebih dalam",
+        "Melakukan retraining model menggunakan data transaksi terbaru",
+        "Mengganti seluruh algoritma machine learning ke decision tree"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun sistem rekomendasi produk untuk aplikasi SuperApp. Data interaksi pengguna sangat sparse dan matriks user-item sangat besar. Pendekatan apa yang paling efisien untuk menangani masalah ini?",
+      "options": [
+        "Menggunakan Collaborative Filtering berbasis Matrix Factorization",
+        "Menghitung jarak Euclidean antar semua pengguna secara langsung",
+        "Membuang seluruh data pengguna yang memiliki transaksi sedikit",
+        "Melakukan One-Hot Encoding pada semua ID pengguna dan produk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Computer Vision untuk deteksi cacat produk di pabrik manufaktur, Anda mendapati bahwa model sangat akurat di komputer development, tetapi lambat saat dijalankan di perangkat edge berdaya rendah di pabrik. Langkah optimasi apa yang harus diambil?",
+      "options": [
+        "Menambah jumlah hidden layers pada arsitektur CNN yang digunakan",
+        "Melakukan proses model quantization dari FP32 ke INT8",
+        "Memperbesar resolusi citra masukan agar fitur lebih jelas terlihat",
+        "Mengubah bahasa pemrograman dari Python ke bahasa tingkat tinggi lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menangani proyek NLP untuk analisis sentimen ulasan produk dalam Bahasa Indonesia yang banyak mengandung singkatan gaul dan typo. Tahap preprocessing apa yang paling krusial sebelum masuk ke embedding?",
+      "options": [
+        "Melakukan stemming ekstrem pada setiap kata agar kembali ke kata dasar",
+        "Menghapus seluruh tanda baca dan angka tanpa pengecualian konteks",
+        "Membangun kamus normalisasi kata slang lokal secara terstruktur",
+        "Mengonversi semua teks menjadi representasi biner murni"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah model regresi untuk memprediksi harga rumah di Surabaya menunjukkan nilai Training RMSE yang sangat rendah, tetapi Test RMSE sangat tinggi. Indikasi apa yang terjadi pada model tersebut?",
+      "options": [
+        "Model mengalami underfitting karena kurang kompleks",
+        "Model mengalami overfitting akibat menghafal data latih",
+        "Terjadi kebocoran data target pada set pengujian",
+        "Distribusi data latih dan uji sudah sangat konsisten"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda menggunakan Random Forest untuk memprediksi keterlambatan pengiriman logistik. Manajemen meminta penjelasan mengapa suatu paket tertentu diprediksi terlambat. Alat bantu apa yang paling tepat digunakan?",
+      "options": [
+        "Menghitung nilai koefisien korelasi Pearson antar semua fitur",
+        "Menggunakan nilai SHAP (SHapley Additive exPlanations) values",
+        "Melihat distribusi frekuensi dari variabel target pengiriman",
+        "Menjalankan Principal Component Analysis untuk mereduksi dimensi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mendeploy model Machine Learning ke production dengan beban trafik yang fluktuatif tinggi setiap jam makan siang. Infrastruktur orkestrasi container apa yang paling tepat untuk auto-scaling model tersebut?",
+      "options": [
+        "Menjalankan skrip Python secara manual menggunakan crontab di VPS",
+        "Memanfaatkan Kubernetes dengan Horizontal Pod Autoscaler",
+        "Menyimpan model dalam bentuk file pickle di shared folder",
+        "Menggunakan satu instance server monolitik tanpa load balancer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan feature engineering pada data tabular finansial, Anda menemukan kolom 'pendapatan_tahunan' memiliki skewness positif yang sangat tinggi. Transformasi apa yang sebaiknya diterapkan?",
+      "options": [
+        "Membagi seluruh nilai pendapatan dengan rata-rata populasi",
+        "Menerapkan transformasi Logaritmik atau Box-Cox pada kolom tersebut",
+        "Mengisi nilai yang kosong menggunakan metode interpolasi linear",
+        "Mengubah tipe data numerik menjadi kategorikal ordinal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model Gradient Boosting (XGBoost) dan proses training memakan waktu berjam-jam karena ukuran data yang masif. Strategi apa yang paling efektif untuk mempercepat iterasi eksperimen?",
+      "options": [
+        "Langsung menghapus 80% fitur secara acak tanpa analisis",
+        "Melakukan subsampling pada baris data dan menggunakan histogram-based split",
+        "Menaikkan jumlah pohon (n_estimators) hingga sepuluh kali lipat",
+        "Mengubah ukuran batch training menjadi satu persatu data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan model deep learning untuk mendeteksi plat nomor kendaraan di gerbang tol otomatis. Saat evaluasi di lingkungan staging, model gagal mengenali plat nomor pada kendaraan yang melaju saat hujan deras atau malam hari dengan pencahayaan minim. Langkah perbaikan paling efektif yang harus Anda lakukan adalah?",
+      "options": [
+        "Mengganti arsitektur jaringan saraf tiruan dari CNN konvensional menjadi model berbasis Transformer",
+        "Melakukan augmentasi data pada dataset latih dengan variasi cuaca ekstrem, kontras rendah, dan noise",
+        "Menurunkan ambang batas threshold deteksi untuk mengakomodasi gambar yang kurang jelas",
+        "Menghapus sampel gambar malam hari dari data evaluasi agar metrik akurasi kembali meningkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform fintech P2P lending menggunakan model klasifikasi biner untuk menyetujui pinjaman. Divisi manajemen risiko meminta agar model lebih konservatif guna menekan angka gagal bayar, meskipun hal itu berdampak pada berkurangnya jumlah debitur yang disetujui. Metrik evaluasi utama apa yang harus Anda prioritaskan untuk disetel?",
+      "options": [
+        "Meningkatkan nilai recall dari kelas positif (gagal bayar) dengan menaikkan classification threshold",
+        "Meningkatkan nilai precision dari kelas negatif (lancar) dengan menurunkan decision threshold",
+        "Meningkatkan nilai precision dari kelas positif (gagal bayar) dengan menaikkan decision threshold",
+        "Meningkatkan nilai akurasi keseluruhan dengan melakukan teknik oversampling pada kelas minoritas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda melatih model prediksi harga properti menggunakan regresi linear berganda. Saat melakukan analisis sisaan (residual plot), Anda menemukan pola berbentuk corong (heteroskedastisitas), di mana varians error semakin besar seiring dengan meningkatnya harga rumah. Tindakan pre-processing yang paling tepat untuk mengatasi masalah ini adalah?",
+      "options": [
+        "Melakukan normalisasi Min-Max pada seluruh variabel independen sebelum proses training ulang",
+        "Menerapkan transformasi logaritmik pada variabel target harga rumah untuk menstabilkan varians",
+        "Menghapus seluruh baris data yang memiliki nilai harga di atas persentil 95 sebagai outlier",
+        "Menambahkan suku polinomial derajat tinggi untuk menangkap hubungan non-linear pada data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Data Science Anda membangun model segmentasi pelanggan menggunakan K-Means Clustering untuk kampanye pemasaran digital. Tantangan utamanya adalah algoritma sangat sensitif terhadap skala fitur dan kehadiran outlier ekstrem dari nilai transaksi pengguna. Langkah mitigasi awal yang paling krusial sebelum menjalankan K-Means adalah?",
+      "options": [
+        "Menggunakan teknik Principal Component Analysis untuk mereduksi dimensi data secara ekstrem",
+        "Mengganti algoritma clustering menjadi DBSCAN karena tidak membutuhkan penentuan jumlah cluster",
+        "Melakukan imputasi nilai missing value menggunakan teknik KNN imputer pada seluruh fitur",
+        "Melakukan standardisasi fitur numerik dan menangani outlier menggunakan transformasi RobustScaler"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendeploy model Machine Learning berbasis REST API menggunakan Flask dan Docker untuk sistem skoring kredit instan. Saat jam sibuk, latency respons meningkat drastis hingga melampaui Service Level Agreement (SLA) perusahaan. Strategi arsitektur produksi yang paling tepat untuk mengatasi lonjakan beban tersebut adalah?",
+      "options": [
+        "Mengubah format serialisasi model dari pickle menjadi format ONNX untuk mempercepat proses inferensi",
+        "Memigrasikan skrip inferensi dari bahasa Python ke bahasa pemrograman C++ murni demi performa",
+        "Menggunakan orkestrator kontainer seperti Kubernetes untuk melakukan autoscaling pod berdasarkan trafik",
+        "Melakukan retraining model secara berkala setiap hari menggunakan data transaksi real-time terbaru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proyek klasifikasi teks multi-kelas untuk tiket layanan pelanggan, Anda menggunakan TF-IDF dan Logistic Regression. Model sering salah mengklasifikasikan tiket karena banyak singkatan gaul baru dan salah eja yang sering digunakan pelanggan. Langkah paling efektif pada tahap NLP pipeline untuk memperbaiki hal ini adalah?",
+      "options": [
+        "Menambahkan kamus normalisasi slang dan koreksi ejaan otomatis sebelum proses ekstraksi fitur TF-IDF",
+        "Memperbesar ukuran n-gram pada TF-IDF menjadi rentang unigram hingga trigram untuk mencakup frasa",
+        "Menghapus semua kata henti (stop words) umum dalam bahasa Indonesia dari kamus data teks",
+        "Menaikkan bobot regularisasi L2 pada model Logistic Regression untuk mencegah terjadinya overfitting"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun model time series untuk meramalkan jumlah kunjungan pasien di rumah sakit mitra. Data historis menunjukkan tren musiman tahunan yang kuat serta tren kenaikan linear jangka panjang. Algoritma dasar manakah yang paling tepat diuji coba pertama kali sebelum beralih ke deep learning?",
+      "options": [
+        "Model Support Vector Regression dengan kernel radial basis function untuk data non-linear",
+        "Algoritma Isolation Forest untuk mendeteksi anomali pada lonjakan kunjungan pasien darurat",
+        "Model SARIMAX yang mampu mengakomodasi komponen musiman dan variabel eksogen liburan",
+        "Model Linear Regression standar dengan fitur waktu sebagai variabel independen tunggal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan validasi silang (k-fold cross-validation, k=5) pada model klasifikasi penipuan kartu kredit, Anda mendapati nilai ROC-AUC sangat tinggi (0.98) pada data training, namun anjlok drastis (0.65) pada data validation fold. Indikasi utama dari situasi ini dan solusi tercepatnya adalah?",
+      "options": [
+        "Model mengalami underfitting; solusi tercepat adalah menambah kompleksitas model dan jumlah fitur",
+        "Terjadi kebocoran data (data leakage) saat pre-processing; solusi tercepat adalah memastikan transformasi data dilakukan di dalam loop fold",
+        "Distribusi kelas sangat seimbang; solusi tercepat adalah menerapkan downsampling pada kelas mayoritas",
+        "Ukuran dataset terlalu besar; solusi tercepat adalah mengurangi jumlah fold menjadi 3 bagian saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menggunakan model LightGBM untuk memprediksi probabilitas klik iklan (CTR) di platform ad-tech. Karena jumlah fitur kategorikal berdimensi tinggi sangat banyak, training sering mengalami memori penuh dan overfitting. Teknik representasi fitur apa yang paling tepat diterapkan?",
+      "options": [
+        "Melakukan One-Hot Encoding pada seluruh fitur kategorikal berdimensi tinggi tersebut",
+        "Mengubah seluruh fitur kategorikal menjadi bentuk numerik kontinu menggunakan Label Encoding biasa",
+        "Menerapkan teknik Target Encoding dengan regularisasi smoothing yang tepat untuk fitur berdimensi tinggi",
+        "Membuang semua fitur kategorikal dan hanya mempertahankan fitur numerik murni di dalam dataset"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah model deteksi objek YOLOv8 untuk memantau keselamatan pekerja konstruksi (helm dan rompi) di situs proyek sering memberikan peringatan palsu (false positive). Manajemen meminta agar sistem hanya memunculkan alarm jika tingkat keyakinan model benar-benar tinggi. Parameter apa yang harus Anda sesuaikan pada sistem inferensi?",
+      "options": [
+        "Menaikkan ambang batas confidence threshold pada fungsi post-processing deteksi objek",
+        "Menurunkan ambang batas Intersection over Union (IoU) pada proses Non-Maximum Suppression",
+        "Menambah jumlah iterasi epoch saat melakukan fine-tuning ulang model pada dataset gambar",
+        "Memperbesar ukuran resolusi input gambar saat melakukan inferensi di edge device"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melatih model prediksi penjualan bulanan untuk jaringan minimarket nasional menggunakan data historis 5 tahun. Hasil evaluasi menunjukkan metrik MAE sangat baik, namun manajemen melaporkan bahwa model gagal mengantisipasi lonjakan pembelian saat Hari Raya Idul Fitri. Apa langkah mitigasi terbaik yang harus Anda ambil?",
+      "options": [
+        "Mengganti arsitektur model menjadi neural network yang lebih dalam untuk menangkap pola non-linear data penjualan harian",
+        "Menambahkan fitur variabel biner (flag) khusus untuk periode hari besar keagamaan dan libur nasional ke dalam dataset",
+        "Melakukan normalisasi ulang pada seluruh fitur numerik menggunakan teknik Min-Max Scaler sebelum proses training",
+        "Menaikkan nilai learning rate pada optimizer agar model lebih sensitif terhadap perubahan tren musiman jangka pendek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup agritech meminta Anda membangun model klasifikasi untuk mendeteksi penyakit daun pada tanaman cabai berdasarkan foto smartphone petani. Model yang dihasilkan memiliki ukuran file 450 MB, sehingga sulit diunduh oleh petani di daerah yang koneksi internetnya terbatas. Bagaimana cara Anda mengatasi kendala ini tanpa mengorbankan akurasi secara drastis?",
+      "options": [
+        "Menerapkan teknik post-training quantization pada model agar ukuran file menyusut dan inferensi berjalan lebih ringan",
+        "Mengurangi resolusi gambar input secara paksa saat tahap preprocessing agar ukuran matriks tensor menjadi lebih kecil",
+        "Memindahkan proses komputasi prediksi sepenuhnya ke sisi client dengan menulis ulang kode dalam bahasa C++ murni",
+        "Menggunakan teknik data augmentation yang lebih agresif pada tahap training untuk memperkaya variasi sampel gambar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan model Machine Learning untuk mendeteksi transaksi dompet digital yang mencurigakan secara real-time. Sistem harus memberikan keputusan dalam waktu kurang dari 50 milidetik. Saat melakukan pengujian beban (load testing), latensi rata-rata mencapai 120 milidetik karena proses ekstraksi fitur yang kompleks. Langkah optimasi apa yang paling tepat?",
+      "options": [
+        "Membuat tabel agregasi pra-hitung (pre-computed features) di dalam basis data Redis untuk diambil secara instan saat inferensi",
+        "Mengubah algoritma model dari Gradient Boosting menjadi Deep Neural Network yang memiliki kecepatan komputasi lebih tinggi",
+        "Menambahkan jumlah worker pada server backend Flask menggunakan konfigurasi multi-threading berbasis Python standar",
+        "Melakukan retraining model menggunakan seluruh dataset historis 3 tahun terakhir untuk menyederhanakan bobot pohon keputusan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek pengenalan suara (Speech Recognition) untuk call center layanan pelanggan berbahasa Indonesia, model sering salah mengenali kata akibat logat daerah yang beragam. Dataset awal Anda didominasi oleh penutur berlogat Jakarta. Strategi pengumpulan data apa yang paling efektif untuk meningkatkan performa model?",
+      "options": [
+        "Melakukan oversampling secara sintetis pada audio penutur berlogat Jakarta menggunakan teknik SMOTE pada domain waktu",
+        "Mengumpulkan sampel audio tambahan secara proporsional dari berbagai daerah penutur di luar wilayah Jabodetabek",
+        "Menaikkan bobot penalti loss function secara manual khusus untuk kata-kata yang sering salah dideteksi oleh sistem",
+        "Menggunakan filter audio digital untuk menyeragamkan frekuensi suara semua penutur menjadi standar logat tunggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengevaluasi model churn prediction menggunakan kurva ROC-AUC dan mendapati skornya sangat tinggi yaitu 0.94. Namun, ketika memantau performa di production selama sebulan, model gagal mendeteksi pelanggan bernilai tinggi yang benar-benar berhenti berlangganan. Analisis apa yang terlewatkan pada evaluasi awal?",
+      "options": [
+        "Anda lupa melakukan standardisasi nilai mean dan variance pada fitur numerik sebelum menghitung matriks korelasi",
+        "Kurva ROC-AUC terlalu optimis pada data tidak seimbang, sehingga Anda seharusnya menggunakan Precision-Recall AUC",
+        "Jumlah fold pada proses cross-validation terlalu sedikit sehingga menyebabkan model mengalami overfitting yang parah",
+        "Nilai threshold probabilitas default 0.5 tidak sesuai, seharusnya dinaikkan mendekati angka 0.9 agar lebih selektif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edukasi daring ingin mempersonalisasi materi kursus bagi siswa. Anda ditugaskan mengelompokkan siswa berdasarkan gaya belajar dan kebiasaan akses menggunakan algoritma K-Means. Masalah apa yang akan Anda hadapi terkait skala data, dan bagaimana cara mengatasinya?",
+      "options": [
+        "Algoritma K-Means sensitif terhadap skala fitur yang berbeda, sehingga Anda harus melakukan standarisasi (Z-score) terlebih dahulu",
+        "Jumlah cluster optimal harus ditentukan secara acak agar hasil segmentasi psikografis siswa tidak menjadi terlalu bias",
+        "Outlier pada durasi akses belajar harus dihapus secara permanen dari dataset agar titik pusat cluster tidak bergeser jauh",
+        "Anda wajib mengubah seluruh variabel kategori teks menjadi representasi One-Hot Encoding sebelum menentukan jumlah k"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melatih model regresi untuk memprediksi durasi pengiriman kurir logistik berdasarkan jarak dan kondisi cuaca. Hasil analisis sisaan (residual plot) menunjukkan pola corong (heteroskedastisitas), di mana kesalahan prediksi semakin besar pada jarak pengiriman yang jauh. Apa implikasi kondisi ini terhadap model Anda?",
+      "options": [
+        "Model melanggar asumsi homoskedastisitas, sehingga estimasi interval kepercayaan koefisien regresi menjadi tidak akurat",
+        "Variabel target (durasi pengiriman) harus segera diubah formatnya menjadi kategori biner lambat atau tepat waktu",
+        "Multikolinieritas yang tinggi antar fitur jarak dan cuaca sedang merusak stabilitas koefisien bobot model regresi",
+        "Proses regularisasi L2 (Ridge) wajib diaktifkan dengan nilai alpha maksimum untuk meredam lonjakan nilai residual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Computer Vision untuk otomatisasi sortir buah di pabrik ekspor, kamera sering menangkap gambar dengan pencahayaan yang sangat minim saat cuaca mendung. Hal ini membuat model klasifikasi salah mengidentifikasi tingkat kematangan buah. Teknik apa yang paling tepat diterapkan pada pipeline data?",
+      "options": [
+        "Melakukan augmentasi data pencahayaan (brightness adjustment dan contrast jittering) secara acak pada saat proses training",
+        "Mengganti arsitektur jaringan saraf tiruan dari CNN konvensional menjadi Transformer berbasis visi komputer skala besar",
+        "Menambahkan lapisan dropout yang agresif pada setiap layer tersembunyi untuk mencegah model menghafal piksel gelap",
+        "Mengonversi seluruh ruang warna citra pelatihan dari RGB menjadi format greyscale murni untuk menghilangkan efek bayangan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun sistem deteksi anomali untuk memantau suhu mesin pabrik tekstil. Sensor mengirimkan data setiap detik, namun data sering terputus sementara akibat gangguan jaringan lokal, menghasilkan nilai kosong (missing values). Pendekatan imputasi apa yang paling aman untuk menjaga integritas data time series ini?",
+      "options": [
+        "Mengisi nilai kosong menggunakan metode Forward Fill (menggunakan nilai valid terakhir sebelum koneksi terputus)",
+        "Mengganti seluruh nilai kosong dengan nilai rata-rata (mean) keseluruhan data suhu mesin selama satu tahun penuh",
+        "Menghapus secara total setiap baris data yang memiliki nilai kosong agar tidak merusak perhitungan matriks kovarians",
+        "Mengisi nilai kosong menggunakan angka nol mutlak karena mesin dianggap mati saat sensor mengalami gangguan jaringan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Data Science Anda menggunakan teknik ensemble Voting Classifier (menggabungkan Logistic Regression, Random Forest, dan SVM) untuk mendeteksi berita hoaks berbahasa Indonesia. Model gabungan ini memberikan akurasi tertinggi pada data validasi. Tantangan operasional apa yang paling besar saat mendeploy model ini ke production?",
+      "options": [
+        "Mekanisme inferensi menjadi lebih lambat karena harus mengeksekusi tiga model berbeda secara berurutan atau paralel",
+        "Ukuran file model gabungan akan selalu lebih kecil daripada ukuran masing-masing model tunggal yang digabungkan",
+        "Ketiga model harus menggunakan bahasa pemrograman backend yang berbeda agar proses <i>voting</i> dapat berjalan optimal",
+        "Nilai metrik akurasi dipastikan akan turun drastis di production karena perbedaan distribusi data antara train dan test"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

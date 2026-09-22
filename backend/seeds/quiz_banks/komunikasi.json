@@ -1,0 +1,306 @@
+{
+  "skill": "Komunikasi",
+  "skill_key": "komunikasi",
+  "questions": [
+    {
+      "question": "Atasan memberi instruksi yang kurang jelas. Sikap terbaik…",
+      "options": [
+        "Mengerjakan sesuai tebakan",
+        "Mengulang poin instruksi dan menanyakan bagian yang belum jelas",
+        "Menunggu ditegur",
+        "Bertanya ke teman saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu harus menyampaikan kabar keterlambatan proyek ke klien. Cara terbaik…",
+      "options": [
+        "Tidak memberi tahu sampai ditanya",
+        "Sampaikan lebih awal, jelaskan sebab dan rencana penyelesaiannya",
+        "Salahkan rekan kerja",
+        "Kirim pesan tanpa detail"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Email ke atasan sebaiknya…",
+      "options": [
+        "Panjang dan detail tanpa subjek",
+        "Subjek jelas, isi singkat, poin penting di awal",
+        "Pakai singkatan chat",
+        "Tanpa salam dan penutup"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Rekan kerja mengkritik pekerjaanmu di rapat. Respons yang paling dewasa…",
+      "options": [
+        "Membalas kritik dengan kritik",
+        "Mendengarkan, bertanya contoh konkret, lalu menindaklanjuti",
+        "Diam lalu mengeluh di belakang",
+        "Keluar dari rapat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat presentasi, audiens tampak bingung. Sebaiknya…",
+      "options": [
+        "Mempercepat bicara",
+        "Berhenti sejenak, tanyakan bagian yang belum jelas, beri contoh",
+        "Mengabaikan",
+        "Membaca slide lebih keras"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Mendengarkan aktif berarti…",
+      "options": [
+        "Menunggu giliran bicara",
+        "Fokus, tidak memotong, dan merangkum ulang maksud lawan bicara",
+        "Sambil membalas chat",
+        "Langsung memberi solusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang manajer divisi lain meminta bantuan untuk proyek mendadak yang tidak termasuk dalam Key Performance Indicator (KPI) utamamu, sementara tenggat waktu tugasmu sendiri sangat ketat. Bagaimana cara kamu menolaknya secara profesional?",
+      "options": [
+        "Menolak secara langsung dan menyarankan mereka mencari bantuan dari anggota tim lain yang lebih santai",
+        "Menyetujui permintaan tersebut tetapi mengorbankan kualitas tugas utamamu agar semua selesai tepat waktu",
+        "Menjelaskan beban kerja saat ini dan menawarkan opsi untuk membantu minggu depan setelah tugas utamamu selesai",
+        "Mengabaikan pesan tersebut hingga mereka mencari orang lain karena itu bukan tanggung jawabmu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah rapat koordinasi lintas departemen, terjadi perdebatan panas mengenai strategi peluncuran produk antara tim pemasaran dan tim operasional. Sebagai fasilitator rapat, langkah komunikasi apa yang paling tepat?",
+      "options": [
+        "Memotong pembicaraan kedua pihak dan langsung mengambil keputusan sepihak demi efisiensi waktu",
+        "Mengarahkan kedua pihak untuk fokus pada tujuan bersama dan merangkum titik temu dari argumen mereka",
+        "Membiarkan perdebatan terus berlanjut agar semua orang bisa meluapkan emosi dan ide mereka secara bebas",
+        "Menunda rapat hari itu dan meminta kedua tim berdiskusi sendiri tanpa kehadiran departemen lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu mendapati kesalahan perhitungan yang cukup fatal dalam laporan keuangan yang sudah diserahkan oleh bawahanmu kepada jajaran direksi. Apa tindakan komunikasi pertama yang harus kamu lakukan?",
+      "options": [
+        "Memanggil bawahan tersebut ke ruang kerja privat untuk mendiskusikan kesalahan dan mencari solusi perbaikan",
+        "Membalas email laporan tersebut secara terbuka dan menyalahkan bawahan di hadapan para direksi",
+        "Langsung merevisi laporan tersebut sendiri tanpa memberitahu bawahan agar masalah cepat selesai",
+        "Menunggu hingga pihak direksi menemukan sendiri kesalahan tersebut sebelum menegur bawahan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kamu harus melakukan presentasi hasil kerja triwulanan di depan jajaran direksi yang terkenal sangat sibuk dan menyukai efisiensi. Strategi komunikasi apa yang paling efektif?",
+      "options": [
+        "Menjelaskan setiap slide secara detail dari awal hingga akhir agar tidak ada informasi yang terlewat",
+        "Menampilkan seluruh data mentah dalam bentuk tabel besar agar direksi bisa menganalisisnya sendiri",
+        "Memulai dengan kesimpulan utama dan rekomendasi strategis, lalu merinci data pendukung jika diminta",
+        "Menggunakan banyak istilah teknis tingkat tinggi untuk menunjukkan penguasaan materi yang mendalam"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien penting mengirimkan pesan melalui WhatsApp pada pukul 21.00 malam dengan nada kesal karena fitur aplikasi mengalami kendala kecil. Sikap komunikasi yang paling tepat adalah...",
+      "options": [
+        "Segera menelepon klien saat itu juga untuk meminta maaf dan langsung memperbaiki masalahnya",
+        "Membalas pesan keesokan paginya saat jam kerja dimulai tanpa memberikan respons apa pun di malam hari",
+        "Mengirimkan pesan singkat yang mengakui masalahnya dan menjanjikan solusi prioritas di pagi hari",
+        "Meminta rekan kerja bagian teknis untuk segera merespons pesan tersebut menggunakan akun milikmu"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu ditugaskan untuk menyampaikan kabar buruk kepada klien bahwa peluncuran fitur baru harus diundur dua minggu dari jadwal. Apa pendekatan komunikasi tertulis yang terbaik?",
+      "options": [
+        "Menyalahkan vendor pihak ketiga secara transparan agar klien tahu akar masalahnya bukan dari timmu",
+        "Menjelaskan kendala teknis secara berlebihan dan memohon maaf berkali-kali tanpa membawa solusi",
+        "Menyampaikan permohonan maaf singkat, alasan penundaan yang objektif, dan jadwal revisi yang jelas",
+        "Mengaburkan informasi penundaan tersebut dengan menyertakan banyak kabar baik lain agar klien tidak fokus"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sesi brainstorming, seorang rekan kerja yang junior menyampaikan ide yang terdengar kurang realistis bagi perusahaan. Cara merespons ide tersebut yang paling konstruktif adalah...",
+      "options": [
+        "Tertawa kecil untuk mencairkan suasana lalu langsung menolak ide tersebut agar dia tidak salah langkah",
+        "Mengapresiasi sudut pandangnya, lalu menanyakan bagaimana dia mengatasi tantangan biaya dan implementasinya",
+        "Diam saja agar dia merasa idenya diterima, namun mengabaikannya saat proyek benar-benar dijalankan",
+        "Meminta rekan kerja yang lebih senior untuk menjelaskan mengapa ide junior tersebut tidak akan pernah berhasil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu memimpin rapat mingguan secara daring (online meeting), namun tiga orang anggota tim tampak tidak pernah menyalakan kamera dan jarang merespons saat dipanggil. Tindakan komunikasimu adalah...",
+      "options": [
+        "Mengeluarkan mereka dari ruang rapat daring agar kehadiran mereka tidak merusak kedisiplinan tim",
+        "Melaporkan ketidakterlibatan mereka langsung kepada atasan tingkat atas setelah rapat selesai",
+        "Mengirimkan pesan pribadi secara sopan untuk menanyakan kendala teknis dan mengajak mereka berpartisipasi",
+        "Mengabaikan situasi tersebut dan terus melanjutkan presentasi sampai waktu rapat selesai"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu baru saja bergabung di sebuah perusahaan dan mendapati budaya komunikasi antar-divisi sangat lambat karena birokrasi yang panjang. Langkah awal komunikasi yang tepat untuk mempercepat koordinasi adalah...",
+      "options": [
+        "Mengabaikan jalur birokrasi resmi dan langsung menghubungi direktur utama setiap kali ada hambatan",
+        "Membuat grup obrolan informal dengan PIC dari divisi lain untuk membahas operasional harian yang mendesak",
+        "Mengirimkan surat resmi kepada departemen terkait dan menunggu balasan sesuai tenggat waktu maksimal",
+        "Mengeluhkan sistem yang lambat tersebut di media sosial pribadi agar mendapat perhatian manajemen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan negosiasi kontrak kerja sama dengan vendor baru, mereka meminta kenaikan harga sebesar 20% dari budget awal yang telah disepakati. Respons verbal yang paling taktis adalah...",
+      "options": [
+        "Menolak keras angka tersebut dan mengancam akan memutus kerja sama secara permanen hari ini",
+        "Menerima permintaan mereka begitu saja karena tidak ingin proses negosiasi memakan waktu lebih lama",
+        "Memahami posisi mereka, lalu mengeksplorasi penyesuaian ruang lingkup kerja agar tetap masuk dalam budget",
+        "Membuka data keuangan internal perusahaan untuk membuktikan bahwa perusahaanmu sedang mengalami krisis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu menerima email komplain dari pelanggan VIP yang sangat marah karena pesanan katering kantornya datang terlambat satu jam. Langkah komunikasi tertulis apa yang paling tepat untuk meredakan situasi?",
+      "options": [
+        "Mengirimkan pesan panjang lebar mengenai kemacetan lalu lintas parah yang dialami oleh kurir di jalan raya.",
+        "Meminta maaf secara tulus atas ketidaknyamanan, mengakui keterlambatan, dan menawarkan solusi kompensasi konkret.",
+        "Menyuruh pelanggan tersebut untuk langsung menghubungi bagian layanan logistik guna mempercepat proses investigasi.",
+        "Mengabaikan email tersebut sementara waktu sampai emosi pelanggan mereda agar tidak memicu perdebatan lanjutan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang anggota tim junior sering mendominasi percakapan dalam rapat dan memotong pembicaraan rekan kerja lainnya, sehingga suasana menjadi tidak kondusif. Sebagai rekan satu level, pendekatan komunikasi apa yang paling efektif?",
+      "options": [
+        "Menegur perilakunya secara langsung dengan nada tinggi di depan forum rapat agar dia merasa jera dan malu.",
+        "Membahas masalah tersebut secara empatik dalam sesi diskusi empat mata di luar jam rapat formal untuk memberikan masukan.",
+        "Membiarkan perilakunya terus berlanjut karena hal tersebut menunjukkan tingkat antusiasme kerja yang sangat tinggi.",
+        "Melaporkan tindakan kurang sopan tersebut kepada atasan langsung agar segera diberikan surat peringatan resmi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu harus meminta persetujuan anggaran tambahan untuk sebuah event kantor kepada Direktur Keuangan yang dikenal sangat analitis dan menyukai efisiensi. Format komunikasi seperti apa yang paling tepat kamu gunakan?",
+      "options": [
+        "Menyusun proposal naratif setebal sepuluh halaman yang menceritakan latar belakang dan perjalanan ide event tersebut.",
+        "Mengirimkan pesan suara melalui aplikasi WhatsApp yang menjelaskan antusiasme tim dalam merancang kegiatan ini.",
+        "Menyiapkan ringkasan eksekutif berisi proyeksi ROI, rincian biaya utama, dan manfaat strategis dalam satu lembar.",
+        "Mengajak beliau makan siang santai di luar kantor agar suasana lebih cair sebelum membicarakan anggaran."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah percakapan telepon dengan vendor penting, sinyal internet mendadak buruk dan suaranya terputus-putus sehingga informasi penting tidak terdengar jelas. Tindakan komunikasi yang paling profesional adalah...",
+      "options": [
+        "Terus mengiyakan setiap kalimat yang diucapkan vendor meskipun tidak paham demi menjaga kesopanan.",
+        "Mematikan sambungan telepon secara sepihak dan menunggu vendor tersebut menelepon kembali ke nomor kamu.",
+        "Meminta maaf, menjelaskan kendala sinyal, lalu merangkum poin pembicaraan terakhir untuk memastikan kesamaan pemahaman.",
+        "Mengalihkan pembicaraan ke topik lain yang lebih ringan agar pembicaraan tidak terhenti akibat masalah teknis."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu ditugaskan untuk melatih karyawan magang baru yang tampak pemalu dan jarang bertanya meskipun terlihat kebingungan dengan tugasnya. Strategi komunikasi apa yang paling tepat untuk diterapkan?",
+      "options": [
+        "Meminta dia untuk membaca seluruh dokumen SOP perusahaan secara mandiri tanpa batas waktu yang ditentukan.",
+        "Menunggu sampai dia berinisiatif mendatangi meja kerjamu untuk menanyakan bagian tugas yang belum dipahami.",
+        "Mengirimkan daftar pertanyaan umum melalui email agar dia bisa menjawabnya kapan pun tanpa tekanan.",
+        "Membuka sesi tanya jawab harian secara informal dan memberikan pertanyaan terbuka untuk memancing komunikasinya."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Kamu menemukan adanya miskomunikasi serius antar-departemen terkait tenggat waktu penyerahan data, yang berisiko menggagalkan peluncuran produk minggu depan. Langkah komunikasi preventif apa yang harus segera diambil?",
+      "options": [
+        "Mengirimkan memo teguran resmi kepada kepala departemen terkait atas kelalaian dalam pencatatan jadwal.",
+        "Mengadakan rapat darurat sinkronisasi lintas divisi untuk menyelaraskan kembali jadwal aksi dan penanggung jawab.",
+        "Menunda peluncuran produk selama satu bulan penuh tanpa melakukan konfirmasi terlebih dahulu kepada manajemen.",
+        "Membuat grup obrolan baru dan memasukkan seluruh karyawan perusahaan agar semua orang tahu masalah tersebut."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menyampaikan progres proyek tahunan kepada dewan komisaris, salah satu komisaris mengajukan pertanyaan tajam yang menyudutkan hasil kerja timmu. Respons komunikasi verbal yang paling tepat adalah...",
+      "options": [
+        "Menjawab pertanyaan dengan nada membela diri guna membuktikan bahwa tim sudah bekerja maksimal.",
+        "Mengalihkan perhatian dewan komisaris ke topik keberhasilan divisi lain untuk meredakan ketegangan.",
+        "Mendengarkan sampai selesai, berterima kasih atas masukan kritis, dan menjawab berbasis data objektif.",
+        "Meminta rekan satu tim yang duduk di sebelahmu untuk mengambil alih dan menjawab pertanyaan tersebut."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu perlu menyampaikan teguran kepada bawahan yang kinerjanya menurun drastis selama dua minggu terakhir akibat masalah pribadi. Pendekatan komunikasi apa yang paling manusiawi dan profesional?",
+      "options": [
+        "Mengirimkan surat peringatan tertulis resmi ke meja kerjanya tanpa perlu melakukan diskusi empat mata.",
+        "Membahas penurunan kinerjanya secara terbuka di depan rekan satu tim agar dia merasa termotivasi untuk bangkit.",
+        "Mengajak berbicara secara privat di ruangan tertutup, menanyakan kondisinya, dan menawarkan dukungan kerja.",
+        "Mengurangi beban kerjanya secara permanen tanpa memberitahu alasan di balik keputusan kebijakan tersebut."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan baru saja memberlakukan kebijakan operasional hibrida (hybrid working) yang memicu kebingungan dan kekhawatiran di kalangan staf operasional. Media komunikasi apa yang paling efektif untuk sosialisasi awal?",
+      "options": [
+        "Mengirimkan dokumen PDF panduan kebijakan sepanjang 50 halaman melalui email massal perusahaan.",
+        "Mengadakan town hall meeting interaktif secara daring untuk menjelaskan alasan dan sesi tanya jawab langsung.",
+        "Meminta setiap kepala bagian untuk menyebarkan informasi dari mulut ke mulut secara berantai ke staf.",
+        "Membuat pengumuman singkat di papan pengumuman fisik lantai dasar gedung kantor utama."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah forum diskusi strategi pemasaran, kamu memiliki ide yang sangat berbeda dari pandangan mayoritas tim dan atasan langsung. Cara menyampaikan pendapat yang paling konstruktif adalah...",
+      "options": [
+        "Menyampaikan ide tersebut dengan nada menantang untuk membuktikan bahwa sudut pandang mayoritas keliru.",
+        "Memilih diam sepanjang rapat berlangsung demi menjaga keharmonisan hubungan kerja dengan anggota tim.",
+        "Menjelaskan sudut pandang alternatif secara logis disertai argumen berbasis data dan studi kasus yang relevan.",
+        "Membagikan ide tersebut secara diam-diam melalui pesan pribadi kepada salah satu rekan kerja setelah rapat selesai."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang manajer senior menegurmu secara terbuka di grup WhatsApp divisi atas keterlambatan tugas kecil, padahal akar masalahnya ada pada sistem server kantor yang sedang down. Tindakan komunikasi yang paling tepat adalah...",
+      "options": [
+        "Membalas pesan tersebut seketika dengan menjelaskan bahwa sistem server kantor sedang mengalami gangguan teknis.",
+        "Mengirim pesan pribadi (private chat) kepada manajer tersebut untuk menjelaskan duduk perkara secara objektif.",
+        "Diam saja dan membiarkan anggota grup lain berasumsi sendiri mengenai kendala teknis yang sedang terjadi.",
+        "Melaporkan tindakan manajer tersebut kepada bagian Human Resources karena menegur secara terbuka di grup."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu ditugaskan memimpin proyek kerja sama dengan instansi pemerintah yang terkenal sangat birokratis dan kaku dalam hal administrasi surat-menyurat. Strategi komunikasi awal yang paling efektif adalah...",
+      "options": [
+        "Mengajak mereka langsung bertemu secara informal di restoran agar proses administrasi bisa lebih cepat selesai.",
+        "Mengirimkan seluruh draf dokumen melalui email pribadi rekan kerja di instansi tersebut untuk memangkas birokrasi.",
+        "Meminta pimpinan perusahaanmu untuk menelepon langsung kepala instansi guna meminta pengecualian aturan.",
+        "Mempelajari standar prosedur operasional persuratan mereka dan menugaskan staf khusus untuk mengawal berkas."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Saat melakukan presentasi proposal bisnis kepada calon investor asing, kamu menyadari dari ekspresi wajah mereka bahwa gaya bicaramu terlalu cepat dan istilah teknis yang digunakan sulit dipahami. Langkah korektif terbaik saat itu adalah...",
+      "options": [
+        "Melanjutkan presentasi sesuai durasi waktu agar seluruh slide materi penting dapat tersampaikan tuntas.",
+        "Meminta maaf, memperlambat tempo bicara, dan mengecek pemahaman mereka terhadap istilah teknis tertentu.",
+        "Melewati sisa slide presentasi dan langsung membagikan dokumen cetak proposal kepada para investor.",
+        "Mengubah bahasa pengantar presentasi dari bahasa Inggris ke bahasa Indonesia agar lebih lancar."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu menerima laporan dari staf lapangan bahwa vendor logistik sering terlantar di gudang karena proses validasi dokumen oleh bagian administrasi gudang memakan waktu lama. Cara kamu menyampaikan masalah ini kepada Kepala Bagian Gudang adalah...",
+      "options": [
+        "Mengirim email teguran resmi dengan cc langsung ke Direktur Operasional agar masalah ini segera ditindaklanjuti.",
+        "Menulis catatan di papan pengumuman gudang agar semua petugas administrasi membaca dan memperbaiki kinerjanya.",
+        "Mengajak diskusi empat mata secara santai untuk membahas hambatan alur kerja validasi dokumen di gudang.",
+        "Membuat laporan terbuka di grup chat divisi logistik mengenai kerugian yang ditimbulkan oleh keterlambatan tersebut."
+      ],
+      "correct_index": 2
+    }
+  ]
+}

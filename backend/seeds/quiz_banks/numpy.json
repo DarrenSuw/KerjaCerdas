@@ -1,0 +1,306 @@
+{
+  "skill": "NumPy",
+  "skill_key": "numpy",
+  "questions": [
+    {
+      "question": "Dalam sistem pemantauan suhu pabrik di Cikarang, Anda mendapatkan array 1D berisi data sensor setiap detik selama satu hari (86.400 elemen). Untuk mendeteksi lonjakan panas yang ekstrem, Anda perlu melakukan normalisasi Min-Max pada array tersebut agar nilainya berada di rentang [0, 1]. Operasi vektorisasi NumPy mana yang paling tepat untuk melakukan ini tanpa menggunakan perulangan (loop)?",
+      "options": [
+        "(arr - arr.min()) / (arr.max() - arr.min())",
+        "np.divide(arr - np.min(arr), np.max(arr) - np.min(arr))",
+        "(arr - np.mean(arr)) / np.std(arr)",
+        "np.normalize(arr, norm='l1', axis=0)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengolah data GPS dari armada logistik. Data koordinat lintang dan bujur disimpan dalam dua array 1D terpisah: 'lat' dan 'lon', masing-masing berisi 500 elemen. Anda perlu menggabungkan keduanya menjadi satu array 2D dengan bentuk (500, 2) untuk dimasukkan ke algoritma klasterisasi machine learning. Fungsi manipulasi bentuk (shape) apa yang paling tepat digunakan?",
+      "options": [
+        "np.vstack((lat, lon)).T",
+        "np.concatenate((lat, lon), axis=1)",
+        "np.column_stack((lat, lon))",
+        "np.reshape(np.array([lat, lon]), (500, 2))"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim riset pemasaran meminta Anda menyaring data penjualan harian (array 1D) hanya untuk hari-hari di mana penjualannya berada di antara 1 juta hingga 5 juta Rupiah. Menggunakan boolean indexing di NumPy, manakah ekspresi penulisan kode yang valid dan sesuai dengan sintaks Python/NumPy?",
+      "options": [
+        "data[(data >= 1000000) and (data <= 5000000)]",
+        "data[(data >= 1000000) & (data <= 5000000)]",
+        "np.filter(data >= 1000000 and data <= 5000000, data)",
+        "data.filter(min=1000000, max=5000000)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan kode pemrosesan citra (image processing) untuk aplikasi seluler. Citra direpresentasikan sebagai array 3D dengan bentuk (1080, 1920, 3). Anda perlu memutar (transpose) sumbu warna dari indeks terakhir ke indeks pertama sehingga bentuknya menjadi (3, 1080, 1920) agar sesuai dengan spesifikasi pustaka deep learning tertentu. Fungsi NumPy mana yang paling efisien?",
+      "options": [
+        "np.rollaxis(image, 2, 0)",
+        "image.transpose(2, 0, 1)",
+        "np.swapaxes(image, 0, 2)",
+        "image.reshape(3, 1080, 1920)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam analisis portofolio saham Bursa Efek Indonesia, Anda memiliki array 1D berisi tingkat pengembalian (return) harian. Anda ingin menghitung rata-rata bergerak (moving average) sederhana dengan jendela (window) 5 hari tanpa menulis perulangan for yang lambat. Fungsi konvolusi atau penggulungan apa di NumPy yang paling cocok untuk tugas ini?",
+      "options": [
+        "np.convolve(returns, np.ones(5)/5, mode='valid')",
+        "np.rolling(returns, window=5).mean()",
+        "np.filter(returns, n=5)",
+        "np.running_mean(returns, 5)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah sistem keuangan menggunakan array NumPy untuk menyimpan matriks transaksi antar akun berukuran (100, 100). Anda perlu mengekstrak elemen-elemen yang berada tepat di diagonal utama matriks tersebut untuk menghitung total transaksi mandiri setiap akun. Metode atau fungsi apa yang paling tepat?",
+      "options": [
+        "np.diagonal(matriks)",
+        "matriks.diagonal_elements()",
+        "np.extract_diag(matriks)",
+        "matriks[matriks == matriks.T]"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa performa skrip pemrosesan data transaksi Anda melambat secara drastis setelah melakukan operasi pengirisan (slicing) berulang kali pada array NumPy yang sangat besar, dan Anda mengubah subset data tersebut. Apa karakteristik internal NumPy yang menyebabkan hal ini perlu diwaspadai?",
+      "options": [
+        "Slicing di NumPy membuat salinan data baru di memori fisik yang menghabiskan banyak RAM",
+        "Slicing di NumPy mengembalikan tampilan (view) dari array asli, sehingga modifikasi pada slice akan merusak data asli jika tidak disalin secara eksplisit",
+        "Slicing otomatis mengubah tipe data array menjadi objek Python murni demi keamanan",
+        "Slicing memicu kompilasi ulang fungsi internal C yang memperlambat eksekusi berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai data scientist di e-commerce lokal, Anda perlu menggabungkan dua matriks data fitur pelanggan dari bulan lalu dan bulan ini yang memiliki jumlah baris yang sama. Fungsi apa yang paling tepat untuk menggabungkan keduanya secara berdampingan secara horizontal?",
+      "options": [
+        "Menggunakan fungsi np.concatenate dengan argumen axis=1",
+        "Menggunakan fungsi np.vstack untuk menumpuk secara vertikal",
+        "Menggunakan fungsi np.append dengan parameter axis default",
+        "Menggunakan fungsi np.dstack untuk penggabungan kedalaman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan data sensor IoT pabrik, Anda memiliki array 2D dengan beberapa nilai kosong yang direpresentasikan sebagai np.nan. Anda ingin mengganti semua nilai NaN tersebut dengan nilai rata-rata dari seluruh array sebelum dianalisis. Cara paling efisien di NumPy adalah:",
+      "options": [
+        "Membuat perulangan for ganda untuk mendeteksi dan mengubah nilai nan",
+        "Menggunakan np.isnan() untuk masking lalu menggantinya dengan np.nanmean()",
+        "Memanfaatkan np.where(np.isnan(data), np.nanmean(data), data)",
+        "Menggunakan fungsi np.nan_to_num() dengan mengisi parameter nan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menganalisis data log akses server berbentuk array 2D berukuran (10000, 5). Operasi menggunakan perulangan Python biasa berjalan sangat lambat. Pendekatan vectorized NumPy mana yang paling tepat untuk menghitung selisih nilai baris berturut-turut?",
+      "options": [
+        "Menggunakan fungsi bawaan np.diff() pada axis yang diinginkan",
+        "Melakukan iterasi baris dengan metode np.nditer() yang dioptimalkan",
+        "Membuat fungsi lambda dan menerapkannya dengan np.vectorize()",
+        "Mengurangi array dengan versi di-slice data[1:] dikurangi data[:-1]"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi fintech memerlukan normalisasi data transaksi harian agar berada pada rentang skala 0 hingga 1. Jika array data transaksi bernama nilai_tx, ekspresi NumPy apa yang langsung menghasilkan normalisasi tersebut tanpa iterasi?",
+      "options": [
+        "(nilai_tx - nilai_tx.mean()) / nilai_tx.std()",
+        "(nilai_tx - nilai_tx.min()) / (nilai_tx.max() - nilai_tx.min())",
+        "nilai_tx / np.linalg.norm(nilai_tx)",
+        "np.clip(nilai_tx, 0, 1) / nilai_tx.sum()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim riset Anda memberikan array 1D berisi jutaan data cuaca. Anda diminta mencari indeks dari 5 nilai suhu tertinggi untuk pengecekan alat. Fungsi NumPy mana yang paling optimal untuk tugas ini tanpa harus melakukan sorting penuh?",
+      "options": [
+        "Menggunakan np.sort() lalu mengambil lima elemen terakhir",
+        "Menggunakan np.argsort() lalu memotong lima indeks pertama",
+        "Menggunakan np.argpartition() dengan parameter -5",
+        "Menggunakan np.max() secara berulang sebanyak lima kali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima data matriks korelasi antar variabel ekonomi berbentuk array 2D. Untuk keperluan laporan, Anda hanya memerlukan elemen-elemen yang berada di atas diagonal utama matriks tersebut. Fungsi NumPy apa yang paling tepat?",
+      "options": [
+        "Menggunakan np.triu() dengan mengatur nilai k sama dengan satu",
+        "Menggunakan np.diag() untuk mengekstrak diagonal utamanya saja",
+        "Menggunakan np.extract() dengan kondisi indeks baris dan kolom",
+        "Menggunakan np.tril() untuk mengambil bagian bawah matriks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis spasial pemetaan wilayah, Anda memiliki dua array 1D koordinat X dan Y. Anda ingin menghasilkan grid koordinat 2D (meshgrid) untuk evaluasi fungsi kontur. Fungsi NumPy mana yang harus dipanggil?",
+      "options": [
+        "Menggunakan fungsi np.meshgrid(X, Y, indexing='ij')",
+        "Menggunakan fungsi np.mgrid[X.min():X.max()] untuk otomatisasi",
+        "Menggunakan fungsi np.broadcast_arrays(X, Y) untuk menyamakan",
+        "Menggunakan fungsi np.cartesian([X, Y]) untuk semua kombinasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menulis modul pengenalan pola sidik jari. Anda memiliki template dan citra uji berupa array 2D dengan tipe data float64, yang memboroskan memori RAM server. Cara paling tepat untuk mengonversinya menjadi uint8 tanpa mengubah rentang nilai adalah:",
+      "options": [
+        "Langsung melakukan casting menggunakan metode array.astype('uint8')",
+        "Melakukan normalisasi ke 0-255 terlebih dahulu baru di-astype('uint8')",
+        "Menggunakan fungsi np.round() sebelum mengubah tipe data ke integer",
+        "Memanfaatkan np.clip() pada data asli lalu langsung mengubah tipenya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pemodelan machine learning prediktif, Anda perlu menghitung jarak Euclidean antara satu titik matriks referensi dan ratusan titik data observasi menggunakan broadcasting NumPy. Bentuk array yang paling benar untuk menerapkan broadcasting secara otomatis adalah:",
+      "options": [
+        "Menyamakan persis seluruh dimensi kedua array matriks tersebut",
+        "Memastikan salah satu dimensi array bernilai satu atau kosong di awal",
+        "Mengatur bentuk array agar berukuran (N, 1) dan (1, M) secara tepat",
+        "Memastikan jumlah total elemen kedua array adalah kelipatan sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem logistik mencatat jalur pengiriman sebagai urutan titik koordinat dalam array 2D berukuran (50, 2). Anda ingin menghitung total jarak tempuh Euclidean kumulatif dari titik pertama hingga titik terakhir secara efisien. Pendekatan NumPy terbaik adalah:",
+      "options": [
+        "Menghitung selisih antar baris berturut-turut dengan np.diff, kuadratkan, jumlahkan per baris, akar kuadratkan, lalu jumlahkan totalnya",
+        "Menggunakan fungsi np.linalg.norm() pada seluruh matriks sekaligus tanpa melakukan operasi pengurangan selisih baris",
+        "Membuat fungsi perulangan for untuk menghitung jarak antar dua titik secara manual lalu mengakumulasikannya ke variabel",
+        "Menggunakan np.sum() langsung pada array koordinat asli setelah dikalikan dengan matriks identitas berukuran sama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengelola data penjualan retail seluruh cabang di Indonesia dalam bentuk array 2D berukuran (12, 30) yang merepresentasikan bulan dan tanggal. Manajemen meminta Anda untuk menghitung total penjualan tahunan secara keseluruhan tanpa menggunakan perulangan Python.",
+      "options": [
+        "Menggunakan fungsi np.sum(data_penjualan)",
+        "Menggunakan fungsi np.add.reduce(data_penjualan)",
+        "Menggunakan metode data_penjualan.sum(axis=0)",
+        "Menggunakan fungsi np.total(data_penjualan)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan data sensor cuaca IoT, Anda menerima array 1D berisi suhu harian. Beberapa nilai tercatat tidak valid dan bernilai negatif. Anda ingin mengganti semua nilai negatif tersebut menjadi angka nol secara efisien tanpa loop.",
+      "options": [
+        "data[data < 0] = 0",
+        "np.where(data < 0, 0, data)",
+        "data.replace(data < 0, 0)",
+        "np.clip(data, a_min=0, a_max=None)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim riset pasar memberikan dua array 1D terpisah: array pertama berisi kode produk dan array kedua berisi jumlah stok gudang di Surabaya. Anda perlu menggabungkan kedua array tersebut secara berdampingan menjadi satu matriks 2D berukuran (N, 2).",
+      "options": [
+        "np.stack((produk, stok), axis=1)",
+        "np.append(produk, stok, axis=1)",
+        "np.concatenate((produk, stok))",
+        "np.merge(produk, stok, on='index')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai data engineer di platform ride-hailing, Anda memiliki array 2D koordinat GPS perjalanan pengguna. Untuk analisis jarak dekat, Anda perlu mengubah bentuk array tersebut dari (1000, 2) menjadi array 3D dengan bentuk (10, 100, 2) tanpa mengubah urutan datanya.",
+      "options": [
+        "data.reshape(10, 100, 2)",
+        "data.resize(10, 100, 2)",
+        "data.transpose(10, 100, 2)",
+        "data.flatten(10, 100, 2)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data keuangan perusahaan startup yang memiliki beberapa nilai ekstrem (outlier). Untuk mendapatkan ukuran pemusatan data yang lebih stabil, Anda diminta menghitung nilai median dari array 1D pengeluaran bulanan.",
+      "options": [
+        "np.median(pengeluaran)",
+        "np.average(pengeluaran)",
+        "pengeluaran.median()",
+        "np.percentile(pengeluaran, 50)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem deteksi penipuan kartu kredit, Anda perlu menghitung matriks kovarians dari 5 variabel finansial yang disimpan dalam array 2D berukuran (5, 1000), di mana baris merepresentasikan variabel dan kolom adalah sampel transaksi.",
+      "options": [
+        "np.cov(data_transaksi)",
+        "np.corrcoef(data_transaksi)",
+        "data_transaksi.cov()",
+        "np.variance(data_transaksi, axis=1)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun fitur pencarian properti berdasarkan lokasi. Anda memiliki array 1D jarak dari titik pusat kota. Anda ingin mengurutkan array tersebut dan mendapatkan indeks asli dari elemen-elemen sebelum diurutkan agar bisa mencocokkan dengan data nama perumahan.",
+      "options": [
+        "np.argsort(jarak)",
+        "np.sort(jarak)",
+        "jarak.sort_indices()",
+        "np.searchsorted(jarak)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan citra medis rontgen berbentuk array 2D, Anda perlu memutar gambar sebesar 90 derajat berlawanan arah jarum jam untuk keperluan orientasi visual dokter.",
+      "options": [
+        "np.rot90(citra, k=1)",
+        "np.flip(citra, axis=0)",
+        "np.roll(citra, shift=90)",
+        "np.transpose(citra)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin melakukan simulasi Monte Carlo untuk proyeksi keuangan dengan menghasilkan 1000 angka acak berdistribusi normal (Gaussian) dengan rata-rata 50 dan standar deviasi 5.",
+      "options": [
+        "np.random.normal(loc=50, scale=5, size=1000)",
+        "np.random.rand(1000) * 5 + 50",
+        "np.random.uniform(50, 5, 1000)",
+        "np.random.standard_normal(1000) * 5 + 50"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi inventory gudang menyimpan data jumlah barang dalam array 1D. Anda diminta untuk mengekstrak hanya elemen-elemen yang memiliki nilai genap menggunakan teknik boolean indexing NumPy.",
+      "options": [
+        "stok[stok % 2 == 0]",
+        "stok.filter(lambda x: x % 2 == 0)",
+        "np.extract(stok, stok % 2 == 0)",
+        "stok[np.mod(stok, 2)]"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengolah data sensor getaran mesin pabrik berupa array 1D. Untuk mendeteksi lonjakan ekstrem, Anda perlu mencari indeks di mana nilai getaran melebihi ambang batas tertentu. Fungsi NumPy manakah yang paling efisien untuk mendapatkan indeks tersebut tanpa menggunakan perulangan Python?",
+      "options": [
+        "np.where(data > ambang)",
+        "np.find(data > ambang)",
+        "np.search(data, ambang)",
+        "np.filter(data > ambang)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengolahan data transaksi fintech, Anda memiliki array 2D berukuran (1000, 5) dan ingin menambahkan kolom baru yang berisi status validasi (boolean). Metode penambahan kolom yang paling optimal secara memori di NumPy adalah...",
+      "options": [
+        "Menggunakan np.append() pada setiap iterasi baris data",
+        "Menggabungkan array dengan np.concatenate(axis=0)",
+        "Menggunakan np.column_stack() atau np.hstack()",
+        "Mengubah bentuk array dengan fungsi np.reshape()"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima data penjualan bulanan berbentuk array 1D dengan beberapa nilai kosong yang disimpan sebagai np.nan. Sebelum menghitung rata-rata penjualan, Anda harus mengabaikan nilai NaN tersebut agar hasil tidak korup. Fungsi statistik apa yang harus digunakan?",
+      "options": [
+        "np.mean(data, ignore_nan=True)",
+        "np.nanmean(data)",
+        "np.average(data, dropna=True)",
+        "np.mean(np.dropna(data))"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Scikit-learn",
+  "skill_key": "scikit-learn",
+  "questions": [
+    {
+      "question": "Anda sedang membangun model prediksi churn pelanggan untuk sebuah perusahaan telekomunikasi di Jakarta. Dataset yang Anda miliki sangat tidak seimbang, di mana hanya 3% pelanggan yang benar-benar churn. Metrik evaluasi apa yang paling tepat digunakan saat melakukan validasi silang (cross-validation) dengan Scikit-learn?",
+      "options": [
+        "Menggunakan akurasi karena mudah dipahami oleh manajemen puncak",
+        "Menggunakan roc_auc atau average_precision_score dari modul metrics",
+        "Menggunakan mean_squared_error untuk mengukur deviasi prediksi",
+        "Menggunakan r2_score untuk melihat persentase variansi data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang Data Scientist senior meminta Anda untuk melatih model Random Forest pada data transaksi e-commerce yang memiliki beberapa fitur numerik dengan rentang nilai yang sangat bervariasi. Langkah prapemrosesan apa yang wajib Anda lakukan menggunakan Scikit-learn sebelum memasukkan data ke model?",
+      "options": [
+        "Melakukan normalisasi atau standarisasi fitur menggunakan StandardScaler",
+        "Mengubah seluruh fitur numerik menjadi kategori dengan KBinsDiscretizer",
+        "Menerapkan PCA secara langsung untuk mereduksi dimensi tanpa penskalaan",
+        "Pohon keputusan dan ensemble-nya tidak memerlukan penskalaan fitur sama sekali"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda sedang mendeploy model Machine Learning ke lingkungan produksi. Untuk menghindari kebocoran data (data leakage) saat melakukan imputasi nilai yang hilang dan penskalaan, praktik terbaik apa di Scikit-learn yang harus diterapkan?",
+      "options": [
+        "Menggabungkan seluruh langkah prapemrosesan dan estimator dalam objek Pipeline",
+        "Melakukan fit_transform pada seluruh dataset sebelum membaginya menjadi data latih",
+        "Menyimpan nilai rata-rata dari data uji untuk mengisi nilai hilang pada data latih",
+        "Menjalankan SimpleImputer secara terpisah pada data latih dan data uji"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah proyek fintech, Anda perlu mencari kombinasi hyperparameter terbaik untuk model Gradient Boosting. Mengingat waktu komputasi yang terbatas di server kantor, modul Scikit-learn apa yang paling efisien untuk mengeksplorasi ruang parameter secara acak?",
+      "options": [
+        "Menggunakan GridSearchCV dengan mencobakan seluruh kombinasi secara exhaustif",
+        "Menggunakan RandomizedSearchCV untuk mengambil sampel kombinasi secara acak",
+        "Menggunakan HalvingGridSearchCV dengan membuang parameter buruk di awal",
+        "Menggunakan ParameterGrid untuk iterasi manual menggunakan perulangan Python"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati model Linear Regression yang Anda latih mengalami overfitting parah pada data historis penjualan ritel. Regularisasi apa di Scikit-learn yang dapat Anda gunakan untuk mengecilkan koefisien fitur yang kurang penting persis menjadi nol?",
+      "options": [
+        "Menggunakan Ridge regression dengan mengatur parameter alpha bernilai tinggi",
+        "Menggunakan Lasso regression untuk melakukan seleksi fitur secara otomatis",
+        "Menggunakan ElasticNet untuk menggabungkan penalti L1 dan L2 sekaligus",
+        "Menggunakan PolynomialFeatures untuk memperluas derajat polinomial data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dataset churn pelanggan yang Anda tangani memiliki kolom kategori seperti 'kota_tinggal' dengan 35 nilai unik. Sebelum melatih model Logistic Regression dengan Scikit-learn, transformasi apa yang harus diaplikasikan pada kolom tersebut?",
+      "options": [
+        "Menggunakan LabelEncoder agar kolom berubah menjadi bilangan bulat berurutan",
+        "Menggunakan OrdinalEncoder dengan asumsi ada tingkatan hierarki wilayah",
+        "Menggunakan OneHotEncoder dengan parameter drop='first' untuk menghindari multikolinearitas",
+        "Menghapus kolom kategori tersebut karena regresi logistik hanya menerima data numerik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengevaluasi model klasifikasi multi-kelas untuk sistem moderasi konten otomatis. Agar Anda dapat melihat secara mendetail baris dan kolom mana saja kelas yang sering tertukar oleh model, fungsi metrik apa yang harus dipanggil dari sklearn.metrics?",
+      "options": [
+        "Memanggil classification_report untuk melihat presisi dan recall per kelas",
+        "Memanggil confusion_matrix untuk memetakan prediksi benar versus aktual",
+        "Memanggil log_loss untuk menghitung penalti probabilitas prediksi",
+        "Memanggil jaccard_score untuk mengukur kesamaan sampel label multikelas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim produk meminta Anda untuk membuat sistem rekomendasi kelompok pengguna (clustering) berdasarkan kebiasaan transaksi. Setelah menjalankan KMeans, metrik internal apa di Scikit-learn yang dapat Anda gunakan untuk mengukur seberapa baik cluster terpisah satu sama lain?",
+      "options": [
+        "Menggunakan silhouette_score untuk menghitung jarak kohesi dan separasi cluster",
+        "Menggunakan adjusted_rand_score karena label ground truth tersedia pada data",
+        "Menggunakan mean_absolute_error untuk mengukur jarak pusat cluster",
+        "Menggunakan homogeneity_score untuk mengevaluasi entropi dari cluster"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Model klasifikasi Random Forest yang Anda buat di local Jupyter Notebook sudah siap digunakan oleh tim Backend. Format dan fungsi apa yang paling aman dan standar di ekosistem Python untuk menyimpan model Scikit-learn beserta pipeline-nya ke dalam file disk?",
+      "options": [
+        "Menyimpan bobot model ke file CSV menggunakan fungsi pandas to_csv",
+        "Menggunakan pustaka joblib untuk melakukan serialisasi objek estimator Scikit-learn",
+        "Mengekspor model secara manual ke dalam format skrip teks Python murni",
+        "Menggunakan modul json bawaan Python untuk mendaur ulang parameter model"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin melatih model Support Vector Classifier (SVC) pada dataset teks besar yang telah diubah menjadi matriks TF-IDF. Pelatihan berjalan sangat lambat karena kompleksitas data. Pendekatan alternatif apa di Scikit-learn yang dirancang khusus untuk menangani pembelajaran mesin skala besar secara efisien?",
+      "options": [
+        "Menggunakan SGDClassifier dengan loss='hinge' untuk estimasi berbasis SGD",
+        "Menggunakan NuSVC karena memiliki kecepatan komputasi yang lebih optimal",
+        "Menggunakan LinearSVC dengan mengubah kernel menjadi 'rbf' secara otomatis",
+        "Menggunakan KernelRidge untuk mempercepat aproksimasi matriks kernel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mengembangkan model prediksi harga properti di Surabaya. Karena sebaran harga sangat pincang (skewed), Anda ingin menerapkan transformasi logaritmik pada variabel target, tetapi tetap ingin mengevaluasi model menggunakan metrik asli pada pipeline Scikit-learn. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi log di luar pipeline dan melatih model secara manual",
+        "Membungkus model regresi dengan objek TransformedTargetRegressor",
+        "Melakukan transformasi manual pada data uji sebelum fungsi predict",
+        "Mengubah fungsi loss bawaan estimator menjadi fungsi logaritma"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi layanan kesehatan online ingin mendeteksi penyakit langka dari data rekam medis pasien. Data tersebut sangat tidak seimbang (hanya 1% kasus positif). Anda menggunakan Logistic Regression dan ingin mengatur ambang batas (threshold) probabilitas prediksi secara manual untuk meningkatkan recall. Metode apa yang harus Anda panggil?",
+      "options": [
+        "Menggunakan fungsi model.predict() lalu mengubah array hasilnya",
+        "Menggunakan fungsi model.predict_proba() lalu menerapkan cutoff kustom",
+        "Mengubah parameter class_weight di awal inisialisasi model regresi",
+        "Menggunakan fungsi model.decision_function() tanpa parameter tambahan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun sistem deteksi penipuan kartu kredit di bank digital. Karena data sangat tidak seimbang, Anda memutuskan untuk menggunakan teknik undersampling pada data latih. Agar tidak terjadi kebocoran data saat validasi silang (cross-validation), bagaimana cara Anda mengintegrasikannya?",
+      "options": [
+        "Menerapkan undersampling pada seluruh dataset sebelum proses cross-validation",
+        "Menggunakan pustaka imbalanced-learn di dalam objek Pipeline Scikit-learn",
+        "Melakukan undersampling secara manual di dalam setiap iterasi split data latih",
+        "Menjalankan undersampling hanya pada data uji di setiap fold validasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek analisis sentimen ulasan aplikasi e-commerce, Anda mengekstrak fitur teks menggunakan TfidfVectorizer. Anda mendapati matriks fitur yang dihasilkan sangat besar dan membuat RAM laptop Anda habis saat pelatihan model. Argumen apa pada TfidfVectorizer yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Menurunkan nilai parameter ngram_range menjadi hanya unigram saja",
+        "Mengatur parameter max_features atau min_df untuk membatasi kosakata",
+        "Mengubah tipe data keluaran matriks menjadi float32 menggunakan astype",
+        "Menghapus semua tanda baca dan mengubah teks menjadi huruf kecil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis performa berbagai model klasifikasi (Logistic Regression, Random Forest, dan SVM) untuk segmentasi nasabah bank. Anda ingin membandingkan kurva ROC dari ketiga model tersebut dalam satu visualisasi grafik. Fungsi Scikit-learn apa yang paling tepat digunakan untuk mendapatkan titik koordinat kurva tersebut?",
+      "options": [
+        "Menggunakan fungsi precision_recall_curve untuk setiap model",
+        "Menggunakan fungsi roc_curve untuk menghitung FPR dan TPR",
+        "Menggunakan fungsi confusion_matrix untuk mendapatkan nilai akurasi",
+        "Menggunakan fungsi auc langsung pada hasil prediksi kelas biner"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model K-Means Clustering untuk mengelompokkan pelanggan berdasarkan pola belanja bulanan mereka. Anda ingin menentukan jumlah klaster ($k$) optimal menggunakan metode Silhouette Coefficient. Modul apa di Scikit-learn yang menyediakan fungsi untuk menghitung skor tersebut secara langsung?",
+      "options": [
+        "Mengimpor fungsi dari modul sklearn.metrics.cluster",
+        "Mengimpor fungsi dari modul sklearn.cluster.evaluation",
+        "Mengambil fungsi langsung dari modul sklearn.preprocessing",
+        "Menggunakan fungsi bawaan yang melekat pada objek KMeans"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup logistik ingin memprediksi waktu pengiriman paket berdasarkan jarak dan berat barang. Setelah melatih Linear Regression, Anda mencurigai adanya multikolinearitas yang tinggi antara beberapa fitur numerik. Metrik atau teknik apa yang dapat Anda hitung untuk mendeteksi masalah ini sebelum melakukan regularisasi?",
+      "options": [
+        "Menghitung skor Mean Squared Error pada data latih dan data uji",
+        "Menghitung nilai Variance Inflation Factor (VIF) dari matriks fitur",
+        "Melihat koefisien bobot model setelah dilakukan standardisasi fitur",
+        "Menjalankan fungsi cross_val_score dengan metrik negative_mse"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun pipeline machine learning yang kompleks yang berisi tahap imputasi missing value menggunakan KNNImputer, penskalaan dengan StandardScaler, danestimator akhir Ridge Regression. Saat melakukan GridSearchCV, Anda ingin memastikan bahwa Imputer hanya belajar dari data latih pada setiap fold. Bagaimana cara penulisan nama parameter grid untuk langkah imputer?",
+      "options": [
+        "Menuliskan nama parameter secara langsung seperti 'n_neighbors'",
+        "Mengawali nama parameter dengan nama langkah, contoh 'imputer__n_neighbors'",
+        "Membuat kelas wrapper kustom agar parameter dapat dikenali grid search",
+        "Melakukan imputasi terpisah sebelum objek Pipeline didefinisikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan untuk melakukan seleksi fitur otomatis pada dataset genomik yang memiliki ribuan kolom namun baris data yang sedikit, guna mencegah overfitting pada model Decision Tree. Teknik seleksi fitur apa di Scikit-learn yang bekerja dengan mengevaluasi skor univariat antara setiap fitur dan target?",
+      "options": [
+        "Menggunakan SequentialFeatureSelector untuk pencarian maju atau mundur",
+        "Menggunakan SelectKBest bersama fungsi uji statistik seperti f_classif",
+        "Menggunakan SelectFromModel berdasarkan koefisien pohon keputusan",
+        "Menggunakan PCA untuk mereduksi dimensi matriks secara keseluruhan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pemeliharaan mesin pabrik (predictive maintenance), Anda melatih model Isolation Forest untuk mendeteksi anomali suhu mesin. Setelah model jadi, metode apa yang harus Anda panggil pada objek model untuk mendapatkan label prediksi anomali (-1 untuk outlier, 1 untuk normal) pada data baru?",
+      "options": [
+        "Memanggil fungsi model.predict(X_baru) pada data pengujian",
+        "Memanggil fungsi model.decision_function(X_baru) secara langsung",
+        "Memanggil fungsi model.score_samples(X_baru) lalu menetapkan threshold",
+        "Memanggil fungsi model.transform(X_baru) untuk mengubah bentuk data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menangani dataset demografi karyawan yang mencakup kolom 'tingkat_pendidikan' (SD, SMP, SMA, S1, S2). Kolom ini memiliki urutan hierarki yang jelas. Transformator Scikit-learn mana yang paling tepat Anda gunakan untuk mengubah kolom ini sebelum dimasukkan ke model?",
+      "options": [
+        "Menggunakan fungsi OneHotEncoder dengan parameter drop='first'",
+        "Menggunakan fungsi OrdinalEncoder dengan menentukan urutan kategori",
+        "Menggunakan fungsi LabelEncoder langsung pada kolom DataFrame tersebut",
+        "Menggunakan fungsi StandardScaler setelah mengubah kategori menjadi angka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek analisis risiko kredit, Anda melatih model Logistic Regression. Karena interpretabilitas adalah kunci, Anda perlu mengekstrak koefisien (bobot) dari setiap fitur setelah model selesai dilatih. Atribut apa yang harus Anda akses pada objek model Scikit-learn tersebut?",
+      "options": [
+        "Mengakses atribut model.feature_importances_ untuk melihat bobot",
+        "Mengakses atribut model.coef_ setelah proses fitting selesai",
+        "Mengakses atribut model.weights_ yang ada di dalam objek estimator",
+        "Mengakses atribut model.intercept_ untuk mendapatkan matriks bobot"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membangun model untuk memprediksi kepuasan pelanggan berdasarkan teks ulasan. Anda ingin mengubah teks mentah menjadi representasi hitungan kata (bag-of-words), namun Anda ingin membatasi ukuran vocabulary maksimum menjadi 5000 kata teratas saja. Parameter apa yang harus diatur pada CountVectorizer?",
+      "options": [
+        "Mengatur argumen max_features sama dengan nilai lima ribu",
+        "Mengatur argumen vocabulary_size sama dengan nilai lima ribu",
+        "Mengatur argumen max_df sama dengan nilai lima ribu",
+        "Mengatur argumen n_features sama dengan nilai lima ribu"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta untuk mengevaluasi model regresi harga rumah menggunakan metrik Root Mean Squared Error (RMSE). Namun, fungsi evaluasi bawaan Scikit-learn di sklearn.metrics hanya menyediakan mean_squared_error. Bagaimana cara yang paling tepat mendapatkan nilai RMSE?",
+      "options": [
+        "Menggunakan mean_squared_error dengan menambahkan argumen root=True",
+        "Menggunakan mean_squared_error lalu menerapkan fungsi akar kuadrat",
+        "Menggunakan mean_absolute_error lalu mengalikannya dengan faktor dua",
+        "Menggunakan r2_score lalu mengonversinya secara manual ke bentuk akar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah model klasifikasi risiko gagal bayar pinjaman yang Anda buat menghasilkan probabilitas kelas alih-alih label keras (0 atau 1). Anda ingin menghitung area di bawah kurva ROC (ROC-AUC) menggunakan fungsi dari Scikit-learn. Argumen apa saja yang wajib Anda masukkan ke dalam fungsi roc_auc_score?",
+      "options": [
+        "Memasukkan nilai label prediksi keras dan nilai label data uji asli",
+        "Memasukkan nilai probabilitas prediksi kelas positif dan label data uji",
+        "Memasukkan nilai matriks kebingungan dan nilai ambang batas optimal",
+        "Memasukkan nilai rata-rata probabilitas kelas dan skor akurasi model"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang melatih model regresi linear untuk memprediksi lama waktu tempuh logistik. Agar model tidak mudah terjebak pada overfitting akibat fitur yang terlalu banyak dan saling berkorelasi tinggi, Anda ingin menerapkan regularisasi L1. Estimator mana dari Scikit-learn yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan modul estimator linear_model.Lasso untuk regularisasi L1",
+        "Menggunakan modul estimator linear_model.Ridge untuk regularisasi L1",
+        "Menggunakan modul estimator linear_model.ElasticNet untuk L1 dan L2",
+        "Menggunakan modul estimator linear_model.SGDRegressor dengan penalty='l2'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam persiapan data untuk model deteksi anomali transaksi, Anda ingin melakukan normalisasi fitur numerik menggunakan rentang minimum dan maksimum secara spesifik (antara 0 dan 1). Kelas transformator mana yang paling tepat dipanggil dari modul preprocessing?",
+      "options": [
+        "Menggunakan kelas StandardScaler untuk melakukan standarisasi data",
+        "Menggunakan kelas MinMaxScaler untuk mengubah rentang nilai data",
+        "Menggunakan kelas RobustScaler untuk menangani outlier secara aman",
+        "Menggunakan kelas Normalizer untuk menormalkan sampel baris data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin melakukan validasi silang (cross-validation) sebanyak 5 fold pada model Decision Tree, sekaligus ingin mengukur performa model menggunakan metrik akurasi dan presisi secara bersamaan. Fungsi mana yang paling efisien digunakan dari modul model_selection?",
+      "options": [
+        "Menggunakan fungsi cross_val_score dengan argumen scoring tunggal",
+        "Menggunakan fungsi cross_validate dengan argumen scoring berupa list metrik",
+        "Menggunakan fungsi train_test_split secara berulang sebanyak lima kali",
+        "Menggunakan fungsi KFold manual dengan mencetak nilai metrik satu per satu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa dimensi fitur data genetik Anda sangat besar (mencapai 10.000 kolom). Untuk mempercepat waktu latih model tanpa kehilangan banyak informasi varians data, Anda memutuskan untuk menerapkan Principal Component Analysis (PCA). Parameter apa yang digunakan saat instansiasi PCA untuk mempertahankan 95% varians?",
+      "options": [
+        "Mengatur parameter n_components sama dengan nilai pecahan nol koma sembilan lima",
+        "Mengatur parameter variance_ratio sama dengan nilai nol koma sembilan lima",
+        "Mengatur parameter keep_variance sama dengan nilai boolean True",
+        "Mengatur parameter max_components sama dengan nilai sembilan puluh lima"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun sebuah pipeline pemrosesan data yang terdiri dari imputasi nilai kosong menggunakan SimpleImputer dan pelatihan model Random Forest. Bagaimana cara terbaik menggabungkan kedua langkah tersebut agar terhindar dari kebocoran data saat validasi silang?",
+      "options": [
+        "Menggabungkan tahapan menggunakan objek Pipeline dari modul sklearn.pipeline",
+        "Melakukan imputasi pada seluruh dataset secara global sebelum validasi silang",
+        "Menjalankan fit_transform pada imputer terpisah untuk setiap fold secara manual",
+        "Menggunakan fungsi make_column_transformer untuk menggabungkan kedua fungsi"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

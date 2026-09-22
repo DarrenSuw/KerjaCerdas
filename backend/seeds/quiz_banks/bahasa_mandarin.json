@@ -1,0 +1,306 @@
+{
+  "skill": "Bahasa Mandarin",
+  "skill_key": "bahasa mandarin",
+  "questions": [
+    {
+      "question": "Anda menerima pesanan komponen mesin via WeChat dari vendor di Guangzhou, tetapi jumlah barang yang dikirim kurang dari perjanjian kontrak. Anda ingin meminta mereka untuk segera mengirimkan sisa kekurangan barang tersebut pada pengiriman berikutnya. Bagaimana Anda menuliskannya secara profesional?",
+      "options": [
+        "Nimen de huo shao le, qing xia ci bu gei women.",
+        "Shuliang bu gou, qing zai xia yi pi yunshu.",
+        "Huowu shuliang buzu, qing zai xiayicipeisongshi buchong.",
+        "Nimen fasong de shuliang cuowu, qing gaizheng."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam percakapan telepon dengan kantor cabang di Surabaya, akuntan asal Tiongkok meminta laporan keuangan bulan lalu segera dikirimkan. Anda ingin menjawab bahwa laporan tersebut sedang dalam proses pengecekan akhir dan akan dikirimkan dalam waktu satu jam. Kalimat jawaban Anda adalah:",
+      "options": [
+        "Baobiao zhengzai zuihou shencha, yixiaooshi nei fasong.",
+        "Caiwu baogao zai zuihou jiancha, yige xiaoshi jiuhui ji.",
+        "Baobiao zheng zai zuo zuihou de hedui, yixiaoshi nei fachu.",
+        "Caiwu baobiao zheng zai jiancha, yixiaoshi hou gei ni."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai staf pemasaran, Anda sedang melakukan presentasi produk kepada calon klien korporat dari Tiongkok. Anda ingin mempersilakan mereka untuk mengajukan pertanyaan jika ada bagian penawaran yang kurang jelas. Kalimat apa yang sebaiknya Anda ucapkan?",
+      "options": [
+        "Ruguo ni you wenti, qingwen ni.",
+        "Ruguo you renhe bu mingbai de difang, qingwen tiwen.",
+        "Ruguo nin you renhe疑問, qing zai zhel tiwen.",
+        "Ruguo nin you renhe bu qingchu de difang, qingwen tichu."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda bekerja sebagai staf administrasi di perusahaan manufaktur penanaman modal asing asal Tiongkok di Cikarang. Atasan Anda meminta Anda untuk menyampaikan kepada teknisi lokal bahwa mesin press nomor 3 sedang mengalami kerusakan dan tidak boleh dioperasikan hari ini. Bagaimana Anda menyampaikan pesan ini kepada teknisi dalam Bahasa Mandarin agar ringkas dan jelas?",
+      "options": [
+        "Sanhao jixie huail le, jintian bu neng kaiji.",
+        "Sanhao jiji you wenti, jintian bu neng gongzuo.",
+        "Sanhao jiqi huail le, jintian bu neng shiyong.",
+        "Sanhao gongju sunhuai le, jintian bu neng yunzuo."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebagai staf HRD, Anda sedang mewawancarai kandidat tenaga ahli asal Tiongkok. Anda ingin menanyakan berapa lama pengalaman kerja kandidat tersebut di bidang instalasi kelistrikan tegangan tinggi. Manakah kalimat tanya yang paling profesional dan tepat untuk situasi ini?",
+      "options": [
+        "Ni zai gaoya dianli fangmian you duo chang de gongzuo jingyan?",
+        "Ni de gaoya dianli gongzuo jingyan you ji nian?",
+        "Ni you duo chang shi jian zuo gaoya dianli de gongzuo?",
+        "Ni de gaoya dianli gongzuojingyan shi duo shao?"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendampingi klien dari Tiongkok yang baru saja tiba di Bandara Soekarno-Hatta untuk kunjungan pabrik. Saat di dalam mobil menuju hotel di Jakarta, Anda ingin menawarkan apakah mereka merasa lelah setelah penerbangan panjang dan ingin langsung beristirahat. Kalimat mana yang paling sopan?",
+      "options": [
+        "Nimen lei le ma, yao bu yao xianzai qu xiuuxi?",
+        "Nimen feiji zuo de hen lei, yao bu yao xiuuxi?",
+        "Nimen lei bu lei, yao xianzai qu xiuuxi ma?",
+        "Nimen zuo feiji lei bu lei, yao hui jiudian xiuuxi ma?"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah rapat koordinasi proyek konstruksi, manajer proyek asal Tiongkok melaporkan bahwa material semen mengalami keterlambatan pengiriman akibat cuaca buruk. Sebagai penerjemah atau staf bilingual, bagaimana Anda menerjemahkan frasa 'keterlambatan pengiriman akibat cuaca buruk' ke dalam Bahasa Mandarin yang tepat?",
+      "options": [
+        "yinwei tianqi buhao er daozhi de fayun yanchi",
+        "yinwei tianqi bu hao er zao cheng de jiaofu yanqi",
+        "tianqi bu hao suoyi fasong de shijian yanchi le",
+        "yinwei tianqi deyuanshi er yanchi de yunshu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertugas membalas email dari kantor pusat di Beijing terkait jadwal audit tahunan. Anda perlu mengonfirmasi bahwa audit tersebut akan dilaksanakan pada hari Rabu minggu depan. Kalimat konfirmasi mana yang paling profesional untuk email bisnis?",
+      "options": [
+        "Women queren audit zai xia zhou san.",
+        "Women queren shenji jiang zai xia zhou san jinxing.",
+        "Women zhibai xia zhou san you shenji gongzuo.",
+        "Women tongzhi shenji zai xia zhou san."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menelepon bagian logistik pelabuhan untuk menanyakan status kontainer impor bahan baku yang belum keluar dari area pelabuhan. Bagaimana cara Anda menanyakan alasan mengapa kontainer tersebut belum diproses?",
+      "options": [
+        "Wei shenme zhege hu柜 haiyou mei chu lai?",
+        "Qingwen zhege xianxiang wei shenme zai zheli?",
+        "Zhege huozhi weishenme hai mei banhao?",
+        "Qingwen zhege jizhuangxiang wei shenme hai mei banli?"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda bekerja di sektor pariwisata Bali dan melayani grup wisatawan VIP dari Tiongkok. Saat memasuki restoran untuk makan malam, Anda ingin menginformasikan kepada pemandu wisata mereka bahwa meja reservasi khusus untuk grup mereka sudah disiapkan di lantai dua. Kalimat mana yang paling tepat?",
+      "options": [
+        "Nimen de yuding zhuozi zai er lou zhunbei hao le.",
+        "Nimen de zhuozi zai er lou yijing anpai hao le.",
+        "Nimen de canzhuo zai er lou yijing shezhi hao le.",
+        "Nimen de zuowei zai er lou yijing jiaru hao le."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai staf pengadaan, Anda ingin meminta penawaran harga (quotation) untuk suku cadang mesin kepada supplier di Shenzhen lewat WeChat. Kalimat Mandarin mana yang paling tepat dan profesional?",
+      "options": [
+        "请问能给我发一份机器零件的报价单吗？",
+        "你们公司的零件太贵了，请降价。",
+        "我现在需要买零件，快点发给我。",
+        "请告诉我你们老板的电话号码是什么。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan inspeksi kualitas di gudang, Anda menemukan beberapa kardus produk cacat dan ingin meminta staf gudang memisahkan barang-barang tersebut. Instruksi Mandarin yang benar adalah:",
+      "options": [
+        "请把这些坏的产品全部扔进垃圾桶。",
+        "请把这些不合格的产品挑出来隔离。",
+        "请帮我把好产品送到客户的公司去。",
+        "请问这些产品是什么时候生产的？"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendampingi direktur asal Tiongkok yang ingin memesan makanan tradisional Indonesia di restoran Jakarta, dan beliau menanyakan menu apa yang tidak pedas. Kalimat Mandarin yang tepat untuk menjawabnya adalah:",
+      "options": [
+        "这道菜非常辣，请您放心享用。",
+        "这个菜一点也不辣，非常适合您。",
+        "服务员，请给我们上一盘辣椒酱。",
+        "对不起，我们这里只有很辣的菜。"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mengurus dokumen perizinan tenaga kerja asing di kantor imigrasi, petugas menanyakan nomor kontak penanggung jawab perusahaan. Cara Anda menjawab dalam Mandarin adalah:",
+      "options": [
+        "这是我们公司的营业执照复印件。",
+        "负责人的电话号码是这个，请记录。",
+        "请问今天还需要提交什么表格吗？",
+        "我们的办公室在市中心商业区内。"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah acara pameran dagang di Jakarta, seorang pengunjung Tiongkok tertarik dengan produk Anda dan Anda ingin mengundang mereka untuk mengunjungi pabrik Anda besok. Kalimat ajakan yang sopan:",
+      "options": [
+        "请问明天下午有空去参观我们的工厂吗？",
+        "我们的工厂离这里很远，不要去看了。",
+        "你们今天晚上必须去工厂加班检查。",
+        "请把你们的名片全部收起来放在这里。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima tamu penting dari kantor pusat di Shanghai di lobi kantor. Untuk mencairkan suasana dan menanyakan apakah perjalanan mereka melelahkan, Anda berkata:",
+      "options": [
+        "欢迎光临，一路上辛苦了吧？",
+        "你们什么时候要回中国去呢？",
+        "请问你们带了多少行李箱来？",
+        "公司的会议室已经在上面准备好了。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam rapat proyek, Anda ingin menyampaikan bahwa tenggat waktu penyelesaian laporan bulanan harus dimajukan dua hari karena permintaan manajemen. Kalimat Mandarin yang tepat adalah:",
+      "options": [
+        "月度报告的截止时间可以延长两天。",
+        "月度报告不需要做了，直接交财务。",
+        "月度报告的提交时间需要提前两天。",
+        "请大家下周再交这份月度财务报告。"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menelepon teknisi pabrik untuk melaporkan bahwa mesin press hidrolik tiba-tiba mengeluarkan suara bising dan berhenti berfungsi. Pernyataan Mandarin yang paling akurat adalah:",
+      "options": [
+        "液压机刚才突然停下来，不能开机了。",
+        "液压机现在发出了异响并且停止工作了。",
+        "请帮我检查一下那台坏掉的空调机器。",
+        "工厂里的机器太多了，需要买新的。"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai staf administrasi kantor, Anda ingin menginformasikan kepada rekan kerja bahwa jam istirahat siang telah selesai dan rapat akan segera dimulai di ruang meeting utama. Kalimat yang tepat:",
+      "options": [
+        "午休时间已经到了，大家可以去吃饭。",
+        "下午的会议取消了，大家各自回座位。",
+        "午休结束了，请大家到主会议室开会。",
+        "请大家现在把今天的工作报告发给我。"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membantu klien Tiongkok menyiapkan presentasi PowerPoint, dan Anda ingin menanyakan apakah warna latar belakang slide sudah sesuai dengan standar perusahaan. Kalimat Mandarin Anda:",
+      "options": [
+        "请问幻灯片的背景颜色符合标准吗？",
+        "这张幻灯片里的字写得太小看不清。",
+        "公司的标志应该放在哪个角落里？",
+        "这个PPT的文件太大无法发送。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai staf logistik, Anda perlu mengonfirmasi kepada sopor truk pengiriman bahwa muatan barang sudah diturunkan seluruhnya di gudang Cikarang. Kalimat Mandarin apa yang paling tepat?",
+      "options": [
+        "请问货物已经全部卸在仓库了吗？",
+        "请问仓库什么时候开始上班呢？",
+        "请问司机现在在哪里休息呢？",
+        "请问这批货物要运到哪里去？"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat mendampingi tamu VIP asal Tiongkok bersantap malam di restoran Jakarta, beliau menanyakan apakah kuah soto ayam ini mengandung daging babi. Bagaimana Anda menjawabnya dalam bahasa Mandarin?",
+      "options": [
+        "这个汤里有很多新鲜的蔬菜。",
+        "这道菜的辣度可以根据您的口味调整。",
+        "这个汤是牛肉做的，没有猪肉。",
+        "不好意思，厨师现在正在休息。"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin meminta tolong kepada rekan kerja asal Tiongkok untuk mengirimkan scan dokumen kontrak proyek yang sudah ditandatangani melalui email. Apa yang Anda katakan?",
+      "options": [
+        "麻烦您看一下这份合同的内容。",
+        "请把已签字的合同扫描发给我。",
+        "什么时候能收到合同的快递？",
+        "请问合同是谁起草和修改的？"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam percakapan via WeChat dengan manajer produksi, Anda ingin menyampaikan bahwa jadwal pemeliharaan mesin terpaksa diundur ke hari Jumat depan. Ungkapan yang tepat adalah:",
+      "options": [
+        "设备维护时间需要提前到明天。",
+        "设备维护工作已经全部完成了。",
+        "设备维护计划改到下周五了。",
+        "设备维护期间请关闭总电源。"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin menanyakan kepada supir taksi online di aplikasi berbahasa Mandarin mengapa dia membatalkan pesanan Anda secara sepihak. Apa yang Anda tanyakan?",
+      "options": [
+        "请问您大概几分钟能到这里？",
+        "请问您为什么取消订单了呢？",
+        "请问可以付现金或者用微信吗？",
+        "请问车费一共是多少钱呢？"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai staf keuangan, Anda ingin mengingatkan rekan satu tim bahwa batas waktu pengumpulan bukti pengeluaran kas kecil adalah pukul 15.00 hari ini. Kalimat Mandarin yang sesuai adalah:",
+      "options": [
+        "请大家下午三点前提交报销单据。",
+        "请问今天的现金支票在哪里领？",
+        "请把上个月的财务报表打印出来。",
+        "请核对一下今天的银行存款余额。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menelepon bagian administrasi gedung untuk melaporkan bahwa AC di ruang rapat lantai 3 tidak berfungsi dan ruangan menjadi sangat panas. Apa yang Anda katakan?",
+      "options": [
+        "三楼会议室的空调坏了，很热。",
+        "请帮我把三楼的灯全部关掉。",
+        "三楼办公室的窗户打不开了。",
+        "请派人来修理三楼的电梯门。"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam rapat evaluasi bulanan, atasan Anda menanyakan berapa persentase peningkatan penjualan produk baru dibandingkan bulan lalu. Cara menjawab yang benar adalah:",
+      "options": [
+        "新产品的库存目前还非常充足。",
+        "新产品的销售额比上个月增长了百分之十五。",
+        "新产品的广告宣传已经全部结束了。",
+        "新产品的价格在市场上很有竞争力。"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memastikan apakah dokumen laporan pajak tahunan sudah disetujui oleh kepala bagian keuangan sebelum diserahkan ke kantor pajak. Kalimat tanya yang tepat:",
+      "options": [
+        "请问这份纳税申报表经理审核了吗？",
+        "请问财务经理什么时候去交税？",
+        "请问今年的纳税金额是多少？",
+        "请问报税的文件需要复印几份？"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebagai staf resepsionis, Anda ingin mengarahkan klien Tiongkok untuk menunggu sebentar di sofa lobi karena ruang meeting sedang disiapkan. Ungkapan yang sopan adalah:",
+      "options": [
+        "请您跟我一起去三楼会议室开会。",
+        "请您先在沙发上坐一会儿，会议室正在准备。",
+        "请问您需要喝咖啡还是矿泉水？",
+        "请把您的身份证在前台登记一下。"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

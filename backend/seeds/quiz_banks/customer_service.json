@@ -1,0 +1,306 @@
+{
+  "skill": "Customer Service",
+  "skill_key": "customer service",
+  "questions": [
+    {
+      "question": "Pelanggan marah karena pesanannya terlambat. Langkah pertama yang paling tepat…",
+      "options": [
+        "Menjelaskan bahwa itu bukan salahmu",
+        "Mendengarkan, lalu meminta maaf atas ketidaknyamanannya",
+        "Langsung menawarkan diskon besar",
+        "Mengalihkan ke atasan tanpa bicara"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan bertanya hal yang kamu belum tahu jawabannya. Sebaiknya…",
+      "options": [
+        "Menebak jawaban agar cepat",
+        "Bilang \"tidak tahu\" lalu diam",
+        "Sampaikan akan dicek, catat, dan beri kabar dengan batas waktu jelas",
+        "Minta pelanggan cari sendiri di internet"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Chat pelanggan masuk saat jam ramai dan belum bisa dijawab lengkap. Respons terbaik…",
+      "options": [
+        "Abaikan sampai sepi",
+        "Balas singkat: pesan diterima dan perkiraan waktu jawaban",
+        "Tutup chat",
+        "Balas dengan stiker saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Keluhan sama muncul dari banyak pelanggan minggu ini. Tindakan paling berguna…",
+      "options": [
+        "Menjawab satu per satu tanpa mencatat",
+        "Mencatat pola keluhan dan melapor ke tim terkait",
+        "Menghapus ulasan buruk",
+        "Menyalahkan kurir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan meminta refund di luar kebijakan toko. Jawaban yang tepat…",
+      "options": [
+        "Menolak dengan kasar",
+        "Menyetujui saja agar cepat selesai",
+        "Jelaskan kebijakan dengan sopan dan tawarkan alternatif yang diizinkan",
+        "Tidak membalas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kalimat pembuka yang paling profesional saat menerima telepon…",
+      "options": [
+        "\"Ya, kenapa?\"",
+        "\"Halo, dengan KerjaCerdas Store, saya Rina. Ada yang bisa dibantu?\"",
+        "\"Siapa ini?\"",
+        "\"Tunggu sebentar\" lalu ditinggal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan marah besar melalui live chat karena salah menerima ukuran baju, padahal ia berencana memakainya untuk acara besok sore. Apa respons awal terbaik yang harus kamu berikan?",
+      "options": [
+        "Menjelaskan bahwa kesalahan packing bisa terjadi karena tingginya volume pesanan harian",
+        "Meminta pelanggan mengirimkan foto baju dan bukti video unboxing secara lengkap",
+        "Memohon maaf atas kendala tersebut dan langsung memproses pengiriman instan penggantinya",
+        "Menyatakan keprihatinan atas situasi mendesak tersebut dan menawarkan solusi penukaran kilat"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Pelanggan menghubungi layanan pelanggan via WhatsApp menanyakan garansi sebuah produk elektronik yang dibelinya enam bulan lalu, namun kamu bertugas di divisi operasional logistik, bukan bagian klaim garansi. Tindakan paling tepat yang harus kamu lakukan adalah",
+      "options": [
+        "Menginformasikan nomor kontak internal divisi garansi agar pelanggan bisa menghubungi mereka",
+        "Menghubungkan langsung percakapan tersebut ke agen divisi garansi tanpa membuat pelanggan menunggu",
+        "Menuliskan tautan situs web resmi bagian layanan purna jual untuk dibaca sendiri oleh pelanggan",
+        "Mencatat kendala tersebut dan meneruskannya ke tim terkait agar mereka yang menghubungi pelanggan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu menerima ulasan bintang satu di e-commerce dari seorang pembeli yang kecewa karena kurir pengiriman dari pihak ketiga melempar paketnya ke teras rumah. Bagaimana cara merespons ulasan publik ini secara profesional?",
+      "options": [
+        "Menjelaskan bahwa pihak ekspedisi berada di luar kendali manajemen toko online",
+        "Meminta pelanggan menghapus ulasan tersebut setelah masalah selesai ditangani",
+        "Menyampaikan permohonan maaf terbuka dan mengajak berdiskusi via pesan privat",
+        "Memberikan voucher belanja khusus agar pelanggan bersedia mengubah ulasannya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan lanjut usia kesulitan melakukan pembayaran pesanan melalui aplikasi karena bingung dengan menu transfer bank. Cara komunikasi paling efektif yang perlu kamu gunakan saat memandunya via telepon adalah",
+      "options": [
+        "Menggunakan bahasa teknis perbankan yang baku agar panduannya tercatat secara resmi",
+        "Berbicara dengan tempo lambat, menggunakan istilah sehari-hari, dan sabar membimbing",
+        "Mengirimkan dokumen panduan PDF panjang melalui email untuk dibaca secara mandiri",
+        "Menyarankan cucunya untuk mengambil alih proses pembayaran pesanan tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan tetap mengajukan komplain berulang kali mengenai fitur aplikasi yang sering error, meskipun kamu sudah menjelaskan prosedur standar pelaporan bug. Langkah eskalasi internal yang paling tepat adalah",
+      "options": [
+        "Mengabaikan laporan lanjutan karena prosedur standar sudah pernah disampaikan",
+        "Membuat tiket prioritas khusus dan berkoordinasi langsung dengan tim pengembang",
+        "Memberikan kompensasi saldo dompet digital pribadi sebagai bentuk permohonan maaf",
+        "Meminta pelanggan menunggu sampai pembaruan aplikasi berikutnya dirilis otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kamu mendapati seorang pelanggan menuliskan kalimat makian dan kata-kata kasar di kolom komentar media sosial karena kendala refund dana yang belum cair. Batas tindakan profesional yang harus kamu ambil adalah",
+      "options": [
+        "Membalas komentar tersebut dengan ketus untuk menegakkan aturan etika berpendapat",
+        "Menghapus komentar kasar tersebut dan memblokir akun media sosial pelanggan selamanya",
+        "Tetap merespons dengan tenang, meminta maaf atas keterlambatan, dan mengarahkan ke DM",
+        "Melaporkan akun pelanggan tersebut ke pihak berwenang atas dugaan pencemaran nama baik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pembeli potensial ragu-ragu membeli produk furnitur karena takut barang tidak muat di ruang tamu rumahnya yang sempit. Kalimat persuasif bernilai pelayanan tinggi yang bisa kamu berikan adalah",
+      "options": [
+        "Menjelaskan spesifikasi ukuran detail dan menawarkan panduan cara mengukur ruangan",
+        "Menjamin bahwa semua furnitur kami pasti pas untuk berbagai ukuran ruangan rumah",
+        "Menyarankan untuk membeli tipe ukuran yang paling kecil agar lebih aman diletakkan",
+        "Meminta pelanggan datang langsung ke gudang utama untuk melihat ukuran aslinya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem tiket customer service mendadak mengalami gangguan teknis total saat jam sibuk, sehingga riwayat chat puluhan pelanggan tidak terlihat. Tindakan mitigasi darurat pertama yang wajib dilakukan adalah",
+      "options": [
+        "Meminta seluruh agen pulang lebih cepat karena sistem operasional lumpuh total",
+        "Mengalihkan sementara saluran komunikasi utama ke aplikasi pesan instan cadangan",
+        "Menunggu bagian pemeliharaan IT menyelesaikan perbaikan sistem tanpa tindakan",
+        "Membuat pengumuman tertulis di koran lokal bahwa layanan sedang tutup sementara"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan meminta agar paket pesanannya dikirimkan menggunakan jasa ekspedisi tertentu yang biayanya lebih mahal dari tarif yang sudah dibayarkan saat checkout. Keputusan operasional yang harus kamu ambil adalah",
+      "options": [
+        "Menuruti permintaan tersebut agar pelanggan merasa puas dan memberikan ulasan bagus",
+        "Menolak permintaan secara tegas tanpa memberikan penjelasan kebijakan pengiriman",
+        "Menjelaskan selisih biaya dan menawarkan opsi penambahan ongkir sesuai permintaan",
+        "Mengirimkan paket lewat ekspedisi pilihan pelanggan dan menanggung selisih biayanya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu sedang menangani pelanggan yang berbicara dengan nada sangat tinggi dan memotong setiap penjelasan yang kamu sampaikan. Teknik mendengarkan aktif terbaik untuk meredam emosinya adalah",
+      "options": [
+        "Memotong pembicaraannya kembali untuk menegaskan posisi aturan perusahaan yang berlaku",
+        "Diam mendengarkan sampai selesai, lalu merangkum inti masalahnya untuk divalidasi",
+        "Menutup sambungan telepon sementara waktu sampai nada suara pelanggan kembali turun",
+        "Berbicara dengan nada suara yang sama tinggi agar pelanggan merasa diimbangi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan menghubungi layanan pelanggan e-commerce karena status pengiriman paketnya tertulis 'terkirim' sejak kemarin sore, namun ia sama sekali belum menerima barang tersebut di rumahnya.",
+      "options": [
+        "Meminta pelanggan mengecek ke sekitar rumah atau satpam kompleks karena kurir sering menitipkan paket di sana",
+        "Menjelaskan bahwa sistem pelacakan kadang eror dan meminta pelanggan menunggu dua hari lagi tanpa pengecekan",
+        "Membuat laporan investigasi internal kepada pihak logistik dan memberikan nomor tiket aduan kepada pelanggan",
+        "Menghubungi kurir yang bertugas saat itu secara pribadi melalui nomor ponselnya untuk menanyakan lokasi paket"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kamu menerima panggilan telepon dari seorang pelanggan yang berbicara dengan tempo sangat cepat dan menggunakan dialek daerah yang cukup pekat, sehingga kamu kesulitan memahami maksud keluhannya.",
+      "options": [
+        "Meminta pelanggan tersebut untuk berbicara menggunakan bahasa Indonesia yang baku dan pelan agar mudah dimengerti",
+        "Mendengarkan dengan seksama poin-poin utamanya, lalu mengonfirmasi ulang inti masalahnya dengan nada ramah",
+        "Memotong pembicaraannya secara sopan dan mengarahkannya untuk menyampaikan keluhan melalui pesan teks saja",
+        "Meminta bantuan rekan kerja yang berasal dari daerah yang sama untuk mengambil alih panggilan telepon tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan marah-marah di kolom ulasan publik karena salah memasukkan alamat pengiriman saat checkout, sehingga paketnya kini dikirim ke alamat lamanya yang kosong.",
+      "options": [
+        "Mengabaikan ulasan tersebut karena kesalahan sepenuhnya murni berasal dari kecerobohan pelanggan saat memesan",
+        "Membalas ulasan dengan menyalahkan pelanggan karena tidak teliti memeriksa alamat sebelum menekan tombol bayar",
+        "Menghubungi secara pribadi untuk menawarkan bantuan pengalihan alamat dengan biaya kirim tambahan khusus",
+        "Membalas ulasan secara profesional, berempati, lalu mengarahkan via pesan pribadi untuk solusi pengiriman ulang"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Seorang pelanggan meminta diskon khusus sebesar 50 persen untuk pembelian produk pakaian dengan dalih ia adalah influencer media sosial yang memiliki ribuan pengikut.",
+      "options": [
+        "Menolak secara tegas sesuai aturan tetap perusahaan dan menawarkan program afiliasi resmi yang tersedia",
+        "Memberikan diskon pribadi menggunakan kupon internal toko agar ia tidak memberikan ulasan buruk",
+        "Menaikkan harga produk terlebih dahulu sebelum memberikan potongan harga yang diminta oleh pelanggan",
+        "Mengabaikan pesan tersebut karena permintaan endorse atau diskon influencer bukan wewenang bagian CS"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang pelanggan baru mengeluhkan bahwa prosedur klaim garansi produk elektronik di toko online-mu terlalu rumit dan membutuhkan banyak syarat foto serta video.",
+      "options": [
+        "Menjelaskan bahwa aturan tersebut dibuat oleh pabrik pusat sehingga pelanggan harus mematuhinya tanpa protes",
+        "Membantu memandu pelanggan satu persatu untuk menyiapkan semua persyaratan foto dan video dengan sabar",
+        "Membuatkan pengecualian khusus dengan melompati prosedur standar agar pelanggan merasa sangat dihargai",
+        "Menyuruh pelanggan datang langsung ke pusat servis terdekat di kotanya untuk memproses klaim garansi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan menghubungi CS melalui live chat untuk menanyakan ketersediaan stok barang langka, namun sistem stok di komputermu sedang mengalami pemeliharaan.",
+      "options": [
+        "Menyuruh pelanggan mengecek sendiri ketersediaan stok tersebut melalui aplikasi pada keesokan harinya",
+        "Menutup sesi chat secara langsung karena sistem sedang tidak bisa diakses untuk pengecekan data",
+        "Mencatat nomor kontak pelanggan dan berjanji akan segera menghubunginya kembali setelah sistem pulih",
+        "Mengatakan bahwa barang tersebut pasti habis terjual karena tingginya minat pembeli minggu ini"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan salah melakukan transfer pembayaran ke rekening lama perusahaan yang sudah ditutup sejak bulan lalu, dan ia menuntut dananya segera dikembalikan hari ini.",
+      "options": [
+        "Meminta pelanggan melampirkan bukti transfer dan mengisi formulir verifikasi refund dana sesuai prosedur keuangan",
+        "Mentransfer uang dari rekening pribadi terlebih dahulu agar pelanggan tidak marah dan komplain berkepanjangan",
+        "Menyatakan bahwa uang tersebut hangus karena dikirim ke rekening yang salah dan bukan tanggung jawab toko",
+        "Menyuruh pelanggan menghubungi bank pengirim untuk membatalkan transaksi transfer yang sudah terlanjur terjadi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang pelanggan mengajukan pembatalan pesanan melalui chat padahal status pesanan di sistem sudah berubah menjadi 'sedang dikemas oleh bagian gudang'.",
+      "options": [
+        "Menyetujui pembatalan tersebut dengan membiarkan bagian gudang membuang paket yang sudah terlanjur dikemas",
+        "Menolak permintaan pembatalan secara kaku karena sistem sudah mengunci data pesanan yang masuk ke gudang",
+        "Mengecek langsung ke bagian gudang apakah paket sudah telanjur masuk ke kantong pengiriman kurir atau belum",
+        "Mengalihkan tanggung jawab kepada pihak kurir ekspedisi agar mereka yang menolak paket saat tiba di tujuan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan mengirimkan pesan panjang lebar berisi pujian dan ucapan terima kasih yang luar biasa atas bantuan penanganan masalah yang kamu berikan sebelumnya.",
+      "options": [
+        "Cukup membaca pesan tersebut dalam hati tanpa memberikan balasan apa pun karena masalahnya sudah selesai",
+        "Membalas dengan ucapan terima kasih kembali serta menyampaikan komitmen untuk terus memberikan pelayanan terbaik",
+        "Menawarkan produk terbaru kepada pelanggan tersebut sebagai bentuk apresiasi atas pujian yang diberikan",
+        "Meneruskan pesan pujian tersebut ke grup percakapan internal kantor untuk mendapatkan pujian dari atasan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan mengeluhkan bau tidak sedap pada kemasan makanan ringan yang baru saja ia terima, meskipun tanggal kadaluarsa pada kemasan masih lama.",
+      "options": [
+        "Menyatakan bahwa makanan tersebut masih layak makan karena belum melewati batas tanggal kadaluarsa pabrik",
+        "Meminta pelanggan untuk membuang makanan tersebut dan melupakan kejadian itu demi kesehatan keluarganya",
+        "Menyelidiki nomor batch produksi tersebut dan mengirimkan produk pengganti yang baru sebagai bentuk tanggung jawab",
+        "Menyarankan pelanggan untuk mencuci kemasan produk tersebut menggunakan sabun sebelum membukanya kembali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan menghubungi layanan pelanggan e-commerce melalui WhatsApp karena ia keliru memesan varian warna produk yang salah. Ia meminta agar warna produk langsung diubah saat itu juga sebelum paket dikemas. Tindakan paling tepat yang harus kamu lakukan adalah...",
+      "options": [
+        "Mengubah data warna produk secara manual pada sistem internal agar sesuai permintaan pembeli",
+        "Menjelaskan prosedur pembatalan pesanan mandiri agar ia bisa membuat pesanan baru dengan warna yang benar",
+        "Menghubungi bagian gudang secara langsung untuk meminta mereka menukar warna barang sebelum dikirim",
+        "Menolak permintaannya karena sistem tidak mengizinkan adanya perubahan varian setelah transaksi berhasil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pembeli online mengirimkan bukti foto bahwa segel kemasan produk skincare miliknya terbuka sebagian saat diterima. Ia menuduh toko mengirimkan barang bekas atau produk tiruan. Respons pertama yang paling tepat untuk meredakan kekhawatirannya adalah...",
+      "options": [
+        "Meminta maaf atas kekhawatiran yang timbul dan meminta nomor pesanan untuk investigasi internal gudang",
+        "Menjelaskan bahwa proses pengemasan di gudang selalu melewati standar pengawasan kualitas yang ketat",
+        "Menyatakan bahwa segel yang rusak bisa saja diakibatkan oleh tekanan selama proses pengiriman kurir",
+        "Menawarkan pengembalian dana penuh secara langsung tanpa harus melalui prosedur pemeriksaan produk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kamu menerima chat dari seorang pelanggan yang menanyakan detail spesifikasi teknis sebuah laptop. Karena informasi tersebut tidak tercantum lengkap pada deskripsi produk, langkah operasional yang harus kamu ambil adalah...",
+      "options": [
+        "Meminta pelanggan untuk mencari informasi lengkap tersebut melalui mesin pencari di internet",
+        "Menunda balasan chat tersebut sampai jam kerja operasional divisi teknis keesokan harinya",
+        "Menghubungi tim manajemen produk atau mengecek unit fisik segera untuk mendapatkan kepastian data",
+        "Memberikan estimasi spesifikasi umum yang biasanya dimiliki oleh seri laptop tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan setia mengajukan keluhan bahwa poin reward loyalitas miliknya hilang secara misterius setelah aplikasi melakukan pembaruan versi terbaru. Sikap profesional yang harus kamu tunjukkan adalah...",
+      "options": [
+        "Meminta maaf atas kendala teknis tersebut dan meminta tangkapan layar akun untuk dikoordinasikan dengan tim IT",
+        "Menyatakan bahwa pembaruan sistem secara berkala memang sering kali mereset data poin secara otomatis",
+        "Menyarankan pelanggan untuk melakukan instal ulang aplikasi agar data poin miliknya bisa pulih kembali",
+        "Membuatkan poin pengganti secara manual dari akun pribadimu agar pelanggan tersebut tidak kecewa"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

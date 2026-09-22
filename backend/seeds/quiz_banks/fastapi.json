@@ -1,0 +1,306 @@
+{
+  "skill": "FastAPI",
+  "skill_key": "fastapi",
+  "questions": [
+    {
+      "question": "Tim backend Anda di Jakarta sedang membangun API e-commerce yang menerima payload JSON kompleks. Anda perlu memastikan data yang masuk divalidasi secara otomatis sebelum masuk ke business logic. Pendekatan mana yang paling idiomatik di FastAPI?",
+      "options": [
+        "Menggunakan pustaka marshmallow untuk validasi manual di dalam fungsi endpoint",
+        "Mendefinisikan skema data menggunakan BaseModel dari Pydantic pada parameter fungsi",
+        "Memeriksa tipe data secara manual menggunakan fungsi isinstance di awal endpoint",
+        "Membuat middleware custom untuk membaca raw body dan mencocokkan tipe datanya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi FastAPI untuk sistem HRD di Surabaya mengalami bottleneck karena proses generate laporan PDF memakan waktu 15 detik. Klien mengeluh endpoint lain ikut melambat saat proses ini berjalan. Bagaimana cara mengatasinya?",
+      "options": [
+        "Mengubah fungsi endpoint tersebut dari async def menjadi def biasa",
+        "Memindahkan proses pembuatan PDF ke dalam latar belakang menggunakan BackgroundTasks",
+        "Membungkus proses PDF dengan blok try-except yang mendalam untuk efisiensi",
+        "Mengganti seluruh framework FastAPI dengan Node.js untuk performa I/O yang lebih baik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mengamankan endpoint FastAPI agar hanya bisa diakses oleh pengguna yang memiliki token JWT yang valid. Di FastAPI, mekanisme apa yang paling tepat untuk menyuntikkan logika verifikasi token ini ke berbagai endpoint?",
+      "options": [
+        "Global middleware yang mendekripsi header authorization pada setiap request masuk",
+        "Fungsi helper biasa yang dipanggil manual di baris pertama setiap fungsi path operation",
+        "Sistem Dependency Injection menggunakan parameter Depends pada fungsi path operation",
+        "Decorator kustom buatan sendiri yang dibungkus di atas setiap fungsi endpoint API"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah layanan fintech di Bandung menggunakan FastAPI dan perlu terhubung ke database PostgreSQL menggunakan SQLAlchemy secara asinkron. Bagaimana cara mengatur sesi database agar aman dan efisien per request?",
+      "options": [
+        "Membuat satu objek sesi global di luar fungsi dan menggunakannya bersama-sama",
+        "Membuka dan menutup koneksi secara manual menggunakan blok try-finally di endpoint",
+        "Membuat generator dependency yang menghasilkan sesi dan menutupnya via yield",
+        "Memanfaatkan lifespan handler untuk membuka koneksi baru pada tiap panggilan API"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi FastAPI Anda mendadak menerima lonjakan trafik dari bot spam, sehingga Anda perlu menerapkan rate limiting pada endpoint login. Pendekatan apa yang paling bersih untuk mengimplementasikannya di FastAPI?",
+      "options": [
+        "Menulis logika pengecekan redis timestamp secara manual di dalam setiap baris kode",
+        "Memanfaatkan fungsi Depends yang memvalidasi hit rate sebelum mengeksekusi endpoint",
+        "Mengonfigurasi file nginx di server production untuk memblokir IP secara permanen",
+        "Menggunakan fungsi sleep bawaan Python selama beberapa detik jika request terlalu cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA menemukan bahwa dokumentasi Swagger UI (/docs) bawaan FastAPI menampilkan informasi skema database internal yang sensitif. Bagaimana cara menyembunyikan dokumen interaktif tersebut khusus untuk lingkungan production?",
+      "options": [
+        "Menghapus folder site-packages bawaan uvicorn yang berisi file aset dokumentasi",
+        "Mengatur parameter docs_url dan redoc_url menjadi None saat instansiasi FastAPI",
+        "Menambahkan variabel lingkungan khusus bertuliskan DISABLE_DOCS=true di server",
+        "Membuat middleware autentikasi dasar yang memblokir akses ke file berakhiran json"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan unit testing pada aplikasi FastAPI menggunakan TestClient dari Pydantic/Starlette, Anda mendapati bahwa koneksi database utama ikut terpengaruh dan merusak data asli. Apa solusi terbaik untuk masalah ini?",
+      "options": [
+        "Menjalankan ulang skrip migrasi alembic setiap kali selesai menjalankan satu tes",
+        "Mengganti dependency database produksi dengan fungsi override_dependency",
+        "Mematikan server uvicorn secara paksa sebelum fungsi test dijalankan oleh pytest",
+        "Membuat database terpisah secara fisik di cloud untuk setiap fungsi unit test"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menambahkan header kustom 'X-Process-Time' ke setiap respons HTTP yang keluar dari aplikasi FastAPI untuk memantau performa. Fitur FastAPI apa yang paling tepat digunakan?",
+      "options": [
+        "Mendeklarasikan parameter Response di setiap fungsi path operation secara manual",
+        "Membuat fungsi middleware kustom yang memodifikasi objek request dan response",
+        "Menggunakan event handler startup untuk menyuntikkan header ke server web",
+        "Memanfaatkan fungsi Pydantic validator untuk menambahkan field ke dalam model"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi FastAPI Anda harus memanggil tiga layanan mikro eksternal yang berbeda secara bersamaan untuk mengumpulkan data dashboard pengguna. Agar waktu tunggu (latency) minimal, bagaimana Anda menulis kodenya?",
+      "options": [
+        "Menggunakan pemanggilan fungsi sinkron secara berurutan menggunakan perulangan for",
+        "Memanfaatkan async/await bersama asyncio.gather untuk mengeksekusi secara paralel",
+        "Membungkus setiap panggilan API eksternal ke dalam blok ThreadPoolExecutor",
+        "Mengubah seluruh arsitektur database menjadi model transaksional terdistribusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah endpoint FastAPI menerima unggahan file gambar berukuran besar dari aplikasi mobile. Anda ingin memvalidasi ekstensi file sebelum menyimpannya ke storage. Di mana tempat paling tepat untuk menangani validasi file ini?",
+      "options": [
+        "Mendefinisikannya langsung di dalam tipe data parameter fungsi menggunakan UploadFile",
+        "Membaca seluruh byte file ke memori menggunakan read() lalu mengecek tipenya",
+        "Membuat pengecekan manual pada atribut filename dan content_type dari UploadFile",
+        "Menyerahkan seluruh proses validasi keamanan file kepada sistem operasi server"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan layanan FastAPI untuk platform logistik di Jakarta yang harus memproses ribuan data pesanan masuk ke database secara asinkron agar tidak memblokir thread utama. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi biasa dengan def dan menyerahkan pengelolaan thread ke uvicorn",
+        "Menggunakan fungsi asinkron dengan async def dan memanfaatkan async driver database",
+        "Mengubah seluruh fungsi endpoint menjadi kode sinkron dengan pustaka time.sleep",
+        "Menjalankan proses database di dalam blok try-except tanpa menggunakan async/await"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sistem manajemen inventaris di Surabaya menggunakan FastAPI dan membutuhkan validasi data stok barang yang ketat. Anda ingin memastikan bahwa nilai stok yang diterima tidak boleh bernilai negatif sebelum masuk ke logika bisnis. Cara paling idiomatik di FastAPI adalah...",
+      "options": [
+        "Membuat kelas model turunan dari BaseModel Pydantic dan menggunakan Field dengan parameter ge=0",
+        "Menulis blok kondisi if manual di dalam fungsi endpoint untuk memeriksa apakah nilai stok kurang dari nol",
+        "Memanfaatkan fungsi bawaan FastAPI bernama validate_payload untuk menyaring tipe data integer",
+        "Menambahkan dekorator khusus validasi tipe data pada parameter fungsi endpoint FastAPI"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi FastAPI Anda di Bandung sering mengalami kegagalan saat klien membatalkan koneksi di tengah proses berat, menyebabkan kebocoran memori. Bagaimana cara menangani pembatalan klien ini dengan aman?",
+      "options": [
+        "Memanfaatkan objek Request bawaan FastAPI untuk mendeteksi status koneksi secara manual setiap detik",
+        "Menggunakan struktur try/finally bersamaan dengan pengecekan await request.is_disconnected()",
+        "Menangkap exception khusus Starlette bernama ClientDisconnect di dalam blok pengecualian global",
+        "Mengandalkan timeout otomatis yang disediakan oleh server ASGI uvicorn tanpa mengubah kode aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengimplementasikan mekanisme Dependency Injection di FastAPI untuk menghubungkan sesi database ke beberapa endpoint secara efisien, serta memastikan sesi tersebut selalu ditutup setelah selesai. Pola apa yang harus diterapkan?",
+      "options": [
+        "Membuat fungsi generator Python dengan yield yang membuka dan menutup sesi database secara otomatis",
+        "Membuat kelas global tunggal yang diinisialisasi sekali saat aplikasi pertama kali dijalankan",
+        "Membuka koneksi database di dalam fungsi middleware lalu menyimpannya ke objek state aplikasi",
+        "Menggunakan fungsi biasa tanpa yield dan memanggil perintah close secara manual di akhir endpoint"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Frontend melaporkan bahwa aplikasi web React mereka mengalami masalah CORS saat mencoba mengakses endpoint FastAPI Anda yang berjalan di port berbeda. Langkah konfigurasi apa yang tepat di FastAPI?",
+      "options": [
+        "Menambahkan header akses secara manual menggunakan fungsi Response di setiap fungsi endpoint API",
+        "Memasang middleware CORSMiddleware dari starlette.middleware.cors dengan parameter domain yang diizinkan",
+        "Mengubah konfigurasi file uvicorn agar secara otomatis mengabaikan semua aturan keamanan browser",
+        "Membuat fungsi helper kustom untuk menyisipkan header Access-Control-Allow-Origin ke semua rute"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menangani error validasi Pydantic kustom di seluruh aplikasi FastAPI agar mengembalikan format JSON yang seragam sesuai standar perusahaan. Fitur apa yang harus Anda gunakan?",
+      "options": [
+        "Membuat blok try-except di setiap file router untuk menangkap error validasi secara terpisah",
+        "Mengubah fungsi bawaan Pydantic melalui konfigurasi global pada file utama aplikasi FastAPI",
+        "Mendaftarkan exception handler khusus menggunakan dekorator app.exception_handler untuk RequestValidationError",
+        "Menulis middleware kustom yang memeriksa kode status respons HTTP bernilai 422 secara berkala"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur pencarian produk di aplikasi e-commerce Anda menerima banyak parameter query opsional seperti kategori, rentang harga, dan urutan. Bagaimana cara mendefinisikannya di FastAPI agar mudah divalidasi?",
+      "options": [
+        "Menggunakan modul Query dari fastapi dan mendefinisikannya sebagai nilai default pada argumen fungsi",
+        "Menggabungkan seluruh parameter query menjadi satu string panjang lalu memparsingnya secara manual",
+        "Membuat kelas BaseModel Pydantic khusus dan meneruskannya sebagai parameter fungsi endpoint",
+        "Menangkap semua parameter melalui objek request.query_params tanpa menggunakan tipe data spesifik"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi microservices dengan FastAPI, Anda perlu meneruskan konfigurasi environment yang sensitif seperti kunci API pihak ketiga ke berbagai modul. Cara terbaik mengelolanya di FastAPI adalah...",
+      "options": [
+        "Menuliskan nilai kunci secara langsung di dalam kode program agar mudah diakses oleh fungsi",
+        "Memanfaatkan BaseSettings dari pydantic-settings untuk memuat variabel dari berkas lingkungan .env",
+        "Menyimpan data konfigurasi di dalam database relasional utama aplikasi lalu mengambilnya saat startup",
+        "Menggunakan variabel global biasa di modul utama yang diimpor oleh seluruh file Python lainnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa beberapa endpoint tertentu di aplikasi FastAPI Anda memerlukan proses autentikasi OAuth2 yang kompleks dengan skema Bearer. Pendekatan modular apa yang disarankan FastAPI untuk ini?",
+      "options": [
+        "Membuat instance OAuth2PasswordBearer dan menggunakannya sebagai dependensi melalui fungsi Depends",
+        "Menulis fungsi dekorator autentikasi kustom sendiri yang memeriksa header authorization secara manual",
+        "Memeriksa keberadaan token langsung di dalam baris pertama setiap kode logika bisnis endpoint",
+        "Mengonfigurasi sistem keamanan terpusat di tingkat server web ASGI sebelum mencapai aplikasi FastAPI"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menguji performa aplikasi FastAPI menggunakan tool benchmarking, Anda melihat bahwa penggunaan latar belakang (BackgroundTasks) sangat membantu untuk tugas seperti mengirim email notifikasi. Kapan tugas latar belakang ini dieksekusi?",
+      "options": [
+        "Sebelum respons HTTP dikirimkan kepada klien yang melakukan permintaan ke server",
+        "Secara bersamaan di awal fungsi endpoint sebelum logika utama dieksekusi oleh server",
+        "Setelah respons HTTP selesai dikirimkan sepenuhnya kembali kepada klien yang memanggil",
+        "Hanya ketika server mendeteksi adanya waktu luang pada thread pool aplikasi utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi FastAPI Anda terintegrasi dengan sistem pembayaran pihak ketiga yang sering mengalami gangguan jaringan intermiten. Anda ingin memastikan bahwa request POST ke gateway pembayaran tersebut otomatis dicoba ulang sebanyak tiga kali jika gagal karena timeout. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi bantuan bawaan FastAPI untuk retry otomatis pada setiap endpoint",
+        "Memanfaatkan library eksternal seperti Tenacity pada fungsi pemanggil HTTP eksternal",
+        "Mengonfigurasi ulang parameter Uvicorn workers agar melakukan restart saat error",
+        "Menulis blok try-except manual di dalam route handler dengan jeda waktu sinkron"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps meminta Anda untuk menambahkan health check endpoint (/healthz) pada aplikasi FastAPI yang berjalan di Kubernetes. Endpoint ini harus mengecek koneksi ke database PostgreSQL dan Redis sebelum mengembalikan status 200 OK. Bagaimana cara mengimplementasikannya secara tepat?",
+      "options": [
+        "Membuat route async yang melakukan query ringan ke database dan ping ke Redis",
+        "Menggunakan middleware global untuk memvalidasi kesehatan sistem setiap ada request",
+        "Memanfaatkan lifespan context manager untuk mengecek status saat aplikasi pertama kali boot",
+        "Mengembalikan status statis menggunakan file konfigurasi eksternal tanpa pengecekan langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun layanan analitik di FastAPI yang memproses data log berukuran besar dalam format CSV. Pengguna mengeluhkan bahwa endpoint unduhan laporan membuat server tidak responsif untuk request lain. Apa solusi terbaik untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah worker Uvicorn dari mode asynchronous menjadi multi-threading murni",
+        "Membagi file CSV menjadi beberapa bagian kecil menggunakan perulangan sinkron",
+        "Menggunakan StreamingResponse dengan generator untuk mengirim data secara bertahap",
+        "Meningkatkan batas timeout pada konfigurasi reverse proxy Nginx di depan aplikasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah fitur notifikasi real-time di aplikasi Anda menggunakan WebSocket FastAPI. Anda mendapati bahwa koneksi dari klien sering terputus secara senyap jika tidak ada aktivitas selama beberapa menit. Bagaimana cara menjaga agar koneksi tetap hidup?",
+      "options": [
+        "Mengatur ulang parameter timeout keep-alive pada server Uvicorn ke angka maksimal",
+        "Mengirimkan pesan ping secara berkala dari server ke klien melalui websocket aktif",
+        "Membuat klien mengirimkan request HTTP polling secara paralel bersamaan dengan websocket",
+        "Menutup koneksi secara paksa dari sisi server setiap kali ada jeda waktu idle"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mendokumentasikan API publik Anda dengan menyembunyikan beberapa endpoint internal khusus administrator agar tidak muncul di halaman Swagger UI (/docs) maupun ReDoc (/redoc). Langkah apa yang paling tepat?",
+      "options": [
+        "Menghapus dekorator router pada endpoint internal tersebut saat dijalankan di production",
+        "Mengatur parameter include_in_schema=False pada dekorator route endpoint internal",
+        "Memodifikasi file template HTML bawaan FastAPI untuk memblokir jalur URL tertentu",
+        "Menggunakan middleware otorisasi untuk mengembalikan error 404 pada dokumentasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengembangan aplikasi multi-tenant, setiap request yang masuk harus membawa header khusus 'X-Tenant-ID' untuk menentukan database schema mana yang harus digunakan. Bagaimana cara mendistribusikan nilai ini secara bersih ke seluruh operasi database?",
+      "options": [
+        "Membaca header secara manual di dalam setiap fungsi handler menggunakan objek Request",
+        "Menyimpan nilai tenant dalam variabel global modul Python yang diakses bersamaan",
+        "Membuat FastAPI Dependency yang mengekstrak header dan mengatur konteks sesi database",
+        "Membuat middleware yang langsung mengubah konfigurasi engine SQLAlchemy secara global"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa beberapa endpoint di aplikasi FastAPI Anda memerlukan proses migrasi skema database otomatis menggunakan Alembic saat aplikasi dinyalakan. Di bagian mana kode inisialisasi tersebut sebaiknya diletakkan?",
+      "options": [
+        "Di dalam fungsi event startup global atau lifespan context manager yang disediakan FastAPI",
+        "Di dalam file konfigurasi utama Pydantic BaseSettings yang dibaca saat modul diimpor",
+        "Di dalam fungsi middleware kustom yang berjalan pada setiap request pertama setiap hari",
+        "Di dalam fungsi dependency injection yang dipanggil pada setiap endpoint database"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah endpoint pencarian produk menggunakan query parameters yang sangat banyak dan dinamis. Anda ingin memvalidasi bahwa kombinasi parameter tertentu harus diisi bersamaan (misalnya, jika min_price diisi, max_price juga wajib diisi). Di mana validasi tingkat lanjut ini paling tepat dilakukan?",
+      "options": [
+        "Menggunakan fungsi validasi kustom berbasis dekorator router pada endpoint tersebut",
+        "Memanfaatkan validator berbasis field tunggal di dalam model Pydantic individual",
+        "Memanfaatkan validator model (root_validator atau model_validator) pada skema Pydantic",
+        "Menulis logika percabangan if-else manual di dalam badan fungsi path operation"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin melakukan caching pada hasil respons endpoint FastAPI yang jarang berubah untuk mengurangi beban database, menggunakan backend Redis. Pendekatan arsitektur apa yang paling bersih untuk mencapainya?",
+      "options": [
+        "Menulis kode pengecekan cache langsung di awal setiap fungsi path operation",
+        "Menggunakan dekorator cache pihak ketiga atau membuat FastAPI Dependency khusus cache",
+        "Mengandalkan fitur caching otomatis yang sudah ada di dalam router bawaan FastAPI",
+        "Memodifikasi konfigurasi Uvicorn agar menyimpan cache respons di memori RAM server"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi FastAPI Anda berjalan di belakang load balancer AWS ALB yang melakukan terminasi SSL. Akibatnya, fungsi request.client.host selalu mencatat IP internal load balancer alih-alih IP asli pengguna. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Menggunakan middleware ProxyHeaders dari Uvicorn untuk membaca header Forwarded",
+        "Mengubah konfigurasi jaringan pada sistem operasi Linux tempat aplikasi di-deploy",
+        "Membaca header kustom 'X-Forwarded-For' secara manual di dalam setiap endpoint",
+        "Mengaktifkan mode HTTPS secara langsung pada parameter konfigurasi uvicorn.run"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

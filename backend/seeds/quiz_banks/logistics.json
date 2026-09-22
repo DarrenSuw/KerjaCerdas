@@ -1,0 +1,306 @@
+{
+  "skill": "Logistics",
+  "skill_key": "logistics",
+  "questions": [
+    {
+      "question": "Sebuah truk pengiriman logistik dari Jakarta menuju Surabaya mengalami kemacetan parah di ruas Tol Trans-Java akibat kecelakaan beruntun. Muatan di dalam truk adalah produk makanan segar dengan batas kadaluarsa 3 hari. Apa tindakan operasional paling tepat yang harus diambil oleh petugas dispatch?",
+      "options": [
+        "Meminta pengemudi untuk tetap menunggu di jalur tol hingga kemacetan benar-benar terurai",
+        "Menginstruksikan pengemudi keluar tol terdekat untuk koordinasi transfer muatan ke truk pendingin cadangan",
+        "Menyuruh pengemudi memutar balik arah kendaraan kembali ke gudang asal di Jakarta untuk pemeriksaan",
+        "Melaporkan kejadian tersebut sebagai kerugian total tanpa mencoba melakukan tindakan penyelamatan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima laporan bahwa stok fisik barang SKU-X di gudang pusat Jakarta tersisa 50 unit, namun sistem manajemen gudang (WMS) mencatat ada 150 unit. Dokumen pengiriman terakhir menunjukkan tidak ada selisih. Langkah awal apa yang paling efektif untuk menginvestigasi ketidaksesuaian ini?",
+      "options": [
+        "Langsung melakukan penyesuaian stok atau stock adjustment di sistem agar sesuai dengan fisik",
+        "Memeriksa area staging, zona penerimaan, dan dokumen pick-list yang belum sepenuhnya tuntas diproses",
+        "Menghukum petugas pencatatan gudang karena dianggap lalai dalam memasukkan data harian",
+        "Memesan barang baru ke supplier sejumlah 100 unit untuk menutup selisih yang ada secepatnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan e-commerce di Cikarang menghadapi lonjakan pesanan hingga 300% saat kampanye tanggal kembar (Harbolnas). Kapasitas tenaga kerja packing saat ini hanya mampu memproses 40% dari total pesanan harian. Keputusan manajerial logistik apa yang harus diambil untuk meminimalkan keterlambatan pengiriman?",
+      "options": [
+        "Menghentikan seluruh proses penjualan online sampai backlog pesanan selesai dikemas",
+        "Merekrut tenaga kerja harian lepas tambahan dan memperpanjang jam operasional shift malam",
+        "Mengurangi standar pengepakan barang dengan menghilangkan penggunaan bubble wrap",
+        "Menunda pengiriman semua pesanan hingga minggu berikutnya tanpa pemberitahuan ke pelanggan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengiriman kargo via udara dari Bandara Soekarno-Hatta ke Medan, pihak maskapai menolak muatan Anda karena berat volumetrik melebihi batas ketentuan, meskipun berat aktualnya ringan. Solusi taktis apa yang harus dilakukan oleh staf warehouse sebelum jadwal penerbangan berikutnya?",
+      "options": [
+        "Membongkar seluruh muatan dan mengganti isi kardus dengan material yang lebih berat",
+        "Meminta pihak maskapai memberikan dispensasi khusus dengan membayar biaya tambahan tunai",
+        "Melakukan re-packing menggunakan karton ukuran lebih kecil dan memadatkan isi muatan",
+        "Membatalkan pengiriman udara tersebut dan beralih menggunakan jalur pengiriman laut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta memilih 3PL (Third-Party Logistics) untuk mendistribusikan produk rapuh ke seluruh wilayah Indonesia timur. Kriteria utama apa yang harus menjadi bobot penilaian tertinggi dalam matriks seleksi vendor?",
+      "options": [
+        "Menawarkan tarif pengiriman paling murah di antara semua kandidat peserta tender",
+        "Memiliki armada truk paling banyak yang beroperasi di Pulau Jawa dan Sumatera",
+        "Rekam jejak tingkat kerusakan barang rendah dan memiliki proteksi asuransi komprehensif",
+        "Kantor pusat vendor berada di lokasi yang sangat dekat dengan fasilitas kantor Anda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah kontainer 40 feet impor tiba di Pelabuhan Tanjung Priok, namun setelah dilakukan pemeriksaan bersama petugas Bea Cukai, ditemukan segel (seal) pelabuhan rusak dan beberapa palet barang hilang. Prosedur penanganan pertama yang wajib dilakukan oleh bagian logistik adalah...",
+      "options": [
+        "Segera menandatangani berita acara serah terima agar kontainer bisa segera keluar pelabuhan",
+        "Membuat Berita Acara Kerusakan/Kehilangan (Discrepancy Report) bersama pihak Otoritas Pelabuhan",
+        "Membawa sisa barang ke gudang perusahaan dan mengajukan klaim hukum kepada pembeli",
+        "Meminta sopir truk kontainer untuk bertanggung jawab mengganti kerugian barang yang hilang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pengelolaan gudang ritel modern, metode penyimpanan apa yang paling efisien untuk barang-barang kategori fast-moving (selalu dicari pembeli setiap hari)?",
+      "options": [
+        "Menyimpan barang di rak paling atas agar tidak mengganggu operasional harian gudang",
+        "Menempatkan barang di area yang paling jauh dari pintu muat untuk keamanan fisik",
+        "Meletakkan barang di zona terdekat dengan pintu keluar dan area staging pengiriman",
+        "Menyimpan barang secara acak di setiap lorong gudang agar kapasitas muat optimal"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pengiriman kargo alat berat menggunakan truk trailer ke proyek konstruksi di pedalaman Kalimantan terkendala jembatan kayu rusak yang tidak mampu menahan beban truk. Tindakan preventif logistik apa yang seharusnya dilakukan pada tahap perencanaan rute?",
+      "options": [
+        "Memaksa pengemudi melintasi jembatan dengan kecepatan tinggi agar beban tidak terlalu lama di atas",
+        "Melakukan survey jalur alternatif dan berkoordinasi dengan kontraktor lokal terkait kapasitas tonase",
+        "Mengganti moda pengiriman menjadi kurir motor agar dapat melewati jembatan kecil tersebut",
+        "Mengabaikan kondisi jembatan karena dianggap tanggung jawab penuh dari pihak sopir truk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda menerapkan sistem inventory Just-In-Time (JIT) untuk komponen pabrikasi. Tiba-tiba, pemasok utama di Jepang mengalami mogok kerja nasional sehingga pasokan bahan baku terhenti total. Langkah mitigasi darurat apa yang harus segera diambil?",
+      "options": [
+        "Menghentikan total seluruh lini produksi pabrik sampai masalah di Jepang selesai",
+        "Mengaktifkan daftar vendor alternatif (secondary supplier) di dalam negeri untuk pasokan cepat",
+        "Menjual seluruh mesin pabrik karena bahan baku tidak akan pernah bisa didapatkan lagi",
+        "Mengubah spesifikasi produk jadi agar tidak membutuhkan komponen dari pemasok tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang supervisor gudang mendapati suhu pada cold storage untuk produk vaksin di fasilitas logistik melonjak dari 4 derajat menjadi 15 derajat Celcius akibat gangguan kompresor. Apa prioritas tindakan pertama yang harus dieksekusi?",
+      "options": [
+        "Memindahkan seluruh stok vaksin ke cold room cadangan atau kontainer berpendingin portabel",
+        "Memanggil teknisi pendingin untuk memperbaiki kerusakan mesin sambil membiarkan vaksin di tempat",
+        "Mencatat kejadian tersebut di laporan bulanan untuk dievaluasi pada rapat manajemen berikutnya",
+        "Langsung mendistribusikan vaksin tersebut ke puskesmas terdekat sebelum rusak total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola pengiriman rutin menggunakan truk box dari Surabaya ke Denpasar. Saat feri penyeberangan Ketapang-Gilimanuk ditutup mendadak karena cuaca buruk, tindakan operasional apa yang harus segera Anda ambil?",
+      "options": [
+        "Meminta pengemudi memutar balik menuju depo terdekat untuk membongkar muatan",
+        "Menginstruksikan pengemudi menunggu di area pelabuhan hingga layanan dibuka kembali",
+        "Mengalihkan rute pengiriman melalui jalur darat alternatif via Selat Madura",
+        "Membatalkan seluruh pesanan pelanggan dan mengembalikan dana secara penuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pusat distribusi di Surabaya menerima komplain dari pelanggan korporat karena sering terjadi kerusakan kemasan luar pada palet barang elektronik. Analisis awal menunjukkan kerusakan terjadi akibat benturan saat manuver forklift di dalam kontainer. Apa langkah perbaikan paling tepat yang harus diterapkan supervisor gudang?",
+      "options": [
+        "Mengganti seluruh armada forklift dengan jenis elektrik berkecepatan rendah",
+        "Menambah lapisan shrink wrap dan memasang dunnage bag di dalam kontainer",
+        "Menurunkan kapasitas muatan setiap truk sebesar setengah dari batas normal",
+        "Mewajibkan operator forklift memiliki sertifikasi nasional resmi dari kementerian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus mengirimkan dokumen penting tender proyek dari kantor pusat di Jakarta ke site tambang terpencil di Sulawesi Tengah dengan batas waktu kurang dari 24 jam. Moda transportasi kombinasi apa yang paling efektif dipilih?",
+      "options": [
+        "Menggunakan kurir ekspres jalur darat langsung dari Jakarta menuju lokasi site",
+        "Memanfaatkan kargo laut menggunakan kapal PELNI menuju pelabuhan terdekat",
+        "Mengirim via kereta api logistik lintas pulau menuju hub transit regional",
+        "Memadukan penerbangan komersial reguler dan sewa ojek motor lokal di sana"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam audit bulanan gudang suku cadang mesin, ditemukan selisih fisik yang signifikan pada item fast-moving bernilai tinggi meskipun sistem WMS menunjukkan angka nol mutlak. Apa tindakan investigasi pertama yang wajib dilakukan tim inventory?",
+      "options": [
+        "Melakukan penghitungan ulang seluruh stok fisik di gudang secara menyeluruh",
+        "Memeriksa kembali catatan transaksi masuk dan keluar serta dokumen retur harian",
+        "Melaporkan kehilangan aset tersebut kepada pihak kepolisian sektor setempat",
+        "Menghapus data item tersebut dari sistem komputer untuk menyeimbangkan neraca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat memuat muatan barang pecah belah ke dalam truk kargo ukuran medium, petugas packer mendapati ruang kosong tersisa di bagian atas tumpukan palet. Keputusan penataan muatan apa yang paling tepat untuk mencegah kerusakan selama perjalanan?",
+      "options": [
+        "Menumpuk barang lain yang lebih berat langsung di atas palet pecah belah",
+        "Membiarkan ruang kosong tersebut tetap terbuka tanpa pengaman tambahan",
+        "Memasang jaring pengaman kargo dan balok penyangga vertikal yang kokoh",
+        "Mengisi ruang kosong menggunakan kardus kosong tanpa produk di dalamnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer operasional meminta Anda menurunkan biaya bahan bakar armada distribusi last-mile di area perkotaan padat seperti Jakarta. Strategi manajemen armada mana yang memberikan dampak efisiensi jangka pendek paling nyata?",
+      "options": [
+        "Melakukan peremajaan seluruh unit kendaraan dengan membeli armada truk baru",
+        "Menerapkan perangkat lunak optimasi rute pengiriman dan pelatihan eco-driving",
+        "Mengurangi jumlah armada operasional hingga separuh dari kapasitas normal",
+        "Memindahkan jam operasional pengiriman sepenuhnya pada waktu tengah malam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah kiriman ekspor garmen dari pabrik di Bandung tertahan di depo lini satu karena dokumen Certificate of Origin (CoO) mengalami kesalahan ketik pada spesifikasi jenis kain. Langkah mitigasi apa yang harus segera ditempuh tim ekspor?",
+      "options": [
+        "Meminta instansi penerbit terkait untuk menerbitkan revisi dokumen secara kilat",
+        "Membatalkan seluruh kontrak ekspor dengan pembeli di luar negeri tersebut",
+        "Mengirim ulang barang dari awal melalui jalur pelayaran kargo yang berbeda",
+        "Menyuap petugas pemeriksa dokumen agar meloloskan kontainer tanpa CoO"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ditugaskan mendesain tata letak (layout) area picking di gudang e-commerce yang melayani ribuan jenis produk kecil berbeda. Prinsip penempatan barang apa yang paling optimal untuk mempercepat proses fulfillment pesanan?",
+      "options": [
+        "Menyimpan semua barang berdasarkan urutan abjad nama produk di setiap rak",
+        "Menempatkan produk dengan frekuensi penjualan tertinggi di dekat area staging",
+        "Mengelompokkan barang berdasarkan negara asal produsen atau vendor pemasok",
+        "Meletakkan produk terberat di rak paling atas untuk menghemat lantai bawah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pihak asuransi menolak klaim ganti rugi atas kerusakan muatan keramik akibat truk terguling di jalan lintas Sumatera. Berdasarkan prosedur standar operasional logistik, dokumen manakah yang biasanya menjadi penyebab utama penolakan tersebut jika tidak dilampirkan?",
+      "options": [
+        "Surat izin mengemudi pengemudi yang sudah kadaluarsa saat kejadian",
+        "Berita acara pemeriksaan kepolisian dan surat jalan resmi bermeterai",
+        "Laporan laba rugi perusahaan pengirim barang pada tahun fiskal berjalan",
+        "Sertifikat pelatihan keselamatan kerja dari lembaga internasional terkait"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa utilisasi ruang vertikal di gudang penyimpanan regional Semarang sangat rendah karena rak palet lama hanya memiliki tinggi 3 meter, sementara tinggi clear ceiling gudang mencapai 9 meter. Langkah taktis apa yang paling efektif untuk diambil?",
+      "options": [
+        "Menambah luas bangunan gudang dengan menyewa lahan kosong di sebelah fasilitas",
+        "Mengajukan investasi pengadaan sistem racking bertingkat tinggi yang kompatibel dengan reach truck",
+        "Menyusun tumpukan palet secara langsung ke atas secara manual hingga menyentuh langit-langit",
+        "Memindahkan separuh inventaris slow-moving ke fasilitas pihak ketiga di luar kota"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mengelola pengiriman rutin menggunakan moda transportasi laut dari Surabaya ke Makassar, kapal kargo mengalami penundaan keberangkatan selama tiga hari berturut-turut akibat cuaca buruk di Laut Flores. Keputusan operasional apa yang harus segera Anda ambil?",
+      "options": [
+        "Membatalkan seluruh pesanan pelanggan dan mengembalikan dana secara penuh tanpa koordinasi",
+        "Menghubungi pihak pelayaran untuk meminta dokumen resmi penundaan dan menginformasikan klien",
+        "Meminta pengemudi truk membawa kontainer kembali ke pabrik asal untuk bongkar muat ulang",
+        "Mengalihkan seluruh muatan kontainer ke moda penerbangan komersial berbadan lebar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kurir pengiriman last-mile di area perkotaan padat Jakarta melaporkan bahwa tingkat kegagalan pengiriman (failed delivery) akibat penerima tidak ada di tempat meningkat tajam. Solusi operasional apa yang paling tepat untuk diterapkan?",
+      "options": [
+        "Memberikan sanksi pemotongan gaji harian kepada seluruh kurir yang gagal melakukan pengiriman",
+        "Menghentikan sementara seluruh rute pengiriman di wilayah perkotaan padat selama sebulan",
+        "Mengintegrasikan fitur konfirmasi jadwal slot waktu dan notifikasi real-time via aplikasi",
+        "Meminta kurir tetap meninggalkan paket di depan pagar rumah tanpa persetujuan pemilik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah kiriman suku cadang mesin pabrik impor tiba di warehouse Cikarang dalam kondisi palet kayu luar basah dan berjamur akibat hujan deras selama perjalanan dari pelabuhan. Apa tindakan pertama yang wajib dilakukan oleh petugas inbound?",
+      "options": [
+        "Langsung menempatkan palet tersebut ke rak penyimpanan bersama barang kering lainnya",
+        "Membuang seluruh kemasan luar dan mendokumentasikan kerusakan dengan foto serta berita acara",
+        "Menolak proses bongkar muat dan langsung mengirim truk kembali ke pelabuhan muat",
+        "Memperbaiki kemasan yang rusak menggunakan lakban transparan tanpa mencatat temuan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menghitung rasio *Order Fill Rate* untuk evaluasi kinerja bulanan pusat distribusi. Dari 1.000 pesanan yang masuk bulan ini, 920 pesanan berhasil dikirimkan lengkap sesuai jumlah dan jenisnya, sementara sisanya mengalami kekurangan item. Berapa nilai rasio tersebut?",
+      "options": [
+        "92 persen tingkat pemenuhan pesanan secara keseluruhan untuk periode tersebut",
+        "80 persen tingkat pemenuhan pesanan secara keseluruhan untuk periode tersebut",
+        "95 persen tingkat pemenuhan pesanan secara keseluruhan untuk periode tersebut",
+        "88 persen tingkat pemenuhan pesanan secara keseluruhan untuk periode tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit stok opname triwulanan di gudang bahan kimia cair, ditemukan ketidaksesuaian antara fisik drum dan data sistem ERP sejumlah 5 drum. Langkah investigasi awal manakah yang paling akurat?",
+      "options": [
+        "Langsung menghapus data sistem agar laporan keuangan akhir bulan terlihat seimbang",
+        "Memeriksa kembali dokumen penerimaan barang, slip pengeluaran, dan log transaksi manual",
+        "Memesan ulang drum pengganti ke supplier utama tanpa mencari tahu penyebab selisih",
+        "Menuduh petugas gudang melakukan pencurian dan melaporkannya ke pihak berwajib"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik tekstil di Solo rutin mengirimkan gulungan kain ke pabrik garment di Tangerang menggunakan truk wingbox. Karena sering terjadi gesekan antar gulungan saat perjalanan darat, langkah pencegahan apa yang paling efektif?",
+      "options": [
+        "Mengganti seluruh armada truk pengiriman dengan kendaraan jenis bak terbuka",
+        "Menambahkan material dunnage, penyangga kayu, dan tali pengikat kargo yang kuat",
+        "Menumpuk gulungan kain secara vertikal tanpa menggunakan alas palet sama sekali",
+        "Meminta pengemudi untuk mempercepat laju kendaraan agar waktu tempuh lebih singkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima penawaran tarif dari dua perusahaan trucking untuk rute Medan - Banda Aceh. Perusahaan A menawarkan harga tetap per truk, sedangkan Perusahaan B menawarkan tarif berdasarkan volume kubikasi aktual. Muatan Anda berupa kotak ringan bervolume besar namun beratnya sedikit. Mana yang Anda pilih?",
+      "options": [
+        "Perusahaan A karena perhitungan biaya logistik per perjalanan menjadi jauh lebih pasti",
+        "Perusahaan B karena tarif berdasarkan kubikasi lebih menguntungkan untuk muatan ringan bervolume",
+        "Kedua perusahaan karena tidak ada perbedaan signifikan dalam perhitungan biaya operasional",
+        "Menolak keduanya dan mencari penyedia jasa yang mengenakan tarif berdasarkan berat kotor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam persiapan pengiriman ekspor komoditas kopi biji ke Eropa menggunakan kontainer Dry Van, ditemukan tingkat kelembapan udara di dalam kontainer berpotensi merusak mutu biji. Tindakan preventif apa yang harus dipasang di dalam kontainer?",
+      "options": [
+        "Memasang jaring pengaman nilon di pintu belakang untuk menahan tekanan muatan",
+        "Menambahkan alat pengering (desiccant/container desiccant) berkualitas tinggi di dinding",
+        "Melapisi seluruh lantai kontainer dengan karpet plastik kedap air berlapis busa",
+        "Menyalakan AC portabel di dalam kontainer selama proses pelayaran laut berlangsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan logistik tempat Anda bekerja ingin mengurangi emisi karbon dari armada truk pengiriman antarkota sekaligus menekan biaya operasional bahan bakar. Kebijakan manajemen armada mana yang paling tepat diterapkan?",
+      "options": [
+        "Menambah jumlah armada truk tua agar kapasitas angkut harian meningkat secara drastis",
+        "Menerapkan sistem rute optimal berbasis GPS dan pelatihan eco-driving bagi pengemudi",
+        "Mengganti seluruh pengemudi senior dengan tenaga kerja paruh waktu tanpa pelatihan",
+        "Mengurangi frekuensi perawatan berkala kendaraan dari tiap bulan menjadi tiap tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pusat distribusi di Surabaya mengalami lonjakan retur barang dari pelanggan ritel akibat kesalahan pengiriman SKU selama periode libur panjang. Langkah operasional apa yang paling efektif untuk segera mengatasi akar masalah tersebut dalam jangka pendek?",
+      "options": [
+        "Membekukan seluruh aktivitas pengiriman keluar gudang hingga proses audit selesai",
+        "Menerapkan sistem pemindaian barcode ganda pada meja packing sebelum muat",
+        "Memberikan sanksi potong gaji kepada seluruh petugas bagian sortir dan packing",
+        "Mengganti seluruh vendor pihak ketiga penyedia jasa angkutan last-mile"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

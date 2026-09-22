@@ -1,0 +1,306 @@
+{
+  "skill": "Accounting",
+  "skill_key": "accounting",
+  "questions": [
+    {
+      "question": "PT Maju Bersatu menerima tagihan dari vendor jasa kebersihan pada tanggal 28 Desember 2023 untuk pekerjaan yang dilakukan pada bulan Desember 2023. Namun, faktur pajak dan dokumen penagihan baru diserahkan dan dicatat oleh bagian keuangan pada tanggal 4 Januari 2024. Sebagai staf akuntansi, apa jurnal penyesuaian yang harus Anda buat per 31 Desember 2023?",
+      "options": [
+        "Debit Beban Jasa Kebersihan, Kredit Utang Usaha",
+        "Debit Utang Usaha, Kredit Kas dan Setara Kas",
+        "Debit Beban Jasa Kebersihan, Kredit Kas Kecil",
+        "Debit Biaya Dibayar Dimuka, Kredit Utang Usaha"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada akhir bulan, Anda melakukan rekonsiliasi bank untuk PT Berkah Mandiri. Terdapat transaksi transfer masuk dari pelanggan sebesar Rp15.000.000 yang sudah dicatat oleh pihak bank pada tanggal 29, tetapi belum dicatat sama sekali di dalam sistem akuntansi perusahaan. Tindakan pencatatan apa yang harus Anda lakukan di jurnal umum?",
+      "options": [
+        "Debit Piutang Usaha dan Kredit Pendapatan Jasa",
+        "Debit Kas di Bank dan Kredit Piutang Usaha",
+        "Debit Kas di Bank dan Kredit Pendapatan Lain-lain",
+        "Debit Biaya Administrasi Bank dan Kredit Kas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sejahtera membeli sebuah mesin produksi seharga Rp100.000.000 pada awal tahun. Mesin tersebut memiliki estimasi masa manfaat 5 tahun tanpa nilai residu. Perusahaan menggunakan metode garis lurus untuk penyusutan fiskal dan komersial. Berapa besar akumulasi penyusutan mesin tersebut pada akhir tahun kedua?",
+      "options": [
+        "Rp20.000.000",
+        "Rp40.000.000",
+        "Rp50.000.000",
+        "Rp60.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan retail membayar sewa toko untuk masa 2 tahun sekaligus sebesar Rp120.000.000 pada tanggal 1 Juli 2023, dan langsung dicatat seluruhnya sebagai beban sewa pada tanggal tersebut. Jurnal penyesuaian apa yang wajib dibuat pada akhir tahun buku 31 Desember 2023?",
+      "options": [
+        "Debit Sewa Dibayar Dimuka Rp90 juta, Kredit Beban Sewa Rp90 juta",
+        "Debit Beban Sewa Rp30 juta, Kredit Sewa Dibayar Dimuka Rp30 juta",
+        "Debit Sewa Dibayar Dimuka Rp45 juta, Kredit Beban Sewa Rp45 juta",
+        "Debit Beban Sewa Rp45 juta, Kredit Sewa Dibayar Dimuka Rp45 juta"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menyusun laporan arus kas metode tidak langsung untuk PT Nusantara. Laba bersih setelah pajak tahun berjalan adalah Rp250.000.000. Selama tahun tersebut, piutang usaha mengalami kenaikan sebesar Rp30.000.000 dan utang usaha mengalami kenaikan sebesar Rp20.000.000. Berapa arus kas bersih dari aktivitas operasi?",
+      "options": [
+        "Rp240.000.000",
+        "Rp250.000.000",
+        "Rp260.000.000",
+        "Rp300.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Cipta Karya menerima uang muka sebesar Rp60.000.000 dari klien pada tanggal 1 November 2023 untuk proyek konsultasi yang akan dikerjakan selama 3 bulan ke depan secara merata. Pada saat diterima, kas dicatat pada akun Pendapatan Diterima Dimuka. Berapa saldo akun tersebut yang harus disajikan dalam Laporan Posisi Keuangan per 31 Desember 2023?",
+      "options": [
+        "Rp0",
+        "Rp20.000.000",
+        "Rp40.000.000",
+        "Rp60.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit pajak PT Andalan Logistik, ditemukan bahwa perusahaan belum memotong PPh Pasal 23 atas jasa teknik senilai Rp10.000.000 yang dibayarkan kepada rekanan pada bulan Maret. Tarif PPh Pasal 23 adalah 2%. Bagaimana perlakuan akuntansi atas sanksi denda keterlambatan penyetoran pajak yang timbul akibat temuan ini?",
+      "options": [
+        "Dicatat sebagai pengurang laba ditahan periode lalu",
+        "Dicatat sebagai beban pajak penghasilan tangguhan",
+        "Dicatat sebagai beban operasional lain yang tidak dapat dikurangkan",
+        "Dicatat sebagai penyesuaian nilai piutang pajak di neraca"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Global Niaga menggunakan metode perpetual untuk mencatat persediaan barang dagang. Perusahaan melakukan Stock Opname akhir tahun dan mendapati selisih fisik persediaan lebih rendah Rp5.000.000 dibandingkan saldo buku akibat kerusakan gudang. Bagaimana jurnal penyesuaian yang tepat untuk mencatat selisih tersebut?",
+      "options": [
+        "Debit Kerugian Persediaan dan Kredit Persediaan Barang Dagang",
+        "Debit Harga Pokok Penjualan dan Kredit Persediaan Barang Dagang",
+        "Debit Persediaan Barang Dagang dan Kredit Beban Operasional",
+        "Debit Beban Penyusutan dan Kredit Persediaan Barang Dagang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pada tanggal 10 Februari, PT Mitra Jaya melunasi faktur pembelian bahan baku senilai Rp50.000.000 dengan syarat pembayaran 2/10, n/30. Faktur tersebut bertanggal 2 Februari. Berapa jumlah kas yang harus dibayarkan perusahaan untuk melunasi utang tersebut secara penuh?",
+      "options": [
+        "Rp48.000.000",
+        "Rp49.000.000",
+        "Rp49.500.000",
+        "Rp50.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Solusi Teknologi menerbitkan obligasi senilai Rp1.000.000.000 dengan tingkat bunga kupon 10% per tahun. Obligasi tersebut diterbitkan pada nilai diskon sebesar Rp950.000.000 karena tingkat bunga pasar lebih tinggi. Bagaimana dampak pencatatan amortisasi diskon obligasi setiap tahun terhadap laporan keuangan?",
+      "options": [
+        "Menurunkan total liabilitas dan menurunkan beban bunga",
+        "Menaikkan nilai tercatat liabilitas dan menaikkan beban bunga",
+        "Menaikkan nilai tercatat aset dan menurunkan beban bunga",
+        "Menurunkan nilai tercatat liabilitas dan menaikkan beban bunga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Bintang Timur mencatat retur penjualan atas barang yang dijual secara kredit kepada pelanggan sebesar Rp5.000.000 (HPP sebesar Rp3.500.000). Bagaimana pencatatan jurnal umum yang tepat untuk transaksi retur tersebut?",
+      "options": [
+        "Debit Retur Penjualan Rp5.000.000, Kredit Piutang Usaha Rp5.000.000 serta Debit Persediaan Rp3.500.000, Kredit HPP Rp3.500.000",
+        "Debit Piutang Usaha Rp5.000.000, Kredit Retur Penjualan Rp5.000.000 serta Debit HPP Rp3.500.000, Kredit Persediaan Rp3.500.000",
+        "Debit Retur Penjualan Rp5.000.000, Kredit Kas Rp5.000.000 serta Debit Persediaan Rp3.500.000, Kredit Pembelian Rp3.500.000",
+        "Debit Penjualan Rp5.000.000, Kredit Piutang Usaha Rp5.000.000 serta Debit HPP Rp3.500.000, Kredit Persediaan Rp3.500.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan rekonsiliasi bank per 31 Oktober 2023 untuk PT Anugerah Abadi, Anda menemukan cek yang telah diterbitkan perusahaan untuk membayar utang sebesar Rp15.000.000 pada tanggal 25 Oktober belum diuangkan oleh vendor ke bank. Bagaimana penyesuaian yang harus dibuat pada catatan akuntansi perusahaan?",
+      "options": [
+        "Mengurangi saldo kas di buku besar perusahaan sebesar Rp15.000.000 pada periode berjalan",
+        "Menambahkan saldo kas di buku besar perusahaan sebesar Rp15.000.000 pada periode berjalan",
+        "Melakukan koreksi fiskal positif pada laporan laba rugi bulanan perusahaan yang bersangkutan",
+        "Tidak perlu membuat jurnal penyesuaian di buku besar karena pencatatan perusahaan sudah benar"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "PT Graha Medika mengimpor alat kesehatan dan membayar PPh Pasal 22 Impor sebesar Rp20.000.000 melalui bank persepsi. Bagaimana perlakuan akuntansi dan pencatatan atas pembayaran PPh Pasal 22 tersebut?",
+      "options": [
+        "Dicatat sebagai Biaya Pajak Penghasilan di laporan laba rugi sebagai beban operasional periodik",
+        "Dicatat sebagai Pembayaran Pipa Pajak di sisi kredit untuk mengurangi liabilitas pajak tangguhan",
+        "Dicatat sebagai Pajak Dibayar Dimuka di neraca sebagai aset lancar pengurang PPh Badan",
+        "Dicatat sebagai Utang Pajak Jangka Panjang karena pelunasannya melalui mekanisme tahunan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Konsultan Prima menerima pembayaran dari klien senilai Rp11.000.000 (sudah termasuk PPN 11%) atas jasa konsultasi yang telah selesai dikerjakan. Berapa jumlah pendapatan jasa yang harus diakui dalam laporan laba rugi perusahaan?",
+      "options": [
+        "Rp11.000.000 dan mencatat PPN Keluaran sebesar Rp1.210.000 di laporan posisi keuangan",
+        "Rp10.000.000 dan mencatat PPN Keluaran sebesar Rp1.000.000 di laporan posisi keuangan",
+        "Rp11.000.000 tanpa perlu memisahkan komponen PPN karena sifatnya pajak pertambahan nilai",
+        "Rp9.900.000 dan mencatat PPN Masukan sebesar Rp1.100.000 di laporan posisi keuangan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Mega Distribusi menghitung penyisihan piutang tak tertagih menggunakan metode persentase penjualan. Dari total penjualan kredit sebesar Rp2.000.000.000 tahun ini, manajemen menetapkan estimasi kerugian piutang sebesar 1%. Jurnal apa yang dibuat pada akhir tahun?",
+      "options": [
+        "Debit Beban Piutang Tak Tertagih Rp20.000.000 dan Kredit Piutang Usaha Rp20.000.000",
+        "Debit Beban Kerugian Piutang Rp20.000.000 dan Kredit Cadangan Kerugian Piutang Rp20.000.000",
+        "Debit Cadangan Kerugian Piutang Rp20.000.000 dan Kredit Beban Operasional Rp20.000.000",
+        "Debit Cadangan Kerugian Piutang Rp20.000.000 dan Kredit Piutang Usaha Rp20.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Surya Energi menerbitkan saham biasa sebanyak 100.000 lembar dengan nilai nominal Rp1.000 per lembar secara tunai. Harga pasar saat penerbitan adalah Rp1.500 per lembar. Berapa nilai yang dicatat dalam akun Agio Saham (Additional Paid-in Capital)?",
+      "options": [
+        "Rp150.000.000 dicatat pada sisi kredit bersamaan dengan akun kas sebesar itu",
+        "Rp100.000.000 dicatat pada sisi kredit untuk akun modal saham ditempatkan",
+        "Rp50.000.000 dicatat pada sisi kredit sebagai tambahan modal disetor di luar nilai nominal",
+        "Tidak ada agio saham yang dicatat karena penjualan dilakukan di bawah harga wajar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam audit pajak PT Bina Sarana, ditemukan bahwa perusahaan mencatat biaya jamuan makan klien tanpa menyertakan daftar nominatif pada akhir tahun pajak. Apa implikasi akuntansi dan fiskal atas temuan tersebut?",
+      "options": [
+        "Biaya tersebut diakui secara penuh di akuntansi komersial dan tidak perlu koreksi fiskal sama sekali",
+        "Biaya tersebut harus dikoreksi fiskal positif karena tidak memenuhi syarat formal perpajakan Indonesia",
+        "Biaya tersebut harus dikoreksi fiskal negatif untuk mengurangi laba kena pajak tahun berjalan",
+        "Biaya tersebut harus dipindahkan dari beban operasional ke akun aset tetap tidak berwujud"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Samudra Logistik melunasi pinjaman bank jangka pendek sebesar Rp200.000.000 beserta bunga pinjaman bulan berjalan sebesar Rp5.000.000. Bagaimana penyajian transaksi pelunasan ini dalam Laporan Arus Kas metode langsung?",
+      "options": [
+        "Arus kas dari aktivitas investasi keluar Rp205.000.000 pada baris pembayaran liabilitas",
+        "Arus kas dari aktivitas operasi keluar Rp200.000.000 dan aktivitas pendanaan keluar Rp5.000.000",
+        "Arus kas dari aktivitas pendanaan keluar Rp200.000.000 dan arus kas operasi keluar Rp5.000.000",
+        "Arus kas dari aktivitas operasi keluar sebesar total pembayaran kas sebesar Rp205.000.000"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Kencana Makmur melakukan revaluasi atas aset bangunan pabriknya yang menyebabkan kenaikan nilai wajar sebesar Rp500.000.000 di atas nilai tercatatnya. Bagaimana pencatatan jurnal atas kenaikan nilai aset tersebut?",
+      "options": [
+        "Debit Aset Tetap - Bangunan Rp500.000.000 dan Kredit Laba Revaluasi di Laba Rugi Rp500.000.000",
+        "Debit Aset Tetap - Bangunan Rp500.000.000 dan Kredit Surplus Revaluasi di Ekuitas Rp500.000.000",
+        "Debit Cadangan Penyusutan Rp500.000.000 dan Kredit Pendapatan Lain-Lain Rp500.000.000",
+        "Debit Akumulasi Penyusutan Rp500.000.000 dan Kredit Modal Disetor Tambahan Rp500.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sentosa Abadi menerima tagihan listrik bulan Desember 2023 sebesar Rp15.000.000 pada tanggal 5 Januari 2024, dan langsung dibayar lunas pada hari itu. Berdasarkan prinsip akuntansi akrual, bagaimana Anda mencatat transaksi tersebut pada pembukuan per 31 Desember 2023?",
+      "options": [
+        "Mencatat beban listrik di debit dan kas di kredit senilai Rp15.000.000",
+        "Mencatat beban listrik di debit dan utang biaya di kredit senilai Rp15.000.000",
+        "Tidak melakukan pencatatan apa pun karena tagihan belum diterima perusahaan",
+        "Mencatat uang muka biaya di debit dan kas di kredit senilai Rp15.000.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pada penutupan buku akhir tahun, PT Cakrawala Nusantara mendapati saldo akun Piutang Usaha sebesar Rp500.000.000. Berdasarkan pengalaman historis, manajemen menetapkan estimasi piutang tak tertagih adalah 2% dari saldo piutang. Jika saldo awal Cadangan Kerugian Piutang (CKP) sebelum penyesuaian adalah Rp4.000.000 (kredit), jurnal penyesuaian apa yang harus Anda buat?",
+      "options": [
+        "Debit Beban Kerugian Piutang Rp6.000.000, Kredit Cadangan Kerugian Piutang Rp6.000.000",
+        "Debit Beban Kerugian Piutang Rp10.000.000, Kredit Cadangan Kerugian Piutang Rp10.000.000",
+        "Debit Beban Kerugian Piutang Rp14.000.000, Kredit Cadangan Kerugian Piutang Rp14.000.000",
+        "Debit Cadangan Kerugian Piutang Rp6.000.000, Kredit Beban Kerugian Piutang Rp6.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Adhikarya Konstruksi menyelesaikan proyek pembangunan gudang senilai Rp800.000.000 pada tanggal 15 November 2023. Klien baru melunasi pembayaran tersebut secara penuh pada tanggal 10 Januari 2024. Kapan PT Adhikarya harus mengakui pendapatan dari proyek tersebut menurut Standar Akuntansi Keuangan di Indonesia?",
+      "options": [
+        "Pada tanggal 15 November 2023 saat proyek selesai dan diserahterimakan",
+        "Pada tanggal 10 Januari 2024 saat dana kas masuk ke rekening perusahaan",
+        "Dicicil pengakuannya setiap akhir bulan dari November hingga Januari",
+        "Tergantung pada tanggal penerbitan faktur pajak komersial oleh perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Aneka Retail membeli barang dagang secara kredit senilai Rp40.000.000 dengan syarat pembayaran 2/10, n/30. Perusahaan menggunakan metode perpetual untuk pencatatan persediaan. Lima hari kemudian, perusahaan melunasi seluruh utang tersebut. Berapa jurnal yang dicatat pada saat pelunasan utang?",
+      "options": [
+        "Debit Utang Usaha Rp40.000.000; Kredit Kas Rp40.000.000",
+        "Debit Utang Usaha Rp40.000.000; Kredit Kas Rp39.200.000, Kredit Persediaan Rp800.000",
+        "Debit Utang Usaha Rp40.000.000, Debit Diskon Pembelian Rp800.000; Kredit Kas Rp40.800.000",
+        "Debit Utang Usaha Rp39.200.000; Kredit Kas Rp39.200.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses penyusunan laporan posisi keuangan (Neraca) PT Harmoni Jaya per 31 Desember 2023, terdapat pinjaman bank jangka panjang sebesar Rp2.000.000.000. Dari jumlah tersebut, sebesar Rp400.000.000 akan jatuh tempo pada bulan Mei 2024. Bagaimana Anda menyajikan kewajiban ini dalam laporan keuangan?",
+      "options": [
+        "Seluruhnya disajikan sebagai liabilitas jangka panjang senilai Rp2.000.000.000",
+        "Seluruhnya disajikan sebagai liabilitas jangka pendek senilai Rp2.000.000.000",
+        "Liabilitas jangka pendek Rp400.000.000 dan liabilitas jangka panjang Rp1.600.000.000",
+        "Dicatat pada catatan atas laporan keuangan saja tanpa mengubah posisi neraca"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Mandiri Sekuritas memiliki investasi berupa saham yang diklasifikasikan sebagai aset keuangan diukur pada nilai wajar melalui penghasilan komprehensif lain (FVOCI). Pada akhir tahun, harga pasar saham tersebut turun dan menghasilkan rugi penurunan nilai wajar sebesar Rp25.000.000. Bagaimana perlakuan akuntansi atas kerugian tersebut?",
+      "options": [
+        "Diakui sebagai beban operasional pada laporan laba rugi tahun berjalan",
+        "Diakui sebagai komponen pendapatan komprehensif lain di ekuitas",
+        "Diakui sebagai pengurang saldo laba ditahan secara langsung tanpa lewat laba rugi",
+        "Tidak dicatat sampai saham tersebut benar-benar dijual di pasar modal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Bahtera Logistik menerbitkan wesel bayar (notes payable) senilai Rp100.000.000 berjangka waktu 6 bulan dengan tingkat bunga 12% per tahun pada tanggal 1 Oktober 2023. Bunga dan pokok akan dibayar sekaligus saat jatuh tempo. Pada akhir tahun buku 31 Desember 2023, jurnal penyesuaian apa yang harus Anda buat?",
+      "options": [
+        "Debit Beban Bunga Rp3.000.000 dan Kredit Utang Bunga Rp3.000.000",
+        "Debit Beban Bunga Rp6.000.000 dan Kredit Utang Bunga Rp6.000.000",
+        "Debit Beban Bunga Rp3.000.000 dan Kredit Kas Rp3.000.000",
+        "Tidak ada jurnal karena bunga dibayar bersamaan dengan pokok wesel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Cyber Solusi Internasional mengeluarkan biaya riset sebesar Rp150.000.000 dan biaya pengembangan produk software sebesar Rp250.000.000 yang telah memenuhi kriteria pengkapitalisasian aset tak berwujud sesuai SAK. Bagaimana perlakuan akuntansi untuk kedua biaya tersebut?",
+      "options": [
+        "Keduanya langsung dibebankan sebagai beban operasional pada periode berjalan",
+        "Biaya riset dibebankan pada periode berjalan, biaya pengembangan dikapitalisasi",
+        "Keduanya dikapitalisasi sebagai aset tak berwujud dan diamortisasi setiap tahun",
+        "Biaya riset dikapitalisasi, sedangkan biaya pengembangan dibebankan langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Wijaya Steel menyewakan sebagian gedung kantornya kepada pihak lain dengan menerima pendapatan sewa diterima dimuka sebesar Rp60.000.000 untuk masa 1 tahun terhitung mulai 1 Oktober 2023. Jurnal penyesuaian apa yang harus dibuat pada tanggal 31 Desember 2023 jika pencatatan awal menggunakan pendekatan liabilitas?",
+      "options": [
+        "Debit Pendapatan Sewa Diterima Dimuka Rp15.000.000, Kredit Pendapatan Sewa Rp15.000.000",
+        "Debit Pendapatan Sewa Diterima Dimuka Rp45.000.000, Kredit Pendapatan Sewa Rp45.000.000",
+        "Debit Pendapatan Sewa Rp15.000.000, Kredit Pendapatan Sewa Diterima Dimuka Rp15.000.000",
+        "Debit Kas Rp15.000.000, Kredit Pendapatan Sewa Diterima Dimuka Rp15.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Delta Elektronik menjual 50 unit televisi dengan harga Rp3.000.000 per unit secara kredit kepada Toko Makmur. Berdasarkan PSAK 72, kapan PT Delta Elektronik harus mengakui pendapatan dari transaksi penjualan tersebut?",
+      "options": [
+        "Saat Toko Makmur melakukan pembayaran cicilan pertama atas faktur",
+        "Saat barang diserahkan dan kendali atas televisi berpindah ke Toko Makmur",
+        "Saat PT Delta Elektronik menerbitkan surat penagihan resmi kepada pembeli",
+        "Saat masa garansi produk televisi yang dijual tersebut resmi berakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam pemeriksaan fisik persediaan akhir tahun di gudang PT Merapi Farma, auditor menemukan obat-obatan senilai Rp75.000.000 milik prinsipal lain yang dititipkan untuk dijual (konsinyasi). Bagaimana perlakuan akuntansi yang tepat atas barang titipan tersebut?",
+      "options": [
+        "Mengeluarkan nilai barang tersebut dari total persediaan di laporan posisi keuangan",
+        "Menambahkannya sebagai bagian dari persediaan barang dalam perjalanan perusahaan",
+        "Mencatatnya sebagai persediaan cadangan khusus untuk mengantisipasi lonjakan harga",
+        "Melaporkannya sebagai bagian dari aset tetap tak berwujud dalam neraca berjalan"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

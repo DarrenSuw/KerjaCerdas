@@ -1,0 +1,306 @@
+{
+  "skill": "Office Administration",
+  "skill_key": "office administration",
+  "questions": [
+    {
+      "question": "Anda menerima pengaduan dari vendor katering kantor bahwa pembayaran tagihan bulan lalu belum diterima, padahal batas termin adalah hari ini. Yang harus Anda lakukan pertama kali adalah?",
+      "options": [
+        "Memarahi bagian keuangan karena lalai melakukan transfer dana tepat pada waktunya",
+        "Memeriksa status dokumen tagihan tersebut di sistem internal dan berkoordinasi dengan bagian finance",
+        "Meminta vendor menagih langsung kepada Direktur Utama pada jam istirahat kantor",
+        "Mengabaikan komplain tersebut karena keterlambatan satu hari dianggap hal yang biasa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima paket dokumen rahasia dari kurir ekspedisi untuk salah satu Direktur yang sedang dinas luar kota selama seminggu. Langkah pertama yang paling tepat sebagai staf administrasi adalah?",
+      "options": [
+        "Membuka paket tersebut untuk memindai isinya lalu mengirimkan salinan digitalnya via email",
+        "Menyimpan paket di meja resepsionis agar mudah terlihat saat sang Direktur kembali",
+        "Mencatat tanggal, pengirim, dan nomor resi di buku ekspedisi lalu menyimpannya di brankas",
+        "Menghubungi kurir untuk mengembalikan paket dan memintanya dikirim ulang minggu depan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang manajer meminta Anda memesan tiket pesawat dan hotel untuk perjalanan dinas mendadak besok pagi. Jadwal rapat klien berubah-ubah setiap jam. Apa tindakan terbaik yang harus Anda lakukan?",
+      "options": [
+        "Memesan tiket kelas ekonomi biasa dan hotel standar tanpa opsi pembatalan",
+        "Memilih penerbangan dan hotel dengan fasilitas reschedule serta refund fleksibel",
+        "Menunggu hingga jadwal rapat klien benar-benar pasti baru melakukan pemesanan",
+        "Meminta manajer tersebut untuk memesan tiketnya sendiri melalui aplikasi pribadi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kantor Anda kehabisan stok kertas printer dan tinta hitam di tengah persiapan dokumen tender penting yang harus dikirimkan sore ini. Sebagai staf admin, prioritas tindakan Anda adalah?",
+      "options": [
+        "Membuat pengajuan pembelian rutin lewat sistem e-procurement perusahaan yang butuh 3 hari",
+        "Membeli kebutuhan tersebut menggunakan dana kas kecil darurat ke toko terdekat untuk saat ini",
+        "Menunda pengiriman dokumen tender keesokan harinya sampai stok logistik datang dari pusat",
+        "Meminta seluruh karyawan di divisi lain untuk berhenti mencetak dokumen operasional harian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan merapikan arsip fisik gudang kantor yang sudah menumpuk selama lima tahun tanpa sistem penataan yang jelas. Langkah awal paling efisien yang harus Anda ambil adalah?",
+      "options": [
+        "Langsung membuang semua dokumen bertahun-tahun lama yang tidak memiliki sampul",
+        "Memilah dokumen berdasarkan kategori dan tahun serta membuat daftar inventaris arsip",
+        "Menyewa jasa profesional pihak ketiga untuk mendata seluruh dokumen secara keseluruhan",
+        "Memasukkan semua kertas ke dalam kardus cokelat besar dan melabelinya secara acak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam rapat bulanan kantor, Anda diminta mencatat notulen. Direktur dan seorang Manajer berdebat sengit mengenai strategi proyek hingga keluar dari agenda rapat. Cara Anda mencatat hal tersebut dalam notulen adalah?",
+      "options": [
+        "Menuliskan seluruh perdebatan kata per kata agar terlihat transparan bagi manajemen",
+        "Melewatkan bagian perdebatan tersebut dan hanya mencatat keputusan akhir yang disepakati",
+        "Meringkas pokok perdebatan secara objektif beserta hasil keputusan atau tindak lanjutnya",
+        "Meminta pimpinan rapat untuk menghentikan debat agar Anda tidak kesulitan mencatat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang tamu penting dari instansi pemerintah datang tanpa janji temu saat atasan Anda sedang dalam rapat tertutup dengan dewan komisaris. Sikap profesional yang harus Anda tunjukkan adalah?",
+      "options": [
+        "Meminta tamu tersebut menunggu di ruang tunggu tamu dan menawarkan minuman, lalu melapor ke atasan",
+        "Menolak tamu secara tegas karena tidak memiliki jadwal temu resmi dengan pimpinan perusahaan",
+        "Menyuruh tamu masuk ke ruang rapat komisaris karena posisinya yang dianggap sangat penting",
+        "Memberikan nomor ponsel pribadi atasan Anda agar tamu bisa langsung menghubunginya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda bertanggung jawab mengelola jadwal pemakaian ruang rapat utama yang sering diperebutkan oleh berbagai divisi. Hari ini ada dua manajer yang memesan ruangan di jam yang sama untuk keperluan mendesak. Solusi terbaik Anda adalah?",
+      "options": [
+        "Memberikan ruangan kepada manajer yang jabatannya lebih tinggi secara struktural",
+        "Membatalkan kedua pemesanan tersebut agar tidak ada pihak yang merasa diistimewakan",
+        "Memberikan ruangan kepada divisi yang memintanya lebih awal berdasarkan sistem tiket",
+        "Memfasilitasi diskusi cepat untuk mencari alternatif ruangan atau penjadwalan ulang"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Perusahaan menerapkan sistem pengarsipan digital baru menggunakan cloud storage. Beberapa staf senior kesulitan mengakses dan sering salah menyimpan folder. Sebagai administrator, pendekatan Anda adalah?",
+      "options": [
+        "Membuat panduan ringkas bergambar langkah penyimpanan dan menawarkan sesi pendampingan singkat",
+        "Mengambil alih seluruh pekerjaan penyimpanan file digital mereka agar tidak terjadi kesalahan lagi",
+        "Melaporkan ketidakpatuhan staf senior tersebut kepada bagian HRD untuk diberikan surat peringatan",
+        "Membiarkan mereka belajar sendiri melalui proses coba-coba hingga terbiasa dengan sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Menjelang akhir bulan, Anda harus merekap laporan klaim biaya operasional dari lima cabang berbeda. Satu cabang mengirimkan bukti nota yang tidak lengkap dan sebagian tulisannya luntur. Tindakan Anda adalah?",
+      "options": [
+        "Langsung menolak seluruh klaim biaya dari cabang tersebut tanpa pengecekan lebih lanjut",
+        "Menambal nominal kekurangan dana tersebut menggunakan uang pribadi dari kas kecil Anda",
+        "Meminta admin cabang tersebut mengirimkan surat pernyataan pertanggungjawaban dan nota valid",
+        "Meloloskan klaim tersebut demi mengejar tenggat waktu pelaporan keuangan ke atasan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati bahwa stok tinta stempel kantor sudah habis tepat sebelum dokumen legal penting harus disahkan dengan cap basah. Apa langkah darurat yang paling logis?",
+      "options": [
+        "Membatalkan pengesahan dokumen dan menundanya hingga minggu depan.",
+        "Mencari toko alat tulis terdekat atau memesan pengiriman instan secara daring.",
+        "Memalsukan cap stempel menggunakan tanda tangan manual di atas kertas.",
+        "Meminta atasan menandatangani dokumen tanpa menggunakan stempel resmi perusahaan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Atasan Anda meminta Anda untuk mengirimkan dokumen penting ke klien melalui layanan kurir instan (motor) pada jam sibuk sore hari hujan deras. Apa tindakan paling tepat yang harus Anda ambil?",
+      "options": [
+        "Menolak permintaan tersebut karena risiko dokumen basah terlalu tinggi bagi kurir.",
+        "Mengemas dokumen dalam plastik kedap air di dalam amplop tebal sebelum memesan kurir.",
+        "Menunggu hujan reda keesokan paginya tanpa konfirmasi ulang kepada sang atasan.",
+        "Meminta staf lain untuk mengantarkan dokumen tersebut menggunakan kendaraan pribadi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan selisih pada pencatatan kas kecil (petty cash) senilai Rp50.000 saat melakukan rekapitulasi pengeluaran operasional mingguan. Langkah awal apa yang harus Anda lakukan?",
+      "options": [
+        "Mengganti kekurangan uang tersebut menggunakan uang pribadi agar laporan segera seimbang.",
+        "Melaporkan kehilangan dana kas kecil ini secara langsung kepada pihak kepolisian terdekat.",
+        "Melacak kembali seluruh nota transaksi fisik dan catatan digital untuk menemukan salah catat.",
+        "Mengabaikan selisih nominal kecil tersebut karena tidak berdampak besar pada keuangan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang klien VIP menelepon kantor dan memaki-maki Anda karena staf teknis terlambat datang untuk perawatan mesin kantor. Bagaimana sikap profesional Anda saat merespons?",
+      "options": [
+        "Memotong pembicaraan klien tersebut dan meminta mereka untuk menelepon kembali nanti.",
+        "Mendengarkan keluhan dengan tenang, mencatat poin masalah, dan berjanji segera menindaklanjuti.",
+        "Membalas dengan nada suara yang sama tinggi untuk mempertahankan wibawa perusahaan.",
+        "Menutup sambungan telepon secara sepihak agar klien mereda emosinya dengan sendirinya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kantor Anda kedatangan mesin fotokopi baru dengan fitur layar sentuh canggih yang belum dipahami oleh sebagian besar staf administrasi. Apa langkah paling efisien untuk mengatasinya?",
+      "options": [
+        "Membiarkan mesin tersebut tidak terpakai sampai ada staf yang bisa mengoperasikannya.",
+        "Meminta teknisi vendor memberikan sesi singkat dan membagikan panduan cetak di dekat mesin.",
+        "Menunjuk satu orang staf junior untuk menebak cara kerja mesin lewat uji coba mandiri.",
+        "Mengembalikan mesin tersebut ke vendor karena dianggap terlalu rumit untuk digunakan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menyusun daftar inventaris aset laptop kantor yang tersebar di empat lantai gedung. Cara paling efektif untuk menghindari duplikasi atau data yang terlewat adalah...",
+      "options": [
+        "Mendata setiap ruangan secara acak sambil berjalan berkeliling gedung tanpa panduan.",
+        "Menggunakan lembar kerja digital bersama dengan sistem penomoran aset dan denah lantai.",
+        "Meminta setiap divisi mengirimkan daftar inventaris mereka melalui pesan singkat pribadi.",
+        "Memotret setiap laptop yang terlihat di atas meja kerja tanpa mencatat nomor serinya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat jam istirahat kantor, Anda mendapati AC di ruang kerja utama mengalami kebocoran air yang cukup deras dan membasahi beberapa dokumen di meja. Tindakan pertama yang wajib Anda lakukan adalah...",
+      "options": [
+        "Memindahkan dokumen dan perangkat elektronik yang basah ke tempat aman lalu matikan unit AC.",
+        "Mencari teknisi gedung terlebih dahulu sambil membiarkan dokumen tetap terendam air.",
+        "Membersihkan genangan lantai menggunakan pel dan mengabaikan dokumen yang ada di atas meja.",
+        "Memotret kondisi ruangan untuk diunggah ke grup percakapan internal kantor."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda harus mengirimkan surel (email) undangan rapat penting kepada 50 pemangku kepentingan eksternal dan internal. Agar privasi alamat surel para penerima tetap terjaga, fitur apa yang harus Anda gunakan?",
+      "options": [
+        "Menempatkan seluruh alamat surel tujuan pada kolom utama penerima (To).",
+        "Memasukkan seluruh alamat surel ke dalam kolom tembusan terbuka (Cc).",
+        "Menggunakan kolom tembusan rahasia (Bcc) untuk seluruh daftar alamat surel undangan.",
+        "Mengirimkan surel tersebut satu per satu secara manual tanpa bantuan fitur grup."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang mantan karyawan datang ke kantor untuk meminta surat keterangan kerja, namun HRD sedang cuti dan sistem HR sedang dalam pemeliharaan. Sebagai staf administrasi, respons yang tepat adalah...",
+      "options": [
+        "Menolak permintaan tersebut secara tegas karena ketiadaan wewenang dan sistem.",
+        "Membuatkan surat sendiri menggunakan kop surat lama tanpa tanda tangan yang sah.",
+        "Mencatat data pemohon dan menjadwalkan pengambilan dokumen setelah HRD aktif kembali.",
+        "Memberikan nomor kontak pribadi HRD yang sedang cuti agar ditelepon langsung."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda akan mengadakan acara ramah tamah bagi klien di kantor. Anda ditugaskan memastikan ketersediaan konsumsi tepat waktu, namun katering belum tiba 15 menit sebelum acara mulai. Langkah Anda adalah...",
+      "options": [
+        "Menghubungi pihak pengendali katering untuk mengecek posisi pengiriman saat itu juga.",
+        "Memesan makanan cepat saji di sekitar kantor menggunakan dana pribadi tanpa konfirmasi.",
+        "Membatalkan acara ramah tamah tersebut secara mendadak demi menghindari rasa malu.",
+        "Menunggu pihak katering datang sambil meminta tamu untuk bersabar tanpa penjelasan."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa persediaan amplop berkop surat perusahaan tersisa lima buah saja, padahal besok pagi akan ada pengiriman 50 dokumen legal penting ke berbagai instansi. Langkah proaktif yang harus Anda lakukan sekarang adalah",
+      "options": [
+        "Membuat amplop sendiri menggunakan kertas HVS dan lem kertas seadanya",
+        "Menggunakan amplop polos tanpa logo perusahaan demi menghemat waktu",
+        "Menunda pengiriman dokumen sampai persediaan amplop baru dikirim vendor",
+        "Berkoordinasi dengan bagian pembelian untuk pengadaan darurat hari ini"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Atasan meminta Anda mencetak dokumen penawaran setebal 100 halaman untuk dibawa ke klien dalam waktu 30 menit. Saat proses cetak berjalan separuh jalan, mesin fotokopi tiba-tiba mengalami kemacetan kertas (paper jam) yang parah dan pesan error tidak kunjung hilang. Tindakan paling tepat yang harus Anda ambil adalah",
+      "options": [
+        "Membongkar seluruh bagian dalam mesin untuk mencari kertas yang tersangkut",
+        "Meminta bantuan teknisi gedung yang butuh waktu 20 menit untuk datang",
+        "Memindahkan file ke flashdisk dan mencetaknya di mesin cadangan lantai lain",
+        "Menghubungi klien untuk menjadwalkan ulang pertemuan karena kendala teknis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mendistribusikan slip gaji fisik kepada seluruh karyawan di kantor. Saat memasukkan lembar ke dalam amplop tertutup, Anda tidak sengaja melihat besaran gaji rekan kerja satu divisi yang duduk di sebelah meja Anda. Sikap profesional yang harus Anda tunjukkan adalah",
+      "options": [
+        "Menyimpan informasi tersebut dalam ingatan dan tidak membahasnya dengan siapa pun",
+        "Segera melapor kepada bagian HRD bahwa amplop gaji kurang tertutup dengan rapat",
+        "Memberitahu rekan kerja tersebut secara diam-diam agar ia tahu nominal gajinya",
+        "Menanyakan alasan perbedaan nominal gaji kepada atasan langsung di kantor"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Kantor Anda berlangganan dua surat kabar harian dan beberapa majalah bisnis yang setiap pagi diletakkan di ruang tunggu tamu. Seringkali bahan bacaan tersebut berantakan atau bahkan hilang sebelum dibaca oleh para manajer. Langkah administratif terbaik untuk mengatasi hal ini adalah",
+      "options": [
+        "Meminta bagian resepsionis untuk melarang tamu menyentuh majalah di meja",
+        "Membuat buku log peminjaman dan memberi stempel nama perusahaan pada setiap terbitan",
+        "Berlangganan versi digital saja dan melarang pengadaan media cetak fisik",
+        "Menyimpan semua majalah di dalam laci meja Anda dan membagikannya saat diminta"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang kurir logistik datang membawa barang kiriman atas nama perusahaan, namun saat Anda memeriksa surat jalan, tertera alamat penerima adalah perusahaan lain yang berlokasi di gedung seberang. Respon yang paling tepat sebagai staf administrasi adalah",
+      "options": [
+        "Menerima paket tersebut dan mengantarkannya sendiri ke gedung seberang",
+        "Menolak paket secara tegas dan meminta kurir segera meninggalkan area kantor",
+        "Menolak paket dengan sopan dan menjelaskan bahwa alamat tujuan keliru",
+        "Menyimpan paket di meja Anda sampai kurir tersebut kembali mencarinya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan pemindaian (scanning) dokumen arsip keuangan tahun lalu, mesin pemindai mengeluarkan bau hangus dan beraspal tipis lalu mati total. Dokumen fisik tersebut sangat rapuh dan harus selesai dipindai hari ini. Apa tindakan pertama Anda?",
+      "options": [
+        "Mematikan sumber listrik mesin, mencabut kabel, lalu melapor ke bagian IT",
+        "Membongkar casing mesin pemindai untuk memeriksa komponen yang terbakar",
+        "Meneruskan proses pemindaian menggunakan ponsel pribadi secara manual",
+        "Mengabaikan bau tersebut dan terus menekan tombol power berulang kali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima telepon dari nomor tidak dikenal yang mengaku sebagai auditor independen dan meminta konfirmasi mengenai nomor rekening bank serta daftar gaji direksi. Sesuai prosedur keamanan data kantor, tindakan Anda adalah",
+      "options": [
+        "Memberikan data tersebut karena penelpon mengaku sebagai pihak berwenang",
+        "Meminta penelpon mengirim email resmi lalu mengonfirmasikannya ke bagian keuangan",
+        "Menyambungkan langsung panggilan telepon tersebut ke ruang kerja direktur",
+        "Meminta maaf dan langsung menutup sambungan telepon tanpa memberikan respon"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang jam kepulangan kantor, lampu indikator pada mesin penghancur kertas (paper shredder) menyala merah tanda kapasitas penampung sudah penuh dan mesin tidak mau beroperasi. Di samping mesin berserakan tumpukan kertas sisa potongan. Tindakan yang tepat adalah",
+      "options": [
+        "Membiarkan tumpukan kertas tersebut dan menyelesaikannya keesokan paginya",
+        "Meminta petugas kebersihan kantor untuk membongkar mesin pemotong kertas",
+        "Mengosongkan wadah penampung sampah mesin dan membersihkan sensornya",
+        "Memaksa memasukkan kertas dengan menekan tombol reverse secara terus-menerus"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang karyawan magang baru kerap menggunakan telepon kantor untuk keperluan pribadi yang berdurasi lama, sehingga klien penting sering mendapati nomor sibuk. Sebagai staf senior, pendekatan yang paling tepat untuk menegur karyawan tersebut adalah",
+      "options": [
+        "Melaporkan perilakunya secara langsung kepada direktur utama perusahaan",
+        "Mencabut kabel telepon di meja magang tersebut tanpa memberi tahu alasannya",
+        "Menyindirnya di depan rekan kerja lain agar ia merasa malu dan jera",
+        "Mengingatkan secara pribadi mengenai etika penggunaan fasilitas komunikasi kantor"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda bertanggung jawab mengelola kunci cadangan ruangan kantor. Seorang karyawan kehilangan kunci ruangannya dan meminta kunci cadangan di luar jam kerja resmi tanpa membawa surat izin atasan. Keputusan yang paling aman bagi Anda adalah",
+      "options": [
+        "Memberikan kunci tersebut karena Anda mengenal baik karyawan yang bersangkutan",
+        "Menolak memberikan kunci dan menyarankan ia meminta surat izin atasan besok",
+        "Meminjamkan kunci dengan syarat ia harus mengembalikannya sebelum jam delapan",
+        "Membukakan pintu ruangan tersebut menggunakan kunci cadangan tanpa syarat"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

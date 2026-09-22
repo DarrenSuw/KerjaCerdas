@@ -1,0 +1,306 @@
+{
+  "skill": "SEO",
+  "skill_key": "seo",
+  "questions": [
+    {
+      "question": "Anda mengelola e-commerce fesyen di Indonesia. Tiba-tiba trafik organik anjlok 40% setelah pembaruan algoritma Google minggu lalu. Langkah pertama apa yang harus Anda lakukan untuk mendiagnosis masalah ini?",
+      "options": [
+        "Langsung membeli backlink berkualitas tinggi dari media nasional untuk mendongkrak otoritas domain kembali",
+        "Mengecek Google Search Console untuk melihat apakah penurunan terjadi pada kueri tertentu atau halaman spesifik",
+        "Menghapus seluruh artikel blog lama yang kurang optimal dan menulis ulang dari awal dengan kata kunci baru",
+        "Mengubah seluruh struktur URL produk agar lebih ramah mesin pencari dan melakukan redirect 301 massal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita lokal mengalami masalah indeksasi di mana Googlebot sering kehabisan anggaran merayapi (crawl budget) karena terlalu banyak halaman arsip tag yang kosong. Solusi teknis apa yang paling tepat diterapkan?",
+      "options": [
+        "Menghapus total semua halaman arsip tag dari database agar tidak bisa diakses sama sekali",
+        "Membiarkan Googlebot bekerja secara alami karena sistem mereka akan otomatis menyesuaikan",
+        "Menambahkan atribut noindex pada halaman arsip tag yang tidak memiliki nilai trafik organik",
+        "Membuat peta situs (sitemap) baru khusus untuk halaman tag agar lebih cepat dirayapi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan meningkatkan peringkat kata kunci lokal untuk klinik kecantikan di Jakarta Selatan. Strategi Off-Page SEO lokal apa yang paling esensial untuk dieksekusi dalam bulan pertama?",
+      "options": [
+        "Mengoptimalkan profil Google Bisnisku dan mengumpulkan ulasan positif dari pasien nyata",
+        "Mendaftarkan website klinik ke ratusan direktori bisnis global berbayar demi backlink instan",
+        "Membuat konten siaran pers setiap hari dan mendistribusikannya ke portal berita luar negeri",
+        "Menukar tautan dengan website kuliner dan otomotif lokal agar trafik rujukan semakin tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Halaman pendaratan (landing page) layanan pinjaman online Anda memiliki rasio pantul (bounce rate) yang sangat tinggi di perangkat seluler. Analisis UX dan SEO mana yang paling mungkin menjadi penyebab utamanya?",
+      "options": [
+        "Judul halaman terlalu pendek dan tidak mengandung nama brand perusahaan secara lengkap",
+        "Kecepatan muat lambat akibat gambar banner utama yang belum dikompresi dengan benar",
+        "Jumlah kata dalam artikel pendukung kurang dari batas minimal standar mesin pencari",
+        "Struktur heading menggunakan tag H3 sebelum H2 pada bagian awal artikel promosi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer pemasaran meminta Anda menargetkan kata kunci dengan volume pencarian sangat tinggi namun persaingan dari brand besar sangat ketat. Sebagai praktisi SEO, pendekatan konten apa yang sebaiknya Anda ambil?",
+      "options": [
+        "Memaksa menggunakan kata kunci utama tersebut pada setiap paragraf agar relevansi meningkat",
+        "Mengabaikan kata kunci tersebut dan fokus pada topik yang sama sekali tidak ada pencariannya",
+        "Menargetkan sekumpulan kata kunci ekor panjang (long-tail keywords) yang berniat beli spesifik",
+        "Membeli domain kedaluwarsa yang dulunya memiliki otoritas tinggi untuk tematik tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menemukan bahwa beberapa halaman produk dengan spesifikasi hampir identik di situs e-commerce Anda bersaing satu sama lain di hasil pencarian (keyword cannibalization). Tindakan perbaikan apa yang harus dilakukan?",
+      "options": [
+        "Menggabungkan halaman-halaman tersebut menjadi satu halaman komprehensif dan mengarahkan URL lama",
+        "Membiarkan kompetisi internal tersebut berjalan karena Google akan memilih halaman terbaik secara otomatis",
+        "Menghapus halaman dengan performa terburuk menggunakan status 404 agar tidak membingungkan robot",
+        "Membuat konten duplikat di domain berbeda untuk menguji halaman mana yang disukai oleh algoritma"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs web travel di Indonesia mengalami penurunan peringkat secara perlahan selama enam bulan. Audit teknis menunjukkan banyak tautan keluar (outbound links) mengarah ke situs scam yang sudah mati. Apa dampak utama kondisi ini?",
+      "options": [
+        "Kehilangan otoritas halaman secara signifikan karena asosiasi dengan tautan rusak dan beracun",
+        "Peningkatan otomatis pada rasio konversi karena pengguna tidak lagi terdistraksi keluar situs",
+        "Penurunan drastis pada jumlah kata per halaman yang terindeks oleh mesin pencari utama",
+        "Perubahan struktur direktori internal yang membuat peta situs menjadi tidak valid total"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan audit on-page pada artikel blog korporat, Anda mendapati bahwa tag title memiliki panjang 85 kata dan meta description mencapai 320 karakter. Masalah apa yang akan langsung terlihat di SERP Google?",
+      "options": [
+        "Google akan menolak mengindeks halaman tersebut karena melanggar batasan ukuran karakter ketat",
+        "Teks pada cuplikan SERP akan terpotong (truncated) dengan tanda elipsis di bagian akhirnya",
+        "Peringkat halaman akan langsung turun ke halaman kedua karena dianggap melakukan spam keyword",
+        "Mesin pencari akan otomatis menulis ulang seluruh isi artikel tanpa persetujuan penulis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merencanakan migrasi domain dari HTTP ke HTTPS untuk situs web klien korporat. Langkah validasi teknis apa yang wajib dilakukan setelah SSL terpasang untuk memastikan SEO tidak rusak?",
+      "options": [
+        "Membiarkan URL lama tetap aktif tanpa pengalihan agar pengguna memiliki dua opsi akses",
+        "Mengubah seluruh tautan internal menjadi HTTPS dan menerapkan pengalihan 301 dari HTTP",
+        "Membuat sitemap baru khusus untuk versi HTTP lama dan mendaftarkannya ke konsol pencari",
+        "Menghapus sertifikat lama setelah tiga hari agar mesin pencari fokus pada domain aman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien Anda di industri B2B ingin meningkatkan jumlah Leads melalui organik. Strategi riset niat pencarian (search intent) seperti apa yang paling efektif untuk diterapkan pada konten blog mereka?",
+      "options": [
+        "Fokus penuh pada kata kunci informatif bervolume tinggi yang mendatangkan pembaca umum",
+        "Mengutamakan kata kunci transaksional komersial yang langsung mencari vendor penyedia jasa",
+        "Membuat kombinasi konten informatif untuk masalah spesifik industri dan panduan pemilihan solusi",
+        "Menargetkan nama-nama brand kompetitor besar agar trafik mereka beralih ke situs klien"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Website marketplace properti Anda mengalami masalah penayangan halaman duplikat dalam jumlah besar akibat filter pencarian harga dan lokasi yang dapat diakses melalui berbagai kombinasi URL. Tindakan teknis paling tepat untuk mengatasi masalah pengindeksan ini adalah",
+      "options": [
+        "Menggunakan tag meta noindex pada setiap halaman filter parameter",
+        "Menghapus seluruh halaman filter dan hanya mengandalkan pencarian internal",
+        "Menerapkan atribut canonical pada URL variasi menuju halaman kategori utama",
+        "Memblokir direktori folder pencarian secara total melalui file robots.txt"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah situs web berita nasional ingin meluncurkan rubrik cek fakta baru yang membutuhkan kecepatan indeksasi tinggi agar artikel langsung tampil di Google News dan Top Stories dalam hitungan menit. Langkah optimasi teknis yang harus diprioritaskan tim pengembang adalah",
+      "options": [
+        "Mengimplementasikan skema markup berita dan integrasi Indexing API",
+        "Memperbanyak tautan balik eksternal dari portal berita internasional",
+        "Mengubah struktur permalink artikel menjadi berbasis angka tanggal",
+        "Menambahkan kata kunci frekuensi tinggi pada paragraf pembuka naskah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa trafik organik situs web agensi wisata Bali menurun drastis setelah Google meluncurkan pembaruan sistem ulasan produk. Halaman utama Anda berisi daftar hotel dengan ulasan yang diambil langsung dari API pihak ketiga tanpa analisis orisinal. Solusi perbaikan konten yang paling efektif adalah",
+      "options": [
+        "Menghapus tautan eksternal keluar menuju situs penyedia ulasan asli",
+        "Menambahkan pengalaman tangan pertama dan foto dokumentasi autentik",
+        "Mempercepat waktu muat server menggunakan layanan jaringan pengiriman",
+        "Mengganti seluruh format artikel ulasan menjadi infografis interaktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan rintisan (startup) teknologi finansial Anda baru saja mengakuisisi domain pesaing dan mengarahkan seluruh lalu lintasnya ke situs utama Anda menggunakan pengalihan 301 massal ke beranda. Setelah tiga minggu, peringkat beberapa kata kunci utama justru merosot. Analisis yang paling masuk akal untuk kegagalan ini adalah",
+      "options": [
+        "Pengalihan 301 membutuhkan waktu minimal tiga bulan untuk mulai stabil",
+        "Pengalihan massal ke beranda melanggar kebijakan pedoman kualitas Google",
+        "Peredaran tautan lama terputus karena kapasitas server tidak mencukupi",
+        "Relevansi kontekstual hilang karena tidak dialihkan ke halaman yang sejenis"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ditugaskan meningkatkan kinerja SEO internasional untuk situs web penyedia Software as a Service (SaaS) yang menargetkan pasar Asia Tenggara (Indonesia, Malaysia, Singapura). Struktur URL terbaik yang harus direkomendasikan kepada tim produk adalah",
+      "options": [
+        "Menggunakan sub-direktori spesifik wilayah seperti domain.com/id/ atau domain.com/my/",
+        "Membuat domain terpisah dengan ekstensi negara seperti domain.co.id dan domain.com.sg",
+        "Memanfaatkan parameter bahasa dinamis pada URL utama berdasarkan lokasi pengguna",
+        "Menggunakan sub-domain terpisah seperti id.domain.com dan my.domain.com untuk setiap negara"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah situs web e-commerce produk kecantikan lokal mengalami masalah Core Web Vitals di mana nilai Cumulative Layout Shift (CLS) sangat tinggi pada perangkat seluler. Berdasarkan pengalaman audit teknis, penyebab paling sering dari masalah ini adalah",
+      "options": [
+        "Penggunaan gambar tanpa dimensi eksplisit dan iklan dinamis yang memuat lambat",
+        "Waktu respons server backend yang tinggi akibat kueri basis data yang rumit",
+        "Ukuran file skrip pihak ketiga yang terlalu besar saat proses pengunduhan awal",
+        "Penerapan gaya tata letak kaskade CSS yang tidak menggunakan kompresi Gzip"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menganalisis laporan Kinerja Penelusuran (Search Console), Anda menemukan ribuan kueri penelusuran spam dalam bahasa asing yang mengarah ke halaman keranjang belanja situs e-commerce Anda. Tindakan preventif yang paling tepat untuk melindungi otoritas situs adalah",
+      "options": [
+        "Mengabaikannya karena sistem Google secara otomatis mengabaikan spam jenis tersebut",
+        "Memblokir akses perayap menggunakan file robots.txt pada direktori keranjang",
+        "Menambahkan tag noindex pada parameter URL keranjang yang dapat dimanipulasi",
+        "Menghapus fitur keranjang belanja sementara waktu hingga serangan spam berhenti"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda merencanakan strategi pembuatan tautan (link building) untuk situs web klinik kesehatan di Surabaya. Agar aman dari penalti manual Google, pendekatan penjangkauan media yang paling direkomendasikan adalah",
+      "options": [
+        "Membeli paket tautan balik dari direktori bisnis lokal dengan metrik domain tinggi",
+        "Membuat siniar kesehatan dan mengundang dokter tamu untuk mendapatkan sebutan merek",
+        "Menulis artikel tamu berisi tautan komersial pada blog pribadi jaringan PBN",
+        "Memasang widget kalkulator kesehatan gratis yang menyertakan tautan di footer situs mitra"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web direktori lowongan kerja mengalami penurunan tajam dalam indeksasi halaman lowongan lama yang otomatis kedaluwarsa setelah 30 hari. Cara terbaik mengelola halaman kedaluwarsa ini agar tidak merusak pengalaman pengguna dan anggaran perayapan adalah",
+      "options": [
+        "Mengalihkan URL halaman kedaluwarsa ke beranda utama menggunakan pengalihan 301",
+        "Membiarkan halaman mengembalikan status kode HTTP 404 secara permanen selamanya",
+        "Menampilkan pesan lowongan telah tutup dengan status HTTP 410 serta tautan alternatif",
+        "Menghapus tautan internal menuju halaman tersebut secara total dari peta situs XML"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer produk ingin mengubah struktur navigasi kategori produk fashion dari bentuk hierarki tiga tingkat menjadi satu tingkat datar untuk mempermudah akses pengguna. Risiko SEO terbesar yang harus Anda sampaikan kepada manajemen adalah",
+      "options": [
+        "Penurunan relevansi kontekstual akibat hilangnya pengelompokan sub-kategori semantik",
+        "Peningkatan beban komputasi peramban pengguna saat merender menu dropdown",
+        "Ketidakcocokan dengan standar skema markup produk versi terbaru di mesin pencari",
+        "Kegagalan sistem pelacakan analitik dalam membaca parameter kampanye pemasaran"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola situs web direktori kuliner di Indonesia dan mendapati bahwa ulasan pengguna sering kali memuat gambar berukuran besar tanpa optimasi, sehingga memperlambat waktu muat halaman seluler. Tindakan perbaikan teknis apa yang paling efektif?",
+      "options": [
+        "Mengubah seluruh format gambar ke PNG agar transisi visual lebih tajam saat dimuat",
+        "Menerapkan atribut lazy loading serta kompresi otomatis ke format WebP",
+        "Memindahkan seluruh file gambar ke folder terpisah agar tidak membebani server utama",
+        "Menghapus metadata gambar secara manual sebelum diunggah oleh kontributor situs"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web e-commerce perkakas rumah tangga mengalami masalah di mana halaman hasil pencarian internal situs (site search) terindeks oleh Google, menyebabkan masalah kanonikal dan konten tipis. Langkah penanganan yang paling tepat adalah?",
+      "options": [
+        "Menghapus semua halaman kategori utama agar Google fokus pada halaman produk saja",
+        "Menambahkan tag meta robots dengan nilai noindex pada halaman hasil pencarian internal",
+        "Membuat peta situs XML terpisah khusus untuk mengakomodasi kueri pencarian internal",
+        "Mengubah struktur URL agar menggunakan parameter dinamis yang sulit dibaca oleh mesin pencari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengoptimalkan artikel panduan investasi emas untuk pembaca di Indonesia. Saat menganalisis SERP, Anda melihat bahwa Google menampilkan kotak 'People Also Ask' dan cuplikan unggulan (featured snippet). Format konten apa yang harus Anda prioritaskan?",
+      "options": [
+        "Paragraf naratif panjang tanpa sub-heading agar pembaca betah berlama-lama di halaman",
+        "Tabel terstruktur dan daftar poin ringkas yang langsung menjawab pertanyaan spesifik",
+        "Video berdurasi panjang yang disematkan di bagian paling bawah artikel penunjang",
+        "Infografis berukuran besar dengan teks tersembunyi di dalam elemen JavaScript"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien Anda di sektor logistik B2B ingin memperluas jangkauan organik ke pasar Asia Tenggara dengan meluncurkan versi bahasa Inggris dan Melayu. Pendekatan struktur URL apa yang paling direkomendasikan untuk SEO internasional?",
+      "options": [
+        "Menggunakan domain tingkat atas yang berbeda untuk setiap negara target pemasaran",
+        "Memanfaatkan parameter URL berbasis sesi pengguna yang aktif berkunjung",
+        "Menggunakan subdirektori khusus bahasa seperti /en/ dan /my/ pada domain utama",
+        "Menempatkan konten terjemahan di dalam satu halaman yang sama menggunakan pop-up"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan audit backlink untuk situs web portal edukasi, Anda menemukan ratusan tautan spam dari situs direktori luar negeri berkualitas rendah yang mengarah ke halaman utama. Langkah mitigasi yang paling tepat diambil adalah?",
+      "options": [
+        "Mengabaikannya karena Google secara otomatis mengabaikan tautan spam tanpa dampak",
+        "Menggunakan alat penolakan tautan (Disavow Tool) di Google Search Console",
+        "Membuat tautan balik tandingan dalam jumlah besar ke situs direktori tersebut",
+        "Mengubah semua struktur tautan internal situs agar terlepas dari domain utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web majalah gaya hidup mengalami penurunan rasio klik-tayang (CTR) di halaman hasil pencarian meskipun peringkat kata kupon dan posisinya stabil di posisi 3. Perbaikan elemen on-page apa yang harus segera dilakukan?",
+      "options": [
+        "Menambahkan lebih banyak kata kunci utama di paragraf pertama artikel",
+        "Menulis ulang tag title dan meta description agar lebih menarik dan relevan",
+        "Mengganti seluruh gambar header dengan ilustrasi vektor beresolusi tinggi",
+        "Memperpanjang jumlah kata artikel hingga dua kali lipat dari ukuran semula"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa tag heading (H1, H2, H3) di situs web berita lokal tidak berurutan dengan benar, di mana beberapa halaman menggunakan H3 sebelum H2. Bagaimana dampak hal ini terhadap performa SEO?",
+      "options": [
+        "Situs akan langsung dikenai penalti manual oleh tim peninjau kualitas Google",
+        "Mesin pencari akan kesulitan memahami hierarki konten dan konteks topik halaman",
+        "Kecepatan server akan menurun drastis akibat kesalahan rendering dokumen HTML",
+        "Jumlah halaman yang terindeks di Google Search Console akan berkurang separuh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web layanan pembersihan rumah (cleaning service) ingin memaksimalkan visibilitas lokal di berbagai kota besar di Indonesia. Strategi pembuatan halaman pendaratan (landing page) yang paling aman dari duplikasi konten adalah?",
+      "options": [
+        "Menyalin satu halaman yang sama dan hanya mengganti nama kota di dalam judul",
+        "Membuat konten unik untuk setiap kota yang mencakup ulasan lokal dan titik layanan",
+        "Menggunakan teknik cloaking untuk menampilkan nama kota berbeda pada IP pengguna",
+        "Membuat satu halaman tunggal dengan daftar seluruh kota tanpa informasi spesifik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menemukan bahwa file robots.txt pada situs web e-commerce Anda secara tidak sengaja memblokir folder aset CSS dan JavaScript utama. Apa dampak langsung yang terdeteksi pada alat pengujian Google?",
+      "options": [
+        "Googlebot tidak dapat merender halaman dengan benar sehingga mempengaruhi penilaian UX",
+        "Situs web akan otomatis dihapus dari indeks Google dalam kurun waktu 1x24 jam",
+        "Trafik dari perangkat seluler akan melonjak karena ukuran file menjadi lebih ringan",
+        "Peringkat kata kunci komersial akan meningkat drastis karena fokus pada teks"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah forum komunitas online lokal mengalami penurunan metrik engagement dan waktu tinggal (dwell time) karena banyak tautan keluar (outbound links) mengarah ke situs eksternal yang tidak relevan. Atribut rel apa yang harus diterapkan pada tautan tersebut?",
+      "options": [
+        "Menambahkan atribut rel=\"dofollow\" untuk memperkuat hubungan antar situs",
+        "Menambahkan atribut rel=\"sponsored\" untuk menandai tautan komersial",
+        "Menambahkan atribut rel=\"ugc\" atau rel=\"nofollow\" untuk mengontrol ekuitas tautan",
+        "Menghapus seluruh tautan keluar tanpa terkecuali dari semua postingan pengguna"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

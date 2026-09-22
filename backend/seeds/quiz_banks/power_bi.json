@@ -1,0 +1,306 @@
+{
+  "skill": "Power BI",
+  "skill_key": "power bi",
+  "questions": [
+    {
+      "question": "Anda membuat laporan penjualan bulanan untuk manajemen di Jakarta. Laporan ini menggunakan DirectQuery ke database SQL Server perusahaan. Saat bos membuka laporan, waktu muat (load time) visual sangat lambat. Langkah apa yang paling efektif untuk mengatasi masalah kinerja ini tanpa mengubah struktur database?",
+      "options": [
+        "Mengubah metode koneksi menjadi Import agar seluruh data tersimpan di memori lokal Power BI",
+        "Membuat tabel kalkulasi baru menggunakan DAX di Power BI untuk menampung seluruh data historis",
+        "Menambahkan indeks pada kolom yang sering digunakan di tabel SQL Server dan mengoptimalkan DAX",
+        "Memindahkan seluruh file laporan ke Power BI Report Server lokal agar tidak bergantung pada cloud"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim finance meminta Anda membuat visual tren kas harian. Anda memiliki tabel tanggal terpisah (DimDate) dan tabel transaksi (FactCash). Saat Anda membuat grafik garis, total kas harian terlihat salah karena ada tanggal di mana tidak ada transaksi sama sekali, sehingga garis tren terputus. Bagaimana cara memperbaikinya?",
+      "options": [
+        "Mengubah tipe relasi dari active menjadi inactive pada model data relasional",
+        "Mengaktifkan opsi 'Show items with no data' pada sumbu kategori di pengaturan visual",
+        "Menambahkan fungsi FILTER pada setiap ukuran DAX untuk memaksa tanggal tetap tampil",
+        "Membuat kolom kalkulasi baru di tabel transaksi untuk mengisi nilai kosong dengan nol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima file CSV dari tim logistik yang berisi kolom tanggal dengan format 'DD-MM-YYYY HH:MM'. Saat Power Query mengimpor data tersebut, kolom terdeteksi sebagai teks. Tindakan apa yang harus dilakukan di Power Query Editor agar kolom ini dapat digunakan untuk analisis waktu?",
+      "options": [
+        "Mengubah tipe data kolom langsung menjadi Date/Time menggunakan lokal bahasa Indonesia",
+        "Membuat kolom custom baru dengan rumus fungsi teks untuk memotong string tanggal",
+        "Menggunakan fitur Conditional Column untuk memetakan teks ke format angka serial",
+        "Mengubah tipe data kolom menjadi Date/Time dengan menentukan Locale yang sesuai"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam laporan performa sales nasional, manajer regional ingin melihat data mereka sendiri, sementara direktur nasional bisa melihat semua data. Anda menggunakan Power BI Service. Pendekatan keamanan apa yang paling tepat diterapkan?",
+      "options": [
+        "Membuat beberapa file PBIX terpisah untuk setiap regional dan membagikannya secara manual",
+        "Menerapkan Row-Level Security (RLS) berbasis peran menggunakan fungsi USERPRINCIPALNAME()",
+        "Menambahkan filter level halaman pada setiap halaman laporan dan mengunci akses halaman",
+        "Membuat tabel peran terpisah di Excel dan menghubungkannya dengan link eksternal ke cloud"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menulis ukuran (measure) DAX untuk menghitung total penjualan tahun lalu (Same Period Last Year). Model data Anda memiliki tabel kalender yang ditandai sebagai Date Table. Rumus mana yang menghasilkan hasil yang akurat?",
+      "options": [
+        "CALCULATE([Total Sales], DATEADD(DimDate[Date], -1, YEAR))",
+        "TOTALYTD([Total Sales], DATEADD(DimDate[Date], -1, MONTH))",
+        "CALCULATE([Total Sales], PARALLELPERIOD(FactSales[Date], -1, YEAR))",
+        "PREVIOUSYEAR(TOTALMONTHLY([Total Sales], DimDate[Date]))"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah laporan power bi yang terhubung ke cloud database mengalami kegagalan (failure) saat proses scheduled refresh di Power BI Service. Pesan error menunjukkan masalah kredensial kedaluwarsa. Apa langkah penyelesaian yang harus Anda ambil?",
+      "options": [
+        "Membuka ulang file PBIX di komputer lokal, memasukkan ulang password, lalu melakukan publish ulang",
+        "Memperbarui kredensial sumber data pada pengaturan dataset di Power BI Service secara langsung",
+        "Menghapus jadwal refresh yang ada dan membuat ulang aturan otomatisasi dari awal dengan akun admin",
+        "Mengubah metode autentikasi dari OAuth2 menjadi Anonymous pada menu Power Query lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membandingkan kontribusi penjualan produk terhadap total kategori dalam bentuk bar chart. Ukuran DAX untuk persentase penjualan produk terhadap total kategori bernilai 100% untuk setiap bar karena konteks filter baris mengabaikan kategori. Fungsi DAX apa yang tepat untuk menghapus filter produk namun mempertahankan kategori?",
+      "options": [
+        "ALL(FactSales[ProductID])",
+        "ALLEXCEPT(DimProduct, DimProduct[SubCategory])",
+        "ALLSELECTED(DimProduct[ProductName])",
+        "REMOVEFILTERS(DimProduct[Category])"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Laporan eksekutif Anda memiliki terlalu banyak visual sehingga waktu muat lambat dan tampilan membingungkan. Anda ingin membuat fitur navigasi tombol di mana pengguna dapat beralih antara tampilan 'Ringkasan Keuangan' dan 'Analisis Operasional' dalam satu area halaman yang sama. Fitur Power BI apa yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan fitur Drill Through antar halaman laporan yang berbeda secara dinamis",
+        "Memanfaatkan Bookmark dan Selection Pane untuk mengatur visibilitas kelompok visual",
+        "Membuat halaman tersembunyi dan menggunakan URL filter untuk mengarahkan pengguna",
+        "Menambahkan custom visual dari marketplace untuk membuat tab interaktif di dalam halaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain model data dengan skema star-schema. Tabel fakta penjualan memiliki 5 juta baris dan tabel produk memiliki 10 ribu baris. Untuk mengoptimalkan ukuran file PBIX dan performa query, tipe penyimpanan (Storage Mode) tabel apa yang sebaiknya digunakan jika data jarang berubah?",
+      "options": [
+        "Mengatur tabel fakta ke DirectQuery dan tabel dimensi ke Import mode",
+        "Mengatur kedua tabel menggunakan metode Dual storage mode secara permanen",
+        "Mengatur tabel fakta dan tabel dimensi keduanya menggunakan metode Import",
+        "Mengatur tabel fakta ke Import mode dan tabel dimensi ke DirectQuery"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat membuat laporan operasional pabrik, Anda mendapati bahwa relasi antara tabel Mesin dan tabel LogKerusakan bersifat many-to-many karena satu mesin bisa memiliki banyak jenis kerusakan dan satu jenis kerusakan bisa terjadi pada banyak mesin. Praktik terbaik apa yang harus diterapkan pada model data ini?",
+      "options": [
+        "Menghapus relasi langsung dan menggantinya dengan fungsi LOOKUPVALUE di tabel fakta",
+        "Membuat tabel jembatan (bridge table) untuk mengubah relasi menjadi one-to-many pada kedua sisi",
+        "Mengubah arah filter silang (cross filter direction) menjadi Both pada relasi many-to-many",
+        "Menggabungkan kedua tabel tersebut di Power Query menjadi satu tabel besar yang redundan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat laporan HR untuk melacak karyawan aktif di PT Maju Mundur. Tabel karyawan memiliki kolom 'TanggalMasuk' dan 'TanggalKeluar' (kosong jika masih aktif). Untuk menghitung jumlah karyawan aktif secara akurat pada visual slicer tanggal apa pun, langkah DAX apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi CALCULATE dengan COUNTROWS dan filter rentang tanggal pada kedua kolom tanggal",
+        "Membuat kolomcalculated kolom teks status aktif lalu menghitung barisnya menggunakan fungsi COUNTA",
+        "Memanfaatkan fungsi FILTER dengan iterasi baris tabel karyawan dan mengecek status keluar secara manual",
+        "Menghitung selisih hari antara tanggal masuk dan keluar lalu merata-ratakannya per bulan berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah laporan operasional logistik di Surabaya memuat tabel 'Pengiriman' dengan 10 juta baris yang diimpor ke Power BI. Saat Anda mencoba melakukan refresh, proses gagal karena memori lokal habis (Out of Memory). Solusi paling efisien di Power Query adalah...",
+      "options": [
+        "Menambahkan indeks kolom baru di awal tabel untuk mempercepat pemindaian data saat proses muat",
+        "Menghapus kolom yang tidak terpakai dan memfilter baris data tahun lama sebelum dimuat ke model",
+        "Mengubah tipe data semua kolom teks menjadi bilangan bulat guna menghemat ruang penyimpanan",
+        "Membuat duplikat tabel pengiriman agar beban pemrosesan terbagi ke dua tabel terpisah di memori"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer penjualan ingin melihat total omzet dari produk kategori 'Elektronik' saja, terlepas dari filter kategori apa pun yang sedang dipilih pengguna pada slicer halaman laporan. Fungsi DAX apa yang paling tepat digunakan?",
+      "options": [
+        "ALLSELECTED untuk mengabaikan konteks filter eksternal pada tabel produk elektronik",
+        "KEEPFILTERS guna mempertahankan filter aktif sambil menambahkan kondisi kategori elektronik",
+        "CALCULATE dengan argumen penghitungan penjualan dan fungsi ALLEXCEPT pada tabel produk",
+        "CALCULATE dengan menyertakan kondisi filter tabel produk kategori sama dengan elektronik"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendesain laporan keuangan menggunakan model data DirectQuery ke SQL Server. Pengguna mengeluh laporan sangat lambat saat membuka halaman utama. Analisis performa (Performance Analyzer) menunjukkan bottleneck ada pada visual matriks. Tindakan optimal yang dapat Anda ambil adalah...",
+      "options": [
+        "Mengubah penyimpanan tabel dari DirectQuery menjadi Import secara keseluruhan tanpa pengecualian",
+        "Membuat tabel agregasi (Aggregation Table) di database sumber untuk meringankan kueri matriks",
+        "Menambahkan kolom kalkulasi kompleks berbasis DAX di dalam model untuk menggantikan kalkulasi SQL",
+        "Memecah matriks besar menjadi sepuluh visual kartu terpisah yang diletakkan berdampingan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan kehadiran cabang retail, Anda mendapati bahwa relasi aktif antara tabel 'Cabang' dan 'Absensi' menyebabkan ambiguitas karena ada dua jalur tanggal. Anda ingin menghitung absensi berdasarkan tanggal rencana kunjungan, bukan tanggal aktual. Fungsi DAX apa yang harus digunakan?",
+      "options": [
+        "USERELATIONSHIP dalam fungsi CALCULATE untuk mengaktifkan relasi non-aktif pada konteks tertentu",
+        "CROSSFILTER untuk mengubah arah hubungan relasi menjadi dua arah secara permanen di model",
+        "RELATEDTABLE untuk menarik seluruh baris data tabel cabang ke dalam tabel absensi saat evaluasi",
+        "LOOKUPVALUE untuk mencari nilai tanggal rencana kunjungan langsung dari tabel dimensi cabang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim marketing meluncurkan kampanye diskon. Mereka ingin melihat distribusi frekuensi nominal transaksi pembelian pelanggan (misalnya berapa banyak transaksi bernilai 0-100rb, 100-200rb, dst). Di Power BI, cara paling tepat menyajikannya adalah...",
+      "options": [
+        "Membuat bar chart standar dengan sumbu X berisi nilai nominal transaksi persis per rupiah",
+        "Membuat kolom calculated menggunakan fungsi SWITCH bersarang di tabel transaksi penjualan",
+        "Membuat Group (Bins) pada kolom nominal transaksi di Power BI Desktop lalu menjadikannya sumbu X",
+        "Menulis ukuran DAX kompleks menggunakan iterator baris untuk mengelompokkan nilai secara dinamis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerbitkan laporan ke Power BI Service dan mengatur terjadwal (Scheduled Refresh). Refresh gagal karena kredensial sumber data (Gateway) kedaluwarsa. Setelah memperbarui kredensial, apa tindakan pencegahan terbaik agar Anda segera tahu jika terjadi kegagalan di masa depan?",
+      "options": [
+        "Mengaktifkan notifikasi kegagalan refresh otomatis yang dikirimkan melalui email ke pemilik dataset",
+        "Mengecek secara manual halaman workspace setiap jam kerja untuk memantau status hijau ikon refresh",
+        "Meminta tim IT membuat skrip PowerShell harian untuk merestart layanan gateway lokal kantor",
+        "Memindahkan seluruh sumber data file lokal ke penyimpanan cloud OneDrive milik pribadi Anda"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat visual kartu (Card) yang warnanya berubah secara dinamis: hijau jika pencapaian target di atas 100%, dan merah jika di bawah 100%. Fitur apa di Power BI yang harus Anda konfigurasi untuk mencapai hal ini?",
+      "options": [
+        "Conditional Formatting berbasis aturan (Rules) pada elemen warna latar belakang atau teks kartu",
+        "Membuat measure DAX terpisah yang menghasilkan kode warna HTML lalu memasukkannya ke visual KPI",
+        "Menggunakan bookmark interaktif untuk menukar kartu hijau dan merah secara otomatis saat kondisi tercapai",
+        "Memasang custom visual dari marketplace pihak ketiga yang mendukung pengubahan warna otomatis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat menggabungkan (Merge Queries) tabel 'Pelanggan' dan 'Transaksi' di Power Query, waktu proses pemuatan data menjadi sangat lambat dan memakan banyak CPU. Analisis menunjukkan jenis join yang dipilih adalah Full Outer. Langkah perbaikan yang paling tepat adalah...",
+      "options": [
+        "Mengganti jenis join menjadi Inner atau Left Outer sesuai kebutuhan bisnis agar baris tidak membengkak",
+        "Menambahkan langkah Table.Buffer pada tabel transaksi sebelum melakukan proses penggabungan",
+        "Melakukan transpose pada kedua tabel terlebih dahulu agar orientasi baris dan kolom sejajar",
+        "Menghapus semua relasi di model data visualisasi agar Power Query dapat berjalan mandiri"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Direktur perusahaan meminta laporan eksekutif yang sangat interaktif namun memiliki tata letak ruang terbatas. Beliau ingin bisa memilih antara melihat grafik tren 'Pendapatan' atau 'Jumlah Pelanggan' pada satu tempat yang sama tanpa menambah visual baru. Fitur native apa yang paling tepat digunakan?",
+      "options": [
+        "Menambahkan tombol navigasi halaman terpisah untuk setiap metrik yang ingin ditampilkan",
+        "Membuat Field Parameter yang mencakup kedua ukuran tersebut, lalu menjadikannya sebagai slicer pilihan",
+        "Menggunakan fungsi DAX SELECTEDVALUE untuk mengubah struktur database secara langsung di sumber",
+        "Membuat dua visual bertumpuk (overlap) dan mengatur visibilitasnya menggunakan layer order"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat laporan operasional gudang dengan tabel fakta mutasi stok yang sangat besar. Pengguna mengeluh bahwa laporan sering kehabisan memori saat melakukan drill-down. Tindakan apa yang paling tepat di Power Query untuk mengoptimalkan penggunaan memori sebelum data dimuat?",
+      "options": [
+        "Menghapus kolom yang tidak terpakai dan mengubah tipe data seminimal mungkin",
+        "Melakukan merge pada semua tabel referensi menjadi satu tabel datar yang besar",
+        "Mengganti seluruh langkah transformasi Power Query dengan fungsi DAX di model",
+        "Menonaktifkan opsi parallel loading untuk menghindari konflik antartabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan analisis penjualan cabang, Anda diminta membuat ukuran DAX untuk menghitung peringkat (ranking) setiap cabang berdasarkan total omzet. Namun, hasil peringkat berubah-ubah secara tidak teratur saat filter wilayah diterapkan pada halaman laporan. Fungsi apa yang harus Anda gunakan untuk mengabaikan filter wilayah tersebut?",
+      "options": [
+        "Menggunakan fungsi FILTER untuk membungkus seluruh tabel wilayah pada argumen kedua",
+        "Menggunakan fungsi ALL pada tabel cabang atau kolom wilayah di dalam fungsi CALCULATE",
+        "Menggunakan fungsi ALLEXCEPT untuk mempertahankan konteks filter dari tabel produk",
+        "Menggunakan fungsi KEEPFILTERS agar konteks luar tetap mendominasi evaluasi peringkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer HR meminta laporan pergerakan karyawan di mana satu tabel mencatat riwayat perubahan jabatan karyawan dari waktu ke waktu. Saat Anda merelasikannya ke tabel demografi, terjadi hubungan ambiguitas karena ada dua tanggal: tanggal mulai dan tanggal selesai. Bagaimana cara mengatasi ambiguitas ini di model data?",
+      "options": [
+        "Membuat tabel jembatan (bridge table) yang menggabungkan kedua kolom tanggal tersebut",
+        "Menghapus salah satu kolom tanggal di Power Query untuk menghilangkan redundansi relasi",
+        "Membiarkan relasi aktif ganda dan menggunakan fungsi CROSSFILTER dalam setiap ukuran",
+        "Membuat satu relasi aktif pada tanggal mulai dan menggunakan USERELATIONSHIP untuk tanggal selesai"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah laporan penjualan retail menggunakan koneksi Import ke database cloud. Setiap kali laporan dibuka oleh direksi, proses muat ulang data memakan waktu lama padahal data historis tidak pernah berubah. Fitur apa di Power BI Service yang paling tepat diaktifkan untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah jenis koneksi menjadi DirectQuery agar data selalu diambil secara real-time",
+        "Mengonfigurasi Incremental Refresh pada tabel transaksi berdasarkan rentang tanggal",
+        "Menambahkan baris aggregator secara manual menggunakan visual custom R atau Python",
+        "Memindahkan seluruh proses transformasi data yang kompleks langsung ke front-end laporan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendesain laporan keuangan di Power BI Desktop dan ingin memastikan bahwa ukuran laba bersih selalu menggunakan mata uang Rupiah, terlepas dari format regional komputer pengguna yang melihat laporan tersebut. Di mana tempat paling tepat untuk mengatur format tampilan ini?",
+      "options": [
+        "Mengubah format regional sistem operasi Windows Server tempat gateway terpasang",
+        "Memilih opsi format kustom secara manual pada panel format visual setiap kali dibuat",
+        "Mengatur string format secara eksplisit di dalam properti ukuran DAX pada panel model",
+        "Menambahkan kolom kalkulasi baru di Power Query yang menyatukan angka dan simbol mata uang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim operasional logistik mendapati bahwa visual peta (map) di laporan mereka sangat lambat merender titik koordinat pengiriman yang berjumlah lebih dari 50.000 titik di seluruh Indonesia. Langkah optimasi visual apa yang sebaiknya Anda ambil?",
+      "options": [
+        "Mengganti visual peta standar dengan visual Mapbox atau Scatter Chart yang mendukung agregasi",
+        "Menambahkan lebih banyak kolom lokasi ke dalam field location agar koordinat lebih spesifik",
+        "Menghapus semua filter tanggal di halaman laporan untuk mempercepat pemuatan titik peta",
+        "Memecah tabel pengiriman menjadi puluhan tabel terpisah berdasarkan wilayah provinsi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis ukuran DAX untuk menghitung rata-rata kepuasan pelanggan, namun hasilnya menampilkan nilai kosong (blank) pada beberapa kategori produk yang tidak memiliki transaksi ulasan. Agar visual tidak terlihat rusak, bagaimana cara mengubah nilai blank tersebut menjadi angka nol?",
+      "options": [
+        "Menambahkan kondisi penanganan kesalahan menggunakan fungsi IFERROR di awal ukuran",
+        "Menambahkan angka nol secara manual ke dalam tabel dimensi produk di Power Query",
+        "Menggunakan fungsi COALESCE atau menjumlahkan ukuran tersebut dengan angka nol",
+        "Mengubah jenis data kolom ulasan di database sumber menjadi tipe teks bernilai nol"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Direksi meminta agar laporan eksekutif dapat menampilkan ringkasan data yang berbeda-beda (misalnya: fokus finansial atau fokus operasional) hanya dengan mengklik tombol navigasi di dalam satu halaman laporan yang sama. Fitur Power BI apa yang paling efisien untuk kebutuhan ini?",
+      "options": [
+        "Membuat beberapa file laporan terpisah dan menggabungkannya via Power BI Workspace",
+        "Memanfaatkan fitur Bookmark dan Selection Pane untuk mengatur visibilitas kelompok visual",
+        "Mengandalkan fitur Q&A visual agar pengguna dapat mengetik sendiri kebutuhan metrik mereka",
+        "Menggunakan URL Parameters untuk membuka halaman web eksternal yang berisi ringkasan lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa ukuran DAX untuk perhitungan Year-to-Date (YTD) penjualan menghasilkan akumulasi yang terus berlanjut melewati tanggal hari ini hingga akhir tahun kalender, padahal data transaksi berhenti pada bulan kemarin. Fungsi apa yang harus ditambahkan untuk menghentikan akumulasi pada tanggal terakhir data?",
+      "options": [
+        "Membatasi rentang tanggal menggunakan fungsi FILTER dengan kondisi tanggal kurang dari MAX tanggal fakta",
+        "Mengganti fungsi TOTALYTD dengan fungsi CALCULATE murni tanpa menggunakan fungsi waktu bawaan",
+        "Menghapus relasi antara tabel tanggal dan tabel fakta agar konteks waktu berjalan secara independen",
+        "Menambahkan fungsi DATEADD dengan parameter negatif untuk mundur satu tahun penuh ke belakang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan kolaborasi tim dalam pengembangan laporan Power BI menggunakan Git integration, file laporan berukuran sangat besar dan sering menyebabkan konflik merge pada file layout.json. Praktik terbaik apa yang harus diterapkan pengembang untuk meminimalisir hal ini?",
+      "options": [
+        "Menghindari penggunaan format PBIP dan tetap menggunakan satu file PBIX yang dikirim via email",
+        "Memisahkan pembuatan model data (.bim atau semantic model) dan desain visual laporan (.pbir)",
+        "Melarang anggota tim lain untuk membuka laporan secara bersamaan pada jam kerja kantor",
+        "Menonaktifkan fitur auto-save di Power BI Desktop agar perubahan kecil tidak terekam otomatis"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

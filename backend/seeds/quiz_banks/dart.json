@@ -1,0 +1,306 @@
+{
+  "skill": "Dart",
+  "skill_key": "dart",
+  "questions": [
+    {
+      "question": "Anda sedang mengembangkan aplikasi keuangan di Jakarta menggunakan Dart dan mendapati bahwa proses parsing JSON dari data transaksi yang besar menyebabkan UI aplikasi sering tersendat (jank). Solusi manakah yang paling tepat untuk mengatasi masalah performa ini tanpa mengganggu thread utama?",
+      "options": [
+        "Menggunakan fungsi rekursif standar untuk memecah data JSON dalam waktu pemanggilan UI",
+        "Memindahkan proses parsing berat ke dalam isolate terpisah menggunakan fungsi compute",
+        "Menurunkan frekuensi pengambilan data API melalui timer singkat pada widget utama",
+        "Mengubah seluruh struktur data model lokal menjadi tipe data dynamic sepenuhnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam tim pengembang e-commerce, Anda diminta memperbaiki error 'Null check operator used on a null value' yang sering terjadi saat aplikasi mengakses data profil pengguna baru. Bagaimana cara paling aman di Dart untuk menangani potensi nilai null pada properti objek tanpa menyebabkan aplikasi crash?",
+      "options": [
+        "Memaksa nilai dengan operator tanda seru ganda di setiap pemanggilan data",
+        "Menggunakan operator akses bersyarat tanya titik dan memberikan nilai cadangan",
+        "Menonaktifkan fitur pemeriksaan null di seluruh konfigurasi proyek aplikasi",
+        "Membungkus seluruh blok kode dalam blok try-catch tanpa pengecekan tipe"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda membuat fungsi utilitas format mata uang Rupiah di Dart yang menerima parameter angka. Terkadang parameter tersebut bisa bernilai null dari server. Deklarasi parameter manakah yang paling tepat menerapkan konsep null-safety modern pada Dart?",
+      "options": [
+        "void formatRupiah(int nominal = 0)",
+        "void formatRupiah(int? nominal)",
+        "void formatRupiah(required int nominal)",
+        "void formatRupiah(int nominal!)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat membangun fitur keranjang belanja, Anda menggunakan fungsi asinkron untuk mengambil data diskon dari server. Kode Anda gagal melakukan tangkapan error ketika koneksi internet terputus. Pendekatan async/await manakah yang benar untuk menangani exception jaringan tersebut?",
+      "options": [
+        "Menempatkan logika pemanggilan dalam blok try-catch dengan penanganan khusus",
+        "Menambahkan kata kunci async di akhir baris fungsi pemanggilan data lokal",
+        "Membiarkan program berjalan otomatis dengan mengabaikan status masa tunggu",
+        "Mengubah fungsi utama aplikasi menjadi sinkron agar menghentikan eksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang kelas basis data lokal di Dart menggunakan pola Singleton agar koneksi database SQLite hanya dibuat sekali selama siklus hidup aplikasi. Manakah implementasi konstruktor yang mencerminkan pola Singleton yang benar di Dart?",
+      "options": [
+        "Membuat konstruktor publik biasa dan memanggilnya berkali-kali di memori",
+        "Menggunakan konstruktor privat dan menyediakan metode pabrik statis",
+        "Membuat kelas abstrak tanpa konstruktor dan mewariskannya ke banyak file",
+        "Menggunakan variabel global di luar kelas untuk menyimpan instansiasi objek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda mendapati bahwa ukuran binary aplikasi Flutter membengkak karena banyak fungsi utilitas string yang diimpor tetapi tidak pernah dipakai. Fitur apa dari Dart yang secara otomatis menghapus kode mati (dead code) saat proses kompilasi rilis?",
+      "options": [
+        "Penerapan dynamic typing secara menyeluruh pada variabel global",
+        "Penggunaan teknik lazy loading pada setiap aset gambar lokal",
+        "Fitur tree shaking yang melekat pada kompiler AOT Dart",
+        "Pemisahan kode otomatis menggunakan isolate multi-proses"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menulis fungsi untuk memproses daftar transaksi harian menggunakan pemrograman fungsional di Dart. Anda ingin mengubah daftar objek transaksi mentah menjadi daftar nama produk saja. Metode koleksi mana yang paling efisien untuk tugas ini?",
+      "options": [
+        "Menggunakan metode map untuk mentransformasi setiap elemen ke bentuk baru",
+        "Menggunakan metode where untuk menyaring data berdasarkan kondisi boolean",
+        "Menggunakan metode fold untuk mereduksi seluruh elemen menjadi satu angka",
+        "Menggunakan metode forEach untuk mencetak setiap elemen ke konsol sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengujian unit (unit testing) untuk fungsi kalkulator pajak penghasilan di Dart, Anda perlu memastikan fungsi mengembalikan error ketika menerima input angka negatif. Bagaimana cara menulis pengujian ekspektasi error yang benar menggunakan package test?",
+      "options": [
+        "expect(() => hitungPajak(-1000), returnsNormally)",
+        "expect(() => hitungPajak(-1000), throwsArgumentError)",
+        "expect(hitungPajak(-1000), equals(0))",
+        "expect(hitungPajak(-1000), isNull)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat kelas kustom untuk merepresentasikan koordinat GPS di aplikasi logistik, dan Anda ingin memastikan dua objek koordinat dengan nilai lintang dan bujur yang sama dianggap setara saat dibandingkan. Apa yang harus Anda lakukan pada kelas tersebut di Dart?",
+      "options": [
+        "Melakukan override pada operator kesetaraan dan getter hashCode",
+        "Mengubah seluruh variabel kelas menjadi bersifat statis dan final",
+        "Menambahkan kata kunci async pada pendeklarasian properti kelas",
+        "Membuat metode ekstensi baru untuk mengubah tipe data menjadi string"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah modul pengolahan data sensor IoT di aplikasi Anda membutuhkan aliran (stream) data suhu secara terus-menerus dari perangkat keras Bluetooth. Anda ingin agar data tersebut bisa didengarkan oleh beberapa bagian UI secara bersamaan. Jenis Stream apa yang harus Anda gunakan di Dart?",
+      "options": [
+        "Single-subscription stream karena hanya ada satu sumber data sensor",
+        "Broadcast stream karena memungkinkan banyak pendengar sekaligus",
+        "Future-based stream untuk mengeksekusi data secara satu kali jalan",
+        "Synchronous stream untuk mengunci thread utama selama pembacaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang membuat fitur pencarian produk di aplikasi marketplace. Saat pengguna mengetik dengan cepat, fungsi pencarian terpanggil berkali-kali. Bagaimana cara terbaik di Dart untuk mencegah pemanggilan API yang berlebihan akibat ketikan cepat tersebut?",
+      "options": [
+        "Menggunakan mekanisme debounce pada stream atau event input pencarian",
+        "Menyimpan semua hasil pencarian sebelumnya ke dalam variabel global",
+        "Mematikan tombol keyboard virtual setiap kali pengguna mulai mengetik",
+        "Menjalankan proses pencarian di dalam isolate terpisah secara langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam aplikasi manajemen inventaris gudang, Anda menerima data JSON bersarang yang cukup kompleks dari API backend. Apa pendekatan paling aman dan efisien di Dart untuk mengubah data JSON tersebut menjadi objek model Dart?",
+      "options": [
+        "Melakukan casting manual secara langsung pada setiap properti bertipe data dynamic",
+        "Memanfaatkan pustaka pembuatan kode otomatis seperti json_serializable",
+        "Mengubah seluruh struktur JSON mentah menjadi string sebelum dibaca widget",
+        "Membuat fungsi rekursif kustom tanpa pengecekan tipe data untuk performa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain arsitektur aplikasi kasir (POS) offline-first di mana operasi tulis ke database lokal SQLite harus berjalan secara transaksional. Bagaimana cara memastikan integritas data jika salah satu tahapan gagal di Dart?",
+      "options": [
+        "Menjalankan setiap perintah SQL secara terpisah tanpa blok pengaman",
+        "Membungkus seluruh rangkaian operasi dalam satu blok transaksi database",
+        "Menghapus database lokal dan mengunduhnya ulang dari server pusat",
+        "Melakukan penundaan waktu eksekusi menggunakan Future.delayed"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fitur pelacakan kurir logistik memerlukan pembaruan posisi GPS secara real-time yang diterima melalui WebSockets. Di Dart, struktur apa yang paling tepat digunakan untuk mengelola aliran data posisi yang berkelanjutan ini ke UI?",
+      "options": [
+        "Menggunakan tipe data Future dan memanggil fungsi secara berulang",
+        "Menggunakan variabel tunggal yang diperbarui nilainya setiap detik",
+        "Menggunakan konsep Stream dan mendengarkannya melalui StreamBuilder",
+        "Menggunakan fungsi rekursif sinkron di dalam thread utama aplikasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam pengembangan modul laporan keuangan, Anda perlu menjumlahkan total transaksi dari list objek yang cukup besar, yang kadang kala bernilai null. Bagaimana cara menulis kode yang aman dan ringkas di Dart untuk operasi ini?",
+      "options": [
+        "Menggunakan perulangan for konvensional dengan pengecekan if bersarang",
+        "Memanfaatkan method fold atau reduce dengan operator null-aware",
+        "Mengubah list menjadi tipe data string lalu memparsingnya kembali",
+        "Mematikan fitur null safety pada file Dart tersebut secara permanen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan adanya kebocoran memori (memory leak) pada halaman dasbor analitik karena subscription pada sebuah Stream Controller tidak ditutup saat pengguna berpindah halaman. Di mana tempat paling tepat untuk menutup subscription tersebut?",
+      "options": [
+        "Di dalam blok fungsi penangkap error global aplikasi",
+        "Di dalam konstruktor utama dari kelas widget halaman tersebut",
+        "Di dalam metode dispose dari Stateful widget halaman tersebut",
+        "Di dalam fungsi main sebelum aplikasi dijalankan pertama kali"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menulis unit test untuk fungsi kalkulator diskon promosi. Anda ingin menguji beberapa skenario data masukan (edge cases) tanpa menulis ulang logika pengujian yang sama berulang kali. Fitur apa di pustaka test Dart yang mendukung kebutuhan ini?",
+      "options": [
+        "Membuat pengujian berbasis parameter dengan testWidgets",
+        "Menggunakan fungsi group dan pengujian berbasis tabel data",
+        "Menjalankan seluruh pengujian di dalam satu fungsi main tunggal",
+        "Membuat mock server eksternal untuk setiap skenario masukan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi HRD Anda sering mengalami lag sesaat ketika memproses data absensi karyawan dalam jumlah ribuan baris di sisi klien. Bagaimana cara memindahkan beban komputasi berat ini agar tidak mengganggu kelancaran animasi UI?",
+      "options": [
+        "Menjalankan pemrosesan data di dalam Isolate terpisah menggunakan compute",
+        "Menggunakan Future.microtask untuk menunda eksekusi beberapa detik",
+        "Memecah data absensi menjadi potongan kecil menggunakan Isolate.exit",
+        "Menaikkan prioritas thread utama melalui konfigurasi sistem operasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam membuat komponen UI kustom untuk grafik penjualan, Anda ingin memastikan bahwa properti warna dan ukuran tidak dapat diubah setelah objek komponen tersebut dibuat. Keyword apa yang harus digunakan pada deklarasi kelas di Dart?",
+      "options": [
+        "Menggunakan modifier late pada setiap variabel di dalam kelas",
+        "Menggunakan keyword abstract pada definisi awal kelas komponen",
+        "Membuat konstruktor kelas tersebut menjadi bertipe factory",
+        "Membuat kelas tersebut bersifat immutable dengan konstruktor const"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda membuat fungsi untuk mengambil profil pengguna dari API eksternal yang terkadang mengalami gangguan jaringan. Anda ingin memastikan fungsi tersebut mencoba ulang permintaan hingga 3 kali sebelum mengembalikan error. Pendekatan mana yang paling idiomatik di Dart?",
+      "options": [
+        "Menggunakan perulangan do-while dengan blok try-catch manual",
+        "Memanfaatkan operator ekstensi atau pustaka utilitas retry khusus",
+        "Memanggil ulang fungsi itu sendiri secara tak terbatas di dalam catch",
+        "Mengabaikan error jaringan dan mengembalikan data kosong ke pengguna"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur ekspor data transaksi ke file CSV di aplikasi fintech. Proses ini memakan waktu beberapa detik dan membuat UI aplikasi terhenti sementara (jank). Bagaimana cara terbaik menangani proses berat ini di Dart?",
+      "options": [
+        "Menjalankan proses tersebut di dalam isolate terpisah menggunakan Isolate.run",
+        "Membungkus fungsi perulangan data dengan blok try-catch yang lebih spesifik",
+        "Mengubah seluruh fungsi pengolahan data menjadi prosedur asinkron standar",
+        "Menggunakan fungsi Future.microtask untuk menunda eksekusi hingga frame berikutnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi PPOB, Anda memiliki fungsi utilitas untuk menghitung biaya admin berdasarkan jenis layanan. Anda ingin memastikan parameter kode layanan yang dimasukkan hanya berupa pilihan yang telah ditentukan tanpa menggunakan string bebas. Fitur Dart apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan tipe data abstrak dengan pola pewarisan kelas turunan ganda",
+        "Memanfaatkan tipe data Enum untuk mendefinisikan konstanta kategori layanan",
+        "Menerapkan tipe data mixin khusus untuk validasi string parameter masukan",
+        "Membuat kelas utilitas dengan konstruktor privat dan metode statis konstan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima respons JSON dari sistem logistik yang strukturnya tidak beraturan dan sering berubah sewaktu-waktu tergantung wilayah kurir. Bagaimana Anda mendefinisikan tipe data penampung di Dart agar aplikasi tidak rentan mengalami error saat parsing?",
+      "options": [
+        "Menggunakan tipe data Map<String, dynamic> untuk akses data dinamis",
+        "Membuat kelas khusus dengan anotasi serialisasi pustaka pihak ketiga",
+        "Mengonversi seluruh string respons mentah menjadi bentuk biner murni",
+        "Mendefinisikan antarmuka khusus dengan tipe kembalian generik penuh"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Anda mendapati bahwa fungsi pembacaan berkas konfigurasi aplikasi sering gagal karena file terkadang belum siap dibaca saat aplikasi dimulai. Anda diminta menulis kode yang aman menggunakan penanganan eksepsi. Mana pendekatan struktur kode yang paling tepat?",
+      "options": [
+        "Menggunakan blok try-catch-finally untuk memastikan penutupan resource file",
+        "Memeriksa keberadaan file dengan kondisi if-else lalu langsung membaca isinya",
+        "Mengabaikan potensi error karena sistem operasi akan otomatis memperbaikinya",
+        "Menjalankan proses pembacaan file di dalam fungsi sinkron tanpa pengaman"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat membuat kelas representasi data produk di aplikasi e-commerce, Anda ingin agar objek produk yang memiliki ID dan kategori sama dianggap identik saat dibandingkan dalam koleksi Set. Apa yang harus Anda override di dalam kelas tersebut?",
+      "options": [
+        "Operator kesamaan == dan juga getter properti hashCode secara bersamaan",
+        "Metode toString() bawaan untuk mengembalikan format JSON string produk",
+        "Fungsi konstruktor standar agar selalu mengembalikan instans yang sama",
+        "Metode clone() kustom untuk menduplikasi properti objek secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun modul caching untuk data profil pengguna di aplikasi mobile. Anda ingin menyimpan objek data ke dalam memori lokal tetapi mengizinkan nilainya menjadi null jika cache kadaluarsa. Fitur tipe data apa di Dart yang mendukung ini?",
+      "options": [
+        "Penerapan tipe data nullable dengan menambahkan tanda tanya pada deklarasi",
+        "Penggunaan kata kunci late untuk menunda inisialisasi variabel memori",
+        "Pemberian nilai default kosong pada setiap parameter fungsi pembacaan",
+        "Pemisahan kelas data menjadi dua bagian terpisah antara data dan status"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sebuah modul analitik penjualan, Anda memiliki daftar angka pendapatan bulanan bertipe List<int?>. Anda perlu menjumlahkan seluruh nilai tersebut, namun harus mengabaikan elemen yang bernilai null tanpa menyebabkan error runtime. Bagaimana cara menulis kode yang paling efisien?",
+      "options": [
+        "Menggunakan metode fold atau reduce dengan pengecekan kondisi nilai null",
+        "Melakukan perulangan for-in biasa dengan pernyataan kondisi if bernilai null",
+        "Mengonversi seluruh elemen null menjadi angka nol sebelum proses penjumlahan",
+        "Memanfaatkan operator cast eksplisit untuk memaksa nilai null menjadi int"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat fungsi pembantu untuk memformat nomor telepon pelanggan. Fungsi ini menerima argumen string yang bisa jadi bernilai null. Anda ingin mengembalikan string kosong jika argumen tersebut null, tanpa menulis blok if-else yang panjang. Operator apa yang paling tepat digunakan?",
+      "options": [
+        "Operator coalescing null (??) untuk menyediakan nilai alternatif pengganti",
+        "Operator cascade (..) untuk merangkai beberapa pemanggilan fungsi sekaligus",
+        "Operator spread (...) untuk menggabungkan koleksi data list secara aman",
+        "Operator conditional access (?.) untuk mengakses properti objek bernilai null"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda merancang fungsi untuk memproses daftar pesanan restoran. Anda ingin menyaring pesanan yang berstatus 'selesai' dan mengubahnya menjadi daftar nama menu saja dalam satu rangkaian operasi yang bersih. Pendekatan fungsional apa yang digunakan?",
+      "options": [
+        "Menggunakan kombinasi metode .where() dilanjutkan dengan metode .map()",
+        "Membuat kelas turunan baru yang mewarisi sifat dari objek daftar pesanan",
+        "Menulis perulangan bersarang manual dengan variabel penampung sementara",
+        "Memanfaatkan fungsi rekursif murni untuk menelusuri setiap elemen data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengembangan aplikasi manajemen tugas, Anda mendefinisikan sebuah kelas Task dengan beberapa properti wajib. Anda ingin memastikan bahwa setelah objek Task dibuat, nilai propertinya tidak dapat diubah kembali dari luar kelas. Kata kunci apa yang harus digunakan pada deklarasi properti tersebut?",
+      "options": [
+        "Menggunakan kata kunci final untuk menandai properti bersifat immutable",
+        "Menambahkan kata kunci static agar properti hanya milik tingkat kelas",
+        "Memakai kata kunci const untuk memaksa evaluasi pada waktu kompilasi",
+        "Mengatur akses properti menjadi privat dengan menambahkan garis bawah"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

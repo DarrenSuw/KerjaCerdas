@@ -81,6 +81,18 @@ async def lifespan(app: FastAPI):
     reconfigure(settings.effective_database_url)
     await init_db()
 
+    # Auto-seed from bundled JSON banks (backend/seeds/quiz_banks/).
+    # Runs once per startup; skips any skill that already has questions.
+    # Never blocks startup — logged warnings only.
+    from backend.seeds.loader import seed_from_json_banks
+
+    try:
+        _seeded = await seed_from_json_banks()
+        if _seeded:
+            logger.info("[SeedLoader] Seeded %d skills from JSON banks on startup.", _seeded)
+    except Exception as exc:  # noqa: BLE001 — never block startup
+        logger.warning("JSON bank seed skipped: %s", exc)
+
     # Starter skill-quiz bank (draft, pending HR review) — inserted once.
     from backend.app.services.quiz.service import seed_bank_if_empty
 

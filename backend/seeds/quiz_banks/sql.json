@@ -1,0 +1,306 @@
+{
+  "skill": "SQL",
+  "skill_key": "sql",
+  "questions": [
+    {
+      "question": "Query untuk mengambil semua kolom dari tabel orders…",
+      "options": [
+        "GET * FROM orders",
+        "SELECT * FROM orders",
+        "SHOW orders ALL",
+        "FETCH orders"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menampilkan pelanggan dari kota 'Bandung' saja…",
+      "options": [
+        "SELECT * FROM customers WHERE city = 'Bandung'",
+        "SELECT * FROM customers IF city = 'Bandung'",
+        "SELECT city = 'Bandung' FROM customers",
+        "FILTER customers BY 'Bandung'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Menghitung jumlah transaksi per kota…",
+      "options": [
+        "SELECT city, COUNT(*) FROM orders GROUP BY city",
+        "SELECT COUNT(city) FROM orders",
+        "SELECT city FROM orders ORDER BY COUNT",
+        "SELECT SUM(city) FROM orders"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Mengurutkan produk dari harga termahal…",
+      "options": [
+        "ORDER BY price ASC",
+        "ORDER BY price DESC",
+        "SORT price HIGH",
+        "GROUP BY price"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menggabungkan tabel orders dan customers berdasarkan customer_id memakai…",
+      "options": [
+        "UNION",
+        "JOIN ... ON orders.customer_id = customers.id",
+        "MERGE ALL",
+        "CONCAT"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Filter hasil agregasi (misal kota dengan > 100 transaksi) memakai…",
+      "options": [
+        "WHERE COUNT(*) > 100",
+        "HAVING COUNT(*) > 100",
+        "LIMIT 100",
+        "ORDER BY 100"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim analis e-commerce meminta Anda menarik daftar pelanggan di database PostgreSQL yang belum pernah sama sekali melakukan transaksi dalam 6 bulan terakhir. Tabel yang tersedia adalah customers (customer_id) dan orders (order_id, customer_id, order_date). Query mana yang paling efisien dan tepat?",
+      "options": [
+        "SELECT * FROM customers WHERE customer_id NOT IN (SELECT customer_id FROM orders WHERE order_date >= NOW() - INTERVAL '6 months')",
+        "SELECT c.* FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_date < NOW() - INTERVAL '6 months'",
+        "SELECT * FROM customers EXCEPT SELECT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_date >= NOW() - INTERVAL '6 months'",
+        "SELECT * FROM customers WHERE NOT EXISTS (SELECT 1 FROM orders WHERE orders.customer_id = customers.customer_id AND order_date >= NOW() - INTERVAL '6 months')"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda bekerja sebagai Data Engineer di sebuah bank digital. Anda harus memperbarui kolom status_akun menjadi 'INACTIVE' pada tabel nasabah untuk akun yang saldo-nya di bawah 50.000 dan tidak memiliki transaksi selama setahun terakhir. Bagaimana query UPDATE yang aman dengan klausa WHERE yang tepat?",
+      "options": [
+        "UPDATE nasabah SET status_akun = 'INACTIVE' WHERE saldo < 50000 AND nasabah_id NOT IN (SELECT nasabah_id FROM transaksi WHERE tanggal >= CURRENT_DATE - INTERVAL '1 year')",
+        "UPDATE nasabah SET status_akun = 'INACTIVE' FROM transaksi WHERE nasabah.saldo < 50000 AND transaksi.tanggal < CURRENT_DATE - INTERVAL '1 year'",
+        "UPDATE nasabah SET status_akun = 'INACTIVE' WHERE saldo < 50000 AND EXISTS (SELECT 1 FROM transaksi WHERE transaksi.nasabah_id = nasabah.nasabah_id AND tanggal < CURRENT_DATE - INTERVAL '1 year')",
+        "UPDATE nasabah SET status_akun = 'INACTIVE' JOIN transaksi ON nasabah.nasabah_id = transaksi.nasabah_id WHERE saldo < 50000 AND tanggal < CURRENT_DATE - INTERVAL '1 year'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen meminta laporan performa penjualan bulanan yang menampilkan total omzet bulan ini beserta total omzet bulan sebelumnya secara berdampingan dalam satu baris untuk setiap kategori produk. Fitur SQL apa yang paling tepat digunakan untuk menyusun laporan ini?",
+      "options": [
+        "Menggunakan fungsi agregasi SUM dengan klausa GROUP BY dan operator UNION ALL antar bulan",
+        "Memanfaatkan fungsi window LAG() atau memetakan hasil subquery menggunakan JOIN diri sendiri",
+        "Membuat tabel temporer untuk bulan ini lalu menggabungkannya dengan tabel temporer bulan lalu",
+        "Menggunakan klausa PIVOT untuk membalik baris tanggal transaksi menjadi kolom bulan berjalan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform fintech mengalami masalah performa pada query pencarian riwayat transaksi berdasarkan nomor rekening karena tabel transaksi memiliki jutaan baris. Solusi indeks apa yang paling tepat diterapkan pada tabel PostgreSQL agar query pencarian spesifik tersebut menjadi cepat?",
+      "options": [
+        "Membuat clustered index pada kolom tanggal_transaksi agar urut secara fisik di dalam penyimpanan",
+        "Membuat composite index pada kolom nomor_rekening dan tanggal_transaksi dengan urutan yang sesuai",
+        "Membuat bitmap index pada kolom nomor_rekening karena memiliki kardinalitas data yang sangat tinggi",
+        "Membuat full-text search index pada kolom nomor_rekening agar proses pencarian teks lebih optimal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis log aktivitas pengguna pada aplikasi logistik. Anda perlu mengidentifikasi pengguna yang melakukan login dari IP address yang berbeda dalam rentang waktu kurang dari 1 jam. Fungsi SQL apa yang paling diandalkan untuk mendeteksi selisih waktu antar baris log?",
+      "options": [
+        "Menggunakan fungsi window LEAD() atau LAG() bersama partisi berdasarkan user_id dan urutan waktu",
+        "Menggunakan fungsi agregasi GROUP_CONCAT atau STRING_AGG untuk menggabungkan daftar IP address",
+        "Menggunakan fungsi matematika ABS() dikurangi hasil kali timestamp awal dan timestamp akhir",
+        "Menggunakan fungsi conditional CASE WHEN untuk membandingkan nilai baris pertama dan terakhir"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam sistem inventaris gudang, Anda memiliki tabel mutasi_stok yang berisi catatan keluar-masuk barang setiap hari. Anda ingin menampilkan sisa stok kumulatif dari waktu ke waktu untuk setiap jenis barang. Sintaks SQL manakah yang menghasilkan perhitungan running total secara akurat?",
+      "options": [
+        "SUM(jumlah) OVER (PARTITION BY barang_id ORDER BY tanggal ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)",
+        "SUM(jumlah) GROUP BY barang_id, tanggal WITH ROLLUP ORDER BY tanggal ASC",
+        "TOTAL(jumlah) RUNNING FROM mutasi_stok GROUP BY barang_id ORDER BY tanggal DESC",
+        "CUMULATIVE_SUM(jumlah) OVER (ORDER BY tanggal RANGE INTERVAL '1 month' PRECEDING)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah startup ride-hailing ingin memberikan penalti otomatis kepada pengemudi yang melakukan pembatalan order lebih dari 3 kali dalam sehari. Tabel pesanan memiliki kolom driver_id, status_pesanan, dan waktu_pesanan. Query mana yang tepat untuk menyaring daftar pengemudi tersebut?",
+      "options": [
+        "SELECT driver_id FROM pesanan WHERE status_pesanan = 'CANCELLED' HAVING COUNT(driver_id) > 3",
+        "SELECT driver_id, COUNT(*) FROM pesanan WHERE status_pesanan = 'CANCELLED' GROUP BY driver_id, CAST(waktu_pesanan AS DATE) HAVING COUNT(*) > 3",
+        "SELECT driver_id FROM pesanan GROUP BY driver_id WHERE status_pesanan = 'CANCELLED' AND COUNT(*) > 3",
+        "SELECT driver_id FROM pesanan WHERE status_pesanan = 'CANCELLED' GROUP BY driver_id WHERE COUNT(*) > 3"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim produk ingin melihat persentase kontribusi pendapatan dari setiap kategori produk terhadap total pendapatan keseluruhan perusahaan pada kuartal ini. Bagaimana Anda menulis query menggunakan teknik CTE (Common Table Expression) untuk mencapai hal ini?",
+      "options": [
+        "WITH Total AS (SELECT SUM(pendapatan) as total_All FROM penjualan) SELECT kategori, SUM(pendapatan) * 100.0 / (SELECT total_All FROM Total) FROM penjualan GROUP BY kategori",
+        "WITH Total(kategori, total) AS (SELECT kategori, SUM(pendapatan) FROM penjualan GROUP BY kategori) SELECT *, total * 100.0 / SUM(total) FROM Total",
+        "WITH PendapatanKategori AS (SELECT kategori, SUM(pendapatan) as sub_total FROM penjualan GROUP BY kategori) SELECT * FROM PendapatanKategori",
+        "WITH Recursive Hitung AS (SELECT kategori, pendapatan FROM penjualan) SELECT kategori, pendapatan FROM Hitung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang melakukan migrasi data dan mendapati tabel tujuan memiliki duplikasi data pada kolom email pelanggan. Anda diminta menghapus data duplikat tersebut dan hanya menyisakan satu baris dengan id terkecil untuk setiap email yang sama. Pendekatan query apa yang paling tepat?",
+      "options": [
+        "DELETE FROM pelanggan WHERE id NOT IN (SELECT MIN(id) FROM pelanggan GROUP BY email)",
+        "DELETE p1 FROM pelanggan p1 JOIN pelanggan p2 ON p1.email = p2.email WHERE p1.id > p2.id",
+        "DELETE FROM pelanggan WHERE id IN (SELECT id FROM (SELECT id, ROW_NUMBER() OVER(PARTITION BY email ORDER BY id) as rn FROM pelanggan) t WHERE rn > 1)",
+        "DROP TABLE pelanggan; CREATE TABLE pelanggan AS SELECT DISTINCT * FROM pelanggan;"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah portal berita online ingin menampilkan 3 artikel terpopuler di setiap kategori berdasarkan jumlah pembaca. Tabel artikel memiliki kolom id, kategori_id, judul, dan jumlah_pembaca. Klausa atau fungsi apa yang paling tepat untuk membatasi hasil per kategori?",
+      "options": [
+        "Menggunakan LIMIT 3 di akhir query utama setelah diurutkan berdasarkan jumlah_pembaca",
+        "Menggunakan fungsi window RANKit() atau ROW_NUMBER() yang dipartisi berdasarkan kategori_id dan diurutkan berdasarkan jumlah_pembaca secara menurun",
+        "Menggunakan klausa TOP 3 dengan pengelompokan GROUP BY kategori_id dan ORDER BY jumlah_pembaca DESC",
+        "Menggunakan subquery dengan operator IN dan klausa LIMIT 3 untuk setiap kategori secara terpisah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola database sistem HR yang mencatat kehadiran harian karyawan. Tim HR meminta laporan untuk mendeteksi anomali: karyawan yang hadir masuk (check-in) lebih dari sekali pada hari yang sama. Tabel absensi bernama `log_kehadiran` dengan kolom `id_karyawan` dan `waktu_masuk`. Query SQL mana yang paling tepat untuk kebutuhan ini?",
+      "options": [
+        "SELECT id_karyawan, COUNT(*) FROM log_kehadiran GROUP BY id_karyawan HAVING COUNT(waktu_masuk) > 1",
+        "SELECT id_karyawan, CAST(waktu_masuk AS DATE) FROM log_kehadiran GROUP BY id_karyawan HAVING COUNT(*) > 1",
+        "SELECT id_karyawan, CAST(waktu_masuk AS DATE) FROM log_kehadiran GROUP BY id_karyawan, CAST(waktu_masuk AS DATE) HAVING COUNT(*) > 1",
+        "SELECT id_karyawan, waktu_masuk FROM log_kehadiran WHERE COUNT(id_karyawan) > 1 GROUP BY id_karyawan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda bekerja di perusahaan logistik dan diminta menyiapkan data untuk model machine learning prediksi churn. Anda harus menampilkan riwayat pengiriman terakhir dari setiap pelanggan berdasarkan tabel `pengiriman` yang memiliki kolom `id_pelanggan`, `id_resi`, dan `tanggal_kirim`. Fitur SQL apa yang paling tepat digunakan untuk mendapatkan baris data terakhir per pelanggan?",
+      "options": [
+        "Menggunakan fungsi agregasi MAX(tanggal_kirim) dengan klausa GROUP BY id_pelanggan tanpa menyertakan kolom id_resi",
+        "Menggunakan fungsi window ROW_NUMBER() OVER (PARTITION BY id_pelanggan ORDER BY tanggal_kirim DESC) di dalam subquery",
+        "Menggunakan fungsi string_agg(id_resi, ', ') dengan klausa ORDER BY tanggal_kirim DESC untuk menggabungkan semua resi",
+        "Menggunakan fungsi LEAD(tanggal_kirim) OVER (PARTITION BY id_pelanggan ORDER BY tanggal_kirim ASC) untuk menarik baris akhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sistem manajemen inventaris gudang, Anda memiliki tabel `pergerakan_stok` dengan kolom `id_barang`, `tanggal`, dan `jumlah_masuk`. Anda diminta membuat laporan kumulatif (running total) untuk melihat akumulasi stok masuk dari hari ke hari bagi barang dengan `id_barang` = 101. Fungsi window apa yang paling tepat digunakan?",
+      "options": [
+        "SUM(jumlah_masuk) OVER (PARTITION BY id_barang ORDER BY tanggal ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)",
+        "TOTAL(jumlah_masuk) OVER (ORDER BY tanggal DESC RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)",
+        "RUNNING_SUM(jumlah_masuk) OVER (PARTITION BY tanggal ORDER BY id_barang ASC)",
+        "CUM_SUM(jumlah_masuk) OVER (ORDER BY tanggal ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim marketing ingin menjalankan kampanye promosi khusus ulang tahun untuk pelanggan yang lahir pada bulan ini (Oktober). Tabel `pelanggan` memiliki kolom `tanggal_lahir` dengan tipe data `DATE`. Mengingat fungsi ekstraksi bulan berbeda antar database, query mana yang paling aman secara portabilitas dan efisien menggunakan indeks?",
+      "options": [
+        "SELECT * FROM pelanggan WHERE EXTRACT(MONTH FROM tanggal_lahir) = 10",
+        "SELECT * FROM pelanggan WHERE MONTH(tanggal_lahir) = 10",
+        "SELECT * FROM pelanggan WHERE tanggal_lahir >= '2023-10-01' AND tanggal_lahir <= '2023-10-31'",
+        "SELECT * FROM pelanggan WHERE TO_CHAR(tanggal_lahir, 'MM') = '10'"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang mendesain query untuk fitur pencarian produk pada e-commerce lokal. Pengguna dapat mencari berdasarkan kata kunci bebas yang mencocokkan kolom `nama_produk` atau `deskripsi`. Untuk mengakomodasi pencarian parsial (misal mengetik 'sepatu' mencocokkan 'sepatu lari pria'), operator SQL apa yang harus dikombinasikan dengan klausa WHERE?",
+      "options": [
+        "Menggunakan operator LIKE '%sepatu%' dengan tambahan fungsi LOWER() untuk mengabaikan perbedaan huruf besar-kecil",
+        "Menggunakan operator MATCH(nama_produk, deskripsi) AGAINST ('sepatu' IN BOOLEAN MODE)",
+        "Menggunakan operator REGEXP_CONTAINS(nama_produk || deskripsi, 'sepatu')",
+        "Menggunakan operator IN ('sepatu') dengan klausa wildcard pada sisi kiri kolom tabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah platform streaming musik mencatat riwayat putar lagu dalam tabel `riwayat_putar` dengan kolom `id_pengguna`, `id_lagu`, dan `waktu_putar`. Tim analitik ingin mengidentifikasi 'power users': pengguna yang mendengarkan lagu secara konsisten selama 3 hari berturut-turut atau lebih. Teknik query SQL apa yang paling tepat untuk mendeteksi pola beruntun (consecutive days) ini?",
+      "options": [
+        "Menggunakan teknik 'Gaps and Islands' dengan mengurangkan nomor urut baris (ROW_NUMBER) dari tanggal unik pengguna",
+        "Menggunakan fungsi LEAD() untuk menghitung selisih waktu antar putar lagu lalu difilter kurang dari 24 jam",
+        "Menggunakan klausa HAVING COUNT(DISTINCT DATE(waktu_putar)) >= 3 tanpa memperhatikan urutan hari",
+        "Menggunakan self-join sebanyak 3 kali pada tabel yang sama dengan kondisi tanggal ditambah 1 hari secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda melakukan audit performa database PostgreSQL pada tabel `transaksi_penjualan` yang memiliki jutaan baris. Query untuk laporan bulanan berjalan sangat lambat. Setelah diperiksa dengan EXPLAIN ANALYZE, terjadi *Sequential Scan* pada kolom tanggal. Langkah perbaikan manakah yang paling tepat untuk mengoptimalkan performa query tersebut?",
+      "options": [
+        "Membuat B-tree index pada kolom tanggal transaksi dan memastikan statistik tabel diperbarui dengan perintah ANALYZE",
+        "Mengubah tipe data kolom tanggal dari TIMESTAMP menjadi VARCHAR agar proses perbandingan teks berjalan lebih cepat",
+        "Menghapus semua batasan (constraints) dan kunci asing (foreign keys) pada tabel transaksi_penjualan",
+        "Menjalankan perintah VACUUM FULL secara berkala setiap kali query laporan bulanan akan dieksekusi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim operasional membutuhkan daftar nama kasir yang mencatatkan total transaksi lebih dari 100 juta rupiah selama bulan lalu, diambil dari tabel `transaksi` dan `karyawan`. Klausa SQL mana yang paling tepat untuk memfilter hasil agregasi nilai total tersebut?",
+      "options": [
+        "WHERE SUM(jumlah_transaksi) > 100000000",
+        "HAVING SUM(jumlah_transaksi) > 100000000",
+        "FILTER SUM(jumlah_transaksi) > 100000000",
+        "CHECK SUM(jumlah_transaksi) > 100000000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta untuk menggabungkan data dari tabel `cabang_jakarta` dan `cabang_surabaya` yang memiliki struktur kolom yang persis sama ke dalam satu laporan tanpa membuang baris data yang duplikat. Operator himpunan apa yang harus Anda gunakan?",
+      "options": [
+        "UNION ALL untuk menggabungkan seluruh baris",
+        "UNION DISTINCT untuk menyaring baris unik",
+        "INTERSECT untuk mencocokkan data kembar",
+        "EXCEPT untuk mengambil selisih data tabel"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam database HR, Anda perlu menampilkan daftar seluruh karyawan beserta nama departemen tempat mereka bekerja. Beberapa departemen baru belum memiliki karyawan, namun Anda tetap ingin menampilkan departemen tersebut dengan nilai NULL pada kolom karyawan. Jenis *join* apa yang tepat?",
+      "options": [
+        "INNER JOIN pada tabel karyawan dan departemen",
+        "LEFT JOIN dengan tabel departemen sebagai acuan",
+        "RIGHT JOIN dengan tabel departemen sebagai acuan",
+        "CROSS JOIN untuk mengalikan seluruh baris data"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tabel `riwayat_gaji` mencatat perubahan gaji karyawan dari waktu ke waktu. Anda diminta menampilkan gaji saat ini dan gaji tepat pada periode sebelumnya untuk setiap karyawan dalam satu baris laporan. Fitur SQL apa yang paling efisien digunakan?",
+      "options": [
+        "Fungsi agregasi MAX dan MIN dengan GROUP BY",
+        "Self-join manual menggunakan kondisi tanggal",
+        "Subquery bersarang dengan operator IN dan NOT",
+        "Fungsi window LAG() dan LEAD() dengan PARTITION"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Tim finance menemukan bahwa nilai transaksi pada kolom `total_harga` di tabel `faktur` tersimpan sebagai tipe data teks (VARCHAR) karena kesalahan impor data. Anda perlu menjumlahkan seluruh nilai tersebut dalam query. Cara terbaik untuk menanganinya adalah:",
+      "options": [
+        "Langsung menjumlahkan kolom karena otomatis dikonversi",
+        "Melakukan fungsi CAST atau operator konversi ke tipe numerik",
+        "Mengubah struktur tabel permanen memakai perintah DROP COLUMN",
+        "Menggunakan fungsi STRING_AGG() untuk menggabungkan nominal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin memperbarui alamat email pelanggan di tabel `pelanggan` berdasarkan ID tertentu, namun Anda ingin memastikan bahwa perubahan dibatalkan jika terjadi kesalahan sintaks atau logika pada transaksi berikutnya. Pendekatan apa yang harus diterapkan?",
+      "options": [
+        "Menjalankan perintah COMMIT di awal sebelum UPDATE",
+        "Menggunakan blok transaksi eksplisit dengan BEGIN dan ROLLBACK",
+        "Membuat tabel backup fisik sebelum menjalankan perintah SQL",
+        "Menonaktifkan batasan foreign key pada database relasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi e-commerce mencatat data keranjang belanja dalam format JSON di dalam satu kolom tabel `sesi_pengguna`. Anda perlu mengekstrak nilai kunci `product_id` dari data JSON tersebut untuk dianalisis. Fungsi bawaan PostgreSQL apa yang lazim digunakan?",
+      "options": [
+        "Menggunakan operator ekstraksi teks JSON -> atau ->>",
+        "Menggunakan fungsi string substring dan posisi karakter",
+        "Melakukan konversi tabel secara total menjadi format CSV",
+        "Membuat fungsi stored procedure kustom dengan bahasa Java"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Google Sheets (Advanced)",
+  "skill_key": "google sheets (advanced)",
+  "questions": [
+    {
+      "question": "Anda memiliki tabel data penjualan bulanan di Google Sheets. Atasan meminta Anda menampilkan total penjualan hanya untuk kategori 'Elektronik' di wilayah 'Jakarta'. Formula apa yang paling efisien untuk kebutuhan ini tanpa mengubah struktur tabel?",
+      "options": [
+        "SUMIF(B2:B100, \"Elektronik\", D2:D100)",
+        "SUMIFS(D2:D100, B2:B100, \"Elektronik\", C2:C100, \"Jakarta\")",
+        "SUM(FILTER(D2:D100, B2:B100=\"Elektronik\" + C2:C100=\"Jakarta\"))",
+        "SUMPRODUCT((B2:B100=\"Elektronik\") * (C2:C100=\"Jakarta\") * D2:D100)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di bagian HR, Anda diminta mencari nama karyawan berdasarkan ID Karyawan yang posisinya berada di kolom sebelah kiri dari kolom nama pada tabel database. Fungsi pencarian apa yang paling tepat digunakan?",
+      "options": [
+        "VLOOKUP dengan indeks kolom negatif",
+        "INDEX dan MATCH secara berpasangan",
+        "HLOOKUP dengan rentang data vertikal",
+        "LOOKUP dengan kunci pencarian ganda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah laporan operasional harian menunjukkan banyak baris kosong secara acak akibat kesalahan sistem unduh data. Anda ingin merapikan tabel dengan menyaring dan menampilkan baris yang tidak kosong saja secara dinamis ke sheet lain. Fungsi apa yang harus dipakai?",
+      "options": [
+        "UNIQUE untuk membuang baris duplikat",
+        "SORT untuk mengurutkan data dari bawah",
+        "FILTER untuk mengecualikan sel kosong",
+        "QUERY dengan klausa ORDER BY kosong"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim finance sering salah memasukkan format tanggal (campuran DD/MM/YYYY dan MM/DD/YYYY) dari berbagai cabang. Anda ingin membuat aturan input agar sel hanya bisa menerima tanggal yang valid dan memunculkan peringatan jika salah. Fitur apa yang digunakan?",
+      "options": [
+        "Data validation dengan kriteria is valid date",
+        "Conditional formatting dengan aturan custom formula",
+        "Protected ranges dengan peringatan edit sel",
+        "Named ranges untuk membatasi rentang input"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang menganalisis data log akses karyawan. Kolom timestamp berisi format 'DD/MM/YYYY HH:MM:SS'. Anda hanya ingin menghitung jumlah akses yang terjadi pada tahun 2023 saja menggunakan fungsi COUNTIFS. Bagaimana cara menyusun kriteria tahunnya?",
+      "options": [
+        "Menggunakan operator pembanding \">=2023-01-01\" dan \"<=2023-12-31\"",
+        "Membuat kolom bantu dengan fungsi YEAR lalu dihitung",
+        "Menggunakan kriteria teks persis sama dengan \"2023\"",
+        "Memakai fungsi TODAY() dikurangi 365 hari"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat dashboard performa sales menggunakan Google Sheets. Anda ingin membuat dropdown filter 'Nama Cabang' yang sumber pilihannya diambil secara otomatis dari kolom data master, dan secara otomatis membuang nama cabang yang duplikat. Fungsi apa yang tepat?",
+      "options": [
+        "TRANSPOSE digabung dengan SORT",
+        "UNIQUE digabung dengan FLATTEN",
+        "ARRAYFORMULA dengan fungsi COUNT",
+        "QUERY dengan klausa GROUP BY"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah file laporan keuangan perusahaan berukuran besar berjalan sangat lambat karena terlalu banyak menggunakan formula volatile seperti INDIRECT dan OFFSET. Langkah optimasi tingkat lanjut apa yang sebaiknya Anda ambil?",
+      "options": [
+        "Mengganti seluruh formula dengan fitur Pivot Table",
+        "Memecah spreadsheet menjadi beberapa file terpisah",
+        "Mengubah fungsi volatile menjadi INDEX atau XLOOKUP",
+        "Menonaktifkan kalkulasi otomatis di pengaturan file"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta membuat rekapitulasi gaji karyawan berdasarkan Jabatan dan Status PTKP secara bersamaan dalam bentuk matriks dua arah (baris dan kolom). Fungsi lookup apa yang paling ringkas dan modern untuk skenario ini?",
+      "options": [
+        "VLOOKUP bertingkat dengan fungsi MATCH",
+        "XLOOKUP bersarang untuk dua kriteria sekaligus",
+        "HLOOKUP dikombinasikan dengan VLOOKUP",
+        "INDEX dengan dua fungsi MATCH di dalamnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan penjualan mingguan, terkadang muncul nilai error #N/A pada hasil rumus XLOOKUP karena data produk tidak ditemukan di database master. Agar laporan tetap terlihat profesional dan tidak merusak grafik, bagaimana cara menangani error tersebut?",
+      "options": [
+        "Membungkus rumus utama dengan fungsi IFERROR",
+        "Mengubah format sel menjadi teks biasa",
+        "Menambahkan kondisi IF di dalam rentang pencarian",
+        "Mematikan opsi tampilkan error di pengaturan lembar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat nomor urut otomatis pada kolom A yang hanya akan terisi angka jika ada teks di kolom B pada baris yang sama, dan formula ini harus diterapkan secara otomatis ke bawah tanpa perlu ditarik manual. Formula apa yang paling tepat?",
+      "options": [
+        "SEQUENCE(COUNTA(B2:B))",
+        "ARRAYFORMULA(IF(B2:B<>\"\", ROW(B2:B)-1, \"\"))",
+        "IF(B2<>\"\", ROW()-1, \"\") disalin ke bawah",
+        "MAP(B2:B, LAMBDA(x, IF(x<>\"\", 1, 0)))"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola data inventori gudang di Google Sheets. Kolom A berisi Kode Barang dan Kolom B berisi Nama Barang. Seringkali petugas gudang melakukan duplikasi entri data. Rumus apa yang paling tepat dimasukkan pada Conditional Formatting untuk menandai baris yang memiliki Kode Barang ganda?",
+      "options": [
+        "=COUNTIF($A:$A, A1) > 1",
+        "=ISDUPLICATE(A:A)",
+        "=UNIQUE(A:A) <> A1",
+        "=MATCH(A1, $A:$A, 0) <> ROW()"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Divisi HR ingin membatasi input pada kolom 'Status Karyawan' hanya boleh diisi dengan pilihan 'Tetap', 'Kontrak', atau 'Magang'. Fitur dan pengaturan apa yang harus Anda gunakan agar sel menolak input teks lain selain ketiga kata tersebut?",
+      "options": [
+        "Data Validation dengan kriteria Dropdown (from a range) yang merujuk ke sel berisi daftar status",
+        "Conditional Formatting dengan aturan Custom formula is untuk mewarnai teks yang salah",
+        "Data Validation dengan kriteria Dropdown (from a list of items) dan mencentang Reject input",
+        "Protected Sheets and ranges untuk mengunci sel agar tidak bisa diketik manual oleh staf"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima data transaksi e-commerce mentah di mana kolom 'Catatan Pembeli' berisi teks berantakan, dan Anda hanya ingin mengekstrak 5 karakter pertama dari kode unik yang selalu berada di awal teks tersebut untuk keperluan analisis cepat. Fungsi teks apa yang paling efektif?",
+      "options": [
+        "MID(A2, 1, 5)",
+        "LEFT(A2, 5)",
+        "SPLIT(A2, 5)",
+        "REGEXEXTRACT(A2, 5)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan keuangan konsolidasi, Anda sering menemukan sel kosong yang terbaca sebagai angka nol atau merusak grafik tren. Anda ingin mengganti semua nilai error #N/A pada tabel rentang A1:D100 menjadi teks 'Belum Ada Data' secara otomatis tanpa merusak rumus aslinya. Rumus apa yang harus digunakan?",
+      "options": [
+        "=IFERROR(VLOOKUP(...), 'Belum Ada Data')",
+        "=IF(ISNA(...), 'Belum Ada Data', VLOOKUP(...))",
+        "=COALESCE(VLOOKUP(...), 'Belum Ada Data')",
+        "=REPLACE(VLOOKUP(...), '#N/A', 'Belum Ada Data')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membuat laporan penjualan regional. Atasan meminta agar total penjualan per wilayah pada kolom F otomatis berubah warna menjadi hijau jika melebihi target dan merah jika di bawah target. Fitur mana yang paling tepat dan efisien untuk kebutuhan ini?",
+      "options": [
+        "Conditional Formatting dengan aturan Greater than dan Less than",
+        "Data Validation dengan aturan warna sel berbasis teks wilayah",
+        "Custom Formula menggunakan fungsi COLOR() di dalam sel",
+        "Pivot Table dengan pengaturan conditional style bawaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim marketing membuat Google Sheets kolaboratif untuk penjadwalan konten. Anda ingin memastikan bahwa kolom 'Link Konten' hanya boleh diisi dengan URL yang valid dan memunculkan peringatan jika format link salah, namun tetap membiarkan pengguna memasukkan data tersebut. Fitur apa yang harus diset?",
+      "options": [
+        "Data Validation dengan kriteria Is valid URL tanpa mencentang opsi Reject input",
+        "Data Protection dengan memberikan akses edit khusus pada admin marketing",
+        "Conditional Formatting dengan aturan teks mengandung 'http://'",
+        "Named Ranges untuk memvalidasi daftar domain yang diizinkan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menggabungkan daftar nama depan di kolom A dan nama belakang di kolom B menjadi satu nama lengkap di kolom C dengan spasi di antaranya, namun Anda ingin formula tersebut otomatis mengisi ke bawah tanpa perlu ditarik manual setiap ada baris baru. Fungsi apa yang paling tepat?",
+      "options": [
+        "=CONCATENATE(A2:A, ' ', B2:B)",
+        "=ARRAYFORMULA(A2:A & ' ' & B2:B)",
+        "=JOIN(' ', A2:A, B2:B)",
+        "=COMBINE(A2:A, B2:A)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah sheet inventori memiliki ratusan baris data produk. Anda ingin mencari tahu berapa banyak baris data yang kategori produknya bernilai 'Elektronik' dan stoknya di atas 50 unit. Rumus statistik apa yang paling tepat digunakan?",
+      "options": [
+        "=COUNTIF(A2:A100, 'Elektronik', B2:B100, '>50')",
+        "=COUNTIFS(A2:A100, 'Elektronik', B2:B100, '>50')",
+        "=SUMIF(A2:A100, 'Elektronik', B2:B100, '>50')",
+        "=DCOUNTA(A2:B100, 2, KriteriaRange)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengimpor data transaksi mentah dari sistem lain ke Google Sheets, dan setiap angka nominal memiliki spasi tersembunyi serta simbol 'Rp' di depannya sehingga tidak bisa dijumlahkan dengan SUM. Rumus apa yang paling cepat untuk membersihkan dan mengubahnya menjadi angka murni?",
+      "options": [
+        "=VALUE(SUBSTITUTE(SUBSTITUTE(A2, 'Rp', ''), ' ', ''))",
+        "=CLEAN(TRIM(A2))",
+        "=NUMBERVALUE(A2, 'Rp')",
+        "=REGEXREPLACE(A2, '[^0-9]', '')"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat rekapitulasi data penjualan regional di mana baris menampilkan kategori produk dan kolom menampilkan nama kota. Formula apa yang paling tepat untuk merangkum total penjualan berdasarkan dua kriteria tersebut secara dinamis?",
+      "options": [
+        "Menggunakan kombinasi fungsi SUM dan FILTER dengan dua kondisi operator logika.",
+        "Menggunakan fungsi SUMIFS dengan rentang kriteria baris dan kolom yang dikunci.",
+        "Menggunakan fungsi QUERY dengan klausa SELECT, WHERE, dan pivot data.",
+        "Menggunakan fungsi VLOOKUP bertingkat dengan bantuan kolom helper."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam laporan operasional, Anda memiliki kolom teks panjang yang berisi alamat pelanggan. Atasan meminta Anda mengekstrak hanya kode pos (5 digit angka terakhir) dari teks tersebut ke kolom baru. Formula mana yang paling efektif?",
+      "options": [
+        "Menggunakan fungsi REGEXEXTRACT dengan pola pencarian lima digit angka di akhir teks.",
+        "Menggunakan fungsi RIGHT untuk mengambil lima karakter dari sisi kanan sel alamat.",
+        "Menggunakan fungsi MID dengan bantuan fungsi LEN untuk menghitung titik potong.",
+        "Menggunakan fungsi SUBSTITUTE untuk menghapus semua karakter selain angka."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim logistik sering memasukkan kode barang secara manual yang sering kali memiliki kelebihan spasi di awal atau akhir teks, sehingga rumus pencarian data sering gagal. Fungsi apa yang dapat diterapkan pada kolom validasi untuk membersihkan masalah ini secara otomatis?",
+      "options": [
+        "Menggabungkan fungsi UPPER dan LOWER pada rentang sel data utama.",
+        "Menerapkan fungsi TRIM pada setiap data mentah sebelum dimasukkan ke rumus.",
+        "Menggunakan fungsi CLEAN untuk menghapus karakter non-printable pada sel.",
+        "Membuat aturan Data Validation kustom dengan fungsi EXACT."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola file rekapitulasi absensi yang diakses oleh 20 staf secara bersamaan. Beberapa staf sering tidak sengaja mengubah urutan baris acak saat melakukan sortir data mandiri. Fitur apa yang harus Anda gunakan agar pekerjaan mereka tidak mengganggu tampilan staf lain?",
+      "options": [
+        "Mengunci seluruh rentang sel kecuali bagian input absensi harian.",
+        "Membuat salinan sheet terpisah untuk setiap anggota tim yang bertugas.",
+        "Membuat Filter Views baru khusus untuk sesi kerja pribadi Anda.",
+        "Membatasi hak akses edit sheet menjadi mode komentar saja."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda menerima laporan keuangan dari cabang dalam bentuk file CSV eksternal yang diperbarui setiap hari melalui tautan web. Agar laporan utama di Google Sheets selalu terbarui tanpa perlu copy-paste manual, fungsi apa yang harus digunakan?",
+      "options": [
+        "Menggunakan fungsi IMPORTRANGE untuk menarik data dari file CSV tersebut.",
+        "Menggunakan fungsi IMPORTDATA untuk mengambil isi file teks atau CSV online.",
+        "Menggunakan fungsi QUERY dengan parameter URL eksternal langsung.",
+        "Menggunakan fitur Apps Script untuk mengunduh file secara berkala."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat tabel matriks target penjualan di mana kepala cabang dapat memasukkan persentase kenaikan di satu sel, dan seluruh tabel proyeksi di bawahnya otomatis memperbarui nilai secara persentase. Fitur apa yang paling tepat untuk simulasi ini?",
+      "options": [
+        "Menggunakan Conditional Formatting untuk menyoroti perubahan angka.",
+        "Membuat Data Validation berupa rentang angka persentase.",
+        "Memanfaatkan fitur Named Ranges untuk mempermudah pembacaan rumus.",
+        "Menggunakan fitur Data Table atau Goal Seek melalui menu analisis."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam lembar kerja inventori, Anda ingin baris data produk secara otomatis berubah warna menjadi merah jika stok kurang dari batas minimum dan tanggal kedaluwarsa sudah terlewati. Pengaturan Conditional Formatting apa yang paling tepat?",
+      "options": [
+        "Menggunakan aturan format kustom dengan rumus logika AND.",
+        "Menggunakan aturan warna berdasarkan gradasi skala warna.",
+        "Menggunakan aturan teks yang mengandung kondisi numerik ganda.",
+        "Menggunakan aturan sel kosong untuk mendeteksi data yang hilang."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memiliki data transaksi penjualan yang sangat besar (lebih dari 50.000 baris) dan sering membuat Google Sheets berjalan sangat lambat saat melakukan rekapitulasi bulanan. Pendekatan apa yang paling efisien untuk mengatasi masalah performa ini?",
+      "options": [
+        "Memindahkan seluruh data historis ke file spreadsheet yang terpisah.",
+        "Mengganti semua rumus kompleks dengan fungsi array tunggal seperti ARRAYFORMULA.",
+        "Menggunakan Google Sheets Pivot Table untuk meringkas data tanpa rumus bertumpuk.",
+        "Mengubah format semua kolom angka menjadi teks biasa."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin menyusun daftar nama karyawan secara unik dan otomatis terurut abjad dari sebuah kolom yang berisi nama-nama yang sering muncul berulang. Kombinasi fungsi apa yang paling tepat?",
+      "options": [
+        "Menggunakan fungsi UNIQUE yang dibungkus di dalam fungsi SORT.",
+        "Menggunakan fungsi FILTER yang dikombinasikan dengan fungsi COUNTIF.",
+        "Menggunakan fungsi TRANSPOSE yang dipadukan dengan fungsi UNIQUE.",
+        "Menggunakan fungsi ARRAYFORMULA dengan parameter SORTDESC."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda membuat laporan pengeluaran di mana atasan ingin melihat rincian biaya hanya dengan mencentang kotak (checkbox) pilihan kategori di samping tabel. Fitur dan fungsi apa yang paling tepat digunakan bersamaan?",
+      "options": [
+        "Fungsi IF bersarang untuk mendeteksi status centang pada setiap baris.",
+        "Fungsi FILTER yang merujuk pada status nilai TRUE atau FALSE dari checkbox.",
+        "Fungsi SUMIF dengan kriteria rentang sel yang berisi kotak centang.",
+        "Fungsi VLOOKUP untuk mencocokkan status centang dengan data master."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima data laporan penjualan dari berbagai cabang yang menggunakan format mata uang tidak seragam, sebagian berupa teks 'Rp 1.500.000', sebagian '1500000', dan beberapa memiliki nilai teks 'Kosong'. Anda ingin menjumlahkan seluruh nilai tersebut dengan aman tanpa menghasilkan error #VALUE!. Formula terbaik apa yang harus Anda gunakan?",
+      "options": [
+        "Menggunakan fungsi SUM dengan nested IF untuk mengabaikan teks",
+        "Menggunakan fungsi SUMPRODUCT dikali dengan fungsi VALUE",
+        "Menggunakan fungsi ARRAYFORMULA dan membersihkan teks dengan SUBSTITUTE",
+        "Menggunakan fungsi SUMIF dengan kriteria rentang angka positif"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

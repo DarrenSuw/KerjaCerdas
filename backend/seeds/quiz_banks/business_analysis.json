@@ -1,0 +1,306 @@
+{
+  "skill": "Business Analysis",
+  "skill_key": "business analysis",
+  "questions": [
+    {
+      "question": "Anda sedang menganalisis proses pengadaan barang di sebuah perusahaan manufaktur di Cikarang. Tim gudang mengeluhkan lambatnya persetujuan pembelian, namun manajer keuangan merasa proses sudah efisien. Apa langkah awal terbaik yang harus Anda ambil?",
+      "options": [
+        "Langsung membuat usulan otomatisasi sistem ERP agar persetujuan lebih cepat",
+        "Mengadakan wawancara terpisah dan memetakan alur proses aktual dari awal hingga akhir",
+        "Meminta bagian IT membuat aplikasi seluler untuk mempercepat tanda tangan digital",
+        "Mengikuti klaim manajer keuangan karena mereka memegang kendali anggaran perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup fintech di Jakarta berencana meluncurkan fitur dompet digital baru. Product Owner meminta Anda menulis dokumen Business Requirements Document (BRD). Bagian mana yang paling krusial untuk mencegah terjadinya pembengkakan ruang lingkup (scope creep) di kemudian hari?",
+      "options": [
+        "Menetapkan batasan proyek yang jelas serta daftar fitur yang tidak termasuk dalam fase ini",
+        "Memasukkan seluruh ide kreatif dari tim pemasaran agar aplikasi terlihat sangat menarik",
+        "Menyerahkan desain antarmuka pengguna secara mendetail tanpa melibatkan tim pengembang",
+        "Menuliskan proyeksi keuntungan finansial secara rinci untuk meyakinkan para pemegang saham"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan sesi elicitation (pengumpulan kebutuhan) dengan tim operasional logistik, dua kepala bagian memberikan proses penanganan retur barang yang saling bertentangan. Bagaimana cara Anda mengatasi konflik ini sebagai Business Analyst?",
+      "options": [
+        "Mengikuti prosedur dari kepala bagian yang masa kerjanya lebih lama di perusahaan",
+        "Membuat dua alur sistem berbeda untuk mengakomodasi kedua cara kerja tersebut",
+        "Mengadakan workshop bersama untuk memvalidasi regulasi perusahaan dan menyepakati satu proses baku",
+        "Memutuskan alur proses sendiri berdasarkan pengalaman Anda di proyek logistik sebelumnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati sistem Point of Sale (POS) baru yang diterapkan di jaringan retail minimarket sering mengalami antrean saat jam sibuk karena proses validasi diskon manual yang lama. Teknik analisis apa yang paling tepat untuk mendiagnosis akar masalah ini?",
+      "options": [
+        "Melakukan analisis regresi linier terhadap data penjualan bulanan masa lalu",
+        "Menggunakan diagram Tulang Ikan (Fishbone Diagram) bersama para kasir dan supervisor toko",
+        "Menyebarkan kuesioner kepuasan pelanggan secara online kepada seluruh pembeli",
+        "Membandingkan fitur POS lokal dengan sistem yang digunakan oleh kompetitor global"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek transformasi digital sistem HRIS di sebuah perusahaan multinasional, Anda diminta menyusun matriks RACI. Peran 'Accountable' dalam matriks tersebut sebaiknya diberikan kepada siapa?",
+      "options": [
+        "Tim konsultan eksternal yang bertugas menulis kode program aplikasi HRIS",
+        "Karyawan biasa yang akan menggunakan sistem baru untuk mengajukan cuti",
+        "Project Manager atau Sponsor yang memiliki wewenang penuh dan tanggung jawab akhir",
+        "Staf administrasi HR yang menginput data awal karyawan ke dalam sistem"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah bank swasta ingin memperbarui aplikasi mobile banking. Anda diminta memprioritaskan kebutuhan fitur menggunakan teknik MoSCoW. Fitur transfer antar bank secara instan masuk ke kategori mana?",
+      "options": [
+        "Must have, karena merupakan layanan esensial yang sudah menjadi standar industri",
+        "Should have, karena bisa ditunda hingga peluncuran versi pembaruan berikutnya",
+        "Could have, jika tim pengembang memiliki sisa waktu setelah fitur utama selesai",
+        "Won't have, sebab fitur tersebut tidak memberikan keuntungan finansial langsung"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memodelkan proses bisnis menggunakan BPMN untuk alur klaim asuransi kesehatan. Simbol 'Gateway' berbentuk berlian (diamond) dengan tanda 'X' di dalamnya digunakan untuk merepresentasikan apa?",
+      "options": [
+        "Percabangan paralel di mana beberapa aktivitas dapat dikerjakan secara serentak",
+        "Titik penggabungan data dari berbagai sumber database perusahaan asuransi",
+        "Gerbang eksklusif (exclusive gateway) di mana hanya satu jalur yang dapat dipilih berdasarkan kondisi",
+        "Perulangan proses (loop) jika dokumen klaim dari nasabah dinyatakan tidak lengkap"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen puncak meminta laporan analisis dampak perubahan (Change Impact Analysis) karena adanya regulasi perpajakan baru yang harus diintegrasikan ke sistem e-commerce perusahaan. Aspek apa yang paling utama untuk dianalisis?",
+      "options": [
+        "Jumlah baris kode program baru yang harus ditulis oleh tim pengembang perangkat lunak",
+        "Perubahan proses operasional, pelatihan staf, serta penyesuaian modul perhitungan harga pada sistem",
+        "Desain logo baru pada antarmuka situs web agar sesuai dengan aturan pajak pemerintah",
+        "Estimasi bonus tahunan bagi tim manajemen proyek yang berhasil menyelesaikan integrasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Setelah sistem ERP baru diterapkan di pabrik tekstil, tingkat adopsi pengguna (user adoption) sangat rendah karena karyawan lini produksi merasa aplikasi terlalu rumit. Sebagai Business Analyst, tindakan perbaikan apa yang harus Anda prioritaskan?",
+      "options": [
+        "Memberikan sanksi tegas kepada karyawan yang masih mencatat data secara manual",
+        "Membatalkan sistem ERP tersebut dan kembali sepenuhnya menggunakan cara konvensional",
+        "Mengadakan sesi pelatihan ulang yang disesuaikan dengan peran kerja serta menyederhanakan panduan",
+        "Mengganti seluruh jajaran tim pengembang aplikasi dengan vendor pihak ketiga yang baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta memvalidasi kebutuhan fungsional untuk fitur pelacakan kurir pengiriman. Kriteria penerimaan (Acceptance Criteria) manakah yang paling baik dan dapat diuji (testable)?",
+      "options": [
+        "Sistem harus menampilkan peta pelacakan kurir yang sangat akurat dan mudah dipahami pengguna",
+        "Pengguna dapat melihat posisi terkini kurir pada peta dengan pembaruan lokasi otomatis setiap 10 detik",
+        "Fitur pelacakan pengiriman harus bekerja dengan baik di semua jenis perangkat seluler",
+        "Kurir dapat mengirimkan pembaruan status pengiriman tanpa mengalami kendala jaringan internet"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menganalisis penurunan konversi transaksi pada platform e-commerce lokal. Data menunjukkan lonjakan pengguna yang meninggalkan keranjang belanja (cart abandonment) pada halaman pengisian alamat pengiriman. Langkah pertama apa yang paling efektif untuk mengidentifikasi akar masalah?",
+      "options": [
+        "Mengubah seluruh desain halaman checkout dengan tampilan yang lebih modern dan minimalis",
+        "Melakukan analisis alur klik (clickstream analysis) dan sesi rekaman pengguna pada halaman tersebut",
+        "Langsung menambah opsi kurir logistik baru untuk mencakup seluruh wilayah pelosok Indonesia",
+        "Membuat kuesioner kepuasan pelanggan yang disebar secara acak melalui email promosi bulanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek integrasi sistem pembayaran QRIS untuk jaringan kafe nasional, manajer operasional meminta tombol konfirmasi pembayaran disembunyikan untuk mempercepat antrean, sementara tim keuangan menuntut bukti transaksi harus muncul di layar kasir. Bagaimana cara Anda menyelesaikan konflik kebutuhan ini?",
+      "options": [
+        "Mengikuti permintaan tim keuangan karena menyangkut pencatatan pendapatan perusahaan",
+        "Mengikuti permintaan manajer operasional agar kecepatan layanan pelanggan tidak terganggu",
+        "Memfasilitasi sesi diskusi dengan memetakan dampak risiko terhadap operasional dan finansial",
+        "Menyerahkan keputusan akhir sepenuhnya kepada tim pengembang perangkat lunak aplikasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik di Surabaya ingin menerapkan sistem manajemen armada berbasis IoT. Anda diminta membuat dokumen Business Requirements Document (BRD). Bagian mana yang paling krusial untuk memastikan keselarasan antara investasi teknologi dan tujuan bisnis?",
+      "options": [
+        "Spesifikasi teknis bahasa pemrograman yang akan digunakan oleh vendor pengembang",
+        "Daftar metrik keberhasilan bisnis seperti penurunan biaya bahan bakar dan waktu tempuh",
+        "Jadwal rinci cuti tahunan seluruh anggota tim pengembang perangkat lunak internal",
+        "Panduan instalasi perangkat keras GPS pada setiap unit kendaraan truk operasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mendokumentasikan proses bisnis penagihan piutang menggunakan notasi BPMN. Terdapat kondisi di mana jika faktur belum dibayar setelah 30 hari, sistem harus otomatis mengirim pengingat, namun jika ada komplain dari klien, proses harus diarahkan ke tim penanganan sengketa. Elemen BPMN apa yang tepat digunakan untuk menggambarkan kondisi tersebut?",
+      "options": [
+        "Exclusive Gateway untuk memecah alur berdasarkan kondisi status faktur atau komplain",
+        "Parallel Gateway untuk menjalankan proses pengiriman pengingat dan penanganan sengketa bersamaan",
+        "Data Object untuk menyimpan data faktur yang bermasalah di dalam database perusahaan",
+        "Intermediate Event untuk menunda proses penagihan hingga batas waktu 30 hari berakhir"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan FMCG merencanakan otomatisasi gudang. Anda melakukan analisis pemangku kepentingan (stakeholder analysis) dan menemukan bahwa Kepala Gudang senior menolak sistem karena khawatir perannya tergantikan. Strategi pengelolaan apa yang paling tepat untuk situasi ini?",
+      "options": [
+        "Mengabaikan kekhawatirannya dan langsung melaporkan penolakan tersebut kepada Direktur Operasional",
+        "Melibatkan beliau secara aktif dalam perancangan alur kerja baru dan memberikan sesi pelatihan khusus",
+        "Memindahkan tanggung jawab pengawasan gudang kepada staf junior yang lebih ramah teknologi",
+        "Mengurangi akses beliau terhadap informasi proyek agar tidak menghambat proses implementasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam penyusunan User Story untuk aplikasi Super App layanan transportasi, Anda menulis cerita: 'Sebagai penumpang, saya ingin melihat estimasi tarif sebelum memesan agar saya bisa menyiapkan uang'. Apa kekurangan utama dari penulisan User Story tersebut menurut prinsip INVEST?",
+      "options": [
+        "Cerita tersebut terlalu panjang dan sulit dipahami oleh pengembang perangkat lunak",
+        "Nilai bisnis bagi pengguna tidak terlihat jelas di dalam kalimat cerita tersebut",
+        "Kriteria penerimaan untuk menguji keakuratan tarif belum dijabarkan di dalamnya",
+        "Tidak ada kekurangan yang signifikan karena telah memenuhi struktur dasar yang standar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menganalisis kelayakan proyek pengembangan aplikasi internal untuk divisi HR. Berdasarkan estimasi, proyek memakan biaya Rp500 juta dengan proyeksi penghematan waktu operasional senilai Rp150 juta per tahun selama 4 tahun. Berapa perkiraan Payback Period proyek tersebut?",
+      "options": [
+        "Sekitar 2 tahun dan 5 bulan karena akumulasi manfaat melampaui biaya investasi",
+        "Tepat 3 tahun dan 4 bulan untuk menutup modal awal sebesar Rp500 juta",
+        "Kurang dari 1 tahun karena keuntungan bersih langsung diterima pada bulan pertama",
+        "Lebih dari 5 tahun karena tingkat pengembalian modal sangat lambat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform edukasi online mengalami lonjakan pendaftaran kursus, namun rasio penyelesaian kursus (completion rate) sangat rendah. Anda diminta melakukan Root Cause Analysis. Pendekatan mana yang paling tepat untuk menggali masalah ini?",
+      "options": [
+        "Menggunakan teknik 5 Whys dengan mewawancarai siswa yang berhenti di tengah modul",
+        "Langsung menambah jumlah pilihan metode pembayaran untuk menarik lebih banyak siswa baru",
+        "Menurunkan standar kualitas materi video pembelajaran agar lebih cepat diselesaikan",
+        "Mengubah struktur organisasi tim pemasaran digital untuk meningkatkan penjualan kursus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang memimpin sesi Product Backlog Grooming untuk sistem manajemen inventaris. Muncul perdebatan sengit mengenai apakah fitur laporan pajak harus dikerjakan sebelum fitur manajemen stok opname. Kriteria apa yang harus digunakan untuk menetapkan prioritas?",
+      "options": [
+        "Tingkat kesulitan teknis pengkodean yang paling rumit menurut tim programmer senior",
+        "Dampak kepatuhan hukum dan nilai bisnis mendesak bagi kelangsungan operasional",
+        "Preferensi pribadi dari Direktur Keuangan yang baru bergabung dengan perusahaan",
+        "Kecepatan penyelesaian fitur yang paling cepat dikerjakan oleh tim magang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah rumah sakit swasta merencanakan sistem pendaftaran pasien online. Anda diminta menyusun matriks Traceability Kebutuhan (Requirements Traceability Matrix). Apa fungsi utama dokumen ini dalam siklus hidup proyek tersebut?",
+      "options": [
+        "Memastikan setiap kebutuhan bisnis memiliki keteraitan dengan fitur desain dan hasil pengujian",
+        "Menghitung secara akurat jumlah anggaran biaya yang harus dibayarkan kepada vendor IT",
+        "Menentukan pembagian tugas harian secara rinci bagi setiap anggota tim pengembang",
+        "Mengatur jadwal cuti bersama bagi seluruh staf administrasi rumah sakit yang terlibat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda memimpin analisis kebutuhan untuk sistem manajemen gudang baru di Surabaya. Kepala bagian logistik menginginkan fitur pelacakan real-time, sementara bagian keuangan membatasi anggaran hanya untuk pencatatan inventaris bulanan. Apa langkah pertama yang paling efektif untuk menyelaraskan perbedaan ini?",
+      "options": [
+        "Mengadakan rapat mediasi untuk mendefinisikan kembali tujuan bisnis utama perusahaan",
+        "Membuat dokumen batasan proyek yang mengakomodasi kedua permintaan secara penuh",
+        "Memilih permintaan bagian keuangan karena anggaran adalah faktor paling kritis",
+        "Menyerahkan keputusan akhir kepada tim pengembang sistem agar objektif"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek integrasi sistem ERP di sebuah pabrik tekstil Bandung, Anda menemukan bahwa laporan keuangan bulanan yang dihasilkan sistem baru memakan waktu 3 hari, lebih lambat dari sistem lama yang manual (2 hari). Tindakan analisis apa yang harus Anda ambil?",
+      "options": [
+        "Mengubah spesifikasi sistem lama agar sesuai dengan standar laporan baru",
+        "Memetakan ulang alur data untuk mengidentifikasi hambatan proses (bottleneck)",
+        "Menyusun instruksi kerja tambahan bagi staf keuangan untuk mempercepat input",
+        "Meminta pengembang untuk menghapus modul laporan keuangan dari sistem ERP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform e-commerce fesyen di Jakarta ingin mengurangi tingkat pengembalian barang (retur). Data menunjukkan 40% retur disebabkan oleh ketidaksesuaian ukuran. Sebagai Business Analyst, bagaimana Anda merumuskan masalah ini ke dalam inisiatif solusi?",
+      "options": [
+        "Menambahkan sanksi denda bagi vendor yang salah mencantumkan ukuran produk",
+        "Menghapus fitur ulasan pelanggan karena sering memuat informasi yang membingungkan",
+        "Mengembangkan panduan ukuran interaktif dan tabel konversi detail pada halaman produk",
+        "Menutup layanan pengembalian barang untuk menekan kerugian operasional perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengevaluasi proses pengajuan klaim asuransi kesehatan korporat. Ditemukan bahwa 60% penolakan klaim terjadi karena dokumen pendukung tidak lengkap dari karyawan. Dokumen apa yang paling tepat Anda buat untuk mendokumentasikan akar masalah ini?",
+      "options": [
+        "Diagram Fishbone untuk mengidentifikasi faktor penyebab ketidaklengkapan berkas",
+        "Matriks RACI untuk memperjelas siapa yang bertanggung jawab memvalidasi klaim",
+        "Diagram Use Case untuk memetakan interaksi pengguna dengan portal klaim",
+        "Dokumen Business Case untuk menghitung potensi kerugian finansial perusahaan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi super-app transportasi lokal berencana meluncurkan fitur patungan ongkos kirim. Product Manager meminta Anda memvalidasi apakah fitur ini benar-benar dibutuhkan pasar sebelum pengembangan dimulai. Pendekatan analisis apa yang paling tepat?",
+      "options": [
+        "Menyusun dokumen spesifikasi teknis lengkap beserta arsitektur basis data",
+        "Melakukan wawancara mendalam dan survei kuantitatif kepada pengguna aktif",
+        "Langsung merilis fitur versi beta ke seluruh pengguna untuk melihat respons",
+        "Menghitung proyeksi ROI berdasarkan asumsi pertumbuhan pengguna tahun depan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek migrasi sistem perbankan digital, tim QA melaporkan bahwa fitur transfer antarbank sering mengalami timeout saat jam sibuk. Anda diminta menganalisis dampak risiko dari masalah ini. Manakah prioritas mitigasi yang paling rasional?",
+      "options": [
+        "Menutup layanan transfer antarbank secara permanen selama jam sibuk operasional",
+        "Membuat mekanisme antrean asinkron dan sistem pemberitahuan status transaksi",
+        "Menyurati Bank Indonesia untuk meminta penundaan batas waktu kliring transaksi",
+        "Mengganti seluruh vendor pihak ketiga penyedia jaringan switching dalam 24 jam"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun persyaratan fungsional untuk sistem absensi berbasis seluler di perusahaan ritel dengan ratusan cabang. Manajer HRD meminta sistem dapat mendeteksi lokasi palsu (fake GPS). Bagaimana Anda menuliskan kriteria penerimaan (acceptance criteria) untuk kebutuhan ini?",
+      "options": [
+        "Sistem harus aman dari segala jenis kecurangan yang dilakukan oleh karyawan",
+        "Karyawan dilarang menggunakan aplikasi pihak ketiga saat melakukan absensi",
+        "Sistem menolak pencatatan kehadiran jika terdeteksi penggunaan aplikasi tiruan lokasi",
+        "HRD akan memeriksa satu persatu foto selfie karyawan yang masuk setiap hari"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah jaringan rumah sakit swasta ingin mengintegrasikan rekam medis pasien antar cabang. Saat lokakarya (workshop) bersama dokter dan staf administrasi, muncul perdebatan sengit mengenai format penyimpanan data pasien yang sensitif. Peran apa yang harus Anda ambil sebagai Business Analyst?",
+      "options": [
+        "Memihak kelompok dokter karena mereka adalah pengguna utama sistem klinis",
+        "Memutuskan standar format data secara sepihak agar rapat cepat selesai",
+        "Memfasilitasi diskusi untuk mencari titik temu regulasi kesehatan dan efisiensi",
+        "Menunda proyek hingga ada instruksi tertulis langsung dari direktur utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan logistik muatan kapal di Tanjung Priok ingin mempercepat proses bongkar muat kontainer. Anda diminta menganalisis alur dokumen kepabeanan yang ada. Teknik pengumpulan kebutuhan mana yang paling efektif untuk menemukan hambatan tersembunyi di lapangan?",
+      "options": [
+        "Membaca ulang peraturan menteri perhubungan edisi terbaru di ruang kerja",
+        "Melakukan observasi langsung (shadowing) terhadap petugas pemeriksa di lapangan",
+        "Menyebarkan kuesioner online kepada seluruh sopir truk kontainer yang terdaftar",
+        "Mengadakan wawancara terstruktur dengan komisaris utama perusahaan pelayaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup EdTech merombak sistem manajemen pembelajarannya (LMS). Anda ditugaskan mengelola manajemen perubahan (change management) bagi para guru sekolah mitra yang gagap teknologi. Strategi pelatihan apa yang paling efektif untuk memastikan tingkat adopsi tinggi?",
+      "options": [
+        "Memberikan modul PDF setebal 200 halaman untuk dipelajari secara mandiri di rumah",
+        "Mengadakan sesi pelatihan interaktif bertahap disertai panduan video singkat berbasis skenario",
+        "Mewajibkan seluruh guru langsung menggunakan sistem baru tanpa ada pelatihan pendahuluan",
+        "Menyerahkan tanggung jawab pelatihan sepenuhnya kepada staf pemasaran perusahaan"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Google Cloud Platform",
+  "skill_key": "google cloud platform",
+  "questions": [
+    {
+      "question": "Sebuah startup e-commerce di Jakarta mengalami lonjakan traffic yang tidak terduga saat flash sale. Aplikasi backend berbasis Node.js yang berjalan di Compute Engine mengalami kelambatan ekstrem karena CPU utilization mencapai 100 persen. Langkah taktis apa yang paling tepat untuk mengatasi beban tinggi ini secara cepat tanpa mengubah kode aplikasi?",
+      "options": [
+        "Melakukan migrasi seluruh database ke Cloud SQL instance yang lebih besar",
+        "Membuat Instance Template dan mengonfigurasi Managed Instance Group dengan Auto-scaling",
+        "Mengubah tipe disk dari Standard Persistent Disk menjadi SSD pada instance utama",
+        "Menonaktifkan sementara layanan logging dan monitoring untuk menghemat sumber daya CPU"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim data engineering di perusahaan finansial perlu memproses data transaksi harian sebesar 500 GB dari Cloud Storage menggunakan Apache Spark. Mereka tidak ingin repot mengelola klaster Hadoop secara manual dan membutuhkan sistem yang langsung siap pakai serta efisien biaya. Layanan GCP mana yang paling sesuai?",
+      "options": [
+        "Menjalankan Apache Spark secara manual pada sekumpulan Compute Engine preemptible",
+        "Menggunakan Cloud Dataproc untuk mengelola klaster Spark dan Hadoop secara otomatis",
+        "Melakukan migrasi pipeline data secara total ke Google BigQuery tanpa Spark",
+        "Membuat container Docker berisi Spark dan mendeploy-nya langsung ke Cloud Run"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web perusahaan logistik memerlukan penyimpanan objek untuk jutaan foto bukti pengiriman. Data ini harus sering diakses (beberapa kali dalam sehari) selama 30 hari pertama, setelah itu sangat jarang diakses namun harus disimpan selama 5 tahun untuk keperluan audit. Strategi penyimpanan di Cloud Storage yang paling optimal adalah?",
+      "options": [
+        "Menyimpan seluruh foto di kelas penyimpanan Standard Bucket untuk kemudahan akses",
+        "Menggunakan kelas penyimpanan Nearline untuk 30 hari pertama lalu memindahkannya",
+        "Memanfaatkan Object Lifecycle Management untuk memindahkan data dari Standard ke Nearline lalu Coldline",
+        "Menghapus foto setelah 30 hari dan hanya menyimpan metadata di Cloud SQL"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan mengamankan koneksi antara on-premise data center perusahaan di Jakarta dengan Google Cloud Virtual Private Cloud (VPC) agar data sensitif nasabah tidak melewati internet publik. Solusi jaringan apa yang memenuhi standar keamanan enterprise dengan latensi rendah?",
+      "options": [
+        "Mengonfigurasi VPN Tunnel standar melalui jaringan internet publik dengan enkripsi IPsec",
+        "Membuat koneksi menggunakan layanan Dedicated Interconnect atau Partner Interconnect",
+        "Menggunakan Public IP dengan tambahan aturan Firewall rule yang sangat ketat",
+        "Memanfaatkan Identity-Aware Proxy untuk merutekan seluruh traffic database on-premise"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi internal HR berbasis microservices dideploy menggunakan Google Kubernetes Engine (GKE). Tim developer sering melakukan pembaruan kode dan melaporkan bahwa proses deployment sering gagal atau memakan waktu lama akibat masalah manajemen trafik. Strategi apa yang paling tepat diterapkan pada GKE?",
+      "options": [
+        "Mengganti GKE dengan Compute Engine agar konfigurasi jaringan lebih sederhana",
+        "Menerapkan strategi rolling update pada Deployment Kubernetes dan menggunakan Ingress controller",
+        "Menghapus seluruh pod lama secara manual sebelum melakukan kubectl apply yang baru",
+        "Meningkatkan ukuran node pool pada GKE agar kapasitas memori selalu berlebih"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim analitik perusahaan media ingin menjalankan query SQL ad-hoc pada dataset log klik pengguna berukuran 10 terabyte yang diperbarui setiap jam. Mereka membutuhkan hasil dalam hitungan detik tanpa perlu melakukan indeks tabel secara manual. Layanan GCP manakah yang paling tepat?",
+      "options": [
+        "Membuat instance PostgreSQL berukuran besar di Cloud SQL khusus untuk query analitik",
+        "Menggunakan Google BigQuery sebagai fully-managed enterprise data warehouse",
+        "Menyimpan data di Bigtable dan menulis aplikasi Java khusus untuk pencarian data",
+        "Menggunakan Cloud Spanner untuk menjamin konsistensi data log berskala besar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda menerapkan prinsip keamanan least privilege untuk akses GCP. Seorang konsultan eksternal hanya diizinkan melihat konfigurasi Cloud Monitoring dan membaca log di Cloud Logging pada sebuah project tertentu selama masa kontrak 2 minggu. Langkah konfigurasi IAM yang paling tepat adalah?",
+      "options": [
+        "Memberikan role Project Editor agar konsultan bisa melihat seluruh isi project dengan bebas",
+        "Memberikan predefined role Monitoring Viewer dan Logging Viewer pada level project",
+        "Memberikan Service Account Key dengan akses Owner yang dikirim melalui email perusahaan",
+        "Membuat Custom Role baru yang mencakup seluruh permission di seluruh GCP service"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi REST API berbasis Python Flask di-deploy ke Cloud Run. Aplikasi ini mendadak mengalami error 'Instance connection limit exceeded' karena tingginya jumlah koneksi bersamaan ke database Cloud SQL. Pendekatan arsitektur apa yang paling efektif untuk menyelesaikan masalah ini?",
+      "options": [
+        "Menurunkan batas maksimal instance Cloud Run agar trafik lebih terpusat",
+        "Mengintegrasikan Cloud SQL Proxy atau menggunakan Cloud SQL Auth Proxy sidecar",
+        "Meningkatkan kapasitas RAM pada instance Cloud Run tanpa mengubah konfigurasi database",
+        "Memindahkan database langsung ke persistent disk pada Compute Engine terdekat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati tagihan Google Cloud bulan ini membengkak secara drastis, dan setelah dicek, penyebabnya adalah banyak snapshot Persistent Disk lama yang tidak pernah dihapus serta instance Compute Engine dev yang dibiarkan menyala 24/7. Tindakan preventif jangka panjang apa yang harus segera diterapkan?",
+      "options": [
+        "Membuat skrip cronjob manual di setiap mesin untuk mematikan komputer setiap sore",
+        "Mengonfigurasi Cloud Billing Budgets and Alerts serta menetapkan kebijakan Resource Manager",
+        "Menghapus akses IAM seluruh tim developer agar tidak ada yang bisa membuat disk baru",
+        "Memindahkan seluruh beban kerja ke region lain yang menawarkan harga lebih murah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi web publik perusahaan Anda sering menjadi target serangan Distributed Denial of Service (DDoS) layer 7 dan bot berbahaya. Arsitektur jaringan GCP apa yang harus diterapkan di depan load balancer aplikasi untuk memitigasi serangan tersebut secara otomatis?",
+      "options": [
+        "Menambahkan aturan Cloud Firewall yang memblokir semua IP address dari luar negeri",
+        "Mengintegrasikan Google Cloud Armor untuk perlindungan DDoS dan Web Application Firewall",
+        "Mengubah skema jaringan dari HTTP(S) Load Balancer menjadi Network Load Balancer",
+        "Membuat instance Compute Engine terpisah yang berfungsi khusus sebagai packet filter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi mobile banking berjalan di Compute Engine dan membutuhkan akses aman ke Cloud SQL tanpa mengekspos database tersebut ke alamat IP publik internet. Bagaimana cara arsitek jaringan mengonfigurasi akses ini?",
+      "options": [
+        "Menggunakan Cloud SQL Auth Proxy pada instance Compute Engine untuk enkripsi dan autentikasi",
+        "Membuka firewall ingress port 3306 khusus untuk IP publik instance aplikasi",
+        "Membuat static route baru melalui VPC Network Peering ke internet gateway publik",
+        "Mengubah tipe koneksi Cloud SQL menjadi Public IP dengan whitelisting IP lokal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim machine learning ingin melatih model AI menggunakan Vertex AI dengan dataset sensitif berupa rekam medis pasien. Perusahaan mewajibkan agar data tersebut tidak dapat diakses oleh Google dan menggunakan kunci enkripsi milik sendiri. Fitur apa yang harus diterapkan?",
+      "options": [
+        "Customer-Managed Encryption Keys (CMEK) menggunakan Cloud KMS pada storage dataset",
+        "Mengaktifkan akses IAM publik dengan tambahan autentikasi token OAuth 2.0",
+        "Menggunakan default Google-managed encryption keys pada seluruh bucket penyimpanan",
+        "Menyimpan data secara lokal di on-premise dan menghubungkannya via VPN standar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan ritel memiliki banyak cabang di seluruh Indonesia yang perlu mengirimkan data log transaksi real-time secara asinkron ke sistem pusat di GCP untuk diproses. Layanan GCP manakah yang paling tepat digunakan sebagai pengumpul pesan (message broker)?",
+      "options": [
+        "Membuat database relasional baru di Cloud SQL untuk setiap cabang ritel",
+        "Menggunakan Cloud Pub/Sub sebagai penyangga pesan yang scalable dan decoupled",
+        "Menyimpan file log langsung ke Google Drive setiap kali transaksi terjadi",
+        "Membangun server Apache Kafka mandiri di atas instance Compute Engine biasa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berbasis Node.js yang berjalan di App Engine Standard Environment sering mengalami latensi tinggi saat melakukan query ke database Cloud SQL karena koneksi database dibuat baru pada setiap HTTP request yang masuk. Apa solusi terbaik untuk masalah ini?",
+      "options": [
+        "Meningkatkan spesifikasi CPU dan RAM pada instance App Engine secara manual",
+        "Memindahkan seluruh database ke local disk instance App Engine yang efisien",
+        "Menggunakan teknik connection pooling di dalam kode aplikasi atau Cloud SQL Proxy",
+        "Mengganti lingkungan deployment App Engine menjadi Flexible Environment"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan media ingin mengarsipkan video siaran masa lalu yang berukuran petabyte dan sangat jarang diakses (hanya sekali dalam beberapa tahun), namun harus memenuhi regulasi kepatuhan arsip jangka panjang dengan biaya terendah. Storage class mana yang harus dipilih?",
+      "options": [
+        "Cloud Storage Standard Storage class untuk performa baca yang paling cepat",
+        "Cloud Storage Nearline Storage class untuk data yang diakses setiap bulan",
+        "Cloud Storage Coldline Storage class untuk data cadangan triwulanan",
+        "Cloud Storage Archive Storage class untuk penyimpanan arsip berbiaya rendah"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendapati bahwa biaya pemakaian jaringan (network egress) dari region `asia-southeast2` (Jakarta) ke region lain di luar negeri melonjak sangat tinggi karena transfer data backup database. Langkah optimasi arsitektur apa yang paling efektif?",
+      "options": [
+        "Memindahkan proses backup database rutin ke dalam region GCP yang sama dengan tujuan",
+        "Mengaktifkan fitur kompresi pada tingkat sistem operasi tanpa mengubah arsitektur",
+        "Mengganti jenis disk persistent disk dari Standard ke SSD untuk mempercepat proses",
+        "Menonaktifkan sementara aturan firewall egress yang membatasi lalu lintas data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan fintech ingin melakukan migrasi database PostgreSQL on-premise berukuran 500GB ke Cloud SQL secara online dengan downtime seminimal mungkin bagi pengguna aplikasi. Layanan GCP apa yang paling tepat digunakan?",
+      "options": [
+        "Google Cloud Storage untuk mengunggah file SQL dump secara manual ke cloud",
+        "Database Migration Service (DMS) dengan konfigurasi replikasi berkelanjutan",
+        "Compute Engine mandiri yang diinstal database server baru lalu di-restore",
+        "BigQuery Data Transfer Service untuk migrasi data transaksional terstruktur"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps ingin memastikan bahwa setiap infrastruktur baru yang dibuat oleh developer di GCP harus mematuhi kebijakan perusahaan, seperti larangan membuat public IP pada instance Compute Engine. Tools apa yang paling tepat digunakan untuk menegakkan aturan ini secara otomatis?",
+      "options": [
+        "Google Cloud Monitoring untuk mendeteksi anomali penggunaan jaringan",
+        "Google Cloud Logging untuk mencatat setiap aktivitas pembuatan instance",
+        "Organization Policy Service untuk membatasi konfigurasi yang tidak diizinkan",
+        "Billing Budgets and Alerts untuk membatasi pengeluaran harian tim developer"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan logistik menjalankan aplikasi berbasis microservices di GKE. Mereka perlu mengumpulkan, menganalisis, dan memvisualisasikan metrik performa CPU serta memori dari seluruh pod secara terpusat. Komponen apa yang secara default menangani pengumpulan metrik ini di GCP?",
+      "options": [
+        "Cloud Logging untuk menganalisis teks error pada console aplikasi",
+        "Cloud Monitoring (sebelumnya Stackdriver) dengan managed service Prometheus",
+        "BigQuery untuk menyimpan seluruh metrik log mentah dalam bentuk tabel",
+        "Cloud Trace untuk melacak perjalanan request HTTP antar microservices"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online ingin melakukan migrasi sistem manajemen konten (CMS) lama mereka ke Compute Engine. Mereka memerlukan lingkungan yang dapat otomatis memulihkan diri (auto-healing) jika terjadi kegagalan sistem operasi atau aplikasi crash. Konfigurasi apa yang harus diterapkan?",
+      "options": [
+        "Membuat Managed Instance Group (MIG) dengan health check dan auto-healing",
+        "Menjalankan satu instance Compute Engine berukuran besar dengan fitur snapshot",
+        "Menggunakan App Engine flexible environment dengan konfigurasi scaling manual",
+        "Menyiapkan dua instance Compute Engine terpisah yang dihubungkan dengan DNS round-robin"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur ingin menghubungkan jaringan lokal pabrik mereka di Cikarang langsung ke VPC di Google Cloud Region Jakarta tanpa melewati internet publik untuk menjaga latensi tetap rendah. Layanan GCP manakah yang paling tepat digunakan?",
+      "options": [
+        "Mengonfigurasi VPN Tunnel standar melalui jaringan internet publik",
+        "Membuat koneksi Dedicated Interconnect atau Partner Interconnect",
+        "Mengaktifkan layanan VPC Network Peering langsung ke router pabrik",
+        "Memasang Public IP pada setiap perangkat mesin pabrik di lokasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang di perusahaan Anda merilis versi baru aplikasi web yang berjalan di GKE. Beberapa pengguna mulai melaporkan error 500 pada fitur tertentu. Anda diminta untuk mendeteksi akar masalah dengan cepat tanpa harus login ke setiap pod secara manual. Apa langkah paling efektif di GCP?",
+      "options": [
+        "Membuka Google Cloud Logging untuk memfilter log error dan Cloud Trace untuk melihat latensi request",
+        "Melakukan restart pada seluruh node cluster GKE untuk membersihkan cache memori yang korup",
+        "Menggunakan Cloud Monitoring untuk melihat penggunaan CPU dan RAM pada tingkat cluster secara global",
+        "Memeriksa file log sistem operasi pada instance Compute Engine yang mendasari node pool GKE"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan e-commerce Anda ingin membatasi akses ke Cloud Storage bucket yang berisi dokumen internal perusahaan agar hanya dapat diunduh oleh karyawan yang terhubung melalui jaringan kantor yang aman. Fitur keamanan apa yang paling tepat diterapkan?",
+      "options": [
+        "Mengaktifkan Uniform Bucket-Level Access dan menggunakan Signed URL untuk setiap file",
+        "Menerapkan aturan VPC Service Controls untuk mengamankan perimeter akses data sensitif",
+        "Mengatur IAM policy agar bucket hanya dapat diakses oleh akun service account tertentu saja",
+        "Menggunakan Customer-Managed Encryption Keys untuk mengenkripsi seluruh objek di bucket"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi pemrosesan dokumen berbasis Python dijalankan menggunakan Cloud Functions. Terkadang, fungsi tersebut gagal memproses dokumen besar karena kehabisan memori. Apa parameter konfigurasi yang harus Anda sesuaikan di Cloud Functions?",
+      "options": [
+        "Meningkatkan batas alokasi memori pada konfigurasi instance Cloud Functions",
+        "Menurunkan nilai timeout agar fungsi dapat dieksekusi ulang dengan lebih cepat",
+        "Mengubah runtime environment dari Python menjadi bahasa pemrograman yang lebih ringan",
+        "Menambahkan instance Cloud SQL baru untuk menyimpan sementara cache dokumen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola beberapa project GCP untuk lingkungan Development, Staging, dan Production. Perusahaan ingin memastikan bahwa semua resource yang dibuat harus berada di region `asia-southeast2` dan menggunakan jenis mesin tertentu untuk efisiensi biaya. Bagaimana cara menegakkan aturan ini secara otomatis?",
+      "options": [
+        "Membuat dokumentasi panduan manual yang wajib dibaca oleh setiap developer baru",
+        "Menggunakan Cloud Asset Inventory untuk memindai resource setiap akhir bulan",
+        "Menetapkan Organization Policy dengan batasan constraint yang sesuai pada level folder",
+        "Memasang alert berbasis Cloud Monitoring untuk mendeteksi resource di region lain"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah layanan API gateway di Compute Engine menerima traffic yang sangat fluktuatif. Anda ingin mendistribusikan beban secara otomatis ke beberapa backend instance dan memastikan ketersediaan tinggi lintas zona di region Jakarta. Komponen apa yang harus dikonfigurasi?",
+      "options": [
+        "Menggunakan Managed Instance Group dengan Auto-healing dan External HTTP(S) Load Balancer",
+        "Memasang satu instance Compute Engine berukuran sangat besar untuk menampung seluruh beban",
+        "Membuat static route manual di dalam VPC routing table untuk mengarahkan paket data",
+        "Mengonfigurasi Cloud CDN untuk melakukan caching pada seluruh payload data REST API"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim Data Science ingin menjadwalkan pekerjaan ETL harian yang mengambil data dari BigQuery, melakukan transformasi menggunakan script Python kustom, dan menyimpannya kembali. Layanan terkelola apa di GCP yang paling sesuai untuk orkestrasi alur kerja ini?",
+      "options": [
+        "Menjalankan script di dalam Compute Engine menggunakan crontab secara manual",
+        "Memanfaatkan layanan Cloud Composer yang berbasis Apache Airflow untuk orkestrasi",
+        "Menggunakan Cloud Functions yang dipicu oleh jadwal Pub/Sub setiap tengah malam",
+        "Membuat instance Cloud Dataproc untuk menjalankan perintah Spark SQL terjadwal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi mobile memerlukan otentikasi pengguna yang aman dengan dukungan login sosial seperti Google dan Apple, serta manajemen sesi yang mudah tanpa harus membangun sistem backend autentikasi dari nol. Layanan GCP manakah yang harus diintegrasikan?",
+      "options": [
+        "Menggunakan Identity-Aware Proxy untuk melindungi backend service secara langsung",
+        "Membangun database PostgreSQL kustom di Cloud SQL untuk menyimpan password hash",
+        "Mengimplementasikan Firebase Authentication pada aplikasi mobile klien",
+        "Memanfaatkan Google Workspace Directory API untuk verifikasi kredensial pengguna"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Perusahaan Anda memiliki kebijakan retensi data yang ketat di mana file log di Cloud Storage harus diubah menjadi format read-only yang tidak bisa dihapus atau dimodifikasi oleh siapa pun, bahkan oleh Administrator project, selama 5 tahun. Fitur apa yang harus diaktifkan pada bucket tersebut?",
+      "options": [
+        "Menggunakan fungsi Object Lifecycle Management dengan aturan delete otomatis",
+        "Menerapkan konfigurasi Bucket Policy Only dan Cloud KMS encryption keys",
+        "Mengaktifkan fitur Object Versioning untuk menyimpan setiap perubahan file",
+        "Menetapkan Cloud Storage Bucket Lock dengan kebijakan Retention Policy"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mendapati bahwa biaya pemakaian jaringan egress keluar dari Google Cloud ke internet sangat tinggi setiap bulannya. Analisis menunjukkan sebagian besar traffic berasal dari file statis yang diunduh oleh pengguna dari berbagai kota. Solusi paling efektif untuk mengoptimalkan biaya ini adalah:",
+      "options": [
+        "Memindahkan seluruh file statis dari Cloud Storage langsung ke server Compute Engine",
+        "Mengintegrasikan Cloud CDN di depan External HTTP(S) Load Balancer untuk caching konten",
+        "Mengubah tipe penyimpanan bucket dari Standard ke Archive Storage class",
+        "Membatasi akses pengguna luar negeri dengan memblokir IP address non-Indonesia"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

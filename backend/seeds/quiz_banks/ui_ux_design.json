@@ -1,0 +1,306 @@
+{
+  "skill": "UI/UX Design",
+  "skill_key": "ui/ux design",
+  "questions": [
+    {
+      "question": "Anda mendesain aplikasi e-commerce lokal dan data analitik menunjukkan lonjakan pengguna keluar (drop-off) pada halaman pembayaran (checkout) di mobile. Apa langkah pertama yang paling efektif untuk menginvestigasi masalah ini?",
+      "options": [
+        "Mengganti seluruh skema warna halaman pembayaran agar lebih menarik",
+        "Membuat ulang desain tombol CTA pembayaran dengan ukuran yang lebih besar",
+        "Menganalisis peta panas (heatmaps) dan rekaman sesi pengguna di halaman tersebut",
+        "Menghapus beberapa kolom formulir pengisian data agar halaman terlihat lebih ringkas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim produk meminta Anda menambahkan lima fitur baru ke halaman beranda aplikasi perbankan digital. Beranda saat ini sudah sangat padat informasi. Bagaimana Anda merespons permintaan ini?",
+      "options": [
+        "Menyusun ulang tata letak grid agar semua fitur baru muat di layar utama",
+        "Mengusulkan uji pengguna dengan prototipe untuk memvalidasi prioritas fitur",
+        "Membuat menu dropdown tersembunyi di sudut kanan atas untuk menampung fitur",
+        "Menolak permintaan tersebut dan mempertahankan desain beranda yang sekarang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan uji usabilitas (usability testing) untuk aplikasi logistik, pengguna lansia kesulitan membaca teks status pengiriman karena ukuran font terlalu kecil. Apa tindakan desain yang paling tepat?",
+      "options": [
+        "Menaikkan skala ukuran font global dan rasio kontras warna teks",
+        "Menyediakan tombol perbesar teks manual di setiap sudut kartu pesanan",
+        "Mengubah jenis huruf (font family) menjadi sans-serif yang lebih tipis",
+        "Mengganti seluruh teks status pengiriman dengan ikon bergambar grafis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda baru saja menyelesaikan sistem desain (design system) untuk aplikasi fintech. Pengembang (developer) mengeluhkan nama komponen yang Anda buat tidak konsisten dengan struktur kode. Apa yang harus Anda lakukan?",
+      "options": [
+        "Meminta tim developer menyesuaikan kode agar mengikuti nama di Figma",
+        "Mengabaikan keluhan tersebut karena penamaan desain adalah hak prerogatif desainer",
+        "Mengadakan sesi diskusi bersama untuk menyelaraskan token penamaan komponen",
+        "Membuat dokumentasi terpisah tanpa mengubah nama komponen yang sudah ada"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi super (super app) di Indonesia ingin meluncurkan fitur dompet digital baru. Manajer produk ingin proses pendaftaran meminta KTP, selfie, dan alamat lengkap di awal sebelum pengguna mencoba fitur. Apa saran UX yang tepat?",
+      "options": [
+        "Menerapkan pendekatan pendaftaran bertahap (progressive onboarding) sesuai kebutuhan",
+        "Membuat pop-up peringatan hukum yang panjang agar pengguna membacanya",
+        "Menghilangkan proses verifikasi KTP untuk mempercepat jumlah unduhan aplikasi",
+        "Memindahkan seluruh formulir verifikasi ke dalam menu pengaturan profil nanti"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mendesain fitur pencarian tiket kereta, Anda mendapati bahwa waktu tunggu (loading) pencarian memakan waktu hingga 4 detik karena latensi jaringan. Apa solusi desain terbaik untuk menjaga pengalaman pengguna?",
+      "options": [
+        "Menampilkan halaman kosong yang bersih hingga hasil pencarian selesai dimuat",
+        "Menggunakan animasi kerangka (skeleton screens) dan indikator progres visual",
+        "Membuat tombol muat ulang otomatis setiap dua detik jika data belum muncul",
+        "Mengalihkan pandangan pengguna ke halaman iklan promosi selama menunggu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Hasil riset pengguna menunjukkan bahwa pengemudi ojek online sering salah menekan tombol 'Selesai Order' karena terlalu dekat dengan tombol 'Batalkan'. Bagaimana Anda memperbaiki masalah tata letak ini?",
+      "options": [
+        "Memperkecil ukuran tombol batal dan memberi warna merah menyala",
+        "Memberikan jarak aman (whitespace) dan konfirmasi modal aksi penting",
+        "Memindahkan tombol batal ke halaman tersembunyi di dalam menu profil",
+        "Menukar posisi kedua tombol tersebut secara acak demi keamanan sistem"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mendesain dasbor analitik untuk pemilik UMKM yang awam teknologi. Mereka mengeluh kebingungan dengan banyaknya grafik rumit pada versi pertama. Langkah apa yang harus Anda ambil?",
+      "options": [
+        "Menambahkan kamus istilah statistik di bagian bawah setiap grafik laporan",
+        "Mengganti semua grafik dengan tabel angka mentah agar lebih transparan",
+        "Menyederhanakan metrik kunci menjadi kartu ringkasan visual yang mudah dipahami",
+        "Membuat tur panduan interaktif yang panjang saat pertama kali login"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah platform edukasi online ingin mengubah alur berlangganan. Tim bisnis ingin tombol 'Batalkan Langganan' disembunyikan di dalam menu bantuan yang rumit demi retensi. Sebagai UX Designer, sikap Anda adalah...",
+      "options": [
+        "Menuruti permintaan bisnis sepenuhnya karena retensi adalah metrik utama perusahaan",
+        "Menolak dan mengarahkan diskusi pada dampak negatif jangka panjang terhadap kepercayaan merek",
+        "Membuat tombol pembatalan transparan namun mengenakan biaya tersembunyi",
+        "Meletakkan tombol tersebut di beranda utama tanpa konfirmasi lanjutan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mendesain formulir pajak online, pengguna sering kebingungan mengisi kolom kode KLU (Klasifikasi Lapangan Usaha). Bagaimana cara mengoptimalkan pengalaman pengisian kolom ini?",
+      "options": [
+        "Menyediakan fitur pencarian prediktif dengan saran otomatis berdasarkan kata kunci",
+        "Mewajibkan pengguna menghafal kode tersebut sebelum mulai membuka halaman",
+        "Menghapus kolom KLU dan menggantinya dengan pilihan kategori bebas",
+        "Memberikan tautan eksternal ke situs web pemerintah di tab peramban baru"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi layanan kesehatan lokal Anda mendapati banyak pengguna batal melanjutkan pendaftaran asuransi karena mereka harus mengunggah foto KTP dan swafoto secara bersamaan pada langkah awal. Langkah apa yang paling tepat untuk memperbaiki alur ini?",
+      "options": [
+        "Mengganti seluruh proses pendaftaran menjadi formulir berbasis teks manual tanpa unggah dokumen",
+        "Memecah proses pendaftaran menjadi beberapa tahap bertahap dengan indikator progres yang jelas",
+        "Menghilangkan syarat verifikasi identitas sepenuhnya untuk mempercepat jumlah pendaftar baru",
+        "Memindahkan seluruh instruksi pengunggahan dokumen ke halaman FAQ terpisah di aplikasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat mendesain halaman riwayat transaksi untuk aplikasi investasi reksa dana, Anda menemukan bahwa pengguna sering keliru membaca status 'Pending' sebagai 'Gagal'. Bagaimana cara paling efektif mengatasi masalah kebingungan visual ini?",
+      "options": [
+        "Mengganti warna latar belakang seluruh tabel transaksi menjadi mode gelap permanen",
+        "Menghapus label teks status dan hanya menggunakan ikon abu-abu untuk semua status",
+        "Membedakan warna ikon status, mempertegas teks label, dan menambahkan tooltip penjelas",
+        "Membuat halaman konfirmasi pop-up setiap kali pengguna melihat detail transaksi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer produk meminta Anda meletakkan banner iklan promosi diskon makanan menutupi setengah layar aplikasi transportasi saat pengguna baru membuka aplikasi. Sikap profesional UX designer yang tepat menghadapi hal ini adalah:",
+      "options": [
+        "Menuruti permintaan tersebut secara langsung demi mengejar target pemasaran jangka pendek",
+        "Menolak permintaan tim produk secara tegas tanpa memberikan solusi alternatif desain",
+        "Membuat banner tersebut muncul secara permanen di bagian bawah layar tanpa tombol tutup",
+        "Mengusulkan format banner yang lebih kecil atau opsi penutupan mudah agar tidak merusak pengalaman"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam perancangan fitur transfer bank, data analitik menunjukkan peningkatan salah kirim dana karena pengguna salah memasukkan nomor rekening tujuan. Desain interaksi apa yang paling tepat untuk meminimalisir kesalahan fatal ini?",
+      "options": [
+        "Menambahkan langkah konfirmasi yang menampilkan nama lengkap pemilik rekening tujuan secara jelas",
+        "Menghilangkan fitur riwayat transfer agar pengguna harus mengetik ulang nomor rekening setiap kali",
+        "Membatasi nominal transfer harian maksimal menjadi nominal yang sangat kecil bagi semua pengguna",
+        "Mengganti tombol konfirmasi transfer dengan animasi bergerak yang menarik perhatian visual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi HRIS (Human Resource Information System) untuk perusahaan manufaktur memiliki tingkat adopsi yang rendah pada fitur klaim penggantian biaya medis. Apa metode riset awal terbaik untuk mendalami akar masalah ini?",
+      "options": [
+        "Melakukan survei kepuasan umum secara daring kepada seluruh jajaran direksi perusahaan",
+        "Mengadakan wawancara mendalam dan observasi langsung kepada karyawan pabrik pemohon klaim",
+        "Membaca ulasan aplikasi di toko aplikasi global untuk melihat keluhan pengguna secara umum",
+        "Membuat prototipe baru dengan gaya visual yang lebih modern tanpa mengubah alur kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain tombol 'Hapus Akun' pada aplikasi dompet digital. Agar sesuai dengan prinsip desain etis (ethical design) dan mencegah tindakan tidak sengaja, pendekatan visual apa yang sebaiknya diterapkan?",
+      "options": [
+        "Membuat tombol tersebut berukuran sangat besar dengan warna merah terang di halaman utama",
+        "Menempatkan tombol tersebut tersembunyi di dalam menu bantuan tanpa konfirmasi lanjutan",
+        "Memberikan jarak aman, warna netral, serta tahapan konfirmasi teks ganda sebelum eksekusi",
+        "Menggabungkan tombol hapus akun dengan tombol keluar aplikasi untuk efisiensi ruang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pengguna aplikasi pemesanan tiket bioskop sering mengeluhkan kebingungan saat memilih kursi karena peta bioskop tidak responsif di layar ponsel kecil. Langkah perbaikan desain antarmuka apa yang paling solutif?",
+      "options": [
+        "Memperkecil ukuran seluruh kursi bioskop agar muat dalam satu layar tanpa perlu gulir",
+        "Menghilangkan fitur pemilihan kursi mandiri dan menggantinya dengan sistem alokasi otomatis",
+        "Mengubah orientasi peta kursi menjadi lanskap tetap dengan fitur cubit untuk memperbesar",
+        "Menyederhanakan tata letak kursi dengan pembagian zona jelas serta area sentuh yang memadai"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam proyek redesign aplikasi berita, tim editorial ingin menampilkan lima berita utama sekaligus dalam bentuk carousel otomatis yang bergeser sendiri di bagian atas layar. Sebagai UX designer, argumen apa yang paling tepat untuk menolak carousel otomatis tersebut?",
+      "options": [
+        "Carousel otomatis menurunkan aksesibilitas, mengganggu pembaca, dan jarang mendatangkan interaksi",
+        "Fitur tersebut memakan terlalu banyak kapasitas penyimpanan data pada perangkat pengguna seluler",
+        "Teknologi animasi carousel otomatis sudah kedaluwarsa dan tidak lagi digunakan oleh media global",
+        "Pemilik produk tidak menyukai warna bergerak yang ada pada komponen banner berita utama"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi properti lokal ingin menerapkan sistem filter pencarian lanjutan (advanced filter). Agar pengguna tidak merasa kewalahan (cognitive overload), struktur UI apa yang sebaiknya Anda rancang?",
+      "options": [
+        "Menampilkan seluruh pilihan filter secara bersamaan dalam satu daftar panjang ke bawah",
+        "Mengelompokkan filter ke dalam kategori logis dengan opsi lanjutan yang bisa disembunyikan",
+        "Meniadakan fitur filter dan mengharuskan pengguna membaca seluruh daftar properti satu persatu",
+        "Menggunakan jendela pop-up bertumpuk yang muncul secara acak setiap kali pengguna mengetik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain fitur unggah dokumen lamaran kerja di portal lowongan pekerjaan. Sistem sering menolak berkas karena ukuran melebihi batas, tetapi informasi ini baru muncul setelah proses unggah selesai 100%. Bagaimana cara memperbaiki pengalaman pengguna ini?",
+      "options": [
+        "Menghapus batasan ukuran berkas agar semua jenis dokumen bisa masuk ke dalam server sistem",
+        "Mempercepat kecepatan server penyimpanan data pusat agar proses unggah terasa lebih singkat",
+        "Memberikan informasi batas ukuran dan format berkas secara jelas sebelum pengguna mulai mengunggah",
+        "Membuat halaman khusus yang hanya berisi daftar perusahaan yang tidak memiliki batasan berkas"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain aplikasi dompet digital dan melihat dari peta panas (heatmap) bahwa tombol 'Scan QR' yang krusial jarang diklik pengguna. Langkah perbaikan UX mana yang paling tepat untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah warna latar belakang aplikasi secara keseluruhan agar tombol tersebut lebih kontras",
+        "Memindahkan posisi tombol ke area jangkauan ibu jari (thumb zone) utama pada navigasi bawah",
+        "Menghapus fitur lain di halaman utama agar perhatian pengguna terpusat pada satu tombol",
+        "Menambahkan animasi bergerak yang konstan pada tombol tersebut untuk menarik perhatian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi marketplace lokal ingin mengurangi tingkat keranjang belanja yang ditinggalkan (cart abandonment). Fitur apa yang paling efektif diterapkan pada halaman pembayaran akhir?",
+      "options": [
+        "Menampilkan timer hitung mundur palsu untuk menciptakan kepanikan agar cepat membayar",
+        "Menyediakan transparansi total biaya pengiriman dan pajak di awal sebelum tombol bayar",
+        "Memaksa pengguna membuat kata sandi yang sangat rumit demi keamanan transaksi mereka",
+        "Menghilangkan semua opsi metode pembayaran dan hanya menyisaan satu transfer bank"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mendesain aplikasi manajemen inventaris gudang, Anda mendapati pekerja sering salah memasukkan data karena kelelahan visual saat shift malam. Keputusan desain antarmuka apa yang harus diambil?",
+      "options": [
+        "Menyediakan fitur mode gelap (dark mode) otomatis untuk mengurangi silau layar perangkat",
+        "Memperkecil ukuran seluruh elemen antarmuka agar informasi yang muat jauh lebih banyak",
+        "Mengganti seluruh teks instruksi tertulis dengan ikon abstrak tanpa label pendukung",
+        "Meningkatkan kecerahan latar belakang putih aplikasi ke tingkat maksimal demi kejelasan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang alur pendaftaran akun baru. Data menunjukkan banyak pengguna menutup aplikasi pada langkah pengisian alamat email karena proses validasi yang rumit. Apa solusi desain terbaik?",
+      "options": [
+        "Meminta pengguna mengetik ulang alamat email sebanyak tiga kali untuk memastikan valid",
+        "Menghapus sama sekali tahapan verifikasi email demi mempercepat proses masuk aplikasi",
+        "Memberikan umpan balik instan (inline validation) yang ramah saat format email keliru",
+        "Mengunci tombol lanjut sampai pengguna mengunggah foto kartu identitas resmi mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi streaming musik lokal ingin mendesain ulang navigasi utamanya. Riset menunjukkan pengguna kesulitan menemukan tombol unduh lagu offline. Bagaimana struktur informasi harus diatur?",
+      "options": [
+        "Menyembunyikan menu unduhan di dalam pengaturan mendalam untuk menjaga kerapian",
+        "Menempatkan aksi unduh secara langsung di sebelah setiap judul lagu atau album",
+        "Menghapus fitur pemutaran musik daring dan fokus sepenuhnya pada mode unduhan saja",
+        "Membuat halaman khusus terpisah yang hanya bisa diakses setelah langganan VIP"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menguji prototipe aplikasi perpajakan UMKM, pengguna sering salah mengartikan istilah teknis akuntansi pada kolom input. Tindakan UX writer yang paling tepat adalah?",
+      "options": [
+        "Membiarkan istilah tetap sama karena itu adalah bahasa hukum standar perpajakan resmi",
+        "Mengganti istilah tersebut dengan bahasa sehari-hari yang umum dipahami pelaku usaha",
+        "Menghapus kolom input tersebut jika dianggap terlalu membingungkan bagi pengguna",
+        "Menambahkan catatan kaki berukuran sangat kecil di bagian paling bawah dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain fitur ulasan produk untuk aplikasi e-commerce. Pengguna malas menulis teks panjang. Pendekatan interaksi apa yang paling tepat untuk meningkatkan partisipasi ulasan?",
+      "options": [
+        "Mewajibkan setiap ulasan minimal berisi 500 kata agar informatif bagi pembaca lain",
+        "Menyediakan sistem rating bintang cepat disertai pilihan tag kelebihan produk instan",
+        "Memberikan denda atau pemotongan poin akun jika pengguna tidak memberikan ulasan",
+        "Menghilangkan kolom rating bintang dan hanya menyediakan kotak esai terbuka panjang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi layanan antar makanan mendapati pengguna sering salah memesan makanan ke alamat rumah lama mereka. Fitur apa yang harus diprioritaskan pada layar utama pemesanan?",
+      "options": [
+        "Menyembunyikan riwayat alamat pengantaran agar pengguna selalu mengetik manual",
+        "Menampilkan lokasi alamat pengiriman aktif secara mencolok dengan opsi ubah cepat",
+        "Mengunci alamat pengiriman secara permanen berdasarkan titik GPS lokasi kantor pusat",
+        "Meminta konfirmasi melalui panggilan telepon setiap kali pesanan baru dibuat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam merancang dasbor laporan keuangan untuk manajer operasional, mereka mengeluhkan terlalu banyak grafik rumit yang membuat pusing. Strategi visualisasi data apa yang harus diterapkan?",
+      "options": [
+        "Menerapkan prinsip hierarki visual dengan menyorot metrik kunci dan menyembunyikan detail",
+        "Menghapus seluruh grafik dan menggantinya dengan tabel angka mentah tanpa format warna",
+        "Memperbesar seluruh elemen grafik secara bersamaan agar terlihat lebih mencolok di layar",
+        "Menambahkan efek animasi 3D yang bergerak terus-menerus pada setiap diagram laporan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain tombol konfirmasi hapus data penting pada aplikasi perkantoran. Bagaimana desain interaksi yang paling aman untuk mencegah kesalahan fatal?",
+      "options": [
+        "Membuat tombol hapus berwarna merah terang dan bisa langsung ditekan satu kali klik",
+        "Menghilangkan tombol konfirmasi dan langsung menghapus data begitu kursor mendekat",
+        "Menerapkan pola friksi berupa ketik ulang kata konfirmasi atau tahan tombol beberapa detik",
+        "Memindahkan tombol hapus ke menu tersembunyi tanpa memberikan pemberitahuan apapun"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Bahasa Inggris",
+  "skill_key": "bahasa inggris",
+  "questions": [
+    {
+      "question": "\"Could you send me the invoice by Friday?\" artinya…",
+      "options": [
+        "Kamu bisa kirim invoice hari Jumat?",
+        "Bisakah kamu mengirim invoice paling lambat Jumat?",
+        "Kamu mengirim invoice Jumat lalu",
+        "Invoice sudah dikirim Jumat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pilih kalimat yang benar…",
+      "options": [
+        "She don't like coffee.",
+        "She doesn't like coffee.",
+        "She not like coffee.",
+        "She doesn't likes coffee."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Balasan yang sopan untuk \"Thank you for your help\"…",
+      "options": [
+        "Okay.",
+        "You're welcome.",
+        "Yes, thank you.",
+        "No problem, bye."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "\"The meeting has been postponed\" artinya rapat…",
+      "options": [
+        "Dibatalkan permanen",
+        "Ditunda",
+        "Dipercepat",
+        "Sudah selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kata yang tepat: \"I have worked here ___ 2023.\"",
+      "options": [
+        "for",
+        "since",
+        "at",
+        "during"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "\"Please find attached the report\" biasanya ditulis di…",
+      "options": [
+        "Pesan suara",
+        "Email yang menyertakan lampiran laporan",
+        "Poster",
+        "Kontrak kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di perusahaan multinasional di Jakarta dan perlu meminta rekan kerja dari divisi keuangan untuk segera memproses klaim perjalanan dinas Anda minggu lalu. Kalimat email profesional mana yang paling tepat?",
+      "options": [
+        "Tolong segera urus uang bensin perjalanan dinas saya kemarin karena sudah seminggu belum cair.",
+        "Could you please process my business trip reimbursement at your earliest convenience?",
+        "I need you to transfer my travel expenses money to my account right now, thank you.",
+        "Why is my travel claim still pending in your department? Please check it immediately."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang klien penting dari Singapura mengirim pesan melalui WhatsApp bisnis, 'We might need to push back our alignment call to next week.' Apa tindakan yang harus Anda lakukan?",
+      "options": [
+        "Membatalkan seluruh kontrak kerja sama karena klien menolak untuk melanjutkan proyek",
+        "Meminta klien untuk mempercepat jadwal pertemuan menjadi sore ini juga tanpa kecuali",
+        "Menghubungi klien untuk mencari slot waktu pengganti rapat pada minggu depan",
+        "Mengabaikan pesan tersebut dan tetap bersiap di ruang meeting pada jadwal semula"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang memimpin rapat virtual dengan vendor asing. Koneksi internet tiba-tiba bermasalah dan suara Anda terputus-putus. Ungkapan bahasa Inggris apa yang paling tepat untuk situasi ini?",
+      "options": [
+        "I am sorry, my internet connection is unstable, could you please hear my voice?",
+        "My connection is very bad right now, so I will leave this meeting permanently.",
+        "Please stop talking because my internet is lagging and I cannot understand you.",
+        "Apologies, my connection seems unstable; could you hear me clearly now?"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam balasan email penawaran harga (quotation) kepada calon klien korporat, Anda ingin menyampaikan bahwa rincian biaya sudah termasuk pajak pertambahan nilai. Frasa formal mana yang tepat?",
+      "options": [
+        "Please note that all the pricing details mentioned above are already inclusive of VAT.",
+        "The total price written in this quotation has not included any tax payment yet.",
+        "You must pay extra tax money on top of the quoted price when the invoice arrives.",
+        "Tax charges will be calculated separately by your accounting team after this."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menerima email dari kantor pusat di London yang menyatakan: 'We need to loop in the legal team before signing.' Apa maksud instruksi tersebut?",
+      "options": [
+        "Anda diminta untuk menghapus divisi hukum dari daftar penerima email",
+        "Anda harus melibatkan atau menyertakan tim hukum dalam proses penandatanganan",
+        "Anda dianjurkan untuk melaporkan perilaku tim hukum kepada atasan pusat",
+        "Anda dipersilakan untuk mengabaikan pendapat tim hukum terkait dokumen ini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebagai HR Manager, Anda sedang menulis surat penawaran kerja (offer letter) untuk kandidat posisi manajerial. Kalimat mana yang tepat untuk menyatakan batas waktu konfirmasi?",
+      "options": [
+        "We expect you to reply this letter quickly or your position will be given away.",
+        "Please let us know your decision regarding this offer by Friday afternoon.",
+        "You have no choice other than accepting this job offer before the weekend ends.",
+        "Send your confirmation letter to our office desk no later than tomorrow morning."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menolak undangan rapat dari divisi lain karena jadwal Anda bentrok dengan deadline laporan bulanan. Kalimat penolakan yang sopan di Outlook Calendar adalah...",
+      "options": [
+        "I am declining this meeting because I am way too busy with my monthly report.",
+        "Do not invite me to this meeting anymore since I have other priority tasks.",
+        "Unfortunately, I have a conflicting deadline at that time and cannot attend.",
+        "I refuse to join your meeting because my schedule is fully booked all day."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan presentasi hasil penjualan kuartal ketiga di depan direksi asing, Anda ingin beralih ke slide berikutnya yang menunjukkan grafik pertumbuhan. Apa kalimat transisi yang natural?",
+      "options": [
+        "Let us move on to the next slide, which illustrates our revenue growth trend.",
+        "Look at this slide right now because it has a very important chart for you.",
+        "Now I will show you something different that has nothing to do with sales.",
+        "Please ignore the previous data and focus entirely on this random picture."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang rekan kerja asing bertanya tentang status laporan proyek: 'Are we still on track to finish by Thursday?' Apa arti pertanyaan tersebut?",
+      "options": [
+        "Apakah kita akan merayakan keberhasilan proyek di stasiun kereta pada hari Kamis?",
+        "Apakah jalur pengiriman dokumen laporan sudah diperiksa ulang sampai hari Kamis?",
+        "Apakah kita masih sesuai jadwal untuk menyelesaikan pekerjaan tepat pada hari Kamis?",
+        "Apakah tenggat waktu penyelesaian proyek telah diundur melewati hari Kamis?"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati kesalahan ketik (typo) nominal angka pada draf kontrak kerja sama yang sudah terkirim ke klien. Cara paling profesional untuk meralatnya via email adalah...",
+      "options": [
+        "Please ignore the previous contract completely and make your own correction.",
+        "My apologies for the oversight in the previous email; please find the revised contract attached.",
+        "You should have noticed that the number was wrong before reading it carefully.",
+        "I made a mistake in the document, so please fix it yourself on page three."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin meyakinkan manajer asal Australia bahwa tim Anda sanggup menyelesaikan proyek tepat waktu meskipun ada tambahan tugas. Kalimat profesional apa yang paling tepat?",
+      "options": [
+        "We can handle this additional task without affecting our current deadline.",
+        "We will try our best to finish this task and the deadline will be fine.",
+        "The extra work is totally okay and we will make it fast for you.",
+        "We can do this task as long as the deadline is moved to next week."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang klien dari luar negeri mengirim email berisi komplain keterlambatan pengiriman dokumen. Frasa pembuka paling tepat untuk menunjukkan empati dan tanggung jawab adalah:",
+      "options": [
+        "We are sorry to hear that your document is late from our side.",
+        "Please accept our sincere apologies for the delay in sending the document.",
+        "We apologize for the inconvenience caused by the late document delivery.",
+        "We regret to inform you that your document delivery was delayed today."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat bergabung dalam panggilan konferensi global, suara Anda terdengar kecil dan tidak jelas oleh partisipan lain. Kalimat paling natural untuk meminta mereka menaikkan volume adalah:",
+      "options": [
+        "Can you please speak louder so I can hear your voice clearly now?",
+        "Could you please turn up your microphone volume a bit?",
+        "Please adjust your sound settings because your voice is too low.",
+        "I cannot hear you well, please make your speaker much louder."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sesi tanya jawab presentasi bisnis dengan direksi asing, Anda belum sepenuhnya paham pertanyaan mereka. Cara paling sopan untuk meminta pengulangan adalah:",
+      "options": [
+        "Could you please elaborate on that point to ensure I address it properly?",
+        "I do not understand your question, please say it again more slowly.",
+        "What do you mean by that question? Can you explain it better?",
+        "Please repeat your question because the sound quality was poor."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu mengonfirmasi ulang kepada vendor logistik mengenai jadwal pengiriman barang ke gudang. Kalimat tanya yang paling tepat adalah:",
+      "options": [
+        "Could you confirm the exact date when the goods will arrive at our warehouse?",
+        "When will you send the goods to our warehouse exactly this week?",
+        "Can you tell me the arrival time of the goods in the warehouse soon?",
+        "Please let me know when the goods are coming to the warehouse today."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin meminta rekan kerja asing untuk memeriksa ulang perhitungan anggaran dalam lembar kerja Excel. Instruksi tertulis yang paling profesional adalah:",
+      "options": [
+        "Please check my budget calculation in the attached Excel file.",
+        "Could you kindly review the budget calculations in the attached spreadsheet?",
+        "Check the numbers in the Excel sheet I sent you to find errors.",
+        "I need you to look at the budget numbers and fix them if wrong."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menyambut tamu korporat asing di lobi kantor, kalimat basa-basi (small talk) yang paling tepat mengenai perjalanan mereka adalah:",
+      "options": [
+        "Did you have a pleasant and smooth journey to our office today?",
+        "Was your flight to Jakarta very tiring and long this morning?",
+        "How was the traffic when you came here from the airport?",
+        "Did you face any major problems traveling to this building?"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyampaikan penolakan secara halus terhadap usulan strategi pemasaran dari agensi mitra karena anggaran terbatas. Kalimat yang paling tepat adalah:",
+      "options": [
+        "We cannot use this strategy because our marketing budget is too small.",
+        "While this strategy is strong, our current budget constraints prevent us from adopting it.",
+        "Your strategy is good, but we reject it due to financial limitations.",
+        "Please change your strategy to fit our very limited marketing budget."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam email penutup kepada klien setelah negosiasi kontrak selesai, kalimat penutup yang paling tepat untuk menunjukkan antusiasme kerja sama adalah:",
+      "options": [
+        "We look forward to a successful partnership and working closely with your team.",
+        "We are very happy to work with you starting from next week onwards.",
+        "Thank you for signing the contract and see you in the next project.",
+        "Hope we can get good results from this business cooperation soon."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin mengingatkan tim proyek bahwa tenggat waktu pengumpulan modul pelatihan adalah besok sore. Pesan pengingat yang paling efektif di grup kerja adalah:",
+      "options": [
+        "Don't forget to submit your training module by tomorrow afternoon.",
+        "This is a friendly reminder that the training module submission is due tomorrow afternoon.",
+        "Please finish the training module tomorrow afternoon without fail.",
+        "Remember that tomorrow afternoon is the deadline for the training module."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu meminta staf administrasi untuk memperbarui data cuti karyawan paling lambat hari Rabu. Kalimat instruksi email yang paling profesional adalah...",
+      "options": [
+        "Please update the employee leave data no later than Wednesday.",
+        "You need to change employee leave data before Wednesday comes.",
+        "Make sure you update the employee leave data on Wednesday fast.",
+        "Employee leave data must be updated by you on Wednesday."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang manajer proyek dari kantor regional mengirim pesan: 'Let's take this offline to discuss further.' Maksud dari pernyataan tersebut adalah...",
+      "options": [
+        "Mari kita matikan komputer kita sekarang.",
+        "Ayo kita lanjutkan diskusi ini secara pribadi di luar forum ini.",
+        "Rapat ini harus dibatalkan karena tidak ada internet.",
+        "Silakan unduh dokumen ini untuk dibaca secara luring."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin mengundang rekan kerja dari kantor cabang untuk bergabung dalam sesi pelatihan internal secara virtual. Kalimat undangan yang paling tepat adalah...",
+      "options": [
+        "You must join our online training session this afternoon.",
+        "Feel free to drop by our online training session today.",
+        "We would like to invite you to join our virtual training session.",
+        "Please come to our virtual training room right now."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam percakapan telepon dengan klien internasional, Anda ingin mengeja nama perusahaan Anda yang sulit agar tidak salah catat. Kalimat yang tepat adalah...",
+      "options": [
+        "Let me spell that out for you to avoid any mistakes.",
+        "You should write down my company name carefully now.",
+        "Listen to how I pronounce my company name very slowly.",
+        "Please remember every single letter of my company name."
+      ],
+      "correct_index": 0
+    }
+  ]
+}

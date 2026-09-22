@@ -1,0 +1,306 @@
+{
+  "skill": "Spring Boot",
+  "skill_key": "spring boot",
+  "questions": [
+    {
+      "question": "Tim Anda sedang mengembangkan sistem e-commerce di mana beberapa transaksi finansial sering mengalami kegagalan akibat timeout pada third-party payment gateway, namun berhasil saat dicoba ulang. Pendekatan apa yang paling tepat diterapkan pada method pemanggilan service tersebut di Spring Boot?",
+      "options": [
+        "Mengaktifkan anotasi @Retryable pada method dan menangani Recovery-nya",
+        "Menaikkan batas waktu koneksi HTTP client secara global di file application.properties",
+        "Mengubah semua database transaction propagation menjadi REQUIRES_NEW",
+        "Membuat thread pool terpisah menggunakan TaskExecutor untuk setiap request"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi microservice Spring Boot Anda mengalami lonjakan trafik saat flash sale, menyebabkan penggunaan memori melonjak tajam karena object pooling yang tidak efisien pada koneksi database. Konfigurasi mana yang paling efektif untuk disesuaikan pada HikariCP?",
+      "options": [
+        "Menurunkan nilai connectionTimeout dan validationTimeout agar cepat putus",
+        "Mengurangi ukuran maximumPoolSize dan menambah minimumIdle sesuai kapasitas DB",
+        "Mengubah autoCommit menjadi false dan menutup manual setiap kali selesai kueri",
+        "Memastikan leakDetectionThreshold diaktifkan dengan durasi milidetik yang pendek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan deploy aplikasi Spring Boot ke lingkungan produksi berbasis Kubernetes, pod sering direstart karena lambatnya proses startup akibat inisialisasi JPA/Hibernate yang berat. Bagaimana cara mencegah Kubernetes melakukan kill prematur pada pod tersebut?",
+      "options": [
+        "Menambahkan health check kustom dengan Spring Boot Actuator dan liveness probe",
+        "Memperbesar nilai initialDelaySeconds pada livenessProbe di file deployment Kubernetes",
+        "Mengonfigurasi startupProbe di Kubernetes untuk memberi waktu inisialisasi aplikasi",
+        "Mematikan fitur ddl-auto Hibernate dan menyerahkan migrasi ke Flyway migration"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi perbankan berbasis Spring Boot mencatat log transaksi harian. Tim security menemukan adanya potensi SQL Injection pada pencarian data nasabah menggunakan Spring Data JPA. Manakah kode repository yang paling aman dari celah tersebut?",
+      "options": [
+        "Query(\"SELECT u FROM User u WHERE u.name = ?1\")",
+        "Query(value = \"SELECT * FROM users WHERE name = :name\", nativeQuery = true)",
+        "Query(\"SELECT u FROM User u WHERE u.name = :name\")",
+        "findByCustomName(String name)"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati memory leak pada aplikasi Spring Boot yang berjalan 24/7 di server perusahaan. Setelah mengambil heap dump, ditemukan banyak instance String yang menumpuk akibat penggunaan String concatenation di dalam loop pada layer service. Apa solusi terbaik untuk memperbaiki pola kodenya?",
+      "options": [
+        "Mengganti semua tipe data String menjadi char array sebelum dilakukan manipulasi",
+        "Menggunakan StringBuilder atau StringBuffer di dalam blok perulangan tersebut",
+        "Menambahkan garbage collector G1GC pada argumen JVM saat menjalankan aplikasi",
+        "Memanfaatkan String.intern() agar instance String disimpan di dalam string pool"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda terintegrasi dengan sistem legacy menggunakan gRPC. Saat terjadi error pada server gRPC tujuan, exception bawaan Java langsung terekspos keclient. Bagaimana cara memetakan exception tersebut menjadi status gRPC yang standar di Spring Boot?",
+      "options": [
+        "Membuat class interceptor yang mengimplementasikan HandlerInterceptorAdapter",
+        "Menggunakan anotasi @ControllerAdvice bersama dengan metode @ExceptionHandler",
+        "Mengimplementasikan interface Metadata.Key untuk menangkap error gRPC secara global",
+        "Membuat GlobalGrpcExceptionHandler yang diberi anotasi @GrpcAdvice"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam arsitektur microservice, Anda perlu menyebarkan perubahan konfigurasi database credentials ke seluruh instance Spring Boot tanpa melakukan restart pada aplikasi. Fitur Spring Cloud apa yang harus diintegrasikan?",
+      "options": [
+        "Spring Cloud Netflix Eureka untuk service discovery dan load balancing dinamis",
+        "Spring Cloud Config Server dengan endpoint /actuator/refresh pada klien",
+        "Spring Cloud Gateway untuk memfilter dan merutekan ulang HTTP request masuk",
+        "Spring Cloud Sleuth untuk melakukan tracing log secara terpusat dan terdistribusi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah query kompleks pada aplikasi reporting Spring Boot memakan waktu hingga 15 detik dan menyebabkan thread pool web server terkunci (exhausted). Langkah optimasi apa yang paling tepat diterapkan pada sisi Spring Data JPA?",
+      "options": [
+        "Menambahkan anotasi @Transactional(readOnly = true) dan membatasi ukuran fetch",
+        "Mengubah strategi fetch type pada seluruh relasi Entity menjadi EAGER loading",
+        "Menyalakan second-level cache menggunakan EhCache untuk menyimpan semua hasil query",
+        "Menaikkan kapasitas server Tomcat max-threads di file konfigurasi application.yml"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menulis unit test untuk service layer di Spring Boot menggunakan JUnit 5 dan Mockito. Saat menjalankan test, Anda mendapati bahwa konteks Spring ApplicationContext dimuat ulang pada setiap kelas test, membuat proses CI/CD sangat lambat. Bagaimana mengatasinya?",
+      "options": [
+        "Menambahkan anotasi @DirtiesContext pada setiap metode pengujian yang dijalankan",
+        "Memastikan penggunaan anotasi @SpringBootTest hanya pada integration test tertentu",
+        "Mengganti semua dependency injection menggunakan constructor injection manual",
+        "Menonaktifkan fitur auto-configuration Spring Boot di dalam file application-test.properties"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda bertindak sebagai resource server OAuth2 menggunakan Spring Security. Saat token JWT kedaluwarsa, klien menerima respons error HTML default alih-alih JSON. Di mana titik kustomisasi yang tepat untuk memperbaiki format respons error tersebut?",
+      "options": [
+        "Membuat filter kustom sebelum UsernamePasswordAuthenticationFilter di SecurityFilterChain",
+        "Mengonfigurasi Customizer pada oauth2ResourceServer dengan jwt dan decoder kustom",
+        "Menambahkan AuthenticationEntryPoint kustom untuk menangani AuthenticationException",
+        "Mengubah pengaturan server.error.include-stacktrace menjadi never di application.yml"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim backend Anda menggunakan Spring Data JPA untuk sistem manajemen stok gudang. Saat melakukan update massal pada ribuan item, aplikasi mendadak lambat karena melakukan query 'SELECT' satu per satu sebelum melakukan update. Bagaimana cara Anda mengoptimalkan proses ini secara tepat di Spring Data JPA?",
+      "options": [
+        "Menggunakan anotasi @Modifying bersama native query pada method repository untuk eksekusi langsung",
+        "Menambahkan anotasi @Transactional(readOnly = true) pada service layer untuk mempercepat proses",
+        "Mengubah strategi fetch type pada entity terkait menjadi EAGER agar data langsung termuat",
+        "Membungkus seluruh proses iterasi dengan EntityManager.flush() secara manual di dalam loop"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda terhubung ke database PostgreSQL eksternal. Seringkali terjadi koneksi terputus tiba-tiba karena masalah jaringan, menyebabkan error pada request pengguna berikutnya. Konfigurasi connection pool HikariCP apa yang paling tepat disesuaikan untuk mendeteksi koneksi mati lebih cepat?",
+      "options": [
+        "Menurunkan nilai connectionTimeout dan memperbesar maximumPoolSize secara signifikan",
+        "Mengaktifkan dan mengatur connectionTestQuery serta memperpendek idleTimeout",
+        "Mengonfigurasi validationTimeout dan menurunkan minimumIdle hingga menyamai nol",
+        "Menaikkan leakDetectionThreshold agar HikariCP mendeteksi koneksi macet lebih dini"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengamankan REST API Spring Boot menggunakan Spring Security dengan JWT. Saat ini, setiap request harus melakukan dekode dan validasi token ke database untuk mengecek status user. Pendekatan arsitektur apa yang paling efisien untuk mengurangi beban database tersebut?",
+      "options": [
+        "Menyimpan token di dalam HTTP session agar mudah divalidasi pada memori lokal server",
+        "Melakukan parsing klaim JWT secara stateless dan validasi tanda tangan secara kriptografi",
+        "Membuat interceptor kustom yang melakukan caching token di Redis setiap kali ada request",
+        "Mengubah mekanisme autentikasi dari JWT kembali menggunakan Basic Auth berbasis cache"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah service Spring Boot memanggil pihak ketiga melalui RestClient yang baru di Spring Boot 3. Ketika server pihak ketiga tersebut mengalami gangguan dan tidak merespons, thread pemanggil ikut tertahan dan memicu thread pool exhaustion. Solusi terbaik apa yang harus diterapkan pada konfigurasi RestClient?",
+      "options": [
+        "Menambahkan interceptor kustom untuk melakukan retry tanpa henti hingga server pulih",
+        "Mengganti implementasi RestClient menjadiRestTemplate lama dengan timeout tak terbatas",
+        "Mengatur request timeout dan mengintegrasikannya dengan libraryCircuit Breaker",
+        "Memindahkan pemanggilan RestClient tersebut ke dalam metode terjadwal dengan @Scheduled"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda mencatat log aktivitas pengguna ke konsol dalam format teks biasa. Tim DevOps meminta agar log tersebut diubah menjadi format JSON terstruktur dengan menyertakan trace ID dan span ID secara otomatis untuk kebutuhan agregasi ELK stack. Apa langkah paling tepat yang harus dilakukan?",
+      "options": [
+        "Mengubah konfigurasi logback-spring.xml menggunakan encoder JSON dan mengaktifkan Micrometer Tracing",
+        "Menulis AspectJ pointcut kustom untuk menangkap setiap pemanggilan method dan mencetak JSON",
+        "Membuat filter servlet manual yang membaca setiap HTTP header lalu menulisnya ke file log",
+        "Menggunakan pustaka pihak ketiga untuk mengganti fungsi System.out.println di seluruh service"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek Spring Boot multitenancy, setiap perusahaan (tenant) memiliki skema database terpisah di PostgreSQL. Saat request masuk, identifier tenant dikirimkan melalui HTTP Header. Bagaimana cara Anda merutekan koneksi database secara dinamis pada runtime?",
+      "options": [
+        "Membuat bean DataSource baru secara manual di dalam controller untuk setiap request masuk",
+        "Menggunakan AbstractRoutingDataSource dari Spring dan menentukan kunci tenant dari ThreadLocal",
+        "Mengubah file application.yml secara dinamis menggunakan Java File API sebelum query dieksekusi",
+        "Membuat beberapa instance aplikasi Spring Boot terpisah yang berjalan pada port berbeda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa proses batch terjadwal dengan @Scheduled di aplikasi Spring Boot sering tumpang tindih karena eksekusi sebelumnya belum selesai ketika jadwal berikutnya tiba. Bagaimana cara mencegah eksekusi konkuren pada method terjadwal tersebut?",
+      "options": [
+        "Menambahkan anotasi @Async pada method terjadwal agar berjalan di thread terpisah",
+        "Menggunakan ThreadPoolTaskScheduler kustom dengan kapasitas thread diset menjadi satu",
+        "Membungkus logika di dalam method dengan mekanisme distributed lock seperti ShedLock",
+        "Mengubah anotasi penjadwalan dari cron expression menjadi fixedRate dengan durasi tetap"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi e-commerce Anda menggunakan Spring AMQP untuk mengirim pesan asinkron ke RabbitMQ. Saat terjadi error pada consumer karena database down, pesan terus-menerus gagal dan masuk kembali ke antrean utama tanpa henti (infinite loop). Apa solusi desain pesan yang paling tepat?",
+      "options": [
+        "Menonaktifkan fitur auto-ack di listener dan menghapus pesan secara permanen saat terjadi error",
+        "Mengonfigurasi Dead Letter Exchange (DLX) dan Dead Letter Queue untuk menampung pesan gagal",
+        "Menambahkan jedaThread.sleep selama satu jam di dalam blok catch pada listener method",
+        "Mengubah protokol pengiriman pesan dari AMQP menjadi HTTP REST agar lebih mudah ditangani"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menguji endpoint Spring MVC yang menerima payload JSON kompleks menggunakan MockMvc di JUnit 5. Salah satu field pada JSON tersebut harus divalidasi dengan @NotNull di DTO, tetapi test Anda selalu lolos meskipun field tersebut dikosongkan. Apa penyebab utama masalah ini?",
+      "options": [
+        "Anda lupa menambahkan anotasi @WebMvcTest dan @Valid pada parameter method controller",
+        "MockMvc mengabaikan anotasi validasi bawaan karena berjalan di lingkungan unit test",
+        "Format JSON yang dikirimkan melalui method content() menggunakan sintaks yang tidak valid",
+        "Pustaka spring-boot-starter-validation belum ditambahkan sebagai dependensi pengujian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah service Spring Boot mengalami lonjakan penggunaan memori (Heap) yang berujung pada OutOfMemoryError setelah berjalan beberapa hari. Setelah dianalisis melalui heap dump, ditemukan banyak objek Hibernate Session yang tidak tertutup dengan benar. Praktik apa yang biasanya memicu masalah ini di Spring Data JPA?",
+      "options": [
+        "Menggunakan method turunan repository bawaan tanpa mendeklarasikan anotasi @Transactional",
+        "Melakukan operasi baca data menggunakan Stream API di dalam transaksi yang berumur panjang",
+        "Menggunakan tipe dataprimitive alih-alih wrapper class pada entity berelasi OneToMany",
+        "Menjalankan query native SQL secara berlebihan di dalam service tanpa caching terpusat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda menggunakan Spring Cloud Gateway sebagai API Gateway. Saat melakukan routing ke downstream service, Anda perlu menambahkan header khusus 'X-Request-Source: mobile' ke setiap request yang masuk. Apa pendekatan paling tepat di dalam konfigurasi?",
+      "options": [
+        "Membuat GlobalFilter kustom yang memodifikasi ServerWebExchange",
+        "Menulis interceptor HTTP kustom di dalam setiap downstream service",
+        "Mengonfigurasi Spring Security untuk menyisipkan header pada filter chain",
+        "Mengubah konfigurasi application.yml pada parameter spring.cloud.gateway"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa aplikasi Spring Boot memuat data relasi One-to-Many secara lambat (lazy loading) di luar transaksi database, sehingga memicu LazyInitializationException saat merender JSON response. Bagaimana cara paling aman mengatasi hal ini?",
+      "options": [
+        "Mengubah seluruh relasi entity di JPA menjadi FetchType.EAGER secara permanen",
+        "Mengaktifkan Open Session In View pattern melalui properti spring.jpa.open-in-view",
+        "Menerapkan DTO projection atau JOIN FETCH pada query repository yang spesifik",
+        "Menonaktifkan serialisasi Jackson pada properti entity yang berelasi kompleks"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah service Spring Boot terhubung ke database MySQL menggunakan HikariCP sebagai connection pool default. Saat beban puncak, aplikasi melaporkan error 'HikariPool - Connection is not available'. Langkah diagnostik awal apa yang paling tepat?",
+      "options": [
+        "Menaikkan batas maksimum koneksi database di server MySQL pusat",
+        "Memeriksa durasi transaksi yang berjalan lama dan potensi koneksi yang tidak tertutup",
+        "Mengganti implementasi connection pool dari HikariCP ke Apache DBCP2",
+        "Menambah jumlah instance pod Kubernetes secara manual tanpa analisis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang mengembangkan fitur upload file berukuran besar pada aplikasi Spring Boot. Ketika file melebihi batas 10MB, aplikasi langsung melempar MaxUploadSizeExceededException. Di mana dan bagaimana cara menangani exception ini secara global?",
+      "options": [
+        "Menggunakan @ControllerAdvice dengan method beradotasi @ExceptionHandler",
+        "Menambahkan interceptor kustom yang memeriksa ukuran content-length",
+        "Mengubah konfigurasi server web embedded Tomcat melalui application.properties",
+        "Menulis filter servlet kustom untuk memotong stream sebelum masuk dispatcher"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda perlu membaca konfigurasi eksternal yang bersifat rahasia seperti API key dari HashiCorp Vault. Apa mekanisme bawaan Spring Cloud yang paling tepat untuk mengintegrasikannya?",
+      "options": [
+        "Menggunakan Spring Cloud Config Server dengan backend penyimpanan Vault",
+        "Menulis BeanPostProcessor kustom untuk melakukan HTTP call ke Vault saat startup",
+        "Memasukkan token Vault langsung ke dalam environment variable sistem operasi",
+        "Membuat scheduled task yang mengunduh file JSON rahasia setiap satu jam sekali"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengujian integrasi (integration test) menggunakan Spring Boot Test, Anda ingin memastikan bahwa container database PostgreSQL aktif sebelum test dimulai tanpa konfigurasi manual yang rumit. Apa teknologi standar yang sebaiknya digunakan?",
+      "options": [
+        "H2 Database in-memory sebagai pengganti total PostgreSQL di semua profil test",
+        "Testcontainers library dengan modul PostgreSQLContainer untuk JUnit 5",
+        "Docker Java API untuk menjalankan kontainer secara manual di dalam setUp method",
+        "Embedded PostgreSQL plugin bawaan dari framework Spring Boot starter test"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi pembayaran Spring Boot Anda sering mengalami duplikasi transaksi akibat pengguna menekan tombol 'Bayar' berulang kali dalam waktu singkat (double submission). Bagaimana cara paling efektif mencegah hal ini di sisi backend?",
+      "options": [
+        "Membuat tabel database baru khusus untuk mencatat log klik tombol frontend",
+        "Menerapkan mekanisme idempotency key menggunakan Redis dengan operasi SETNX",
+        "Menambahkan jeda waktu Thread.sleep selama 5 detik pada setiap request masuk",
+        "Menggunakan anotasi @Transactional dengan tingkat isolasi REPEATABLE_READ"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengekspos metrik performa kustom (misal: jumlah dokumen terproses) dari aplikasi Spring Boot ke sistem monitoring Prometheus. Komponen apa yang harus diintegrasikan?",
+      "options": [
+        "Spring Boot Actuator dengan Micrometer dependency dan registry Prometheus",
+        "JavaMelody profiling agent yang dipasang sebagai JVM argument tambahan",
+        "Logback appender kustom yang mengirim data metrik via protokol TCP",
+        "Spring Integration framework dengan file adapter berbasis CSV berkala"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi Spring Boot Anda menggunakan Caching abstraction dengan Redis. Beberapa data master jarang berubah tetapi sering diakses, namun ketika berubah, data di cache tidak otomatis terbarukan. Anotasi apa yang paling tepat untuk memperbarui cache?",
+      "options": [
+        "@CacheEvict untuk menghapus data lama atau @CachePut untuk memperbarui nilai",
+        "@Cacheable dengan parameter condition bernilai false saat terjadi perubahan data",
+        "@CacheConfig di tingkat kelas untuk memaksa sinkronisasi otomatis setiap detik",
+        "@EnableCaching dengan konfigurasi TTL otomatis di level application.yml"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim QA melaporkan bahwa dokumentasi Swagger/OpenAPI dari REST API Spring Boot Anda tidak menampilkan deskripsi parameter keamanan JWT. Dependensi apa yang umumnya ditambahkan untuk memperbaiki hal ini secara otomatis?",
+      "options": [
+        "springdoc-openapi-starter-webmvc-ui dan konfigurasi OpenAPI bean",
+        "spring-boot-starter-security-docs versi terbaru dari komunitas",
+        "swagger-annotations dan manual parser untuk file konfigurasi JSON",
+        "springfox-swagger2 library yang diintegrasikan dengan Spring Boot 3"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

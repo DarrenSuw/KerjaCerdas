@@ -1,0 +1,306 @@
+{
+  "skill": "Business Development",
+  "skill_key": "business development",
+  "questions": [
+    {
+      "question": "Anda sedang memimpin negosiasi kemitraan strategis dengan perusahaan logistik terkemuka di Indonesia. Di tahap akhir, negosiasi mandek karena perbedaan pendapat mengenai skema bagi hasil. Strategi negosiasi apa yang paling efektif untuk memecah kebuntuan ini?",
+      "options": [
+        "Mengancam akan membatalkan kerja sama jika mereka tidak menyetujui persentase yang Anda tawarkan.",
+        "Mengusulkan model bagi hasil dinamis berdasarkan pencapaian volume transaksi berkala atau tier tertentu.",
+        "Mengalah sepenuhnya pada tuntutan mereka demi menjaga hubungan baik demi target penutupan bulan ini.",
+        "Melibatkan pihak manajemen puncak mereka secara langsung tanpa melalui PIC yang sedang bernegosiasi."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan Anda berencana melakukan ekspansi ke Surabaya dan Anda ditugaskan memetakan potensi pasar dalam dua minggu. Sumber data awal apa yang paling akurat dan efisien untuk dianalisis oleh Anda?",
+      "options": [
+        "Hasil survei acak via media sosial yang disebar secara nasional tanpa filter domisili target.",
+        "Data sekunder dari asosiasi industri terkait, laporan riset pasar lokal, dan data internal transaksi historis.",
+        "Asumsi pribadi berdasarkan pengalaman tinggal di Surabaya beberapa tahun yang lalu.",
+        "Menunggu laporan konsultan eksternal yang baru akan selesai dalam waktu tiga bulan ke depan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja mendapatkan daftar 500 kontak perusahaan potensial hasil pameran industri. Tingkat konversi melalui email dingin (cold email) biasanya sangat rendah. Pendekatan apa yang harus Anda prioritaskan agar upaya penjangkauan (outreach) lebih efektif?",
+      "options": [
+        "Mengirimkan templat email yang sama persis ke seluruh 500 kontak secara serentak hari ini.",
+        "Melakukan segmentasi kontak berdasarkan ukuran perusahaan dan industri, lalu membuat pesan personalisasi.",
+        "Menelpon satu per satu nomor telepon kantor tanpa melihat latar belakang perusahaan mereka terlebih dahulu.",
+        "Meminta tim pemasaran untuk menjalankan iklan bertarget di media sosial khusus para kontak tersebut."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah rapat presentasi solusi bisnis kepada calon klien korporat di Jakarta, Direktur Operasional mereka secara terbuka meragukan keandalan sistem perusahaan Anda karena insiden downtime yang terjadi tahun lalu. Bagaimana respons profesional Anda?",
+      "options": [
+        "Menyangkal kejadian tersebut dan menyatakan bahwa informasi yang mereka terima sama sekali tidak benar.",
+        "Mengakui insiden tersebut secara transparan, lalu memaparkan langkah mitigasi dan peningkatan infrastruktur sejak saat itu.",
+        "Mengalihkan topik pembicaraan ke fitur keunggulan lain yang tidak berkaitan dengan stabilitas sistem.",
+        "Menyalahkan pihak penyedia server pihak ketiga atas gangguan teknis yang terjadi di masa lalu."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyusun proposal kerja sama (partnership proposal) untuk sebuah jenama (brand) ritel besar. Manajer pengembangan bisnis mereka dikenal sangat menyukai data dan efisiensi waktu. Apa fokus utama yang harus Anda tonjolkan di halaman depan proposal?",
+      "options": [
+        "Portofolio sejarah pendirian perusahaan dan visi misi pendiri sejak hari pertama berdiri.",
+        "Proyeksi peningkatan pendapatan dan efisiensi operasional terukur yang akan mereka peroleh.",
+        "Desain grafis dan tata letak dokumen yang sangat artistik tanpa terlalu memikirkan angka.",
+        "Daftar lengkap seluruh penghargaan yang pernah dimenangkan oleh tim internal perusahaan Anda."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja di perusahaan SaaS B2B lokal. Seorang calon klien potensial tingkat Enterprise meminta fitur kustom yang sangat spesifik dan belum ada dalam roadmap produk Anda, namun ukuran kontrak potensialnya bernilai 30% dari target kuartal tim Anda. Apa langkah terbaik yang harus Anda ambil?",
+      "options": [
+        "Langsung menyetujui permintaan tersebut untuk mengamankan tanda tangan kontrak secepat mungkin.",
+        "Menolak dengan tegas karena mengubah roadmap produk hanya demi satu klien adalah hal yang tabu.",
+        "Berkoordinasi dengan tim Produk dan Engineering untuk menilai kelayakan serta dampak bisnis jangka panjang.",
+        "Mengalihkan klien tersebut ke kompetitor yang sudah memiliki fitur khusus yang mereka butuhkan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kemitraan strategis yang telah berjalan selama enam bulan dengan sebuah startup fintech menunjukkan metrik pertumbuhan metrik transaksi yang stagnan. Sebagai pengelola kemitraan tersebut, tindakan proaktif apa yang harus Anda lakukan?",
+      "options": [
+        "Memutus kontrak kerja sama secara sepihak karena dianggap sudah tidak memberikan nilai tambah.",
+        "Mengadakan pertemuan evaluasi kinerja bersama (QBR) untuk mengidentifikasi hambatan di lapangan dan merancang kampanye bersama.",
+        "Menaikkan target komisi atau biaya layanan kepada mitra tersebut untuk menutup kerugian transaksi yang rendah.",
+        "Membiarkan situasi berjalan sendiri karena fluktuasi pasar adalah hal yang biasa terjadi pada industri ini."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mencari mitra strategis di sektor pendidikan tinggi di Indonesia untuk program literasi digital. Apa indikator kualifikasi utama (qualifying criteria) yang paling penting untuk menyaring daftar universitas target?",
+      "options": [
+        "Jumlah total mahasiswa aktif, komitmen pimpinan kampus pada teknologi, dan keselarasan visi program.",
+        "Luas area kampus dan keindahan arsitektur gedung rektorat di setiap universitas target.",
+        "Popularitas tim olahraga kampus tersebut di berbagai kejuaraan tingkat nasional.",
+        "Jumlah warung kopi yang beroperasi di sekitar area lingkungan kampus tersebut."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur besar menunjukkan ketertarikan yang tinggi pada produk Anda, namun proses pengadaan (procurement) mereka mensyaratkan tempo pembayaran (payment terms) 90 hari, sedangkan kebijakan perusahaan Anda adalah 30 hari. Bagaimana cara Anda menengahi hal ini?",
+      "options": [
+        "Menerima syarat 90 hari tersebut tanpa syarat tambahan demi mengamankan pencapaian target penjualan.",
+        "Menolak tegas dan membatalkan peluang bisnis karena aturan internal perusahaan tidak bisa diganggu gugat.",
+        "Menawarkan kompromi berupa penyesuaian harga atau meminta uang muka (down payment) di awal untuk menjaga arus kas.",
+        "Meminta mereka untuk membayar tunai di muka secara penuh tanpa memberikan ruang diskusi sama sekali."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta untuk merancang matriks Key Performance Indicator (KPI) bagi staf Business Development junior yang berfokus pada pencarian klien baru (lead generation). Metrik mana yang paling seimbang untuk memotivasi kualitas dan kuantitas kerja mereka?",
+      "options": [
+        "Hanya menghitung jumlah panggilan telepon keluar per hari tanpa melihat apakah kontak tersebut relevan.",
+        "Kombinasi antara jumlah prospek berkualitas yang dihasilkan, pertemuan penawaran terjadwal, dan nilai penutupan kontrak.",
+        "Hanya fokus pada total pendapatan bersih perusahaan di akhir tahun tanpa melihat kontribusi individu.",
+        "Jumlah proposal yang dikirimkan melalui email tanpa memedulikan apakah klien membaca atau meresponsnya."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda dituntut untuk mencapai target pendapatan tahunan dari lini produk baru dalam waktu enam bulan. Strategi alokasi sumber daya pengembangan bisnis yang paling realistis adalah...",
+      "options": [
+        "Membuka kampanye iklan berbayar massal secara nasional tanpa segmentasi industri",
+        "Fokus mendekati sepuluh akun target utama (whale accounts) dengan pendekatan tailor-made",
+        "Merekrut sepuluh tenaga sales baru untuk melakukan panggilan dingin setiap hari",
+        "Menurunkan harga jual produk hingga di bawah biaya produksi untuk merebut pasar cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengidentifikasi peluang kerja sama dengan platform e-commerce regional untuk memasarkan layanan pembayaran digital perusahaan Anda. Langkah awal paling taktis yang harus Anda ambil untuk memvalidasi minat mereka sebelum menyusun proposal formal adalah...",
+      "options": [
+        "Mengirimkan dokumen penawaran harga lengkap beserta draf perjanjian kerja sama eksklusif",
+        "Meminta jadwal pertemuan dengan tim produk mereka untuk membahas integrasi teknis mendalam",
+        "Mengadakan diskusi informal via jejaring profesional untuk memetakan tantangan transaksi mereka",
+        "Membuat prototipe purwarupa dashboard merchant khusus yang sudah disesuaikan dengan brand mereka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah korporasi FMCG besar di Jakarta menunda penandatanganan kontrak kerja sama tahunan karena restrukturisasi internal manajemen puncak. Sebagai pengembang bisnis yang memegang akun ini, tindakan paling tepat untuk menjaga momentum adalah...",
+      "options": [
+        "Mengirimkan somasi hukum atas keterlambatan realisasi komitmen yang telah disepakati",
+        "Menjadwalkan ulang sesi perkenalan dari awal dengan direksi baru secara agresif",
+        "Mengalihkan seluruh sumber daya alokasi akun ke prospek lain yang lebih cepat closing",
+        "Menjaga komunikasi bernilai tambah dengan mengirimkan riset industri relevan kepada PIC"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam pertemuan penawaran produk SaaS HR kepada calon klien korporat, mereka keberatan dengan skema pembayaran di muka (annual upfront). Strategi negosiasi terbaik untuk mempertahankan nilai kontrak tanpa merusak cash flow perusahaan Anda adalah...",
+      "options": [
+        "Memberikan diskon harga langsung sebesar tigapuluh persen untuk pembayaran bulanan",
+        "Menawarkan opsi pembayaran triwulanan dengan sedikit penyesuaian biaya administrasi",
+        "Memperpanjang durasi masa percobaan gratis selama enam bulan tanpa komitmen bayar",
+        "Mengubah model bisnis secara total menjadi bagi hasil berdasarkan jumlah karyawan aktif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan mengevaluasi portofolio kemitraan kanal (channel partnership) yang tidak produktif selama dua kuartal berturut-turut di wilayah Jabodetabek. Langkah pertama yang paling profesional sebelum memutuskan pemutusan kerja sama adalah...",
+      "options": [
+        "Mengirimkan surat pemberitahuan pemutusan sepihak sesuai klausul minimum penalti",
+        "Melakukan audit bersama untuk meninjau hambatan penjualan dan pelatihan ulang mitra",
+        "Menurunkan target insentif komisi mereka secara drastis agar mereka mundur sendiri",
+        "Mengalihkan database klien aktif milik mitra tersebut langsung ke tim sales internal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan presentasi pitching di hadapan para pemegang saham bank swasta nasional, mereka mempertanyakan aspek keamanan data platform Anda terkait regulasi OJK. Respon paling efektif untuk membangun kepercayaan adalah...",
+      "options": [
+        "Menjelaskan secara teknis arsitektur basis data dan menunjukkan sertifikasi kepatuhan",
+        "Meminta mereka menandatangani perjanjian kerahasiaan sebelum melanjutkan presentasi",
+        "Menjamin secara lisan bahwa sistem perusahaan dijamin aman dari segala bentuk peretasan",
+        "Mengalihkan topik pembicaraan ke keunggulan fitur lain yang tidak berkaitan dengan regulasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang strategi penetrasi pasar untuk produk software rantai pasok (supply chain) ke industri manufaktur di Cikarang. Hambatan terbesar adalah kebiasaan mereka menggunakan metode manual. Pendekatan value proposition yang paling tepat digunakan adalah...",
+      "options": [
+        "Menekankan keindahan antarmuka pengguna aplikasi yang sangat modern dan interaktif",
+        "Memamerkan daftar klien luar negeri yang telah sukses menggunakan sistem aplikasi Anda",
+        "Menghitung estimasi penghematan biaya operasional dan pengurangan tingkat kesalahan manual",
+        "Menawarkan pelatihan gratis selama setahun penuh bagi seluruh operator pabrik level bawah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan media digital menawarkan kerja sama barter promosi (media partnership) untuk acara tahunan perusahaan Anda. Cara paling objektif untuk mengukur kelayakan nilai ekonomis kerja sama tersebut adalah...",
+      "options": [
+        "Membandingkan jumlah pengikut media sosial mereka dengan target audiens produk Anda",
+        "Menghitung estimasi perolehan impresi dan potensi konversi prospek berdasarkan data historis",
+        "Meminta jaminan penempatan logo perusahaan pada posisi utama di setiap terbitan artikel",
+        "Menyetujui kerja sama asalkan mereka meliput CEO Anda dalam rubrik wawancara khusus"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam upaya memperluas ekosistem produk, Anda ingin mengajak kolaborasi perusahaan rintisan (startup) logistik lokal yang sedang bertumbuh pesat. Format penawaran kerja sama awal (pitch deck) yang paling menarik bagi pendiri startup tersebut adalah...",
+      "options": [
+        "Dokumen perjanjian hukum setebal lima puluh halaman mengenai hak kekayaan intelektual",
+        "Paparan ringkas mengenai dampak pertumbuhan pengguna bersama dan efisiensi operasional",
+        "Rincian struktur kepemilikan saham jika mereka bersedia diakuisisi oleh perusahaan Anda",
+        "Daftar panjang aturan birokrasi internal yang harus dipatuhi tim teknis mereka nantinya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati seorang mitra strategis utama mulai memasarkan produk pesaing secara diam-diam kepada basis klien bersama. Tindakan mitigasi risiko bisnis yang paling profesional dan terukur adalah...",
+      "options": [
+        "Memutus akses sistem secara seketika tanpa pemberitahuan untuk melindungi data klien",
+        "Mengadakan pertemuan evaluasi kinerja berdasarkan klausul non-kompetisi dalam kontrak",
+        "Menyebarkan informasi pelanggaran tersebut kepada asosiasi industri agar reputasi mereka turun",
+        "Memberikan bonus komisi tambahan agar mereka menghentikan penjualan produk pesaing"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati tingkat pembatalan di tengah jalan (churn rate) pada klien hasil ekspansi wilayah luar Jawa menunjukkan peningkatan signifikan dalam dua bulan terakhir. Langkah investigasi awal apa yang wajib dilakukan oleh tim pengembangan bisnis?",
+      "options": [
+        "Menaikkan target perolehan klien baru di wilayah tersebut untuk menutup potensi kerugian dari klien yang berhenti.",
+        "Menurunkan harga langganan produk secara drastis bagi seluruh klien lama di luar wilayah Jawa agar mereka bertahan.",
+        "Mengadakan wawancara mendalam dengan klien yang berhenti guna mengidentifikasi kesenjangan harapan dan realitas layanan.",
+        "Memutus hubungan kerja sama dengan agen pemasaran lokal yang dianggap gagal menjaga kepuasan para klien tersebut."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mendekati sebuah grup perusahaan konglomerat di Jakarta untuk penawaran solusi terintegrasi. Setelah tiga kali pertemuan tingkat manajerial, mereka meminta proposal harga tanpa memberikan kejelasan anggaran maupun ruang lingkup proyek yang pasti. Langkah taktis apa yang paling tepat Anda ambil?",
+      "options": [
+        "Mengirimkan penawaran harga terendah untuk mengamankan posisi awal dan menghindari kehilangan peluang dari kompetitor.",
+        "Meminta sesi lokakarya singkat bersama tim teknis mereka guna memetakan kebutuhan spesifik sebelum menyusun estimasi biaya.",
+        "Menolak memberikan proposal harga sampai mereka menunjuk satu orang pengambil keputusan tertinggi dalam proyek tersebut.",
+        "Menyusun tiga opsi paket harga berbeda agar mereka dapat memilih sendiri besaran investasi yang sesuai anggaran."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah instansi pemerintah daerah menunjukkan ketertarikan besar pada platform digital yang Anda tawarkan, namun mereka terbentur aturan birokrasi tahun anggaran berjalan yang sudah terkunci. Sebagai pengembang bisnis, strategi mana yang paling efektif untuk mengatasi kendala ini?",
+      "options": [
+        "Menawarkan skema uji coba gratis penuh selama sisa tahun ini agar mereka dapat langsung menggunakannya tanpa anggaran.",
+        "Menyusun draf nota kesepahaman awal untuk dimasukkan ke dalam Rencana Anggaran Pendapatan Belanja Daerah tahun berikutnya.",
+        "Meminta mereka mengalihkan pos anggaran pemeliharaan rutin infrastruktur yang ada saat ini untuk membayar layanan Anda.",
+        "Membantu mereka melobi bagian perbendaharaan daerah agar melakukan revisi anggaran mendadak demi proyek strategis ini."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda berhasil menjalin kemitraan dengan sebuah asosiasi industri berskala nasional. Tantangannya, anggota asosiasi tersebut sangat pasif dan jarang merespons penawaran produk Anda melalui jalur komunikasi utama. Apa langkah paling produktif untuk meningkatkan tingkat keterlibatan mereka?",
+      "options": [
+        "Mengirimkan siaran pesan promosi massal setiap minggu berisi diskon khusus untuk seluruh anggota terdaftar.",
+        "Mengadakan webinar edukasi bersama pengurus inti asosiasi yang membahas studi kasus efisiensi operasional industri.",
+        "Meminta data kontak pribadi seluruh anggota untuk melakukan panggilan telepon langsung satu per satu secara agresif.",
+        "Mengancam akan menghentikan kerja sama kemitraan jika asosiasi tidak mampu mendatangkan jumlah prospek minimal."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah forum jejaring bisnis, Anda berkenalan dengan direktur utama calon klien strategis yang potensial. Beliau memberikan kartu nama pribadi dan meminta Anda mengirimkan ringkasan penawaran. Bagaimana cara menindaklanjuti kontak tersebut secara profesional dalam 24 jam ke depan?",
+      "options": [
+        "Mengirimkan pesan singkat personal yang mengingatkan momen pertemuan dan melampirkan dokumen profil perusahaan.",
+        "Menghubungi nomor telepon selulernya secara langsung untuk menjadwalkan panggilan telepon pembahasan produk.",
+        "Mengirimkan email formal berisi katalog lengkap seluruh lini produk dan daftar harga promosi terbaru.",
+        "Menghubungkan akun profesional Anda dengannya melalui platform LinkedIn sambil mengirimkan pesan ajakan kerja sama."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan Anda berencana meluncurkan produk baru untuk segmen UMKM kuliner di kota Bandung. Untuk menekan biaya akuisisi pelanggan, Anda ditugaskan mencari mitra strategis lokal yang memiliki basis pedagang tersebut. Siapa pihak paling ideal yang harus Anda ajak berkolaborasi?",
+      "options": [
+        "Dinas Koperasi dan Usaha Kecil Menengah setempat yang memiliki program pembinaan rutin bagi para wirausaha.",
+        "Asosiasi pengusaha kuliner nasional yang berpusat di gedung perkantoran mewah kawasan pusat bisnis Jakarta.",
+        "Perusahaan pembiayaan modal ventura multinasional yang fokus mendanai startup teknologi tahap lanjut.",
+        "Komunitas digital marketing independen yang anggotanya mayoritas adalah pelajar dan mahasiswa kreatif."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan negosiasi kontrak kerja sama jangka panjang dengan distributor regional, mereka meminta klausul eksklusivitas wilayah yang melarang perusahaan Anda menjual produk ke pihak lain di area yang sama. Sikap apa yang paling bijak untuk melindungi kepentingan bisnis Anda?",
+      "options": [
+        "Menyetujui permintaan tersebut tanpa syarat demi segera menutup transaksi penjualan dalam kuartal berjalan.",
+        "Menolak tegas permintaan itu dan mengakhiri perundingan karena dianggap merugikan strategi ekspansi perusahaan.",
+        "Memberikan syarat target penjualan minimum yang ketat sebagai prasyarat sahnya hak eksklusivitas wilayah tersebut.",
+        "Mengalihkan diskusi ke pembahasan diskon harga pembelian grosir tanpa membahas ulang klausul wilayah."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menyiapkan laporan kinerja bulanan untuk direksi mengenai efektivitas saluran kemitraan strategis. Metrik utama manakah yang paling akurat merepresentasikan kualitas kontribusi bisnis dari kanal tersebut dibandingkan sekadar jumlah prospek masuk?",
+      "options": [
+        "Jumlah total klik tautan rujukan yang dihasilkan oleh halaman situs web mitra dalam periode satu bulan.",
+        "Nilai pendapatan bersih yang dihasilkan berbanding dengan biaya operasional yang dikeluarkan untuk mitra.",
+        "Jumlah keseluruhan prospek mentah yang berhasil dikumpulkan oleh tim pemasaran mitra melalui pameran.",
+        "Frekuensi pertemuan koordinasi rutin yang berhasil diselenggarakan bersama para manajer akun mitra."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan rintisan teknologi finansial mengajak perusahaan Anda melakukan kampanye pemasaran bersama (co-marketing). Setelah diteliti, basis pengguna mereka tidak sejalan dengan profil pelanggan ideal (ICP) produk Anda. Apa langkah penolakan yang paling profesional?",
+      "options": [
+        "Menolak ajakan tersebut secara langsung melalui pesan singkat tanpa memberikan alasan mendasar kepada mereka.",
+        "Mengabaikan seluruh komunikasi email dan panggilan telepon dari pihak manajemen perusahaan rintisan tersebut.",
+        "Menyampaikan apresiasi atas tawaran tersebut dan menjelaskan fokus segmentasi pasar strategis yang sedang ditempuh.",
+        "Menerima ajakan kerja sama tersebut dengan catatan mereka bersedia menanggung seluruh biaya produksi kampanye."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan menghidupkan kembali hubungan bisnis dengan mantan klien korporat yang tidak memperpanjang kontrak tahun lalu karena masalah performa sistem teknis. Langkah komunikasi pembuka apa yang paling tepat untuk memulai pendekatan kembali?",
+      "options": [
+        "Mengirimkan penawaran diskon besar jika mereka mau menandatangani kontrak baru dalam minggu ini.",
+        "Menyampaikan informasi pembaruan sistem dan perbaikan fitur mayor yang langsung menjawab keluhan masa lalu mereka.",
+        "Meminta atasan Anda menelepon langsung direktur mereka untuk menanyakan alasan kepindahan ke kompetitor.",
+        "Mengundang mereka menghadiri acara peluncuran produk baru perusahaan di hotel bintang lima."
+      ],
+      "correct_index": 1
+    }
+  ]
+}

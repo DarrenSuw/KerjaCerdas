@@ -47,12 +47,13 @@ from backend.app.services.matching.evidence import skill_key
 
 _logger = logging.getLogger(__name__)
 
-# Target size of a healthy bank. With QUESTIONS_PER_QUIZ=5, a 50-question pool
-# gives C(50,5)=2,118,760 possible draws — the probability of drawing the exact
-# same 5 two days in a row is <0.0005%. This is the primary retake defence.
+# Target size of a healthy bank. With QUESTIONS_PER_QUIZ=5, a 30-question pool
+# gives C(30,5)=142,506 possible draws — the probability of drawing the exact
+# same 5 two days in a row is <0.0007%. This is the primary retake defence and
+# matches the JSON seed banks bundled in backend/seeds/quiz_banks/.
 # BANK_MINIMUM (2x quiz length) is the floor below which two consecutive attempts
 # cannot be non-overlapping at all.
-BANK_TARGET = 50
+BANK_TARGET = 30
 BANK_MINIMUM = 10
 GENERATE_BATCH = 10  # questions asked for per LLM call
 MAX_BATCHES = 6  # hard stop; raised from 4 to fill the larger target

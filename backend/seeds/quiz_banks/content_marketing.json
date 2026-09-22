@@ -1,0 +1,306 @@
+{
+  "skill": "Content Marketing",
+  "skill_key": "content marketing",
+  "questions": [
+    {
+      "question": "Sebuah brand skincare lokal mendapati artikel blog panduan cara mengatasi jerawat mendapat trafik organik yang sangat tinggi dari Google, namun conversion rate untuk pembelian produk di e-commerce sangat rendah. Langkah apa yang paling tepat untuk mengoptimalkan artikel tersebut?",
+      "options": [
+        "Menambahkan banner pop-up diskon besar di tengah artikel agar langsung menarik perhatian pembaca",
+        "Mengganti topik artikel secara keseluruhan karena trafik tinggi tidak berguna jika tidak ada penjualan",
+        "Menyisipkan tautan produk yang relevan secara natural dan menambahkan CTA quiz jenis kulit di akhir artikel",
+        "Memperpanjang artikel dengan memasukkan lebih banyak kata kunci agar peringkat di mesin pencari semakin naik"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ditugaskan membuat konten LinkedIn untuk perusahaan B2B SaaS (Software as a Service) bidang HRIS. Format konten seperti apa yang paling efektif untuk membangun otoritas brand dan mendatangkan leads berkualitas dari para HR Manager?",
+      "options": [
+        "Infografis langkah praktis mengatasi masalah turnover karyawan disertai template dokumen yang bisa diunduh",
+        "Video reels berdurasi 15 detik menggunakan tren musik TikTok terbaru yang sedang viral di kalangan profesional",
+        "Kumpulan meme seputar susahnya merekrut kandidat yang cocok untuk mencairkan suasana kerja",
+        "Teks panjang berisi pujian dari CEO perusahaan terhadap pencapaian tim internal sepanjang kuartal ini"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah kanal YouTube perusahaan fintech mencatat rata-rata penonton (audience retention) turun drastis di menit kedua pada setiap video edukasi keuangan yang diunggah. Apa tindakan perbaikan pertama yang harus Anda ambil?",
+      "options": [
+        "Mengganti seluruh host video dengan figur publik terkenal yang memiliki basis pengikut sosial media besar",
+        "Mengevaluasi dan memperbaiki bagian intro video agar langsung menyampaikan inti materi tanpa basa-basi",
+        "Memperpendek durasi total video secara drastis dari 10 menit menjadi kurang dari 2 menit saja",
+        "Menaikkan anggaran iklan berbayar YouTube Ads untuk mendatangkan lebih banyak penonton baru setiap hari"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim content marketing Anda baru saja merilis e-book gratis tentang strategi pajak UMKM. Agar kampanye lead generation melalui e-mail sukses besar, strategi distribusi mana yang paling efektif diimplementasikan dalam minggu pertama?",
+      "options": [
+        "Mengunggah tautan unduhan langsung di halaman depan website tanpa meminta data diri pengguna",
+        "Membuat thread Twitter/X berseri yang merangkum poin-poin menarik dan menaruh tautan landing page di akhir",
+        "Mengirimkan e-book tersebut secara acak ke seluruh database nomor WhatsApp pribadi yang dibeli dari vendor",
+        "Memasang iklan banner berbayar di portal berita nasional dengan tombol yang langsung mengunduh file PDF"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Engagement rate akun Instagram brand fashion Muslim menurun drastis selama bulan di luar Ramadhan. Sebagai content lead, bagaimana Anda merumuskan ulang pilar konten untuk menjaga kestabilan interaksi audiens?",
+      "options": [
+        "Menghentikan sementara aktivitas posting di Instagram dan mengalihkan seluruh anggaran ke platform TikTok",
+        "Mengubah fokus konten menjadi hiburan umum seperti kuis tebak gambar yang tidak berhubungan dengan fashion",
+        "Menggeser pilar konten dari jualan produk langsung ke mix and match harian dan tips styling profesional",
+        "Memperbanyak frekuensi posting foto katalog produk berlatar putih polos dengan keterangan harga diskon"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah portal berita kuliner lokal ingin mengukur ROI (Return on Investment) dari rubrik konten bersponsor (sponsored content) yang dibiayai oleh brandKecap. Metrik mana yang paling komprehensif untuk dilaporkan kepada klien?",
+      "options": [
+        "Jumlah total tayangan halaman (pageviews) dan waktu baca rata-rata artikel tersebut di website",
+        "Jumlah klik pada banner di dalam artikel, tingkat konversi pembelian produk, dan brand lift study",
+        "Jumlah komentar positif yang masuk di kolom komentar artikel dan media sosial terkait",
+        "Total biaya produksi konten dibandingkan dengan jumlah kata yang berhasil ditulis oleh tim redaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati sebuah artikel panduan investasi emas yang Anda terbitkan setahun yang lalu mengalami penurunan posisi peringkat di Google dari posisi 2 ke posisi 8. Langkah audit SEO content apa yang harus dilakukan?",
+      "options": [
+        "Menghapus artikel lama tersebut secara permanen dan membuat artikel baru dengan judul yang sama persis",
+        "Membeli backlink instan dalam jumlah besar dari situs-situs direktori luar negeri untuk mendongkrak otoritas",
+        "Memperbarui data statistik, merevisi informasi yang sudah kedaluwarsa, dan memperkaya pembahasan sub-topik",
+        "Mengubah URL artikel agar terindeks ulang oleh mesin pencari sebagai konten yang sepenuhnya baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam menyusun content calendar bulanan untuk produk kopi literan, Anda harus menyelaraskan konten dengan momen Hari Kemerdekaan Republik Indonesia. Ide konten mana yang paling berisiko merusak citra brand (tone-deaf)?",
+      "options": [
+        "Mengadakan kompetisi meracik kopi dengan resep kemerdekaan bersama barista internal perusahaan",
+        "Membuat promo diskon merdeka dengan syarat pelanggan wajib mengunggah foto produk dengan filter bendera robek",
+        "Membuat konten edukasi sejarah singkat masuknya biji kopi nusantara ke kancah internasional era kolonial",
+        "Meluncurkan varian kemasan edisi khusus bertema pahlawan nasional hasil kolaborasi dengan ilustrator lokal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi EdTech ingin meningkatkan jumlah pendaftar kursus bahasa Inggris melalui strategi content marketing berbasis repurposing. Bentuk repurposing paling efisien dari satu materi webinar berdurasi 1 jam adalah...",
+      "options": [
+        "Meringkas transkrip webinar menjadi satu utas postingan media sosial tanpa mengubah format apapun",
+        "Memotong webinar menjadi beberapa video pendek reels/shorts, infografis tips, dan artikel ringkasan blog",
+        "Mengunggah ulang rekaman utuh webinar tersebut ke lima platform video yang berbeda secara bersamaan",
+        "Menerjemahkan seluruh dialog audio webinar ke dalam bahasa asing dan mengunggahnya sebagai podcast audio"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Atasan Anda meminta agar seluruh artikel blog perusahaan wajib memuat nama produk sebanyak minimal 5% dari total kata agar brand awareness meningkat. Sebagai profesional content marketing, bagaimana cara Anda menanggapi permintaan ini?",
+      "options": [
+        "Menuruti permintaan tersebut secara mutlak pada setiap artikel tanpa memperdulikan kenyamanan membaca",
+        "Menolak mentah-mentah permintaan tersebut dan mengancam akan keluar dari tim karena tidak sesuai teori SEO",
+        "Memberikan edukasi berbasis data bahwa kepadatan keyword yang berlebihan justru merusak pengalaman pembaca dan menurunkan peringkat SEO",
+        "Menyembunyikan nama produk menggunakan warna teks yang sama dengan latar belakang putih agar tidak terlihat mata manusia"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital meluncurkan fitur investasi reksa dana. Anda ditugaskan membuat infografis edukasi di Instagram. Apa langkah awal paling tepat untuk memastikan konten ini efektif menjangkau audiens awam?",
+      "options": [
+        "Menggunakan istilah teknis pasar modal agar brand terlihat sangat kredibel",
+        "Memecah konsep imbal hasil dan risiko menjadi analogi kehidupan sehari-hari",
+        "Menyertakan disclaimer hukum yang panjang di slide pertama untuk transparansi",
+        "Memasang tombol tautan langsung ke halaman registrasi di setiap slide postingan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Artikel panduan 'Cara Mengatur Keuangan Pengantin Baru' dari sebuah bank swasta memiliki bounce rate 85%. Analisis menunjukkan pembaca langsung pergi karena paragraf pembuka terlalu panjang membahas sejarah inflasi. Apa perbaikan yang harus Anda lakukan?",
+      "options": [
+        "Menghapus seluruh sub-bagian teks dan menggantinya dengan infografis penuh",
+        "Memindahkan ringkasan solusi praktis ke bagian awal sebelum membahas latar belakang",
+        "Menambahkan pop-up penawaran kartu kredit di detik kelima kunjungan halaman",
+        "Mengganti judul artikel dengan kalimat yang lebih provokatif dan bombastis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Brand kopi siap minum kemasan botol ingin meningkatkan user-generated content (UGC) melalui TikTok. Kampanye seperti apa yang paling berpotensi memicu partisipasi aktif konsumen muda?",
+      "options": [
+        "Sayembara menulis esai panjang mengenai filosofi biji kopi nusantara",
+        "Kompetisi foto produk estetik di dalam studio dengan pencahayaan profesional",
+        "Tantangan membuat kreasi minuman campuran unik menggunakan varian produk",
+        "Permintaan mengisi formulir survei kepuasan pelanggan berhadiah voucer belanja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mengelola newsletter mingguan untuk situs e-commerce fesyen. Angka open rate turun drastis selama tiga minggu berturut-turut. Langkah diagnostik mana yang paling tepat untuk menguji penyebab masalah ini?",
+      "options": [
+        "Mengubah jadwal pengiriman dari hari Selasa pagi menjadi Sabtu malam",
+        "Melakukan pengujian A/B pada subjek email dengan variasi gaya bahasa",
+        "Menambahkan jumlah produk diskon di dalam badan email secara masif",
+        "Menghapus seluruh daftar pelanggan yang tidak aktif dalam enam bulan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah klinik kecantikan ingin menggunakan strategi content marketing berbasis testimoni pasien di Instagram Reels. Agar konten tidak terkesan sebagai iklan hard-selling yang membosankan, pendekatan narasi apa yang sebaiknya digunakan?",
+      "options": [
+        "Menampilkan daftar harga perawatan secara penuh di awal video berdurasi pendek",
+        "Menceritakan perjalanan emosional pasien mengatasi rasa tidak percaya diri",
+        "Menunjukkan foto close-up kondisi kulit sebelum dan sesudah secara ekstrem",
+        "Mengharuskan dokter spesialis membacakan sertifikat penghargaan klinik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Perusahaan logistik B2B ingin mendistribusikan laporan riset industri rantai pasok setebal 50 halaman. Format konten turunan apa yang paling efektif untuk menarik minat para pengambil keputusan di LinkedIn?",
+      "options": [
+        "Video pendek berdurasi 15 detik dengan musik tren dan transisi cepat",
+        "Dokumen geser (carousel) berisi ringkasan tiga temuan data paling mengejutkan",
+        "Membuat kuis interaktif berhadiah merchandise gratis untuk umum",
+        "Infografis komik lucu tentang keseharian supir truk pengiriman barang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs web properti mendapati konten artikel panduan KPR mengalami stagnasi peringkat di mesin pencari. Kompetitor baru saja merilis artikel serupa yang lebih komprehensif. Apa tindakan optimasi lanjutan yang paling tepat?",
+      "options": [
+        "Menghapus artikel lama dan membuat URL baru dari nol secara rutin",
+        "Memperbarui data suku bunga terbaru dan menambahkan bagian FAQ interaktif",
+        "Memperbanyak jumlah repetisi kata kunci KPR di setiap paragraf penutup",
+        "Membeli backlink berbayar dalam jumlah besar dari situs direktori acak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merencanakan kampanye content marketing untuk peluncuran aplikasi pencatatan keuangan UMKM. Segmen audiens adalah pemilik toko kelontong tradisional. Jenis konten edukasi apa yang paling mudah diterima mereka?",
+      "options": [
+        "Webinar daring berdurasi dua jam tentang analisis laporan laba rugi",
+        "Studi kasus tertulis mengenai perusahaan rintisan teknologi global",
+        "Video tutorial singkat berdurasi satu menit menggunakan bahasa sehari-hari",
+        "E-book akademis setebal seratus halaman tentang akuntansi perpajakan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah brand furnitur lokal ingin membangun otoritas merek (brand authority) di ranah pencarian organik. Strategi pilar konten (content pillar) mana yang paling strategis untuk jangka panjang?",
+      "options": [
+        "Membuat artikel khusus setiap kali ada diskon kilat akhir pekan",
+        "Menerbitkan panduan desain interior, perawatan kayu, dan tata ruang rumah",
+        "Mengunggah siaran pers perusahaan setiap kali ada pergantian direksi",
+        "Menulis ulasan produk pesaing secara langsung untuk membandingkan harga"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah hotel butik di Bali ingin menarik wisatawan domestik melalui strategi content marketing di Instagram. Konten jenis apa yang terbukti paling tinggi tingkat konversinya untuk pemesanan kamar?",
+      "options": [
+        "Foto brosur digital resmi dengan daftar lengkap fasilitas kamar hotel",
+        "Video pengalaman tamu (guest experience) menikmati sarapan terapung",
+        "Pengumuman perubahan kebijakan manajemen internal dan protokol operasional",
+        "Infografis statistik tingkat hunian hotel selama lima tahun terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform e-commerce produk ibu dan anak ingin membuat konten TikTok yang efektif menjangkau ibu muda urban. Manakah pendekatan pembuatan konten yang paling tepat untuk diuji pertama kali?",
+      "options": [
+        "Membuat video ulasan produk berdurasi panjang dengan menampilkan spesifikasi teknis dan bahan baku",
+        "Membuat video kompilasi foto produk estetik dengan latar musik tren yang sedang viral di platform",
+        "Membuat sketsa komedi keseharian ibu rumah tangga yang menghadapi anak tantrum sambil belanja",
+        "Membuat video tanya jawab langsung dengan dokter spesialis anak mengenai nutrisi balita usia dini"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati laporan bulanan bahwa konten artikel blog panduan resep masakan dari brand bumbu dapur memiliki pageviews tinggi tetapi konversi penjualan produknya hampir nol. Apa langkah optimasi paling taktis yang harus diambil?",
+      "options": [
+        "Mengganti seluruh topik artikel blog dengan fokus pada ulasan produk bumbu dapur baru",
+        "Menyisipkan tautan produk dan tombol beli langsung di tengah langkah-langkah resep relevan",
+        "Menghapus artikel berkinerja rendah tersebut untuk menaikkan kualitas keseluruhan situs",
+        "Menambahkan pop-up diskon besar di halaman utama blog untuk menarik perhatian pembaca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan rintisan logistik rantai pasok meluncurkan fitur pelacakan armada berbasis satelit. Sebagai content strategist, bagaimana cara terbaik mengemas penjelasan fitur ini untuk audiens manajer operasional B2B?",
+      "options": [
+        "Menggunakan infografis warna-warni ceria dengan bahasa gaul agar mudah dipahami cepat",
+        "Menyusun studi kasus berbasis data nyata efisiensi biaya yang dialami klien terdahulu",
+        "Membuat video pendek berdurasi 15 detik dengan menampilkan tarian karyawan di kantor",
+        "Mengadakan siaran langsung tanya jawab di media sosial dengan hadiah suvenir menarik"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Akun Instagram sebuah brand suplemen kesehatan mengalami penurunan jangkauan organik (reach) secara konsisten selama dua bulan berturut-turut. Kebijakan apa yang harus Anda evaluasi dan ubah terlebih dahulu?",
+      "options": [
+        "Menghentikan seluruh penggunaan tagar di setiap takar teks takarar unggahan media",
+        "Mengurangi frekuensi unggah feed harian dan memperbanyak produksi konten video pendek",
+        "Membeli paket promosi penambahan pengikut instan dari pihak ketiga terpercaya",
+        "Menghapus semua komentar negatif dari pengguna yang mengeluhkan harga produk"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan menyusun naskah siniar (podcast) mingguan untuk sebuah bank digital. Agar pendengar tetap bertahan hingga akhir episode berdurasi 20 menit, teknik penyusunan apa yang paling krusial?",
+      "options": [
+        "Menempatkan informasi promosi produk diskon kartu kredit pada menit pertama siaran",
+        "Membuat babak perkenalan yang panjang untuk menjelaskan sejarah pendirian perusahaan",
+        "Menyampaikan kisah sukses nasabah nyata yang keluar dari jeratan utang di awal acara",
+        "Membaca seluruh syarat dan ketentuan layanan investasi secara lengkap di bagian tengah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah klinik kecantikan premium ingin meningkatkan jumlah pendaftar konsultasi melalui Meta Ads dengan materi konten foto. Format visual mana yang memberikan tingkat konversi paling stabil untuk segmen wanita karier?",
+      "options": [
+        "Foto sebelum dan sesudah perawatan wajah yang disertai penjelasan proses medis rinci",
+        "Grafis testimoni teks polos dengan latar belakang warna pastel dan logo klinik besar",
+        "Foto candid natural dokter spesialis kulit yang sedang tersenyum ramah di ruang praktik",
+        "Kolase foto seluruh produk krim malam yang berjejer rapi di atas meja marmer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam merencanakan kampanye peluncuran lini pakaian kerja wanita, Anda mendapati bahwa target audiens di kota besar lebih aktif berinteraksi pada malam hari selepas jam kantor. Apa keputusan penjadwalan konten yang paling logis?",
+      "options": [
+        "Menjadwalkan semua publikasi konten pada pukul 08.00 pagi agar dibaca saat sarapan",
+        "Menyebarkan waktu publikasi secara merata setiap dua jam sepanjang hari kerja penuh",
+        "Memusatkan penayangan konten promosi utama pada rentang pukul 19.00 hingga 21.00 WIB",
+        "Mengunggah materi kampanye hanya pada hari Sabtu dan Minggu siang hari libur"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi pencari kerja (job portal) ingin mendominasi hasil pencarian Google untuk kata kunci 'tips wawancara kerja'. Strategi konten SEO apa yang paling efektif untuk mengalahkan dominasi pesaing lama?",
+      "options": [
+        "Menulis artikel dengan jumlah kata minimal 5.000 kata tanpa memperhatikan sub-topik",
+        "Membuat kluster konten mendalam yang mencakup simulasi pertanyaan, bahasa tubuh, dan negosiasi gaji",
+        "Menggunakan teknik pengulangan kata kunci target sebanyak mungkin di setiap paragraf pembuka",
+        "Membeli tautan balik (backlinks) dalam jumlah besar dari situs web direktori acak"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mengelola buletin email (newsletter) mingguan untuk komunitas hobi kopi. Tingkat pembukaan email (open rate) terus merosot. Eksperimen A/B testing apa yang paling tepat dilakukan pertama kali?",
+      "options": [
+        "Menguji dua desain templat tata letak warna latar belakang email yang berbeda total",
+        "Menguji dua variasi subjek email yang menggunakan pendekatan personalisasi versus rasa penasaran",
+        "Menguji dua hari pengiriman email yang berbeda antara hari Selasa dan hari Minggu sore",
+        "Menguji dua jenis tautan tombol ajakan bertindak yang mengarah ke halaman produk berbeda"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand furnitur modular lokal ingin memanfaatkan platform Pinterest untuk menjangkau pemilik rumah baru. Konten visual seperti apa yang memiliki potensi simpanan (saves) tertinggi?",
+      "options": [
+        "Infografis tabel harga perbandingan bahan kayu jati dengan multipleks secara detail",
+        "Foto sudut ruangan minimalis estetik yang menampilkan solusi penataan ruang sempit",
+        "Grafis poster diskon besar-besaran akhir tahun dengan batas waktu pemesanan ketat",
+        "Tangkapan layar ulasan bintang lima dari pelanggan yang puas di marketplace online"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

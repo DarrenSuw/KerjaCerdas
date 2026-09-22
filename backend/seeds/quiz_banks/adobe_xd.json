@@ -1,0 +1,306 @@
+{
+  "skill": "Adobe XD",
+  "skill_key": "adobe xd",
+  "questions": [
+    {
+      "question": "Anda sedang mendesain aplikasi mobile e-commerce dan ingin memastikan tombol 'Beli Sekarang' tetap berada di posisi yang sama di bagian bawah layar meskipun pengguna menggulir (scroll) halaman detail produk. Fitur apa di Adobe XD yang paling tepat digunakan?",
+      "options": [
+        "Mengatur opsi 'Fixed position when scrolling' pada panel Inspector",
+        "Mengelompokkan tombol ke dalam komponen utama (Master Component)",
+        "Menambahkan interaksi 'Auto-Animate' pada area bawah halaman",
+        "Mengaktifkan grid layout khusus untuk perangkat mobile"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim frontend meminta aset ikon dalam format SVG yang bersih tanpa grup layer yang berlebihan dari file Adobe XD Anda. Cara paling efisien untuk mengekspor ikon tersebut langsung dari canvas adalah:",
+      "options": [
+        "Melakukan klik kanan pada ikon, pilih Export, lalu tentukan format SVG",
+        "Menandai ikon sebagai asset di panel Assets lalu unduh via Cloud",
+        "Menyalin kode SVG langsung dari panel Inspector menggunakan plugin pihak ketiga",
+        "Mengekspor seluruh artboard ke format SVG lalu memotongnya secara manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain dasbor web dengan tabel data yang sangat panjang. Ketika baris tabel bertambah, Anda ingin elemen di bawah tabel secara otomatis bergeser ke bawah tanpa harus menggesernya secara manual satu per satu. Fitur apa yang harus diterapkan?",
+      "options": [
+        "Memanfaatkan fungsi 'Stack' pada panel properti objek",
+        "Menggunakan fitur 'Repeat Grid' untuk menduplikasi baris tabel",
+        "Mengubah grup tabel menjadi komponen dengan status interaktif",
+        "Mengaktifkan panduan 'Responsive Resize' pada area artboard"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Klien meminta perubahan warna primer dari biru tua menjadi hijau lumut pada seluruh halaman aplikasi yang terdiri dari 30 artboard. Agar Anda tidak perlu mengubah warna satu persatu secara manual, langkah apa yang harus dilakukan?",
+      "options": [
+        "Memperbarui nilai warna pada panel Assets bagian Colors",
+        "Menggunakan fitur 'Find and Replace' khusus untuk kode warna hex",
+        "Menyeleksi seluruh artboard lalu menerapkan efek color overlay",
+        "Mengedit definisi warna master component di halaman terpisah"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat animasi transisi yang mulus antara dua artboard saat pengguna mengeklik kartu produk untuk melihat detailnya, di mana elemen gambar membesar secara otomatis. Pengaturan prototipe manakah yang paling tepat?",
+      "options": [
+        "Menggunakan 'Auto-Animate' dengan nama layer elemen yang identik",
+        "Memilih transisi 'Slide Left' dengan durasi waktu 0.6 detik",
+        "Menambahkan trigger 'Hover' pada kartu produk sebelum diklik",
+        "Mengatur aksi 'Transition' dengan efek dissolve pada kedua artboard"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan uji coba prototipe (User Testing) untuk aplikasi perbankan, pengguna sering kesulitan menemukan menu transfer karena tata letaknya membingungkan. Fitur apa di Adobe XD yang memungkinkan Anda merekam dan mengumpulkan masukan langsung dari pengguna?",
+      "options": [
+        "Membuat tautan 'Share for Review' dan mengizinkan komentar publik",
+        "Menggunakan fitur 'Device Preview' via kabel USB ke ponsel penguji",
+        "Mengekspor prototipe interaktif menjadi format video berdurasi pendek",
+        "Membuka mode 'Design Specs' untuk mengunduh spesifikasi desain"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang desain responsif untuk tampilan web desktop dan tablet. Saat mengubah ukuran artboard tablet menjadi lebih kecil, beberapa teks dan tombol bergeser tidak beraturan. Pengaturan apa yang membantu menjaga tata letak tetap proporsional?",
+      "options": [
+        "Mengaktifkan 'Responsive Resize' dan menyesuaikan konstrain objek",
+        "Mengunci posisi setiap elemen menggunakan fitur 'Lock' di panel layer",
+        "Mengubah seluruh kelompok elemen menjadi satu gambar bitmap utuh",
+        "Membuat sistem grid kolom yang berbeda pada setiap ukuran artboard"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat komponen tombol yang memiliki tiga kondisi berbeda: Default, Hover, dan Pressed, agar desainer lain dapat menggunakannya dengan konsisten. Fitur apa yang harus Anda buat di Adobe XD?",
+      "options": [
+        "Membuat komponen utama dengan fitur 'Component States'",
+        "Membuat tiga artboard terpisah lalu menghubungkannya dengan trigger",
+        "Menyimpan tiga versi tombol tersebut ke dalam panel 'Document Assets'",
+        "Mengelompokkan tombol ke dalam folder 'Symbols' di panel layer"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim developer membutuhkan informasi jarak spasi (padding dan margin) yang tepat antara elemen kartu dan teks di dalam desain Anda tanpa harus menebak-nebak. Fitur apa yang paling efisien untuk dibagikan kepada mereka?",
+      "options": [
+        "Membagikan tautan 'Share for Development' untuk melihat Design Specs",
+        "Mengekspor seluruh desain ke dalam format file PDF beresolusi tinggi",
+        "Mengambil tangkapan layar artboard dan mencatat ukurannya di dokumen lain",
+        "Meminta developer menginstal aplikasi Adobe XD versi lengkap di PC mereka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain daftar menu makanan yang panjang dan ingin area daftar tersebut dapat digulir secara vertikal di dalam layar ponsel, sementara header dan footer aplikasi tetap diam di tempatnya. Bagaimana cara membuatnya di Adobe XD?",
+      "options": [
+        "Mengatur tinggi artboard melebihi ukuran layar dan mengaktifkan scroll vertical",
+        "Membuat artboard terpisah untuk setiap item menu yang ada di daftar",
+        "Menggunakan fitur 'Overlay' untuk memunculkan menu dari bawah layar",
+        "Menambahkan interaksi 'Drag' pada area kontainer menu makanan tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang aplikasi HRIS dan perlu membuat struktur navigasi menu samping (sidebar) yang konsisten dan muncul di setiap halaman tanpa harus menyalinnya manual ke puluhan artboard. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fungsi Repeat Grid pada seluruh artboard",
+        "Membuat menu tersebut menjadi Master Component",
+        "Mengelompokkan menu kedalam grup lalu menguncinya",
+        "Memanfaatkan plugin pihak ketiga untuk sinkronisasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek redesign aplikasi logistik, Anda ingin menguji apakah alur pendaftaran akun baru sudah intuitif sebelum diserahkan ke developer. Langkah apa yang harus dilakukan di panel Prototype Adobe XD?",
+      "options": [
+        "Menghubungkan target artboard dengan interaksi tap dan tipe transisi Dissolve",
+        "Mengaktifkan fitur Auto-Animate pada tombol mulai dan akhir pendaftaran",
+        "Membuat trigger keypress agar halaman berpindah otomatis saat ditekan",
+        "Menyusun urutan artboard berdasarkan nomor halaman secara berurutan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain banner promosi dengan teks dinamis yang panjangnya bervariasi di dalam kotak kartu produk. Agar kotak tersebut otomatis melebar ke samping mengikuti panjang teks tanpa merusak layout, pengaturan apa yang harus diaktifkan pada teks?",
+      "options": [
+        "Mengubah jenis teks menjadi Fixed Size pada panel properti",
+        "Mengatur constraints agar elemen teks selalu berada di tengah",
+        "Mengubah properti teks menjadi Auto-Width pada panel properti",
+        "Membuat teks tersebut menjadi komponen independen terpisah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat mendesain halaman profil pengguna, Anda ingin memastikan foto profil berbentuk lingkaran tetap proporsional dan tidak lonjong meskipun layar ponsel diubah ukurannya. Fitur apa yang harus diterapkan pada objek foto tersebut?",
+      "options": [
+        "Mengunci aspek rasio lebar dan tinggi pada panel properti",
+        "Mengaktifkan fitur Responsive Resize secara manual",
+        "Memasukkan foto ke dalam bentuk lingkaran menggunakan mask",
+        "Menambahkan padding khusus pada sisi kiri dan kanan foto"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menunjukkan kepada klien bagaimana pop-up konfirmasi pembayaran meluncur naik dari bagian bawah layar saat tombol konfirmasi ditekan. Pengaturan transisi mana yang harus dipilih pada mode Prototype?",
+      "options": [
+        "Menggunakan transisi Slide Left dengan durasi 0.4 detik",
+        "Menggunakan transisi Overlay dengan jenis Slide Up",
+        "Menggunakan transisi Dissolve dengan easing ease-in-out",
+        "Menggunakan transisi Auto-Animate dengan nama layer sama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bekerja dalam tim yang menggunakan sistem desain (Design System) terpusat di perusahaan. Bagaimana cara terbaik mendistribusikan pustaka warna dan gaya teks agar bisa digunakan oleh desainer lain?",
+      "options": [
+        "Menyimpan file XD ke folder bersama di local network kantor",
+        "Menerbitkan Asset tersebut sebagai Linked Cloud Document",
+        "Mengekspor file aset grafis ke dalam format PDF standar",
+        "Mengirimkan kode warna HEX melalui dokumen catatan tim"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Klien meminta Anda menyiapkan file presentasi interaktif untuk uji coba pengguna tanpa harus menginstal aplikasi Adobe XD di perangkat mereka. Langkah ekspor apa yang paling tepat?",
+      "options": [
+        "Mengekspor seluruh artboard menjadi satu file dokumen PDF",
+        "Membuat tautan Web Link melalui fitur Share for Review",
+        "Menyimpan file kerja dalam format lama (.xd legacy version)",
+        "Mengekspor aset gambar satu persatu dalam format PNG"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda merancang galeri foto produk di mana pengguna dapat mengusap (swipe) secara horizontal untuk melihat gambar lain dalam satu kartu. Fitur tata letak apa yang paling efektif untuk menyusun gambar-gambar tersebut?",
+      "options": [
+        "Memanfaatkan fitur Stack untuk menyusun elemen secara horizontal",
+        "Menggunakan fitur Repeat Grid untuk menduplikasi kotak gambar",
+        "Menempatkan semua gambar ke dalam satu grup artboard terpisah",
+        "Menggunakan fitur Padding otomatis pada setiap bingkai gambar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat merancang dasbor analitik, Anda membuat kartu statistik yang berisi angka dan label teks di dalamnya. Agar jarak antar teks di dalam kartu tetap rapi dan konsisten saat isi teks berubah, fitur apa yang harus diaktifkan?",
+      "options": [
+        "Mengaktifkan fungsi Stack pada panel properti layout",
+        "Mengunci posisi absolut setiap elemen teks di dalam kartu",
+        "Menggunakan fitur Grid Layout dengan kolom tersembunyi",
+        "Menambahkan garis panduan manual pada setiap komponen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendesain aplikasi dengan mode gelap (Dark Mode) dan mode terang (Light Mode) pada file Adobe XD yang sama. Cara paling efisien untuk mengelola warna latar belakang pada kedua mode tersebut adalah?",
+      "options": [
+        "Membuat dua file terpisah untuk masing-masing mode tampilan",
+        "Menyimpan warna latar ke dalam Color Assets dan menggantinya manual",
+        "Memanfaatkan fitur Component States untuk mengubah variasi tema",
+        "Menggunakan plugin pihak ketiga untuk membalikkan warna layar"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang merancang aplikasi Super App di Indonesia yang memiliki navigasi bawah (bottom navigation) dengan lima menu utama. Agar pengguna dapat berpindah antar halaman dengan lancar tanpa membuat artboard baru yang terpisah untuk setiap kombinasi state, fitur prototyping apa yang paling efisien digunakan?",
+      "options": [
+        "Membuat interaksi Tap dengan aksi 'Transition' menuju artboard halaman tujuan masing-masing",
+        "Memanfaatkan fitur 'Component States' untuk mengubah tampilan seluruh halaman dalam satu artboard",
+        "Menggunakan fitur 'Overlay' dengan posisi tetap pada setiap layar artboard utama aplikasi",
+        "Menerapkan fitur 'Previous Artboard' pada setiap tombol menu navigasi bawah secara konsisten"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek pembuatan aplikasi manajemen inventaris gudang, Anda ingin menampilkan detail produk dalam sebuah jendela modal kecil yang muncul di tengah layar ketika pengguna mengeklik salah satu baris tabel. Metode prototyping mana yang paling tepat untuk mewujudkan hal ini?",
+      "options": [
+        "Mengatur interaksi Tap dengan aksi 'Auto-Animate' dan opsi target ke artboard terpisah",
+        "Menggunakan aksi 'Wipe' untuk menggeser layar utama dan menampilkan modal di samping",
+        "Memilih aksi 'Overlay' dengan efek 'Slide Up' pada artboard yang sama atau terpisah",
+        "Mengaktifkan interaksi 'Hover' agar jendela modal langsung terbuka saat kursor mendekati baris"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendesain sebuah situs web berita dengan header navigasi atas yang selalu terlihat meskipun pengguna menggulir (scroll) halaman ke bawah. Pengaturan tata letak manakah di panel properti Adobe XD yang harus diaktifkan pada elemen header tersebut?",
+      "options": [
+        "Mencentang opsi 'Fixed Position when Scrolling' dan mengatur tinggi vertikal header",
+        "Mengelompokkan header ke dalam 'Component' lalu mengunci posisi sumbu X dan Y",
+        "Mengubah artboard menjadi tipe web interaktif dengan dukungan native vertical scroll",
+        "Menandai grup header sebagai elemen global yang menempel otomatis pada batas atas"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang desain tampilan aplikasi dompet digital. Untuk memastikan teks nominal saldo tidak terpotong saat nominalnya berubah dari ribuan menjadi miliaran rupiah, teknik penyesuaian teks apa yang harus dipilih pada panel properti?",
+      "options": [
+        "Mengatur tipe teks menjadi 'Fixed Width' agar kotak teks tidak melebar melewati batas layar",
+        "Menggunakan tipe teks 'Point Text' dan menambahkan spasi manual di akhir kalimat",
+        "Memilih tipe teks 'Auto-Width' atau menggunakan fitur 'Stack' pada kontainer kartu saldo",
+        "Mengaktifkan fungsi 'Responsive Resize' secara manual pada setiap karakter angka saldo"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim QA perusahaan meminta tautan tautan spesifikasi desain (Design Specs) dari file Adobe XD Anda untuk keperluan inspeksi tata letak dan warna. Cara paling profesional untuk membagikannya tanpa memberikan akses edit adalah:",
+      "options": [
+        "Mengekspor seluruh artboard menjadi file PDF beresolusi tinggi melalui menu Export",
+        "Memublikasikan tautan khusus menggunakan opsi 'Share for Development' dari panel Share",
+        "Mengunggah file sumber (.xd) ke Google Drive bersama folder aset gambar terpisah",
+        "Mengambil tangkapan layar setiap komponen dan menyusunnya dalam dokumen presentasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain halaman daftar transaksi keuangan yang panjang. Anda ingin memastikan bahwa judul kolom tabel tetap berada di posisinya di bagian atas area scroll ketika pengguna menggulir daftar transaksi ke bawah di dalam area tersebut. Fitur apa yang harus disesuaikan?",
+      "options": [
+        "Mengatur area gulir vertikal (Vertical Scrolling) pada grup kontainer tabel dengan tinggi viewport",
+        "Memecah tabel menjadi beberapa artboard terpisah dan menghubungkannya dengan aksi Drag",
+        "Menggunakan komponen master tunggal yang otomatis mengunci baris pertama setiap tabel",
+        "Menerapkan efek animasi paralak pada latar belakang tabel agar judul terlihat tetap diam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat merancang ikon aplikasi berukuran kecil, Anda menyadari garis tepi ikon sering terlihat kabur atau tidak presisi pada layar perangkat dengan kerapatan piksel standar. Apa penyebab utama masalah ini dalam alur kerja Adobe XD?",
+      "options": [
+        "Penggunaan format warna CMYK alih-alih RGB pada dokumen kerja desain aplikasi",
+        "Koordinat posisi atau ukuran objek berada di angka desimal (pecahan piksel)",
+        "Ketidakcocokan versi Adobe XD yang digunakan dengan sistem operasi komputer Anda",
+        "Grup layer ikon terlalu dalam sehingga mengganggu proses rendering vektor grafis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengekspor aset ikon berbentuk vektor untuk diserahkan langsung ke developer Android dan iOS dalam berbagai skala resolusi secara bersamaan (1x, 2x, 3x). Langkah paling efisien di Adobe XD adalah:",
+      "options": [
+        "Menyeleksi setiap ikon, membuka panel Export, dan mencentang berbagai format skala target",
+        "Menyalin kode SVG manual dari panel Design Specs untuk setiap variasi ukuran aset",
+        "Membuat artboard terpisah untuk setiap ukuran ikon dan mengekspornya satu per satu",
+        "Menggunakan fitur rekam layar untuk mendokumentasikan bentuk vektor setiap aset ikon"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mendesain form pendaftaran akun yang panjang, Anda ingin tombol 'Lanjutkan' terkunci di bagian bawah layar perangkat mobile bahkan saat keyboard virtual muncul atau pengguna menggulir formulir. Pengaturan apa yang paling tepat?",
+      "options": [
+        "Menjadikan tombol sebagai komponen utama dengan state khusus keyboard aktif",
+        "Meletakkan tombol di luar batas artboard utama agar posisinya otomatis absolut",
+        "Memanfaatkan fitur 'Fixed Position when Scrolling' pada layer tombol di bagian bawah",
+        "Menggunakan animasi Auto-Animate untuk memindahkan tombol secara manual via script"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin menyelaraskan jarak antar beberapa kartu produk dalam sebuah grid galeri e-commerce agar konsisten tanpa harus mengatur posisi satu persatu secara manual setiap kali konten di dalam kartu diubah. Fitur tata letak apa yang harus diaktifkan?",
+      "options": [
+        "Menggunakan fitur 'Grid Layout' bawaan artboard dengan kolom tetap",
+        "Mengaktifkan fitur 'Stack' (Flexbox-like) pada grup pembungkus kartu produk",
+        "Memanfaatkan fitur 'Distribute Horizontally' setiap kali menambah kartu baru",
+        "Mengonversi seluruh galeri menjadi satu komponen tunggal yang tidak bisa dipecah"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

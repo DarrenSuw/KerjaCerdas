@@ -1,0 +1,306 @@
+{
+  "skill": "Excel (Advanced)",
+  "skill_key": "excel (advanced)",
+  "questions": [
+    {
+      "question": "Anda diminta menganalisis data penjualan bulanan di mana nama cabang sering kali memiliki spasi ekstra di awal atau akhir sel (misal: ' Jakarta ' vs 'Jakarta'). Formula apa yang paling efektif digunakan sebelum melakukan rekapitulasi dengan SUMIF agar tidak terjadi selisih akibat perbedaan spasi tersebut?",
+      "options": [
+        "Menggunakan fungsi CLEAN dan UPPER pada kolom bantu",
+        "Menggunakan fungsi TRIM untuk membersihkan spasi tidak beraturan",
+        "Menggunakan fungsi SUBSTITUTE untuk menghapus karakter spasi",
+        "Menggunakan fungsi REPLACE untuk mengganti spasi dengan teks kosong"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Departemen keuangan mendapati bahwa laporan laba rugi bulanan gagal menarik data dari lembar kerja cabang karena struktur kolom tanggal pada data sumber berupa teks string (format 'YYYYMMDD'), sedangkan kriteria pencarian menggunakan format tanggal Excel standar. Fungsi apa yang paling tepat untuk memperbaiki masalah konversi ini dalam rumus pencarian?",
+      "options": [
+        "Mengonversi string teks tersebut menggunakan fungsi DATEVALUE",
+        "Menggunakan fungsi TEXT untuk menyamakan format tampilan sel",
+        "Mengubah tipe data kolom sumber melalui menu Text to Columns",
+        "Memodifikasi formula pencarian agar membaca data sebagai angka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang membangun dashboard eksekutif yang memerlukan grafik batang dinamis. Grafik harus otomatis memperbarui rentang datanya ketika pengguna menambah baris data baru setiap akhir bulan tanpa harus mengubah rentang sumber grafik secara manual. Pendekatan apa yang paling efisien?",
+      "options": [
+        "Membuat tabel resmi Excel menggunakan shortcut Ctrl + T untuk sumber data",
+        "Menggunakan fungsi OFFSET dan COUNTA untuk mendefinisikan Named Range",
+        "Memperluas rentang sumber grafik hingga baris maksimum 1000 secara statis",
+        "Membuat makro VBA sederhana yang aktif setiap kali lembar kerja dibuka"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan retail memiliki jutaan baris data transaksi penjualan dari berbagai cabang dalam satu tahun terakhir. Manajemen meminta laporan ringkas omzet per kategori produk per bulan. Metode apa yang paling optimal untuk mengolah data tersebut tanpa membuat file menjadi sangat lambat atau mengalami batas baris Excel?",
+      "options": [
+        "Menggunakan rumus SUMIFS bertingkat dengan bantuan kolom helper",
+        "Memuat data ke dalam Data Model dan menggunakan PivotTable",
+        "Memecah data mentah menjadi beberapa file Excel berdasarkan bulan",
+        "Menggunakan fungsi VLOOKUP dan HLOOKUP secara bersamaan di sheet baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima laporan anggaran dari 30 cabang perusahaan yang masing-masing filenya memiliki struktur sel persis sama tetapi diletakkan di folder terpisah. Anda harus menggabungkan seluruh data tersebut menjadi satu master laporan secara cepat. Fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan fitur Konsolidasi data bawaan berdasarkan posisi sel",
+        "Membuat skrip VBA untuk membuka dan menyalin setiap file satu persatu",
+        "Menggunakan Power Query untuk menggabungkan seluruh file dari folder",
+        "Menghubungkan setiap file menggunakan rumus eksternal link secara manual"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam sebuah laporan komisi penjualan, Anda perlu mencari tingkat persentase insentif berdasarkan pencapaian target yang nilainya berada di dalam rentang kontinu (misal: 0-50jt, 50.1-100jt, dst). Formula pencarian mana yang harus digunakan agar Excel tidak menghasilkan error #N/A pada nilai di antara rentang tersebut?",
+      "options": [
+        "Menggunakan VLOOKUP dengan argumen range_lookup diatur bernilai FALSE",
+        "Menggunakan HLOOKUP dengan argumen range_lookup diatur bernilai TRUE",
+        "Menggunakan XLOOKUP dengan mode pencarian exact match or next smaller",
+        "Menggunakan MATCH dengan tipe pencarian yang diatur bernilai nol"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen HR ingin melihat daftar karyawan yang hadir terlambat lebih dari 3 kali dalam sebulan pada tabel absensi yang sangat besar. Anda diminta menerapkan pemformatan otomatis agar baris data karyawan tersebut berwarna merah secara utuh. Fitur apa yang harus diset dalam Conditional Formatting?",
+      "options": [
+        "Menggunakan aturan Highlight Cells Rules dengan kriteria teks tertentu",
+        "Menggunakan rumus formula kustom dengan mengunci kolom referensi huruf",
+        "Menggunakan aturan Top/Bottom Rules untuk menyeleksi 3 data tertinggi",
+        "Menggunakan format sel berdasarkan ikon set yang disediakan Excel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah file laporan operasional harian berukuran besar berjalan sangat lambat setiap kali Anda mengetik data baru karena Excel terus melakukan kalkulasi ulang pada seluruh rumus yang kompleks di latar belakang. Langkah mitigasi apa yang paling tepat untuk mengatasi gangguan produktivitas ini?",
+      "options": [
+        "Mengubah opsi pengaturan Calculation Options dari Automatic menjadi Manual",
+        "Menghapus seluruh Conditional Formatting yang ada di dalam lembar kerja",
+        "Menonaktifkan fitur Hardware Graphics Acceleration melalui menu pengaturan",
+        "Mengubah format penyimpanan file dari .xlsx menjadi format biner .xlsb"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta membuat laporan perbandingan harga vendor di mana kolom pertama berisi nama barang dan baris pertama berisi nama vendor, sehingga Anda perlu mencari titik temu harga berdasarkan dua kriteria tersebut. Kombinasi fungsi apa yang paling andal untuk kasus ini?",
+      "options": [
+        "Menggunakan fungsi gabungan VLOOKUP bersarang dengan fungsi HLOOKUP",
+        "Menggunakan fungsi INDEX dengan menyarangkan fungsi MATCH ganda",
+        "Menggunakan fungsi SUMPRODUCT untuk menjumlahkan baris dan kolom",
+        "Menggunakan fungsi OFFSET dengan argumen tinggi dan lebar yang dinamis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses audit inventaris gudang, Anda mendapati banyak sel kosong pada kolom kode SKU karena petugas lupa mencatatnya, yang kemudian merusak hasil rekapitulasi data. Fungsi apa yang paling tepat untuk membungkus rumus pencarian agar menampilkan teks 'Belum Terdata' alih-alih pesan error #N/A?",
+      "options": [
+        "Membungkus rumus utama dengan fungsi ISERROR untuk menangkap kesalahan",
+        "Membungkus rumus utama dengan fungsi IFNA untuk menangkap error pencarian",
+        "Membungkus rumus utama dengan fungsi ISBLANK untuk mendeteksi sel kosong",
+        "Membungkus rumus utama dengan fungsi IFERROR untuk mengatasi semua jenis error"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta membuat laporan keuangan bulanan yang mengambil data dari 12 file Excel terpisah (satu file per bulan) dalam satu folder khusus. Rumus apa yang paling efisien untuk menjumlahkan sel B5 dari seluruh file tersebut tanpa harus membuka file-file itu secara bersamaan?",
+      "options": [
+        "Menggunakan rumus SUM dengan referensi jalur direktori folder secara langsung",
+        "Membuat tautan manual dengan membuka satu per satu file dan menjumlahkannya",
+        "Memanfaatkan fitur Consolidate pada tab Data berdasarkan posisi sel yang sama",
+        "Menulis skrip VBA khusus untuk membuka file secara otomatis di background"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen meminta Anda untuk membuat drop-down list kategori produk di sel A2 yang pilihannya akan otomatis berubah dan menyesuaikan berdasarkan divisi yang dipilih sebelumnya pada sel A1. Fitur apa yang harus Anda gunakan pada data validation?",
+      "options": [
+        "Mengatur sumber data validation langsung ke rentang sel horizontal dan vertikal",
+        "Menggunakan fungsi INDIRECT dengan referensi nama range yang sesuai sel A1",
+        "Memasukkan rumus IF bertingkat di dalam kotak sumber data validation",
+        "Membuat tabel pivot ganda yang terhubung langsung dengan sel input utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah laporan penjualan besar menggunakan PivotTable sering mengalami penambahan data baru setiap hari, namun pengguna lain sering lupa memperbarui sumber data sehingga laporan terpotong. Bagaimana cara paling praktis agar sumber data PivotTable otomatis meluas?",
+      "options": [
+        "Mengubah rentang data sumber secara manual setiap akhir pekan",
+        "Menggunakan rumus OFFSET dan COUNTA untuk mendefinisikan range nama",
+        "Mengonversi rentang data tabel mentah menjadi format Excel Table resmi",
+        "Membuat makro VBA untuk melakukan refresh otomatis setiap kali file dibuka"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menganalisis data gaji karyawan dan ingin mencari tahu berapa persisnya bonus yang harus diberikan agar total pengeluaran gaji setelah bonus persis mencapai anggaran maksimal perusahaan sebesar Rp500.000.000. Fitur analisis apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat skenario berbeda dengan Scenario Manager untuk setiap nilai bonus",
+        "Menggunakan fitur Goal Seek dengan target nilai sel total pada angka tertentu",
+        "Menjalankan simulasi tabel data dua variabel untuk menguji berbagai persentase",
+        "Memanfaatkan Solver untuk optimasi batasan anggaran dengan beberapa variabel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan absensi, kolom tanggal berisi format teks yang tidak seragam (misal: '01/05/2023' dan '2023.05.01'). Anda ingin mengubah seluruh data tersebut menjadi serial tanggal standar Excel agar bisa dihitung durasinya. Fungsi apa yang paling efektif?",
+      "options": [
+        "Menggabungkan fungsi DATE, VALUE, dan MID untuk mengekstrak komponen",
+        "Menggunakan fitur Text to Columns dengan pemisah karakter garis miring",
+        "Memanfaatkan fungsi SUBSTITUTE untuk mengganti semua tanda titik dan garis",
+        "Mengubah format sel melalui menu Format Cells menjadi bentuk tanggal baku"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati file laporan operasional berukuran 45 MB yang sangat lambat ketika disimpan maupun dibuka karena banyaknya rumus volatil seperti INDIRECT dan TODAY yang tertanam di ribuan baris. Langkah perbaikan apa yang paling tepat?",
+      "options": [
+        "Menonaktifkan fitur Automatic Calculation dan mengubahnya menjadi Manual",
+        "Menghapus seluruh format conditional formatting yang ada di lembar kerja",
+        "Mengganti fungsi volatil dengan referensi sel statis atau indeks langsung",
+        "Memecah file besar tersebut menjadi beberapa bagian file workbook terpisah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Departemen HR ingin melihat distribusi umur karyawan ke dalam kelompok interval 5 tahunan (20-24, 25-29, dst) dari data tanggal lahir yang ada. Rumus atau alat bantu apa yang paling cepat menyajikan rekapitulasi frekuensi tersebut?",
+      "options": [
+        "Menggunakan fungsi FREQUENCY dengan array rentang batas atas usia",
+        "Membuat rumus COUNTIFS bertingkat untuk setiap kategori rentang usia",
+        "Menyusun PivotTable dengan mengelompokkan field tanggal berdasarkan tahun",
+        "Memakai fungsi SUMPRODUCT dengan kondisi logika perbandingan tanggal lahir"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu menggabungkan data nama depan dari kolom A dan nama belakang dari kolom B, namun beberapa nama memiliki kelebihan spasi di tengah atau huruf kapital yang tidak beraturan. Formula apa yang menghasilkan teks bersih berformat 'Nama Depan Nama Belakang'?",
+      "options": [
+        "CONCATENATE(TRIM(A2), \" \", TRIM(B2)) dengan tambahan fungsi PROPER",
+        "PROPER(TRIM(A2) & \" \" & TRIM(B2)) untuk merapikan spasi dan kapitalisasi",
+        "TEXTJOIN(\" \", TRUE, UPPER(A2), LOWER(B2)) agar hurufnya seragam",
+        "REPLACE(A2 & B2, SEARCH(\" \", A2&B2), 1, \" \") untuk merapikan karakter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proses rekonsiliasi bank, Anda memiliki dua tabel berisi ribuan nomor transaksi yang tidak berurutan dan ingin menandai transaksi mana saja yang hanya muncul di tabel pertama tetapi tidak ada di tabel kedua. Pendekatan formula yang paling mangkus adalah:",
+      "options": [
+        "Menggunakan fungsi VLOOKUP untuk mencari kecocokan nilai antar tabel",
+        "Memanfaatkan fungsi MATCH dengan tipe pencarian persis bernilai nol",
+        "Mengombinasikan fungsi ISNA dan VLOOKUP atau fungsi COUNTIF sederhana",
+        "Menjalankan fungsi FILTER dengan kondisi rentang sel yang saling silang"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat model proyeksi laba tahun depan di mana manajemen ingin melihat tiga skenario hasil berbeda (Optimis, Moderat, Pesimis) dalam satu lembar kerja yang sama tanpa harus mengubah-ubah sel input secara manual setiap kali presentasi. Fitur apa yang harus disiapkan?",
+      "options": [
+        "Menyiapkan tiga lembar kerja terpisah dengan rumus yang diduplikasi penuh",
+        "Membuat Scenario Manager untuk menyimpan kumpulan nilai variabel input",
+        "Menggunakan fasilitas Data Table satu variabel untuk mencatat hasil proyeksi",
+        "Memanfaatkan kontrol Form Button untuk menjalankan makro pengubah data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola laporan penjualan regional di mana kolom target berada di kolom D dan pencapaian aktual di kolom E. Manajemen meminta indikator visual teks sederhana di kolom F berupa emoji centang hijau jika target tercapai atau silang merah jika tidak. Formula apa yang paling efisien untuk diletakkan di sel F2?",
+      "options": [
+        "=IF(E2>=D2, \"✅ Tercapai\", \"❌ Belum\")",
+        "=CHOOSE(E2>=D2, \"✅ Tercapai\", \"❌ Belum\")",
+        "=SWITCH(E2>=D2, TRUE, \"✅ Tercapai\", \"❌ Belum\")",
+        "=IFS(E2>=D2=\"Ya\", \"✅ Tercapai\", \"❌ Belum\")"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam laporan keuangan konsolidasi, Anda perlu menjumlahkan total biaya operasional hanya untuk baris yang kolom 'Status' nya bernilai 'Disetujui' dan kolom 'Departemen' nya bernilai 'IT'. Fungsi apa yang paling tepat digunakan?",
+      "options": [
+        "=SUMIF(Status_Range, \"Disetujui\", Biaya_Range)",
+        "=SUMIFS(Biaya_Range, Status_Range, \"Disetujui\", Dept_Range, \"IT\")",
+        "=SUMPRODUCT((Status_Range=\"Disetujui\")*(Dept_Range=\"IT\")*(Biaya_Range))",
+        "=DSUM(Database_Range, \"Biaya\", Kriteria_Range)"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim sales sering salah memasukkan input angka kuantitas dengan menyisipkan karakter spasi atau huruf di dalam sel numerik (misal: ' 150 pcs'). Saat Anda menggunakan fungsi SUM, data tersebut diabaikan. Cara paling tepat untuk membersihkan seluruh kolom data tersebut secara massal adalah:",
+      "options": [
+        "Menggunakan Power Query untuk mengubah tipe data kolom menjadi Whole Number secara otomatis",
+        "Membuat kolom baru dengan rumus VALUE(SUBSTITUTE(...)) untuk setiap baris data transaksi",
+        "Menggunakan fitur Find & Replace bawaan Excel untuk menghapus semua huruf dan spasi",
+        "Memanfaatkan Conditional Formatting untuk menandai sel yang berisi teks agar diperbaiki manual"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda sedang merancang lembar kerja absensi karyawan. Anda ingin memastikan bahwa sel tanggal cuti (di kolom C) tidak boleh diisi dengan tanggal yang sudah lewat atau tanggal di luar tahun fiskal berjalan (2024). Pengaturan apa yang harus Anda gunakan?",
+      "options": [
+        "Conditional Formatting dengan aturan kustom berbasis rumus tanggal",
+        "Data Validation dengan opsi Allow diatur ke Date dan batasan rentang tahun",
+        "Protection Sheet dengan mengunci sel yang berada di luar rentang tanggal",
+        "Custom Number Formatting untuk membatasi input tampilan kalender sel"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam sebuah laporan komisi bulanan, Anda ingin menampilkan nama sales terbaik peringkat pertama berdasarkan total penjualan di sel B2. Kolom nama berada di A, dan total penjualan di B. Formula apa yang paling tepat?",
+      "options": [
+        "=INDEX(A2:A100, MATCH(MAX(B2:B100), B2:B100, 0))",
+        "=VLOOKUP(MAX(B2:B100), A2:B100, 1, FALSE)",
+        "=XLOOKUP(LARGE(B2:B100, 1), B2:B100, A2:A100)",
+        "=HLOOKUP(MAX(B2:B100), A2:B100, 2, FALSE)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati file Excel laporan inventaris berjalan sangat lambat setiap kali ada perubahan data, karena file tersebut berisi ribuan rumus volatile seperti TODAY() dan INDIRECT() di setiap barisnya. Langkah paling efektif untuk memperbaiki performa tanpa merusak logika laporan adalah:",
+      "options": [
+        "Memindahkan seluruh rumus volatile tersebut ke dalam format tabel Excel terstruktur",
+        "Mengubah mode perhitungan workbook dari Automatic menjadi Manual Calculation",
+        "Mengganti fungsi volatile dengan referensi sel statis atau alternatif non-volatile",
+        "Menyimpan ulang file dalam format biner (.xlsb) untuk mempercepat proses kalkulasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda membuat ringkasan eksekutif penjualan bulanan menggunakan PivotTable. Manajemen meminta agar laporan dapat difilter secara interaktif berdasarkan 'Region' dan 'Kategori Produk' menggunakan tombol klik visual yang modern tanpa harus membuka menu drop-down filter biasa. Fitur apa yang harus Anda tambahkan?",
+      "options": [
+        "Menggunakan fitur Timeline untuk memfilter berdasarkan tanggal transaksi",
+        "Memasukkan komponen Slicer untuk masing-masing kolom yang diminta",
+        "Membuat Form Controls Button yang dihubungkan dengan makro VBA penyaring",
+        "Mengaktifkan Report Filter Pages pada opsi PivotTable Analyze"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu menghitung rata-rata skor kepuasan pelanggan di kolom B, namun Anda ingin mengabaikan nilai 0 (yang menandakan pelanggan tidak mengisi survei) agar tidak mendistorsi hasil rata-rata. Formula apa yang paling tepat?",
+      "options": [
+        "=AVERAGEIF(B2:B100, \"<>0\")",
+        "=AVERAGEIFS(B2:B100, B2:B100, \">0\")",
+        "=SUM(B2:B100) / COUNTIF(B2:B100, \">0\")",
+        "=TRIMMEAN(B2:B100, COUNTIF(B2:B100, 0)/COUNTA(B2:B100))"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Departemen HR mencatat ID karyawan dalam format teks angka dengan jumlah digit yang tidak seragam (misal: '45' seharusnya '00045'). Untuk keperluan integrasi sistem, Anda perlu menyeragamkan semua ID menjadi tepat 5 digit dengan menambahkan angka nol di depannya. Formula yang paling tepat adalah:",
+      "options": [
+        "=TEXT(A2, \"00000\")",
+        "=REPT(\"0\", 5-LEN(A2)) & A2",
+        "=FIXED(A2, 5, TRUE)",
+        "=RIGHT(\"00000\" & A2, 5)"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda diminta menganalisis tren pertumbuhan penjualan kuartalan. Kolom C berisi total penjualan kuartal ini dan kolom B berisi total penjualan kuartal lalu. Anda ingin menghitung persentase pertumbuhan dengan aman, mengantisipasi potensi error jika kolom kuartal lalu bernilai nol atau kosong. Formula yang paling robust adalah:",
+      "options": [
+        "=IFERROR((C2-B2)/B2, 0)",
+        "=IF(B2=0, 0, (C2-B2)/B2)",
+        "=ISERROR((C2-B2)/B2, \"N/A\", (C2-B2)/B2)",
+        "=QUOTIENT(C2-B2, B2)"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

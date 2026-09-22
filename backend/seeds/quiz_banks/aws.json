@@ -1,0 +1,306 @@
+{
+  "skill": "AWS",
+  "skill_key": "aws",
+  "questions": [
+    {
+      "question": "Sebuah startup e-commerce di Jakarta mengalami lonjakan trafik tak terduga saat kampanye flash sale, menyebabkan server web berbasis EC2 di Auto Scaling Group kewalahan karena proses inisialisasi instance baru memakan waktu 3 menit. Langkah apa yang paling tepat untuk mengatasi masalah latensi ini pada masa mendatang?",
+      "options": [
+        "Mengganti seluruh instance EC2 dengan ukuran instance yang paling besar",
+        "Mengaktifkan fitur Target Tracking Scaling dengan cooldown period yang lebih lama",
+        "Menerapkan konsep Warm Pools pada Auto Scaling Group untuk instance siap pakai",
+        "Memindahkan beban kerja basis data langsung ke instance EC2 komputasi tinggi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta mengamankan akses ke bucket Amazon S3 yang berisi data pribadi pelanggan (PII) sesuai regulasi perlindungan data. Akses hanya boleh diberikan kepada aplikasi backend tertentu yang berjalan di VPC perusahaan, tanpa melalui publik internet. Solusi mana yang paling tepat?",
+      "options": [
+        "Membuat Gateway VPC Endpoint untuk S3 dan membatasi akses bucket via bucket policy",
+        "Mengubah seluruh objek di dalam bucket S3 tersebut menjadi terenkripsi dengan KMS",
+        "Menonaktifkan akses publik dan menggunakan presigned URL untuk setiap unduhan",
+        "Menempatkan server proxy Nginx di depan bucket S3 untuk memvalidasi token akses"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi mobile perbankan memerlukan sistem penjadwalan tugas (cron job) harian untuk melakukan rekonsiliasi data transaksi tengah malam. Tugas ini harus berjalan andal tanpa mengelola server secara manual dan dapat memproses data hingga 2 jam. Layanan AWS apa yang paling sesuai?",
+      "options": [
+        "AWS Lambda dengan konfigurasi timeout maksimum yang diatur hingga batas waktu",
+        "Amazon EventBridge yang memicu tugas container pada AWS Fargate di ECS",
+        "Amazon EC2 Instance yang dijadwalkan menyala otomatis menggunakan CloudWatch",
+        "AWS Batch yang dikonfigurasikan dengan klaster EC2 spot instance untuk hemat biaya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim keamanan siber perusahaan Anda menemukan adanya aktivitas mencurigakan dari alamat IP eksternal yang mencoba melakukan brute force pada port SSH instance EC2 produksi. Tindakan preventif otomatis apa yang harus diterapkan menggunakan AWS native tools?",
+      "options": [
+        "Mengonfigurasi AWS Shield Advanced untuk mendeteksi dan memblokir paket TCP",
+        "Membuat aturan AWS WAF untuk memfilter lalu lintas jaringan pada lapisan aplikasi",
+        "Menggunakan Amazon GuardDuty yang terintegrasi dengan NACL untuk memblokir IP",
+        "Mengubah Security Group agar menutup port SSH dan beralih menggunakan AWS Systems Manager"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah portal berita nasional menggunakan CloudFront sebagai CDN untuk mendistribusikan konten statis dan dinamis. Saat redaksi mengunggah gambar berita terbaru dengan nama file yang sama, pembaca di beberapa daerah masih melihat gambar lama. Bagaimana cara memperbarui cache ini secara efisien?",
+      "options": [
+        "Melakukan invalidasi jalur file spesifik pada distribusi CloudFront yang digunakan",
+        "Menurunkan nilai TTL default pada pengaturan cache behavior CloudFront menjadi nol",
+        "Menghapus objek secara manual langsung dari asal penyimpanan Amazon S3 bucket",
+        "Mengubah URL gambar dengan menambahkan parameter acak pada setiap unggahan baru"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan logistik ingin membangun pipeline data real-time untuk memantau posisi armada truk via GPS. Data masuk ribuan titik per detik dan harus diproses serta disimpan ke data lake S3 dengan latensi minimum. Kombinasi layanan AWS mana yang paling optimal?",
+      "options": [
+        "Amazon SQS untuk antrean pesan yang dibaca secara berkala oleh AWS Lambda",
+        "Amazon Kinesis Data Streams yang diintegrasikan langsung dengan Amazon Kinesis Firehose",
+        "Amazon MSK (Managed Streaming for Apache Kafka) yang dihubungkan ke RDS PostgreSQL",
+        "AWS IoT Core yang langsung menyimpan setiap pesan masuk ke dalam DynamoDB table"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab mengelola infrastruktur multi-akun AWS untuk berbagai unit bisnis di perusahaan Anda. Untuk keperluan audit keuangan, Anda perlu mengonsolidasikan semua catatan log CloudTrail dari seluruh akun ke satu tempat yang aman. Pendekatan arsitektur apa yang dianjurkan?",
+      "options": [
+        "Membuat skrip Lambda terjadwal di setiap akun untuk menyalin log ke satu bucket pusat",
+        "Mengaktifkan fitur organizational trail pada AWS Organizations dengan tujuan satu S3 bucket",
+        "Menggunakan Amazon CloudWatch Cross-Account Observability untuk memantau log aktivitas",
+        "Menghubungkan setiap akun ke satu instance EC2 perantara yang bertindak sebagai kolektor log"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi berbasis microservices berjalan di Amazon EKS dan mengalami kegagalan komunikasi antar pod akibat masalah konfigurasi resolusi nama domain internal. Alat diagnostik apa yang paling cepat dan tepat untuk memeriksa masalah DNS ini dari dalam pod?",
+      "options": [
+        "Membuat pod sementara dengan utilitas seperti 'dnsutils' untuk menjalankan perintahnslookup",
+        "Memeriksa metrik performa klaster EKS secara keseluruhan melalui konsol Amazon CloudWatch",
+        "Melihat laporan status kesehatan node worker di panel manajemen EC2 Auto Scaling",
+        "Melakukan restart pada seluruh komponen CoreDNS yang berjalan di namespace kube-system"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi web enterprise di AWS memerlukan database relasional yang dapat melakukan failover otomatis antar Availability Zone jika terjadi gangguan infrastruktur, serta mendukung replika baca untuk laporan analitik. Konfigurasi Amazon RDS mana yang memenuhi kebutuhan tersebut?",
+      "options": [
+        "Single-AZ RDS Instance dengan penyimpanan cadangan otomatis yang diaktifkan",
+        "Multi-AZ DB Cluster dengan satu instance penulis dan dua instance pembaca otomatis",
+        "Multi-AZ DB Instancedeployment dengan tambahan satu Read Replica terpisah",
+        "Amazon Aurora Serverless v2 dengan skala kapasitas minimum yang disesuaikan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah perusahaan finansial di Surabaya harus menyimpan log transaksi selama 5 tahun untuk keperluan audit OJK, namun log tersebut jarang sekali diakses setelah 30 hari pertama. Strategi penyimpanan AWS mana yang paling optimal untuk menekan biaya?",
+      "options": [
+        "Menyimpan seluruh data di Amazon S3 Standard dan menghapusnya setelah 5 tahun menggunakan Lifecycle Policy",
+        "Memindahkan objek ke S3 Glacier Flexible Retrieval setelah 30 hari via S3 Lifecycle Rules untuk efisiensi biaya",
+        "Menggunakan Amazon EBS dengan tipe cold HDD (st1) dan membuat snapshot bulanan secara manual",
+        "Mentransfer data secara berkala ke instance Amazon EC2 berkapasitas besar dengan volume EBS gp3"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim developer Anda mendeploy aplikasi backend berbasis Node.js ke AWS Elastic Beanstalk. Saat dirilis ke production, latensi melonjak drastis dan beberapa request gagal karena keterbatasan sumber daya CPU pada instance tunggal. Langkah mitigasi apa yang paling tepat?",
+      "options": [
+        "Mengubah tipe instance EC2 melalui konsol Elastic Beanstalk ke spesifikasi yang lebih besar dan kuat",
+        "Mengaktifkan fitur Auto Scaling pada environment Elastic Beanstalk dan menambah Application Load Balancer",
+        "Memindahkan seluruh kode aplikasi ke AWS Lambda tanpa mengubah konfigurasi lingkungan server",
+        "Menonaktifkan health check Elastic Beanstalk agar tidak terjadi pemutusan koneksi otomatis pada instance"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola aplikasi web perusahaan media yang mendistribusikan video melalui Amazon CloudFront. Pengguna di wilayah Indonesia bagian timur mengeluhkan waktu muat video yang sangat lambat. Konfigurasi apa yang perlu disesuaikan pada CloudFront?",
+      "options": [
+        "Mengganti protokol origin dari HTTP menjadi HTTPS agar enkripsi data berjalan lebih cepat di jaringan",
+        "Menambahkan lebih banyak aturan AWS WAF untuk menyaring lalu lintas dari region timur Indonesia",
+        "Mengonfigurasi ulang pengaturan TTL minimum dan maksimum pada cache behavior agar lebih pendek",
+        "Memastikan CloudFront menggunakan Price Class yang mencakup edge locations di Asia Pasifik terdekat"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Sebuah sistem pemrosesan dokumen di AWS menggunakan Amazon SQS untuk antrean tugas dan Amazon EC2 Worker Instances untuk memprosesnya. Terkadang proses gagal dan pesan masuk ke Dead Letter Queue (DLQ). Bagaimana cara terbaik memantau penumpukan pesan ini?",
+      "options": [
+        "Membuat alarm Amazon CloudWatch pada metrik ApproximateNumberOfMessagesVisible di DLQ",
+        "Menulis skrip cron job di setiap instance EC2 untuk memeriksa jumlah file log secara berkala",
+        "Menggunakan AWS CloudTrail untuk melacak setiap panggilan API DeleteMessage pada antrean SQS",
+        "Memasang agen AWS Inspector pada instance worker untuk memindai kesehatan sistem operasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan ritel online ingin memastikan bahwa database Amazon RDS PostgreSQL mereka tetap aman dari akses publik langsung, namun aplikasi web di subnet publik tetap dapat melakukan kueri data. Desain jaringan AWS mana yang harus diterapkan?",
+      "options": [
+        "Menempatkan RDS di subnet publik dengan mengubah Security Group agar hanya menerima IP kantor",
+        "Menggunakan NAT Gateway di subnet publik agar RDS dapat diakses melalui alamat IP publik dinamis",
+        "Menempatkan RDS di subnet privat dan mengonfigurasi Security Group agar hanya mengizinkan trafik dari web server",
+        "Menghubungkan RDS langsung ke Internet Gateway melalui tabel rute khusus untuk subnet database"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda diminta menyiapkan infrastruktur staging untuk aplikasi web menggunakan AWS CloudFormation agar dapat dibuat dan dihancurkan dengan mudah. Template harus mendukung parameter lingkungan yang berbeda (dev, staging, prod). Pendekatan apa yang paling tepat?",
+      "options": [
+        "Membuat tiga file template terpisah yang berisi kode statis untuk masing-masing lingkungan kerja",
+        "Menggunakan AWS Systems Manager Parameter Store dan Mapping di CloudFormation untuk nilai dinamis",
+        "Menulis skripBash kustom untuk memodifikasi file template secara langsung sebelum dieksekusi",
+        "Menjalankan perintah AWS CLI manual untuk mengubah konfigurasi sumber daya setelah stack selesai dibuat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim DevOps ingin memastikan bahwa tidak ada instance EC2 baru yang dibuat di luar region Jakarta (ap-southeast-3) demi kepatuhan regulasi data lokal. Kebijakan keamanan AWS mana yang paling efektif untuk menegakkan aturan ini?",
+      "options": [
+        "Membuat IAM Policy yang membatasi izin pembuatan instance dan melampirkan ke semua pengguna IAM",
+        "Mengonfigurasi AWS Organizations Service Control Policy (SCP) untuk menolak aksi EC2 di region lain",
+        "Menggunakan Amazon GuardDuty untuk mengirim email peringatan setiap kali ada instance di region lain",
+        "Menghapus izin akses konsol AWS bagi seluruh anggota tim kecuali administrator infrastruktur utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi analytics mengumpulkan data klik pengguna yang dikirimkan ke Amazon Kinesis Data Streams. Data tersebut perlu ditransformasikan secara ringkas sebelum disimpan ke Amazon S3. Layanan integrasi AWS mana yang paling sesuai?",
+      "options": [
+        "AWS Lambda yang dipicu secara otomatis untuk membaca batch data dari Kinesis Streams",
+        "Amazon SQS yang ditempatkan di antara Kinesis Streams dan bucket S3 untuk menahan data sementara",
+        "AWS Glue Crawler yang berjalan setiap jam untuk memindai perubahan data pada Kinesis Streams",
+        "Amazon SNS yang mengirimkan notifikasi push ke server pemrosesan setiap ada data masuk"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi berbasis serverless menggunakan beberapa fungsi AWS Lambda yang memanggil API pihak ketiga. Kadang-kadang API eksternal tersebut lambat, menyebabkan fungsi Lambda mencapai batas timeout (3 detik default). Bagaimana cara memperbaikinya secara arsitektural?",
+      "options": [
+        "Menulis ulang seluruh fungsi Lambda menggunakan bahasa pemrograman yang berjalan di mesin virtual JVM",
+        "Mengubah konfigurasi timeout fungsi Lambda dan menerapkan pola asinkron menggunakan SQS",
+        "Menyewa dedicated host di Amazon EC2 untuk menjalankan seluruh fungsi Lambda secara lokal",
+        "Menonaktifkan fungsi CloudWatch Logs pada Lambda untuk mengurangi overhead eksekusi kode"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform SaaS HRMS di Jakarta mengalami lonjakan penggunaan CPU hingga 90% pada instance EC2 di Auto Scaling Group setiap hari pukul 08.00 saat ribuan karyawan melakukan presensi online. Tindakan paling tepat untuk mengatasi masalah performa prediktabol ini adalah",
+      "options": [
+        "Mengubah tipe instance EC2 ke ukuran yang lebih besar secara permanen setiap pagi",
+        "Mengimplementasikan Target Tracking Scaling Policy dengan metrik CPU Utilization",
+        "Mengaktifkan Scheduled Scaling untuk menambah kapasitas instance sebelum jam 08.00",
+        "Memindahkan seluruh beban kerja aplikasi monolitik tersebut langsung ke AWS Lambda"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim Data Science perusahaan Anda membutuhkan lingkungan Jupyter Notebook kolaboratif yang terintegrasi dengan data lake di Amazon S3 dan dapat dikonfigurasi dengan mudah tanpa harus mengelola infrastruktur server manual. Layanan AWS yang paling sesuai adalah",
+      "options": [
+        "Menyiapkan cluster Amazon EMR khusus untuk menjalankan server Jupyter",
+        "Menggunakan Amazon SageMaker Studio untuk lingkungan notebook berbasis web",
+        "Membuat instance EC2 Ubuntu dan menginstal JupyterHub secara mandiri di sana",
+        "Menjalankan container Docker berisi Jupyter di dalam layanan Amazon ECS"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta mendesain arsitektur penyimpanan file bersama (shared storage) yang dapat diakses secara simultan oleh puluhan instance EC2 Linux di region Jakarta melalui protokol NFS. Layanan AWS yang paling tepat dipilih adalah",
+      "options": [
+        "Menggunakan Amazon Elastic File System (EFS) yang terhubung ke setiap instance",
+        "Memanfaatkan Amazon Elastic Block Store (EBS) dengan tipe volume io2 Block Express",
+        "Membuat instance EC2 khusus sebagai server FTP internal untuk berbagi file data",
+        "Menyimpan seluruh file bersama ke dalam satu bucket Amazon S3 dengan akses IAM"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan media online ingin mendistribusikan gambar produk secara dinamis dalam berbagai ukuran resolusi sesuai perangkat pengguna tanpa membebani server origin. Solusi serverless AWS yang paling optimal adalah",
+      "options": [
+        "Menjalankan script Python terjadwal di EC2 untuk meresize gambar setiap malam",
+        "Membuat arsitektur Lambda@Edge yang memproses dan meresize gambar via CloudFront",
+        "Menggunakan fitur bawaan Amazon S3 Batch Operations untuk mengubah ukuran file",
+        "Menyediakan beberapa folder terpisah di S3 untuk setiap ukuran resolusi gambar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi e-commerce Anda menggunakan Amazon ElastiCache untuk Redis guna menyimpan sesi pengguna dan cache produk. Saat traffic melonjak, beberapa node Redis mengalami out-of-memory dan data penting terhapus. Kebijakan eviksi (eviction policy) apa yang harus dikonfigurasi agar data sesi aktif tidak mudah terhapus?",
+      "options": [
+        "Mengatur maxmemory-policy menjadi volatile-lru untuk menghapus data berkedaluwarsa",
+        "Mengubah kebijakan eviksi menjadi noeviction agar operasi tulis gagal alih-alih menghapus data",
+        "Memilih allkeys-lru agar Redis secara otomatis menghapus data yang paling jarang digunakan",
+        "Menggunakan volatile-random untuk menghapus kunci acak yang memiliki waktu kedaluwarsa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu memantau log aplikasi dari puluhan container di Amazon ECS dan membuat metrik kustom untuk mendeteksi lonjakan HTTP 500 error secara real-time. Pendekatan integrasi native AWS yang paling efisien adalah",
+      "options": [
+        "Mengonfigurasi log driver AWS FireLens untuk meneruskan log ke CloudWatch Logs",
+        "Membuat daemon kustom di dalam container untuk mengirim log via HTTP ke server lain",
+        "Menyimpan semua file log ke volume EBS bersama lalu dibaca oleh skrip cron eksternal",
+        "Menggunakan fitur ekspor otomatis dari Application Load Balancer ke S3 bucket"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan telekomunikasi ingin melakukan migrasi database Oracle on-premise berukuran 2 TB ke Amazon RDS for Oracle dengan downtime minimal saat cutover produksi. Strategi migrasi AWS yang paling tepat adalah",
+      "options": [
+        "Melakukan export database manual via Data Pump dan mengimpornya ke RDS di akhir pekan",
+        "Memanfaatkan AWS Database Migration Service (DMS) dengan replikasi berkelanjutan",
+        "Membuat backup fisik dari database on-premise lalu merestorasinya langsung ke RDS",
+        "Membangun ulang skema database secara manual menggunakan skrip DDL dan insert data"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendesain sistem otentikasi pengguna untuk aplikasi web enterprise menggunakan Amazon Cognito User Pools. Kebutuhan bisnis mengharuskan sandi pengguna memenuhi standar kompleksitas tinggi dan mendukung autentikasi multifaktor (MFA). Langkah konfigurasi yang tepat di Cognito adalah",
+      "options": [
+        "Menulis kode kustom di backend aplikasi untuk memvalidasi panjang karakter sandi",
+        "Mengatur kebijakan password (password policy) dan mengaktifkan opsi SMS atau TOTP MFA",
+        "Membuat fungsi Lambda tambahan untuk memeriksa kekuatan sandi saat proses sign-up",
+        "Mengandalkan pengaturan default Cognito karena sudah otomatis memenuhi standar industri"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pengembang ingin memastikan bahwa setiap perubahan konfigurasi infrastruktur melalui Terraform pada file state disimpan secara aman dan terpusat di AWS dengan mekanisme locking untuk mencegah konflik. Best practice penyimpanan state backend adalah",
+      "options": [
+        "Menyimpan file terraform.tfstate di direktori lokal komputer masing-masing developer",
+        "Menggunakan bucket Amazon S3 untuk penyimpanan file state dan tabel DynamoDB untuk state locking",
+        "Membuat instance EC2 khusus yang menjalankan server Git privat untuk menampung file state",
+        "Memanfaatkan layanan AWS CodeCommit untuk menyimpan riwayat perubahan file state secara otomatis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi web di AWS mendadak tidak dapat diakses dari internet melalui domain kustom, meskipun alamat IP publik dari ALB dapat diakses langsung via HTTP. Pemeriksaan pertama yang paling efektif pada konfigurasi DNS publik (misalnya Route 53) adalah",
+      "options": [
+        "Memeriksa apakah record tipe A atau CNAME sudah diarahkan dengan benar ke DNS name ALB",
+        "Memastikan bahwa masa berlaku sertifikat SSL/TLS di AWS Certificate Manager belum habis",
+        "Mengecek ulang aturan Security Group pada instance EC2 target backend aplikasi web",
+        "Melihat metrik ErrorRate pada CloudWatch untuk memastikan tidak ada gangguan hardware"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan finansial di Jakarta menggunakan Amazon Aurora PostgreSQL untuk aplikasi inti mereka. Selama jam sibuk operasional, latensi kueri melonjak tajam akibat tingginya operasi baca. Bagaimana cara paling efektif mengatasi masalah ini tanpa mengubah kode aplikasi?",
+      "options": [
+        "Menambahkan Aurora Read Replica dan mengarahkan lalu lintas baca ke endpoint replica tersebut",
+        "Melakukan restart pada instance database utama setiap pagi sebelum jam sibuk operasional dimulai",
+        "Meningkatkan ukuran instans EC2 aplikasi web agar dapat memproses kueri SQL lebih cepat",
+        "Mengubah mesin database Aurora menjadi DynamoDB untuk performa pembacaan yang lebih tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim pengembang di perusahaan Anda merilis aplikasi baru berbasis container ke Amazon ECS menggunakan Fargate launch type. Namun, task terus-menerus gagal start dengan status error 'Essential container in task exited'. Apa langkah pertama yang paling tepat untuk mendiagnosis akar masalahnya?",
+      "options": [
+        "Memeriksa log stream dari container tersebut di Amazon CloudWatch Logs untuk melihat pesan error aplikasi",
+        "Melakukan SSH langsung ke container yang bermasalah menggunakan sesi SSM Session Manager",
+        "Mengubah konfigurasi Task Definition dengan menambah kapasitas CPU dan memori dua kali lipat",
+        "Menghapus Application Load Balancer lalu membuatnya kembali dari awal di console AWS"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

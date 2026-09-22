@@ -1,0 +1,306 @@
+{
+  "skill": "Kasir",
+  "skill_key": "kasir",
+  "questions": [
+    {
+      "question": "Total belanja Rp87.500, pelanggan membayar Rp100.000. Kembaliannya…",
+      "options": [
+        "Rp12.500",
+        "Rp13.500",
+        "Rp22.500",
+        "Rp11.500"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Harga Rp60.000 diskon 15%. Yang dibayar pelanggan…",
+      "options": [
+        "Rp45.000",
+        "Rp51.000",
+        "Rp54.000",
+        "Rp9.000"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di akhir shift uang di laci kurang Rp20.000 dari catatan. Tindakan yang benar…",
+      "options": [
+        "Menutup dengan uang pribadi diam-diam",
+        "Mencatat selisih dan melapor ke supervisor sesuai prosedur",
+        "Mengubah catatan penjualan",
+        "Mengabaikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan membayar dengan QRIS tapi notifikasi belum masuk. Sebaiknya…",
+      "options": [
+        "Langsung serahkan barang",
+        "Cek status di aplikasi/mesin sampai transaksi berhasil sebelum menyerahkan barang",
+        "Minta bayar dua kali",
+        "Batalkan pesanan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Uang kertas yang diterima terlihat mencurigakan (palsu). Langkah pertama…",
+      "options": [
+        "Menerima saja",
+        "Periksa ciri keaslian (dilihat, diraba, diterawang) dan minta pembayaran lain dengan sopan jika ragu",
+        "Menuduh pelanggan",
+        "Merobek uangnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Membeli 3 barang @Rp12.500 dan 2 barang @Rp7.000. Totalnya…",
+      "options": [
+        "Rp51.500",
+        "Rp37.500",
+        "Rp44.500",
+        "Rp52.500"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pelanggan bertransaksi menggunakan kartu debit pada mesin EDC. Struk pembayaran tidak keluar dari mesin, tetapi saldo rekening pelanggan terpotong. Langkah paling tepat adalah...",
+      "options": [
+        "Meminta pelanggan melakukan pembayaran ulang secara tunai tanpa mengecek mesin EDC.",
+        "Mengabaikan masalah tersebut dan langsung menyerahkan barang belanjaan kepada pelanggan.",
+        "Mengecek ulang status transaksi di mesin EDC dan melapor ke supervisor sesuai SOP.",
+        "Membatalkan seluruh belanjaan dan menyuruh pelanggan mengurus sendiri ke pihak bank."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Pelanggan memprotes harga biskuit di rak tertera Rp12.000, tetapi saat di-scan di kasir muncul Rp15.000. Tindakan profesional kasir adalah...",
+      "options": [
+        "Mengonfirmasi ke tim area rak dan memberlakukan harga terendah sesuai aturan toko.",
+        "Menjelaskan bahwa harga kasir paling benar dan memaksa pelanggan membayar Rp15.000.",
+        "Mengubah harga barang di kasir menjadi Rp12.000 secara mandiri tanpa konfirmasi.",
+        "Menyuruh pelanggan mengembalikan barang tersebut ke rak jika tidak setuju harganya."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pelanggan ingin menukar barang yang rusak saat dibuka di rumah, tetapi ia lupa tidak membawa struk belanja. Tindakan kasir yang tepat adalah...",
+      "options": [
+        "Menolak pengembalian barang secara tegas karena struk pembelian adalah syarat mutlak.",
+        "Membayar ganti rugi barang dari kantong pribadi agar tidak ada komplain dari pelanggan.",
+        "Mengarahkan pelanggan membeli produk baru dengan memberikan diskon secara sepihak.",
+        "Membantu melacak riwayat transaksi pelanggan di sistem melalui waktu belanja atau member."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Antrean di kasir Anda mencapai lebih dari 8 orang, sementara pelanggan di depan Anda membutuhkan waktu lama untuk membayar. Langkah terbaik Anda adalah...",
+      "options": [
+        "Meninggalkan meja kasir sebentar untuk menertibkan posisi antrean pelanggan di belakang.",
+        "Tetap melayani dengan ramah sambil meminta bantuan supervisor membuka kasir tambahan.",
+        "Meminta pelanggan di depan Anda untuk mempercepat transaksi agar antrean cepat terurai.",
+        "Mematikan komputer kasir secara mendadak agar antrean pelanggan pindah ke kasir lain."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan membawa voucher diskon yang sudah kedaluwarsa kemarin dan marah-marah menuntut agar voucher tetap diproses. Sikap kasir yang tepat adalah...",
+      "options": [
+        "Memproses voucher tersebut secara diam-diam agar pelanggan tidak membuat kegaduhan.",
+        "Menjelaskan masa berlaku voucher dengan sopan serta menawarkan promo aktif lainnya.",
+        "Memotong harga barang menggunakan uang pribadi demi menjaga reputasi pelayanan toko.",
+        "Memanggil petugas keamanan untuk segera mengusir pelanggan tersebut keluar dari toko."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan ingin membayar total belanjaan Rp300.000 menggunakan kombinasi uang tunai Rp100.000 dan sisanya dengan kartu debit. Langkah kasir yang tepat adalah...",
+      "options": [
+        "Menolak transaksi karena sistem kasir hanya dapat menerima satu metode pembayaran saja.",
+        "Meminta pelanggan mentransfer uang tunainya ke rekening kasir agar bisa di-debit penuh.",
+        "Memproses input pembayaran tunai terlebih dahulu di sistem, lalu sisanya via EDC.",
+        "Menyuruh pelanggan mengurangi barang belanjaan hingga totalnya pas dengan uang tunai."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Barcode pada kemasan buah segar rusak sehingga scanner tidak dapat membacanya. Antrean kasir mulai menumpuk. Tindakan kasir yang efisien adalah...",
+      "options": [
+        "Meminta pelanggan mengambil sendiri buah kemasan lain yang barcode-nya masih utuh.",
+        "Menghapus produk buah tersebut dari daftar belanjaan tanpa memberitahu pelanggan.",
+        "Memasukkan kode PLU/SKU produk secara manual atau meminta bantuan tim runner barang.",
+        "Mengabaikan produk tersebut dan melanjutkan scan pada barang-barang belanjaan lainnya."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sesaat setelah transaksi selesai dan struk diserahkan, pelanggan tidak sengaja menjatuhkan botol kecap hingga pecah di area kasir. Tindakan kasir yang tepat adalah...",
+      "options": [
+        "Meminta pelanggan membayar ulang botol kecap tersebut karena transaksi sudah selesai.",
+        "Menginformasikan tim kebersihan dan memproses penggantian barang sesuai kebijakan toko.",
+        "Meminta pelanggan membersihkan sendiri tumpahan kecap sebelum keluar dari area toko.",
+        "Membiarkan tumpahan tersebut hingga jam operasional toko berakhir di malam hari."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di pertengahan shift, laci kasir Anda sudah terlalu penuh dengan uang tunai melebihi batas keamanan. Tindakan yang harus dilakukan kasir adalah...",
+      "options": [
+        "Memindahkan sebagian uang ke kantong celana agar laci kasir mudah ditutup kembali.",
+        "Mengunci laci dan menolak semua transaksi tunai dari pelanggan untuk sisa shift.",
+        "Melakukan prosedur setor antara (cash drop) bersama supervisor sesuai SOP keamanan.",
+        "Menyembunyikan seikat uang kertas di bawah meja kasir agar tidak terlihat pelanggan."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kasir menyadari telah melakukan double scan pada satu produk belanjaan pelanggan yang sudah membayar tunai dan hendak berjalan keluar. Tindakan kasir adalah...",
+      "options": [
+        "Memanggil pelanggan kembali, memohon maaf, dan mengembalikan selisih uang belanja.",
+        "Membiarkan pelanggan pergi karena transaksi sudah selesai dan pembayaran sudah diterima.",
+        "Menyimpan kelebihan uang pembayaran di laci untuk menutupi potensi kekurangan kasir.",
+        "Mengubah catatan stok barang secara manual tanpa berkoordinasi dengan supervisor shift."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang pelanggan hendak membayar belanjaan dengan uang pecahan Rp50.000, namun bagian sudut kiri atas uang tersebut terlihat robek dan disambung menggunakan selotip bening. Sebagai kasir yang teliti, tindakan paling tepat yang harus Anda lakukan adalah",
+      "options": [
+        "menolak uang tersebut secara langsung dan meminta metode pembayaran lain",
+        "menerima uang tersebut karena kerusakan masih di bawah batas toleransi",
+        "memeriksa tingkat keasliannya dan menolak jika pita pengaman ikut terkelupas",
+        "memanggil pengawas toko untuk meminta izin khusus menerima uang tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Anda sedang melayani transaksi, tiba-tiba aliran listrik toko padam total dan sistem POS (Point of Sale) mati seketika. Pelanggan di depan Anda sudah terlanjur menyerahkan uang tunai. Langkah pertama yang harus Anda ambil adalah",
+      "options": [
+        "menyalakan genset toko secara manual untuk melanjutkan proses input data",
+        "meminta pelanggan menunggu di area kasir sampai aliran listrik kembali normal",
+        "mengamankan uang tunai pelanggan dan mencatat transaksi secara manual",
+        "menghentikan pelayanan sementara dan meminta semua antrean keluar toko"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan mengembalikan produk susu kotak yang baru saja dibelai tiga menit lalu karena kemasannya bocor merembes. Pelanggan tersebut menunjukkan struk pembelian yang sah. Sikap profesional Anda sebagai kasir adalah",
+      "options": [
+        "mengarahkan pelanggan langsung ke bagian layanan pelanggan di lantai dua",
+        "meminta maaf, memeriksa fisik barang, lalu memproses penukaran produk",
+        "menjelaskan bahwa risiko kerusakan setelah dibayar adalah tanggung jawab pembeli",
+        "menghubungi distributor resmi produk tersebut untuk meminta penggantian baru"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan menyerahkan kartu member digital melalui layar ponselnya, namun sinyal internet di area kasir sangat buruk sehingga barcode tidak dapat dimuat. Antrean di belakang mulai panjang. Tindakan terbaik Anda adalah",
+      "options": [
+        "meminta pelanggan minggir sejenak untuk mencari sinyal dan mendahulukan antrean lain",
+        "menginput nomor member secara manual melalui sistem POS jika fitur tersebut tersedia",
+        "melewatkan poin member untuk transaksi tersebut agar proses pembayaran tetap cepat",
+        "meminta pelanggan melakukan tangkapan layar ulang sebelum datang ke meja kasir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam satu transaksi, pelanggan membeli barang promo 'Beli 2 Gratis 1' untuk produk sabun mandi. Setelah di-scan, sistem POS hanya memotong harga untuk pembelian 2 buah dan tetap mengenakan biaya untuk barang ketiga. Yang harus Anda lakukan adalah",
+      "options": [
+        "melanjutkan pembayaran sesuai nominal sistem karena itu harga yang berlaku otomatis",
+        "membatalkan item ketiga tersebut dari daftar belanjaan pelanggan secara permanen",
+        "menghubungi supervisor untuk melakukan override harga promo secara manual di sistem",
+        "memberikan potongan harga secara pribadi menggunakan uang dari kantong sendiri"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan asing (turis) ingin membayar belanjaan menggunakan kartu kredit berlogo internasional, namun mesin EDC menolak transaksi dengan keterangan 'Invalid Card'. Sebagai kasir, langkah penanganan awal Anda adalah",
+      "options": [
+        "menyuruh pelanggan pergi ke ATM terdekat untuk mengambil uang tunai fisik",
+        "memeriksa masa berlaku kartu dan meminta pelanggan mencoba menggesek ulang",
+        "menghubungi bank penerbit kartu kredit melalui telepon genggam pribadi Anda",
+        "menawarkan opsi pembayaran alternatif berupa dompet digital lokal yang populer"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang jam tutup toko, seorang pelanggan datang terburu-buru dan meletakkan satu keranjang penuh barang belanjaan di meja kasir. Aturan toko menyatakan kasir wajib tutup tepat waktu. Sikap Anda yang paling tepat adalah",
+      "options": [
+        "menolak melayani pelanggan tersebut karena jam operasional toko sudah berakhir",
+        "tetap melayani transaksi pelanggan tersebut dengan tenang hingga selesai tuntas",
+        "meminta rekan kasir lain untuk menggantikan tugas Anda menyelesaikan transaksi",
+        "menghitung cepat belanjaan dan meminta pembayaran dalam bentuk uang pas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang anak kecil tanpa pengawasan orang dewasa mencoret-coret meja kasir menggunakan spidol permanen saat orang tuanya sedang membayar belanjaan. Respon profesional Anda terhadap orang tua anak tersebut adalah",
+      "options": [
+        "memarahi anak tersebut secara langsung di depan orang tuanya dengan tegas",
+        "meminta ganti rugi biaya pembersihan meja kasir secara tunai saat itu juga",
+        "menyampaikan teguran secara sopan dan meminta bantuan untuk membersihkannya",
+        "mengabaikan kejadian tersebut agar tidak mempermalukan pelanggan di muka umum"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Ketika Anda sedang melakukan proses rekapitulasi uang kas (closing shift) seorang diri, tiba-tiba ada seorang teman karyawan dari bagian gudang meminta tolong dipinjamkan uang Rp100.000 dari laci kasir untuk keperluan mendesak. Tindakan Anda adalah",
+      "options": [
+        "memberikan pinjaman tersebut dengan catatan membuat surat tanda terima pribadi",
+        "menolak permintaan tersebut karena isi laci kasir adalah tanggung jawab mutlak Anda",
+        "meminta persetujuan lisan dari kepala toko melalui pesan singkat sebelum memberikan",
+        "memberikan uang tersebut asal diganti keesokan paginya sebelum jam buka toko"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan menyerahkan uang pecahan Rp100.000 untuk pembayaran. Saat Anda menerawang uang tersebut di bawah lampu UV kasir, tidak terlihat tanda air pahlawan dan benang pengaman tampak dicetak biasa. Langkah prosedural yang wajib dilakukan adalah",
+      "options": [
+        "mengembalikan uang tersebut secara halus kepada pelanggan tanpa menuduh palsu",
+        "langsung merobek uang tersebut di depan pelanggan agar tidak beredar lagi",
+        "menyimpan uang tersebut di laci terpisah khusus untuk bukti laporan kepolisian",
+        "meminta identitas pelanggan untuk dicatat bersama uang temuan di laci khusus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang pelanggan marah-marah di depan kasir karena merasa kembalian uang tunainya kurang Rp10.000, padahal Anda merasa sudah menghitungnya dengan benar. Tindakan profesional yang paling tepat adalah...",
+      "options": [
+        "Berdebat dengan pelanggan untuk membuktikan bahwa perhitungan Anda sudah pasti benar",
+        "Meminta maaf, tetap tenang, dan menyarankan untuk menghitung ulang bersama di meja kasir",
+        "Langsung memberikan uang Rp10.000 dari dompet pribadi untuk menghentikan keributan",
+        "Mengabaikan pelanggan tersebut dan segera memanggil pelanggan berikutnya dalam antrean"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat Anda sedang melayani pembayaran tunai, mesin laci kasir (cash drawer) mendadak macet dan tidak mau terbuka secara otomatis. Langkah darurat yang harus Anda lakukan adalah...",
+      "options": [
+        "Memaksa membuka laci dengan mencongkel menggunakan obeng atau benda tajam",
+        "Meninggalkan meja kasir untuk mencari teknisi toko tanpa menutup layar POS",
+        "Menggunakan tombol kunci manual darurat di bagian bawah laci kasir",
+        "Meminta pelanggan untuk membayarkan ulang menggunakan metode pembayaran digital"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan hendak melakukan pembayaran belanjaan senilai Rp45.000 menggunakan uang pecahan Rp50.000, namun lembaran tersebut basah kuyup dan lemas. Apa yang harus Anda lakukan?",
+      "options": [
+        "Menolak uang tersebut secara tegas karena berisiko merusak mesin penghitung uang",
+        "Menerima uang tersebut, mengeringkannya dengan tisu, dan menyimpannya terpisah",
+        "Meminta pelanggan menggantinya dengan uang tunai lain atau metode pembayaran lain",
+        "Menerima uang tersebut dan langsung menukarkannya ke brankas utama saat itu juga"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sistem POS tiba-tiba mengalami gangguan jaringan internet, sehingga proses input barang menggunakan scanner manual gagal total. Tindakan paling tepat untuk menjaga kelancaran operasional adalah...",
+      "options": [
+        "Menutup seluruh layanan kasir dan menyuruh semua pelanggan meninggalkan toko",
+        "Menggunakan daftar harga manual atau mencatat kode PLU dan harga secara berkala",
+        "Melanjutkan pemindaian barang meskipun layar monitor dalam kondisi padam",
+        "Membiarkan antrean menumpuk sambil menunggu koneksi internet pulih kembali"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

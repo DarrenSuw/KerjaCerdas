@@ -1,0 +1,306 @@
+{
+  "skill": "Notion",
+  "skill_key": "notion",
+  "questions": [
+    {
+      "question": "Tim marketing Anda sering salah memasukkan format tanggal publikasi di content calendar Notion karena menggunakan properti Text biasa. Langkah terbaik apa yang harus Anda lakukan pada database tersebut?",
+      "options": [
+        "Mengubah tipe properti tersebut menjadi Date dan atur format tampilannya",
+        "Membuat halaman baru setiap kali ada jadwal konten baru agar lebih rapi",
+        "Menghapus kolom tanggal lama dan menggantinya dengan properti Select",
+        "Mengunci database agar tidak ada anggota tim yang bisa mengubah isinya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat halaman SOP perusahaan di Notion yang bisa diakses oleh semua karyawan, namun bagian 'Keuangan & Gaji' hanya boleh dilihat oleh manajer. Bagaimana cara mengatur aksesnya?",
+      "options": [
+        "Mengunci seluruh halaman utama SOP menggunakan kata sandi khusus",
+        "Membuat database terpisah dan membagikannya via tautan publik",
+        "Membagi halaman menjadi sub-page dan atur Page Permission secara spesifik",
+        "Memindahkan dokumen keuangan tersebut keluar dari aplikasi Notion"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajer operasional meminta laporan mingguan yang merangkum tugas selesai dari tiga proyek berbeda dalam satu tampilan tabel yang ringkas. Fitur Notion apa yang paling tepat Anda gunakan?",
+      "options": [
+        "Membuat tabel manual baru dan menyalin data dari tiga proyek tersebut",
+        "Membuat Master Database lalu gunakan fitur Linked View of Database",
+        "Menggunakan fungsi ekspor data ke Excel lalu gabungkan menggunakan rumus",
+        "Membuat halaman galeri terpisah untuk masing-masing laporan proyek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah database CRM klien di Notion menjadi sangat lambat dan berantakan karena berisi ratusan klien lama yang sudah tidak aktif. Apa tindakan paling efisien untuk mengatasinya?",
+      "options": [
+        "Menghapus permanen seluruh data klien lama yang sudah tidak aktif",
+        "Membuat database baru setiap awal bulan untuk mencatat klien aktif",
+        "Memanfaatkan fitur Filter untuk menyembunyikan status klien yang arsip",
+        "Memindahkan data klien lama ke dalam dokumen teks di luar Notion"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda ingin membuat template meeting notes yang otomatis mencantumkan tanggal hari ini dan nama pembuatnya setiap kali tim membuat dokumen baru. Fitur apa yang harus Anda manfaatkan?",
+      "options": [
+        "Menggunakan tombol button bawaan untuk menyalin teks secara manual",
+        "Memanfaatkan fitur database template dengan dynamic variables",
+        "Menuliskan rumus formula khusus pada judul halaman dokumen baru",
+        "Meminta setiap anggota tim mengetik ulang format tanggal dan nama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim sales mengeluhkan tampilan Kanban Board leads penjualan terlalu panjang ke bawah karena banyaknya kartu dengan status 'Lost'. Bagaimana cara merapikan tampilan tanpa menghapus data?",
+      "options": [
+        "Menghapus semua kartu dengan status Lost dari papan utama",
+        "Menggunakan fitur Grouping alternatif berdasarkan kategori produk",
+        "Menyembunyikan kolom status Lost menggunakan pengaturan filter board",
+        "Membatasi jumlah maksimal kartu yang tampil per kolom di setting board"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda perlu menghitung total estimasi jam kerja dari seluruh task yang berstatus 'In Progress' di sebuah database proyek. Formula atau fitur apa yang paling tepat digunakan?",
+      "options": [
+        "Membuat rumus manual menggunakan kalkulator eksternal setiap hari",
+        "Memakai fitur kalkulasi bawaan di bagian bawah kolom tabel database",
+        "Menggunakan properti text biasa untuk mencatat akumulasi angka jam",
+        "Mengekspor data ke format CSV untuk dihitung menggunakan spreadsheet"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Atasan Anda ingin melihat status progress proyek dalam bentuk grafik persentase penyelesaian tugas di halaman utama Notion. Fitur apa yang harus Anda pasang di halaman tersebut?",
+      "options": [
+        "Menghubungkan Notion dengan layanan pembuat diagram pihak ketiga",
+        "Membuat tabel ringkasan manual yang diperbarui setiap akhir pekan",
+        "Memanfaatkan database view jenis chart yang tersedia di Notion",
+        "Menggunakan blok kode HTML untuk merender grafik batang interaktif"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah dokumen briefing produk di Notion sering direvisi oleh banyak departemen, sehingga anggota tim sering bingung melihat versi mana yang paling baru. Solusi terbaik di Notion adalah?",
+      "options": [
+        "Membuat halaman baru dengan nama berbeda untuk setiap revisi dokumen",
+        "Memanfaatkan fitur Page History untuk melacak perubahan dan versi",
+        "Mengunci halaman sepenuhnya agar tidak ada revisi lanjutan yang masuk",
+        "Menghapus komentar lama dan menyisipkan catatan revisi di akhir teks"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan merapikan workspace perusahaan yang memiliki ratusan halaman tidak beraturan. Langkah pertama apa yang paling efektif untuk membangun struktur navigasi yang baik?",
+      "options": [
+        "Menghapus seluruh halaman lama dan mulai membuat dari awal",
+        "Membuat satu halaman Hub utama dengan sistem sub-page yang hierarkis",
+        "Memberikan akses penuh kepada semua karyawan ke semua dokumen",
+        "Memindahkan seluruh dokumen penting ke folder lokal komputer pribadi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim HR Anda ingin membuat database orientasi karyawan baru di mana setiap rekrutan baru secara otomatis mendapatkan daftar tugas onboarding yang sama persis saat profil mereka ditambahkan. Fitur Notion apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan Notion Automations untuk menyalin tugas ketika baris baru dibuat",
+        "Membuat Database Templates dengan tombol 'New' yang sudah berisi sub-task",
+        "Memakai rumus formula untuk menghasilkan daftar tugas secara dinamis",
+        "Mengatur Relation antar database tugas dan database karyawan secara manual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin agar setiap halaman catatan rapat (meeting notes) baru di proyek Anda otomatis terisi nama pembuatnya (creator) tanpa mereka harus mengetiknya secara manual setiap kali.",
+      "options": [
+        "Membuat properti teks biasa yang wajib diisi manual sebelum rapat dimulai",
+        "Menambahkan properti 'Created by' pada database meeting notes tersebut",
+        "Menggunakan fitur Mention `@` untuk memanggil nama akun setiap kali mengetik",
+        "Membuat formula khusus yang mendeteksi akun aktif saat halaman dibuka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi operasional ingin melihat daftar inventaris kantor yang jumlah stoknya sudah di bawah batas minimum, agar bisa segera dilakukan pembelian ulang tanpa harus mencari satu per satu.",
+      "options": [
+        "Membuat tampilan galeri dengan menyortir berdasarkan abjad nama barang",
+        "Menggunakan filter database di mana properti jumlah stok lebih kecil dari batas minimum",
+        "Mengekspor data inventaris ke spreadsheet Excel setiap akhir minggu",
+        "Membuat halaman terpisah dan menulis ulang daftar barang yang hampir habis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer Anda meminta agar link penting perusahaan (seperti absensi, cuti, dan portal klaim) selalu berada di bagian paling atas setiap halaman divisi tanpa perlu menempelkannya berulang-ulang.",
+      "options": [
+        "Menyalin link tersebut secara manual ke setiap halaman baru yang dibuat",
+        "Membuat satu halaman khusus lalu membagikan link-nya ke grup chat kantor",
+        "Membuat Sync Block di halaman utama dan menyalinnya ke halaman divisi",
+        "Menggunakan fitur komentar agar anggota tim bisa melihat tautan terkait"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah tim proyek menggunakan tabel task dengan ratusan baris. Anggota tim sering kesulitan menemukan tugas milik mereka sendiri di antara banyaknya data dari divisi lain.",
+      "options": [
+        "Membuat database baru yang terpisah total untuk setiap anggota tim",
+        "Membuat tampilan tabel baru dengan filter di mana properti Assignee adalah diri sendiri",
+        "Menghapus tugas milik anggota tim lain agar tabel terlihat lebih bersih",
+        "Mengubah semua baris tugas menjadi bentuk teks biasa di dalam halaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menyematkan file presentasi PDF perusahaan langsung di dalam halaman Notion agar klien dapat melihatnya tanpa harus mengunduh file terlebih dahulu.",
+      "options": [
+        "Mengunggah file menggunakan blok File lalu mengeklik tombol unduh",
+        "Menggunakan blok PDF untuk menampilkan dokumen secara langsung di halaman",
+        "Menyimpan file di Google Drive lalu menuliskan alamat URL teks biasa",
+        "Mengubah format dokumen PDF tersebut menjadi gambar beresolusi tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim kreatif sering menggunakan emoji yang berbeda-beda untuk status tugas (misal: 🟢, ✅, 🟩 untuk 'Selesai'), membuat laporan rekapitulasi data menjadi tidak akurat dan sulit dikelompokkan.",
+      "options": [
+        "Mengubah properti status menjadi tipe Select dengan pilihan opsi yang dibatasi",
+        "Membuat panduan tertulis agar tim hanya memakai satu jenis emoji saja",
+        "Menggunakan fungsi formula untuk mengganti semua emoji secara otomatis",
+        "Membiarkannya karena emoji tidak mempengaruhi hasil perhitungan data"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin membuat halaman FAQ pelanggan di mana setiap pertanyaan bisa diklik untuk memunculkan jawaban penjelas di bawahnya, agar halaman tidak terlihat panjang dan penuh teks.",
+      "options": [
+        "Menggunakan blok Callout untuk menyorot setiap jawaban penting",
+        "Membuat tabel bersarang dengan kolom terpisah untuk tanya dan jawab",
+        "Menggunakan blok Toggle untuk menyembunyikan dan menampilkan teks jawaban",
+        "Memecah setiap pertanyaan ke dalam halaman terpisah yang saling taut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Direktur perusahaan ingin memantau anggaran pengeluaran bulanan dari beberapa proyek berbeda dalam satu tabel ringkasan utama tanpa harus membuka halaman detail setiap proyek.",
+      "options": [
+        "Membuat relasi antar database proyek dan menggunakan fitur Rollup untuk menjumlahkan",
+        "Mengetik ulang total pengeluaran secara manual setiap akhir bulan di tabel utama",
+        "Menggunakan fitur Export PDF dari setiap halaman proyek lalu menggabungkannya",
+        "Membuat satu halaman bersama dan meminta semua staf mengetik pengeluaran di sana"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin memastikan bahwa catatan rapat penting yang bersifat rahasia tidak sengaja terhapus atau diubah oleh karyawan magang yang memiliki akses lihat (view) ke workspace.",
+      "options": [
+        "Menghapus akun magang dari workspace setiap kali rapat rahasia selesai",
+        "Mengunci halaman (Lock page) agar tidak bisa disunting oleh pengguna yang tidak berwenang",
+        "Menyembunyikan halaman tersebut di dalam arsip pribadi yang terkunci sandi",
+        "Memindahkan catatan rapat ke aplikasi luar yang memiliki sistem keamanan ketat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer keuangan meminta laporan pengeluaran bulanan yang dikelompokkan (Group by) berdasarkan departemen, di mana setiap kelompok otomatis menampilkan total jumlah angka pengeluarannya di bagian bawah. Pengaturan apa yang Anda terapkan pada tampilan tabel Notion?",
+      "options": [
+        "Menggunakan fitur Sub-items untuk menghubungkan antar departemen",
+        "Mengaktifkan fungsi Grouping pada departemen dan fungsi Calculate sum",
+        "Membuat halaman terpisah untuk setiap departemen lalu menjumlahkannya",
+        "Mengekspor data ke spreadsheet setiap akhir bulan untuk dihitung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim operasional ingin melihat daftar tugas mendesak di database proyek dengan kondisi: prioritas 'Tinggi' DAN tenggat waktu jatuh tempo minggu ini. Bagaimana cara Anda menampilkan data tersebut di satu tampilan tabel yang sama?",
+      "options": [
+        "Membuat dua database terpisah lalu menghubungkannya dengan relasi",
+        "Menggunakan fitur Filter dengan kondisi bertingkat (Advanced Filter)",
+        "Menyaring data secara manual satu per satu setiap hari Senin",
+        "Membuat formula khusus yang mengekspor data ke Excel eksternal"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin membuat tombol interaktif di halaman utama Notion agar staf administrasi bisa langsung membuat baris baru di database cuti karyawan dengan status default 'Menunggu Persetujuan'. Fitur apa yang harus Anda gunakan?",
+      "options": [
+        "Membuat Database Template dan mengatur shortcut keyboard khusus",
+        "Menggunakan fitur Automation untuk mendeteksi perubahan halaman",
+        "Memanfaatkan blok perintah interaktif berbasis tombol (Button block)",
+        "Menulis skrip integrasi pihak ketiga menggunakan Webhook Notion"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah database klien di Notion memiliki properti 'Status Proyek' yang sering diubah oleh tim sales. Anda ingin memastikan bahwa setiap perubahan status tersebut otomatis tercatat kapan tanggal dan jam perubahannya terjadi tanpa diisi manual. Properti apa yang tepat?",
+      "options": [
+        "Menggunakan properti tipe Last edited time pada database tersebut",
+        "Membuat properti formula dengan fungsi now() yang dikunci",
+        "Meminta staf untuk selalu menulis manual di properti teks tambahan",
+        "Memasang widget pihak ketiga untuk memantau aktivitas baris"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mengelola database artikel blog. Penulis sering lupa mengisi nama mereka sendiri pada properti penulis. Bagaimana cara otomatis mencatat nama karyawan yang membuat halaman artikel tersebut?",
+      "options": [
+        "Mengatur properti tipe Created by pada konfigurasi database",
+        "Membuat formula khusus yang mendeteksi akun login aktif saat ini",
+        "Mewajibkan pengisian nama melalui validasi teks manual di awal",
+        "Menggunakan fiturmention otomatis setiap kali halaman baru dibuat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Tim konten Anda sering menghapus halaman arsip lama secara tidak sengaja dari workspace bersama. Langkah pengamanan apa yang paling tepat untuk mencegah kejadian ini terulang tanpa harus membatasi akses baca mereka?",
+      "options": [
+        "Mengunci halaman (Lock page) utama dan memberikan akses editor terbatas",
+        "Menghapus seluruh izin akses akun mereka dan menjadikannya tamu",
+        "Memindahkan semua halaman penting ke aplikasi dokumen lain di luar Notion",
+        "Mematikan fitur riwayat revisi halaman di pengaturan tingkat lanjut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda ingin menyusun direktori kontak vendor eksternal di Notion di mana daftar tersebut menampilkan kartu-kartu perusahaan vendor, dan ketika diklik, memuat daftar orang/PIC yang bekerja di perusahaan tersebut. Relasi apa yang harus dibuat?",
+      "options": [
+        "Relasi satu arah (One-way relation) dari vendor ke halaman pribadi",
+        "Relasi dua arah (Two-way relation) antara database Vendor dan database PIC",
+        "Menggabungkan nama vendor dan nama PIC ke dalam satu kolom teks panjang",
+        "Membuat halaman turunan (Sub-page) manual di dalam setiap baris vendor"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah dokumen SOP perusahaan sangat panjang dan memiliki banyak sub-judul bab. Pembaca sering mengeluh kesulitan melompat ke bagian tertentu. Elemen apa yang paling efektif Anda pasang di bagian paling atas dokumen?",
+      "options": [
+        "Membuat daftar pranala manual satu per satu menggunakan teks biasa",
+        "Menyisipkan blok daftar isi otomatis (Table of contents block)",
+        "Membagi dokumen tersebut menjadi puluhan halaman terpisah yang kecil",
+        "Menambahkan gambar tangkapan layar peta navigasi di awal dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ingin menampilkan ringkasan status tugas dari database proyek secara visual langsung di halaman dashboard utama tanpa membuat tim harus membuka database aslinya. Fitur tampilan apa yang paling tepat disematkan?",
+      "options": [
+        "Menyalin tabel mentah secara manual setiap minggu ke halaman utama",
+        "Membuat tautan tampilan database (Linked view of database) di dashboard",
+        "Menggunakan tangkapan layar gambar dari tabel proyek yang diperbarui",
+        "Membuat halaman baru yang terpisah total dari database proyek utama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Quality Assurance ingin menandai bug yang sudah kedaluwarsa secara otomatis dengan label 'Kritis' jika tanggal tenggat waktunya sudah lewat dan statusnya belum 'Selesai'. Fitur Notion mana yang dapat mengevaluasi kondisi logika ini secara otomatis?",
+      "options": [
+        "Menggunakan properti Formula dengan fungsi kondisi logika tanggal",
+        "Membuat tombol interaktif yang harus diklik setiap pagi oleh staf",
+        "Mengandalkan pengingat manual melalui fitur mention komentar",
+        "Menghubungkan database ke aplikasi email eksternal viaZapier"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Warehouse Management",
+  "skill_key": "warehouse management",
+  "questions": [
+    {
+      "question": "Anda diminta merancang tata letak penyimpanan (slotting) untuk barang berukuran kecil, bernilai tinggi, dan sangat cepat laku (fast-moving) di gudang logistik. Di manakah posisi rak yang paling optimal untuk item tersebut?",
+      "options": [
+        "Di area mezanin tingkat paling atas yang jarang diakses pekerja lain",
+        "Di zona aman dekat pintu keluar utama dan setinggi jangkauan dada",
+        "Di sudut paling belakang gudang untuk meminimalkan risiko pencurian",
+        "Di dalam kontainer khusus di halaman luar area bongkar muat terbuka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda adalah kepala gudang retail fesyen. Menjelang Hari Raya, tren pesanan online melonjak tajam, namun kapasitas jalur packing saat ini terbatas dan sering terjadi antrean. Tindakan paling efektif apa yang harus segera Anda ambil?",
+      "options": [
+        "Menambah jam kerja shift malam khusus staf administrasi data pesanan",
+        "Mengonversi area buffer zona inbound yang longgar menjadi stasiun packing sementara",
+        "Menghentikan sementara semua pengiriman barang grosir untuk fokus ke e-commerce",
+        "Meminta vendor ekspedisi untuk mempercepat waktu penjemputan barang harian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat melakukan stock opname bulanan di gudang suku cadang mesin, tim Anda menemukan selisih fisik sebanyak 50 unit bearing yang tercatat di sistem WMS padahal rak penyimpanan kosong. Langkah investigasi awal yang paling tepat adalah?",
+      "options": [
+        "Langsung melakukan koreksi stok negatif pada sistem WMS hari ini juga",
+        "Memeriksa ulang log transaksi penerimaan dan pengeluaran barang sejak opname lalu",
+        "Memanggil seluruh petugas keamanan gudang untuk dimintai keterangan formal",
+        "Membuat berita acara kehilangan aset perusahaan kepada pihak kepolisian"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Gudang bahan baku industri makanan Anda memiliki ruang terbatas dan menerapkan metode FIFO. Saat operator menurunkan palet baru tepung terigu, mereka menaruhnya tepat di depan palet lama yang belum habis. Apa instruksi korektif Anda?",
+      "options": [
+        "Meminta operator memindahkan palet lama ke posisi paling atas tumpukan",
+        "Menginstruksikan operator membongkar palet baru dan menyusunnya secara manual",
+        "Menyuruh operator merotasi posisi palet lama agar berada di jalur akses depan",
+        "Menjadwalkan ulang pengiriman pasokan tepung terigu dari supplier utama"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati tingkat kerusakan barang (damaged goods) di area racking tinggi meningkat akibat kesalahan operator forklift saat mengambil palet. Sebagai supervisor, intervensi operasional apa yang paling mendesak?",
+      "options": [
+        "Mengganti seluruh unit forklift dengan model elektrik berkapasitas lebih kecil",
+        "Memberikan sanksi pemotongan gaji kepada operator yang sering melakukan kesalahan",
+        "Mengadakan pelatihan ulang dan sertifikasi keselamatan operasional forklift",
+        "Memperketat pengawasan CCTV di setiap sudut lorong rak penyimpanan tinggi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah gudang farmasi menyimpan produk vaksin yang sangat sensitif terhadap suhu. Pukul 02.00 dini hari, sistem monitoring mencatat suhu cold room naik dari 5°C menjadi 12°C. Tindakan darurat apa yang harus dilakukan petugas jaga malam?",
+      "options": [
+        "Menunggu kedatangan manajer pemeliharaan pada pagi hari untuk pengecekan",
+        "Memindahkan seluruh stok vaksin ke cold box cadangan dan melapor supervisor",
+        "Mematikan total aliran listrik ruangan agar mesin pendingin melakukan reset",
+        "Membuka pintu gudang lebar-lebar untuk melancarkan sirkulasi udara luar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Di gudang e-fulfillment, analisis data menunjukkan bahwa produk A (tissue basah) dan produk B (cairan pembersih) sering dibeli bersamaan oleh pelanggan, tetapi posisinya terpisah di ujung gudang yang berlawanan. Apa perbaikan tata letak yang paling efisien?",
+      "options": [
+        "Menempatkan kedua produk tersebut di zona penyimpanan yang berdekatan",
+        "Menggabungkan kedua jenis barang tersebut ke dalam satu kardus kemasan",
+        "Membuat jalur khusus forklift untuk mempercepat perpindahan antar zona",
+        "Menugaskan dua orang picker sekaligus untuk melayani satu nomor pesanan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Pihak ekspedisi logistik mengeluhkan lambatnya proses serah terima barang (handover) di loading dock gudang Anda setiap sore karena dokumen surat jalan masih dicetak manual. Solusi administratif apa yang paling tepat?",
+      "options": [
+        "Merekam video proses serah terima barang sebagai bukti validasi harian",
+        "Menerapkan sistem e-Delivery Order menggunakan pindai barcode digital",
+        "Meminta sopir truk datang lebih pagi sebelum jam sibuk operasional",
+        "Menambah jumlah personel administrasi khusus bagian pencetakan dokumen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Gudang distribusi FMCG Anda sering mengalami kemacetan di area inbound saat truk kontainer datang bersamaan pada pukul 10.00 pagi. Kebijakan penjadwalan apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Membatasi jumlah total supplier yang boleh bekerja sama dengan perusahaan",
+        "Menerapkan sistem slot waktu kedatangan (dock booking system) bagi setiap truk",
+        "Menambah luas area parkir truk di halaman depan area luar gerbang gudang",
+        "Meminta buruh bongkar muat bekerja lebih cepat dari durasi standar operasional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Saat menerima kiriman komponen elektronik sensitif (ESD), Anda melihat kemasan luar karton basah dan rusak karena hujan selama perjalanan. Langkah penanganan awal yang paling tepat sesuai SOP gudang adalah?",
+      "options": [
+        "Langsung memasukkan barang ke rak penyimpanan khusus komponen kering",
+        "Meminta sopir truk bertanggung jawab mengganti kerugian barang rusak",
+        "Memisahkan barang tersebut ke area karantina dan memberi catatan khusus",
+        "Membuka semua kemasan kardus saat itu juga untuk memeriksa isi komponen"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang operator baru di gudang logistik mengalami cedera punggung ringan karena mengangkat kardus berat dengan posisi membungkuk yang salah. Sebagai supervisor gudang, tindakan perbaikan sistemik apa yang wajib segera dilakukan?",
+      "options": [
+        "Memberikan teguran tertulis kepada operator tersebut dan memotong gaji pokoknya sebagai bentuk sanksi kelalaian",
+        "Mengadakan sesi pelatihan ulang mengenai teknik manual handling yang aman serta menyediakan alat bantu angkat mekanis",
+        "Melarang seluruh pekerja pria mengangkat beban di atas 10 kilogram tanpa terkecuali dalam aktivitas operasional harian",
+        "Menjual seluruh barang berukuran berat dan hanya menerima penyimpanan barang berukuran ringan di masa mendatang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola gudang suku cadang otomotif di Cikarang. Saat ini, tingkat perputaran (turnover) item fast-moving sangat lambat karena posisi rak penyimpanan berada di zona paling dalam gudang, sementara barang slow-moving justru di dekat pintu keluar. Langkah operasional apa yang paling efektif untuk mengatasi masalah ini?",
+      "options": [
+        "Mengubah tata letak gudang dengan memindahkan item fast-moving ke zona staging dan rak terdekat dengan area outbound",
+        "Menambah jumlah tenaga kerja forklift secara permanen untuk mempercepat perpindahan barang dari zona dalam",
+        "Membuat kebijakan lembur bagi tim picker agar mereka dapat berjalan lebih cepat saat mengambil barang di dalam",
+        "Mengganti sistem manajemen gudang dengan software baru yang memiliki fitur pelacakan GPS berbasis satelit"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di gudang e-commerce kosmetik, petugas sering salah mengambil varian warna lipstik karena kemasan sekundernya sangat mirip satu sama lain. Sebagai supervisor, tindakan preventif terbaik apa yang harus segera diterapkan di area picking?",
+      "options": [
+        "Mewajibkan setiap petugas memeriksa kode SKU fisik secara teliti dan manual di bawah lampu terang",
+        "Mengimplementasikan pemindaian barcode menggunakan perangkat handheld pada setiap item sebelum dimasukkan ke wadah pesanan",
+        "Memberikan sanksi pemotongan insentif kepada petugas yang terbukti melakukan kesalahan pengambilan lebih dari tiga kali",
+        "Memisahkan lokasi penyimpanan seluruh produk kosmetik ke gedung terpisah untuk menghindari kebingungan visual"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah gudang material bangunan menerima pengiriman pipa PVC panjang dalam jumlah besar yang ditumpuk terlalu tinggi di atas palet kayu tanpa pengikat, sehingga berisiko longsor dan membahayakan pekerja. Apa tindakan darurat yang harus Anda ambil?",
+      "options": [
+        "Membiarkan posisi tumpukan tetap sama namun memasang garis pembatas kuning agar pekerja tidak mendekat",
+        "Meminta supir truk pengangkut untuk segera membawa kembali seluruh muatan pipa PVC tersebut ke pabrik asal",
+        "Menghentikan proses bongkar muat sementara, lalu merapikan dan mengikat ulang tumpukan pipa sesuai standar keamanan",
+        "Melanjutkan proses penerimaan barang dengan cepat agar area loading dock segera kosong untuk truk berikutnya"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan audit inventaris harian di gudang bahan kimia cair, Anda mendapati drum kemasan 200 liter mengalami kebocoran lambat dan cairan merembes ke lantai area sekitar. Prosedur penanganan awal yang paling tepat adalah?",
+      "options": [
+        "Menutup area sekitar, menaburkan material penyerap khusus bahan kimia, dan memindahkan sisa cairan ke drum cadangan yang aman",
+        "Menyiram lantai yang basah dengan air mengalir bertekanan tinggi agar cairan kimia cepat masuk ke saluran pembuangan umum",
+        "Membiarkan cairan mengering dengan sendirinya sambil menunggu jadwal pembersihan rutin mingguan dari tim facility management",
+        "Memindahkan drum yang bocor ke area kantor administrasi agar tidak mengganggu aktivitas operasional di lantai gudang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem WMS (Warehouse Management System) Anda mendatakan stok fisik baterai lithium di rak A-04 masih ada 50 unit, namun saat tim melakukan pengambilan pesanan, rak tersebut kosong melompong. Langkah investigasi awal yang harus Anda lakukan adalah?",
+      "options": [
+        "Langsung melakukan penyesuaian (adjustment) stok di sistem komputer menjadi nol agar pesanan pelanggan bisa segera diproses",
+        "Memeriksa ulang riwayat transaksi keluar-masuk, catatan mutasi, dan kemungkinan barang terselip di area staging atau staging error",
+        "Melaporkan kehilangan barang tersebut kepada pihak kepolisian setempat dengan menyertakan rekaman kamera pengawas CCTV",
+        "Menghentikan seluruh operasional gudang hari itu juga dan melakukan stock opname total untuk seluruh kategori barang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Gudang logistik pihak ketiga (3PL) Anda melayani produk makanan kering dan produk pembersih lantai secara bersamaan. Tim auditor kualitas melaporkan adanya kontaminasi bau pada produk makanan. Kebijakan tata letak apa yang gagal diterapkan sebelumnya?",
+      "options": [
+        "Penerapan metode penyimpanan berdasarkan abjad nama produk tanpa memperhatikan kategori jenis barang",
+        "Penyimpanan produk makanan dan produk berbau tajam dalam satu zona tanpa sekat atau jarak pemisah yang memadai",
+        "Penggunaan palet kayu bekas yang tidak melalui proses fumigasi sebelum dimasukkan ke dalam area penyimpanan utama",
+        "Penempatan produk makanan di rak tingkat paling atas yang langsung bersentuhan dengan atap seng gudang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Menjelang akhir jam kerja shift sore, terjadi antrean panjang truk pengiriman keluar gudang karena proses verifikasi surat jalan dan pemeriksaan fisik muatan oleh petugas security memakan waktu terlalu lama. Solusi proses operasional untuk mempercepat alur ini adalah?",
+      "options": [
+        "Meniadakan sama sekali proses pemeriksaan fisik muatan truk oleh security demi mengejar kecepatan waktu keberangkatan",
+        "Meminta supir truk untuk keluar area gudang terlebih dahulu tanpa membawa dokumen surat jalan resmi yang lengkap",
+        "Menerapkan sistem dokumen digital pra-terbit dan sampling pengecekan acak berbasis tingkat kepatuhan vendor yang terverifikasi",
+        "Mengganti seluruh petugas security gudang dengan tenaga robot otomatis yang menggunakan sensor pemindai inframerah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda mendapati lantai epoxy di jalur utama forklift gudang mengalami retak parah dan berlubang, yang menyebabkan roda forklift sering tersangkut dan mengancam keselamatan pengemudi. Langkah penanganan pemeliharaan fasilitas yang tepat adalah?",
+      "options": [
+        "Menutup area jalur tersebut menggunakan tanda peringatan dan segera menjadwalkan perbaikan permukaan lantai pada akhir pekan",
+        "Meminta pengemudi forklift untuk mengemudikan kendaraan dengan kecepatan maksimal agar dapat melewati lubang dengan cepat",
+        "Menimbun lubang di lantai tersebut menggunakan sisa kardus bekas dan lakban hitam berukuran besar secara mandiri",
+        "Membiarkan kondisi lantai apa adanya karena kerusakan infrastruktur adalah hal yang wajar dalam operasional gudang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Gudang distribusi barang pecah belah (keramik) Anda mencatat tingkat kerusakan barang akibat terjatuh dari rak pallet mencapai 4% setiap bulannya. Analisis teknis menunjukkan balok racking sering bergeser saat tertabrak pelan oleh reach truck. Solusi pengamanan infrastruktur apa yang paling tepat?",
+      "options": [
+        "Memasang pelindung tiang rak (upright protector) berbahan baja dan pembatas pengaman (rack guard) di setiap ujung jalur",
+        "Menurunkan kapasitas target kecepatan kerja harian bagi seluruh pengemudi reach truck hingga 50 persen",
+        "Mengganti seluruh sistem rak pallet baja dengan rak yang terbuat dari bahan kayu lapis berstandar ekspor",
+        "Menyimpan seluruh barang pecah belah langsung di atas lantai gudang tanpa menggunakan struktur rak bertingkat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam pengaturan tata letak gudang, Anda mendapati bahwa jalur lintas utama forklift sering mengalami kemacetan karena aktivitas putar balik yang sempit. Solusi rekayasa tata letak apa yang paling tepat?",
+      "options": [
+        "Menerapkan sistem jalur satu arah (one-way traffic) dengan rambu jelas",
+        "Melarang penggunaan forklift besar dan menggantinya dengan hand pallet",
+        "Mengurangi kapasitas penyimpanan rak demi memperluas lorong gudang",
+        "Menjadwalkan ulang operasional forklift hanya pada malam hari saja"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Di gudang produk elektronik konsumsi, Anda mendapati tingkat retur pelanggan akibat salah kirim varian warna meningkat. Langkah preventif operasional apa yang paling efektif diterapkan segera?",
+      "options": [
+        "Mewajibkan scan barcode SKU dan varian pada sistem WMS sebelum barang dikemas",
+        "Memberikan sanksi teguran tertulis kepada seluruh tim packer yang bertugas",
+        "Menempatkan pengawas khusus di meja packing untuk memeriksa manual satu per satu",
+        "Membuat label warna tambahan yang ditempel manual di luar kemasan kardus"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah gudang suku cadang alat berat mengalami lonjakan waktu tunggu (waiting time) truk ekspedisi saat proses muat barang di loading dock. Apa tindakan analisis awal yang harus Anda ambil?",
+      "options": [
+        "Mengganti seluruh vendor penyedia jasa ekspedisi dengan penyedia baru",
+        "Memperpanjang jam operasional gudang hingga malam hari setiap hari",
+        "Mengukur waktu siklus tiap tahapan dari staging hingga dokumen keluar",
+        "Menambah jumlah tenaga kerja bongkar muat secara permanen di dock"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat melakukan audit mingguan di gudang produk FMCG, Anda menemukan selisih negatif yang konsisten pada produk bernilai tinggi namun berukuran kecil. Apa langkah investigasi internal terbaik?",
+      "options": [
+        "Melakukan penghitungan ulang seluruh stok barang di gudang utama",
+        "Membatasi akses area penyimpanan dan audit rekaman CCTV secara berkala",
+        "Membebankan selisih harga barang kepada seluruh petugas bagian gudang",
+        "Menghentikan sementara pengiriman produk tersebut hingga audit selesai"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Gudang Anda menerima pasokan bahan baku cair dalam jerigen yang baru datang dengan segel pengaman rusak sebagian. Prosedur penanganan yang paling tepat sesuai standar gudang adalah?",
+      "options": [
+        "Menolak seluruh muatan truk pengangkut dan meminta pengembalian dana",
+        "Memindahkan cairan ke jerigen lain yang bersih untuk menghindari bocor",
+        "Menerima barang dengan catatan khusus pada berita acara pemeriksaan",
+        "Melakukan karantina fisik dan uji sampel bersama pihak bagian pembelian"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda ingin mengurangi waktu tempuh (travel time) petugas pemetik barang (picker) di gudang online shop skala menengah. Strategi pengambilan apa yang paling efektif diterapkan?",
+      "options": [
+        "Menggabungkan beberapa pesanan dalam satu perjalanan ambil (batch picking)",
+        "Menugaskan satu picker untuk menyelesaikan satu pesanan secara berurutan",
+        "Membiarkan picker mengambil barang secara acak sesuai kedatangan pesanan",
+        "Menyimpan seluruh barang terlaris di sudut paling belakang area gudang"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sistem WMS melaporkan adanya 'ghost stock' di lokasi rak tertentu, di mana sistem mencatat ada barang namun rak tersebut kosong saat picker datang mengambil. Tindakan korektif sistem yang diperlukan adalah?",
+      "options": [
+        "Melakukan penyesuaian stok manual pada WMS tanpa verifikasi fisik",
+        "Menghapus lokasi rak tersebut dari daftar master data sistem WMS",
+        "Membuat tiket investigasi siklus stok untuk rekonsiliasi data inventaris",
+        "Menonaktifkan sementara akun pengguna picker yang melaporkan masalah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Menghadapi musim puncak (peak season) Lebaran, gudang Anda kekurangan ruang penyimpanan di lantai (floor stacking). Kebijakan operasional jangka pendek apa yang paling logis?",
+      "options": [
+        "Menyewa ruang gudang tambahan terdekat khusus untuk buffer stock",
+        "Menghentikan sementara aktivitas penerimaan barang baru dari supplier",
+        "Menumpuk palet lebih tinggi melampaui batas aman spesifikasi rak",
+        "Menjual cepat barang lambat bergerak dengan harga diskon besar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Operator reach truck melaporkan adanya balok penopang rak palet (beam) yang sedikit bengkok akibat tersenggol garpu forklift. Langkah tanggap darurat keselamatan yang wajib dilakukan adalah?",
+      "options": [
+        "Meminta operator memperbaikinya sendiri menggunakan palu besi besar",
+        "Mengosongkan area rak tersebut dan melarang akses di sekitar lokasi",
+        "Menurunkan beban palet paling atas dan tetap memakai rak bagian bawah",
+        "Melanjutkan operasional dengan catatan pengawasan visual secara rutin"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah gudang logistik mendapati tingkat kecelakaan kerja akibat senggolan antara pejalan kaki dan forklift meningkat di area persimpangan. Tindakan pengendalian risiko fisik apa yang paling tepat?",
+      "options": [
+        "Memasang cembung cermin tikungan (convex mirror) dan garis batas jalur",
+        "Memberikan pelatihan keselamatan kerja ulang selama seminggu penuh",
+        "Melarang pekerja berjalan kaki melintasi area operasional forklift sama sekali",
+        "Mengurangi kecepatan operasional seluruh unit forklift menjadi setengahnya"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

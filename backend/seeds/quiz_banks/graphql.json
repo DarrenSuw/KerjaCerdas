@@ -1,0 +1,306 @@
+{
+  "skill": "GraphQL",
+  "skill_key": "graphql",
+  "questions": [
+    {
+      "question": "Tim frontend melaporkan bahwa halaman profil pengguna di aplikasi e-commerce sering mengalami lambat muat karena payload JSON yang terlalu besar dari server GraphQL. Apa langkah paling efektif yang harus Anda ambil pada resolver GraphQL?",
+      "options": [
+        "Membuat endpoint REST terpisah khusus untuk halaman profil",
+        "Mengubah skema agar klien dapat meminta field secara spesifik",
+        "Melakukan pemotongan data langsung di klien setelah diterima",
+        "Menonaktifkan fitur introspeksi untuk mengurangi ukuran respons"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang merancang mutasi GraphQL untuk proses 'Checkout Pesanan' di platform logistik. Klien mengeluhkan bahwa mutasi sering gagal di tengah jalan akibat koneksi tidak stabil, menyebabkan duplikasi pesanan. Solusi arsitektural mana yang paling tepat diterapkan?",
+      "options": [
+        "Menggunakan mekanisme Idempotency Key pada argumen input mutasi",
+        "Mengganti seluruh mutasi GraphQL tersebut kembali menjadi HTTP POST",
+        "Menaikkan batas timeout server GraphQL hingga durasi maksimum",
+        "Meminta tim mobile untuk otomatis melakukan retry tanpa validasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah query analitik kompleks di dasbor admin memicu masalah 'N+1 Query Problem' pada database PostgreSQL ketika mengakses relasi daftar transaksi dan detail merchant. Bagaimana cara Anda memperbaikinya secara optimal?",
+      "options": [
+        "Melakukan iterasi loop di dalam resolver untuk setiap transaksi",
+        "Menulis ulang query SQL mentah dan mengabaikan ORM yang ada",
+        "Mengimplementasikan DataLoader untuk melakukan batching dan caching",
+        "Membatasi kedalaman query maksimal dua level menggunakan middleware"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Aplikasi super-app Anda memiliki jutaan pengguna aktif harian, dan API GraphQL publik mulai disalahgunakan oleh pihak ketiga dengan mengirimkan query yang sangat bersarang (nested deeply) untuk melakukan scraping data. Tindakan pencegahan apa yang harus dipasang?",
+      "options": [
+        "Menerapkan pembatasan kompleksitas query (Query Cost Analysis/Depth Limiting)",
+        "Memindahkan seluruh endpoint GraphQL ke jaringan intranet perusahaan",
+        "Mengharuskan pengguna memasukkan kode OTP setiap kali mengirim query",
+        "Mengurangi ukuran payload maksimal menjadi 1 kilobyte per request"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda perlu memperbarui sistem autentikasi dari menggunakan Header Token konvensional ke sistem Cookie HttpOnly untuk keamanan yang lebih baik pada klien web. Apa dampak perubahan ini terhadap cara klien mengirimkan query GraphQL?",
+      "options": [
+        "Klien harus menyertakan token secara manual di dalam body setiap query",
+        "Klien wajib menambahkan kredensial otomatis pada konfigurasi fetch/axios",
+        "Klien tidak lagi diizinkan mengakses skema GraphQL yang bersifat publik",
+        "Klien harus mengubah format payload dari JSON menjadi form-urlencoded"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim Anda ingin memigrasikan layanan monolitik REST lama ke arsitektur GraphQL Federation untuk membagi domain layanan produk dan pengguna ke tim yang berbeda. Komponen apa yang wajib disiapkan di depan layanan-layanan tersebut?",
+      "options": [
+        "Sebuah API Gateway sentral yang bertindak sebagai Apollo Gateway",
+        "Sebuah server proxy reverse Nginx biasa tanpa konfigurasi tambahan",
+        "Sebuah database pusat bersama untuk menyimpan cache semua skema",
+        "Sebuah skrip cron job untuk menggabungkan file JSON setiap malam"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat memantau performa production server GraphQL di jam sibuk, Anda mendapati bahwa sebuah query sederhana dieksekusi berulang kali dengan parameter yang sama dalam waktu singkat. Strategi caching mana yang paling efektif untuk mengatasinya?",
+      "options": [
+        "Caching berbasis HTTP GET pada level CDN untuk respons query tersebut",
+        "Menyimpan seluruh basis data ke dalam memori RAM server aplikasi",
+        "Meminta klien untuk melakukan reload halaman secara berkala saja",
+        "Menghapus semua indeks pada tabel database agar pembacaan lebih cepat"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang developer junior membuat perubahan pada skema GraphQL dengan menghapus field 'phoneNumber' yang masih digunakan oleh aplikasi versi lama di perangkat pengguna. Apa istilah untuk kesalahan praktik manajemen skema ini?",
+      "options": [
+        "Melakukan perubahan yang merusak kompatibilitas (Breaking Changes)",
+        "Mengabaikan prinsip pemrograman berorientasi objek secara total",
+        "Melanggar standar penulisan dokumen spesifikasi OpenAPI v3",
+        "Gagal mengompilasi kode bahasa pemrograman TypeScript di server"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Fitur 'Live Tracking' kurir pengiriman membutuhkan pembaruan posisi real-time ke aplikasi seluler pelanggan. Fitur GraphQL apa yang harus Anda implementasikan untuk menangani aliran data dua arah ini?",
+      "options": [
+        "Menggunakan fitur Subscription berbasis protokol WebSocket",
+        "Membuat loop setInterval di klien untuk melakukan query setiap detik",
+        "Mengandalkan fitur Mutasi dengan respons tertunda (Long Polling)",
+        "Memanfaatkan mekanisme Directive khusus bernama @live di skema"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati server GraphQL mengalami lonjakan error yang sulit dilacak karena pesan error dari database langsung bocor ke klien melalui respons GraphQL. Bagaimana cara mengamankan penanganan error ini?",
+      "options": [
+        "Menangkap error di resolver, log detailnya secara internal, dan kembalikan pesan umum",
+        "Mematikan fitur penanganan error agar server langsung melakukan restart otomatis",
+        "Mengubah seluruh format respons error dari objek JSON menjadi teks kosong",
+        "Menghapus semua blok kode try-catch agar error otomatis teratasi oleh sistem"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Aplikasi e-commerce Anda melayani jutaan pengguna mobile dengan kualitas jaringan yang bervariasi di berbagai daerah Indonesia. Anda ingin menghindari payload besar dengan membuat sistem di mana klien dapat meminta tipe data polimorfik secara dinamis pada endpoint yang sama. Fitur skema GraphQL apa yang paling tepat digunakan?",
+      "options": [
+        "Menggunakan tipe data Scalar kustom untuk mendefinisikan struktur JSON bebas.",
+        "Menggunakan Interface atau Union types untuk merepresentasikan objek bertipe jamak.",
+        "Membuat banyak query terpisah khusus untuk setiap tipe perangkat mobile.",
+        "Memanfaatkan fungsi Directive bawaan untuk memfilter field secara dinamis."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA melaporkan bahwa endpoint mutasi registrasi akun baru sering gagal mendeteksi input email yang tidak valid sebelum data masuk ke database utama. Di mana dan bagaimana cara paling tepat menangani validasi bisnis tingkat lanjut ini dalam arsitektur GraphQL?",
+      "options": [
+        "Melakukan validasi langsung di dalam fungsi resolver sebelum memanggil service database.",
+        "Membuat skema khusus bertipe Enum untuk memastikan domain email yang diizinkan.",
+        "Menulis skrip middleware HTTP pihak ketiga sebelum permintaan masuk ke server.",
+        "Memanfaatkan Custom Scalar untuk validasi format regex pada tingkat definisi skema."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda mendapati bahwa query GraphQL untuk laporan penjualan bulanan sangat lambat karena klien dapat meminta kedalaman relasi (nesting) hingga 10 level, yang membebani database. Langkah mitigasi apa yang paling efektif diterapkan pada server Apollo GraphQL?",
+      "options": [
+        "Membatasi jumlah karakter string pada argumen query menggunakan tipe String.",
+        "Menerapkan plugin pembatas kedalaman query atau Query Complexity Analysis.",
+        "Mengubah seluruh struktur query GraphQL kembali menjadi endpoint REST.",
+        "Menonaktifkan fitur introspeksi skema pada lingkungan production server."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah layanan fintech memerlukan audit trail untuk setiap transaksi finansial yang dilakukan melalui mutasi GraphQL. Anda ingin mencatat data pengguna yang melakukan aksi tanpa harus memaksa klien mengirimkan ID mereka secara manual di setiap argumen mutasi. Pendekatan apa yang paling tepat?",
+      "options": [
+        "Meneruskan objek konteks (context) yang berisi token atau sesi pengguna dari server HTTP.",
+        "Menyimpan data pengguna ke dalam variabel global server setiap kali aplikasi dimulai.",
+        "Meminta klien mengirimkan kredensial lengkap melalui argumen di setiap jenis query.",
+        "Menggunakan fungsi resolver sekunder untuk menebak identitas dari alamat IP klien."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam proyek migrasi sistem pemesanan tiket, Anda perlu memastikan bahwa klien lama yang masih menggunakan versi skema lama tidak langsung rusak aplikasinya ketika Anda menambahkan fitur baru. Strategi pengelolaan skema apa yang sebaiknya diterapkan?",
+      "options": [
+        "Segera menghapus field lama dan memaksa seluruh pengguna memperbarui aplikasi.",
+        "Membuat endpoint URL baru yang terpisah untuk setiap perubahan versi minor.",
+        "Menandai field lama dengan direktif @deprecated beserta pesan migrasi yang jelas.",
+        "Mengubah tipe data field lama menjadi Boolean agar tidak memicu error parsing."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang membangun dashboard internal HR yang menampilkan data gaji karyawan. Data ini sangat sensitif dan hanya boleh diakses oleh manajer HR. Bagaimana cara terbaik menerapkan kontrol akses (Authorization) pada level field di server GraphQL?",
+      "options": [
+        "Melakukan pengecekan peran (role check) di dalam masing-masing resolver field terkait.",
+        "Menyaring data hasil query pada sisi aplikasi frontend menggunakan JavaScript.",
+        "Membuat skema GraphQL yang berbeda secara fisik untuk setiap jabatan karyawan.",
+        "Mengandalkan firewall jaringan perusahaan untuk memblokir akses ke database."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah modul pencarian produk di aplikasi marketplace Anda membutuhkan performa tinggi. Klien sering mencari produk berdasarkan berbagai kombinasi filter opsional (kategori, rentang harga, lokasi toko, rating). Bagaimana cara merancang argumen query yang bersih untuk kasus ini?",
+      "options": [
+        "Membuat argumen terpisah untuk setiap kemungkinan kombinasi filter di skema.",
+        "Menggabungkan seluruh parameter filter ke dalam satu objek input bertipe Input Object.",
+        "Menggunakan satu argumen string panjang yang berisi query SQL mentah.",
+        "Menghindari penggunaan argumen dan memaksa klien memfilter data secara manual."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim backend Anda menggunakan DataLoader untuk mengatasi masalah N+1 query pada relasi produk dan kategori. Namun, saat pengujian, data kategori untuk produk tertentu terkadang tertukar dengan produk lain dalam cache batch. Apa penyebab utama kesalahan konfigurasi DataLoader ini?",
+      "options": [
+        "Fungsi batchLoadFn tidak mengembalikan array dengan urutan dan panjang yang sama.",
+        "Klien mengirimkan terlalu banyak argumen bersarang di dalam satu kali query.",
+        "Server GraphQL dijalankan menggunakan protokol HTTP GET alih-alih POST.",
+        "Instance DataLoader dibuat secara global sekali seumur hidup server, bukan per request."
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Aplikasi portal berita Anda ingin mendukung fitur mode gelap (dark mode) dan preferensi bahasa yang disimpan di server. Klien perlu mengubah preferensi ini melalui mutasi dan langsung mendapatkan pembaruan status tanpa refresh. Desain tipe pengembalian (return type) mutasi yang paling ideal adalah:",
+      "options": [
+        "Mengembalikan nilai boolean sederhana penanda status sukses atau gagal saja.",
+        "Mengembalikan objek payload mutasi yang berisi data terbaru dan objek error.",
+        "Mengembalikan seluruh daftar artikel berita terbaru agar halaman langsung terisi.",
+        "Mengembalikan teks kosong karena perubahan state cukup ditangani oleh klien."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati ukuran bundle network log untuk operasi GraphQL di aplikasi enterprise Anda membengkak karena query yang dikirimkan klien sangat panjang dan berulang. Solusi optimasi standar industri apa yang paling tepat diterapkan?",
+      "options": [
+        "Mengaktifkan kompresi Gzip atau Brotli pada level reverse proxy Nginx.",
+        "Memindahkan seluruh operasi query yang kompleks menjadi metode HTTP GET.",
+        "Menerapkan teknik Persisted Queries untuk mengirim hash alih-alih string query.",
+        "Memecah satu skema besar menjadi ratusan file skema mikro yang terpisah."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang mengembangkan layanan manajemen inventaris gudang dengan GraphQL. Beberapa mutasi perubahan stok barang sering kali gagal karena konflik data konkuren dari petugas gudang yang berbeda. Pendekatan apa yang paling tepat untuk menangani konkurensi ini pada level skema GraphQL?",
+      "options": [
+        "Menambahkan argumen versi data atau token optimis pada input mutasi untuk validasi konflik",
+        "Membuat middleware server yang otomatis mengulang mutasi yang gagal hingga berhasil",
+        "Mengubah semua mutasi tersebut menjadi operasi query sinkronus menggunakan REST",
+        "Menonaktifkan validasi basis data sementara selama proses mutasi massal berjalan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah aplikasi super-app finansial ingin memastikan bahwa klien seluler hanya dapat mengirim data terenkripsi pada argumen mutasi transfer dana. Di mana tempat paling aman untuk memvalidasi dan mendekripsi payload sensitif tersebut sebelum mencapai resolver bisnis?",
+      "options": [
+        "Di dalam komponen UI aplikasi seluler sebelum memanggil fungsi client GraphQL",
+        "Di dalam fungsi resolver spesifik untuk mutasi transfer dana di backend server",
+        "Di dalam lapisan konteks (context setup) GraphQL yang diekstrak dari HTTP header",
+        "Di dalam skema SDL GraphQL menggunakan custom directive validasi format string"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Tim frontend melaporkan bahwa cache klien Apollo Client sering menunjukkan data kadaluarsa setelah mutasi 'UpdateStatusPesanan' dijalankan. Apa tindakan paling efisien untuk memperbarui state cache klien secara otomatis tanpa harus memuat ulang seluruh halaman?",
+      "options": [
+        "Menggunakan mekanisme refetchQueries secara manual pada setiap komponen halaman",
+        "Memanfaatkan fitur update function pada mutasi untuk memodifikasi cache lokal secara langsung",
+        "Melakukan reload halaman secara otomatis setiap kali mutasi berhasil diselesaikan",
+        "Menghapus seluruh isi cache lokal menggunakan metode client.clearStore()"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati bahwa query GraphQL untuk laporan transaksi bulanan sering membebani server karena klien meminta relasi data hingga 8 level kedalaman yang tidak perlu. Bagaimana cara paling efektif untuk mencegah penyalahgunaan ini tanpa merusak fungsionalitas yang sah?",
+      "options": [
+        "Membatasi ukuran payload respons HTTP maksimal 1 Megabyte pada level reverse proxy",
+        "Menambahkan plugin validasi kedalaman query (query depth limiting) pada server GraphQL",
+        "Menghapus semua relasi antar tabel pada skema database relasional PostgreSQL",
+        "Memaksa klien untuk melakukan paginasi offset pada setiap level objek relasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam arsitektur microservices menggunakan GraphQL Federation, layanan 'Produk' dan 'Ulasan' digabungkan. Layanan Ulasan membutuhkan data nama produk dari layanan Produk. Bagaimana cara layanan Ulasan mengakses referensi tipe data Produk secara efisien?",
+      "options": [
+        "Melakukan HTTP REST call langsung ke endpoint internal layanan Produk setiap kali ulasan dimuat",
+        "Menggunakan direktif @external dan @key pada skema federasi untuk entitas lintas layanan",
+        "Menyalin seluruh tabel produk ke dalam database lokal milik layanan Ulasan secara berkala",
+        "Meminta klien frontend untuk menggabungkan data produk dan ulasan secara manual di browser"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda perlu mengimplementasikan fitur pencarian produk dengan filter multi-kategori dan rentang harga di e-commerce. Desain argumen input apa pada query GraphQL yang paling bersih dan mudah dikembangkan untuk kebutuhan ini?",
+      "options": [
+        "Membuat puluhan argumen terpisah langsung pada fungsi query pencarian produk",
+        "Menggunakan satu argumen objek input khusus (input object type) yang berisi berbagai parameter opsional",
+        "Menggabungkan semua parameter filter menjadi satu string JSON mentah yang di-parse manual",
+        "Membuat beberapa query terpisah yang masing-masing hanya menangani satu jenis filter"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah fitur unggah dokumen KYC (Know Your Customer) pada aplikasi perbankan digital menggunakan mutasi GraphQL. Bagaimana cara menangani pengiriman file biner (multipart file upload) yang optimal melalui transport GraphQL?",
+      "options": [
+        "Mengubah file biner menjadi string Base64 dan mengirimkannya sebagai argumen tipe String biasa",
+        "Menggunakan spesifikasi GraphQL Multipart Request untuk mengirim file terpisah dari payload JSON",
+        "Mengunggah file terlebih dahulu ke server FTP terpisah, lalu mengirim URL-nya via mutasi",
+        "Menyimpan file langsung ke dalam kolom tipe data teks pada skema database PostgreSQL"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim QA menemukan bahwa beberapa resolver di server GraphQL mengembalikan struktur data null padahal field tersebut didefinisikan sebagai non-null (!) di skema SDL, sehingga merusak aplikasi klien. Bagaimana cara penanganan error yang benar pada kasus ini?",
+      "options": [
+        "Mengubah semua tanda seru (!) pada skema menjadi opsional agar aplikasi tidak pernah crash",
+        "Memastikan resolver menangani kegagalan pengambilan data dengan melemparkan GraphQLError yang spesifik",
+        "Membiarkan server mengembalikan nilai kosong tanpa memberikan informasi apapun ke log",
+        "Menangkap error di klien dan mengganti nilai null dengan string kosong secara paksa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Aplikasi Anda memiliki jutaan pengguna dan Anda ingin memantau performa resolver GraphQL di production untuk mendeteksi bottleneck latensi secara akurat. Alat atau pendekatan apa yang paling tepat diterapkan pada server Node.js?",
+      "options": [
+        "Menambahkan perintah console.log di awal dan akhir setiap fungsi resolver kode",
+        "Mengintegrasikan tracing berbasis tracing extension atau APM yang mendukung siklus hidup GraphQL",
+        "Mengandalkan laporan error dari browser pengguna yang dikirim melalui email dukungan",
+        "Menghitung jumlah total baris kode pada direktori resolver menggunakan script shell"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda harus memigrasikan endpoint API lama dari REST ke GraphQL tanpa memutus aplikasi seluler versi lama yang masih beredar di pasaran. Strategi transisi apa yang paling aman untuk diterapkan pada backend server?",
+      "options": [
+        "Menghapus total kode REST lama dan memaksa semua pengguna memperbarui aplikasi hari ini",
+        "Menjalankan server GraphQL secara berdampingan dengan endpoint REST lama menggunakan basis kode yang sama",
+        "Mengubah semua endpoint REST menjadi fungsi redirect otomatis menuju halaman login",
+        "Menutup akses API sepenuhnya selama proses migrasi skema database berlangsung"
+      ],
+      "correct_index": 1
+    }
+  ]
+}

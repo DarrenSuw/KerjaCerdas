@@ -1,0 +1,306 @@
+{
+  "skill": "Business Analytics",
+  "skill_key": "business analytics",
+  "questions": [
+    {
+      "question": "Tim *growth* di sebuah perusahaan *e-commerce* Indonesia melihat lonjakan kunjungan dari iklan media sosial minggu lalu, tetapi tingkat pembelian (*conversion rate*) justru turun 20%. Langkah analisis awal apa yang paling tepat untuk mendiagnosis masalah ini?",
+      "options": [
+        "Menghentikan seluruh anggaran iklan media sosial demi mencegah kerugian lebih lanjut",
+        "Membuat laporan ringkasan total biaya pemasaran dan laba kotor secara bulanan",
+        "Menganalisis corong konversi berdasarkan perangkat dan halaman arahan iklan",
+        "Melakukan survei kepuasan pelanggan kepada seluruh pengunjung situs web baru"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen senior meminta Anda mengevaluasi efektivitas kampanye diskon tanggal kembar (11.11). Data menunjukkan peningkatan volume transaksi yang drastis, namun margin keuntungan bersih perusahaan malah menipis. Metrik apa yang harus Anda prioritaskan untuk analisis lanjutan?",
+      "options": [
+        "Biaya akuisisi pelanggan baru dibandingkan dengan nilai seumur hidup pelanggan",
+        "Total tayangan iklan dan tingkat keterlibatan di seluruh platform media sosial",
+        "Jumlah unduhan aplikasi seluler selama periode kampanye diskon berlangsung",
+        "Rata-rata waktu muat halaman pembayaran saat lonjakan trafik tertinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah jaringan supermarket lokal ingin mengurangi tingkat kerusakan stok buah segar di cabang-cabang Jabodetabek. Anda diberikan data historis penjualan harian, suhu gudang, dan waktu pengiriman. Bagaimana pendekatan analitis pertama yang paling efektif?",
+      "options": [
+        "Membangun model kecerdasan buatan untuk memprediksi tren pasar global",
+        "Menghitung tingkat perputaran inventaris dan korelasi waktu simpan dengan retur",
+        "Menyusun ulang tata letak seluruh toko berdasarkan preferensi staf operasional",
+        "Mengadakan rapat koordinasi mingguan dengan seluruh pemasok buah segar"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati data penjualan bulanan aplikasi *fintech* menunjukkan anomali berupa lonjakan transaksi yang tidak biasa pada tanggal 30 setiap bulannya. Apa tindakan validasi data yang paling tepat sebelum melaporkannya ke manajemen?",
+      "options": [
+        "Langsung menghapus baris data tanggal 30 agar tidak merusak model prediksi",
+        "Memeriksa apakah lonjakan tersebut berasal dari siklus penggajian atau aktivitas bot",
+        "Mengubah asumsi dasar pertumbuhan bisnis agar sesuai dengan angka anomali",
+        "Mengabaikan temuan tersebut karena hanya terjadi satu hari dalam sebulan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan logistik berbasis aplikasi di Surabaya ingin menurunkan tingkat pembatalan pesanan oleh pengemudi. Anda diminta membuat dasbor pemantauan kinerja pengemudi. Indikator utama apa yang paling esensial ditampilkan?",
+      "options": [
+        "Total jarak tempuh kumulatif seluruh pengemudi dalam satu tahun terakhir",
+        "Rata-rata waktu tunggu penjemputan barang dan rasio pembatalan per wilayah",
+        "Jumlah kendaraan operasional yang dimiliki oleh perusahaan mitra logistik",
+        "Total pendapatan kotor harian yang dihasilkan oleh masing-masing pengemudi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam proyek segmentasi pelanggan untuk layanan *streaming* musik berlangganan, Anda menggunakan teknik klasterisasi K-Means. Setelah mendapatkan klaster, bagaimana cara terbaik memanfaatkan hasil ini untuk tim pemasaran?",
+      "options": [
+        "Mengirimkan penawaran promosi seragam kepada seluruh pengguna terdaftar",
+        "Membuat strategi kampanye yang dipersonalisasi berdasarkan perilaku tiap klaster",
+        "Fokus melayani klaster dengan jumlah anggota paling sedikit dan mengabaikan lain",
+        "Menghapus akun pengguna yang masuk ke dalam klaster dengan aktivitas rendah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Divisi *customer service* sebuah bank digital melaporkan peningkatan jumlah tiket keluhan terkait kegagalan transfer antarbank. Sebagai analis data, apa langkah paling strategis untuk membantu menyelesaikan masalah ini?",
+      "options": [
+        "Menambah jumlah staf layanan pelanggan untuk mempercepat waktu tanggap",
+        "Menganalisis log sistem berdasarkan mitra bank tujuan dan waktu kegagalan",
+        "Membuat survei daring untuk mengukur tingkat stres nasabah yang gagal transfer",
+        "Meninjau ulang struktur gaji dan bonus tim teknologi informasi perusahaan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menyiapkan laporan kinerja triwulanan untuk direksi yang memiliki waktu terbatas. Dari grafik analisis tren penjualan yang kompleks, elemen apa yang harus Anda tonjolkan di bagian paling atas laporan?",
+      "options": [
+        "Seluruh tabel data mentah yang digunakan untuk menghasilkan grafik bulanan",
+        "Kesimpulan utama dan rekomendasi tindakan berdasarkan temuan analisis",
+        "Metodologi statistik rumit yang digunakan untuk membersihkan data anomali",
+        "Daftar nama anggota tim analis yang berkontribusi dalam pengerjaan proyek"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita daring mengalami penurunan durasi baca (*session duration*) pembaca setia sebesar 15% dalam dua bulan terakhir. Analisis data apa yang paling tepat untuk mengidentifikasi akar penyebab masalah ini?",
+      "options": [
+        "Membandingkan rasio pentalan dan kecepatan muat halaman pada artikel populer",
+        "Menghitung total biaya server yang dikeluarkan untuk mengelola basis data",
+        "Menaikkan tarif pemasangan iklan banner untuk meningkatkan pendapatan",
+        "Mengurangi jumlah artikel berita yang diterbitkan setiap hari secara drastis"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Perusahaan rintisan *edtech* ingin menguji apakah fitur kuis interaktif baru dapat meningkatkan tingkat kelulusan peserta kursus daring. Desain eksperimen apa yang paling tepat untuk menguji hipotesis ini?",
+      "options": [
+        "Memberikan fitur kuis hanya kepada peserta yang mendaftar di akhir pekan",
+        "Melakukan uji A/B dengan membagi peserta baru secara acak ke kelompok kontrol dan perlakuan",
+        "Meminta seluruh peserta senior mencoba fitur kuis lalu mengisi kuesioner opini",
+        "Mengamati perilaku belajar peserta kursus tanpa memberikan intervensi apa pun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan FMCG nasional meluncurkan produk mi instan rasa baru di wilayah Jawa Barat. Tim manajemen ingin mengetahui apakah penjualan minggu pertama melampaui target minimum 10.000 unit secara statistik, ataukah itu hanya fluktuasi acak. Apa langkah analitis awal yang paling tepat?",
+      "options": [
+        "Menghitung rata-rata penjualan harian dan membuat diagram garis untuk melihat tren visual",
+        "Melakukan uji hipotesis satu sampel menggunakan data penjualan harian tiap gerai ritel",
+        "Mengumpulkan data demografi pembeli melalui kuesioner daring di media sosial",
+        "Membandingkan total penjualan minggu pertama dengan data historis produk lama"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis data keranjang belanja (*market basket analysis*) untuk sebuah jaringan minimarket nasional guna menentukan penempatan produk promosi. Hasil menunjukkan asosiasi yang kuat antara pembelian popok bayi dan tisu basah. Keputusan bisnis apa yang paling tepat berdasarkan temuan ini?",
+      "options": [
+        "Menaikkan harga kedua produk secara bersamaan untuk memaksimalkan margin keuntungan",
+        "Memberikan diskon besar khusus untuk pembelian tisu basah tanpa syarat tambahan",
+        "Menempatkan rak tisu basah di lorong yang sama dekat dengan produk popok bayi",
+        "Menghentikan penjualan produk lain yang memiliki asosiasi lemah di kategori tersebut"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital mengalami lonjakan rasio churn (*churn rate*) sebesar 4% pada pengguna baru di bulan kedua setelah pendaftaran. Manajemen meminta Anda mengidentifikasi akar masalahnya. Tindakan analitis apa yang harus Anda lakukan pertama kali?",
+      "options": [
+        "Melakukan analisis kohort untuk melihat pola aktivitas pengguna berdasarkan bulan pendaftaran",
+        "Mengirimkan survei kepuasan kepada seluruh pengguna yang sudah menghapus aplikasi",
+        "Membuat model prediktif machine learning untuk meramalkan churn di masa depan",
+        "Menghitung total kerugian finansial akibat hilangnya pengguna baru tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer operasional sebuah pabrik tekstil di Solo ingin mengurangi waktu menganggur (*downtime*) mesin rajut. Anda diberikan data log operasional selama satu tahun terakhir. Analisis apa yang paling efektif untuk menemukan penyebab utama kerusakan mesin?",
+      "options": [
+        "Menghitung total jam kerusakan mesin setiap bulan untuk dilaporkan kepada direksi",
+        "Membuat diagram Pareto untuk mengategorikan frekuensi dan durasi jenis kerusakan mesin",
+        "Melakukan regresi linear antara suhu ruangan pabrik dan frekuensi kerusakan mesin",
+        "Membandingkan biaya perbaikan mesin antar shift kerja pagi dan malam secara berkala"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah platform pemesanan hotel lokal ingin mengoptimalkan strategi penetapan harga dinamis (*dynamic pricing*) saat akhir pekan panjang. Data historis menunjukkan permintaan sangat elastis terhadap harga. Apa pendekatan analitis terbaik untuk menentukan harga kamar?",
+      "options": [
+        "Menaikkan harga kamar secara merata sebesar 50% di seluruh properti mitra",
+        "Menggunakan analisis elastisitas harga untuk memproyeksikan okupansi pada berbagai tingkat tarif",
+        "Menyamakan harga kamar dengan tarif rata-rata kompetitor terdekat di kota wisata",
+        "Memberikan harga tetap yang murah untuk menarik volume pemesanan yang masif"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pemasaran digital sebuah dealer otomotif ingin mengalokasikan anggaran iklan bulan depan ke platform media sosial yang menghasilkan prospek (*leads*) berkualitas tinggi. Metrik gabungan mana yang harus Anda gunakan untuk evaluasi?",
+      "options": [
+        "Biaya per Klik (CPC) dan total tayangan iklan di setiap platform media sosial",
+        "Rasio Konversi prospek menjadi pembelian aktual dan Biaya per Akuisisi (CPA)",
+        "Jumlah total komentar dan tanda suka pada setiap unggahan konten iklan",
+        "Total anggaran yang dihabiskan dibandingkan dengan durasi penayangan iklan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda diminta menganalisis efektivitas tata letak baru situs web e-commerce lokal. Data clickstream menunjukkan peningkatan klik pada tombol keranjang, tetapi tingkat penyelesaian transaksi (*checkout completion rate*) justru menurun. Apa interpretasi bisnis yang paling logis?",
+      "options": [
+        "Pengunjung situs web sangat menyukai desain warna tombol keranjang yang baru",
+        "Proses pembayaran atau pengisian data di halaman checkout mengalami hambatan",
+        "Jumlah pengunjung total ke situs web mengalami lonjakan yang signifikan minggu ini",
+        "Harga produk di keranjang belanja terlalu murah bagi sebagian besar pembeli"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan asuransi kesehatan di Jakarta ingin mendeteksi potensi klaim penipuan (*fraud*) dari jaringan rumah sakit mitra. Teknik analitis apa yang paling tepat diterapkan pada database klaim historis?",
+      "options": [
+        "Analisis klasterisasi untuk mengelompokkan nasabah berdasarkan usia dan premi",
+        "Analisis deret waktu untuk memproyeksikan total pembayaran klaim tahun depan",
+        "Deteksi pencilan (*outlier detection*) untuk mengidentifikasi pola klaim yang menyimpang",
+        "Uji korelasi sederhana antara besar klaim dan tingkat kepuasan peserta asuransi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen rantai pasok sebuah perusahaan ritel fashion ingin mengurangi biaya penyimpanan gudang dengan mengoptimalkan tingkat stok pengaman (*safety stock*). Variabel apa yang paling krusial untuk dimasukkan ke dalam model analitis Anda?",
+      "options": [
+        "Gaji pegawai gudang dan biaya sewa gedung penyimpanan di setiap wilayah",
+        "Waktu tunggu pengiriman (*lead time*) supplier dan variabilitas permintaan harian",
+        "Warna dan ukuran pakaian yang paling cepat laku terjual di gerai fisik",
+        "Jumlah hari libur nasional dalam satu tahun kalender operasional bisnis"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita berlangganan ingin menurunkan tingkat pembatalan langganan bulanan. Anda diminta membangun sistem peringatan dini. Variabel perilaku pengguna mana yang paling penting untuk dilacak dalam model prediktif?",
+      "options": [
+        "Frekuensi login harian dan penurunan durasi baca artikel dalam 14 hari terakhir",
+        "Jumlah total artikel yang dibagikan pengguna ke akun media sosial pribadi mereka",
+        "Waktu dalam sehari ketika pengguna paling sering membuka aplikasi berita",
+        "Metode pembayaran yang dipilih pengguna saat pertama kali mendaftar langganan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan rintisan logistik di Jakarta mencatat peningkatan waktu tunggu pengiriman kurir sebesar 25% pada jam sibuk. Manajemen meminta Anda menganalisis akar permasalahan dari data operasional harian. Langkah analitis pertama yang paling tepat untuk Anda lakukan adalah",
+      "options": [
+        "Mengelompokkan data waktu tunggu berdasarkan wilayah administratif dan rentang jam operasional",
+        "Membuat model prediktif untuk meramalkan jumlah pesanan bulan depan secara keseluruhan",
+        "Melakukan survei kepuasan kepada seluruh pelanggan yang menerima paket pada minggu lalu",
+        "Menghitung rata-rata biaya operasional harian untuk setiap armada kendaraan yang tersedia"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajer penjualan sebuah distributor barang FMCG meminta laporan performa produk berdasarkan wilayah pemasaran di Pulau Jawa. Anda menemukan distribusi data penjualan sangat miring (skewed) karena kontribusi besar dari beberapa kota besar. Metrik ringkasan yang paling tepat digunakan untuk merepresentasikan penjualan tipikal per kota adalah",
+      "options": [
+        "Nilai rata-rata aritmatika karena mencakup keseluruhan total volume penjualan aktual",
+        "Nilai median karena tidak terdistorsi secara ekstrem oleh angka penjualan kota besar",
+        "Nilai simpangan baku untuk menunjukkan seberapa jauh variasi data dari titik pusat",
+        "Nilai jangkauan data untuk memperlihatkan selisih antara penjualan tertinggi dan terendah"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda sedang menganalisis efektivitas halaman pembayaran (checkout) baru pada aplikasi marketplace lokal. Data menunjukkan bahwa meskipun jumlah pengunjung yang masuk ke halaman pembayaran meningkat, jumlah transaksi yang berhasil justru menurun. Tindakan analisis lanjutan yang paling strategis adalah",
+      "options": [
+        "Menghitung tingkat konversi total dari halaman beranda hingga transaksi selesai",
+        "Menelusuri tingkat drop-off pada setiap tahapan spesifik di dalam formulir pembayaran",
+        "Membandingkan total kunjungan iklan media sosial dengan total unduhan aplikasi",
+        "Menganalisis profil demografi pengguna baru yang mendaftar dalam periode tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Tim pemasaran sebuah bank swasta meluncurkan kampanye kartu kredit melalui SMS blast. Dari 50.000 pesan terkirim, terdapat 1.000 klik tautan dan 50 pengajuan aplikasi. Pimpinan meminta Anda menilai efisiensi biaya kampanye ini. Metrik gabungan manakah yang paling akurat untuk dievaluasi?",
+      "options": [
+        "Rasio klik terhadap tayangan dan total biaya pengiriman pesan per000 target audiens",
+        "Biaya perolehan nasabah dan tingkat konversi dari klik tautan menjadi pengajuan",
+        "Total volume pesan terkirim dibandingkan dengan jumlah penutupan rekening tabungan",
+        "Rata-rata saldo minimum rekening yang dibuka melalui tautan SMS pemasaran tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah jaringan restoran cepat saji nasional ingin mengevaluasi dampak kenaikan harga menu terhadap volume penjualan bulanan di berbagai cabang perkotaan. Anda diminta menyajikan temuan tersebut kepada Dewan Direksi yang memiliki waktu terbatas. Format visualisasi data manakah yang paling efektif untuk menyampaikan hubungan dua variabel tersebut?",
+      "options": [
+        "Diagram batang bertumpuk untuk menunjukkan komposisi produk terlaris tiap bulan",
+        "Grafik tebar (scatter plot) untuk melihat korelasi antara persentase perubahan harga dan volume",
+        "Diagram lingkaran untuk membandingkan pangsa pasar pendapatan antar cabang restoran",
+        "Grafik garis kumulatif untuk menampilkan akumulasi total transaksi sepanjang tahun"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menganalisis data kepuasan pelanggan (CSAT) dari layanan pengaduan pelanggan sebuah perusahaan telekomunikasi. Ditemukan adanya peningkatan jumlah komplain yang tidak terselesaikan dalam SLA (Service Level Agreement). Langkah awal paling tepat untuk mengidentifikasi hambatan proses internal adalah",
+      "options": [
+        "Membuat diagram alur proses penanganan tiket dari awal masuk hingga selesai",
+        "Menghitung persentase total komplain terhadap jumlah pelanggan aktif secara nasional",
+        "Melakukan analisis regresi linear antara durasi panggilan dan jenis perangkat pelanggan",
+        "Menyebarkan kuesioner baru kepada staf operasional mengenai beban kerja harian"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Manajemen rantai pasok sebuah perusahaan ritel pakaian ingin menentukan titik pemesanan ulang (reorder point) untuk gudang regional di Makassar. Variabel historis utama apa saja yang wajib Anda libatkan dalam perhitungan analitis tersebut?",
+      "options": [
+        "Harga jual produk di toko ritel dan anggaran promosi musiman triwulanan",
+        "Rata-rata waktu tunggu pengiriman pemasok dan tingkat permintaan harian",
+        "Jumlah karyawan gudang aktif dan kapasitas maksimum truk pengangkut barang",
+        "Total biaya sewa gudang tahunan dan depresiasi nilai inventaris tersimpan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita daring ingin menguji judul artikel mana yang menghasilkan rasio klik (CTR) lebih tinggi melalui pengujian A/B. Setelah mengumpulkan data selama tiga hari dengan lalu lintas tinggi, langkah validasi statistik yang harus Anda pastikan sebelum mengambil keputusan adalah",
+      "options": [
+        "Memastikan durasi pengujian telah mencapai tingkat signifikansi statistik yang memadai",
+        "Menghitung total biaya produksi konten artikel yang diuji secara finansial",
+        "Memeriksa latar belakang demografi pembaca yang membagikan artikel ke media sosial",
+        "Menilai jumlah kata dalam isi artikel utama yang terkait dengan judul tersebut"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam menganalisis performa penjualan bulanan produk kosmetik di berbagai kota, Anda mendapati adanya nilai data yang hilang (missing values) pada kolom kategori produk untuk 5% dari total transaksi. Pendekatan penanganan data yang paling aman untuk menjaga integritas analisis adalah",
+      "options": [
+        "Menghapus seluruh baris data transaksi yang memiliki nilai kosong pada kolom kategori",
+        "Mengganti seluruh nilai kosong dengan kategori produk terlaris secara keseluruhan",
+        "Mengevaluasi pola hilangnya data dan melakukan imputasi berdasarkan konteks transaksi terkait",
+        "Mengabaikan kolom kategori produk dan hanya menganalisis total nilai transaksi moneter"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah aplikasi layanan kesehatan telemedicine mencatat lonjakan pembatalan janji temu dokter oleh pasien pada hari-hari menjelang akhir pekan. Manajemen meminta rekomendasi berbasis data untuk menekan angka pembatalan tersebut. Analisis data lanjutan yang paling tepat untuk dilakukan adalah",
+      "options": [
+        "Memeriksa distribusi waktu pemesanan awal dan kategori spesialisasi dokter yang dipilih pasien",
+        "Menghitung total pendapatan kotor perusahaan dari seluruh sesi konsultasi bulanan",
+        "Membandingkan jumlah dokter aktif dengan total kapasitas server aplikasi saat ini",
+        "Menganalisis tren unduhan aplikasi melalui toko aplikasi seluler secara global"
+      ],
+      "correct_index": 0
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Cost Accounting",
+  "skill_key": "cost accounting",
+  "questions": [
+    {
+      "question": "Sebuah perusahaan manufaktur garmen di Bandung menggunakan sistem job order costing. Pada bulan Maret, terdapat sisa bahan baku kain katun yang rusak namun masih memiliki sedikit nilai jual (scrap). Bagaimana perlakuan akuntansi yang paling tepat untuk hasil penjualan scrap tersebut?",
+      "options": [
+        "Dicatat sebagai pendapatan lain-lain di laporan laba rugi komprehensif",
+        "Mengurangi biaya overhead pabrik aktual pada periode yang bersangkutan",
+        "Dicatat sebagai penambah modal disetor dalam laporan perubahan ekuitas",
+        "Dialokasikan langsung ke akun harga pokok penjualan secara proporsional"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajer pabrik PT Makmur Sejahtera meminta saran mengenai alokasi biaya departemen pendukung (maintenance dan IT) ke departemen produksi (perakitan dan finishing). Metode mana yang harus Anda rekomendasikan jika departemen pemeliharaan memberikan jasa yang cukup signifikan kepada departemen IT dan sebaliknya?",
+      "options": [
+        "Metode alokasi langsung karena perhitungannya paling sederhana dan cepat",
+        "Metode alokasi bertahap untuk mendistribusikan biaya secara berurutan",
+        "Metode alokasi timbal balik untuk mengakui jasa timbal balik antar departemen",
+        "Metode tarif tunggal untuk menggabungkan semua biaya jasa pendukung"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Nusantara Elektronik memproduksi televisi LED. Tarif overhead pabrik ditentukan di awal tahun sebesar Rp50.000 per jam mesin. Pada akhir tahun, total jam mesin aktual adalah 10.000 jam, sedangkan overhead aktual tercatat sebesar Rp520.000.000. Jurnal penyesuaian apa yang harus dibuat jika varians tersebut dialokasikan ke HPP?",
+      "options": [
+        "Debit HPP Rp20.000.000; Kredit Underapplied Overhead Rp20.000.000",
+        "Debit Overapplied Overhead Rp20.000.000; Kredit HPP Rp20.000.000",
+        "Debit HPP Rp20.000.000; Kredit Overapplied Overhead Rp20.000.000",
+        "Debit Underapplied Overhead Rp20.000.000; Kredit HPP Rp20.000.000"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam audit operasional di pabrik kimia, ditemukan bahwa biaya bahan penolong dicatat sebagai biaya tetap padahal penggunaannya sangat fluktuatif mengikuti volume produksi. Apa dampak langsung dari kesalahan klasifikasi perilaku biaya ini terhadap anggaran?",
+      "options": [
+        "Anggaran fleksibel menjadi tidak akurat dalam mengevaluasi efisiensi biaya",
+        "Laba bersih perusahaan pada akhir tahun menjadi lebih rendah dari seharusnya",
+        "Nilai persediaan barang dalam proses di neraca mengalami overestimate",
+        "Tarif overhead yang dibebankan menjadi lebih tinggi dari biaya sesungguhnya"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah pabrik roti di Surabaya menerapkan proses costing dengan metode rata-rata tertimbang (weighted average). Persediaan awal barang dalam proses memiliki tingkat penyelesaian konversi 40% dengan biaya Rp10.000.000. Apa implikasi utama dari penggunaan metode ini terhadap unit ekuivalen?",
+      "options": [
+        "Biaya periode lalu dipisahkan secara tegas dari biaya periode berjalan",
+        "Biaya persediaan awal digabung dengan biaya periode berjalan tanpa dibedakan",
+        "Unit ekuivalen hanya dihitung berdasarkan produk yang selesai diproses saja",
+        "Tingkat penyelesaian persediaan awal diabaikan sepenuhnya dalam perhitungan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Perkasa Steel memproduksi pipa baja kustom. Pelanggan meminta tambahan spesifikasi khusus di tengah jalan yang memerlukan tambahan bahan baku dan jam kerja. Dokumen pengendali apa yang harus segera diperbarui oleh bagian cost accounting untuk melacak biaya tambahan ini?",
+      "options": [
+        "Laporan laba rugi segmen dan analisis varians anggaran departemen",
+        "Kartu jam kerja langsung dan rekapitulasi pengeluaran kas operasional",
+        "Lembar biaya pesanan atau job cost sheet untuk pesanan spesifik tersebut",
+        "Buku besar persediaan bahan baku dan daftar aset tetap perusahaan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Manajemen PT Sejahtera Mandiri ingin beralih dari sistem tradisional berbasis jam kerja langsung ke Activity-Based Costing (ABC) untuk lini produk furnitur. Alasan manajerial apa yang paling mendasari keputusan strategis ini?",
+      "options": [
+        "Produk bervolume rendah seringkali mensubsidi produk bervolume tinggi secara silang",
+        "Biaya tenaga kerja langsung sudah mendominasi lebih dari 80% total biaya produksi",
+        "Pemerintah memberikan insentif pajak bagi perusahaan yang menerapkan sistem ABC",
+        "Standar akuntansi keuangan mewajibkan penggunaan ABC untuk perusahaan manufaktur"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam analisis varians biaya standar, departemen produksi mencatatkan varians efisiensi tenaga kerja yang tidak mengfuntungkan (unfavorable). Manakah skenario operasional di lantai pabrik yang paling mungkin menyebabkan kondisi ini?",
+      "options": [
+        "Tarif upah per jam yang dibayarkan kepada pekerja lebih tinggi dari standar",
+        "Pekerja menghabiskan waktu lebih lama untuk menyelesaikan unit produk",
+        "Pembelian bahan baku berkualitas rendah mengakibatkan mesin sering macet",
+        "Jumlah jam kerja aktual lebih sedikit daripada jam kerja standar yang diizinkan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah pabrik perakitan elektronik mengalami kerugian akibat produk cacat yang melebihi batas normal perusahaan. Bagaimana perlakuan akuntansi yang benar untuk biaya kerugian produk cacat (abnormal spoilage) tersebut?",
+      "options": [
+        "Dikapitalisasi sebagai bagian dari nilai persediaan produk jadi di gudang",
+        "Dibebankan sebagai kerugian periode berjalan di laporan laba rugi",
+        "Ditambahkan ke dalam perhitungan tarif overhead pabrik periode berikutnya",
+        "Dialokasikan secara proporsional ke sisa unit produk yang lolos inspeksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Cipta Kreasi memproduksi dua jenis produk bersama (joint products), yaitu Produk A dan Produk B dari satu proses inisial. Manajemen perlu memutuskan apakah produk harus dijual langsung pada titik pemisahan (split-off point) atau diproses lebih lanjut. Kriteria apa yang harus digunakan dalam analisis keputusan ini?",
+      "options": [
+        "Membandingkan total biaya historis produksi bersama dengan harga jual pasar",
+        "Memastikan bahwa pendapatan tambahan melebihi biaya pemrosesan lebih lanjut",
+        "Menghitung alokasi biaya bersama berdasarkan metode nilai pasar wajar",
+        "Memastikan margin laba kotor kedua produk mencapai minimal 30 persen"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sentosa Jaya memproduksi furnitur kayu. Pada akhir periode, ditemukan adanya sisa bahan baku (scrap) kayu jati yang masih bernilai ekonomis cukup tinggi dari pesanan khusus pelanggan tertentu. Bagaimana perlakuan akuntansi yang paling tepat untuk hasil penjualan sisa bahan baku tersebut?",
+      "options": [
+        "Dicatat sebagai pendapatan lain-lain di laporan laba rugi komprehensif periode berjalan",
+        "Dikurangkan dari nilai harga pokok penjualan atas pesanan khusus yang bersangkutan",
+        "Dialokasikan sebagai penambah laba kotor untuk seluruh lini produk secara merata",
+        "Dikurangkan dari total biaya overhead pabrik aktual atau pengendali pesanan tersebut"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "PT Mandala Medika memproduksi alat suntik steril. Dalam analisis biaya relevan untuk keputusan menerima pesanan khusus di bawah harga normal, manajer keuangan mendapati bahwa kapasitas mesin saat ini masih idle 35%. Komponen biaya apa yang paling tepat untuk diabaikan dalam perhitungan penawaran harga tersebut?",
+      "options": [
+        "Biaya bahan baku langsung yang spesifik digunakan untuk pesanan khusus ini",
+        "Biaya penyusutan mesin pabrik yang dialokasikan berdasarkan metode garis lurus",
+        "Biaya tenaga kerja langsung tambahan yang dibayarkan berdasarkan lembur",
+        "Biaya pengiriman khusus yang timbul akibat lokasi gudang pemesan yang jauh"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Tirta Kencana memproduksi air mineral kemasan galon. Perusahaan menetapkan tarif biaya overhead pabrik (BOP) tetap berdasarkan kapasitas normal 100.000 jam mesin. Akibat pemadaman bergilir PLN, jam mesin aktual turun menjadi 80.000 jam. Muncul varians volume overhead yang tidak menguntungkan. Apa tindakan manajerial yang paling tepat berdasarkan analisis varians tersebut?",
+      "options": [
+        "Mengevaluasi efisiensi pengunaan energi listrik dan kecepatan operator di lini produksi",
+        "Membebankan seluruh kerugian kapasitas menganggur langsung ke harga pokok penjualan",
+        "Menganalisis kapasitas pabrik yang tidak terpakai sebagai beban kapasitas tetap periode",
+        "Menaikkan harga jual produk jadi secara proporsional untuk menutup kerugian jam mesin"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam implementasi *Activity-Based Costing* (ABC) di PT Dirgantara Komponen, aktivitas pemeliharaan mesin diklasifikasikan sebagai *facility-sustaining activity*. Saat manajemen menyusun laporan profitabilitas pelanggan, bagaimana alokasi biaya aktivitas tersebut seharusnya dibebankan?",
+      "options": [
+        "Dialokasikan secara proporsional berdasarkan jumlah jam mesin yang dikonsumsi pelanggan",
+        "Dibebankan langsung secara merata ke setiap transaksi penjualan tanpa melihat volume",
+        "Tidak dialokasikan ke pelanggan individual karena merupakan biaya kapasitas struktur",
+        "Dialokasikan berdasarkan jumlah pesanan khusus yang diminta oleh masing-masing klien"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Bio Farma memproduksi dua jenis vaksin melalui proses bersama (*joint process*). Titik pisah (*split-off point*) tercapai ketika produk masuk ke tahap pengemasan akhir. Manajemen ingin menentukan profitabilitas lini produk secara akurat untuk laporan internal. Metode apa yang paling tepat digunakan untuk mengalokasikan biaya bersama (*joint costs*) guna pengambilan keputusan strategis?",
+      "options": [
+        "Metode nilai jual bersih yang dapat direalisasikan pada titik pisah",
+        "Metode unit fisik berdasarkan berat total kilogram output yang dihasilkan",
+        "Metode biaya rata-rata tertimbang berdasarkan jam kerja langsung pabrik",
+        "Metode biaya historis berdasarkan nilai perolehan bahan baku awal"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Mega Plastik mencatat varians harga bahan baku (*material price variance*) yang sangat tidak menguntungkan pada akhir bulan. Kepala bagian pembelian berargumen bahwa kenaikan harga terjadi karena kelangkaan pasokan global, bukan karena kesalahan operasional. Sebagai akuntan biaya, kapan waktu terbaik varians tersebut seharusnya diidentifikasi agar efektif bagi manajemen?",
+      "options": [
+        "Saat bahan baku tersebut selesai diproses menjadi produk jadi di lini produksi",
+        "Saat faktur pembelian disetujui dan bahan baku dimasukkan ke dalam gudang",
+        "Saat laporan laba rugi bulanan diterbitkan oleh bagian akuntansi keuangan",
+        "Saat pesanan penjualan dari pelanggan akhir diterima oleh bagian pemasaran"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur komponen otomotif di Karawang menggunakan sistem *standard costing*. Pada periode ini, tercatat varians efisiensi tenaga kerja langsung yang sangat menguntungkan (*favorable*). Namun, mandor pabrik melaporkan adanya peningkatan drastis pada jumlah produk cacat di akhir jalur produksi. Analisis biaya apa yang harus segera dilakukan?",
+      "options": [
+        "Memeriksa apakah standar jam kerja terlalu longgar dan pekerja bekerja terlalu cepat",
+        "Menghitung ulang tarif upah standar per jam untuk menyesuaikan tingkat inflasi",
+        "Menilai kembali anggaran overhead tetap departemen produksi secara menyeluruh",
+        "Mengukur ulang kapasitas praktis pabrik untuk menghindari kelebihan produksi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Wijaya Beton memproduksi beton pratekan untuk proyek infrastruktur. Perusahaan menerima pesanan besar dengan spesifikasi khusus yang memerlukan modifikasi cetakan mesin senilai Rp150.000.000 yang tidak memiliki nilai sisa setelah proyek selesai. Dalam kalkulasi biaya pesanan ini, bagaimana biaya modifikasi tersebut harus diperlakukan?",
+      "options": [
+        "Dikapitalisasi sebagai aset tetap dan disusutkan selama umur ekonomis proyek berjalan",
+        "Dibebankan sepenuhnya sebagai biaya overhead pabrik aktual untuk periode berjalan",
+        "Dibebankan langsung secara penuh sebagai biaya overhead khusus untuk pesanan tersebut",
+        "Dimasukkan ke dalam akun biaya pemasaran dan distribusi dalam laporan laba rugi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Surya Mandiri menerapkan sistem pengendalian biaya berbasis *Kaizen Costing* pada lini perakitan televisi. Setiap bulan, manajemen menetapkan target penurunan biaya sebesar 1% tanpa mengubah spesifikasi produk. Peran utama akuntan biaya dalam program perbaikan berkelanjutan ini adalah...",
+      "options": [
+        "Menghitung selisih antara biaya aktual saat ini dengan target biaya penurunan yang ditetapkan",
+        "Menyusun anggaran belanja modal untuk mengganti seluruh mesin lama dengan mesin otomatis",
+        "Menaikkan harga jual produk secara berkala untuk mengimbangi penurunan margin laba",
+        "Melakukan audit kepatuhan terhadap absensi dan jam lembur operator lini perakitan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Anugerah Logistik mengoperasikan armada truk pengiriman. Manajemen ingin membebankan biaya departemen garasi ke departemen operasional menggunakan metode bertahap (step-down). Departemen garasi memberikan jasa terbesar, diikuti oleh departemen utilitas. Urutan alokasi manakah yang paling tepat untuk menghindari distorsi biaya?",
+      "options": [
+        "Mengalokasikan biaya utilitas terlebih dahulu, kemudian biaya garasi ke departemen operasional.",
+        "Mengalokasikan biaya garasi terlebih dahulu, baru kemudian biaya utilitas ke departemen operasional.",
+        "Mengalokasikan kedua departemen secara simultan menggunakan metode aljabar linier.",
+        "Membagi rata biaya kedua departemen pendukung langsung ke seluruh unit truk aktif."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam evaluasi kinerja bulanan pabrik alas kaki, ditemukan varians volume overhead yang sangat tidak menguntungkan (unfavorable). Manajer pabrik berargumen hal ini disebabkan oleh kerusakan mesin utama selama dua minggu. Bagaimana akuntan biaya sebaiknya memperlakukan varians volume tersebut dalam laporan keuangan?",
+      "options": [
+        "Mengkapitalisasikannya sebagai bagian dari nilai aset mesin yang sedang diperbaiki.",
+        "Membebankannya langsung sebagai kerugian periode berjalan di laporan laba rugi.",
+        "Menunda pencatatannya hingga periode berikutnya saat kapasitas normal tercapai.",
+        "Menambahkan jumlah tersebut ke dalam harga pokok persediaan barang dalam proses."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah perusahaan manufaktur mainan anak di Cikarang memproduksi lini mainan plastik. Pada akhir bulan, bagian produksi melaporkan adanya produk cacat normal sebesar 2% dari total produksi yang nilainya dapat diabaikan. Bagaimana perlakuan akuntansi biaya yang tepat untuk biaya produk cacat normal tersebut?",
+      "options": [
+        "Dicatat sebagai akun kerugian produk cacat terpisah di laporan laba rugi.",
+        "Dibebankan secara langsung sebagai bagian dari biaya overhead pabrik aktual.",
+        "Diakumulasikan dan dibebankan sebagai bagian dari harga pokok produk baik yang selesai.",
+        "Dikurangkan langsung dari total beban gaji tenaga kerja langsung periode tersebut."
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "PT Agro Makmur memproses kelapa sawit menjadi minyak mentah (CPO) dan inti sawit (kernel) pada satu titik pisah. Manajemen ingin mengalokasikan biaya bersama menggunakan metode nilai realisasi bersih (net realizable value). Data menunjukkan produk kernel harus melalui proses tambahan sebelum dijual. Apa langkah pertama yang harus dilakukan akuntan biaya?",
+      "options": [
+        "Menghitung estimasi nilai jual akhir kernel dikurangi biaya pemrosesan lanjutan.",
+        "Mmembagi total biaya bersama berdasarkan berat fisik masing-masing produk akhir.",
+        "Menentukan harga pasar CPO sebagai dasar pembagi seluruh biaya bersama pabrik.",
+        "Mengalokasikan biaya tambahan kernel terlebih dahulu ke dalam akun persediaan awal."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Bina Karya memproduksi furnitur kantor berdasarkan pesanan khusus instansi pemerintah. Ketika pesanan hampir selesai, klien meminta perubahan desain sandaran kursi yang memerlukan tambahan kayu jati pilihan. Bagaimana perlakuan akuntansi biaya untuk tambahan bahan baku tersebut?",
+      "options": [
+        "Dicatat sebagai biaya overhead pabrik tambahan yang disebar ke semua pesanan aktif.",
+        "Dibebankan langsung ke lembar biaya pesanan (job cost sheet) khusus proyek tersebut.",
+        "Diakui sebagai biaya operasional pemasaran karena merupakan permintaan revisi klien.",
+        "Dicatat sebagai beban kerugian bahan baku akibat perubahan spesifikasi mendadak."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Delta Tekstil menerapkan sistem perhitungan biaya berdasarkan proses (process costing) dengan metode FIFO untuk Departemen Finishing. Persediaan awal barang dalam proses memiliki tingkat penyelesaian konversi 40%. Manajer produksi ingin mengetahui bagaimana perlakuan unit persediaan awal terhadap perhitungan unit ekuivalen periode ini.",
+      "options": [
+        "Unit persediaan awal diabaikan karena sudah diselesaikan pada periode sebelumnya.",
+        "Hanya pekerjaan untuk menyelesaikan sisa persediaan awal yang dimasukkan dalam unit ekuivalen.",
+        "Seluruh biaya persediaan awal digabungkan dengan biaya periode berjalan tanpa pemisahan.",
+        "Unit persediaan awal dikurangi langsung dari total unit produk yang selesai diproses."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam audit internal pabrik farmasi, ditemukan bahwa biaya penyusutan mesin pabrik dicatat sebagai biaya variabel karena jam operasi mesin berfluktuasi setiap bulan. Manajer keuangan meminta koreksi. Apa dampak jika koreksi dilakukan dengan mengubahnya menjadi biaya tetap?",
+      "options": [
+        "Tarif overhead per unit akan berfluktuasi secara ekstrem mengikuti volume produksi bulanan.",
+        "Laba bersih periode fluktuasi produksi akan lebih stabil dibandingkan metode sebelumnya.",
+        "Total biaya produksi per unit akan selalu tetap tidak peduli berapapun jumlah output.",
+        "Perhitungan harga pokok penjualan akan sepenuhnya bebas dari pengaruh kapasitas menganggur."
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "PT Indah Paper memproduksi kertas HVS dan menghadapi masalah sisa potongan kertas (trim waste) yang cukup besar. Sisa potongan ini dikumpulkan dan dijual ke pabrik daur ulang dengan harga murah. Bagaimana pencatatan akuntansi yang tepat saat penjualan sisa potongan kertas tersebut?",
+      "options": [
+        "Dicatat sebagai pendapatan lain-lain di luar kegiatan operasional utama perusahaan.",
+        "Dikreditkan langsung untuk mengurangi akun pengendali biaya overhead pabrik aktual.",
+        "Diakui sebagai penambah nilai persediaan barang jadi kertas HVS periode berjalan.",
+        "Dialokasikan sebagai penambah harga pokok penjualan khusus untuk produk sisa."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Manajemen PT Krakatau Komponen sedang mempertimbangkan pesanan khusus dari luar negeri di bawah harga normal, sementara kapasitas pabrik saat ini masih menyisakan 25%. Biaya mana yang paling relevan untuk dipertimbangkan oleh akuntan manajemen dalam mengambil keputusan ini?",
+      "options": [
+        "Alokasi biaya tetap fasilitas pabrik yang sudah dibebankan secara proporsional.",
+        "Biaya variabel tambahan untuk tenaga kerja langsung dan bahan baku langsung.",
+        "Biaya penyusutan historis mesin pabrik yang digunakan untuk memproduksi pesanan.",
+        "Biaya overhead tetap umum yang dialokasikan dari kantor pusat perusahaan."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Global Elektronik mengimplementasikan Activity-Based Costing (ABC) untuk lini produk televisi pintar. Aktivitas pengaturan mesin (set-up machines) diklasifikasikan sebagai tingkat batch (batch-level activity). Apa implikasi praktis dari klasifikasi ini terhadap pembebanan biaya?",
+      "options": [
+        "Biaya set-up dibebankan secara merata berdasarkan jumlah total jam kerja langsung.",
+        "Biaya set-up dibebankan ke produk berdasarkan frekuensi atau jumlah batch produksi.",
+        "Biaya set-up diperlakukan sebagai biaya periode dan langsung menjadi beban operasional.",
+        "Biaya set-up dibebankan hanya jika produk tersebut terjual ke distributor akhir."
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "PT Sinar Baja memproduksi baut khusus pesanan galangan kapal. Di tengah proses produksi, pemesan meminta penambahan lapisan anti-karat yang tidak ada di kontrak awal. Bagaimana akuntabilitas biaya tambahan ini dicatat dalam job order costing?",
+      "options": [
+        "Dibebankan sebagai biaya overhead pabrik aktual untuk disebar ke semua pesanan aktif.",
+        "Dimasukkan dalam kartu biaya pesanan khusus tersebut sebagai bahan dan tenaga kerja tambahan.",
+        "Dicatat sebagai rugi operasional periode berjalan karena merupakan perubahan spesifikasi.",
+        "Dibebankan langsung ke akun harga pokok penjualan tanpa melalui kartu pesanan."
+      ],
+      "correct_index": 1
+    }
+  ]
+}

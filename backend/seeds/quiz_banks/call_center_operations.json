@@ -1,0 +1,306 @@
+{
+  "skill": "Call Center Operations",
+  "skill_key": "call center operations",
+  "questions": [
+    {
+      "question": "Seorang pelanggan menelepon call center bank dengan nada sangat marah karena saldo rekeningnya terpotong dua kali untuk transaksi e-commerce. Apa langkah pertama yang paling tepat Anda lakukan?",
+      "options": [
+        "Meminta pelanggan untuk segera mengirimkan bukti tangkapan layar melalui email resmi perusahaan",
+        "Menjelaskan sistem keamanan transaksi online bank sebelum memeriksa rincian mutasi rekening",
+        "Mendengarkan keluhan secara aktif tanpa memotong pembicaraan dan mencatat detail transaksi",
+        "Mengarahkan pelanggan untuk langsung mendatangi kantor cabang terdekat guna proses investigasi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Anda sedang menangani antrean panggilan masuk yang sangat padat (high queue volume). Durasi penanganan rata-rata (AHT) Anda harus dijaga tetap optimal. Pelanggan di telepon menanyakan informasi umum yang sebenarnya sudah tersedia lengkap di FAQ situs web. Sikap Anda adalah...",
+      "options": [
+        "Menjelaskan jawaban secara ringkas, lalu memberikan panduan singkat cara mengakses halaman FAQ tersebut",
+        "Meminta pelanggan membaca sendiri situs web karena informasi tersebut sudah sangat jelas tertulis",
+        "Menolak memberikan penjelasan lisan dan langsung mengirimkan tautan halaman web via SMS otomatis",
+        "Mengabaikan pertanyaan tersebut dan fokus membahas kendala utama lain yang disampaikan pelanggan"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Saat melakukan verifikasi data (AHT/Customer Authentication) penelepon yang mengaku sebagai pemilik polis asuransi, agen menyadari suara penelepon sangat berbeda dari rekaman data demografi usia yang tertera di sistem. Tindakan keamanan yang paling tepat adalah...",
+      "options": [
+        "Melanjutkan percakapan karena verifikasi nomor telepon seluler penelepon sudah sesuai sistem",
+        "Mengajukan pertanyaan verifikasi sekunder sesuai prosedur eskalasi pencegahan penipuan",
+        "Meminta penelepon menyerahkan nomor PIN rahasia untuk mempercepat proses validasi identitas",
+        "Menutup sambungan telepon secara sepihak demi menghindari kebocoran data nasabah prioritas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan mengeluhkan kendala teknis internet rumah yang sudah terjadi selama tiga hari berturut-turut. SLA penanganan normal adalah 2x24 jam dan kasus ini sudah melewati batas waktu. Respon verbal yang paling tepat untuk meredakan emosi pelanggan adalah...",
+      "options": [
+        "Menyatakan bahwa keterlambatan ini merupakan kesalahan dari pihak vendor jaringan luar kota",
+        "Meminta maaf atas keterlambatan penyelesaian dan memprioritaskan eskalasi langsung ke tim teknis",
+        "Menyarankan pelanggan untuk melakukan modem restart mandiri secara berkala di rumah",
+        "Memberikan nomor kontak pribadi teknisi lapangan agar pelanggan bisa menelepon langsung"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sistem aplikasi CRM (Customer Relationship Management) yang Anda gunakan mendadak mengalami gangguan total (error) saat Anda sedang berbicara dengan pelanggan di telepon. Langkah operasional darurat yang harus diambil adalah...",
+      "options": [
+        "Memutus sambungan telepon sementara waktu dan menelepon kembali setelah aplikasi pulih",
+        "Mencatat data pelanggan dan kendala secara manual pada kertas kerja, lalu memprosesnya nanti",
+        "Meminta pelanggan menunggu di jalur telepon tanpa batas waktu hingga sistem kembali normal",
+        "Mengalihkan panggilan tersebut ke mesin penjawab otomatis interaktif tanpa konfirmasi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima panggilan dari pelanggan lansia yang kesulitan mengikuti instruksi navigasi menu aplikasi digital perusahaan. Pendekatan komunikasi yang paling efektif dalam situasi ini adalah...",
+      "options": [
+        "Menggunakan istilah teknis standar aplikasi agar pelanggan terbiasa dengan bahasa digital",
+        "Berbicara dengan tempo lambat, menggunakan bahasa sederhana, dan memandu langkah demi langkah",
+        "Menyuruh anggota keluarga yang lebih muda untuk menelepon kembali menggantikan beliau",
+        "Mengirimkan panduan berbentuk dokumen PDF panjang melalui aplikasi pesan singkat seluler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang agen baru sering mendapatkan nilai rendah pada metrik FCR (First Contact Resolution) karena terlalu cepat mengakhiri panggilan tanpa memastikan masalah tuntas. Pelatihan atau koreksi kinerja apa yang paling efektif untuk agen tersebut?",
+      "options": [
+        "Memberikan teguran tertulis langsung tanpa evaluasi mendalam terhadap rekaman panggilan",
+        "Melakukan sesi coaching dengan memutar rekaman telepon dan melatih teknik konfirmasi akhir",
+        "Meminta agen tersebut mengurangi durasi bicara agar panggilan berikutnya bisa lebih cepat",
+        "Menurunkan target FCR harian khusus untuk agen tersebut sampai kinerjanya dianggap stabil"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan meminta supervisor untuk mengambil alih panggilan karena merasa tidak puas dengan penjelasan agen. Berdasarkan standar operasional eskalasi, tindakan yang harus dilakukan agen sebelum melakukan transfer panggilan adalah...",
+      "options": [
+        "Langsung mentransfer panggilan tanpa memberikan ringkasan masalah kepada supervisor",
+        "Menjelaskan kepada supervisor melalui chat internal mengenai ringkasan masalah dan emosi pelanggan",
+        "Meminta pelanggan menceritakan ulang seluruh kronologi masalah dari awal kepada supervisor",
+        "Menolak permintaan transfer dan memaksa pelanggan menyelesaikan percakapan dengan agen saat itu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam mode 'After Call Work' (ACW), seorang agen harus segera merangkum catatan penanganan tiket agar siap menerima panggilan berikutnya. Namun, catatan tersebut membutuhkan investigasi silang data yang cukup rumit. Tindakan yang paling tepat adalah...",
+      "options": [
+        "Mencatat poin penting secara ringkas sesuai batas waktu ACW, lalu melengkapi detailnya di jeda istirahat",
+        "Mengabaikan pencatatan tiket agar tidak melanggar durasi ACW yang ditetapkan manajemen",
+        "Membiarkan status agen tetap di ACW dalam waktu lama demi memastikan catatan sangat sempurna",
+        "Meminta rekan kerja lain untuk mengambil alih tugas pengisian catatan tiket sistem CRM"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan e-commerce mengalami lonjakan panggilan darurat karena kegagalan massal sistem pembayaran saat kampanye flash sale. Supervisor menetapkan status operasi darurat. Fokus utama kinerja agen dalam situasi ini adalah...",
+      "options": [
+        "Memaksimalkan penjualan produk lain kepada setiap penelepon yang masuk ke antrean",
+        "Memperpanjang durasi ngobrol dengan pelanggan untuk mencairkan suasana tegang",
+        "Menangani panggilan dengan cepat, menyampaikan informasi status gangguan secara seragam, dan mencatat tiket",
+        "Menutup akses jalur telepon masuk dan mengalihkan seluruh komplain ke media sosial"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan menelepon layanan pelanggan penyedia seluler sambil menangis karena nomornya terblokir sesaat sebelum ia harus melakukan transaksi penting. Sebagai agen, langkah awal apa yang paling tepat untuk meredakan situasi ini?",
+      "options": [
+        "Meminta pelanggan untuk mengirimkan KTP melalui WhatsApp guna mempercepat proses pembukaan blokir",
+        "Menggunakan teknik active listening, mendengarkan keluhannya, lalu segera melakukan verifikasi data",
+        "Menjelaskan secara rinci prosedur standar perusahaan mengenai alasan pemblokiran kartu seluler",
+        "Mengalihkan panggilan tersebut ke supervisor agar penanganan bisa dilakukan dengan lebih cepat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima panggilan dari seorang nasabah prioritas yang mendesak untuk menaikkan limit kartu kreditnya hari ini juga demi keperluan mendadak di luar negeri. Sistem menunjukkan bahwa syarat dokumen belum lengkap. Apa tindakan terbaik Anda?",
+      "options": [
+        "Menolak permintaan tersebut secara tegas sesuai dengan prosedur operasional baku yang berlaku",
+        "Meminta nasabah mengirim email dokumen dan menjanjikan eskalasi prioritas ke tim penilai",
+        "Menyetujui kenaikan limit sementara dengan pertanggungjawaban pribadi pada sistem internal",
+        "Menyarankan nasabah untuk menggunakan kartu kredit dari bank lain yang memiliki limit lebih tinggi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam memonitor metrik *Occupancy Rate*, seorang supervisor melihat bahwa Anda menghabiskan waktu terlalu lama dalam status 'Not Ready' setelah panggilan selesai untuk merapikan catatan. Apa dampak langsung dari kebiasaan ini terhadap operasional?",
+      "options": [
+        "Menurunkan nilai kepuasan pelanggan secara keseluruhan pada laporan bulanan tim",
+        "Memperpanjang rata-rata durasi penanganan panggilan berikutnya secara signifikan",
+        "Meningkatkan waktu tunggu antrean masuk bagi pelanggan lain di sistem *queue*",
+        "Mengurangi akurasi data laporan kinerja yang masuk ke dalam sistem penilaian harian"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan menelepon untuk membatalkan langganan layanan TV berbayar karena merasa biayanya terlalu mahal dibandingkan frekuensi penggunaannya. Sebagai agen retensi, bagaimana cara Anda merespons?",
+      "options": [
+        "Langsung memproses permintaan pembatalan akun agar durasi rata-rata panggilan tetap terjaga",
+        "Menawarkan paket berlangganan alternatif yang lebih ekonomis sesuai dengan pola pemakaiannya",
+        "Memberikan diskon khusus secara sepihak tanpa persetujuan sistem untuk menahannya",
+        "Meminta pelanggan mendatangi kantor cabang terdekat untuk mengisi formulir penutupan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati seorang penelepon memberikan jawaban verifikasi tanggal lahir yang salah tiga kali berturut-turut, namun ia menyebutkan detail transaksi terakhir dengan sangat akurat. Apa tindakan yang harus Anda ambil?",
+      "options": [
+        "Melanjutkan percakapan karena informasi transaksi terakhir sudah membuktikan identitasnya",
+        "Mengakhiri panggilan seketika demi menjaga keamanan data pribadi sesuai kebijakan privasi",
+        "Mengajukan pertanyaan verifikasi alternatif tingkat lanjut yang tertera pada sistem keamanan",
+        "Meminta penelepon menyebutkan nama ibu kandung untuk menggantikan tanggal lahir yang salah"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Ketika menangani keluhan logistik yang tertunda, agen sering kali harus berkoordinasi dengan pihak gudang eksternal melalui pesan singkat. Bagaimana cara menjaga profesionalisme suara saat melakukan koordinasi tersebut sambil tetap terhubung dengan pelanggan di telepon?",
+      "options": [
+        "Menggunakan fitur *hold* pada sistem telepon sembari meminta izin kepada pelanggan terlebih dahulu",
+        "Membisikkan informasi kepada rekan gudang dengan posisi gagang telepon agak menjauh dari mulut",
+        "Membiarkan pelanggan mendengarkan percakapan internal agar mereka tahu proses sedang berjalan",
+        "Meminta pelanggan untuk menunggu tanpa menggunakan tombol *hold* agar durasi panggilan efisien"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Sebuah perusahaan utilitas listrik mengalami gangguan jaringan regional. Saluran telepon call center mendadak dibanjiri panggilan masuk yang melonjak 300%. Kebijakan penanganan apa yang paling efektif diterapkan pada situasi ini?",
+      "options": [
+        "Menerapkan pesan otomatis pra-rekaman (*IVR announcement*) mengenai gangguan wilayah dan estimasi pemulihan",
+        "Meningkatkan kecepatan bicara agen agar setiap panggilan dapat diselesaikan dalam waktu kurang dari satu menit",
+        "Menutup jalur telepon sementara waktu dan mengarahkan seluruh pelanggan untuk melapor melalui media sosial",
+        "Menambahkan pertanyaan verifikasi yang lebih ketat untuk menyaring jumlah penelepon yang masuk ke agen"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Seorang agen baru menunjukkan tingkat stres yang tinggi karena sering menghadapi pelanggan dengan nada bicara tinggi dan kasar. Sebagai pemimpin tim, pendekatan pembinaan apa yang paling tepat diberikan?",
+      "options": [
+        "Memberikan teguran tertulis karena gagal mempertahankan standar keramahan layanan perusahaan",
+        "Menyarankan agen untuk membalas dengan nada tegas agar pelanggan tidak bersikap semena-mena",
+        "Mengadakan sesi *debriefing* pribadi, melatih teknik pelepasan emosi, dan simulasi penanganan",
+        "Memindahkan agen secara permanen ke bagian penanganan tiket tertulis yang bebas interaksi suara"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam proses audit kualitas (*Quality Assurance*), seorang agen dinilai kurang dalam hal 'pengendalian alur percakapan'. Situasi seperti apa yang biasanya mencerminkan kekurangan pada aspek tersebut?",
+      "options": [
+        "Agen terlalu banyak memberikan jeda senyap tanpa alasan yang jelas saat mencari data di sistem",
+        "Agen gagal mengarahkan kembali pelanggan yang gemar bercerita di luar topik permasalahan utama",
+        "Agen lupa menyebutkan nama perusahaan dan salam pembuka standar pada awal panggilan masuk",
+        "Agen mengakhiri percakapan tanpa menanyakan apakah ada hal lain yang masih bisa dibantu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Pelanggan meminta agar seluruh transkrip percakapan telepon hari ini dikirimkan melalui email sebagai bukti komitmen agen dalam menyelesaikan masalah klaim asuransi. Langkah administratif apa yang harus dilakukan agen?",
+      "options": [
+        "Mengabaikan permintaan tersebut karena transkrip rekaman suara bersifat rahasia perusahaan",
+        "Menuliskan ringkasan hasil resolusi secara jelas pada catatan tiket yang otomatis terkirim ke email",
+        "Mengirimkan rekaman audio mentah panggilan tersebut langsung ke alamat email pribadi pelanggan",
+        "Meminta pelanggan mengajukan surat resmi bermeterai sebelum transkrip percakapan diberikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan menelepon dengan nada tinggi dan menggunakan kata-kata kasar karena paket pesanannya mengalami keterlambatan pengiriman selama seminggu dari estimasi. Apa langkah pertama yang paling tepat untuk meredam emosi pelanggan tersebut?",
+      "options": [
+        "Meminta pelanggan untuk tenang terlebih dahulu sebelum menjelaskan prosedur operasional pengiriman",
+        "Mendengarkan keluhannya tanpa menyela dan memberikan respons empati yang tulus atas ketidaknyamanan",
+        "Menjelaskan secara rinci kendala operasional logistik eksternal yang sedang dihadapi perusahaan",
+        "Memotong pembicaraan untuk langsung menawarkan kompensasi berupa voucher diskon belanja berikutnya"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menerima panggilan dari seorang nasabah yang meminta perubahan nomor telepon terdaftar pada akun mobile banking miliknya. Sesuai prosedur keamanan, apa yang harus Anda lakukan sebelum memproses permintaan tersebut?",
+      "options": [
+        "Langsung mengubah data nomor telepon di sistem setelah nasabah menyebutkan nama lengkapnya",
+        "Mengirimkan tautan pembaruan data melalui SMS ke nomor lama milik nasabah tersebut",
+        "Melakukan verifikasi identitas ketat sesuai protokol keamanan data pribadi sebelum akses diberikan",
+        "Meminta nasabah untuk mengirimkan foto KTP melalui aplikasi pesan singkat agar proses lebih cepat"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Saat Anda sedang menjelaskan solusi teknis secara detail, penelepon tiba-tiba terdiam cukup lama dan tidak merespons pertanyaan konfirmasi Anda. Tindakan penanganan panggilan yang paling profesional adalah...",
+      "options": [
+        "Menutup panggilan secara otomatis karena menganggap sambungan telepon telah terputus",
+        "Menegur pelanggan dengan nada suara lebih tinggi agar kembali fokus mendengarkan penjelasan",
+        "Mengabaikan jeda tersebut dan terus melanjutkan pembacaan panduan langkah-langkah teknis",
+        "Menyapa kembali dengan lembut dan memastikan apakah pelanggan masih mendengarkan penjelasan Anda"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Seorang pelanggan menyampaikan komplain yang sangat rumit dan melibatkan beberapa departemen internal sekaligus. Untuk menjaga metrik AHT (Average Handling Time) tetap ideal tanpa mengorbankan kualitas, strategi terbaik yang dapat Anda terapkan adalah...",
+      "options": [
+        "Meminta pelanggan menelepon kembali di lain hari ketika masalah tersebut sudah selesai diteliti",
+        "Mencatat poin-poin utama masalah dengan cepat, melakukan eskalasi internal, dan memberikan estimasi waktu hubungi balik",
+        "Menolak penanganan masalah tersebut dan mengarahkan pelanggan untuk membaca halaman FAQ di website",
+        "Membiarkan panggilan tetap tersambung sambil Anda mencari solusi tanpa menginformasikan status kepada pelanggan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Ketika Anda sedang mengakses sistem informasi pelanggan, aplikasi mendadak membeku (freezing) sehingga Anda tidak dapat melihat data historis penelepon. Respons verbal yang paling tepat kepada pelanggan di telepon adalah...",
+      "options": [
+        "Diam saja sambil menunggu aplikasi kembali berfungsi normal tanpa memberikan penjelasan apapun",
+        "Mengatakan bahwa sistem sedang rusak parah dan meminta pelanggan menelepon kembali nanti",
+        "Menginformasikan secara sopan bahwa Anda sedang memuat ulang halaman sistem untuk mengakses data mereka",
+        "Meminta pelanggan untuk menyebutkan ulang seluruh riwayat transaksi mereka dari awal secara detail"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Seorang pelanggan meminta informasi rahasia mengenai saldo rekening milik anggota keluarganya yang lain. Sebagai agen call center yang mematuhi regulasi perlindungan data pribadi, sikap Anda adalah...",
+      "options": [
+        "Memberikan informasi tersebut karena pelanggan mengaku sebagai anggota keluarga dekat serumah",
+        "Menolak permintaan secara tegas dan menjelaskan kebijakan kerahasiaan data nasabah yang berlaku",
+        "Meminta pelanggan untuk menyerahkan surat kuasa bermeterai ke kantor cabang terdekat saja",
+        "Memberikan petunjuk samar agar pelanggan dapat menebak sendiri nominal saldo rekening tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mendapati antrean panggilan masuk (call queue) melonjak drastis di atas rata-rata normal. Cara Anda mengelola waktu penanganan setiap panggilan (AHT) agar tetap efisien tanpa mengabaikan kepuasan pelanggan adalah...",
+      "options": [
+        "Mengurangi durasi salam pembuka dan langsung meminta pelanggan menyebutkan inti masalahnya",
+        "Menyelesaikan setiap masalah secara terstruktur, fokus pada solusi inti, dan menghindari basa-basi berlebih",
+        "Menutup panggilan lebih cepat dengan memberikan solusi instan meskipun masalah belum sepenuhnya tuntas",
+        "Mengalihkan seluruh panggilan masuk ke fitur pesan suara otomatis untuk menurunkan beban kerja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Seorang pelanggan asing menghubungi call center dan mengalami kesulitan berbahasa Indonesia maupun Inggris dengan lancar. Langkah penanganan operasional yang tepat adalah...",
+      "options": [
+        "Meminta pelanggan tersebut untuk belajar bahasa Indonesia sebelum menghubungi layanan pelanggan",
+        "Segera menutup panggilan karena kendala bahasa tidak diatur dalam Standar Operasional Prosedur",
+        "Berbicara dengan nada suara yang sangat keras dan lambat agar pelanggan bisa memahami kata-kata Anda",
+        "Mencari agen atau rekan kerja lain yang fasih berbahasa tersebut atau menggunakan fitur terjemahan resmi"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Dalam skenario penanganan komplain berat, pelanggan menuntut agar tiket keluhannya diselesaikan dalam waktu 1 jam, padahal SLA normal perusahaan adalah 3 hari kerja. Respon komunikasi yang paling tepat adalah...",
+      "options": [
+        "Menyetujui permintaan tersebut agar pelanggan merasa senang meskipun mustahil untuk dipenuhi",
+        "Menjelaskan batasan SLA resmi perusahaan dengan empati dan menawarkan pengawalan prioritas khusus",
+        "Menolak permintaan pelanggan secara mentah-mentah dan menyuruh mereka menunggu sesuai antrean",
+        "Menyalahkan bagian operasional lapangan yang bekerja lambat dalam menyelesaikan masalah tersebut"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda baru saja menyelesaikan panggilan penanganan komplain yang sangat menguras emosi dan melelahkan. Sebelum menerima panggilan antrean berikutnya, Anda perlu memanfaatkan mode ACW (After Call Work) secara optimal untuk...",
+      "options": [
+        "Beristirahat minum kopi dan mengobrol santai dengan rekan kerja di sebelah meja Anda",
+        "Meninggalkan meja kerja sejenak untuk menenangkan diri tanpa memperbarui status sistem",
+        "Menulis ringkasan catatan penanganan tiket secara akurat dan mereset kondisi mental Anda",
+        "Membuka media sosial pribadi untuk mengalihkan pikiran dari komplain pelanggan sebelumnya"
+      ],
+      "correct_index": 2
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "skill": "Digital Marketing",
+  "skill_key": "digital marketing",
+  "questions": [
+    {
+      "question": "Anda mengelola kampanye iklan Meta Ads untuk klinik kecantikan di Jakarta. Setelah berjalan 5 hari, metrik menunjukkan CTR (Click-Through-Rate) sangat tinggi di angka 4.5%, namun Conversion Rate di landing page sangat rendah di bawah 0.5%. Langkah apa yang paling tepat dilakukan pertama kali?",
+      "options": [
+        "Mengganti materi visual dan teks pada iklan agar target audiens lebih relevan",
+        "Meningkatkan anggaran harian untuk mendatangkan traffic yang lebih banyak",
+        "Memeriksa kesesuaian pesan iklan dengan formulir pendaftaran di landing page",
+        "Mematikan kampanye saat itu juga dan mereset ulang seluruh pixel pelacakan"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah brand fashion lokal meluncurkan produk baru di TikTok Shop. Video pendek yang diunggah organik mendapat 100k views, tetapi hampir tidak ada pembelian. Apa strategi optimal berikutnya untuk mengonversi views tersebut menjadi penjualan?",
+      "options": [
+        "Mengadakan sesi Live streaming rutin untuk mendemonstrasikan produk secara langsung",
+        "Menghapus video tersebut dan membuat ulang dengan backsound yang sedang tren",
+        "Mengubah akun TikTok biasa menjadi akun bisnis terverifikasi untuk fitur analitik",
+        "Membeli paket followers tambahan agar kredibilitas toko online terlihat lebih tinggi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Budget Google Search Ads untuk produk SaaS B2B Anda cepat habis sebelum jam 2 siang setiap hari, padahal jam operasional target klien baru aktif pukul 13.00 - 18.00 WIB. Bagaimana cara paling efektif mengoptimalkan alokasi anggaran tersebut?",
+      "options": [
+        "Mengubah tipe bidding menjadi maximize conversions dan menaikkan budget harian",
+        "Memperketat penargetan kata kunci negatif serta mengatur jadwal penayangan iklan",
+        "Menurunkan nilai bid pada setiap kata kunci agar iklan tampil lebih lama di mesin pencari",
+        "Memindahkan seluruh sisa anggaran bulanan ke platform media sosial berbayar lain"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan meningkatkan organic traffic website e-commerce elektronik lokal yang mengalami penurunan drastis setelah pembaruan algoritma Google. Analisis awal menunjukkan banyak halaman produk usang yang kanibal. Tindakan apa yang harus diprioritaskan?",
+      "options": [
+        "Membuat domain baru yang bersih dari penalti lalu mengalihkan semua tautan lama",
+        "Menulis ulang deskripsi produk dengan memasukkan nama brand sebanyak mungkin",
+        "Mengonsolidasikan halaman produk serupa dan melakukan 301 redirect ke halaman utama",
+        "Membeli backstory domain otoritas tinggi untuk mendongkrak peringkat SEO teknis"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Kampanye e-mail marketing untuk peluncuran produk FMCG baru memiliki open rate yang sangat rendah (di bawah 10%), meskipun database kontak berasal dari pelanggan aktif. Apa langkah pertama yang paling tepat untuk memperbaiki performa ini?",
+      "options": [
+        "Mengubah hari pengiriman e-mail dari hari kerja menjadi akhir pekan",
+        "Melakukan uji A/B pada baris subjek e-mail agar lebih memancing rasa penasaran",
+        "Memperpanjang isi teks e-mail agar informasi produk tersampaikan secara lengkap",
+        "Menghapus seluruh daftar kontak yang tidak aktif dalam tiga bulan terakhir"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah startup aplikasi fintech ingin memaksimalkan akuisisi pengguna baru melalui KOL (Key Opinion Leader) di Instagram dengan budget terbatas. Metrik apa yang paling krusial untuk dijadikan acuan dalam pemilihan KOL?",
+      "options": [
+        "Jumlah pengikut total yang dimiliki oleh KOL tersebut di akun utama mereka",
+        "Tingkat keterlibatan audiens atau engagement rate pada postingan reel mereka",
+        "Rata-rata jumlah penonton live streaming dalam satu bulan terakhir",
+        "Frekuensi unggahan konten bersponsor yang mereka lakukan dalam seminggu"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda bertanggung jawab atas performa Google Analytics 4 (GA4) untuk portal berita online. Manajemen ingin melacak berapa banyak pembaca yang benar-benar membaca artikel sampai selesai (mencapai 90% halaman). Fitur apa yang harus Anda konfigurasikan?",
+      "options": [
+        "Mengaktifkan pelacakan Enhanced Measurement untuk scroll dan outbound clicks",
+        "Membuat custom event baru melalui Google Tag Manager untuk persentase scroll",
+        "Menghitung rata-rata durasi sesi pembaca di setiap halaman kategori berita",
+        "Memasang plugin pihak ketiga untuk memonitor pergerakan kursor mouse pembaca"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Akun Instagram resmi perusahaan B2B manufaktur mengalami stagnasi pertumbuhan pengikut dan interaksi selama dua kuartal berturut-turut. Konten apa yang paling efektif untuk membalikkan kondisi ini dalam jangka panjang?",
+      "options": [
+        "Mengikuti tren audio dan format reels lucu yang sedang viral di beranda pengguna",
+        "Mengadakan kuis berhadiah merchandise perusahaan setiap akhir pekan secara rutin",
+        "Membagikan studi kasus teknis dan solusi industri yang mendalam secara visual",
+        "Memperbanyak foto kegiatan internal kantor untuk menunjukkan budaya kerja"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Dalam mengevaluasi performa kampanye digital secara keseluruhan menggunakan model attribution berbasis data, Anda menemukan bahwa channel Paid Search sering berperan sebagai penutup konversi. Apa implikasi strategis dari temuan ini bagi tim marketing?",
+      "options": [
+        "Mengurangi porsi anggaran untuk channel penunjang seperti sosial media organik",
+        "Mempertahankan dukungan anggaran pada channel awareness agar pencarian merek tetap kuat",
+        "Mengalihkan seluruh dana iklan fokus hanya ke Google Search demi efisiensi biaya",
+        "Menghentikan penggunaan social media ads karena tidak langsung menghasilkan transaksi"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand produk perawatan tubuh lokal ingin masuk ke pasar Gen Z melalui TikTok. Tim kreatif telah menyiapkan 10 video konten berbeda. Strategi distribusi mana yang paling efektif untuk menemukan pemenang dengan cepat?",
+      "options": [
+        "Mengunggah satu video per hari secara konsisten selama sepuluh hari berturut-turut",
+        "Menjalankan Spark Ads pada seluruh video dengan target audiens yang disamakan",
+        "Mengunggah kesepuluh video secara bersamaan dalam satu hari untuk tes pasar",
+        "Menyerahkan seluruh konten kepada micro-influencer untuk diunggah di akun mereka"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola iklan Meta Ads untuk sebuah restoran fine dining di Bali. Kampanye menggunakan target jangkauan luas, namun dalam 4 hari ROAS (Return on Ad Spend) sangat rendah dan mayoritas leads yang masuk berasal dari wisatawan bujet rendah yang tidak sesuai segmentasi. Apa langkah paling taktis yang harus Anda ambil?",
+      "options": [
+        "Menurunkan anggaran harian sebesar 50 persen sampai algoritma Meta menemukan audiens yang tepat secara otomatis",
+        "Mengganti materi visual dengan foto menu paling murah untuk menarik minat awal konsumen lokal",
+        "Memperketat penargetan geografis dan menambahkan pengecualian minat yang berkaitan dengan backpaker",
+        "Membuat halaman landing baru yang hanya menampilkan promo diskon besar demi mendongkrak konversi"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah situs e-commerce fesyen lokal mengalami lonjakan rasio keranjang belanja yang ditinggalkan (cart abandonment rate) hingga 75 persen pada minggu gajian. Analisis menunjukkan masalah utama terjadi pada halaman pembayaran (checkout). Langkah optimasi manakah yang paling efektif untuk menaikkan konversi dalam waktu dekat?",
+      "options": [
+        "Menghilangkan opsi pembayaran transfer bank konvensional dan hanya menyediakan kartu kredit",
+        "Menyederhanakan formulir pengisian data diri dan mengaktifkan fitur pembayaran instan populer",
+        "Mengirimkan e-mail pengingat otomatis setiap 10 menit kepada pengguna yang meninggalkan keranjang",
+        "Menambahkan syarat pembelian minimum untuk setiap transaksi agar kualitas pesanan meningkat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Kampanye Google Performance Max yang Anda jalankan untuk produk asuransi kesehatan menunjukkan porsi konversi terbesar didapat dari penempatan banner di aplikasi seluler gratis (in-app mobile games). Namun, tim sales melaporkan lead dari sumber tersebut tidak valid dan sangat tidak berkualitas. Bagaimana cara Anda mengatasinya?",
+      "options": [
+        "Membuat daftar pengecualian penempatan iklan (placement exclusion list) untuk memblokir aplikasi game",
+        "Menghentikan total kampanye Performance Max dan beralih sepenuhnya menggunakan Google Display Network",
+        "Menaikkan target Cost Per Acquisition (CPA) agar sistem otomatis mencari audiens di situs web berita",
+        "Menambahkan ekstensi formulir prospek langsung pada aset teks untuk menyaring kualitas pendaftar"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda baru saja merilis artikel pilar SEO untuk situs B2B software HRIS di Indonesia dengan kata kunci utama 'aplikasi payroll terbaik'. Setelah 3 bulan, posisi artikel tertahan di halaman kedua Google. Apa tindakan optimasi lanjutan yang paling tepat untuk mendorong peringkatnya ke halaman pertama?",
+      "options": [
+        "Menambahkan pengulangan kata kunci target secara persis sebanyak minimal 10 persen di setiap paragraf",
+        "Menghapus seluruh tautan keluar (outbound links) agar otoritas halaman tidak terbagi ke situs lain",
+        "Memperbarui konten dengan data industri terbaru serta memperkuat tautan internal dari artikel pendukung",
+        "Mengubah URL artikel agar lebih pendek dan mendaftarkannya kembali melalui Google Search Console"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah klinik kecantikan di Surabaya ingin meningkatkan jumlah reservasi melalui Meta Ads. Metrik menunjukkan tingkat klik (CTR) iklan sangat tinggi di angka 4 persen, tetapi conversion rate di halaman pendaratan (landing page) sangat rendah. Diagnosa masalah apa yang paling akurat dari situasi ini?",
+      "options": [
+        "Judul dan visual iklan berhasil menarik perhatian, namun formulir pemesanan di landing page terlalu rumit",
+        "Anggaran harian iklan terlalu kecil sehingga sistem Meta belum stabil dalam mendistribusikan tayangan",
+        "Target audiens yang dipilih pada level ad set terlalu sempit sehingga frekuensi penayangan berlebihan",
+        "Penempatan iklan otomatis (advantage+ placements) gagal mengoptimalkan format video di Reels"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam mengelola anggaran Google Search Ads untuk sebuah platform logistik B2B, Anda mendapati biaya per klik (CPC) melonjak tajam karena tingginya persaingan kata kunci merek dari kompetitor. Apa strategi bidding yang paling tepat untuk mengamankan posisi tanpa boros anggaran?",
+      "options": [
+        "Beralih ke strategi Maximize Clicks untuk mendominasi pangsa tayangan di halaman pencarian",
+        "Menggunakan Target Impression Share dengan menetapkan batas bid maksimum pada posisi teratas",
+        "Menurunkan anggaran harian secara drastis hingga kompetitor menghentikan penayangan iklan mereka",
+        "Menghapus semua kata kunci bertuliskan merek kompetitor dan fokus pada kata kunci generik saja"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah brand suplemen kesehatan meluncurkan program affiliate marketing di TikTok. Mereka merekrut 50 kreator mikro untuk mengunggah video ulasan produk. Setelah dua minggu, penjualan dari tautan afiliasi sangat minim meskipun penayangan video cukup tinggi. Langkah evaluasi apa yang harus diprioritaskan?",
+      "options": [
+        "Memutus kontrak kerja sama dengan seluruh kreator dan mencari agensi talent tier 1 yang lebih mahal",
+        "Menganalisis skrip video kreator untuk memastikan adanya ajakan bertindak (CTA) dan penawaran diskon yang jelas",
+        "Meminta kreator menghapus video lama dan mengunggah ulang secara serentak pada pukul 21.00 malam",
+        "Menaikkan komisi penjualan afiliasi sebesar 100 persen tanpa mengubah format konten video yang ada"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan merancang strategi retargeting untuk situs web pendidikan online. Audiens terbagi menjadi pengunjung artikel blog, pengunjung halaman harga, dan pengguna yang sudah mendaftar akun gratis namun belum berlangganan berbayar. Materi iklan mana yang paling efektif diberikan untuk kelompok pengguna akun gratis?",
+      "options": [
+        "Iklan kesadaran merek yang menampilkan visi dan misi perusahaan di berbagai portal berita nasional",
+        "Iklan testimoni keberhasilan alumni lengkap dengan penawaran diskon khusus peningkatan ke akun premium",
+        "Iklan penjelasan dasar mengenai cara mendaftar akun gratis bagi pengguna baru di platform",
+        "Iklan daftar lowongan pekerjaan mitra perusahaan yang bekerja sama dengan lembaga pendidikan"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah portal berita online mengalami penurunan drastis pada metrik waktu baca rata-rata (average engagement time) di Google Analytics 4. Tim redaksi meminta saran Anda untuk memperbaiki struktur konten artikel. Pendekatan analitis manakah yang harus Anda lakukan terlebih dahulu?",
+      "options": [
+        "Mengganti seluruh penulis artikel dengan jurnalis senior yang memiliki gaya penulisan investigatif",
+        "Memeriksa laporan per halaman untuk melihat apakah penurunan terjadi pada topik atau kategori tertentu saja",
+        "Menonaktifkan semua format iklan banner di dalam artikel agar pembaca tidak terganggu secara visual",
+        "Membuat pop-up ajgan berlangganan newsletter yang muncul tepat saat pembaca membuka halaman"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda mengelola kampanye e-mail marketing untuk peluncuran fitur baru aplikasi keuangan. Dari 50.000 database pengguna, open rate mencapai 22 persen, tetapi click-through rate (CTR) di dalam e-mail sangat rendah (di bawah 1 persen). Apa evaluasi utama terhadap elemen e-mail tersebut?",
+      "options": [
+        "Subjek e-mail terlalu provokatif sehingga memicu banyak pengguna melakukan unsubscribe secara massal",
+        "Waktu pengiriman e-mail dilakukan pada hari libur nasional ketika pengguna tidak membuka aplikasi",
+        "Isi e-mail terlalu banyak menyertakan tautan eksternal menuju situs web resmi perusahaan",
+        "Pesan di dalam e-mail kurang relevan atau tombol aksi utama (CTA) tidak cukup jelas bagi pembaca"
+      ],
+      "correct_index": 3
+    },
+    {
+      "question": "Anda mengelola iklan Meta Ads untuk sebuah hotel bintang empat di Yogyakarta. Kampanye penarikan wisatawan akhir pekan menghasilkan banyak klik, namun pemesanan kamar di website sangat sedikit. Langkah taktis apa yang paling tepat dilakukan pertama kali?",
+      "options": [
+        "Mengganti seluruh materi visual iklan dengan foto kamar tipe suite termahal",
+        "Memeriksa ulang halaman tujuan (landing page) untuk memastikan alur reservasi bebas hambatan",
+        "Menurunkan anggaran harian secara drastis untuk menekan biaya operasional iklan",
+        "Memperluas jangkauan penargetan lokasi iklan ke seluruh provinsi di luar Pulau Jawa"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah situs e-commerce produk ibu dan anak mendapati bahwa sebagian besar transaksi berasal dari trafik organik mesin pencari, tetapi halaman kategori produk utamanya tidak mengalami kenaikan peringkat selama tiga bulan. Apa tindakan SEO teknis yang harus diprioritaskan?",
+      "options": [
+        "Menghapus seluruh artikel blog informatif agar otoritas domain terfokus pada produk",
+        "Memperbarui struktur tautaninternal dan mengoptimalkan kecepatan muat halaman kategori",
+        "Membeli tautan balik berbayar dalam jumlah besar dari situs berita nasional ternama",
+        "Mengubah nama domain utama agar lebih ramah mesin pencari dan mudah diingat"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda menjalankan kampanye Google Ads tipe Search untuk layanan logistik kargo antarkota. Kata kunci dengan pencocokan frasa (phrase match) mendatangkan banyak klik tidak relevan yang menguras anggaran. Keputusan optimasi apa yang paling efektif?",
+      "options": [
+        "Mengubah semua kata kunci yang aktif menjadi tipe pencocokan luas (broad match)",
+        "Menambahkan istilah pencarian yang tidak relevan ke dalam daftar kata kunci negatif",
+        "Mematikan seluruh kampanye Search dan memindahkannya total ke platform Meta Ads",
+        "Menaikkan penawaran harga per klik maksimal agar iklan mendominasi posisi teratas"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah aplikasi dompet digital lokal meluncurkan program referral baru. Tim pemasaran ingin mengirimkan pemberitahuan push notification kepada seluruh pengguna aktif secara bersamaan. Pendekatan segmentasi apa yang sebaiknya diterapkan sebelum pengiriman?",
+      "options": [
+        "Mengirimkan pesan yang sama persis kepada seluruh basis data tanpa melihat histori transaksi",
+        "Membagi audiens berdasarkan tingkat keaktifan aplikasi dan riwayat penggunaan fitur transfer",
+        "Menargetkan secara eksklusif pengguna yang sudah menghapus aplikasi dari perangkat mereka",
+        "Memilih sampel acak sepuluh persen dari total keseluruhan pengguna aplikasi seluler"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Dalam laporan bulanan Google Analytics 4 untuk situs portal berita ekonomi, manajemen menanyakan mengapa rasio pantulan (bounce rate) pada artikel analisis saham sangat tinggi. Analisis awal apa yang paling rasional untuk menjelaskan hal ini?",
+      "options": [
+        "Pembaca langsung menemukan informasi saham yang dicari dan menutup halaman karena sudah puas",
+        "Kode pelacakan Google Analytics pada bagian footer situs mengalami kerusakan fatal",
+        "Situs web mengalami serangan siber tersembunyi yang mengalihkan trafik organik",
+        "Sever hosting tidak mampu menampung lonjakan pembaca pada jam perdagangan bursa"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Anda menangani kampanye TikTok Ads untuk produk fashion remaja. Setelah seminggu berjalan, frekuensi penayangan (frequency) iklan mencapai angka 4.5 dengan rasio klik (CTR) yang mulai menurun tajam. Apa langkah mitigasi yang paling tepat?",
+      "options": [
+        "Menambahkan anggaran harian sebesar dua kali lipat untuk mempercepat jangkauan",
+        "Membuat variasi materi video kreatif baru untuk menyegarkan kejenuhan audiens",
+        "Menghentikan total seluruh aktivitas promosi berbayar di platform media sosial",
+        "Mempersempit batasan demografi usia target pasar menjadi hanya satu tahun rentang"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Sebuah agensi properti meluncurkan kampanye Lead Generation di LinkedIn untuk memasarkan ruang kantor komersial di Jakarta Selatan. Biaya per lead (CPL) tercatat sangat tinggi melebihi target KPI. Strategi penyesuaian apa yang harus diuji?",
+      "options": [
+        "Memperluas kriteria jabatan pekerjaan audiens target ke level staf pemula",
+        "Menyederhanakan formulir pendaftaran di dalam iklan untuk mengurangi hambatan pengisian",
+        "Mengganti format materi iklan menjadi video animasi pendek bergaya komedi",
+        "Menghapus tombol ajakan bertindak (CTA) pada materi visual iklan LinkedIn"
+      ],
+      "correct_index": 1
+    },
+    {
+      "question": "Anda ditugaskan memperbaiki performa e-mail marketing untuk retensi pelanggan sebuah brand kopi langganan bulanan. Metrik open rate bagus, namun click-through rate sangat rendah. Bagian mana dari e-mail yang paling mendesak untuk dievaluasi ulang?",
+      "options": [
+        "Baris subjek e-mail dan nama pengirim yang muncul di kotak masuk utama",
+        "Waktu pengiriman e-mail yang dijadwalkan pada hari kerja pukul sembilan pagi",
+        "Tata letak penawaran produk dan kejelasan tombol panggilan tindakan di dalam isi e-mail",
+        "Kepatuhan sistem pengiriman e-mail terhadap protokol keamanan SPF dan DKIM"
+      ],
+      "correct_index": 2
+    },
+    {
+      "question": "Sebuah marketplace lokal mendapati bahwa konversi pembelian melalui perangkat seluler jauh lebih rendah dibandingkan komputer desktop, meskipun trafik seluler mendominasi. Investigasi awal apa yang wajib dilakukan tim digital marketing?",
+      "options": [
+        "Memeriksa kecepatan muat halaman seluler dan kemudahan proses pembayaran di layar kecil",
+        "Menaikkan anggaran iklan khusus untuk perangkat desktop pada jam kerja kantoran",
+        "Menghilangkan semua gambar produk berukuran besar pada versi aplikasi seluler",
+        "Menambah jumlah teks deskripsi produk agar pembaca seluler lebih memahami spesifikasi"
+      ],
+      "correct_index": 0
+    },
+    {
+      "question": "Dalam merencanakan strategi kampanye lintas platform (omnichannel) untuk peluncuran produk FMCG, Anda ingin memastikan bahwa pelanggan yang melihat iklan video di YouTube juga terpapar banner reminder di media sosial. Metode apa yang paling tepat?",
+      "options": [
+        "Memasang tag piksel konversi global yang sama persis di semua platform periklanan",
+        "Membangun segmen audiens kustom berdasarkan interaksi video untuk kampanye retargeting",
+        "Menggunakan satu jenis materi grafis statis untuk seluruh penempatan iklan digital",
+        "Menyamakan jadwal penayangan iklan secara bersamaan pada detik yang persis sama"
+      ],
+      "correct_index": 1
+    }
+  ]
+}
